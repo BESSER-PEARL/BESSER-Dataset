@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'mteach::Professor' has the following attributes: 'firstName' of type str; 'lastName' of type str.
+The class 'mteach::Course' has the following attributes: 'name' of type str; 'time' of type int; 'coefficient' of type float.
+The class 'mteach::Topic' has the following attributes: 'title' of type str.
+'mteach::Course' (role 'Course4', cardinality 0..*) is associated with 'mteach::Topic' (role 'topics', cardinality 0..*).
+'mteach::Course' (role 'teachedCourses', cardinality 0..*) is associated with 'mteach::Professor' (role 'Professor', cardinality 0..*).
+'mteach::Topic' (role 'Topic', cardinality 0..*) is associated with 'mteach::Course' (role 'course', cardinality 0..*).
+'mteach::Professor' (role 'professor', cardinality 0..*) is associated with 'mteach::Course' (role 'Course', cardinality 0..*).

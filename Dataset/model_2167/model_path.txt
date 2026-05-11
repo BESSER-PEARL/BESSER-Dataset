@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/atlanmod/neoEMF-Instantiator/example/fr.inria.atlanmod.dag/model/dag.ecore

@@ -1,0 +1,31 @@
+The model has 15 class(es).
+The class 'HibernateTest::Bz398057B1' has the following attributes: 'valueStr' of type str.
+The class 'HibernateTest::Bz397682P' has the following attributes: 'dbId' of type str.
+The class 'HibernateTest::Bz387752::Main' has the following attributes: 'enumUnsettable' of type str; 'strUnsettable' of type str; 'strSettable' of type str; 'enumSettable' of type str.
+The class 'HibernateTest::Bz380987::Person' has the following attributes: 'name' of type str.
+The class 'HibernateTest::Bz356181::Transient' has no attributes.
+The class 'HibernateTest::Bz356181::Main' has the following attributes: 'transient' of type str; 'nonTransient' of type str.
+The class 'HibernateTest::Bz380987::Place' has the following attributes: 'name' of type str.
+The class 'HibernateTest::Bz356181::NonTransient' has no attributes.
+The class 'HibernateTest::Bz398057B' has the following attributes: 'value' of type float; 'dbId' of type str.
+The class 'HibernateTest::Bz398057A' has the following attributes: 'dbId' of type str.
+The class 'Bz398057A' has no attributes.
+The class 'HibernateTest::Bz380987::Group' has no attributes.
+The class 'Bz398057B' has no attributes.
+The class 'HibernateTest::Bz397682C' has the following attributes: 'dbId' of type str.
+The class 'HibernateTest::Bz398057A1' has no attributes.
+The enumeration 'Bz387752_Enum' has the following literals: 'VAL0', 'VAL1'.
+'HibernateTest::Bz398057B1' is a specialization of 'Bz398057B'.
+'HibernateTest::Bz398057A1' is a specialization of 'Bz398057A'.
+'HibernateTest::Bz380987::Place' (role 'places', cardinality 0..*) is associated with 'HibernateTest::Bz380987::Person' (role 'Bz380987_Person8', cardinality 0..*).
+'HibernateTest::Bz380987::Person' (role 'people', cardinality 0..*) is associated with 'HibernateTest::Bz380987::Group' (role 'Bz380987_Group', cardinality 0..*).
+'HibernateTest::Bz397682C' (role 'listOfC', cardinality 0..*) is associated with 'HibernateTest::Bz397682P' (role 'Bz397682P', cardinality 0..*).
+'HibernateTest::Bz397682C' (role 'Bz397682C', cardinality 0..*) is associated with 'HibernateTest::Bz397682P' (role 'refToP', cardinality 0..*).
+'HibernateTest::Bz356181::Main' (role 'HibernateTest_Bz356181_Main5', cardinality 0..*) is associated with 'HibernateTest::Bz356181::NonTransient' (role 'HibernateTest_Bz356181_NonTransient4', cardinality 0..*).
+'HibernateTest::Bz356181::Transient' (role 'HibernateTest_Bz356181_Transient', cardinality 0..*) is associated with 'HibernateTest::Bz356181::Main' (role 'HibernateTest_Bz356181_Main', cardinality 0..*).
+'HibernateTest::Bz398057A' (role 'refToClassA', cardinality 0..*) is associated with 'HibernateTest::Bz398057B' (role 'Bz398057B', cardinality 0..*).
+'HibernateTest::Bz356181::NonTransient' (role 'HibernateTest_Bz356181_NonTransient', cardinality 0..*) is associated with 'HibernateTest::Bz356181::Main' (role 'HibernateTest_Bz356181_Main2', cardinality 0..*).
+'HibernateTest::Bz380987::Place' (role 'Bz380987_Place', cardinality 0..*) is associated with 'HibernateTest::Bz380987::Person' (role 'people11', cardinality 0..*).
+'HibernateTest::Bz397682C' (role 'HibernateTest_Bz397682C16', cardinality 0..*) is associated with 'HibernateTest::Bz397682C' (role 'HibernateTest_Bz397682C', cardinality 0..*).
+'HibernateTest::Bz380987::Person' (role 'Bz380987_Person', cardinality 0..*) is associated with 'HibernateTest::Bz380987::Group' (role 'group', cardinality 0..*).
+'HibernateTest::Bz398057B' (role 'listOfB', cardinality 0..*) is associated with 'HibernateTest::Bz398057A' (role 'Bz398057A', cardinality 0..*).

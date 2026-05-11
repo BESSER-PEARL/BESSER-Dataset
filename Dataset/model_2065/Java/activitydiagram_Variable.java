@@ -1,0 +1,48 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class activitydiagram_Variable extends NamedElement {
+
+
+
+
+
+
+    private activitydiagram_Activity activitydiagram_activity;
+
+
+
+
+    private activitydiagram_Activity activitydiagram_activity;
+
+
+    public activitydiagram_Variable(
+    ) {
+        super(
+        );
+    }
+
+
+
+    public activitydiagram_Activity getActivitydiagram_activity() {
+        return activitydiagram_activity;
+    }
+
+    public void setActivitydiagram_activity(activitydiagram_Activity activitydiagram_activity) {
+        this.activitydiagram_activity = activitydiagram_activity;
+    }
+    public activitydiagram_Activity getActivitydiagram_activity() {
+        return activitydiagram_activity;
+    }
+
+    public void setActivitydiagram_activity(activitydiagram_Activity activitydiagram_activity) {
+        this.activitydiagram_activity = activitydiagram_activity;
+    }
+
+}

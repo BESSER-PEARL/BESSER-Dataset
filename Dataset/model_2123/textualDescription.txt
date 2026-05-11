@@ -1,0 +1,20 @@
+The model has 8 class(es).
+The class 'SubTestPackage::List::Element' has no attributes.
+The class 'List::TestPackage::Test' has the following attributes: 'value' of type int.
+The class 'TestPackage::List::Element' has no attributes.
+The class 'List::SubTestPackage::SubTest' has the following attributes: 'value' of type int.
+The class 'List::Element' has the following attributes: 'name' of type str; 'value' of type int.
+The class 'List::List' has the following attributes: 'type' of type str; 'size' of type int.
+The class 'SubTestPackage::SubTest' has no attributes.
+The class 'Test' has no attributes.
+The enumeration 'listType' has the following literals: 'ArrayList', 'List'.
+'List::TestPackage::Test' (role 'List_TestPackage_Test', cardinality 0..*) is associated with 'TestPackage::List::Element' (role 'TestPackage_List_Element', cardinality 0..*).
+'Test' (role 'Test', cardinality 0..*) is associated with 'List::List' (role 'List_List11', cardinality 0..*).
+'SubTestPackage::List::Element' (role 'Element', cardinality 0..*) is associated with 'List::SubTestPackage::SubTest' (role 'subTestPointer', cardinality 0..*).
+'List::List' (role 'List_List2', cardinality 0..*) is associated with 'List::Element' (role 'List_Element3', cardinality 0..*).
+'TestPackage::List::Element' (role 'TestPackage_List_Element19', cardinality 0..*) is associated with 'List::TestPackage::Test' (role 'List_TestPackage_Test18', cardinality 0..*).
+'List::List' (role 'List_List', cardinality 0..*) is associated with 'List::Element' (role 'List_Element', cardinality 0..*).
+'List::List' (role 'List_List14', cardinality 0..*) is associated with 'List::Element' (role 'List_Element13', cardinality 0..*).
+'SubTestPackage::SubTest' (role 'SubTest', cardinality 0..*) is associated with 'List::Element' (role 'elementPointer', cardinality 0..*).
+'List::List' (role 'List_List5', cardinality 0..*) is associated with 'List::Element' (role 'List_Element6', cardinality 0..*).
+'List::List' (role 'List_List9', cardinality 0..*) is associated with 'List::List' (role 'List_List7', cardinality 0..*).

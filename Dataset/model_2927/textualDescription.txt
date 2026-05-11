@@ -1,0 +1,21 @@
+The model has 10 class(es).
+The class 'Type' has no attributes.
+The class 'ling::DataType' has no attributes.
+The class 'ling::Entity' has no attributes.
+The class 'AbstractElement' has no attributes.
+The class 'ling::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'ling::Type' has the following attributes: 'name' of type str.
+The class 'ling::PackageDeclaration' has the following attributes: 'name' of type str.
+The class 'ling::Domainmodel' has no attributes.
+The class 'ling::Feature' has the following attributes: 'many' of type bool; 'name' of type str.
+The class 'ling::AbstractElement' has no attributes.
+'ling::Type' is a specialization of 'AbstractElement'.
+'ling::Import' is a specialization of 'AbstractElement'.
+'ling::Entity' is a specialization of 'Type'.
+'ling::PackageDeclaration' is a specialization of 'AbstractElement'.
+'ling::DataType' is a specialization of 'Type'.
+'ling::Type' (role 'ling_Type', cardinality 0..*) is associated with 'ling::Feature' (role 'ling_Feature8', cardinality 0..*).
+'ling::Feature' (role 'ling_Feature', cardinality 0..*) is associated with 'ling::Entity' (role 'ling_Entity6', cardinality 0..*).
+'ling::Entity' (role 'ling_Entity', cardinality 0..*) is associated with 'ling::Entity' (role 'ling_Entity3', cardinality 0..*).
+'ling::PackageDeclaration' (role 'ling_PackageDeclaration', cardinality 0..*) is associated with 'ling::AbstractElement' (role 'ling_AbstractElement2', cardinality 0..*).
+'ling::Domainmodel' (role 'ling_Domainmodel', cardinality 0..*) is associated with 'ling::AbstractElement' (role 'ling_AbstractElement', cardinality 0..*).

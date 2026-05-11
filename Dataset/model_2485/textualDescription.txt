@@ -1,0 +1,7 @@
+The model has 6 class(es).
+The class 'fsmProv::Region' has no attributes.
+The class 'fsmProv::Trigger' has the following attributes: 'expression' of type str.
+The class 'fsmProv::Transition' has no attributes.
+The class 'fsmProv::StateMachine' has no attributes.
+The class 'fsmProv::State' has no attributes.
+The class 'fsmProv::AbstractState' has no attributes.

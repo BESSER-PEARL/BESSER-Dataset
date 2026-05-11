@@ -1,0 +1,67 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class wikidb116_version116_math  {
+
+    private String math_html;
+    private String math_mathml;
+    private String math_outputhash;
+    private String math_inputhash;
+    private int math_html_conservativeness;
+
+
+
+    public wikidb116_version116_math(
+        String math_html,        String math_mathml,        String math_outputhash,        String math_inputhash,        int math_html_conservativeness    ) {
+        this.math_html = math_html;
+        this.math_mathml = math_mathml;
+        this.math_outputhash = math_outputhash;
+        this.math_inputhash = math_inputhash;
+        this.math_html_conservativeness = math_html_conservativeness;
+    }
+
+
+    public String getMath_html() {
+        return math_html;
+    }
+
+    public void setMath_html(String math_html) {
+        this.math_html = math_html;
+    }
+    public String getMath_mathml() {
+        return math_mathml;
+    }
+
+    public void setMath_mathml(String math_mathml) {
+        this.math_mathml = math_mathml;
+    }
+    public String getMath_outputhash() {
+        return math_outputhash;
+    }
+
+    public void setMath_outputhash(String math_outputhash) {
+        this.math_outputhash = math_outputhash;
+    }
+    public String getMath_inputhash() {
+        return math_inputhash;
+    }
+
+    public void setMath_inputhash(String math_inputhash) {
+        this.math_inputhash = math_inputhash;
+    }
+    public int getMath_html_conservativeness() {
+        return math_html_conservativeness;
+    }
+
+    public void setMath_html_conservativeness(int math_html_conservativeness) {
+        this.math_html_conservativeness = math_html_conservativeness;
+    }
+
+
+}

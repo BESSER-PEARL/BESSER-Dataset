@@ -1,0 +1,13 @@
+The model has 5 class(es).
+The class 'tests::TypeA' has no attributes.
+The class 'tests::Root' has no attributes.
+The class 'Named' has no attributes.
+The class 'tests::Named' has the following attributes: 'name' of type str.
+The class 'tests::TypeB' has no attributes.
+'tests::TypeB' is a specialization of 'Named'.
+'tests::TypeA' is a specialization of 'Named'.
+'tests::Root' is a specialization of 'Named'.
+'tests::TypeA' (role 'tests_TypeA', cardinality 0..*) is associated with 'tests::TypeB' (role 'tests_TypeB', cardinality 0..*).
+'tests::Root' (role 'tests_Root', cardinality 0..*) is associated with 'tests::TypeA' (role 'tests_TypeA5', cardinality 0..*).
+'tests::Root' (role 'tests_Root7', cardinality 0..*) is associated with 'tests::TypeB' (role 'tests_TypeB8', cardinality 0..*).
+'tests::TypeA' (role 'tests_TypeA3', cardinality 0..*) is associated with 'tests::TypeB' (role 'tests_TypeB2', cardinality 0..*).

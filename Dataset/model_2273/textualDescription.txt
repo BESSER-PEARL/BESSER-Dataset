@@ -1,0 +1,15 @@
+The model has 8 class(es).
+The class 'university::Course' has the following attributes: 'etcs' of type int; 'id' of type str; 'name' of type str.
+The class 'university::Staff' has the following attributes: 'staff' of type str.
+The class 'university::Address' has no attributes.
+The class 'university::CourseCatalog' has no attributes.
+The class 'university::Professor' has no attributes.
+The class 'university::Assistant' has no attributes.
+The class 'university::Person' has the following attributes: 'name' of type str.
+The class 'Person' has no attributes.
+'university::Professor' is a specialization of 'Person'.
+'university::Assistant' is a specialization of 'Person'.
+'university::Professor' (role 'university_Professor', cardinality 0..*) is associated with 'university::Staff' (role 'university_Staff', cardinality 0..*).
+'university::Assistant' (role 'university_Assistant', cardinality 0..*) is associated with 'university::Staff' (role 'university_Staff3', cardinality 0..*).
+'university::Person' (role 'university_Person', cardinality 0..*) is associated with 'university::Address' (role 'university_Address', cardinality 0..*).
+'university::Course' (role 'university_Course', cardinality 0..*) is associated with 'university::CourseCatalog' (role 'university_CourseCatalog', cardinality 0..*).

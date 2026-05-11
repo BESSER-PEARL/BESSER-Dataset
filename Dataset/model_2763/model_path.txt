@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ReEng/reclipse-emf/trunk/tests/org.reclipse.tests/model/tests.ecore

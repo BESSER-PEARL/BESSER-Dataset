@@ -1,0 +1,64 @@
+The model has 24 class(es).
+The class 'SQLObject' has no attributes.
+The class 'relational::ReferenceConstraint' has no attributes.
+The class 'UniqueConstraint' has no attributes.
+The class 'TypedElement' has no attributes.
+The class 'relational::PrimaryKey' has no attributes.
+The class 'relational::Comment' has the following attributes: 'description' of type str.
+The class 'TableConstraint' has no attributes.
+The class 'relational::ForeignKey' has no attributes.
+The class 'relational::BaseTable' has no attributes.
+The class 'relational::ENamedElement' has the following attributes: 'name' of type str.
+The class 'relational::Trigger' has the following attributes: 'updateType' of type bool; 'deleteType' of type bool; 'actionTime' of type str; 'insertType' of type bool.
+The class 'relational::TableConstraint' has no attributes.
+The class 'relational::UniqueConstraint' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'relational::Constraint' has no attributes.
+The class 'relational::Column' has the following attributes: 'srid' of type str; 'nullable' of type bool; 'length' of type int; 'defaultValue' of type str.
+The class 'relational::SQLObject' has the following attributes: 'description' of type str; 'label' of type str.
+The class 'ENamedElement' has no attributes.
+The class 'relational::Schema' has no attributes.
+The class 'relational::TypedElement' has no attributes.
+The class 'relational::DataType' has no attributes.
+The class 'Table' has no attributes.
+The class 'relational::Table' has no attributes.
+The class 'ReferenceConstraint' has no attributes.
+The enumeration 'ActionTimeType' has the following literals: 'AFTER', 'BEFORE', 'INSTEADOF'.
+'relational::ReferenceConstraint' is a specialization of 'TableConstraint'.
+'relational::TypedElement' is a specialization of 'SQLObject'.
+'relational::ForeignKey' is a specialization of 'ReferenceConstraint'.
+'relational::PrimaryKey' is a specialization of 'UniqueConstraint'.
+'relational::SQLObject' is a specialization of 'ENamedElement'.
+'relational::Trigger' is a specialization of 'SQLObject'.
+'relational::DataType' is a specialization of 'SQLObject'.
+'relational::Constraint' is a specialization of 'SQLObject'.
+'relational::Table' is a specialization of 'SQLObject'.
+'relational::Schema' is a specialization of 'SQLObject'.
+'relational::TableConstraint' is a specialization of 'Constraint'.
+'relational::UniqueConstraint' is a specialization of 'ReferenceConstraint'.
+'relational::Column' is a specialization of 'TypedElement'.
+'relational::BaseTable' is a specialization of 'Table'.
+'relational::TableConstraint' (role 'constraints', cardinality 0..*) is associated with 'relational::BaseTable' (role 'BaseTable', cardinality 0..*).
+'relational::Table' (role 'tables', cardinality 0..*) is associated with 'relational::Schema' (role 'Schema14', cardinality 0..*).
+'relational::Table' (role 'triggerTables', cardinality 0..*) is associated with 'relational::Trigger' (role 'Trigger18', cardinality 0..*).
+'relational::Table' (role 'table', cardinality 0..*) is associated with 'relational::Trigger' (role 'Trigger16', cardinality 0..*).
+'relational::Table' (role 'table20', cardinality 0..*) is associated with 'relational::Column' (role 'Column', cardinality 0..*).
+'relational::TypedElement' (role 'TypedElement', cardinality 0..*) is associated with 'relational::DataType' (role 'dataType', cardinality 0..*).
+'relational::BaseTable' (role 'baseTable', cardinality 0..*) is associated with 'relational::TableConstraint' (role 'TableConstraint', cardinality 0..*).
+'relational::Trigger' (role 'Trigger', cardinality 0..*) is associated with 'relational::Schema' (role 'schema6', cardinality 0..*).
+'relational::ForeignKey' (role 'referencingForeignKeys', cardinality 0..*) is associated with 'relational::BaseTable' (role 'BaseTable32', cardinality 0..*).
+'relational::Trigger' (role 'triggersConstrainted', cardinality 0..*) is associated with 'relational::Table' (role 'Table12', cardinality 0..*).
+'relational::BaseTable' (role 'referencedTable', cardinality 0..*) is associated with 'relational::ForeignKey' (role 'ForeignKey26', cardinality 0..*).
+'relational::ForeignKey' (role 'foreignKey35', cardinality 0..*) is associated with 'relational::Column' (role 'Column36', cardinality 0..*).
+'relational::Column' (role 'columns', cardinality 0..*) is associated with 'relational::Table' (role 'Table22', cardinality 0..*).
+'relational::ForeignKey' (role 'ForeignKey', cardinality 0..*) is associated with 'relational::Column' (role 'referencedMembers', cardinality 0..*).
+'relational::SQLObject' (role 'SQLObject', cardinality 0..*) is associated with 'relational::Comment' (role 'comments', cardinality 0..*).
+'relational::ForeignKey' (role 'foreignKey', cardinality 0..*) is associated with 'relational::UniqueConstraint' (role 'UniqueConstraint', cardinality 0..*).
+'relational::UniqueConstraint' (role 'uniqueConstraint', cardinality 0..*) is associated with 'relational::ForeignKey' (role 'ForeignKey38', cardinality 0..*).
+'relational::ReferenceConstraint' (role 'referenceConstraint', cardinality 0..*) is associated with 'relational::Column' (role 'Column30', cardinality 0..*).
+'relational::Schema' (role 'schema', cardinality 0..*) is associated with 'relational::Table' (role 'Table', cardinality 0..*).
+'relational::ReferenceConstraint' (role 'ReferenceConstraint', cardinality 0..*) is associated with 'relational::Column' (role 'members', cardinality 0..*).
+'relational::Comment' (role 'Comment', cardinality 0..*) is associated with 'relational::SQLObject' (role 'sqlobject', cardinality 0..*).
+'relational::Schema' (role 'Schema', cardinality 0..*) is associated with 'relational::Trigger' (role 'triggers', cardinality 0..*).
+'relational::Table' (role 'Table10', cardinality 0..*) is associated with 'relational::Trigger' (role 'triggers9', cardinality 0..*).
+'relational::TypedElement' (role 'typedElement', cardinality 0..*) is associated with 'relational::DataType' (role 'DataType', cardinality 0..*).

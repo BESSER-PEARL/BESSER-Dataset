@@ -1,0 +1,26 @@
+The model has 10 class(es).
+The class 'Referentiable' has no attributes.
+The class 'fsmWithMethods::Referentiable' has no attributes.
+The class 'fsmWithMethods::Transition' has no attributes.
+The class 'FExpression' has no attributes.
+The class 'fsmWithMethods::Event' has no attributes.
+The class 'fsmWithMethods::MethodCall' has no attributes.
+The class 'fsmWithMethods::FExpression' has the following attributes: 'name' of type str.
+The class 'fsmWithMethods::Fsm' has the following attributes: 'name' of type str.
+The class 'fsmWithMethods::State' has no attributes.
+The class 'fsmWithMethods::Method' has no attributes.
+'fsmWithMethods::FExpression' is a specialization of 'Referentiable'.
+'fsmWithMethods::State' is a specialization of 'FExpression'.
+'fsmWithMethods::Transition' is a specialization of 'FExpression'.
+'fsmWithMethods::MethodCall' is a specialization of 'FExpression'.
+'fsmWithMethods::Event' is a specialization of 'FExpression'.
+'fsmWithMethods::Method' is a specialization of 'FExpression'.
+'fsmWithMethods::Fsm' (role 'fsmWithMethods_Fsm', cardinality 0..*) is associated with 'fsmWithMethods::State' (role 'fsmWithMethods_State', cardinality 0..*).
+'fsmWithMethods::FExpression' (role 'fsmWithMethods_FExpression7', cardinality 0..*) is associated with 'fsmWithMethods::Method' (role 'fsmWithMethods_Method6', cardinality 0..*).
+'fsmWithMethods::FExpression' (role 'fsmWithMethods_FExpression4', cardinality 0..*) is associated with 'fsmWithMethods::Method' (role 'fsmWithMethods_Method', cardinality 0..*).
+'fsmWithMethods::MethodCall' (role 'fsmWithMethods_MethodCall', cardinality 0..*) is associated with 'fsmWithMethods::Method' (role 'fsmWithMethods_Method9', cardinality 0..*).
+'fsmWithMethods::Referentiable' (role 'fsmWithMethods_Referentiable', cardinality 0..*) is associated with 'fsmWithMethods::MethodCall' (role 'fsmWithMethods_MethodCall11', cardinality 0..*).
+'fsmWithMethods::Fsm' (role 'fsmWithMethods_Fsm2', cardinality 0..*) is associated with 'fsmWithMethods::FExpression' (role 'fsmWithMethods_FExpression', cardinality 0..*).
+'fsmWithMethods::Transition' (role 'fsmWithMethods_Transition15', cardinality 0..*) is associated with 'fsmWithMethods::FExpression' (role 'fsmWithMethods_FExpression16', cardinality 0..*).
+'fsmWithMethods::FExpression' (role 'fsmWithMethods_FExpression19', cardinality 0..*) is associated with 'fsmWithMethods::Transition' (role 'fsmWithMethods_Transition18', cardinality 0..*).
+'fsmWithMethods::Transition' (role 'fsmWithMethods_Transition', cardinality 0..*) is associated with 'fsmWithMethods::FExpression' (role 'fsmWithMethods_FExpression13', cardinality 0..*).

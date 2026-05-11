@@ -1,0 +1,29 @@
+The model has 8 class(es).
+The class 'school::Student' has the following attributes: 'name' of type str.
+The class 'school::Year' has the following attributes: 'weightOfRegularCourses' of type int; 'startingDate' of type int.
+The class 'school::Course' has the following attributes: 'subject' of type str; 'weight' of type int.
+The class 'school::School' has the following attributes: 'numberOfTeachers' of type int; 'address' of type str; 'currentYear' of type int; 'name' of type str.
+The class 'Course' has no attributes.
+The class 'school::SchoolClass' has the following attributes: 'code' of type str.
+The class 'school::SpecialisationCourse' has the following attributes: 'specialisation' of type str.
+The class 'school::Teacher' has the following attributes: 'name' of type str.
+'school::SpecialisationCourse' is a specialization of 'Course'.
+'school::School' (role 'school7', cardinality 0..*) is associated with 'school::Teacher' (role 'Teacher8', cardinality 0..*).
+'school::SchoolClass' (role 'school_SchoolClass', cardinality 0..*) is associated with 'school::Course' (role 'school_Course', cardinality 0..*).
+'school::Course' (role 'Course19', cardinality 0..*) is associated with 'school::SchoolClass' (role 'schoolClass18', cardinality 0..*).
+'school::Teacher' (role 'homeroomTeacher', cardinality 0..*) is associated with 'school::SchoolClass' (role 'SchoolClass30', cardinality 0..*).
+'school::Course' (role 'courses2', cardinality 0..*) is associated with 'school::Teacher' (role 'Teacher', cardinality 0..*).
+'school::Student' (role 'students', cardinality 0..*) is associated with 'school::SchoolClass' (role 'SchoolClass24', cardinality 0..*).
+'school::School' (role 'School', cardinality 0..*) is associated with 'school::Course' (role 'courses', cardinality 0..*).
+'school::Course' (role 'Course', cardinality 0..*) is associated with 'school::School' (role 'school10', cardinality 0..*).
+'school::School' (role 'School26', cardinality 0..*) is associated with 'school::Teacher' (role 'teachers', cardinality 0..*).
+'school::Student' (role 'Student', cardinality 0..*) is associated with 'school::SchoolClass' (role 'schoolClass', cardinality 0..*).
+'school::Course' (role 'Course28', cardinality 0..*) is associated with 'school::Teacher' (role 'teacher', cardinality 0..*).
+'school::SchoolClass' (role 'SchoolClass', cardinality 0..*) is associated with 'school::Course' (role 'courses4', cardinality 0..*).
+'school::SchoolClass' (role 'schoolClasses', cardinality 0..*) is associated with 'school::Year' (role 'Year15', cardinality 0..*).
+'school::Year' (role 'school_Year', cardinality 0..*) is associated with 'school::School' (role 'school_School13', cardinality 0..*).
+'school::SchoolClass' (role 'SchoolClass34', cardinality 0..*) is associated with 'school::Year' (role 'year', cardinality 0..*).
+'school::Teacher' (role 'school_Teacher', cardinality 0..*) is associated with 'school::School' (role 'school_School', cardinality 0..*).
+'school::School' (role 'school', cardinality 0..*) is associated with 'school::Year' (role 'Year', cardinality 0..*).
+'school::SchoolClass' (role 'homeroomedClass', cardinality 0..*) is associated with 'school::Teacher' (role 'Teacher21', cardinality 0..*).
+'school::School' (role 'School32', cardinality 0..*) is associated with 'school::Year' (role 'years', cardinality 0..*).

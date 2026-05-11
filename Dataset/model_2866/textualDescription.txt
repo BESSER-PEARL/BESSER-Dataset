@@ -1,0 +1,205 @@
+The model has 86 class(es).
+The class 'deviceModelingLanguage::SimpleBasicLiteral' has the following attributes: 'lit' of type str.
+The class 'deviceModelingLanguage::Literal' has no attributes.
+The class 'deviceModelingLanguage::BinaryExp' has the following attributes: 'op' of type str.
+The class 'deviceModelingLanguage::ConstraintNat' has no attributes.
+The class 'deviceModelingLanguage::InvariantDecl' has the following attributes: 'invName' of type str.
+The class 'MemberDecl' has no attributes.
+The class 'deviceModelingLanguage::SetFeatureType' has no attributes.
+The class 'deviceModelingLanguage::AnyNatConstraint' has no attributes.
+The class 'Type' has no attributes.
+The class 'deviceModelingLanguage::SomeFeatureType' has no attributes.
+The class 'deviceModelingLanguage::BaseFeatureType' has no attributes.
+The class 'Modifier' has no attributes.
+The class 'deviceModelingLanguage::Var' has no attributes.
+The class 'deviceModelingLanguage::SomeType' has no attributes.
+The class 'Accessor' has no attributes.
+The class 'deviceModelingLanguage::EitherFeatureType' has the following attributes: 'choice' of type str.
+The class 'deviceModelingLanguage::SimpleSeqLiteral' has no attributes.
+The class 'FeatureType' has no attributes.
+The class 'deviceModelingLanguage::Param' has the following attributes: 'name' of type str.
+The class 'deviceModelingLanguage::Accessor' has no attributes.
+The class 'deviceModelingLanguage::Data' has no attributes.
+The class 'deviceModelingLanguage::SimpleOptionLiteral' has no attributes.
+The class 'deviceModelingLanguage::OptionFeatureType' has the following attributes: 'none' of type bool.
+The class 'deviceModelingLanguage::LiteralExp' has no attributes.
+The class 'deviceModelingLanguage::NoneType' has no attributes.
+The class 'SimpleLiteral' has no attributes.
+The class 'deviceModelingLanguage::SimpleSomeLiteral' has no attributes.
+The class 'BaseType' has no attributes.
+The class 'deviceModelingLanguage::Const' has the following attributes: 'product' of type bool; 'schema' of type bool; 'class_' of type bool; 'instance' of type bool.
+The class 'deviceModelingLanguage::Modifier' has no attributes.
+The class 'deviceModelingLanguage::Device' has no attributes.
+The class 'deviceModelingLanguage::SimpleTupleLiteral' has no attributes.
+The class 'deviceModelingLanguage::Val' has no attributes.
+The class 'Primary' has no attributes.
+The class 'SimpleOptionLiteral' has no attributes.
+The class 'deviceModelingLanguage::Model' has the following attributes: 'class_' of type bool; 'schema' of type bool; 'product' of type bool.
+The class 'MModifier' has no attributes.
+The class 'deviceModelingLanguage::SetLiteral' has no attributes.
+The class 'deviceModelingLanguage::OptionType' has no attributes.
+The class 'deviceModelingLanguage::AttrDecl' has the following attributes: 'attributeName' of type str.
+The class 'deviceModelingLanguage::SetType' has no attributes.
+The class 'deviceModelingLanguage::SimpleLiteral' has no attributes.
+The class 'deviceModelingLanguage::Feature' has the following attributes: 'product' of type bool; 'schema' of type bool; 'class_' of type bool.
+The class 'deviceModelingLanguage::SimpleSetLiteral' has no attributes.
+The class 'deviceModelingLanguage::UnaryExp' has the following attributes: 'op' of type str.
+The class 'deviceModelingLanguage::TupleType' has no attributes.
+The class 'deviceModelingLanguage::ReportMemberDecl' has the following attributes: 'name' of type str.
+The class 'deviceModelingLanguage::GeneralInvariant' has no attributes.
+The class 'deviceModelingLanguage::Exp' has no attributes.
+The class 'deviceModelingLanguage::FeatureDecl' has no attributes.
+The class 'deviceModelingLanguage::TypeDecl' has no attributes.
+The class 'deviceModelingLanguage::TupleLiteral' has no attributes.
+The class 'FeatureDecl' has no attributes.
+The class 'deviceModelingLanguage::FeatureType' has no attributes.
+The class 'deviceModelingLanguage::SubMemberDecl' has the following attributes: 'name' of type str.
+The class 'deviceModelingLanguage::Assignment' has the following attributes: 'name' of type str.
+The class 'Decl' has no attributes.
+The class 'deviceModelingLanguage::SomeLiteral' has no attributes.
+The class 'deviceModelingLanguage::Primary' has no attributes.
+The class 'OptionLiteral' has no attributes.
+The class 'deviceModelingLanguage::NameExp' has the following attributes: 'id' of type str.
+The class 'deviceModelingLanguage::Report' has the following attributes: 'name' of type str.
+The class 'Literal' has no attributes.
+The class 'deviceModelingLanguage::MultiplicityInvariant' has no attributes.
+The class 'deviceModelingLanguage::Override' has no attributes.
+The class 'deviceModelingLanguage::BaseType' has no attributes.
+The class 'deviceModelingLanguage::MModifier' has no attributes.
+The class 'Exp' has no attributes.
+The class 'deviceModelingLanguage::App' has no attributes.
+The class 'deviceModelingLanguage::SimpleNoneLiteral' has no attributes.
+The class 'deviceModelingLanguage::MemberDecl' has no attributes.
+The class 'ConstraintNat' has no attributes.
+The class 'deviceModelingLanguage::NumNatConstraint' has the following attributes: 'num' of type str.
+The class 'deviceModelingLanguage::Decl' has the following attributes: 'name' of type str.
+The class 'deviceModelingLanguage::PrimaryExp' has no attributes.
+The class 'deviceModelingLanguage::NoneLiteral' has no attributes.
+The class 'deviceModelingLanguage::SubMemberMatch' has the following attributes: 'any' of type str; 'qNames' of type str; 'name' of type str.
+The class 'deviceModelingLanguage::AccessExp' has no attributes.
+The class 'deviceModelingLanguage::SeqLiteral' has no attributes.
+The class 'deviceModelingLanguage::OptionLiteral' has no attributes.
+The class 'InvariantDecl' has no attributes.
+The class 'deviceModelingLanguage::BasicLiteral' has the following attributes: 'lit' of type str.
+The class 'deviceModelingLanguage::Type' has no attributes.
+The class 'deviceModelingLanguage::ConstraintExp' has no attributes.
+The class 'deviceModelingLanguage::SeqFeatureType' has no attributes.
+The class 'deviceModelingLanguage::SeqType' has no attributes.
+'deviceModelingLanguage::SeqLiteral' is a specialization of 'Literal'.
+'deviceModelingLanguage::Data' is a specialization of 'MModifier'.
+'deviceModelingLanguage::NameExp' is a specialization of 'Primary'.
+'deviceModelingLanguage::SetFeatureType' is a specialization of 'FeatureType'.
+'deviceModelingLanguage::SimpleSomeLiteral' is a specialization of 'SimpleOptionLiteral'.
+'deviceModelingLanguage::UnaryExp' is a specialization of 'Exp'.
+'deviceModelingLanguage::LiteralExp' is a specialization of 'Primary'.
+'deviceModelingLanguage::TypeDecl' is a specialization of 'Decl'.
+'deviceModelingLanguage::SeqFeatureType' is a specialization of 'FeatureType'.
+'deviceModelingLanguage::PrimaryExp' is a specialization of 'Exp'.
+'deviceModelingLanguage::SeqType' is a specialization of 'Type'.
+'deviceModelingLanguage::AttrDecl' is a specialization of 'Accessor'.
+'deviceModelingLanguage::Val' is a specialization of 'MModifier'.
+'deviceModelingLanguage::Const' is a specialization of 'Modifier'.
+'deviceModelingLanguage::SimpleOptionLiteral' is a specialization of 'SimpleLiteral'.
+'deviceModelingLanguage::Var' is a specialization of 'Modifier'.
+'deviceModelingLanguage::SimpleSeqLiteral' is a specialization of 'SimpleLiteral'.
+'deviceModelingLanguage::Override' is a specialization of 'Modifier'.
+'deviceModelingLanguage::AnyNatConstraint' is a specialization of 'ConstraintNat'.
+'deviceModelingLanguage::Const' is a specialization of 'MModifier'.
+'deviceModelingLanguage::FeatureDecl' is a specialization of 'Decl'.
+'deviceModelingLanguage::AccessExp' is a specialization of 'Exp'.
+'deviceModelingLanguage::Var' is a specialization of 'MModifier'.
+'deviceModelingLanguage::Feature' is a specialization of 'FeatureDecl'.
+'deviceModelingLanguage::MultiplicityInvariant' is a specialization of 'InvariantDecl'.
+'deviceModelingLanguage::NoneLiteral' is a specialization of 'OptionLiteral'.
+'deviceModelingLanguage::BasicLiteral' is a specialization of 'Literal'.
+'deviceModelingLanguage::SimpleTupleLiteral' is a specialization of 'SimpleLiteral'.
+'deviceModelingLanguage::SomeType' is a specialization of 'BaseType'.
+'deviceModelingLanguage::Data' is a specialization of 'FeatureDecl'.
+'deviceModelingLanguage::SomeLiteral' is a specialization of 'OptionLiteral'.
+'deviceModelingLanguage::InvariantDecl' is a specialization of 'MemberDecl'.
+'deviceModelingLanguage::GeneralInvariant' is a specialization of 'InvariantDecl'.
+'deviceModelingLanguage::OptionLiteral' is a specialization of 'Literal'.
+'deviceModelingLanguage::SomeFeatureType' is a specialization of 'FeatureType'.
+'deviceModelingLanguage::SimpleBasicLiteral' is a specialization of 'SimpleLiteral'.
+'deviceModelingLanguage::EitherFeatureType' is a specialization of 'FeatureType'.
+'deviceModelingLanguage::App' is a specialization of 'FeatureDecl'.
+'deviceModelingLanguage::NoneType' is a specialization of 'BaseType'.
+'deviceModelingLanguage::SetLiteral' is a specialization of 'Literal'.
+'deviceModelingLanguage::Override' is a specialization of 'MModifier'.
+'deviceModelingLanguage::AttrDecl' is a specialization of 'MemberDecl'.
+'deviceModelingLanguage::SimpleNoneLiteral' is a specialization of 'SimpleOptionLiteral'.
+'deviceModelingLanguage::SetType' is a specialization of 'Type'.
+'deviceModelingLanguage::OptionType' is a specialization of 'BaseType'.
+'deviceModelingLanguage::SubMemberDecl' is a specialization of 'MemberDecl'.
+'deviceModelingLanguage::BaseType' is a specialization of 'Type'.
+'deviceModelingLanguage::SimpleSetLiteral' is a specialization of 'SimpleLiteral'.
+'deviceModelingLanguage::NumNatConstraint' is a specialization of 'ConstraintNat'.
+'deviceModelingLanguage::BinaryExp' is a specialization of 'Exp'.
+'deviceModelingLanguage::Val' is a specialization of 'Modifier'.
+'deviceModelingLanguage::Device' is a specialization of 'FeatureDecl'.
+'deviceModelingLanguage::TupleLiteral' is a specialization of 'Literal'.
+'deviceModelingLanguage::OptionFeatureType' is a specialization of 'FeatureType'.
+'deviceModelingLanguage::BaseFeatureType' is a specialization of 'FeatureType'.
+'deviceModelingLanguage::TupleType' is a specialization of 'BaseType'.
+'deviceModelingLanguage::SubMemberDecl' is a specialization of 'Accessor'.
+'deviceModelingLanguage::SimpleTupleLiteral' (role 'deviceModelingLanguage_SimpleTupleLiteral', cardinality 0..*) is associated with 'deviceModelingLanguage::SimpleLiteral' (role 'deviceModelingLanguage_SimpleLiteral69', cardinality 0..*).
+'deviceModelingLanguage::Exp' (role 'deviceModelingLanguage_Exp102', cardinality 0..*) is associated with 'deviceModelingLanguage::UnaryExp' (role 'deviceModelingLanguage_UnaryExp', cardinality 0..*).
+'deviceModelingLanguage::FeatureDecl' (role 'deviceModelingLanguage_FeatureDecl27', cardinality 0..*) is associated with 'deviceModelingLanguage::BaseFeatureType' (role 'deviceModelingLanguage_BaseFeatureType', cardinality 0..*).
+'deviceModelingLanguage::Exp' (role 'deviceModelingLanguage_Exp23', cardinality 0..*) is associated with 'deviceModelingLanguage::Assignment' (role 'deviceModelingLanguage_Assignment22', cardinality 0..*).
+'deviceModelingLanguage::BasicLiteral' (role 'deviceModelingLanguage_BasicLiteral', cardinality 0..*) is associated with 'deviceModelingLanguage::TypeDecl' (role 'deviceModelingLanguage_TypeDecl56', cardinality 0..*).
+'deviceModelingLanguage::Literal' (role 'deviceModelingLanguage_Literal58', cardinality 0..*) is associated with 'deviceModelingLanguage::TupleLiteral' (role 'deviceModelingLanguage_TupleLiteral', cardinality 0..*).
+'deviceModelingLanguage::Assignment' (role 'deviceModelingLanguage_Assignment', cardinality 0..*) is associated with 'deviceModelingLanguage::FeatureDecl' (role 'deviceModelingLanguage_FeatureDecl10', cardinality 0..*).
+'deviceModelingLanguage::Device' (role 'deviceModelingLanguage_Device', cardinality 0..*) is associated with 'deviceModelingLanguage::FeatureDecl' (role 'deviceModelingLanguage_FeatureDecl8', cardinality 0..*).
+'deviceModelingLanguage::SeqFeatureType' (role 'deviceModelingLanguage_SeqFeatureType89', cardinality 0..*) is associated with 'deviceModelingLanguage::BaseFeatureType' (role 'deviceModelingLanguage_BaseFeatureType90', cardinality 0..*).
+'deviceModelingLanguage::TypeDecl' (role 'deviceModelingLanguage_TypeDecl1', cardinality 0..*) is associated with 'deviceModelingLanguage::TypeDecl' (role 'deviceModelingLanguage_TypeDecl', cardinality 0..*).
+'deviceModelingLanguage::SubMemberMatch' (role 'deviceModelingLanguage_SubMemberMatch', cardinality 0..*) is associated with 'deviceModelingLanguage::MultiplicityInvariant' (role 'deviceModelingLanguage_MultiplicityInvariant36', cardinality 0..*).
+'deviceModelingLanguage::MultiplicityInvariant' (role 'deviceModelingLanguage_MultiplicityInvariant33', cardinality 0..*) is associated with 'deviceModelingLanguage::ConstraintNat' (role 'deviceModelingLanguage_ConstraintNat34', cardinality 0..*).
+'deviceModelingLanguage::BaseFeatureType' (role 'deviceModelingLanguage_BaseFeatureType77', cardinality 0..*) is associated with 'deviceModelingLanguage::SomeFeatureType' (role 'deviceModelingLanguage_SomeFeatureType', cardinality 0..*).
+'deviceModelingLanguage::NoneType' (role 'deviceModelingLanguage_NoneType', cardinality 0..*) is associated with 'deviceModelingLanguage::Type' (role 'deviceModelingLanguage_Type122', cardinality 0..*).
+'deviceModelingLanguage::SetLiteral' (role 'deviceModelingLanguage_SetLiteral66', cardinality 0..*) is associated with 'deviceModelingLanguage::SimpleLiteral' (role 'deviceModelingLanguage_SimpleLiteral67', cardinality 0..*).
+'deviceModelingLanguage::SetType' (role 'deviceModelingLanguage_SetType', cardinality 0..*) is associated with 'deviceModelingLanguage::Type' (role 'deviceModelingLanguage_Type114', cardinality 0..*).
+'deviceModelingLanguage::PrimaryExp' (role 'deviceModelingLanguage_PrimaryExp', cardinality 0..*) is associated with 'deviceModelingLanguage::Primary' (role 'deviceModelingLanguage_Primary', cardinality 0..*).
+'deviceModelingLanguage::OptionType' (role 'deviceModelingLanguage_OptionType', cardinality 0..*) is associated with 'deviceModelingLanguage::Type' (role 'deviceModelingLanguage_Type118', cardinality 0..*).
+'deviceModelingLanguage::SeqFeatureType' (role 'deviceModelingLanguage_SeqFeatureType', cardinality 0..*) is associated with 'deviceModelingLanguage::BaseFeatureType' (role 'deviceModelingLanguage_BaseFeatureType87', cardinality 0..*).
+'deviceModelingLanguage::SimpleSomeLiteral' (role 'deviceModelingLanguage_SimpleSomeLiteral', cardinality 0..*) is associated with 'deviceModelingLanguage::SimpleLiteral' (role 'deviceModelingLanguage_SimpleLiteral128', cardinality 0..*).
+'deviceModelingLanguage::Exp' (role 'deviceModelingLanguage_Exp', cardinality 0..*) is associated with 'deviceModelingLanguage::FeatureDecl' (role 'deviceModelingLanguage_FeatureDecl12', cardinality 0..*).
+'deviceModelingLanguage::Model' (role 'deviceModelingLanguage_Model', cardinality 0..*) is associated with 'deviceModelingLanguage::Decl' (role 'deviceModelingLanguage_Decl', cardinality 0..*).
+'deviceModelingLanguage::BaseFeatureType' (role 'deviceModelingLanguage_BaseFeatureType92', cardinality 0..*) is associated with 'deviceModelingLanguage::SetFeatureType' (role 'deviceModelingLanguage_SetFeatureType', cardinality 0..*).
+'deviceModelingLanguage::Param' (role 'deviceModelingLanguage_Param', cardinality 0..*) is associated with 'deviceModelingLanguage::BaseFeatureType' (role 'deviceModelingLanguage_BaseFeatureType51', cardinality 0..*).
+'deviceModelingLanguage::SimpleSetLiteral' (role 'deviceModelingLanguage_SimpleSetLiteral', cardinality 0..*) is associated with 'deviceModelingLanguage::SimpleLiteral' (role 'deviceModelingLanguage_SimpleLiteral73', cardinality 0..*).
+'deviceModelingLanguage::Type' (role 'deviceModelingLanguage_Type116', cardinality 0..*) is associated with 'deviceModelingLanguage::TupleType' (role 'deviceModelingLanguage_TupleType', cardinality 0..*).
+'deviceModelingLanguage::Literal' (role 'deviceModelingLanguage_Literal', cardinality 0..*) is associated with 'deviceModelingLanguage::AttrDecl' (role 'deviceModelingLanguage_AttrDecl17', cardinality 0..*).
+'deviceModelingLanguage::Literal' (role 'deviceModelingLanguage_Literal126', cardinality 0..*) is associated with 'deviceModelingLanguage::SomeLiteral' (role 'deviceModelingLanguage_SomeLiteral', cardinality 0..*).
+'deviceModelingLanguage::AccessExp' (role 'deviceModelingLanguage_AccessExp', cardinality 0..*) is associated with 'deviceModelingLanguage::PrimaryExp' (role 'deviceModelingLanguage_PrimaryExp105', cardinality 0..*).
+'deviceModelingLanguage::Accessor' (role 'deviceModelingLanguage_Accessor', cardinality 0..*) is associated with 'deviceModelingLanguage::ReportMemberDecl' (role 'deviceModelingLanguage_ReportMemberDecl', cardinality 0..*).
+'deviceModelingLanguage::LiteralExp' (role 'deviceModelingLanguage_LiteralExp', cardinality 0..*) is associated with 'deviceModelingLanguage::BasicLiteral' (role 'deviceModelingLanguage_BasicLiteral110', cardinality 0..*).
+'deviceModelingLanguage::SomeFeatureType' (role 'deviceModelingLanguage_SomeFeatureType79', cardinality 0..*) is associated with 'deviceModelingLanguage::MemberDecl' (role 'deviceModelingLanguage_MemberDecl80', cardinality 0..*).
+'deviceModelingLanguage::TypeDecl' (role 'deviceModelingLanguage_TypeDecl54', cardinality 0..*) is associated with 'deviceModelingLanguage::BaseType' (role 'deviceModelingLanguage_BaseType', cardinality 0..*).
+'deviceModelingLanguage::Exp' (role 'deviceModelingLanguage_Exp100', cardinality 0..*) is associated with 'deviceModelingLanguage::BinaryExp' (role 'deviceModelingLanguage_BinaryExp99', cardinality 0..*).
+'deviceModelingLanguage::AccessExp' (role 'deviceModelingLanguage_AccessExp107', cardinality 0..*) is associated with 'deviceModelingLanguage::Accessor' (role 'deviceModelingLanguage_Accessor108', cardinality 0..*).
+'deviceModelingLanguage::FeatureDecl' (role 'deviceModelingLanguage_FeatureDecl39', cardinality 0..*) is associated with 'deviceModelingLanguage::MultiplicityInvariant' (role 'deviceModelingLanguage_MultiplicityInvariant38', cardinality 0..*).
+'deviceModelingLanguage::Type' (role 'deviceModelingLanguage_Type64', cardinality 0..*) is associated with 'deviceModelingLanguage::SetLiteral' (role 'deviceModelingLanguage_SetLiteral', cardinality 0..*).
+'deviceModelingLanguage::BaseFeatureType' (role 'deviceModelingLanguage_BaseFeatureType75', cardinality 0..*) is associated with 'deviceModelingLanguage::OptionFeatureType' (role 'deviceModelingLanguage_OptionFeatureType', cardinality 0..*).
+'deviceModelingLanguage::ConstraintNat' (role 'deviceModelingLanguage_ConstraintNat', cardinality 0..*) is associated with 'deviceModelingLanguage::MultiplicityInvariant' (role 'deviceModelingLanguage_MultiplicityInvariant', cardinality 0..*).
+'deviceModelingLanguage::SimpleSeqLiteral' (role 'deviceModelingLanguage_SimpleSeqLiteral', cardinality 0..*) is associated with 'deviceModelingLanguage::SimpleLiteral' (role 'deviceModelingLanguage_SimpleLiteral71', cardinality 0..*).
+'deviceModelingLanguage::SimpleLiteral' (role 'deviceModelingLanguage_SimpleLiteral', cardinality 0..*) is associated with 'deviceModelingLanguage::SeqLiteral' (role 'deviceModelingLanguage_SeqLiteral62', cardinality 0..*).
+'deviceModelingLanguage::MemberDecl' (role 'deviceModelingLanguage_MemberDecl85', cardinality 0..*) is associated with 'deviceModelingLanguage::EitherFeatureType' (role 'deviceModelingLanguage_EitherFeatureType84', cardinality 0..*).
+'deviceModelingLanguage::SubMemberDecl' (role 'deviceModelingLanguage_SubMemberDecl20', cardinality 0..*) is associated with 'deviceModelingLanguage::FeatureType' (role 'deviceModelingLanguage_FeatureType', cardinality 0..*).
+'deviceModelingLanguage::SetFeatureType' (role 'deviceModelingLanguage_SetFeatureType94', cardinality 0..*) is associated with 'deviceModelingLanguage::BaseFeatureType' (role 'deviceModelingLanguage_BaseFeatureType95', cardinality 0..*).
+'deviceModelingLanguage::Type' (role 'deviceModelingLanguage_Type120', cardinality 0..*) is associated with 'deviceModelingLanguage::SomeType' (role 'deviceModelingLanguage_SomeType', cardinality 0..*).
+'deviceModelingLanguage::Modifier' (role 'deviceModelingLanguage_Modifier', cardinality 0..*) is associated with 'deviceModelingLanguage::AttrDecl' (role 'deviceModelingLanguage_AttrDecl', cardinality 0..*).
+'deviceModelingLanguage::SeqType' (role 'deviceModelingLanguage_SeqType', cardinality 0..*) is associated with 'deviceModelingLanguage::Type' (role 'deviceModelingLanguage_Type112', cardinality 0..*).
+'deviceModelingLanguage::BaseFeatureType' (role 'deviceModelingLanguage_BaseFeatureType82', cardinality 0..*) is associated with 'deviceModelingLanguage::EitherFeatureType' (role 'deviceModelingLanguage_EitherFeatureType', cardinality 0..*).
+'deviceModelingLanguage::Exp' (role 'deviceModelingLanguage_Exp97', cardinality 0..*) is associated with 'deviceModelingLanguage::BinaryExp' (role 'deviceModelingLanguage_BinaryExp', cardinality 0..*).
+'deviceModelingLanguage::Device' (role 'deviceModelingLanguage_Device46', cardinality 0..*) is associated with 'deviceModelingLanguage::ConstraintExp' (role 'deviceModelingLanguage_ConstraintExp', cardinality 0..*).
+'deviceModelingLanguage::AttrDecl' (role 'deviceModelingLanguage_AttrDecl15', cardinality 0..*) is associated with 'deviceModelingLanguage::Type' (role 'deviceModelingLanguage_Type', cardinality 0..*).
+'deviceModelingLanguage::FeatureDecl' (role 'deviceModelingLanguage_FeatureDecl3', cardinality 0..*) is associated with 'deviceModelingLanguage::FeatureDecl' (role 'deviceModelingLanguage_FeatureDecl', cardinality 0..*).
+'deviceModelingLanguage::Type' (role 'deviceModelingLanguage_Type60', cardinality 0..*) is associated with 'deviceModelingLanguage::SeqLiteral' (role 'deviceModelingLanguage_SeqLiteral', cardinality 0..*).
+'deviceModelingLanguage::Type' (role 'deviceModelingLanguage_Type124', cardinality 0..*) is associated with 'deviceModelingLanguage::NoneLiteral' (role 'deviceModelingLanguage_NoneLiteral', cardinality 0..*).
+'deviceModelingLanguage::Exp' (role 'deviceModelingLanguage_Exp49', cardinality 0..*) is associated with 'deviceModelingLanguage::ConstraintExp' (role 'deviceModelingLanguage_ConstraintExp48', cardinality 0..*).
+'deviceModelingLanguage::Exp' (role 'deviceModelingLanguage_Exp41', cardinality 0..*) is associated with 'deviceModelingLanguage::GeneralInvariant' (role 'deviceModelingLanguage_GeneralInvariant', cardinality 0..*).
+'deviceModelingLanguage::MModifier' (role 'deviceModelingLanguage_MModifier', cardinality 0..*) is associated with 'deviceModelingLanguage::SubMemberDecl' (role 'deviceModelingLanguage_SubMemberDecl', cardinality 0..*).
+'deviceModelingLanguage::BaseFeatureType' (role 'deviceModelingLanguage_BaseFeatureType29', cardinality 0..*) is associated with 'deviceModelingLanguage::MemberDecl' (role 'deviceModelingLanguage_MemberDecl30', cardinality 0..*).
+'deviceModelingLanguage::Device' (role 'deviceModelingLanguage_Device43', cardinality 0..*) is associated with 'deviceModelingLanguage::FeatureDecl' (role 'deviceModelingLanguage_FeatureDecl44', cardinality 0..*).
+'deviceModelingLanguage::MemberDecl' (role 'deviceModelingLanguage_MemberDecl', cardinality 0..*) is associated with 'deviceModelingLanguage::FeatureDecl' (role 'deviceModelingLanguage_FeatureDecl6', cardinality 0..*).
+'deviceModelingLanguage::Report' (role 'deviceModelingLanguage_Report', cardinality 0..*) is associated with 'deviceModelingLanguage::Exp' (role 'deviceModelingLanguage_Exp25', cardinality 0..*).

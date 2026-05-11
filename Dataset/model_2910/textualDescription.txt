@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'entitymm::Model' has the following attributes: 'name' of type str.
+The class 'entitymm::Attribute' has the following attributes: 'name' of type str.
+The class 'entitymm::PrimitiveType' has no attributes.
+The class 'entitymm::Type' has the following attributes: 'name' of type str.
+The class 'Type' has no attributes.
+The class 'entitymm::Entity' has the following attributes: 'size' of type int; 'isPersistent' of type bool; 'desc' of type str.
+'entitymm::Entity' is a specialization of 'Type'.
+'entitymm::PrimitiveType' is a specialization of 'Type'.
+'entitymm::Attribute' (role 'entitymm_Attribute', cardinality 0..*) is associated with 'entitymm::PrimitiveType' (role 'entitymm_PrimitiveType', cardinality 0..*).
+'entitymm::Entity' (role 'Entity', cardinality 0..*) is associated with 'entitymm::Attribute' (role 'attributes', cardinality 0..*).
+'entitymm::Entity' (role 'entity', cardinality 0..*) is associated with 'entitymm::Attribute' (role 'Attribute', cardinality 0..*).
+'entitymm::Type' (role 'entitymm_Type', cardinality 0..*) is associated with 'entitymm::Model' (role 'entitymm_Model', cardinality 0..*).

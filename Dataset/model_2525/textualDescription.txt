@@ -1,0 +1,15 @@
+The model has 5 class(es).
+The class 'rulegen::Context' has no attributes.
+The class 'rulegen::C' has no attributes.
+The class 'rulegen::D' has no attributes.
+The class 'rulegen::A' has no attributes.
+The class 'rulegen::B' has no attributes.
+'rulegen::Context' (role 'rulegen_Context2', cardinality 0..*) is associated with 'rulegen::B' (role 'rulegen_B', cardinality 0..*).
+'rulegen::A' (role 'rulegen_A', cardinality 0..*) is associated with 'rulegen::Context' (role 'rulegen_Context', cardinality 0..*).
+'rulegen::B' (role 'B11', cardinality 0..*) is associated with 'rulegen::C' (role 'edgeBC', cardinality 0..*).
+'rulegen::C' (role 'rulegen_C', cardinality 0..*) is associated with 'rulegen::Context' (role 'rulegen_Context4', cardinality 0..*).
+'rulegen::C' (role 'C', cardinality 0..*) is associated with 'rulegen::B' (role 'edgeCB', cardinality 0..*).
+'rulegen::Context' (role 'rulegen_Context6', cardinality 0..*) is associated with 'rulegen::D' (role 'rulegen_D', cardinality 0..*).
+'rulegen::D' (role 'rulegen_D13', cardinality 0..*) is associated with 'rulegen::C' (role 'rulegen_C14', cardinality 0..*).
+'rulegen::B' (role 'B', cardinality 0..*) is associated with 'rulegen::A' (role 'edgeBA', cardinality 0..*).
+'rulegen::B' (role 'edgeAB', cardinality 0..*) is associated with 'rulegen::A' (role 'A', cardinality 0..*).

@@ -1,0 +1,16 @@
+The model has 7 class(es).
+The class 'SqlMetamodel::Column' has the following attributes: 'type' of type str; 'nullable' of type bool; 'name' of type str.
+The class 'SqlMetamodel::Table' has the following attributes: 'name' of type str.
+The class 'SqlMetamodel::ForeingKey' has no attributes.
+The class 'SqlMetamodel::PrimaryKey' has no attributes.
+The class 'SqlMetamodel::Schema' has the following attributes: 'name' of type str.
+The class 'Constraint' has no attributes.
+The class 'SqlMetamodel::Constraint' has the following attributes: 'name' of type str.
+The enumeration 'TypeData' has the following literals: 'DATE', 'INT', 'STRING', 'BOOLEAN', 'FLOAT', 'DOUBLE'.
+'SqlMetamodel::PrimaryKey' is a specialization of 'Constraint'.
+'SqlMetamodel::ForeingKey' is a specialization of 'Constraint'.
+'SqlMetamodel::Table' (role 'SqlMetamodel_Table', cardinality 0..*) is associated with 'SqlMetamodel::Schema' (role 'SqlMetamodel_Schema', cardinality 0..*).
+'SqlMetamodel::Table' (role 'SqlMetamodel_Table2', cardinality 0..*) is associated with 'SqlMetamodel::Column' (role 'SqlMetamodel_Column', cardinality 0..*).
+'SqlMetamodel::Table' (role 'SqlMetamodel_Table4', cardinality 0..*) is associated with 'SqlMetamodel::Constraint' (role 'SqlMetamodel_Constraint', cardinality 0..*).
+'SqlMetamodel::PrimaryKey' (role 'SqlMetamodel_PrimaryKey', cardinality 0..*) is associated with 'SqlMetamodel::Table' (role 'SqlMetamodel_Table6', cardinality 0..*).
+'SqlMetamodel::ForeingKey' (role 'SqlMetamodel_ForeingKey', cardinality 0..*) is associated with 'SqlMetamodel::Table' (role 'SqlMetamodel_Table8', cardinality 0..*).

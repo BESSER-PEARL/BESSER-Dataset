@@ -1,0 +1,20 @@
+The model has 10 class(es).
+The class 'rpslPerceptionGraphMetaModel::OutputPort' has no attributes.
+The class 'rpslPerceptionGraphMetaModel::InputPort' has no attributes.
+The class 'rpslPerceptionGraphMetaModel::PerceptionGraph' has the following attributes: 'name' of type str; 'doc' of type str; 'uuid' of type str.
+The class 'rpslPerceptionGraphMetaModel::Element' has the following attributes: 'name' of type str; 'doc' of type str.
+The class 'Element' has no attributes.
+The class 'rpslPerceptionGraphMetaModel::Leaf' has no attributes.
+The class 'rpslPerceptionGraphMetaModel::Component' has no attributes.
+The class 'rpslPerceptionGraphMetaModel::Node' has no attributes.
+The class 'rpslPerceptionGraphMetaModel::Connection' has no attributes.
+The class 'rpslPerceptionGraphMetaModel::Prototype' has no attributes.
+'rpslPerceptionGraphMetaModel::Leaf' is a specialization of 'Element'.
+'rpslPerceptionGraphMetaModel::Node' is a specialization of 'Element'.
+'rpslPerceptionGraphMetaModel::PerceptionGraph' (role 'rpslPerceptionGraphMetaModel_PerceptionGraph2', cardinality 0..*) is associated with 'rpslPerceptionGraphMetaModel::Prototype' (role 'rpslPerceptionGraphMetaModel_Prototype', cardinality 0..*).
+'rpslPerceptionGraphMetaModel::Connection' (role 'rpslPerceptionGraphMetaModel_Connection', cardinality 0..*) is associated with 'rpslPerceptionGraphMetaModel::Node' (role 'rpslPerceptionGraphMetaModel_Node', cardinality 0..*).
+'rpslPerceptionGraphMetaModel::Connection' (role 'rpslPerceptionGraphMetaModel_Connection12', cardinality 0..*) is associated with 'rpslPerceptionGraphMetaModel::OutputPort' (role 'rpslPerceptionGraphMetaModel_OutputPort', cardinality 0..*).
+'rpslPerceptionGraphMetaModel::Connection' (role 'rpslPerceptionGraphMetaModel_Connection10', cardinality 0..*) is associated with 'rpslPerceptionGraphMetaModel::InputPort' (role 'rpslPerceptionGraphMetaModel_InputPort', cardinality 0..*).
+'rpslPerceptionGraphMetaModel::Component' (role 'rpslPerceptionGraphMetaModel_Component', cardinality 0..*) is associated with 'rpslPerceptionGraphMetaModel::Element' (role 'rpslPerceptionGraphMetaModel_Element4', cardinality 0..*).
+'rpslPerceptionGraphMetaModel::Element' (role 'rpslPerceptionGraphMetaModel_Element', cardinality 0..*) is associated with 'rpslPerceptionGraphMetaModel::PerceptionGraph' (role 'rpslPerceptionGraphMetaModel_PerceptionGraph', cardinality 0..*).
+'rpslPerceptionGraphMetaModel::Element' (role 'rpslPerceptionGraphMetaModel_Element8', cardinality 0..*) is associated with 'rpslPerceptionGraphMetaModel::Connection' (role 'rpslPerceptionGraphMetaModel_Connection7', cardinality 0..*).

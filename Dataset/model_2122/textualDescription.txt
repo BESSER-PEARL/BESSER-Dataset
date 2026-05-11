@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'testSuite::Test' has the following attributes: 'name' of type str.
+The class 'testSuite::Model' has no attributes.
+'testSuite::Model' (role 'testSuite_Model', cardinality 0..*) is associated with 'testSuite::Test' (role 'testSuite_Test', cardinality 0..*).

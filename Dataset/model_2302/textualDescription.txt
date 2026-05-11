@@ -1,0 +1,25 @@
+The model has 10 class(es).
+The class 'PersonList::Male' has no attributes.
+The class 'PersonList::Female' has no attributes.
+The class 'PersonList::Place' has the following attributes: 'address' of type str.
+The class 'PersonList::LivingPlace' has no attributes.
+The class 'PersonList::WorkingPosition' has the following attributes: 'description' of type str.
+The class 'Person' has no attributes.
+The class 'PersonList::Person' has the following attributes: 'name' of type str.
+The class 'PersonList::List' has no attributes.
+The class 'Place' has no attributes.
+The class 'PersonList::WorkPlace' has no attributes.
+The enumeration 'Gender' has the following literals: 'Male', 'Female'.
+'PersonList::WorkPlace' is a specialization of 'Place'.
+'PersonList::LivingPlace' is a specialization of 'Place'.
+'PersonList::Male' is a specialization of 'Person'.
+'PersonList::Female' is a specialization of 'Person'.
+'PersonList::WorkingPosition' (role 'WorkingPosition7', cardinality 0..*) is associated with 'PersonList::WorkPlace' (role 'works', cardinality 0..*).
+'PersonList::Person' (role 'Person', cardinality 0..*) is associated with 'PersonList::List' (role 'list', cardinality 0..*).
+'PersonList::LivingPlace' (role 'LivingPlace', cardinality 0..*) is associated with 'PersonList::Person' (role 'persons5', cardinality 0..*).
+'PersonList::List' (role 'List', cardinality 0..*) is associated with 'PersonList::Person' (role 'members', cardinality 0..*).
+'PersonList::WorkingPosition' (role 'works12', cardinality 0..*) is associated with 'PersonList::Person' (role 'Person13', cardinality 0..*).
+'PersonList::WorkingPosition' (role 'position', cardinality 0..*) is associated with 'PersonList::WorkPlace' (role 'WorkPlace', cardinality 0..*).
+'PersonList::LivingPlace' (role 'home', cardinality 0..*) is associated with 'PersonList::Person' (role 'Person9', cardinality 0..*).
+'PersonList::Person' (role 'persons', cardinality 0..*) is associated with 'PersonList::WorkingPosition' (role 'WorkingPosition', cardinality 0..*).
+'PersonList::Place' (role 'PersonList_Place', cardinality 0..*) is associated with 'PersonList::List' (role 'PersonList_List', cardinality 0..*).

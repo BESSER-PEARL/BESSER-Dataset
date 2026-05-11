@@ -1,0 +1,17 @@
+The model has 6 class(es).
+The class 'studyprogram::Program' has the following attributes: 'name' of type str.
+The class 'studyprogram::Course' has the following attributes: 'credits' of type float; 'name' of type str.
+The class 'studyprogram::Semester' has the following attributes: 'season' of type str; 'year' of type int.
+The class 'studyprogram::Department' has the following attributes: 'name' of type str.
+The class 'studyprogram::Specialization' has the following attributes: 'name' of type str.
+The class 'studyprogram::Slot' has no attributes.
+The enumeration 'Season' has the following literals: 'Summer', 'Fall', 'Spring'.
+'studyprogram::Department' (role 'studyprogram_Department19', cardinality 0..*) is associated with 'studyprogram::Program' (role 'studyprogram_Program20', cardinality 0..*).
+'studyprogram::Course' (role 'studyprogram_Course15', cardinality 0..*) is associated with 'studyprogram::Slot' (role 'studyprogram_Slot14', cardinality 0..*).
+'studyprogram::Specialization' (role 'studyprogram_Specialization4', cardinality 0..*) is associated with 'studyprogram::Semester' (role 'studyprogram_Semester5', cardinality 0..*).
+'studyprogram::Course' (role 'studyprogram_Course17', cardinality 0..*) is associated with 'studyprogram::Department' (role 'studyprogram_Department', cardinality 0..*).
+'studyprogram::Program' (role 'studyprogram_Program', cardinality 0..*) is associated with 'studyprogram::Semester' (role 'studyprogram_Semester', cardinality 0..*).
+'studyprogram::Semester' (role 'studyprogram_Semester10', cardinality 0..*) is associated with 'studyprogram::Slot' (role 'studyprogram_Slot', cardinality 0..*).
+'studyprogram::Specialization' (role 'studyprogram_Specialization6', cardinality 0..*) is associated with 'studyprogram::Specialization' (role 'studyprogram_Specialization8', cardinality 0..*).
+'studyprogram::Course' (role 'studyprogram_Course', cardinality 0..*) is associated with 'studyprogram::Slot' (role 'studyprogram_Slot12', cardinality 0..*).
+'studyprogram::Program' (role 'studyprogram_Program2', cardinality 0..*) is associated with 'studyprogram::Specialization' (role 'studyprogram_Specialization', cardinality 0..*).

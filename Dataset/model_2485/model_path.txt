@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset/repos/damenac/puzzle/examples/modularized-state-machines/fr.inria.diverse.puzzle.examples.fsm.syntax/models/fsm-provided.ecore

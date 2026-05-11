@@ -1,0 +1,15 @@
+The model has 5 class(es).
+The class 'genSql::DataBase' has no attributes.
+The class 'genSql::Table' has the following attributes: 'name' of type str.
+The class 'genSql::ForeignKey' has no attributes.
+The class 'genSql::PrimaryKey' has no attributes.
+The class 'genSql::Column' has the following attributes: 'SQLType' of type str; 'name' of type str.
+The enumeration 'TIPO' has the following literals: 'varchar', 'number', 'boolean', 'int', 'date', 'String'.
+'genSql::Table' (role 'genSql_Table6', cardinality 0..*) is associated with 'genSql::ForeignKey' (role 'genSql_ForeignKey', cardinality 0..*).
+'genSql::Column' (role 'genSql_Column', cardinality 0..*) is associated with 'genSql::Table' (role 'genSql_Table2', cardinality 0..*).
+'genSql::PrimaryKey' (role 'genSql_PrimaryKey', cardinality 0..*) is associated with 'genSql::Table' (role 'genSql_Table4', cardinality 0..*).
+'genSql::ForeignKey' (role 'genSql_ForeignKey14', cardinality 0..*) is associated with 'genSql::Table' (role 'genSql_Table15', cardinality 0..*).
+'genSql::DataBase' (role 'genSql_DataBase', cardinality 0..*) is associated with 'genSql::Table' (role 'genSql_Table', cardinality 0..*).
+'genSql::Column' (role 'genSql_Column18', cardinality 0..*) is associated with 'genSql::ForeignKey' (role 'genSql_ForeignKey17', cardinality 0..*).
+'genSql::PrimaryKey' (role 'genSql_PrimaryKey8', cardinality 0..*) is associated with 'genSql::Column' (role 'genSql_Column9', cardinality 0..*).
+'genSql::ForeignKey' (role 'genSql_ForeignKey11', cardinality 0..*) is associated with 'genSql::Column' (role 'genSql_Column12', cardinality 0..*).

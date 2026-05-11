@@ -1,0 +1,10 @@
+The model has 3 class(es).
+The class 'education::Student' has the following attributes: 'name' of type str.
+The class 'education::Course' has the following attributes: 'name' of type str.
+The class 'education::School' has the following attributes: 'name' of type str; 'address' of type str; 'phone' of type str.
+'education::School' (role 'education_School', cardinality 0..*) is associated with 'education::Student' (role 'education_Student', cardinality 0..*).
+'education::School' (role 'education_School14', cardinality 0..*) is associated with 'education::Course' (role 'education_Course13', cardinality 0..*).
+'education::School' (role 'education_School2', cardinality 0..*) is associated with 'education::Course' (role 'education_Course', cardinality 0..*).
+'education::School' (role 'education_School5', cardinality 0..*) is associated with 'education::Student' (role 'education_Student4', cardinality 0..*).
+'education::Course' (role 'education_Course10', cardinality 0..*) is associated with 'education::Student' (role 'education_Student11', cardinality 0..*).
+'education::Student' (role 'education_Student7', cardinality 0..*) is associated with 'education::Course' (role 'education_Course8', cardinality 0..*).

@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'opposite2::Root' has no attributes.
+The class 'opposite2::AbstractClassB' has no attributes.
+The class 'AbstractClassB' has no attributes.
+The class 'opposite2::ConcreteEndB1' has no attributes.
+The class 'opposite2::EndA' has no attributes.
+The class 'opposite2::ConcreteEndB2' has no attributes.
+'opposite2::ConcreteEndB1' is a specialization of 'AbstractClassB'.
+'opposite2::ConcreteEndB2' is a specialization of 'AbstractClassB'.
+'opposite2::AbstractClassB' (role 'toB', cardinality 0..*) is associated with 'opposite2::EndA' (role 'EndA', cardinality 0..*).
+'opposite2::Root' (role 'opposite2_Root', cardinality 0..*) is associated with 'opposite2::EndA' (role 'opposite2_EndA', cardinality 0..*).
+'opposite2::EndA' (role 'toA', cardinality 0..*) is associated with 'opposite2::AbstractClassB' (role 'AbstractClassB', cardinality 0..*).
+'opposite2::Root' (role 'opposite2_Root2', cardinality 0..*) is associated with 'opposite2::AbstractClassB' (role 'opposite2_AbstractClassB', cardinality 0..*).

@@ -1,0 +1,106 @@
+The model has 45 class(es).
+The class 'pimm::Port' has the following attributes: 'kind' of type str; 'name' of type str.
+The class 'pimm::HRefinement' has no attributes.
+The class 'Port' has no attributes.
+The class 'pimm::ConfigOutputInterface' has no attributes.
+The class 'DataPort' has no attributes.
+The class 'pimm::Parameterizable' has no attributes.
+The class 'pimm::FunctionPrototype' has the following attributes: 'name' of type str.
+The class 'AbstractActor' has no attributes.
+The class 'pimm::DataInputPort' has no attributes.
+The class 'pimm::Fifo' has the following attributes: 'id' of type str; 'type' of type str.
+The class 'pimm::ISetter' has no attributes.
+The class 'pimm::RoundBufferActor' has no attributes.
+The class 'pimm::visitor::PiMMVisitor' has no attributes.
+The class 'ExecutableActor' has no attributes.
+The class 'pimm::ConfigInputInterface' has no attributes.
+The class 'pimm::DataPort' has the following attributes: 'annotation' of type str.
+The class 'Refinement' has no attributes.
+The class 'pimm::AbstractVertex' has the following attributes: 'name' of type str.
+The class 'pimm::PiGraph' has no attributes.
+The class 'pimm::ConfigOutputPort' has no attributes.
+The class 'pimm::ForkActor' has no attributes.
+The class 'pimm::Actor' has the following attributes: 'memoryScriptPath' of type str; 'configurationActor' of type bool.
+The class 'Parameterizable' has no attributes.
+The class 'pimm::DataInputInterface' has no attributes.
+The class 'pimm::Expression' has the following attributes: 'string' of type str.
+The class 'pimm::ConfigInputPort' has no attributes.
+The class 'pimm::ExecutableActor' has no attributes.
+The class 'pimm::BroadcastActor' has no attributes.
+The class 'pimm::Dependency' has no attributes.
+The class 'AbstractVertex' has no attributes.
+The class 'DataOutputPort' has no attributes.
+The class 'pimm::Delay' has no attributes.
+The class 'pimm::InterfaceActor' has the following attributes: 'kind' of type str.
+The class 'Parameter' has no attributes.
+The class 'PiMMVisitable' has no attributes.
+The class 'pimm::Refinement' has the following attributes: 'fileName' of type str; 'filePath' of type str.
+The class 'ISetter' has no attributes.
+The class 'pimm::DataOutputPort' has no attributes.
+The class 'InterfaceActor' has no attributes.
+The class 'pimm::FunctionParameter' has the following attributes: 'name' of type str; 'type' of type str; 'direction' of type str; 'isConfigurationParameter' of type bool.
+The class 'pimm::JoinActor' has no attributes.
+The class 'pimm::visitor::PiMMVisitable' has no attributes.
+The class 'pimm::AbstractActor' has no attributes.
+The class 'pimm::Parameter' has the following attributes: 'configurationInterface' of type bool.
+The class 'pimm::DataOutputInterface' has no attributes.
+The enumeration 'Direction' has the following literals: 'OUT', 'IN'.
+The enumeration 'PortMemoryAnnotation' has the following literals: 'NONE', 'UNUSED', 'WRITE_ONLY', 'READ_ONLY'.
+'pimm::AbstractActor' is a specialization of 'AbstractVertex'.
+'pimm::FunctionPrototype' is a specialization of 'PiMMVisitable'.
+'pimm::BroadcastActor' is a specialization of 'ExecutableActor'.
+'pimm::Fifo' is a specialization of 'PiMMVisitable'.
+'pimm::InterfaceActor' is a specialization of 'AbstractActor'.
+'pimm::HRefinement' is a specialization of 'Refinement'.
+'pimm::Parameterizable' is a specialization of 'PiMMVisitable'.
+'pimm::DataOutputPort' is a specialization of 'DataPort'.
+'pimm::PiGraph' is a specialization of 'AbstractActor'.
+'pimm::Parameter' is a specialization of 'ISetter'.
+'pimm::ConfigOutputPort' is a specialization of 'ISetter'.
+'pimm::ConfigOutputPort' is a specialization of 'DataOutputPort'.
+'pimm::ConfigInputPort' is a specialization of 'Port'.
+'pimm::Actor' is a specialization of 'ExecutableActor'.
+'pimm::Port' is a specialization of 'PiMMVisitable'.
+'pimm::ExecutableActor' is a specialization of 'AbstractActor'.
+'pimm::FunctionParameter' is a specialization of 'PiMMVisitable'.
+'pimm::ConfigInputInterface' is a specialization of 'Parameter'.
+'pimm::DataPort' is a specialization of 'Port'.
+'pimm::RoundBufferActor' is a specialization of 'ExecutableActor'.
+'pimm::JoinActor' is a specialization of 'ExecutableActor'.
+'pimm::ConfigOutputInterface' is a specialization of 'InterfaceActor'.
+'pimm::DataInputInterface' is a specialization of 'InterfaceActor'.
+'pimm::Dependency' is a specialization of 'PiMMVisitable'.
+'pimm::Expression' is a specialization of 'PiMMVisitable'.
+'pimm::Parameter' is a specialization of 'AbstractVertex'.
+'pimm::ForkActor' is a specialization of 'ExecutableActor'.
+'pimm::AbstractVertex' is a specialization of 'Parameterizable'.
+'pimm::Refinement' is a specialization of 'PiMMVisitable'.
+'pimm::Delay' is a specialization of 'Parameterizable'.
+'pimm::DataOutputInterface' is a specialization of 'InterfaceActor'.
+'pimm::DataInputPort' is a specialization of 'DataPort'.
+'pimm::Delay' (role 'pimm_Delay34', cardinality 0..*) is associated with 'pimm::Expression' (role 'pimm_Expression35', cardinality 0..*).
+'pimm::Fifo' (role 'Fifo', cardinality 0..*) is associated with 'pimm::DataInputPort' (role 'targetPort', cardinality 0..*).
+'pimm::FunctionPrototype' (role 'pimm_FunctionPrototype41', cardinality 0..*) is associated with 'pimm::FunctionParameter' (role 'pimm_FunctionParameter', cardinality 0..*).
+'pimm::Delay' (role 'pimm_Delay', cardinality 0..*) is associated with 'pimm::Fifo' (role 'pimm_Fifo22', cardinality 0..*).
+'pimm::PiGraph' (role 'pimm_PiGraph', cardinality 0..*) is associated with 'pimm::AbstractActor' (role 'pimm_AbstractActor7', cardinality 0..*).
+'pimm::Parameterizable' (role 'pimm_Parameterizable', cardinality 0..*) is associated with 'pimm::ConfigInputPort' (role 'pimm_ConfigInputPort', cardinality 0..*).
+'pimm::FunctionPrototype' (role 'pimm_FunctionPrototype39', cardinality 0..*) is associated with 'pimm::HRefinement' (role 'pimm_HRefinement38', cardinality 0..*).
+'pimm::Dependency' (role 'outgoingDependencies', cardinality 0..*) is associated with 'pimm::ISetter' (role 'ISetter', cardinality 0..*).
+'pimm::PiGraph' (role 'pimm_PiGraph13', cardinality 0..*) is associated with 'pimm::Dependency' (role 'pimm_Dependency', cardinality 0..*).
+'pimm::Fifo' (role 'Fifo17', cardinality 0..*) is associated with 'pimm::DataOutputPort' (role 'sourcePort', cardinality 0..*).
+'pimm::Actor' (role 'pimm_Actor', cardinality 0..*) is associated with 'pimm::Refinement' (role 'pimm_Refinement', cardinality 0..*).
+'pimm::Fifo' (role 'outgoingFifo', cardinality 0..*) is associated with 'pimm::DataOutputPort' (role 'DataOutputPort', cardinality 0..*).
+'pimm::DataOutputPort' (role 'pimm_DataOutputPort', cardinality 0..*) is associated with 'pimm::AbstractActor' (role 'pimm_AbstractActor3', cardinality 0..*).
+'pimm::Port' (role 'pimm_Port', cardinality 0..*) is associated with 'pimm::InterfaceActor' (role 'pimm_InterfaceActor', cardinality 0..*).
+'pimm::ConfigInputPort' (role 'ConfigInputPort', cardinality 0..*) is associated with 'pimm::Dependency' (role 'incomingDependency', cardinality 0..*).
+'pimm::ConfigInputPort' (role 'getter', cardinality 0..*) is associated with 'pimm::Dependency' (role 'Dependency', cardinality 0..*).
+'pimm::Dependency' (role 'Dependency32', cardinality 0..*) is associated with 'pimm::ISetter' (role 'setter', cardinality 0..*).
+'pimm::ConfigOutputPort' (role 'pimm_ConfigOutputPort', cardinality 0..*) is associated with 'pimm::AbstractActor' (role 'pimm_AbstractActor5', cardinality 0..*).
+'pimm::Parameter' (role 'pimm_Parameter', cardinality 0..*) is associated with 'pimm::PiGraph' (role 'pimm_PiGraph11', cardinality 0..*).
+'pimm::Fifo' (role 'pimm_Fifo', cardinality 0..*) is associated with 'pimm::PiGraph' (role 'pimm_PiGraph9', cardinality 0..*).
+'pimm::Fifo' (role 'incomingFifo', cardinality 0..*) is associated with 'pimm::DataInputPort' (role 'DataInputPort', cardinality 0..*).
+'pimm::Parameter' (role 'pimm_Parameter28', cardinality 0..*) is associated with 'pimm::Expression' (role 'pimm_Expression', cardinality 0..*).
+'pimm::DataInputPort' (role 'pimm_DataInputPort', cardinality 0..*) is associated with 'pimm::AbstractActor' (role 'pimm_AbstractActor', cardinality 0..*).
+'pimm::Parameter' (role 'pimm_Parameter25', cardinality 0..*) is associated with 'pimm::ConfigInputPort' (role 'pimm_ConfigInputPort26', cardinality 0..*).
+'pimm::Expression' (role 'pimm_Expression43', cardinality 0..*) is associated with 'pimm::DataPort' (role 'pimm_DataPort', cardinality 0..*).
+'pimm::HRefinement' (role 'pimm_HRefinement', cardinality 0..*) is associated with 'pimm::FunctionPrototype' (role 'pimm_FunctionPrototype', cardinality 0..*).

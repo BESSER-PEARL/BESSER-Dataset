@@ -1,0 +1,17 @@
+The model has 6 class(es).
+The class 'automata::State' has the following attributes: 'name' of type str.
+The class 'automata::Current' has the following attributes: 'name' of type str.
+The class 'automata::Transition' has the following attributes: 'name' of type str; 'token' of type str.
+The class 'automata::Final' has the following attributes: 'name' of type str.
+The class 'automata::Automata' has no attributes.
+The class 'automata::Initial' has the following attributes: 'name' of type str.
+'automata::State' (role 'automata_State20', cardinality 0..*) is associated with 'automata::Final' (role 'automata_Final19', cardinality 0..*).
+'automata::Automata' (role 'automata_Automata8', cardinality 0..*) is associated with 'automata::Final' (role 'automata_Final', cardinality 0..*).
+'automata::State' (role 'automata_State23', cardinality 0..*) is associated with 'automata::Current' (role 'automata_Current22', cardinality 0..*).
+'automata::Transition' (role 'automata_Transition13', cardinality 0..*) is associated with 'automata::State' (role 'automata_State14', cardinality 0..*).
+'automata::Current' (role 'automata_Current', cardinality 0..*) is associated with 'automata::Automata' (role 'automata_Automata', cardinality 0..*).
+'automata::State' (role 'automata_State', cardinality 0..*) is associated with 'automata::Automata' (role 'automata_Automata4', cardinality 0..*).
+'automata::Automata' (role 'automata_Automata2', cardinality 0..*) is associated with 'automata::Initial' (role 'automata_Initial', cardinality 0..*).
+'automata::State' (role 'automata_State11', cardinality 0..*) is associated with 'automata::Transition' (role 'automata_Transition10', cardinality 0..*).
+'automata::Initial' (role 'automata_Initial16', cardinality 0..*) is associated with 'automata::State' (role 'automata_State17', cardinality 0..*).
+'automata::Automata' (role 'automata_Automata6', cardinality 0..*) is associated with 'automata::Transition' (role 'automata_Transition', cardinality 0..*).

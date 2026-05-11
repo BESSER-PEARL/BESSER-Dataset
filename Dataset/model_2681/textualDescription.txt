@@ -1,0 +1,30 @@
+The model has 11 class(es).
+The class 'errormanypov::K' has no attributes.
+The class 'errormanypov::C' has no attributes.
+The class 'errormanypov::E' has no attributes.
+The class 'errormanypov::A' has no attributes.
+The class 'Named' has no attributes.
+The class 'errormanypov::M' has no attributes.
+The class 'errormanypov::J' has no attributes.
+The class 'errormanypov::Named' has the following attributes: 'name' of type str.
+The class 'errormanypov::F' has no attributes.
+The class 'errormanypov::JK' has no attributes.
+The class 'errormanypov::B' has no attributes.
+'errormanypov::A' is a specialization of 'Named'.
+'errormanypov::C' is a specialization of 'Named'.
+'errormanypov::F' is a specialization of 'Named'.
+'errormanypov::E' is a specialization of 'Named'.
+'errormanypov::K' is a specialization of 'Named'.
+'errormanypov::B' is a specialization of 'Named'.
+'errormanypov::J' is a specialization of 'Named'.
+'errormanypov::M' is a specialization of 'Named'.
+'errormanypov::JK' is a specialization of 'Named'.
+'errormanypov::M' (role 'errormanypov_M', cardinality 0..*) is associated with 'errormanypov::K' (role 'errormanypov_K', cardinality 0..*).
+'errormanypov::K' (role 'errormanypov_K13', cardinality 0..*) is associated with 'errormanypov::C' (role 'errormanypov_C14', cardinality 0..*).
+'errormanypov::F' (role 'errormanypov_F', cardinality 0..*) is associated with 'errormanypov::E' (role 'errormanypov_E8', cardinality 0..*).
+'errormanypov::B' (role 'errormanypov_B6', cardinality 0..*) is associated with 'errormanypov::C' (role 'errormanypov_C', cardinality 0..*).
+'errormanypov::A' (role 'errormanypov_A2', cardinality 0..*) is associated with 'errormanypov::E' (role 'errormanypov_E', cardinality 0..*).
+'errormanypov::K' (role 'errormanypov_K17', cardinality 0..*) is associated with 'errormanypov::JK' (role 'errormanypov_JK16', cardinality 0..*).
+'errormanypov::J' (role 'errormanypov_J', cardinality 0..*) is associated with 'errormanypov::A' (role 'errormanypov_A4', cardinality 0..*).
+'errormanypov::JK' (role 'errormanypov_JK', cardinality 0..*) is associated with 'errormanypov::J' (role 'errormanypov_J10', cardinality 0..*).
+'errormanypov::B' (role 'errormanypov_B', cardinality 0..*) is associated with 'errormanypov::A' (role 'errormanypov_A', cardinality 0..*).

@@ -1,0 +1,5 @@
+The model has 1 class(es).
+The class 'coloredTree::HueTree' has the following attributes: 'color' of type str; 'label' of type str.
+The enumeration 'Color' has the following literals: 'blue', 'red', 'green'.
+'coloredTree::HueTree' (role 'HueTree', cardinality 0..*) is associated with 'coloredTree::HueTree' (role 'parent', cardinality 0..*).
+'coloredTree::HueTree' (role 'children', cardinality 0..*) is associated with 'coloredTree::HueTree' (role 'HueTree4', cardinality 0..*).

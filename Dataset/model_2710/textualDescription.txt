@@ -1,0 +1,33 @@
+The model has 18 class(es).
+The class 'k2::Q' has no attributes.
+The class 'B' has no attributes.
+The class 'M' has no attributes.
+The class 'k2::C' has no attributes.
+The class 'C' has no attributes.
+The class 'k2::J' has no attributes.
+The class 'N' has no attributes.
+The class 'P' has no attributes.
+The class 'A' has no attributes.
+The class 'k2::B' has no attributes.
+The class 'G' has no attributes.
+The class 'k2::P' has no attributes.
+The class 'k2::X' has no attributes.
+The class 'k2::G' has the following attributes: 'name' of type str.
+The class 'k2::N' has no attributes.
+The class 'k2::M' has no attributes.
+The class 'k2::A' has no attributes.
+The class 'k2::I' has no attributes.
+'k2::N' is a specialization of 'M'.
+'k2::J' is a specialization of 'A'.
+'k2::C' is a specialization of 'G'.
+'k2::Q' is a specialization of 'P'.
+'k2::I' is a specialization of 'G'.
+'k2::B' is a specialization of 'C'.
+'k2::P' is a specialization of 'N'.
+'k2::A' is a specialization of 'B'.
+'k2::M' is a specialization of 'G'.
+'k2::X' (role 'k2_X2', cardinality 0..*) is associated with 'k2::P' (role 'k2_P', cardinality 0..*).
+'k2::C' (role 'k2_C', cardinality 0..*) is associated with 'k2::X' (role 'k2_X', cardinality 0..*).
+'k2::I' (role 'k2_I', cardinality 0..*) is associated with 'k2::B' (role 'k2_B', cardinality 0..*).
+'k2::M' (role 'k2_M', cardinality 0..*) is associated with 'k2::C' (role 'k2_C5', cardinality 0..*).
+'k2::P' (role 'k2_P7', cardinality 0..*) is associated with 'k2::A' (role 'k2_A', cardinality 0..*).

@@ -1,0 +1,43 @@
+The model has 23 class(es).
+The class 'ck2gfx::ObjectTypes' has no attributes.
+The class 'ck2gfx::ColorCode' has the following attributes: 'key' of type str.
+The class 'ck2gfx::BitmapFont' has the following attributes: 'color' of type int; 'effect' of type bool; 'fontName' of type str; 'name' of type str.
+The class 'ck2gfx::Color' has the following attributes: 'b' of type int; 'r' of type int; 'g' of type int.
+The class 'ck2gfx::BitmapFonts' has no attributes.
+The class 'ck2gfx::Animation' has the following attributes: 'name' of type str; 'file' of type str; 'defaultAnimationTime' of type float.
+The class 'ck2gfx::Coordinates' has the following attributes: 'x' of type float; 'y' of type float.
+The class 'ck2gfx::Model' has no attributes.
+The class 'ck2gfx::LineChartType' has the following attributes: 'lineWidth' of type int; 'name' of type str.
+The class 'ck2gfx::SpriteTypes' has no attributes.
+The class 'ck2gfx::SpriteType' has the following attributes: 'noRefCount' of type bool; 'effectFile' of type str; 'clickSound' of type str; 'name' of type str; 'loadType' of type str; 'transparenceCheck' of type bool; 'textureFile' of type str; 'canBeLowres' of type bool; 'allwaysTransparent' of type bool; 'noOfFrames' of type int.
+The class 'ck2gfx::Pdxmesh' has the following attributes: 'name' of type str; 'scaleOnCullDistance' of type bool; 'actorFile' of type str; 'cullDistance' of type float; 'scale' of type float.
+The class 'ck2gfx::EObject' has no attributes.
+The class 'ck2gfx::ColorRatio' has the following attributes: 'b' of type float; 'r' of type float; 'g' of type float.
+The class 'ck2gfx::MaskedShieldType' has the following attributes: 'effectFile' of type str; 'textureFile1' of type str; 'name' of type str; 'allwaysTransparent' of type bool; 'textureFile2' of type str; 'clickSound' of type str.
+The class 'ck2gfx::PortraitType' has the following attributes: 'eyeColorIndex' of type int; 'name' of type str; 'headgearThatHidesHair' of type int; 'effectFile' of type str; 'hairColorIndex' of type int; 'layers' of type str.
+The class 'ck2gfx::CoatOfArmsType' has the following attributes: 'mask' of type str; 'sealOverlay' of type str; 'effect' of type str; 'name' of type str; 'frame' of type str.
+The class 'ck2gfx::ArrowType' has the following attributes: 'effect' of type str; 'height' of type float; 'size' of type float; 'endAt' of type float; 'textureFile' of type str; 'name' of type str; 'bodyTexture' of type str; 'type' of type int; 'heading' of type float.
+The class 'ck2gfx::EMFXActorType' has the following attributes: 'actorFile' of type str; 'attack' of type str; 'move' of type str; 'idle' of type str; 'name' of type str; 'scale' of type float; 'useAnimation' of type bool; 'scaleOnCullDistance' of type bool; 'cullDistance' of type float.
+The class 'ck2gfx::AnimatedSpriteType' has the following attributes: 'animationRateFps' of type float; 'playOnShow' of type bool; 'name' of type str; 'noOfFrames' of type int; 'texturefile' of type str; 'looping' of type bool.
+The class 'ck2gfx::CorneredTileSpriteType' has the following attributes: 'allwaysTransparent' of type bool; 'texturefile' of type str; 'name' of type str; 'tilingCenter' of type bool; 'noRefCount' of type bool; 'loadType' of type str.
+The class 'ck2gfx::CoatOfArmsLayer' has the following attributes: 'mask' of type str; 'scale' of type float.
+The class 'ck2gfx::ProgressbarType' has the following attributes: 'loadType' of type str; 'maxValue' of type float; 'name' of type str; 'effectFile' of type str; 'textureFile2' of type str; 'noRefCount' of type bool; 'allwaysTransparent' of type bool; 'textureFile1' of type str; 'horizontal' of type bool.
+'ck2gfx::Model' (role 'ck2gfx_Model', cardinality 0..*) is associated with 'ck2gfx::EObject' (role 'ck2gfx_EObject', cardinality 0..*).
+'ck2gfx::ColorRatio' (role 'ck2gfx_ColorRatio28', cardinality 0..*) is associated with 'ck2gfx::ArrowType' (role 'ck2gfx_ArrowType', cardinality 0..*).
+'ck2gfx::BitmapFont' (role 'ck2gfx_BitmapFont34', cardinality 0..*) is associated with 'ck2gfx::ColorCode' (role 'ck2gfx_ColorCode', cardinality 0..*).
+'ck2gfx::ProgressbarType' (role 'ck2gfx_ProgressbarType', cardinality 0..*) is associated with 'ck2gfx::ColorRatio' (role 'ck2gfx_ColorRatio', cardinality 0..*).
+'ck2gfx::LineChartType' (role 'ck2gfx_LineChartType', cardinality 0..*) is associated with 'ck2gfx::Coordinates' (role 'ck2gfx_Coordinates19', cardinality 0..*).
+'ck2gfx::EMFXActorType' (role 'ck2gfx_EMFXActorType', cardinality 0..*) is associated with 'ck2gfx::Animation' (role 'ck2gfx_Animation', cardinality 0..*).
+'ck2gfx::Color' (role 'ck2gfx_Color17', cardinality 0..*) is associated with 'ck2gfx::PortraitType' (role 'ck2gfx_PortraitType16', cardinality 0..*).
+'ck2gfx::CorneredTileSpriteType' (role 'ck2gfx_CorneredTileSpriteType', cardinality 0..*) is associated with 'ck2gfx::Coordinates' (role 'ck2gfx_Coordinates', cardinality 0..*).
+'ck2gfx::ArrowType' (role 'ck2gfx_ArrowType30', cardinality 0..*) is associated with 'ck2gfx::ColorRatio' (role 'ck2gfx_ColorRatio31', cardinality 0..*).
+'ck2gfx::ColorRatio' (role 'ck2gfx_ColorRatio10', cardinality 0..*) is associated with 'ck2gfx::ProgressbarType' (role 'ck2gfx_ProgressbarType9', cardinality 0..*).
+'ck2gfx::Coordinates' (role 'ck2gfx_Coordinates13', cardinality 0..*) is associated with 'ck2gfx::ProgressbarType' (role 'ck2gfx_ProgressbarType12', cardinality 0..*).
+'ck2gfx::ObjectTypes' (role 'ck2gfx_ObjectTypes', cardinality 0..*) is associated with 'ck2gfx::EObject' (role 'ck2gfx_EObject25', cardinality 0..*).
+'ck2gfx::EObject' (role 'ck2gfx_EObject2', cardinality 0..*) is associated with 'ck2gfx::SpriteTypes' (role 'ck2gfx_SpriteTypes', cardinality 0..*).
+'ck2gfx::CoatOfArmsType' (role 'ck2gfx_CoatOfArmsType', cardinality 0..*) is associated with 'ck2gfx::CoatOfArmsLayer' (role 'ck2gfx_CoatOfArmsLayer', cardinality 0..*).
+'ck2gfx::PortraitType' (role 'ck2gfx_PortraitType', cardinality 0..*) is associated with 'ck2gfx::Color' (role 'ck2gfx_Color', cardinality 0..*).
+'ck2gfx::Color' (role 'ck2gfx_Color37', cardinality 0..*) is associated with 'ck2gfx::ColorCode' (role 'ck2gfx_ColorCode36', cardinality 0..*).
+'ck2gfx::CoatOfArmsLayer' (role 'ck2gfx_CoatOfArmsLayer22', cardinality 0..*) is associated with 'ck2gfx::Coordinates' (role 'ck2gfx_Coordinates23', cardinality 0..*).
+'ck2gfx::BitmapFonts' (role 'ck2gfx_BitmapFonts', cardinality 0..*) is associated with 'ck2gfx::BitmapFont' (role 'ck2gfx_BitmapFont', cardinality 0..*).
+'ck2gfx::CorneredTileSpriteType' (role 'ck2gfx_CorneredTileSpriteType5', cardinality 0..*) is associated with 'ck2gfx::Coordinates' (role 'ck2gfx_Coordinates6', cardinality 0..*).

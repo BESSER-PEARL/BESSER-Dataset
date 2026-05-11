@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/arcadien/emf4cpp/emf4cpp/emf4cpp/emf4cpp.tests/tree-bintree/BinTree.ecore

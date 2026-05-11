@@ -1,0 +1,21 @@
+The model has 6 class(es).
+The class 'NamedElement' has no attributes.
+The class 'relationaldatabase::Table' has no attributes.
+The class 'relationaldatabase::NamedElement' has the following attributes: 'name' of type str.
+The class 'relationaldatabase::Column' has no attributes.
+The class 'relationaldatabase::RelationalDatabase' has no attributes.
+The class 'relationaldatabase::ForeignKey' has no attributes.
+'relationaldatabase::ForeignKey' is a specialization of 'NamedElement'.
+'relationaldatabase::Column' is a specialization of 'NamedElement'.
+'relationaldatabase::Table' is a specialization of 'NamedElement'.
+'relationaldatabase::Table' (role 'relationaldatabase_Table', cardinality 0..*) is associated with 'relationaldatabase::RelationalDatabase' (role 'relationaldatabase_RelationalDatabase', cardinality 0..*).
+'relationaldatabase::ForeignKey' (role 'ForeignKey10', cardinality 0..*) is associated with 'relationaldatabase::Column' (role 'tableColumn', cardinality 0..*).
+'relationaldatabase::Column' (role 'Column3', cardinality 0..*) is associated with 'relationaldatabase::Table' (role 'tableAsPrimaryKey', cardinality 0..*).
+'relationaldatabase::Column' (role 'primaryKey', cardinality 0..*) is associated with 'relationaldatabase::Table' (role 'Table8', cardinality 0..*).
+'relationaldatabase::Column' (role 'Column14', cardinality 0..*) is associated with 'relationaldatabase::ForeignKey' (role 'foreignKeysAsColumn', cardinality 0..*).
+'relationaldatabase::Table' (role 'Table', cardinality 0..*) is associated with 'relationaldatabase::Column' (role 'columns', cardinality 0..*).
+'relationaldatabase::Table' (role 'Table18', cardinality 0..*) is associated with 'relationaldatabase::ForeignKey' (role 'foreignKeys', cardinality 0..*).
+'relationaldatabase::Column' (role 'Column', cardinality 0..*) is associated with 'relationaldatabase::Table' (role 'table', cardinality 0..*).
+'relationaldatabase::ForeignKey' (role 'ForeignKey', cardinality 0..*) is associated with 'relationaldatabase::Table' (role 'table5', cardinality 0..*).
+'relationaldatabase::ForeignKey' (role 'ForeignKey12', cardinality 0..*) is associated with 'relationaldatabase::Column' (role 'foreignColumn', cardinality 0..*).
+'relationaldatabase::Column' (role 'Column16', cardinality 0..*) is associated with 'relationaldatabase::ForeignKey' (role 'foreignKeysAsForeignColumn', cardinality 0..*).

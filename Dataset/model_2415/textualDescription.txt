@@ -1,0 +1,93 @@
+The model has 47 class(es).
+The class 'rdb::datatypes::PrimitiveDataType' has the following attributes: 'type' of type str.
+The class 'UniqueConstraint' has no attributes.
+The class 'CheckConstraint' has no attributes.
+The class 'ViewAlias' has no attributes.
+The class 'IndexedColumn' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'rdb::SchemaElement' has the following attributes: 'owner' of type str.
+The class 'view::rdb::Column' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'rdb::constraints::Index' has no attributes.
+The class 'rdb::constraints::PrimaryKey' has no attributes.
+The class 'rdb::view::ViewColumn' has no attributes.
+The class 'ViewColumn' has no attributes.
+The class 'DataType' has no attributes.
+The class 'rdb::NamedElement' has the following attributes: 'name' of type str.
+The class 'rdb::constraints::UniqueConstraint' has no attributes.
+The class 'rdb::view::ReferencedViewColumn' has no attributes.
+The class 'PrimaryKey' has no attributes.
+The class 'datatypes::PrimitiveDataType' has no attributes.
+The class 'ForeignKey' has no attributes.
+The class 'SchemaElement' has no attributes.
+The class 'NamedColumnSet' has no attributes.
+The class 'rdb::datatypes::Domain' has no attributes.
+The class 'constraints::rdb::TableColumn' has no attributes.
+The class 'Element' has no attributes.
+The class 'rdb::TableColumn' has the following attributes: 'isForeignKey' of type str; 'isPrimaryKey' of type str.
+The class 'Domain' has no attributes.
+The class 'rdb::view::ViewAlias' has no attributes.
+The class 'Column' has no attributes.
+The class 'rdb::view::View' has the following attributes: 'ddl' of type str.
+The class 'view::rdb::NamedColumnSet' has no attributes.
+The class 'ColumnRefConstraint' has no attributes.
+The class 'rdb::Model' has the following attributes: 'server_id' of type str.
+The class 'rdb::Schema' has no attributes.
+The class 'rdb::Table' has no attributes.
+The class 'rdb::constraints::ForeignKey' has no attributes.
+The class 'rdb::constraints::Constraint' has no attributes.
+The class 'Index' has no attributes.
+The class 'rdb::Element' has no attributes.
+The class 'PrimitiveDataType' has no attributes.
+The class 'rdb::view::ViewExpressionColumn' has the following attributes: 'expression' of type str.
+The class 'rdb::Column' has no attributes.
+The class 'rdb::NamedColumnSet' has no attributes.
+The class 'rdb::datatypes::DataType' has the following attributes: 'decimalDigits' of type int; 'size' of type int; 'default' of type str; 'var' of type str; 'check' of type str; 'nullable' of type bool.
+The class 'rdb::constraints::CheckConstraint' has the following attributes: 'expression' of type str.
+The class 'rdb::constraints::ColumnRefConstraint' has no attributes.
+The class 'rdb::constraints::IndexedColumn' has the following attributes: 'ascending' of type bool.
+'rdb::Schema' is a specialization of 'NamedElement'.
+'rdb::view::ReferencedViewColumn' is a specialization of 'ViewColumn'.
+'rdb::constraints::CheckConstraint' is a specialization of 'Constraint'.
+'rdb::datatypes::DataType' is a specialization of 'NamedElement'.
+'rdb::datatypes::PrimitiveDataType' is a specialization of 'DataType'.
+'rdb::view::ViewColumn' is a specialization of 'Column'.
+'rdb::Model' is a specialization of 'NamedElement'.
+'rdb::NamedColumnSet' is a specialization of 'SchemaElement'.
+'rdb::SchemaElement' is a specialization of 'NamedElement'.
+'rdb::view::View' is a specialization of 'NamedColumnSet'.
+'rdb::Column' is a specialization of 'NamedElement'.
+'rdb::TableColumn' is a specialization of 'Column'.
+'rdb::view::ViewExpressionColumn' is a specialization of 'ViewColumn'.
+'rdb::constraints::ForeignKey' is a specialization of 'ColumnRefConstraint'.
+'rdb::NamedElement' is a specialization of 'Element'.
+'rdb::Table' is a specialization of 'NamedColumnSet'.
+'rdb::constraints::IndexedColumn' is a specialization of 'NamedElement'.
+'rdb::constraints::PrimaryKey' is a specialization of 'UniqueConstraint'.
+'rdb::constraints::Index' is a specialization of 'Constraint'.
+'rdb::constraints::Constraint' is a specialization of 'NamedElement'.
+'rdb::constraints::UniqueConstraint' is a specialization of 'ColumnRefConstraint'.
+'rdb::constraints::ColumnRefConstraint' is a specialization of 'Constraint'.
+'rdb::view::ViewAlias' is a specialization of 'NamedElement'.
+'rdb::datatypes::Domain' is a specialization of 'SchemaElement'.
+'rdb::datatypes::Domain' is a specialization of 'datatypes::PrimitiveDataType'.
+'Domain' (role 'Domain27', cardinality 0..*) is associated with 'rdb::datatypes::Domain' (role 'rdb_datatypes_Domain', cardinality 0..*).
+'rdb::TableColumn' (role 'rdb_TableColumn19', cardinality 0..*) is associated with 'PrimitiveDataType' (role 'PrimitiveDataType', cardinality 0..*).
+'constraints::rdb::TableColumn' (role 'constraints_rdb_TableColumn25', cardinality 0..*) is associated with 'rdb::constraints::IndexedColumn' (role 'rdb_constraints_IndexedColumn', cardinality 0..*).
+'rdb::Model' (role 'rdb_Model', cardinality 0..*) is associated with 'rdb::Schema' (role 'rdb_Schema', cardinality 0..*).
+'rdb::Table' (role 'rdb_Table11', cardinality 0..*) is associated with 'ForeignKey' (role 'ForeignKey', cardinality 0..*).
+'Domain' (role 'Domain', cardinality 0..*) is associated with 'rdb::TableColumn' (role 'rdb_TableColumn17', cardinality 0..*).
+'view::rdb::Column' (role 'view_rdb_Column', cardinality 0..*) is associated with 'rdb::view::ReferencedViewColumn' (role 'rdb_view_ReferencedViewColumn', cardinality 0..*).
+'rdb::Table' (role 'rdb_Table15', cardinality 0..*) is associated with 'CheckConstraint' (role 'CheckConstraint', cardinality 0..*).
+'rdb::view::ViewAlias' (role 'rdb_view_ViewAlias', cardinality 0..*) is associated with 'view::rdb::NamedColumnSet' (role 'view_rdb_NamedColumnSet', cardinality 0..*).
+'Index' (role 'Index', cardinality 0..*) is associated with 'rdb::Table' (role 'rdb_Table13', cardinality 0..*).
+'ViewColumn' (role 'ViewColumn', cardinality 0..*) is associated with 'rdb::view::View' (role 'rdb_view_View', cardinality 0..*).
+'UniqueConstraint' (role 'UniqueConstraint', cardinality 0..*) is associated with 'rdb::Table' (role 'rdb_Table9', cardinality 0..*).
+'rdb::Table' (role 'rdb_Table7', cardinality 0..*) is associated with 'PrimaryKey' (role 'PrimaryKey', cardinality 0..*).
+'UniqueConstraint' (role 'UniqueConstraint22', cardinality 0..*) is associated with 'rdb::constraints::ForeignKey' (role 'rdb_constraints_ForeignKey', cardinality 0..*).
+'rdb::constraints::ColumnRefConstraint' (role 'rdb_constraints_ColumnRefConstraint', cardinality 0..*) is associated with 'constraints::rdb::TableColumn' (role 'constraints_rdb_TableColumn', cardinality 0..*).
+'rdb::constraints::Index' (role 'rdb_constraints_Index', cardinality 0..*) is associated with 'IndexedColumn' (role 'IndexedColumn', cardinality 0..*).
+'rdb::view::View' (role 'rdb_view_View30', cardinality 0..*) is associated with 'ViewAlias' (role 'ViewAlias', cardinality 0..*).
+'rdb::Element' (role 'rdb_Element', cardinality 0..*) is associated with 'rdb::Element' (role 'rdb_Element0', cardinality 0..*).
+'rdb::SchemaElement' (role 'rdb_SchemaElement', cardinality 0..*) is associated with 'rdb::Schema' (role 'rdb_Schema4', cardinality 0..*).
+'rdb::Table' (role 'rdb_Table', cardinality 0..*) is associated with 'rdb::TableColumn' (role 'rdb_TableColumn', cardinality 0..*).

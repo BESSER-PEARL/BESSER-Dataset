@@ -1,0 +1,10 @@
+The model has 4 class(es).
+The class 'pcg::Vertex' has no attributes.
+The class 'pcg::Graph' has no attributes.
+The class 'pcg::Edge' has the following attributes: 'kind' of type str.
+The class 'pcg::Resource' has the following attributes: 'title' of type str; 'id' of type str.
+'pcg::Edge' (role 'pcg_Edge', cardinality 0..*) is associated with 'pcg::Graph' (role 'pcg_Graph2', cardinality 0..*).
+'pcg::Graph' (role 'pcg_Graph', cardinality 0..*) is associated with 'pcg::Vertex' (role 'pcg_Vertex', cardinality 0..*).
+'pcg::Resource' (role 'pcg_Resource', cardinality 0..*) is associated with 'pcg::Vertex' (role 'pcg_Vertex4', cardinality 0..*).
+'pcg::Vertex' (role 'pcg_Vertex7', cardinality 0..*) is associated with 'pcg::Edge' (role 'pcg_Edge6', cardinality 0..*).
+'pcg::Vertex' (role 'pcg_Vertex10', cardinality 0..*) is associated with 'pcg::Edge' (role 'pcg_Edge9', cardinality 0..*).

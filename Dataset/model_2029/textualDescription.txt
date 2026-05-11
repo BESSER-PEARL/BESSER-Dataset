@@ -1,0 +1,53 @@
+The model has 19 class(es).
+The class 'uisut::UITransition' has the following attributes: 'guardStr' of type str; 'actionStr' of type str; 'triggerStr' of type str; 'scriptStr' of type str.
+The class 'uisut::UITrigger' has no attributes.
+The class 'uisut::UIState' has the following attributes: 'isInitial' of type bool; 'pic' of type str.
+The class 'uisut::UISUT' has no attributes.
+The class 'uisut::UISUTElement' has the following attributes: 'id' of type str; 'description' of type str; 'name' of type str.
+The class 'uisut::UIDataVariable' has the following attributes: 'constraintRE' of type str.
+The class 'uisut::UIStatemachine' has no attributes.
+The class 'uisut::ComponentTrigger' has no attributes.
+The class 'uisut::InitialState' has no attributes.
+The class 'uisut::UICondition' has no attributes.
+The class 'AbstractState' has no attributes.
+The class 'UITrigger' has no attributes.
+The class 'uisut::ApplicationSystem' has no attributes.
+The class 'UISUTElement' has no attributes.
+The class 'uisut::Action' has no attributes.
+The class 'uisut::UIControl' has the following attributes: 'variableName' of type str; 'valueExpression' of type str.
+The class 'uisut::FinalState' has no attributes.
+The class 'uisut::AbstractState' has no attributes.
+The class 'uisut::UserTrigger' has no attributes.
+'uisut::FinalState' is a specialization of 'AbstractState'.
+'uisut::UISUT' is a specialization of 'UISUTElement'.
+'uisut::ComponentTrigger' is a specialization of 'UITrigger'.
+'uisut::InitialState' is a specialization of 'AbstractState'.
+'uisut::UITransition' is a specialization of 'UISUTElement'.
+'uisut::UIState' is a specialization of 'AbstractState'.
+'uisut::UIStatemachine' is a specialization of 'UISUTElement'.
+'uisut::Action' is a specialization of 'UISUTElement'.
+'uisut::AbstractState' is a specialization of 'UISUTElement'.
+'uisut::UserTrigger' is a specialization of 'UITrigger'.
+'uisut::ApplicationSystem' is a specialization of 'UISUTElement'.
+'uisut::UIControl' is a specialization of 'UISUTElement'.
+'uisut::UIDataVariable' is a specialization of 'UISUTElement'.
+'uisut::UICondition' is a specialization of 'UISUTElement'.
+'uisut::UITrigger' is a specialization of 'UISUTElement'.
+'uisut::UIStatemachine' (role 'uisut_UIStatemachine6', cardinality 0..*) is associated with 'uisut::UITransition' (role 'uisut_UITransition', cardinality 0..*).
+'uisut::UIState' (role 'uisut_UIState14', cardinality 0..*) is associated with 'uisut::UIDataVariable' (role 'uisut_UIDataVariable15', cardinality 0..*).
+'uisut::UIStatemachine' (role 'uisut_UIStatemachine8', cardinality 0..*) is associated with 'uisut::UIDataVariable' (role 'uisut_UIDataVariable', cardinality 0..*).
+'uisut::UIControl' (role 'uisut_UIControl', cardinality 0..*) is associated with 'uisut::UIState' (role 'uisut_UIState', cardinality 0..*).
+'uisut::UICondition' (role 'uisut_UICondition', cardinality 0..*) is associated with 'uisut::UITransition' (role 'uisut_UITransition22', cardinality 0..*).
+'uisut::UITransition' (role 'UITransition', cardinality 0..*) is associated with 'uisut::AbstractState' (role 'itsTrgtState', cardinality 0..*).
+'uisut::AbstractState' (role 'AbstractState18', cardinality 0..*) is associated with 'uisut::UITransition' (role 'itsOutTransition', cardinality 0..*).
+'uisut::UIDataVariable' (role 'uisut_UIDataVariable33', cardinality 0..*) is associated with 'uisut::UIControl' (role 'uisut_UIControl32', cardinality 0..*).
+'uisut::AbstractState' (role 'uisut_AbstractState', cardinality 0..*) is associated with 'uisut::UIStatemachine' (role 'uisut_UIStatemachine4', cardinality 0..*).
+'uisut::UITransition' (role 'uisut_UITransition26', cardinality 0..*) is associated with 'uisut::UIDataVariable' (role 'uisut_UIDataVariable27', cardinality 0..*).
+'uisut::UIState' (role 'uisut_UIState11', cardinality 0..*) is associated with 'uisut::UIDataVariable' (role 'uisut_UIDataVariable12', cardinality 0..*).
+'uisut::UITransition' (role 'UITransition36', cardinality 0..*) is associated with 'uisut::AbstractState' (role 'itsSrcState', cardinality 0..*).
+'uisut::UITransition' (role 'itsInTransition', cardinality 0..*) is associated with 'uisut::AbstractState' (role 'AbstractState', cardinality 0..*).
+'uisut::UIDataVariable' (role 'uisut_UIDataVariable30', cardinality 0..*) is associated with 'uisut::UIControl' (role 'uisut_UIControl29', cardinality 0..*).
+'uisut::UISUT' (role 'uisut_UISUT', cardinality 0..*) is associated with 'uisut::UIStatemachine' (role 'uisut_UIStatemachine', cardinality 0..*).
+'uisut::UITrigger' (role 'uisut_UITrigger', cardinality 0..*) is associated with 'uisut::UITransition' (role 'uisut_UITransition20', cardinality 0..*).
+'uisut::UITransition' (role 'uisut_UITransition24', cardinality 0..*) is associated with 'uisut::Action' (role 'uisut_Action', cardinality 0..*).
+'uisut::ApplicationSystem' (role 'uisut_ApplicationSystem', cardinality 0..*) is associated with 'uisut::UISUT' (role 'uisut_UISUT2', cardinality 0..*).

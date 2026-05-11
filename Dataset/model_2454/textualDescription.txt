@@ -1,0 +1,10 @@
+The model has 3 class(es).
+The class 'cbmg::Transition' has the following attributes: 'method' of type str; 'nbrOfTransitions' of type int; 'condition' of type str; 'thinkTime' of type float; 'accept' of type str; 'probability' of type float.
+The class 'cbmg::State' has the following attributes: 'isStartState' of type bool; 'port' of type int; 'localName' of type str; 'isEndState' of type bool; 'localAddr' of type str; 'requestURL' of type str.
+The class 'cbmg::RequestParameter' has the following attributes: 'parameterValue' of type str; 'parameterName' of type str.
+'cbmg::Transition' (role 'cbmg_Transition5', cardinality 0..*) is associated with 'cbmg::State' (role 'cbmg_State6', cardinality 0..*).
+'cbmg::RequestParameter' (role 'cbmg_RequestParameter', cardinality 0..*) is associated with 'cbmg::Transition' (role 'cbmg_Transition11', cardinality 0..*).
+'cbmg::Transition' (role 'cbmg_Transition8', cardinality 0..*) is associated with 'cbmg::State' (role 'cbmg_State9', cardinality 0..*).
+'cbmg::State' (role 'cbmg_State', cardinality 0..*) is associated with 'cbmg::Transition' (role 'cbmg_Transition', cardinality 0..*).
+'cbmg::RequestParameter' (role 'cbmg_RequestParameter13', cardinality 0..*) is associated with 'cbmg::Transition' (role 'cbmg_Transition14', cardinality 0..*).
+'cbmg::State' (role 'cbmg_State2', cardinality 0..*) is associated with 'cbmg::Transition' (role 'cbmg_Transition3', cardinality 0..*).

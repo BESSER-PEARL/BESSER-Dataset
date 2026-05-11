@@ -1,0 +1,187 @@
+The model has 67 class(es).
+The class 'declaration::xpand3::DeclaredParameter' has no attributes.
+The class 'xpand3::ImportStatement' has the following attributes: 'exported' of type bool.
+The class 'AbstractStatementWithBody' has no attributes.
+The class 'xpand3::expression::IntegerLiteral' has no attributes.
+The class 'xpand3::expression::SwitchExpression' has no attributes.
+The class 'xpand3::expression::ChainExpression' has no attributes.
+The class 'xpand3::expression::UnaryOperation' has no attributes.
+The class 'xpand3::expression::Case' has no attributes.
+The class 'expression::xpand3::Identifier' has no attributes.
+The class 'xpand3::declaration::AbstractAspect' has the following attributes: 'wildparams' of type bool.
+The class 'xpand3::declaration::CreateExtension' has no attributes.
+The class 'xpand3::expression::FeatureCall' has no attributes.
+The class 'xpand3::File' has no attributes.
+The class 'xpand3::expression::BooleanOperation' has no attributes.
+The class 'xpand3::expression::GlobalVarExpression' has no attributes.
+The class 'xpand3::expression::BinaryOperation' has no attributes.
+The class 'Literal' has no attributes.
+The class 'xpand3::declaration::Definition' has no attributes.
+The class 'AbstractStatement' has no attributes.
+The class 'Extension' has no attributes.
+The class 'xpand3::statement::ProtectStatement' has the following attributes: 'disable' of type bool.
+The class 'xpand3::expression::NullLiteral' has no attributes.
+The class 'xpand3::expression::StringLiteral' has no attributes.
+The class 'xpand3::Identifier' has the following attributes: 'value' of type str.
+The class 'declaration::xpand3::Identifier' has no attributes.
+The class 'xpand3::statement::ForEachStatement' has no attributes.
+The class 'xpand3::statement::ExpandStatement' has the following attributes: 'foreach' of type bool.
+The class 'Case' has no attributes.
+The class 'xpand3::statement::ExpressionStatement' has no attributes.
+The class 'xpand3::expression::ConstructorCallExpression' has no attributes.
+The class 'xpand3::expression::CollectionExpression' has no attributes.
+The class 'xpand3::expression::IfExpression' has no attributes.
+The class 'xpand3::declaration::Extension' has the following attributes: 'cached' of type bool.
+The class 'xpand3::DeclaredParameter' has no attributes.
+The class 'xpand3::expression::BooleanLiteral' has no attributes.
+The class 'xpand3::statement::AbstractStatementWithBody' has no attributes.
+The class 'xpand3::expression::OperationCall' has no attributes.
+The class 'xpand3::declaration::Check' has the following attributes: 'errorSeverity' of type bool; 'feature' of type str.
+The class 'AbstractAspect' has no attributes.
+The class 'xpand3::statement::LetStatement' has no attributes.
+The class 'xpand3::expression::ListLiteral' has no attributes.
+The class 'xpand3::declaration::JavaExtension' has no attributes.
+The class 'SyntaxElement' has no attributes.
+The class 'xpand3::expression::AbstractExpression' has no attributes.
+The class 'xpand3::declaration::AbstractDeclaration' has the following attributes: 'isPrivate' of type bool.
+The class 'BinaryOperation' has no attributes.
+The class 'xpand3::expression::RealLiteral' has no attributes.
+The class 'FeatureCall' has no attributes.
+The class 'xpand3::expression::TypeSelectExpression' has no attributes.
+The class 'xpand3::statement::IfStatement' has no attributes.
+The class 'xpand3::declaration::ExtensionAspect' has no attributes.
+The class 'AbstractDeclaration' has no attributes.
+The class 'AbstractExpression' has no attributes.
+The class 'statement::xpand3::Identifier' has no attributes.
+The class 'xpand3::statement::FileStatement' has the following attributes: 'once' of type bool.
+The class 'xpand3::statement::TextStatement' has the following attributes: 'deleteLine' of type bool; 'value' of type str.
+The class 'xpand3::declaration::DefinitionAspect' has no attributes.
+The class 'xpand3::statement::AbstractStatement' has no attributes.
+The class 'IfStatement' has no attributes.
+The class 'AbstractNamedDeclaration' has no attributes.
+The class 'xpand3::expression::Cast' has no attributes.
+The class 'xpand3::statement::ErrorStatement' has no attributes.
+The class 'xpand3::expression::LetExpression' has no attributes.
+The class 'xpand3::declaration::AbstractNamedDeclaration' has no attributes.
+The class 'xpand3::SyntaxElement' has the following attributes: 'line' of type int; 'fileName' of type str; 'end' of type int; 'start' of type int.
+The class 'declaration::xpand3::File' has no attributes.
+The class 'xpand3::expression::Literal' has no attributes.
+'xpand3::ImportStatement' is a specialization of 'SyntaxElement'.
+'xpand3::expression::BooleanLiteral' is a specialization of 'Literal'.
+'xpand3::expression::Case' is a specialization of 'SyntaxElement'.
+'xpand3::declaration::Extension' is a specialization of 'AbstractNamedDeclaration'.
+'xpand3::expression::ConstructorCallExpression' is a specialization of 'AbstractExpression'.
+'xpand3::DeclaredParameter' is a specialization of 'SyntaxElement'.
+'xpand3::expression::TypeSelectExpression' is a specialization of 'FeatureCall'.
+'xpand3::statement::ErrorStatement' is a specialization of 'AbstractStatement'.
+'xpand3::statement::ExpressionStatement' is a specialization of 'AbstractStatement'.
+'xpand3::declaration::Check' is a specialization of 'AbstractDeclaration'.
+'xpand3::File' is a specialization of 'SyntaxElement'.
+'xpand3::statement::ForEachStatement' is a specialization of 'AbstractStatementWithBody'.
+'xpand3::expression::IntegerLiteral' is a specialization of 'Literal'.
+'xpand3::expression::NullLiteral' is a specialization of 'Literal'.
+'xpand3::declaration::AbstractNamedDeclaration' is a specialization of 'AbstractDeclaration'.
+'xpand3::Identifier' is a specialization of 'SyntaxElement'.
+'xpand3::expression::UnaryOperation' is a specialization of 'AbstractExpression'.
+'xpand3::statement::AbstractStatement' is a specialization of 'SyntaxElement'.
+'xpand3::statement::FileStatement' is a specialization of 'AbstractStatementWithBody'.
+'xpand3::declaration::CreateExtension' is a specialization of 'Extension'.
+'xpand3::expression::BooleanOperation' is a specialization of 'BinaryOperation'.
+'xpand3::statement::TextStatement' is a specialization of 'AbstractStatement'.
+'xpand3::expression::FeatureCall' is a specialization of 'AbstractExpression'.
+'xpand3::expression::LetExpression' is a specialization of 'AbstractExpression'.
+'xpand3::expression::Literal' is a specialization of 'AbstractExpression'.
+'xpand3::expression::SwitchExpression' is a specialization of 'AbstractExpression'.
+'xpand3::statement::IfStatement' is a specialization of 'AbstractStatementWithBody'.
+'xpand3::expression::OperationCall' is a specialization of 'FeatureCall'.
+'xpand3::expression::GlobalVarExpression' is a specialization of 'AbstractExpression'.
+'xpand3::declaration::Definition' is a specialization of 'AbstractNamedDeclaration'.
+'xpand3::declaration::DefinitionAspect' is a specialization of 'AbstractAspect'.
+'xpand3::declaration::JavaExtension' is a specialization of 'AbstractNamedDeclaration'.
+'xpand3::expression::IfExpression' is a specialization of 'AbstractExpression'.
+'xpand3::expression::RealLiteral' is a specialization of 'Literal'.
+'xpand3::expression::StringLiteral' is a specialization of 'Literal'.
+'xpand3::expression::AbstractExpression' is a specialization of 'SyntaxElement'.
+'xpand3::expression::BinaryOperation' is a specialization of 'AbstractExpression'.
+'xpand3::statement::ProtectStatement' is a specialization of 'AbstractStatementWithBody'.
+'xpand3::statement::AbstractStatementWithBody' is a specialization of 'AbstractStatement'.
+'xpand3::statement::LetStatement' is a specialization of 'AbstractStatementWithBody'.
+'xpand3::declaration::AbstractAspect' is a specialization of 'AbstractDeclaration'.
+'xpand3::statement::ExpandStatement' is a specialization of 'AbstractStatement'.
+'xpand3::expression::CollectionExpression' is a specialization of 'FeatureCall'.
+'xpand3::expression::Cast' is a specialization of 'AbstractExpression'.
+'xpand3::declaration::AbstractDeclaration' is a specialization of 'SyntaxElement'.
+'xpand3::declaration::ExtensionAspect' is a specialization of 'AbstractAspect'.
+'xpand3::expression::ChainExpression' is a specialization of 'AbstractExpression'.
+'xpand3::expression::ListLiteral' is a specialization of 'AbstractExpression'.
+'xpand3::statement::ProtectStatement' (role 'xpand3_statement_ProtectStatement', cardinality 0..*) is associated with 'AbstractExpression' (role 'AbstractExpression122', cardinality 0..*).
+'expression::xpand3::Identifier' (role 'expression_xpand3_Identifier19', cardinality 0..*) is associated with 'xpand3::expression::ConstructorCallExpression' (role 'xpand3_expression_ConstructorCallExpression', cardinality 0..*).
+'xpand3::declaration::JavaExtension' (role 'xpand3_declaration_JavaExtension', cardinality 0..*) is associated with 'declaration::xpand3::Identifier' (role 'declaration_xpand3_Identifier157', cardinality 0..*).
+'xpand3::expression::LetExpression' (role 'xpand3_expression_LetExpression50', cardinality 0..*) is associated with 'expression::xpand3::Identifier' (role 'expression_xpand3_Identifier51', cardinality 0..*).
+'declaration::xpand3::Identifier' (role 'declaration_xpand3_Identifier142', cardinality 0..*) is associated with 'xpand3::declaration::Extension' (role 'xpand3_declaration_Extension141', cardinality 0..*).
+'xpand3::statement::ExpandStatement' (role 'xpand3_statement_ExpandStatement87', cardinality 0..*) is associated with 'AbstractExpression' (role 'AbstractExpression88', cardinality 0..*).
+'AbstractExpression' (role 'AbstractExpression150', cardinality 0..*) is associated with 'xpand3::declaration::Check' (role 'xpand3_declaration_Check', cardinality 0..*).
+'xpand3::expression::LetExpression' (role 'xpand3_expression_LetExpression47', cardinality 0..*) is associated with 'AbstractExpression' (role 'AbstractExpression48', cardinality 0..*).
+'declaration::xpand3::Identifier' (role 'declaration_xpand3_Identifier160', cardinality 0..*) is associated with 'xpand3::declaration::JavaExtension' (role 'xpand3_declaration_JavaExtension159', cardinality 0..*).
+'expression::xpand3::Identifier' (role 'expression_xpand3_Identifier35', cardinality 0..*) is associated with 'xpand3::expression::GlobalVarExpression' (role 'xpand3_expression_GlobalVarExpression', cardinality 0..*).
+'AbstractExpression' (role 'AbstractExpression67', cardinality 0..*) is associated with 'xpand3::expression::Case' (role 'xpand3_expression_Case66', cardinality 0..*).
+'xpand3::statement::ProtectStatement' (role 'xpand3_statement_ProtectStatement124', cardinality 0..*) is associated with 'AbstractExpression' (role 'AbstractExpression125', cardinality 0..*).
+'statement::xpand3::Identifier' (role 'statement_xpand3_Identifier117', cardinality 0..*) is associated with 'xpand3::statement::LetStatement' (role 'xpand3_statement_LetStatement', cardinality 0..*).
+'xpand3::declaration::DefinitionAspect' (role 'xpand3_declaration_DefinitionAspect', cardinality 0..*) is associated with 'AbstractStatement' (role 'AbstractStatement148', cardinality 0..*).
+'AbstractExpression' (role 'AbstractExpression45', cardinality 0..*) is associated with 'xpand3::expression::LetExpression' (role 'xpand3_expression_LetExpression', cardinality 0..*).
+'xpand3::expression::CollectionExpression' (role 'xpand3_expression_CollectionExpression28', cardinality 0..*) is associated with 'expression::xpand3::Identifier' (role 'expression_xpand3_Identifier29', cardinality 0..*).
+'xpand3::ImportStatement' (role 'xpand3_ImportStatement4', cardinality 0..*) is associated with 'xpand3::Identifier' (role 'xpand3_Identifier', cardinality 0..*).
+'xpand3::expression::SwitchExpression' (role 'xpand3_expression_SwitchExpression', cardinality 0..*) is associated with 'AbstractExpression' (role 'AbstractExpression57', cardinality 0..*).
+'AbstractExpression' (role 'AbstractExpression72', cardinality 0..*) is associated with 'xpand3::expression::BinaryOperation' (role 'xpand3_expression_BinaryOperation71', cardinality 0..*).
+'xpand3::statement::ExpandStatement' (role 'xpand3_statement_ExpandStatement90', cardinality 0..*) is associated with 'statement::xpand3::Identifier' (role 'statement_xpand3_Identifier', cardinality 0..*).
+'declaration::xpand3::Identifier' (role 'declaration_xpand3_Identifier', cardinality 0..*) is associated with 'xpand3::declaration::AbstractNamedDeclaration' (role 'xpand3_declaration_AbstractNamedDeclaration', cardinality 0..*).
+'xpand3::expression::IfExpression' (role 'xpand3_expression_IfExpression', cardinality 0..*) is associated with 'AbstractExpression' (role 'AbstractExpression37', cardinality 0..*).
+'AbstractExpression' (role 'AbstractExpression53', cardinality 0..*) is associated with 'xpand3::expression::ListLiteral' (role 'xpand3_expression_ListLiteral', cardinality 0..*).
+'xpand3::expression::Cast' (role 'xpand3_expression_Cast', cardinality 0..*) is associated with 'expression::xpand3::Identifier' (role 'expression_xpand3_Identifier', cardinality 0..*).
+'xpand3::statement::LetStatement' (role 'xpand3_statement_LetStatement119', cardinality 0..*) is associated with 'AbstractExpression' (role 'AbstractExpression120', cardinality 0..*).
+'xpand3::declaration::AbstractDeclaration' (role 'xpand3_declaration_AbstractDeclaration133', cardinality 0..*) is associated with 'AbstractExpression' (role 'AbstractExpression134', cardinality 0..*).
+'AbstractExpression' (role 'AbstractExpression139', cardinality 0..*) is associated with 'xpand3::declaration::Extension' (role 'xpand3_declaration_Extension', cardinality 0..*).
+'xpand3::statement::ExpressionStatement' (role 'xpand3_statement_ExpressionStatement', cardinality 0..*) is associated with 'AbstractExpression' (role 'AbstractExpression92', cardinality 0..*).
+'xpand3::expression::UnaryOperation' (role 'xpand3_expression_UnaryOperation79', cardinality 0..*) is associated with 'AbstractExpression' (role 'AbstractExpression80', cardinality 0..*).
+'declaration::xpand3::DeclaredParameter' (role 'declaration_xpand3_DeclaredParameter', cardinality 0..*) is associated with 'xpand3::declaration::AbstractDeclaration' (role 'xpand3_declaration_AbstractDeclaration131', cardinality 0..*).
+'AbstractExpression' (role 'AbstractExpression26', cardinality 0..*) is associated with 'xpand3::expression::CollectionExpression' (role 'xpand3_expression_CollectionExpression', cardinality 0..*).
+'xpand3::expression::ChainExpression' (role 'xpand3_expression_ChainExpression', cardinality 0..*) is associated with 'AbstractExpression' (role 'AbstractExpression14', cardinality 0..*).
+'AbstractExpression' (role 'AbstractExpression128', cardinality 0..*) is associated with 'xpand3::statement::ProtectStatement' (role 'xpand3_statement_ProtectStatement127', cardinality 0..*).
+'AbstractExpression' (role 'AbstractExpression85', cardinality 0..*) is associated with 'xpand3::statement::ExpandStatement' (role 'xpand3_statement_ExpandStatement84', cardinality 0..*).
+'xpand3::DeclaredParameter' (role 'xpand3_DeclaredParameter8', cardinality 0..*) is associated with 'xpand3::Identifier' (role 'xpand3_Identifier9', cardinality 0..*).
+'AbstractExpression' (role 'AbstractExpression40', cardinality 0..*) is associated with 'xpand3::expression::IfExpression' (role 'xpand3_expression_IfExpression39', cardinality 0..*).
+'xpand3::expression::BinaryOperation' (role 'xpand3_expression_BinaryOperation', cardinality 0..*) is associated with 'AbstractExpression' (role 'AbstractExpression69', cardinality 0..*).
+'xpand3::expression::TypeSelectExpression' (role 'xpand3_expression_TypeSelectExpression', cardinality 0..*) is associated with 'expression::xpand3::Identifier' (role 'expression_xpand3_Identifier33', cardinality 0..*).
+'xpand3::declaration::AbstractAspect' (role 'xpand3_declaration_AbstractAspect', cardinality 0..*) is associated with 'declaration::xpand3::Identifier' (role 'declaration_xpand3_Identifier144', cardinality 0..*).
+'xpand3::statement::ErrorStatement' (role 'xpand3_statement_ErrorStatement', cardinality 0..*) is associated with 'AbstractExpression' (role 'AbstractExpression94', cardinality 0..*).
+'declaration::xpand3::File' (role 'declaration_xpand3_File', cardinality 0..*) is associated with 'xpand3::declaration::AbstractDeclaration' (role 'xpand3_declaration_AbstractDeclaration', cardinality 0..*).
+'xpand3::File' (role 'xpand3_File2', cardinality 0..*) is associated with 'AbstractDeclaration' (role 'AbstractDeclaration', cardinality 0..*).
+'xpand3::statement::ForEachStatement' (role 'xpand3_statement_ForEachStatement110', cardinality 0..*) is associated with 'statement::xpand3::Identifier' (role 'statement_xpand3_Identifier111', cardinality 0..*).
+'xpand3::expression::IfExpression' (role 'xpand3_expression_IfExpression42', cardinality 0..*) is associated with 'AbstractExpression' (role 'AbstractExpression43', cardinality 0..*).
+'xpand3::statement::IfStatement' (role 'xpand3_statement_IfStatement115', cardinality 0..*) is associated with 'IfStatement' (role 'IfStatement', cardinality 0..*).
+'expression::xpand3::Identifier' (role 'expression_xpand3_Identifier75', cardinality 0..*) is associated with 'xpand3::expression::BinaryOperation' (role 'xpand3_expression_BinaryOperation74', cardinality 0..*).
+'statement::xpand3::Identifier' (role 'statement_xpand3_Identifier100', cardinality 0..*) is associated with 'xpand3::statement::FileStatement' (role 'xpand3_statement_FileStatement99', cardinality 0..*).
+'xpand3::statement::ForEachStatement' (role 'xpand3_statement_ForEachStatement104', cardinality 0..*) is associated with 'AbstractExpression' (role 'AbstractExpression105', cardinality 0..*).
+'AbstractExpression' (role 'AbstractExpression31', cardinality 0..*) is associated with 'xpand3::expression::OperationCall' (role 'xpand3_expression_OperationCall', cardinality 0..*).
+'xpand3::expression::Case' (role 'xpand3_expression_Case', cardinality 0..*) is associated with 'AbstractExpression' (role 'AbstractExpression64', cardinality 0..*).
+'xpand3::declaration::JavaExtension' (role 'xpand3_declaration_JavaExtension162', cardinality 0..*) is associated with 'declaration::xpand3::Identifier' (role 'declaration_xpand3_Identifier163', cardinality 0..*).
+'AbstractExpression' (role 'AbstractExpression146', cardinality 0..*) is associated with 'xpand3::declaration::ExtensionAspect' (role 'xpand3_declaration_ExtensionAspect', cardinality 0..*).
+'expression::xpand3::Identifier' (role 'expression_xpand3_Identifier77', cardinality 0..*) is associated with 'xpand3::expression::UnaryOperation' (role 'xpand3_expression_UnaryOperation', cardinality 0..*).
+'expression::xpand3::Identifier' (role 'expression_xpand3_Identifier24', cardinality 0..*) is associated with 'xpand3::expression::FeatureCall' (role 'xpand3_expression_FeatureCall23', cardinality 0..*).
+'xpand3::statement::FileStatement' (role 'xpand3_statement_FileStatement', cardinality 0..*) is associated with 'AbstractExpression' (role 'AbstractExpression97', cardinality 0..*).
+'AbstractExpression' (role 'AbstractExpression82', cardinality 0..*) is associated with 'xpand3::statement::ExpandStatement' (role 'xpand3_statement_ExpandStatement', cardinality 0..*).
+'AbstractExpression' (role 'AbstractExpression113', cardinality 0..*) is associated with 'xpand3::statement::IfStatement' (role 'xpand3_statement_IfStatement', cardinality 0..*).
+'xpand3::expression::SwitchExpression' (role 'xpand3_expression_SwitchExpression62', cardinality 0..*) is associated with 'Case' (role 'Case', cardinality 0..*).
+'declaration::xpand3::DeclaredParameter' (role 'declaration_xpand3_DeclaredParameter155', cardinality 0..*) is associated with 'xpand3::declaration::CreateExtension' (role 'xpand3_declaration_CreateExtension', cardinality 0..*).
+'xpand3::expression::ChainExpression' (role 'xpand3_expression_ChainExpression16', cardinality 0..*) is associated with 'AbstractExpression' (role 'AbstractExpression17', cardinality 0..*).
+'xpand3::expression::FeatureCall' (role 'xpand3_expression_FeatureCall', cardinality 0..*) is associated with 'AbstractExpression' (role 'AbstractExpression21', cardinality 0..*).
+'AbstractExpression' (role 'AbstractExpression60', cardinality 0..*) is associated with 'xpand3::expression::SwitchExpression' (role 'xpand3_expression_SwitchExpression59', cardinality 0..*).
+'xpand3::expression::Literal' (role 'xpand3_expression_Literal', cardinality 0..*) is associated with 'expression::xpand3::Identifier' (role 'expression_xpand3_Identifier55', cardinality 0..*).
+'AbstractStatement' (role 'AbstractStatement137', cardinality 0..*) is associated with 'xpand3::declaration::Definition' (role 'xpand3_declaration_Definition', cardinality 0..*).
+'statement::xpand3::Identifier' (role 'statement_xpand3_Identifier108', cardinality 0..*) is associated with 'xpand3::statement::ForEachStatement' (role 'xpand3_statement_ForEachStatement107', cardinality 0..*).
+'xpand3::DeclaredParameter' (role 'xpand3_DeclaredParameter', cardinality 0..*) is associated with 'xpand3::Identifier' (role 'xpand3_Identifier6', cardinality 0..*).
+'xpand3::File' (role 'xpand3_File', cardinality 0..*) is associated with 'xpand3::ImportStatement' (role 'xpand3_ImportStatement', cardinality 0..*).
+'AbstractExpression' (role 'AbstractExpression102', cardinality 0..*) is associated with 'xpand3::statement::ForEachStatement' (role 'xpand3_statement_ForEachStatement', cardinality 0..*).
+'xpand3::expression::Cast' (role 'xpand3_expression_Cast12', cardinality 0..*) is associated with 'AbstractExpression' (role 'AbstractExpression', cardinality 0..*).
+'AbstractStatement' (role 'AbstractStatement', cardinality 0..*) is associated with 'xpand3::statement::AbstractStatementWithBody' (role 'xpand3_statement_AbstractStatementWithBody', cardinality 0..*).
+'AbstractExpression' (role 'AbstractExpression153', cardinality 0..*) is associated with 'xpand3::declaration::Check' (role 'xpand3_declaration_Check152', cardinality 0..*).

@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'z6fsm::State' has no attributes.
+The class 'z6fsm::AbstractState' has the following attributes: 'id' of type str.
+The class 'AbstractState' has no attributes.
+The class 'z6fsm::Region' has the following attributes: 'name' of type str.
+The class 'z6fsm::Foo' has no attributes.
+'z6fsm::Foo' is a specialization of 'AbstractState'.
+'z6fsm::State' is a specialization of 'AbstractState'.
+'z6fsm::AbstractState' (role 'z6fsm_AbstractState', cardinality 0..*) is associated with 'z6fsm::Region' (role 'z6fsm_Region', cardinality 0..*).
+'z6fsm::AbstractState' (role 'z6fsm_AbstractState3', cardinality 0..*) is associated with 'z6fsm::AbstractState' (role 'z6fsm_AbstractState1', cardinality 0..*).

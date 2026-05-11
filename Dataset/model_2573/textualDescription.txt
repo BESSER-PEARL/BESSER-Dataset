@@ -1,0 +1,281 @@
+The model has 117 class(es).
+The class 'Prms' has no attributes.
+The class 'sql::PivotColumns' has no attributes.
+The class 'sql::Model' has no attributes.
+The class 'AnalyticExprArgs' has no attributes.
+The class 'sql::DbObjectNameAll' has the following attributes: 'dbname' of type str.
+The class 'sql::Col' has no attributes.
+The class 'sql::AnalyticExprArgs' has no attributes.
+The class 'sql::SQLCaseWhens' has no attributes.
+The class 'sql::JRParameter' has the following attributes: 'jrprm' of type str.
+The class 'sql::ColumnOrAlias' has the following attributes: 'allCols' of type str; 'alias' of type str.
+The class 'OrOrderByColumn' has no attributes.
+The class 'sql::Plus' has no attributes.
+The class 'sql::XExpr' has the following attributes: 'xf' of type str.
+The class 'sql::FunctionExtract' has the following attributes: 'v' of type str.
+The class 'sql::OrderByClause' has no attributes.
+The class 'sql::PivotForClause' has no attributes.
+The class 'sql::Star' has no attributes.
+The class 'Operands' has no attributes.
+The class 'sql::ColumnFull' has no attributes.
+The class 'sql::OBCArgs' has no attributes.
+The class 'sql::AnalyticExprArg' has no attributes.
+The class 'sql::UnpivotTable' has no attributes.
+The class 'sql::FunctionAnalytical' has no attributes.
+The class 'sql::PivotInClause' has the following attributes: 'pinany' of type str.
+The class 'ColumnFull' has no attributes.
+The class 'sql::IntegerValue' has the following attributes: 'integer' of type int.
+The class 'sql::OrOrderByColumn' has no attributes.
+The class 'SelectQuery' has no attributes.
+The class 'OpFunctionArg' has no attributes.
+The class 'OrExpr' has no attributes.
+The class 'sql::Minus' has no attributes.
+The class 'OrColumn' has no attributes.
+The class 'sql::OpFunctionCast' has the following attributes: 'p' of type int; 'p2' of type int; 'type' of type str.
+The class 'sql::ExistsOper' has the following attributes: 'op' of type str.
+The class 'sql::ExpOperand' has the following attributes: 'prm' of type str.
+The class 'sql::Like' has the following attributes: 'opLike' of type str.
+The class 'sql::OrTable' has no attributes.
+The class 'sql::PivotTable' has no attributes.
+The class 'sql::pcols' has no attributes.
+The class 'OperandList' has no attributes.
+The class 'QueryPartitionClause' has no attributes.
+The class 'sql::OpFList' has no attributes.
+The class 'PivotFunction' has no attributes.
+The class 'UnpivotInClauseArgs' has no attributes.
+The class 'OrderByClauseArgs' has no attributes.
+The class 'sql::AnalyticClause' has no attributes.
+The class 'sql::TableFull' has no attributes.
+The class 'sql::QueryPartitionClause' has no attributes.
+The class 'sql::GroupByColumnFull' has no attributes.
+The class 'sql::WindowingClauseOperandFollowing' has no attributes.
+The class 'sql::Pivots' has no attributes.
+The class 'PivotForClause' has no attributes.
+The class 'sql::WhenList' has no attributes.
+The class 'sql::Offset' has the following attributes: 'offset' of type int.
+The class 'sql::Limit' has the following attributes: 'l1' of type int.
+The class 'Pivots' has no attributes.
+The class 'sql::Div' has no attributes.
+The class 'sql::ColumnOperand' has the following attributes: 'ora' of type str.
+The class 'sql::UnipivotInClause' has the following attributes: 'op' of type str.
+The class 'sql::UnpivotInClause' has no attributes.
+The class 'sql::FromTableJoin' has the following attributes: 'join' of type str.
+The class 'OpFunctionArgAgregate' has no attributes.
+The class 'sql::Operand' has no attributes.
+The class 'sql::SubQueryOperand' has no attributes.
+The class 'sql::ScalarOperand' has the following attributes: 'sostr' of type str; 'soint' of type int; 'sodbl' of type str; 'sodt' of type date; 'sotime' of type date; 'sodate' of type date.
+The class 'sql::OpFunction' has the following attributes: 'fname' of type str.
+The class 'sql::PivotFunctions' has the following attributes: 'abc' of type str.
+The class 'sql::PivotCol' has no attributes.
+The class 'sql::AExpArgs' has no attributes.
+The class 'sql::OrGroupByColumn' has no attributes.
+The class 'sql::Concat' has no attributes.
+The class 'OrGroupByColumn' has no attributes.
+The class 'sql::ExprGroup' has the following attributes: 'isnot' of type str.
+The class 'sql::Operands' has no attributes.
+The class 'sql::OrColumn' has no attributes.
+The class 'sql::Between' has the following attributes: 'opBetween' of type str.
+The class 'sql::POperand' has the following attributes: 'prm' of type str.
+The class 'sql::OrderByColumnFull' has the following attributes: 'direction' of type str; 'colOrderInt' of type int.
+The class 'sql::LikeOperand' has the following attributes: 'op2' of type str.
+The class 'sql::OpList' has no attributes.
+The class 'sql::OrderByClauseArgs' has no attributes.
+The class 'sql::WindowingClauseOperandPreceding' has no attributes.
+The class 'sql::PivotFunction' has no attributes.
+The class 'sql::FetchFirst' has the following attributes: 'row' of type str.
+The class 'sql::OperandList' has no attributes.
+The class 'SQLCaseWhens' has no attributes.
+The class 'sql::OperandListGroup' has no attributes.
+The class 'sql::SelectQuery' has no attributes.
+The class 'UnpivotInClause' has no attributes.
+The class 'sql::Comparison' has the following attributes: 'subOperator' of type str; 'operator' of type str.
+The class 'sql::OpFunctionArg' has no attributes.
+The class 'OrTable' has no attributes.
+The class 'sql::UnpivotInClauseArgs' has no attributes.
+The class 'sql::TableOrAlias' has the following attributes: 'alias' of type str.
+The class 'sql::uicargs' has no attributes.
+The class 'sql::FullExpression' has the following attributes: 'c' of type str; 'isnull' of type str; 'notPrm' of type str.
+The class 'sql::OpFunctionArgOperand' has no attributes.
+The class 'sql::InOper' has the following attributes: 'op' of type str.
+The class 'PivotColumns' has no attributes.
+The class 'sql::Select' has the following attributes: 'select' of type str.
+The class 'sql::WindowingClause' has no attributes.
+The class 'sql::SelectSubSet' has the following attributes: 'op' of type str; 'all' of type str.
+The class 'sql::OrderByClauseArg' has no attributes.
+The class 'sql::OpFunctionArgAgregate' has no attributes.
+The class 'sql::SQLCaseOperand' has no attributes.
+The class 'sql::Prms' has no attributes.
+The class 'sql::tbls' has no attributes.
+The class 'sql::UnpivotInClauseArg' has no attributes.
+The class 'sql::WindowingClauseBetween' has no attributes.
+The class 'WindowingClause' has no attributes.
+The class 'sql::DbObjectName' has the following attributes: 'dbname' of type str.
+The class 'sql::SqlCaseWhen' has no attributes.
+The class 'PivotCol' has no attributes.
+The class 'sql::pvcs' has no attributes.
+The class 'TableFull' has no attributes.
+The class 'sql::OrExpr' has no attributes.
+The class 'sql::FromTable' has no attributes.
+The enumeration 'EXTRACT_VALUES' has the following literals: 'minMicro', 'minSec', 'ds', 'm', 'quart', 'hs', 'h', 'yearMonth', 'month', 'year', 'hms', 'week', 's', 'daymin', 'dms', 'hmin', 'dayh', 'ms', 'day', 'micros'.
+The enumeration 'XFunction' has the following literals: 'xgt', 'xgtl', 'xin', 'xbwnr', 'xbwnl', 'xls', 'xnoteq', 'xbwn', 'xlsr', 'xeq', 'xnotin', 'xbwnc'.
+'sql::PivotCol' is a specialization of 'Pivots'.
+'sql::OrderByColumnFull' is a specialization of 'OrOrderByColumn'.
+'sql::DbObjectName' is a specialization of 'ColumnFull'.
+'sql::UnpivotInClauseArg' is a specialization of 'UnpivotInClauseArgs'.
+'sql::OrColumn' is a specialization of 'PivotForClause'.
+'sql::WindowingClauseBetween' is a specialization of 'WindowingClause'.
+'sql::DbObjectName' is a specialization of 'PivotCol'.
+'sql::FullExpression' is a specialization of 'OrExpr'.
+'sql::ColumnOrAlias' is a specialization of 'OrColumn'.
+'sql::Pivots' is a specialization of 'PivotColumns'.
+'sql::UnipivotInClause' is a specialization of 'UnpivotInClause'.
+'sql::Star' is a specialization of 'Operands'.
+'sql::Minus' is a specialization of 'Operands'.
+'sql::PivotCol' is a specialization of 'PivotFunction'.
+'sql::AExpArgs' is a specialization of 'AnalyticExprArgs'.
+'sql::SqlCaseWhen' is a specialization of 'SQLCaseWhens'.
+'sql::Div' is a specialization of 'Operands'.
+'sql::AnalyticExprArg' is a specialization of 'AnalyticExprArgs'.
+'sql::OBCArgs' is a specialization of 'OrderByClauseArgs'.
+'sql::OrderByClauseArg' is a specialization of 'OrderByClauseArgs'.
+'sql::Plus' is a specialization of 'Operands'.
+'sql::Concat' is a specialization of 'Operands'.
+'sql::WindowingClauseOperandPreceding' is a specialization of 'WindowingClause'.
+'sql::uicargs' is a specialization of 'UnpivotInClauseArgs'.
+'sql::OpFunctionArgOperand' is a specialization of 'OpFunctionArg'.
+'sql::ScalarOperand' is a specialization of 'OperandList'.
+'sql::PivotCol' is a specialization of 'PivotColumns'.
+'sql::FromTable' is a specialization of 'OrTable'.
+'sql::JRParameter' is a specialization of 'Prms'.
+'sql::pcols' is a specialization of 'PivotCol'.
+'sql::OpFList' is a specialization of 'OpFunctionArg'.
+'sql::AnalyticExprArgs' is a specialization of 'QueryPartitionClause'.
+'sql::DbObjectName' is a specialization of 'TableFull'.
+'sql::ColumnFull' is a specialization of 'PivotForClause'.
+'sql::Operands' is a specialization of 'OpFunctionArgAgregate'.
+'sql::pvcs' is a specialization of 'Pivots'.
+'sql::WhenList' is a specialization of 'SQLCaseWhens'.
+'sql::tbls' is a specialization of 'TableFull'.
+'sql::Select' is a specialization of 'SelectQuery'.
+'sql::GroupByColumnFull' is a specialization of 'OrGroupByColumn'.
+'sql::Col' is a specialization of 'ColumnFull'.
+'sql::OpList' is a specialization of 'OperandList'.
+'sql::FullExpression' (role 'sql_FullExpression98', cardinality 0..*) is associated with 'sql::FullExpression' (role 'sql_FullExpression96', cardinality 0..*).
+'sql::Operands' (role 'sql_Operands131', cardinality 0..*) is associated with 'sql::Comparison' (role 'sql_Comparison130', cardinality 0..*).
+'sql::Operand' (role 'sql_Operand170', cardinality 0..*) is associated with 'sql::Operand' (role 'sql_Operand172', cardinality 0..*).
+'sql::Like' (role 'sql_Like', cardinality 0..*) is associated with 'sql::FullExpression' (role 'sql_FullExpression116', cardinality 0..*).
+'sql::ExistsOper' (role 'sql_ExistsOper', cardinality 0..*) is associated with 'sql::FullExpression' (role 'sql_FullExpression109', cardinality 0..*).
+'sql::OrExpr' (role 'sql_OrExpr', cardinality 0..*) is associated with 'sql::Select' (role 'sql_Select13', cardinality 0..*).
+'sql::ColumnOrAlias' (role 'sql_ColumnOrAlias34', cardinality 0..*) is associated with 'sql::DbObjectName' (role 'sql_DbObjectName', cardinality 0..*).
+'sql::Limit' (role 'sql_Limit', cardinality 0..*) is associated with 'sql::IntegerValue' (role 'sql_IntegerValue3', cardinality 0..*).
+'sql::AnalyticExprArg' (role 'sql_AnalyticExprArg219', cardinality 0..*) is associated with 'sql::OrderByClauseArg' (role 'sql_OrderByClauseArg', cardinality 0..*).
+'sql::Operands' (role 'sql_Operands162', cardinality 0..*) is associated with 'sql::Operands' (role 'sql_Operands164', cardinality 0..*).
+'sql::SubQueryOperand' (role 'sql_SubQueryOperand', cardinality 0..*) is associated with 'sql::TableOrAlias' (role 'sql_TableOrAlias52', cardinality 0..*).
+'sql::pvcs' (role 'sql_pvcs', cardinality 0..*) is associated with 'sql::PivotCol' (role 'sql_PivotCol', cardinality 0..*).
+'sql::ColumnOrAlias' (role 'sql_ColumnOrAlias32', cardinality 0..*) is associated with 'sql::Operands' (role 'sql_Operands', cardinality 0..*).
+'sql::SqlCaseWhen' (role 'sql_SqlCaseWhen249', cardinality 0..*) is associated with 'sql::Operands' (role 'sql_Operands250', cardinality 0..*).
+'sql::PivotTable' (role 'sql_PivotTable61', cardinality 0..*) is associated with 'sql::PivotFunctions' (role 'sql_PivotFunctions', cardinality 0..*).
+'sql::ColumnFull' (role 'sql_ColumnFull', cardinality 0..*) is associated with 'sql::OrderByColumnFull' (role 'sql_OrderByColumnFull86', cardinality 0..*).
+'sql::OpFunction' (role 'sql_OpFunction183', cardinality 0..*) is associated with 'sql::Operand' (role 'sql_Operand182', cardinality 0..*).
+'sql::OrderByClause' (role 'sql_OrderByClause217', cardinality 0..*) is associated with 'sql::OrderByClauseArgs' (role 'sql_OrderByClauseArgs', cardinality 0..*).
+'sql::SQLCaseOperand' (role 'sql_SQLCaseOperand242', cardinality 0..*) is associated with 'sql::SQLCaseWhens' (role 'sql_SQLCaseWhens', cardinality 0..*).
+'sql::DbObjectNameAll' (role 'sql_DbObjectNameAll', cardinality 0..*) is associated with 'sql::ColumnOrAlias' (role 'sql_ColumnOrAlias36', cardinality 0..*).
+'sql::ExpOperand' (role 'sql_ExpOperand', cardinality 0..*) is associated with 'sql::Operand' (role 'sql_Operand190', cardinality 0..*).
+'sql::SelectSubSet' (role 'sql_SelectSubSet7', cardinality 0..*) is associated with 'sql::Select' (role 'sql_Select6', cardinality 0..*).
+'sql::FetchFirst' (role 'sql_FetchFirst', cardinality 0..*) is associated with 'sql::IntegerValue' (role 'sql_IntegerValue', cardinality 0..*).
+'sql::Operands' (role 'sql_Operands146', cardinality 0..*) is associated with 'sql::Between' (role 'sql_Between145', cardinality 0..*).
+'sql::JRParameter' (role 'sql_JRParameter', cardinality 0..*) is associated with 'sql::Prms' (role 'sql_Prms128', cardinality 0..*).
+'sql::UnipivotInClause' (role 'sql_UnipivotInClause', cardinality 0..*) is associated with 'sql::UnpivotInClauseArgs' (role 'sql_UnpivotInClauseArgs254', cardinality 0..*).
+'sql::tbls' (role 'sql_tbls', cardinality 0..*) is associated with 'sql::DbObjectName' (role 'sql_DbObjectName261', cardinality 0..*).
+'sql::OrExpr' (role 'sql_OrExpr18', cardinality 0..*) is associated with 'sql::Select' (role 'sql_Select17', cardinality 0..*).
+'sql::Operands' (role 'sql_Operands124', cardinality 0..*) is associated with 'sql::XExpr' (role 'sql_XExpr123', cardinality 0..*).
+'sql::XExpr' (role 'sql_XExpr126', cardinality 0..*) is associated with 'sql::Prms' (role 'sql_Prms', cardinality 0..*).
+'sql::OpFunctionCast' (role 'sql_OpFunctionCast', cardinality 0..*) is associated with 'sql::LikeOperand' (role 'sql_LikeOperand138', cardinality 0..*).
+'sql::Select' (role 'sql_Select15', cardinality 0..*) is associated with 'sql::OrGroupByColumn' (role 'sql_OrGroupByColumn', cardinality 0..*).
+'sql::OrderByColumnFull' (role 'sql_OrderByColumnFull', cardinality 0..*) is associated with 'sql::OrOrderByColumn' (role 'sql_OrOrderByColumn84', cardinality 0..*).
+'sql::LikeOperand' (role 'sql_LikeOperand135', cardinality 0..*) is associated with 'sql::OpFunction' (role 'sql_OpFunction136', cardinality 0..*).
+'sql::Select' (role 'sql_Select25', cardinality 0..*) is associated with 'sql::Offset' (role 'sql_Offset', cardinality 0..*).
+'sql::Operand' (role 'sql_Operand185', cardinality 0..*) is associated with 'sql::SQLCaseOperand' (role 'sql_SQLCaseOperand', cardinality 0..*).
+'sql::OrderByClauseArg' (role 'sql_OrderByClauseArg265', cardinality 0..*) is associated with 'sql::OBCArgs' (role 'sql_OBCArgs', cardinality 0..*).
+'sql::SubQueryOperand' (role 'sql_SubQueryOperand175', cardinality 0..*) is associated with 'sql::Operand' (role 'sql_Operand174', cardinality 0..*).
+'sql::pcols' (role 'sql_pcols', cardinality 0..*) is associated with 'sql::DbObjectName' (role 'sql_DbObjectName259', cardinality 0..*).
+'sql::WhenList' (role 'sql_WhenList', cardinality 0..*) is associated with 'sql::SqlCaseWhen' (role 'sql_SqlCaseWhen271', cardinality 0..*).
+'sql::GroupByColumnFull' (role 'sql_GroupByColumnFull90', cardinality 0..*) is associated with 'sql::ColumnFull' (role 'sql_ColumnFull91', cardinality 0..*).
+'sql::ColumnOperand' (role 'sql_ColumnOperand233', cardinality 0..*) is associated with 'sql::ColumnFull' (role 'sql_ColumnFull234', cardinality 0..*).
+'sql::GroupByColumnFull' (role 'sql_GroupByColumnFull93', cardinality 0..*) is associated with 'sql::OpFunction' (role 'sql_OpFunction', cardinality 0..*).
+'sql::ScalarOperand' (role 'sql_ScalarOperand', cardinality 0..*) is associated with 'sql::Operand' (role 'sql_Operand192', cardinality 0..*).
+'sql::Select' (role 'sql_Select11', cardinality 0..*) is associated with 'sql::OrTable' (role 'sql_OrTable', cardinality 0..*).
+'sql::AnalyticExprArgs' (role 'sql_AnalyticExprArgs', cardinality 0..*) is associated with 'sql::QueryPartitionClause' (role 'sql_QueryPartitionClause221', cardinality 0..*).
+'sql::Operands' (role 'sql_Operands231', cardinality 0..*) is associated with 'sql::OpFunctionCast' (role 'sql_OpFunctionCast230', cardinality 0..*).
+'sql::AnalyticExprArg' (role 'sql_AnalyticExprArg226', cardinality 0..*) is associated with 'sql::DbObjectName' (role 'sql_DbObjectName227', cardinality 0..*).
+'sql::Operands' (role 'sql_Operands247', cardinality 0..*) is associated with 'sql::SqlCaseWhen' (role 'sql_SqlCaseWhen246', cardinality 0..*).
+'sql::InOper' (role 'sql_InOper', cardinality 0..*) is associated with 'sql::FullExpression' (role 'sql_FullExpression107', cardinality 0..*).
+'sql::FullExpression' (role 'sql_FullExpression114', cardinality 0..*) is associated with 'sql::Between' (role 'sql_Between', cardinality 0..*).
+'sql::TableOrAlias' (role 'sql_TableOrAlias54', cardinality 0..*) is associated with 'sql::PivotTable' (role 'sql_PivotTable', cardinality 0..*).
+'sql::Operand' (role 'sql_Operand169', cardinality 0..*) is associated with 'sql::ColumnOperand' (role 'sql_ColumnOperand', cardinality 0..*).
+'sql::AnalyticExprArg' (role 'sql_AnalyticExprArg223', cardinality 0..*) is associated with 'sql::Operands' (role 'sql_Operands224', cardinality 0..*).
+'sql::AnalyticExprArg' (role 'sql_AnalyticExprArg267', cardinality 0..*) is associated with 'sql::AExpArgs' (role 'sql_AExpArgs', cardinality 0..*).
+'sql::OpFunction' (role 'sql_OpFunction194', cardinality 0..*) is associated with 'sql::OpFunctionArg' (role 'sql_OpFunctionArg', cardinality 0..*).
+'sql::UnpivotTable' (role 'sql_UnpivotTable77', cardinality 0..*) is associated with 'sql::UnpivotInClause' (role 'sql_UnpivotInClause', cardinality 0..*).
+'sql::OrExpr' (role 'sql_OrExpr121', cardinality 0..*) is associated with 'sql::ExprGroup' (role 'sql_ExprGroup120', cardinality 0..*).
+'sql::OpFunctionArgAgregate' (role 'sql_OpFunctionArgAgregate', cardinality 0..*) is associated with 'sql::OpFunctionArgOperand' (role 'sql_OpFunctionArgOperand', cardinality 0..*).
+'sql::Operand' (role 'sql_Operand180', cardinality 0..*) is associated with 'sql::FunctionExtract' (role 'sql_FunctionExtract', cardinality 0..*).
+'sql::Select' (role 'sql_Select', cardinality 0..*) is associated with 'sql::SelectSubSet' (role 'sql_SelectSubSet', cardinality 0..*).
+'sql::OrTable' (role 'sql_OrTable38', cardinality 0..*) is associated with 'sql::FromTable' (role 'sql_FromTable', cardinality 0..*).
+'sql::FullExpression' (role 'sql_FullExpression103', cardinality 0..*) is associated with 'sql::FullExpression' (role 'sql_FullExpression101', cardinality 0..*).
+'sql::UnpivotInClauseArgs' (role 'sql_UnpivotInClauseArgs', cardinality 0..*) is associated with 'sql::PivotInClause' (role 'sql_PivotInClause70', cardinality 0..*).
+'sql::WindowingClauseBetween' (role 'sql_WindowingClauseBetween210', cardinality 0..*) is associated with 'sql::WindowingClauseOperandFollowing' (role 'sql_WindowingClauseOperandFollowing', cardinality 0..*).
+'sql::SQLCaseOperand' (role 'sql_SQLCaseOperand239', cardinality 0..*) is associated with 'sql::OrExpr' (role 'sql_OrExpr240', cardinality 0..*).
+'sql::UnpivotTable' (role 'sql_UnpivotTable', cardinality 0..*) is associated with 'sql::TableOrAlias' (role 'sql_TableOrAlias56', cardinality 0..*).
+'sql::WindowingClause' (role 'sql_WindowingClause', cardinality 0..*) is associated with 'sql::AnalyticClause' (role 'sql_AnalyticClause207', cardinality 0..*).
+'sql::Select' (role 'sql_Select20', cardinality 0..*) is associated with 'sql::OrOrderByColumn' (role 'sql_OrOrderByColumn', cardinality 0..*).
+'sql::Col' (role 'sql_Col', cardinality 0..*) is associated with 'sql::DbObjectName' (role 'sql_DbObjectName252', cardinality 0..*).
+'sql::Select' (role 'sql_Select9', cardinality 0..*) is associated with 'sql::OrColumn' (role 'sql_OrColumn', cardinality 0..*).
+'sql::Comparison' (role 'sql_Comparison', cardinality 0..*) is associated with 'sql::FullExpression' (role 'sql_FullExpression118', cardinality 0..*).
+'sql::WindowingClauseOperandPreceding' (role 'sql_WindowingClauseOperandPreceding214', cardinality 0..*) is associated with 'sql::AnalyticExprArg' (role 'sql_AnalyticExprArg215', cardinality 0..*).
+'sql::FromTableJoin' (role 'sql_FromTableJoin44', cardinality 0..*) is associated with 'sql::TableOrAlias' (role 'sql_TableOrAlias45', cardinality 0..*).
+'sql::SqlCaseWhen' (role 'sql_SqlCaseWhen', cardinality 0..*) is associated with 'sql::OrExpr' (role 'sql_OrExpr244', cardinality 0..*).
+'sql::OrderByClause' (role 'sql_OrderByClause', cardinality 0..*) is associated with 'sql::AnalyticClause' (role 'sql_AnalyticClause205', cardinality 0..*).
+'sql::Operands' (role 'sql_Operands199', cardinality 0..*) is associated with 'sql::FunctionExtract' (role 'sql_FunctionExtract198', cardinality 0..*).
+'sql::ColumnOrAlias' (role 'sql_ColumnOrAlias', cardinality 0..*) is associated with 'sql::OrColumn' (role 'sql_OrColumn30', cardinality 0..*).
+'sql::UnpivotTable' (role 'sql_UnpivotTable72', cardinality 0..*) is associated with 'sql::PivotColumns' (role 'sql_PivotColumns', cardinality 0..*).
+'sql::Operand' (role 'sql_Operand177', cardinality 0..*) is associated with 'sql::OpFunctionCast' (role 'sql_OpFunctionCast178', cardinality 0..*).
+'sql::SubQueryOperand' (role 'sql_SubQueryOperand68', cardinality 0..*) is associated with 'sql::PivotInClause' (role 'sql_PivotInClause67', cardinality 0..*).
+'sql::PivotTable' (role 'sql_PivotTable65', cardinality 0..*) is associated with 'sql::PivotInClause' (role 'sql_PivotInClause', cardinality 0..*).
+'sql::QueryPartitionClause' (role 'sql_QueryPartitionClause', cardinality 0..*) is associated with 'sql::AnalyticClause' (role 'sql_AnalyticClause203', cardinality 0..*).
+'sql::FunctionAnalytical' (role 'sql_FunctionAnalytical201', cardinality 0..*) is associated with 'sql::AnalyticClause' (role 'sql_AnalyticClause', cardinality 0..*).
+'sql::UnpivotTable' (role 'sql_UnpivotTable74', cardinality 0..*) is associated with 'sql::PivotForClause' (role 'sql_PivotForClause75', cardinality 0..*).
+'sql::SubQueryOperand' (role 'sql_SubQueryOperand149', cardinality 0..*) is associated with 'sql::InOper' (role 'sql_InOper148', cardinality 0..*).
+'sql::FunctionAnalytical' (role 'sql_FunctionAnalytical', cardinality 0..*) is associated with 'sql::OpFunction' (role 'sql_OpFunction196', cardinality 0..*).
+'sql::TableFull' (role 'sql_TableFull', cardinality 0..*) is associated with 'sql::TableOrAlias' (role 'sql_TableOrAlias50', cardinality 0..*).
+'sql::TableOrAlias' (role 'sql_TableOrAlias58', cardinality 0..*) is associated with 'sql::DbObjectName' (role 'sql_DbObjectName59', cardinality 0..*).
+'sql::TableOrAlias' (role 'sql_TableOrAlias', cardinality 0..*) is associated with 'sql::FromTable' (role 'sql_FromTable40', cardinality 0..*).
+'sql::PivotColumns' (role 'sql_PivotColumns79', cardinality 0..*) is associated with 'sql::UnpivotInClauseArg' (role 'sql_UnpivotInClauseArg', cardinality 0..*).
+'sql::AnalyticExprArg' (role 'sql_AnalyticExprArg', cardinality 0..*) is associated with 'sql::WindowingClauseOperandFollowing' (role 'sql_WindowingClauseOperandFollowing212', cardinality 0..*).
+'sql::PivotTable' (role 'sql_PivotTable63', cardinality 0..*) is associated with 'sql::PivotForClause' (role 'sql_PivotForClause', cardinality 0..*).
+'sql::OperandList' (role 'sql_OperandList', cardinality 0..*) is associated with 'sql::OperandListGroup' (role 'sql_OperandListGroup159', cardinality 0..*).
+'sql::ScalarOperand' (role 'sql_ScalarOperand263', cardinality 0..*) is associated with 'sql::OpList' (role 'sql_OpList', cardinality 0..*).
+'sql::XExpr' (role 'sql_XExpr', cardinality 0..*) is associated with 'sql::FullExpression' (role 'sql_FullExpression105', cardinality 0..*).
+'sql::SubQueryOperand' (role 'sql_SubQueryOperand154', cardinality 0..*) is associated with 'sql::ExistsOper' (role 'sql_ExistsOper153', cardinality 0..*).
+'sql::Limit' (role 'sql_Limit23', cardinality 0..*) is associated with 'sql::Select' (role 'sql_Select22', cardinality 0..*).
+'sql::Operand' (role 'sql_Operand167', cardinality 0..*) is associated with 'sql::Operands' (role 'sql_Operands166', cardinality 0..*).
+'sql::FromTable' (role 'sql_FromTable42', cardinality 0..*) is associated with 'sql::FromTableJoin' (role 'sql_FromTableJoin', cardinality 0..*).
+'sql::Between' (role 'sql_Between142', cardinality 0..*) is associated with 'sql::Operands' (role 'sql_Operands143', cardinality 0..*).
+'sql::Operands' (role 'sql_Operands112', cardinality 0..*) is associated with 'sql::FullExpression' (role 'sql_FullExpression111', cardinality 0..*).
+'sql::ExprGroup' (role 'sql_ExprGroup', cardinality 0..*) is associated with 'sql::FullExpression' (role 'sql_FullExpression100', cardinality 0..*).
+'sql::Operand' (role 'sql_Operand', cardinality 0..*) is associated with 'sql::Operands' (role 'sql_Operands161', cardinality 0..*).
+'sql::OpFunctionArgOperand' (role 'sql_OpFunctionArgOperand269', cardinality 0..*) is associated with 'sql::OpFList' (role 'sql_OpFList', cardinality 0..*).
+'sql::OrExpr' (role 'sql_OrExpr95', cardinality 0..*) is associated with 'sql::FullExpression' (role 'sql_FullExpression', cardinality 0..*).
+'sql::POperand' (role 'sql_POperand', cardinality 0..*) is associated with 'sql::LikeOperand' (role 'sql_LikeOperand140', cardinality 0..*).
+'sql::POperand' (role 'sql_POperand188', cardinality 0..*) is associated with 'sql::Operand' (role 'sql_Operand187', cardinality 0..*).
+'sql::SelectQuery' (role 'sql_SelectQuery', cardinality 0..*) is associated with 'sql::Model' (role 'sql_Model', cardinality 0..*).
+'sql::PivotColumns' (role 'sql_PivotColumns82', cardinality 0..*) is associated with 'sql::UnpivotInClauseArg' (role 'sql_UnpivotInClauseArg81', cardinality 0..*).
+'sql::WindowingClauseOperandPreceding' (role 'sql_WindowingClauseOperandPreceding', cardinality 0..*) is associated with 'sql::WindowingClauseBetween' (role 'sql_WindowingClauseBetween', cardinality 0..*).
+'sql::SubQueryOperand' (role 'sql_SubQueryOperand236', cardinality 0..*) is associated with 'sql::SelectQuery' (role 'sql_SelectQuery237', cardinality 0..*).
+'sql::InOper' (role 'sql_InOper151', cardinality 0..*) is associated with 'sql::OperandListGroup' (role 'sql_OperandListGroup', cardinality 0..*).
+'sql::OrGroupByColumn' (role 'sql_OrGroupByColumn88', cardinality 0..*) is associated with 'sql::GroupByColumnFull' (role 'sql_GroupByColumnFull', cardinality 0..*).
+'sql::FromTableJoin' (role 'sql_FromTableJoin47', cardinality 0..*) is associated with 'sql::OrExpr' (role 'sql_OrExpr48', cardinality 0..*).
+'sql::UnpivotInClauseArg' (role 'sql_UnpivotInClauseArg256', cardinality 0..*) is associated with 'sql::uicargs' (role 'sql_uicargs', cardinality 0..*).
+'sql::LikeOperand' (role 'sql_LikeOperand', cardinality 0..*) is associated with 'sql::Like' (role 'sql_Like133', cardinality 0..*).
+'sql::OperandListGroup' (role 'sql_OperandListGroup157', cardinality 0..*) is associated with 'sql::ExistsOper' (role 'sql_ExistsOper156', cardinality 0..*).
+'sql::Select' (role 'sql_Select27', cardinality 0..*) is associated with 'sql::FetchFirst' (role 'sql_FetchFirst28', cardinality 0..*).

@@ -1,0 +1,639 @@
+The model has 256 class(es).
+The class 'Filter' has no attributes.
+The class 'EdgeMappingImport' has no attributes.
+The class 'DiagramDescription' has no attributes.
+The class 'tool::SelectModelElementVariable' has no attributes.
+The class 'description::NodeMapping' has no attributes.
+The class 'ContainerMapping' has no attributes.
+The class 'diagram::tool::DeleteElementDescription' has no attributes.
+The class 'tool::NodeCreationVariable' has no attributes.
+The class 'diagram::concern::ConcernDescription' has no attributes.
+The class 'diagram::description::EdgeMapping' has the following attributes: 'targetExpression' of type str; 'useDomainElement' of type bool; 'pathExpression' of type str; 'targetFinderExpression' of type str; 'domainClass' of type str; 'sourceFinderExpression' of type str.
+The class 'DRepresentation' has no attributes.
+The class 'diagram::description::IEdgeMapping' has no attributes.
+The class 'diagram::FlatContainerStyle' has the following attributes: 'foregroundColor' of type str; 'backgroundStyle' of type str; 'backgroundColor' of type str.
+The class 'description::AbstractNodeMapping' has no attributes.
+The class 'BasicLabelStyleDescription' has no attributes.
+The class 'diagram::Dot' has the following attributes: 'backgroundColor' of type str; 'strokeSizeComputationExpression' of type str.
+The class 'IEdgeMapping' has no attributes.
+The class 'diagram::style::WorkspaceImageDescription' has the following attributes: 'workspacePath' of type str.
+The class 'diagram::style::CustomStyleDescription' has the following attributes: 'id' of type str.
+The class 'diagram::tool::DiagramNavigationDescription' has no attributes.
+The class 'diagram::Square' has the following attributes: 'color' of type str; 'height' of type str; 'width' of type str.
+The class 'tool::VariableContainer' has no attributes.
+The class 'diagram::tool::TargetEdgeViewCreationVariable' has no attributes.
+The class 'DRepresentationElement' has no attributes.
+The class 'diagram::WorkspaceImage' has the following attributes: 'workspacePath' of type str.
+The class 'Customization' has no attributes.
+The class 'Layout' has no attributes.
+The class 'diagram::tool::ContainerDropDescription' has the following attributes: 'dragSource' of type str; 'moveEdges' of type bool.
+The class 'diagram::CustomStyle' has the following attributes: 'id' of type str.
+The class 'description::RepresentationElementMapping' has no attributes.
+The class 'diagram::CenterLabelStyle' has no attributes.
+The class 'tool::ToolGroup' has no attributes.
+The class 'diagram::style::BundledImageDescription' has the following attributes: 'shape' of type str; 'providedShapeID' of type str.
+The class 'tool::DirectEditLabel' has no attributes.
+The class 'diagram::tool::SourceEdgeViewCreationVariable' has no attributes.
+The class 'diagram::EdgeTarget' has no attributes.
+The class 'ConditionalEdgeStyleDescription' has no attributes.
+The class 'diagram::filter::Filter' has the following attributes: 'filterKind' of type str.
+The class 'tool::TargetEdgeViewCreationVariable' has no attributes.
+The class 'EdgeStyle' has no attributes.
+The class 'description::DocumentedElement' has no attributes.
+The class 'ConditionalNodeStyleDescription' has no attributes.
+The class 'style::HideLabelCapabilityStyleDescription' has no attributes.
+The class 'diagram::DragAndDropTarget' has no attributes.
+The class 'diagram::tool::ToolGroup' has no attributes.
+The class 'diagram::description::ConditionalEdgeStyleDescription' has no attributes.
+The class 'tool::PopupMenu' has no attributes.
+The class 'DecorationDescriptionsSet' has no attributes.
+The class 'diagram::DSemanticDiagram' has no attributes.
+The class 'diagram::AbstractDNode' has the following attributes: 'arrangeConstraints' of type str.
+The class 'description::AbstractVariable' has no attributes.
+The class 'diagram::tool::ContainerCreationDescription' has the following attributes: 'iconPath' of type str.
+The class 'diagram::VariableValue' has no attributes.
+The class 'diagram::HideFilter' has no attributes.
+The class 'ColorDescription' has no attributes.
+The class 'diagram::DNodeListElement' has no attributes.
+The class 'AdditionalLayer' has no attributes.
+The class 'diagram::description::MappingBasedDecoration' has no attributes.
+The class 'diagram::description::DiagramImportDescription' has no attributes.
+The class 'diagram::description::ConditionalContainerStyleDescription' has no attributes.
+The class 'tool::ToolGroupExtension' has no attributes.
+The class 'diagram::filter::CompositeFilterDescription' has no attributes.
+The class 'AbstractDNode' has no attributes.
+The class 'diagram::Note' has the following attributes: 'color' of type str.
+The class 'tool::ToolSection' has no attributes.
+The class 'diagram::IndirectlyCollapseFilter' has no attributes.
+The class 'diagram::tool::DeleteHookParameter' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'diagram::style::GaugeSectionDescription' has the following attributes: 'valueExpression' of type str; 'label' of type str; 'minValueExpression' of type str; 'maxValueExpression' of type str.
+The class 'diagram::description::DiagramDescription' has the following attributes: 'enablePopupBars' of type bool; 'preconditionExpression' of type str; 'rootExpression' of type str; 'domainClass' of type str.
+The class 'Layer' has no attributes.
+The class 'diagram::tool::DirectEditLabel' has the following attributes: 'inputLabelExpression' of type str.
+The class 'diagram::tool::Navigation' has the following attributes: 'createIfNotExistent' of type bool.
+The class 'style::EndLabelStyleDescription' has no attributes.
+The class 'description::DiagramElementMapping' has no attributes.
+The class 'diagram::DEdge' has the following attributes: 'size' of type str; 'isFold' of type bool; 'endLabel' of type str; 'arrangeConstraints' of type str; 'isMockEdge' of type bool; 'routingStyle' of type str; 'beginLabel' of type str.
+The class 'diagram::filter::MappingFilter' has the following attributes: 'viewConditionExpression' of type str; 'semanticConditionExpression' of type str.
+The class 'TypedVariable' has no attributes.
+The class 'filter::Filter' has no attributes.
+The class 'tool::EditMaskVariables' has no attributes.
+The class 'diagram::DNodeList' has no attributes.
+The class 'diagram::ComputedStyleDescriptionRegistry' has no attributes.
+The class 'diagram::BracketEdgeStyle' has no attributes.
+The class 'diagram::style::BeginLabelStyleDescription' has no attributes.
+The class 'BasicLabelStyle' has no attributes.
+The class 'diagram::description::EdgeMappingImport' has the following attributes: 'inheritsAncestorFilters' of type bool.
+The class 'tool::ElementDropVariable' has no attributes.
+The class 'diagram::tool::TargetEdgeCreationVariable' has no attributes.
+The class 'ConditionalContainerStyleDescription' has no attributes.
+The class 'NodeStyle' has no attributes.
+The class 'DDiagramElementContainer' has no attributes.
+The class 'diagram::description::ContainerMappingImport' has no attributes.
+The class 'diagram::HideLabelCapabilityStyle' has the following attributes: 'hideLabelByDefault' of type bool.
+The class 'description::IEdgeMapping' has no attributes.
+The class 'diagram::style::BracketEdgeStyleDescription' has no attributes.
+The class 'diagram::tool::NodeCreationVariable' has no attributes.
+The class 'diagram::tool::DiagramCreationDescription' has no attributes.
+The class 'AbstractToolDescription' has no attributes.
+The class 'tool::TargetEdgeCreationVariable' has no attributes.
+The class 'description::DiagramDescription' has no attributes.
+The class 'diagram::EdgeStyle' has the following attributes: 'targetArrow' of type str; 'foldingStyle' of type str; 'size' of type str; 'sourceArrow' of type str; 'routingStyle' of type str; 'lineStyle' of type str; 'strokeColor' of type str; 'centered' of type str.
+The class 'diagram::tool::RequestDescription' has the following attributes: 'type' of type str.
+The class 'diagram::BundledImage' has the following attributes: 'providedShapeID' of type str; 'color' of type str; 'shape' of type str.
+The class 'diagram::TypedVariableValue' has the following attributes: 'value' of type str.
+The class 'ConditionalStyleDescription' has no attributes.
+The class 'ToolEntry' has no attributes.
+The class 'NodeMapping' has no attributes.
+The class 'CreateView' has no attributes.
+The class 'diagram::description::DiagramExtensionDescription' has no attributes.
+The class 'AbstractNodeMapping' has no attributes.
+The class 'CollapseFilter' has no attributes.
+The class 'diagram::DDiagram' has the following attributes: 'headerHeight' of type int; 'isInLayoutingMode' of type bool; 'synchronized' of type bool.
+The class 'HideLabelCapabilityStyle' has no attributes.
+The class 'tool::DropContainerVariable' has no attributes.
+The class 'style::EdgeStyleDescription' has no attributes.
+The class 'diagram::style::EdgeStyleDescription' has the following attributes: 'targetArrow' of type str; 'endsCentering' of type str; 'foldingStyle' of type str; 'routingStyle' of type str; 'lineStyle' of type str; 'sourceArrow' of type str; 'sizeComputationExpression' of type str.
+The class 'diagram::style::HideLabelCapabilityStyleDescription' has the following attributes: 'hideLabelByDefault' of type bool.
+The class 'tool::DeleteHookParameter' has no attributes.
+The class 'diagram::style::NodeStyleDescription' has the following attributes: 'labelPosition' of type str; 'forbiddenSides' of type str; 'resizeKind' of type str; 'sizeComputationExpression' of type str.
+The class 'diagram::tool::DeleteHook' has the following attributes: 'id' of type str.
+The class 'diagram::style::ContainerStyleDescription' has the following attributes: 'roundedCorner' of type bool.
+The class 'diagram::tool::NodeCreationDescription' has the following attributes: 'iconPath' of type str.
+The class 'tool::BehaviorTool' has no attributes.
+The class 'diagram::Decoration' has no attributes.
+The class 'diagram::style::SizeComputationContainerStyleDescription' has the following attributes: 'heightComputationExpression' of type str; 'widthComputationExpression' of type str.
+The class 'style::SizeComputationContainerStyleDescription' has no attributes.
+The class 'LabelStyle' has no attributes.
+The class 'diagram::style::RoundedCornerStyleDescription' has the following attributes: 'arcWidth' of type str; 'arcHeight' of type str.
+The class 'ContainerModelOperation' has no attributes.
+The class 'diagram::style::FlatContainerStyleDescription' has the following attributes: 'backgroundStyle' of type str.
+The class 'diagram::filter::FilterDescription' has no attributes.
+The class 'DiagramElementMapping' has no attributes.
+The class 'tool::SourceEdgeViewCreationVariable' has no attributes.
+The class 'DecorationDescription' has no attributes.
+The class 'diagram::GaugeCompositeStyle' has the following attributes: 'alignment' of type str.
+The class 'diagram::Style' has no attributes.
+The class 'tool::ContainerViewVariable' has no attributes.
+The class 'diagram::DDiagramElement' has the following attributes: 'tooltipText' of type str; 'visible' of type bool.
+The class 'tool::InitialNodeCreationOperation' has no attributes.
+The class 'diagram::style::EndLabelStyleDescription' has no attributes.
+The class 'VariableValue' has no attributes.
+The class 'RepresentationExtensionDescription' has no attributes.
+The class 'EdgeStyleDescription' has no attributes.
+The class 'diagram::BorderedStyle' has the following attributes: 'borderLineStyle' of type str; 'borderSize' of type str; 'borderColor' of type str; 'borderSizeComputationExpression' of type str.
+The class 'diagram::description::Layout' has no attributes.
+The class 'diagram::tool::ReconnectEdgeDescription' has the following attributes: 'reconnectionKind' of type str.
+The class 'tool::ReconnectEdgeDescription' has no attributes.
+The class 'diagram::filter::VariableFilter' has the following attributes: 'semanticConditionExpression' of type str.
+The class 'concern::ConcernDescription' has no attributes.
+The class 'diagram::AbsoluteBoundsFilter' has the following attributes: 'y' of type str; 'x' of type str; 'height' of type str; 'width' of type str.
+The class 'description::AbstractMappingImport' has no attributes.
+The class 'diagram::tool::EdgeCreationDescription' has the following attributes: 'iconPath' of type str; 'connectionStartPrecondition' of type str.
+The class 'diagram::EObjectVariableValue' has no attributes.
+The class 'diagram::description::Layer' has the following attributes: 'icon' of type str.
+The class 'DDiagram' has no attributes.
+The class 'diagram::tool::ToolGroupExtension' has no attributes.
+The class 'diagram::FoldingPointFilter' has no attributes.
+The class 'tool::ElementDoubleClickVariable' has no attributes.
+The class 'diagram::Ellipse' has the following attributes: 'color' of type str; 'horizontalDiameter' of type str; 'verticalDiameter' of type str.
+The class 'BorderedStyle' has no attributes.
+The class 'style::BorderedStyleDescription' has no attributes.
+The class 'diagram::style::BorderedStyleDescription' has the following attributes: 'borderSizeComputationExpression' of type str; 'borderLineStyle' of type str.
+The class 'diagram::FoldingFilter' has no attributes.
+The class 'diagram::EObject' has no attributes.
+The class 'diagram::style::DotDescription' has the following attributes: 'strokeSizeComputationExpression' of type str.
+The class 'RepresentationCreationDescription' has no attributes.
+The class 'diagram::GraphicalFilter' has no attributes.
+The class 'diagram::description::ConditionalNodeStyleDescription' has no attributes.
+The class 'diagram::tool::SourceEdgeCreationVariable' has no attributes.
+The class 'diagram::tool::DoubleClickDescription' has no attributes.
+The class 'GraphicalFilter' has no attributes.
+The class 'validation::ValidationRule' has no attributes.
+The class 'description::EndUserDocumentedElement' has no attributes.
+The class 'diagram::description::DragAndDropTargetDescription' has no attributes.
+The class 'NodeStyleDescription' has no attributes.
+The class 'diagram::CollapseFilter' has the following attributes: 'width' of type int; 'height' of type int.
+The class 'diagram::EndLabelStyle' has no attributes.
+The class 'FilterDescription' has no attributes.
+The class 'concern::ConcernSet' has no attributes.
+The class 'tool::ElementDeleteVariable' has no attributes.
+The class 'style::RoundedCornerStyleDescription' has no attributes.
+The class 'diagram::ContainerStyle' has no attributes.
+The class 'diagram::style::EllipseNodeDescription' has the following attributes: 'horizontalDiameterComputationExpression' of type str; 'verticalDiameterComputationExpression' of type str.
+The class 'tool::InitialContainerDropOperation' has no attributes.
+The class 'diagram::description::OrderedTreeLayout' has the following attributes: 'childrenExpression' of type str.
+The class 'Customizable' has no attributes.
+The class 'diagram::description::NodeMapping' has no attributes.
+The class 'diagram::style::ShapeContainerStyleDescription' has the following attributes: 'shape' of type str.
+The class 'diagram::ShapeContainerStyle' has the following attributes: 'backgroundColor' of type str; 'shape' of type str.
+The class 'diagram::tool::CreateEdgeView' has the following attributes: 'sourceExpression' of type str; 'targetExpression' of type str.
+The class 'ContainerStyle' has no attributes.
+The class 'description::ContainerMapping' has no attributes.
+The class 'diagram::BeginLabelStyle' has no attributes.
+The class 'diagram::Lozenge' has the following attributes: 'width' of type str; 'color' of type str; 'height' of type str.
+The class 'style::BeginLabelStyleDescription' has no attributes.
+The class 'tool::DeleteHook' has no attributes.
+The class 'diagram::GaugeSection' has the following attributes: 'label' of type str; 'backgroundColor' of type str; 'foregroundColor' of type str; 'max' of type str; 'min' of type str; 'value' of type str.
+The class 'style::LabelStyleDescription' has no attributes.
+The class 'description::RepresentationImportDescription' has no attributes.
+The class 'InteractiveVariableDescription' has no attributes.
+The class 'diagram::description::CompositeLayout' has the following attributes: 'padding' of type int; 'direction' of type str.
+The class 'RepresentationNavigationDescription' has no attributes.
+The class 'tool::RepresentationCreationDescription' has no attributes.
+The class 'diagram::style::SquareDescription' has the following attributes: 'height' of type str; 'width' of type str.
+The class 'diagram::description::NodeMappingImport' has no attributes.
+The class 'description::DragAndDropTargetDescription' has no attributes.
+The class 'filter::CompositeFilterDescription' has no attributes.
+The class 'diagram::description::AbstractNodeMapping' has the following attributes: 'domainClass' of type str.
+The class 'EdgeTarget' has no attributes.
+The class 'tool::DoubleClickDescription' has no attributes.
+The class 'diagram::style::LozengeNodeDescription' has the following attributes: 'widthComputationExpression' of type str; 'heightComputationExpression' of type str.
+The class 'DocumentedElement' has no attributes.
+The class 'diagram::NodeStyle' has the following attributes: 'labelPosition' of type str.
+The class 'tool::SourceEdgeCreationVariable' has no attributes.
+The class 'style::CenterLabelStyleDescription' has no attributes.
+The class 'filter::FilterDescription' has no attributes.
+The class 'description::IdentifiedElement' has no attributes.
+The class 'diagram::tool::CreateView' has the following attributes: 'variableName' of type str; 'containerViewExpression' of type str.
+The class 'diagram::description::AdditionalLayer' has the following attributes: 'optional' of type bool; 'activeByDefault' of type bool.
+The class 'tool::AbstractToolDescription' has no attributes.
+The class 'diagram::description::DiagramElementMapping' has the following attributes: 'semanticCandidatesExpression' of type str; 'createElements' of type bool; 'preconditionExpression' of type str; 'semanticElements' of type str; 'synchronizationLock' of type bool.
+The class 'diagram::tool::ElementDoubleClickVariable' has no attributes.
+The class 'diagram::DNodeContainer' has the following attributes: 'childrenPresentation' of type str.
+The class 'DSemanticDecorator' has no attributes.
+The class 'tool::DeleteElementDescription' has no attributes.
+The class 'validation::ValidationSet' has no attributes.
+The class 'diagram::FilterVariableHistory' has no attributes.
+The class 'diagram::description::ContainerMapping' has the following attributes: 'childrenPresentation' of type str.
+The class 'diagram::DDiagramElementContainer' has the following attributes: 'width' of type str; 'height' of type str.
+The class 'tool::ElementSelectVariable' has no attributes.
+The class 'diagram::AppliedCompositeFilters' has no attributes.
+The class 'tool::ContainerDropDescription' has no attributes.
+The class 'description::RepresentationDescription' has no attributes.
+The class 'style::NodeStyleDescription' has no attributes.
+The class 'DDiagramElement' has no attributes.
+The class 'diagram::style::NoteDescription' has no attributes.
+The class 'diagram::tool::BehaviorTool' has the following attributes: 'domainClass' of type str.
+The class 'style::StyleDescription' has no attributes.
+The class 'StyleDescription' has no attributes.
+The class 'tool::InitialOperation' has no attributes.
+The class 'diagram::tool::ToolSection' has the following attributes: 'icon' of type str.
+The class 'DragAndDropTarget' has no attributes.
+The class 'description::PasteTargetDescription' has no attributes.
+The class 'diagram::concern::ConcernSet' has no attributes.
+The class 'tool::InitEdgeCreationOperation' has no attributes.
+The class 'diagram::DNode' has the following attributes: 'resizeKind' of type str; 'height' of type str; 'width' of type str; 'labelPosition' of type str.
+The class 'diagram::HideLabelFilter' has no attributes.
+The class 'style::ContainerStyleDescription' has no attributes.
+The class 'style::GaugeSectionDescription' has no attributes.
+The class 'MappingBasedToolDescription' has no attributes.
+The class 'EdgeMapping' has no attributes.
+The class 'style::LabelBorderStyleDescription' has no attributes.
+The class 'tool::ToolEntry' has no attributes.
+The class 'diagram::style::GaugeCompositeStyleDescription' has the following attributes: 'alignment' of type str.
+The class 'diagram::style::CenterLabelStyleDescription' has no attributes.
+The class 'Style' has no attributes.
+The class 'style::TooltipStyleDescription' has no attributes.
+The enumeration 'ArrangeConstraint' has the following literals: 'KEEP_RATIO', 'KEEP_LOCATION', 'KEEP_SIZE'.
+The enumeration 'BackgroundStyle' has the following literals: 'Liquid', 'GradientTopToBottom', 'GradientLeftToRight'.
+The enumeration 'ContainerLayout' has the following literals: 'HorizontalStack', 'FreeForm', 'VerticalStack', 'List'.
+The enumeration 'CenteringStyle' has the following literals: 'None_', 'Target', 'Source', 'Both'.
+The enumeration 'EdgeArrows' has the following literals: 'OutputArrow', 'OutputFillClosedArrow', 'InputArrow', 'FillDiamond', 'InputClosedArrow', 'InputArrowWithFillDiamond', 'Diamond', 'InputArrowWithDiamond', 'InputFillClosedArrow', 'OutputClosedArrow', 'NoDecoration'.
+The enumeration 'LayoutDirection' has the following literals: 'LeftToRight', 'BottomToTop', 'TopToBottom'.
+The enumeration 'FilterKind' has the following literals: 'COLLAPSE', 'HIDE'.
+The enumeration 'ContainerShape' has the following literals: 'parallelogram'.
+The enumeration 'BundledImageShape' has the following literals: 'dot', 'providedShape', 'ring', 'square', 'stroke', 'triangle'.
+The enumeration 'LineStyle' has the following literals: 'dash', 'solid', 'dash_dot', 'dot'.
+The enumeration 'Side' has the following literals: 'WEST', 'EAST', 'SOUTH', 'NORTH'.
+The enumeration 'ResizeKind' has the following literals: 'NORTH_SOUTH', 'EAST_WEST', 'NONE', 'NSEW'.
+The enumeration 'LabelPosition' has the following literals: 'node', 'border'.
+The enumeration 'ReconnectionKind' has the following literals: 'RECONNECT_TARGET', 'RECONNECT_SOURCE', 'RECONNECT_BOTH'.
+The enumeration 'FoldingStyle' has the following literals: 'NONE', 'TARGET', 'SOURCE'.
+The enumeration 'EdgeRouting' has the following literals: 'tree', 'manhattan', 'straight'.
+The enumeration 'AlignmentKind' has the following literals: 'SQUARE', 'VERTICAL', 'HORIZONTAL'.
+'diagram::CollapseFilter' is a specialization of 'GraphicalFilter'.
+'diagram::tool::NodeCreationVariable' is a specialization of 'tool::VariableContainer'.
+'diagram::description::NodeMappingImport' is a specialization of 'description::AbstractMappingImport'.
+'diagram::tool::ElementDoubleClickVariable' is a specialization of 'tool::VariableContainer'.
+'diagram::tool::SourceEdgeCreationVariable' is a specialization of 'description::AbstractVariable'.
+'diagram::DDiagram' is a specialization of 'DRepresentation'.
+'diagram::style::WorkspaceImageDescription' is a specialization of 'style::NodeStyleDescription'.
+'diagram::DNode' is a specialization of 'AbstractDNode'.
+'diagram::ShapeContainerStyle' is a specialization of 'ContainerStyle'.
+'diagram::style::NodeStyleDescription' is a specialization of 'style::HideLabelCapabilityStyleDescription'.
+'diagram::description::AbstractNodeMapping' is a specialization of 'description::DocumentedElement'.
+'diagram::style::ContainerStyleDescription' is a specialization of 'style::RoundedCornerStyleDescription'.
+'diagram::style::GaugeCompositeStyleDescription' is a specialization of 'NodeStyleDescription'.
+'diagram::DSemanticDiagram' is a specialization of 'DSemanticDecorator'.
+'diagram::tool::CreateEdgeView' is a specialization of 'CreateView'.
+'diagram::tool::DiagramNavigationDescription' is a specialization of 'RepresentationNavigationDescription'.
+'diagram::style::NodeStyleDescription' is a specialization of 'style::BorderedStyleDescription'.
+'diagram::tool::ToolGroup' is a specialization of 'ToolEntry'.
+'diagram::description::DiagramImportDescription' is a specialization of 'description::DiagramDescription'.
+'diagram::tool::TargetEdgeCreationVariable' is a specialization of 'tool::VariableContainer'.
+'diagram::description::EdgeMapping' is a specialization of 'description::DiagramElementMapping'.
+'diagram::tool::SourceEdgeViewCreationVariable' is a specialization of 'tool::VariableContainer'.
+'diagram::tool::TargetEdgeCreationVariable' is a specialization of 'description::AbstractVariable'.
+'diagram::style::SquareDescription' is a specialization of 'NodeStyleDescription'.
+'diagram::FlatContainerStyle' is a specialization of 'ContainerStyle'.
+'diagram::tool::CreateView' is a specialization of 'ContainerModelOperation'.
+'diagram::HideFilter' is a specialization of 'GraphicalFilter'.
+'diagram::description::MappingBasedDecoration' is a specialization of 'DecorationDescription'.
+'diagram::concern::ConcernDescription' is a specialization of 'description::DocumentedElement'.
+'diagram::Note' is a specialization of 'NodeStyle'.
+'diagram::description::OrderedTreeLayout' is a specialization of 'Layout'.
+'diagram::GaugeSection' is a specialization of 'Customizable'.
+'diagram::DDiagramElementContainer' is a specialization of 'AbstractDNode'.
+'diagram::tool::TargetEdgeViewCreationVariable' is a specialization of 'tool::VariableContainer'.
+'diagram::BeginLabelStyle' is a specialization of 'BasicLabelStyle'.
+'diagram::tool::DiagramCreationDescription' is a specialization of 'RepresentationCreationDescription'.
+'diagram::filter::VariableFilter' is a specialization of 'Filter'.
+'diagram::description::Layer' is a specialization of 'description::EndUserDocumentedElement'.
+'diagram::DNodeList' is a specialization of 'DDiagramElementContainer'.
+'diagram::BracketEdgeStyle' is a specialization of 'EdgeStyle'.
+'diagram::style::CustomStyleDescription' is a specialization of 'NodeStyleDescription'.
+'diagram::BorderedStyle' is a specialization of 'Style'.
+'diagram::tool::ReconnectEdgeDescription' is a specialization of 'MappingBasedToolDescription'.
+'diagram::filter::FilterDescription' is a specialization of 'description::IdentifiedElement'.
+'diagram::style::DotDescription' is a specialization of 'NodeStyleDescription'.
+'diagram::HideLabelFilter' is a specialization of 'GraphicalFilter'.
+'diagram::BundledImage' is a specialization of 'NodeStyle'.
+'diagram::description::ConditionalContainerStyleDescription' is a specialization of 'ConditionalStyleDescription'.
+'diagram::tool::DeleteElementDescription' is a specialization of 'MappingBasedToolDescription'.
+'diagram::ContainerStyle' is a specialization of 'HideLabelCapabilityStyle'.
+'diagram::tool::SourceEdgeViewCreationVariable' is a specialization of 'description::AbstractVariable'.
+'diagram::NodeStyle' is a specialization of 'LabelStyle'.
+'diagram::style::CenterLabelStyleDescription' is a specialization of 'BasicLabelStyleDescription'.
+'diagram::tool::ToolSection' is a specialization of 'description::IdentifiedElement'.
+'diagram::DDiagramElement' is a specialization of 'DRepresentationElement'.
+'diagram::style::WorkspaceImageDescription' is a specialization of 'style::ContainerStyleDescription'.
+'diagram::description::ConditionalEdgeStyleDescription' is a specialization of 'ConditionalStyleDescription'.
+'diagram::description::Layer' is a specialization of 'description::IdentifiedElement'.
+'diagram::DNodeContainer' is a specialization of 'DDiagramElementContainer'.
+'diagram::style::EllipseNodeDescription' is a specialization of 'NodeStyleDescription'.
+'diagram::style::ContainerStyleDescription' is a specialization of 'style::BorderedStyleDescription'.
+'diagram::style::EndLabelStyleDescription' is a specialization of 'BasicLabelStyleDescription'.
+'diagram::NodeStyle' is a specialization of 'HideLabelCapabilityStyle'.
+'diagram::style::NodeStyleDescription' is a specialization of 'style::LabelStyleDescription'.
+'diagram::CustomStyle' is a specialization of 'NodeStyle'.
+'diagram::FoldingFilter' is a specialization of 'GraphicalFilter'.
+'diagram::tool::SourceEdgeCreationVariable' is a specialization of 'tool::VariableContainer'.
+'diagram::style::NodeStyleDescription' is a specialization of 'style::StyleDescription'.
+'diagram::style::ContainerStyleDescription' is a specialization of 'style::HideLabelCapabilityStyleDescription'.
+'diagram::description::ContainerMappingImport' is a specialization of 'description::AbstractMappingImport'.
+'diagram::NodeStyle' is a specialization of 'Style'.
+'diagram::GaugeCompositeStyle' is a specialization of 'NodeStyle'.
+'diagram::style::FlatContainerStyleDescription' is a specialization of 'style::ContainerStyleDescription'.
+'diagram::tool::DoubleClickDescription' is a specialization of 'MappingBasedToolDescription'.
+'diagram::filter::FilterDescription' is a specialization of 'description::DocumentedElement'.
+'diagram::tool::EdgeCreationDescription' is a specialization of 'MappingBasedToolDescription'.
+'diagram::description::ContainerMapping' is a specialization of 'description::DragAndDropTargetDescription'.
+'diagram::tool::ContainerCreationDescription' is a specialization of 'MappingBasedToolDescription'.
+'diagram::description::ContainerMappingImport' is a specialization of 'description::ContainerMapping'.
+'diagram::DDiagramElementContainer' is a specialization of 'EdgeTarget'.
+'diagram::tool::DirectEditLabel' is a specialization of 'MappingBasedToolDescription'.
+'diagram::tool::TargetEdgeViewCreationVariable' is a specialization of 'description::AbstractVariable'.
+'diagram::Dot' is a specialization of 'NodeStyle'.
+'diagram::DSemanticDiagram' is a specialization of 'DDiagram'.
+'diagram::style::ShapeContainerStyleDescription' is a specialization of 'style::ContainerStyleDescription'.
+'diagram::AbsoluteBoundsFilter' is a specialization of 'GraphicalFilter'.
+'diagram::EObjectVariableValue' is a specialization of 'VariableValue'.
+'diagram::ContainerStyle' is a specialization of 'BorderedStyle'.
+'diagram::Square' is a specialization of 'NodeStyle'.
+'diagram::description::DiagramImportDescription' is a specialization of 'description::RepresentationImportDescription'.
+'diagram::EndLabelStyle' is a specialization of 'BasicLabelStyle'.
+'diagram::tool::ContainerDropDescription' is a specialization of 'MappingBasedToolDescription'.
+'diagram::style::ContainerStyleDescription' is a specialization of 'style::LabelStyleDescription'.
+'diagram::concern::ConcernDescription' is a specialization of 'description::IdentifiedElement'.
+'diagram::FoldingPointFilter' is a specialization of 'GraphicalFilter'.
+'diagram::WorkspaceImage' is a specialization of 'ContainerStyle'.
+'diagram::style::BeginLabelStyleDescription' is a specialization of 'BasicLabelStyleDescription'.
+'diagram::AppliedCompositeFilters' is a specialization of 'GraphicalFilter'.
+'diagram::tool::BehaviorTool' is a specialization of 'AbstractToolDescription'.
+'diagram::DDiagramElementContainer' is a specialization of 'DragAndDropTarget'.
+'diagram::NodeStyle' is a specialization of 'BorderedStyle'.
+'diagram::description::NodeMapping' is a specialization of 'description::AbstractNodeMapping'.
+'diagram::style::ContainerStyleDescription' is a specialization of 'style::TooltipStyleDescription'.
+'diagram::tool::NodeCreationDescription' is a specialization of 'MappingBasedToolDescription'.
+'diagram::DDiagram' is a specialization of 'description::DocumentedElement'.
+'diagram::description::AbstractNodeMapping' is a specialization of 'description::DiagramElementMapping'.
+'diagram::tool::ElementDoubleClickVariable' is a specialization of 'description::AbstractVariable'.
+'diagram::IndirectlyCollapseFilter' is a specialization of 'CollapseFilter'.
+'diagram::filter::MappingFilter' is a specialization of 'Filter'.
+'diagram::EdgeStyle' is a specialization of 'Style'.
+'diagram::style::RoundedCornerStyleDescription' is a specialization of 'StyleDescription'.
+'diagram::Ellipse' is a specialization of 'NodeStyle'.
+'diagram::style::NoteDescription' is a specialization of 'NodeStyleDescription'.
+'diagram::description::DiagramElementMapping' is a specialization of 'description::RepresentationElementMapping'.
+'diagram::DNode' is a specialization of 'EdgeTarget'.
+'diagram::description::EdgeMappingImport' is a specialization of 'description::IdentifiedElement'.
+'diagram::tool::RequestDescription' is a specialization of 'AbstractToolDescription'.
+'diagram::description::ContainerMapping' is a specialization of 'description::AbstractNodeMapping'.
+'diagram::Lozenge' is a specialization of 'NodeStyle'.
+'diagram::description::NodeMapping' is a specialization of 'description::DragAndDropTargetDescription'.
+'diagram::style::FlatContainerStyleDescription' is a specialization of 'style::SizeComputationContainerStyleDescription'.
+'diagram::DEdge' is a specialization of 'DDiagramElement'.
+'diagram::description::EdgeMappingImport' is a specialization of 'description::IEdgeMapping'.
+'diagram::description::AdditionalLayer' is a specialization of 'Layer'.
+'diagram::TypedVariableValue' is a specialization of 'VariableValue'.
+'diagram::style::EdgeStyleDescription' is a specialization of 'StyleDescription'.
+'diagram::ContainerStyle' is a specialization of 'LabelStyle'.
+'diagram::style::BundledImageDescription' is a specialization of 'NodeStyleDescription'.
+'diagram::description::EdgeMappingImport' is a specialization of 'description::DocumentedElement'.
+'diagram::filter::CompositeFilterDescription' is a specialization of 'FilterDescription'.
+'diagram::tool::ToolSection' is a specialization of 'description::DocumentedElement'.
+'diagram::DDiagram' is a specialization of 'DragAndDropTarget'.
+'diagram::description::DiagramDescription' is a specialization of 'description::RepresentationDescription'.
+'diagram::description::EdgeMapping' is a specialization of 'description::IEdgeMapping'.
+'diagram::style::ShapeContainerStyleDescription' is a specialization of 'style::SizeComputationContainerStyleDescription'.
+'diagram::DNode' is a specialization of 'DragAndDropTarget'.
+'diagram::ContainerStyle' is a specialization of 'Style'.
+'diagram::DEdge' is a specialization of 'EdgeTarget'.
+'diagram::description::Layer' is a specialization of 'description::DocumentedElement'.
+'diagram::description::NodeMappingImport' is a specialization of 'description::NodeMapping'.
+'diagram::style::NodeStyleDescription' is a specialization of 'style::TooltipStyleDescription'.
+'diagram::description::ConditionalNodeStyleDescription' is a specialization of 'ConditionalStyleDescription'.
+'diagram::description::DiagramDescription' is a specialization of 'description::PasteTargetDescription'.
+'diagram::AbstractDNode' is a specialization of 'DDiagramElement'.
+'diagram::WorkspaceImage' is a specialization of 'NodeStyle'.
+'diagram::description::DiagramDescription' is a specialization of 'description::DragAndDropTargetDescription'.
+'diagram::concern::ConcernSet' is a specialization of 'DocumentedElement'.
+'diagram::style::BorderedStyleDescription' is a specialization of 'StyleDescription'.
+'diagram::description::DiagramElementMapping' is a specialization of 'description::PasteTargetDescription'.
+'diagram::style::BracketEdgeStyleDescription' is a specialization of 'EdgeStyleDescription'.
+'diagram::description::Layout' is a specialization of 'DocumentedElement'.
+'diagram::description::EdgeMapping' is a specialization of 'description::DocumentedElement'.
+'diagram::description::DiagramExtensionDescription' is a specialization of 'RepresentationExtensionDescription'.
+'diagram::style::LozengeNodeDescription' is a specialization of 'NodeStyleDescription'.
+'diagram::description::CompositeLayout' is a specialization of 'Layout'.
+'diagram::DNodeListElement' is a specialization of 'AbstractDNode'.
+'diagram::tool::NodeCreationVariable' is a specialization of 'description::AbstractVariable'.
+'diagram::CenterLabelStyle' is a specialization of 'BasicLabelStyle'.
+'diagram::tool::Navigation' is a specialization of 'ContainerModelOperation'.
+'diagram::description::AbstractNodeMapping' (role 'diagram_description_AbstractNodeMapping', cardinality 0..*) is associated with 'NodeMapping' (role 'NodeMapping187', cardinality 0..*).
+'diagram::DNode' (role 'diagram_DNode', cardinality 0..*) is associated with 'diagram::DDiagram' (role 'diagram_DDiagram9', cardinality 0..*).
+'diagram::DNode' (role 'diagram_DNode55', cardinality 0..*) is associated with 'diagram::DDiagramElementContainer' (role 'diagram_DDiagramElementContainer54', cardinality 0..*).
+'diagram::description::OrderedTreeLayout' (role 'diagram_description_OrderedTreeLayout', cardinality 0..*) is associated with 'AbstractNodeMapping' (role 'AbstractNodeMapping244', cardinality 0..*).
+'diagram::description::NodeMapping' (role 'diagram_description_NodeMapping', cardinality 0..*) is associated with 'style::NodeStyleDescription' (role 'style_NodeStyleDescription', cardinality 0..*).
+'diagram::style::EdgeStyleDescription' (role 'diagram_style_EdgeStyleDescription318', cardinality 0..*) is associated with 'DiagramElementMapping' (role 'DiagramElementMapping319', cardinality 0..*).
+'tool::InitEdgeCreationOperation' (role 'tool_InitEdgeCreationOperation', cardinality 0..*) is associated with 'diagram::tool::EdgeCreationDescription' (role 'diagram_tool_EdgeCreationDescription359', cardinality 0..*).
+'diagram::DDiagramElement' (role 'diagram_DDiagramElement3', cardinality 0..*) is associated with 'diagram::DDiagram' (role 'diagram_DDiagram2', cardinality 0..*).
+'tool::ElementSelectVariable' (role 'tool_ElementSelectVariable', cardinality 0..*) is associated with 'diagram::tool::ReconnectEdgeDescription' (role 'diagram_tool_ReconnectEdgeDescription414', cardinality 0..*).
+'style::ContainerStyleDescription' (role 'style_ContainerStyleDescription', cardinality 0..*) is associated with 'diagram::description::ContainerMapping' (role 'diagram_description_ContainerMapping212', cardinality 0..*).
+'NodeMapping' (role 'NodeMapping155', cardinality 0..*) is associated with 'diagram::description::DiagramDescription' (role 'diagram_description_DiagramDescription154', cardinality 0..*).
+'concern::ConcernSet' (role 'concern_ConcernSet181', cardinality 0..*) is associated with 'diagram::description::DiagramExtensionDescription' (role 'diagram_description_DiagramExtensionDescription180', cardinality 0..*).
+'diagram::Style' (role 'diagram_Style97', cardinality 0..*) is associated with 'diagram::DEdge' (role 'diagram_DEdge96', cardinality 0..*).
+'diagram::style::DotDescription' (role 'diagram_style_DotDescription', cardinality 0..*) is associated with 'ColorDescription' (role 'ColorDescription290', cardinality 0..*).
+'diagram::tool::ContainerCreationDescription' (role 'diagram_tool_ContainerCreationDescription378', cardinality 0..*) is associated with 'AbstractNodeMapping' (role 'AbstractNodeMapping379', cardinality 0..*).
+'ColorDescription' (role 'ColorDescription301', cardinality 0..*) is associated with 'diagram::style::FlatContainerStyleDescription' (role 'diagram_style_FlatContainerStyleDescription300', cardinality 0..*).
+'filter::FilterDescription' (role 'filter_FilterDescription', cardinality 0..*) is associated with 'diagram::DDiagram' (role 'diagram_DDiagram17', cardinality 0..*).
+'DiagramElementMapping' (role 'DiagramElementMapping316', cardinality 0..*) is associated with 'diagram::style::EdgeStyleDescription' (role 'diagram_style_EdgeStyleDescription315', cardinality 0..*).
+'style::StyleDescription' (role 'style_StyleDescription', cardinality 0..*) is associated with 'diagram::ComputedStyleDescriptionRegistry' (role 'diagram_ComputedStyleDescriptionRegistry', cardinality 0..*).
+'diagram::description::DiagramDescription' (role 'diagram_description_DiagramDescription132', cardinality 0..*) is associated with 'tool::AbstractToolDescription' (role 'tool_AbstractToolDescription', cardinality 0..*).
+'diagram::style::GaugeSectionDescription' (role 'diagram_style_GaugeSectionDescription295', cardinality 0..*) is associated with 'ColorDescription' (role 'ColorDescription296', cardinality 0..*).
+'tool::TargetEdgeCreationVariable' (role 'tool_TargetEdgeCreationVariable406', cardinality 0..*) is associated with 'diagram::tool::ReconnectEdgeDescription' (role 'diagram_tool_ReconnectEdgeDescription405', cardinality 0..*).
+'tool::ToolSection' (role 'tool_ToolSection', cardinality 0..*) is associated with 'diagram::description::DiagramDescription' (role 'diagram_description_DiagramDescription168', cardinality 0..*).
+'diagram::DEdge' (role 'DEdge102', cardinality 0..*) is associated with 'diagram::EdgeTarget' (role 'targetNode', cardinality 0..*).
+'diagram::DDiagramElementContainer' (role 'diagram_DDiagramElementContainer60', cardinality 0..*) is associated with 'diagram::DDiagramElement' (role 'diagram_DDiagramElement61', cardinality 0..*).
+'Layout' (role 'Layout', cardinality 0..*) is associated with 'diagram::description::DiagramDescription' (role 'diagram_description_DiagramDescription139', cardinality 0..*).
+'ColorDescription' (role 'ColorDescription298', cardinality 0..*) is associated with 'diagram::style::FlatContainerStyleDescription' (role 'diagram_style_FlatContainerStyleDescription', cardinality 0..*).
+'diagram::DNodeListElement' (role 'diagram_DNodeListElement83', cardinality 0..*) is associated with 'NodeMapping' (role 'NodeMapping84', cardinality 0..*).
+'diagram::tool::EdgeCreationDescription' (role 'diagram_tool_EdgeCreationDescription361', cardinality 0..*) is associated with 'DiagramElementMapping' (role 'DiagramElementMapping362', cardinality 0..*).
+'diagram::description::DiagramImportDescription' (role 'diagram_description_DiagramImportDescription', cardinality 0..*) is associated with 'DiagramDescription' (role 'DiagramDescription173', cardinality 0..*).
+'ColorDescription' (role 'ColorDescription280', cardinality 0..*) is associated with 'diagram::style::SquareDescription' (role 'diagram_style_SquareDescription', cardinality 0..*).
+'tool::InitialContainerDropOperation' (role 'tool_InitialContainerDropOperation', cardinality 0..*) is associated with 'diagram::tool::ContainerDropDescription' (role 'diagram_tool_ContainerDropDescription448', cardinality 0..*).
+'DiagramElementMapping' (role 'DiagramElementMapping428', cardinality 0..*) is associated with 'diagram::tool::CreateView' (role 'diagram_tool_CreateView', cardinality 0..*).
+'ConditionalContainerStyleDescription' (role 'ConditionalContainerStyleDescription', cardinality 0..*) is associated with 'diagram::description::ContainerMapping' (role 'diagram_description_ContainerMapping214', cardinality 0..*).
+'diagram::tool::BehaviorTool' (role 'diagram_tool_BehaviorTool', cardinality 0..*) is associated with 'tool::InitialOperation' (role 'tool_InitialOperation426', cardinality 0..*).
+'diagram::EdgeStyle' (role 'diagram_EdgeStyle', cardinality 0..*) is associated with 'diagram::DEdge' (role 'diagram_DEdge89', cardinality 0..*).
+'filter::FilterDescription' (role 'filter_FilterDescription20', cardinality 0..*) is associated with 'diagram::DDiagram' (role 'diagram_DDiagram19', cardinality 0..*).
+'filter::Filter' (role 'filter_Filter', cardinality 0..*) is associated with 'diagram::filter::CompositeFilterDescription' (role 'diagram_filter_CompositeFilterDescription', cardinality 0..*).
+'diagram::DDiagram' (role 'diagram_DDiagram13', cardinality 0..*) is associated with 'diagram::DDiagramElementContainer' (role 'diagram_DDiagramElementContainer', cardinality 0..*).
+'diagram::DDiagramElement' (role 'diagram_DDiagramElement73', cardinality 0..*) is associated with 'diagram::DNodeContainer' (role 'diagram_DNodeContainer', cardinality 0..*).
+'diagram::concern::ConcernDescription' (role 'diagram_concern_ConcernDescription461', cardinality 0..*) is associated with 'tool::BehaviorTool' (role 'tool_BehaviorTool462', cardinality 0..*).
+'diagram::DEdge' (role 'outgoingEdges', cardinality 0..*) is associated with 'diagram::EdgeTarget' (role 'EdgeTarget', cardinality 0..*).
+'filter::FilterDescription' (role 'filter_FilterDescription118', cardinality 0..*) is associated with 'diagram::description::DiagramDescription' (role 'diagram_description_DiagramDescription', cardinality 0..*).
+'diagram::description::ContainerMapping' (role 'diagram_description_ContainerMapping206', cardinality 0..*) is associated with 'ContainerMapping' (role 'ContainerMapping207', cardinality 0..*).
+'diagram::tool::DeleteElementDescription' (role 'diagram_tool_DeleteElementDescription382', cardinality 0..*) is associated with 'tool::ElementDeleteVariable' (role 'tool_ElementDeleteVariable383', cardinality 0..*).
+'concern::ConcernDescription' (role 'concern_ConcernDescription', cardinality 0..*) is associated with 'diagram::DDiagram' (role 'diagram_DDiagram15', cardinality 0..*).
+'diagram::description::DiagramDescription' (role 'diagram_description_DiagramDescription125', cardinality 0..*) is associated with 'ContainerMapping' (role 'ContainerMapping126', cardinality 0..*).
+'diagram::description::EdgeMapping' (role 'diagram_description_EdgeMapping222', cardinality 0..*) is associated with 'DiagramElementMapping' (role 'DiagramElementMapping223', cardinality 0..*).
+'diagram::tool::NodeCreationDescription' (role 'diagram_tool_NodeCreationDescription344', cardinality 0..*) is associated with 'tool::InitialNodeCreationOperation' (role 'tool_InitialNodeCreationOperation', cardinality 0..*).
+'tool::SourceEdgeCreationVariable' (role 'tool_SourceEdgeCreationVariable403', cardinality 0..*) is associated with 'diagram::tool::ReconnectEdgeDescription' (role 'diagram_tool_ReconnectEdgeDescription', cardinality 0..*).
+'diagram::tool::EdgeCreationDescription' (role 'diagram_tool_EdgeCreationDescription355', cardinality 0..*) is associated with 'tool::SourceEdgeViewCreationVariable' (role 'tool_SourceEdgeViewCreationVariable', cardinality 0..*).
+'diagram::DDiagramElement' (role 'diagram_DDiagramElement40', cardinality 0..*) is associated with 'diagram::GraphicalFilter' (role 'diagram_GraphicalFilter', cardinality 0..*).
+'diagram::DDiagram' (role 'diagram_DDiagram5', cardinality 0..*) is associated with 'DiagramDescription' (role 'DiagramDescription', cardinality 0..*).
+'ConditionalEdgeStyleDescription' (role 'ConditionalEdgeStyleDescription236', cardinality 0..*) is associated with 'diagram::description::EdgeMappingImport' (role 'diagram_description_EdgeMappingImport235', cardinality 0..*).
+'diagram::tool::EdgeCreationDescription' (role 'diagram_tool_EdgeCreationDescription353', cardinality 0..*) is associated with 'tool::TargetEdgeCreationVariable' (role 'tool_TargetEdgeCreationVariable', cardinality 0..*).
+'tool::SourceEdgeCreationVariable' (role 'tool_SourceEdgeCreationVariable', cardinality 0..*) is associated with 'diagram::tool::EdgeCreationDescription' (role 'diagram_tool_EdgeCreationDescription351', cardinality 0..*).
+'DecorationDescriptionsSet' (role 'DecorationDescriptionsSet', cardinality 0..*) is associated with 'diagram::description::Layer' (role 'diagram_description_Layer271', cardinality 0..*).
+'diagram::EObject' (role 'diagram_EObject', cardinality 0..*) is associated with 'diagram::EObjectVariableValue' (role 'diagram_EObjectVariableValue116', cardinality 0..*).
+'diagram::DDiagramElement' (role 'diagram_DDiagramElement', cardinality 0..*) is associated with 'diagram::DDiagram' (role 'diagram_DDiagram', cardinality 0..*).
+'diagram::description::Layer' (role 'diagram_description_Layer276', cardinality 0..*) is associated with 'Customization' (role 'Customization', cardinality 0..*).
+'ColorDescription' (role 'ColorDescription286', cardinality 0..*) is associated with 'diagram::style::BundledImageDescription' (role 'diagram_style_BundledImageDescription', cardinality 0..*).
+'diagram::tool::NodeCreationDescription' (role 'diagram_tool_NodeCreationDescription346', cardinality 0..*) is associated with 'AbstractNodeMapping' (role 'AbstractNodeMapping347', cardinality 0..*).
+'diagram::DNodeList' (role 'diagram_DNodeList', cardinality 0..*) is associated with 'diagram::DNodeListElement' (role 'diagram_DNodeListElement75', cardinality 0..*).
+'diagram::tool::Navigation' (role 'diagram_tool_Navigation', cardinality 0..*) is associated with 'DiagramDescription' (role 'DiagramDescription430', cardinality 0..*).
+'diagram::ContainerStyle' (role 'diagram_ContainerStyle', cardinality 0..*) is associated with 'diagram::DDiagramElementContainer' (role 'diagram_DDiagramElementContainer63', cardinality 0..*).
+'DiagramDescription' (role 'DiagramDescription432', cardinality 0..*) is associated with 'diagram::tool::DiagramCreationDescription' (role 'diagram_tool_DiagramCreationDescription', cardinality 0..*).
+'tool::InitialOperation' (role 'tool_InitialOperation400', cardinality 0..*) is associated with 'diagram::tool::DoubleClickDescription' (role 'diagram_tool_DoubleClickDescription399', cardinality 0..*).
+'EdgeMappingImport' (role 'EdgeMappingImport254', cardinality 0..*) is associated with 'diagram::description::Layer' (role 'diagram_description_Layer253', cardinality 0..*).
+'tool::DropContainerVariable' (role 'tool_DropContainerVariable', cardinality 0..*) is associated with 'diagram::tool::ContainerDropDescription' (role 'diagram_tool_ContainerDropDescription438', cardinality 0..*).
+'diagram::DDiagramElementContainer' (role 'diagram_DDiagramElementContainer70', cardinality 0..*) is associated with 'ContainerMapping' (role 'ContainerMapping71', cardinality 0..*).
+'NodeMapping' (role 'NodeMapping198', cardinality 0..*) is associated with 'diagram::description::ContainerMapping' (role 'diagram_description_ContainerMapping197', cardinality 0..*).
+'diagram::DDiagramElement' (role 'diagram_DDiagramElement36', cardinality 0..*) is associated with 'diagram::Decoration' (role 'diagram_Decoration', cardinality 0..*).
+'tool::InitialOperation' (role 'tool_InitialOperation424', cardinality 0..*) is associated with 'diagram::tool::DirectEditLabel' (role 'diagram_tool_DirectEditLabel423', cardinality 0..*).
+'diagram::description::EdgeMapping' (role 'diagram_description_EdgeMapping231', cardinality 0..*) is associated with 'AbstractNodeMapping' (role 'AbstractNodeMapping', cardinality 0..*).
+'NodeMapping' (role 'NodeMapping248', cardinality 0..*) is associated with 'diagram::description::Layer' (role 'diagram_description_Layer', cardinality 0..*).
+'diagram::description::EdgeMapping' (role 'diagram_description_EdgeMapping225', cardinality 0..*) is associated with 'style::EdgeStyleDescription' (role 'style_EdgeStyleDescription', cardinality 0..*).
+'ContainerMapping' (role 'ContainerMapping163', cardinality 0..*) is associated with 'diagram::description::DiagramDescription' (role 'diagram_description_DiagramDescription162', cardinality 0..*).
+'diagram::description::Layer' (role 'diagram_description_Layer268', cardinality 0..*) is associated with 'tool::AbstractToolDescription' (role 'tool_AbstractToolDescription269', cardinality 0..*).
+'ContainerMapping' (role 'ContainerMapping204', cardinality 0..*) is associated with 'diagram::description::ContainerMapping' (role 'diagram_description_ContainerMapping203', cardinality 0..*).
+'diagram::tool::DeleteElementDescription' (role 'diagram_tool_DeleteElementDescription', cardinality 0..*) is associated with 'tool::ElementDeleteVariable' (role 'tool_ElementDeleteVariable', cardinality 0..*).
+'diagram::description::DiagramDescription' (role 'diagram_description_DiagramDescription134', cardinality 0..*) is associated with 'concern::ConcernDescription' (role 'concern_ConcernDescription135', cardinality 0..*).
+'diagram::EdgeTarget' (role 'diagram_EdgeTarget', cardinality 0..*) is associated with 'diagram::DEdge' (role 'diagram_DEdge99', cardinality 0..*).
+'ColorDescription' (role 'ColorDescription288', cardinality 0..*) is associated with 'diagram::style::NoteDescription' (role 'diagram_style_NoteDescription', cardinality 0..*).
+'DiagramElementMapping' (role 'DiagramElementMapping220', cardinality 0..*) is associated with 'diagram::description::EdgeMapping' (role 'diagram_description_EdgeMapping', cardinality 0..*).
+'diagram::tool::ContainerCreationDescription' (role 'diagram_tool_ContainerCreationDescription369', cardinality 0..*) is associated with 'tool::NodeCreationVariable' (role 'tool_NodeCreationVariable370', cardinality 0..*).
+'EdgeMapping' (role 'EdgeMapping274', cardinality 0..*) is associated with 'diagram::description::Layer' (role 'diagram_description_Layer273', cardinality 0..*).
+'diagram::DEdge' (role 'diagram_DEdge', cardinality 0..*) is associated with 'diagram::DDiagram' (role 'diagram_DDiagram7', cardinality 0..*).
+'diagram::description::DiagramDescription' (role 'diagram_description_DiagramDescription148', cardinality 0..*) is associated with 'Layer' (role 'Layer149', cardinality 0..*).
+'NodeMapping' (role 'NodeMapping338', cardinality 0..*) is associated with 'diagram::tool::NodeCreationDescription' (role 'diagram_tool_NodeCreationDescription', cardinality 0..*).
+'concern::ConcernSet' (role 'concern_ConcernSet', cardinality 0..*) is associated with 'diagram::description::DiagramDescription' (role 'diagram_description_DiagramDescription130', cardinality 0..*).
+'diagram::AppliedCompositeFilters' (role 'diagram_AppliedCompositeFilters', cardinality 0..*) is associated with 'filter::CompositeFilterDescription' (role 'filter_CompositeFilterDescription', cardinality 0..*).
+'DiagramElementMapping' (role 'DiagramElementMapping393', cardinality 0..*) is associated with 'diagram::tool::DoubleClickDescription' (role 'doubleClickDescription', cardinality 0..*).
+'tool::ReconnectEdgeDescription' (role 'tool_ReconnectEdgeDescription', cardinality 0..*) is associated with 'diagram::description::EdgeMapping' (role 'diagram_description_EdgeMapping229', cardinality 0..*).
+'DiagramElementMapping' (role 'DiagramElementMapping450', cardinality 0..*) is associated with 'diagram::filter::MappingFilter' (role 'diagram_filter_MappingFilter', cardinality 0..*).
+'diagram::description::ContainerMapping' (role 'diagram_description_ContainerMapping', cardinality 0..*) is associated with 'NodeMapping' (role 'NodeMapping195', cardinality 0..*).
+'validation::ValidationRule' (role 'validation_ValidationRule', cardinality 0..*) is associated with 'diagram::DDiagram' (role 'diagram_DDiagram22', cardinality 0..*).
+'diagram::Style' (role 'diagram_Style', cardinality 0..*) is associated with 'diagram::DNode' (role 'diagram_DNode47', cardinality 0..*).
+'diagram::DDiagram' (role 'diagram_DDiagram11', cardinality 0..*) is associated with 'diagram::DNodeListElement' (role 'diagram_DNodeListElement', cardinality 0..*).
+'diagram::DNode' (role 'diagram_DNode43', cardinality 0..*) is associated with 'diagram::AbstractDNode' (role 'diagram_AbstractDNode', cardinality 0..*).
+'ContainerMapping' (role 'ContainerMapping257', cardinality 0..*) is associated with 'diagram::description::Layer' (role 'diagram_description_Layer256', cardinality 0..*).
+'ConditionalNodeStyleDescription' (role 'ConditionalNodeStyleDescription', cardinality 0..*) is associated with 'diagram::description::NodeMapping' (role 'diagram_description_NodeMapping193', cardinality 0..*).
+'diagram::tool::ToolGroupExtension' (role 'diagram_tool_ToolGroupExtension335', cardinality 0..*) is associated with 'tool::AbstractToolDescription' (role 'tool_AbstractToolDescription336', cardinality 0..*).
+'diagram::description::DiagramDescription' (role 'diagram_description_DiagramDescription120', cardinality 0..*) is associated with 'EdgeMapping' (role 'EdgeMapping', cardinality 0..*).
+'tool::EditMaskVariables' (role 'tool_EditMaskVariables', cardinality 0..*) is associated with 'diagram::tool::DirectEditLabel' (role 'diagram_tool_DirectEditLabel', cardinality 0..*).
+'validation::ValidationRule' (role 'validation_ValidationRule459', cardinality 0..*) is associated with 'diagram::concern::ConcernDescription' (role 'diagram_concern_ConcernDescription458', cardinality 0..*).
+'diagram::style::BorderedStyleDescription' (role 'diagram_style_BorderedStyleDescription', cardinality 0..*) is associated with 'ColorDescription' (role 'ColorDescription', cardinality 0..*).
+'diagram::DDiagram' (role 'diagram_DDiagram26', cardinality 0..*) is associated with 'diagram::FilterVariableHistory' (role 'diagram_FilterVariableHistory', cardinality 0..*).
+'filter::FilterDescription' (role 'filter_FilterDescription456', cardinality 0..*) is associated with 'diagram::concern::ConcernDescription' (role 'diagram_concern_ConcernDescription', cardinality 0..*).
+'style::LabelBorderStyleDescription' (role 'style_LabelBorderStyleDescription', cardinality 0..*) is associated with 'diagram::style::FlatContainerStyleDescription' (role 'diagram_style_FlatContainerStyleDescription303', cardinality 0..*).
+'style::EdgeStyleDescription' (role 'style_EdgeStyleDescription240', cardinality 0..*) is associated with 'diagram::description::ConditionalEdgeStyleDescription' (role 'diagram_description_ConditionalEdgeStyleDescription', cardinality 0..*).
+'diagram::tool::ToolSection' (role 'diagram_tool_ToolSection', cardinality 0..*) is associated with 'tool::ToolEntry' (role 'tool_ToolEntry', cardinality 0..*).
+'style::CenterLabelStyleDescription' (role 'style_CenterLabelStyleDescription', cardinality 0..*) is associated with 'diagram::style::EdgeStyleDescription' (role 'diagram_style_EdgeStyleDescription311', cardinality 0..*).
+'diagram::tool::ToolSection' (role 'diagram_tool_ToolSection327', cardinality 0..*) is associated with 'tool::ToolEntry' (role 'tool_ToolEntry328', cardinality 0..*).
+'diagram::tool::ContainerDropDescription' (role 'diagram_tool_ContainerDropDescription443', cardinality 0..*) is associated with 'tool::ElementDropVariable' (role 'tool_ElementDropVariable', cardinality 0..*).
+'diagram::tool::ReconnectEdgeDescription' (role 'diagram_tool_ReconnectEdgeDescription411', cardinality 0..*) is associated with 'tool::TargetEdgeViewCreationVariable' (role 'tool_TargetEdgeViewCreationVariable412', cardinality 0..*).
+'ColorDescription' (role 'ColorDescription282', cardinality 0..*) is associated with 'diagram::style::LozengeNodeDescription' (role 'diagram_style_LozengeNodeDescription', cardinality 0..*).
+'AdditionalLayer' (role 'AdditionalLayer', cardinality 0..*) is associated with 'diagram::description::DiagramDescription' (role 'diagram_description_DiagramDescription146', cardinality 0..*).
+'diagram::DNode' (role 'diagram_DNode45', cardinality 0..*) is associated with 'diagram::NodeStyle' (role 'diagram_NodeStyle', cardinality 0..*).
+'style::GaugeSectionDescription' (role 'style_GaugeSectionDescription', cardinality 0..*) is associated with 'diagram::style::GaugeCompositeStyleDescription' (role 'diagram_style_GaugeCompositeStyleDescription', cardinality 0..*).
+'diagram::tool::ToolSection' (role 'diagram_tool_ToolSection325', cardinality 0..*) is associated with 'tool::PopupMenu' (role 'tool_PopupMenu', cardinality 0..*).
+'diagram::style::GaugeSectionDescription' (role 'diagram_style_GaugeSectionDescription', cardinality 0..*) is associated with 'ColorDescription' (role 'ColorDescription293', cardinality 0..*).
+'diagram::DDiagramElementContainer' (role 'diagram_DDiagramElementContainer58', cardinality 0..*) is associated with 'diagram::DDiagramElementContainer' (role 'diagram_DDiagramElementContainer56', cardinality 0..*).
+'diagram::description::EdgeMapping' (role 'diagram_description_EdgeMapping227', cardinality 0..*) is associated with 'ConditionalEdgeStyleDescription' (role 'ConditionalEdgeStyleDescription', cardinality 0..*).
+'InteractiveVariableDescription' (role 'InteractiveVariableDescription', cardinality 0..*) is associated with 'diagram::filter::VariableFilter' (role 'diagram_filter_VariableFilter', cardinality 0..*).
+'tool::RepresentationCreationDescription' (role 'tool_RepresentationCreationDescription', cardinality 0..*) is associated with 'diagram::description::DiagramDescription' (role 'diagram_description_DiagramDescription137', cardinality 0..*).
+'tool::ContainerDropDescription' (role 'tool_ContainerDropDescription', cardinality 0..*) is associated with 'diagram::description::DragAndDropTargetDescription' (role 'diagram_description_DragAndDropTargetDescription', cardinality 0..*).
+'diagram::EdgeTarget' (role 'EdgeTarget92', cardinality 0..*) is associated with 'diagram::DEdge' (role 'incomingEdges', cardinality 0..*).
+'diagram::tool::NodeCreationDescription' (role 'diagram_tool_NodeCreationDescription342', cardinality 0..*) is associated with 'tool::ContainerViewVariable' (role 'tool_ContainerViewVariable', cardinality 0..*).
+'diagram::CenterLabelStyle' (role 'diagram_CenterLabelStyle', cardinality 0..*) is associated with 'diagram::EdgeStyle' (role 'diagram_EdgeStyle106', cardinality 0..*).
+'diagram::DDiagramElementContainer' (role 'diagram_DDiagramElementContainer65', cardinality 0..*) is associated with 'diagram::Style' (role 'diagram_Style66', cardinality 0..*).
+'diagram::description::Layer' (role 'diagram_description_Layer259', cardinality 0..*) is associated with 'DiagramElementMapping' (role 'DiagramElementMapping260', cardinality 0..*).
+'ColorDescription' (role 'ColorDescription307', cardinality 0..*) is associated with 'diagram::style::EdgeStyleDescription' (role 'diagram_style_EdgeStyleDescription', cardinality 0..*).
+'diagram::DDiagramElementContainer' (role 'diagram_DDiagramElementContainer68', cardinality 0..*) is associated with 'ContainerMapping' (role 'ContainerMapping', cardinality 0..*).
+'diagram::description::MappingBasedDecoration' (role 'diagram_description_MappingBasedDecoration', cardinality 0..*) is associated with 'DiagramElementMapping' (role 'DiagramElementMapping246', cardinality 0..*).
+'diagram::description::DiagramElementMapping' (role 'diagram_description_DiagramElementMapping184', cardinality 0..*) is associated with 'tool::DirectEditLabel' (role 'tool_DirectEditLabel', cardinality 0..*).
+'diagram::DDiagramElement' (role 'diagram_DDiagramElement38', cardinality 0..*) is associated with 'DiagramElementMapping' (role 'DiagramElementMapping', cardinality 0..*).
+'diagram::tool::ContainerCreationDescription' (role 'diagram_tool_ContainerCreationDescription375', cardinality 0..*) is associated with 'tool::InitialNodeCreationOperation' (role 'tool_InitialNodeCreationOperation376', cardinality 0..*).
+'diagram::DEdge' (role 'DEdge', cardinality 0..*) is associated with 'diagram::EdgeTarget' (role 'sourceNode', cardinality 0..*).
+'ColorDescription' (role 'ColorDescription305', cardinality 0..*) is associated with 'diagram::style::ShapeContainerStyleDescription' (role 'diagram_style_ShapeContainerStyleDescription', cardinality 0..*).
+'Layer' (role 'Layer', cardinality 0..*) is associated with 'diagram::DDiagram' (role 'diagram_DDiagram28', cardinality 0..*).
+'diagram::tool::ContainerCreationDescription' (role 'diagram_tool_ContainerCreationDescription', cardinality 0..*) is associated with 'ContainerMapping' (role 'ContainerMapping367', cardinality 0..*).
+'tool::ElementSelectVariable' (role 'tool_ElementSelectVariable420', cardinality 0..*) is associated with 'diagram::tool::ReconnectEdgeDescription' (role 'diagram_tool_ReconnectEdgeDescription419', cardinality 0..*).
+'tool::AbstractToolDescription' (role 'tool_AbstractToolDescription152', cardinality 0..*) is associated with 'diagram::description::DiagramDescription' (role 'diagram_description_DiagramDescription151', cardinality 0..*).
+'diagram::DEdge' (role 'diagram_DEdge94', cardinality 0..*) is associated with 'IEdgeMapping' (role 'IEdgeMapping', cardinality 0..*).
+'tool::ContainerViewVariable' (role 'tool_ContainerViewVariable446', cardinality 0..*) is associated with 'diagram::tool::ContainerDropDescription' (role 'diagram_tool_ContainerDropDescription445', cardinality 0..*).
+'tool::ToolGroupExtension' (role 'tool_ToolGroupExtension', cardinality 0..*) is associated with 'diagram::tool::ToolSection' (role 'diagram_tool_ToolSection330', cardinality 0..*).
+'validation::ValidationSet' (role 'validation_ValidationSet', cardinality 0..*) is associated with 'diagram::description::DiagramDescription' (role 'diagram_description_DiagramDescription128', cardinality 0..*).
+'tool::ElementDoubleClickVariable' (role 'tool_ElementDoubleClickVariable397', cardinality 0..*) is associated with 'diagram::tool::DoubleClickDescription' (role 'diagram_tool_DoubleClickDescription396', cardinality 0..*).
+'NodeMapping' (role 'NodeMapping201', cardinality 0..*) is associated with 'diagram::description::ContainerMapping' (role 'diagram_description_ContainerMapping200', cardinality 0..*).
+'EdgeMapping' (role 'EdgeMapping349', cardinality 0..*) is associated with 'diagram::tool::EdgeCreationDescription' (role 'diagram_tool_EdgeCreationDescription', cardinality 0..*).
+'diagram::DDiagram' (role 'diagram_DDiagram24', cardinality 0..*) is associated with 'tool::BehaviorTool' (role 'tool_BehaviorTool', cardinality 0..*).
+'tool::DeleteHookParameter' (role 'tool_DeleteHookParameter', cardinality 0..*) is associated with 'diagram::tool::DeleteHook' (role 'diagram_tool_DeleteHook', cardinality 0..*).
+'DiagramElementMapping' (role 'DiagramElementMapping365', cardinality 0..*) is associated with 'diagram::tool::EdgeCreationDescription' (role 'diagram_tool_EdgeCreationDescription364', cardinality 0..*).
+'validation::ValidationSet' (role 'validation_ValidationSet178', cardinality 0..*) is associated with 'diagram::description::DiagramExtensionDescription' (role 'diagram_description_DiagramExtensionDescription177', cardinality 0..*).
+'diagram::description::DiagramDescription' (role 'diagram_description_DiagramDescription165', cardinality 0..*) is associated with 'DiagramElementMapping' (role 'DiagramElementMapping166', cardinality 0..*).
+'diagram::DNodeListElement' (role 'diagram_DNodeListElement80', cardinality 0..*) is associated with 'diagram::Style' (role 'diagram_Style81', cardinality 0..*).
+'tool::NodeCreationVariable' (role 'tool_NodeCreationVariable', cardinality 0..*) is associated with 'diagram::tool::NodeCreationDescription' (role 'diagram_tool_NodeCreationDescription340', cardinality 0..*).
+'NodeMapping' (role 'NodeMapping', cardinality 0..*) is associated with 'diagram::DNode' (role 'diagram_DNode49', cardinality 0..*).
+'diagram::DDiagram' (role 'diagram_DDiagram30', cardinality 0..*) is associated with 'diagram::DDiagramElement' (role 'diagram_DDiagramElement31', cardinality 0..*).
+'diagram::EdgeStyle' (role 'diagram_EdgeStyle108', cardinality 0..*) is associated with 'diagram::EndLabelStyle' (role 'diagram_EndLabelStyle', cardinality 0..*).
+'diagram::description::DiagramDescription' (role 'diagram_description_DiagramDescription122', cardinality 0..*) is associated with 'NodeMapping' (role 'NodeMapping123', cardinality 0..*).
+'diagram::tool::ContainerDropDescription' (role 'diagram_tool_ContainerDropDescription', cardinality 0..*) is associated with 'DiagramElementMapping' (role 'DiagramElementMapping436', cardinality 0..*).
+'diagram::description::NodeMappingImport' (role 'diagram_description_NodeMappingImport', cardinality 0..*) is associated with 'NodeMapping' (role 'NodeMapping216', cardinality 0..*).
+'diagram::NodeStyle' (role 'diagram_NodeStyle78', cardinality 0..*) is associated with 'diagram::DNodeListElement' (role 'diagram_DNodeListElement77', cardinality 0..*).
+'diagram::description::Layer' (role 'diagram_description_Layer262', cardinality 0..*) is associated with 'tool::AbstractToolDescription' (role 'tool_AbstractToolDescription263', cardinality 0..*).
+'diagram::tool::ToolSection' (role 'diagram_tool_ToolSection322', cardinality 0..*) is associated with 'tool::ToolSection' (role 'tool_ToolSection323', cardinality 0..*).
+'tool::SourceEdgeViewCreationVariable' (role 'tool_SourceEdgeViewCreationVariable409', cardinality 0..*) is associated with 'diagram::tool::ReconnectEdgeDescription' (role 'diagram_tool_ReconnectEdgeDescription408', cardinality 0..*).
+'IEdgeMapping' (role 'IEdgeMapping233', cardinality 0..*) is associated with 'diagram::description::EdgeMappingImport' (role 'diagram_description_EdgeMappingImport', cardinality 0..*).
+'diagram::description::DiagramDescription' (role 'diagram_description_DiagramDescription143', cardinality 0..*) is associated with 'Layer' (role 'Layer144', cardinality 0..*).
+'diagram::FilterVariableHistory' (role 'diagram_FilterVariableHistory111', cardinality 0..*) is associated with 'diagram::VariableValue' (role 'diagram_VariableValue', cardinality 0..*).
+'diagram::BeginLabelStyle' (role 'diagram_BeginLabelStyle', cardinality 0..*) is associated with 'diagram::EdgeStyle' (role 'diagram_EdgeStyle104', cardinality 0..*).
+'ContainerMapping' (role 'ContainerMapping218', cardinality 0..*) is associated with 'diagram::description::ContainerMappingImport' (role 'diagram_description_ContainerMappingImport', cardinality 0..*).
+'diagram::description::ConditionalNodeStyleDescription' (role 'diagram_description_ConditionalNodeStyleDescription', cardinality 0..*) is associated with 'style::NodeStyleDescription' (role 'style_NodeStyleDescription238', cardinality 0..*).
+'AdditionalLayer' (role 'AdditionalLayer175', cardinality 0..*) is associated with 'diagram::description::DiagramExtensionDescription' (role 'diagram_description_DiagramExtensionDescription', cardinality 0..*).
+'diagram::description::DiagramDescription' (role 'diagram_description_DiagramDescription141', cardinality 0..*) is associated with 'tool::InitialOperation' (role 'tool_InitialOperation', cardinality 0..*).
+'diagram::description::ContainerMapping' (role 'diagram_description_ContainerMapping209', cardinality 0..*) is associated with 'ContainerMapping' (role 'ContainerMapping210', cardinality 0..*).
+'diagram::tool::ToolGroup' (role 'diagram_tool_ToolGroup', cardinality 0..*) is associated with 'tool::AbstractToolDescription' (role 'tool_AbstractToolDescription332', cardinality 0..*).
+'tool::InitialOperation' (role 'tool_InitialOperation389', cardinality 0..*) is associated with 'diagram::tool::DeleteElementDescription' (role 'diagram_tool_DeleteElementDescription388', cardinality 0..*).
+'diagram::tool::DeleteElementDescription' (role 'diagram_tool_DeleteElementDescription391', cardinality 0..*) is associated with 'tool::DeleteHook' (role 'tool_DeleteHook', cardinality 0..*).
+'style::ContainerStyleDescription' (role 'style_ContainerStyleDescription242', cardinality 0..*) is associated with 'diagram::description::ConditionalContainerStyleDescription' (role 'diagram_description_ConditionalContainerStyleDescription', cardinality 0..*).
+'tool::SelectModelElementVariable' (role 'tool_SelectModelElementVariable', cardinality 0..*) is associated with 'diagram::EObjectVariableValue' (role 'diagram_EObjectVariableValue', cardinality 0..*).
+'diagram::style::EdgeStyleDescription' (role 'diagram_style_EdgeStyleDescription313', cardinality 0..*) is associated with 'style::EndLabelStyleDescription' (role 'style_EndLabelStyleDescription', cardinality 0..*).
+'DiagramDescription' (role 'DiagramDescription434', cardinality 0..*) is associated with 'diagram::tool::DiagramNavigationDescription' (role 'diagram_tool_DiagramNavigationDescription', cardinality 0..*).
+'tool::DropContainerVariable' (role 'tool_DropContainerVariable441', cardinality 0..*) is associated with 'diagram::tool::ContainerDropDescription' (role 'diagram_tool_ContainerDropDescription440', cardinality 0..*).
+'tool::ElementDoubleClickVariable' (role 'tool_ElementDoubleClickVariable', cardinality 0..*) is associated with 'diagram::tool::DoubleClickDescription' (role 'diagram_tool_DoubleClickDescription', cardinality 0..*).
+'EdgeMappingImport' (role 'EdgeMappingImport', cardinality 0..*) is associated with 'diagram::description::DiagramDescription' (role 'diagram_description_DiagramDescription160', cardinality 0..*).
+'NodeMapping' (role 'NodeMapping52', cardinality 0..*) is associated with 'diagram::DNode' (role 'diagram_DNode51', cardinality 0..*).
+'diagram::description::DiagramElementMapping' (role 'diagram_description_DiagramElementMapping', cardinality 0..*) is associated with 'tool::DeleteElementDescription' (role 'tool_DeleteElementDescription', cardinality 0..*).
+'diagram::description::DiagramElementMapping' (role 'mappings', cardinality 0..*) is associated with 'tool::DoubleClickDescription' (role 'DoubleClickDescription', cardinality 0..*).
+'diagram::description::Layer' (role 'diagram_description_Layer265', cardinality 0..*) is associated with 'tool::ToolSection' (role 'tool_ToolSection266', cardinality 0..*).
+'NodeMapping' (role 'NodeMapping190', cardinality 0..*) is associated with 'diagram::description::AbstractNodeMapping' (role 'diagram_description_AbstractNodeMapping189', cardinality 0..*).
+'tool::ToolGroup' (role 'tool_ToolGroup', cardinality 0..*) is associated with 'diagram::tool::ToolGroupExtension' (role 'diagram_tool_ToolGroupExtension', cardinality 0..*).
+'diagram::concern::ConcernSet' (role 'diagram_concern_ConcernSet', cardinality 0..*) is associated with 'concern::ConcernDescription' (role 'concern_ConcernDescription454', cardinality 0..*).
+'diagram::tool::EdgeCreationDescription' (role 'diagram_tool_EdgeCreationDescription357', cardinality 0..*) is associated with 'tool::TargetEdgeViewCreationVariable' (role 'tool_TargetEdgeViewCreationVariable', cardinality 0..*).
+'diagram::GaugeSection' (role 'diagram_GaugeSection', cardinality 0..*) is associated with 'diagram::GaugeCompositeStyle' (role 'diagram_GaugeCompositeStyle', cardinality 0..*).
+'diagram::TypedVariableValue' (role 'diagram_TypedVariableValue', cardinality 0..*) is associated with 'TypedVariable' (role 'TypedVariable', cardinality 0..*).
+'diagram::style::EllipseNodeDescription' (role 'diagram_style_EllipseNodeDescription', cardinality 0..*) is associated with 'ColorDescription' (role 'ColorDescription284', cardinality 0..*).
+'tool::ContainerViewVariable' (role 'tool_ContainerViewVariable386', cardinality 0..*) is associated with 'diagram::tool::DeleteElementDescription' (role 'diagram_tool_DeleteElementDescription385', cardinality 0..*).
+'diagram::style::EdgeStyleDescription' (role 'diagram_style_EdgeStyleDescription309', cardinality 0..*) is associated with 'style::BeginLabelStyleDescription' (role 'style_BeginLabelStyleDescription', cardinality 0..*).
+'diagram::description::Layer' (role 'diagram_description_Layer250', cardinality 0..*) is associated with 'EdgeMapping' (role 'EdgeMapping251', cardinality 0..*).
+'diagram::tool::ReconnectEdgeDescription' (role 'diagram_tool_ReconnectEdgeDescription416', cardinality 0..*) is associated with 'tool::InitialOperation' (role 'tool_InitialOperation417', cardinality 0..*).
+'diagram::DNodeListElement' (role 'diagram_DNodeListElement86', cardinality 0..*) is associated with 'NodeMapping' (role 'NodeMapping87', cardinality 0..*).
+'diagram::DDiagramElement' (role 'diagram_DDiagramElement33', cardinality 0..*) is associated with 'Layer' (role 'Layer34', cardinality 0..*).
+'tool::ContainerViewVariable' (role 'tool_ContainerViewVariable373', cardinality 0..*) is associated with 'diagram::tool::ContainerCreationDescription' (role 'diagram_tool_ContainerCreationDescription372', cardinality 0..*).
+'tool::AbstractToolDescription' (role 'tool_AbstractToolDescription171', cardinality 0..*) is associated with 'diagram::description::DiagramDescription' (role 'diagram_description_DiagramDescription170', cardinality 0..*).
+'EdgeMapping' (role 'EdgeMapping158', cardinality 0..*) is associated with 'diagram::description::DiagramDescription' (role 'diagram_description_DiagramDescription157', cardinality 0..*).

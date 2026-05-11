@@ -1,0 +1,61 @@
+The model has 31 class(es).
+The class 'architecture::ImportReferenceDependency' has no attributes.
+The class 'architecture::ArchitectureFile' has the following attributes: 'path' of type str.
+The class 'architecture::extension::RelationshipConstraint' has no attributes.
+The class 'architecture::Type' has the following attributes: 'binary' of type bool; 'qualifiedName' of type str; 'source' of type bool.
+The class 'architecture::Field' has no attributes.
+The class 'architecture::DeclaredType' has no attributes.
+The class 'architecture::extension::RoleRelationship' has no attributes.
+The class 'architecture::FieldReferenceDependency' has no attributes.
+The class 'architecture::extension::Role' has the following attributes: 'attachedElement' of type str.
+The class 'Dependency' has no attributes.
+The class 'architecture::InheritanceDependency' has no attributes.
+The class 'Relationship' has no attributes.
+The class 'architecture::ReferenceDependency' has the following attributes: 'uri' of type str; 'name' of type str.
+The class 'architecture::InjectionDependency' has no attributes.
+The class 'architecture::RuntimeDependency' has no attributes.
+The class 'architecture::Dependency' has no attributes.
+The class 'architecture::Library' has no attributes.
+The class 'AnalysedElement' has no attributes.
+The class 'architecture::AnalysedElement' has the following attributes: 'properties' of type int; 'idAnalyzedElement' of type int; 'name' of type str.
+The class 'architecture::ParameterRelationship' has no attributes.
+The class 'architecture::extension::Pattern' has no attributes.
+The class 'ReferenceDependency' has no attributes.
+The class 'architecture::Project' has no attributes.
+The class 'architecture::Relationship' has the following attributes: 'relationShipId' of type int.
+The class 'architecture::ReturnTypeRelationship' has no attributes.
+The class 'RuntimeDependency' has no attributes.
+The class 'architecture::Method' has no attributes.
+The class 'architecture::extension::PatternRelationship' has the following attributes: 'referenceName' of type str.
+The class 'architecture::extension::Bop' has no attributes.
+The class 'architecture::CallRelationship' has no attributes.
+The class 'architecture::extension::ExtensionRelationship' has no attributes.
+'architecture::extension::Pattern' is a specialization of 'AnalysedElement'.
+'architecture::Library' is a specialization of 'AnalysedElement'.
+'architecture::CallRelationship' is a specialization of 'Relationship'.
+'architecture::ArchitectureFile' is a specialization of 'AnalysedElement'.
+'architecture::ReferenceDependency' is a specialization of 'Dependency'.
+'architecture::extension::RoleRelationship' is a specialization of 'Relationship'.
+'architecture::ReturnTypeRelationship' is a specialization of 'Relationship'.
+'architecture::Dependency' is a specialization of 'Relationship'.
+'architecture::RuntimeDependency' is a specialization of 'Dependency'.
+'architecture::FieldReferenceDependency' is a specialization of 'ReferenceDependency'.
+'architecture::InjectionDependency' is a specialization of 'RuntimeDependency'.
+'architecture::Type' is a specialization of 'AnalysedElement'.
+'architecture::extension::PatternRelationship' is a specialization of 'Relationship'.
+'architecture::Method' is a specialization of 'AnalysedElement'.
+'architecture::ImportReferenceDependency' is a specialization of 'ReferenceDependency'.
+'architecture::Project' is a specialization of 'AnalysedElement'.
+'architecture::extension::ExtensionRelationship' is a specialization of 'Relationship'.
+'architecture::extension::Role' is a specialization of 'AnalysedElement'.
+'architecture::ParameterRelationship' is a specialization of 'Relationship'.
+'architecture::DeclaredType' is a specialization of 'Relationship'.
+'architecture::Field' is a specialization of 'AnalysedElement'.
+'architecture::InheritanceDependency' is a specialization of 'Dependency'.
+'architecture::AnalysedElement' (role 'architecture_AnalysedElement', cardinality 0..*) is associated with 'architecture::InjectionDependency' (role 'architecture_InjectionDependency', cardinality 0..*).
+'architecture::Relationship' (role 'outgoingRelationships', cardinality 0..*) is associated with 'architecture::AnalysedElement' (role 'AnalysedElement11', cardinality 0..*).
+'architecture::AnalysedElement' (role 'parent', cardinality 0..*) is associated with 'architecture::AnalysedElement' (role 'AnalysedElement', cardinality 0..*).
+'architecture::AnalysedElement' (role 'containedElements', cardinality 0..*) is associated with 'architecture::AnalysedElement' (role 'AnalysedElement7', cardinality 0..*).
+'architecture::Relationship' (role 'Relationship', cardinality 0..*) is associated with 'architecture::AnalysedElement' (role 'source', cardinality 0..*).
+'architecture::AnalysedElement' (role 'AnalysedElement9', cardinality 0..*) is associated with 'architecture::Relationship' (role 'incomingRelationships', cardinality 0..*).
+'architecture::AnalysedElement' (role 'target', cardinality 0..*) is associated with 'architecture::Relationship' (role 'Relationship2', cardinality 0..*).

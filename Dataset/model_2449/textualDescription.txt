@@ -1,0 +1,13 @@
+The model has 4 class(es).
+The class 'gfsm::Machine' has no attributes.
+The class 'gfsm::Transition' has the following attributes: 'event' of type str.
+The class 'gfsm::Guard' has the following attributes: 'value' of type str.
+The class 'gfsm::State' has the following attributes: 'name' of type str.
+'gfsm::State' (role 'to', cardinality 0..*) is associated with 'gfsm::Transition' (role 'Transition6', cardinality 0..*).
+'gfsm::Transition' (role 'Transition', cardinality 0..*) is associated with 'gfsm::State' (role 'from_', cardinality 0..*).
+'gfsm::Transition' (role 'gfsm_Transition10', cardinality 0..*) is associated with 'gfsm::Machine' (role 'gfsm_Machine9', cardinality 0..*).
+'gfsm::Machine' (role 'gfsm_Machine', cardinality 0..*) is associated with 'gfsm::State' (role 'gfsm_State', cardinality 0..*).
+'gfsm::Transition' (role 'gfsm_Transition', cardinality 0..*) is associated with 'gfsm::Guard' (role 'gfsm_Guard', cardinality 0..*).
+'gfsm::Transition' (role 'outgoings', cardinality 0..*) is associated with 'gfsm::State' (role 'State', cardinality 0..*).
+'gfsm::State' (role 'State2', cardinality 0..*) is associated with 'gfsm::Transition' (role 'incommings', cardinality 0..*).
+'gfsm::State' (role 'gfsm_State13', cardinality 0..*) is associated with 'gfsm::Machine' (role 'gfsm_Machine12', cardinality 0..*).

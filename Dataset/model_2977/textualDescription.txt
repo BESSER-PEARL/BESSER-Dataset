@@ -1,0 +1,451 @@
+The model has 168 class(es).
+The class 'robochart::StateMachine' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'robochart::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'robochart::TypeDecl' has no attributes.
+The class 'robochart::VarExp' has no attributes.
+The class 'robochart::ControllerRef' has no attributes.
+The class 'robochart::VectorType' has the following attributes: 'size' of type int.
+The class 'StateMachine' has no attributes.
+The class 'robochart::ClockExp' has no attributes.
+The class 'Assignable' has no attributes.
+The class 'robochart::OperationRef' has no attributes.
+The class 'robochart::RecordType' has no attributes.
+The class 'robochart::RoboticPlatformRef' has no attributes.
+The class 'robochart::ControllerDef' has no attributes.
+The class 'robochart::ElseExp' has no attributes.
+The class 'QuantifierExpression' has no attributes.
+The class 'robochart::FromExp' has no attributes.
+The class 'robochart::Declaration' has no attributes.
+The class 'robochart::SetRange' has no attributes.
+The class 'robochart::Junction' has no attributes.
+The class 'robochart::IfExpression' has no attributes.
+The class 'TypedNamedElement' has no attributes.
+The class 'robochart::ProbabilisticJunction' has no attributes.
+The class 'robochart::TupleExp' has no attributes.
+The class 'robochart::IntegerExp' has the following attributes: 'value' of type int.
+The class 'Action' has no attributes.
+The class 'robochart::Modulus' has no attributes.
+The class 'robochart::StateMachineRef' has no attributes.
+The class 'robochart::RCPackage' has no attributes.
+The class 'robochart::Expression' has no attributes.
+The class 'robochart::Wait' has no attributes.
+The class 'Junction' has no attributes.
+The class 'robochart::WaitingCondition' has no attributes.
+The class 'RelationType' has no attributes.
+The class 'robochart::ResultExp' has no attributes.
+The class 'Expression' has no attributes.
+The class 'robochart::ArrayAssignable' has no attributes.
+The class 'robochart::Final' has no attributes.
+The class 'robochart::LessOrEqual' has no attributes.
+The class 'BasicContext' has no attributes.
+The class 'robochart::AnyType' has the following attributes: 'identifier' of type str.
+The class 'robochart::DefiniteDescription' has no attributes.
+The class 'robochart::Or' has no attributes.
+The class 'robochart::RelationType' has no attributes.
+The class 'robochart::ExitAction' has no attributes.
+The class 'robochart::SeqExp' has no attributes.
+The class 'robochart::TypeExp' has no attributes.
+The class 'robochart::BinaryExpression' has no attributes.
+The class 'robochart::Selection' has no attributes.
+The class 'robochart::Interface' has no attributes.
+The class 'robochart::NamedElement' has the following attributes: 'name' of type str.
+The class 'robochart::Field' has no attributes.
+The class 'robochart::Assignment' has no attributes.
+The class 'robochart::LambdaExp' has no attributes.
+The class 'StateMachineBody' has no attributes.
+The class 'robochart::Event' has the following attributes: 'broadcast' of type bool.
+The class 'robochart::ArrayExp' has no attributes.
+The class 'robochart::ParExp' has no attributes.
+The class 'robochart::GreaterThan' has no attributes.
+The class 'robochart::FloatExp' has the following attributes: 'value' of type float.
+The class 'Reference' has no attributes.
+The class 'robochart::NamedExpression' has no attributes.
+The class 'robochart::SeqType' has no attributes.
+The class 'robochart::TimedStatement' has no attributes.
+The class 'LambdaExp' has no attributes.
+The class 'robochart::Action' has no attributes.
+The class 'robochart::Mult' has no attributes.
+The class 'TypeDecl' has no attributes.
+The class 'robochart::StateClockExp' has no attributes.
+The class 'robochart::RCModule' has no attributes.
+The class 'robochart::SetExp' has no attributes.
+The class 'robochart::SendEvent' has no attributes.
+The class 'robochart::Not' has no attributes.
+The class 'robochart::IdExp' has no attributes.
+The class 'robochart::NameType' has no attributes.
+The class 'robochart::Implies' has no attributes.
+The class 'robochart::Enumeration' has no attributes.
+The class 'robochart::Reference' has no attributes.
+The class 'robochart::IsExp' has no attributes.
+The class 'robochart::RefExp' has no attributes.
+The class 'robochart::Context' has no attributes.
+The class 'robochart::LetExpression' has no attributes.
+The class 'BasicPackage' has no attributes.
+The class 'Statement' has no attributes.
+The class 'robochart::LessThan' has no attributes.
+The class 'robochart::Forall' has no attributes.
+The class 'Variable' has no attributes.
+The class 'RoboticPlatform' has no attributes.
+The class 'robochart::Call' has no attributes.
+The class 'robochart::ConnectionNode' has no attributes.
+The class 'robochart::Exists' has the following attributes: 'unique' of type bool.
+The class 'NodeContainer' has no attributes.
+The class 'robochart::TypeRef' has no attributes.
+The class 'NamedExpression' has no attributes.
+The class 'Operation' has no attributes.
+The class 'robochart::DuringAction' has no attributes.
+The class 'robochart::Connection' has the following attributes: 'async_' of type bool; 'bidirec' of type bool.
+The class 'robochart::WaitingConditionRef' has no attributes.
+The class 'robochart::QuantifierExpression' has no attributes.
+The class 'robochart::SetComp' has no attributes.
+The class 'robochart::CallExp' has no attributes.
+The class 'Type' has no attributes.
+The class 'robochart::Neg' has no attributes.
+The class 'robochart::Type' has no attributes.
+The class 'robochart::Minus' has no attributes.
+The class 'robochart::FunctionType' has no attributes.
+The class 'robochart::VarRef' has no attributes.
+The class 'robochart::Trigger' has the following attributes: '_type' of type str.
+The class 'robochart::Equals' has no attributes.
+The class 'robochart::Node' has no attributes.
+The class 'Node' has no attributes.
+The class 'robochart::NodeContainer' has no attributes.
+The class 'robochart::ClockReset' has no attributes.
+The class 'robochart::ProductType' has no attributes.
+The class 'ConnectionNode' has no attributes.
+The class 'robochart::SetType' has no attributes.
+The class 'robochart::IfStmt' has no attributes.
+The class 'robochart::Initial' has no attributes.
+The class 'robochart::MatrixType' has the following attributes: 'columns' of type int; 'rows' of type int.
+The class 'Controller' has no attributes.
+The class 'robochart::PrimitiveType' has no attributes.
+The class 'robochart::Function' has no attributes.
+The class 'robochart::BasicContext' has no attributes.
+The class 'robochart::Variable' has the following attributes: 'modifier' of type str.
+The class 'robochart::VarSelection' has no attributes.
+The class 'robochart::StringExp' has the following attributes: 'value' of type str.
+The class 'robochart::Statement' has no attributes.
+The class 'robochart::RoboticPlatform' has no attributes.
+The class 'robochart::RangeExp' has the following attributes: 'linterval' of type str; 'rinterval' of type str.
+The class 'robochart::OperationDef' has no attributes.
+The class 'SetType' has no attributes.
+The class 'robochart::OperationSig' has the following attributes: 'terminates' of type bool.
+The class 'robochart::Literal' has no attributes.
+The class 'robochart::TypedNamedElement' has no attributes.
+The class 'robochart::InExp' has no attributes.
+The class 'robochart::BooleanExp' has the following attributes: 'value' of type str.
+The class 'Context' has no attributes.
+The class 'robochart::SeqStatement' has no attributes.
+The class 'robochart::Div' has no attributes.
+The class 'robochart::Clock' has no attributes.
+The class 'robochart::ParStmt' has no attributes.
+The class 'robochart::Member' has no attributes.
+The class 'robochart::Transition' has no attributes.
+The class 'State' has no attributes.
+The class 'robochart::And' has no attributes.
+The class 'robochart::GreaterOrEqual' has no attributes.
+The class 'BinaryExpression' has no attributes.
+The class 'robochart::Different' has no attributes.
+The class 'robochart::AsExp' has no attributes.
+The class 'robochart::ToExp' has no attributes.
+The class 'robochart::RoboticPlatformDef' has no attributes.
+The class 'robochart::Controller' has no attributes.
+The class 'robochart::Skip' has no attributes.
+The class 'robochart::EnumExp' has no attributes.
+The class 'robochart::EntryAction' has no attributes.
+The class 'robochart::Iff' has no attributes.
+The class 'robochart::StateMachineBody' has no attributes.
+The class 'robochart::Parameter' has no attributes.
+The class 'robochart::Cat' has no attributes.
+The class 'robochart::Plus' has no attributes.
+The class 'Member' has no attributes.
+The class 'robochart::StateMachineDef' has no attributes.
+The class 'robochart::Assignable' has no attributes.
+The class 'robochart::BasicPackage' has the following attributes: 'name' of type str.
+The class 'robochart::VariableList' has the following attributes: 'modifier' of type str.
+The class 'OperationSig' has no attributes.
+The class 'robochart::Operation' has no attributes.
+The class 'robochart::State' has no attributes.
+The enumeration 'TriggerType' has the following literals: 'SIMPLE', 'EMPTY', 'SYNC', 'OUTPUT', 'INPUT'.
+The enumeration 'VariableModifier' has the following literals: 'VAR', 'CONST'.
+'robochart::SetRange' is a specialization of 'Expression'.
+'robochart::Iff' is a specialization of 'BinaryExpression'.
+'robochart::WaitingCondition' is a specialization of 'NamedElement'.
+'robochart::GreaterOrEqual' is a specialization of 'BinaryExpression'.
+'robochart::LambdaExp' is a specialization of 'Expression'.
+'robochart::DuringAction' is a specialization of 'Action'.
+'robochart::ProductType' is a specialization of 'Type'.
+'robochart::IsExp' is a specialization of 'Expression'.
+'robochart::RefExp' is a specialization of 'Expression'.
+'robochart::Function' is a specialization of 'NamedExpression'.
+'robochart::Different' is a specialization of 'BinaryExpression'.
+'robochart::GreaterThan' is a specialization of 'BinaryExpression'.
+'robochart::Div' is a specialization of 'BinaryExpression'.
+'robochart::ArrayAssignable' is a specialization of 'Assignable'.
+'robochart::Field' is a specialization of 'NamedExpression'.
+'robochart::IfStmt' is a specialization of 'Statement'.
+'robochart::Modulus' is a specialization of 'BinaryExpression'.
+'robochart::SeqExp' is a specialization of 'Expression'.
+'robochart::TupleExp' is a specialization of 'Expression'.
+'robochart::LessOrEqual' is a specialization of 'BinaryExpression'.
+'robochart::Forall' is a specialization of 'QuantifierExpression'.
+'robochart::Neg' is a specialization of 'Expression'.
+'robochart::AsExp' is a specialization of 'Expression'.
+'robochart::StateMachine' is a specialization of 'ConnectionNode'.
+'robochart::SetComp' is a specialization of 'Expression'.
+'robochart::State' is a specialization of 'NodeContainer'.
+'robochart::LessThan' is a specialization of 'BinaryExpression'.
+'robochart::TypeExp' is a specialization of 'Expression'.
+'robochart::Exists' is a specialization of 'QuantifierExpression'.
+'robochart::ElseExp' is a specialization of 'Expression'.
+'robochart::PrimitiveType' is a specialization of 'TypeDecl'.
+'robochart::StateMachineBody' is a specialization of 'Context'.
+'robochart::IdExp' is a specialization of 'Expression'.
+'robochart::Declaration' is a specialization of 'NamedExpression'.
+'robochart::DefiniteDescription' is a specialization of 'LambdaExp'.
+'robochart::And' is a specialization of 'BinaryExpression'.
+'robochart::RoboticPlatformDef' is a specialization of 'RoboticPlatform'.
+'robochart::State' is a specialization of 'Node'.
+'robochart::Variable' is a specialization of 'Member'.
+'robochart::RoboticPlatformRef' is a specialization of 'Reference'.
+'robochart::ControllerDef' is a specialization of 'Controller'.
+'robochart::Equals' is a specialization of 'BinaryExpression'.
+'robochart::Literal' is a specialization of 'NamedExpression'.
+'robochart::StateMachineDef' is a specialization of 'StateMachineBody'.
+'robochart::ParStmt' is a specialization of 'Statement'.
+'robochart::RelationType' is a specialization of 'Type'.
+'robochart::Implies' is a specialization of 'BinaryExpression'.
+'robochart::ClockReset' is a specialization of 'Statement'.
+'robochart::StateMachineRef' is a specialization of 'StateMachine'.
+'robochart::ClockExp' is a specialization of 'Expression'.
+'robochart::RoboticPlatformDef' is a specialization of 'Context'.
+'robochart::IfExpression' is a specialization of 'Expression'.
+'robochart::ParExp' is a specialization of 'Expression'.
+'robochart::TypeRef' is a specialization of 'Type'.
+'robochart::Controller' is a specialization of 'ConnectionNode'.
+'robochart::Initial' is a specialization of 'Junction'.
+'robochart::EntryAction' is a specialization of 'Action'.
+'robochart::Enumeration' is a specialization of 'TypeDecl'.
+'robochart::Final' is a specialization of 'State'.
+'robochart::RecordType' is a specialization of 'TypeDecl'.
+'robochart::Mult' is a specialization of 'BinaryExpression'.
+'robochart::Call' is a specialization of 'Statement'.
+'robochart::StateMachine' is a specialization of 'NamedElement'.
+'robochart::RoboticPlatform' is a specialization of 'ConnectionNode'.
+'robochart::Selection' is a specialization of 'Expression'.
+'robochart::ToExp' is a specialization of 'Expression'.
+'robochart::RangeExp' is a specialization of 'Expression'.
+'robochart::VarRef' is a specialization of 'Assignable'.
+'robochart::NameType' is a specialization of 'TypeDecl'.
+'robochart::BooleanExp' is a specialization of 'Expression'.
+'robochart::Variable' is a specialization of 'NamedExpression'.
+'robochart::LetExpression' is a specialization of 'Expression'.
+'robochart::ExitAction' is a specialization of 'Action'.
+'robochart::StringExp' is a specialization of 'Expression'.
+'robochart::FunctionType' is a specialization of 'RelationType'.
+'robochart::OperationDef' is a specialization of 'StateMachineBody'.
+'robochart::StateMachineDef' is a specialization of 'StateMachine'.
+'robochart::Interface' is a specialization of 'BasicContext'.
+'robochart::SeqStatement' is a specialization of 'Statement'.
+'robochart::StateMachineBody' is a specialization of 'NodeContainer'.
+'robochart::ArrayExp' is a specialization of 'Expression'.
+'robochart::OperationRef' is a specialization of 'Reference'.
+'robochart::Minus' is a specialization of 'BinaryExpression'.
+'robochart::Declaration' is a specialization of 'NamedElement'.
+'robochart::ControllerDef' is a specialization of 'Context'.
+'robochart::ResultExp' is a specialization of 'Expression'.
+'robochart::ProbabilisticJunction' is a specialization of 'Junction'.
+'robochart::Node' is a specialization of 'NamedElement'.
+'robochart::VectorType' is a specialization of 'Type'.
+'robochart::SetType' is a specialization of 'Type'.
+'robochart::TypeDecl' is a specialization of 'NamedElement'.
+'robochart::OperationRef' is a specialization of 'Operation'.
+'robochart::Variable' is a specialization of 'TypedNamedElement'.
+'robochart::TypedNamedElement' is a specialization of 'NamedElement'.
+'robochart::Parameter' is a specialization of 'Variable'.
+'robochart::QuantifierExpression' is a specialization of 'Expression'.
+'robochart::Skip' is a specialization of 'Statement'.
+'robochart::OperationSig' is a specialization of 'NamedElement'.
+'robochart::BinaryExpression' is a specialization of 'Expression'.
+'robochart::Junction' is a specialization of 'Node'.
+'robochart::Transition' is a specialization of 'NamedElement'.
+'robochart::VarSelection' is a specialization of 'Assignable'.
+'robochart::Context' is a specialization of 'BasicContext'.
+'robochart::Operation' is a specialization of 'ConnectionNode'.
+'robochart::CallExp' is a specialization of 'Expression'.
+'robochart::Wait' is a specialization of 'Statement'.
+'robochart::WaitingConditionRef' is a specialization of 'Expression'.
+'robochart::ControllerRef' is a specialization of 'Controller'.
+'robochart::RCPackage' is a specialization of 'BasicPackage'.
+'robochart::Function' is a specialization of 'TypedNamedElement'.
+'robochart::SetExp' is a specialization of 'Expression'.
+'robochart::StateMachineRef' is a specialization of 'Reference'.
+'robochart::OperationDef' is a specialization of 'Operation'.
+'robochart::VarExp' is a specialization of 'Expression'.
+'robochart::Controller' is a specialization of 'NamedElement'.
+'robochart::SendEvent' is a specialization of 'Statement'.
+'robochart::Cat' is a specialization of 'BinaryExpression'.
+'robochart::IntegerExp' is a specialization of 'Expression'.
+'robochart::Event' is a specialization of 'NamedElement'.
+'robochart::OperationDef' is a specialization of 'OperationSig'.
+'robochart::AnyType' is a specialization of 'Type'.
+'robochart::Interface' is a specialization of 'NamedElement'.
+'robochart::StateClockExp' is a specialization of 'Expression'.
+'robochart::Member' is a specialization of 'TypedNamedElement'.
+'robochart::Or' is a specialization of 'BinaryExpression'.
+'robochart::FromExp' is a specialization of 'Expression'.
+'robochart::Literal' is a specialization of 'TypeDecl'.
+'robochart::RoboticPlatformRef' is a specialization of 'RoboticPlatform'.
+'robochart::TimedStatement' is a specialization of 'Statement'.
+'robochart::SeqType' is a specialization of 'SetType'.
+'robochart::Operation' is a specialization of 'NamedElement'.
+'robochart::MatrixType' is a specialization of 'Type'.
+'robochart::Not' is a specialization of 'Expression'.
+'robochart::InExp' is a specialization of 'Expression'.
+'robochart::EnumExp' is a specialization of 'Expression'.
+'robochart::FloatExp' is a specialization of 'Expression'.
+'robochart::Clock' is a specialization of 'NamedElement'.
+'robochart::Plus' is a specialization of 'BinaryExpression'.
+'robochart::Field' is a specialization of 'Member'.
+'robochart::Assignment' is a specialization of 'Statement'.
+'robochart::RCModule' is a specialization of 'NamedElement'.
+'robochart::RoboticPlatform' is a specialization of 'NamedElement'.
+'robochart::Statement' (role 'robochart_Statement167', cardinality 0..*) is associated with 'robochart::IfStmt' (role 'robochart_IfStmt166', cardinality 0..*).
+'robochart::Type' (role 'robochart_Type242', cardinality 0..*) is associated with 'robochart::TypeExp' (role 'robochart_TypeExp', cardinality 0..*).
+'robochart::ConnectionNode' (role 'robochart_ConnectionNode138', cardinality 0..*) is associated with 'robochart::Connection' (role 'robochart_Connection137', cardinality 0..*).
+'robochart::LambdaExp' (role 'robochart_LambdaExp217', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression218', cardinality 0..*).
+'robochart::TypeRef' (role 'robochart_TypeRef', cardinality 0..*) is associated with 'robochart::TypeDecl' (role 'robochart_TypeDecl34', cardinality 0..*).
+'robochart::Declaration' (role 'robochart_Declaration', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression228', cardinality 0..*).
+'robochart::RecordType' (role 'robochart_RecordType', cardinality 0..*) is associated with 'robochart::Field' (role 'robochart_Field', cardinality 0..*).
+'robochart::Expression' (role 'robochart_Expression119', cardinality 0..*) is associated with 'robochart::Trigger' (role 'robochart_Trigger118', cardinality 0..*).
+'robochart::Type' (role 'robochart_Type', cardinality 0..*) is associated with 'robochart::TypedNamedElement' (role 'robochart_TypedNamedElement', cardinality 0..*).
+'robochart::VarSelection' (role 'robochart_VarSelection', cardinality 0..*) is associated with 'robochart::Assignable' (role 'robochart_Assignable299', cardinality 0..*).
+'robochart::Assignable' (role 'robochart_Assignable304', cardinality 0..*) is associated with 'robochart::ArrayAssignable' (role 'robochart_ArrayAssignable', cardinality 0..*).
+'robochart::Assignment' (role 'robochart_Assignment173', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression174', cardinality 0..*).
+'robochart::RCPackage' (role 'robochart_RCPackage15', cardinality 0..*) is associated with 'robochart::Function' (role 'robochart_Function', cardinality 0..*).
+'robochart::Expression' (role 'robochart_Expression240', cardinality 0..*) is associated with 'robochart::InExp' (role 'robochart_InExp239', cardinality 0..*).
+'robochart::ControllerDef' (role 'robochart_ControllerDef', cardinality 0..*) is associated with 'robochart::RCPackage' (role 'robochart_RCPackage9', cardinality 0..*).
+'robochart::ArrayExp' (role 'robochart_ArrayExp192', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression193', cardinality 0..*).
+'robochart::ProductType' (role 'robochart_ProductType', cardinality 0..*) is associated with 'robochart::Type' (role 'robochart_Type25', cardinality 0..*).
+'robochart::Connection' (role 'robochart_Connection140', cardinality 0..*) is associated with 'robochart::Event' (role 'robochart_Event141', cardinality 0..*).
+'robochart::Literal' (role 'robochart_Literal266', cardinality 0..*) is associated with 'robochart::EnumExp' (role 'robochart_EnumExp265', cardinality 0..*).
+'robochart::NodeContainer' (role 'robochart_NodeContainer81', cardinality 0..*) is associated with 'robochart::Transition' (role 'robochart_Transition', cardinality 0..*).
+'robochart::QuantifierExpression' (role 'robochart_QuantifierExpression', cardinality 0..*) is associated with 'robochart::Variable' (role 'robochart_Variable204', cardinality 0..*).
+'robochart::MatrixType' (role 'robochart_MatrixType', cardinality 0..*) is associated with 'robochart::Type' (role 'robochart_Type320', cardinality 0..*).
+'robochart::Neg' (role 'robochart_Neg', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression244', cardinality 0..*).
+'robochart::Transition' (role 'robochart_Transition95', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression96', cardinality 0..*).
+'robochart::Expression' (role 'robochart_Expression215', cardinality 0..*) is associated with 'robochart::LambdaExp' (role 'robochart_LambdaExp214', cardinality 0..*).
+'robochart::Member' (role 'robochart_Member', cardinality 0..*) is associated with 'robochart::Selection' (role 'robochart_Selection248', cardinality 0..*).
+'robochart::Variable' (role 'robochart_Variable116', cardinality 0..*) is associated with 'robochart::Trigger' (role 'robochart_Trigger115', cardinality 0..*).
+'robochart::VectorType' (role 'robochart_VectorType', cardinality 0..*) is associated with 'robochart::Type' (role 'robochart_Type318', cardinality 0..*).
+'robochart::Variable' (role 'robochart_Variable250', cardinality 0..*) is associated with 'robochart::VarExp' (role 'robochart_VarExp', cardinality 0..*).
+'robochart::ControllerRef' (role 'robochart_ControllerRef', cardinality 0..*) is associated with 'robochart::ControllerDef' (role 'robochart_ControllerDef146', cardinality 0..*).
+'robochart::WaitingCondition' (role 'robochart_WaitingCondition313', cardinality 0..*) is associated with 'robochart::Transition' (role 'robochart_Transition314', cardinality 0..*).
+'robochart::Expression' (role 'robochart_Expression272', cardinality 0..*) is associated with 'robochart::SetExp' (role 'robochart_SetExp', cardinality 0..*).
+'robochart::VarSelection' (role 'robochart_VarSelection301', cardinality 0..*) is associated with 'robochart::Member' (role 'robochart_Member302', cardinality 0..*).
+'robochart::ClockReset' (role 'robochart_ClockReset187', cardinality 0..*) is associated with 'robochart::Clock' (role 'robochart_Clock188', cardinality 0..*).
+'robochart::Variable' (role 'robochart_Variable110', cardinality 0..*) is associated with 'robochart::Trigger' (role 'robochart_Trigger109', cardinality 0..*).
+'robochart::Transition' (role 'robochart_Transition84', cardinality 0..*) is associated with 'robochart::Node' (role 'robochart_Node85', cardinality 0..*).
+'robochart::SetType' (role 'robochart_SetType', cardinality 0..*) is associated with 'robochart::Type' (role 'robochart_Type32', cardinality 0..*).
+'robochart::SetComp' (role 'robochart_SetComp276', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression277', cardinality 0..*).
+'robochart::TimedStatement' (role 'robochart_TimedStatement159', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression160', cardinality 0..*).
+'robochart::OperationSig' (role 'robochart_OperationSig62', cardinality 0..*) is associated with 'robochart::BasicContext' (role 'robochart_BasicContext61', cardinality 0..*).
+'robochart::QuantifierExpression' (role 'robochart_QuantifierExpression206', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression207', cardinality 0..*).
+'robochart::Trigger' (role 'robochart_Trigger121', cardinality 0..*) is associated with 'robochart::Variable' (role 'robochart_Variable122', cardinality 0..*).
+'robochart::RCModule' (role 'robochart_RCModule', cardinality 0..*) is associated with 'robochart::RCPackage' (role 'robochart_RCPackage11', cardinality 0..*).
+'robochart::Expression' (role 'robochart_Expression280', cardinality 0..*) is associated with 'robochart::SetComp' (role 'robochart_SetComp279', cardinality 0..*).
+'robochart::Action' (role 'robochart_Action126', cardinality 0..*) is associated with 'robochart::Statement' (role 'robochart_Statement127', cardinality 0..*).
+'robochart::OperationSig' (role 'robochart_OperationSig54', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression55', cardinality 0..*).
+'robochart::InExp' (role 'robochart_InExp', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression237', cardinality 0..*).
+'robochart::ArrayAssignable' (role 'robochart_ArrayAssignable306', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression307', cardinality 0..*).
+'robochart::LetExpression' (role 'robochart_LetExpression', cardinality 0..*) is associated with 'robochart::Declaration' (role 'robochart_Declaration230', cardinality 0..*).
+'robochart::Transition' (role 'robochart_Transition90', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression91', cardinality 0..*).
+'robochart::Expression' (role 'robochart_Expression185', cardinality 0..*) is associated with 'robochart::Call' (role 'robochart_Call184', cardinality 0..*).
+'robochart::BasicPackage' (role 'robochart_BasicPackage', cardinality 0..*) is associated with 'robochart::Import' (role 'robochart_Import', cardinality 0..*).
+'robochart::StateClockExp' (role 'robochart_StateClockExp', cardinality 0..*) is associated with 'robochart::State' (role 'robochart_State197', cardinality 0..*).
+'robochart::Enumeration' (role 'robochart_Enumeration263', cardinality 0..*) is associated with 'robochart::EnumExp' (role 'robochart_EnumExp', cardinality 0..*).
+'robochart::RCModule' (role 'robochart_RCModule148', cardinality 0..*) is associated with 'robochart::Connection' (role 'robochart_Connection149', cardinality 0..*).
+'robochart::Expression' (role 'robochart_Expression99', cardinality 0..*) is associated with 'robochart::Transition' (role 'robochart_Transition98', cardinality 0..*).
+'robochart::ClockExp' (role 'robochart_ClockExp', cardinality 0..*) is associated with 'robochart::Clock' (role 'robochart_Clock195', cardinality 0..*).
+'robochart::ParExp' (role 'robochart_ParExp', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression268', cardinality 0..*).
+'robochart::RCPackage' (role 'robochart_RCPackage3', cardinality 0..*) is associated with 'robochart::RoboticPlatformDef' (role 'robochart_RoboticPlatformDef', cardinality 0..*).
+'robochart::SetRange' (role 'robochart_SetRange', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression282', cardinality 0..*).
+'robochart::Context' (role 'robochart_Context72', cardinality 0..*) is associated with 'robochart::Interface' (role 'robochart_Interface73', cardinality 0..*).
+'robochart::VariableList' (role 'robochart_VariableList59', cardinality 0..*) is associated with 'robochart::BasicContext' (role 'robochart_BasicContext', cardinality 0..*).
+'robochart::Transition' (role 'robochart_Transition101', cardinality 0..*) is associated with 'robochart::Statement' (role 'robochart_Statement', cardinality 0..*).
+'robochart::StateMachine' (role 'robochart_StateMachine', cardinality 0..*) is associated with 'robochart::ControllerDef' (role 'robochart_ControllerDef129', cardinality 0..*).
+'robochart::Parameter' (role 'robochart_Parameter', cardinality 0..*) is associated with 'robochart::Function' (role 'robochart_Function41', cardinality 0..*).
+'robochart::StateMachineRef' (role 'robochart_StateMachineRef', cardinality 0..*) is associated with 'robochart::StateMachineDef' (role 'robochart_StateMachineDef77', cardinality 0..*).
+'robochart::Call' (role 'robochart_Call', cardinality 0..*) is associated with 'robochart::OperationSig' (role 'robochart_OperationSig182', cardinality 0..*).
+'robochart::Selection' (role 'robochart_Selection', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression246', cardinality 0..*).
+'robochart::StateMachineDef' (role 'robochart_StateMachineDef', cardinality 0..*) is associated with 'robochart::RCPackage' (role 'robochart_RCPackage7', cardinality 0..*).
+'robochart::Expression' (role 'robochart_Expression294', cardinality 0..*) is associated with 'robochart::CallExp' (role 'robochart_CallExp', cardinality 0..*).
+'robochart::NameType' (role 'robochart_NameType', cardinality 0..*) is associated with 'robochart::Type' (role 'robochart_Type23', cardinality 0..*).
+'robochart::BasicContext' (role 'robochart_BasicContext64', cardinality 0..*) is associated with 'robochart::Event' (role 'robochart_Event65', cardinality 0..*).
+'robochart::Statement' (role 'robochart_Statement180', cardinality 0..*) is associated with 'robochart::ParStmt' (role 'robochart_ParStmt', cardinality 0..*).
+'robochart::SeqStatement' (role 'robochart_SeqStatement', cardinality 0..*) is associated with 'robochart::Statement' (role 'robochart_Statement178', cardinality 0..*).
+'robochart::Expression' (role 'robochart_Expression154', cardinality 0..*) is associated with 'robochart::TimedStatement' (role 'robochart_TimedStatement', cardinality 0..*).
+'robochart::Expression' (role 'robochart_Expression270', cardinality 0..*) is associated with 'robochart::SeqExp' (role 'robochart_SeqExp', cardinality 0..*).
+'robochart::Type' (role 'robochart_Type256', cardinality 0..*) is associated with 'robochart::AsExp' (role 'robochart_AsExp255', cardinality 0..*).
+'robochart::OperationDef' (role 'robochart_OperationDef57', cardinality 0..*) is associated with 'robochart::OperationRef' (role 'robochart_OperationRef', cardinality 0..*).
+'robochart::Interface' (role 'robochart_Interface', cardinality 0..*) is associated with 'robochart::RCPackage' (role 'robochart_RCPackage', cardinality 0..*).
+'robochart::Variable' (role 'robochart_Variable37', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression', cardinality 0..*).
+'robochart::WaitingCondition' (role 'robochart_WaitingCondition', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression311', cardinality 0..*).
+'robochart::ArrayExp' (role 'robochart_ArrayExp', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression190', cardinality 0..*).
+'robochart::Not' (role 'robochart_Not', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression235', cardinality 0..*).
+'robochart::Context' (role 'robochart_Context', cardinality 0..*) is associated with 'robochart::Interface' (role 'robochart_Interface67', cardinality 0..*).
+'robochart::Expression' (role 'robochart_Expression287', cardinality 0..*) is associated with 'robochart::TupleExp' (role 'robochart_TupleExp', cardinality 0..*).
+'robochart::Context' (role 'robochart_Context69', cardinality 0..*) is associated with 'robochart::Interface' (role 'robochart_Interface70', cardinality 0..*).
+'robochart::Connection' (role 'robochart_Connection', cardinality 0..*) is associated with 'robochart::ControllerDef' (role 'robochart_ControllerDef133', cardinality 0..*).
+'robochart::Event' (role 'robochart_Event', cardinality 0..*) is associated with 'robochart::Type' (role 'robochart_Type39', cardinality 0..*).
+'robochart::Trigger' (role 'robochart_Trigger106', cardinality 0..*) is associated with 'robochart::Event' (role 'robochart_Event107', cardinality 0..*).
+'robochart::Connection' (role 'robochart_Connection143', cardinality 0..*) is associated with 'robochart::Event' (role 'robochart_Event144', cardinality 0..*).
+'robochart::IsExp' (role 'robochart_IsExp260', cardinality 0..*) is associated with 'robochart::Type' (role 'robochart_Type261', cardinality 0..*).
+'robochart::Node' (role 'robochart_Node88', cardinality 0..*) is associated with 'robochart::Transition' (role 'robochart_Transition87', cardinality 0..*).
+'robochart::Expression' (role 'robochart_Expression289', cardinality 0..*) is associated with 'robochart::RangeExp' (role 'robochart_RangeExp', cardinality 0..*).
+'robochart::Expression' (role 'robochart_Expression164', cardinality 0..*) is associated with 'robochart::IfStmt' (role 'robochart_IfStmt', cardinality 0..*).
+'robochart::SetComp' (role 'robochart_SetComp', cardinality 0..*) is associated with 'robochart::Variable' (role 'robochart_Variable274', cardinality 0..*).
+'robochart::CallExp' (role 'robochart_CallExp296', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression297', cardinality 0..*).
+'robochart::SendEvent' (role 'robochart_SendEvent', cardinality 0..*) is associated with 'robochart::Trigger' (role 'robochart_Trigger176', cardinality 0..*).
+'robochart::RelationType' (role 'robochart_RelationType29', cardinality 0..*) is associated with 'robochart::Type' (role 'robochart_Type30', cardinality 0..*).
+'robochart::Expression' (role 'robochart_Expression47', cardinality 0..*) is associated with 'robochart::Function' (role 'robochart_Function46', cardinality 0..*).
+'robochart::RoboticPlatformRef' (role 'robochart_RoboticPlatformRef', cardinality 0..*) is associated with 'robochart::RoboticPlatformDef' (role 'robochart_RoboticPlatformDef75', cardinality 0..*).
+'robochart::NamedExpression' (role 'robochart_NamedExpression', cardinality 0..*) is associated with 'robochart::RefExp' (role 'robochart_RefExp', cardinality 0..*).
+'robochart::Transition' (role 'robochart_Transition93', cardinality 0..*) is associated with 'robochart::Trigger' (role 'robochart_Trigger', cardinality 0..*).
+'robochart::IfExpression' (role 'robochart_IfExpression225', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression226', cardinality 0..*).
+'robochart::Connection' (role 'robochart_Connection135', cardinality 0..*) is associated with 'robochart::ConnectionNode' (role 'robochart_ConnectionNode', cardinality 0..*).
+'robochart::ControllerDef' (role 'robochart_ControllerDef131', cardinality 0..*) is associated with 'robochart::Operation' (role 'robochart_Operation', cardinality 0..*).
+'robochart::Expression' (role 'robochart_Expression52', cardinality 0..*) is associated with 'robochart::OperationSig' (role 'robochart_OperationSig51', cardinality 0..*).
+'robochart::StateMachineBody' (role 'robochart_StateMachineBody', cardinality 0..*) is associated with 'robochart::Clock' (role 'robochart_Clock', cardinality 0..*).
+'robochart::Expression' (role 'robochart_Expression253', cardinality 0..*) is associated with 'robochart::AsExp' (role 'robochart_AsExp', cardinality 0..*).
+'robochart::Variable' (role 'robochart_Variable212', cardinality 0..*) is associated with 'robochart::LambdaExp' (role 'robochart_LambdaExp', cardinality 0..*).
+'robochart::IfStmt' (role 'robochart_IfStmt169', cardinality 0..*) is associated with 'robochart::Statement' (role 'robochart_Statement170', cardinality 0..*).
+'robochart::IfExpression' (role 'robochart_IfExpression222', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression223', cardinality 0..*).
+'robochart::Assignable' (role 'robochart_Assignable', cardinality 0..*) is associated with 'robochart::Assignment' (role 'robochart_Assignment', cardinality 0..*).
+'robochart::OperationSig' (role 'robochart_OperationSig', cardinality 0..*) is associated with 'robochart::Parameter' (role 'robochart_Parameter49', cardinality 0..*).
+'robochart::VariableList' (role 'robochart_VariableList', cardinality 0..*) is associated with 'robochart::Variable' (role 'robochart_Variable', cardinality 0..*).
+'robochart::Node' (role 'robochart_Node', cardinality 0..*) is associated with 'robochart::NodeContainer' (role 'robochart_NodeContainer', cardinality 0..*).
+'robochart::Expression' (role 'robochart_Expression285', cardinality 0..*) is associated with 'robochart::SetRange' (role 'robochart_SetRange284', cardinality 0..*).
+'robochart::Statement' (role 'robochart_Statement157', cardinality 0..*) is associated with 'robochart::TimedStatement' (role 'robochart_TimedStatement156', cardinality 0..*).
+'robochart::TypeDecl' (role 'robochart_TypeDecl', cardinality 0..*) is associated with 'robochart::RCPackage' (role 'robochart_RCPackage5', cardinality 0..*).
+'robochart::Transition' (role 'robochart_Transition103', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression104', cardinality 0..*).
+'robochart::Expression' (role 'robochart_Expression202', cardinality 0..*) is associated with 'robochart::BinaryExpression' (role 'robochart_BinaryExpression201', cardinality 0..*).
+'robochart::RCModule' (role 'robochart_RCModule151', cardinality 0..*) is associated with 'robochart::ConnectionNode' (role 'robochart_ConnectionNode152', cardinality 0..*).
+'robochart::Trigger' (role 'robochart_Trigger124', cardinality 0..*) is associated with 'robochart::ClockReset' (role 'robochart_ClockReset', cardinality 0..*).
+'robochart::Expression' (role 'robochart_Expression233', cardinality 0..*) is associated with 'robochart::LetExpression' (role 'robochart_LetExpression232', cardinality 0..*).
+'robochart::RangeExp' (role 'robochart_RangeExp291', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression292', cardinality 0..*).
+'robochart::Literal' (role 'robochart_Literal20', cardinality 0..*) is associated with 'robochart::Type' (role 'robochart_Type21', cardinality 0..*).
+'robochart::OperationDef' (role 'robochart_OperationDef', cardinality 0..*) is associated with 'robochart::RCPackage' (role 'robochart_RCPackage13', cardinality 0..*).
+'robochart::Expression' (role 'robochart_Expression210', cardinality 0..*) is associated with 'robochart::QuantifierExpression' (role 'robochart_QuantifierExpression209', cardinality 0..*).
+'robochart::Variable' (role 'robochart_Variable309', cardinality 0..*) is associated with 'robochart::VarRef' (role 'robochart_VarRef', cardinality 0..*).
+'robochart::Wait' (role 'robochart_Wait', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression162', cardinality 0..*).
+'robochart::Type' (role 'robochart_Type27', cardinality 0..*) is associated with 'robochart::RelationType' (role 'robochart_RelationType', cardinality 0..*).
+'robochart::IsExp' (role 'robochart_IsExp', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression258', cardinality 0..*).
+'robochart::WaitingConditionRef' (role 'robochart_WaitingConditionRef', cardinality 0..*) is associated with 'robochart::WaitingCondition' (role 'robochart_WaitingCondition316', cardinality 0..*).
+'robochart::Expression' (role 'robochart_Expression220', cardinality 0..*) is associated with 'robochart::IfExpression' (role 'robochart_IfExpression', cardinality 0..*).
+'robochart::BinaryExpression' (role 'robochart_BinaryExpression', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression199', cardinality 0..*).
+'robochart::State' (role 'robochart_State', cardinality 0..*) is associated with 'robochart::Action' (role 'robochart_Action', cardinality 0..*).
+'robochart::Trigger' (role 'robochart_Trigger112', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression113', cardinality 0..*).
+'robochart::Function' (role 'robochart_Function43', cardinality 0..*) is associated with 'robochart::Expression' (role 'robochart_Expression44', cardinality 0..*).
+'robochart::Enumeration' (role 'robochart_Enumeration', cardinality 0..*) is associated with 'robochart::Literal' (role 'robochart_Literal', cardinality 0..*).

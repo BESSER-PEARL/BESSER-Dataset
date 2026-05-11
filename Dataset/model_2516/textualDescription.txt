@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'test::EClass1' has the following attributes: 'EAttribute0' of type str.
+The class 'test::EClass2' has the following attributes: 'EAttribute0' of type bool; 'EAttribute1' of type int.
+The class 'test::EClass0' has the following attributes: 'attr0' of type str; 'attr1' of type bool.
+The enumeration 'EEnum0' has the following literals: 'b', 'a'.
+'test::EClass2' (role 'test_EClass25', cardinality 0..*) is associated with 'test::EClass1' (role 'test_EClass14', cardinality 0..*).
+'test::EClass1' (role 'test_EClass1', cardinality 0..*) is associated with 'test::EClass0' (role 'test_EClass0', cardinality 0..*).
+'test::EClass2' (role 'test_EClass2', cardinality 0..*) is associated with 'test::EClass0' (role 'test_EClass02', cardinality 0..*).

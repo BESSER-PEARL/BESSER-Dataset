@@ -1,0 +1,4 @@
+The model has 1 class(es).
+The class 'TreeDsl::Tree' has the following attributes: 'label' of type str.
+'TreeDsl::Tree' (role 'Tree4', cardinality 0..*) is associated with 'TreeDsl::Tree' (role 'children', cardinality 0..*).
+'TreeDsl::Tree' (role 'parent', cardinality 0..*) is associated with 'TreeDsl::Tree' (role 'Tree', cardinality 0..*).

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/diffblue/eclipse-cbmc/org.eclipse.cbmc.tracedebugger/model/trace.ecore

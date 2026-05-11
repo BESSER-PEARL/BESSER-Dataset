@@ -1,0 +1,44 @@
+The model has 18 class(es).
+The class 'Action' has no attributes.
+The class 'automata::State' has the following attributes: 'name' of type str; 'initial' of type bool.
+The class 'automata::NumberAction' has the following attributes: 'value' of type str.
+The class 'automata::NumberVariable' has the following attributes: 'value' of type str; 'initialValue' of type str.
+The class 'automata::Automaton' has no attributes.
+The class 'Variable' has no attributes.
+The class 'automata::Variable' has the following attributes: 'name' of type str.
+The class 'automata::BooleanAction' has the following attributes: 'value' of type bool.
+The class 'automata::BooleanVariable' has the following attributes: 'initialValue' of type bool; 'value' of type bool.
+The class 'automata::Transition' has no attributes.
+The class 'automata::Guard' has no attributes.
+The class 'automata::StringAction' has the following attributes: 'value' of type str.
+The class 'automata::NumberGuard' has the following attributes: 'operator' of type str; 'value' of type str.
+The class 'automata::BooleanGuard' has the following attributes: 'operator' of type bool; 'value' of type bool.
+The class 'automata::Action' has no attributes.
+The class 'automata::StringGuard' has the following attributes: 'operator' of type bool; 'value' of type str.
+The class 'Guard' has no attributes.
+The class 'automata::StringVariable' has the following attributes: 'initialValue' of type str; 'value' of type str.
+The enumeration 'StringOperator' has the following literals: 'Unequal', 'Equal'.
+The enumeration 'BooleanOperator' has the following literals: 'Unequal', 'Equal'.
+The enumeration 'NumberOperator' has the following literals: 'Unequal', 'LessOrEqualThan', 'GreaterOrEqualThan', 'GreaterThan', 'Equal', 'LessThan'.
+'automata::StringGuard' is a specialization of 'Guard'.
+'automata::BooleanGuard' is a specialization of 'Guard'.
+'automata::NumberVariable' is a specialization of 'Variable'.
+'automata::BooleanAction' is a specialization of 'Action'.
+'automata::NumberAction' is a specialization of 'Action'.
+'automata::NumberGuard' is a specialization of 'Guard'.
+'automata::StringAction' is a specialization of 'Action'.
+'automata::BooleanVariable' is a specialization of 'Variable'.
+'automata::StringVariable' is a specialization of 'Variable'.
+'automata::State' (role 'automata_State', cardinality 0..*) is associated with 'automata::Automaton' (role 'automata_Automaton', cardinality 0..*).
+'automata::Transition' (role 'automata_Transition12', cardinality 0..*) is associated with 'automata::Guard' (role 'automata_Guard', cardinality 0..*).
+'automata::NumberVariable' (role 'automata_NumberVariable', cardinality 0..*) is associated with 'automata::NumberGuard' (role 'automata_NumberGuard', cardinality 0..*).
+'automata::Transition' (role 'automata_Transition14', cardinality 0..*) is associated with 'automata::Action' (role 'automata_Action', cardinality 0..*).
+'automata::NumberAction' (role 'automata_NumberAction', cardinality 0..*) is associated with 'automata::NumberVariable' (role 'automata_NumberVariable21', cardinality 0..*).
+'automata::State' (role 'automata_State10', cardinality 0..*) is associated with 'automata::Transition' (role 'automata_Transition9', cardinality 0..*).
+'automata::Variable' (role 'automata_Variable', cardinality 0..*) is associated with 'automata::Automaton' (role 'automata_Automaton4', cardinality 0..*).
+'automata::BooleanAction' (role 'automata_BooleanAction', cardinality 0..*) is associated with 'automata::BooleanVariable' (role 'automata_BooleanVariable23', cardinality 0..*).
+'automata::Transition' (role 'automata_Transition6', cardinality 0..*) is associated with 'automata::State' (role 'automata_State7', cardinality 0..*).
+'automata::StringVariable' (role 'automata_StringVariable', cardinality 0..*) is associated with 'automata::StringGuard' (role 'automata_StringGuard', cardinality 0..*).
+'automata::StringVariable' (role 'automata_StringVariable19', cardinality 0..*) is associated with 'automata::StringAction' (role 'automata_StringAction', cardinality 0..*).
+'automata::BooleanGuard' (role 'automata_BooleanGuard', cardinality 0..*) is associated with 'automata::BooleanVariable' (role 'automata_BooleanVariable', cardinality 0..*).
+'automata::Automaton' (role 'automata_Automaton2', cardinality 0..*) is associated with 'automata::Transition' (role 'automata_Transition', cardinality 0..*).

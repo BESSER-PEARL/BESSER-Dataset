@@ -1,0 +1,4 @@
+The model has 1 class(es).
+The class 'simpletree::Tree' has the following attributes: 'label' of type str.
+'simpletree::Tree' (role 'Tree', cardinality 0..*) is associated with 'simpletree::Tree' (role 'parent', cardinality 0..*).
+'simpletree::Tree' (role 'children', cardinality 0..*) is associated with 'simpletree::Tree' (role 'Tree4', cardinality 0..*).

@@ -1,0 +1,110 @@
+The model has 29 class(es).
+The class 'scxml::Finalize' has no attributes.
+The class 'scxml::State' has the following attributes: 'id' of type str.
+The class 'scxml::Cancel' has the following attributes: 'sendid' of type str; 'sendidexpr' of type str.
+The class 'scxml::Param' has the following attributes: 'name' of type str; 'expr' of type str.
+The class 'scxml::Content' has no attributes.
+The class 'scxml::ElseIf' has the following attributes: 'cond' of type str.
+The class 'scxml::Script' has no attributes.
+The class 'scxml::Raise' has the following attributes: 'event' of type str.
+The class 'scxml::Data' has the following attributes: 'expr' of type str; 'id' of type str; 'src' of type str.
+The class 'scxml::OnExit' has no attributes.
+The class 'scxml::Parallel' has the following attributes: 'id' of type str.
+The class 'scxml::Anchor' has the following attributes: 'type' of type str; 'snapshot' of type str.
+The class 'scxml::Send' has the following attributes: 'id' of type str; 'target' of type str; 'typeexpr' of type str; 'idlocation' of type str; 'delay' of type str; 'delayexpr' of type str; 'eventexpr' of type str; 'event' of type str; 'targetexpr' of type str; 'namelist' of type str; 'type' of type str; 'hintsexpr' of type str; 'hints' of type str.
+The class 'scxml::Else' has no attributes.
+The class 'scxml::Assign' has the following attributes: 'expr' of type str; 'dataid' of type str; 'location' of type str.
+The class 'scxml::NamedElement' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'scxml::Invoke' has the following attributes: 'autoforward' of type str; 'id' of type str; 'typeexpr' of type str; 'type' of type str; 'idlocation' of type str; 'namelist' of type str; 'src' of type str; 'srcexpr' of type str.
+The class 'scxml::If' has the following attributes: 'cond' of type str.
+The class 'scxml::Donedata' has no attributes.
+The class 'scxml::Log' has the following attributes: 'label' of type str; 'level' of type str; 'expr' of type str.
+The class 'scxml::FinalState' has the following attributes: 'id' of type str.
+The class 'scxml::Validate' has the following attributes: 'schema' of type str; 'location' of type str.
+The class 'scxml::InitialState' has no attributes.
+The class 'scxml::HistoryState' has the following attributes: 'type' of type str; 'id' of type str.
+The class 'scxml::Transition' has the following attributes: 'cond' of type str; 'event' of type str; 'anchor' of type str.
+The class 'scxml::ServiceTemplate' has the following attributes: 'name' of type str; 'exmode' of type str; 'xmlns' of type str; 'profile' of type str; 'version' of type str.
+The class 'scxml::DataModel' has the following attributes: 'schema' of type str.
+The class 'scxml::OnEntry' has no attributes.
+'scxml::FinalState' is a specialization of 'NamedElement'.
+'scxml::Parallel' is a specialization of 'NamedElement'.
+'scxml::State' is a specialization of 'NamedElement'.
+'scxml::InitialState' is a specialization of 'NamedElement'.
+'scxml::HistoryState' is a specialization of 'NamedElement'.
+'scxml::Script' (role 'scxml_Script48', cardinality 0..*) is associated with 'scxml::OnEntry' (role 'scxml_OnEntry47', cardinality 0..*).
+'scxml::State' (role 'scxml_State10', cardinality 0..*) is associated with 'scxml::State' (role 'scxml_State8', cardinality 0..*).
+'scxml::Log' (role 'scxml_Log', cardinality 0..*) is associated with 'scxml::OnEntry' (role 'scxml_OnEntry56', cardinality 0..*).
+'scxml::OnExit' (role 'scxml_OnExit66', cardinality 0..*) is associated with 'scxml::Script' (role 'scxml_Script67', cardinality 0..*).
+'scxml::ServiceTemplate' (role 'scxml_ServiceTemplate45', cardinality 0..*) is associated with 'scxml::Script' (role 'scxml_Script', cardinality 0..*).
+'scxml::Anchor' (role 'scxml_Anchor', cardinality 0..*) is associated with 'scxml::State' (role 'scxml_State18', cardinality 0..*).
+'scxml::Assign' (role 'scxml_Assign175', cardinality 0..*) is associated with 'scxml::Finalize' (role 'scxml_Finalize174', cardinality 0..*).
+'scxml::NamedElement' (role 'scxml_NamedElement26', cardinality 0..*) is associated with 'scxml::Transition' (role 'scxml_Transition25', cardinality 0..*).
+'scxml::FinalState' (role 'scxml_FinalState', cardinality 0..*) is associated with 'scxml::State' (role 'scxml_State12', cardinality 0..*).
+'scxml::Data' (role 'scxml_Data', cardinality 0..*) is associated with 'scxml::DataModel' (role 'scxml_DataModel147', cardinality 0..*).
+'scxml::Validate' (role 'scxml_Validate145', cardinality 0..*) is associated with 'scxml::If' (role 'scxml_If144', cardinality 0..*).
+'scxml::Raise' (role 'scxml_Raise85', cardinality 0..*) is associated with 'scxml::OnExit' (role 'scxml_OnExit84', cardinality 0..*).
+'scxml::If' (role 'scxml_If76', cardinality 0..*) is associated with 'scxml::OnExit' (role 'scxml_OnExit75', cardinality 0..*).
+'scxml::Finalize' (role 'scxml_Finalize183', cardinality 0..*) is associated with 'scxml::Log' (role 'scxml_Log184', cardinality 0..*).
+'scxml::Param' (role 'scxml_Param170', cardinality 0..*) is associated with 'scxml::Invoke' (role 'scxml_Invoke169', cardinality 0..*).
+'scxml::Raise' (role 'scxml_Raise', cardinality 0..*) is associated with 'scxml::OnEntry' (role 'scxml_OnEntry60', cardinality 0..*).
+'scxml::FinalState' (role 'scxml_FinalState37', cardinality 0..*) is associated with 'scxml::ServiceTemplate' (role 'scxml_ServiceTemplate36', cardinality 0..*).
+'scxml::NamedElement' (role 'scxml_NamedElement2', cardinality 0..*) is associated with 'scxml::Transition' (role 'scxml_Transition', cardinality 0..*).
+'scxml::Cancel' (role 'scxml_Cancel', cardinality 0..*) is associated with 'scxml::OnEntry' (role 'scxml_OnEntry52', cardinality 0..*).
+'scxml::Donedata' (role 'scxml_Donedata', cardinality 0..*) is associated with 'scxml::FinalState' (role 'scxml_FinalState99', cardinality 0..*).
+'scxml::OnExit' (role 'scxml_OnExit81', cardinality 0..*) is associated with 'scxml::Param' (role 'scxml_Param82', cardinality 0..*).
+'scxml::OnEntry' (role 'scxml_OnEntry64', cardinality 0..*) is associated with 'scxml::Validate' (role 'scxml_Validate', cardinality 0..*).
+'scxml::Finalize' (role 'scxml_Finalize189', cardinality 0..*) is associated with 'scxml::Raise' (role 'scxml_Raise190', cardinality 0..*).
+'scxml::If' (role 'scxml_If141', cardinality 0..*) is associated with 'scxml::Send' (role 'scxml_Send142', cardinality 0..*).
+'scxml::If' (role 'scxml_If181', cardinality 0..*) is associated with 'scxml::Finalize' (role 'scxml_Finalize180', cardinality 0..*).
+'scxml::ServiceTemplate' (role 'scxml_ServiceTemplate39', cardinality 0..*) is associated with 'scxml::Parallel' (role 'scxml_Parallel40', cardinality 0..*).
+'scxml::OnEntry' (role 'scxml_OnEntry58', cardinality 0..*) is associated with 'scxml::Param' (role 'scxml_Param', cardinality 0..*).
+'scxml::If' (role 'scxml_If126', cardinality 0..*) is associated with 'scxml::Cancel' (role 'scxml_Cancel127', cardinality 0..*).
+'scxml::OnExit' (role 'scxml_OnExit105', cardinality 0..*) is associated with 'scxml::Parallel' (role 'scxml_Parallel104', cardinality 0..*).
+'scxml::If' (role 'scxml_If130', cardinality 0..*) is associated with 'scxml::If' (role 'scxml_If128', cardinality 0..*).
+'scxml::Parallel' (role 'scxml_Parallel106', cardinality 0..*) is associated with 'scxml::Parallel' (role 'scxml_Parallel108', cardinality 0..*).
+'scxml::OnExit' (role 'scxml_OnExit87', cardinality 0..*) is associated with 'scxml::Send' (role 'scxml_Send88', cardinality 0..*).
+'scxml::Else' (role 'scxml_Else', cardinality 0..*) is associated with 'scxml::If' (role 'scxml_If121', cardinality 0..*).
+'scxml::If' (role 'scxml_If132', cardinality 0..*) is associated with 'scxml::Log' (role 'scxml_Log133', cardinality 0..*).
+'scxml::OnEntry' (role 'scxml_OnEntry54', cardinality 0..*) is associated with 'scxml::If' (role 'scxml_If', cardinality 0..*).
+'scxml::Transition' (role 'scxml_Transition22', cardinality 0..*) is associated with 'scxml::NamedElement' (role 'scxml_NamedElement23', cardinality 0..*).
+'scxml::State' (role 'scxml_State7', cardinality 0..*) is associated with 'scxml::InitialState' (role 'scxml_InitialState', cardinality 0..*).
+'scxml::State' (role 'scxml_State20', cardinality 0..*) is associated with 'scxml::Invoke' (role 'scxml_Invoke', cardinality 0..*).
+'scxml::Anchor' (role 'scxml_Anchor117', cardinality 0..*) is associated with 'scxml::Parallel' (role 'scxml_Parallel116', cardinality 0..*).
+'scxml::Assign' (role 'scxml_Assign70', cardinality 0..*) is associated with 'scxml::OnExit' (role 'scxml_OnExit69', cardinality 0..*).
+'scxml::Invoke' (role 'scxml_Invoke166', cardinality 0..*) is associated with 'scxml::Content' (role 'scxml_Content167', cardinality 0..*).
+'scxml::OnEntry' (role 'scxml_OnEntry', cardinality 0..*) is associated with 'scxml::State' (role 'scxml_State', cardinality 0..*).
+'scxml::OnExit' (role 'scxml_OnExit97', cardinality 0..*) is associated with 'scxml::FinalState' (role 'scxml_FinalState96', cardinality 0..*).
+'scxml::Content' (role 'scxml_Content', cardinality 0..*) is associated with 'scxml::Data' (role 'scxml_Data149', cardinality 0..*).
+'scxml::OnEntry' (role 'scxml_OnEntry94', cardinality 0..*) is associated with 'scxml::FinalState' (role 'scxml_FinalState93', cardinality 0..*).
+'scxml::Param' (role 'scxml_Param164', cardinality 0..*) is associated with 'scxml::Donedata' (role 'scxml_Donedata163', cardinality 0..*).
+'scxml::Donedata' (role 'scxml_Donedata160', cardinality 0..*) is associated with 'scxml::Content' (role 'scxml_Content161', cardinality 0..*).
+'scxml::Assign' (role 'scxml_Assign', cardinality 0..*) is associated with 'scxml::OnEntry' (role 'scxml_OnEntry50', cardinality 0..*).
+'scxml::HistoryState' (role 'scxml_HistoryState', cardinality 0..*) is associated with 'scxml::State' (role 'scxml_State16', cardinality 0..*).
+'scxml::If' (role 'scxml_If135', cardinality 0..*) is associated with 'scxml::Param' (role 'scxml_Param136', cardinality 0..*).
+'scxml::Content' (role 'scxml_Content156', cardinality 0..*) is associated with 'scxml::Content' (role 'scxml_Content158', cardinality 0..*).
+'scxml::Log' (role 'scxml_Log79', cardinality 0..*) is associated with 'scxml::OnExit' (role 'scxml_OnExit78', cardinality 0..*).
+'scxml::Finalize' (role 'scxml_Finalize192', cardinality 0..*) is associated with 'scxml::Send' (role 'scxml_Send193', cardinality 0..*).
+'scxml::InitialState' (role 'scxml_InitialState34', cardinality 0..*) is associated with 'scxml::ServiceTemplate' (role 'scxml_ServiceTemplate33', cardinality 0..*).
+'scxml::Finalize' (role 'scxml_Finalize177', cardinality 0..*) is associated with 'scxml::Cancel' (role 'scxml_Cancel178', cardinality 0..*).
+'scxml::Param' (role 'scxml_Param152', cardinality 0..*) is associated with 'scxml::Send' (role 'scxml_Send151', cardinality 0..*).
+'scxml::Send' (role 'scxml_Send154', cardinality 0..*) is associated with 'scxml::Content' (role 'scxml_Content155', cardinality 0..*).
+'scxml::Validate' (role 'scxml_Validate196', cardinality 0..*) is associated with 'scxml::Finalize' (role 'scxml_Finalize195', cardinality 0..*).
+'scxml::ServiceTemplate' (role 'scxml_ServiceTemplate', cardinality 0..*) is associated with 'scxml::Transition' (role 'scxml_Transition28', cardinality 0..*).
+'scxml::ElseIf' (role 'scxml_ElseIf', cardinality 0..*) is associated with 'scxml::If' (role 'scxml_If119', cardinality 0..*).
+'scxml::Finalize' (role 'scxml_Finalize186', cardinality 0..*) is associated with 'scxml::Param' (role 'scxml_Param187', cardinality 0..*).
+'scxml::State' (role 'scxml_State5', cardinality 0..*) is associated with 'scxml::OnExit' (role 'scxml_OnExit', cardinality 0..*).
+'scxml::OnEntry' (role 'scxml_OnEntry62', cardinality 0..*) is associated with 'scxml::Send' (role 'scxml_Send', cardinality 0..*).
+'scxml::If' (role 'scxml_If138', cardinality 0..*) is associated with 'scxml::Raise' (role 'scxml_Raise139', cardinality 0..*).
+'scxml::NamedElement' (role 'scxml_NamedElement', cardinality 0..*) is associated with 'scxml::DataModel' (role 'scxml_DataModel', cardinality 0..*).
+'scxml::State' (role 'scxml_State31', cardinality 0..*) is associated with 'scxml::ServiceTemplate' (role 'scxml_ServiceTemplate30', cardinality 0..*).
+'scxml::Cancel' (role 'scxml_Cancel73', cardinality 0..*) is associated with 'scxml::OnExit' (role 'scxml_OnExit72', cardinality 0..*).
+'scxml::ServiceTemplate' (role 'scxml_ServiceTemplate42', cardinality 0..*) is associated with 'scxml::DataModel' (role 'scxml_DataModel43', cardinality 0..*).
+'scxml::Parallel' (role 'scxml_Parallel', cardinality 0..*) is associated with 'scxml::State' (role 'scxml_State14', cardinality 0..*).
+'scxml::Parallel' (role 'scxml_Parallel113', cardinality 0..*) is associated with 'scxml::HistoryState' (role 'scxml_HistoryState114', cardinality 0..*).
+'scxml::Finalize' (role 'scxml_Finalize', cardinality 0..*) is associated with 'scxml::Invoke' (role 'scxml_Invoke172', cardinality 0..*).
+'scxml::If' (role 'scxml_If123', cardinality 0..*) is associated with 'scxml::Assign' (role 'scxml_Assign124', cardinality 0..*).
+'scxml::Parallel' (role 'scxml_Parallel110', cardinality 0..*) is associated with 'scxml::State' (role 'scxml_State111', cardinality 0..*).
+'scxml::Validate' (role 'scxml_Validate91', cardinality 0..*) is associated with 'scxml::OnExit' (role 'scxml_OnExit90', cardinality 0..*).
+'scxml::OnEntry' (role 'scxml_OnEntry102', cardinality 0..*) is associated with 'scxml::Parallel' (role 'scxml_Parallel101', cardinality 0..*).

@@ -1,0 +1,32 @@
+The model has 6 class(es).
+The class 'xygraph::FontDescriptor' has the following attributes: 'name' of type str; 'size' of type int; 'style' of type int.
+The class 'xygraph::TraceDescriptor' has the following attributes: 'errorBarEnabled' of type bool; 'lineWidth' of type int; 'name' of type str; 'errorBarCapWidth' of type int; 'baseLine' of type str; 'pointSize' of type int; 'areaAlpha' of type int; 'traceType' of type str; 'antiAliasing' of type bool; 'drawYErrorInArea' of type bool; 'yErrorBarType' of type str; 'xErrorBarType' of type str; 'pointStyle' of type str.
+The class 'xygraph::ColorDescriptor' has the following attributes: 'r' of type int; 'g' of type int; 'b' of type int.
+The class 'xygraph::EObject' has no attributes.
+The class 'xygraph::XYGraphDescriptor' has the following attributes: 'showPlotAreaBorder' of type bool; 'showTitle' of type bool; 'zoomType' of type str; 'transparent' of type bool; 'title' of type str; 'showLegend' of type bool.
+The class 'xygraph::AxisDescriptor' has the following attributes: 'formatPattern' of type str; 'orientation' of type str; 'zoomType' of type str; 'autoScale' of type bool; 'autoScaleThreshold' of type float; 'showMinorGrid' of type bool; 'rangeUpper' of type float; 'autoFormat' of type bool; 'title' of type str; 'rangeLower' of type float; 'dashGridLine' of type bool; 'showMajorGrid' of type bool; 'minorTicksVisible' of type bool; 'dateEnabled' of type bool; 'primarySide' of type bool; 'logScale' of type bool.
+The enumeration 'Trace_TraceType' has the following literals: 'STEP_HORIZONTALLY', 'DASH_LINE', 'STEP_VERTICALLY', 'DOT_LINE', 'SOLID_LINE', 'DASHDOT_LINE', 'POINT', 'AREA', 'LINE_AREA', 'DASHDOTDOT_LINE', 'BAR'.
+The enumeration 'ZoomType' has the following literals: 'NONE', 'DYNAMIC_ZOOM', 'ZOOM_IN_VERTICALLY', 'ZOOM_OUT_HORIZONTALLY', 'RUBBERBAND_ZOOM', 'ZOOM_IN', 'PANNING', 'HORIZONTAL_ZOOM', 'ZOOM_OUT', 'ZOOM_OUT_VERTICALLY', 'VERTICAL_ZOOM', 'ZOOM_IN_HORIZONTALLY'.
+The enumeration 'Trace_BaseLine' has the following literals: 'ZERO', 'POSITIVE_INFINITY', 'NEGATIVE_INFINITY'.
+The enumeration 'Trace_ErrorBarType' has the following literals: 'NONE', 'MINUS', 'BOTH', 'PLUS'.
+The enumeration 'Trace_PointStyle' has the following literals: 'POINT', 'DIAMOND', 'FILLED_SQUARE', 'XCROSS', 'CIRCLE', 'TRIANGLE', 'CROSS', 'FILLED_TRIANGLE', 'BAR', 'SQUARE', 'FILLED_DIAMOND', 'NONE'.
+The enumeration 'LinearScale_Orientation' has the following literals: 'VERTICAL', 'HORIZONTAL'.
+'xygraph::XYGraphDescriptor' (role 'xygraph_XYGraphDescriptor', cardinality 0..*) is associated with 'xygraph::ColorDescriptor' (role 'xygraph_ColorDescriptor', cardinality 0..*).
+'xygraph::ColorDescriptor' (role 'xygraph_ColorDescriptor41', cardinality 0..*) is associated with 'xygraph::TraceDescriptor' (role 'xygraph_TraceDescriptor40', cardinality 0..*).
+'xygraph::EObject' (role 'xygraph_EObject14', cardinality 0..*) is associated with 'xygraph::XYGraphDescriptor' (role 'xygraph_XYGraphDescriptor13', cardinality 0..*).
+'xygraph::FontDescriptor' (role 'xygraph_FontDescriptor35', cardinality 0..*) is associated with 'xygraph::AxisDescriptor' (role 'xygraph_AxisDescriptor34', cardinality 0..*).
+'xygraph::ColorDescriptor' (role 'xygraph_ColorDescriptor38', cardinality 0..*) is associated with 'xygraph::TraceDescriptor' (role 'xygraph_TraceDescriptor37', cardinality 0..*).
+'xygraph::AxisDescriptor' (role 'xygraph_AxisDescriptor44', cardinality 0..*) is associated with 'xygraph::TraceDescriptor' (role 'xygraph_TraceDescriptor43', cardinality 0..*).
+'xygraph::AxisDescriptor' (role 'xygraph_AxisDescriptor25', cardinality 0..*) is associated with 'xygraph::ColorDescriptor' (role 'xygraph_ColorDescriptor26', cardinality 0..*).
+'xygraph::XYGraphDescriptor' (role 'xygraph_XYGraphDescriptor16', cardinality 0..*) is associated with 'xygraph::TraceDescriptor' (role 'xygraph_TraceDescriptor17', cardinality 0..*).
+'xygraph::EObject' (role 'xygraph_EObject', cardinality 0..*) is associated with 'xygraph::XYGraphDescriptor' (role 'xygraph_XYGraphDescriptor11', cardinality 0..*).
+'xygraph::ColorDescriptor' (role 'xygraph_ColorDescriptor7', cardinality 0..*) is associated with 'xygraph::XYGraphDescriptor' (role 'xygraph_XYGraphDescriptor6', cardinality 0..*).
+'xygraph::ColorDescriptor' (role 'xygraph_ColorDescriptor20', cardinality 0..*) is associated with 'xygraph::AxisDescriptor' (role 'xygraph_AxisDescriptor19', cardinality 0..*).
+'xygraph::ColorDescriptor' (role 'xygraph_ColorDescriptor23', cardinality 0..*) is associated with 'xygraph::AxisDescriptor' (role 'xygraph_AxisDescriptor22', cardinality 0..*).
+'xygraph::TraceDescriptor' (role 'xygraph_TraceDescriptor46', cardinality 0..*) is associated with 'xygraph::AxisDescriptor' (role 'xygraph_AxisDescriptor47', cardinality 0..*).
+'xygraph::AxisDescriptor' (role 'xygraph_AxisDescriptor', cardinality 0..*) is associated with 'xygraph::XYGraphDescriptor' (role 'xygraph_XYGraphDescriptor2', cardinality 0..*).
+'xygraph::FontDescriptor' (role 'xygraph_FontDescriptor', cardinality 0..*) is associated with 'xygraph::XYGraphDescriptor' (role 'xygraph_XYGraphDescriptor9', cardinality 0..*).
+'xygraph::ColorDescriptor' (role 'xygraph_ColorDescriptor29', cardinality 0..*) is associated with 'xygraph::AxisDescriptor' (role 'xygraph_AxisDescriptor28', cardinality 0..*).
+'xygraph::TraceDescriptor' (role 'xygraph_TraceDescriptor49', cardinality 0..*) is associated with 'xygraph::EObject' (role 'xygraph_EObject50', cardinality 0..*).
+'xygraph::XYGraphDescriptor' (role 'xygraph_XYGraphDescriptor4', cardinality 0..*) is associated with 'xygraph::TraceDescriptor' (role 'xygraph_TraceDescriptor', cardinality 0..*).
+'xygraph::AxisDescriptor' (role 'xygraph_AxisDescriptor31', cardinality 0..*) is associated with 'xygraph::FontDescriptor' (role 'xygraph_FontDescriptor32', cardinality 0..*).

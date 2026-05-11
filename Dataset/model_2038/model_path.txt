@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/alex-jacquot/MDE/etatma/model/etatma.ecore

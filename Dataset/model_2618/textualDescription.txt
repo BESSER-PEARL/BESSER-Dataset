@@ -1,0 +1,32 @@
+The model has 12 class(es).
+The class 'DNodeEdgeStyle' has no attributes.
+The class 'diastyle::DNodeEdgeStyle' has the following attributes: 'line' of type str; 'icon' of type str; 'fontColor' of type str; 'lineWidth' of type int; 'fontName' of type str; 'textAlignment' of type str; 'fontStyle' of type str; 'fontSize' of type int.
+The class 'diastyle::DStyle' has the following attributes: 'styleHandler' of type str.
+The class 'diastyle::DNodeStyle' has the following attributes: 'layout' of type str; 'sizeY' of type int; 'figure' of type str; 'shapeData' of type str; 'sizeX' of type int; 'radius' of type int; 'shape' of type str.
+The class 'diastyle::DStyleBridge' has the following attributes: 'name' of type str.
+The class 'diastyle::DGraph' has no attributes.
+The class 'EModelElement' has no attributes.
+The class 'diastyle::DBaseStyle' has the following attributes: 'parentName' of type str; 'name' of type str; 'color' of type str.
+The class 'diastyle::DGraphElement' has no attributes.
+The class 'diastyle::DNestingEdgeStyle' has no attributes.
+The class 'diastyle::DEdgeStyle' has the following attributes: 'arrowDirection' of type str; 'arrowSize' of type int; 'shape' of type str.
+The class 'DBaseStyle' has no attributes.
+The enumeration 'DDirection' has the following literals: 'right', 'left', 'none', 'bidirectional'.
+The enumeration 'DShape' has the following literals: 'rectangle', 'ellipse', 'arrow', 'dot', 'triangle', 'custom', 'roundedRectangle'.
+The enumeration 'DFontStyle' has the following literals: 'bold', 'normal', 'italic'.
+The enumeration 'DAlignment' has the following literals: 'fill', 'end', 'center', 'beginning'.
+The enumeration 'DLayout' has the following literals: 'vertical', 'none', 'free', 'horizontal'.
+The enumeration 'DColor' has the following literals: 'black', 'darkBlue', 'blue', 'red', 'lightBlue', 'lightGray', 'yellow', 'gray', 'cyan', 'orange', 'white', 'darkGreen', 'lightGreen', 'darkGray', 'green'.
+The enumeration 'DLine' has the following literals: 'dashdotdot', 'dashdot', 'solid', 'dash', 'custom', 'dot'.
+The enumeration 'DFontName' has the following literals: 'courier', 'times', 'arial'.
+'diastyle::DEdgeStyle' is a specialization of 'DNodeEdgeStyle'.
+'diastyle::DStyle' is a specialization of 'EModelElement'.
+'diastyle::DNestingEdgeStyle' is a specialization of 'DBaseStyle'.
+'diastyle::DNodeEdgeStyle' is a specialization of 'DBaseStyle'.
+'diastyle::DNodeEdgeStyle' is a specialization of 'EModelElement'.
+'diastyle::DNodeStyle' is a specialization of 'DNodeEdgeStyle'.
+'diastyle::DGraphElement' (role 'diastyle_DGraphElement', cardinality 0..*) is associated with 'diastyle::DStyleBridge' (role 'diastyle_DStyleBridge', cardinality 0..*).
+'diastyle::DBaseStyle' (role 'diastyle_DBaseStyle9', cardinality 0..*) is associated with 'diastyle::DBaseStyle' (role 'diastyle_DBaseStyle7', cardinality 0..*).
+'diastyle::DBaseStyle' (role 'diastyle_DBaseStyle', cardinality 0..*) is associated with 'diastyle::DStyle' (role 'diastyle_DStyle', cardinality 0..*).
+'diastyle::DBaseStyle' (role 'diastyle_DBaseStyle5', cardinality 0..*) is associated with 'diastyle::DStyleBridge' (role 'diastyle_DStyleBridge6', cardinality 0..*).
+'diastyle::DStyle' (role 'diastyle_DStyle2', cardinality 0..*) is associated with 'diastyle::DGraph' (role 'diastyle_DGraph', cardinality 0..*).

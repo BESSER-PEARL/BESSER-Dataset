@@ -1,0 +1,14 @@
+The model has 4 class(es).
+The class 'project::Foundation' has no attributes.
+The class 'project::Project' has the following attributes: 'start' of type date; 'end' of type date; 'longname' of type str; 'devmail' of type str; 'shortname' of type str; 'homepage' of type str.
+The class 'project::Person' has the following attributes: 'image' of type str; 'firstname' of type str; 'email' of type str; 'lastname' of type str.
+The class 'project::CommitterShip' has the following attributes: 'end' of type date; 'start' of type date.
+'project::Project' (role 'project', cardinality 0..*) is associated with 'project::CommitterShip' (role 'CommitterShip', cardinality 0..*).
+'project::Person' (role 'person', cardinality 0..*) is associated with 'project::CommitterShip' (role 'CommitterShip16', cardinality 0..*).
+'project::Project' (role 'Project8', cardinality 0..*) is associated with 'project::Project' (role 'subprojects', cardinality 0..*).
+'project::Project' (role 'project_Project', cardinality 0..*) is associated with 'project::Foundation' (role 'project_Foundation', cardinality 0..*).
+'project::Project' (role 'project_Project10', cardinality 0..*) is associated with 'project::Person' (role 'project_Person11', cardinality 0..*).
+'project::Person' (role 'Person', cardinality 0..*) is associated with 'project::CommitterShip' (role 'committerships', cardinality 0..*).
+'project::Foundation' (role 'project_Foundation2', cardinality 0..*) is associated with 'project::Person' (role 'project_Person', cardinality 0..*).
+'project::Project' (role 'Project', cardinality 0..*) is associated with 'project::Project' (role 'parent', cardinality 0..*).
+'project::Project' (role 'Project13', cardinality 0..*) is associated with 'project::CommitterShip' (role 'committers', cardinality 0..*).

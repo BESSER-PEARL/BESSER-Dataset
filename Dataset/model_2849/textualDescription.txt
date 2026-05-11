@@ -1,0 +1,549 @@
+The model has 222 class(es).
+The class 'model::types::JvmParameterizedTypeReference' has no attributes.
+The class 'RichStringForLoop' has no attributes.
+The class 'JvmDeclaredType' has no attributes.
+The class 'model::types::JvmLowerBound' has no attributes.
+The class 'model::ss::XtendClass' has no attributes.
+The class 'model::types::JvmConstraintOwner' has no attributes.
+The class 'model::types::JvmVoid' has no attributes.
+The class 'model::ss::RichStringElseIf' has no attributes.
+The class 'JvmType' has no attributes.
+The class 'model::xbase::XSetLiteral' has no attributes.
+The class 'model::xbase::XPrefixOperation' has no attributes.
+The class 'model::richstring::ForLoopStart' has no attributes.
+The class 'model::richstring::IfConditionStart' has no attributes.
+The class 'model::xbase::XNumberLiteral' has the following attributes: 'value' of type str.
+The class 'model::types::JvmModule' has the following attributes: 'simpleName' of type str.
+The class 'ProcessedRichString' has no attributes.
+The class 'model::xbase::XWhileExpression' has no attributes.
+The class 'model::types::JvmTypeParameterDeclarator' has no attributes.
+The class 'JvmTypeParameter' has no attributes.
+The class 'model::types::JvmIntAnnotationValue' has the following attributes: 'values' of type int.
+The class 'model::types::JvmBooleanAnnotationValue' has the following attributes: 'values' of type bool.
+The class 'model::types::JvmExecutable' has the following attributes: 'varArgs' of type bool.
+The class 'model::xbase::XFeatureCall' has the following attributes: 'indexedOperation' of type bool; 'typeLiteral' of type bool; 'explicitOperationCall' of type bool; 'packageFragment' of type bool.
+The class 'model::types::JvmAnyTypeReference' has no attributes.
+The class 'CreateExtensionInfo' has no attributes.
+The class 'model::xtype::XImportItem' has the following attributes: 'alias' of type str.
+The class 'model::types::JvmType' has no attributes.
+The class 'model::types::JvmAnnotationValue' has no attributes.
+The class 'ElseIfCondition' has no attributes.
+The class 'model::xtype::XImportDeclaration1' has the following attributes: 'importURI' of type str; 'alias' of type str.
+The class 'model::ss::XtendVariableDeclaration' has the following attributes: 'extension' of type bool.
+The class 'model::types::JvmFeature' has no attributes.
+The class 'types::JvmComponentType' has no attributes.
+The class 'JvmAnnotationType' has no attributes.
+The class 'model::xbase::XCatchClause' has no attributes.
+The class 'JvmIdentifiableElement' has no attributes.
+The class 'Literal' has no attributes.
+The class 'model::ss::XtendAnnotationTarget' has no attributes.
+The class 'model::richstring::ForLoopEnd' has no attributes.
+The class 'RichStringIf' has no attributes.
+The class 'XAbstractFeatureCall' has no attributes.
+The class 'types::JvmTypeReference' has no attributes.
+The class 'model::xtype::XComputedTypeReference' has the following attributes: 'typeProvider' of type str.
+The class 'model::xbase::XInstanceOfExpression' has no attributes.
+The class 'model::richstring::ProcessedRichString' has no attributes.
+The class 'JvmMember' has no attributes.
+The class 'model::ss::RichString' has no attributes.
+The class 'model::xannotation::XAnnotation' has no attributes.
+The class 'model::types::JvmFloatAnnotationValue' has the following attributes: 'values' of type float.
+The class 'model::xbase::XIfExpression' has no attributes.
+The class 'JvmEnumerationLiteral' has no attributes.
+The class 'JvmTypeConstraint' has no attributes.
+The class 'model::types::JvmCustomAnnotationValue' has the following attributes: 'values' of type str.
+The class 'model::types::JvmAnnotationType' has no attributes.
+The class 'ElseStart' has no attributes.
+The class 'model::types::JvmByteAnnotationValue' has the following attributes: 'values' of type str.
+The class 'JvmAnnotationValue' has no attributes.
+The class 'model::types::JvmEnumAnnotationValue' has no attributes.
+The class 'model::xbase::XBooleanLiteral' has the following attributes: 'isTrue' of type bool.
+The class 'model::xbase::XUnaryOperation' has no attributes.
+The class 'model::xtype::XExportDeclaration' has the following attributes: 'importURI' of type str; 'alias' of type str; 'wildcard' of type bool.
+The class 'model::types::JvmComponentType' has no attributes.
+The class 'model::richstring::Literal' has the following attributes: 'offset' of type int; 'length' of type int.
+The class 'model::ss::XtendDelegate' has no attributes.
+The class 'XForEachExpression' has no attributes.
+The class 'model::xbase::XThrowExpression' has no attributes.
+The class 'model::richstring::EndIf' has no attributes.
+The class 'model::xbase::XObjectLiteralPart' has the following attributes: 'name' of type str.
+The class 'model::ss::XtendMember' has the following attributes: 'modifiers' of type str.
+The class 'model::ss::XtendEvent' has the following attributes: 'name' of type str.
+The class 'XImportItem' has no attributes.
+The class 'XStringLiteral' has no attributes.
+The class 'model::types::JvmCompoundTypeReference' has no attributes.
+The class 'model::ss::XtendTypeDeclaration' has the following attributes: 'name' of type str.
+The class 'model::xbase::XForEachExpression' has no attributes.
+The class 'model::types::JvmConstructor' has no attributes.
+The class 'model::xbase::XAssignment' has the following attributes: 'explicitStatic' of type bool.
+The class 'XImportDeclaration1' has no attributes.
+The class 'JvmParameterizedTypeReference' has no attributes.
+The class 'model::types::JvmNoModule' has no attributes.
+The class 'EndIf' has no attributes.
+The class 'model::xtype::XFunctionTypeRef' has the following attributes: 'instanceContext' of type bool.
+The class 'xbase::XExpression' has no attributes.
+The class 'ForLoopStart' has no attributes.
+The class 'types::JvmConstraintOwner' has no attributes.
+The class 'types::JvmIdentifiableElement' has no attributes.
+The class 'model::xtype::XImportSection1' has no attributes.
+The class 'types::JvmMember' has no attributes.
+The class 'model::types::JvmGenericType' has the following attributes: 'interface' of type bool; 'strictFloatingPoint' of type bool.
+The class 'model::types::JvmStringAnnotationValue' has the following attributes: 'values' of type str.
+The class 'model::types::JvmAnnotationAnnotationValue' has no attributes.
+The class 'model::ss::XtendEnum' has no attributes.
+The class 'model::xbase::XMemberFeatureCall1' has the following attributes: 'typeLiteral' of type bool; 'explicitStatic' of type bool; 'packageFragment' of type bool; 'nullSafe' of type bool; 'staticWithDeclaringType' of type bool; 'explicitOperationCall' of type bool; 'indexedOperation' of type bool.
+The class 'JvmArrayType' has no attributes.
+The class 'XtendMember' has no attributes.
+The class 'ss::model::EObject' has no attributes.
+The class 'JvmFeature' has no attributes.
+The class 'model::types::JvmLongAnnotationValue' has the following attributes: 'values' of type str.
+The class 'model::types::JvmField' has the following attributes: 'transient' of type bool; 'volatile' of type bool; 'final' of type bool; 'static' of type bool.
+The class 'model::types::JvmEnumerationLiteral' has no attributes.
+The class 'model::types::JvmDoubleAnnotationValue' has the following attributes: 'values' of type float.
+The class 'model::xtype::XExportSection' has no attributes.
+The class 'XCollectionLiteral' has no attributes.
+The class 'model::types::JvmShortAnnotationValue' has the following attributes: 'values' of type str.
+The class 'model::xbase::XBreakExpression' has no attributes.
+The class 'model::xannotation::XAnnotationElementValuePair' has no attributes.
+The class 'model::types::JvmSpecializedTypeReference' has no attributes.
+The class 'JvmFormalParameter' has no attributes.
+The class 'model::types::JvmWildcardTypeReference' has no attributes.
+The class 'model::xbase::XBinaryOperation' has no attributes.
+The class 'model::ss::XtendAnnotationType' has no attributes.
+The class 'model::types::JvmGenericArrayTypeReference' has no attributes.
+The class 'XCasePart' has no attributes.
+The class 'model::types::JvmMember' has the following attributes: 'identifier' of type str; 'simpleName' of type str; 'modifiers' of type str; 'visibility' of type str.
+The class 'RichStringLiteral' has no attributes.
+The class 'JvmExecutable' has no attributes.
+The class 'model::xbase::XReturnExpression' has no attributes.
+The class 'model::xbase::XDoWhileExpression' has no attributes.
+The class 'model::xbase::XExpression' has no attributes.
+The class 'JvmAnnotationReference' has no attributes.
+The class 'model::xbase::XForLoopExpression' has no attributes.
+The class 'model::types::JvmUpperBound' has no attributes.
+The class 'model::xbase::XAbstractFeatureCall' has the following attributes: 'validFeature' of type bool; 'invalidFeatureIssueCode' of type str.
+The class 'XAnnotationElementValuePair' has no attributes.
+The class 'model::xtype::XExportItem' has the following attributes: 'alias' of type str.
+The class 'XImportSection1' has no attributes.
+The class 'model::xbase::XContinueExpression' has no attributes.
+The class 'model::xtype::XImportSection' has no attributes.
+The class 'model::xbase::XTypeLiteral' has the following attributes: 'arrayDimensions' of type str.
+The class 'model::ss::XtendFormalParameter' has the following attributes: 'extension' of type bool.
+The class 'JvmTypeParameterDeclarator' has no attributes.
+The class 'XtendAnnotationTarget' has no attributes.
+The class 'model::xbase::XNullLiteral' has no attributes.
+The class 'XImportDeclaration' has no attributes.
+The class 'model::xbase::XClosure' has the following attributes: 'name' of type str; 'operator' of type bool; 'exported' of type bool; 'explicitSyntax' of type bool.
+The class 'model::types::JvmArrayType' has no attributes.
+The class 'model::xbase::XFunctionDeclaration' has the following attributes: 'name' of type str.
+The class 'JvmCompoundTypeReference' has no attributes.
+The class 'model::xbase::XObjectLiteral' has no attributes.
+The class 'model::richstring::LinePart' has no attributes.
+The class 'model::types::JvmDeclaredType' has the following attributes: 'packageName' of type str; 'exported' of type bool; 'abstract' of type bool; 'final' of type bool; 'static' of type bool.
+The class 'model::types::JvmTypeParameter' has the following attributes: 'name' of type str.
+The class 'XVariableDeclaration' has no attributes.
+The class 'XBlockExpression' has no attributes.
+The class 'model::xbase::XMemberFeatureCall' has the following attributes: 'nullSafe' of type bool; 'typeLiteral' of type bool; 'explicitStatic' of type bool; 'explicitOperationCall' of type bool; 'packageFragment' of type bool; 'staticWithDeclaringType' of type bool; 'indexedOperation' of type bool.
+The class 'model::xbase::XSwitchExpression' has the following attributes: 'localVarName' of type str.
+The class 'model::types::JvmFormalParameter' has the following attributes: 'name' of type str; 'varArg' of type bool.
+The class 'model::xbase::XBlockExpression' has no attributes.
+The class 'XAnnotation' has no attributes.
+The class 'model::xbase::XAbstractWhileExpression' has no attributes.
+The class 'model::ss::RichStringIf' has no attributes.
+The class 'model::types::JvmTypeReference' has no attributes.
+The class 'model::xbase::XCasePart' has no attributes.
+The class 'JvmAnnotationTarget' has no attributes.
+The class 'types::model::EObject' has no attributes.
+The class 'model::xbase::XStringLiteral' has the following attributes: 'value' of type str.
+The class 'XObjectLiteralPart' has no attributes.
+The class 'XtendTypeDeclaration' has no attributes.
+The class 'ForLoopEnd' has no attributes.
+The class 'model::ss::XtendField' has the following attributes: 'name' of type str.
+The class 'model::types::JvmAnnotationReference' has no attributes.
+The class 'model::xbase::XConstructorCall' has the following attributes: 'validFeature' of type bool; 'invalidFeatureIssueCode' of type str.
+The class 'model::xtype::XImportDeclaration' has the following attributes: 'wildcard' of type bool; 'extension' of type bool; 'importedNamespace' of type str; 'static' of type bool.
+The class 'JvmOperation' has no attributes.
+The class 'model::types::JvmCharAnnotationValue' has the following attributes: 'values' of type str.
+The class 'model::xbase::XIndexOperation' has no attributes.
+The class 'LinePart' has no attributes.
+The class 'types::JvmDeclaredType' has no attributes.
+The class 'XAbstractWhileExpression' has no attributes.
+The class 'model::xbase::XTernaryOperation' has no attributes.
+The class 'model::ss::XtendInterface' has no attributes.
+The class 'RichString' has no attributes.
+The class 'XExportSection' has no attributes.
+The class 'model::xbase::XListLiteral' has no attributes.
+The class 'model::ss::RichStringLiteral' has no attributes.
+The class 'model::types::JvmDelegateTypeReference' has no attributes.
+The class 'JvmConstraintOwner' has no attributes.
+The class 'model::ss::XtendConstructor' has no attributes.
+The class 'IfConditionStart' has no attributes.
+The class 'model::types::JvmTypeConstraint' has no attributes.
+The class 'model::xbase::XCollectionLiteral' has no attributes.
+The class 'model::xbase::XKeyValuePair' has the following attributes: 'key1' of type str.
+The class 'model::ss::XtendFunction' has the following attributes: 'name' of type str.
+The class 'model::richstring::ElseIfCondition' has no attributes.
+The class 'model::types::JvmEnumerationType' has no attributes.
+The class 'model::xbase::XCastedExpression' has no attributes.
+The class 'model::xbase::XTryCatchFinallyExpression' has no attributes.
+The class 'model::types::JvmSynonymTypeReference' has no attributes.
+The class 'model::ss::RichStringForLoop' has no attributes.
+The class 'JvmTypeReference' has no attributes.
+The class 'XCatchClause' has no attributes.
+The class 'XtendParameter' has no attributes.
+The class 'model::richstring::ElseStart' has no attributes.
+The class 'model::xbase::XVariableDeclaration' has the following attributes: 'writeable' of type bool; 'exported' of type bool; 'name' of type str.
+The class 'model::types::JvmUnknownTypeReference' has the following attributes: 'qualifiedName' of type str.
+The class 'model::xbase::XArrayLiteral' has no attributes.
+The class 'XExportItem' has no attributes.
+The class 'model::xbase::XVariableDeclarationList' has the following attributes: 'writeable' of type bool; 'exported' of type bool.
+The class 'XExportDeclaration' has no attributes.
+The class 'model::types::JvmIdentifiableElement' has no attributes.
+The class 'model::ss::XtendParameter' has the following attributes: 'varArg' of type bool; 'name' of type str; 'extension' of type bool.
+The class 'model::types::JvmAnnotationTarget' has no attributes.
+The class 'model::richstring::Line' has no attributes.
+The class 'JvmComponentType' has no attributes.
+The class 'JvmSpecializedTypeReference' has no attributes.
+The class 'model::types::JvmTypeAnnotationValue' has no attributes.
+The class 'XExpression' has no attributes.
+The class 'JvmField' has no attributes.
+The class 'JvmConstructor' has no attributes.
+The class 'model::richstring::LineBreak' has no attributes.
+The class 'model::types::JvmMultiTypeReference' has no attributes.
+The class 'model::richstring::PrintedExpression' has no attributes.
+The class 'model::ss::CreateExtensionInfo' has the following attributes: 'name' of type str.
+The class 'Line' has no attributes.
+The class 'types::JvmTypeParameterDeclarator' has no attributes.
+The class 'model::ss::XtendEnumLiteral' has the following attributes: 'name' of type str.
+The class 'model::ss::XtendFile' has the following attributes: 'package' of type str.
+The class 'types::JvmFeature' has no attributes.
+The class 'model::xbase::XPostfixOperation' has no attributes.
+The class 'model::types::JvmPrimitiveType' has the following attributes: 'simpleName' of type str.
+The class 'RichStringElseIf' has no attributes.
+The class 'model::types::JvmOperation' has the following attributes: 'static' of type bool; 'abstract' of type bool; 'native' of type bool; 'synchronized' of type bool; 'final' of type bool; 'default' of type bool; 'strictFloatingPoint' of type bool.
+The enumeration 'JvmVisibility' has the following literals: 'PRIVATE', 'PUBLIC'.
+'model::types::JvmDeclaredType' is a specialization of 'types::JvmComponentType'.
+'model::richstring::ElseIfCondition' is a specialization of 'LinePart'.
+'model::types::JvmTypeParameter' is a specialization of 'types::JvmConstraintOwner'.
+'model::xbase::XInstanceOfExpression' is a specialization of 'XExpression'.
+'model::xbase::XContinueExpression' is a specialization of 'XExpression'.
+'model::types::JvmAnnotationTarget' is a specialization of 'JvmIdentifiableElement'.
+'model::xbase::XListLiteral' is a specialization of 'XCollectionLiteral'.
+'model::ss::XtendDelegate' is a specialization of 'XtendTypeDeclaration'.
+'model::types::JvmFormalParameter' is a specialization of 'JvmAnnotationTarget'.
+'model::types::JvmCustomAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'model::types::JvmAnyTypeReference' is a specialization of 'JvmTypeReference'.
+'model::xbase::XForLoopExpression' is a specialization of 'XExpression'.
+'model::ss::RichStringLiteral' is a specialization of 'XStringLiteral'.
+'model::types::JvmSpecializedTypeReference' is a specialization of 'JvmTypeReference'.
+'model::xtype::XFunctionTypeRef' is a specialization of 'JvmSpecializedTypeReference'.
+'model::types::JvmFloatAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'model::types::JvmConstructor' is a specialization of 'JvmExecutable'.
+'model::xbase::XWhileExpression' is a specialization of 'XAbstractWhileExpression'.
+'model::types::JvmBooleanAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'model::types::JvmFeature' is a specialization of 'JvmMember'.
+'model::xbase::XSetLiteral' is a specialization of 'XCollectionLiteral'.
+'model::types::JvmComponentType' is a specialization of 'JvmType'.
+'model::richstring::ElseStart' is a specialization of 'LinePart'.
+'model::types::JvmModule' is a specialization of 'JvmIdentifiableElement'.
+'model::xbase::XArrayLiteral' is a specialization of 'XExpression'.
+'model::types::JvmGenericType' is a specialization of 'types::JvmTypeParameterDeclarator'.
+'model::types::JvmAnnotationAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'model::types::JvmDeclaredType' is a specialization of 'types::JvmMember'.
+'model::ss::RichStringForLoop' is a specialization of 'XForEachExpression'.
+'model::xbase::XSwitchExpression' is a specialization of 'xbase::XExpression'.
+'model::types::JvmWildcardTypeReference' is a specialization of 'types::JvmConstraintOwner'.
+'model::ss::XtendClass' is a specialization of 'XtendTypeDeclaration'.
+'model::ss::XtendFunction' is a specialization of 'XtendMember'.
+'model::types::JvmShortAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'model::xbase::XUnaryOperation' is a specialization of 'XAbstractFeatureCall'.
+'model::xbase::XPostfixOperation' is a specialization of 'XAbstractFeatureCall'.
+'model::types::JvmGenericArrayTypeReference' is a specialization of 'JvmTypeReference'.
+'model::xbase::XTernaryOperation' is a specialization of 'XExpression'.
+'model::types::JvmExecutable' is a specialization of 'types::JvmTypeParameterDeclarator'.
+'model::types::JvmCompoundTypeReference' is a specialization of 'JvmTypeReference'.
+'model::xbase::XAbstractFeatureCall' is a specialization of 'XExpression'.
+'model::xbase::XBreakExpression' is a specialization of 'XExpression'.
+'model::ss::XtendEnum' is a specialization of 'XtendTypeDeclaration'.
+'model::richstring::IfConditionStart' is a specialization of 'LinePart'.
+'model::ss::XtendFormalParameter' is a specialization of 'JvmFormalParameter'.
+'model::xbase::XMemberFeatureCall1' is a specialization of 'XAbstractFeatureCall'.
+'model::ss::XtendEnumLiteral' is a specialization of 'XtendMember'.
+'model::types::JvmByteAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'model::ss::XtendVariableDeclaration' is a specialization of 'XVariableDeclaration'.
+'model::xbase::XReturnExpression' is a specialization of 'XExpression'.
+'model::richstring::EndIf' is a specialization of 'LinePart'.
+'model::richstring::PrintedExpression' is a specialization of 'LinePart'.
+'model::types::JvmOperation' is a specialization of 'JvmExecutable'.
+'model::ss::XtendTypeDeclaration' is a specialization of 'XtendMember'.
+'model::xbase::XClosure' is a specialization of 'types::JvmIdentifiableElement'.
+'model::xbase::XAssignment' is a specialization of 'XAbstractFeatureCall'.
+'model::xbase::XBinaryOperation' is a specialization of 'XAbstractFeatureCall'.
+'model::xannotation::XAnnotation' is a specialization of 'XExpression'.
+'model::types::JvmLowerBound' is a specialization of 'JvmTypeConstraint'.
+'model::ss::XtendAnnotationType' is a specialization of 'XtendTypeDeclaration'.
+'model::types::JvmMultiTypeReference' is a specialization of 'JvmCompoundTypeReference'.
+'model::xbase::XVariableDeclaration' is a specialization of 'types::JvmIdentifiableElement'.
+'model::types::JvmParameterizedTypeReference' is a specialization of 'JvmTypeReference'.
+'model::types::JvmExecutable' is a specialization of 'types::JvmFeature'.
+'model::ss::RichString' is a specialization of 'XBlockExpression'.
+'model::types::JvmTypeParameter' is a specialization of 'types::JvmComponentType'.
+'model::types::JvmPrimitiveType' is a specialization of 'JvmComponentType'.
+'model::xbase::XTryCatchFinallyExpression' is a specialization of 'XExpression'.
+'model::types::JvmTypeAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'model::types::JvmCharAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'model::xbase::XThrowExpression' is a specialization of 'XExpression'.
+'model::richstring::Literal' is a specialization of 'LinePart'.
+'model::xbase::XKeyValuePair' is a specialization of 'XExpression'.
+'model::xbase::XMemberFeatureCall' is a specialization of 'XAbstractFeatureCall'.
+'model::types::JvmLongAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'model::xbase::XBooleanLiteral' is a specialization of 'XExpression'.
+'model::types::JvmField' is a specialization of 'JvmFeature'.
+'model::types::JvmMember' is a specialization of 'JvmAnnotationTarget'.
+'model::xbase::XPrefixOperation' is a specialization of 'XAbstractFeatureCall'.
+'model::types::JvmStringAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'model::xbase::XTypeLiteral' is a specialization of 'XExpression'.
+'model::xbase::XVariableDeclaration' is a specialization of 'xbase::XExpression'.
+'model::xbase::XCastedExpression' is a specialization of 'XExpression'.
+'model::xbase::XSwitchExpression' is a specialization of 'types::JvmIdentifiableElement'.
+'model::xbase::XDoWhileExpression' is a specialization of 'XAbstractWhileExpression'.
+'model::xbase::XAbstractWhileExpression' is a specialization of 'XExpression'.
+'model::types::JvmDelegateTypeReference' is a specialization of 'JvmTypeReference'.
+'model::xbase::XConstructorCall' is a specialization of 'XExpression'.
+'model::xbase::XNullLiteral' is a specialization of 'XExpression'.
+'model::xbase::XStringLiteral' is a specialization of 'XExpression'.
+'model::xbase::XBlockExpression' is a specialization of 'XExpression'.
+'model::types::JvmWildcardTypeReference' is a specialization of 'types::JvmTypeReference'.
+'model::xbase::XCollectionLiteral' is a specialization of 'XExpression'.
+'model::xbase::XFunctionDeclaration' is a specialization of 'XExpression'.
+'model::xbase::XNumberLiteral' is a specialization of 'XExpression'.
+'model::xbase::XIndexOperation' is a specialization of 'XAbstractFeatureCall'.
+'model::types::JvmArrayType' is a specialization of 'JvmComponentType'.
+'model::xbase::XFeatureCall' is a specialization of 'XAbstractFeatureCall'.
+'model::xtype::XComputedTypeReference' is a specialization of 'JvmSpecializedTypeReference'.
+'model::richstring::LineBreak' is a specialization of 'Literal'.
+'model::ss::RichStringIf' is a specialization of 'XExpression'.
+'model::xbase::XForEachExpression' is a specialization of 'XExpression'.
+'model::ss::XtendEvent' is a specialization of 'XtendMember'.
+'model::types::JvmEnumerationLiteral' is a specialization of 'JvmField'.
+'model::types::JvmEnumAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'model::xbase::XObjectLiteral' is a specialization of 'XExpression'.
+'model::xbase::XIfExpression' is a specialization of 'XExpression'.
+'model::types::JvmType' is a specialization of 'JvmIdentifiableElement'.
+'model::ss::XtendConstructor' is a specialization of 'XtendMember'.
+'model::types::JvmEnumerationType' is a specialization of 'JvmDeclaredType'.
+'model::types::JvmUnknownTypeReference' is a specialization of 'JvmTypeReference'.
+'model::ss::XtendField' is a specialization of 'XtendMember'.
+'model::ss::XtendInterface' is a specialization of 'XtendTypeDeclaration'.
+'model::xbase::XClosure' is a specialization of 'xbase::XExpression'.
+'model::ss::XtendParameter' is a specialization of 'XtendAnnotationTarget'.
+'model::types::JvmVoid' is a specialization of 'JvmType'.
+'model::types::JvmDoubleAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'model::richstring::ForLoopStart' is a specialization of 'LinePart'.
+'model::types::JvmSynonymTypeReference' is a specialization of 'JvmCompoundTypeReference'.
+'model::ss::XtendMember' is a specialization of 'XtendAnnotationTarget'.
+'model::types::JvmGenericType' is a specialization of 'types::JvmDeclaredType'.
+'model::xbase::XVariableDeclarationList' is a specialization of 'XExpression'.
+'model::types::JvmAnnotationType' is a specialization of 'JvmDeclaredType'.
+'model::richstring::ForLoopEnd' is a specialization of 'LinePart'.
+'model::types::JvmIntAnnotationValue' is a specialization of 'JvmAnnotationValue'.
+'model::types::JvmUpperBound' is a specialization of 'JvmTypeConstraint'.
+'model::xbase::XReturnExpression' (role 'model_xbase_XReturnExpression', cardinality 0..*) is associated with 'XExpression' (role 'XExpression241', cardinality 0..*).
+'XExpression' (role 'XExpression205', cardinality 0..*) is associated with 'model::xbase::XForEachExpression' (role 'model_xbase_XForEachExpression204', cardinality 0..*).
+'model::richstring::IfConditionStart' (role 'ifConditionStart', cardinality 0..*) is associated with 'ElseStart' (role 'ElseStart', cardinality 0..*).
+'XExpression' (role 'XExpression328', cardinality 0..*) is associated with 'model::ss::RichStringIf' (role 'model_ss_RichStringIf', cardinality 0..*).
+'JvmTypeParameter' (role 'JvmTypeParameter308', cardinality 0..*) is associated with 'model::ss::XtendFunction' (role 'model_ss_XtendFunction307', cardinality 0..*).
+'ForLoopStart' (role 'ForLoopStart', cardinality 0..*) is associated with 'model::richstring::ForLoopEnd' (role 'end', cardinality 0..*).
+'model::xbase::XTernaryOperation' (role 'model_xbase_XTernaryOperation249', cardinality 0..*) is associated with 'XExpression' (role 'XExpression250', cardinality 0..*).
+'model::types::JvmConstructor' (role 'model_types_JvmConstructor', cardinality 0..*) is associated with 'XExpression' (role 'XExpression50', cardinality 0..*).
+'model::xbase::XClosure' (role 'model_xbase_XClosure176', cardinality 0..*) is associated with 'JvmTypeParameter' (role 'JvmTypeParameter177', cardinality 0..*).
+'model::richstring::Line' (role 'line', cardinality 0..*) is associated with 'LinePart' (role 'LinePart', cardinality 0..*).
+'model::xbase::XMemberFeatureCall' (role 'model_xbase_XMemberFeatureCall', cardinality 0..*) is associated with 'XExpression' (role 'XExpression136', cardinality 0..*).
+'JvmTypeReference' (role 'JvmTypeReference156', cardinality 0..*) is associated with 'model::xbase::XConstructorCall' (role 'model_xbase_XConstructorCall155', cardinality 0..*).
+'model::xbase::XCatchClause' (role 'model_xbase_XCatchClause', cardinality 0..*) is associated with 'XExpression' (role 'XExpression231', cardinality 0..*).
+'model::ss::XtendAnnotationTarget' (role 'model_ss_XtendAnnotationTarget', cardinality 0..*) is associated with 'XAnnotation' (role 'XAnnotation', cardinality 0..*).
+'JvmComponentType' (role 'JvmComponentType', cardinality 0..*) is associated with 'model::types::JvmArrayType' (role 'arrayType', cardinality 0..*).
+'model::ss::RichStringForLoop' (role 'model_ss_RichStringForLoop', cardinality 0..*) is associated with 'XExpression' (role 'XExpression320', cardinality 0..*).
+'model::types::JvmField' (role 'model_types_JvmField38', cardinality 0..*) is associated with 'XExpression' (role 'XExpression', cardinality 0..*).
+'model::types::JvmDeclaredType' (role 'model_types_JvmDeclaredType', cardinality 0..*) is associated with 'JvmTypeReference' (role 'JvmTypeReference', cardinality 0..*).
+'XExpression' (role 'XExpression194', cardinality 0..*) is associated with 'model::xbase::XForLoopExpression' (role 'model_xbase_XForLoopExpression193', cardinality 0..*).
+'JvmTypeReference' (role 'JvmTypeReference374', cardinality 0..*) is associated with 'model::ss::XtendEvent' (role 'model_ss_XtendEvent', cardinality 0..*).
+'model::ss::RichStringIf' (role 'model_ss_RichStringIf330', cardinality 0..*) is associated with 'XExpression' (role 'XExpression331', cardinality 0..*).
+'model::xannotation::XAnnotation' (role 'model_xannotation_XAnnotation383', cardinality 0..*) is associated with 'XExpression' (role 'XExpression384', cardinality 0..*).
+'XExpression' (role 'XExpression189', cardinality 0..*) is associated with 'model::xbase::XUnaryOperation' (role 'model_xbase_XUnaryOperation', cardinality 0..*).
+'XExpression' (role 'XExpression107', cardinality 0..*) is associated with 'model::xbase::XSwitchExpression' (role 'model_xbase_XSwitchExpression106', cardinality 0..*).
+'model::ss::XtendFunction' (role 'model_ss_XtendFunction', cardinality 0..*) is associated with 'XExpression' (role 'XExpression298', cardinality 0..*).
+'model::ss::XtendField' (role 'model_ss_XtendField315', cardinality 0..*) is associated with 'XExpression' (role 'XExpression316', cardinality 0..*).
+'model::xbase::XIfExpression' (role 'model_xbase_XIfExpression', cardinality 0..*) is associated with 'XExpression' (role 'XExpression94', cardinality 0..*).
+'JvmAnnotationValue' (role 'JvmAnnotationValue70', cardinality 0..*) is associated with 'model::types::JvmAnnotationReference' (role 'model_types_JvmAnnotationReference69', cardinality 0..*).
+'JvmMember' (role 'JvmMember', cardinality 0..*) is associated with 'model::types::JvmDeclaredType' (role 'declaringType', cardinality 0..*).
+'model::xbase::XAbstractFeatureCall' (role 'model_xbase_XAbstractFeatureCall133', cardinality 0..*) is associated with 'XExpression' (role 'XExpression134', cardinality 0..*).
+'XExpression' (role 'XExpression102', cardinality 0..*) is associated with 'model::xbase::XSwitchExpression' (role 'model_xbase_XSwitchExpression', cardinality 0..*).
+'model::ss::XtendInterface' (role 'model_ss_XtendInterface', cardinality 0..*) is associated with 'JvmTypeReference' (role 'JvmTypeReference358', cardinality 0..*).
+'model::richstring::LinePart' (role 'parts', cardinality 0..*) is associated with 'Line' (role 'Line414', cardinality 0..*).
+'model::types::JvmExecutable' (role 'model_types_JvmExecutable', cardinality 0..*) is associated with 'JvmFormalParameter' (role 'JvmFormalParameter', cardinality 0..*).
+'XImportItem' (role 'XImportItem', cardinality 0..*) is associated with 'model::xtype::XImportDeclaration1' (role 'model_xtype_XImportDeclaration1', cardinality 0..*).
+'XExpression' (role 'XExpression117', cardinality 0..*) is associated with 'model::xbase::XBlockExpression' (role 'model_xbase_XBlockExpression', cardinality 0..*).
+'XExpression' (role 'XExpression144', cardinality 0..*) is associated with 'model::xbase::XMemberFeatureCall1' (role 'model_xbase_XMemberFeatureCall1143', cardinality 0..*).
+'model::xannotation::XAnnotationElementValuePair' (role 'model_xannotation_XAnnotationElementValuePair388', cardinality 0..*) is associated with 'JvmOperation' (role 'JvmOperation389', cardinality 0..*).
+'model::xtype::XImportSection1' (role 'model_xtype_XImportSection1', cardinality 0..*) is associated with 'XImportDeclaration1' (role 'XImportDeclaration1', cardinality 0..*).
+'model::xbase::XConstructorCall' (role 'model_xbase_XConstructorCall152', cardinality 0..*) is associated with 'XExpression' (role 'XExpression153', cardinality 0..*).
+'model::xbase::XAbstractFeatureCall' (role 'model_xbase_XAbstractFeatureCall', cardinality 0..*) is associated with 'JvmIdentifiableElement' (role 'JvmIdentifiableElement', cardinality 0..*).
+'model::richstring::Line' (role 'lines', cardinality 0..*) is associated with 'ProcessedRichString' (role 'ProcessedRichString', cardinality 0..*).
+'XExpression' (role 'XExpression97', cardinality 0..*) is associated with 'model::xbase::XIfExpression' (role 'model_xbase_XIfExpression96', cardinality 0..*).
+'model::richstring::IfConditionStart' (role 'model_richstring_IfConditionStart426', cardinality 0..*) is associated with 'EndIf' (role 'EndIf', cardinality 0..*).
+'model::ss::XtendFunction' (role 'model_ss_XtendFunction300', cardinality 0..*) is associated with 'JvmTypeReference' (role 'JvmTypeReference301', cardinality 0..*).
+'model::xbase::XFeatureCall' (role 'model_xbase_XFeatureCall', cardinality 0..*) is associated with 'XExpression' (role 'XExpression146', cardinality 0..*).
+'JvmTypeReference' (role 'JvmTypeReference217', cardinality 0..*) is associated with 'model::xbase::XInstanceOfExpression' (role 'model_xbase_XInstanceOfExpression', cardinality 0..*).
+'XExpression' (role 'XExpression243', cardinality 0..*) is associated with 'model::xbase::XPrefixOperation' (role 'model_xbase_XPrefixOperation', cardinality 0..*).
+'JvmTypeReference' (role 'JvmTypeReference18', cardinality 0..*) is associated with 'model::types::JvmTypeConstraint' (role 'model_types_JvmTypeConstraint', cardinality 0..*).
+'JvmTypeReference' (role 'JvmTypeReference62', cardinality 0..*) is associated with 'model::types::JvmFormalParameter' (role 'model_types_JvmFormalParameter', cardinality 0..*).
+'XExpression' (role 'XExpression77', cardinality 0..*) is associated with 'model::types::JvmAnnotationValue' (role 'model_types_JvmAnnotationValue76', cardinality 0..*).
+'XtendMember' (role 'XtendMember', cardinality 0..*) is associated with 'model::ss::XtendTypeDeclaration' (role 'declaringType356', cardinality 0..*).
+'JvmTypeReference' (role 'JvmTypeReference263', cardinality 0..*) is associated with 'model::xbase::XFunctionDeclaration' (role 'model_xbase_XFunctionDeclaration262', cardinality 0..*).
+'model::xbase::XObjectLiteralPart' (role 'model_xbase_XObjectLiteralPart', cardinality 0..*) is associated with 'XExpression' (role 'XExpression272', cardinality 0..*).
+'model::richstring::ElseIfCondition' (role 'model_richstring_ElseIfCondition', cardinality 0..*) is associated with 'RichStringElseIf' (role 'RichStringElseIf428', cardinality 0..*).
+'model::xbase::XAbstractFeatureCall' (role 'model_xbase_XAbstractFeatureCall127', cardinality 0..*) is associated with 'JvmTypeReference' (role 'JvmTypeReference128', cardinality 0..*).
+'model::xtype::XFunctionTypeRef' (role 'model_xtype_XFunctionTypeRef396', cardinality 0..*) is associated with 'JvmType' (role 'JvmType397', cardinality 0..*).
+'XExpression' (role 'XExpression343', cardinality 0..*) is associated with 'model::ss::CreateExtensionInfo' (role 'model_ss_CreateExtensionInfo', cardinality 0..*).
+'model::types::JvmGenericType' (role 'model_types_JvmGenericType', cardinality 0..*) is associated with 'JvmParameterizedTypeReference' (role 'JvmParameterizedTypeReference', cardinality 0..*).
+'model::xbase::XAssignment' (role 'model_xbase_XAssignment', cardinality 0..*) is associated with 'XExpression' (role 'XExpression236', cardinality 0..*).
+'model::ss::RichStringElseIf' (role 'model_ss_RichStringElseIf', cardinality 0..*) is associated with 'XExpression' (role 'XExpression338', cardinality 0..*).
+'model::types::JvmDelegateTypeReference' (role 'model_types_JvmDelegateTypeReference', cardinality 0..*) is associated with 'JvmTypeReference' (role 'JvmTypeReference85', cardinality 0..*).
+'model::richstring::ProcessedRichString' (role 'richString', cardinality 0..*) is associated with 'Line' (role 'Line', cardinality 0..*).
+'model::xtype::XFunctionTypeRef' (role 'model_xtype_XFunctionTypeRef', cardinality 0..*) is associated with 'JvmTypeReference' (role 'JvmTypeReference391', cardinality 0..*).
+'IfConditionStart' (role 'IfConditionStart', cardinality 0..*) is associated with 'model::richstring::ElseIfCondition' (role 'elseIfConditions', cardinality 0..*).
+'JvmTypeReference' (role 'JvmTypeReference52', cardinality 0..*) is associated with 'model::types::JvmOperation' (role 'model_types_JvmOperation', cardinality 0..*).
+'JvmTypeParameter' (role 'JvmTypeParameter361', cardinality 0..*) is associated with 'model::ss::XtendInterface' (role 'model_ss_XtendInterface360', cardinality 0..*).
+'XExpression' (role 'XExpression65', cardinality 0..*) is associated with 'model::types::JvmFormalParameter' (role 'model_types_JvmFormalParameter64', cardinality 0..*).
+'JvmTypeReference' (role 'JvmTypeReference311', cardinality 0..*) is associated with 'model::ss::XtendFunction' (role 'model_ss_XtendFunction310', cardinality 0..*).
+'JvmType' (role 'JvmType381', cardinality 0..*) is associated with 'model::xannotation::XAnnotation' (role 'model_xannotation_XAnnotation380', cardinality 0..*).
+'model::xtype::XExportSection' (role 'model_xtype_XExportSection', cardinality 0..*) is associated with 'XExportDeclaration' (role 'XExportDeclaration', cardinality 0..*).
+'model::types::JvmEnumAnnotationValue' (role 'model_types_JvmEnumAnnotationValue', cardinality 0..*) is associated with 'JvmEnumerationLiteral' (role 'JvmEnumerationLiteral83', cardinality 0..*).
+'model::ss::XtendFile' (role 'model_ss_XtendFile282', cardinality 0..*) is associated with 'XExportSection' (role 'XExportSection283', cardinality 0..*).
+'model::types::JvmField' (role 'model_types_JvmField43', cardinality 0..*) is associated with 'XExpression' (role 'XExpression44', cardinality 0..*).
+'model::xbase::XCasePart' (role 'model_xbase_XCasePart', cardinality 0..*) is associated with 'XExpression' (role 'XExpression109', cardinality 0..*).
+'XExpression' (role 'XExpression158', cardinality 0..*) is associated with 'model::xbase::XCollectionLiteral' (role 'model_xbase_XCollectionLiteral', cardinality 0..*).
+'XExpression' (role 'XExpression386', cardinality 0..*) is associated with 'model::xannotation::XAnnotationElementValuePair' (role 'model_xannotation_XAnnotationElementValuePair', cardinality 0..*).
+'model::richstring::EndIf' (role 'model_richstring_EndIf', cardinality 0..*) is associated with 'IfConditionStart' (role 'IfConditionStart433', cardinality 0..*).
+'JvmTypeReference' (role 'JvmTypeReference394', cardinality 0..*) is associated with 'model::xtype::XFunctionTypeRef' (role 'model_xtype_XFunctionTypeRef393', cardinality 0..*).
+'model::types::JvmField' (role 'model_types_JvmField40', cardinality 0..*) is associated with 'XExpression' (role 'XExpression41', cardinality 0..*).
+'model::xbase::XAssignment' (role 'model_xbase_XAssignment238', cardinality 0..*) is associated with 'XExpression' (role 'XExpression239', cardinality 0..*).
+'JvmTypeReference' (role 'JvmTypeReference26', cardinality 0..*) is associated with 'model::types::JvmParameterizedTypeReference' (role 'model_types_JvmParameterizedTypeReference', cardinality 0..*).
+'model::xbase::XFunctionDeclaration' (role 'model_xbase_XFunctionDeclaration', cardinality 0..*) is associated with 'XExpression' (role 'XExpression260', cardinality 0..*).
+'JvmTypeReference' (role 'JvmTypeReference318', cardinality 0..*) is associated with 'model::ss::XtendParameter' (role 'model_ss_XtendParameter', cardinality 0..*).
+'JvmTypeReference' (role 'JvmTypeReference174', cardinality 0..*) is associated with 'model::xbase::XClosure' (role 'model_xbase_XClosure173', cardinality 0..*).
+'XExpression' (role 'XExpression377', cardinality 0..*) is associated with 'model::ss::XtendEvent' (role 'model_ss_XtendEvent376', cardinality 0..*).
+'JvmTypeReference' (role 'JvmTypeReference87', cardinality 0..*) is associated with 'model::types::JvmSpecializedTypeReference' (role 'model_types_JvmSpecializedTypeReference', cardinality 0..*).
+'model::ss::RichStringElseIf' (role 'model_ss_RichStringElseIf340', cardinality 0..*) is associated with 'XExpression' (role 'XExpression341', cardinality 0..*).
+'JvmType' (role 'JvmType32', cardinality 0..*) is associated with 'model::types::JvmAnyTypeReference' (role 'model_types_JvmAnyTypeReference', cardinality 0..*).
+'JvmTypeReference' (role 'JvmTypeReference313', cardinality 0..*) is associated with 'model::ss::XtendField' (role 'model_ss_XtendField', cardinality 0..*).
+'model::ss::XtendFile' (role 'model_ss_XtendFile', cardinality 0..*) is associated with 'XImportSection1' (role 'XImportSection1276', cardinality 0..*).
+'model::xbase::XIndexOperation' (role 'model_xbase_XIndexOperation', cardinality 0..*) is associated with 'XExpression' (role 'XExpression255', cardinality 0..*).
+'model::xbase::XForEachExpression' (role 'model_xbase_XForEachExpression', cardinality 0..*) is associated with 'XExpression' (role 'XExpression202', cardinality 0..*).
+'model::richstring::ProcessedRichString' (role 'model_richstring_ProcessedRichString', cardinality 0..*) is associated with 'RichString' (role 'RichString', cardinality 0..*).
+'model::types::JvmAnnotationValue' (role 'model_types_JvmAnnotationValue', cardinality 0..*) is associated with 'JvmOperation' (role 'JvmOperation', cardinality 0..*).
+'model::xbase::XFunctionDeclaration' (role 'model_xbase_XFunctionDeclaration265', cardinality 0..*) is associated with 'JvmFormalParameter' (role 'JvmFormalParameter266', cardinality 0..*).
+'JvmFormalParameter' (role 'JvmFormalParameter165', cardinality 0..*) is associated with 'model::xbase::XClosure' (role 'model_xbase_XClosure', cardinality 0..*).
+'model::ss::XtendDelegate' (role 'model_ss_XtendDelegate371', cardinality 0..*) is associated with 'JvmTypeReference' (role 'JvmTypeReference372', cardinality 0..*).
+'model::xbase::XKeyValuePair' (role 'model_xbase_XKeyValuePair', cardinality 0..*) is associated with 'XExpression' (role 'XExpression160', cardinality 0..*).
+'model::ss::XtendFunction' (role 'model_ss_XtendFunction303', cardinality 0..*) is associated with 'XtendParameter' (role 'XtendParameter', cardinality 0..*).
+'model::xbase::XTypeLiteral' (role 'model_xbase_XTypeLiteral', cardinality 0..*) is associated with 'JvmType' (role 'JvmType215', cardinality 0..*).
+'model::xtype::XExportItem' (role 'model_xtype_XExportItem', cardinality 0..*) is associated with 'JvmIdentifiableElement' (role 'JvmIdentifiableElement408', cardinality 0..*).
+'JvmEnumerationLiteral' (role 'JvmEnumerationLiteral', cardinality 0..*) is associated with 'model::types::JvmEnumerationType' (role 'model_types_JvmEnumerationType', cardinality 0..*).
+'XObjectLiteralPart' (role 'XObjectLiteralPart', cardinality 0..*) is associated with 'model::xbase::XObjectLiteral' (role 'model_xbase_XObjectLiteral', cardinality 0..*).
+'XExpression' (role 'XExpression187', cardinality 0..*) is associated with 'model::xbase::XBinaryOperation' (role 'model_xbase_XBinaryOperation186', cardinality 0..*).
+'XExpression' (role 'XExpression220', cardinality 0..*) is associated with 'model::xbase::XInstanceOfExpression' (role 'model_xbase_XInstanceOfExpression219', cardinality 0..*).
+'XExpression' (role 'XExpression227', cardinality 0..*) is associated with 'model::xbase::XTryCatchFinallyExpression' (role 'model_xbase_XTryCatchFinallyExpression226', cardinality 0..*).
+'XExpression' (role 'XExpression100', cardinality 0..*) is associated with 'model::xbase::XIfExpression' (role 'model_xbase_XIfExpression99', cardinality 0..*).
+'model::xbase::XAbstractWhileExpression' (role 'model_xbase_XAbstractWhileExpression', cardinality 0..*) is associated with 'XExpression' (role 'XExpression210', cardinality 0..*).
+'model::types::JvmModule' (role 'model_types_JvmModule4', cardinality 0..*) is associated with 'XExportSection' (role 'XExportSection', cardinality 0..*).
+'XExpression' (role 'XExpression131', cardinality 0..*) is associated with 'model::xbase::XAbstractFeatureCall' (role 'model_xbase_XAbstractFeatureCall130', cardinality 0..*).
+'RichStringElseIf' (role 'RichStringElseIf', cardinality 0..*) is associated with 'model::ss::RichStringIf' (role 'model_ss_RichStringIf333', cardinality 0..*).
+'model::richstring::Literal' (role 'model_richstring_Literal', cardinality 0..*) is associated with 'RichStringLiteral' (role 'RichStringLiteral', cardinality 0..*).
+'model::xbase::XTernaryOperation' (role 'model_xbase_XTernaryOperation', cardinality 0..*) is associated with 'XExpression' (role 'XExpression247', cardinality 0..*).
+'model::xbase::XMemberFeatureCall1' (role 'model_xbase_XMemberFeatureCall1', cardinality 0..*) is associated with 'XExpression' (role 'XExpression141', cardinality 0..*).
+'model::ss::RichStringForLoop' (role 'model_ss_RichStringForLoop325', cardinality 0..*) is associated with 'XExpression' (role 'XExpression326', cardinality 0..*).
+'CreateExtensionInfo' (role 'CreateExtensionInfo', cardinality 0..*) is associated with 'model::ss::XtendFunction' (role 'model_ss_XtendFunction305', cardinality 0..*).
+'model::xbase::XVariableDeclaration' (role 'model_xbase_XVariableDeclaration', cardinality 0..*) is associated with 'JvmTypeReference' (role 'JvmTypeReference119', cardinality 0..*).
+'JvmArrayType' (role 'JvmArrayType', cardinality 0..*) is associated with 'model::types::JvmComponentType' (role 'componentType', cardinality 0..*).
+'model::types::JvmTypeParameterDeclarator' (role 'declarator', cardinality 0..*) is associated with 'JvmTypeParameter' (role 'JvmTypeParameter', cardinality 0..*).
+'JvmType' (role 'JvmType', cardinality 0..*) is associated with 'model::types::JvmParameterizedTypeReference' (role 'model_types_JvmParameterizedTypeReference28', cardinality 0..*).
+'model::xtype::XImportDeclaration' (role 'model_xtype_XImportDeclaration', cardinality 0..*) is associated with 'JvmDeclaredType' (role 'JvmDeclaredType400', cardinality 0..*).
+'model::xbase::XVariableDeclaration' (role 'model_xbase_XVariableDeclaration121', cardinality 0..*) is associated with 'XExpression' (role 'XExpression122', cardinality 0..*).
+'model::ss::XtendClass' (role 'model_ss_XtendClass287', cardinality 0..*) is associated with 'JvmTypeReference' (role 'JvmTypeReference288', cardinality 0..*).
+'model::xbase::XClosure' (role 'model_xbase_XClosure170', cardinality 0..*) is associated with 'JvmFormalParameter' (role 'JvmFormalParameter171', cardinality 0..*).
+'model::xbase::XMemberFeatureCall' (role 'model_xbase_XMemberFeatureCall138', cardinality 0..*) is associated with 'XExpression' (role 'XExpression139', cardinality 0..*).
+'XImportSection1' (role 'XImportSection16', cardinality 0..*) is associated with 'model::types::JvmNoModule' (role 'model_types_JvmNoModule', cardinality 0..*).
+'JvmAnnotationReference' (role 'JvmAnnotationReference', cardinality 0..*) is associated with 'model::types::JvmAnnotationTarget' (role 'model_types_JvmAnnotationTarget', cardinality 0..*).
+'model::xbase::XAbstractWhileExpression' (role 'model_xbase_XAbstractWhileExpression212', cardinality 0..*) is associated with 'XExpression' (role 'XExpression213', cardinality 0..*).
+'ElseIfCondition' (role 'ElseIfCondition', cardinality 0..*) is associated with 'model::richstring::IfConditionStart' (role 'ifConditionStart424', cardinality 0..*).
+'model::ss::XtendMember' (role 'members295', cardinality 0..*) is associated with 'XtendTypeDeclaration' (role 'XtendTypeDeclaration296', cardinality 0..*).
+'model::xbase::XArrayLiteral' (role 'model_xbase_XArrayLiteral', cardinality 0..*) is associated with 'XExpression' (role 'XExpression274', cardinality 0..*).
+'model::types::JvmNoModule' (role 'model_types_JvmNoModule8', cardinality 0..*) is associated with 'types::model::EObject' (role 'types_model_EObject9', cardinality 0..*).
+'model::ss::XtendConstructor' (role 'model_ss_XtendConstructor353', cardinality 0..*) is associated with 'JvmTypeReference' (role 'JvmTypeReference354', cardinality 0..*).
+'model::types::JvmOperation' (role 'model_types_JvmOperation59', cardinality 0..*) is associated with 'XExpression' (role 'XExpression60', cardinality 0..*).
+'model::xbase::XTernaryOperation' (role 'model_xbase_XTernaryOperation252', cardinality 0..*) is associated with 'XExpression' (role 'XExpression253', cardinality 0..*).
+'model::ss::XtendConstructor' (role 'model_ss_XtendConstructor', cardinality 0..*) is associated with 'XExpression' (role 'XExpression345', cardinality 0..*).
+'model::xbase::XForLoopExpression' (role 'model_xbase_XForLoopExpression', cardinality 0..*) is associated with 'XExpression' (role 'XExpression191', cardinality 0..*).
+'XExpression' (role 'XExpression323', cardinality 0..*) is associated with 'model::ss::RichStringForLoop' (role 'model_ss_RichStringForLoop322', cardinality 0..*).
+'model::xbase::XFeatureCall' (role 'model_xbase_XFeatureCall148', cardinality 0..*) is associated with 'XExpression' (role 'XExpression149', cardinality 0..*).
+'JvmAnnotationTarget' (role 'JvmAnnotationTarget', cardinality 0..*) is associated with 'model::types::JvmMember' (role 'model_types_JvmMember', cardinality 0..*).
+'IfConditionStart' (role 'IfConditionStart431', cardinality 0..*) is associated with 'model::richstring::ElseStart' (role 'elseStart', cardinality 0..*).
+'XExpression' (role 'XExpression197', cardinality 0..*) is associated with 'model::xbase::XForLoopExpression' (role 'model_xbase_XForLoopExpression196', cardinality 0..*).
+'model::xbase::XForLoopExpression' (role 'model_xbase_XForLoopExpression199', cardinality 0..*) is associated with 'XExpression' (role 'XExpression200', cardinality 0..*).
+'JvmDeclaredType' (role 'JvmDeclaredType', cardinality 0..*) is associated with 'model::types::JvmMember' (role 'members', cardinality 0..*).
+'XExpression' (role 'XExpression420', cardinality 0..*) is associated with 'model::richstring::PrintedExpression' (role 'model_richstring_PrintedExpression', cardinality 0..*).
+'model::types::JvmOperation' (role 'model_types_JvmOperation56', cardinality 0..*) is associated with 'XExpression' (role 'XExpression57', cardinality 0..*).
+'XExpression' (role 'XExpression168', cardinality 0..*) is associated with 'model::xbase::XClosure' (role 'model_xbase_XClosure167', cardinality 0..*).
+'XCasePart' (role 'XCasePart', cardinality 0..*) is associated with 'model::xbase::XSwitchExpression' (role 'model_xbase_XSwitchExpression104', cardinality 0..*).
+'model::xtype::XExportDeclaration' (role 'model_xtype_XExportDeclaration', cardinality 0..*) is associated with 'XExportItem' (role 'XExportItem', cardinality 0..*).
+'JvmTypeParameter' (role 'JvmTypeParameter369', cardinality 0..*) is associated with 'model::ss::XtendDelegate' (role 'model_ss_XtendDelegate368', cardinality 0..*).
+'model::types::JvmOperation' (role 'model_types_JvmOperation54', cardinality 0..*) is associated with 'JvmAnnotationValue' (role 'JvmAnnotationValue', cardinality 0..*).
+'model::types::JvmModule' (role 'model_types_JvmModule2', cardinality 0..*) is associated with 'types::model::EObject' (role 'types_model_EObject', cardinality 0..*).
+'ss::model::EObject' (role 'ss_model_EObject', cardinality 0..*) is associated with 'model::ss::XtendFile' (role 'model_ss_XtendFile280', cardinality 0..*).
+'JvmTypeParameter' (role 'JvmTypeParameter351', cardinality 0..*) is associated with 'model::ss::XtendConstructor' (role 'model_ss_XtendConstructor350', cardinality 0..*).
+'model::types::JvmCompoundTypeReference' (role 'model_types_JvmCompoundTypeReference91', cardinality 0..*) is associated with 'JvmTypeReference' (role 'JvmTypeReference92', cardinality 0..*).
+'model::xbase::XCatchClause' (role 'model_xbase_XCatchClause233', cardinality 0..*) is associated with 'JvmFormalParameter' (role 'JvmFormalParameter234', cardinality 0..*).
+'JvmParameterizedTypeReference' (role 'JvmParameterizedTypeReference24', cardinality 0..*) is associated with 'model::types::JvmGenericType' (role 'model_types_JvmGenericType23', cardinality 0..*).
+'model::ss::XtendDelegate' (role 'model_ss_XtendDelegate', cardinality 0..*) is associated with 'JvmTypeReference' (role 'JvmTypeReference363', cardinality 0..*).
+'XExpression' (role 'XExpression73', cardinality 0..*) is associated with 'model::types::JvmAnnotationReference' (role 'model_types_JvmAnnotationReference72', cardinality 0..*).
+'XImportSection1' (role 'XImportSection1', cardinality 0..*) is associated with 'model::types::JvmModule' (role 'model_types_JvmModule', cardinality 0..*).
+'model::types::JvmTypeConstraint' (role 'constraints', cardinality 0..*) is associated with 'JvmConstraintOwner' (role 'JvmConstraintOwner', cardinality 0..*).
+'XExpression' (role 'XExpression258', cardinality 0..*) is associated with 'model::xbase::XIndexOperation' (role 'model_xbase_XIndexOperation257', cardinality 0..*).
+'XAnnotationElementValuePair' (role 'XAnnotationElementValuePair', cardinality 0..*) is associated with 'model::xannotation::XAnnotation' (role 'model_xannotation_XAnnotation', cardinality 0..*).
+'JvmFormalParameter' (role 'JvmFormalParameter208', cardinality 0..*) is associated with 'model::xbase::XForEachExpression' (role 'model_xbase_XForEachExpression207', cardinality 0..*).
+'model::types::JvmCompoundTypeReference' (role 'model_types_JvmCompoundTypeReference', cardinality 0..*) is associated with 'JvmType' (role 'JvmType89', cardinality 0..*).
+'model::xbase::XCasePart' (role 'model_xbase_XCasePart111', cardinality 0..*) is associated with 'XExpression' (role 'XExpression112', cardinality 0..*).
+'model::ss::XtendFile' (role 'model_ss_XtendFile278', cardinality 0..*) is associated with 'XtendTypeDeclaration' (role 'XtendTypeDeclaration', cardinality 0..*).
+'model::xtype::XImportItem' (role 'model_xtype_XImportItem', cardinality 0..*) is associated with 'JvmIdentifiableElement' (role 'JvmIdentifiableElement404', cardinality 0..*).
+'JvmTypeParameterDeclarator' (role 'JvmTypeParameterDeclarator', cardinality 0..*) is associated with 'model::types::JvmTypeParameter' (role 'typeParameters', cardinality 0..*).
+'model::xbase::XObjectLiteral' (role 'model_xbase_XObjectLiteral269', cardinality 0..*) is associated with 'JvmType' (role 'JvmType270', cardinality 0..*).
+'JvmTypeConstraint' (role 'JvmTypeConstraint', cardinality 0..*) is associated with 'model::types::JvmConstraintOwner' (role 'owner', cardinality 0..*).
+'XExpression' (role 'XExpression224', cardinality 0..*) is associated with 'model::xbase::XTryCatchFinallyExpression' (role 'model_xbase_XTryCatchFinallyExpression', cardinality 0..*).
+'XtendAnnotationTarget' (role 'XtendAnnotationTarget', cardinality 0..*) is associated with 'model::ss::XtendMember' (role 'model_ss_XtendMember', cardinality 0..*).
+'XExpression' (role 'XExpression222', cardinality 0..*) is associated with 'model::xbase::XThrowExpression' (role 'model_xbase_XThrowExpression', cardinality 0..*).
+'model::xbase::XBinaryOperation' (role 'model_xbase_XBinaryOperation', cardinality 0..*) is associated with 'XExpression' (role 'XExpression184', cardinality 0..*).
+'model::richstring::ForLoopStart' (role 'start', cardinality 0..*) is associated with 'ForLoopEnd' (role 'ForLoopEnd', cardinality 0..*).
+'JvmConstructor' (role 'JvmConstructor', cardinality 0..*) is associated with 'model::xbase::XConstructorCall' (role 'model_xbase_XConstructorCall', cardinality 0..*).
+'model::richstring::ForLoopStart' (role 'model_richstring_ForLoopStart', cardinality 0..*) is associated with 'RichStringForLoop' (role 'RichStringForLoop', cardinality 0..*).
+'JvmTypeReference' (role 'JvmTypeReference48', cardinality 0..*) is associated with 'model::types::JvmExecutable' (role 'model_types_JvmExecutable47', cardinality 0..*).
+'XExpression' (role 'XExpression124', cardinality 0..*) is associated with 'model::xbase::XVariableDeclarationList' (role 'model_xbase_XVariableDeclarationList', cardinality 0..*).
+'model::xbase::XCastedExpression' (role 'model_xbase_XCastedExpression', cardinality 0..*) is associated with 'JvmTypeReference' (role 'JvmTypeReference179', cardinality 0..*).
+'JvmTypeReference' (role 'JvmTypeReference79', cardinality 0..*) is associated with 'model::types::JvmTypeAnnotationValue' (role 'model_types_JvmTypeAnnotationValue', cardinality 0..*).
+'model::xbase::XCastedExpression' (role 'model_xbase_XCastedExpression181', cardinality 0..*) is associated with 'XExpression' (role 'XExpression182', cardinality 0..*).
+'JvmTypeParameter' (role 'JvmTypeParameter291', cardinality 0..*) is associated with 'model::ss::XtendClass' (role 'model_ss_XtendClass290', cardinality 0..*).
+'model::richstring::IfConditionStart' (role 'model_richstring_IfConditionStart', cardinality 0..*) is associated with 'RichStringIf' (role 'RichStringIf', cardinality 0..*).
+'JvmTypeReference' (role 'JvmTypeReference115', cardinality 0..*) is associated with 'model::xbase::XCasePart' (role 'model_xbase_XCasePart114', cardinality 0..*).
+'XtendParameter' (role 'XtendParameter366', cardinality 0..*) is associated with 'model::ss::XtendDelegate' (role 'model_ss_XtendDelegate365', cardinality 0..*).
+'model::ss::XtendClass' (role 'model_ss_XtendClass', cardinality 0..*) is associated with 'JvmTypeReference' (role 'JvmTypeReference285', cardinality 0..*).
+'XExpression' (role 'XExpression245', cardinality 0..*) is associated with 'model::xbase::XPostfixOperation' (role 'model_xbase_XPostfixOperation', cardinality 0..*).
+'XCatchClause' (role 'XCatchClause', cardinality 0..*) is associated with 'model::xbase::XTryCatchFinallyExpression' (role 'model_xbase_XTryCatchFinallyExpression229', cardinality 0..*).
+'JvmAnnotationReference' (role 'JvmAnnotationReference81', cardinality 0..*) is associated with 'model::types::JvmAnnotationAnnotationValue' (role 'model_types_JvmAnnotationAnnotationValue', cardinality 0..*).
+'model::types::JvmAnnotationReference' (role 'model_types_JvmAnnotationReference', cardinality 0..*) is associated with 'JvmAnnotationType' (role 'JvmAnnotationType', cardinality 0..*).
+'model::types::JvmGenericArrayTypeReference' (role 'model_types_JvmGenericArrayTypeReference', cardinality 0..*) is associated with 'JvmTypeReference' (role 'JvmTypeReference30', cardinality 0..*).
+'model::ss::RichStringIf' (role 'model_ss_RichStringIf335', cardinality 0..*) is associated with 'XExpression' (role 'XExpression336', cardinality 0..*).
+'model::xbase::XKeyValuePair' (role 'model_xbase_XKeyValuePair162', cardinality 0..*) is associated with 'XExpression' (role 'XExpression163', cardinality 0..*).
+'XImportDeclaration' (role 'XImportDeclaration', cardinality 0..*) is associated with 'model::xtype::XImportSection' (role 'model_xtype_XImportSection', cardinality 0..*).
+'XtendParameter' (role 'XtendParameter348', cardinality 0..*) is associated with 'model::ss::XtendConstructor' (role 'model_ss_XtendConstructor347', cardinality 0..*).
+'model::types::JvmField' (role 'model_types_JvmField', cardinality 0..*) is associated with 'JvmTypeReference' (role 'JvmTypeReference36', cardinality 0..*).

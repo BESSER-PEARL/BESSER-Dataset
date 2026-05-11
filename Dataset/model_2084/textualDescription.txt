@@ -1,0 +1,73 @@
+The model has 40 class(es).
+The class 'ws::bundle::Bundle' has the following attributes: 'ID' of type str.
+The class 'Node' has no attributes.
+The class 'ws::skeleton::Skeleton' has the following attributes: 'ID' of type str.
+The class 'ws::middleware::Stub' has no attributes.
+The class 'Process' has no attributes.
+The class 'ws::tree::BasicNode' has the following attributes: 'modelName' of type str.
+The class 'Tree' has no attributes.
+The class 'ws::tree::P::Simulator' has no attributes.
+The class 'ws::middleware::VM' has the following attributes: 'ID' of type str; 'protocol' of type str.
+The class 'ws::tree::Coordinator' has no attributes.
+The class 'ws::tree::CDEVSSimulator' has no attributes.
+The class 'Repository' has no attributes.
+The class 'Simulator' has no attributes.
+The class 'Root' has no attributes.
+The class 'ws::tree::P::Coordinator' has no attributes.
+The class 'ws::tree::PDEVSCoordinator' has no attributes.
+The class 'ws::middleware::WebService' has no attributes.
+The class 'Coordinator' has no attributes.
+The class 'ws::tree::CDEVSCoordinator' has no attributes.
+The class 'Skeleton' has no attributes.
+The class 'ws::tree::Node' has the following attributes: 'ID' of type str.
+The class 'ws::tree::FlatCoordinator' has no attributes.
+The class 'ws::middleware::Middleware' has no attributes.
+The class 'ws::bundle::Process' has the following attributes: 'ID' of type str.
+The class 'Stub' has no attributes.
+The class 'ws::middleware::ServiceImpl' has no attributes.
+The class 'ServiceImpl' has no attributes.
+The class 'ws::middleware::Processor' has the following attributes: 'ID' of type str; 'IP' of type str.
+The class 'ws::tree::NodeCoordinator' has no attributes.
+The class 'ws::tree::Tree' has the following attributes: 'ID' of type str.
+The class 'Processor' has no attributes.
+The class 'ws::tree::Simulator' has no attributes.
+The class 'BasicNode' has no attributes.
+The class 'ServiceDescription' has no attributes.
+The class 'ws::middleware::Repository' has no attributes.
+The class 'ws::tree::PDEVSSimulator' has no attributes.
+The class 'ws::tree::Root' has no attributes.
+The class 'VM' has no attributes.
+The class 'ws::middleware::ServiceDescription' has no attributes.
+The class 'Middleware' has no attributes.
+'ws::tree::PDEVSCoordinator' is a specialization of 'Coordinator'.
+'ws::tree::P::Simulator' is a specialization of 'Simulator'.
+'ws::tree::BasicNode' is a specialization of 'Node'.
+'ws::tree::NodeCoordinator' is a specialization of 'Coordinator'.
+'ws::tree::PDEVSSimulator' is a specialization of 'Simulator'.
+'ws::tree::FlatCoordinator' is a specialization of 'Coordinator'.
+'ws::tree::P::Coordinator' is a specialization of 'Coordinator'.
+'ws::tree::CDEVSSimulator' is a specialization of 'Simulator'.
+'ws::tree::Coordinator' is a specialization of 'BasicNode'.
+'ws::tree::Simulator' is a specialization of 'BasicNode'.
+'ws::middleware::WebService' is a specialization of 'Middleware'.
+'ws::tree::Root' is a specialization of 'Node'.
+'ws::middleware::ServiceImpl' is a specialization of 'ServiceDescription'.
+'ws::tree::CDEVSCoordinator' is a specialization of 'Coordinator'.
+'Node' (role 'Node', cardinality 0..*) is associated with 'ws::bundle::Process' (role 'ws_bundle_Process', cardinality 0..*).
+'BasicNode' (role 'BasicNode16', cardinality 0..*) is associated with 'ws::tree::Coordinator' (role 'ws_tree_Coordinator', cardinality 0..*).
+'Root' (role 'Root', cardinality 0..*) is associated with 'ws::tree::Tree' (role 'ws_tree_Tree', cardinality 0..*).
+'ws::skeleton::Skeleton' (role 'ws_skeleton_Skeleton', cardinality 0..*) is associated with 'Tree' (role 'Tree', cardinality 0..*).
+'ws::bundle::Process' (role 'ws_bundle_Process27', cardinality 0..*) is associated with 'Middleware' (role 'Middleware', cardinality 0..*).
+'VM' (role 'VM', cardinality 0..*) is associated with 'ws::middleware::Middleware' (role 'ws_middleware_Middleware', cardinality 0..*).
+'ws::tree::Root' (role 'ws_tree_Root', cardinality 0..*) is associated with 'BasicNode' (role 'BasicNode', cardinality 0..*).
+'Stub' (role 'Stub', cardinality 0..*) is associated with 'ws::middleware::WebService' (role 'ws_middleware_WebService', cardinality 0..*).
+'ws::skeleton::Skeleton' (role 'ws_skeleton_Skeleton19', cardinality 0..*) is associated with 'Root' (role 'Root20', cardinality 0..*).
+'Process' (role 'Process24', cardinality 0..*) is associated with 'ws::bundle::Bundle' (role 'ws_bundle_Bundle23', cardinality 0..*).
+'ws::middleware::Stub' (role 'ws_middleware_Stub', cardinality 0..*) is associated with 'ServiceImpl' (role 'ServiceImpl', cardinality 0..*).
+'Coordinator' (role 'Coordinator', cardinality 0..*) is associated with 'ws::tree::Tree' (role 'ws_tree_Tree11', cardinality 0..*).
+'ws::tree::Tree' (role 'ws_tree_Tree13', cardinality 0..*) is associated with 'Simulator' (role 'Simulator', cardinality 0..*).
+'Process' (role 'Process', cardinality 0..*) is associated with 'ws::middleware::Middleware' (role 'ws_middleware_Middleware2', cardinality 0..*).
+'Repository' (role 'Repository', cardinality 0..*) is associated with 'ws::middleware::WebService' (role 'ws_middleware_WebService5', cardinality 0..*).
+'ws::middleware::Repository' (role 'ws_middleware_Repository', cardinality 0..*) is associated with 'ServiceDescription' (role 'ServiceDescription', cardinality 0..*).
+'Skeleton' (role 'Skeleton', cardinality 0..*) is associated with 'ws::bundle::Bundle' (role 'ws_bundle_Bundle', cardinality 0..*).
+'ws::middleware::VM' (role 'ws_middleware_VM', cardinality 0..*) is associated with 'Processor' (role 'Processor', cardinality 0..*).

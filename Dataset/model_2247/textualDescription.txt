@@ -1,0 +1,51 @@
+The model has 15 class(es).
+The class 'courses::Course' has the following attributes: 'name' of type str; 'credit' of type float; 'code' of type str.
+The class 'courses::Coursework' has the following attributes: 'location' of type str; 'numLabHour' of type int; 'numLectHour' of type int; 'numSpecHour' of type int; 'instructionLanguage' of type str; 'teachingSemester' of type str; 'termNumber' of type int.
+The class 'courses::EvaluationForm' has the following attributes: 'duration' of type str; 'examAids' of type str; 'weighting' of type str; 'type' of type str.
+The class 'courses::StudyProgram' has the following attributes: 'code' of type str.
+The class 'courses::Person' has the following attributes: 'name' of type str; 'Credits' of type float.
+The class 'courses::ContactInfo' has the following attributes: 'department' of type str; 'phone' of type str.
+The class 'courses::CourseHour' has the following attributes: 'type' of type str; 'day' of type str; 'room' of type str; 'startHour' of type str; 'endHour' of type str.
+The class 'courses::Content' has no attributes.
+The class 'courses::University' has the following attributes: 'name' of type str.
+The class 'courses::Timetable' has no attributes.
+The class 'courses::Paragraph' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'courses::CreditsReduction' has the following attributes: 'reduction' of type float.
+The class 'courses::ExaminationArrangement' has the following attributes: 'type' of type str; 'grade' of type str.
+The class 'courses::ExaminationPanel' has the following attributes: 'date' of type str; 'time' of type str; 'room' of type str.
+The class 'courses::CourseInstance' has no attributes.
+The enumeration 'Department' has the following literals: 'DepartmentofComputerScience', 'DepartmentofMathematicalSciences'.
+The enumeration 'TeachingLanguage' has the following literals: 'Norwegian', 'English'.
+The enumeration 'Semester' has the following literals: 'Spring2011', 'Autumn2012', 'Autumn2014', 'Spring2017', 'Spring2018', 'Spring2012', 'Spring2015', 'Autumn2017', 'Autumn2010', 'Autumn2011', 'Autumn2016', 'Autumn2015', 'Autumn2013', 'Spring2014', 'Spring2016', 'Spring2013'.
+The enumeration 'Location' has the following literals: 'Trondheim'.
+The enumeration 'HourStart' has the following literals: 'h1715', 'h1015', 'h1215', 'h1815', 'h0815', 'h1915', 'h1515', 'h1615', 'h1115', 'h0915', 'h1315', 'h1415'.
+The enumeration 'Day' has the following literals: 'Friday', 'Thursday', 'Tuesday', 'Monday', 'Wednesday'.
+The enumeration 'HourEnd' has the following literals: 'h1800', 'h1900', 'h1000', 'h1100', 'h1300', 'h0900', 'h1600', 'h1400', 'h1700', 'h1500', 'h2000', 'h0800', 'h1200'.
+'courses::StudyProgram' (role 'studyProgram', cardinality 0..*) is associated with 'courses::Course' (role 'Course', cardinality 0..*).
+'courses::Course' (role 'courses_Course28', cardinality 0..*) is associated with 'courses::CourseInstance' (role 'courses_CourseInstance27', cardinality 0..*).
+'courses::Course' (role 'courses', cardinality 0..*) is associated with 'courses::StudyProgram' (role 'StudyProgram', cardinality 0..*).
+'courses::Content' (role 'courses_Content', cardinality 0..*) is associated with 'courses::ExaminationArrangement' (role 'courses_ExaminationArrangement', cardinality 0..*).
+'courses::Person' (role 'courses_Person', cardinality 0..*) is associated with 'courses::University' (role 'courses_University2', cardinality 0..*).
+'courses::Coursework' (role 'courses_Coursework', cardinality 0..*) is associated with 'courses::CourseInstance' (role 'courses_CourseInstance21', cardinality 0..*).
+'courses::EvaluationForm' (role 'courses_EvaluationForm', cardinality 0..*) is associated with 'courses::ExaminationPanel' (role 'courses_ExaminationPanel49', cardinality 0..*).
+'courses::Person' (role 'Person53', cardinality 0..*) is associated with 'courses::StudyProgram' (role 'studyProgram52', cardinality 0..*).
+'courses::CourseInstance' (role 'courses_CourseInstance25', cardinality 0..*) is associated with 'courses::ExaminationPanel' (role 'courses_ExaminationPanel', cardinality 0..*).
+'courses::ContactInfo' (role 'courses_ContactInfo41', cardinality 0..*) is associated with 'courses::Person' (role 'courses_Person42', cardinality 0..*).
+'courses::Person' (role 'courses_Person7', cardinality 0..*) is associated with 'courses::University' (role 'courses_University6', cardinality 0..*).
+'courses::University' (role 'courses_University', cardinality 0..*) is associated with 'courses::Course' (role 'courses_Course', cardinality 0..*).
+'courses::Paragraph' (role 'courses_Paragraph', cardinality 0..*) is associated with 'courses::Content' (role 'courses_Content14', cardinality 0..*).
+'courses::Course' (role 'Course55', cardinality 0..*) is associated with 'courses::Person' (role 'student', cardinality 0..*).
+'courses::Timetable' (role 'courses_Timetable44', cardinality 0..*) is associated with 'courses::CourseHour' (role 'courses_CourseHour', cardinality 0..*).
+'courses::Person' (role 'Person', cardinality 0..*) is associated with 'courses::Course' (role 'course', cardinality 0..*).
+'courses::ExaminationPanel' (role 'courses_ExaminationPanel36', cardinality 0..*) is associated with 'courses::ExaminationArrangement' (role 'courses_ExaminationArrangement35', cardinality 0..*).
+'courses::StudyProgram' (role 'courses_StudyProgram47', cardinality 0..*) is associated with 'courses::CourseHour' (role 'courses_CourseHour46', cardinality 0..*).
+'courses::StudyProgram' (role 'courses_StudyProgram', cardinality 0..*) is associated with 'courses::University' (role 'courses_University4', cardinality 0..*).
+'courses::CourseInstance' (role 'courses_CourseInstance16', cardinality 0..*) is associated with 'courses::ContactInfo' (role 'courses_ContactInfo', cardinality 0..*).
+'courses::CourseInstance' (role 'courses_CourseInstance33', cardinality 0..*) is associated with 'courses::CreditsReduction' (role 'courses_CreditsReduction', cardinality 0..*).
+'courses::CreditsReduction' (role 'courses_CreditsReduction60', cardinality 0..*) is associated with 'courses::Course' (role 'courses_Course61', cardinality 0..*).
+'courses::ContactInfo' (role 'courses_ContactInfo38', cardinality 0..*) is associated with 'courses::Person' (role 'courses_Person39', cardinality 0..*).
+'courses::CourseInstance' (role 'courses_CourseInstance23', cardinality 0..*) is associated with 'courses::Timetable' (role 'courses_Timetable', cardinality 0..*).
+'courses::Course' (role 'courses_Course9', cardinality 0..*) is associated with 'courses::CourseInstance' (role 'courses_CourseInstance', cardinality 0..*).
+'courses::CourseInstance' (role 'courses_CourseInstance18', cardinality 0..*) is associated with 'courses::Content' (role 'courses_Content19', cardinality 0..*).
+'courses::StudyProgram' (role 'StudyProgram58', cardinality 0..*) is associated with 'courses::Person' (role 'student57', cardinality 0..*).
+'courses::CourseInstance' (role 'courses_CourseInstance30', cardinality 0..*) is associated with 'courses::Course' (role 'courses_Course31', cardinality 0..*).

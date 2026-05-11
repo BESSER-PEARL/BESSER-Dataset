@@ -1,0 +1,48 @@
+The model has 20 class(es).
+The class 'UML::Activity::mine::Fork' has no attributes.
+The class 'UML::Activity::mine::ActivityFinalNode' has no attributes.
+The class 'UML::Activity::mine::ControlNode' has no attributes.
+The class 'Action' has no attributes.
+The class 'UML::Activity::mine::ObjectNode' has the following attributes: 'objects' of type str; 'upperBound' of type str.
+The class 'UML::Activity::mine::ExpansionNode' has no attributes.
+The class 'UML::Activity::mine::ExpansionRegion' has no attributes.
+The class 'UML::Activity::mine::ActivityNode' has no attributes.
+The class 'UML::Activity::mine::DatastoreNode' has no attributes.
+The class 'Element' has no attributes.
+The class 'UML::Activity::mine::ActivityParameterNode' has the following attributes: 'parameter' of type str.
+The class 'ObjectNode' has no attributes.
+The class 'UML::Activity::mine::Activity' has no attributes.
+The class 'UML::Activity::mine::Join' has no attributes.
+The class 'UML::Activity::mine::ActivityInitialNode' has no attributes.
+The class 'UML::Activity::mine::Action' has the following attributes: 'outputs' of type str; 'inputs' of type str.
+The class 'UML::Activity::mine::ActivityEdge' has the following attributes: 'objectFlow' of type bool.
+The class 'ControlNode' has no attributes.
+The class 'ActivityNode' has no attributes.
+The class 'UML::Activity::mine::Element' has the following attributes: 'elementID' of type str; 'name' of type str; 'properties' of type str.
+The enumeration 'Direction' has the following literals: 'OUT', 'IN'.
+The enumeration 'ExpansionMode' has the following literals: 'PARALLEL', 'ITERATIVE'.
+The enumeration 'Status' has the following literals: 'ACTIVE', 'INACTIVE', 'DONE'.
+'UML::Activity::mine::ActivityParameterNode' is a specialization of 'ObjectNode'.
+'UML::Activity::mine::ActivityEdge' is a specialization of 'Element'.
+'UML::Activity::mine::Action' is a specialization of 'ActivityNode'.
+'UML::Activity::mine::ObjectNode' is a specialization of 'ActivityNode'.
+'UML::Activity::mine::Join' is a specialization of 'ControlNode'.
+'UML::Activity::mine::ActivityInitialNode' is a specialization of 'ControlNode'.
+'UML::Activity::mine::DatastoreNode' is a specialization of 'ObjectNode'.
+'UML::Activity::mine::ExpansionNode' is a specialization of 'ObjectNode'.
+'UML::Activity::mine::ExpansionRegion' is a specialization of 'Action'.
+'UML::Activity::mine::Fork' is a specialization of 'ControlNode'.
+'UML::Activity::mine::Activity' is a specialization of 'Element'.
+'UML::Activity::mine::ControlNode' is a specialization of 'ActivityNode'.
+'UML::Activity::mine::ActivityNode' is a specialization of 'Element'.
+'UML::Activity::mine::ActivityFinalNode' is a specialization of 'ControlNode'.
+'UML::Activity::mine::ActivityNode' (role 'UML_Activity_mine_ActivityNode', cardinality 0..*) is associated with 'UML::Activity::mine::Activity' (role 'UML_Activity_mine_Activity', cardinality 0..*).
+'UML::Activity::mine::Activity' (role 'UML_Activity_mine_Activity2', cardinality 0..*) is associated with 'UML::Activity::mine::ActivityEdge' (role 'UML_Activity_mine_ActivityEdge', cardinality 0..*).
+'UML::Activity::mine::ExpansionRegion' (role 'UML_Activity_mine_ExpansionRegion', cardinality 0..*) is associated with 'UML::Activity::mine::ExpansionNode' (role 'UML_Activity_mine_ExpansionNode', cardinality 0..*).
+'UML::Activity::mine::ActivityEdge' (role 'UML_Activity_mine_ActivityEdge15', cardinality 0..*) is associated with 'UML::Activity::mine::ExpansionRegion' (role 'UML_Activity_mine_ExpansionRegion14', cardinality 0..*).
+'UML::Activity::mine::ActivityEdge' (role 'ActivityEdge8', cardinality 0..*) is associated with 'UML::Activity::mine::ActivityNode' (role 'source', cardinality 0..*).
+'UML::Activity::mine::ActivityNode' (role 'ActivityNode5', cardinality 0..*) is associated with 'UML::Activity::mine::ActivityEdge' (role 'outgoing', cardinality 0..*).
+'UML::Activity::mine::ActivityNode' (role 'ActivityNode', cardinality 0..*) is associated with 'UML::Activity::mine::ActivityEdge' (role 'incoming', cardinality 0..*).
+'UML::Activity::mine::ExpansionNode' (role 'UML_Activity_mine_ExpansionNode12', cardinality 0..*) is associated with 'UML::Activity::mine::ExpansionRegion' (role 'UML_Activity_mine_ExpansionRegion11', cardinality 0..*).
+'UML::Activity::mine::ExpansionRegion' (role 'UML_Activity_mine_ExpansionRegion17', cardinality 0..*) is associated with 'UML::Activity::mine::ActivityNode' (role 'UML_Activity_mine_ActivityNode18', cardinality 0..*).
+'UML::Activity::mine::ActivityNode' (role 'target', cardinality 0..*) is associated with 'UML::Activity::mine::ActivityEdge' (role 'ActivityEdge', cardinality 0..*).

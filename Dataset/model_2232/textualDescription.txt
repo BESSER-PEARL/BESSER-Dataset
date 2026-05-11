@@ -1,0 +1,36 @@
+The model has 10 class(es).
+The class 'studyprogram::Department' has the following attributes: 'name' of type str.
+The class 'studyprogram::StudyPlan' has the following attributes: 'name' of type str.
+The class 'studyprogram::Program' has the following attributes: 'name' of type str.
+The class 'studyprogram::SemesterCourse' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'studyprogram::University' has the following attributes: 'name' of type str.
+The class 'studyprogram::Year' has the following attributes: 'value' of type int.
+The class 'studyprogram::ElectiveCourses' has no attributes.
+The class 'studyprogram::ObligatoryCourses' has no attributes.
+The class 'studyprogram::Course' has the following attributes: 'semester' of type str; 'code' of type str; 'credits' of type str; 'name' of type str.
+The class 'studyprogram::Semester' has the following attributes: 'type' of type str.
+The enumeration 'CourseType' has the following literals: 'Obligatory', 'Elective'.
+The enumeration 'SemesterType' has the following literals: 'Spring', 'Fall'.
+'studyprogram::Department' (role 'Department32', cardinality 0..*) is associated with 'studyprogram::Course' (role 'courses', cardinality 0..*).
+'studyprogram::Program' (role 'Program38', cardinality 0..*) is associated with 'studyprogram::ObligatoryCourses' (role 'obligatoryCourses', cardinality 0..*).
+'studyprogram::Semester' (role 'semester', cardinality 0..*) is associated with 'studyprogram::SemesterCourse' (role 'SemesterCourse', cardinality 0..*).
+'studyprogram::Semester' (role 'semesters', cardinality 0..*) is associated with 'studyprogram::Year' (role 'Year26', cardinality 0..*).
+'studyprogram::StudyPlan' (role 'StudyPlan21', cardinality 0..*) is associated with 'studyprogram::StudyPlan' (role 'studyPlan20', cardinality 0..*).
+'studyprogram::Program' (role 'program', cardinality 0..*) is associated with 'studyprogram::StudyPlan' (role 'StudyPlan', cardinality 0..*).
+'studyprogram::Program' (role 'Program34', cardinality 0..*) is associated with 'studyprogram::ElectiveCourses' (role 'electiveCourses', cardinality 0..*).
+'studyprogram::Department' (role 'departments', cardinality 0..*) is associated with 'studyprogram::University' (role 'University', cardinality 0..*).
+'studyprogram::Department' (role 'Department6', cardinality 0..*) is associated with 'studyprogram::Program' (role 'programs', cardinality 0..*).
+'studyprogram::Program' (role 'Program', cardinality 0..*) is associated with 'studyprogram::Department' (role 'department4', cardinality 0..*).
+'studyprogram::ElectiveCourses' (role 'ElectiveCourses', cardinality 0..*) is associated with 'studyprogram::Program' (role 'program9', cardinality 0..*).
+'studyprogram::SemesterCourse' (role 'studyprogram_SemesterCourse', cardinality 0..*) is associated with 'studyprogram::Course' (role 'studyprogram_Course', cardinality 0..*).
+'studyprogram::ObligatoryCourses' (role 'studyprogram_ObligatoryCourses', cardinality 0..*) is associated with 'studyprogram::Course' (role 'studyprogram_Course40', cardinality 0..*).
+'studyprogram::Program' (role 'Program14', cardinality 0..*) is associated with 'studyprogram::StudyPlan' (role 'studyPlans', cardinality 0..*).
+'studyprogram::Semester' (role 'Semester', cardinality 0..*) is associated with 'studyprogram::Year' (role 'year', cardinality 0..*).
+'studyprogram::StudyPlan' (role 'studyPlan', cardinality 0..*) is associated with 'studyprogram::Year' (role 'Year', cardinality 0..*).
+'studyprogram::StudyPlan' (role 'specialisations', cardinality 0..*) is associated with 'studyprogram::StudyPlan' (role 'StudyPlan17', cardinality 0..*).
+'studyprogram::Course' (role 'studyprogram_Course36', cardinality 0..*) is associated with 'studyprogram::ElectiveCourses' (role 'studyprogram_ElectiveCourses', cardinality 0..*).
+'studyprogram::Department' (role 'department', cardinality 0..*) is associated with 'studyprogram::Course' (role 'Course', cardinality 0..*).
+'studyprogram::Department' (role 'Department', cardinality 0..*) is associated with 'studyprogram::University' (role 'school', cardinality 0..*).
+'studyprogram::ObligatoryCourses' (role 'ObligatoryCourses', cardinality 0..*) is associated with 'studyprogram::Program' (role 'program11', cardinality 0..*).
+'studyprogram::StudyPlan' (role 'StudyPlan24', cardinality 0..*) is associated with 'studyprogram::Year' (role 'years', cardinality 0..*).
+'studyprogram::Semester' (role 'Semester29', cardinality 0..*) is associated with 'studyprogram::SemesterCourse' (role 'semesterCourses', cardinality 0..*).

@@ -1,0 +1,116 @@
+The model has 63 class(es).
+The class 'INamed' has no attributes.
+The class 'TestParameter' has no attributes.
+The class 'model::base::ITracingElement' has no attributes.
+The class 'model::batch::BatchOperation' has no attributes.
+The class 'base::IID' has no attributes.
+The class 'ISpecmatePositionableModelObject' has no attributes.
+The class 'base::ITracingElement' has no attributes.
+The class 'model::testspecification::TestStep' has the following attributes: 'expectedOutcome' of type str.
+The class 'model::processes::ProcessEnd' has no attributes.
+The class 'model::testspecification::TestProcedure' has the following attributes: 'isRegressionTest' of type bool.
+The class 'model::history::History' has no attributes.
+The class 'model::requirements::CEGConnection' has the following attributes: 'negate' of type bool.
+The class 'model::requirements::CEGModel' has the following attributes: 'modelRequirements' of type str.
+The class 'base::INamed' has no attributes.
+The class 'model::testspecification::ParameterAssignment' has the following attributes: 'condition' of type str; 'value' of type str.
+The class 'model::base::IDescribed' has the following attributes: 'description' of type str.
+The class 'model::testspecification::TestParameter' has the following attributes: 'type' of type str.
+The class 'base::IPositionable' has no attributes.
+The class 'model::base::IModelConnection' has no attributes.
+The class 'model::history::Change' has the following attributes: 'objectType' of type str; 'oldValue' of type str; 'isCreate' of type bool; 'newValue' of type str; 'objectName' of type str; 'isDelete' of type bool; 'feature' of type str.
+The class 'model::requirements::CEGNode' has the following attributes: 'condition' of type str; 'type' of type str; 'variable' of type str.
+The class 'Operation' has no attributes.
+The class 'base::IExternal' has no attributes.
+The class 'model::processes::ProcessConnection' has the following attributes: 'labelX' of type float; 'labelY' of type float; 'condition' of type str.
+The class 'model::base::IModelNode' has no attributes.
+The class 'model::requirements::Requirement' has the following attributes: 'implementingITTeam' of type str; 'tac' of type str; 'numberOfTests' of type int; 'isRegressionRequirement' of type bool; 'platform' of type str; 'plannedRelease' of type str; 'status' of type str; 'implementingUnit' of type str; 'implementingBOTeam' of type str.
+The class 'model::base::IExternal' has the following attributes: 'extId' of type str; 'extId2' of type str; 'live' of type bool; 'source' of type str.
+The class 'base::ISpecmateModelObject' has no attributes.
+The class 'model::administration::ProblemDetail' has the following attributes: 'ecode' of type str; 'detail' of type str; 'instance' of type str; 'status' of type int.
+The class 'ParameterAssignment' has no attributes.
+The class 'model::export::Export' has the following attributes: 'content' of type str; 'type' of type str.
+The class 'HistoryEntry' has no attributes.
+The class 'IContentElement' has no attributes.
+The class 'model::processes::Process' has no attributes.
+The class 'model::history::HistoryEntry' has the following attributes: 'user' of type str; 'comment' of type str; 'timestamp' of type str; 'deletedObjects' of type str.
+The class 'ProcessNode' has no attributes.
+The class 'model::base::INamed' has the following attributes: 'name' of type str.
+The class 'model::testspecification::TestCase' has the following attributes: 'consistent' of type bool.
+The class 'IContainer' has no attributes.
+The class 'model::base::IID' has the following attributes: 'id' of type str.
+The class 'ITracingElement' has no attributes.
+The class 'model::base::ISpecmateModelObject' has no attributes.
+The class 'base::IDescribed' has no attributes.
+The class 'IModelNode' has no attributes.
+The class 'model::processes::ProcessDecision' has no attributes.
+The class 'model::base::ISpecmatePositionableModelObject' has the following attributes: 'width' of type float; 'height' of type float; 'x' of type float; 'y' of type float.
+The class 'model::base::Folder' has the following attributes: 'library' of type bool.
+The class 'base::IRecycled' has no attributes.
+The class 'model::base::IContainer' has no attributes.
+The class 'model::base::IPositionable' has the following attributes: 'position' of type int.
+The class 'model::base::IContentElement' has no attributes.
+The class 'base::IContainer' has no attributes.
+The class 'model::processes::ProcessStep' has the following attributes: 'expectedOutcome' of type str.
+The class 'IModelConnection' has no attributes.
+The class 'model::testspecification::TestSpecification' has no attributes.
+The class 'model::processes::ProcessStart' has no attributes.
+The class 'model::processes::ProcessNode' has no attributes.
+The class 'base::IContentElement' has no attributes.
+The class 'Change' has no attributes.
+The class 'model::base::IRecycled' has the following attributes: 'hasRecycledChildren' of type bool; 'recycled' of type bool.
+The class 'ISpecmateModelObject' has no attributes.
+The class 'model::batch::Operation' has the following attributes: 'type' of type str.
+The class 'model::administration::Status' has the following attributes: 'value' of type str.
+The enumeration 'ErrorCode' has the following literals: 'scheduler', 'noAuthorization', 'trello', 'noSuchService', 'testgeneration', 'seralization', 'persistency', 'search', 'inMaintenanceMode', 'metrics', 'methodNotAllowed', 'configuration', 'hpProxy', 'nlp', 'jira', 'validator', 'invalidData', 'restService', 'internalProblem', 'userSession', 'migration'.
+The enumeration 'NodeType' has the following literals: 'AND', 'OR'.
+The enumeration 'OperationType' has the following literals: 'UPDATE', 'DELETE', 'CREATE'.
+The enumeration 'ParameterType' has the following literals: 'INPUT', 'OUTPUT'.
+'model::requirements::Requirement' is a specialization of 'base::ISpecmateModelObject'.
+'model::testspecification::ParameterAssignment' is a specialization of 'IContentElement'.
+'model::base::IContainer' is a specialization of 'IContentElement'.
+'model::testspecification::TestParameter' is a specialization of 'IContentElement'.
+'model::processes::ProcessStart' is a specialization of 'ProcessNode'.
+'model::base::IContentElement' is a specialization of 'base::IDescribed'.
+'model::testspecification::TestStep' is a specialization of 'base::IPositionable'.
+'model::base::ISpecmateModelObject' is a specialization of 'base::ITracingElement'.
+'model::processes::ProcessStep' is a specialization of 'ProcessNode'.
+'model::processes::ProcessDecision' is a specialization of 'ProcessNode'.
+'model::testspecification::TestCase' is a specialization of 'base::IContainer'.
+'model::testspecification::TestProcedure' is a specialization of 'base::IExternal'.
+'model::requirements::CEGNode' is a specialization of 'IModelNode'.
+'model::base::ISpecmateModelObject' is a specialization of 'base::IContainer'.
+'model::base::Folder' is a specialization of 'ISpecmateModelObject'.
+'model::base::IModelNode' is a specialization of 'ISpecmatePositionableModelObject'.
+'model::export::Export' is a specialization of 'INamed'.
+'model::base::IContentElement' is a specialization of 'base::IRecycled'.
+'model::processes::Process' is a specialization of 'IContainer'.
+'model::base::ISpecmatePositionableModelObject' is a specialization of 'ISpecmateModelObject'.
+'model::testspecification::TestStep' is a specialization of 'base::IContentElement'.
+'model::requirements::Requirement' is a specialization of 'base::IExternal'.
+'model::base::IContentElement' is a specialization of 'base::IID'.
+'model::processes::ProcessConnection' is a specialization of 'IModelConnection'.
+'model::processes::ProcessNode' is a specialization of 'IModelNode'.
+'model::testspecification::TestCase' is a specialization of 'base::IPositionable'.
+'model::base::IModelConnection' is a specialization of 'ISpecmateModelObject'.
+'model::testspecification::TestSpecification' is a specialization of 'IContainer'.
+'model::requirements::CEGConnection' is a specialization of 'IModelConnection'.
+'model::processes::ProcessEnd' is a specialization of 'ProcessNode'.
+'model::base::IContentElement' is a specialization of 'base::INamed'.
+'model::requirements::CEGModel' is a specialization of 'ISpecmateModelObject'.
+'model::testspecification::TestProcedure' is a specialization of 'base::IContainer'.
+'model::testspecification::TestParameter' (role 'parameter', cardinality 0..*) is associated with 'ParameterAssignment' (role 'ParameterAssignment', cardinality 0..*).
+'TestParameter' (role 'TestParameter13', cardinality 0..*) is associated with 'model::testspecification::TestStep' (role 'model_testspecification_TestStep', cardinality 0..*).
+'IModelNode' (role 'IModelNode', cardinality 0..*) is associated with 'model::base::IModelConnection' (role 'outgoingConnections', cardinality 0..*).
+'IModelConnection' (role 'IModelConnection6', cardinality 0..*) is associated with 'model::base::IModelNode' (role 'target', cardinality 0..*).
+'IModelNode' (role 'IModelNode3', cardinality 0..*) is associated with 'model::base::IModelConnection' (role 'incomingConnections', cardinality 0..*).
+'model::base::ITracingElement' (role 'tracesTo', cardinality 0..*) is associated with 'ITracingElement' (role 'ITracingElement9', cardinality 0..*).
+'IModelConnection' (role 'IModelConnection', cardinality 0..*) is associated with 'model::base::IModelNode' (role 'source', cardinality 0..*).
+'Operation' (role 'Operation', cardinality 0..*) is associated with 'model::batch::BatchOperation' (role 'model_batch_BatchOperation', cardinality 0..*).
+'IContentElement' (role 'IContentElement21', cardinality 0..*) is associated with 'model::batch::Operation' (role 'model_batch_Operation20', cardinality 0..*).
+'TestParameter' (role 'TestParameter', cardinality 0..*) is associated with 'model::testspecification::ParameterAssignment' (role 'assignments', cardinality 0..*).
+'HistoryEntry' (role 'HistoryEntry', cardinality 0..*) is associated with 'model::history::History' (role 'model_history_History', cardinality 0..*).
+'IContentElement' (role 'IContentElement18', cardinality 0..*) is associated with 'model::batch::Operation' (role 'model_batch_Operation', cardinality 0..*).
+'IContentElement' (role 'IContentElement', cardinality 0..*) is associated with 'model::base::IContainer' (role 'model_base_IContainer', cardinality 0..*).
+'model::base::ITracingElement' (role 'tracesFrom', cardinality 0..*) is associated with 'ITracingElement' (role 'ITracingElement', cardinality 0..*).
+'model::history::HistoryEntry' (role 'model_history_HistoryEntry', cardinality 0..*) is associated with 'Change' (role 'Change', cardinality 0..*).

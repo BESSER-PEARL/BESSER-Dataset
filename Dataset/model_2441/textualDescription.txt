@@ -1,0 +1,15 @@
+The model has 6 class(es).
+The class 'ddl::Table' has no attributes.
+The class 'ddl::DataType' has no attributes.
+The class 'ddl::Schema' has no attributes.
+The class 'ddl::Column' has no attributes.
+The class 'DataElement' has no attributes.
+The class 'ddl::DataElement' has the following attributes: 'name' of type str.
+'ddl::Table' is a specialization of 'DataElement'.
+'ddl::Column' is a specialization of 'DataElement'.
+'ddl::DataType' is a specialization of 'DataElement'.
+'ddl::Schema' is a specialization of 'DataElement'.
+'ddl::Column' (role 'ddl_Column', cardinality 0..*) is associated with 'ddl::Table' (role 'ddl_Table4', cardinality 0..*).
+'ddl::Table' (role 'ddl_Table', cardinality 0..*) is associated with 'ddl::Schema' (role 'ddl_Schema', cardinality 0..*).
+'ddl::DataType' (role 'ddl_DataType7', cardinality 0..*) is associated with 'ddl::Column' (role 'ddl_Column6', cardinality 0..*).
+'ddl::DataType' (role 'ddl_DataType', cardinality 0..*) is associated with 'ddl::Schema' (role 'ddl_Schema2', cardinality 0..*).

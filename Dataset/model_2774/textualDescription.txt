@@ -1,0 +1,24 @@
+The model has 10 class(es).
+The class 'xDstmdata::tEnum' has the following attributes: 'name' of type str; 'literals' of type str.
+The class 'xDstmdata::vVariable' has the following attributes: 'tString' of type str; 'name' of type str; 'tID' of type str.
+The class 'xDstmdata::cIntchannel' has the following attributes: 'tID' of type str; 'bound' of type int; 'tString' of type str; 'name' of type str.
+The class 'xDstmdata::cExtchannel' has the following attributes: 'tString' of type str; 'tID' of type str; 'name' of type str.
+The class 'xDstmdata::tCompound' has the following attributes: 'name' of type str.
+The class 'xDstmdata::composingtype' has the following attributes: 'tString' of type str; 'tID' of type str.
+The class 'xDstmdata::tMultitype' has the following attributes: 'name' of type str.
+The class 'xDstmdata::tTypes' has no attributes.
+The class 'xDstmdata::subtype' has the following attributes: 'tString' of type str; 'tID' of type str.
+The class 'xDstmdata::channel::specifier' has the following attributes: 'type' of type str.
+'xDstmdata::tMultitype' (role 'xDstmdata_tMultitype', cardinality 0..*) is associated with 'xDstmdata::tTypes' (role 'xDstmdata_tTypes4', cardinality 0..*).
+'xDstmdata::tTypes' (role 'xDstmdata_tTypes2', cardinality 0..*) is associated with 'xDstmdata::tCompound' (role 'xDstmdata_tCompound', cardinality 0..*).
+'xDstmdata::tTypes' (role 'xDstmdata_tTypes6', cardinality 0..*) is associated with 'xDstmdata::cIntchannel' (role 'xDstmdata_cIntchannel', cardinality 0..*).
+'xDstmdata::vVariable' (role 'xDstmdata_vVariable', cardinality 0..*) is associated with 'xDstmdata::tTypes' (role 'xDstmdata_tTypes10', cardinality 0..*).
+'xDstmdata::tTypes' (role 'xDstmdata_tTypes8', cardinality 0..*) is associated with 'xDstmdata::cExtchannel' (role 'xDstmdata_cExtchannel', cardinality 0..*).
+'xDstmdata::channel::specifier' (role 'xDstmdata_channel_specifier', cardinality 0..*) is associated with 'xDstmdata::subtype' (role 'xDstmdata_subtype14', cardinality 0..*).
+'xDstmdata::channel::specifier' (role 'xDstmdata_channel_specifier22', cardinality 0..*) is associated with 'xDstmdata::cIntchannel' (role 'xDstmdata_cIntchannel21', cardinality 0..*).
+'xDstmdata::cExtchannel' (role 'xDstmdata_cExtchannel24', cardinality 0..*) is associated with 'xDstmdata::channel::specifier' (role 'xDstmdata_channel_specifier25', cardinality 0..*).
+'xDstmdata::channel::specifier' (role 'xDstmdata_channel_specifier28', cardinality 0..*) is associated with 'xDstmdata::vVariable' (role 'xDstmdata_vVariable27', cardinality 0..*).
+'xDstmdata::channel::specifier' (role 'xDstmdata_channel_specifier19', cardinality 0..*) is associated with 'xDstmdata::composingtype' (role 'xDstmdata_composingtype18', cardinality 0..*).
+'xDstmdata::tEnum' (role 'xDstmdata_tEnum', cardinality 0..*) is associated with 'xDstmdata::tTypes' (role 'xDstmdata_tTypes', cardinality 0..*).
+'xDstmdata::tMultitype' (role 'xDstmdata_tMultitype16', cardinality 0..*) is associated with 'xDstmdata::composingtype' (role 'xDstmdata_composingtype', cardinality 0..*).
+'xDstmdata::tCompound' (role 'xDstmdata_tCompound12', cardinality 0..*) is associated with 'xDstmdata::subtype' (role 'xDstmdata_subtype', cardinality 0..*).

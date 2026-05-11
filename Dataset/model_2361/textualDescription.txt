@@ -1,0 +1,27 @@
+The model has 7 class(es).
+The class 'SimpleRDBMS::RdbmsTable' has no attributes.
+The class 'RdbmsModelElement' has no attributes.
+The class 'SimpleRDBMS::RdbmsKey' has no attributes.
+The class 'SimpleRDBMS::RdbmsColumn' has the following attributes: 'rdbmsType' of type str.
+The class 'SimpleRDBMS::RdbmsSchema' has no attributes.
+The class 'SimpleRDBMS::RdbmsForeignKey' has no attributes.
+The class 'SimpleRDBMS::RdbmsModelElement' has the following attributes: 'id' of type str; 'rdbmsName' of type str; 'rdbmsKind' of type str.
+'SimpleRDBMS::RdbmsForeignKey' is a specialization of 'RdbmsModelElement'.
+'SimpleRDBMS::RdbmsColumn' is a specialization of 'RdbmsModelElement'.
+'SimpleRDBMS::RdbmsKey' is a specialization of 'RdbmsModelElement'.
+'SimpleRDBMS::RdbmsTable' is a specialization of 'RdbmsModelElement'.
+'SimpleRDBMS::RdbmsSchema' is a specialization of 'RdbmsModelElement'.
+'SimpleRDBMS::RdbmsKey' (role 'RdbmsKey', cardinality 0..*) is associated with 'SimpleRDBMS::RdbmsColumn' (role 'rdbmsColumn2', cardinality 0..*).
+'SimpleRDBMS::RdbmsForeignKey' (role 'rdbmsForeignKey10', cardinality 0..*) is associated with 'SimpleRDBMS::RdbmsColumn' (role 'RdbmsColumn', cardinality 0..*).
+'SimpleRDBMS::RdbmsTable' (role 'RdbmsTable19', cardinality 0..*) is associated with 'SimpleRDBMS::RdbmsSchema' (role 'rdbmsSchema', cardinality 0..*).
+'SimpleRDBMS::RdbmsColumn' (role 'RdbmsColumn21', cardinality 0..*) is associated with 'SimpleRDBMS::RdbmsTable' (role 'rdbmsOwner', cardinality 0..*).
+'SimpleRDBMS::RdbmsForeignKey' (role 'RdbmsForeignKey', cardinality 0..*) is associated with 'SimpleRDBMS::RdbmsColumn' (role 'rdbmsColumn4', cardinality 0..*).
+'SimpleRDBMS::RdbmsColumn' (role 'RdbmsColumn12', cardinality 0..*) is associated with 'SimpleRDBMS::RdbmsKey' (role 'rdbmsKey', cardinality 0..*).
+'SimpleRDBMS::RdbmsTable' (role 'rdbmsOwner26', cardinality 0..*) is associated with 'SimpleRDBMS::RdbmsKey' (role 'RdbmsKey27', cardinality 0..*).
+'SimpleRDBMS::RdbmsTable' (role 'rdbmsTable', cardinality 0..*) is associated with 'SimpleRDBMS::RdbmsSchema' (role 'RdbmsSchema', cardinality 0..*).
+'SimpleRDBMS::RdbmsTable' (role 'RdbmsTable17', cardinality 0..*) is associated with 'SimpleRDBMS::RdbmsKey' (role 'rdbmsKey16', cardinality 0..*).
+'SimpleRDBMS::RdbmsKey' (role 'rdbmsRefersTo', cardinality 0..*) is associated with 'SimpleRDBMS::RdbmsForeignKey' (role 'RdbmsForeignKey14', cardinality 0..*).
+'SimpleRDBMS::RdbmsTable' (role 'RdbmsTable', cardinality 0..*) is associated with 'SimpleRDBMS::RdbmsColumn' (role 'rdbmsColumn', cardinality 0..*).
+'SimpleRDBMS::RdbmsForeignKey' (role 'rdbmsRefersToOpposite', cardinality 0..*) is associated with 'SimpleRDBMS::RdbmsKey' (role 'RdbmsKey8', cardinality 0..*).
+'SimpleRDBMS::RdbmsTable' (role 'rdbmsOwner23', cardinality 0..*) is associated with 'SimpleRDBMS::RdbmsForeignKey' (role 'RdbmsForeignKey24', cardinality 0..*).
+'SimpleRDBMS::RdbmsForeignKey' (role 'rdbmsForeignKey', cardinality 0..*) is associated with 'SimpleRDBMS::RdbmsTable' (role 'RdbmsTable6', cardinality 0..*).

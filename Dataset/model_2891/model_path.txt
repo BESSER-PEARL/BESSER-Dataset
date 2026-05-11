@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/SpriMoon/EMF_custom/sources/com.proxiad.emfcustomizer.samples.entity2ddlxtend/src/entity/entity.ecore

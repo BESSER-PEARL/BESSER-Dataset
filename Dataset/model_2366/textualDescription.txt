@@ -1,0 +1,42 @@
+The model has 13 class(es).
+The class 'Key' has no attributes.
+The class 'ModelElement' has no attributes.
+The class 'sql::ModelElement' has no attributes.
+The class 'sql::Key' has no attributes.
+The class 'sql::Schema' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'sql::NamedElement' has the following attributes: 'name' of type str.
+The class 'sql::PrimaryKey' has no attributes.
+The class 'sql::Column' has the following attributes: 'type' of type str; 'properties' of type str.
+The class 'sql::ForeignKey' has no attributes.
+The class 'sql::Event' has the following attributes: 'action' of type str; 'condition' of type str.
+The class 'sql::Annotation' has the following attributes: 'annotation' of type str.
+The class 'sql::Table' has no attributes.
+The enumeration 'Property' has the following literals: 'AutoIncrement', 'Unique', 'NotNull'.
+The enumeration 'Condition' has the following literals: 'Delete', 'Update'.
+The enumeration 'Action' has the following literals: 'SetNull', 'Cascade'.
+'sql::NamedElement' is a specialization of 'ModelElement'.
+'sql::Table' is a specialization of 'NamedElement'.
+'sql::Column' is a specialization of 'NamedElement'.
+'sql::Schema' is a specialization of 'NamedElement'.
+'sql::ForeignKey' is a specialization of 'Key'.
+'sql::PrimaryKey' is a specialization of 'Key'.
+'sql::Key' is a specialization of 'ModelElement'.
+'sql::Event' is a specialization of 'ModelElement'.
+'sql::Column' is a specialization of 'ModelElement'.
+'sql::Schema' (role 'Schema', cardinality 0..*) is associated with 'sql::Table' (role 'ownedTables', cardinality 0..*).
+'sql::Column' (role 'column', cardinality 0..*) is associated with 'sql::Key' (role 'Key', cardinality 0..*).
+'sql::ForeignKey' (role 'ForeignKey6', cardinality 0..*) is associated with 'sql::Table' (role 'referencedTable', cardinality 0..*).
+'sql::Annotation' (role 'Annotation', cardinality 0..*) is associated with 'sql::ModelElement' (role 'owningModelElement', cardinality 0..*).
+'sql::Table' (role 'owningTable4', cardinality 0..*) is associated with 'sql::ForeignKey' (role 'ForeignKey', cardinality 0..*).
+'sql::PrimaryKey' (role 'ownedPrimaryKey', cardinality 0..*) is associated with 'sql::Table' (role 'Table13', cardinality 0..*).
+'sql::Column' (role 'Column11', cardinality 0..*) is associated with 'sql::Key' (role 'keys', cardinality 0..*).
+'sql::Table' (role 'Table15', cardinality 0..*) is associated with 'sql::ForeignKey' (role 'referencingForeignKeys', cardinality 0..*).
+'sql::Table' (role 'owningTable2', cardinality 0..*) is associated with 'sql::PrimaryKey' (role 'PrimaryKey', cardinality 0..*).
+'sql::ForeignKey' (role 'ownedForeignKeys', cardinality 0..*) is associated with 'sql::Table' (role 'Table17', cardinality 0..*).
+'sql::Column' (role 'Column', cardinality 0..*) is associated with 'sql::Table' (role 'owningTable', cardinality 0..*).
+'sql::Annotation' (role 'ownedAnnotations', cardinality 0..*) is associated with 'sql::ModelElement' (role 'ModelElement', cardinality 0..*).
+'sql::Schema' (role 'owningSchema', cardinality 0..*) is associated with 'sql::Table' (role 'Table22', cardinality 0..*).
+'sql::ForeignKey' (role 'ForeignKey20', cardinality 0..*) is associated with 'sql::Event' (role 'ownedEvents', cardinality 0..*).
+'sql::Event' (role 'Event', cardinality 0..*) is associated with 'sql::ForeignKey' (role 'owningForeignKey', cardinality 0..*).
+'sql::Column' (role 'ownedColumns', cardinality 0..*) is associated with 'sql::Table' (role 'Table', cardinality 0..*).

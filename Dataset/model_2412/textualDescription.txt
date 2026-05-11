@@ -1,0 +1,185 @@
+The model has 68 class(es).
+The class 'SQL2003::V3::Domain' has the following attributes: 'name' of type str; 'expression' of type str; 'default' of type str.
+The class 'SQL2003::V3::Feature' has no attributes.
+The class 'SQL2003::V3::DistinctType' has no attributes.
+The class 'SQL2003::V3::UserDefinedType' has the following attributes: 'name' of type str.
+The class 'SQL2003::V3::ColumnConstraint' has no attributes.
+The class 'SQL2003::V3::Field' has no attributes.
+The class 'SQL2003::V3::MULTISET' has no attributes.
+The class 'SQL2003::V3::BinaryStringType' has the following attributes: 'length_def' of type str; 'descriptor' of type str.
+The class 'SQL2003::V3::PrimaryKey' has no attributes.
+The class 'SQL2003::V3::NumericType' has the following attributes: 'descriptor' of type str.
+The class 'SQL2003::V3::PredefinedType' has no attributes.
+The class 'SQL2003::V3::NotNull' has no attributes.
+The class 'SQL2003::V3::ROW' has no attributes.
+The class 'SQL2003::V3::BaseTable' has no attributes.
+The class 'SQL2003::V3::Procedure' has no attributes.
+The class 'SQL2003::V3::NumericFeature' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'SQL2003::V3::DomainConstraint' has no attributes.
+The class 'SQL2003::V3::ReferenceType' has no attributes.
+The class 'SQL2003::V3::View' has no attributes.
+The class 'SQL2003::V3::XMLType' has the following attributes: 'descriptor' of type str.
+The class 'SQL2003::V3::Schema' has the following attributes: 'name' of type str.
+The class 'SQL2003::V3::TypedTable' has no attributes.
+The class 'SQL2003::V3::ParameterWithMode' has the following attributes: 'mode' of type str.
+The class 'SQL2003::V3::TableConstraint' has the following attributes: 'name' of type str.
+The class 'SQL2003::V3::StructuralComponent' has the following attributes: 'name' of type str.
+The class 'SQL2003::V3::DatetimeType' has the following attributes: 'descriptor' of type str.
+The class 'SQL2003::V3::MethodParameter' has no attributes.
+The class 'SQL2003::V3::ReferentialConstraint' has the following attributes: 'delete_action' of type str; 'update_action' of type str; 'match' of type str.
+The class 'StructuralComponent' has no attributes.
+The class 'Feature' has no attributes.
+The class 'SQL2003::V3::Attribute' has the following attributes: 'default' of type str.
+The class 'SQL2003::V3::DatetimeFeature' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'SQL2003::V3::StructuredType' has the following attributes: 'is_instantiable' of type bool; 'is_final' of type bool.
+The class 'SQL2003::V3::DerivedTable' has the following attributes: 'query_expression' of type str.
+The class 'SQL2003::V3::BooleanType' has the following attributes: 'descriptor' of type str.
+The class 'SQL2003::V3::TriggerDescriptor' has the following attributes: 'actionTime' of type str; 'event' of type str; 'level' of type str; 'triggeredAction' of type str.
+The class 'SQL2003::V3::BehaviouralComponent' has the following attributes: 'name' of type str; 'body' of type str.
+The class 'DerivedTable' has no attributes.
+The class 'BaseTable' has no attributes.
+The class 'SQL2003::V3::Function' has no attributes.
+The class 'SQL2003::V3::Restriction' has no attributes.
+The class 'ConstructedType' has no attributes.
+The class 'SQL2003::V3::CharacterStringType' has the following attributes: 'length_def' of type str; 'descriptor' of type str.
+The class 'SQL2003::V3::CollectionType' has no attributes.
+The class 'SQL2003::V3::Method' has the following attributes: 'name' of type str; 'body' of type str.
+The class 'DataType' has no attributes.
+The class 'SQL2003::V3::UniqueConstraint' has no attributes.
+The class 'SQL2003::V3::IntervalType' has the following attributes: 'descriptor' of type str.
+The class 'SQL2003::V3::Trigger' has the following attributes: 'name' of type str.
+The class 'SQL2003::V3::DataType' has no attributes.
+The class 'TableConstraint' has no attributes.
+The class 'CollectionType' has no attributes.
+The class 'SQL2003::V3::TableCheckConstraint' has the following attributes: 'expression' of type str.
+The class 'UserDefinedType' has no attributes.
+The class 'Restriction' has no attributes.
+The class 'SQL2003::V3::ARRAY' has the following attributes: 'num_elements' of type str.
+The class 'SQL2003::V3::StringFeature' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'SQL2003::V3::IntervalFeature' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'ColumnConstraint' has no attributes.
+The class 'UniqueConstraint' has no attributes.
+The class 'SQL2003::V3::Parameter' has the following attributes: 'name' of type str.
+The class 'SQL2003::V3::Table' has the following attributes: 'name' of type str.
+The class 'Table' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'SQL2003::V3::Column' has the following attributes: 'default' of type str.
+The class 'SQL2003::V3::ConstructedType' has the following attributes: 'name' of type str.
+The class 'PredefinedType' has no attributes.
+The class 'BehaviouralComponent' has no attributes.
+The enumeration 'NumericFeatures' has the following literals: 'radix', 'precision', 'scale'.
+The enumeration 'StringFeatures' has the following literals: 'multiplier', 'length', 'unit'.
+The enumeration 'BooleanTypes' has the following literals: 'BOOLEAN'.
+The enumeration 'IntervalTypes' has the following literals: 'SECOND', 'YEAR', 'HOUR_SECOND', 'DAY_HOUR', 'DAY_SECOND', 'MONTH', 'MINUTE_SECOND', 'YEAR_MONTH', 'HOUR_MINUTE', 'HOUR', 'MINUTE', 'DAY', 'DAY_MINUTE'.
+The enumeration 'TriggerActionTime' has the following literals: 'BEFORE', 'AFTER'.
+The enumeration 'XMLTypes' has the following literals: 'XMLTYPE'.
+The enumeration 'CharacterStringTypes' has the following literals: 'CHARACTERVARYING', 'CHARACTERLARGEOBJECT', 'CHARACTER'.
+The enumeration 'TriggerEvent' has the following literals: 'INSERT', 'UPDATE', 'DELETE'.
+The enumeration 'Unit' has the following literals: 'OCTETS', 'CHARACTERS'.
+The enumeration 'MatchTypes' has the following literals: 'PARTIAL', 'TOTAL', 'SIMPLE'.
+The enumeration 'IntervalFeatures' has the following literals: 'second_precision', 'start_leading_precision', 'end_leading_precision', 'leading_precision'.
+The enumeration 'NumericRadix' has the following literals: 'DECIMAL', 'BINARY'.
+The enumeration 'BinaryStringTypes' has the following literals: 'BINARYVARYING', 'BINARYLARGEOBJECT', 'BINARY'.
+The enumeration 'ReferentialAction' has the following literals: 'SET_NULL', 'CASCADE', 'NO_ACTION', 'RESTRICT', 'SET_DEFAULT'.
+The enumeration 'Multiplier' has the following literals: 'K', 'P', 'G', 'T', 'M'.
+The enumeration 'DatetimeFeatures' has the following literals: 'precision'.
+The enumeration 'TriggerLevel' has the following literals: 'ROW_LEVEL', 'STATEMENT_LEVEL'.
+The enumeration 'NumericTypes' has the following literals: 'BIGINT', 'NUMERIC', 'FLOAT', 'INTEGER', 'SMALLINT', 'DECIMAL', 'REAL', 'DOUBLEPRECISION'.
+The enumeration 'ParameterMode' has the following literals: 'IN', 'INOUT', 'OUT'.
+The enumeration 'DatetimeTypes' has the following literals: 'TIMEWITHTIMEZONE', 'TIMESTAMPWITHOUTTIMEZONE', 'DATE', 'TIMESTAMPWITHTIMEZONE', 'TIMEWITHOUTTIMEZONE'.
+'SQL2003::V3::IntervalType' is a specialization of 'PredefinedType'.
+'SQL2003::V3::NumericType' is a specialization of 'PredefinedType'.
+'SQL2003::V3::DerivedTable' is a specialization of 'Table'.
+'SQL2003::V3::TableConstraint' is a specialization of 'Restriction'.
+'SQL2003::V3::CharacterStringType' is a specialization of 'PredefinedType'.
+'SQL2003::V3::Function' is a specialization of 'BehaviouralComponent'.
+'SQL2003::V3::StructuredType' is a specialization of 'UserDefinedType'.
+'SQL2003::V3::IntervalFeature' is a specialization of 'Feature'.
+'SQL2003::V3::CollectionType' is a specialization of 'ConstructedType'.
+'SQL2003::V3::ReferenceType' is a specialization of 'ConstructedType'.
+'SQL2003::V3::UserDefinedType' is a specialization of 'DataType'.
+'SQL2003::V3::TableCheckConstraint' is a specialization of 'TableConstraint'.
+'SQL2003::V3::NumericFeature' is a specialization of 'Feature'.
+'SQL2003::V3::ReferentialConstraint' is a specialization of 'TableConstraint'.
+'SQL2003::V3::PredefinedType' is a specialization of 'DataType'.
+'SQL2003::V3::DatetimeFeature' is a specialization of 'Feature'.
+'SQL2003::V3::Column' is a specialization of 'StructuralComponent'.
+'SQL2003::V3::PrimaryKey' is a specialization of 'UniqueConstraint'.
+'SQL2003::V3::XMLType' is a specialization of 'PredefinedType'.
+'SQL2003::V3::Field' is a specialization of 'StructuralComponent'.
+'SQL2003::V3::ROW' is a specialization of 'ConstructedType'.
+'SQL2003::V3::ARRAY' is a specialization of 'CollectionType'.
+'SQL2003::V3::TypedTable' is a specialization of 'BaseTable'.
+'SQL2003::V3::View' is a specialization of 'DerivedTable'.
+'SQL2003::V3::UniqueConstraint' is a specialization of 'TableConstraint'.
+'SQL2003::V3::Attribute' is a specialization of 'StructuralComponent'.
+'SQL2003::V3::DatetimeType' is a specialization of 'PredefinedType'.
+'SQL2003::V3::Trigger' is a specialization of 'Restriction'.
+'SQL2003::V3::BooleanType' is a specialization of 'PredefinedType'.
+'SQL2003::V3::Procedure' is a specialization of 'BehaviouralComponent'.
+'SQL2003::V3::DistinctType' is a specialization of 'UserDefinedType'.
+'SQL2003::V3::NotNull' is a specialization of 'ColumnConstraint'.
+'SQL2003::V3::ColumnConstraint' is a specialization of 'Restriction'.
+'SQL2003::V3::DomainConstraint' is a specialization of 'TableConstraint'.
+'SQL2003::V3::ParameterWithMode' is a specialization of 'Parameter'.
+'SQL2003::V3::MethodParameter' is a specialization of 'Parameter'.
+'SQL2003::V3::ConstructedType' is a specialization of 'DataType'.
+'SQL2003::V3::BaseTable' is a specialization of 'Table'.
+'SQL2003::V3::BinaryStringType' is a specialization of 'PredefinedType'.
+'SQL2003::V3::StringFeature' is a specialization of 'Feature'.
+'SQL2003::V3::MULTISET' is a specialization of 'CollectionType'.
+'SQL2003::V3::Domain' (role 'Domain66', cardinality 0..*) is associated with 'SQL2003::V3::StructuralComponent' (role 'defines', cardinality 0..*).
+'SQL2003::V3::ReferentialConstraint' (role 'SQL2003_V3_ReferentialConstraint', cardinality 0..*) is associated with 'SQL2003::V3::UniqueConstraint' (role 'SQL2003_V3_UniqueConstraint', cardinality 0..*).
+'SQL2003::V3::ReferenceType' (role 'SQL2003_V3_ReferenceType', cardinality 0..*) is associated with 'SQL2003::V3::StructuredType' (role 'SQL2003_V3_StructuredType', cardinality 0..*).
+'SQL2003::V3::Domain' (role 'has_domain', cardinality 0..*) is associated with 'SQL2003::V3::StructuralComponent' (role 'StructuralComponent', cardinality 0..*).
+'SQL2003::V3::View' (role 'views100', cardinality 0..*) is associated with 'SQL2003::V3::StructuralComponent' (role 'StructuralComponent101', cardinality 0..*).
+'SQL2003::V3::CollectionType' (role 'SQL2003_V3_CollectionType', cardinality 0..*) is associated with 'SQL2003::V3::CollectionType' (role 'SQL2003_V3_CollectionType3', cardinality 0..*).
+'SQL2003::V3::DataType' (role 'datatypes', cardinality 0..*) is associated with 'SQL2003::V3::Schema' (role 'Schema9', cardinality 0..*).
+'SQL2003::V3::StructuredType' (role 'structured', cardinality 0..*) is associated with 'SQL2003::V3::Attribute' (role 'Attribute', cardinality 0..*).
+'SQL2003::V3::Trigger' (role 'trigger', cardinality 0..*) is associated with 'SQL2003::V3::TriggerDescriptor' (role 'TriggerDescriptor', cardinality 0..*).
+'SQL2003::V3::Table' (role 'table', cardinality 0..*) is associated with 'SQL2003::V3::Column' (role 'Column', cardinality 0..*).
+'SQL2003::V3::StructuralComponent' (role 'SQL2003_V3_StructuralComponent63', cardinality 0..*) is associated with 'SQL2003::V3::Feature' (role 'SQL2003_V3_Feature64', cardinality 0..*).
+'SQL2003::V3::StructuralComponent' (role 'columns61', cardinality 0..*) is associated with 'SQL2003::V3::Restriction' (role 'Restriction', cardinality 0..*).
+'SQL2003::V3::Schema' (role 'Schema77', cardinality 0..*) is associated with 'SQL2003::V3::Table' (role 'tables', cardinality 0..*).
+'SQL2003::V3::Table' (role 'Table', cardinality 0..*) is associated with 'SQL2003::V3::Column' (role 'columns', cardinality 0..*).
+'SQL2003::V3::CollectionType' (role 'SQL2003_V3_CollectionType6', cardinality 0..*) is associated with 'SQL2003::V3::DataType' (role 'SQL2003_V3_DataType', cardinality 0..*).
+'SQL2003::V3::DistinctType' (role 'is_source_of', cardinality 0..*) is associated with 'SQL2003::V3::PredefinedType' (role 'PredefinedType', cardinality 0..*).
+'SQL2003::V3::Domain' (role 'Domain', cardinality 0..*) is associated with 'SQL2003::V3::DomainConstraint' (role 'constraint', cardinality 0..*).
+'SQL2003::V3::StructuralComponent' (role 'SQL2003_V3_StructuralComponent', cardinality 0..*) is associated with 'SQL2003::V3::DataType' (role 'SQL2003_V3_DataType58', cardinality 0..*).
+'SQL2003::V3::Schema' (role 'Schema', cardinality 0..*) is associated with 'SQL2003::V3::BehaviouralComponent' (role 'behaviouralComponents', cardinality 0..*).
+'SQL2003::V3::MethodParameter' (role 'parameters', cardinality 0..*) is associated with 'SQL2003::V3::Method' (role 'Method', cardinality 0..*).
+'SQL2003::V3::Domain' (role 'Domain56', cardinality 0..*) is associated with 'SQL2003::V3::Schema' (role 'schema55', cardinality 0..*).
+'SQL2003::V3::Table' (role 'Table43', cardinality 0..*) is associated with 'SQL2003::V3::Restriction' (role 'restrictions', cardinality 0..*).
+'SQL2003::V3::Method' (role 'methods', cardinality 0..*) is associated with 'SQL2003::V3::StructuredType' (role 'StructuredType23', cardinality 0..*).
+'SQL2003::V3::DataType' (role 'SQL2003_V3_DataType30', cardinality 0..*) is associated with 'SQL2003::V3::Parameter' (role 'SQL2003_V3_Parameter', cardinality 0..*).
+'SQL2003::V3::Restriction' (role 'restrictions45', cardinality 0..*) is associated with 'SQL2003::V3::StructuralComponent' (role 'StructuralComponent46', cardinality 0..*).
+'SQL2003::V3::StructuredType' (role 'structured72', cardinality 0..*) is associated with 'SQL2003::V3::Method' (role 'Method73', cardinality 0..*).
+'SQL2003::V3::TypedTable' (role 'TypedTable', cardinality 0..*) is associated with 'SQL2003::V3::StructuredType' (role 'structured75', cardinality 0..*).
+'SQL2003::V3::Trigger' (role 'Trigger', cardinality 0..*) is associated with 'SQL2003::V3::TriggerDescriptor' (role 'description', cardinality 0..*).
+'SQL2003::V3::Table' (role 'table83', cardinality 0..*) is associated with 'SQL2003::V3::Restriction' (role 'Restriction84', cardinality 0..*).
+'SQL2003::V3::Feature' (role 'SQL2003_V3_Feature', cardinality 0..*) is associated with 'SQL2003::V3::DistinctType' (role 'SQL2003_V3_DistinctType', cardinality 0..*).
+'SQL2003::V3::Method' (role 'method', cardinality 0..*) is associated with 'SQL2003::V3::MethodParameter' (role 'MethodParameter', cardinality 0..*).
+'SQL2003::V3::ParameterWithMode' (role 'parametersWithMode', cardinality 0..*) is associated with 'SQL2003::V3::BehaviouralComponent' (role 'BehaviouralComponent', cardinality 0..*).
+'SQL2003::V3::Schema' (role 'schema50', cardinality 0..*) is associated with 'SQL2003::V3::DataType' (role 'DataType', cardinality 0..*).
+'SQL2003::V3::Field' (role 'fields', cardinality 0..*) is associated with 'SQL2003::V3::ROW' (role 'ROW', cardinality 0..*).
+'SQL2003::V3::Domain' (role 'domains', cardinality 0..*) is associated with 'SQL2003::V3::Schema' (role 'Schema13', cardinality 0..*).
+'SQL2003::V3::Field' (role 'Field', cardinality 0..*) is associated with 'SQL2003::V3::ROW' (role 'row', cardinality 0..*).
+'SQL2003::V3::BehaviouralComponent' (role 'behaviouralComponent', cardinality 0..*) is associated with 'SQL2003::V3::ParameterWithMode' (role 'ParameterWithMode', cardinality 0..*).
+'SQL2003::V3::ROW' (role 'sub_types', cardinality 0..*) is associated with 'SQL2003::V3::ROW' (role 'ROW35', cardinality 0..*).
+'SQL2003::V3::View' (role 'View81', cardinality 0..*) is associated with 'SQL2003::V3::Table' (role 'tables80', cardinality 0..*).
+'SQL2003::V3::StructuredType' (role 'StructuredType', cardinality 0..*) is associated with 'SQL2003::V3::Attribute' (role 'attributes', cardinality 0..*).
+'SQL2003::V3::Method' (role 'SQL2003_V3_Method25', cardinality 0..*) is associated with 'SQL2003::V3::DataType' (role 'SQL2003_V3_DataType26', cardinality 0..*).
+'SQL2003::V3::StructuralComponent' (role 'components', cardinality 0..*) is associated with 'SQL2003::V3::View' (role 'View', cardinality 0..*).
+'SQL2003::V3::StructuredType' (role 'SQL2003_V3_StructuredType69', cardinality 0..*) is associated with 'SQL2003::V3::StructuredType' (role 'SQL2003_V3_StructuredType67', cardinality 0..*).
+'SQL2003::V3::Table' (role 'Table98', cardinality 0..*) is associated with 'SQL2003::V3::View' (role 'views', cardinality 0..*).
+'SQL2003::V3::Method' (role 'SQL2003_V3_Method', cardinality 0..*) is associated with 'SQL2003::V3::Method' (role 'SQL2003_V3_Method20', cardinality 0..*).
+'SQL2003::V3::Schema' (role 'schema52', cardinality 0..*) is associated with 'SQL2003::V3::Table' (role 'Table53', cardinality 0..*).
+'SQL2003::V3::Trigger' (role 'SQL2003_V3_Trigger', cardinality 0..*) is associated with 'SQL2003::V3::StructuralComponent' (role 'SQL2003_V3_StructuralComponent87', cardinality 0..*).
+'SQL2003::V3::ROW' (role 'super_type', cardinality 0..*) is associated with 'SQL2003::V3::ROW' (role 'ROW39', cardinality 0..*).
+'SQL2003::V3::BehaviouralComponent' (role 'BehaviouralComponent48', cardinality 0..*) is associated with 'SQL2003::V3::Schema' (role 'schema', cardinality 0..*).
+'SQL2003::V3::StructuredType' (role 'StructuredType90', cardinality 0..*) is associated with 'SQL2003::V3::TypedTable' (role 'typed', cardinality 0..*).
+'SQL2003::V3::TypedTable' (role 'TypedTable96', cardinality 0..*) is associated with 'SQL2003::V3::TypedTable' (role 'supertable', cardinality 0..*).
+'SQL2003::V3::PredefinedType' (role 'source_type', cardinality 0..*) is associated with 'SQL2003::V3::DistinctType' (role 'DistinctType', cardinality 0..*).
+'SQL2003::V3::DataType' (role 'SQL2003_V3_DataType19', cardinality 0..*) is associated with 'SQL2003::V3::Function' (role 'SQL2003_V3_Function', cardinality 0..*).
+'SQL2003::V3::DomainConstraint' (role 'DomainConstraint', cardinality 0..*) is associated with 'SQL2003::V3::Domain' (role 'domain', cardinality 0..*).
+'SQL2003::V3::TypedTable' (role 'subtables', cardinality 0..*) is associated with 'SQL2003::V3::TypedTable' (role 'TypedTable93', cardinality 0..*).

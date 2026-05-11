@@ -1,0 +1,772 @@
+The model has 307 class(es).
+The class 'siddhi::RIGHT' has the following attributes: 'right' of type str.
+The class 'siddhi::SequenceCollectionStatefulSource' has no attributes.
+The class 'siddhi::AppAnnotation' has no attributes.
+The class 'siddhi::StandardStatefulSource' has the following attributes: 'one_or_more' of type str; 'zero_or_more' of type str; 'zero_or_one' of type str.
+The class 'siddhi::OUTER' has the following attributes: 'outer' of type str.
+The class 'LAST' has no attributes.
+The class 'siddhi::FULL' has the following attributes: 'full' of type str.
+The class 'siddhi::OR' has the following attributes: 'or_' of type str.
+The class 'EXPIRED' has no attributes.
+The class 'siddhi::WITHIN' has the following attributes: 'within' of type str.
+The class 'siddhi::AttributeList' has no attributes.
+The class 'siddhi::OF' has the following attributes: 'of' of type str.
+The class 'EverySequenceSourceChain' has no attributes.
+The class 'siddhi::HourValue' has no attributes.
+The class 'siddhi::QueryInput' has no attributes.
+The class 'RIGHT' has no attributes.
+The class 'JOIN' has no attributes.
+The class 'RETURN' has no attributes.
+The class 'siddhi::ON' has the following attributes: 'on' of type str.
+The class 'siddhi::TriggerName' has the following attributes: 'id' of type str.
+The class 'LONG' has no attributes.
+The class 'siddhi::Source1OrStandardStatefulSource' has the following attributes: 'name' of type str.
+The class 'siddhi::OutputEventType' has no attributes.
+The class 'WEEKS' has no attributes.
+The class 'siddhi::GroupBy' has no attributes.
+The class 'siddhi::LONG::LITERAL' has no attributes.
+The class 'STREAM' has no attributes.
+The class 'OUTER' has no attributes.
+The class 'siddhi::LeftAbsentSequenceSource1' has no attributes.
+The class 'FeaturesOrOutAttr' has no attributes.
+The class 'siddhi::EverySequenceSourceChain' has no attributes.
+The class 'siddhi::AggregationTime' has no attributes.
+The class 'siddhi::PLAN' has the following attributes: 'plan' of type str.
+The class 'siddhi::APP' has the following attributes: 'ap' of type str.
+The class 'DAYS' has no attributes.
+The class 'LEFT' has no attributes.
+The class 'siddhi::PatternStream' has no attributes.
+The class 'INNER' has no attributes.
+The class 'siddhi::FunctionNamespace' has no attributes.
+The class 'siddhi::SELECT' has the following attributes: 'select' of type str.
+The class 'siddhi::DAYS' has the following attributes: 'days' of type str; 'day' of type str.
+The class 'UPDATE' has no attributes.
+The class 'SequenceSourceChain' has no attributes.
+The class 'siddhi::AggregationTimeDuration' has no attributes.
+The class 'siddhi::ConditionRanges' has no attributes.
+The class 'siddhi::EObject' has no attributes.
+The class 'siddhi::Per1' has no attributes.
+The class 'siddhi::MonthValue' has no attributes.
+The class 'siddhi::EveryAbsentSequenceSourceChain' has no attributes.
+The class 'siddhi::E' has the following attributes: 'e' of type str.
+The class 'siddhi::JoinStream' has no attributes.
+The class 'siddhi::OBJECT' has the following attributes: 'object' of type str.
+The class 'siddhi::LanguageName' has the following attributes: 'id' of type str.
+The class 'SignedFloatValue' has no attributes.
+The class 'siddhi::SECONDS' has the following attributes: 'sec' of type str; 'seconds' of type str; 'second' of type str.
+The class 'BEGIN' has no attributes.
+The class 'siddhi::Win' has no attributes.
+The class 'siddhi::FROM' has the following attributes: 'from_' of type str.
+The class 'HOURS' has no attributes.
+The class 'INTS' has no attributes.
+The class 'AGGREGATE' has no attributes.
+The class 'EveryAbsentSequenceSourceChain' has no attributes.
+The class 'siddhi::Source' has no attributes.
+The class 'PartitionWithStream' has no attributes.
+The class 'Expression' has no attributes.
+The class 'siddhi::IS' has the following attributes: 'is_' of type str.
+The class 'siddhi::DefinitionTrigger' has no attributes.
+The class 'siddhi::LONG' has the following attributes: 'long' of type str.
+The class 'siddhi::FunctionOperation' has no attributes.
+The class 'siddhi::FALSE' has the following attributes: 'fals' of type str.
+The class 'siddhi::Attribute' has no attributes.
+The class 'siddhi::PatternSource' has no attributes.
+The class 'siddhi::SNAPSHOT' has the following attributes: 'snapshot' of type str.
+The class 'siddhi::MILLISECONDS' has the following attributes: 'millisec' of type str; 'millisecond' of type str; 'milliseconds' of type str.
+The class 'siddhi::BoolValue' has no attributes.
+The class 'siddhi::SignedFloatValue' has no attributes.
+The class 'siddhi::FunctionName' has the following attributes: 'id' of type str.
+The class 'siddhi::LogicalStatefulSource' has no attributes.
+The class 'siddhi::AttributeType' has no attributes.
+The class 'siddhi::SecondValue' has no attributes.
+The class 'FLOAT' has no attributes.
+The class 'MathAddsubOperation' has no attributes.
+The class 'siddhi::Name' has the following attributes: 'na' of type str.
+The class 'siddhi::BEGIN' has the following attributes: 'begin' of type str.
+The class 'siddhi::JoinSource' has no attributes.
+The class 'siddhi::SetClause' has no attributes.
+The class 'siddhi::MinuteValue' has no attributes.
+The class 'siddhi::WITH' has the following attributes: 'wi' of type str.
+The class 'FROM' has no attributes.
+The class 'siddhi::MathOtherOperations' has no attributes.
+The class 'TRIGGER' has no attributes.
+The class 'siddhi::INTO' has the following attributes: 'into' of type str.
+The class 'siddhi::AttributeReference' has the following attributes: 'name' of type str; 'hash2' of type str; 'hash1' of type str.
+The class 'AGGREGATION' has no attributes.
+The class 'BasicAbsentPatternSource' has no attributes.
+The class 'FIRST' has no attributes.
+The class 'SetAssignment' has no attributes.
+The class 'siddhi::Annotation' has no attributes.
+The class 'AbsentPatternSourceChain' has no attributes.
+The class 'siddhi::HOURS' has the following attributes: 'hours' of type str; 'hour' of type str.
+The class 'siddhi::MathAddsubOperation' has the following attributes: 'substract' of type str; 'add' of type str.
+The class 'siddhi::MathOperation' has no attributes.
+The class 'siddhi::Query' has no attributes.
+The class 'PER' has no attributes.
+The class 'INTO' has no attributes.
+The class 'siddhi::QueryOutput' has no attributes.
+The class 'siddhi::BasicSource' has no attributes.
+The class 'siddhi::SetAssignment' has no attributes.
+The class 'FULL' has no attributes.
+The class 'siddhi::EVERY' has the following attributes: 'every1' of type str.
+The class 'siddhi::SignedLongValue' has no attributes.
+The class 'PARTITION' has no attributes.
+The class 'siddhi::joins' has no attributes.
+The class 'siddhi::FeaturesOrOutAttr' has the following attributes: 'name' of type str.
+The class 'FUNCTION' has no attributes.
+The class 'siddhi::AttributeNameReference' has no attributes.
+The class 'siddhi::INSERT' has the following attributes: 'insert' of type str.
+The class 'siddhi::Expression' has no attributes.
+The class 'siddhi::MathEqualOperation' has the following attributes: 'not_eq' of type str; 'eq' of type str.
+The class 'siddhi::OutputRateType' has no attributes.
+The class 'siddhi::Source1' has the following attributes: 'inner' of type str.
+The class 'RightAbsentPatternSource' has no attributes.
+The class 'siddhi::RightAbsentSequenceSource1' has no attributes.
+The class 'siddhi::BY' has the following attributes: 'by' of type str.
+The class 'siddhi::DayValue' has no attributes.
+The class 'siddhi::DEFINE' has the following attributes: 'define' of type str.
+The class 'SignedLongValue' has no attributes.
+The class 'siddhi::END' has the following attributes: 'end' of type str.
+The class 'siddhi::AggregationTimeInterval' has no attributes.
+The class 'siddhi::CURRENT' has the following attributes: 'currt' of type str.
+The class 'siddhi::DOUBLE' has the following attributes: 'double' of type str.
+The class 'BOOL' has no attributes.
+The class 'siddhi::INTS' has the following attributes: 'int' of type str.
+The class 'siddhi::BOOL' has the following attributes: 'bool' of type str.
+The class 'siddhi::RightAbsentPatternSource1' has the following attributes: 'fb' of type str.
+The class 'siddhi::INNER' has the following attributes: 'inner' of type str.
+The class 'BY' has no attributes.
+The class 'siddhi::MillisecondValue' has no attributes.
+The class 'StandardStream' has no attributes.
+The class 'siddhi::JOIN' has the following attributes: 'join' of type str.
+The class 'MILLISECONDS' has no attributes.
+The class 'OUTPUT' has no attributes.
+The class 'IS' has no attributes.
+The class 'siddhi::UPDATE' has the following attributes: 'update' of type str.
+The class 'siddhi::OUTPUT' has the following attributes: 'output' of type str.
+The class 'siddhi::ExecutionElement' has no attributes.
+The class 'siddhi::LEFT' has the following attributes: 'left' of type str.
+The class 'FALSE' has no attributes.
+The class 'siddhi::EveryAbsentPatternSource' has no attributes.
+The class 'siddhi::TRUE' has the following attributes: 'tr' of type str.
+The class 'siddhi::GroupByQuerySelection' has no attributes.
+The class 'siddhi::SequenceSource' has no attributes.
+The class 'SECONDS' has no attributes.
+The class 'siddhi::FUNCTION' has the following attributes: 'function' of type str.
+The class 'siddhi::SignedDoubleValue' has no attributes.
+The class 'siddhi::FIRST' has the following attributes: 'first' of type str.
+The class 'siddhi::MathDivmulOperation' has the following attributes: 'multiply' of type str; 'devide' of type str; 'mod' of type str.
+The class 'siddhi::ConditionRange' has no attributes.
+The class 'siddhi::AnonymousStream' has no attributes.
+The class 'siddhi::AND' has the following attributes: 'and_' of type str.
+The class 'siddhi::WEEKS' has the following attributes: 'weeks' of type str; 'week' of type str.
+The class 'siddhi::StreamFunction' has no attributes.
+The class 'siddhi::NULL' has the following attributes: 'null' of type str.
+The class 'siddhi::FLOAT' has the following attributes: 'float' of type str.
+The class 'siddhi::SequenceSourceChain' has the following attributes: 'op' of type str.
+The class 'LeftAbsentSequenceSource' has no attributes.
+The class 'STRINGS' has no attributes.
+The class 'siddhi::UNIDIRECTIONAL' has the following attributes: 'unidirectional' of type str.
+The class 'INSERT' has no attributes.
+The class 'siddhi::EveryPatternSourceChain' has the following attributes: 'op' of type str.
+The class 'siddhi::ExecPartition' has no attributes.
+The class 'RightAbsentSequenceSource' has no attributes.
+The class 'siddhi::BasicSourceStreamHandlers1' has no attributes.
+The class 'siddhi::PartitionWithStream' has no attributes.
+The class 'SignedDoubleValue' has no attributes.
+The class 'siddhi::GROUP' has the following attributes: 'group' of type str.
+The class 'siddhi::ForTime' has no attributes.
+The class 'siddhi::StandardStream' has no attributes.
+The class 'siddhi::WithinTime' has no attributes.
+The class 'MathOtherOperations' has no attributes.
+The class 'WINDOW' has no attributes.
+The class 'siddhi::FeaturesOrOutAttrReference' has no attributes.
+The class 'LogicalAbsentStatefulSource' has no attributes.
+The class 'siddhi::MathInOperation' has no attributes.
+The class 'AggregationTime' has no attributes.
+The class 'siddhi::RAW' has the following attributes: 'raw' of type str.
+The class 'siddhi::AGGREGATION' has the following attributes: 'aggre' of type str.
+The class 'WITH' has no attributes.
+The class 'MathDivmulOperation' has no attributes.
+The class 'MINUTES' has no attributes.
+The class 'siddhi::LogicalAbsentStatefulSource' has no attributes.
+The class 'siddhi::FunctionBody' has the following attributes: 'value' of type str.
+The class 'siddhi::AT' has the following attributes: 'at' of type str.
+The class 'DOUBLE' has no attributes.
+The class 'AppAnnotation' has no attributes.
+The class 'DEFINE' has no attributes.
+The class 'siddhi::SET' has the following attributes: 'set' of type str.
+The class 'siddhi::OutputAttribute' has no attributes.
+The class 'SELECT' has no attributes.
+The class 'SequenceSource' has no attributes.
+The class 'siddhi::RETURN' has the following attributes: 'return_' of type str.
+The class 'Source1OrStandardStatefulSource' has no attributes.
+The class 'siddhi::LeftAbsentPatternSource1' has the following attributes: 'fb' of type str.
+The class 'siddhi::D' has the following attributes: 'd' of type str.
+The class 'siddhi::MathLogicalOperation' has no attributes.
+The class 'siddhi::FOR' has the following attributes: 'for_' of type str.
+The class 'siddhi::AggregationTimeRange' has no attributes.
+The class 'siddhi::HavingExpr' has no attributes.
+The class 'siddhi::PropertyValue' has no attributes.
+The class 'siddhi::OutputRate' has no attributes.
+The class 'GROUP' has no attributes.
+The class 'siddhi::Target' has no attributes.
+The class 'siddhi::AGGREGATE' has the following attributes: 'agrregate' of type str.
+The class 'siddhi::ExecutionPlan' has no attributes.
+The class 'AT' has no attributes.
+The class 'siddhi::Literal' has no attributes.
+The class 'siddhi::StringValue' has the following attributes: 'sl' of type str.
+The class 'TRUE' has no attributes.
+The class 'siddhi::MINUTES' has the following attributes: 'minutes' of type str; 'min' of type str; 'minute' of type str.
+The class 'siddhi::MainSource' has no attributes.
+The class 'siddhi::RightAbsentSequenceSource' has the following attributes: 'op' of type str; 'cp' of type str; 'comma' of type str; 'comm' of type str.
+The class 'siddhi::WINDOW' has the following attributes: 'window' of type str.
+The class 'ALL' has no attributes.
+The class 'siddhi::EXPIRED' has the following attributes: 'expired' of type str.
+The class 'LeftAbsentPatternSource' has no attributes.
+The class 'EVENTS' has no attributes.
+The class 'siddhi::PatternCollectionStatefulSource' has no attributes.
+The class 'siddhi::TABLE' has the following attributes: 'table' of type str.
+The class 'siddhi::AS' has the following attributes: 'a' of type str.
+The class 'SequenceCollectionStatefulSource' has no attributes.
+The class 'SET' has no attributes.
+The class 'RAW' has no attributes.
+The class 'siddhi::TRIGGER' has the following attributes: 'trigger' of type str.
+The class 'siddhi::FLOAT::LITERAL' has no attributes.
+The class 'siddhi::Filter' has no attributes.
+The class 'siddhi::BasicAbsentPatternSource' has no attributes.
+The class 'siddhi::RightAbsentPatternSource' has the following attributes: 'fb2' of type str.
+The class 'PatternCollectionStatefulSource' has no attributes.
+The class 'siddhi::DOUBLE::LITERAL' has no attributes.
+The class 'siddhi::StreamReference' has the following attributes: 'hash' of type str.
+The class 'MONTHS' has no attributes.
+The class 'siddhi::MONTHS' has the following attributes: 'months' of type str; 'month' of type str.
+The class 'siddhi::PER' has the following attributes: 'per' of type str.
+The class 'siddhi::AttributeIndex' has no attributes.
+The class 'WITHIN' has no attributes.
+The class 'siddhi::PARTITION' has the following attributes: 'partition' of type str.
+The class 'siddhi::PatternSourceChain' has the following attributes: 'op' of type str.
+The class 'CURRENT' has no attributes.
+The class 'siddhi::IN' has the following attributes: 'in_' of type str.
+The class 'siddhi::SiddhiQL' has no attributes.
+The class 'YEARS' has no attributes.
+The class 'siddhi::StreamAlias' has no attributes.
+The class 'siddhi::LeftAbsentSequenceSource' has the following attributes: 'cp' of type str; 'comma' of type str; 'op' of type str; 'comm' of type str.
+The class 'siddhi::DefinitionTable' has no attributes.
+The class 'siddhi::AnnotationElement' has no attributes.
+The class 'siddhi::STREAM' has the following attributes: 'str' of type str.
+The class 'siddhi::DefinitionAggregation' has no attributes.
+The class 'MathOperation' has no attributes.
+The class 'siddhi::EVENTS' has the following attributes: 'events' of type str.
+The class 'siddhi::L' has the following attributes: 'l' of type str.
+The class 'siddhi::ALL' has the following attributes: 'all' of type str.
+The class 'siddhi::PropertySeparator' has no attributes.
+The class 'siddhi::NotOperation' has no attributes.
+The class 'siddhi::AbsentPatternSourceChain' has no attributes.
+The class 'Name' has no attributes.
+The class 'siddhi::DefinitionWindow' has no attributes.
+The class 'JoinSource' has no attributes.
+The class 'siddhi::HAVING' has the following attributes: 'having' of type str.
+The class 'FOR' has no attributes.
+The class 'siddhi::WeekValue' has no attributes.
+The class 'OBJECT' has no attributes.
+The class 'siddhi::LAST' has the following attributes: 'last' of type str.
+The class 'siddhi::DefinitionStream' has no attributes.
+The class 'siddhi::SourceOrEventReference' has no attributes.
+The class 'siddhi::NullCheck' has no attributes.
+The class 'siddhi::NOT' has the following attributes: 'not1' of type str.
+The class 'siddhi::STRINGS' has the following attributes: 'string' of type str.
+The class 'siddhi::TimeValue' has no attributes.
+The class 'siddhi::Collect' has the following attributes: 'start' of type str; 'end' of type str.
+The class 'siddhi::AbsentSequenceSourceChain' has no attributes.
+The class 'TABLE' has no attributes.
+The class 'siddhi::BasicSourceStreamHandlers' has no attributes.
+The class 'NULL' has no attributes.
+The class 'siddhi::DELETE' has the following attributes: 'delete' of type str.
+The class 'siddhi::QuerySection' has no attributes.
+The class 'siddhi::OutAttr' has no attributes.
+The class 'SNAPSHOT' has no attributes.
+The class 'siddhi::LeftAbsentPatternSource' has the following attributes: 'fb1' of type str.
+The class 'EveryAbsentPatternSource' has no attributes.
+The class 'siddhi::PropertyName' has no attributes.
+The class 'DELETE' has no attributes.
+The class 'siddhi::ConstantValue' has the following attributes: 'siv' of type str.
+The class 'siddhi::Keyword' has no attributes.
+The class 'HAVING' has no attributes.
+The class 'siddhi::Features' has no attributes.
+The class 'siddhi::WithinTimeRange' has no attributes.
+The class 'END' has no attributes.
+The class 'JoinStream' has no attributes.
+The class 'siddhi::FunctionId' has no attributes.
+The class 'siddhi::F' has the following attributes: 'f' of type str.
+The class 'siddhi::YEARS' has the following attributes: 'years' of type str; 'year' of type str.
+The class 'siddhi::YearValue' has no attributes.
+The class 'siddhi::BasicSourceStreamHandler' has no attributes.
+The class 'PatternStream' has no attributes.
+The class 'siddhi::SequenceStream' has no attributes.
+The class 'siddhi::DefinitionFunction' has no attributes.
+The class 'siddhi::MathGtLtOperation' has the following attributes: 'lt' of type str; 'gt_eq' of type str; 'gt' of type str; 'lt_eq' of type str.
+'siddhi::LogicalAbsentStatefulSource' is a specialization of 'SequenceSource'.
+'siddhi::OutputRate' is a specialization of 'OUTPUT'.
+'siddhi::Keyword' is a specialization of 'LONG'.
+'siddhi::Keyword' is a specialization of 'SECONDS'.
+'siddhi::ForTime' is a specialization of 'FOR'.
+'siddhi::Keyword' is a specialization of 'DEFINE'.
+'siddhi::joins' is a specialization of 'LEFT'.
+'siddhi::DayValue' is a specialization of 'DAYS'.
+'siddhi::AggregationTimeDuration' is a specialization of 'SECONDS'.
+'siddhi::MathAddsubOperation' is a specialization of 'MathOperation'.
+'siddhi::GroupBy' is a specialization of 'GROUP'.
+'siddhi::Keyword' is a specialization of 'INTO'.
+'siddhi::EVERY' is a specialization of 'RightAbsentPatternSource'.
+'siddhi::MainSource' is a specialization of 'JoinSource'.
+'siddhi::DefinitionFunction' is a specialization of 'RETURN'.
+'siddhi::LeftAbsentPatternSource' is a specialization of 'AbsentPatternSourceChain'.
+'siddhi::Keyword' is a specialization of 'SNAPSHOT'.
+'siddhi::StandardStatefulSource' is a specialization of 'SequenceCollectionStatefulSource'.
+'siddhi::EVERY' is a specialization of 'EveryAbsentPatternSource'.
+'siddhi::Keyword' is a specialization of 'BY'.
+'siddhi::Keyword' is a specialization of 'YEARS'.
+'siddhi::Keyword' is a specialization of 'MONTHS'.
+'siddhi::WithinTimeRange' is a specialization of 'WITHIN'.
+'siddhi::StandardStatefulSource' is a specialization of 'Source1OrStandardStatefulSource'.
+'siddhi::NullCheck' is a specialization of 'MathOtherOperations'.
+'siddhi::YearValue' is a specialization of 'YEARS'.
+'siddhi::EveryPatternSourceChain' is a specialization of 'PatternStream'.
+'siddhi::Keyword' is a specialization of 'DOUBLE'.
+'siddhi::OutputRateType' is a specialization of 'FIRST'.
+'siddhi::DefinitionWindow' is a specialization of 'DEFINE'.
+'siddhi::Win' is a specialization of 'WINDOW'.
+'siddhi::OutAttr' is a specialization of 'FeaturesOrOutAttr'.
+'siddhi::AttributeType' is a specialization of 'STRINGS'.
+'siddhi::LONG::LITERAL' is a specialization of 'SignedLongValue'.
+'siddhi::Keyword' is a specialization of 'FLOAT'.
+'siddhi::Keyword' is a specialization of 'RETURN'.
+'siddhi::MathOperation' is a specialization of 'Expression'.
+'siddhi::NOT' is a specialization of 'LogicalAbsentStatefulSource'.
+'siddhi::OutputEventType' is a specialization of 'EXPIRED'.
+'siddhi::DefinitionTrigger' is a specialization of 'AT'.
+'siddhi::Keyword' is a specialization of 'IS'.
+'siddhi::QueryOutput' is a specialization of 'INSERT'.
+'siddhi::LeftAbsentSequenceSource1' is a specialization of 'LeftAbsentSequenceSource'.
+'siddhi::joins' is a specialization of 'INNER'.
+'siddhi::Keyword' is a specialization of 'END'.
+'siddhi::ConditionRanges' is a specialization of 'PartitionWithStream'.
+'siddhi::StreamAlias' is a specialization of 'Source1OrStandardStatefulSource'.
+'siddhi::DefinitionFunction' is a specialization of 'FUNCTION'.
+'siddhi::QueryOutput' is a specialization of 'UPDATE'.
+'siddhi::SequenceCollectionStatefulSource' is a specialization of 'SequenceSource'.
+'siddhi::QueryOutput' is a specialization of 'INTO'.
+'siddhi::SecondValue' is a specialization of 'SECONDS'.
+'siddhi::MathGtLtOperation' is a specialization of 'MathOperation'.
+'siddhi::LeftAbsentPatternSource1' is a specialization of 'LeftAbsentPatternSource'.
+'siddhi::AttributeType' is a specialization of 'LONG'.
+'siddhi::DefinitionTrigger' is a specialization of 'TRIGGER'.
+'siddhi::Keyword' is a specialization of 'SELECT'.
+'siddhi::StandardStream' is a specialization of 'JoinStream'.
+'siddhi::DefinitionTrigger' is a specialization of 'DEFINE'.
+'siddhi::Keyword' is a specialization of 'INTS'.
+'siddhi::MonthValue' is a specialization of 'MONTHS'.
+'siddhi::AttributeType' is a specialization of 'INTS'.
+'siddhi::Keyword' is a specialization of 'WEEKS'.
+'siddhi::DefinitionWindow' is a specialization of 'OUTPUT'.
+'siddhi::DefinitionStream' is a specialization of 'DEFINE'.
+'siddhi::Keyword' is a specialization of 'LAST'.
+'siddhi::AttributeIndex' is a specialization of 'LAST'.
+'siddhi::Keyword' is a specialization of 'NULL'.
+'siddhi::Keyword' is a specialization of 'MILLISECONDS'.
+'siddhi::AnonymousStream' is a specialization of 'RETURN'.
+'siddhi::AggregationTimeDuration' is a specialization of 'HOURS'.
+'siddhi::MathDivmulOperation' is a specialization of 'MathAddsubOperation'.
+'siddhi::RightAbsentPatternSource' is a specialization of 'AbsentPatternSourceChain'.
+'siddhi::OutputRateType' is a specialization of 'LAST'.
+'siddhi::AttributeReference' is a specialization of 'SetAssignment'.
+'siddhi::ExecPartition' is a specialization of 'BEGIN'.
+'siddhi::MathEqualOperation' is a specialization of 'MathOperation'.
+'siddhi::FLOAT::LITERAL' is a specialization of 'SignedFloatValue'.
+'siddhi::Keyword' is a specialization of 'TABLE'.
+'siddhi::SetClause' is a specialization of 'SET'.
+'siddhi::Keyword' is a specialization of 'OBJECT'.
+'siddhi::Keyword' is a specialization of 'EVENTS'.
+'siddhi::Keyword' is a specialization of 'FULL'.
+'siddhi::OutputEventType' is a specialization of 'RAW'.
+'siddhi::Keyword' is a specialization of 'STRINGS'.
+'siddhi::NullCheck' is a specialization of 'IS'.
+'siddhi::ExecPartition' is a specialization of 'END'.
+'siddhi::NotOperation' is a specialization of 'MathOtherOperations'.
+'siddhi::OutputRateType' is a specialization of 'ALL'.
+'siddhi::DefinitionAggregation' is a specialization of 'AGGREGATION'.
+'siddhi::DefinitionAggregation' is a specialization of 'FROM'.
+'siddhi::OutputEventType' is a specialization of 'CURRENT'.
+'siddhi::MillisecondValue' is a specialization of 'MILLISECONDS'.
+'siddhi::Keyword' is a specialization of 'DELETE'.
+'siddhi::AttributeType' is a specialization of 'BOOL'.
+'siddhi::Keyword' is a specialization of 'OUTER'.
+'siddhi::RightAbsentPatternSource1' is a specialization of 'RightAbsentPatternSource'.
+'siddhi::EVERY' is a specialization of 'EveryAbsentSequenceSourceChain'.
+'siddhi::Keyword' is a specialization of 'DAYS'.
+'siddhi::HavingExpr' is a specialization of 'HAVING'.
+'siddhi::Per1' is a specialization of 'PER'.
+'siddhi::Keyword' is a specialization of 'STREAM'.
+'siddhi::BasicSourceStreamHandlers1' is a specialization of 'WINDOW'.
+'siddhi::joins' is a specialization of 'JOIN'.
+'siddhi::NOT' is a specialization of 'BasicAbsentPatternSource'.
+'siddhi::AggregationTimeDuration' is a specialization of 'MINUTES'.
+'siddhi::WithinTime' is a specialization of 'WITHIN'.
+'siddhi::MainSource' is a specialization of 'StandardStream'.
+'siddhi::Keyword' is a specialization of 'BEGIN'.
+'siddhi::MathLogicalOperation' is a specialization of 'MathOperation'.
+'siddhi::NullCheck' is a specialization of 'NULL'.
+'siddhi::DefinitionAggregation' is a specialization of 'BY'.
+'siddhi::Keyword' is a specialization of 'CURRENT'.
+'siddhi::OutputRate' is a specialization of 'EVENTS'.
+'siddhi::WeekValue' is a specialization of 'WEEKS'.
+'siddhi::DefinitionTable' is a specialization of 'TABLE'.
+'siddhi::Keyword' is a specialization of 'LEFT'.
+'siddhi::ExecPartition' is a specialization of 'WITH'.
+'siddhi::EVERY' is a specialization of 'EverySequenceSourceChain'.
+'siddhi::OutputEventType' is a specialization of 'EVENTS'.
+'siddhi::AttributeType' is a specialization of 'DOUBLE'.
+'siddhi::MathOtherOperations' is a specialization of 'MathDivmulOperation'.
+'siddhi::Keyword' is a specialization of 'INNER'.
+'siddhi::Keyword' is a specialization of 'JOIN'.
+'siddhi::EVERY' is a specialization of 'LeftAbsentPatternSource'.
+'siddhi::StandardStatefulSource' is a specialization of 'PatternCollectionStatefulSource'.
+'siddhi::AggregationTimeDuration' is a specialization of 'WEEKS'.
+'siddhi::AggregationTimeInterval' is a specialization of 'AggregationTime'.
+'siddhi::AbsentPatternSourceChain' is a specialization of 'PatternStream'.
+'siddhi::Keyword' is a specialization of 'GROUP'.
+'siddhi::QueryOutput' is a specialization of 'FOR'.
+'siddhi::LogicalStatefulSource' is a specialization of 'SequenceSource'.
+'siddhi::joins' is a specialization of 'OUTER'.
+'siddhi::GroupBy' is a specialization of 'BY'.
+'siddhi::Keyword' is a specialization of 'Name'.
+'siddhi::StandardStatefulSource' is a specialization of 'SequenceSource'.
+'siddhi::Keyword' is a specialization of 'FALSE'.
+'siddhi::DefinitionStream' is a specialization of 'STREAM'.
+'siddhi::Keyword' is a specialization of 'MINUTES'.
+'siddhi::RightAbsentSequenceSource1' is a specialization of 'RightAbsentSequenceSource'.
+'siddhi::Keyword' is a specialization of 'HOURS'.
+'siddhi::APP' is a specialization of 'AppAnnotation'.
+'siddhi::AttributeType' is a specialization of 'FLOAT'.
+'siddhi::DefinitionTable' is a specialization of 'DEFINE'.
+'siddhi::Keyword' is a specialization of 'WITHIN'.
+'siddhi::QueryOutput' is a specialization of 'RETURN'.
+'siddhi::Keyword' is a specialization of 'BOOL'.
+'siddhi::Source1' is a specialization of 'Source1OrStandardStatefulSource'.
+'siddhi::MathInOperation' is a specialization of 'MathOperation'.
+'siddhi::AggregationTimeDuration' is a specialization of 'DAYS'.
+'siddhi::Features' is a specialization of 'FeaturesOrOutAttr'.
+'siddhi::Keyword' is a specialization of 'FOR'.
+'siddhi::HourValue' is a specialization of 'HOURS'.
+'siddhi::Keyword' is a specialization of 'WINDOW'.
+'siddhi::DefinitionAggregation' is a specialization of 'AGGREGATE'.
+'siddhi::DefinitionFunction' is a specialization of 'DEFINE'.
+'siddhi::DOUBLE::LITERAL' is a specialization of 'SignedDoubleValue'.
+'siddhi::Keyword' is a specialization of 'PARTITION'.
+'siddhi::BoolValue' is a specialization of 'TRUE'.
+'siddhi::QueryOutput' is a specialization of 'DELETE'.
+'siddhi::DefinitionWindow' is a specialization of 'WINDOW'.
+'siddhi::AnonymousStream' is a specialization of 'FROM'.
+'siddhi::MinuteValue' is a specialization of 'MINUTES'.
+'siddhi::AttributeType' is a specialization of 'OBJECT'.
+'siddhi::EveryAbsentPatternSource' is a specialization of 'AbsentPatternSourceChain'.
+'siddhi::Keyword' is a specialization of 'ALL'.
+'siddhi::Keyword' is a specialization of 'UPDATE'.
+'siddhi::OutputEventType' is a specialization of 'ALL'.
+'siddhi::ExecPartition' is a specialization of 'PARTITION'.
+'siddhi::joins' is a specialization of 'FULL'.
+'siddhi::EVERY' is a specialization of 'AbsentPatternSourceChain'.
+'siddhi::Keyword' is a specialization of 'FROM'.
+'siddhi::AggregationTimeRange' is a specialization of 'AggregationTime'.
+'siddhi::AggregationTimeDuration' is a specialization of 'MONTHS'.
+'siddhi::SequenceSource' is a specialization of 'SequenceSourceChain'.
+'siddhi::DefinitionAggregation' is a specialization of 'DEFINE'.
+'siddhi::BoolValue' is a specialization of 'FALSE'.
+'siddhi::Keyword' is a specialization of 'RAW'.
+'siddhi::Keyword' is a specialization of 'OUTPUT'.
+'siddhi::AggregationTimeDuration' is a specialization of 'YEARS'.
+'siddhi::Query' is a specialization of 'FROM'.
+'siddhi::Keyword' is a specialization of 'INSERT'.
+'siddhi::Keyword' is a specialization of 'EXPIRED'.
+'siddhi::joins' is a specialization of 'RIGHT'.
+'siddhi::Keyword' is a specialization of 'HAVING'.
+'siddhi::GroupByQuerySelection' is a specialization of 'SELECT'.
+'siddhi::Keyword' is a specialization of 'TRUE'.
+'siddhi::Keyword' is a specialization of 'WITH'.
+'siddhi::OutputRate' is a specialization of 'SNAPSHOT'.
+'siddhi::Keyword' is a specialization of 'FIRST'.
+'siddhi::Keyword' is a specialization of 'RIGHT'.
+'siddhi::SequenceStream' (role 'siddhi_SequenceStream210', cardinality 0..*) is associated with 'siddhi::EverySequenceSourceChain' (role 'siddhi_EverySequenceSourceChain', cardinality 0..*).
+'siddhi::FunctionOperation' (role 'siddhi_FunctionOperation571', cardinality 0..*) is associated with 'siddhi::AttributeList' (role 'siddhi_AttributeList', cardinality 0..*).
+'siddhi::ON' (role 'siddhi_ON', cardinality 0..*) is associated with 'siddhi::QueryOutput' (role 'siddhi_QueryOutput151', cardinality 0..*).
+'siddhi::AS' (role 'siddhi_AS451', cardinality 0..*) is associated with 'siddhi::MainSource' (role 'siddhi_MainSource450', cardinality 0..*).
+'siddhi::DefinitionTrigger' (role 'siddhi_DefinitionTrigger52', cardinality 0..*) is associated with 'siddhi::EVERY' (role 'siddhi_EVERY', cardinality 0..*).
+'siddhi::DOUBLE::LITERAL' (role 'siddhi_DOUBLE_LITERAL', cardinality 0..*) is associated with 'siddhi::E' (role 'siddhi_E', cardinality 0..*).
+'siddhi::Keyword' (role 'siddhi_Keyword614', cardinality 0..*) is associated with 'siddhi::EVERY' (role 'siddhi_EVERY615', cardinality 0..*).
+'siddhi::Target' (role 'siddhi_Target164', cardinality 0..*) is associated with 'siddhi::Source' (role 'siddhi_Source165', cardinality 0..*).
+'siddhi::APP' (role 'siddhi_APP643', cardinality 0..*) is associated with 'siddhi::AnnotationElement' (role 'siddhi_AnnotationElement644', cardinality 0..*).
+'siddhi::AS' (role 'siddhi_AS200', cardinality 0..*) is associated with 'siddhi::OutAttr' (role 'siddhi_OutAttr199', cardinality 0..*).
+'siddhi::LeftAbsentSequenceSource' (role 'siddhi_LeftAbsentSequenceSource245', cardinality 0..*) is associated with 'siddhi::WithinTime' (role 'siddhi_WithinTime246', cardinality 0..*).
+'siddhi::AbsentSequenceSourceChain' (role 'siddhi_AbsentSequenceSourceChain233', cardinality 0..*) is associated with 'siddhi::LeftAbsentSequenceSource' (role 'siddhi_LeftAbsentSequenceSource', cardinality 0..*).
+'siddhi::MathOperation' (role 'siddhi_MathOperation', cardinality 0..*) is associated with 'siddhi::MathOperation' (role 'siddhi_MathOperation486', cardinality 0..*).
+'siddhi::NOT' (role 'siddhi_NOT', cardinality 0..*) is associated with 'siddhi::LogicalAbsentStatefulSource' (role 'siddhi_LogicalAbsentStatefulSource351', cardinality 0..*).
+'siddhi::RightAbsentPatternSource' (role 'siddhi_RightAbsentPatternSource397', cardinality 0..*) is associated with 'siddhi::RightAbsentPatternSource' (role 'siddhi_RightAbsentPatternSource399', cardinality 0..*).
+'siddhi::QueryOutput' (role 'siddhi_QueryOutput153', cardinality 0..*) is associated with 'siddhi::Expression' (role 'siddhi_Expression154', cardinality 0..*).
+'siddhi::LogicalAbsentStatefulSource' (role 'siddhi_LogicalAbsentStatefulSource364', cardinality 0..*) is associated with 'siddhi::OR' (role 'siddhi_OR365', cardinality 0..*).
+'siddhi::Annotation' (role 'siddhi_Annotation67', cardinality 0..*) is associated with 'siddhi::DefinitionAggregation' (role 'siddhi_DefinitionAggregation66', cardinality 0..*).
+'siddhi::PatternSourceChain' (role 'siddhi_PatternSourceChain314', cardinality 0..*) is associated with 'siddhi::PatternSourceChain' (role 'siddhi_PatternSourceChain316', cardinality 0..*).
+'siddhi::ConstantValue' (role 'siddhi_ConstantValue', cardinality 0..*) is associated with 'siddhi::Literal' (role 'siddhi_Literal509', cardinality 0..*).
+'siddhi::BasicSourceStreamHandlers' (role 'siddhi_BasicSourceStreamHandlers', cardinality 0..*) is associated with 'siddhi::MainSource' (role 'siddhi_MainSource456', cardinality 0..*).
+'siddhi::Name' (role 'siddhi_Name505', cardinality 0..*) is associated with 'siddhi::StreamReference' (role 'siddhi_StreamReference504', cardinality 0..*).
+'siddhi::SequenceSourceChain' (role 'siddhi_SequenceSourceChain649', cardinality 0..*) is associated with 'siddhi::RightAbsentSequenceSource1' (role 'siddhi_RightAbsentSequenceSource1648', cardinality 0..*).
+'siddhi::APP' (role 'siddhi_APP', cardinality 0..*) is associated with 'siddhi::Name' (role 'siddhi_Name641', cardinality 0..*).
+'siddhi::Name' (role 'siddhi_Name666', cardinality 0..*) is associated with 'siddhi::MathInOperation' (role 'siddhi_MathInOperation665', cardinality 0..*).
+'siddhi::TimeValue' (role 'siddhi_TimeValue562', cardinality 0..*) is associated with 'siddhi::ConstantValue' (role 'siddhi_ConstantValue561', cardinality 0..*).
+'siddhi::SetClause' (role 'siddhi_SetClause167', cardinality 0..*) is associated with 'siddhi::SetAssignment' (role 'siddhi_SetAssignment', cardinality 0..*).
+'siddhi::MathEqualOperation' (role 'siddhi_MathEqualOperation', cardinality 0..*) is associated with 'siddhi::MathAddsubOperation' (role 'siddhi_MathAddsubOperation670', cardinality 0..*).
+'siddhi::AbsentSequenceSourceChain' (role 'siddhi_AbsentSequenceSourceChain224', cardinality 0..*) is associated with 'siddhi::AbsentSequenceSourceChain' (role 'siddhi_AbsentSequenceSourceChain226', cardinality 0..*).
+'siddhi::PatternSourceChain' (role 'siddhi_PatternSourceChain324', cardinality 0..*) is associated with 'siddhi::PatternSource' (role 'siddhi_PatternSource', cardinality 0..*).
+'siddhi::BasicSourceStreamHandlers' (role 'siddhi_BasicSourceStreamHandlers547', cardinality 0..*) is associated with 'siddhi::BasicSource' (role 'siddhi_BasicSource546', cardinality 0..*).
+'siddhi::LeftAbsentSequenceSource' (role 'siddhi_LeftAbsentSequenceSource251', cardinality 0..*) is associated with 'siddhi::SequenceSourceChain' (role 'siddhi_SequenceSourceChain252', cardinality 0..*).
+'siddhi::SecondValue' (role 'siddhi_SecondValue602', cardinality 0..*) is associated with 'siddhi::TimeValue' (role 'siddhi_TimeValue601', cardinality 0..*).
+'siddhi::Keyword' (role 'siddhi_Keyword617', cardinality 0..*) is associated with 'siddhi::UNIDIRECTIONAL' (role 'siddhi_UNIDIRECTIONAL618', cardinality 0..*).
+'siddhi::RightAbsentPatternSource' (role 'siddhi_RightAbsentPatternSource404', cardinality 0..*) is associated with 'siddhi::WithinTime' (role 'siddhi_WithinTime405', cardinality 0..*).
+'siddhi::StandardStatefulSource' (role 'siddhi_StandardStatefulSource535', cardinality 0..*) is associated with 'siddhi::Collect' (role 'siddhi_Collect', cardinality 0..*).
+'siddhi::PatternCollectionStatefulSource' (role 'siddhi_PatternCollectionStatefulSource', cardinality 0..*) is associated with 'siddhi::PatternSource' (role 'siddhi_PatternSource328', cardinality 0..*).
+'siddhi::Source1OrStandardStatefulSource' (role 'siddhi_Source1OrStandardStatefulSource', cardinality 0..*) is associated with 'siddhi::SourceOrEventReference' (role 'siddhi_SourceOrEventReference549', cardinality 0..*).
+'siddhi::Source1' (role 'siddhi_Source1162', cardinality 0..*) is associated with 'siddhi::Target' (role 'siddhi_Target161', cardinality 0..*).
+'siddhi::RightAbsentPatternSource1' (role 'siddhi_RightAbsentPatternSource1653', cardinality 0..*) is associated with 'siddhi::EveryAbsentPatternSource' (role 'siddhi_EveryAbsentPatternSource654', cardinality 0..*).
+'siddhi::LogicalAbsentStatefulSource' (role 'siddhi_LogicalAbsentStatefulSource353', cardinality 0..*) is associated with 'siddhi::BasicSource' (role 'siddhi_BasicSource', cardinality 0..*).
+'siddhi::FunctionOperation' (role 'siddhi_FunctionOperation502', cardinality 0..*) is associated with 'siddhi::NullCheck' (role 'siddhi_NullCheck501', cardinality 0..*).
+'siddhi::LogicalAbsentStatefulSource' (role 'siddhi_LogicalAbsentStatefulSource341', cardinality 0..*) is associated with 'siddhi::LogicalAbsentStatefulSource' (role 'siddhi_LogicalAbsentStatefulSource343', cardinality 0..*).
+'siddhi::Expression' (role 'siddhi_Expression', cardinality 0..*) is associated with 'siddhi::ConditionRange' (role 'siddhi_ConditionRange128', cardinality 0..*).
+'siddhi::MathOperation' (role 'siddhi_MathOperation488', cardinality 0..*) is associated with 'siddhi::MathOperation' (role 'siddhi_MathOperation490', cardinality 0..*).
+'siddhi::ConditionRanges' (role 'siddhi_ConditionRanges124', cardinality 0..*) is associated with 'siddhi::ConditionRange' (role 'siddhi_ConditionRange', cardinality 0..*).
+'siddhi::MathLogicalOperation' (role 'siddhi_MathLogicalOperation661', cardinality 0..*) is associated with 'siddhi::MathOperation' (role 'siddhi_MathOperation662', cardinality 0..*).
+'siddhi::GroupByQuerySelection' (role 'siddhi_GroupByQuerySelection179', cardinality 0..*) is associated with 'siddhi::GroupBy' (role 'siddhi_GroupBy', cardinality 0..*).
+'siddhi::EObject' (role 'siddhi_EObject', cardinality 0..*) is associated with 'siddhi::LeftAbsentSequenceSource' (role 'siddhi_LeftAbsentSequenceSource240', cardinality 0..*).
+'siddhi::AggregationTime' (role 'siddhi_AggregationTime', cardinality 0..*) is associated with 'siddhi::DefinitionAggregation' (role 'siddhi_DefinitionAggregation81', cardinality 0..*).
+'siddhi::WithinTimeRange' (role 'siddhi_WithinTimeRange', cardinality 0..*) is associated with 'siddhi::JoinStream' (role 'siddhi_JoinStream426', cardinality 0..*).
+'siddhi::QuerySection' (role 'siddhi_QuerySection181', cardinality 0..*) is associated with 'siddhi::GroupByQuerySelection' (role 'siddhi_GroupByQuerySelection182', cardinality 0..*).
+'siddhi::Literal' (role 'siddhi_Literal514', cardinality 0..*) is associated with 'siddhi::AttributeReference' (role 'siddhi_AttributeReference515', cardinality 0..*).
+'siddhi::OutputRate' (role 'siddhi_OutputRate171', cardinality 0..*) is associated with 'siddhi::EVERY' (role 'siddhi_EVERY172', cardinality 0..*).
+'siddhi::StringValue' (role 'siddhi_StringValue565', cardinality 0..*) is associated with 'siddhi::ConstantValue' (role 'siddhi_ConstantValue564', cardinality 0..*).
+'siddhi::AttributeReference' (role 'siddhi_AttributeReference187', cardinality 0..*) is associated with 'siddhi::GroupBy' (role 'siddhi_GroupBy186', cardinality 0..*).
+'siddhi::MathOperation' (role 'siddhi_MathOperation668', cardinality 0..*) is associated with 'siddhi::MathGtLtOperation' (role 'siddhi_MathGtLtOperation', cardinality 0..*).
+'siddhi::Win' (role 'siddhi_Win', cardinality 0..*) is associated with 'siddhi::MainSource' (role 'siddhi_MainSource', cardinality 0..*).
+'siddhi::LeftAbsentSequenceSource' (role 'siddhi_LeftAbsentSequenceSource241', cardinality 0..*) is associated with 'siddhi::LeftAbsentSequenceSource' (role 'siddhi_LeftAbsentSequenceSource243', cardinality 0..*).
+'siddhi::LanguageName' (role 'siddhi_LanguageName', cardinality 0..*) is associated with 'siddhi::DefinitionFunction' (role 'siddhi_DefinitionFunction60', cardinality 0..*).
+'siddhi::Annotation' (role 'siddhi_Annotation90', cardinality 0..*) is associated with 'siddhi::Annotation' (role 'siddhi_Annotation88', cardinality 0..*).
+'siddhi::QuerySection' (role 'siddhi_QuerySection288', cardinality 0..*) is associated with 'siddhi::AnonymousStream' (role 'siddhi_AnonymousStream287', cardinality 0..*).
+'siddhi::ForTime' (role 'siddhi_ForTime639', cardinality 0..*) is associated with 'siddhi::NOT' (role 'siddhi_NOT638', cardinality 0..*).
+'siddhi::AttributeReference' (role 'siddhi_AttributeReference528', cardinality 0..*) is associated with 'siddhi::AttributeIndex' (role 'siddhi_AttributeIndex529', cardinality 0..*).
+'siddhi::OutputAttribute' (role 'siddhi_OutputAttribute194', cardinality 0..*) is associated with 'siddhi::AttributeReference' (role 'siddhi_AttributeReference195', cardinality 0..*).
+'siddhi::SequenceStream' (role 'siddhi_SequenceStream', cardinality 0..*) is associated with 'siddhi::QueryInput' (role 'siddhi_QueryInput204', cardinality 0..*).
+'siddhi::Features' (role 'siddhi_Features107', cardinality 0..*) is associated with 'siddhi::AttributeType' (role 'siddhi_AttributeType108', cardinality 0..*).
+'siddhi::OR' (role 'siddhi_OR157', cardinality 0..*) is associated with 'siddhi::QueryOutput' (role 'siddhi_QueryOutput156', cardinality 0..*).
+'siddhi::DefinitionStream' (role 'siddhi_DefinitionStream22', cardinality 0..*) is associated with 'siddhi::Annotation' (role 'siddhi_Annotation', cardinality 0..*).
+'siddhi::RightAbsentPatternSource' (role 'siddhi_RightAbsentPatternSource402', cardinality 0..*) is associated with 'siddhi::RightAbsentPatternSource' (role 'siddhi_RightAbsentPatternSource400', cardinality 0..*).
+'siddhi::HourValue' (role 'siddhi_HourValue', cardinality 0..*) is associated with 'siddhi::TimeValue' (role 'siddhi_TimeValue593', cardinality 0..*).
+'siddhi::EverySequenceSourceChain' (role 'siddhi_EverySequenceSourceChain214', cardinality 0..*) is associated with 'siddhi::SequenceSource' (role 'siddhi_SequenceSource', cardinality 0..*).
+'siddhi::JoinStream' (role 'siddhi_JoinStream428', cardinality 0..*) is associated with 'siddhi::Per1' (role 'siddhi_Per1', cardinality 0..*).
+'siddhi::MathLogicalOperation' (role 'siddhi_MathLogicalOperation', cardinality 0..*) is associated with 'siddhi::AND' (role 'siddhi_AND656', cardinality 0..*).
+'siddhi::SignedDoubleValue' (role 'siddhi_SignedDoubleValue', cardinality 0..*) is associated with 'siddhi::ConstantValue' (role 'siddhi_ConstantValue555', cardinality 0..*).
+'siddhi::Name' (role 'siddhi_Name105', cardinality 0..*) is associated with 'siddhi::Features' (role 'siddhi_Features104', cardinality 0..*).
+'siddhi::JoinStream' (role 'siddhi_JoinStream413', cardinality 0..*) is associated with 'siddhi::JoinSource' (role 'siddhi_JoinSource', cardinality 0..*).
+'siddhi::OutputEventType' (role 'siddhi_OutputEventType', cardinality 0..*) is associated with 'siddhi::DefinitionWindow' (role 'siddhi_DefinitionWindow48', cardinality 0..*).
+'siddhi::GroupByQuerySelection' (role 'siddhi_GroupByQuerySelection', cardinality 0..*) is associated with 'siddhi::DefinitionAggregation' (role 'siddhi_DefinitionAggregation74', cardinality 0..*).
+'siddhi::OutputEventType' (role 'siddhi_OutputEventType147', cardinality 0..*) is associated with 'siddhi::QueryOutput' (role 'siddhi_QueryOutput146', cardinality 0..*).
+'siddhi::SequenceSourceChain' (role 'siddhi_SequenceSourceChain271', cardinality 0..*) is associated with 'siddhi::SequenceSourceChain' (role 'siddhi_SequenceSourceChain273', cardinality 0..*).
+'siddhi::BasicSourceStreamHandlers' (role 'siddhi_BasicSourceStreamHandlers463', cardinality 0..*) is associated with 'siddhi::BasicSourceStreamHandler' (role 'siddhi_BasicSourceStreamHandler', cardinality 0..*).
+'siddhi::StreamReference' (role 'siddhi_StreamReference', cardinality 0..*) is associated with 'siddhi::NullCheck' (role 'siddhi_NullCheck', cardinality 0..*).
+'siddhi::AnonymousStream' (role 'siddhi_AnonymousStream290', cardinality 0..*) is associated with 'siddhi::OutputRate' (role 'siddhi_OutputRate291', cardinality 0..*).
+'siddhi::AbsentSequenceSourceChain' (role 'siddhi_AbsentSequenceSourceChain235', cardinality 0..*) is associated with 'siddhi::RightAbsentSequenceSource' (role 'siddhi_RightAbsentSequenceSource', cardinality 0..*).
+'siddhi::Literal' (role 'siddhi_Literal', cardinality 0..*) is associated with 'siddhi::MathOtherOperations' (role 'siddhi_MathOtherOperations495', cardinality 0..*).
+'siddhi::BasicSourceStreamHandlers' (role 'siddhi_BasicSourceStreamHandlers541', cardinality 0..*) is associated with 'siddhi::StandardStatefulSource' (role 'siddhi_StandardStatefulSource540', cardinality 0..*).
+'siddhi::RightAbsentSequenceSource' (role 'siddhi_RightAbsentSequenceSource266', cardinality 0..*) is associated with 'siddhi::SequenceSourceChain' (role 'siddhi_SequenceSourceChain267', cardinality 0..*).
+'siddhi::ExecutionPlan' (role 'siddhi_ExecutionPlan14', cardinality 0..*) is associated with 'siddhi::DefinitionAggregation' (role 'siddhi_DefinitionAggregation', cardinality 0..*).
+'siddhi::ForTime' (role 'siddhi_ForTime', cardinality 0..*) is associated with 'siddhi::TimeValue' (role 'siddhi_TimeValue374', cardinality 0..*).
+'siddhi::EveryPatternSourceChain' (role 'siddhi_EveryPatternSourceChain391', cardinality 0..*) is associated with 'siddhi::LeftAbsentPatternSource' (role 'siddhi_LeftAbsentPatternSource390', cardinality 0..*).
+'siddhi::StreamReference' (role 'siddhi_StreamReference507', cardinality 0..*) is associated with 'siddhi::AttributeIndex' (role 'siddhi_AttributeIndex', cardinality 0..*).
+'siddhi::TimeValue' (role 'siddhi_TimeValue589', cardinality 0..*) is associated with 'siddhi::WeekValue' (role 'siddhi_WeekValue', cardinality 0..*).
+'siddhi::DefinitionStream' (role 'siddhi_DefinitionStream26', cardinality 0..*) is associated with 'siddhi::Features' (role 'siddhi_Features', cardinality 0..*).
+'siddhi::Name' (role 'siddhi_Name100', cardinality 0..*) is associated with 'siddhi::PropertyName' (role 'siddhi_PropertyName99', cardinality 0..*).
+'siddhi::StandardStream' (role 'siddhi_StandardStream', cardinality 0..*) is associated with 'siddhi::DefinitionAggregation' (role 'siddhi_DefinitionAggregation72', cardinality 0..*).
+'siddhi::FunctionOperation' (role 'siddhi_FunctionOperation569', cardinality 0..*) is associated with 'siddhi::FunctionId' (role 'siddhi_FunctionId', cardinality 0..*).
+'siddhi::TimeValue' (role 'siddhi_TimeValue597', cardinality 0..*) is associated with 'siddhi::SecondValue' (role 'siddhi_SecondValue', cardinality 0..*).
+'siddhi::Annotation' (role 'siddhi_Annotation29', cardinality 0..*) is associated with 'siddhi::DefinitionTable' (role 'siddhi_DefinitionTable28', cardinality 0..*).
+'siddhi::PatternStream' (role 'siddhi_PatternStream', cardinality 0..*) is associated with 'siddhi::QueryInput' (role 'siddhi_QueryInput206', cardinality 0..*).
+'siddhi::LeftAbsentSequenceSource' (role 'siddhi_LeftAbsentSequenceSource236', cardinality 0..*) is associated with 'siddhi::LeftAbsentSequenceSource' (role 'siddhi_LeftAbsentSequenceSource238', cardinality 0..*).
+'siddhi::DefinitionWindow' (role 'siddhi_DefinitionWindow46', cardinality 0..*) is associated with 'siddhi::FunctionOperation' (role 'siddhi_FunctionOperation', cardinality 0..*).
+'siddhi::ExecutionElement' (role 'siddhi_ExecutionElement18', cardinality 0..*) is associated with 'siddhi::ExecPartition' (role 'siddhi_ExecPartition', cardinality 0..*).
+'siddhi::ExecutionElement' (role 'siddhi_ExecutionElement20', cardinality 0..*) is associated with 'siddhi::Query' (role 'siddhi_Query', cardinality 0..*).
+'siddhi::BasicSourceStreamHandler' (role 'siddhi_BasicSourceStreamHandler474', cardinality 0..*) is associated with 'siddhi::Filter' (role 'siddhi_Filter', cardinality 0..*).
+'siddhi::YearValue' (role 'siddhi_YearValue', cardinality 0..*) is associated with 'siddhi::TimeValue' (role 'siddhi_TimeValue585', cardinality 0..*).
+'siddhi::E' (role 'siddhi_E607', cardinality 0..*) is associated with 'siddhi::FLOAT::LITERAL' (role 'siddhi_FLOAT_LITERAL', cardinality 0..*).
+'siddhi::Attribute' (role 'siddhi_Attribute580', cardinality 0..*) is associated with 'siddhi::AttributeList' (role 'siddhi_AttributeList579', cardinality 0..*).
+'siddhi::RightAbsentPatternSource' (role 'siddhi_RightAbsentPatternSource651', cardinality 0..*) is associated with 'siddhi::RightAbsentPatternSource1' (role 'siddhi_RightAbsentPatternSource1', cardinality 0..*).
+'siddhi::TimeValue' (role 'siddhi_TimeValue591', cardinality 0..*) is associated with 'siddhi::DayValue' (role 'siddhi_DayValue', cardinality 0..*).
+'siddhi::EveryPatternSourceChain' (role 'siddhi_EveryPatternSourceChain307', cardinality 0..*) is associated with 'siddhi::PatternSourceChain' (role 'siddhi_PatternSourceChain', cardinality 0..*).
+'siddhi::DefinitionAggregation' (role 'siddhi_DefinitionAggregation69', cardinality 0..*) is associated with 'siddhi::Source1' (role 'siddhi_Source170', cardinality 0..*).
+'siddhi::OutputRate' (role 'siddhi_OutputRate174', cardinality 0..*) is associated with 'siddhi::TimeValue' (role 'siddhi_TimeValue175', cardinality 0..*).
+'siddhi::PatternSourceChain' (role 'siddhi_PatternSourceChain319', cardinality 0..*) is associated with 'siddhi::PatternSourceChain' (role 'siddhi_PatternSourceChain317', cardinality 0..*).
+'siddhi::Features' (role 'siddhi_Features35', cardinality 0..*) is associated with 'siddhi::DefinitionTable' (role 'siddhi_DefinitionTable34', cardinality 0..*).
+'siddhi::D' (role 'siddhi_D', cardinality 0..*) is associated with 'siddhi::DOUBLE::LITERAL' (role 'siddhi_DOUBLE_LITERAL605', cardinality 0..*).
+'siddhi::Keyword' (role 'siddhi_Keyword623', cardinality 0..*) is associated with 'siddhi::AND' (role 'siddhi_AND624', cardinality 0..*).
+'siddhi::OF' (role 'siddhi_OF633', cardinality 0..*) is associated with 'siddhi::Keyword' (role 'siddhi_Keyword632', cardinality 0..*).
+'siddhi::WithinTime' (role 'siddhi_WithinTime229', cardinality 0..*) is associated with 'siddhi::AbsentSequenceSourceChain' (role 'siddhi_AbsentSequenceSourceChain228', cardinality 0..*).
+'siddhi::MathOtherOperations' (role 'siddhi_MathOtherOperations', cardinality 0..*) is associated with 'siddhi::MathOperation' (role 'siddhi_MathOperation493', cardinality 0..*).
+'siddhi::StreamAlias' (role 'siddhi_StreamAlias454', cardinality 0..*) is associated with 'siddhi::MainSource' (role 'siddhi_MainSource453', cardinality 0..*).
+'siddhi::Expression' (role 'siddhi_Expression190', cardinality 0..*) is associated with 'siddhi::HavingExpr' (role 'siddhi_HavingExpr189', cardinality 0..*).
+'siddhi::QuerySection' (role 'siddhi_QuerySection', cardinality 0..*) is associated with 'siddhi::Query' (role 'siddhi_Query140', cardinality 0..*).
+'siddhi::TimeValue' (role 'siddhi_TimeValue587', cardinality 0..*) is associated with 'siddhi::MonthValue' (role 'siddhi_MonthValue', cardinality 0..*).
+'siddhi::AttributeType' (role 'siddhi_AttributeType', cardinality 0..*) is associated with 'siddhi::DefinitionFunction' (role 'siddhi_DefinitionFunction62', cardinality 0..*).
+'siddhi::Features' (role 'siddhi_Features44', cardinality 0..*) is associated with 'siddhi::DefinitionWindow' (role 'siddhi_DefinitionWindow43', cardinality 0..*).
+'siddhi::OutputRateType' (role 'siddhi_OutputRateType', cardinality 0..*) is associated with 'siddhi::OutputRate' (role 'siddhi_OutputRate169', cardinality 0..*).
+'siddhi::TimeValue' (role 'siddhi_TimeValue', cardinality 0..*) is associated with 'siddhi::DefinitionTrigger' (role 'siddhi_DefinitionTrigger54', cardinality 0..*).
+'siddhi::WithinTimeRange' (role 'siddhi_WithinTimeRange435', cardinality 0..*) is associated with 'siddhi::Expression' (role 'siddhi_Expression436', cardinality 0..*).
+'siddhi::StreamFunction' (role 'siddhi_StreamFunction', cardinality 0..*) is associated with 'siddhi::BasicSourceStreamHandler' (role 'siddhi_BasicSourceStreamHandler476', cardinality 0..*).
+'siddhi::RightAbsentSequenceSource' (role 'siddhi_RightAbsentSequenceSource259', cardinality 0..*) is associated with 'siddhi::RightAbsentSequenceSource' (role 'siddhi_RightAbsentSequenceSource261', cardinality 0..*).
+'siddhi::LeftAbsentPatternSource' (role 'siddhi_LeftAbsentPatternSource375', cardinality 0..*) is associated with 'siddhi::LeftAbsentPatternSource' (role 'siddhi_LeftAbsentPatternSource', cardinality 0..*).
+'siddhi::ON' (role 'siddhi_ON421', cardinality 0..*) is associated with 'siddhi::JoinStream' (role 'siddhi_JoinStream420', cardinality 0..*).
+'siddhi::SetClause' (role 'siddhi_SetClause', cardinality 0..*) is associated with 'siddhi::QueryOutput' (role 'siddhi_QueryOutput159', cardinality 0..*).
+'siddhi::AttributeReference' (role 'siddhi_AttributeReference525', cardinality 0..*) is associated with 'siddhi::SourceOrEventReference' (role 'siddhi_SourceOrEventReference526', cardinality 0..*).
+'siddhi::StreamAlias' (role 'siddhi_StreamAlias', cardinality 0..*) is associated with 'siddhi::Name' (role 'siddhi_Name444', cardinality 0..*).
+'siddhi::SequenceSourceChain' (role 'siddhi_SequenceSourceChain223', cardinality 0..*) is associated with 'siddhi::EveryAbsentSequenceSourceChain' (role 'siddhi_EveryAbsentSequenceSourceChain222', cardinality 0..*).
+'siddhi::Name' (role 'siddhi_Name574', cardinality 0..*) is associated with 'siddhi::FunctionNamespace' (role 'siddhi_FunctionNamespace573', cardinality 0..*).
+'siddhi::EveryAbsentPatternSource' (role 'siddhi_EveryAbsentPatternSource', cardinality 0..*) is associated with 'siddhi::BasicAbsentPatternSource' (role 'siddhi_BasicAbsentPatternSource372', cardinality 0..*).
+'siddhi::LogicalStatefulSource' (role 'siddhi_LogicalStatefulSource334', cardinality 0..*) is associated with 'siddhi::StandardStatefulSource' (role 'siddhi_StandardStatefulSource335', cardinality 0..*).
+'siddhi::WithinTime' (role 'siddhi_WithinTime370', cardinality 0..*) is associated with 'siddhi::AbsentPatternSourceChain' (role 'siddhi_AbsentPatternSourceChain369', cardinality 0..*).
+'siddhi::OutputAttribute' (role 'siddhi_OutputAttribute192', cardinality 0..*) is associated with 'siddhi::OutAttr' (role 'siddhi_OutAttr', cardinality 0..*).
+'siddhi::ConstantValue' (role 'siddhi_ConstantValue557', cardinality 0..*) is associated with 'siddhi::SignedFloatValue' (role 'siddhi_SignedFloatValue', cardinality 0..*).
+'siddhi::LeftAbsentPatternSource' (role 'siddhi_LeftAbsentPatternSource394', cardinality 0..*) is associated with 'siddhi::LeftAbsentPatternSource' (role 'siddhi_LeftAbsentPatternSource392', cardinality 0..*).
+'siddhi::EveryPatternSourceChain' (role 'siddhi_EveryPatternSourceChain302', cardinality 0..*) is associated with 'siddhi::EveryPatternSourceChain' (role 'siddhi_EveryPatternSourceChain300', cardinality 0..*).
+'siddhi::DefinitionFunction' (role 'siddhi_DefinitionFunction58', cardinality 0..*) is associated with 'siddhi::FunctionName' (role 'siddhi_FunctionName', cardinality 0..*).
+'siddhi::FunctionOperation' (role 'siddhi_FunctionOperation485', cardinality 0..*) is associated with 'siddhi::Win' (role 'siddhi_Win484', cardinality 0..*).
+'siddhi::RightAbsentSequenceSource' (role 'siddhi_RightAbsentSequenceSource258', cardinality 0..*) is associated with 'siddhi::RightAbsentSequenceSource' (role 'siddhi_RightAbsentSequenceSource256', cardinality 0..*).
+'siddhi::DefinitionWindow' (role 'siddhi_DefinitionWindow', cardinality 0..*) is associated with 'siddhi::ExecutionPlan' (role 'siddhi_ExecutionPlan8', cardinality 0..*).
+'siddhi::EveryPatternSourceChain' (role 'siddhi_EveryPatternSourceChain309', cardinality 0..*) is associated with 'siddhi::EVERY' (role 'siddhi_EVERY310', cardinality 0..*).
+'siddhi::LogicalStatefulSource' (role 'siddhi_LogicalStatefulSource', cardinality 0..*) is associated with 'siddhi::PatternSource' (role 'siddhi_PatternSource326', cardinality 0..*).
+'siddhi::RightAbsentPatternSource' (role 'siddhi_RightAbsentPatternSource410', cardinality 0..*) is associated with 'siddhi::EveryAbsentPatternSource' (role 'siddhi_EveryAbsentPatternSource411', cardinality 0..*).
+'siddhi::FunctionOperation' (role 'siddhi_FunctionOperation567', cardinality 0..*) is associated with 'siddhi::FunctionNamespace' (role 'siddhi_FunctionNamespace', cardinality 0..*).
+'siddhi::TriggerName' (role 'siddhi_TriggerName', cardinality 0..*) is associated with 'siddhi::DefinitionTrigger' (role 'siddhi_DefinitionTrigger50', cardinality 0..*).
+'siddhi::RightAbsentSequenceSource' (role 'siddhi_RightAbsentSequenceSource255', cardinality 0..*) is associated with 'siddhi::RightAbsentSequenceSource' (role 'siddhi_RightAbsentSequenceSource253', cardinality 0..*).
+'siddhi::Literal' (role 'siddhi_Literal511', cardinality 0..*) is associated with 'siddhi::FunctionOperation' (role 'siddhi_FunctionOperation512', cardinality 0..*).
+'siddhi::Source1' (role 'siddhi_Source141', cardinality 0..*) is associated with 'siddhi::DefinitionWindow' (role 'siddhi_DefinitionWindow40', cardinality 0..*).
+'siddhi::NOT' (role 'siddhi_NOT630', cardinality 0..*) is associated with 'siddhi::Keyword' (role 'siddhi_Keyword629', cardinality 0..*).
+'siddhi::OR' (role 'siddhi_OR659', cardinality 0..*) is associated with 'siddhi::MathLogicalOperation' (role 'siddhi_MathLogicalOperation658', cardinality 0..*).
+'siddhi::AnnotationElement' (role 'siddhi_AnnotationElement', cardinality 0..*) is associated with 'siddhi::Annotation' (role 'siddhi_Annotation87', cardinality 0..*).
+'siddhi::BoolValue' (role 'siddhi_BoolValue', cardinality 0..*) is associated with 'siddhi::ConstantValue' (role 'siddhi_ConstantValue553', cardinality 0..*).
+'siddhi::Query' (role 'siddhi_Query142', cardinality 0..*) is associated with 'siddhi::OutputRate' (role 'siddhi_OutputRate', cardinality 0..*).
+'siddhi::ExecutionPlan' (role 'siddhi_ExecutionPlan16', cardinality 0..*) is associated with 'siddhi::ExecutionElement' (role 'siddhi_ExecutionElement', cardinality 0..*).
+'siddhi::LogicalStatefulSource' (role 'siddhi_LogicalStatefulSource339', cardinality 0..*) is associated with 'siddhi::OR' (role 'siddhi_OR340', cardinality 0..*).
+'siddhi::PatternSourceChain' (role 'siddhi_PatternSourceChain311', cardinality 0..*) is associated with 'siddhi::PatternSourceChain' (role 'siddhi_PatternSourceChain313', cardinality 0..*).
+'siddhi::SignedLongValue' (role 'siddhi_SignedLongValue', cardinality 0..*) is associated with 'siddhi::ConstantValue' (role 'siddhi_ConstantValue559', cardinality 0..*).
+'siddhi::AttributeReference' (role 'siddhi_AttributeReference', cardinality 0..*) is associated with 'siddhi::DefinitionAggregation' (role 'siddhi_DefinitionAggregation76', cardinality 0..*).
+'siddhi::Source' (role 'siddhi_Source459', cardinality 0..*) is associated with 'siddhi::MainSource' (role 'siddhi_MainSource458', cardinality 0..*).
+'siddhi::FunctionBody' (role 'siddhi_FunctionBody', cardinality 0..*) is associated with 'siddhi::DefinitionFunction' (role 'siddhi_DefinitionFunction64', cardinality 0..*).
+'siddhi::PropertyName' (role 'siddhi_PropertyName', cardinality 0..*) is associated with 'siddhi::AnnotationElement' (role 'siddhi_AnnotationElement92', cardinality 0..*).
+'siddhi::RightAbsentPatternSource' (role 'siddhi_RightAbsentPatternSource395', cardinality 0..*) is associated with 'siddhi::RightAbsentPatternSource' (role 'siddhi_RightAbsentPatternSource', cardinality 0..*).
+'siddhi::MathOperation' (role 'siddhi_MathOperation583', cardinality 0..*) is associated with 'siddhi::Attribute' (role 'siddhi_Attribute582', cardinality 0..*).
+'siddhi::StringValue' (role 'siddhi_StringValue133', cardinality 0..*) is associated with 'siddhi::ConditionRange' (role 'siddhi_ConditionRange132', cardinality 0..*).
+'siddhi::JoinStream' (role 'siddhi_JoinStream430', cardinality 0..*) is associated with 'siddhi::joins' (role 'siddhi_joins', cardinality 0..*).
+'siddhi::ConditionRanges' (role 'siddhi_ConditionRanges126', cardinality 0..*) is associated with 'siddhi::OR' (role 'siddhi_OR', cardinality 0..*).
+'siddhi::Query' (role 'siddhi_Query118', cardinality 0..*) is associated with 'siddhi::ExecPartition' (role 'siddhi_ExecPartition117', cardinality 0..*).
+'siddhi::OutputAttribute' (role 'siddhi_OutputAttribute', cardinality 0..*) is associated with 'siddhi::GroupByQuerySelection' (role 'siddhi_GroupByQuerySelection177', cardinality 0..*).
+'siddhi::Expression' (role 'siddhi_Expression518', cardinality 0..*) is associated with 'siddhi::AttributeReference' (role 'siddhi_AttributeReference517', cardinality 0..*).
+'siddhi::Query' (role 'siddhi_Query144', cardinality 0..*) is associated with 'siddhi::QueryOutput' (role 'siddhi_QueryOutput', cardinality 0..*).
+'siddhi::Filter' (role 'siddhi_Filter478', cardinality 0..*) is associated with 'siddhi::Expression' (role 'siddhi_Expression479', cardinality 0..*).
+'siddhi::DefinitionTable' (role 'siddhi_DefinitionTable', cardinality 0..*) is associated with 'siddhi::ExecutionPlan' (role 'siddhi_ExecutionPlan6', cardinality 0..*).
+'siddhi::SequenceSourceChain' (role 'siddhi_SequenceSourceChain274', cardinality 0..*) is associated with 'siddhi::SequenceSourceChain' (role 'siddhi_SequenceSourceChain276', cardinality 0..*).
+'siddhi::FeaturesOrOutAttrReference' (role 'siddhi_FeaturesOrOutAttrReference533', cardinality 0..*) is associated with 'siddhi::FeaturesOrOutAttr' (role 'siddhi_FeaturesOrOutAttr', cardinality 0..*).
+'siddhi::DefinitionFunction' (role 'siddhi_DefinitionFunction', cardinality 0..*) is associated with 'siddhi::ExecutionPlan' (role 'siddhi_ExecutionPlan12', cardinality 0..*).
+'siddhi::EverySequenceSourceChain' (role 'siddhi_EverySequenceSourceChain216', cardinality 0..*) is associated with 'siddhi::WithinTime' (role 'siddhi_WithinTime', cardinality 0..*).
+'siddhi::ConditionRanges' (role 'siddhi_ConditionRanges', cardinality 0..*) is associated with 'siddhi::OF' (role 'siddhi_OF', cardinality 0..*).
+'siddhi::AbsentSequenceSourceChain' (role 'siddhi_AbsentSequenceSourceChain231', cardinality 0..*) is associated with 'siddhi::BasicAbsentPatternSource' (role 'siddhi_BasicAbsentPatternSource', cardinality 0..*).
+'siddhi::LogicalAbsentStatefulSource' (role 'siddhi_LogicalAbsentStatefulSource345', cardinality 0..*) is associated with 'siddhi::StandardStatefulSource' (role 'siddhi_StandardStatefulSource346', cardinality 0..*).
+'siddhi::Source1' (role 'siddhi_Source132', cardinality 0..*) is associated with 'siddhi::DefinitionTable' (role 'siddhi_DefinitionTable31', cardinality 0..*).
+'siddhi::MathAddsubOperation' (role 'siddhi_MathAddsubOperation', cardinality 0..*) is associated with 'siddhi::MathDivmulOperation' (role 'siddhi_MathDivmulOperation', cardinality 0..*).
+'siddhi::AS' (role 'siddhi_AS', cardinality 0..*) is associated with 'siddhi::ConditionRange' (role 'siddhi_ConditionRange130', cardinality 0..*).
+'siddhi::LogicalStatefulSource' (role 'siddhi_LogicalStatefulSource337', cardinality 0..*) is associated with 'siddhi::AND' (role 'siddhi_AND', cardinality 0..*).
+'siddhi::WithinTimeRange' (role 'siddhi_WithinTimeRange438', cardinality 0..*) is associated with 'siddhi::Expression' (role 'siddhi_Expression439', cardinality 0..*).
+'siddhi::MillisecondValue' (role 'siddhi_MillisecondValue', cardinality 0..*) is associated with 'siddhi::TimeValue' (role 'siddhi_TimeValue599', cardinality 0..*).
+'siddhi::F' (role 'siddhi_F', cardinality 0..*) is associated with 'siddhi::FLOAT::LITERAL' (role 'siddhi_FLOAT_LITERAL609', cardinality 0..*).
+'siddhi::LogicalAbsentStatefulSource' (role 'siddhi_LogicalAbsentStatefulSource361', cardinality 0..*) is associated with 'siddhi::BasicAbsentPatternSource' (role 'siddhi_BasicAbsentPatternSource362', cardinality 0..*).
+'siddhi::JoinStream' (role 'siddhi_JoinStream423', cardinality 0..*) is associated with 'siddhi::Expression' (role 'siddhi_Expression424', cardinality 0..*).
+'siddhi::FunctionId' (role 'siddhi_FunctionId576', cardinality 0..*) is associated with 'siddhi::Name' (role 'siddhi_Name577', cardinality 0..*).
+'siddhi::DefinitionWindow' (role 'siddhi_DefinitionWindow37', cardinality 0..*) is associated with 'siddhi::Annotation' (role 'siddhi_Annotation38', cardinality 0..*).
+'siddhi::AttributeNameReference' (role 'siddhi_AttributeNameReference', cardinality 0..*) is associated with 'siddhi::Features' (role 'siddhi_Features551', cardinality 0..*).
+'siddhi::Keyword' (role 'siddhi_Keyword626', cardinality 0..*) is associated with 'siddhi::OR' (role 'siddhi_OR627', cardinality 0..*).
+'siddhi::Source' (role 'siddhi_Source544', cardinality 0..*) is associated with 'siddhi::BasicSource' (role 'siddhi_BasicSource543', cardinality 0..*).
+'siddhi::NullCheck' (role 'siddhi_NullCheck498', cardinality 0..*) is associated with 'siddhi::AttributeReference' (role 'siddhi_AttributeReference499', cardinality 0..*).
+'siddhi::AggregationTimeDuration' (role 'siddhi_AggregationTimeDuration', cardinality 0..*) is associated with 'siddhi::AggregationTime' (role 'siddhi_AggregationTime83', cardinality 0..*).
+'siddhi::AbsentPatternSourceChain' (role 'siddhi_AbsentPatternSourceChain', cardinality 0..*) is associated with 'siddhi::AbsentPatternSourceChain' (role 'siddhi_AbsentPatternSourceChain366', cardinality 0..*).
+'siddhi::TimeValue' (role 'siddhi_TimeValue447', cardinality 0..*) is associated with 'siddhi::WithinTime' (role 'siddhi_WithinTime446', cardinality 0..*).
+'siddhi::L' (role 'siddhi_L', cardinality 0..*) is associated with 'siddhi::LONG::LITERAL' (role 'siddhi_LONG_LITERAL', cardinality 0..*).
+'siddhi::NOT' (role 'siddhi_NOT672', cardinality 0..*) is associated with 'siddhi::NotOperation' (role 'siddhi_NotOperation', cardinality 0..*).
+'siddhi::Keyword' (role 'siddhi_Keyword', cardinality 0..*) is associated with 'siddhi::AS' (role 'siddhi_AS612', cardinality 0..*).
+'siddhi::Expression' (role 'siddhi_Expression466', cardinality 0..*) is associated with 'siddhi::BasicSourceStreamHandlers1' (role 'siddhi_BasicSourceStreamHandlers1465', cardinality 0..*).
+'siddhi::NOT' (role 'siddhi_NOT635', cardinality 0..*) is associated with 'siddhi::BasicSource' (role 'siddhi_BasicSource636', cardinality 0..*).
+'siddhi::StandardStatefulSource' (role 'siddhi_StandardStatefulSource537', cardinality 0..*) is associated with 'siddhi::Source' (role 'siddhi_Source538', cardinality 0..*).
+'siddhi::UNIDIRECTIONAL' (role 'siddhi_UNIDIRECTIONAL433', cardinality 0..*) is associated with 'siddhi::JoinStream' (role 'siddhi_JoinStream432', cardinality 0..*).
+'siddhi::StreamFunction' (role 'siddhi_StreamFunction481', cardinality 0..*) is associated with 'siddhi::FunctionOperation' (role 'siddhi_FunctionOperation482', cardinality 0..*).
+'siddhi::PropertyValue' (role 'siddhi_PropertyValue', cardinality 0..*) is associated with 'siddhi::AnnotationElement' (role 'siddhi_AnnotationElement94', cardinality 0..*).
+'siddhi::SequenceSourceChain' (role 'siddhi_SequenceSourceChain278', cardinality 0..*) is associated with 'siddhi::WithinTime' (role 'siddhi_WithinTime279', cardinality 0..*).
+'siddhi::EveryPatternSourceChain' (role 'siddhi_EveryPatternSourceChain295', cardinality 0..*) is associated with 'siddhi::EveryPatternSourceChain' (role 'siddhi_EveryPatternSourceChain', cardinality 0..*).
+'siddhi::LogicalAbsentStatefulSource' (role 'siddhi_LogicalAbsentStatefulSource', cardinality 0..*) is associated with 'siddhi::PatternSource' (role 'siddhi_PatternSource332', cardinality 0..*).
+'siddhi::PropertySeparator' (role 'siddhi_PropertySeparator', cardinality 0..*) is associated with 'siddhi::PropertyName' (role 'siddhi_PropertyName102', cardinality 0..*).
+'siddhi::Source1' (role 'siddhi_Source1', cardinality 0..*) is associated with 'siddhi::DefinitionStream' (role 'siddhi_DefinitionStream24', cardinality 0..*).
+'siddhi::DefinitionStream' (role 'siddhi_DefinitionStream', cardinality 0..*) is associated with 'siddhi::ExecutionPlan' (role 'siddhi_ExecutionPlan4', cardinality 0..*).
+'siddhi::SiddhiQL' (role 'siddhi_SiddhiQL', cardinality 0..*) is associated with 'siddhi::ExecutionPlan' (role 'siddhi_ExecutionPlan', cardinality 0..*).
+'siddhi::BasicAbsentPatternSource' (role 'siddhi_BasicAbsentPatternSource270', cardinality 0..*) is associated with 'siddhi::RightAbsentSequenceSource' (role 'siddhi_RightAbsentSequenceSource269', cardinality 0..*).
+'siddhi::EverySequenceSourceChain' (role 'siddhi_EverySequenceSourceChain218', cardinality 0..*) is associated with 'siddhi::SequenceSourceChain' (role 'siddhi_SequenceSourceChain', cardinality 0..*).
+'siddhi::FunctionOperation' (role 'siddhi_FunctionOperation472', cardinality 0..*) is associated with 'siddhi::BasicSourceStreamHandlers1' (role 'siddhi_BasicSourceStreamHandlers1471', cardinality 0..*).
+'siddhi::MainSource' (role 'siddhi_MainSource461', cardinality 0..*) is associated with 'siddhi::BasicSourceStreamHandlers1' (role 'siddhi_BasicSourceStreamHandlers1', cardinality 0..*).
+'siddhi::ON' (role 'siddhi_ON621', cardinality 0..*) is associated with 'siddhi::Keyword' (role 'siddhi_Keyword620', cardinality 0..*).
+'siddhi::JoinStream' (role 'siddhi_JoinStream415', cardinality 0..*) is associated with 'siddhi::JoinSource' (role 'siddhi_JoinSource416', cardinality 0..*).
+'siddhi::IN' (role 'siddhi_IN', cardinality 0..*) is associated with 'siddhi::MathInOperation' (role 'siddhi_MathInOperation', cardinality 0..*).
+'siddhi::Source1' (role 'siddhi_Source1110', cardinality 0..*) is associated with 'siddhi::Source' (role 'siddhi_Source', cardinality 0..*).
+'siddhi::DefinitionAggregation' (role 'siddhi_DefinitionAggregation78', cardinality 0..*) is associated with 'siddhi::EVERY' (role 'siddhi_EVERY79', cardinality 0..*).
+'siddhi::QueryInput' (role 'siddhi_QueryInput285', cardinality 0..*) is associated with 'siddhi::AnonymousStream' (role 'siddhi_AnonymousStream284', cardinality 0..*).
+'siddhi::UNIDIRECTIONAL' (role 'siddhi_UNIDIRECTIONAL', cardinality 0..*) is associated with 'siddhi::JoinStream' (role 'siddhi_JoinStream418', cardinality 0..*).
+'siddhi::HavingExpr' (role 'siddhi_HavingExpr', cardinality 0..*) is associated with 'siddhi::QuerySection' (role 'siddhi_QuerySection184', cardinality 0..*).
+'siddhi::AttributeReference' (role 'siddhi_AttributeReference531', cardinality 0..*) is associated with 'siddhi::FeaturesOrOutAttrReference' (role 'siddhi_FeaturesOrOutAttrReference', cardinality 0..*).
+'siddhi::ExecPartition' (role 'siddhi_ExecPartition112', cardinality 0..*) is associated with 'siddhi::Annotation' (role 'siddhi_Annotation113', cardinality 0..*).
+'siddhi::JoinStream' (role 'siddhi_JoinStream', cardinality 0..*) is associated with 'siddhi::QueryInput' (role 'siddhi_QueryInput202', cardinality 0..*).
+'siddhi::StandardStatefulSource' (role 'siddhi_StandardStatefulSource', cardinality 0..*) is associated with 'siddhi::PatternSource' (role 'siddhi_PatternSource330', cardinality 0..*).
+'siddhi::EveryAbsentSequenceSourceChain' (role 'siddhi_EveryAbsentSequenceSourceChain220', cardinality 0..*) is associated with 'siddhi::AbsentSequenceSourceChain' (role 'siddhi_AbsentSequenceSourceChain', cardinality 0..*).
+'siddhi::EveryPatternSourceChain' (role 'siddhi_EveryPatternSourceChain304', cardinality 0..*) is associated with 'siddhi::WithinTime' (role 'siddhi_WithinTime305', cardinality 0..*).
+'siddhi::LeftAbsentPatternSource' (role 'siddhi_LeftAbsentPatternSource378', cardinality 0..*) is associated with 'siddhi::AbsentPatternSourceChain' (role 'siddhi_AbsentPatternSourceChain379', cardinality 0..*).
+'siddhi::LeftAbsentPatternSource' (role 'siddhi_LeftAbsentPatternSource382', cardinality 0..*) is associated with 'siddhi::LeftAbsentPatternSource' (role 'siddhi_LeftAbsentPatternSource380', cardinality 0..*).
+'siddhi::RightAbsentPatternSource' (role 'siddhi_RightAbsentPatternSource407', cardinality 0..*) is associated with 'siddhi::EveryPatternSourceChain' (role 'siddhi_EveryPatternSourceChain408', cardinality 0..*).
+'siddhi::QueryInput' (role 'siddhi_QueryInput', cardinality 0..*) is associated with 'siddhi::Query' (role 'siddhi_Query138', cardinality 0..*).
+'siddhi::QueryInput' (role 'siddhi_QueryInput208', cardinality 0..*) is associated with 'siddhi::AnonymousStream' (role 'siddhi_AnonymousStream', cardinality 0..*).
+'siddhi::StringValue' (role 'siddhi_StringValue', cardinality 0..*) is associated with 'siddhi::DefinitionTrigger' (role 'siddhi_DefinitionTrigger56', cardinality 0..*).
+'siddhi::BasicAbsentPatternSource' (role 'siddhi_BasicAbsentPatternSource356', cardinality 0..*) is associated with 'siddhi::LogicalAbsentStatefulSource' (role 'siddhi_LogicalAbsentStatefulSource355', cardinality 0..*).
+'siddhi::WithinTime' (role 'siddhi_WithinTime322', cardinality 0..*) is associated with 'siddhi::PatternSourceChain' (role 'siddhi_PatternSourceChain321', cardinality 0..*).
+'siddhi::LeftAbsentSequenceSource' (role 'siddhi_LeftAbsentSequenceSource248', cardinality 0..*) is associated with 'siddhi::BasicAbsentPatternSource' (role 'siddhi_BasicAbsentPatternSource249', cardinality 0..*).
+'siddhi::RightAbsentSequenceSource' (role 'siddhi_RightAbsentSequenceSource646', cardinality 0..*) is associated with 'siddhi::RightAbsentSequenceSource1' (role 'siddhi_RightAbsentSequenceSource1', cardinality 0..*).
+'siddhi::Query' (role 'siddhi_Query135', cardinality 0..*) is associated with 'siddhi::Annotation' (role 'siddhi_Annotation136', cardinality 0..*).
+'siddhi::WithinTime' (role 'siddhi_WithinTime264', cardinality 0..*) is associated with 'siddhi::RightAbsentSequenceSource' (role 'siddhi_RightAbsentSequenceSource263', cardinality 0..*).
+'siddhi::Name' (role 'siddhi_Name', cardinality 0..*) is associated with 'siddhi::Annotation' (role 'siddhi_Annotation85', cardinality 0..*).
+'siddhi::EveryAbsentSequenceSourceChain' (role 'siddhi_EveryAbsentSequenceSourceChain', cardinality 0..*) is associated with 'siddhi::SequenceStream' (role 'siddhi_SequenceStream212', cardinality 0..*).
+'siddhi::WithinTime' (role 'siddhi_WithinTime282', cardinality 0..*) is associated with 'siddhi::SequenceSource' (role 'siddhi_SequenceSource281', cardinality 0..*).
+'siddhi::LogicalAbsentStatefulSource' (role 'siddhi_LogicalAbsentStatefulSource348', cardinality 0..*) is associated with 'siddhi::AND' (role 'siddhi_AND349', cardinality 0..*).
+'siddhi::AttributeReference' (role 'siddhi_AttributeReference520', cardinality 0..*) is associated with 'siddhi::SourceOrEventReference' (role 'siddhi_SourceOrEventReference', cardinality 0..*).
+'siddhi::PartitionWithStream' (role 'siddhi_PartitionWithStream', cardinality 0..*) is associated with 'siddhi::ExecPartition' (role 'siddhi_ExecPartition115', cardinality 0..*).
+'siddhi::MinuteValue' (role 'siddhi_MinuteValue', cardinality 0..*) is associated with 'siddhi::TimeValue' (role 'siddhi_TimeValue595', cardinality 0..*).
+'siddhi::AppAnnotation' (role 'siddhi_AppAnnotation', cardinality 0..*) is associated with 'siddhi::ExecutionPlan' (role 'siddhi_ExecutionPlan2', cardinality 0..*).
+'siddhi::StringValue' (role 'siddhi_StringValue97', cardinality 0..*) is associated with 'siddhi::PropertyValue' (role 'siddhi_PropertyValue96', cardinality 0..*).
+'siddhi::AttributeReference' (role 'siddhi_AttributeReference522', cardinality 0..*) is associated with 'siddhi::AttributeIndex' (role 'siddhi_AttributeIndex523', cardinality 0..*).
+'siddhi::Attribute' (role 'siddhi_Attribute', cardinality 0..*) is associated with 'siddhi::OutAttr' (role 'siddhi_OutAttr197', cardinality 0..*).
+'siddhi::WithinTime' (role 'siddhi_WithinTime385', cardinality 0..*) is associated with 'siddhi::LeftAbsentPatternSource' (role 'siddhi_LeftAbsentPatternSource384', cardinality 0..*).
+'siddhi::Target' (role 'siddhi_Target', cardinality 0..*) is associated with 'siddhi::QueryOutput' (role 'siddhi_QueryOutput149', cardinality 0..*).
+'siddhi::LogicalAbsentStatefulSource' (role 'siddhi_LogicalAbsentStatefulSource358', cardinality 0..*) is associated with 'siddhi::BasicAbsentPatternSource' (role 'siddhi_BasicAbsentPatternSource359', cardinality 0..*).
+'siddhi::LeftAbsentPatternSource' (role 'siddhi_LeftAbsentPatternSource387', cardinality 0..*) is associated with 'siddhi::EveryAbsentPatternSource' (role 'siddhi_EveryAbsentPatternSource388', cardinality 0..*).
+'siddhi::Per1' (role 'siddhi_Per1441', cardinality 0..*) is associated with 'siddhi::Expression' (role 'siddhi_Expression442', cardinality 0..*).
+'siddhi::AnonymousStream' (role 'siddhi_AnonymousStream293', cardinality 0..*) is associated with 'siddhi::OutputEventType' (role 'siddhi_OutputEventType294', cardinality 0..*).
+'siddhi::Source' (role 'siddhi_Source122', cardinality 0..*) is associated with 'siddhi::ConditionRanges' (role 'siddhi_ConditionRanges121', cardinality 0..*).
+'siddhi::BasicSourceStreamHandlers1' (role 'siddhi_BasicSourceStreamHandlers1468', cardinality 0..*) is associated with 'siddhi::FunctionOperation' (role 'siddhi_FunctionOperation469', cardinality 0..*).
+'siddhi::ExecutionPlan' (role 'siddhi_ExecutionPlan10', cardinality 0..*) is associated with 'siddhi::DefinitionTrigger' (role 'siddhi_DefinitionTrigger', cardinality 0..*).
+'siddhi::EveryPatternSourceChain' (role 'siddhi_EveryPatternSourceChain297', cardinality 0..*) is associated with 'siddhi::EveryPatternSourceChain' (role 'siddhi_EveryPatternSourceChain299', cardinality 0..*).

@@ -1,0 +1,16 @@
+The model has 6 class(es).
+The class 'AA' has no attributes.
+The class 'formalmetamodel::A' has the following attributes: 'name' of type str.
+The class 'formalmetamodel::AA' has no attributes.
+The class 'formalmetamodel::C' has the following attributes: 'name' of type str.
+The class 'formalmetamodel::B' has the following attributes: 'name' of type str.
+The class 'formalmetamodel::FormalModel' has no attributes.
+'formalmetamodel::A' is a specialization of 'AA'.
+'formalmetamodel::A' (role 'formalmetamodel_A', cardinality 0..*) is associated with 'formalmetamodel::B' (role 'formalmetamodel_B', cardinality 0..*).
+'formalmetamodel::B' (role 'formalmetamodel_B8', cardinality 0..*) is associated with 'formalmetamodel::FormalModel' (role 'formalmetamodel_FormalModel', cardinality 0..*).
+'formalmetamodel::A' (role 'formalmetamodel_A3', cardinality 0..*) is associated with 'formalmetamodel::B' (role 'formalmetamodel_B2', cardinality 0..*).
+'formalmetamodel::A' (role 'formalmetamodel_A11', cardinality 0..*) is associated with 'formalmetamodel::FormalModel' (role 'formalmetamodel_FormalModel10', cardinality 0..*).
+'formalmetamodel::A' (role 'formalmetamodel_A19', cardinality 0..*) is associated with 'formalmetamodel::C' (role 'formalmetamodel_C18', cardinality 0..*).
+'formalmetamodel::B' (role 'formalmetamodel_B6', cardinality 0..*) is associated with 'formalmetamodel::B' (role 'formalmetamodel_B4', cardinality 0..*).
+'formalmetamodel::C' (role 'formalmetamodel_C16', cardinality 0..*) is associated with 'formalmetamodel::C' (role 'formalmetamodel_C14', cardinality 0..*).
+'formalmetamodel::C' (role 'formalmetamodel_C', cardinality 0..*) is associated with 'formalmetamodel::FormalModel' (role 'formalmetamodel_FormalModel13', cardinality 0..*).

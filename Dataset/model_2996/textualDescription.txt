@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'typeB::BlockB' has no attributes.
+The class 'typeB::OutPortB' has no attributes.
+The class 'typeB::PortB' has the following attributes: 'id' of type int.
+The class 'PortB' has no attributes.
+The class 'typeB::InPortB' has no attributes.
+'typeB::OutPortB' is a specialization of 'PortB'.
+'typeB::InPortB' is a specialization of 'PortB'.
+'typeB::InPortB' (role 'typeB_InPortB', cardinality 0..*) is associated with 'typeB::BlockB' (role 'typeB_BlockB', cardinality 0..*).
+'typeB::OutPortB' (role 'typeB_OutPortB4', cardinality 0..*) is associated with 'typeB::BlockB' (role 'typeB_BlockB5', cardinality 0..*).
+'typeB::BlockB' (role 'typeB_BlockB2', cardinality 0..*) is associated with 'typeB::OutPortB' (role 'typeB_OutPortB', cardinality 0..*).

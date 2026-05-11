@@ -1,0 +1,15 @@
+The model has 9 class(es).
+The class 'inheritance::Sub2Subclass' has no attributes.
+The class 'Subclass1' has no attributes.
+The class 'inheritance::Subclass2' has no attributes.
+The class 'inheritance::Superclass' has no attributes.
+The class 'inheritance::Subclass1' has no attributes.
+The class 'Superclass' has no attributes.
+The class 'inheritance::Subclass3' has no attributes.
+The class 'Subclass2' has no attributes.
+The class 'inheritance::Sub1Subclass' has no attributes.
+'inheritance::Subclass2' is a specialization of 'Superclass'.
+'inheritance::Subclass3' is a specialization of 'Superclass'.
+'inheritance::Sub2Subclass' is a specialization of 'Subclass2'.
+'inheritance::Sub1Subclass' is a specialization of 'Subclass1'.
+'inheritance::Subclass1' is a specialization of 'Superclass'.

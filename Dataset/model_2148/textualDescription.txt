@@ -1,0 +1,91 @@
+The model has 29 class(es).
+The class 'AssociationTarget' has no attributes.
+The class 'bpmn::Artifact' has no attributes.
+The class 'bpmn::ArtifactsContainer' has no attributes.
+The class 'bpmn::SubProcess' has the following attributes: 'isTransaction' of type str; 'adhoc' of type str.
+The class 'bpmn::AssociationTarget' has no attributes.
+The class 'bpmn::TextAnnotation' has no attributes.
+The class 'ArtifactsContainer' has no attributes.
+The class 'bpmn::Activity' has the following attributes: 'activityType' of type str; 'looping' of type str.
+The class 'bpmn::DataObject' has no attributes.
+The class 'Artifact' has no attributes.
+The class 'Graph' has no attributes.
+The class 'Vertex' has no attributes.
+The class 'bpmn::SequenceEdge' has the following attributes: 'isDefault' of type str; 'conditionType' of type str.
+The class 'Activity' has no attributes.
+The class 'bpmn::NamedBpmnObject' has the following attributes: 'name' of type str; 'documentation' of type str; 'ncname' of type str.
+The class 'NamedBpmnObject' has no attributes.
+The class 'bpmn::MessageVertex' has the following attributes: 'orderedMessages' of type str.
+The class 'bpmn::Pool' has no attributes.
+The class 'bpmn::Identifiable' has the following attributes: 'iD' of type str.
+The class 'MessageVertex' has no attributes.
+The class 'bpmn::BpmnDiagram' has the following attributes: 'title' of type str; 'author' of type str.
+The class 'bpmn::Group' has no attributes.
+The class 'bpmn::Graph' has no attributes.
+The class 'Identifiable' has no attributes.
+The class 'bpmn::Association' has the following attributes: 'direction' of type str.
+The class 'EModelElement' has no attributes.
+The class 'bpmn::MessagingEdge' has no attributes.
+The class 'bpmn::Lane' has no attributes.
+The class 'bpmn::Vertex' has no attributes.
+The enumeration 'SequenceFlowConditionType' has the following literals: 'Default', 'Expression', 'None_'.
+The enumeration 'DirectionType' has the following literals: 'From', 'None_', 'Both', 'To'.
+The enumeration 'ActivityType' has the following literals: 'GatewayParallel', 'EventIntermediateLink', 'EventIntermediateError', 'EventEndMultiple', 'EventEndEmpty', 'EventEndMessage', 'EventIntermediateTimer', 'SubProcess', 'GatewayDataBasedInclusive', 'GatewayEventBasedExclusive', 'EventEndTerminate', 'EventStartEmpty', 'EventStartLink', 'EventIntermediateCompensation', 'EventStartRule', 'EventStartSignal', 'EventIntermediateMultiple', 'EventIntermediateCancel', 'EventEndError', 'EventIntermediateEmpty', 'EventIntermediateMessage', 'EventEndCancel', 'EventStartTimer', 'EventIntermediateRule', 'EventEndLink', 'EventStartMultiple', 'EventIntermediateSignal', 'EventStartMessage', 'GatewayDataBasedExclusive', 'EventEndSignal', 'EventEndCompensation', 'GatewayComplex', 'Task'.
+'bpmn::SequenceEdge' is a specialization of 'NamedBpmnObject'.
+'bpmn::BpmnDiagram' is a specialization of 'ArtifactsContainer'.
+'bpmn::Activity' is a specialization of 'MessageVertex'.
+'bpmn::Pool' is a specialization of 'MessageVertex'.
+'bpmn::MessagingEdge' is a specialization of 'AssociationTarget'.
+'bpmn::Identifiable' is a specialization of 'EModelElement'.
+'bpmn::SubProcess' is a specialization of 'Activity'.
+'bpmn::ArtifactsContainer' is a specialization of 'NamedBpmnObject'.
+'bpmn::MessagingEdge' is a specialization of 'NamedBpmnObject'.
+'bpmn::Lane' is a specialization of 'AssociationTarget'.
+'bpmn::Artifact' is a specialization of 'NamedBpmnObject'.
+'bpmn::Vertex' is a specialization of 'AssociationTarget'.
+'bpmn::Graph' is a specialization of 'ArtifactsContainer'.
+'bpmn::SubProcess' is a specialization of 'Graph'.
+'bpmn::MessageVertex' is a specialization of 'NamedBpmnObject'.
+'bpmn::Graph' is a specialization of 'AssociationTarget'.
+'bpmn::Pool' is a specialization of 'Graph'.
+'bpmn::AssociationTarget' is a specialization of 'Identifiable'.
+'bpmn::Activity' is a specialization of 'Vertex'.
+'bpmn::Artifact' is a specialization of 'Identifiable'.
+'bpmn::SequenceEdge' is a specialization of 'AssociationTarget'.
+'bpmn::MessageVertex' is a specialization of 'Identifiable'.
+'bpmn::Association' is a specialization of 'EModelElement'.
+'bpmn::TextAnnotation' is a specialization of 'Artifact'.
+'bpmn::Lane' is a specialization of 'NamedBpmnObject'.
+'bpmn::DataObject' is a specialization of 'Artifact'.
+'bpmn::Group' is a specialization of 'Artifact'.
+'bpmn::BpmnDiagram' is a specialization of 'Identifiable'.
+'bpmn::Artifact' (role 'source', cardinality 0..*) is associated with 'bpmn::Association' (role 'Association', cardinality 0..*).
+'bpmn::Graph' (role 'graph', cardinality 0..*) is associated with 'bpmn::Vertex' (role 'Vertex', cardinality 0..*).
+'bpmn::MessageVertex' (role 'MessageVertex', cardinality 0..*) is associated with 'bpmn::MessagingEdge' (role 'outgoingMessages', cardinality 0..*).
+'bpmn::Association' (role 'associations', cardinality 0..*) is associated with 'bpmn::Artifact' (role 'Artifact8', cardinality 0..*).
+'bpmn::AssociationTarget' (role 'AssociationTarget', cardinality 0..*) is associated with 'bpmn::Association' (role 'associations10', cardinality 0..*).
+'bpmn::MessagingEdge' (role 'MessagingEdge30', cardinality 0..*) is associated with 'bpmn::MessageVertex' (role 'source29', cardinality 0..*).
+'bpmn::BpmnDiagram' (role 'bpmnDiagram', cardinality 0..*) is associated with 'bpmn::Pool' (role 'Pool', cardinality 0..*).
+'bpmn::ArtifactsContainer' (role 'artifactsContainer', cardinality 0..*) is associated with 'bpmn::Artifact' (role 'Artifact', cardinality 0..*).
+'bpmn::MessageVertex' (role 'MessageVertex33', cardinality 0..*) is associated with 'bpmn::MessagingEdge' (role 'incomingMessages', cardinality 0..*).
+'bpmn::Vertex' (role 'source47', cardinality 0..*) is associated with 'bpmn::SequenceEdge' (role 'SequenceEdge48', cardinality 0..*).
+'bpmn::SequenceEdge' (role 'SequenceEdge', cardinality 0..*) is associated with 'bpmn::Graph' (role 'graph18', cardinality 0..*).
+'bpmn::Lane' (role 'lanes', cardinality 0..*) is associated with 'bpmn::Activity' (role 'Activity21', cardinality 0..*).
+'bpmn::Activity' (role 'eventHandlers', cardinality 0..*) is associated with 'bpmn::SubProcess' (role 'SubProcess', cardinality 0..*).
+'bpmn::Lane' (role 'Lane', cardinality 0..*) is associated with 'bpmn::Activity' (role 'activities2', cardinality 0..*).
+'bpmn::Vertex' (role 'vertices', cardinality 0..*) is associated with 'bpmn::Graph' (role 'Graph53', cardinality 0..*).
+'bpmn::Artifact' (role 'artifacts', cardinality 0..*) is associated with 'bpmn::ArtifactsContainer' (role 'ArtifactsContainer', cardinality 0..*).
+'bpmn::MessagingEdge' (role 'messages', cardinality 0..*) is associated with 'bpmn::BpmnDiagram' (role 'BpmnDiagram', cardinality 0..*).
+'bpmn::Vertex' (role 'Vertex42', cardinality 0..*) is associated with 'bpmn::SequenceEdge' (role 'incomingEdges', cardinality 0..*).
+'bpmn::BpmnDiagram' (role 'bpmnDiagram15', cardinality 0..*) is associated with 'bpmn::MessagingEdge' (role 'MessagingEdge', cardinality 0..*).
+'bpmn::Pool' (role 'pool', cardinality 0..*) is associated with 'bpmn::Lane' (role 'Lane36', cardinality 0..*).
+'bpmn::MessageVertex' (role 'target26', cardinality 0..*) is associated with 'bpmn::MessagingEdge' (role 'MessagingEdge27', cardinality 0..*).
+'bpmn::SequenceEdge' (role 'outgoingEdges', cardinality 0..*) is associated with 'bpmn::Vertex' (role 'Vertex40', cardinality 0..*).
+'bpmn::Pool' (role 'pools', cardinality 0..*) is associated with 'bpmn::BpmnDiagram' (role 'BpmnDiagram38', cardinality 0..*).
+'bpmn::Pool' (role 'Pool24', cardinality 0..*) is associated with 'bpmn::Lane' (role 'lanes23', cardinality 0..*).
+'bpmn::Group' (role 'Group', cardinality 0..*) is associated with 'bpmn::Activity' (role 'activities', cardinality 0..*).
+'bpmn::Activity' (role 'Activity', cardinality 0..*) is associated with 'bpmn::Group' (role 'groups', cardinality 0..*).
+'bpmn::Graph' (role 'Graph', cardinality 0..*) is associated with 'bpmn::SequenceEdge' (role 'sequenceEdges', cardinality 0..*).
+'bpmn::Vertex' (role 'target50', cardinality 0..*) is associated with 'bpmn::SequenceEdge' (role 'SequenceEdge51', cardinality 0..*).
+'bpmn::AssociationTarget' (role 'target', cardinality 0..*) is associated with 'bpmn::Association' (role 'Association12', cardinality 0..*).
+'bpmn::Activity' (role 'Activity45', cardinality 0..*) is associated with 'bpmn::SubProcess' (role 'eventHandlerFor', cardinality 0..*).

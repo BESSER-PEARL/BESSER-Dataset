@@ -1,0 +1,55 @@
+The model has 29 class(es).
+The class 'rsgf::mw::Middleware' has no attributes.
+The class 'rsgf::vm::VM' has the following attributes: 'ID' of type str; 'protocol' of type str.
+The class 'rsgf::tree::Simulator' has no attributes.
+The class 'rsgf::tree::P::Simulator' has no attributes.
+The class 'rsgf::tree::NodeCoordinator' has no attributes.
+The class 'Coordinator' has no attributes.
+The class 'rsgf::tree::Node' has the following attributes: 'ID' of type str.
+The class 'Tree' has no attributes.
+The class 'rsgf::skeleton::Skeleton' has the following attributes: 'ID' of type str.
+The class 'Skeleton' has no attributes.
+The class 'rsgf::tree::P::Coordinator' has no attributes.
+The class 'rsgf::bundle::Process' has the following attributes: 'ID' of type str.
+The class 'rsgf::tree::PDEVSCoordinator' has no attributes.
+The class 'Process' has no attributes.
+The class 'Root' has no attributes.
+The class 'rsgf::tree::Tree' has the following attributes: 'ID' of type str.
+The class 'Node' has no attributes.
+The class 'rsgf::tree::Coordinator' has no attributes.
+The class 'VM' has no attributes.
+The class 'rsgf::tree::Root' has no attributes.
+The class 'Simulator' has no attributes.
+The class 'rsgf::tree::BasicNode' has the following attributes: 'modelName' of type str.
+The class 'rsgf::tree::CDEVSCoordinator' has no attributes.
+The class 'rsgf::bundle::Bundle' has the following attributes: 'ID' of type str.
+The class 'rsgf::tree::PDEVSSimulator' has no attributes.
+The class 'Middleware' has no attributes.
+The class 'rsgf::tree::CDEVSSimulator' has no attributes.
+The class 'BasicNode' has no attributes.
+The class 'rsgf::tree::FlatCoordinator' has no attributes.
+'rsgf::tree::P::Simulator' is a specialization of 'Simulator'.
+'rsgf::tree::PDEVSSimulator' is a specialization of 'Simulator'.
+'rsgf::tree::PDEVSCoordinator' is a specialization of 'Coordinator'.
+'rsgf::tree::CDEVSSimulator' is a specialization of 'Simulator'.
+'rsgf::tree::Simulator' is a specialization of 'BasicNode'.
+'rsgf::tree::BasicNode' is a specialization of 'Node'.
+'rsgf::tree::Coordinator' is a specialization of 'BasicNode'.
+'rsgf::tree::NodeCoordinator' is a specialization of 'Coordinator'.
+'rsgf::tree::P::Coordinator' is a specialization of 'Coordinator'.
+'rsgf::tree::Root' is a specialization of 'Node'.
+'rsgf::tree::CDEVSCoordinator' is a specialization of 'Coordinator'.
+'rsgf::tree::FlatCoordinator' is a specialization of 'Coordinator'.
+'Tree' (role 'Tree', cardinality 0..*) is associated with 'rsgf::skeleton::Skeleton' (role 'rsgf_skeleton_Skeleton', cardinality 0..*).
+'rsgf::skeleton::Skeleton' (role 'rsgf_skeleton_Skeleton10', cardinality 0..*) is associated with 'Root' (role 'Root11', cardinality 0..*).
+'rsgf::bundle::Bundle' (role 'rsgf_bundle_Bundle', cardinality 0..*) is associated with 'Skeleton' (role 'Skeleton', cardinality 0..*).
+'rsgf::mw::Middleware' (role 'rsgf_mw_Middleware', cardinality 0..*) is associated with 'Process' (role 'Process19', cardinality 0..*).
+'rsgf::tree::Tree' (role 'rsgf_tree_Tree2', cardinality 0..*) is associated with 'Coordinator' (role 'Coordinator', cardinality 0..*).
+'Simulator' (role 'Simulator', cardinality 0..*) is associated with 'rsgf::tree::Tree' (role 'rsgf_tree_Tree4', cardinality 0..*).
+'rsgf::bundle::Bundle' (role 'rsgf_bundle_Bundle14', cardinality 0..*) is associated with 'Process' (role 'Process', cardinality 0..*).
+'rsgf::bundle::Process' (role 'rsgf_bundle_Process', cardinality 0..*) is associated with 'Node' (role 'Node', cardinality 0..*).
+'Root' (role 'Root', cardinality 0..*) is associated with 'rsgf::tree::Tree' (role 'rsgf_tree_Tree', cardinality 0..*).
+'rsgf::tree::Coordinator' (role 'rsgf_tree_Coordinator', cardinality 0..*) is associated with 'BasicNode' (role 'BasicNode7', cardinality 0..*).
+'VM' (role 'VM', cardinality 0..*) is associated with 'rsgf::mw::Middleware' (role 'rsgf_mw_Middleware21', cardinality 0..*).
+'rsgf::tree::Root' (role 'rsgf_tree_Root', cardinality 0..*) is associated with 'BasicNode' (role 'BasicNode', cardinality 0..*).
+'Middleware' (role 'Middleware', cardinality 0..*) is associated with 'rsgf::bundle::Process' (role 'rsgf_bundle_Process17', cardinality 0..*).

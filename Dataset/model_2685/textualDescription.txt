@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'simplecont::C' has the following attributes: 'id' of type str.
+The class 'simplecont::A' has the following attributes: 'name' of type str.
+The class 'simplecont::B' has the following attributes: 'name' of type str.
+The class 'simplecont::X' has no attributes.
+'simplecont::A' (role 'simplecont_A7', cardinality 0..*) is associated with 'simplecont::X' (role 'simplecont_X', cardinality 0..*).
+'simplecont::C' (role 'simplecont_C', cardinality 0..*) is associated with 'simplecont::A' (role 'simplecont_A2', cardinality 0..*).
+'simplecont::A' (role 'simplecont_A', cardinality 0..*) is associated with 'simplecont::B' (role 'simplecont_B', cardinality 0..*).
+'simplecont::B' (role 'simplecont_B5', cardinality 0..*) is associated with 'simplecont::C' (role 'simplecont_C4', cardinality 0..*).

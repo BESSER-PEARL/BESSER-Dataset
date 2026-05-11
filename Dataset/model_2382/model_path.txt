@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset/repos/adilinam/QVTdCaseStudy/org.eclipse.qvtd.build.etl.tests/src/org/eclipse/qvtd/build/etl/tests/UmlToRdbms/SimpleUMLtoRDBMS.ecore

@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'lhs::C' has the following attributes: 'c' of type str.
+The class 'lhs::A' has the following attributes: 'a' of type str.
+The class 'lhs::B' has the following attributes: 'b' of type str.
+'lhs::A' (role 'lhs_A', cardinality 0..*) is associated with 'lhs::B' (role 'lhs_B', cardinality 0..*).
+'lhs::B' (role 'lhs_B5', cardinality 0..*) is associated with 'lhs::C' (role 'lhs_C4', cardinality 0..*).
+'lhs::A' (role 'lhs_A2', cardinality 0..*) is associated with 'lhs::C' (role 'lhs_C', cardinality 0..*).

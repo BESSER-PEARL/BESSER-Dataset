@@ -1,0 +1,34 @@
+The model has 16 class(es).
+The class 'dependability2stochasticpetrinet::Arc' has no attributes.
+The class 'dependability2stochasticpetrinet::RequiredElement2Connection' has no attributes.
+The class 'dependability2stochasticpetrinet::ErrorModel2PetriNetModule' has no attributes.
+The class 'dependability2stochasticpetrinet::TraceLink' has no attributes.
+The class 'dependability2stochasticpetrinet::RailwayContainer' has no attributes.
+The class 'dependability2stochasticpetrinet::RailwayContainer2PetriNet' has no attributes.
+The class 'dependability2stochasticpetrinet::Dependability2StochasticPetriNetTrace' has no attributes.
+The class 'dependability2stochasticpetrinet::PetriNet' has no attributes.
+The class 'PetriNetModuleTraceLink' has no attributes.
+The class 'dependability2stochasticpetrinet::Node' has no attributes.
+The class 'dependability2stochasticpetrinet::PetriNetModuleTraceLink' has no attributes.
+The class 'dependability2stochasticpetrinet::ErrorModel' has no attributes.
+The class 'dependability2stochasticpetrinet::Transition' has no attributes.
+The class 'dependability2stochasticpetrinet::Place' has no attributes.
+The class 'dependability2stochasticpetrinet::DependabilityModel' has no attributes.
+The class 'TraceLink' has no attributes.
+'dependability2stochasticpetrinet::ErrorModel2PetriNetModule' is a specialization of 'PetriNetModuleTraceLink'.
+'dependability2stochasticpetrinet::RequiredElement2Connection' is a specialization of 'PetriNetModuleTraceLink'.
+'dependability2stochasticpetrinet::RailwayContainer2PetriNet' is a specialization of 'TraceLink'.
+'dependability2stochasticpetrinet::PetriNetModuleTraceLink' is a specialization of 'TraceLink'.
+'dependability2stochasticpetrinet::Place' (role 'dependability2stochasticpetrinet_Place', cardinality 0..*) is associated with 'dependability2stochasticpetrinet::ErrorModel2PetriNetModule' (role 'dependability2stochasticpetrinet_ErrorModel2PetriNetModule7', cardinality 0..*).
+'dependability2stochasticpetrinet::RailwayContainer' (role 'dependability2stochasticpetrinet_RailwayContainer14', cardinality 0..*) is associated with 'dependability2stochasticpetrinet::RailwayContainer2PetriNet' (role 'dependability2stochasticpetrinet_RailwayContainer2PetriNet', cardinality 0..*).
+'dependability2stochasticpetrinet::PetriNetModuleTraceLink' (role 'dependability2stochasticpetrinet_PetriNetModuleTraceLink19', cardinality 0..*) is associated with 'dependability2stochasticpetrinet::Arc' (role 'dependability2stochasticpetrinet_Arc', cardinality 0..*).
+'dependability2stochasticpetrinet::Dependability2StochasticPetriNetTrace' (role 'dependability2stochasticpetrinet_Dependability2StochasticPetriNetTrace', cardinality 0..*) is associated with 'dependability2stochasticpetrinet::RailwayContainer' (role 'dependability2stochasticpetrinet_RailwayContainer', cardinality 0..*).
+'dependability2stochasticpetrinet::TraceLink' (role 'dependability2stochasticpetrinet_TraceLink', cardinality 0..*) is associated with 'dependability2stochasticpetrinet::Dependability2StochasticPetriNetTrace' (role 'dependability2stochasticpetrinet_Dependability2StochasticPetriNetTrace4', cardinality 0..*).
+'dependability2stochasticpetrinet::ErrorModel2PetriNetModule' (role 'dependability2stochasticpetrinet_ErrorModel2PetriNetModule', cardinality 0..*) is associated with 'dependability2stochasticpetrinet::ErrorModel' (role 'dependability2stochasticpetrinet_ErrorModel', cardinality 0..*).
+'dependability2stochasticpetrinet::RequiredElement2Connection' (role 'dependability2stochasticpetrinet_RequiredElement2Connection', cardinality 0..*) is associated with 'dependability2stochasticpetrinet::ErrorModel' (role 'dependability2stochasticpetrinet_ErrorModel21', cardinality 0..*).
+'dependability2stochasticpetrinet::PetriNetModuleTraceLink' (role 'dependability2stochasticpetrinet_PetriNetModuleTraceLink', cardinality 0..*) is associated with 'dependability2stochasticpetrinet::Node' (role 'dependability2stochasticpetrinet_Node', cardinality 0..*).
+'dependability2stochasticpetrinet::ErrorModel' (role 'dependability2stochasticpetrinet_ErrorModel24', cardinality 0..*) is associated with 'dependability2stochasticpetrinet::RequiredElement2Connection' (role 'dependability2stochasticpetrinet_RequiredElement2Connection23', cardinality 0..*).
+'dependability2stochasticpetrinet::ErrorModel2PetriNetModule' (role 'dependability2stochasticpetrinet_ErrorModel2PetriNetModule12', cardinality 0..*) is associated with 'dependability2stochasticpetrinet::Transition' (role 'dependability2stochasticpetrinet_Transition', cardinality 0..*).
+'dependability2stochasticpetrinet::PetriNet' (role 'dependability2stochasticpetrinet_PetriNet', cardinality 0..*) is associated with 'dependability2stochasticpetrinet::RailwayContainer2PetriNet' (role 'dependability2stochasticpetrinet_RailwayContainer2PetriNet16', cardinality 0..*).
+'dependability2stochasticpetrinet::DependabilityModel' (role 'dependability2stochasticpetrinet_DependabilityModel', cardinality 0..*) is associated with 'dependability2stochasticpetrinet::Dependability2StochasticPetriNetTrace' (role 'dependability2stochasticpetrinet_Dependability2StochasticPetriNetTrace2', cardinality 0..*).
+'dependability2stochasticpetrinet::Place' (role 'dependability2stochasticpetrinet_Place10', cardinality 0..*) is associated with 'dependability2stochasticpetrinet::ErrorModel2PetriNetModule' (role 'dependability2stochasticpetrinet_ErrorModel2PetriNetModule9', cardinality 0..*).

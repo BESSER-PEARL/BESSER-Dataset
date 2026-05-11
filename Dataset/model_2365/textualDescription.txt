@@ -1,0 +1,20 @@
+The model has 11 class(es).
+The class 'relational::Column' has no attributes.
+The class 'Table' has no attributes.
+The class 'RelationalEntity' has no attributes.
+The class 'relational::Key' has no attributes.
+The class 'relational::PrimaryKey' has no attributes.
+The class 'relational::Table' has no attributes.
+The class 'relational::Schema' has no attributes.
+The class 'relational::View' has no attributes.
+The class 'relational::RelationalEntity' has no attributes.
+The class 'Key' has no attributes.
+The class 'relational::ForeignKey' has no attributes.
+The enumeration 'SqlDataType' has the following literals: 'CHAR', 'DATE', 'VARCHAR', 'INTEGER'.
+'relational::Key' is a specialization of 'RelationalEntity'.
+'relational::Column' is a specialization of 'RelationalEntity'.
+'relational::PrimaryKey' is a specialization of 'Key'.
+'relational::Table' is a specialization of 'RelationalEntity'.
+'relational::ForeignKey' is a specialization of 'Key'.
+'relational::View' is a specialization of 'Table'.
+'relational::Schema' is a specialization of 'RelationalEntity'.

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/hallvard/emfacade/org.eclipse.gmt.emfacade.tests/src/org/eclipse/gmt/emfacade/swt/draw2d.ecore

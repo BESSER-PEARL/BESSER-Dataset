@@ -1,0 +1,31 @@
+The model has 12 class(es).
+The class 'kref::Named' has the following attributes: 'name' of type str.
+The class 'kref::K' has no attributes.
+The class 'B' has no attributes.
+The class 'kref::H' has no attributes.
+The class 'kref::F' has no attributes.
+The class 'kref::E' has no attributes.
+The class 'kref::A' has no attributes.
+The class 'kref::B' has no attributes.
+The class 'kref::G' has no attributes.
+The class 'Named' has no attributes.
+The class 'kref::J' has no attributes.
+The class 'kref::C' has no attributes.
+'kref::E' is a specialization of 'B'.
+'kref::C' is a specialization of 'Named'.
+'kref::A' is a specialization of 'Named'.
+'kref::K' is a specialization of 'Named'.
+'kref::H' is a specialization of 'Named'.
+'kref::J' is a specialization of 'Named'.
+'kref::B' is a specialization of 'Named'.
+'kref::F' is a specialization of 'Named'.
+'kref::E' is a specialization of 'Named'.
+'kref::G' is a specialization of 'Named'.
+'kref::J' (role 'kref_J', cardinality 0..*) is associated with 'kref::F' (role 'kref_F9', cardinality 0..*).
+'kref::G' (role 'kref_G14', cardinality 0..*) is associated with 'kref::H' (role 'kref_H', cardinality 0..*).
+'kref::K' (role 'kref_K12', cardinality 0..*) is associated with 'kref::F' (role 'kref_F11', cardinality 0..*).
+'kref::A' (role 'kref_A', cardinality 0..*) is associated with 'kref::B' (role 'kref_B', cardinality 0..*).
+'kref::E' (role 'kref_E', cardinality 0..*) is associated with 'kref::F' (role 'kref_F', cardinality 0..*).
+'kref::G' (role 'kref_G', cardinality 0..*) is associated with 'kref::B' (role 'kref_B6', cardinality 0..*).
+'kref::K' (role 'kref_K', cardinality 0..*) is associated with 'kref::A' (role 'kref_A2', cardinality 0..*).
+'kref::B' (role 'kref_B4', cardinality 0..*) is associated with 'kref::C' (role 'kref_C', cardinality 0..*).

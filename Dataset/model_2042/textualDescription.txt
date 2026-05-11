@@ -1,0 +1,209 @@
+The model has 66 class(es).
+The class 'urml::IfStatementOperation' has no attributes.
+The class 'urml::LocalVar' has no attributes.
+The class 'urml::GreaterThanOrEqual' has no attributes.
+The class 'urml::Port' has the following attributes: 'name' of type str; 'conjugated' of type bool.
+The class 'urml::Capsule' has the following attributes: 'root' of type bool; 'name' of type str.
+The class 'StringExpression' has no attributes.
+The class 'urml::Invoke' has no attributes.
+The class 'urml::Equal' has no attributes.
+The class 'urml::Trigger::in' has no attributes.
+The class 'urml::InformTimer' has no attributes.
+The class 'urml::GreaterThan' has no attributes.
+The class 'urml::WhileLoopOperation' has no attributes.
+The class 'urml::StateMachine' has no attributes.
+The class 'urml::Assignment' has no attributes.
+The class 'urml::NotBooleanExpression' has no attributes.
+The class 'urml::Trigger::out' has no attributes.
+The class 'StatementOperation' has no attributes.
+The class 'urml::NoOp' has no attributes.
+The class 'urml::ConditionalOrExpression' has no attributes.
+The class 'urml::LogStatement' has no attributes.
+The class 'urml::ActionCode' has no attributes.
+The class 'urml::Identifiable' has the following attributes: 'name' of type str; 'isBool' of type bool; 'isInt' of type bool.
+The class 'urml::TimerPort' has the following attributes: 'name' of type str.
+The class 'urml::Modulo' has no attributes.
+The class 'urml::ConditionalAndExpression' has no attributes.
+The class 'urml::Signal' has the following attributes: 'name' of type str.
+The class 'urml::Literal' has no attributes.
+The class 'Statement' has no attributes.
+The class 'urml::IntLiteral' has the following attributes: 'int' of type int.
+The class 'urml::Minus' has no attributes.
+The class 'urml::Connector' has no attributes.
+The class 'urml::Statement' has no attributes.
+The class 'urml::Variable' has the following attributes: 'assign' of type bool.
+The class 'urml::Divide' has no attributes.
+The class 'urml::LogPort' has the following attributes: 'name' of type str.
+The class 'urml::OperationCode' has no attributes.
+The class 'Expression' has no attributes.
+The class 'urml::LessThan' has no attributes.
+The class 'urml::BoolLiteral' has the following attributes: 'true' of type bool.
+The class 'urml::ConcatenateExpression' has no attributes.
+The class 'Literal' has no attributes.
+The class 'urml::Protocol' has the following attributes: 'name' of type str.
+The class 'urml::SendTrigger' has no attributes.
+The class 'Identifiable' has no attributes.
+The class 'urml::NotEqual' has no attributes.
+The class 'Assignable' has no attributes.
+The class 'urml::FunctionCall' has no attributes.
+The class 'urml::Assignable' has no attributes.
+The class 'urml::CapsuleInst' has the following attributes: 'name' of type str.
+The class 'urml::StringExpression' has the following attributes: 'str' of type str.
+The class 'urml::Attribute' has no attributes.
+The class 'urml::State::' has the following attributes: 'name' of type str; 'final' of type bool.
+The class 'urml::Operation' has the following attributes: 'name' of type str; 'isBool' of type bool; 'isVoid' of type bool; 'isInt' of type bool.
+The class 'urml::UnaryExpression' has no attributes.
+The class 'urml::Expression' has no attributes.
+The class 'urml::ReturnStatement' has no attributes.
+The class 'urml::Identifier' has no attributes.
+The class 'urml::Transition' has the following attributes: 'init' of type bool; 'universal' of type bool; 'name' of type str.
+The class 'urml::IfStatement' has no attributes.
+The class 'urml::Multiply' has no attributes.
+The class 'urml::Model' has the following attributes: 'name' of type str.
+The class 'urml::IncomingVariable' has no attributes.
+The class 'urml::LessThanOrEqual' has no attributes.
+The class 'urml::StatementOperation' has no attributes.
+The class 'urml::Plus' has no attributes.
+The class 'urml::WhileLoop' has no attributes.
+'urml::Plus' is a specialization of 'Expression'.
+'urml::NotBooleanExpression' is a specialization of 'Expression'.
+'urml::Literal' is a specialization of 'Expression'.
+'urml::IntLiteral' is a specialization of 'Literal'.
+'urml::SendTrigger' is a specialization of 'StatementOperation'.
+'urml::NoOp' is a specialization of 'StatementOperation'.
+'urml::Assignable' is a specialization of 'Identifiable'.
+'urml::Divide' is a specialization of 'Expression'.
+'urml::SendTrigger' is a specialization of 'Statement'.
+'urml::Assignment' is a specialization of 'StatementOperation'.
+'urml::BoolLiteral' is a specialization of 'Literal'.
+'urml::WhileLoopOperation' is a specialization of 'StatementOperation'.
+'urml::IfStatement' is a specialization of 'Statement'.
+'urml::LessThan' is a specialization of 'Expression'.
+'urml::ConcatenateExpression' is a specialization of 'StringExpression'.
+'urml::Invoke' is a specialization of 'Statement'.
+'urml::FunctionCall' is a specialization of 'Literal'.
+'urml::Invoke' is a specialization of 'StatementOperation'.
+'urml::Modulo' is a specialization of 'Expression'.
+'urml::Variable' is a specialization of 'Statement'.
+'urml::LocalVar' is a specialization of 'Assignable'.
+'urml::NotEqual' is a specialization of 'Expression'.
+'urml::LogStatement' is a specialization of 'Statement'.
+'urml::IfStatementOperation' is a specialization of 'StatementOperation'.
+'urml::InformTimer' is a specialization of 'Statement'.
+'urml::ConditionalAndExpression' is a specialization of 'Expression'.
+'urml::InformTimer' is a specialization of 'StatementOperation'.
+'urml::Multiply' is a specialization of 'Expression'.
+'urml::Minus' is a specialization of 'Expression'.
+'urml::Equal' is a specialization of 'Expression'.
+'urml::Variable' is a specialization of 'StatementOperation'.
+'urml::LessThanOrEqual' is a specialization of 'Expression'.
+'urml::NoOp' is a specialization of 'Statement'.
+'urml::IncomingVariable' is a specialization of 'Identifiable'.
+'urml::UnaryExpression' is a specialization of 'Expression'.
+'urml::Assignment' is a specialization of 'Statement'.
+'urml::ConditionalOrExpression' is a specialization of 'Expression'.
+'urml::Identifier' is a specialization of 'Expression'.
+'urml::LogStatement' is a specialization of 'StatementOperation'.
+'urml::Attribute' is a specialization of 'Assignable'.
+'urml::GreaterThanOrEqual' is a specialization of 'Expression'.
+'urml::GreaterThan' is a specialization of 'Expression'.
+'urml::WhileLoop' is a specialization of 'Statement'.
+'urml::ReturnStatement' is a specialization of 'StatementOperation'.
+'urml::ActionCode' (role 'urml_ActionCode82', cardinality 0..*) is associated with 'urml::Transition' (role 'urml_Transition81', cardinality 0..*).
+'urml::Capsule' (role 'urml_Capsule28', cardinality 0..*) is associated with 'urml::Operation' (role 'urml_Operation', cardinality 0..*).
+'urml::CapsuleInst' (role 'urml_CapsuleInst41', cardinality 0..*) is associated with 'urml::Connector' (role 'urml_Connector40', cardinality 0..*).
+'urml::GreaterThanOrEqual' (role 'urml_GreaterThanOrEqual195', cardinality 0..*) is associated with 'urml::Expression' (role 'urml_Expression196', cardinality 0..*).
+'urml::Protocol' (role 'urml_Protocol38', cardinality 0..*) is associated with 'urml::Port' (role 'urml_Port37', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression102', cardinality 0..*) is associated with 'urml::WhileLoopOperation' (role 'urml_WhileLoopOperation', cardinality 0..*).
+'urml::Attribute' (role 'urml_Attribute22', cardinality 0..*) is associated with 'urml::Capsule' (role 'urml_Capsule21', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression134', cardinality 0..*) is associated with 'urml::Invoke' (role 'urml_Invoke133', cardinality 0..*).
+'urml::State::' (role 'urml_State_59', cardinality 0..*) is associated with 'urml::ActionCode' (role 'urml_ActionCode', cardinality 0..*).
+'urml::Variable' (role 'urml_Variable', cardinality 0..*) is associated with 'urml::LocalVar' (role 'urml_LocalVar119', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression129', cardinality 0..*) is associated with 'urml::InformTimer' (role 'urml_InformTimer128', cardinality 0..*).
+'urml::Assignment' (role 'urml_Assignment', cardinality 0..*) is associated with 'urml::Assignable' (role 'urml_Assignable', cardinality 0..*).
+'urml::Connector' (role 'urml_Connector43', cardinality 0..*) is associated with 'urml::Port' (role 'urml_Port44', cardinality 0..*).
+'urml::Invoke' (role 'urml_Invoke', cardinality 0..*) is associated with 'urml::Operation' (role 'urml_Operation131', cardinality 0..*).
+'urml::CapsuleInst' (role 'urml_CapsuleInst', cardinality 0..*) is associated with 'urml::Capsule' (role 'urml_Capsule24', cardinality 0..*).
+'urml::GreaterThanOrEqual' (role 'urml_GreaterThanOrEqual', cardinality 0..*) is associated with 'urml::Expression' (role 'urml_Expression193', cardinality 0..*).
+'urml::IfStatement' (role 'urml_IfStatement150', cardinality 0..*) is associated with 'urml::Statement' (role 'urml_Statement151', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression', cardinality 0..*) is associated with 'urml::Attribute' (role 'urml_Attribute', cardinality 0..*).
+'urml::FunctionCall' (role 'urml_FunctionCall165', cardinality 0..*) is associated with 'urml::Expression' (role 'urml_Expression166', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression186', cardinality 0..*) is associated with 'urml::LessThanOrEqual' (role 'urml_LessThanOrEqual185', cardinality 0..*).
+'urml::ActionCode' (role 'urml_ActionCode62', cardinality 0..*) is associated with 'urml::State::' (role 'urml_State_61', cardinality 0..*).
+'urml::CapsuleInst' (role 'urml_CapsuleInst47', cardinality 0..*) is associated with 'urml::Connector' (role 'urml_Connector46', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression226', cardinality 0..*) is associated with 'urml::Multiply' (role 'urml_Multiply225', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression231', cardinality 0..*) is associated with 'urml::Divide' (role 'urml_Divide230', cardinality 0..*).
+'urml::Trigger::in' (role 'urml_Trigger_in84', cardinality 0..*) is associated with 'urml::Port' (role 'urml_Port85', cardinality 0..*).
+'urml::Minus' (role 'urml_Minus220', cardinality 0..*) is associated with 'urml::Expression' (role 'urml_Expression221', cardinality 0..*).
+'urml::LogPort' (role 'urml_LogPort153', cardinality 0..*) is associated with 'urml::LogStatement' (role 'urml_LogStatement', cardinality 0..*).
+'urml::ReturnStatement' (role 'urml_ReturnStatement', cardinality 0..*) is associated with 'urml::Expression' (role 'urml_Expression115', cardinality 0..*).
+'urml::Modulo' (role 'urml_Modulo235', cardinality 0..*) is associated with 'urml::Expression' (role 'urml_Expression236', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression160', cardinality 0..*) is associated with 'urml::NotBooleanExpression' (role 'urml_NotBooleanExpression', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression122', cardinality 0..*) is associated with 'urml::Variable' (role 'urml_Variable121', cardinality 0..*).
+'urml::IfStatementOperation' (role 'urml_IfStatementOperation109', cardinality 0..*) is associated with 'urml::StatementOperation' (role 'urml_StatementOperation110', cardinality 0..*).
+'urml::StringExpression' (role 'urml_StringExpression171', cardinality 0..*) is associated with 'urml::ConcatenateExpression' (role 'urml_ConcatenateExpression170', cardinality 0..*).
+'urml::GreaterThan' (role 'urml_GreaterThan', cardinality 0..*) is associated with 'urml::Expression' (role 'urml_Expression198', cardinality 0..*).
+'urml::LogPort' (role 'urml_LogPort', cardinality 0..*) is associated with 'urml::Capsule' (role 'urml_Capsule19', cardinality 0..*).
+'urml::ConcatenateExpression' (role 'urml_ConcatenateExpression', cardinality 0..*) is associated with 'urml::StringExpression' (role 'urml_StringExpression168', cardinality 0..*).
+'urml::Protocol' (role 'urml_Protocol5', cardinality 0..*) is associated with 'urml::Signal' (role 'urml_Signal', cardinality 0..*).
+'urml::CapsuleInst' (role 'urml_CapsuleInst52', cardinality 0..*) is associated with 'urml::Capsule' (role 'urml_Capsule53', cardinality 0..*).
+'urml::Transition' (role 'urml_Transition67', cardinality 0..*) is associated with 'urml::State::' (role 'urml_State_68', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression74', cardinality 0..*) is associated with 'urml::Transition' (role 'urml_Transition73', cardinality 0..*).
+'urml::Transition' (role 'urml_Transition', cardinality 0..*) is associated with 'urml::StateMachine' (role 'urml_StateMachine57', cardinality 0..*).
+'urml::Multiply' (role 'urml_Multiply', cardinality 0..*) is associated with 'urml::Expression' (role 'urml_Expression223', cardinality 0..*).
+'urml::Signal' (role 'urml_Signal10', cardinality 0..*) is associated with 'urml::LocalVar' (role 'urml_LocalVar', cardinality 0..*).
+'urml::Capsule' (role 'urml_Capsule26', cardinality 0..*) is associated with 'urml::Connector' (role 'urml_Connector', cardinality 0..*).
+'urml::StateMachine' (role 'urml_StateMachine55', cardinality 0..*) is associated with 'urml::State::' (role 'urml_State_', cardinality 0..*).
+'urml::Model' (role 'urml_Model', cardinality 0..*) is associated with 'urml::Capsule' (role 'urml_Capsule', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression183', cardinality 0..*) is associated with 'urml::LessThanOrEqual' (role 'urml_LessThanOrEqual', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression203', cardinality 0..*) is associated with 'urml::Equal' (role 'urml_Equal', cardinality 0..*).
+'urml::StringExpression' (role 'urml_StringExpression', cardinality 0..*) is associated with 'urml::LogStatement' (role 'urml_LogStatement155', cardinality 0..*).
+'urml::FunctionCall' (role 'urml_FunctionCall', cardinality 0..*) is associated with 'urml::Operation' (role 'urml_Operation163', cardinality 0..*).
+'urml::OperationCode' (role 'urml_OperationCode100', cardinality 0..*) is associated with 'urml::StatementOperation' (role 'urml_StatementOperation', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression218', cardinality 0..*) is associated with 'urml::Minus' (role 'urml_Minus', cardinality 0..*).
+'urml::Port' (role 'urml_Port92', cardinality 0..*) is associated with 'urml::Trigger::out' (role 'urml_Trigger_out', cardinality 0..*).
+'urml::ActionCode' (role 'urml_ActionCode117', cardinality 0..*) is associated with 'urml::Statement' (role 'urml_Statement', cardinality 0..*).
+'urml::IfStatementOperation' (role 'urml_IfStatementOperation112', cardinality 0..*) is associated with 'urml::StatementOperation' (role 'urml_StatementOperation113', cardinality 0..*).
+'urml::Transition' (role 'urml_Transition76', cardinality 0..*) is associated with 'urml::Trigger::in' (role 'urml_Trigger_in', cardinality 0..*).
+'urml::Protocol' (role 'urml_Protocol', cardinality 0..*) is associated with 'urml::Model' (role 'urml_Model2', cardinality 0..*).
+'urml::Assignment' (role 'urml_Assignment137', cardinality 0..*) is associated with 'urml::Expression' (role 'urml_Expression138', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression140', cardinality 0..*) is associated with 'urml::WhileLoop' (role 'urml_WhileLoop', cardinality 0..*).
+'urml::Trigger::out' (role 'urml_Trigger_out124', cardinality 0..*) is associated with 'urml::SendTrigger' (role 'urml_SendTrigger', cardinality 0..*).
+'urml::IfStatement' (role 'urml_IfStatement147', cardinality 0..*) is associated with 'urml::Statement' (role 'urml_Statement148', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression145', cardinality 0..*) is associated with 'urml::IfStatement' (role 'urml_IfStatement', cardinality 0..*).
+'urml::GreaterThan' (role 'urml_GreaterThan200', cardinality 0..*) is associated with 'urml::Expression' (role 'urml_Expression201', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression191', cardinality 0..*) is associated with 'urml::LessThan' (role 'urml_LessThan190', cardinality 0..*).
+'urml::Capsule' (role 'urml_Capsule12', cardinality 0..*) is associated with 'urml::Port' (role 'urml_Port', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression98', cardinality 0..*) is associated with 'urml::Trigger::out' (role 'urml_Trigger_out97', cardinality 0..*).
+'urml::StatementOperation' (role 'urml_StatementOperation105', cardinality 0..*) is associated with 'urml::WhileLoopOperation' (role 'urml_WhileLoopOperation104', cardinality 0..*).
+'urml::Capsule' (role 'urml_Capsule30', cardinality 0..*) is associated with 'urml::StateMachine' (role 'urml_StateMachine', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression228', cardinality 0..*) is associated with 'urml::Divide' (role 'urml_Divide', cardinality 0..*).
+'urml::LocalVar' (role 'urml_LocalVar33', cardinality 0..*) is associated with 'urml::Operation' (role 'urml_Operation32', cardinality 0..*).
+'urml::Plus' (role 'urml_Plus', cardinality 0..*) is associated with 'urml::Expression' (role 'urml_Expression213', cardinality 0..*).
+'urml::WhileLoop' (role 'urml_WhileLoop142', cardinality 0..*) is associated with 'urml::Statement' (role 'urml_Statement143', cardinality 0..*).
+'urml::Port' (role 'urml_Port50', cardinality 0..*) is associated with 'urml::Connector' (role 'urml_Connector49', cardinality 0..*).
+'urml::Capsule' (role 'urml_Capsule17', cardinality 0..*) is associated with 'urml::TimerPort' (role 'urml_TimerPort', cardinality 0..*).
+'urml::Identifiable' (role 'urml_Identifiable', cardinality 0..*) is associated with 'urml::Identifier' (role 'urml_Identifier', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression206', cardinality 0..*) is associated with 'urml::Equal' (role 'urml_Equal205', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression107', cardinality 0..*) is associated with 'urml::IfStatementOperation' (role 'urml_IfStatementOperation', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression208', cardinality 0..*) is associated with 'urml::NotEqual' (role 'urml_NotEqual', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression176', cardinality 0..*) is associated with 'urml::ConditionalOrExpression' (role 'urml_ConditionalOrExpression175', cardinality 0..*).
+'urml::Signal' (role 'urml_Signal8', cardinality 0..*) is associated with 'urml::Protocol' (role 'urml_Protocol7', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression188', cardinality 0..*) is associated with 'urml::LessThan' (role 'urml_LessThan', cardinality 0..*).
+'urml::IncomingVariable' (role 'urml_IncomingVariable', cardinality 0..*) is associated with 'urml::Trigger::in' (role 'urml_Trigger_in90', cardinality 0..*).
+'urml::TimerPort' (role 'urml_TimerPort79', cardinality 0..*) is associated with 'urml::Transition' (role 'urml_Transition78', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression158', cardinality 0..*) is associated with 'urml::StringExpression' (role 'urml_StringExpression157', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression173', cardinality 0..*) is associated with 'urml::ConditionalOrExpression' (role 'urml_ConditionalOrExpression', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression211', cardinality 0..*) is associated with 'urml::NotEqual' (role 'urml_NotEqual210', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression233', cardinality 0..*) is associated with 'urml::Modulo' (role 'urml_Modulo', cardinality 0..*).
+'urml::Signal' (role 'urml_Signal88', cardinality 0..*) is associated with 'urml::Trigger::in' (role 'urml_Trigger_in87', cardinality 0..*).
+'urml::Capsule' (role 'urml_Capsule14', cardinality 0..*) is associated with 'urml::Port' (role 'urml_Port15', cardinality 0..*).
+'urml::State::' (role 'urml_State_71', cardinality 0..*) is associated with 'urml::Transition' (role 'urml_Transition70', cardinality 0..*).
+'urml::Expression' (role 'urml_Expression181', cardinality 0..*) is associated with 'urml::ConditionalAndExpression' (role 'urml_ConditionalAndExpression180', cardinality 0..*).
+'urml::ConditionalAndExpression' (role 'urml_ConditionalAndExpression', cardinality 0..*) is associated with 'urml::Expression' (role 'urml_Expression178', cardinality 0..*).
+'urml::Plus' (role 'urml_Plus215', cardinality 0..*) is associated with 'urml::Expression' (role 'urml_Expression216', cardinality 0..*).
+'urml::Trigger::out' (role 'urml_Trigger_out94', cardinality 0..*) is associated with 'urml::Signal' (role 'urml_Signal95', cardinality 0..*).
+'urml::TimerPort' (role 'urml_TimerPort126', cardinality 0..*) is associated with 'urml::InformTimer' (role 'urml_InformTimer', cardinality 0..*).
+'urml::UnaryExpression' (role 'urml_UnaryExpression', cardinality 0..*) is associated with 'urml::Expression' (role 'urml_Expression238', cardinality 0..*).
+'urml::Operation' (role 'urml_Operation35', cardinality 0..*) is associated with 'urml::OperationCode' (role 'urml_OperationCode', cardinality 0..*).
+'urml::StateMachine' (role 'urml_StateMachine65', cardinality 0..*) is associated with 'urml::State::' (role 'urml_State_64', cardinality 0..*).

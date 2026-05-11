@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/DevBoost/EMFText/Core/Tests/org.emftext.test.grammar_features/metamodel/grammar_features.ecore

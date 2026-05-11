@@ -1,0 +1,11 @@
+The model has 3 class(es).
+The class 'iDM::Test::StateMachine' has the following attributes: 'name' of type str.
+The class 'iDM::Test::Transition' has the following attributes: 'name' of type str.
+The class 'iDM::Test::State' has the following attributes: 'name' of type str.
+'iDM::Test::Transition' (role 'outgoing', cardinality 0..*) is associated with 'iDM::Test::State' (role 'State', cardinality 0..*).
+'iDM::Test::State' (role 'iDM_Test_State', cardinality 0..*) is associated with 'iDM::Test::StateMachine' (role 'iDM_Test_StateMachine', cardinality 0..*).
+'iDM::Test::Transition' (role 'incomming', cardinality 0..*) is associated with 'iDM::Test::State' (role 'State11', cardinality 0..*).
+'iDM::Test::Transition' (role 'Transition', cardinality 0..*) is associated with 'iDM::Test::State' (role 'to', cardinality 0..*).
+'iDM::Test::State' (role 'iDM_Test_State5', cardinality 0..*) is associated with 'iDM::Test::StateMachine' (role 'iDM_Test_StateMachine4', cardinality 0..*).
+'iDM::Test::State' (role 'from_', cardinality 0..*) is associated with 'iDM::Test::Transition' (role 'Transition8', cardinality 0..*).
+'iDM::Test::StateMachine' (role 'iDM_Test_StateMachine2', cardinality 0..*) is associated with 'iDM::Test::Transition' (role 'iDM_Test_Transition', cardinality 0..*).

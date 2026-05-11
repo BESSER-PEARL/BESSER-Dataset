@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'ecoreJavascriptTest::C3' has no attributes.
+The class 'ecoreJavascriptTest::C2' has the following attributes: 'name' of type str; 'value' of type int.
+The class 'C2' has no attributes.
+The class 'ecoreJavascriptTest::C1' has the following attributes: 'name' of type str.
+'ecoreJavascriptTest::C3' is a specialization of 'C2'.
+'ecoreJavascriptTest::C1' (role 'C1', cardinality 0..*) is associated with 'ecoreJavascriptTest::C2' (role 'c2s', cardinality 0..*).
+'ecoreJavascriptTest::C1' (role 'ecoreJavascriptTest_C11', cardinality 0..*) is associated with 'ecoreJavascriptTest::C1' (role 'ecoreJavascriptTest_C1', cardinality 0..*).
+'ecoreJavascriptTest::C1' (role 'c1', cardinality 0..*) is associated with 'ecoreJavascriptTest::C2' (role 'C2', cardinality 0..*).

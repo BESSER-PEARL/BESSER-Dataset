@@ -1,0 +1,35 @@
+The model has 14 class(es).
+The class 'test7::AttributeTypeElement' has the following attributes: 'name' of type str; 'dataType' of type str.
+The class 'test7::FeatureAttributeReference' has no attributes.
+The class 'test7::SelectionStateSC' has the following attributes: 'state' of type str.
+The class 'test7::FeatureAttributeElement' has the following attributes: 'value' of type str.
+The class 'SolutionConstraint' has no attributes.
+The class 'test7::Feature' has the following attributes: 'name' of type str.
+The class 'test7::FeatureAttribute' has the following attributes: 'name' of type str.
+The class 'test7::FiniteDomainSCValueReference' has the following attributes: 'value' of type str.
+The class 'test7::HardLimitSC' has the following attributes: 'value1' of type str; 'value2' of type str; 'op1' of type str; 'op2' of type str.
+The class 'test7::AttributeType' has the following attributes: 'name' of type str.
+The class 'test7::OptimizationSC' has the following attributes: 'funct' of type str.
+The class 'test7::SolutionConstraint' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'test7::FiniteDomainSC' has no attributes.
+The class 'test7::Model' has no attributes.
+'test7::OptimizationSC' is a specialization of 'SolutionConstraint'.
+'test7::HardLimitSC' is a specialization of 'SolutionConstraint'.
+'test7::FiniteDomainSC' is a specialization of 'SolutionConstraint'.
+'test7::SelectionStateSC' is a specialization of 'SolutionConstraint'.
+'test7::FeatureAttribute' (role 'test7_FeatureAttribute16', cardinality 0..*) is associated with 'test7::FeatureAttributeElement' (role 'test7_FeatureAttributeElement', cardinality 0..*).
+'test7::AttributeType' (role 'test7_AttributeType23', cardinality 0..*) is associated with 'test7::OptimizationSC' (role 'test7_OptimizationSC', cardinality 0..*).
+'test7::FiniteDomainSC' (role 'test7_FiniteDomainSC', cardinality 0..*) is associated with 'test7::Feature' (role 'test7_Feature29', cardinality 0..*).
+'test7::Feature' (role 'test7_Feature20', cardinality 0..*) is associated with 'test7::FeatureAttributeReference' (role 'test7_FeatureAttributeReference21', cardinality 0..*).
+'test7::FeatureAttribute' (role 'test7_FeatureAttribute13', cardinality 0..*) is associated with 'test7::AttributeType' (role 'test7_AttributeType14', cardinality 0..*).
+'test7::FiniteDomainSCValueReference' (role 'test7_FiniteDomainSCValueReference', cardinality 0..*) is associated with 'test7::FiniteDomainSC' (role 'test7_FiniteDomainSC34', cardinality 0..*).
+'test7::Model' (role 'test7_Model6', cardinality 0..*) is associated with 'test7::SolutionConstraint' (role 'test7_SolutionConstraint', cardinality 0..*).
+'test7::SelectionStateSC' (role 'test7_SelectionStateSC', cardinality 0..*) is associated with 'test7::Feature' (role 'test7_Feature27', cardinality 0..*).
+'test7::FeatureAttribute' (role 'test7_FeatureAttribute32', cardinality 0..*) is associated with 'test7::FiniteDomainSC' (role 'test7_FiniteDomainSC31', cardinality 0..*).
+'test7::AttributeType' (role 'test7_AttributeType', cardinality 0..*) is associated with 'test7::Model' (role 'test7_Model', cardinality 0..*).
+'test7::AttributeType' (role 'test7_AttributeType8', cardinality 0..*) is associated with 'test7::AttributeTypeElement' (role 'test7_AttributeTypeElement', cardinality 0..*).
+'test7::Model' (role 'test7_Model4', cardinality 0..*) is associated with 'test7::Feature' (role 'test7_Feature', cardinality 0..*).
+'test7::FeatureAttribute' (role 'test7_FeatureAttribute18', cardinality 0..*) is associated with 'test7::FeatureAttributeReference' (role 'test7_FeatureAttributeReference', cardinality 0..*).
+'test7::AttributeType' (role 'test7_AttributeType25', cardinality 0..*) is associated with 'test7::HardLimitSC' (role 'test7_HardLimitSC', cardinality 0..*).
+'test7::Model' (role 'test7_Model2', cardinality 0..*) is associated with 'test7::FeatureAttribute' (role 'test7_FeatureAttribute', cardinality 0..*).
+'test7::AttributeType' (role 'test7_AttributeType11', cardinality 0..*) is associated with 'test7::AttributeType' (role 'test7_AttributeType9', cardinality 0..*).

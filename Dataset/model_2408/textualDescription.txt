@@ -1,0 +1,18 @@
+The model has 8 class(es).
+The class 'dbschema::ForeignKeyColumn' has no attributes.
+The class 'dbschema::AttributeColumn' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Column' has no attributes.
+The class 'dbschema::NamedElement' has the following attributes: 'name' of type str.
+The class 'dbschema::DBSchema' has no attributes.
+The class 'dbschema::Column' has the following attributes: 'size' of type int; 'type' of type str; 'primary' of type bool.
+The class 'dbschema::Table' has no attributes.
+The enumeration 'ColumnType' has the following literals: 'LONGVARBINARY', 'TIME', 'REF', 'VARCHAR', 'BINARY', 'BOOLEAN', 'REAL', 'DATALINK', 'JAVAOBJECT', 'STRUCT', 'INTEGER', 'DOUBLE', 'BLOB', 'NULL', 'NUMERIC', 'BIGINT', 'ARRAY', 'VARBINARY', 'FLOAT', 'NCHAR', 'CLOB', 'TIMESTAMP', 'BIT', 'DISTINCT', 'ROWID', 'NVARCHAR', 'DATE', 'SMALLINT', 'LONGNVARCHAR', 'NCLOB', 'TINYINT', 'DECIMAL', 'CHAR', 'OTHER', 'SQLXML', 'LONGVARCHAR'.
+'dbschema::DBSchema' is a specialization of 'NamedElement'.
+'dbschema::Column' is a specialization of 'NamedElement'.
+'dbschema::Table' is a specialization of 'NamedElement'.
+'dbschema::AttributeColumn' is a specialization of 'Column'.
+'dbschema::ForeignKeyColumn' is a specialization of 'Column'.
+'dbschema::Table' (role 'dbschema_Table', cardinality 0..*) is associated with 'dbschema::DBSchema' (role 'dbschema_DBSchema', cardinality 0..*).
+'dbschema::ForeignKeyColumn' (role 'dbschema_ForeignKeyColumn', cardinality 0..*) is associated with 'dbschema::AttributeColumn' (role 'dbschema_AttributeColumn', cardinality 0..*).
+'dbschema::Column' (role 'dbschema_Column', cardinality 0..*) is associated with 'dbschema::Table' (role 'dbschema_Table2', cardinality 0..*).

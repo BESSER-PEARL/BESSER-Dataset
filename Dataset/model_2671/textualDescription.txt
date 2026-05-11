@@ -1,0 +1,24 @@
+The model has 10 class(es).
+The class 'comps::F' has no attributes.
+The class 'comps::H' has no attributes.
+The class 'comps::E' has no attributes.
+The class 'comps::Named' has the following attributes: 'name' of type str.
+The class 'comps::C' has no attributes.
+The class 'Named' has no attributes.
+The class 'comps::G' has no attributes.
+The class 'comps::A' has no attributes.
+The class 'comps::B' has no attributes.
+The class 'B' has no attributes.
+'comps::C' is a specialization of 'Named'.
+'comps::E' is a specialization of 'B'.
+'comps::A' is a specialization of 'Named'.
+'comps::G' is a specialization of 'Named'.
+'comps::H' is a specialization of 'Named'.
+'comps::B' is a specialization of 'Named'.
+'comps::F' is a specialization of 'Named'.
+'comps::E' is a specialization of 'Named'.
+'comps::G' (role 'comps_G7', cardinality 0..*) is associated with 'comps::H' (role 'comps_H', cardinality 0..*).
+'comps::B' (role 'comps_B2', cardinality 0..*) is associated with 'comps::C' (role 'comps_C', cardinality 0..*).
+'comps::A' (role 'comps_A', cardinality 0..*) is associated with 'comps::B' (role 'comps_B', cardinality 0..*).
+'comps::F' (role 'comps_F', cardinality 0..*) is associated with 'comps::E' (role 'comps_E', cardinality 0..*).
+'comps::B' (role 'comps_B4', cardinality 0..*) is associated with 'comps::G' (role 'comps_G', cardinality 0..*).

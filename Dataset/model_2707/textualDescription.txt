@@ -1,0 +1,12 @@
+The model has 7 class(es).
+The class 'pgohttpestest::D' has no attributes.
+The class 'pgohttpestest::B' has the following attributes: 'priv1' of type int.
+The class 'pgohttpestest::C' has the following attributes: 'name' of type str.
+The class 'pgohttpestest::A' has the following attributes: 'value' of type int; 'name' of type str.
+The class 'pgohttpestest::Priv' has the following attributes: 'name' of type str.
+The class 'pgohttpestest::Root' has no attributes.
+The class 'C' has no attributes.
+'pgohttpestest::D' is a specialization of 'C'.
+'pgohttpestest::A' (role 'pgohttpestest_A', cardinality 0..*) is associated with 'pgohttpestest::Root' (role 'pgohttpestest_Root', cardinality 0..*).
+'pgohttpestest::C' (role 'pgohttpestest_C', cardinality 0..*) is associated with 'pgohttpestest::B' (role 'pgohttpestest_B4', cardinality 0..*).
+'pgohttpestest::B' (role 'pgohttpestest_B', cardinality 0..*) is associated with 'pgohttpestest::Root' (role 'pgohttpestest_Root2', cardinality 0..*).

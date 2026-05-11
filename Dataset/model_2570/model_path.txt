@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/fx-world/GenerationGap/plugins/de.fxworld.generationgap.core.tests/testdata/simpleGeneration/metamodel/test.ecore

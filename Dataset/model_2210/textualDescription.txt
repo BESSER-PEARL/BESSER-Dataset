@@ -1,0 +1,26 @@
+The model has 9 class(es).
+The class 'universityStudies::CourseSlot' has no attributes.
+The class 'universityStudies::Department' has no attributes.
+The class 'universityStudies::Semester' has the following attributes: 'season' of type str; 'semesterNumber' of type int; 'name' of type str.
+The class 'universityStudies::Specialization' has the following attributes: 'name' of type str.
+The class 'universityStudies::Programme' has the following attributes: 'numberOfSemesters' of type int; 'name' of type str; 'programmeType' of type str.
+The class 'universityStudies::ElectiveCourseSlot' has no attributes.
+The class 'universityStudies::MandatoryCourseSlot' has no attributes.
+The class 'universityStudies::Course' has the following attributes: 'level' of type int; 'name' of type str; 'code' of type str; 'credits' of type str.
+The class 'CourseSlot' has no attributes.
+The enumeration 'ProgrammeType' has the following literals: 'Master', 'Årsstudie', 'IntegrertMaster', 'Bachelor'.
+The enumeration 'Seasons' has the following literals: 'Spring', 'Fall'.
+The enumeration 'Credits' has the following literals: 'Double', 'Full', 'Basic', 'Minor'.
+'universityStudies::ElectiveCourseSlot' is a specialization of 'CourseSlot'.
+'universityStudies::MandatoryCourseSlot' is a specialization of 'CourseSlot'.
+'universityStudies::Specialization' (role 'universityStudies_Specialization10', cardinality 0..*) is associated with 'universityStudies::Semester' (role 'universityStudies_Semester11', cardinality 0..*).
+'universityStudies::Department' (role 'Department17', cardinality 0..*) is associated with 'universityStudies::Programme' (role 'Programme', cardinality 0..*).
+'universityStudies::Course' (role 'universityStudies_Course22', cardinality 0..*) is associated with 'universityStudies::ElectiveCourseSlot' (role 'universityStudies_ElectiveCourseSlot', cardinality 0..*).
+'universityStudies::Specialization' (role 'universityStudies_Specialization6', cardinality 0..*) is associated with 'universityStudies::Specialization' (role 'universityStudies_Specialization8', cardinality 0..*).
+'universityStudies::Course' (role 'universityStudies_Course20', cardinality 0..*) is associated with 'universityStudies::CourseSlot' (role 'universityStudies_CourseSlot19', cardinality 0..*).
+'universityStudies::Department' (role 'universityStudies_Department', cardinality 0..*) is associated with 'universityStudies::Course' (role 'universityStudies_Course15', cardinality 0..*).
+'universityStudies::CourseSlot' (role 'universityStudies_CourseSlot', cardinality 0..*) is associated with 'universityStudies::Semester' (role 'universityStudies_Semester13', cardinality 0..*).
+'universityStudies::Programme' (role 'universityStudies_Programme4', cardinality 0..*) is associated with 'universityStudies::Semester' (role 'universityStudies_Semester', cardinality 0..*).
+'universityStudies::Specialization' (role 'universityStudies_Specialization', cardinality 0..*) is associated with 'universityStudies::Programme' (role 'universityStudies_Programme2', cardinality 0..*).
+'universityStudies::Department' (role 'Department', cardinality 0..*) is associated with 'universityStudies::Programme' (role 'Programmes', cardinality 0..*).
+'universityStudies::Programme' (role 'universityStudies_Programme', cardinality 0..*) is associated with 'universityStudies::Course' (role 'universityStudies_Course', cardinality 0..*).

@@ -1,0 +1,717 @@
+The model has 287 class(es).
+The class 'adb::ReturnSubtypeIndication' has no attributes.
+The class 'adb::GuardedAlternative' has no attributes.
+The class 'RealTypeDefinition' has no attributes.
+The class 'adb::NullStatement' has the following attributes: 'null' of type bool.
+The class 'adb::SubprogramDeclaration' has the following attributes: 'abstract' of type bool; 'null' of type bool; 'renamedName' of type str.
+The class 'adb::AttributeDesignator' has no attributes.
+The class 'adb::FullTypeDeclaration' has no attributes.
+The class 'adb::AspectClause' has the following attributes: 'name' of type str.
+The class 'adb::DeclarativeItem' has no attributes.
+The class 'adb::Range' has no attributes.
+The class 'adb::TaskBodyStub' has no attributes.
+The class 'Interval' has no attributes.
+The class 'adb::VariantPart' has the following attributes: 'name' of type str.
+The class 'adb::FormalObjectDeclaration' has no attributes.
+The class 'Aggregate' has no attributes.
+The class 'adb::IfStatement' has no attributes.
+The class 'AbortStatement' has no attributes.
+The class 'adb::KnownDiscriminantPart' has no attributes.
+The class 'adb::SimpleExpression' has the following attributes: 'unaryAddingOperator' of type str; 'binaryAddingOperators' of type str.
+The class 'adb::PackageDeclaration' has the following attributes: 'name' of type str.
+The class 'adb::RecordExtensionPart' has no attributes.
+The class 'adb::EntryBodyFormalPart' has no attributes.
+The class 'AbortablePart' has no attributes.
+The class 'adb::RecordTypeDefinition' has the following attributes: 'tagged' of type bool; 'abstract' of type bool; 'limited' of type bool.
+The class 'adb::LabelisableStatement' has no attributes.
+The class 'adb::Interval' has no attributes.
+The class 'adb::LibraryUnitSpecification' has no attributes.
+The class 'adb::LibrarySpecification' has no attributes.
+The class 'adb::RecordComponentAssociation' has no attributes.
+The class 'adb::Null' has the following attributes: 'value' of type str.
+The class 'DiscreteRange' has no attributes.
+The class 'adb::GotoStatement' has the following attributes: 'labelId' of type str.
+The class 'adb::AccessToDataDefinition' has the following attributes: 'generalAccessModifier' of type str.
+The class 'adb::Mode' has the following attributes: 'out' of type bool; 'in_' of type bool.
+The class 'SelectStatement' has no attributes.
+The class 'adb::PrivateExtensionDeclaration' has the following attributes: 'synchronized' of type bool; 'limited' of type bool; 'abstract' of type bool.
+The class 'adb::Variant' has no attributes.
+The class 'adb::GenericItems' has no attributes.
+The class 'adb::EntityRange' has no attributes.
+The class 'adb::TaskDefinition' has no attributes.
+The class 'ParameterEffectiveValue' has no attributes.
+The class 'adb::Membership' has the following attributes: 'not_' of type bool.
+The class 'adb::PragmaArgumentAssociation' has the following attributes: 'name' of type str.
+The class 'RecordComponentAssociation' has no attributes.
+The class 'NewTypeDeclaration' has no attributes.
+The class 'adb::PackageBodyStub' has no attributes.
+The class 'PackageDeclaration' has no attributes.
+The class 'ComponentItem' has no attributes.
+The class 'adb::AsynchronousSelect' has no attributes.
+The class 'adb::ProtectedBodyStub' has no attributes.
+The class 'adb::IntegerTypeDefinition' has no attributes.
+The class 'adb::PackageSpecification' has the following attributes: 'endname' of type str.
+The class 'adb::UnknownDiscriminantPart' has the following attributes: 'box' of type bool.
+The class 'adb::DiscriminantPart' has no attributes.
+The class 'adb::ParameterEffectiveValue' has no attributes.
+The class 'adb::RaiseStatement' has no attributes.
+The class 'adb::BodyStub' has the following attributes: 'name' of type str.
+The class 'adb::FormalPrivateTypeDefinition' has the following attributes: 'tagged' of type bool; 'abstract' of type bool; 'limited' of type bool.
+The class 'adb::ArrayAggregate' has no attributes.
+The class 'adb::TypeDeclaration' has the following attributes: 'name' of type str.
+The class 'adb::InitializedComponents' has no attributes.
+The class 'adb::TypeDefinition' has no attributes.
+The class 'adb::AnonymousAccessDefinition' has no attributes.
+The class 'adb::SubtypeDeclaration' has no attributes.
+The class 'adb::SequenceOfStatements' has no attributes.
+The class 'adb::ComponentItem' has no attributes.
+The class 'adb::GenericInstantiation' has the following attributes: 'genericName' of type str; 'name' of type str.
+The class 'adb::RealRangeSpecification' has no attributes.
+The class 'adb::Pragma' has the following attributes: 'name' of type str.
+The class 'adb::ExceptionChoice' has the following attributes: 'others' of type bool.
+The class 'adb::ContextItem' has no attributes.
+The class 'adb::CompositeConstraint' has no attributes.
+The class 'adb::SimpleStatement' has no attributes.
+The class 'adb::SimpleReturnStatement' has no attributes.
+The class 'adb::PositionalArrayAggregate' has the following attributes: 'othersBox' of type bool.
+The class 'adb::AbortStatement' has no attributes.
+The class 'LibrarySpecification' has no attributes.
+The class 'adb::SubtypeIndication' has the following attributes: 'subtypeMark' of type str.
+The class 'adb::Term' has the following attributes: 'multiplyingOperators' of type str.
+The class 'adb::AccessSpecification' has no attributes.
+The class 'adb::ExtensionAggregate' has no attributes.
+The class 'adb::OptConstraint' has no attributes.
+The class 'SimpleStatement' has no attributes.
+The class 'adb::DiscriminantSelectors' has the following attributes: 'discriminantSelectorName' of type str.
+The class 'DiscreteSubtypeDefinition' has no attributes.
+The class 'adb::EntryDeclaration' has the following attributes: 'name' of type str.
+The class 'ContextItem' has no attributes.
+The class 'adb::TriggeringStatement' has no attributes.
+The class 'CompoundStatement' has no attributes.
+The class 'adb::ConditionalEntryCall' has no attributes.
+The class 'adb::CompilationUnit' has no attributes.
+The class 'adb::FormalTypeDefinition' has no attributes.
+The class 'adb::BlockStatement' has the following attributes: 'blockStatementIdentifier' of type str.
+The class 'adb::ConstrainedIndexes' has no attributes.
+The class 'ProtectedOperationDeclaration' has no attributes.
+The class 'adb::StringLiteral' has the following attributes: 'value' of type str.
+The class 'DeclarativeBlock' has no attributes.
+The class 'adb::InterfaceList' has no attributes.
+The class 'adb::UnconstrainedIndexes' has no attributes.
+The class 'adb::BasicDeclarativeItem' has no attributes.
+The class 'adb::Label' has the following attributes: 'identifier' of type str.
+The class 'adb::AncestorPart' has no attributes.
+The class 'LibraryUnitSpecification' has no attributes.
+The class 'adb::Factor' has the following attributes: 'abs' of type bool; 'not_' of type bool.
+The class 'ArrayAggregate' has no attributes.
+The class 'adb::ProtectedTypeDeclaration' has no attributes.
+The class 'Qualifier' has no attributes.
+The class 'adb::EntryIndexSpecification' has the following attributes: 'name' of type str.
+The class 'adb::NewTypeDeclaration' has no attributes.
+The class 'adb::Expression' has the following attributes: 'booleanOperator' of type str.
+The class 'adb::DiscreteRange' has no attributes.
+The class 'adb::HandledSequenceOfStatements' has no attributes.
+The class 'BodyStub' has no attributes.
+The class 'adb::Qualifier' has no attributes.
+The class 'TaskItem' has no attributes.
+The class 'adb::NumberDeclaration' has no attributes.
+The class 'adb::RangeConstraint' has no attributes.
+The class 'adb::TimedEntryCall' has no attributes.
+The class 'adb::Compilation' has no attributes.
+The class 'adb::NamedArrayAggregate' has no attributes.
+The class 'adb::RecordAggregate' has no attributes.
+The class 'adb::SignedIntegerTypeDefinition' has no attributes.
+The class 'adb::QualifiedName' has no attributes.
+The class 'Statement' has no attributes.
+The class 'adb::ExplicitRange' has no attributes.
+The class 'adb::AccessTypeDefinition' has no attributes.
+The class 'adb::RequeueStatement' has the following attributes: 'abort' of type bool.
+The class 'adb::ArrayTypeDefinition' has no attributes.
+The class 'adb::InterfaceTypeDefinition' has the following attributes: 'synchro' of type bool; 'limited' of type bool; 'task' of type bool; 'protected' of type bool.
+The class 'adb::TaskItem' has no attributes.
+The class 'adb::ExceptionDeclaration' has no attributes.
+The class 'adb::DelayStatement' has the following attributes: 'until' of type str.
+The class 'adb::LoopParameterSpecification' has the following attributes: 'identifier' of type str.
+The class 'adb::DerivedTypeDefinition' has the following attributes: 'limited' of type str; 'abstract' of type str.
+The class 'SelectAlternative' has no attributes.
+The class 'adb::ProtectedOperationItem' has no attributes.
+The class 'adb::PrivateTypeDeclaration' has the following attributes: 'abstract' of type bool; 'limited' of type bool; 'tagged' of type bool.
+The class 'Unit' has no attributes.
+The class 'adb::EntryIndex' has no attributes.
+The class 'adb::UsePackageClause' has no attributes.
+The class 'adb::ArrayComponentAssociation' has the following attributes: 'box' of type bool.
+The class 'adb::FloatingPointDefinition' has no attributes.
+The class 'ProtectedElementDeclaration' has no attributes.
+The class 'adb::ExitStatement' has no attributes.
+The class 'adb::SelectAlternative' has no attributes.
+The class 'adb::UseClause' has no attributes.
+The class 'adb::GenericActualPart' has no attributes.
+The class 'HandledSequenceOfStatements' has no attributes.
+The class 'DeclarativeItem' has no attributes.
+The class 'AncestorPart' has no attributes.
+The class 'adb::ProtectedBody' has the following attributes: 'idTask' of type str; 'identifier' of type str.
+The class 'adb::Allocator' has no attributes.
+The class 'ObjectDeclaration' has no attributes.
+The class 'adb::TaskBody' has no attributes.
+The class 'Range' has no attributes.
+The class 'adb::AccessToSubprogramDefinition' has the following attributes: 'protected' of type bool.
+The class 'adb::Name' has the following attributes: 'name' of type str.
+The class 'ScalarConstraint' has no attributes.
+The class 'adb::ComponentClause' has the following attributes: 'localName' of type str.
+The class 'adb::LibraryUnitDeclaration' has the following attributes: 'private' of type bool.
+The class 'adb::AcceptStatement' has the following attributes: 'entryidentifier' of type str.
+The class 'adb::RealTypeDefinition' has no attributes.
+The class 'adb::DeltaConstraint' has no attributes.
+The class 'adb::IndexConstraint' has no attributes.
+The class 'adb::DeclarativeBlock' has no attributes.
+The class 'adb::ModularTypeDefinition' has no attributes.
+The class 'adb::ProcedureOrEntryCallStatement' has no attributes.
+The class 'adb::PackageDefinition' has no attributes.
+The class 'adb::DiscreteChoiceList' has no attributes.
+The class 'SubprogramSpecification' has no attributes.
+The class 'FullTypeDeclaration' has no attributes.
+The class 'adb::ParenthesizedExpression' has no attributes.
+The class 'adb::DefiningIdentifierList' has the following attributes: 'name' of type str.
+The class 'adb::ComponentList' has no attributes.
+The class 'adb::FormalPackageAssociation' has the following attributes: 'genericFormalParameterSelectorName' of type str.
+The class 'UseClause' has no attributes.
+The class 'adb::EntryCallAlternative' has no attributes.
+The class 'adb::FormalSubprogramDeclaration' has the following attributes: 'abstract' of type str.
+The class 'DiscreteChoice' has no attributes.
+The class 'adb::RecordComponentAssociationList' has the following attributes: 'nullRecord' of type bool.
+The class 'adb::OverridingIndicator' has the following attributes: 'not_' of type bool.
+The class 'adb::NumericLiteral' has the following attributes: 'value' of type str.
+The class 'adb::LoopStatement' has the following attributes: 'sameName' of type str; 'name' of type str.
+The class 'adb::AssignmentStatement' has no attributes.
+The class 'adb::ModClause' has no attributes.
+The class 'GenericFormalParameterDeclaration' has no attributes.
+The class 'adb::ParameterAssociation' has the following attributes: 'selectorName' of type str.
+The class 'adb::ArrayIndexes' has no attributes.
+The class 'adb::ParameterAndResultProfile' has no attributes.
+The class 'adb::ScalarConstraint' has no attributes.
+The class 'adb::AccessToDataInstance' has the following attributes: 'constant' of type str.
+The class 'adb::FormalPackageActualPart' has the following attributes: 'box' of type bool.
+The class 'adb::SelectiveAccept' has no attributes.
+The class 'RecordAggregate' has no attributes.
+The class 'adb::NotNullAccessDefinition' has no attributes.
+The class 'adb::PackageBody' has no attributes.
+The class 'adb::ProperBody' has no attributes.
+The class 'adb::Guard' has no attributes.
+The class 'ProtectedOperationItem' has no attributes.
+The class 'adb::FormalTypeDeclaration' has the following attributes: 'identifier' of type str.
+The class 'IntegerTypeDefinition' has no attributes.
+The class 'adb::CaseStatement' has no attributes.
+The class 'adb::TaskNames' has no attributes.
+The class 'adb::FormalDerivedTypeDefinition' has the following attributes: 'absract' of type str; 'synchronized' of type bool; 'limited' of type bool.
+The class 'adb::GenericFormalParameterDeclaration' has no attributes.
+The class 'adb::ObjectDeclaration' has no attributes.
+The class 'adb::Aggregate' has no attributes.
+The class 'adb::OptNullExclusion' has the following attributes: 'not_null' of type str.
+The class 'ArrayIndexes' has no attributes.
+The class 'CompositeConstraint' has no attributes.
+The class 'adb::Renaming' has the following attributes: 'renamed' of type str.
+The class 'adb::EntryBarrier' has no attributes.
+The class 'adb::GenericAssociation' has the following attributes: 'selectorName' of type str.
+The class 'adb::AbortablePart' has no attributes.
+The class 'adb::ExplicitGenericActualParameter' has no attributes.
+The class 'adb::ProtectedDefinition' has no attributes.
+The class 'adb::FormalPackageDeclaration' has the following attributes: 'name' of type str; 'genericPackageName' of type str.
+The class 'adb::ComponentDeclaration' has no attributes.
+The class 'adb::SubprogramDefault' has the following attributes: 'defaultName' of type str.
+The class 'adb::UninitializedComponents' has the following attributes: 'box' of type bool.
+The class 'adb::DigitsConstraint' has no attributes.
+The class 'adb::Primary' has no attributes.
+The class 'adb::BasicDeclaration' has no attributes.
+The class 'adb::SeparateSubunit' has the following attributes: 'parentUnitName' of type str.
+The class 'adb::ExceptionHandler' has the following attributes: 'name' of type str.
+The class 'adb::DiscreteChoice' has no attributes.
+The class 'adb::CaseStatementAlternative' has no attributes.
+The class 'adb::OptVariantPart' has no attributes.
+The class 'BasicDeclaration' has no attributes.
+The class 'TriggeringStatement' has no attributes.
+The class 'adb::WithClause' has the following attributes: 'limited' of type bool; 'private' of type bool.
+The class 'adb::RecordDefinition' has the following attributes: 'null' of type str.
+The class 'adb::ExtendedReturnStatement' has the following attributes: 'identifier' of type str.
+The class 'adb::DiscriminantAssociation' has no attributes.
+The class 'Body' has no attributes.
+The class 'adb::SelectStatement' has no attributes.
+The class 'ReturnSubtypeIndication' has no attributes.
+The class 'ExplicitGenericActualParameter' has no attributes.
+The class 'DiscriminantPart' has no attributes.
+The class 'adb::TriggeringAlternative' has no attributes.
+The class 'adb::EObject' has no attributes.
+The class 'ProperBody' has no attributes.
+The class 'adb::FormalPart' has no attributes.
+The class 'adb::ContextClause' has no attributes.
+The class 'FormalTypeDefinition' has no attributes.
+The class 'adb::CompoundStatement' has no attributes.
+The class 'adb::ParameterSpecification' has no attributes.
+The class 'adb::ProtectedElementDeclaration' has no attributes.
+The class 'EntryIndex' has no attributes.
+The class 'Primary' has no attributes.
+The class 'adb::ProtectedOperationDeclaration' has no attributes.
+The class 'adb::AcceptAlternative' has no attributes.
+The class 'adb::Statement' has no attributes.
+The class 'adb::GenericDeclaration' has no attributes.
+The class 'adb::SubprogramBody' has the following attributes: 'endname' of type str.
+The class 'adb::Unit' has no attributes.
+The class 'adb::IncompleteTypeDeclaration' has the following attributes: 'tagged' of type bool.
+The class 'AccessSpecification' has no attributes.
+The class 'adb::SubprogramSpecification' has no attributes.
+The class 'adb::FullDataTypeDeclaration' has no attributes.
+The class 'adb::GenericItem' has no attributes.
+The class 'NotNullAccessDefinition' has no attributes.
+The class 'adb::SingleProtectedDeclaration' has the following attributes: 'name' of type str.
+The class 'ParenthesizedExpression' has no attributes.
+The class 'adb::DelayAlternative' has no attributes.
+The class 'GenericItem' has no attributes.
+The class 'TypeDefinition' has no attributes.
+The class 'adb::Body' has no attributes.
+The class 'adb::TaskDeclaration' has the following attributes: 'name' of type str.
+The class 'adb::DataInstanceDeclaration' has the following attributes: 'aliased' of type bool; 'constant' of type bool.
+The class 'adb::EntryBody' has the following attributes: 'endid' of type str.
+The class 'RangeConstraint' has no attributes.
+The class 'adb::UseTypeClause' has the following attributes: 'typesNames' of type str; 'useTypeRefs' of type str.
+The class 'TypeDeclaration' has no attributes.
+The class 'adb::ComponentChoiceList' has the following attributes: 'componentSelectorName' of type str; 'others' of type bool.
+The class 'adb::ProcedureSpecification' has no attributes.
+The class 'adb::FixedPointDefinition' has no attributes.
+The class 'adb::IterationScheme' has no attributes.
+The class 'adb::DiscriminantSpecification' has no attributes.
+The class 'BasicDeclarativeItem' has no attributes.
+The class 'adb::EnumerationTypeDefinition' has the following attributes: 'enumerationliteralspecifications' of type str.
+The class 'adb::PrimaryName' has no attributes.
+The class 'adb::ComponentDefinition' has the following attributes: 'aliased' of type bool.
+The class 'adb::Relation' has the following attributes: 'relationalOperator' of type str.
+The class 'adb::FunctionSpecification' has no attributes.
+The class 'adb::DiscriminantConstraint' has no attributes.
+The class 'adb::DiscreteSubtypeDefinition' has no attributes.
+'adb::ExitStatement' is a specialization of 'SimpleStatement'.
+'adb::UsePackageClause' is a specialization of 'UseClause'.
+'adb::InterfaceTypeDefinition' is a specialization of 'TypeDefinition'.
+'adb::NumberDeclaration' is a specialization of 'BasicDeclaration'.
+'adb::TaskDeclaration' is a specialization of 'BasicDeclaration'.
+'adb::ConstrainedIndexes' is a specialization of 'ArrayIndexes'.
+'adb::ExtensionAggregate' is a specialization of 'Aggregate'.
+'adb::LibraryUnitDeclaration' is a specialization of 'Unit'.
+'adb::InitializedComponents' is a specialization of 'RecordComponentAssociation'.
+'adb::Pragma' is a specialization of 'BasicDeclarativeItem'.
+'adb::SubtypeIndication' is a specialization of 'DiscreteSubtypeDefinition'.
+'adb::ComponentDeclaration' is a specialization of 'ComponentItem'.
+'adb::AccessTypeDefinition' is a specialization of 'TypeDefinition'.
+'adb::TaskBody' is a specialization of 'DeclarativeBlock'.
+'adb::TaskBodyStub' is a specialization of 'BodyStub'.
+'adb::SingleProtectedDeclaration' is a specialization of 'ObjectDeclaration'.
+'adb::DiscriminantConstraint' is a specialization of 'CompositeConstraint'.
+'adb::UseClause' is a specialization of 'ContextItem'.
+'adb::PackageBody' is a specialization of 'DeclarativeBlock'.
+'adb::DelayStatement' is a specialization of 'SimpleStatement'.
+'adb::TaskBody' is a specialization of 'ProperBody'.
+'adb::PackageBodyStub' is a specialization of 'BodyStub'.
+'adb::ProtectedBody' is a specialization of 'ProperBody'.
+'adb::FormalDerivedTypeDefinition' is a specialization of 'FormalTypeDefinition'.
+'adb::FormalPrivateTypeDefinition' is a specialization of 'FormalTypeDefinition'.
+'adb::IntegerTypeDefinition' is a specialization of 'TypeDefinition'.
+'adb::PackageDefinition' is a specialization of 'PackageDeclaration'.
+'adb::AcceptAlternative' is a specialization of 'SelectAlternative'.
+'adb::GotoStatement' is a specialization of 'SimpleStatement'.
+'adb::AsynchronousSelect' is a specialization of 'SelectStatement'.
+'adb::SignedIntegerTypeDefinition' is a specialization of 'IntegerTypeDefinition'.
+'adb::AccessToSubprogramDefinition' is a specialization of 'AccessSpecification'.
+'adb::SimpleReturnStatement' is a specialization of 'SimpleStatement'.
+'adb::SubprogramBody' is a specialization of 'ProperBody'.
+'adb::Expression' is a specialization of 'EntryIndex'.
+'adb::ProperBody' is a specialization of 'Body'.
+'adb::UninitializedComponents' is a specialization of 'RecordComponentAssociation'.
+'adb::RealTypeDefinition' is a specialization of 'TypeDefinition'.
+'adb::SelectStatement' is a specialization of 'CompoundStatement'.
+'adb::StringLiteral' is a specialization of 'Primary'.
+'adb::CaseStatement' is a specialization of 'CompoundStatement'.
+'adb::ProcedureSpecification' is a specialization of 'SubprogramSpecification'.
+'adb::IndexConstraint' is a specialization of 'CompositeConstraint'.
+'adb::Pragma' is a specialization of 'ContextItem'.
+'adb::SubprogramSpecification' is a specialization of 'LibraryUnitSpecification'.
+'adb::CompoundStatement' is a specialization of 'Statement'.
+'adb::SubprogramSpecification' is a specialization of 'LibrarySpecification'.
+'adb::AbortStatement' is a specialization of 'SimpleStatement'.
+'adb::BodyStub' is a specialization of 'Body'.
+'adb::FormalSubprogramDeclaration' is a specialization of 'GenericFormalParameterDeclaration'.
+'adb::DiscreteRange' is a specialization of 'DiscreteSubtypeDefinition'.
+'adb::RequeueStatement' is a specialization of 'SimpleStatement'.
+'adb::PrivateTypeDeclaration' is a specialization of 'NewTypeDeclaration'.
+'adb::AnonymousAccessDefinition' is a specialization of 'ReturnSubtypeIndication'.
+'adb::WithClause' is a specialization of 'ContextItem'.
+'adb::SubprogramDeclaration' is a specialization of 'ProtectedOperationItem'.
+'adb::NumericLiteral' is a specialization of 'Primary'.
+'adb::AspectClause' is a specialization of 'TaskItem'.
+'adb::Expression' is a specialization of 'ParameterEffectiveValue'.
+'adb::SequenceOfStatements' is a specialization of 'AbortablePart'.
+'adb::ArrayAggregate' is a specialization of 'Aggregate'.
+'adb::IncompleteTypeDeclaration' is a specialization of 'NewTypeDeclaration'.
+'adb::SubprogramSpecification' is a specialization of 'BodyStub'.
+'adb::SubprogramBody' is a specialization of 'ProtectedOperationItem'.
+'adb::GenericInstantiation' is a specialization of 'LibraryUnitSpecification'.
+'adb::Renaming' is a specialization of 'PackageDeclaration'.
+'adb::Expression' is a specialization of 'AncestorPart'.
+'adb::UseClause' is a specialization of 'GenericItem'.
+'adb::GenericInstantiation' is a specialization of 'BasicDeclaration'.
+'adb::AspectClause' is a specialization of 'ProtectedOperationDeclaration'.
+'adb::Null' is a specialization of 'Primary'.
+'adb::FullTypeDeclaration' is a specialization of 'NewTypeDeclaration'.
+'adb::Range' is a specialization of 'Interval'.
+'adb::SubtypeIndication' is a specialization of 'DiscreteRange'.
+'adb::AccessToDataInstance' is a specialization of 'NotNullAccessDefinition'.
+'adb::AccessToSubprogramDefinition' is a specialization of 'NotNullAccessDefinition'.
+'adb::Aggregate' is a specialization of 'Qualifier'.
+'adb::BlockStatement' is a specialization of 'CompoundStatement'.
+'adb::Range' is a specialization of 'DiscreteRange'.
+'adb::NewTypeDeclaration' is a specialization of 'TypeDeclaration'.
+'adb::UnknownDiscriminantPart' is a specialization of 'DiscriminantPart'.
+'adb::InterfaceTypeDefinition' is a specialization of 'FormalTypeDefinition'.
+'adb::AssignmentStatement' is a specialization of 'SimpleStatement'.
+'adb::DelayStatement' is a specialization of 'TriggeringStatement'.
+'adb::ProtectedTypeDeclaration' is a specialization of 'FullTypeDeclaration'.
+'adb::Allocator' is a specialization of 'Primary'.
+'adb::NullStatement' is a specialization of 'SimpleStatement'.
+'adb::FixedPointDefinition' is a specialization of 'RealTypeDefinition'.
+'adb::ProtectedOperationDeclaration' is a specialization of 'ProtectedElementDeclaration'.
+'adb::ObjectDeclaration' is a specialization of 'BasicDeclaration'.
+'adb::TimedEntryCall' is a specialization of 'SelectStatement'.
+'adb::EntityRange' is a specialization of 'Range'.
+'adb::TypeDeclaration' is a specialization of 'BasicDeclaration'.
+'adb::FloatingPointDefinition' is a specialization of 'RealTypeDefinition'.
+'adb::Expression' is a specialization of 'ExplicitGenericActualParameter'.
+'adb::RecordTypeDefinition' is a specialization of 'TypeDefinition'.
+'adb::ProcedureOrEntryCallStatement' is a specialization of 'TriggeringStatement'.
+'adb::ExceptionDeclaration' is a specialization of 'BasicDeclaration'.
+'adb::RecordComponentAssociationList' is a specialization of 'RecordAggregate'.
+'adb::UnconstrainedIndexes' is a specialization of 'ArrayIndexes'.
+'adb::EntryBody' is a specialization of 'DeclarativeBlock'.
+'adb::AspectClause' is a specialization of 'ProtectedOperationItem'.
+'adb::SubtypeIndication' is a specialization of 'DiscreteChoice'.
+'adb::ExtendedReturnStatement' is a specialization of 'CompoundStatement'.
+'adb::SubtypeIndication' is a specialization of 'ReturnSubtypeIndication'.
+'adb::AccessTypeDefinition' is a specialization of 'FormalTypeDefinition'.
+'adb::SubprogramBody' is a specialization of 'Unit'.
+'adb::ArrayTypeDefinition' is a specialization of 'TypeDefinition'.
+'adb::ProcedureOrEntryCallStatement' is a specialization of 'SimpleStatement'.
+'adb::EnumerationTypeDefinition' is a specialization of 'TypeDefinition'.
+'adb::FormalObjectDeclaration' is a specialization of 'GenericFormalParameterDeclaration'.
+'adb::PackageDefinition' is a specialization of 'LibrarySpecification'.
+'adb::Name' is a specialization of 'Interval'.
+'adb::EntryDeclaration' is a specialization of 'ProtectedOperationDeclaration'.
+'adb::UseClause' is a specialization of 'BasicDeclarativeItem'.
+'adb::FullDataTypeDeclaration' is a specialization of 'FullTypeDeclaration'.
+'adb::DelayAlternative' is a specialization of 'SelectAlternative'.
+'adb::DeltaConstraint' is a specialization of 'ScalarConstraint'.
+'adb::AcceptStatement' is a specialization of 'CompoundStatement'.
+'adb::SubprogramDeclaration' is a specialization of 'BasicDeclaration'.
+'adb::KnownDiscriminantPart' is a specialization of 'DiscriminantPart'.
+'adb::PackageBody' is a specialization of 'Unit'.
+'adb::PackageDeclaration' is a specialization of 'BasicDeclaration'.
+'adb::PrivateExtensionDeclaration' is a specialization of 'NewTypeDeclaration'.
+'adb::EntryBody' is a specialization of 'ProtectedOperationItem'.
+'adb::PositionalArrayAggregate' is a specialization of 'ArrayAggregate'.
+'adb::FormalPackageDeclaration' is a specialization of 'GenericFormalParameterDeclaration'.
+'adb::BasicDeclarativeItem' is a specialization of 'DeclarativeItem'.
+'adb::BlockStatement' is a specialization of 'DeclarativeBlock'.
+'adb::DataInstanceDeclaration' is a specialization of 'ObjectDeclaration'.
+'adb::PackageBody' is a specialization of 'ProperBody'.
+'adb::UseTypeClause' is a specialization of 'UseClause'.
+'adb::EntryDeclaration' is a specialization of 'TaskItem'.
+'adb::BasicDeclaration' is a specialization of 'BasicDeclarativeItem'.
+'adb::RangeConstraint' is a specialization of 'ScalarConstraint'.
+'adb::Range' is a specialization of 'RangeConstraint'.
+'adb::NamedArrayAggregate' is a specialization of 'ArrayAggregate'.
+'adb::ConditionalEntryCall' is a specialization of 'SelectStatement'.
+'adb::SelectiveAccept' is a specialization of 'SelectStatement'.
+'adb::FormalTypeDeclaration' is a specialization of 'GenericFormalParameterDeclaration'.
+'adb::ExplicitRange' is a specialization of 'Range'.
+'adb::GenericDeclaration' is a specialization of 'LibraryUnitSpecification'.
+'adb::LoopStatement' is a specialization of 'CompoundStatement'.
+'adb::RaiseStatement' is a specialization of 'SimpleStatement'.
+'adb::ComponentDeclaration' is a specialization of 'ProtectedElementDeclaration'.
+'adb::IfStatement' is a specialization of 'CompoundStatement'.
+'adb::SimpleStatement' is a specialization of 'Statement'.
+'adb::ArrayTypeDefinition' is a specialization of 'FormalTypeDefinition'.
+'adb::SubprogramDeclaration' is a specialization of 'ProtectedOperationDeclaration'.
+'adb::GenericDeclaration' is a specialization of 'BasicDeclaration'.
+'adb::RecordAggregate' is a specialization of 'Aggregate'.
+'adb::SeparateSubunit' is a specialization of 'Unit'.
+'adb::ModularTypeDefinition' is a specialization of 'IntegerTypeDefinition'.
+'adb::GenericFormalParameterDeclaration' is a specialization of 'GenericItem'.
+'adb::FunctionSpecification' is a specialization of 'SubprogramSpecification'.
+'adb::AspectClause' is a specialization of 'BasicDeclarativeItem'.
+'adb::PackageDeclaration' is a specialization of 'LibraryUnitSpecification'.
+'adb::Range' is a specialization of 'DiscreteChoice'.
+'adb::Range' is a specialization of 'ParameterEffectiveValue'.
+'adb::AccessToDataDefinition' is a specialization of 'AccessSpecification'.
+'adb::QualifiedName' is a specialization of 'Primary'.
+'adb::SequenceOfStatements' is a specialization of 'HandledSequenceOfStatements'.
+'adb::AspectClause' is a specialization of 'ComponentItem'.
+'adb::SubtypeDeclaration' is a specialization of 'TypeDeclaration'.
+'adb::TaskNames' is a specialization of 'AbortStatement'.
+'adb::DerivedTypeDefinition' is a specialization of 'TypeDefinition'.
+'adb::ParenthesizedExpression' is a specialization of 'Primary'.
+'adb::SubprogramBody' is a specialization of 'DeclarativeBlock'.
+'adb::ProtectedBodyStub' is a specialization of 'BodyStub'.
+'adb::Expression' is a specialization of 'DiscreteChoice'.
+'adb::DigitsConstraint' is a specialization of 'ScalarConstraint'.
+'adb::Pragma' is a specialization of 'Statement'.
+'adb::Aggregate' is a specialization of 'ParenthesizedExpression'.
+'adb::Body' is a specialization of 'DeclarativeItem'.
+'adb::GenericActualPart' (role 'adb_GenericActualPart', cardinality 0..*) is associated with 'adb::GenericInstantiation' (role 'adb_GenericInstantiation20', cardinality 0..*).
+'adb::Name' (role 'adb_Name204', cardinality 0..*) is associated with 'adb::ProcedureOrEntryCallStatement' (role 'adb_ProcedureOrEntryCallStatement', cardinality 0..*).
+'adb::AnonymousAccessDefinition' (role 'adb_AnonymousAccessDefinition391', cardinality 0..*) is associated with 'adb::ParameterAndResultProfile' (role 'adb_ParameterAndResultProfile390', cardinality 0..*).
+'adb::ComponentClause' (role 'adb_ComponentClause446', cardinality 0..*) is associated with 'adb::Expression' (role 'adb_Expression447', cardinality 0..*).
+'adb::SimpleExpression' (role 'adb_SimpleExpression415', cardinality 0..*) is associated with 'adb::SignedIntegerTypeDefinition' (role 'adb_SignedIntegerTypeDefinition414', cardinality 0..*).
+'adb::AcceptStatement' (role 'adb_AcceptStatement231', cardinality 0..*) is associated with 'adb::FormalPart' (role 'adb_FormalPart232', cardinality 0..*).
+'adb::EntityRange' (role 'adb_EntityRange569', cardinality 0..*) is associated with 'adb::Expression' (role 'adb_Expression570', cardinality 0..*).
+'adb::CompilationUnit' (role 'adb_CompilationUnit', cardinality 0..*) is associated with 'adb::Compilation' (role 'adb_Compilation', cardinality 0..*).
+'adb::Guard' (role 'adb_Guard', cardinality 0..*) is associated with 'adb::SelectiveAccept' (role 'adb_SelectiveAccept', cardinality 0..*).
+'adb::PrimaryName' (role 'adb_PrimaryName554', cardinality 0..*) is associated with 'adb::PrimaryName' (role 'adb_PrimaryName556', cardinality 0..*).
+'adb::FormalPackageActualPart' (role 'adb_FormalPackageActualPart117', cardinality 0..*) is associated with 'adb::FormalPackageAssociation' (role 'adb_FormalPackageAssociation', cardinality 0..*).
+'adb::Expression' (role 'adb_Expression192', cardinality 0..*) is associated with 'adb::IterationScheme' (role 'adb_IterationScheme191', cardinality 0..*).
+'adb::Unit' (role 'adb_Unit', cardinality 0..*) is associated with 'adb::CompilationUnit' (role 'adb_CompilationUnit4', cardinality 0..*).
+'adb::ExceptionDeclaration' (role 'adb_ExceptionDeclaration123', cardinality 0..*) is associated with 'adb::Name' (role 'adb_Name124', cardinality 0..*).
+'adb::AsynchronousSelect' (role 'adb_AsynchronousSelect', cardinality 0..*) is associated with 'adb::TriggeringAlternative' (role 'adb_TriggeringAlternative', cardinality 0..*).
+'adb::GuardedAlternative' (role 'adb_GuardedAlternative', cardinality 0..*) is associated with 'adb::SelectiveAccept' (role 'adb_SelectiveAccept261', cardinality 0..*).
+'adb::Expression' (role 'adb_Expression311', cardinality 0..*) is associated with 'adb::RaiseStatement' (role 'adb_RaiseStatement310', cardinality 0..*).
+'adb::NotNullAccessDefinition' (role 'adb_NotNullAccessDefinition', cardinality 0..*) is associated with 'adb::DiscriminantSpecification' (role 'adb_DiscriminantSpecification326', cardinality 0..*).
+'adb::DeclarativeBlock' (role 'adb_DeclarativeBlock', cardinality 0..*) is associated with 'adb::DeclarativeItem' (role 'adb_DeclarativeItem', cardinality 0..*).
+'adb::RealRangeSpecification' (role 'adb_RealRangeSpecification', cardinality 0..*) is associated with 'adb::RealTypeDefinition' (role 'adb_RealTypeDefinition467', cardinality 0..*).
+'adb::SimpleExpression' (role 'adb_SimpleExpression572', cardinality 0..*) is associated with 'adb::ExplicitRange' (role 'adb_ExplicitRange', cardinality 0..*).
+'adb::LabelisableStatement' (role 'adb_LabelisableStatement84', cardinality 0..*) is associated with 'adb::Statement' (role 'adb_Statement', cardinality 0..*).
+'adb::TaskBody' (role 'adb_TaskBody223', cardinality 0..*) is associated with 'adb::TaskDeclaration' (role 'adb_TaskDeclaration224', cardinality 0..*).
+'adb::InterfaceList' (role 'adb_InterfaceList334', cardinality 0..*) is associated with 'adb::Name' (role 'adb_Name335', cardinality 0..*).
+'adb::ParameterSpecification' (role 'adb_ParameterSpecification404', cardinality 0..*) is associated with 'adb::Name' (role 'adb_Name405', cardinality 0..*).
+'adb::ArrayComponentAssociation' (role 'adb_ArrayComponentAssociation548', cardinality 0..*) is associated with 'adb::Expression' (role 'adb_Expression549', cardinality 0..*).
+'adb::Expression' (role 'adb_Expression206', cardinality 0..*) is associated with 'adb::SimpleReturnStatement' (role 'adb_SimpleReturnStatement', cardinality 0..*).
+'adb::DiscriminantConstraint' (role 'adb_DiscriminantConstraint', cardinality 0..*) is associated with 'adb::DiscriminantAssociation' (role 'adb_DiscriminantAssociation', cardinality 0..*).
+'adb::DataInstanceDeclaration' (role 'adb_DataInstanceDeclaration140', cardinality 0..*) is associated with 'adb::ArrayTypeDefinition' (role 'adb_ArrayTypeDefinition', cardinality 0..*).
+'adb::PackageBody' (role 'adb_PackageBody', cardinality 0..*) is associated with 'adb::PackageDeclaration' (role 'adb_PackageDeclaration', cardinality 0..*).
+'adb::GenericAssociation' (role 'adb_GenericAssociation314', cardinality 0..*) is associated with 'adb::GenericActualPart' (role 'adb_GenericActualPart313', cardinality 0..*).
+'adb::AsynchronousSelect' (role 'adb_AsynchronousSelect298', cardinality 0..*) is associated with 'adb::AbortablePart' (role 'adb_AbortablePart', cardinality 0..*).
+'adb::DiscreteChoiceList' (role 'adb_DiscreteChoiceList', cardinality 0..*) is associated with 'adb::CaseStatementAlternative' (role 'adb_CaseStatementAlternative182', cardinality 0..*).
+'adb::IfStatement' (role 'adb_IfStatement175', cardinality 0..*) is associated with 'adb::SequenceOfStatements' (role 'adb_SequenceOfStatements176', cardinality 0..*).
+'adb::PragmaArgumentAssociation' (role 'adb_PragmaArgumentAssociation', cardinality 0..*) is associated with 'adb::Pragma' (role 'adb_Pragma147', cardinality 0..*).
+'adb::ParameterSpecification' (role 'adb_ParameterSpecification398', cardinality 0..*) is associated with 'adb::Mode' (role 'adb_Mode399', cardinality 0..*).
+'adb::AssignmentStatement' (role 'adb_AssignmentStatement161', cardinality 0..*) is associated with 'adb::Expression' (role 'adb_Expression162', cardinality 0..*).
+'adb::FormalSubprogramDeclaration' (role 'adb_FormalSubprogramDeclaration111', cardinality 0..*) is associated with 'adb::SubprogramDefault' (role 'adb_SubprogramDefault', cardinality 0..*).
+'adb::Name' (role 'adb_Name159', cardinality 0..*) is associated with 'adb::AssignmentStatement' (role 'adb_AssignmentStatement', cardinality 0..*).
+'adb::ExplicitGenericActualParameter' (role 'adb_ExplicitGenericActualParameter', cardinality 0..*) is associated with 'adb::GenericAssociation' (role 'adb_GenericAssociation316', cardinality 0..*).
+'adb::Expression' (role 'adb_Expression477', cardinality 0..*) is associated with 'adb::Relation' (role 'adb_Relation', cardinality 0..*).
+'adb::AnonymousAccessDefinition' (role 'adb_AnonymousAccessDefinition138', cardinality 0..*) is associated with 'adb::DataInstanceDeclaration' (role 'adb_DataInstanceDeclaration137', cardinality 0..*).
+'adb::ComponentClause' (role 'adb_ComponentClause', cardinality 0..*) is associated with 'adb::AspectClause' (role 'adb_AspectClause441', cardinality 0..*).
+'adb::DiscreteChoiceList' (role 'adb_DiscreteChoiceList546', cardinality 0..*) is associated with 'adb::ArrayComponentAssociation' (role 'adb_ArrayComponentAssociation545', cardinality 0..*).
+'adb::RealRangeSpecification' (role 'adb_RealRangeSpecification472', cardinality 0..*) is associated with 'adb::SimpleExpression' (role 'adb_SimpleExpression473', cardinality 0..*).
+'adb::FormalSubprogramDeclaration' (role 'adb_FormalSubprogramDeclaration', cardinality 0..*) is associated with 'adb::SubprogramSpecification' (role 'adb_SubprogramSpecification109', cardinality 0..*).
+'adb::DelayStatement' (role 'adb_DelayStatement280', cardinality 0..*) is associated with 'adb::DelayAlternative' (role 'adb_DelayAlternative', cardinality 0..*).
+'adb::RealTypeDefinition' (role 'adb_RealTypeDefinition', cardinality 0..*) is associated with 'adb::Expression' (role 'adb_Expression465', cardinality 0..*).
+'adb::Expression' (role 'adb_Expression256', cardinality 0..*) is associated with 'adb::DelayStatement' (role 'adb_DelayStatement', cardinality 0..*).
+'adb::SelectiveAccept' (role 'adb_SelectiveAccept259', cardinality 0..*) is associated with 'adb::SelectAlternative' (role 'adb_SelectAlternative', cardinality 0..*).
+'adb::OptVariantPart' (role 'adb_OptVariantPart427', cardinality 0..*) is associated with 'adb::VariantPart' (role 'adb_VariantPart', cardinality 0..*).
+'adb::IfStatement' (role 'adb_IfStatement169', cardinality 0..*) is associated with 'adb::Expression' (role 'adb_Expression170', cardinality 0..*).
+'adb::ParameterAssociation' (role 'adb_ParameterAssociation563', cardinality 0..*) is associated with 'adb::ParameterEffectiveValue' (role 'adb_ParameterEffectiveValue', cardinality 0..*).
+'adb::InterfaceTypeDefinition' (role 'adb_InterfaceTypeDefinition', cardinality 0..*) is associated with 'adb::InterfaceList' (role 'adb_InterfaceList337', cardinality 0..*).
+'adb::EntityRange' (role 'adb_EntityRange', cardinality 0..*) is associated with 'adb::Name' (role 'adb_Name567', cardinality 0..*).
+'adb::FormalObjectDeclaration' (role 'adb_FormalObjectDeclaration89', cardinality 0..*) is associated with 'adb::Mode' (role 'adb_Mode', cardinality 0..*).
+'adb::PositionalArrayAggregate' (role 'adb_PositionalArrayAggregate', cardinality 0..*) is associated with 'adb::Expression' (role 'adb_Expression539', cardinality 0..*).
+'adb::Expression' (role 'adb_Expression542', cardinality 0..*) is associated with 'adb::PositionalArrayAggregate' (role 'adb_PositionalArrayAggregate541', cardinality 0..*).
+'adb::DefiningIdentifierList' (role 'adb_DefiningIdentifierList121', cardinality 0..*) is associated with 'adb::ExceptionDeclaration' (role 'adb_ExceptionDeclaration', cardinality 0..*).
+'adb::TriggeringAlternative' (role 'adb_TriggeringAlternative302', cardinality 0..*) is associated with 'adb::SequenceOfStatements' (role 'adb_SequenceOfStatements303', cardinality 0..*).
+'adb::RecordComponentAssociation' (role 'adb_RecordComponentAssociation531', cardinality 0..*) is associated with 'adb::ComponentChoiceList' (role 'adb_ComponentChoiceList', cardinality 0..*).
+'adb::PrivateExtensionDeclaration' (role 'adb_PrivateExtensionDeclaration49', cardinality 0..*) is associated with 'adb::InterfaceList' (role 'adb_InterfaceList50', cardinality 0..*).
+'adb::Expression' (role 'adb_Expression273', cardinality 0..*) is associated with 'adb::Guard' (role 'adb_Guard272', cardinality 0..*).
+'adb::RealRangeSpecification' (role 'adb_RealRangeSpecification469', cardinality 0..*) is associated with 'adb::SimpleExpression' (role 'adb_SimpleExpression470', cardinality 0..*).
+'adb::ParameterSpecification' (role 'adb_ParameterSpecification410', cardinality 0..*) is associated with 'adb::Expression' (role 'adb_Expression411', cardinality 0..*).
+'adb::ExtendedReturnStatement' (role 'adb_ExtendedReturnStatement', cardinality 0..*) is associated with 'adb::ReturnSubtypeIndication' (role 'adb_ReturnSubtypeIndication', cardinality 0..*).
+'adb::Membership' (role 'adb_Membership', cardinality 0..*) is associated with 'adb::Relation' (role 'adb_Relation485', cardinality 0..*).
+'adb::EntryCallAlternative' (role 'adb_EntryCallAlternative286', cardinality 0..*) is associated with 'adb::ProcedureOrEntryCallStatement' (role 'adb_ProcedureOrEntryCallStatement287', cardinality 0..*).
+'adb::Variant' (role 'adb_Variant460', cardinality 0..*) is associated with 'adb::ComponentList' (role 'adb_ComponentList461', cardinality 0..*).
+'adb::ProtectedOperationItem' (role 'adb_ProtectedOperationItem', cardinality 0..*) is associated with 'adb::ProtectedBody' (role 'adb_ProtectedBody', cardinality 0..*).
+'adb::SimpleExpression' (role 'adb_SimpleExpression518', cardinality 0..*) is associated with 'adb::DeltaConstraint' (role 'adb_DeltaConstraint', cardinality 0..*).
+'adb::InitializedComponents' (role 'adb_InitializedComponents', cardinality 0..*) is associated with 'adb::Expression' (role 'adb_Expression533', cardinality 0..*).
+'adb::OptNullExclusion' (role 'adb_OptNullExclusion374', cardinality 0..*) is associated with 'adb::AnonymousAccessDefinition' (role 'adb_AnonymousAccessDefinition373', cardinality 0..*).
+'adb::ParameterAndResultProfile' (role 'adb_ParameterAndResultProfile384', cardinality 0..*) is associated with 'adb::OptNullExclusion' (role 'adb_OptNullExclusion385', cardinality 0..*).
+'adb::PackageSpecification' (role 'adb_PackageSpecification24', cardinality 0..*) is associated with 'adb::BasicDeclarativeItem' (role 'adb_BasicDeclarativeItem25', cardinality 0..*).
+'adb::RecordComponentAssociationList' (role 'adb_RecordComponentAssociationList537', cardinality 0..*) is associated with 'adb::ExtensionAggregate' (role 'adb_ExtensionAggregate536', cardinality 0..*).
+'adb::OverridingIndicator' (role 'adb_OverridingIndicator67', cardinality 0..*) is associated with 'adb::SubprogramSpecification' (role 'adb_SubprogramSpecification66', cardinality 0..*).
+'adb::FormalObjectDeclaration' (role 'adb_FormalObjectDeclaration96', cardinality 0..*) is associated with 'adb::AnonymousAccessDefinition' (role 'adb_AnonymousAccessDefinition', cardinality 0..*).
+'adb::PackageDeclaration' (role 'adb_PackageDeclaration217', cardinality 0..*) is associated with 'adb::PackageBody' (role 'adb_PackageBody216', cardinality 0..*).
+'adb::NotNullAccessDefinition' (role 'adb_NotNullAccessDefinition377', cardinality 0..*) is associated with 'adb::AnonymousAccessDefinition' (role 'adb_AnonymousAccessDefinition376', cardinality 0..*).
+'adb::SingleProtectedDeclaration' (role 'adb_SingleProtectedDeclaration144', cardinality 0..*) is associated with 'adb::ProtectedDefinition' (role 'adb_ProtectedDefinition145', cardinality 0..*).
+'adb::DiscriminantSpecification' (role 'adb_DiscriminantSpecification328', cardinality 0..*) is associated with 'adb::Name' (role 'adb_Name329', cardinality 0..*).
+'adb::CaseStatement' (role 'adb_CaseStatement', cardinality 0..*) is associated with 'adb::Expression' (role 'adb_Expression178', cardinality 0..*).
+'adb::LoopParameterSpecification' (role 'adb_LoopParameterSpecification', cardinality 0..*) is associated with 'adb::IterationScheme' (role 'adb_IterationScheme194', cardinality 0..*).
+'adb::ContextClause' (role 'adb_ContextClause8', cardinality 0..*) is associated with 'adb::ContextItem' (role 'adb_ContextItem', cardinality 0..*).
+'adb::SubprogramSpecification' (role 'adb_SubprogramSpecification64', cardinality 0..*) is associated with 'adb::SubprogramDeclaration' (role 'adb_SubprogramDeclaration', cardinality 0..*).
+'adb::RaiseStatement' (role 'adb_RaiseStatement', cardinality 0..*) is associated with 'adb::Name' (role 'adb_Name308', cardinality 0..*).
+'adb::SingleProtectedDeclaration' (role 'adb_SingleProtectedDeclaration', cardinality 0..*) is associated with 'adb::InterfaceList' (role 'adb_InterfaceList142', cardinality 0..*).
+'adb::TaskBody' (role 'adb_TaskBody', cardinality 0..*) is associated with 'adb::TaskDeclaration' (role 'adb_TaskDeclaration221', cardinality 0..*).
+'adb::Expression' (role 'adb_Expression249', cardinality 0..*) is associated with 'adb::EntryBarrier' (role 'adb_EntryBarrier248', cardinality 0..*).
+'adb::TaskDeclaration' (role 'adb_TaskDeclaration35', cardinality 0..*) is associated with 'adb::TaskDeclaration' (role 'adb_TaskDeclaration37', cardinality 0..*).
+'adb::SequenceOfStatements' (role 'adb_SequenceOfStatements264', cardinality 0..*) is associated with 'adb::SelectiveAccept' (role 'adb_SelectiveAccept263', cardinality 0..*).
+'adb::FixedPointDefinition' (role 'adb_FixedPointDefinition', cardinality 0..*) is associated with 'adb::Expression' (role 'adb_Expression475', cardinality 0..*).
+'adb::OverridingIndicator' (role 'adb_OverridingIndicator', cardinality 0..*) is associated with 'adb::GenericInstantiation' (role 'adb_GenericInstantiation', cardinality 0..*).
+'adb::DiscriminantAssociation' (role 'adb_DiscriminantAssociation527', cardinality 0..*) is associated with 'adb::Expression' (role 'adb_Expression528', cardinality 0..*).
+'adb::SelectAlternative' (role 'adb_SelectAlternative270', cardinality 0..*) is associated with 'adb::GuardedAlternative' (role 'adb_GuardedAlternative269', cardinality 0..*).
+'adb::ComponentDeclaration' (role 'adb_ComponentDeclaration', cardinality 0..*) is associated with 'adb::DefiningIdentifierList' (role 'adb_DefiningIdentifierList429', cardinality 0..*).
+'adb::DiscriminantPart' (role 'adb_DiscriminantPart100', cardinality 0..*) is associated with 'adb::FormalTypeDeclaration' (role 'adb_FormalTypeDeclaration', cardinality 0..*).
+'adb::ExitStatement' (role 'adb_ExitStatement201', cardinality 0..*) is associated with 'adb::Expression' (role 'adb_Expression202', cardinality 0..*).
+'adb::ProtectedTypeDeclaration' (role 'adb_ProtectedTypeDeclaration60', cardinality 0..*) is associated with 'adb::ProtectedDefinition' (role 'adb_ProtectedDefinition', cardinality 0..*).
+'adb::TaskDefinition' (role 'adb_TaskDefinition219', cardinality 0..*) is associated with 'adb::TaskItem' (role 'adb_TaskItem', cardinality 0..*).
+'adb::PrivateExtensionDeclaration' (role 'adb_PrivateExtensionDeclaration', cardinality 0..*) is associated with 'adb::DiscriminantPart' (role 'adb_DiscriminantPart45', cardinality 0..*).
+'adb::NamedArrayAggregate' (role 'adb_NamedArrayAggregate', cardinality 0..*) is associated with 'adb::ArrayComponentAssociation' (role 'adb_ArrayComponentAssociation', cardinality 0..*).
+'adb::RequeueStatement' (role 'adb_RequeueStatement', cardinality 0..*) is associated with 'adb::Name' (role 'adb_Name254', cardinality 0..*).
+'adb::PrivateExtensionDeclaration' (role 'adb_PrivateExtensionDeclaration47', cardinality 0..*) is associated with 'adb::SubtypeIndication' (role 'adb_SubtypeIndication', cardinality 0..*).
+'adb::AspectClause' (role 'adb_AspectClause', cardinality 0..*) is associated with 'adb::Expression' (role 'adb_Expression437', cardinality 0..*).
+'adb::OptConstraint' (role 'adb_OptConstraint512', cardinality 0..*) is associated with 'adb::EObject' (role 'adb_EObject', cardinality 0..*).
+'adb::ParameterSpecification' (role 'adb_ParameterSpecification401', cardinality 0..*) is associated with 'adb::OptNullExclusion' (role 'adb_OptNullExclusion402', cardinality 0..*).
+'adb::Expression' (role 'adb_Expression332', cardinality 0..*) is associated with 'adb::DiscriminantSpecification' (role 'adb_DiscriminantSpecification331', cardinality 0..*).
+'adb::DefiningIdentifierList' (role 'adb_DefiningIdentifierList', cardinality 0..*) is associated with 'adb::FormalObjectDeclaration' (role 'adb_FormalObjectDeclaration', cardinality 0..*).
+'adb::AnonymousAccessDefinition' (role 'adb_AnonymousAccessDefinition408', cardinality 0..*) is associated with 'adb::ParameterSpecification' (role 'adb_ParameterSpecification407', cardinality 0..*).
+'adb::ContextClause' (role 'adb_ContextClause', cardinality 0..*) is associated with 'adb::CompilationUnit' (role 'adb_CompilationUnit2', cardinality 0..*).
+'adb::ProtectedDefinition' (role 'adb_ProtectedDefinition62', cardinality 0..*) is associated with 'adb::ProtectedElementDeclaration' (role 'adb_ProtectedElementDeclaration', cardinality 0..*).
+'adb::EntryDeclaration' (role 'adb_EntryDeclaration', cardinality 0..*) is associated with 'adb::OverridingIndicator' (role 'adb_OverridingIndicator52', cardinality 0..*).
+'adb::DefiningIdentifierList' (role 'adb_DefiningIdentifierList154', cardinality 0..*) is associated with 'adb::NumberDeclaration' (role 'adb_NumberDeclaration', cardinality 0..*).
+'adb::PrivateTypeDeclaration' (role 'adb_PrivateTypeDeclaration', cardinality 0..*) is associated with 'adb::DiscriminantPart' (role 'adb_DiscriminantPart43', cardinality 0..*).
+'adb::PragmaArgumentAssociation' (role 'adb_PragmaArgumentAssociation149', cardinality 0..*) is associated with 'adb::Expression' (role 'adb_Expression150', cardinality 0..*).
+'adb::OptNullExclusion' (role 'adb_OptNullExclusion348', cardinality 0..*) is associated with 'adb::AccessTypeDefinition' (role 'adb_AccessTypeDefinition', cardinality 0..*).
+'adb::ParameterAndResultProfile' (role 'adb_ParameterAndResultProfile355', cardinality 0..*) is associated with 'adb::AccessToSubprogramDefinition' (role 'adb_AccessToSubprogramDefinition354', cardinality 0..*).
+'adb::LoopStatement' (role 'adb_LoopStatement', cardinality 0..*) is associated with 'adb::IterationScheme' (role 'adb_IterationScheme', cardinality 0..*).
+'adb::AttributeDesignator' (role 'adb_AttributeDesignator', cardinality 0..*) is associated with 'adb::PrimaryName' (role 'adb_PrimaryName561', cardinality 0..*).
+'adb::FormalPart' (role 'adb_FormalPart69', cardinality 0..*) is associated with 'adb::ProcedureSpecification' (role 'adb_ProcedureSpecification', cardinality 0..*).
+'adb::TimedEntryCall' (role 'adb_TimedEntryCall283', cardinality 0..*) is associated with 'adb::DelayAlternative' (role 'adb_DelayAlternative284', cardinality 0..*).
+'adb::ParameterAndResultProfile' (role 'adb_ParameterAndResultProfile', cardinality 0..*) is associated with 'adb::FunctionSpecification' (role 'adb_FunctionSpecification', cardinality 0..*).
+'adb::Expression' (role 'adb_Expression157', cardinality 0..*) is associated with 'adb::NumberDeclaration' (role 'adb_NumberDeclaration156', cardinality 0..*).
+'adb::GenericItems' (role 'adb_GenericItems86', cardinality 0..*) is associated with 'adb::GenericItem' (role 'adb_GenericItem', cardinality 0..*).
+'adb::EntryIndexSpecification' (role 'adb_EntryIndexSpecification', cardinality 0..*) is associated with 'adb::EntryBodyFormalPart' (role 'adb_EntryBodyFormalPart243', cardinality 0..*).
+'adb::SequenceOfStatements' (role 'adb_SequenceOfStatements77', cardinality 0..*) is associated with 'adb::ExceptionHandler' (role 'adb_ExceptionHandler78', cardinality 0..*).
+'adb::FormalObjectDeclaration' (role 'adb_FormalObjectDeclaration93', cardinality 0..*) is associated with 'adb::Name' (role 'adb_Name94', cardinality 0..*).
+'adb::EntryBarrier' (role 'adb_EntryBarrier', cardinality 0..*) is associated with 'adb::EntryBody' (role 'adb_EntryBody241', cardinality 0..*).
+'adb::Pragma' (role 'adb_Pragma', cardinality 0..*) is associated with 'adb::CompilationUnit' (role 'adb_CompilationUnit6', cardinality 0..*).
+'adb::DataInstanceDeclaration' (role 'adb_DataInstanceDeclaration128', cardinality 0..*) is associated with 'adb::SubtypeIndication' (role 'adb_SubtypeIndication129', cardinality 0..*).
+'adb::Factor' (role 'adb_Factor495', cardinality 0..*) is associated with 'adb::Primary' (role 'adb_Primary496', cardinality 0..*).
+'adb::FormalPart' (role 'adb_FormalPart382', cardinality 0..*) is associated with 'adb::ParameterAndResultProfile' (role 'adb_ParameterAndResultProfile381', cardinality 0..*).
+'adb::CaseStatementAlternative' (role 'adb_CaseStatementAlternative184', cardinality 0..*) is associated with 'adb::SequenceOfStatements' (role 'adb_SequenceOfStatements185', cardinality 0..*).
+'adb::OptNullExclusion' (role 'adb_OptNullExclusion508', cardinality 0..*) is associated with 'adb::SubtypeIndication' (role 'adb_SubtypeIndication507', cardinality 0..*).
+'adb::DigitsConstraint' (role 'adb_DigitsConstraint516', cardinality 0..*) is associated with 'adb::RangeConstraint' (role 'adb_RangeConstraint', cardinality 0..*).
+'adb::Expression' (role 'adb_Expression', cardinality 0..*) is associated with 'adb::FormalObjectDeclaration' (role 'adb_FormalObjectDeclaration98', cardinality 0..*).
+'adb::PackageSpecification' (role 'adb_PackageSpecification', cardinality 0..*) is associated with 'adb::PackageDefinition' (role 'adb_PackageDefinition', cardinality 0..*).
+'adb::LibraryUnitDeclaration' (role 'adb_LibraryUnitDeclaration13', cardinality 0..*) is associated with 'adb::LibraryUnitSpecification' (role 'adb_LibraryUnitSpecification', cardinality 0..*).
+'adb::Primary' (role 'adb_Primary', cardinality 0..*) is associated with 'adb::Factor' (role 'adb_Factor493', cardinality 0..*).
+'adb::OptConstraint' (role 'adb_OptConstraint', cardinality 0..*) is associated with 'adb::SubtypeIndication' (role 'adb_SubtypeIndication510', cardinality 0..*).
+'adb::Expression' (role 'adb_Expression164', cardinality 0..*) is associated with 'adb::IfStatement' (role 'adb_IfStatement', cardinality 0..*).
+'adb::SubprogramSpecification' (role 'adb_SubprogramSpecification', cardinality 0..*) is associated with 'adb::SubprogramBody' (role 'adb_SubprogramBody', cardinality 0..*).
+'adb::RecordExtensionPart' (role 'adb_RecordExtensionPart', cardinality 0..*) is associated with 'adb::DerivedTypeDefinition' (role 'adb_DerivedTypeDefinition344', cardinality 0..*).
+'adb::AcceptStatement' (role 'adb_AcceptStatement229', cardinality 0..*) is associated with 'adb::EntryIndex' (role 'adb_EntryIndex', cardinality 0..*).
+'adb::AttributeDesignator' (role 'adb_AttributeDesignator565', cardinality 0..*) is associated with 'adb::ParenthesizedExpression' (role 'adb_ParenthesizedExpression', cardinality 0..*).
+'adb::TimedEntryCall' (role 'adb_TimedEntryCall', cardinality 0..*) is associated with 'adb::EntryCallAlternative' (role 'adb_EntryCallAlternative', cardinality 0..*).
+'adb::ComponentList' (role 'adb_ComponentList425', cardinality 0..*) is associated with 'adb::OptVariantPart' (role 'adb_OptVariantPart', cardinality 0..*).
+'adb::GuardedAlternative' (role 'adb_GuardedAlternative266', cardinality 0..*) is associated with 'adb::Guard' (role 'adb_Guard267', cardinality 0..*).
+'adb::Expression' (role 'adb_Expression210', cardinality 0..*) is associated with 'adb::ExtendedReturnStatement' (role 'adb_ExtendedReturnStatement209', cardinality 0..*).
+'adb::Name' (role 'adb_Name363', cardinality 0..*) is associated with 'adb::UnconstrainedIndexes' (role 'adb_UnconstrainedIndexes', cardinality 0..*).
+'adb::KnownDiscriminantPart' (role 'adb_KnownDiscriminantPart318', cardinality 0..*) is associated with 'adb::DiscriminantSpecification' (role 'adb_DiscriminantSpecification', cardinality 0..*).
+'adb::EntryDeclaration' (role 'adb_EntryDeclaration237', cardinality 0..*) is associated with 'adb::EntryBody' (role 'adb_EntryBody', cardinality 0..*).
+'adb::Relation' (role 'adb_Relation479', cardinality 0..*) is associated with 'adb::SimpleExpression' (role 'adb_SimpleExpression480', cardinality 0..*).
+'adb::DigitsConstraint' (role 'adb_DigitsConstraint', cardinality 0..*) is associated with 'adb::SimpleExpression' (role 'adb_SimpleExpression514', cardinality 0..*).
+'adb::SequenceOfStatements' (role 'adb_SequenceOfStatements295', cardinality 0..*) is associated with 'adb::ConditionalEntryCall' (role 'adb_ConditionalEntryCall294', cardinality 0..*).
+'adb::PrimaryName' (role 'adb_PrimaryName558', cardinality 0..*) is associated with 'adb::Name' (role 'adb_Name559', cardinality 0..*).
+'adb::SimpleExpression' (role 'adb_SimpleExpression489', cardinality 0..*) is associated with 'adb::Term' (role 'adb_Term', cardinality 0..*).
+'adb::DataInstanceDeclaration' (role 'adb_DataInstanceDeclaration', cardinality 0..*) is associated with 'adb::DefiningIdentifierList' (role 'adb_DefiningIdentifierList126', cardinality 0..*).
+'adb::FormalPackageActualPart' (role 'adb_FormalPackageActualPart114', cardinality 0..*) is associated with 'adb::GenericActualPart' (role 'adb_GenericActualPart115', cardinality 0..*).
+'adb::EntryCallAlternative' (role 'adb_EntryCallAlternative292', cardinality 0..*) is associated with 'adb::ConditionalEntryCall' (role 'adb_ConditionalEntryCall', cardinality 0..*).
+'adb::CaseStatement' (role 'adb_CaseStatement180', cardinality 0..*) is associated with 'adb::CaseStatementAlternative' (role 'adb_CaseStatementAlternative', cardinality 0..*).
+'adb::EntryIndexSpecification' (role 'adb_EntryIndexSpecification251', cardinality 0..*) is associated with 'adb::DiscreteSubtypeDefinition' (role 'adb_DiscreteSubtypeDefinition252', cardinality 0..*).
+'adb::ComponentDefinition' (role 'adb_ComponentDefinition367', cardinality 0..*) is associated with 'adb::SubtypeIndication' (role 'adb_SubtypeIndication368', cardinality 0..*).
+'adb::AccessTypeDefinition' (role 'adb_AccessTypeDefinition350', cardinality 0..*) is associated with 'adb::AccessSpecification' (role 'adb_AccessSpecification', cardinality 0..*).
+'adb::GenericItems' (role 'adb_GenericItems', cardinality 0..*) is associated with 'adb::GenericDeclaration' (role 'adb_GenericDeclaration', cardinality 0..*).
+'adb::IndexConstraint' (role 'adb_IndexConstraint', cardinality 0..*) is associated with 'adb::DiscreteRange' (role 'adb_DiscreteRange', cardinality 0..*).
+'adb::InterfaceList' (role 'adb_InterfaceList342', cardinality 0..*) is associated with 'adb::DerivedTypeDefinition' (role 'adb_DerivedTypeDefinition341', cardinality 0..*).
+'adb::HandledSequenceOfStatements' (role 'adb_HandledSequenceOfStatements', cardinality 0..*) is associated with 'adb::DeclarativeBlock' (role 'adb_DeclarativeBlock29', cardinality 0..*).
+'adb::IfStatement' (role 'adb_IfStatement166', cardinality 0..*) is associated with 'adb::SequenceOfStatements' (role 'adb_SequenceOfStatements167', cardinality 0..*).
+'adb::EntryCallAlternative' (role 'adb_EntryCallAlternative289', cardinality 0..*) is associated with 'adb::SequenceOfStatements' (role 'adb_SequenceOfStatements290', cardinality 0..*).
+'adb::ExitStatement' (role 'adb_ExitStatement', cardinality 0..*) is associated with 'adb::LoopStatement' (role 'adb_LoopStatement199', cardinality 0..*).
+'adb::Name' (role 'adb_Name379', cardinality 0..*) is associated with 'adb::AccessToDataInstance' (role 'adb_AccessToDataInstance', cardinality 0..*).
+'adb::LibraryUnitDeclaration' (role 'adb_LibraryUnitDeclaration11', cardinality 0..*) is associated with 'adb::UsePackageClause' (role 'adb_UsePackageClause', cardinality 0..*).
+'adb::FormalTypeDefinition' (role 'adb_FormalTypeDefinition', cardinality 0..*) is associated with 'adb::FormalTypeDeclaration' (role 'adb_FormalTypeDeclaration102', cardinality 0..*).
+'adb::ConstrainedIndexes' (role 'adb_ConstrainedIndexes', cardinality 0..*) is associated with 'adb::DiscreteSubtypeDefinition' (role 'adb_DiscreteSubtypeDefinition365', cardinality 0..*).
+'adb::FormalDerivedTypeDefinition' (role 'adb_FormalDerivedTypeDefinition106', cardinality 0..*) is associated with 'adb::InterfaceList' (role 'adb_InterfaceList107', cardinality 0..*).
+'adb::Term' (role 'adb_Term491', cardinality 0..*) is associated with 'adb::Factor' (role 'adb_Factor', cardinality 0..*).
+'adb::FormalPart' (role 'adb_FormalPart', cardinality 0..*) is associated with 'adb::EntryDeclaration' (role 'adb_EntryDeclaration56', cardinality 0..*).
+'adb::EntryBodyFormalPart' (role 'adb_EntryBodyFormalPart245', cardinality 0..*) is associated with 'adb::FormalPart' (role 'adb_FormalPart246', cardinality 0..*).
+'adb::TypeDefinition' (role 'adb_TypeDefinition', cardinality 0..*) is associated with 'adb::FullDataTypeDeclaration' (role 'adb_FullDataTypeDeclaration', cardinality 0..*).
+'adb::HandledSequenceOfStatements' (role 'adb_HandledSequenceOfStatements213', cardinality 0..*) is associated with 'adb::ExtendedReturnStatement' (role 'adb_ExtendedReturnStatement212', cardinality 0..*).
+'adb::SimpleExpression' (role 'adb_SimpleExpression483', cardinality 0..*) is associated with 'adb::Relation' (role 'adb_Relation482', cardinality 0..*).
+'adb::ComponentClause' (role 'adb_ComponentClause452', cardinality 0..*) is associated with 'adb::SimpleExpression' (role 'adb_SimpleExpression453', cardinality 0..*).
+'adb::RecordComponentAssociationList' (role 'adb_RecordComponentAssociationList', cardinality 0..*) is associated with 'adb::RecordComponentAssociation' (role 'adb_RecordComponentAssociation', cardinality 0..*).
+'adb::RecordDefinition' (role 'adb_RecordDefinition', cardinality 0..*) is associated with 'adb::RecordExtensionPart' (role 'adb_RecordExtensionPart346', cardinality 0..*).
+'adb::LibrarySpecification' (role 'adb_LibrarySpecification', cardinality 0..*) is associated with 'adb::GenericDeclaration' (role 'adb_GenericDeclaration17', cardinality 0..*).
+'adb::ModularTypeDefinition' (role 'adb_ModularTypeDefinition', cardinality 0..*) is associated with 'adb::Expression' (role 'adb_Expression417', cardinality 0..*).
+'adb::ArrayTypeDefinition' (role 'adb_ArrayTypeDefinition361', cardinality 0..*) is associated with 'adb::ComponentDefinition' (role 'adb_ComponentDefinition', cardinality 0..*).
+'adb::ExceptionHandler' (role 'adb_ExceptionHandler', cardinality 0..*) is associated with 'adb::ExceptionChoice' (role 'adb_ExceptionChoice73', cardinality 0..*).
+'adb::SequenceOfStatements' (role 'adb_SequenceOfStatements189', cardinality 0..*) is associated with 'adb::LoopStatement' (role 'adb_LoopStatement188', cardinality 0..*).
+'adb::ExplicitRange' (role 'adb_ExplicitRange574', cardinality 0..*) is associated with 'adb::SimpleExpression' (role 'adb_SimpleExpression575', cardinality 0..*).
+'adb::DefiningIdentifierList' (role 'adb_DefiningIdentifierList396', cardinality 0..*) is associated with 'adb::ParameterSpecification' (role 'adb_ParameterSpecification395', cardinality 0..*).
+'adb::ParameterAssociation' (role 'adb_ParameterAssociation', cardinality 0..*) is associated with 'adb::PrimaryName' (role 'adb_PrimaryName553', cardinality 0..*).
+'adb::PackageSpecification' (role 'adb_PackageSpecification22', cardinality 0..*) is associated with 'adb::BasicDeclarativeItem' (role 'adb_BasicDeclarativeItem', cardinality 0..*).
+'adb::FormalPackageDeclaration' (role 'adb_FormalPackageDeclaration', cardinality 0..*) is associated with 'adb::FormalPackageActualPart' (role 'adb_FormalPackageActualPart', cardinality 0..*).
+'adb::HandledSequenceOfStatements' (role 'adb_HandledSequenceOfStatements235', cardinality 0..*) is associated with 'adb::AcceptStatement' (role 'adb_AcceptStatement234', cardinality 0..*).
+'adb::DerivedTypeDefinition' (role 'adb_DerivedTypeDefinition', cardinality 0..*) is associated with 'adb::SubtypeIndication' (role 'adb_SubtypeIndication339', cardinality 0..*).
+'adb::LabelisableStatement' (role 'adb_LabelisableStatement82', cardinality 0..*) is associated with 'adb::Label' (role 'adb_Label', cardinality 0..*).
+'adb::IfStatement' (role 'adb_IfStatement172', cardinality 0..*) is associated with 'adb::SequenceOfStatements' (role 'adb_SequenceOfStatements173', cardinality 0..*).
+'adb::ComponentClause' (role 'adb_ComponentClause449', cardinality 0..*) is associated with 'adb::SimpleExpression' (role 'adb_SimpleExpression450', cardinality 0..*).
+'adb::OptNullExclusion' (role 'adb_OptNullExclusion324', cardinality 0..*) is associated with 'adb::DiscriminantSpecification' (role 'adb_DiscriminantSpecification323', cardinality 0..*).
+'adb::ComponentList' (role 'adb_ComponentList423', cardinality 0..*) is associated with 'adb::ComponentItem' (role 'adb_ComponentItem', cardinality 0..*).
+'adb::RecordTypeDefinition' (role 'adb_RecordTypeDefinition', cardinality 0..*) is associated with 'adb::RecordDefinition' (role 'adb_RecordDefinition419', cardinality 0..*).
+'adb::AcceptStatement' (role 'adb_AcceptStatement', cardinality 0..*) is associated with 'adb::EntryDeclaration' (role 'adb_EntryDeclaration227', cardinality 0..*).
+'adb::KnownDiscriminantPart' (role 'adb_KnownDiscriminantPart39', cardinality 0..*) is associated with 'adb::FullTypeDeclaration' (role 'adb_FullTypeDeclaration', cardinality 0..*).
+'adb::DataInstanceDeclaration' (role 'adb_DataInstanceDeclaration134', cardinality 0..*) is associated with 'adb::Name' (role 'adb_Name135', cardinality 0..*).
+'adb::SelectAlternative' (role 'adb_SelectAlternative275', cardinality 0..*) is associated with 'adb::SequenceOfStatements' (role 'adb_SequenceOfStatements276', cardinality 0..*).
+'adb::Expression' (role 'adb_Expression444', cardinality 0..*) is associated with 'adb::ModClause' (role 'adb_ModClause443', cardinality 0..*).
+'adb::FormalPackageAssociation' (role 'adb_FormalPackageAssociation119', cardinality 0..*) is associated with 'adb::GenericAssociation' (role 'adb_GenericAssociation', cardinality 0..*).
+'adb::Allocator' (role 'adb_Allocator', cardinality 0..*) is associated with 'adb::Name' (role 'adb_Name502', cardinality 0..*).
+'adb::DiscreteSubtypeDefinition' (role 'adb_DiscreteSubtypeDefinition', cardinality 0..*) is associated with 'adb::EntryDeclaration' (role 'adb_EntryDeclaration54', cardinality 0..*).
+'adb::SignedIntegerTypeDefinition' (role 'adb_SignedIntegerTypeDefinition', cardinality 0..*) is associated with 'adb::SimpleExpression' (role 'adb_SimpleExpression', cardinality 0..*).
+'adb::ExceptionChoice' (role 'adb_ExceptionChoice', cardinality 0..*) is associated with 'adb::Name' (role 'adb_Name', cardinality 0..*).
+'adb::EntryBodyFormalPart' (role 'adb_EntryBodyFormalPart', cardinality 0..*) is associated with 'adb::EntryBody' (role 'adb_EntryBody239', cardinality 0..*).
+'adb::ProperBody' (role 'adb_ProperBody', cardinality 0..*) is associated with 'adb::SeparateSubunit' (role 'adb_SeparateSubunit', cardinality 0..*).
+'adb::Allocator' (role 'adb_Allocator504', cardinality 0..*) is associated with 'adb::Qualifier' (role 'adb_Qualifier505', cardinality 0..*).
+'adb::Name' (role 'adb_Name305', cardinality 0..*) is associated with 'adb::TaskNames' (role 'adb_TaskNames', cardinality 0..*).
+'adb::LoopParameterSpecification' (role 'adb_LoopParameterSpecification196', cardinality 0..*) is associated with 'adb::DiscreteSubtypeDefinition' (role 'adb_DiscreteSubtypeDefinition197', cardinality 0..*).
+'adb::Name' (role 'adb_Name388', cardinality 0..*) is associated with 'adb::ParameterAndResultProfile' (role 'adb_ParameterAndResultProfile387', cardinality 0..*).
+'adb::SubtypeDeclaration' (role 'adb_SubtypeDeclaration', cardinality 0..*) is associated with 'adb::SubtypeIndication' (role 'adb_SubtypeIndication152', cardinality 0..*).
+'adb::IncompleteTypeDeclaration' (role 'adb_IncompleteTypeDeclaration', cardinality 0..*) is associated with 'adb::DiscriminantPart' (role 'adb_DiscriminantPart', cardinality 0..*).
+'adb::SequenceOfStatements' (role 'adb_SequenceOfStatements', cardinality 0..*) is associated with 'adb::ExceptionHandler' (role 'adb_ExceptionHandler75', cardinality 0..*).
+'adb::AccessToSubprogramDefinition' (role 'adb_AccessToSubprogramDefinition', cardinality 0..*) is associated with 'adb::FormalPart' (role 'adb_FormalPart352', cardinality 0..*).
+'adb::TaskDeclaration' (role 'adb_TaskDeclaration', cardinality 0..*) is associated with 'adb::KnownDiscriminantPart' (role 'adb_KnownDiscriminantPart', cardinality 0..*).
+'adb::Expression' (role 'adb_Expression435', cardinality 0..*) is associated with 'adb::ComponentDeclaration' (role 'adb_ComponentDeclaration434', cardinality 0..*).
+'adb::RangeConstraint' (role 'adb_RangeConstraint521', cardinality 0..*) is associated with 'adb::DeltaConstraint' (role 'adb_DeltaConstraint520', cardinality 0..*).
+'adb::DiscreteChoiceList' (role 'adb_DiscreteChoiceList458', cardinality 0..*) is associated with 'adb::Variant' (role 'adb_Variant457', cardinality 0..*).
+'adb::ComponentDeclaration' (role 'adb_ComponentDeclaration431', cardinality 0..*) is associated with 'adb::ComponentDefinition' (role 'adb_ComponentDefinition432', cardinality 0..*).
+'adb::WithClause' (role 'adb_WithClause', cardinality 0..*) is associated with 'adb::LibraryUnitDeclaration' (role 'adb_LibraryUnitDeclaration', cardinality 0..*).
+'adb::DataInstanceDeclaration' (role 'adb_DataInstanceDeclaration131', cardinality 0..*) is associated with 'adb::Expression' (role 'adb_Expression132', cardinality 0..*).
+'adb::ComponentDefinition' (role 'adb_ComponentDefinition370', cardinality 0..*) is associated with 'adb::AnonymousAccessDefinition' (role 'adb_AnonymousAccessDefinition371', cardinality 0..*).
+'adb::TriggeringAlternative' (role 'adb_TriggeringAlternative300', cardinality 0..*) is associated with 'adb::TriggeringStatement' (role 'adb_TriggeringStatement', cardinality 0..*).
+'adb::RecordDefinition' (role 'adb_RecordDefinition421', cardinality 0..*) is associated with 'adb::ComponentList' (role 'adb_ComponentList', cardinality 0..*).
+'adb::SubtypeIndication' (role 'adb_SubtypeIndication357', cardinality 0..*) is associated with 'adb::AccessToDataDefinition' (role 'adb_AccessToDataDefinition', cardinality 0..*).
+'adb::DiscreteChoiceList' (role 'adb_DiscreteChoiceList463', cardinality 0..*) is associated with 'adb::DiscreteChoice' (role 'adb_DiscreteChoice', cardinality 0..*).
+'adb::Name' (role 'adb_Name104', cardinality 0..*) is associated with 'adb::FormalDerivedTypeDefinition' (role 'adb_FormalDerivedTypeDefinition', cardinality 0..*).
+'adb::FormalPart' (role 'adb_FormalPart393', cardinality 0..*) is associated with 'adb::ParameterSpecification' (role 'adb_ParameterSpecification', cardinality 0..*).
+'adb::ModClause' (role 'adb_ModClause', cardinality 0..*) is associated with 'adb::AspectClause' (role 'adb_AspectClause439', cardinality 0..*).
+'adb::TaskDeclaration' (role 'adb_TaskDeclaration34', cardinality 0..*) is associated with 'adb::TaskDefinition' (role 'adb_TaskDefinition', cardinality 0..*).
+'adb::OptNullExclusion' (role 'adb_OptNullExclusion', cardinality 0..*) is associated with 'adb::FormalObjectDeclaration' (role 'adb_FormalObjectDeclaration91', cardinality 0..*).
+'adb::AcceptStatement' (role 'adb_AcceptStatement278', cardinality 0..*) is associated with 'adb::AcceptAlternative' (role 'adb_AcceptAlternative', cardinality 0..*).
+'adb::Interval' (role 'adb_Interval', cardinality 0..*) is associated with 'adb::Membership' (role 'adb_Membership487', cardinality 0..*).
+'adb::QualifiedName' (role 'adb_QualifiedName', cardinality 0..*) is associated with 'adb::Name' (role 'adb_Name498', cardinality 0..*).
+'adb::ExtensionAggregate' (role 'adb_ExtensionAggregate', cardinality 0..*) is associated with 'adb::AncestorPart' (role 'adb_AncestorPart', cardinality 0..*).
+'adb::PrimaryName' (role 'adb_PrimaryName', cardinality 0..*) is associated with 'adb::Name' (role 'adb_Name551', cardinality 0..*).
+'adb::ArrayTypeDefinition' (role 'adb_ArrayTypeDefinition359', cardinality 0..*) is associated with 'adb::ArrayIndexes' (role 'adb_ArrayIndexes', cardinality 0..*).
+'adb::SequenceOfStatements' (role 'adb_SequenceOfStatements80', cardinality 0..*) is associated with 'adb::LabelisableStatement' (role 'adb_LabelisableStatement', cardinality 0..*).
+'adb::DiscriminantAssociation' (role 'adb_DiscriminantAssociation525', cardinality 0..*) is associated with 'adb::DiscriminantSelectors' (role 'adb_DiscriminantSelectors', cardinality 0..*).
+'adb::DiscriminantSpecification' (role 'adb_DiscriminantSpecification320', cardinality 0..*) is associated with 'adb::DefiningIdentifierList' (role 'adb_DefiningIdentifierList321', cardinality 0..*).
+'adb::QualifiedName' (role 'adb_QualifiedName500', cardinality 0..*) is associated with 'adb::Qualifier' (role 'adb_Qualifier', cardinality 0..*).
+'adb::VariantPart' (role 'adb_VariantPart455', cardinality 0..*) is associated with 'adb::Variant' (role 'adb_Variant', cardinality 0..*).
+'adb::InterfaceList' (role 'adb_InterfaceList58', cardinality 0..*) is associated with 'adb::ProtectedTypeDeclaration' (role 'adb_ProtectedTypeDeclaration', cardinality 0..*).
+'adb::InterfaceList' (role 'adb_InterfaceList', cardinality 0..*) is associated with 'adb::TaskDeclaration' (role 'adb_TaskDeclaration32', cardinality 0..*).

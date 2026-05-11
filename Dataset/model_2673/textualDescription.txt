@@ -1,0 +1,28 @@
+The model has 14 class(es).
+The class 'namd::H' has no attributes.
+The class 'namd::C' has no attributes.
+The class 'namd::Named' has the following attributes: 'name' of type str.
+The class 'namd::E' has no attributes.
+The class 'B' has no attributes.
+The class 'namd::F' has no attributes.
+The class 'namd::G' has no attributes.
+The class 'namd::A' has no attributes.
+The class 'Named' has no attributes.
+The class 'D' has no attributes.
+The class 'namd::D' has no attributes.
+The class 'namd::B' has no attributes.
+The class 'namd::I' has no attributes.
+The class 'F' has no attributes.
+'namd::G' is a specialization of 'Named'.
+'namd::H' is a specialization of 'Named'.
+'namd::C' is a specialization of 'Named'.
+'namd::I' is a specialization of 'F'.
+'namd::D' is a specialization of 'B'.
+'namd::B' is a specialization of 'Named'.
+'namd::E' is a specialization of 'Named'.
+'namd::F' is a specialization of 'D'.
+'namd::C' (role 'namd_C', cardinality 0..*) is associated with 'namd::B' (role 'namd_B2', cardinality 0..*).
+'namd::F' (role 'namd_F', cardinality 0..*) is associated with 'namd::G' (role 'namd_G', cardinality 0..*).
+'namd::A' (role 'namd_A', cardinality 0..*) is associated with 'namd::B' (role 'namd_B', cardinality 0..*).
+'namd::H' (role 'namd_H', cardinality 0..*) is associated with 'namd::F' (role 'namd_F6', cardinality 0..*).
+'namd::D' (role 'namd_D', cardinality 0..*) is associated with 'namd::E' (role 'namd_E', cardinality 0..*).

@@ -1,0 +1,13 @@
+The model has 5 class(es).
+The class 'relationalmm::Table' has no attributes.
+The class 'relationalmm::Named' has the following attributes: 'name' of type str.
+The class 'Named' has no attributes.
+The class 'relationalmm::Column' has no attributes.
+The class 'relationalmm::Type' has no attributes.
+'relationalmm::Type' is a specialization of 'Named'.
+'relationalmm::Table' is a specialization of 'Named'.
+'relationalmm::Column' is a specialization of 'Named'.
+'relationalmm::Column' (role 'relationalmm_Column3', cardinality 0..*) is associated with 'relationalmm::Type' (role 'relationalmm_Type', cardinality 0..*).
+'relationalmm::Column' (role 'col', cardinality 0..*) is associated with 'relationalmm::Table' (role 'Table', cardinality 0..*).
+'relationalmm::Column' (role 'relationalmm_Column', cardinality 0..*) is associated with 'relationalmm::Table' (role 'relationalmm_Table', cardinality 0..*).
+'relationalmm::Table' (role 'owner', cardinality 0..*) is associated with 'relationalmm::Column' (role 'Column', cardinality 0..*).

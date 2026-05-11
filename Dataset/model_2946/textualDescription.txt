@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'slolpBPM::Feature' has the following attributes: 'name' of type str; 'many' of type bool.
+The class 'slolpBPM::DomainModel' has no attributes.
+The class 'Type' has no attributes.
+The class 'slolpBPM::Type' has the following attributes: 'name' of type str.
+The class 'slolpBPM::Entity' has no attributes.
+The class 'slolpBPM::Datatype' has no attributes.
+'slolpBPM::Entity' is a specialization of 'Type'.
+'slolpBPM::Datatype' is a specialization of 'Type'.
+'slolpBPM::Type' (role 'slolpBPM_Type', cardinality 0..*) is associated with 'slolpBPM::DomainModel' (role 'slolpBPM_DomainModel', cardinality 0..*).
+'slolpBPM::Feature' (role 'slolpBPM_Feature', cardinality 0..*) is associated with 'slolpBPM::Entity' (role 'slolpBPM_Entity4', cardinality 0..*).
+'slolpBPM::Entity' (role 'slolpBPM_Entity1', cardinality 0..*) is associated with 'slolpBPM::Entity' (role 'slolpBPM_Entity', cardinality 0..*).
+'slolpBPM::Feature' (role 'slolpBPM_Feature6', cardinality 0..*) is associated with 'slolpBPM::Type' (role 'slolpBPM_Type7', cardinality 0..*).

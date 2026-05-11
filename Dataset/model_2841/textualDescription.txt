@@ -1,0 +1,364 @@
+The model has 134 class(es).
+The class 'optGrammar::HexLiteral' has the following attributes: 'value' of type str.
+The class 'optGrammar::Model' has no attributes.
+The class 'Literal' has no attributes.
+The class 'optGrammar::BitXor' has no attributes.
+The class 'optGrammar::BitOr' has no attributes.
+The class 'optGrammar::NewExpression' has no attributes.
+The class 'optGrammar::IntLiteral' has the following attributes: 'value' of type int.
+The class 'optGrammar::Continue' has no attributes.
+The class 'optGrammar::VisibilitySpecifier' has no attributes.
+The class 'optGrammar::ThrowStatement' has no attributes.
+The class 'optGrammar::UnitsLiteral' has the following attributes: 'value' of type str.
+The class 'optGrammar::Body' has no attributes.
+The class 'optGrammar::BinaryNotExpression' has no attributes.
+The class 'optGrammar::SpecialLiteral' has the following attributes: 'name' of type str.
+The class 'optGrammar::IfStatement' has no attributes.
+The class 'optGrammar::NamedType' has the following attributes: 'type' of type str.
+The class 'optGrammar::VarVariableTypeDeclaration' has the following attributes: 'semicolon' of type bool.
+The class 'optGrammar::SpecialExpression' has the following attributes: 'type' of type str.
+The class 'optGrammar::EmitStatement' has no attributes.
+The class 'optGrammar::PrimaryArithmetic' has no attributes.
+The class 'optGrammar::IntParameter' has no attributes.
+The class 'optGrammar::ExpressionStatement' has the following attributes: 'semicolon' of type bool.
+The class 'optGrammar::VisibilityLiteral' has the following attributes: 'type' of type str.
+The class 'optGrammar::ForStatement' has no attributes.
+The class 'optGrammar::Modifier' has the following attributes: 'name' of type str.
+The class 'optGrammar::PrimaryTypeDefinitionDeclaration' has no attributes.
+The class 'optGrammar::BooleanLiteral' has the following attributes: 'value' of type str.
+The class 'optGrammar::Type' has the following attributes: 'isVarType' of type bool.
+The class 'optGrammar::Or' has no attributes.
+The class 'optGrammar::versionOperator' has the following attributes: 'value' of type str.
+The class 'optGrammar::Literal' has no attributes.
+The class 'PrimaryTypeDefinitionDeclaration' has no attributes.
+The class 'Statement' has no attributes.
+The class 'optGrammar::VarVariableTupleVariableDeclaration' has the following attributes: 'semicolon' of type bool.
+The class 'StandardType' has no attributes.
+The class 'ContinueStatement' has no attributes.
+The class 'optGrammar::LocationSpecifier' has no attributes.
+The class 'optGrammar::StringLiteral' has the following attributes: 'value' of type str.
+The class 'optGrammar::ImportDirective' has the following attributes: 'importURI' of type str; 'unitAlias' of type str.
+The class 'SimpleStatement' has no attributes.
+The class 'optGrammar::Arguments' has no attributes.
+The class 'optGrammar::FunctionCallListArguments' has no attributes.
+The class 'optGrammar::Tuple' has no attributes.
+The class 'optGrammar::HashFunction' has the following attributes: 'name' of type str.
+The class 'optGrammar::IndexedSpecifer' has no attributes.
+The class 'optGrammar::StandardVariableDeclaration' has the following attributes: 'semicolon' of type bool.
+The class 'optGrammar::PreDecExpression' has no attributes.
+The class 'optGrammar::StructDefinition' has the following attributes: 'name' of type str.
+The class 'optGrammar::StandardTypeWithoutQualifiedIdentifier' has no attributes.
+The class 'optGrammar::Statement' has no attributes.
+The class 'optGrammar::NumericLiteral' has no attributes.
+The class 'optGrammar::PrimaryTypeDeclaration' has the following attributes: 'constant' of type bool; 'name' of type str.
+The class 'optGrammar::ParameterList' has no attributes.
+The class 'optGrammar::ReturnStatement' has no attributes.
+The class 'optGrammar::SymbolAlias' has the following attributes: 'symbol' of type str; 'alias' of type str.
+The class 'optGrammar::EnumDefinition' has the following attributes: 'name' of type str.
+The class 'optGrammar::NonArrayableDeclaration' has no attributes.
+The class 'optGrammar::QualifiedIdentifier' has the following attributes: 'identifier' of type str.
+The class 'optGrammar::Exponent' has no attributes.
+The class 'optGrammar::VariableDeclarationOptionalElement' has no attributes.
+The class 'optGrammar::ModifierInvocation' has no attributes.
+The class 'optGrammar::Event' has the following attributes: 'isAnonymous' of type bool; 'name' of type str.
+The class 'optGrammar::PostIncDecExpression' has the following attributes: 'postOp' of type str.
+The class 'optGrammar::EnumValue' has the following attributes: 'name' of type str.
+The class 'optGrammar::ArrayableDeclaration' has no attributes.
+The class 'optGrammar::Equality' has the following attributes: 'equalityOp' of type str.
+The class 'optGrammar::DoWhileStatement' has no attributes.
+The class 'optGrammar::Expression' has no attributes.
+The class 'optGrammar::Variable' has the following attributes: 'name' of type str.
+The class 'NamedType' has no attributes.
+The class 'optGrammar::PlaceHolderStatement' has no attributes.
+The class 'optGrammar::SimpleStatement2' has no attributes.
+The class 'optGrammar::ContinueStatement' has no attributes.
+The class 'optGrammar::BreakStatement' has no attributes.
+The class 'optGrammar::PragmaDirective' has no attributes.
+The class 'optGrammar::LocationLiteral' has the following attributes: 'type' of type str.
+The class 'optGrammar::BlockhashFunction' has no attributes.
+The class 'optGrammar::StandardType' has no attributes.
+The class 'DefinitionBody' has no attributes.
+The class 'optGrammar::ReturnParameterDeclaration' has no attributes.
+The class 'optGrammar::ConstantSpecifier' has no attributes.
+The class 'optGrammar::WhileStatement' has no attributes.
+The class 'FunctionCallArguments' has no attributes.
+The class 'optGrammar::Comparison' has the following attributes: 'comparisonOp' of type str.
+The class 'optGrammar::FunctionDefinition' has the following attributes: 'name' of type str.
+The class 'optGrammar::SimpleStatement' has no attributes.
+The class 'optGrammar::ArrayType' has no attributes.
+The class 'optGrammar::UnitTypes' has no attributes.
+The class 'optGrammar::Contract' has the following attributes: 'name' of type str.
+The class 'optGrammar::Index' has no attributes.
+The class 'optGrammar::Field' has the following attributes: 'field' of type str.
+The class 'optGrammar::Const' has no attributes.
+The class 'optGrammar::ReturnsParameterList' has no attributes.
+The class 'optGrammar::DefinitionBody' has no attributes.
+The class 'optGrammar::TimeUnitsLiteral' has the following attributes: 'value' of type str.
+The class 'optGrammar::Assignment' has the following attributes: 'assignmentOp' of type str.
+The class 'optGrammar::SimpleTypeDeclaration' has no attributes.
+The class 'optGrammar::DecimalLiteral' has the following attributes: 'value' of type float.
+The class 'optGrammar::NotExpression' has no attributes.
+The class 'optGrammar::StateMutability' has the following attributes: 'type' of type str.
+The class 'optGrammar::Shift' has the following attributes: 'shiftOp' of type str.
+The class 'optGrammar::SignExpression' has the following attributes: 'signOp' of type str.
+The class 'PrimaryTypeDeclaration' has no attributes.
+The class 'SimpleStatement2' has no attributes.
+The class 'optGrammar::TupleSeparator' has no attributes.
+The class 'optGrammar::AddSub' has the following attributes: 'additionOp' of type str.
+The class 'optGrammar::VariableDeclarationExpression' has no attributes.
+The class 'optGrammar::SizedDeclaration' has no attributes.
+The class 'LoopStructures' has no attributes.
+The class 'optGrammar::BitAnd' has no attributes.
+The class 'optGrammar::ArithmeticOperations' has no attributes.
+The class 'optGrammar::PreIncExpression' has no attributes.
+The class 'optGrammar::TypeCast' has no attributes.
+The class 'VariableDeclarationOptionalElement' has no attributes.
+The class 'Expression' has no attributes.
+The class 'optGrammar::MathematicalFunction' has the following attributes: 'function' of type str.
+The class 'optGrammar::DeleteStatement' has no attributes.
+The class 'optGrammar::GasleftFunction' has the following attributes: 'name' of type str.
+The class 'optGrammar::Qualifier' has no attributes.
+The class 'optGrammar::ConstructorDefinition' has the following attributes: 'name' of type str.
+The class 'optGrammar::FunctionCallArguments' has no attributes.
+The class 'optGrammar::SecondOperators' has the following attributes: 'operator' of type str.
+The class 'Type' has no attributes.
+The class 'optGrammar::EcrecoverFunction' has the following attributes: 'function' of type str.
+The class 'Qualifier' has no attributes.
+The class 'optGrammar::MulDivMod' has the following attributes: 'multipliciativeOp' of type str.
+The class 'optGrammar::InheritanceSpecifier' has no attributes.
+The class 'optGrammar::FunctionCall' has no attributes.
+The class 'StandardTypeWithoutQualifiedIdentifier' has no attributes.
+The class 'optGrammar::FunctionCallArg' has the following attributes: 'name' of type str.
+The class 'optGrammar::LoopStructures' has the following attributes: 'type' of type str.
+The class 'PrimaryArithmetic' has no attributes.
+The class 'optGrammar::Mapping' has no attributes.
+The class 'optGrammar::And' has no attributes.
+The enumeration 'EqualityOpEnum' has the following literals: 'EQ', 'NOTEQ'.
+The enumeration 'SpecialExpressionTypeEnum' has the following literals: 'THIS', 'SUPER'.
+The enumeration 'ReservedWordsEnum' has the following literals: 'RELOCATABLE', 'LET', 'TYPE', 'OF', 'MATCH', 'TRY', 'USING', 'CATCH', 'CASE', 'AS', 'ILLEGAL', 'TYPEOF', 'FINAL', 'SWITCH'.
+The enumeration 'AssignmentOpEnum' has the following literals: 'ASSIGN_XOR', 'ASSIGN_OR', 'ASSIGN_SUB', 'ASSIGN_MULT', 'ASSIGN_MOD', 'ASSIGN_SHIFT_RIGHT_ARIMETIC', 'ASSIGN_ADD', 'ASSIGN_SHIFT_LEFT', 'ASSIGN_AND', 'ASSIGN_SHIFT_RIGHT', 'ASSIGN', 'ASSIGN_DIV'.
+The enumeration 'AdditionOpEnum' has the following literals: 'ADD', 'SUB'.
+The enumeration 'ShiftOpEnum' has the following literals: 'LEFT_SHIFT', 'ARITHMETIC_RIGHT_SHIFT', 'RIGHT_SHIFT'.
+The enumeration 'ComparisonOpEnum' has the following literals: 'LT', 'LTE', 'GTE', 'IN', 'GT'.
+The enumeration 'MulDivModOpEnum' has the following literals: 'MOD', 'MULT', 'DIV'.
+The enumeration 'IncDecOpEnum' has the following literals: 'INC', 'DEC'.
+'optGrammar::Field' is a specialization of 'Qualifier'.
+'optGrammar::HashFunction' is a specialization of 'Literal'.
+'optGrammar::DoWhileStatement' is a specialization of 'Statement'.
+'optGrammar::Tuple' is a specialization of 'Expression'.
+'optGrammar::BitAnd' is a specialization of 'Expression'.
+'optGrammar::EmitStatement' is a specialization of 'Statement'.
+'optGrammar::Shift' is a specialization of 'Expression'.
+'optGrammar::SizedDeclaration' is a specialization of 'NamedType'.
+'optGrammar::EnumDefinition' is a specialization of 'DefinitionBody'.
+'optGrammar::ConstructorDefinition' is a specialization of 'DefinitionBody'.
+'optGrammar::ContinueStatement' is a specialization of 'Statement'.
+'optGrammar::Mapping' is a specialization of 'StandardTypeWithoutQualifiedIdentifier'.
+'optGrammar::VariableDeclarationExpression' is a specialization of 'Expression'.
+'optGrammar::MathematicalFunction' is a specialization of 'Literal'.
+'optGrammar::StringLiteral' is a specialization of 'Literal'.
+'optGrammar::StandardTypeWithoutQualifiedIdentifier' is a specialization of 'SimpleStatement2'.
+'optGrammar::ForStatement' is a specialization of 'LoopStructures'.
+'optGrammar::BreakStatement' is a specialization of 'Statement'.
+'optGrammar::ArrayableDeclaration' is a specialization of 'PrimaryTypeDeclaration'.
+'optGrammar::PrimaryTypeDeclaration' is a specialization of 'PrimaryTypeDefinitionDeclaration'.
+'optGrammar::PreIncExpression' is a specialization of 'Expression'.
+'optGrammar::BinaryNotExpression' is a specialization of 'Expression'.
+'optGrammar::VarVariableTypeDeclaration' is a specialization of 'SimpleStatement'.
+'optGrammar::ExpressionStatement' is a specialization of 'SimpleStatement'.
+'optGrammar::FunctionDefinition' is a specialization of 'DefinitionBody'.
+'optGrammar::SimpleStatement' is a specialization of 'Statement'.
+'optGrammar::BitOr' is a specialization of 'Expression'.
+'optGrammar::PrimaryTypeDefinitionDeclaration' is a specialization of 'DefinitionBody'.
+'optGrammar::ReturnStatement' is a specialization of 'Statement'.
+'optGrammar::BooleanLiteral' is a specialization of 'Literal'.
+'optGrammar::SpecialExpression' is a specialization of 'Expression'.
+'optGrammar::StandardVariableDeclaration' is a specialization of 'SimpleStatement'.
+'optGrammar::MulDivMod' is a specialization of 'Expression'.
+'optGrammar::Body' is a specialization of 'Statement'.
+'optGrammar::Mapping' is a specialization of 'StandardType'.
+'optGrammar::Equality' is a specialization of 'Expression'.
+'optGrammar::QualifiedIdentifier' is a specialization of 'StandardType'.
+'optGrammar::ExpressionStatement' is a specialization of 'SimpleStatement2'.
+'optGrammar::PostIncDecExpression' is a specialization of 'Expression'.
+'optGrammar::Index' is a specialization of 'Qualifier'.
+'optGrammar::FunctionCallListArguments' is a specialization of 'FunctionCallArguments'.
+'optGrammar::Expression' is a specialization of 'PrimaryArithmetic'.
+'optGrammar::Comparison' is a specialization of 'Expression'.
+'optGrammar::TypeCast' is a specialization of 'Expression'.
+'optGrammar::Event' is a specialization of 'DefinitionBody'.
+'optGrammar::Arguments' is a specialization of 'Qualifier'.
+'optGrammar::WhileStatement' is a specialization of 'LoopStructures'.
+'optGrammar::EcrecoverFunction' is a specialization of 'Literal'.
+'optGrammar::VarVariableTupleVariableDeclaration' is a specialization of 'SimpleStatement2'.
+'optGrammar::SignExpression' is a specialization of 'Expression'.
+'optGrammar::StandardVariableDeclaration' is a specialization of 'SimpleStatement2'.
+'optGrammar::LoopStructures' is a specialization of 'Statement'.
+'optGrammar::ThrowStatement' is a specialization of 'Statement'.
+'optGrammar::TupleSeparator' is a specialization of 'Expression'.
+'optGrammar::StandardType' is a specialization of 'Type'.
+'optGrammar::StandardTypeWithoutQualifiedIdentifier' is a specialization of 'SimpleStatement'.
+'optGrammar::Or' is a specialization of 'Expression'.
+'optGrammar::PreDecExpression' is a specialization of 'Expression'.
+'optGrammar::ConstantSpecifier' is a specialization of 'VariableDeclarationOptionalElement'.
+'optGrammar::BlockhashFunction' is a specialization of 'Literal'.
+'optGrammar::VisibilitySpecifier' is a specialization of 'VariableDeclarationOptionalElement'.
+'optGrammar::DeleteStatement' is a specialization of 'Statement'.
+'optGrammar::Continue' is a specialization of 'ContinueStatement'.
+'optGrammar::VarVariableTupleVariableDeclaration' is a specialization of 'SimpleStatement'.
+'optGrammar::Modifier' is a specialization of 'DefinitionBody'.
+'optGrammar::BitXor' is a specialization of 'Expression'.
+'optGrammar::Exponent' is a specialization of 'Expression'.
+'optGrammar::Assignment' is a specialization of 'Expression'.
+'optGrammar::PlaceHolderStatement' is a specialization of 'Statement'.
+'optGrammar::IndexedSpecifer' is a specialization of 'VariableDeclarationOptionalElement'.
+'optGrammar::SpecialLiteral' is a specialization of 'Literal'.
+'optGrammar::SimpleTypeDeclaration' is a specialization of 'NamedType'.
+'optGrammar::AddSub' is a specialization of 'Expression'.
+'optGrammar::And' is a specialization of 'Expression'.
+'optGrammar::NonArrayableDeclaration' is a specialization of 'PrimaryTypeDeclaration'.
+'optGrammar::NotExpression' is a specialization of 'Expression'.
+'optGrammar::NumericLiteral' is a specialization of 'PrimaryArithmetic'.
+'optGrammar::QualifiedIdentifier' is a specialization of 'Expression'.
+'optGrammar::LocationSpecifier' is a specialization of 'VariableDeclarationOptionalElement'.
+'optGrammar::NamedType' is a specialization of 'StandardType'.
+'optGrammar::StructDefinition' is a specialization of 'DefinitionBody'.
+'optGrammar::NewExpression' is a specialization of 'Expression'.
+'optGrammar::NamedType' is a specialization of 'StandardTypeWithoutQualifiedIdentifier'.
+'optGrammar::IfStatement' is a specialization of 'LoopStructures'.
+'optGrammar::GasleftFunction' is a specialization of 'Literal'.
+'optGrammar::Literal' is a specialization of 'Expression'.
+'optGrammar::VarVariableTypeDeclaration' is a specialization of 'SimpleStatement2'.
+'optGrammar::NumericLiteral' is a specialization of 'Literal'.
+'optGrammar::Body' (role 'optGrammar_Body143', cardinality 0..*) is associated with 'optGrammar::Statement' (role 'optGrammar_Statement144', cardinality 0..*).
+'optGrammar::VisibilityLiteral' (role 'optGrammar_VisibilityLiteral', cardinality 0..*) is associated with 'optGrammar::ConstructorDefinition' (role 'optGrammar_ConstructorDefinition21', cardinality 0..*).
+'optGrammar::VisibilityLiteral' (role 'optGrammar_VisibilityLiteral63', cardinality 0..*) is associated with 'optGrammar::PrimaryTypeDeclaration' (role 'optGrammar_PrimaryTypeDeclaration62', cardinality 0..*).
+'optGrammar::ConstructorDefinition' (role 'optGrammar_ConstructorDefinition', cardinality 0..*) is associated with 'optGrammar::ParameterList' (role 'optGrammar_ParameterList', cardinality 0..*).
+'optGrammar::InheritanceSpecifier' (role 'optGrammar_InheritanceSpecifier', cardinality 0..*) is associated with 'optGrammar::Contract' (role 'optGrammar_Contract10', cardinality 0..*).
+'optGrammar::FunctionCall' (role 'optGrammar_FunctionCall173', cardinality 0..*) is associated with 'optGrammar::FunctionDefinition' (role 'optGrammar_FunctionDefinition174', cardinality 0..*).
+'optGrammar::Shift' (role 'optGrammar_Shift277', cardinality 0..*) is associated with 'optGrammar::Expression' (role 'optGrammar_Expression278', cardinality 0..*).
+'optGrammar::Expression' (role 'optGrammar_Expression285', cardinality 0..*) is associated with 'optGrammar::MulDivMod' (role 'optGrammar_MulDivMod', cardinality 0..*).
+'optGrammar::SecondOperators' (role 'optGrammar_SecondOperators170', cardinality 0..*) is associated with 'optGrammar::PrimaryArithmetic' (role 'optGrammar_PrimaryArithmetic171', cardinality 0..*).
+'optGrammar::ConstructorDefinition' (role 'optGrammar_ConstructorDefinition19', cardinality 0..*) is associated with 'optGrammar::ModifierInvocation' (role 'optGrammar_ModifierInvocation', cardinality 0..*).
+'optGrammar::QualifiedIdentifier' (role 'optGrammar_QualifiedIdentifier', cardinality 0..*) is associated with 'optGrammar::Qualifier' (role 'optGrammar_Qualifier', cardinality 0..*).
+'optGrammar::ForStatement' (role 'optGrammar_ForStatement', cardinality 0..*) is associated with 'optGrammar::SimpleStatement2' (role 'optGrammar_SimpleStatement2', cardinality 0..*).
+'optGrammar::Expression' (role 'optGrammar_Expression75', cardinality 0..*) is associated with 'optGrammar::ArrayType' (role 'optGrammar_ArrayType74', cardinality 0..*).
+'optGrammar::Equality' (role 'optGrammar_Equality252', cardinality 0..*) is associated with 'optGrammar::Expression' (role 'optGrammar_Expression253', cardinality 0..*).
+'optGrammar::ParameterList' (role 'optGrammar_ParameterList103', cardinality 0..*) is associated with 'optGrammar::PrimaryTypeDefinitionDeclaration' (role 'optGrammar_PrimaryTypeDefinitionDeclaration104', cardinality 0..*).
+'optGrammar::LocationLiteral' (role 'optGrammar_LocationLiteral', cardinality 0..*) is associated with 'optGrammar::NonArrayableDeclaration' (role 'optGrammar_NonArrayableDeclaration', cardinality 0..*).
+'optGrammar::PrimaryTypeDeclaration' (role 'optGrammar_PrimaryTypeDeclaration', cardinality 0..*) is associated with 'optGrammar::PrimaryTypeDefinitionDeclaration' (role 'optGrammar_PrimaryTypeDefinitionDeclaration57', cardinality 0..*).
+'optGrammar::VarVariableTupleVariableDeclaration' (role 'optGrammar_VarVariableTupleVariableDeclaration224', cardinality 0..*) is associated with 'optGrammar::Expression' (role 'optGrammar_Expression225', cardinality 0..*).
+'optGrammar::FunctionCallListArguments' (role 'optGrammar_FunctionCallListArguments', cardinality 0..*) is associated with 'optGrammar::InheritanceSpecifier' (role 'optGrammar_InheritanceSpecifier28', cardinality 0..*).
+'optGrammar::Expression' (role 'optGrammar_Expression86', cardinality 0..*) is associated with 'optGrammar::Index' (role 'optGrammar_Index', cardinality 0..*).
+'optGrammar::Statement' (role 'optGrammar_Statement', cardinality 0..*) is associated with 'optGrammar::DoWhileStatement' (role 'optGrammar_DoWhileStatement', cardinality 0..*).
+'optGrammar::Expression' (role 'optGrammar_Expression280', cardinality 0..*) is associated with 'optGrammar::AddSub' (role 'optGrammar_AddSub', cardinality 0..*).
+'optGrammar::Expression' (role 'optGrammar_Expression160', cardinality 0..*) is associated with 'optGrammar::SignExpression' (role 'optGrammar_SignExpression', cardinality 0..*).
+'optGrammar::StandardTypeWithoutQualifiedIdentifier' (role 'optGrammar_StandardTypeWithoutQualifiedIdentifier', cardinality 0..*) is associated with 'optGrammar::StandardVariableDeclaration' (role 'optGrammar_StandardVariableDeclaration', cardinality 0..*).
+'optGrammar::Mapping' (role 'optGrammar_Mapping', cardinality 0..*) is associated with 'optGrammar::SizedDeclaration' (role 'optGrammar_SizedDeclaration77', cardinality 0..*).
+'optGrammar::Expression' (role 'optGrammar_Expression215', cardinality 0..*) is associated with 'optGrammar::StandardVariableDeclaration' (role 'optGrammar_StandardVariableDeclaration214', cardinality 0..*).
+'optGrammar::ParameterList' (role 'optGrammar_ParameterList95', cardinality 0..*) is associated with 'optGrammar::Event' (role 'optGrammar_Event', cardinality 0..*).
+'optGrammar::ArrayType' (role 'optGrammar_ArrayType', cardinality 0..*) is associated with 'optGrammar::NamedType' (role 'optGrammar_NamedType', cardinality 0..*).
+'optGrammar::FunctionCallArguments' (role 'optGrammar_FunctionCallArguments', cardinality 0..*) is associated with 'optGrammar::FunctionCallArg' (role 'optGrammar_FunctionCallArg', cardinality 0..*).
+'optGrammar::ReturnParameterDeclaration' (role 'optGrammar_ReturnParameterDeclaration111', cardinality 0..*) is associated with 'optGrammar::Variable' (role 'optGrammar_Variable', cardinality 0..*).
+'optGrammar::ArrayableDeclaration' (role 'optGrammar_ArrayableDeclaration', cardinality 0..*) is associated with 'optGrammar::SizedDeclaration' (role 'optGrammar_SizedDeclaration', cardinality 0..*).
+'optGrammar::Expression' (role 'optGrammar_Expression230', cardinality 0..*) is associated with 'optGrammar::Assignment' (role 'optGrammar_Assignment229', cardinality 0..*).
+'optGrammar::Body' (role 'optGrammar_Body', cardinality 0..*) is associated with 'optGrammar::ConstructorDefinition' (role 'optGrammar_ConstructorDefinition23', cardinality 0..*).
+'optGrammar::Expression' (role 'optGrammar_Expression135', cardinality 0..*) is associated with 'optGrammar::ForStatement' (role 'optGrammar_ForStatement134', cardinality 0..*).
+'optGrammar::EnumValue' (role 'optGrammar_EnumValue', cardinality 0..*) is associated with 'optGrammar::EnumDefinition' (role 'optGrammar_EnumDefinition', cardinality 0..*).
+'optGrammar::IntLiteral' (role 'optGrammar_IntLiteral', cardinality 0..*) is associated with 'optGrammar::NumericLiteral' (role 'optGrammar_NumericLiteral', cardinality 0..*).
+'optGrammar::Expression' (role 'optGrammar_Expression227', cardinality 0..*) is associated with 'optGrammar::Assignment' (role 'optGrammar_Assignment', cardinality 0..*).
+'optGrammar::DecimalLiteral' (role 'optGrammar_DecimalLiteral', cardinality 0..*) is associated with 'optGrammar::NumericLiteral' (role 'optGrammar_NumericLiteral195', cardinality 0..*).
+'optGrammar::Variable' (role 'optGrammar_Variable212', cardinality 0..*) is associated with 'optGrammar::StandardVariableDeclaration' (role 'optGrammar_StandardVariableDeclaration211', cardinality 0..*).
+'optGrammar::IntParameter' (role 'optGrammar_IntParameter', cardinality 0..*) is associated with 'optGrammar::BlockhashFunction' (role 'optGrammar_BlockhashFunction', cardinality 0..*).
+'optGrammar::UnitTypes' (role 'optGrammar_UnitTypes206', cardinality 0..*) is associated with 'optGrammar::UnitsLiteral' (role 'optGrammar_UnitsLiteral', cardinality 0..*).
+'optGrammar::Expression' (role 'optGrammar_Expression240', cardinality 0..*) is associated with 'optGrammar::Or' (role 'optGrammar_Or', cardinality 0..*).
+'optGrammar::BitOr' (role 'optGrammar_BitOr262', cardinality 0..*) is associated with 'optGrammar::Expression' (role 'optGrammar_Expression263', cardinality 0..*).
+'optGrammar::Exponent' (role 'optGrammar_Exponent', cardinality 0..*) is associated with 'optGrammar::Expression' (role 'optGrammar_Expression290', cardinality 0..*).
+'optGrammar::MathematicalFunction' (role 'optGrammar_MathematicalFunction', cardinality 0..*) is associated with 'optGrammar::IntParameter' (role 'optGrammar_IntParameter186', cardinality 0..*).
+'optGrammar::FunctionCallListArguments' (role 'optGrammar_FunctionCallListArguments101', cardinality 0..*) is associated with 'optGrammar::ModifierInvocation' (role 'optGrammar_ModifierInvocation100', cardinality 0..*).
+'optGrammar::BitXor' (role 'optGrammar_BitXor', cardinality 0..*) is associated with 'optGrammar::Expression' (role 'optGrammar_Expression265', cardinality 0..*).
+'optGrammar::UnitTypes' (role 'optGrammar_UnitTypes', cardinality 0..*) is associated with 'optGrammar::NumericLiteral' (role 'optGrammar_NumericLiteral197', cardinality 0..*).
+'optGrammar::SecondOperators' (role 'optGrammar_SecondOperators', cardinality 0..*) is associated with 'optGrammar::ArithmeticOperations' (role 'optGrammar_ArithmeticOperations168', cardinality 0..*).
+'optGrammar::PrimaryTypeDefinitionDeclaration' (role 'optGrammar_PrimaryTypeDefinitionDeclaration', cardinality 0..*) is associated with 'optGrammar::StructDefinition' (role 'optGrammar_StructDefinition', cardinality 0..*).
+'optGrammar::IfStatement' (role 'optGrammar_IfStatement125', cardinality 0..*) is associated with 'optGrammar::Statement' (role 'optGrammar_Statement126', cardinality 0..*).
+'optGrammar::VarVariableTypeDeclaration' (role 'optGrammar_VarVariableTypeDeclaration', cardinality 0..*) is associated with 'optGrammar::Variable' (role 'optGrammar_Variable217', cardinality 0..*).
+'optGrammar::NewExpression' (role 'optGrammar_NewExpression', cardinality 0..*) is associated with 'optGrammar::Contract' (role 'optGrammar_Contract162', cardinality 0..*).
+'optGrammar::QualifiedIdentifier' (role 'optGrammar_QualifiedIdentifier118', cardinality 0..*) is associated with 'optGrammar::DeleteStatement' (role 'optGrammar_DeleteStatement', cardinality 0..*).
+'optGrammar::Expression' (role 'optGrammar_Expression268', cardinality 0..*) is associated with 'optGrammar::BitXor' (role 'optGrammar_BitXor267', cardinality 0..*).
+'optGrammar::Expression' (role 'optGrammar_Expression115', cardinality 0..*) is associated with 'optGrammar::DoWhileStatement' (role 'optGrammar_DoWhileStatement114', cardinality 0..*).
+'optGrammar::IntParameter' (role 'optGrammar_IntParameter190', cardinality 0..*) is associated with 'optGrammar::EcrecoverFunction' (role 'optGrammar_EcrecoverFunction', cardinality 0..*).
+'optGrammar::Expression' (role 'optGrammar_Expression258', cardinality 0..*) is associated with 'optGrammar::Comparison' (role 'optGrammar_Comparison257', cardinality 0..*).
+'optGrammar::Shift' (role 'optGrammar_Shift', cardinality 0..*) is associated with 'optGrammar::Expression' (role 'optGrammar_Expression275', cardinality 0..*).
+'optGrammar::versionOperator' (role 'optGrammar_versionOperator', cardinality 0..*) is associated with 'optGrammar::PragmaDirective' (role 'optGrammar_PragmaDirective6', cardinality 0..*).
+'optGrammar::Expression' (role 'optGrammar_Expression270', cardinality 0..*) is associated with 'optGrammar::BitAnd' (role 'optGrammar_BitAnd', cardinality 0..*).
+'optGrammar::Body' (role 'optGrammar_Body53', cardinality 0..*) is associated with 'optGrammar::FunctionDefinition' (role 'optGrammar_FunctionDefinition52', cardinality 0..*).
+'optGrammar::Tuple' (role 'optGrammar_Tuple', cardinality 0..*) is associated with 'optGrammar::Expression' (role 'optGrammar_Expression81', cardinality 0..*).
+'optGrammar::InheritanceSpecifier' (role 'optGrammar_InheritanceSpecifier25', cardinality 0..*) is associated with 'optGrammar::Contract' (role 'optGrammar_Contract26', cardinality 0..*).
+'optGrammar::Expression' (role 'optGrammar_Expression243', cardinality 0..*) is associated with 'optGrammar::Or' (role 'optGrammar_Or242', cardinality 0..*).
+'optGrammar::FunctionCallListArguments' (role 'optGrammar_FunctionCallListArguments30', cardinality 0..*) is associated with 'optGrammar::Expression' (role 'optGrammar_Expression', cardinality 0..*).
+'optGrammar::PreIncExpression' (role 'optGrammar_PreIncExpression', cardinality 0..*) is associated with 'optGrammar::Expression' (role 'optGrammar_Expression154', cardinality 0..*).
+'optGrammar::ConstructorDefinition' (role 'optGrammar_ConstructorDefinition15', cardinality 0..*) is associated with 'optGrammar::StateMutability' (role 'optGrammar_StateMutability', cardinality 0..*).
+'optGrammar::And' (role 'optGrammar_And', cardinality 0..*) is associated with 'optGrammar::Expression' (role 'optGrammar_Expression245', cardinality 0..*).
+'optGrammar::ExpressionStatement' (role 'optGrammar_ExpressionStatement', cardinality 0..*) is associated with 'optGrammar::Expression' (role 'optGrammar_Expression83', cardinality 0..*).
+'optGrammar::IntParameter' (role 'optGrammar_IntParameter188', cardinality 0..*) is associated with 'optGrammar::HashFunction' (role 'optGrammar_HashFunction', cardinality 0..*).
+'optGrammar::PrimaryArithmetic' (role 'optGrammar_PrimaryArithmetic', cardinality 0..*) is associated with 'optGrammar::ArithmeticOperations' (role 'optGrammar_ArithmeticOperations', cardinality 0..*).
+'optGrammar::Expression' (role 'optGrammar_Expression238', cardinality 0..*) is associated with 'optGrammar::VariableDeclarationExpression' (role 'optGrammar_VariableDeclarationExpression237', cardinality 0..*).
+'optGrammar::Model' (role 'optGrammar_Model4', cardinality 0..*) is associated with 'optGrammar::Contract' (role 'optGrammar_Contract', cardinality 0..*).
+'optGrammar::ReturnParameterDeclaration' (role 'optGrammar_ReturnParameterDeclaration108', cardinality 0..*) is associated with 'optGrammar::Type' (role 'optGrammar_Type109', cardinality 0..*).
+'optGrammar::VisibilitySpecifier' (role 'optGrammar_VisibilitySpecifier', cardinality 0..*) is associated with 'optGrammar::VisibilityLiteral' (role 'optGrammar_VisibilityLiteral69', cardinality 0..*).
+'optGrammar::ForStatement' (role 'optGrammar_ForStatement140', cardinality 0..*) is associated with 'optGrammar::Statement' (role 'optGrammar_Statement141', cardinality 0..*).
+'optGrammar::FunctionDefinition' (role 'optGrammar_FunctionDefinition', cardinality 0..*) is associated with 'optGrammar::ParameterList' (role 'optGrammar_ParameterList36', cardinality 0..*).
+'optGrammar::Contract' (role 'optGrammar_Contract12', cardinality 0..*) is associated with 'optGrammar::DefinitionBody' (role 'optGrammar_DefinitionBody', cardinality 0..*).
+'optGrammar::Equality' (role 'optGrammar_Equality', cardinality 0..*) is associated with 'optGrammar::Expression' (role 'optGrammar_Expression250', cardinality 0..*).
+'optGrammar::NonArrayableDeclaration' (role 'optGrammar_NonArrayableDeclaration66', cardinality 0..*) is associated with 'optGrammar::SimpleTypeDeclaration' (role 'optGrammar_SimpleTypeDeclaration', cardinality 0..*).
+'optGrammar::ReturnParameterDeclaration' (role 'optGrammar_ReturnParameterDeclaration', cardinality 0..*) is associated with 'optGrammar::ReturnsParameterList' (role 'optGrammar_ReturnsParameterList106', cardinality 0..*).
+'optGrammar::BitAnd' (role 'optGrammar_BitAnd272', cardinality 0..*) is associated with 'optGrammar::Expression' (role 'optGrammar_Expression273', cardinality 0..*).
+'optGrammar::PreDecExpression' (role 'optGrammar_PreDecExpression', cardinality 0..*) is associated with 'optGrammar::Expression' (role 'optGrammar_Expression156', cardinality 0..*).
+'optGrammar::ArithmeticOperations' (role 'optGrammar_ArithmeticOperations181', cardinality 0..*) is associated with 'optGrammar::IntParameter' (role 'optGrammar_IntParameter180', cardinality 0..*).
+'optGrammar::Expression' (role 'optGrammar_Expression260', cardinality 0..*) is associated with 'optGrammar::BitOr' (role 'optGrammar_BitOr', cardinality 0..*).
+'optGrammar::Expression' (role 'optGrammar_Expression248', cardinality 0..*) is associated with 'optGrammar::And' (role 'optGrammar_And247', cardinality 0..*).
+'optGrammar::Expression' (role 'optGrammar_Expression283', cardinality 0..*) is associated with 'optGrammar::AddSub' (role 'optGrammar_AddSub282', cardinality 0..*).
+'optGrammar::FunctionDefinition' (role 'optGrammar_FunctionDefinition44', cardinality 0..*) is associated with 'optGrammar::ModifierInvocation' (role 'optGrammar_ModifierInvocation45', cardinality 0..*).
+'optGrammar::Expression' (role 'optGrammar_Expression202', cardinality 0..*) is associated with 'optGrammar::TypeCast' (role 'optGrammar_TypeCast201', cardinality 0..*).
+'optGrammar::FunctionDefinition' (role 'optGrammar_FunctionDefinition47', cardinality 0..*) is associated with 'optGrammar::VisibilityLiteral' (role 'optGrammar_VisibilityLiteral48', cardinality 0..*).
+'optGrammar::Expression' (role 'optGrammar_Expression295', cardinality 0..*) is associated with 'optGrammar::PostIncDecExpression' (role 'optGrammar_PostIncDecExpression', cardinality 0..*).
+'optGrammar::NumericLiteral' (role 'optGrammar_NumericLiteral193', cardinality 0..*) is associated with 'optGrammar::HexLiteral' (role 'optGrammar_HexLiteral', cardinality 0..*).
+'optGrammar::FunctionCall' (role 'optGrammar_FunctionCall', cardinality 0..*) is associated with 'optGrammar::EmitStatement' (role 'optGrammar_EmitStatement', cardinality 0..*).
+'optGrammar::FunctionCall' (role 'optGrammar_FunctionCall176', cardinality 0..*) is associated with 'optGrammar::Expression' (role 'optGrammar_Expression177', cardinality 0..*).
+'optGrammar::BinaryNotExpression' (role 'optGrammar_BinaryNotExpression', cardinality 0..*) is associated with 'optGrammar::Expression' (role 'optGrammar_Expression158', cardinality 0..*).
+'optGrammar::LocationSpecifier' (role 'optGrammar_LocationSpecifier', cardinality 0..*) is associated with 'optGrammar::LocationLiteral' (role 'optGrammar_LocationLiteral71', cardinality 0..*).
+'optGrammar::Expression' (role 'optGrammar_Expression60', cardinality 0..*) is associated with 'optGrammar::PrimaryTypeDefinitionDeclaration' (role 'optGrammar_PrimaryTypeDefinitionDeclaration59', cardinality 0..*).
+'optGrammar::Expression' (role 'optGrammar_Expression220', cardinality 0..*) is associated with 'optGrammar::VarVariableTypeDeclaration' (role 'optGrammar_VarVariableTypeDeclaration219', cardinality 0..*).
+'optGrammar::SymbolAlias' (role 'optGrammar_SymbolAlias', cardinality 0..*) is associated with 'optGrammar::ImportDirective' (role 'optGrammar_ImportDirective8', cardinality 0..*).
+'optGrammar::FunctionDefinition' (role 'optGrammar_FunctionDefinition38', cardinality 0..*) is associated with 'optGrammar::StateMutability' (role 'optGrammar_StateMutability39', cardinality 0..*).
+'optGrammar::IntParameter' (role 'optGrammar_IntParameter183', cardinality 0..*) is associated with 'optGrammar::FunctionCall' (role 'optGrammar_FunctionCall184', cardinality 0..*).
+'optGrammar::VariableDeclarationExpression' (role 'optGrammar_VariableDeclarationExpression234', cardinality 0..*) is associated with 'optGrammar::Variable' (role 'optGrammar_Variable235', cardinality 0..*).
+'optGrammar::FunctionCallArg' (role 'optGrammar_FunctionCallArg33', cardinality 0..*) is associated with 'optGrammar::Expression' (role 'optGrammar_Expression34', cardinality 0..*).
+'optGrammar::MulDivMod' (role 'optGrammar_MulDivMod287', cardinality 0..*) is associated with 'optGrammar::Expression' (role 'optGrammar_Expression288', cardinality 0..*).
+'optGrammar::Exponent' (role 'optGrammar_Exponent292', cardinality 0..*) is associated with 'optGrammar::Expression' (role 'optGrammar_Expression293', cardinality 0..*).
+'optGrammar::Statement' (role 'optGrammar_Statement131', cardinality 0..*) is associated with 'optGrammar::WhileStatement' (role 'optGrammar_WhileStatement130', cardinality 0..*).
+'optGrammar::Expression' (role 'optGrammar_Expression120', cardinality 0..*) is associated with 'optGrammar::IfStatement' (role 'optGrammar_IfStatement', cardinality 0..*).
+'optGrammar::Statement' (role 'optGrammar_Statement123', cardinality 0..*) is associated with 'optGrammar::IfStatement' (role 'optGrammar_IfStatement122', cardinality 0..*).
+'optGrammar::TypeCast' (role 'optGrammar_TypeCast', cardinality 0..*) is associated with 'optGrammar::SizedDeclaration' (role 'optGrammar_SizedDeclaration199', cardinality 0..*).
+'optGrammar::Body' (role 'optGrammar_Body93', cardinality 0..*) is associated with 'optGrammar::Modifier' (role 'optGrammar_Modifier92', cardinality 0..*).
+'optGrammar::NewExpression' (role 'optGrammar_NewExpression164', cardinality 0..*) is associated with 'optGrammar::FunctionCallListArguments' (role 'optGrammar_FunctionCallListArguments165', cardinality 0..*).
+'optGrammar::ImportDirective' (role 'optGrammar_ImportDirective', cardinality 0..*) is associated with 'optGrammar::Model' (role 'optGrammar_Model2', cardinality 0..*).
+'optGrammar::ReturnsParameterList' (role 'optGrammar_ReturnsParameterList', cardinality 0..*) is associated with 'optGrammar::FunctionDefinition' (role 'optGrammar_FunctionDefinition50', cardinality 0..*).
+'optGrammar::WhileStatement' (role 'optGrammar_WhileStatement', cardinality 0..*) is associated with 'optGrammar::Expression' (role 'optGrammar_Expression128', cardinality 0..*).
+'optGrammar::SpecialExpression' (role 'optGrammar_SpecialExpression', cardinality 0..*) is associated with 'optGrammar::Field' (role 'optGrammar_Field', cardinality 0..*).
+'optGrammar::FunctionDefinition' (role 'optGrammar_FunctionDefinition41', cardinality 0..*) is associated with 'optGrammar::Const' (role 'optGrammar_Const42', cardinality 0..*).
+'optGrammar::VariableDeclarationOptionalElement' (role 'optGrammar_VariableDeclarationOptionalElement', cardinality 0..*) is associated with 'optGrammar::StandardVariableDeclaration' (role 'optGrammar_StandardVariableDeclaration209', cardinality 0..*).
+'optGrammar::ParameterList' (role 'optGrammar_ParameterList90', cardinality 0..*) is associated with 'optGrammar::Modifier' (role 'optGrammar_Modifier', cardinality 0..*).
+'optGrammar::Qualifier' (role 'optGrammar_Qualifier150', cardinality 0..*) is associated with 'optGrammar::SpecialExpression' (role 'optGrammar_SpecialExpression149', cardinality 0..*).
+'optGrammar::UnitTypes' (role 'optGrammar_UnitTypes204', cardinality 0..*) is associated with 'optGrammar::TimeUnitsLiteral' (role 'optGrammar_TimeUnitsLiteral', cardinality 0..*).
+'optGrammar::Const' (role 'optGrammar_Const', cardinality 0..*) is associated with 'optGrammar::ConstructorDefinition' (role 'optGrammar_ConstructorDefinition17', cardinality 0..*).
+'optGrammar::ReturnStatement' (role 'optGrammar_ReturnStatement', cardinality 0..*) is associated with 'optGrammar::Expression' (role 'optGrammar_Expression146', cardinality 0..*).
+'optGrammar::Modifier' (role 'optGrammar_Modifier98', cardinality 0..*) is associated with 'optGrammar::ModifierInvocation' (role 'optGrammar_ModifierInvocation97', cardinality 0..*).
+'optGrammar::NotExpression' (role 'optGrammar_NotExpression', cardinality 0..*) is associated with 'optGrammar::Expression' (role 'optGrammar_Expression152', cardinality 0..*).
+'optGrammar::VariableDeclarationExpression' (role 'optGrammar_VariableDeclarationExpression', cardinality 0..*) is associated with 'optGrammar::Expression' (role 'optGrammar_Expression232', cardinality 0..*).
+'optGrammar::Arguments' (role 'optGrammar_Arguments', cardinality 0..*) is associated with 'optGrammar::FunctionCallArguments' (role 'optGrammar_FunctionCallArguments88', cardinality 0..*).
+'optGrammar::Mapping' (role 'optGrammar_Mapping79', cardinality 0..*) is associated with 'optGrammar::Type' (role 'optGrammar_Type', cardinality 0..*).
+'optGrammar::Comparison' (role 'optGrammar_Comparison', cardinality 0..*) is associated with 'optGrammar::Expression' (role 'optGrammar_Expression255', cardinality 0..*).
+'optGrammar::ExpressionStatement' (role 'optGrammar_ExpressionStatement138', cardinality 0..*) is associated with 'optGrammar::ForStatement' (role 'optGrammar_ForStatement137', cardinality 0..*).
+'optGrammar::VarVariableTupleVariableDeclaration' (role 'optGrammar_VarVariableTupleVariableDeclaration', cardinality 0..*) is associated with 'optGrammar::Tuple' (role 'optGrammar_Tuple222', cardinality 0..*).
+'optGrammar::Model' (role 'optGrammar_Model', cardinality 0..*) is associated with 'optGrammar::PragmaDirective' (role 'optGrammar_PragmaDirective', cardinality 0..*).

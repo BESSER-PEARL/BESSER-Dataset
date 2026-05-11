@@ -1,0 +1,18 @@
+The model has 5 class(es).
+The class 'tdt4250::Specialisation' has the following attributes: 'name' of type str.
+The class 'tdt4250::Student' has the following attributes: 'current_semester' of type int; 'studentID' of type int.
+The class 'tdt4250::CourseGroup' has no attributes.
+The class 'tdt4250::StudyProgram' has the following attributes: 'number_of_semesters' of type int; 'name' of type str.
+The class 'tdt4250::Course' has the following attributes: 'level' of type str; 'semester' of type str; 'code' of type str; 'name' of type str; 'study_points' of type float.
+The enumeration 'StudyProgramName' has the following literals: 'informatics', 'computer_science_5_years', 'computer_science_2_years'.
+The enumeration 'Semester' has the following literals: 'spring', 'autumn'.
+'tdt4250::Specialisation' (role 'tdt4250_Specialisation', cardinality 0..*) is associated with 'tdt4250::StudyProgram' (role 'tdt4250_StudyProgram2', cardinality 0..*).
+'tdt4250::Student' (role 'tdt4250_Student18', cardinality 0..*) is associated with 'tdt4250::Specialisation' (role 'tdt4250_Specialisation17', cardinality 0..*).
+'tdt4250::Course' (role 'tdt4250_Course7', cardinality 0..*) is associated with 'tdt4250::Student' (role 'tdt4250_Student6', cardinality 0..*).
+'tdt4250::Course' (role 'tdt4250_Course12', cardinality 0..*) is associated with 'tdt4250::CourseGroup' (role 'tdt4250_CourseGroup11', cardinality 0..*).
+'tdt4250::Specialisation' (role 'tdt4250_Specialisation15', cardinality 0..*) is associated with 'tdt4250::CourseGroup' (role 'tdt4250_CourseGroup14', cardinality 0..*).
+'tdt4250::CourseGroup' (role 'tdt4250_CourseGroup24', cardinality 0..*) is associated with 'tdt4250::Specialisation' (role 'tdt4250_Specialisation23', cardinality 0..*).
+'tdt4250::Course' (role 'tdt4250_Course', cardinality 0..*) is associated with 'tdt4250::StudyProgram' (role 'tdt4250_StudyProgram4', cardinality 0..*).
+'tdt4250::Course' (role 'tdt4250_Course9', cardinality 0..*) is associated with 'tdt4250::CourseGroup' (role 'tdt4250_CourseGroup', cardinality 0..*).
+'tdt4250::StudyProgram' (role 'tdt4250_StudyProgram', cardinality 0..*) is associated with 'tdt4250::Student' (role 'tdt4250_Student', cardinality 0..*).
+'tdt4250::Specialisation' (role 'tdt4250_Specialisation19', cardinality 0..*) is associated with 'tdt4250::Specialisation' (role 'tdt4250_Specialisation21', cardinality 0..*).

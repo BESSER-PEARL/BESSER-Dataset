@@ -1,0 +1,24 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Metamodelo_Cpp_CppJumpStatement extends CppExpression {
+
+
+
+
+    public Metamodelo_Cpp_CppJumpStatement(
+    ) {
+        super(
+        );
+    }
+
+
+
+
+}

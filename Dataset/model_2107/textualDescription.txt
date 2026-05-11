@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'tests::TestsModel' has no attributes.
+The class 'tests::Test' has the following attributes: 'version' of type str; 'id' of type str.
+'tests::TestsModel' (role 'tests_TestsModel', cardinality 0..*) is associated with 'tests::Test' (role 'tests_Test', cardinality 0..*).

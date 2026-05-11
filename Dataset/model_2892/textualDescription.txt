@@ -1,0 +1,36 @@
+The model has 15 class(es).
+The class 'typedef::EnumLiteral' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'typedef::Exception' has the following attributes: 'exceptionType' of type str.
+The class 'typedef::PrimitiveType' has the following attributes: 'typesetName' of type str; 'nillable' of type bool.
+The class 'typedef::Entity' has the following attributes: 'versionuid' of type int.
+The class 'typedef::EnumVal' has no attributes.
+The class 'typedef::TypeAnnotation' has the following attributes: 'source' of type str.
+The class 'Type' has no attributes.
+The class 'typedef::Feature' has the following attributes: 'name' of type str.
+The class 'typedef::TypedArray' has no attributes.
+The class 'typedef::DocumentRoot' has no attributes.
+The class 'typedef::Type' has the following attributes: 'name' of type str.
+The class 'typedef::CSIDatatype' has the following attributes: 'nillable' of type bool; 'code' of type str.
+The class 'typedef::TypeLanguageBinding' has the following attributes: 'langSpecificType' of type str; 'langSpecificNS' of type str; 'lang' of type str; 'defaultInitValue' of type str; 'nullValueLiteral' of type str.
+The class 'typedef::TDAnnotationDetail' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'typedef::TDDocumentation' has the following attributes: 'doc' of type str.
+The enumeration 'CSIExceptionTypes' has the following literals: 'USER', 'UNRECOVERABLE', 'SYSTEM'.
+The enumeration 'CSIDatatypeCodes' has the following literals: 'CSIBoolean', 'CSIInteger', 'CSIByte', 'CSIString', 'CSIDate', 'CSILong', 'CSIDouble', 'CSIFloat'.
+'typedef::Exception' is a specialization of 'Type'.
+'typedef::PrimitiveType' is a specialization of 'Type'.
+'typedef::Entity' is a specialization of 'Type'.
+'typedef::TypedArray' is a specialization of 'Type'.
+'typedef::EnumVal' is a specialization of 'Type'.
+'typedef::CSIDatatype' is a specialization of 'Type'.
+'typedef::EnumLiteral' (role 'typedef_EnumLiteral22', cardinality 0..*) is associated with 'typedef::TDDocumentation' (role 'typedef_TDDocumentation23', cardinality 0..*).
+'typedef::Type' (role 'typedef_Type13', cardinality 0..*) is associated with 'typedef::TypedArray' (role 'typedef_TypedArray', cardinality 0..*).
+'typedef::Feature' (role 'typedef_Feature', cardinality 0..*) is associated with 'typedef::Entity' (role 'typedef_Entity', cardinality 0..*).
+'typedef::TDAnnotationDetail' (role 'typedef_TDAnnotationDetail', cardinality 0..*) is associated with 'typedef::TypeAnnotation' (role 'typedef_TypeAnnotation15', cardinality 0..*).
+'typedef::TypeAnnotation' (role 'typedef_TypeAnnotation', cardinality 0..*) is associated with 'typedef::Type' (role 'typedef_Type2', cardinality 0..*).
+'typedef::Type' (role 'typedef_Type8', cardinality 0..*) is associated with 'typedef::Feature' (role 'typedef_Feature7', cardinality 0..*).
+'typedef::TDDocumentation' (role 'typedef_TDDocumentation', cardinality 0..*) is associated with 'typedef::Type' (role 'typedef_Type4', cardinality 0..*).
+'typedef::PrimitiveType' (role 'typedef_PrimitiveType', cardinality 0..*) is associated with 'typedef::TypeLanguageBinding' (role 'typedef_TypeLanguageBinding', cardinality 0..*).
+'typedef::Feature' (role 'typedef_Feature10', cardinality 0..*) is associated with 'typedef::TDDocumentation' (role 'typedef_TDDocumentation11', cardinality 0..*).
+'typedef::EnumVal' (role 'typedef_EnumVal20', cardinality 0..*) is associated with 'typedef::EnumLiteral' (role 'typedef_EnumLiteral', cardinality 0..*).
+'typedef::Type' (role 'typedef_Type18', cardinality 0..*) is associated with 'typedef::EnumVal' (role 'typedef_EnumVal', cardinality 0..*).
+'typedef::Type' (role 'typedef_Type', cardinality 0..*) is associated with 'typedef::DocumentRoot' (role 'typedef_DocumentRoot', cardinality 0..*).

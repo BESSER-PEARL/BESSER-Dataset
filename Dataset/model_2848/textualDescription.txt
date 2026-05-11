@@ -1,0 +1,186 @@
+The model has 57 class(es).
+The class 'SharedDef' has no attributes.
+The class 'aDSL::Body' has no attributes.
+The class 'aDSL::Comparison' has the following attributes: 'op' of type str.
+The class 'aDSL::New' has no attributes.
+The class 'aDSL::Reference' has the following attributes: 'isarray' of type bool.
+The class 'aDSL::Parameter' has the following attributes: 'istyped' of type bool; 'name' of type str.
+The class 'aDSL::SharedArrayDef' has no attributes.
+The class 'aDSL::MemberSelection' has the following attributes: 'methodinvocation' of type bool; 'ispar' of type bool.
+The class 'aDSL::TryCatchStat' has the following attributes: 'name' of type str.
+The class 'aDSL::WhileStat' has no attributes.
+The class 'aDSL::Minus' has no attributes.
+The class 'aDSL::Operator' has the following attributes: 'opName' of type str.
+The class 'aDSL::MainMethod' has no attributes.
+The class 'aDSL::FinishStat' has no attributes.
+The class 'aDSL::VarDef' has no attributes.
+The class 'Expression' has no attributes.
+The class 'Member' has no attributes.
+The class 'aDSL::Expression' has no attributes.
+The class 'aDSL::VariableDef' has the following attributes: 'istyped' of type bool; 'isinit' of type bool; 'vartype' of type str; 'name' of type str; 'isstatic' of type bool.
+The class 'aDSL::BoolConstant' has the following attributes: 'value' of type str.
+The class 'aDSL::ForStat' has no attributes.
+The class 'aDSL::Statement' has no attributes.
+The class 'aDSL::SharedVarDef' has no attributes.
+The class 'aDSL::AsyncStat' has no attributes.
+The class 'aDSL::WhenStatement' has no attributes.
+The class 'aDSL::ReturnStat' has no attributes.
+The class 'aDSL::Member' has no attributes.
+The class 'aDSL::XClass' has the following attributes: 'name' of type str.
+The class 'aDSL::For2Statement' has no attributes.
+The class 'aDSL::Here' has no attributes.
+The class 'aDSL::Not' has no attributes.
+The class 'aDSL::Init' has no attributes.
+The class 'aDSL::FuncVarDef' has the following attributes: 'name' of type str.
+The class 'aDSL::VariableType' has the following attributes: 'isarray' of type bool.
+The class 'aDSL::AtomicStatement' has no attributes.
+The class 'aDSL::IfStat' has the following attributes: 'iselse' of type bool.
+The class 'aDSL::Assignment' has no attributes.
+The class 'aDSL::Or' has no attributes.
+The class 'aDSL::DeRef' has no attributes.
+The class 'aDSL::StringConstant' has the following attributes: 'value' of type str.
+The class 'aDSL::This' has no attributes.
+The class 'aDSL::Block' has the following attributes: 'ispar' of type bool.
+The class 'aDSL::PrintInst' has no attributes.
+The class 'aDSL::IntConstant' has no attributes.
+The class 'aDSL::Plus' has no attributes.
+The class 'aDSL::And' has no attributes.
+The class 'aDSL::IntegerNegative' has the following attributes: 'isneg' of type bool; 'value' of type int.
+The class 'aDSL::Equality' has the following attributes: 'op' of type str.
+The class 'aDSL::Null' has no attributes.
+The class 'aDSL::AbstractElements' has the following attributes: 'importedNamespace' of type str.
+The class 'aDSL::AtStat' has no attributes.
+The class 'aDSL::MulOrDiv' has the following attributes: 'op' of type str.
+The class 'aDSL::Method' has the following attributes: 'istyped' of type bool; 'name' of type str; 'isconst' of type bool.
+The class 'aDSL::Program' has the following attributes: 'name' of type str.
+The class 'aDSL::SharedDef' has the following attributes: 'name' of type str; 'replicas' of type bool.
+The class 'VarDef' has no attributes.
+The class 'Statement' has no attributes.
+'aDSL::WhileStat' is a specialization of 'Statement'.
+'aDSL::Null' is a specialization of 'Expression'.
+'aDSL::SharedDef' is a specialization of 'Statement'.
+'aDSL::Parameter' is a specialization of 'VarDef'.
+'aDSL::VariableDef' is a specialization of 'Member'.
+'aDSL::DeRef' is a specialization of 'Expression'.
+'aDSL::PrintInst' is a specialization of 'Member'.
+'aDSL::AsyncStat' is a specialization of 'Statement'.
+'aDSL::ForStat' is a specialization of 'Statement'.
+'aDSL::Here' is a specialization of 'Expression'.
+'aDSL::VariableDef' is a specialization of 'VarDef'.
+'aDSL::StringConstant' is a specialization of 'Expression'.
+'aDSL::BoolConstant' is a specialization of 'Expression'.
+'aDSL::For2Statement' is a specialization of 'Statement'.
+'aDSL::VariableType' is a specialization of 'VarDef'.
+'aDSL::WhenStatement' is a specialization of 'Statement'.
+'aDSL::Expression' is a specialization of 'Statement'.
+'aDSL::SharedVarDef' is a specialization of 'SharedDef'.
+'aDSL::Comparison' is a specialization of 'Expression'.
+'aDSL::MulOrDiv' is a specialization of 'Expression'.
+'aDSL::Method' is a specialization of 'Member'.
+'aDSL::Assignment' is a specialization of 'Expression'.
+'aDSL::SharedArrayDef' is a specialization of 'SharedDef'.
+'aDSL::Equality' is a specialization of 'Expression'.
+'aDSL::Init' is a specialization of 'Expression'.
+'aDSL::VariableDef' is a specialization of 'Statement'.
+'aDSL::MemberSelection' is a specialization of 'Expression'.
+'aDSL::Not' is a specialization of 'Expression'.
+'aDSL::FinishStat' is a specialization of 'Statement'.
+'aDSL::This' is a specialization of 'Expression'.
+'aDSL::FuncVarDef' is a specialization of 'Statement'.
+'aDSL::ReturnStat' is a specialization of 'Statement'.
+'aDSL::XClass' is a specialization of 'VarDef'.
+'aDSL::FuncVarDef' is a specialization of 'Member'.
+'aDSL::Operator' is a specialization of 'Member'.
+'aDSL::FuncVarDef' is a specialization of 'VarDef'.
+'aDSL::PrintInst' is a specialization of 'Statement'.
+'aDSL::SharedDef' is a specialization of 'VarDef'.
+'aDSL::IntConstant' is a specialization of 'Expression'.
+'aDSL::AtomicStatement' is a specialization of 'Statement'.
+'aDSL::TryCatchStat' is a specialization of 'Statement'.
+'aDSL::Minus' is a specialization of 'Expression'.
+'aDSL::Plus' is a specialization of 'Expression'.
+'aDSL::AtStat' is a specialization of 'Statement'.
+'aDSL::New' is a specialization of 'Expression'.
+'aDSL::MainMethod' is a specialization of 'Member'.
+'aDSL::Or' is a specialization of 'Expression'.
+'aDSL::SharedDef' is a specialization of 'Member'.
+'aDSL::And' is a specialization of 'Expression'.
+'aDSL::Reference' is a specialization of 'Expression'.
+'aDSL::IfStat' is a specialization of 'Statement'.
+'aDSL::AsyncStat' (role 'aDSL_AsyncStat', cardinality 0..*) is associated with 'aDSL::Block' (role 'aDSL_Block55', cardinality 0..*).
+'aDSL::MulOrDiv' (role 'aDSL_MulOrDiv', cardinality 0..*) is associated with 'aDSL::Expression' (role 'aDSL_Expression160', cardinality 0..*).
+'aDSL::ForStat' (role 'aDSL_ForStat', cardinality 0..*) is associated with 'aDSL::VariableDef' (role 'aDSL_VariableDef93', cardinality 0..*).
+'aDSL::SharedDef' (role 'aDSL_SharedDef', cardinality 0..*) is associated with 'aDSL::VariableType' (role 'aDSL_VariableType79', cardinality 0..*).
+'aDSL::Body' (role 'aDSL_Body91', cardinality 0..*) is associated with 'aDSL::WhileStat' (role 'aDSL_WhileStat90', cardinality 0..*).
+'aDSL::And' (role 'aDSL_And137', cardinality 0..*) is associated with 'aDSL::Expression' (role 'aDSL_Expression138', cardinality 0..*).
+'aDSL::Expression' (role 'aDSL_Expression36', cardinality 0..*) is associated with 'aDSL::VariableDef' (role 'aDSL_VariableDef35', cardinality 0..*).
+'aDSL::Expression' (role 'aDSL_Expression148', cardinality 0..*) is associated with 'aDSL::Comparison' (role 'aDSL_Comparison147', cardinality 0..*).
+'aDSL::VariableType' (role 'aDSL_VariableType175', cardinality 0..*) is associated with 'aDSL::New' (role 'aDSL_New', cardinality 0..*).
+'aDSL::XClass' (role 'aDSL_XClass50', cardinality 0..*) is associated with 'aDSL::VariableType' (role 'aDSL_VariableType49', cardinality 0..*).
+'aDSL::Program' (role 'aDSL_Program', cardinality 0..*) is associated with 'aDSL::AbstractElements' (role 'aDSL_AbstractElements', cardinality 0..*).
+'aDSL::Parameter' (role 'aDSL_Parameter', cardinality 0..*) is associated with 'aDSL::Method' (role 'aDSL_Method', cardinality 0..*).
+'aDSL::VariableType' (role 'aDSL_VariableType180', cardinality 0..*) is associated with 'aDSL::Init' (role 'aDSL_Init', cardinality 0..*).
+'aDSL::Parameter' (role 'aDSL_Parameter20', cardinality 0..*) is associated with 'aDSL::Operator' (role 'aDSL_Operator', cardinality 0..*).
+'aDSL::Expression' (role 'aDSL_Expression74', cardinality 0..*) is associated with 'aDSL::For2Statement' (role 'aDSL_For2Statement73', cardinality 0..*).
+'aDSL::For2Statement' (role 'aDSL_For2Statement76', cardinality 0..*) is associated with 'aDSL::Block' (role 'aDSL_Block77', cardinality 0..*).
+'aDSL::New' (role 'aDSL_New177', cardinality 0..*) is associated with 'aDSL::Expression' (role 'aDSL_Expression178', cardinality 0..*).
+'aDSL::Member' (role 'aDSL_Member122', cardinality 0..*) is associated with 'aDSL::MemberSelection' (role 'aDSL_MemberSelection121', cardinality 0..*).
+'aDSL::Expression' (role 'aDSL_Expression104', cardinality 0..*) is associated with 'aDSL::ReturnStat' (role 'aDSL_ReturnStat', cardinality 0..*).
+'aDSL::Plus' (role 'aDSL_Plus152', cardinality 0..*) is associated with 'aDSL::Expression' (role 'aDSL_Expression153', cardinality 0..*).
+'aDSL::Statement' (role 'aDSL_Statement69', cardinality 0..*) is associated with 'aDSL::WhenStatement' (role 'aDSL_WhenStatement68', cardinality 0..*).
+'aDSL::Expression' (role 'aDSL_Expression155', cardinality 0..*) is associated with 'aDSL::Minus' (role 'aDSL_Minus', cardinality 0..*).
+'aDSL::Statement' (role 'aDSL_Statement47', cardinality 0..*) is associated with 'aDSL::Block' (role 'aDSL_Block', cardinality 0..*).
+'aDSL::Block' (role 'aDSL_Block57', cardinality 0..*) is associated with 'aDSL::FinishStat' (role 'aDSL_FinishStat', cardinality 0..*).
+'aDSL::Or' (role 'aDSL_Or', cardinality 0..*) is associated with 'aDSL::Expression' (role 'aDSL_Expression130', cardinality 0..*).
+'aDSL::Expression' (role 'aDSL_Expression96', cardinality 0..*) is associated with 'aDSL::ForStat' (role 'aDSL_ForStat95', cardinality 0..*).
+'aDSL::Method' (role 'aDSL_Method14', cardinality 0..*) is associated with 'aDSL::VariableType' (role 'aDSL_VariableType15', cardinality 0..*).
+'aDSL::Expression' (role 'aDSL_Expression88', cardinality 0..*) is associated with 'aDSL::WhileStat' (role 'aDSL_WhileStat', cardinality 0..*).
+'aDSL::Program' (role 'aDSL_Program2', cardinality 0..*) is associated with 'aDSL::XClass' (role 'aDSL_XClass', cardinality 0..*).
+'aDSL::VariableType' (role 'aDSL_VariableType43', cardinality 0..*) is associated with 'aDSL::Parameter' (role 'aDSL_Parameter42', cardinality 0..*).
+'aDSL::Body' (role 'aDSL_Body86', cardinality 0..*) is associated with 'aDSL::TryCatchStat' (role 'aDSL_TryCatchStat85', cardinality 0..*).
+'aDSL::Block' (role 'aDSL_Block109', cardinality 0..*) is associated with 'aDSL::IfStat' (role 'aDSL_IfStat108', cardinality 0..*).
+'aDSL::PrintInst' (role 'aDSL_PrintInst', cardinality 0..*) is associated with 'aDSL::Expression' (role 'aDSL_Expression', cardinality 0..*).
+'aDSL::VariableType' (role 'aDSL_VariableType33', cardinality 0..*) is associated with 'aDSL::VariableDef' (role 'aDSL_VariableDef', cardinality 0..*).
+'aDSL::IfStat' (role 'aDSL_IfStat111', cardinality 0..*) is associated with 'aDSL::Block' (role 'aDSL_Block112', cardinality 0..*).
+'aDSL::MainMethod' (role 'aDSL_MainMethod10', cardinality 0..*) is associated with 'aDSL::Body' (role 'aDSL_Body', cardinality 0..*).
+'aDSL::Expression' (role 'aDSL_Expression150', cardinality 0..*) is associated with 'aDSL::Plus' (role 'aDSL_Plus', cardinality 0..*).
+'aDSL::FuncVarDef' (role 'aDSL_FuncVarDef', cardinality 0..*) is associated with 'aDSL::Parameter' (role 'aDSL_Parameter25', cardinality 0..*).
+'aDSL::Minus' (role 'aDSL_Minus157', cardinality 0..*) is associated with 'aDSL::Expression' (role 'aDSL_Expression158', cardinality 0..*).
+'aDSL::Assignment' (role 'aDSL_Assignment116', cardinality 0..*) is associated with 'aDSL::Expression' (role 'aDSL_Expression117', cardinality 0..*).
+'aDSL::Not' (role 'aDSL_Not', cardinality 0..*) is associated with 'aDSL::Expression' (role 'aDSL_Expression165', cardinality 0..*).
+'aDSL::MemberSelection' (role 'aDSL_MemberSelection', cardinality 0..*) is associated with 'aDSL::Expression' (role 'aDSL_Expression119', cardinality 0..*).
+'aDSL::SharedDef' (role 'aDSL_SharedDef81', cardinality 0..*) is associated with 'aDSL::VarDef' (role 'aDSL_VarDef', cardinality 0..*).
+'aDSL::Expression' (role 'aDSL_Expression143', cardinality 0..*) is associated with 'aDSL::Equality' (role 'aDSL_Equality142', cardinality 0..*).
+'aDSL::Expression' (role 'aDSL_Expression128', cardinality 0..*) is associated with 'aDSL::MemberSelection' (role 'aDSL_MemberSelection127', cardinality 0..*).
+'aDSL::Expression' (role 'aDSL_Expression59', cardinality 0..*) is associated with 'aDSL::AtStat' (role 'aDSL_AtStat', cardinality 0..*).
+'aDSL::Expression' (role 'aDSL_Expression135', cardinality 0..*) is associated with 'aDSL::And' (role 'aDSL_And', cardinality 0..*).
+'aDSL::MulOrDiv' (role 'aDSL_MulOrDiv162', cardinality 0..*) is associated with 'aDSL::Expression' (role 'aDSL_Expression163', cardinality 0..*).
+'aDSL::Expression' (role 'aDSL_Expression66', cardinality 0..*) is associated with 'aDSL::WhenStatement' (role 'aDSL_WhenStatement', cardinality 0..*).
+'aDSL::DeRef' (role 'aDSL_DeRef', cardinality 0..*) is associated with 'aDSL::VarDef' (role 'aDSL_VarDef168', cardinality 0..*).
+'aDSL::Reference' (role 'aDSL_Reference172', cardinality 0..*) is associated with 'aDSL::Expression' (role 'aDSL_Expression173', cardinality 0..*).
+'aDSL::SharedVarDef' (role 'aDSL_SharedVarDef', cardinality 0..*) is associated with 'aDSL::Expression' (role 'aDSL_Expression40', cardinality 0..*).
+'aDSL::Parameter' (role 'aDSL_Parameter71', cardinality 0..*) is associated with 'aDSL::For2Statement' (role 'aDSL_For2Statement', cardinality 0..*).
+'aDSL::Reference' (role 'aDSL_Reference', cardinality 0..*) is associated with 'aDSL::VarDef' (role 'aDSL_VarDef170', cardinality 0..*).
+'aDSL::XClass' (role 'aDSL_XClass125', cardinality 0..*) is associated with 'aDSL::MemberSelection' (role 'aDSL_MemberSelection124', cardinality 0..*).
+'aDSL::Equality' (role 'aDSL_Equality', cardinality 0..*) is associated with 'aDSL::Expression' (role 'aDSL_Expression140', cardinality 0..*).
+'aDSL::Expression' (role 'aDSL_Expression23', cardinality 0..*) is associated with 'aDSL::Operator' (role 'aDSL_Operator22', cardinality 0..*).
+'aDSL::IntConstant' (role 'aDSL_IntConstant', cardinality 0..*) is associated with 'aDSL::IntegerNegative' (role 'aDSL_IntegerNegative', cardinality 0..*).
+'aDSL::VariableType' (role 'aDSL_VariableType28', cardinality 0..*) is associated with 'aDSL::FuncVarDef' (role 'aDSL_FuncVarDef27', cardinality 0..*).
+'aDSL::XClass' (role 'aDSL_XClass5', cardinality 0..*) is associated with 'aDSL::XClass' (role 'aDSL_XClass3', cardinality 0..*).
+'aDSL::Expression' (role 'aDSL_Expression133', cardinality 0..*) is associated with 'aDSL::Or' (role 'aDSL_Or132', cardinality 0..*).
+'aDSL::Expression' (role 'aDSL_Expression99', cardinality 0..*) is associated with 'aDSL::ForStat' (role 'aDSL_ForStat98', cardinality 0..*).
+'aDSL::ForStat' (role 'aDSL_ForStat101', cardinality 0..*) is associated with 'aDSL::Block' (role 'aDSL_Block102', cardinality 0..*).
+'aDSL::SharedArrayDef' (role 'aDSL_SharedArrayDef', cardinality 0..*) is associated with 'aDSL::VariableDef' (role 'aDSL_VariableDef38', cardinality 0..*).
+'aDSL::Expression' (role 'aDSL_Expression114', cardinality 0..*) is associated with 'aDSL::Assignment' (role 'aDSL_Assignment', cardinality 0..*).
+'aDSL::Expression' (role 'aDSL_Expression145', cardinality 0..*) is associated with 'aDSL::Comparison' (role 'aDSL_Comparison', cardinality 0..*).
+'aDSL::Body' (role 'aDSL_Body45', cardinality 0..*) is associated with 'aDSL::Statement' (role 'aDSL_Statement', cardinality 0..*).
+'aDSL::TryCatchStat' (role 'aDSL_TryCatchStat', cardinality 0..*) is associated with 'aDSL::Body' (role 'aDSL_Body83', cardinality 0..*).
+'aDSL::FuncVarDef' (role 'aDSL_FuncVarDef30', cardinality 0..*) is associated with 'aDSL::Body' (role 'aDSL_Body31', cardinality 0..*).
+'aDSL::XClass' (role 'aDSL_XClass7', cardinality 0..*) is associated with 'aDSL::Member' (role 'aDSL_Member', cardinality 0..*).
+'aDSL::Body' (role 'aDSL_Body18', cardinality 0..*) is associated with 'aDSL::Method' (role 'aDSL_Method17', cardinality 0..*).
+'aDSL::VariableType' (role 'aDSL_VariableType', cardinality 0..*) is associated with 'aDSL::MainMethod' (role 'aDSL_MainMethod', cardinality 0..*).
+'aDSL::Init' (role 'aDSL_Init182', cardinality 0..*) is associated with 'aDSL::Expression' (role 'aDSL_Expression183', cardinality 0..*).
+'aDSL::Statement' (role 'aDSL_Statement64', cardinality 0..*) is associated with 'aDSL::AtomicStatement' (role 'aDSL_AtomicStatement', cardinality 0..*).
+'aDSL::IfStat' (role 'aDSL_IfStat', cardinality 0..*) is associated with 'aDSL::Expression' (role 'aDSL_Expression106', cardinality 0..*).
+'aDSL::AtStat' (role 'aDSL_AtStat61', cardinality 0..*) is associated with 'aDSL::Block' (role 'aDSL_Block62', cardinality 0..*).
+'aDSL::VariableType' (role 'aDSL_VariableType53', cardinality 0..*) is associated with 'aDSL::VariableType' (role 'aDSL_VariableType51', cardinality 0..*).

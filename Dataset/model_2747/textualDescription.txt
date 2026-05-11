@@ -1,0 +1,6 @@
+The model has 2 class(es).
+The class 'testcontainment::B' has no attributes.
+The class 'testcontainment::A' has no attributes.
+'testcontainment::B' (role 'bs', cardinality 0..*) is associated with 'testcontainment::A' (role 'A', cardinality 0..*).
+'testcontainment::A' (role 'testcontainment_A', cardinality 0..*) is associated with 'testcontainment::B' (role 'testcontainment_B', cardinality 0..*).
+'testcontainment::A' (role 'a', cardinality 0..*) is associated with 'testcontainment::B' (role 'B', cardinality 0..*).

@@ -1,0 +1,13 @@
+The model has 7 class(es).
+The class 'tfsm::FSM' has no attributes.
+The class 'FSM' has no attributes.
+The class 'Transition' has no attributes.
+The class 'State' has no attributes.
+The class 'tfsm::Transition' has no attributes.
+The class 'tfsm::State' has the following attributes: 'time' of type int.
+The class 'tfsm::Guard' has the following attributes: 'time' of type int.
+'tfsm::State' is a specialization of 'State'.
+'tfsm::FSM' is a specialization of 'FSM'.
+'tfsm::Transition' is a specialization of 'Transition'.
+'tfsm::State' (role 'tfsm_State', cardinality 0..*) is associated with 'tfsm::FSM' (role 'tfsm_FSM', cardinality 0..*).
+'tfsm::Guard' (role 'tfsm_Guard', cardinality 0..*) is associated with 'tfsm::Transition' (role 'tfsm_Transition', cardinality 0..*).

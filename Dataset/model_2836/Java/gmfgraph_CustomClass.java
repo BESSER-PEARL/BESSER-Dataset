@@ -1,0 +1,40 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class gmfgraph_CustomClass  {
+
+    private String bundleName;
+    private String qualifiedClassName;
+
+
+
+    public gmfgraph_CustomClass(
+        String bundleName,        String qualifiedClassName    ) {
+        this.bundleName = bundleName;
+        this.qualifiedClassName = qualifiedClassName;
+    }
+
+
+    public String getBundlename() {
+        return bundleName;
+    }
+
+    public void setBundlename(String bundleName) {
+        this.bundleName = bundleName;
+    }
+    public String getQualifiedclassname() {
+        return qualifiedClassName;
+    }
+
+    public void setQualifiedclassname(String qualifiedClassName) {
+        this.qualifiedClassName = qualifiedClassName;
+    }
+
+
+}

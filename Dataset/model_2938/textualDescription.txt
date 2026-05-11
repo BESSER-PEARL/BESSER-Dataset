@@ -1,0 +1,175 @@
+The model has 64 class(es).
+The class 'eJSL::DetailPageField' has no attributes.
+The class 'eJSL::EJSLModel' has the following attributes: 'name' of type str.
+The class 'eJSL::Section' has no attributes.
+The class 'eJSL::LinkParameter' has the following attributes: 'name' of type str; 'value' of type str; 'id' of type bool.
+The class 'eJSL::Method' has the following attributes: 'returnvalue' of type str; 'name' of type str.
+The class 'eJSL::Type' has no attributes.
+The class 'eJSL::CssBlock' has the following attributes: 'selector' of type str.
+The class 'eJSL::ExternalLink' has the following attributes: 'label' of type str; 'target' of type str.
+The class 'eJSL::ComplexHTMLTypes' has the following attributes: 'htmltype' of type str.
+The class 'eJSL::Page' has the following attributes: 'name' of type str.
+The class 'eJSL::ParameterGroup' has the following attributes: 'label' of type str; 'name' of type str.
+The class 'eJSL::Module' has no attributes.
+The class 'eJSL::BackendSection' has no attributes.
+The class 'eJSL::Package' has the following attributes: 'name' of type str.
+The class 'Type' has no attributes.
+The class 'eJSL::CustomPage' has the following attributes: 'preserve' of type str; 'pageType' of type str.
+The class 'eJSL::Attribute' has the following attributes: 'name' of type str; 'isunique' of type bool; 'preserve' of type bool; 'isprimary' of type bool; 'id' of type bool.
+The class 'eJSL::InternalLink' has the following attributes: 'name' of type str.
+The class 'eJSL::MethodParameter' has the following attributes: 'name' of type str.
+The class 'eJSL::FrontendSection' has no attributes.
+The class 'Extension' has no attributes.
+The class 'eJSL::Parameter' has the following attributes: 'name' of type str; 'size' of type int; 'descripton' of type str; 'defaultvalue' of type str; 'label' of type str.
+The class 'eJSL::Author' has the following attributes: 'name' of type str; 'authoremail' of type str; 'authorurl' of type str.
+The class 'eJSL::StandardTypes' has the following attributes: 'autoincrement' of type bool; 'type' of type str; 'notnull' of type bool; 'default' of type str.
+The class 'eJSL::Component' has no attributes.
+The class 'eJSL::StaticPage' has the following attributes: 'preserve' of type bool; 'HTMLBody' of type str.
+The class 'eJSL::Position' has the following attributes: 'name' of type str.
+The class 'eJSL::CMSExtension' has no attributes.
+The class 'DynamicPage' has no attributes.
+The class 'eJSL::ExtensionPackage' has no attributes.
+The class 'eJSL::PageAction' has the following attributes: 'name' of type str; 'pageActionPosition' of type str; 'pageActionType' of type str.
+The class 'eJSL::HTMLTypes' has no attributes.
+The class 'eJSL::Reference' has the following attributes: 'upper' of type str; 'id' of type bool; 'lower' of type str; 'preserve' of type bool.
+The class 'Section' has no attributes.
+The class 'EJSLPart' has no attributes.
+The class 'Page' has no attributes.
+The class 'eJSL::Feature' has no attributes.
+The class 'eJSL::Extension' has the following attributes: 'name' of type str.
+The class 'eJSL::Link' has no attributes.
+The class 'eJSL::Plugin' has the following attributes: 'type' of type str.
+The class 'eJSL::Language' has the following attributes: 'name' of type str; 'sys' of type bool.
+The class 'eJSL::coreFeature' has no attributes.
+The class 'eJSL::KeyValuePair' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'eJSL::IndexPage' has no attributes.
+The class 'eJSL::DetailsPage' has no attributes.
+The class 'eJSL::EJSLPart' has no attributes.
+The class 'eJSL::DynamicPage' has the following attributes: 'preserve' of type bool.
+The class 'eJSL::PageReference' has the following attributes: 'sect' of type str.
+The class 'eJSL::PositionParameter' has the following attributes: 'name' of type str; 'divid' of type str; 'type' of type str.
+The class 'eJSL::SimpleHTMLTypes' has the following attributes: 'htmltype' of type str.
+The class 'eJSL::Library' has no attributes.
+The class 'eJSL::DatatypeReference' has no attributes.
+The class 'InternalLink' has no attributes.
+The class 'eJSL::ComponentReference' has the following attributes: 'core' of type str.
+The class 'HTMLTypes' has no attributes.
+The class 'eJSL::ContextLink' has no attributes.
+The class 'eJSL::CMSCore' has no attributes.
+The class 'eJSL::Manifestation' has the following attributes: 'link' of type str; 'copyright' of type str; 'license' of type str; 'version' of type str; 'creationdate' of type str; 'description' of type str.
+The class 'Link' has no attributes.
+The class 'eJSL::Datatype' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'eJSL::Class' has the following attributes: 'name' of type str.
+The class 'eJSL::Template' has no attributes.
+The class 'eJSL::Entity' has the following attributes: 'name' of type str; 'preserve' of type bool.
+The class 'eJSL::Entitypackage' has the following attributes: 'name' of type str.
+The enumeration 'PageActionKind' has the following literals: 'NEW', 'PUBLISH', 'CHECKIN', 'HIDE', 'TRASH', 'SAVE', 'CLOSE', 'SAVE_COPY', 'PWRESET', 'CANCEL', 'SAVE_CLOSE', 'EDIT', 'UNPUBLISH', 'INDIVIDUAL', 'ARCHIVE', 'LOGIN'.
+The enumeration 'SimpleHTMLTypeKinds' has the following literals: 'Editor', 'Text_Field', 'Filepicker', 'Link', 'Integer', 'Yes_No_Buttons', 'Textarea', 'Datepicker', 'Imagepicker', 'Text_Field_NE'.
+The enumeration 'StandardTypeKinds' has the following literals: 'Text', 'Image', 'Time', 'Integer', 'Datetime', 'Label', 'Boolean', 'Link', 'Short_Text', 'Date', 'File', 'Encrypted_Text'.
+The enumeration 'ComplexHTMLTypeKinds' has the following literals: 'Multiselect', 'Radiobutton', 'Checkbox', 'Select'.
+The enumeration 'DataAccessKinds' has the following literals: 'webservice', 'database', 'frontendDAO', 'backendDAO'.
+The enumeration 'PageKinds' has the following literals: 'custom', 'list', 'details'.
+The enumeration 'CoreComponent' has the following literals: 'User', 'Content', 'Menu'.
+The enumeration 'PluginKinds' has the following literals: 'extensions', 'contact', 'authenticate', 'user', 'quick_icons', 'search', 'xml_rpc', 'captcha', 'editors', 'content', 'finder', 'system'.
+The enumeration 'PageActionPositionKind' has the following literals: 'top', 'center', 'bottom'.
+'eJSL::FrontendSection' is a specialization of 'Section'.
+'eJSL::StaticPage' is a specialization of 'Page'.
+'eJSL::SimpleHTMLTypes' is a specialization of 'HTMLTypes'.
+'eJSL::IndexPage' is a specialization of 'DynamicPage'.
+'eJSL::CustomPage' is a specialization of 'Page'.
+'eJSL::ComplexHTMLTypes' is a specialization of 'HTMLTypes'.
+'eJSL::Plugin' is a specialization of 'Extension'.
+'eJSL::DetailsPage' is a specialization of 'DynamicPage'.
+'eJSL::Template' is a specialization of 'Extension'.
+'eJSL::ExternalLink' is a specialization of 'Link'.
+'eJSL::CMSExtension' is a specialization of 'EJSLPart'.
+'eJSL::ContextLink' is a specialization of 'InternalLink'.
+'eJSL::CMSCore' is a specialization of 'EJSLPart'.
+'eJSL::DatatypeReference' is a specialization of 'HTMLTypes'.
+'eJSL::StandardTypes' is a specialization of 'Type'.
+'eJSL::DynamicPage' is a specialization of 'Page'.
+'eJSL::Library' is a specialization of 'Extension'.
+'eJSL::InternalLink' is a specialization of 'Link'.
+'eJSL::Component' is a specialization of 'Extension'.
+'eJSL::Module' is a specialization of 'Extension'.
+'eJSL::DatatypeReference' is a specialization of 'Type'.
+'eJSL::BackendSection' is a specialization of 'Section'.
+'eJSL::ExtensionPackage' is a specialization of 'Extension'.
+'eJSL::PageReference' (role 'eJSL_PageReference128', cardinality 0..*) is associated with 'eJSL::ComponentReference' (role 'eJSL_ComponentReference', cardinality 0..*).
+'eJSL::Entitypackage' (role 'eJSL_Entitypackage', cardinality 0..*) is associated with 'eJSL::Feature' (role 'eJSL_Feature11', cardinality 0..*).
+'eJSL::Type' (role 'eJSL_Type164', cardinality 0..*) is associated with 'eJSL::Method' (role 'eJSL_Method163', cardinality 0..*).
+'eJSL::PageReference' (role 'eJSL_PageReference', cardinality 0..*) is associated with 'eJSL::Section' (role 'eJSL_Section123', cardinality 0..*).
+'eJSL::ParameterGroup' (role 'eJSL_ParameterGroup65', cardinality 0..*) is associated with 'eJSL::Page' (role 'eJSL_Page64', cardinality 0..*).
+'eJSL::Entity' (role 'eJSL_Entity140', cardinality 0..*) is associated with 'eJSL::Library' (role 'eJSL_Library', cardinality 0..*).
+'eJSL::Parameter' (role 'eJSL_Parameter23', cardinality 0..*) is associated with 'eJSL::KeyValuePair' (role 'eJSL_KeyValuePair', cardinality 0..*).
+'eJSL::Class' (role 'eJSL_Class156', cardinality 0..*) is associated with 'eJSL::Class' (role 'eJSL_Class154', cardinality 0..*).
+'eJSL::Reference' (role 'eJSL_Reference61', cardinality 0..*) is associated with 'eJSL::Attribute' (role 'eJSL_Attribute62', cardinality 0..*).
+'eJSL::HTMLTypes' (role 'eJSL_HTMLTypes90', cardinality 0..*) is associated with 'eJSL::DetailPageField' (role 'eJSL_DetailPageField89', cardinality 0..*).
+'eJSL::Type' (role 'eJSL_Type169', cardinality 0..*) is associated with 'eJSL::MethodParameter' (role 'eJSL_MethodParameter168', cardinality 0..*).
+'eJSL::ParameterGroup' (role 'eJSL_ParameterGroup', cardinality 0..*) is associated with 'eJSL::EJSLPart' (role 'eJSL_EJSLPart6', cardinality 0..*).
+'eJSL::Attribute' (role 'eJSL_Attribute53', cardinality 0..*) is associated with 'eJSL::Attribute' (role 'eJSL_Attribute51', cardinality 0..*).
+'eJSL::Entity' (role 'eJSL_Entity159', cardinality 0..*) is associated with 'eJSL::Class' (role 'eJSL_Class158', cardinality 0..*).
+'eJSL::Method' (role 'eJSL_Method166', cardinality 0..*) is associated with 'eJSL::MethodParameter' (role 'eJSL_MethodParameter', cardinality 0..*).
+'eJSL::Manifestation' (role 'eJSL_Manifestation', cardinality 0..*) is associated with 'eJSL::Extension' (role 'eJSL_Extension112', cardinality 0..*).
+'eJSL::Entity' (role 'eJSL_Entity', cardinality 0..*) is associated with 'eJSL::Feature' (role 'eJSL_Feature13', cardinality 0..*).
+'eJSL::Attribute' (role 'eJSL_Attribute101', cardinality 0..*) is associated with 'eJSL::Link' (role 'eJSL_Link100', cardinality 0..*).
+'eJSL::Feature' (role 'eJSL_Feature17', cardinality 0..*) is associated with 'eJSL::Section' (role 'eJSL_Section', cardinality 0..*).
+'eJSL::KeyValuePair' (role 'eJSL_KeyValuePair185', cardinality 0..*) is associated with 'eJSL::PositionParameter' (role 'eJSL_PositionParameter184', cardinality 0..*).
+'eJSL::CssBlock' (role 'eJSL_CssBlock', cardinality 0..*) is associated with 'eJSL::Template' (role 'eJSL_Template175', cardinality 0..*).
+'eJSL::Attribute' (role 'eJSL_Attribute', cardinality 0..*) is associated with 'eJSL::Entity' (role 'eJSL_Entity46', cardinality 0..*).
+'eJSL::EJSLPart' (role 'eJSL_EJSLPart4', cardinality 0..*) is associated with 'eJSL::Parameter' (role 'eJSL_Parameter', cardinality 0..*).
+'eJSL::Language' (role 'eJSL_Language179', cardinality 0..*) is associated with 'eJSL::KeyValuePair' (role 'eJSL_KeyValuePair180', cardinality 0..*).
+'eJSL::Entity' (role 'eJSL_Entity135', cardinality 0..*) is associated with 'eJSL::Plugin' (role 'eJSL_Plugin', cardinality 0..*).
+'eJSL::Page' (role 'eJSL_Page75', cardinality 0..*) is associated with 'eJSL::Link' (role 'eJSL_Link', cardinality 0..*).
+'eJSL::DetailPageField' (role 'eJSL_DetailPageField86', cardinality 0..*) is associated with 'eJSL::Attribute' (role 'eJSL_Attribute87', cardinality 0..*).
+'eJSL::Parameter' (role 'eJSL_Parameter71', cardinality 0..*) is associated with 'eJSL::Page' (role 'eJSL_Page70', cardinality 0..*).
+'eJSL::Extension' (role 'eJSL_Extension116', cardinality 0..*) is associated with 'eJSL::ExtensionPackage' (role 'eJSL_ExtensionPackage', cardinality 0..*).
+'eJSL::Entitypackage' (role 'eJSL_Entitypackage35', cardinality 0..*) is associated with 'eJSL::Entitypackage' (role 'eJSL_Entitypackage33', cardinality 0..*).
+'eJSL::DetailPageField' (role 'eJSL_DetailPageField95', cardinality 0..*) is associated with 'eJSL::KeyValuePair' (role 'eJSL_KeyValuePair96', cardinality 0..*).
+'eJSL::Package' (role 'eJSL_Package', cardinality 0..*) is associated with 'eJSL::Library' (role 'eJSL_Library144', cardinality 0..*).
+'eJSL::Attribute' (role 'eJSL_Attribute83', cardinality 0..*) is associated with 'eJSL::DynamicPage' (role 'eJSL_DynamicPage82', cardinality 0..*).
+'eJSL::Reference' (role 'eJSL_Reference', cardinality 0..*) is associated with 'eJSL::Entity' (role 'eJSL_Entity48', cardinality 0..*).
+'eJSL::Author' (role 'eJSL_Author', cardinality 0..*) is associated with 'eJSL::Manifestation' (role 'eJSL_Manifestation177', cardinality 0..*).
+'eJSL::PageReference' (role 'eJSL_PageReference125', cardinality 0..*) is associated with 'eJSL::Page' (role 'eJSL_Page126', cardinality 0..*).
+'eJSL::Entity' (role 'eJSL_Entity98', cardinality 0..*) is associated with 'eJSL::CustomPage' (role 'eJSL_CustomPage', cardinality 0..*).
+'eJSL::Reference' (role 'eJSL_Reference55', cardinality 0..*) is associated with 'eJSL::Attribute' (role 'eJSL_Attribute56', cardinality 0..*).
+'eJSL::Parameter' (role 'eJSL_Parameter29', cardinality 0..*) is associated with 'eJSL::ParameterGroup' (role 'eJSL_ParameterGroup28', cardinality 0..*).
+'eJSL::Attribute' (role 'eJSL_Attribute80', cardinality 0..*) is associated with 'eJSL::DynamicPage' (role 'eJSL_DynamicPage79', cardinality 0..*).
+'eJSL::Component' (role 'eJSL_Component131', cardinality 0..*) is associated with 'eJSL::ComponentReference' (role 'eJSL_ComponentReference130', cardinality 0..*).
+'eJSL::DatatypeReference' (role 'eJSL_DatatypeReference', cardinality 0..*) is associated with 'eJSL::Datatype' (role 'eJSL_Datatype19', cardinality 0..*).
+'eJSL::Module' (role 'eJSL_Module', cardinality 0..*) is associated with 'eJSL::PageReference' (role 'eJSL_PageReference133', cardinality 0..*).
+'eJSL::Datatype' (role 'eJSL_Datatype41', cardinality 0..*) is associated with 'eJSL::Entitypackage' (role 'eJSL_Entitypackage40', cardinality 0..*).
+'eJSL::Entity' (role 'eJSL_Entity38', cardinality 0..*) is associated with 'eJSL::Entitypackage' (role 'eJSL_Entitypackage37', cardinality 0..*).
+'eJSL::Entity' (role 'eJSL_Entity42', cardinality 0..*) is associated with 'eJSL::Entity' (role 'eJSL_Entity44', cardinality 0..*).
+'eJSL::Library' (role 'eJSL_Library142', cardinality 0..*) is associated with 'eJSL::Class' (role 'eJSL_Class', cardinality 0..*).
+'eJSL::PositionParameter' (role 'eJSL_PositionParameter', cardinality 0..*) is associated with 'eJSL::Position' (role 'eJSL_Position182', cardinality 0..*).
+'eJSL::LinkParameter' (role 'eJSL_LinkParameter109', cardinality 0..*) is associated with 'eJSL::Attribute' (role 'eJSL_Attribute110', cardinality 0..*).
+'eJSL::DynamicPage' (role 'eJSL_DynamicPage', cardinality 0..*) is associated with 'eJSL::Entity' (role 'eJSL_Entity77', cardinality 0..*).
+'eJSL::Feature' (role 'eJSL_Feature15', cardinality 0..*) is associated with 'eJSL::Page' (role 'eJSL_Page', cardinality 0..*).
+'eJSL::Package' (role 'eJSL_Package147', cardinality 0..*) is associated with 'eJSL::Package' (role 'eJSL_Package145', cardinality 0..*).
+'eJSL::PageAction' (role 'eJSL_PageAction104', cardinality 0..*) is associated with 'eJSL::Link' (role 'eJSL_Link103', cardinality 0..*).
+'eJSL::DetailsPage' (role 'eJSL_DetailsPage', cardinality 0..*) is associated with 'eJSL::DetailPageField' (role 'eJSL_DetailPageField', cardinality 0..*).
+'eJSL::KeyValuePair' (role 'eJSL_KeyValuePair26', cardinality 0..*) is associated with 'eJSL::Parameter' (role 'eJSL_Parameter25', cardinality 0..*).
+'eJSL::Class' (role 'eJSL_Class161', cardinality 0..*) is associated with 'eJSL::Method' (role 'eJSL_Method', cardinality 0..*).
+'eJSL::Class' (role 'eJSL_Class153', cardinality 0..*) is associated with 'eJSL::Class' (role 'eJSL_Class151', cardinality 0..*).
+'eJSL::InternalLink' (role 'eJSL_InternalLink', cardinality 0..*) is associated with 'eJSL::Page' (role 'eJSL_Page106', cardinality 0..*).
+'eJSL::CMSExtension' (role 'eJSL_CMSExtension', cardinality 0..*) is associated with 'eJSL::Extension' (role 'eJSL_Extension', cardinality 0..*).
+'eJSL::Parameter' (role 'eJSL_Parameter21', cardinality 0..*) is associated with 'eJSL::HTMLTypes' (role 'eJSL_HTMLTypes', cardinality 0..*).
+'eJSL::CssBlock' (role 'eJSL_CssBlock187', cardinality 0..*) is associated with 'eJSL::KeyValuePair' (role 'eJSL_KeyValuePair188', cardinality 0..*).
+'eJSL::Attribute' (role 'eJSL_Attribute50', cardinality 0..*) is associated with 'eJSL::Type' (role 'eJSL_Type', cardinality 0..*).
+'eJSL::LinkParameter' (role 'eJSL_LinkParameter', cardinality 0..*) is associated with 'eJSL::ContextLink' (role 'eJSL_ContextLink', cardinality 0..*).
+'eJSL::Component' (role 'eJSL_Component120', cardinality 0..*) is associated with 'eJSL::Section' (role 'eJSL_Section121', cardinality 0..*).
+'eJSL::EJSLPart' (role 'eJSL_EJSLPart8', cardinality 0..*) is associated with 'eJSL::Feature' (role 'eJSL_Feature', cardinality 0..*).
+'eJSL::Reference' (role 'eJSL_Reference58', cardinality 0..*) is associated with 'eJSL::Entity' (role 'eJSL_Entity59', cardinality 0..*).
+'eJSL::Parameter' (role 'eJSL_Parameter171', cardinality 0..*) is associated with 'eJSL::Template' (role 'eJSL_Template', cardinality 0..*).
+'eJSL::Parameter' (role 'eJSL_Parameter138', cardinality 0..*) is associated with 'eJSL::Plugin' (role 'eJSL_Plugin137', cardinality 0..*).
+'eJSL::Extension' (role 'eJSL_Extension114', cardinality 0..*) is associated with 'eJSL::Language' (role 'eJSL_Language', cardinality 0..*).
+'eJSL::EJSLPart' (role 'eJSL_EJSLPart', cardinality 0..*) is associated with 'eJSL::EJSLModel' (role 'eJSL_EJSLModel', cardinality 0..*).
+'eJSL::Component' (role 'eJSL_Component', cardinality 0..*) is associated with 'eJSL::ParameterGroup' (role 'eJSL_ParameterGroup118', cardinality 0..*).
+'eJSL::Position' (role 'eJSL_Position', cardinality 0..*) is associated with 'eJSL::Template' (role 'eJSL_Template173', cardinality 0..*).
+'eJSL::Page' (role 'eJSL_Page67', cardinality 0..*) is associated with 'eJSL::Parameter' (role 'eJSL_Parameter68', cardinality 0..*).
+'eJSL::EJSLPart' (role 'eJSL_EJSLPart2', cardinality 0..*) is associated with 'eJSL::Datatype' (role 'eJSL_Datatype', cardinality 0..*).
+'eJSL::Parameter' (role 'eJSL_Parameter32', cardinality 0..*) is associated with 'eJSL::ParameterGroup' (role 'eJSL_ParameterGroup31', cardinality 0..*).
+'eJSL::PageAction' (role 'eJSL_PageAction', cardinality 0..*) is associated with 'eJSL::Page' (role 'eJSL_Page73', cardinality 0..*).
+'eJSL::KeyValuePair' (role 'eJSL_KeyValuePair93', cardinality 0..*) is associated with 'eJSL::DetailPageField' (role 'eJSL_DetailPageField92', cardinality 0..*).
+'eJSL::Package' (role 'eJSL_Package149', cardinality 0..*) is associated with 'eJSL::Class' (role 'eJSL_Class150', cardinality 0..*).

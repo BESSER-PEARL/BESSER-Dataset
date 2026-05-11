@@ -1,0 +1,104 @@
+The model has 51 class(es).
+The class 'mm::rdb::Operations' has no attributes.
+The class 'mm::ops::DeleteRows' has the following attributes: 'tableName' of type str; 'owningSchemaName' of type str; 'whereCondition' of type str.
+The class 'mm::ops::AddUnique' has the following attributes: 'constrainedColumnNames' of type str; 'owningTableName' of type str; 'name' of type str; 'owningSchemaName' of type str.
+The class 'mm::rdb::Table' has the following attributes: 'name' of type str.
+The class 'Sequence' has no attributes.
+The class 'mm::ops::SetColumnType' has the following attributes: 'owningColumnName' of type str; 'oldType' of type str; 'owningTableName' of type str; 'owningSchemaName' of type str; 'newType' of type str.
+The class 'mm::ops::RemoveTable' has the following attributes: 'name' of type str; 'owningSchemaName' of type str.
+The class 'mm::rdb::Index' has the following attributes: 'name' of type str.
+The class 'Index' has no attributes.
+The class 'mm::ops::AddTable' has the following attributes: 'name' of type str; 'owningSchemaName' of type str.
+The class 'ModelRoot' has no attributes.
+The class 'mm::ops::AddColumn' has the following attributes: 'owningTableName' of type str; 'name' of type str; 'owningSchemaName' of type str; 'type' of type str; 'defaultValue' of type str.
+The class 'Column' has no attributes.
+The class 'Operations' has no attributes.
+The class 'ops::ModelOperation' has no attributes.
+The class 'mm::rdb::TableConstraint' has the following attributes: 'name' of type str.
+The class 'mm::rdb::Sequence' has the following attributes: 'startValue' of type int; 'name' of type str.
+The class 'mm::ops::RenameColumn' has the following attributes: 'newName' of type str; 'owningSchemaName' of type str; 'owningTableName' of type str; 'name' of type str.
+The class 'mm::rdb::Unique' has no attributes.
+The class 'mm::ops::AddNotNull' has the following attributes: 'owningTableName' of type str; 'owningSchemaName' of type str; 'constrainedColumnName' of type str.
+The class 'mm::ops::InsertRows' has the following attributes: 'sourceColumnsNames' of type str; 'targetColumnNames' of type str; 'targetTableName' of type str; 'whereCondition' of type str; 'sourceTableName' of type str; 'owningSchemaName' of type str.
+The class 'mm::ops::UpdateRows' has the following attributes: 'whereCondition' of type str; 'sourceColumnName' of type str; 'sourceTableName' of type str; 'owningSchemaName' of type str; 'targetTableName' of type str; 'targetColumnName' of type str.
+The class 'mm::ops::RemoveConstraint' has the following attributes: 'owningSchemaName' of type str; 'owningTableName' of type str; 'name' of type str.
+The class 'mm::ops::HasNoOwnInstances' has the following attributes: 'whereCondition' of type str; 'owningSchemaName' of type str; 'tableName' of type str.
+The class 'mm::ops::AddIndex' has the following attributes: 'owningTableName' of type str; 'owningSchemaName' of type str; 'name' of type str; 'columnsNames' of type str.
+The class 'mm::rdb::Schema' has the following attributes: 'name' of type str.
+The class 'Structure' has no attributes.
+The class 'mm::rdb::PrimaryKey' has no attributes.
+The class 'mm::ops::RenameTable' has the following attributes: 'owningSchemaName' of type str; 'newName' of type str; 'name' of type str.
+The class 'mm::ops::AddForeignKey' has the following attributes: 'name' of type str; 'targetTableName' of type str; 'owningSchemaName' of type str; 'constrainedColumnName' of type str; 'owningTableName' of type str.
+The class 'ModelOperation' has no attributes.
+The class 'Table' has no attributes.
+The class 'mm::rdb::ForeignKey' has no attributes.
+The class 'mm::rdb::Column' has the following attributes: 'name' of type str; 'type' of type str; 'isNillable' of type str; 'defaultValue' of type str.
+The class 'mm::ops::GenerateSequenceNumbers' has the following attributes: 'sequenceName' of type str; 'columnName' of type str; 'owningSchemaName' of type str; 'tableName' of type str.
+The class 'mm::rdb::ModelRoot' has no attributes.
+The class 'mm::ops::AddSchema' has the following attributes: 'name' of type str.
+The class 'mm::ops::NillRows' has the following attributes: 'tableName' of type str; 'whereCondition' of type str; 'columnName' of type str; 'owningSchemaName' of type str.
+The class 'mm::ops::RemoveNotNull' has the following attributes: 'owningSchemaName' of type str; 'owningTableName' of type str; 'constrainedColumnName' of type str.
+The class 'mm::ops::RemoveColumn' has the following attributes: 'owningTableName' of type str; 'name' of type str; 'owningSchemaName' of type str.
+The class 'mm::ops::RemoveDefaultValue' has the following attributes: 'owningColumnName' of type str; 'owningTableName' of type str; 'owningSchemaName' of type str.
+The class 'mm::ops::RemoveSequence' has the following attributes: 'name' of type str; 'owningSchemaName' of type str.
+The class 'mm::rdb::Structure' has no attributes.
+The class 'mm::ops::AddSequence' has the following attributes: 'startValue' of type int; 'name' of type str; 'owningSchemaName' of type str.
+The class 'Schema' has no attributes.
+The class 'mm::ops::AddPrimaryKey' has the following attributes: 'name' of type str; 'owningSchemaName' of type str; 'owningTableName' of type str; 'constrainedColumnName' of type str.
+The class 'mm::ops::SetDefaultValue' has the following attributes: 'newDefaultValue' of type str; 'owningSchemaName' of type str; 'owningTableName' of type str; 'owningColumnName' of type str.
+The class 'mm::ops::HasNoInstances' has the following attributes: 'tableName' of type str; 'owningSchemaName' of type str.
+The class 'mm::ops::RemoveIndex' has the following attributes: 'owningSchemaName' of type str; 'name' of type str.
+The class 'mm::ops::ModelOperation' has no attributes.
+The class 'TableConstraint' has no attributes.
+The enumeration 'PrimitiveType' has the following literals: 'boolean', 'int', 'char', 'float'.
+'mm::ops::SetColumnType' is a specialization of 'ModelOperation'.
+'mm::ops::HasNoInstances' is a specialization of 'ModelOperation'.
+'mm::ops::AddSequence' is a specialization of 'ModelOperation'.
+'mm::rdb::ForeignKey' is a specialization of 'TableConstraint'.
+'mm::ops::RemoveDefaultValue' is a specialization of 'ModelOperation'.
+'mm::ops::RenameColumn' is a specialization of 'ModelOperation'.
+'mm::ops::GenerateSequenceNumbers' is a specialization of 'ModelOperation'.
+'mm::ops::UpdateRows' is a specialization of 'ModelOperation'.
+'mm::ops::RemoveColumn' is a specialization of 'ModelOperation'.
+'mm::rdb::PrimaryKey' is a specialization of 'TableConstraint'.
+'mm::ops::AddUnique' is a specialization of 'ModelOperation'.
+'mm::ops::AddIndex' is a specialization of 'ModelOperation'.
+'mm::ops::RemoveNotNull' is a specialization of 'ModelOperation'.
+'mm::ops::AddColumn' is a specialization of 'ModelOperation'.
+'mm::ops::SetDefaultValue' is a specialization of 'ModelOperation'.
+'mm::ops::AddPrimaryKey' is a specialization of 'ModelOperation'.
+'mm::ops::HasNoOwnInstances' is a specialization of 'ModelOperation'.
+'mm::ops::RemoveIndex' is a specialization of 'ModelOperation'.
+'mm::ops::AddSchema' is a specialization of 'ModelOperation'.
+'mm::ops::AddNotNull' is a specialization of 'ModelOperation'.
+'mm::ops::AddForeignKey' is a specialization of 'ModelOperation'.
+'mm::rdb::Structure' is a specialization of 'ModelRoot'.
+'mm::rdb::Unique' is a specialization of 'TableConstraint'.
+'mm::rdb::Operations' is a specialization of 'ModelRoot'.
+'mm::ops::RemoveSequence' is a specialization of 'ModelOperation'.
+'mm::ops::NillRows' is a specialization of 'ModelOperation'.
+'mm::ops::AddTable' is a specialization of 'ModelOperation'.
+'mm::ops::RenameTable' is a specialization of 'ModelOperation'.
+'mm::ops::RemoveTable' is a specialization of 'ModelOperation'.
+'mm::ops::RemoveConstraint' is a specialization of 'ModelOperation'.
+'mm::ops::InsertRows' is a specialization of 'ModelOperation'.
+'mm::ops::DeleteRows' is a specialization of 'ModelOperation'.
+'mm::rdb::Schema' (role 'owningSchema5', cardinality 0..*) is associated with 'Sequence' (role 'Sequence', cardinality 0..*).
+'mm::rdb::ForeignKey' (role 'mm_rdb_ForeignKey', cardinality 0..*) is associated with 'Table' (role 'Table28', cardinality 0..*).
+'mm::rdb::ForeignKey' (role 'mm_rdb_ForeignKey30', cardinality 0..*) is associated with 'Column' (role 'Column31', cardinality 0..*).
+'mm::rdb::Table' (role 'owningTable18', cardinality 0..*) is associated with 'TableConstraint' (role 'TableConstraint', cardinality 0..*).
+'mm::rdb::Structure' (role 'owningStructure', cardinality 0..*) is associated with 'Schema' (role 'Schema', cardinality 0..*).
+'Column' (role 'Column24', cardinality 0..*) is associated with 'mm::rdb::Unique' (role 'mm_rdb_Unique', cardinality 0..*).
+'Operations' (role 'Operations', cardinality 0..*) is associated with 'mm::ops::ModelOperation' (role 'operations', cardinality 0..*).
+'Column' (role 'Column26', cardinality 0..*) is associated with 'mm::rdb::PrimaryKey' (role 'mm_rdb_PrimaryKey', cardinality 0..*).
+'Schema' (role 'Schema9', cardinality 0..*) is associated with 'mm::rdb::Sequence' (role 'sequence', cardinality 0..*).
+'mm::rdb::Index' (role 'indexes', cardinality 0..*) is associated with 'Schema' (role 'Schema11', cardinality 0..*).
+'Table' (role 'Table22', cardinality 0..*) is associated with 'mm::rdb::TableConstraint' (role 'constraints', cardinality 0..*).
+'mm::rdb::Schema' (role 'schemas', cardinality 0..*) is associated with 'Structure' (role 'Structure', cardinality 0..*).
+'ops::ModelOperation' (role 'ModelOperation', cardinality 0..*) is associated with 'mm::rdb::Operations' (role 'owningOperations', cardinality 0..*).
+'Table' (role 'Table20', cardinality 0..*) is associated with 'mm::rdb::Column' (role 'columns', cardinality 0..*).
+'Table' (role 'Table', cardinality 0..*) is associated with 'mm::rdb::Schema' (role 'owningSchema', cardinality 0..*).
+'Schema' (role 'Schema14', cardinality 0..*) is associated with 'mm::rdb::Table' (role 'tables', cardinality 0..*).
+'Index' (role 'Index', cardinality 0..*) is associated with 'mm::rdb::Schema' (role 'owningSchema7', cardinality 0..*).
+'Column' (role 'Column', cardinality 0..*) is associated with 'mm::rdb::Index' (role 'mm_rdb_Index', cardinality 0..*).
+'mm::rdb::Table' (role 'owningTable', cardinality 0..*) is associated with 'Column' (role 'Column16', cardinality 0..*).

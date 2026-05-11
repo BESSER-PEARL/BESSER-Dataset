@@ -1,0 +1,19 @@
+The model has 9 class(es).
+The class 'scheduleOfCourse::scheduleOfCourse' has no attributes.
+The class 'scheduleOfCourse::CourseLoad' has the following attributes: 'type' of type str; 'totalQuantity' of type int; 'unitQuantity' of type int.
+The class 'scheduleOfCourse::Lesson' has the following attributes: 'start' of type str; 'end' of type str.
+The class 'scheduleOfCourse::Capacity' has the following attributes: 'exam' of type int; 'normal' of type int.
+The class 'scheduleOfCourse::LessonPeriod' has the following attributes: 'start' of type str; 'end' of type str.
+The class 'scheduleOfCourse::TopLevelSpace' has the following attributes: 'name' of type str; 'type' of type str; 'id' of type str.
+The class 'scheduleOfCourse::Room' has the following attributes: 'description' of type str; 'id' of type str; 'name' of type str; 'type' of type str.
+The class 'scheduleOfCourse::Occupation' has the following attributes: 'max' of type int; 'current' of type int.
+The class 'scheduleOfCourse::Shift' has the following attributes: 'types' of type str; 'name' of type str.
+'scheduleOfCourse::Room' (role 'scheduleOfCourse_Room15', cardinality 0..*) is associated with 'scheduleOfCourse::TopLevelSpace' (role 'scheduleOfCourse_TopLevelSpace', cardinality 0..*).
+'scheduleOfCourse::Lesson' (role 'scheduleOfCourse_Lesson', cardinality 0..*) is associated with 'scheduleOfCourse::Shift' (role 'scheduleOfCourse_Shift2', cardinality 0..*).
+'scheduleOfCourse::Lesson' (role 'scheduleOfCourse_Lesson12', cardinality 0..*) is associated with 'scheduleOfCourse::Room' (role 'scheduleOfCourse_Room13', cardinality 0..*).
+'scheduleOfCourse::Occupation' (role 'scheduleOfCourse_Occupation', cardinality 0..*) is associated with 'scheduleOfCourse::Shift' (role 'scheduleOfCourse_Shift', cardinality 0..*).
+'scheduleOfCourse::scheduleOfCourse' (role 'scheduleOfCourse_scheduleOfCourse', cardinality 0..*) is associated with 'scheduleOfCourse::LessonPeriod' (role 'scheduleOfCourse_LessonPeriod', cardinality 0..*).
+'scheduleOfCourse::Room' (role 'scheduleOfCourse_Room', cardinality 0..*) is associated with 'scheduleOfCourse::Shift' (role 'scheduleOfCourse_Shift4', cardinality 0..*).
+'scheduleOfCourse::scheduleOfCourse' (role 'scheduleOfCourse_scheduleOfCourse9', cardinality 0..*) is associated with 'scheduleOfCourse::Shift' (role 'scheduleOfCourse_Shift10', cardinality 0..*).
+'scheduleOfCourse::Room' (role 'scheduleOfCourse_Room17', cardinality 0..*) is associated with 'scheduleOfCourse::Capacity' (role 'scheduleOfCourse_Capacity', cardinality 0..*).
+'scheduleOfCourse::scheduleOfCourse' (role 'scheduleOfCourse_scheduleOfCourse7', cardinality 0..*) is associated with 'scheduleOfCourse::CourseLoad' (role 'scheduleOfCourse_CourseLoad', cardinality 0..*).

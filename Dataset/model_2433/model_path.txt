@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/TransformationToolContest/ttc2016-live/examples/eu.ttc.dataflow.examples.class2rdb/metamodels/Relational.ecore

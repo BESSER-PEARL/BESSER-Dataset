@@ -1,0 +1,282 @@
+The model has 105 class(es).
+The class 'Metamodelo::Cpp::CppSelectionStatement' has no attributes.
+The class 'Metamodelo::Cpp::CppNamedElement' has the following attributes: 'name' of type str.
+The class 'Metamodelo::Cpp::CppEnumConstructor' has no attributes.
+The class 'Metamodelo::Cpp::CppPathReference' has no attributes.
+The class 'Metamodelo::Cpp::CppVariableDeclarationFragment' has no attributes.
+The class 'CppFunction' has no attributes.
+The class 'Metamodelo::Cpp::CppBlock' has no attributes.
+The class 'Metamodelo::Cpp::CppTypeAccess' has no attributes.
+The class 'Metamodelo::Cpp::CppLabeledStatement' has no attributes.
+The class 'Metamodelo::Cpp::CppContinueStatement' has no attributes.
+The class 'CppMemberFunction' has no attributes.
+The class 'CppAbstractMethodInvocation' has no attributes.
+The class 'Metamodelo::Cpp::CppModelElement' has no attributes.
+The class 'Metamodelo::Cpp::CppInfixExpression' has the following attributes: 'operator' of type str.
+The class 'Metamodelo::Cpp::CppDeclarationExpression' has no attributes.
+The class 'CppSelectionStatement' has no attributes.
+The class 'Metamodelo::Cpp::CppClass' has the following attributes: 'isFinal' of type bool; 'isAbstract' of type bool; 'classkey' of type str; 'isGeneric' of type bool.
+The class 'Metamodelo::Cpp::CppRegexLiteral' has the following attributes: 'pattern' of type str; 'options' of type str.
+The class 'CppUnaryExpression' has no attributes.
+The class 'Metamodelo::Cpp::CppModel' has the following attributes: 'name' of type str; 'targetFolder' of type str; 'sourceFolder' of type str.
+The class 'Metamodelo::Cpp::CppFunction' has the following attributes: 'isInline' of type bool; 'isVarArg' of type bool; 'linkage' of type str.
+The class 'Metamodelo::Cpp::CppArrayInitializer' has no attributes.
+The class 'CppIterationStatement' has no attributes.
+The class 'Metamodelo::Cpp::CppVariableAccess' has no attributes.
+The class 'Metamodelo::Cpp::CppClassFile' has no attributes.
+The class 'Metamodelo::Cpp::CppExpression' has no attributes.
+The class 'Metamodelo::Cpp::CppDoWhileStatement' has no attributes.
+The class 'CppModelElement' has no attributes.
+The class 'Metamodelo::Cpp::CppAssignamentStatement' has the following attributes: 'operator' of type str.
+The class 'Metamodelo::Cpp::CppUnsignedType' has no attributes.
+The class 'CppMethodInvocation' has no attributes.
+The class 'Metamodelo::Cpp::CppJumpStatement' has no attributes.
+The class 'Metamodelo::Cpp::CppForStatement' has no attributes.
+The class 'Metamodelo::Cpp::CppIterationStatement' has no attributes.
+The class 'Metamodelo::Cpp::CppVariableDeclarationGroup' has no attributes.
+The class 'Metamodelo::Cpp::CppTryExpression' has no attributes.
+The class 'Metamodelo::Cpp::CppCharType' has no attributes.
+The class 'Metamodelo::Cpp::CppIfStatement' has no attributes.
+The class 'CppVariableDeclaration' has no attributes.
+The class 'Metamodelo::Cpp::CppSuperConstructorInvocation' has no attributes.
+The class 'Metamodelo::Cpp::CppBinaryExpression' has no attributes.
+The class 'Metamodelo::Cpp::CppMemberFunction' has no attributes.
+The class 'CppPrimitiveType' has no attributes.
+The class 'Metamodelo::Cpp::CppUnaryExpression' has no attributes.
+The class 'CppType' has no attributes.
+The class 'Metamodelo::Cpp::CppVoidType' has no attributes.
+The class 'Metamodelo::Cpp::CppBooleanLiteral' has the following attributes: 'booleanValue' of type bool.
+The class 'Metamodelo::Cpp::CppAbstractMethodInvocation' has no attributes.
+The class 'Metamodelo::Cpp::CppMethod' has the following attributes: 'isFinal' of type bool; 'isVirtual' of type bool; 'isConst' of type bool; 'isPureVirtual' of type bool.
+The class 'Metamodelo::Cpp::CppType' has no attributes.
+The class 'Metamodelo::Cpp::CppMethodInvocation' has no attributes.
+The class 'Metamodelo::Cpp::CppDestructor' has the following attributes: 'isVirtual' of type bool.
+The class 'Metamodelo::Cpp::CppPrefixExpression' has the following attributes: 'operator' of type str.
+The class 'Metamodelo::Cpp::CppStringLiteral' has the following attributes: 'literalValue' of type str.
+The class 'CppField' has no attributes.
+The class 'Metamodelo::Cpp::CppVariableDeclaration' has the following attributes: 'vartype' of type str; 'isArray' of type bool.
+The class 'CppFieldContainer' has no attributes.
+The class 'Metamodelo::Cpp::CppConstructor' has no attributes.
+The class 'CppNamedElement' has no attributes.
+The class 'Metamodelo::Cpp::CppFieldContainer' has no attributes.
+The class 'Metamodelo::Cpp::CppArrayAccess' has no attributes.
+The class 'Metamodelo::Cpp::CppParenthizedExpression' has no attributes.
+The class 'Metamodelo::Cpp::CppEnum' has no attributes.
+The class 'Metamodelo::Cpp::CppClassifier' has no attributes.
+The class 'Metamodelo::Cpp::CppNumberLiteral' has the following attributes: 'token' of type str.
+The class 'Metamodelo::Cpp::CppIntType' has no attributes.
+The class 'Metamodelo::Cpp::CppCatchClause' has no attributes.
+The class 'Metamodelo::Cpp::CppCharacterLiteral' has the following attributes: 'charValue' of type str.
+The class 'Metamodelo::Cpp::CppCase' has no attributes.
+The class 'Metamodelo::Cpp::CppImportDeclaration' has no attributes.
+The class 'Metamodelo::Cpp::CppConstantExpression' has no attributes.
+The class 'Metamodelo::Cpp::CppDoubleType' has no attributes.
+The class 'Metamodelo::Cpp::CppShortType' has no attributes.
+The class 'Metamodelo::Cpp::CppCastExpression' has no attributes.
+The class 'Metamodelo::Cpp::CppFloatType' has no attributes.
+The class 'Metamodelo::Cpp::CppPackage' has no attributes.
+The class 'CppPathReferentiable' has no attributes.
+The class 'Metamodelo::Cpp::CppLongType' has no attributes.
+The class 'Metamodelo::Cpp::CppTypeParameter' has no attributes.
+The class 'Metamodelo::Cpp::CppComment' has the following attributes: 'multiLine' of type bool; 'singleLine' of type bool; 'content' of type str.
+The class 'Metamodelo::Cpp::CppNullLiteral' has no attributes.
+The class 'CppTypedElement' has no attributes.
+The class 'Metamodelo::Cpp::CppBreakStatement' has no attributes.
+The class 'Metamodelo::Cpp::CppPathReferentiable' has no attributes.
+The class 'Metamodelo::Cpp::CppWhileStatement' has no attributes.
+The class 'Metamodelo::Cpp::CppVariable' has the following attributes: 'isConst' of type bool; 'storage' of type str.
+The class 'Metamodelo::Cpp::CppFieldAccess' has no attributes.
+The class 'Metamodelo::Cpp::CppReturnStatement' has no attributes.
+The class 'CppJumpStatement' has no attributes.
+The class 'Metamodelo::Cpp::CppBooleanType' has no attributes.
+The class 'Metamodelo::Cpp::CppTypedElement' has no attributes.
+The class 'CppExpression' has no attributes.
+The class 'Metamodelo::Cpp::CppSwitchExpression' has no attributes.
+The class 'Metamodelo::Cpp::CppThisExpression' has no attributes.
+The class 'CppClassifier' has no attributes.
+The class 'Metamodelo::Cpp::CppSuperMethodInvocation' has no attributes.
+The class 'Metamodelo::Cpp::CppPostfixExpression' has the following attributes: 'operator' of type str.
+The class 'Metamodelo::Cpp::CppIfElseStatement' has the following attributes: 'inLine' of type bool.
+The class 'Metamodelo::Cpp::CppSingleVariableDeclaration' has no attributes.
+The class 'CppBinaryExpression' has no attributes.
+The class 'Metamodelo::Cpp::CppPrimitiveType' has no attributes.
+The class 'Metamodelo::Cpp::CppSignedType' has no attributes.
+The class 'Metamodelo::Cpp::CppField' has the following attributes: 'accessSpecifier' of type str.
+The class 'Metamodelo::Cpp::CppGotoStatement' has no attributes.
+The class 'Metamodelo::Cpp::CppThrowExpression' has no attributes.
+The enumeration 'CppLinkageSpecifier' has the following literals: 'EXTERN', 'STATIC'.
+The enumeration 'CppPostfixOperator' has the following literals: 'DECREMENT', 'INCREMENT'.
+The enumeration 'CppVarType' has the following literals: 'POINTER', 'OBJECT', 'REFERENCE'.
+The enumeration 'CppQualifierType' has the following literals: 'VOLATILE', 'CONST', 'ATOMIC', 'RESTRICT'.
+The enumeration 'CppStorageType' has the following literals: 'REGISTER', 'MUTABLE', 'TYPEDEF', 'STATIC', 'THREAD_LOCAL', 'AUTO', 'EXTERN'.
+The enumeration 'CppUnaryOperator' has the following literals: 'NOT', 'MINUS', 'ASTERISK', 'PLUS', 'INCREMENT', 'AMPERSAND', 'DECREMENT', 'BIT_NOT'.
+The enumeration 'CppOperator' has the following literals: 'LESS_THAN', 'XOR_EQ', 'TIMES', 'BIT_AND', 'SHIFT_LEFT', 'SHIFT_RIGHT', 'NOT_EQUALS', 'BIT_OR', 'GREATER_EQUALS', 'XOR', 'GREATER_THAN', 'LESS_EQUALS', 'MINUS', 'DIVISION', 'OR', 'EQUALS', 'REMAINDER', 'PLUS', 'AND'.
+The enumeration 'CppClassKey' has the following literals: 'UNION', 'CLASS', 'STRUCT'.
+The enumeration 'CppAssignmentOperator' has the following literals: 'OR_ASSIGN', 'ASSIGN', 'PLUS_ASSIGN', 'MODULO_ASSIGN', 'AND_ASSIGN', 'MINUS_ASSIGN', 'SHIFT_LEFT_ASSIGN', 'SHIFT_RIGHT_ASSIGN', 'DIVISSION_ASSIGN', 'XOR_ASSIGN', 'TIMES_ASSIGN'.
+The enumeration 'CppAccessSpecifier' has the following literals: 'PRIVATE', 'PUBLIC', 'PROTECTED'.
+'Metamodelo::Cpp::CppSuperMethodInvocation' is a specialization of 'CppAbstractMethodInvocation'.
+'Metamodelo::Cpp::CppPostfixExpression' is a specialization of 'CppUnaryExpression'.
+'Metamodelo::Cpp::CppClassifier' is a specialization of 'CppType'.
+'Metamodelo::Cpp::CppBinaryExpression' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppThrowExpression' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppDestructor' is a specialization of 'CppMemberFunction'.
+'Metamodelo::Cpp::CppThisExpression' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppVariableAccess' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppIntType' is a specialization of 'CppPrimitiveType'.
+'Metamodelo::Cpp::CppBreakStatement' is a specialization of 'CppJumpStatement'.
+'Metamodelo::Cpp::CppVariableDeclaration' is a specialization of 'CppNamedElement'.
+'Metamodelo::Cpp::CppVariableDeclarationGroup' is a specialization of 'CppTypedElement'.
+'Metamodelo::Cpp::CppConstructor' is a specialization of 'CppMemberFunction'.
+'Metamodelo::Cpp::CppVariable' is a specialization of 'CppField'.
+'Metamodelo::Cpp::CppIfElseStatement' is a specialization of 'CppSelectionStatement'.
+'Metamodelo::Cpp::CppWhileStatement' is a specialization of 'CppIterationStatement'.
+'Metamodelo::Cpp::CppTryExpression' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppVariable' is a specialization of 'CppType'.
+'Metamodelo::Cpp::CppVariable' is a specialization of 'CppVariableDeclaration'.
+'Metamodelo::Cpp::CppRegexLiteral' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppMethodInvocation' is a specialization of 'CppAbstractMethodInvocation'.
+'Metamodelo::Cpp::CppFunction' is a specialization of 'CppModelElement'.
+'Metamodelo::Cpp::CppLabeledStatement' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppLabeledStatement' is a specialization of 'CppNamedElement'.
+'Metamodelo::Cpp::CppUnaryExpression' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppShortType' is a specialization of 'CppPrimitiveType'.
+'Metamodelo::Cpp::CppNullLiteral' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppForStatement' is a specialization of 'CppIterationStatement'.
+'Metamodelo::Cpp::CppMethod' is a specialization of 'CppMemberFunction'.
+'Metamodelo::Cpp::CppPrefixExpression' is a specialization of 'CppUnaryExpression'.
+'Metamodelo::Cpp::CppComment' is a specialization of 'CppModelElement'.
+'Metamodelo::Cpp::CppMethod' is a specialization of 'CppTypedElement'.
+'Metamodelo::Cpp::CppJumpStatement' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppEnum' is a specialization of 'CppType'.
+'Metamodelo::Cpp::CppIterationStatement' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppLongType' is a specialization of 'CppPrimitiveType'.
+'Metamodelo::Cpp::CppMemberFunction' is a specialization of 'CppFunction'.
+'Metamodelo::Cpp::CppParenthizedExpression' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppBooleanType' is a specialization of 'CppPrimitiveType'.
+'Metamodelo::Cpp::CppInfixExpression' is a specialization of 'CppBinaryExpression'.
+'Metamodelo::Cpp::CppIfStatement' is a specialization of 'CppSelectionStatement'.
+'Metamodelo::Cpp::CppVariableDeclarationFragment' is a specialization of 'CppVariableDeclaration'.
+'Metamodelo::Cpp::CppSingleVariableDeclaration' is a specialization of 'CppVariableDeclaration'.
+'Metamodelo::Cpp::CppGotoStatement' is a specialization of 'CppJumpStatement'.
+'Metamodelo::Cpp::CppSwitchExpression' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppExpression' is a specialization of 'CppModelElement'.
+'Metamodelo::Cpp::CppSuperConstructorInvocation' is a specialization of 'CppMethodInvocation'.
+'Metamodelo::Cpp::CppField' is a specialization of 'CppNamedElement'.
+'Metamodelo::Cpp::CppDoWhileStatement' is a specialization of 'CppIterationStatement'.
+'Metamodelo::Cpp::CppVariable' is a specialization of 'CppTypedElement'.
+'Metamodelo::Cpp::CppAssignamentStatement' is a specialization of 'CppBinaryExpression'.
+'Metamodelo::Cpp::CppFloatType' is a specialization of 'CppPrimitiveType'.
+'Metamodelo::Cpp::CppTypeParameter' is a specialization of 'CppType'.
+'Metamodelo::Cpp::CppNumberLiteral' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppTypedElement' is a specialization of 'CppModelElement'.
+'Metamodelo::Cpp::CppArrayInitializer' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppCatchClause' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppNamedElement' is a specialization of 'CppModelElement'.
+'Metamodelo::Cpp::CppTypeAccess' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppPackage' is a specialization of 'CppPathReferentiable'.
+'Metamodelo::Cpp::CppClassFile' is a specialization of 'CppPathReferentiable'.
+'Metamodelo::Cpp::CppArrayAccess' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppClassifier' is a specialization of 'CppFieldContainer'.
+'Metamodelo::Cpp::CppContinueStatement' is a specialization of 'CppJumpStatement'.
+'Metamodelo::Cpp::CppConstantExpression' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppSelectionStatement' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppStringLiteral' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppBlock' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppCase' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppType' is a specialization of 'CppPathReferentiable'.
+'Metamodelo::Cpp::CppDoubleType' is a specialization of 'CppPrimitiveType'.
+'Metamodelo::Cpp::CppVoidType' is a specialization of 'CppPrimitiveType'.
+'Metamodelo::Cpp::CppImportDeclaration' is a specialization of 'CppModelElement'.
+'Metamodelo::Cpp::CppPathReferentiable' is a specialization of 'CppNamedElement'.
+'Metamodelo::Cpp::CppCharType' is a specialization of 'CppPrimitiveType'.
+'Metamodelo::Cpp::CppCastExpression' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppReturnStatement' is a specialization of 'CppJumpStatement'.
+'Metamodelo::Cpp::CppUnsignedType' is a specialization of 'CppPrimitiveType'.
+'Metamodelo::Cpp::CppConstantExpression' is a specialization of 'CppNamedElement'.
+'Metamodelo::Cpp::CppSingleVariableDeclaration' is a specialization of 'CppTypedElement'.
+'Metamodelo::Cpp::CppSignedType' is a specialization of 'CppPrimitiveType'.
+'Metamodelo::Cpp::CppPathReference' is a specialization of 'CppModelElement'.
+'Metamodelo::Cpp::CppFieldContainer' is a specialization of 'CppModelElement'.
+'Metamodelo::Cpp::CppDeclarationExpression' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppMemberFunction' is a specialization of 'CppField'.
+'Metamodelo::Cpp::CppFunction' is a specialization of 'CppType'.
+'Metamodelo::Cpp::CppBooleanLiteral' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppAbstractMethodInvocation' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppClass' is a specialization of 'CppClassifier'.
+'Metamodelo::Cpp::CppPrimitiveType' is a specialization of 'CppType'.
+'Metamodelo::Cpp::CppCharacterLiteral' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppEnumConstructor' is a specialization of 'CppNamedElement'.
+'Metamodelo::Cpp::CppFieldAccess' is a specialization of 'CppExpression'.
+'Metamodelo::Cpp::CppPathReferentiable' (role 'Metamodelo_Cpp_CppPathReferentiable19', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppClassFile' (role 'Metamodelo_Cpp_CppClassFile18', cardinality 0..*).
+'Metamodelo::Cpp::CppCatchClause' (role 'Metamodelo_Cpp_CppCatchClause123', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression124', cardinality 0..*).
+'Metamodelo::Cpp::CppPathReferentiable' (role 'childrenReferences', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppPackage' (role 'CppPackage', cardinality 0..*).
+'Metamodelo::Cpp::CppSingleVariableDeclaration' (role 'exception', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppCatchClause' (role 'CppCatchClause', cardinality 0..*).
+'Metamodelo::Cpp::CppClassifier' (role 'Metamodelo_Cpp_CppClassifier32', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppMemberFunction' (role 'Metamodelo_Cpp_CppMemberFunction33', cardinality 0..*).
+'Metamodelo::Cpp::CppPathReferentiable' (role 'Metamodelo_Cpp_CppPathReferentiable', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppModel' (role 'Metamodelo_Cpp_CppModel2', cardinality 0..*).
+'Metamodelo::Cpp::CppMemberFunction' (role 'Metamodelo_Cpp_CppMemberFunction56', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppAbstractMethodInvocation' (role 'Metamodelo_Cpp_CppAbstractMethodInvocation', cardinality 0..*).
+'Metamodelo::Cpp::CppType' (role 'CppType', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppTypeAccess' (role 'usagesInTypeAccess', cardinality 0..*).
+'Metamodelo::Cpp::CppClass' (role 'Metamodelo_Cpp_CppClass41', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppClass' (role 'Metamodelo_Cpp_CppClass39', cardinality 0..*).
+'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression111', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppArrayAccess' (role 'Metamodelo_Cpp_CppArrayAccess', cardinality 0..*).
+'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression126', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppThrowExpression' (role 'Metamodelo_Cpp_CppThrowExpression', cardinality 0..*).
+'Metamodelo::Cpp::CppClassFile' (role 'Metamodelo_Cpp_CppClassFile44', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppImportDeclaration' (role 'Metamodelo_Cpp_CppImportDeclaration43', cardinality 0..*).
+'Metamodelo::Cpp::CppIterationStatement' (role 'Metamodelo_Cpp_CppIterationStatement', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression68', cardinality 0..*).
+'Metamodelo::Cpp::CppType' (role 'Metamodelo_Cpp_CppType', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppModel' (role 'Metamodelo_Cpp_CppModel4', cardinality 0..*).
+'Metamodelo::Cpp::CppVariable' (role 'Metamodelo_Cpp_CppVariable', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppClassifier' (role 'Metamodelo_Cpp_CppClassifier35', cardinality 0..*).
+'Metamodelo::Cpp::CppPathReference' (role 'CppPathReference', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppPathReferentiable' (role 'referencedTerminal', cardinality 0..*).
+'Metamodelo::Cpp::CppClassFile' (role 'Metamodelo_Cpp_CppClassFile21', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppImportDeclaration' (role 'Metamodelo_Cpp_CppImportDeclaration', cardinality 0..*).
+'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression71', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppIterationStatement' (role 'Metamodelo_Cpp_CppIterationStatement70', cardinality 0..*).
+'Metamodelo::Cpp::CppVariableDeclaration' (role 'Metamodelo_Cpp_CppVariableDeclaration', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression138', cardinality 0..*).
+'Metamodelo::Cpp::CppFieldAccess' (role 'Metamodelo_Cpp_CppFieldAccess129', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression130', cardinality 0..*).
+'Metamodelo::Cpp::CppPathReference' (role 'referencedIn', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppPathReferentiable' (role 'CppPathReferentiable', cardinality 0..*).
+'Metamodelo::Cpp::CppModel' (role 'Metamodelo_Cpp_CppModel6', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppClassFile' (role 'Metamodelo_Cpp_CppClassFile', cardinality 0..*).
+'Metamodelo::Cpp::CppGotoStatement' (role 'Metamodelo_Cpp_CppGotoStatement', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppLabeledStatement' (role 'Metamodelo_Cpp_CppLabeledStatement', cardinality 0..*).
+'Metamodelo::Cpp::CppReturnStatement' (role 'Metamodelo_Cpp_CppReturnStatement', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression93', cardinality 0..*).
+'Metamodelo::Cpp::CppTypeAccess' (role 'Metamodelo_Cpp_CppTypeAccess133', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppTypeAccess' (role 'Metamodelo_Cpp_CppTypeAccess135', cardinality 0..*).
+'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression97', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppBinaryExpression' (role 'Metamodelo_Cpp_CppBinaryExpression', cardinality 0..*).
+'Metamodelo::Cpp::CppCastExpression' (role 'Metamodelo_Cpp_CppCastExpression', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppTypeAccess' (role 'Metamodelo_Cpp_CppTypeAccess106', cardinality 0..*).
+'Metamodelo::Cpp::CppFunction' (role 'Metamodelo_Cpp_CppFunction51', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppBlock' (role 'Metamodelo_Cpp_CppBlock', cardinality 0..*).
+'Metamodelo::Cpp::CppSelectionStatement' (role 'Metamodelo_Cpp_CppSelectionStatement', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression63', cardinality 0..*).
+'Metamodelo::Cpp::CppSingleVariableDeclaration' (role 'Metamodelo_Cpp_CppSingleVariableDeclaration', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppFunction' (role 'Metamodelo_Cpp_CppFunction', cardinality 0..*).
+'Metamodelo::Cpp::CppCase' (role 'Metamodelo_Cpp_CppCase85', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression86', cardinality 0..*).
+'Metamodelo::Cpp::CppVariableAccess' (role 'Metamodelo_Cpp_CppVariableAccess', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppFieldAccess' (role 'Metamodelo_Cpp_CppFieldAccess', cardinality 0..*).
+'Metamodelo::Cpp::CppDeclarationExpression' (role 'CppDeclarationExpression', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppVariableDeclarationGroup' (role 'groups', cardinality 0..*).
+'Metamodelo::Cpp::CppFieldContainer' (role 'CppFieldContainer', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppField' (role 'cppFields', cardinality 0..*).
+'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression59', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppAbstractMethodInvocation' (role 'Metamodelo_Cpp_CppAbstractMethodInvocation58', cardinality 0..*).
+'Metamodelo::Cpp::CppParenthizedExpression' (role 'Metamodelo_Cpp_CppParenthizedExpression', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression104', cardinality 0..*).
+'Metamodelo::Cpp::CppArrayAccess' (role 'Metamodelo_Cpp_CppArrayAccess113', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression114', cardinality 0..*).
+'Metamodelo::Cpp::CppPackage' (role 'Metamodelo_Cpp_CppPackage15', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppType' (role 'Metamodelo_Cpp_CppType16', cardinality 0..*).
+'Metamodelo::Cpp::CppVariableDeclaration' (role 'Metamodelo_Cpp_CppVariableDeclaration140', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression141', cardinality 0..*).
+'Metamodelo::Cpp::CppIfElseStatement' (role 'Metamodelo_Cpp_CppIfElseStatement', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression73', cardinality 0..*).
+'Metamodelo::Cpp::CppTypeParameter' (role 'Metamodelo_Cpp_CppTypeParameter26', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppTypeAccess' (role 'Metamodelo_Cpp_CppTypeAccess', cardinality 0..*).
+'Metamodelo::Cpp::CppTypeAccess' (role 'Metamodelo_Cpp_CppTypeAccess46', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppTypedElement' (role 'Metamodelo_Cpp_CppTypedElement', cardinality 0..*).
+'Metamodelo::Cpp::CppVariableDeclarationGroup' (role 'CppVariableDeclarationGroup', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppDeclarationExpression' (role 'container', cardinality 0..*).
+'Metamodelo::Cpp::CppModel' (role 'Metamodelo_Cpp_CppModel', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppClass' (role 'Metamodelo_Cpp_CppClass', cardinality 0..*).
+'Metamodelo::Cpp::CppPackage' (role 'parentReference', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppPathReferentiable' (role 'CppPathReferentiable11', cardinality 0..*).
+'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression83', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppCase' (role 'Metamodelo_Cpp_CppCase82', cardinality 0..*).
+'Metamodelo::Cpp::CppSwitchExpression' (role 'Metamodelo_Cpp_CppSwitchExpression77', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppCase' (role 'Metamodelo_Cpp_CppCase', cardinality 0..*).
+'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression118', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppTryExpression' (role 'Metamodelo_Cpp_CppTryExpression', cardinality 0..*).
+'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression91', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppForStatement' (role 'Metamodelo_Cpp_CppForStatement90', cardinality 0..*).
+'Metamodelo::Cpp::CppVariableDeclarationGroup' (role 'CppVariableDeclarationGroup146', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppVariableDeclarationFragment' (role 'fragments', cardinality 0..*).
+'Metamodelo::Cpp::CppVariableAccess' (role 'usageInVariableAccess', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppVariableDeclaration' (role 'CppVariableDeclaration', cardinality 0..*).
+'Metamodelo::Cpp::CppBlock' (role 'Metamodelo_Cpp_CppBlock53', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression54', cardinality 0..*).
+'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression48', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppArrayInitializer' (role 'Metamodelo_Cpp_CppArrayInitializer', cardinality 0..*).
+'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression88', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppForStatement' (role 'Metamodelo_Cpp_CppForStatement', cardinality 0..*).
+'Metamodelo::Cpp::CppCatchClause' (role 'catchClause', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppSingleVariableDeclaration' (role 'CppSingleVariableDeclaration', cardinality 0..*).
+'Metamodelo::Cpp::CppType' (role 'access', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppTypeAccess' (role 'CppTypeAccess', cardinality 0..*).
+'Metamodelo::Cpp::CppSelectionStatement' (role 'Metamodelo_Cpp_CppSelectionStatement65', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression66', cardinality 0..*).
+'Metamodelo::Cpp::CppEnumConstructor' (role 'Metamodelo_Cpp_CppEnumConstructor', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppEnum' (role 'Metamodelo_Cpp_CppEnum', cardinality 0..*).
+'Metamodelo::Cpp::CppTypeParameter' (role 'Metamodelo_Cpp_CppTypeParameter', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppType' (role 'Metamodelo_Cpp_CppType24', cardinality 0..*).
+'Metamodelo::Cpp::CppEnumConstructor' (role 'Metamodelo_Cpp_CppEnumConstructor38', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression', cardinality 0..*).
+'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression80', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppSwitchExpression' (role 'Metamodelo_Cpp_CppSwitchExpression79', cardinality 0..*).
+'Metamodelo::Cpp::CppUnaryExpression' (role 'Metamodelo_Cpp_CppUnaryExpression', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression102', cardinality 0..*).
+'Metamodelo::Cpp::CppField' (role 'CppField', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppFieldContainer' (role 'fieldContainer', cardinality 0..*).
+'Metamodelo::Cpp::CppClassifier' (role 'Metamodelo_Cpp_CppClassifier29', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppMemberFunction' (role 'Metamodelo_Cpp_CppMemberFunction30', cardinality 0..*).
+'Metamodelo::Cpp::CppVariableDeclaration' (role 'variable', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppVariableAccess' (role 'CppVariableAccess', cardinality 0..*).
+'Metamodelo::Cpp::CppMethodInvocation' (role 'Metamodelo_Cpp_CppMethodInvocation', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression61', cardinality 0..*).
+'Metamodelo::Cpp::CppPackage' (role 'Metamodelo_Cpp_CppPackage', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppPackage' (role 'Metamodelo_Cpp_CppPackage12', cardinality 0..*).
+'Metamodelo::Cpp::CppSwitchExpression' (role 'Metamodelo_Cpp_CppSwitchExpression', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression75', cardinality 0..*).
+'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression100', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppBinaryExpression' (role 'Metamodelo_Cpp_CppBinaryExpression99', cardinality 0..*).
+'Metamodelo::Cpp::CppVariableDeclarationGroup' (role 'variablesContainer', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppVariableDeclarationFragment' (role 'CppVariableDeclarationFragment', cardinality 0..*).
+'Metamodelo::Cpp::CppTryExpression' (role 'Metamodelo_Cpp_CppTryExpression120', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppCatchClause' (role 'Metamodelo_Cpp_CppCatchClause', cardinality 0..*).
+'Metamodelo::Cpp::CppCastExpression' (role 'Metamodelo_Cpp_CppCastExpression108', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppExpression' (role 'Metamodelo_Cpp_CppExpression109', cardinality 0..*).
+'Metamodelo::Cpp::CppClassifier' (role 'Metamodelo_Cpp_CppClassifier', cardinality 0..*) is associated with 'Metamodelo::Cpp::CppMemberFunction' (role 'Metamodelo_Cpp_CppMemberFunction', cardinality 0..*).

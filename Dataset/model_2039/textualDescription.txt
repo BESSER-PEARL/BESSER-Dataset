@@ -1,0 +1,10 @@
+The model has 3 class(es).
+The class 'sAAP::Transition' has the following attributes: 'name' of type str.
+The class 'sAAP::State' has the following attributes: 'name' of type str; 'default' of type bool.
+The class 'sAAP::StateMachine' has the following attributes: 'name' of type str.
+'sAAP::Transition' (role 'incoming', cardinality 0..*) is associated with 'sAAP::State' (role 'State8', cardinality 0..*).
+'sAAP::StateMachine' (role 'sAAP_StateMachine', cardinality 0..*) is associated with 'sAAP::State' (role 'sAAP_State', cardinality 0..*).
+'sAAP::Transition' (role 'outgoing', cardinality 0..*) is associated with 'sAAP::State' (role 'State', cardinality 0..*).
+'sAAP::Transition' (role 'sAAP_Transition', cardinality 0..*) is associated with 'sAAP::StateMachine' (role 'sAAP_StateMachine5', cardinality 0..*).
+'sAAP::State' (role 'from_', cardinality 0..*) is associated with 'sAAP::Transition' (role 'Transition', cardinality 0..*).
+'sAAP::Transition' (role 'Transition2', cardinality 0..*) is associated with 'sAAP::State' (role 'to', cardinality 0..*).

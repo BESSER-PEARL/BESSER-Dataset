@@ -1,0 +1,14 @@
+The model has 4 class(es).
+The class 'tables::ForeignKey' has the following attributes: 'name' of type str.
+The class 'tables::Table' has the following attributes: 'name' of type str.
+The class 'tables::Database' has the following attributes: 'name' of type str.
+The class 'tables::Column' has the following attributes: 'type' of type str; 'name' of type str.
+The enumeration 'Type' has the following literals: 'bool', 'datetime', 'string', 'float', 'integer'.
+'tables::ForeignKey' (role 'foreign_key', cardinality 0..*) is associated with 'tables::Column' (role 'Column10', cardinality 0..*).
+'tables::Table' (role 'tables_Table', cardinality 0..*) is associated with 'tables::Column' (role 'tables_Column', cardinality 0..*).
+'tables::Column' (role 'column', cardinality 0..*) is associated with 'tables::ForeignKey' (role 'ForeignKey', cardinality 0..*).
+'tables::Column' (role 'Column', cardinality 0..*) is associated with 'tables::Table' (role 'table', cardinality 0..*).
+'tables::Table' (role 'Table5', cardinality 0..*) is associated with 'tables::Column' (role 'columns', cardinality 0..*).
+'tables::Table' (role 'tables_Table8', cardinality 0..*) is associated with 'tables::ForeignKey' (role 'tables_ForeignKey', cardinality 0..*).
+'tables::Table' (role 'Table', cardinality 0..*) is associated with 'tables::Database' (role 'database', cardinality 0..*).
+'tables::Database' (role 'Database', cardinality 0..*) is associated with 'tables::Table' (role 'tables', cardinality 0..*).

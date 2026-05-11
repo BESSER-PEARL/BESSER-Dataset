@@ -1,0 +1,51 @@
+The model has 21 class(es).
+The class 'tests::ExternalTestType' has no attributes.
+The class 'tests::EReferenceTest' has no attributes.
+The class 'DObject' has no attributes.
+The class 'tests::TestParameter' has the following attributes: 'defaultValue' of type float.
+The class 'tests::TestCategoryExtends' has the following attributes: 'testExtendsProperty' of type int.
+The class 'TestCategoryBeanAbstract' has no attributes.
+The class 'tests::TestCategoryCompositionArray' has no attributes.
+The class 'tests::TestCategoryBeanB' has no attributes.
+The class 'tests::TestCrossLinkedParametersWithCalculation' has the following attributes: 'calcedTrl' of type float.
+The class 'tests::TestCategoryBase' has the following attributes: 'testBaseProperty' of type int.
+The class 'tests::TestCategoryReferenceArray' has no attributes.
+The class 'TestCategoryBase' has no attributes.
+The class 'tests::TestCategoryIntrinsicArray' has the following attributes: 'testStringArrayStatic' of type str; 'testStringArrayDynamic' of type str.
+The class 'tests::TestCategoryBeanConcrete' has no attributes.
+The class 'tests::TestMassParameters' has no attributes.
+The class 'tests::TestCategoryBeanA' has no attributes.
+The class 'tests::TestCategoryReference' has no attributes.
+The class 'dmf::DObject' has no attributes.
+The class 'tests::TestCategoryAllProperty' has the following attributes: 'testFloat' of type float; 'testString' of type str; 'testInt' of type int; 'testResource' of type str; 'testEnum' of type str; 'testBool' of type bool.
+The class 'tests::TestCategoryComposition' has no attributes.
+The class 'tests::TestCategoryBeanAbstract' has no attributes.
+The enumeration 'EnumTestEnum' has the following literals: 'MEDIUM', 'HIGH', 'LOW', 'INCREDIBLE'.
+'tests::TestCrossLinkedParametersWithCalculation' is a specialization of 'DObject'.
+'tests::EReferenceTest' is a specialization of 'DObject'.
+'tests::TestCategoryBeanConcrete' is a specialization of 'TestCategoryBeanAbstract'.
+'tests::TestCategoryIntrinsicArray' is a specialization of 'DObject'.
+'tests::TestMassParameters' is a specialization of 'DObject'.
+'tests::TestCategoryBeanA' is a specialization of 'DObject'.
+'tests::TestCategoryExtends' is a specialization of 'dmf::DObject'.
+'tests::TestCategoryReferenceArray' is a specialization of 'DObject'.
+'tests::TestCategoryExtends' is a specialization of 'TestCategoryBase'.
+'tests::TestCategoryReference' is a specialization of 'DObject'.
+'tests::TestCategoryCompositionArray' is a specialization of 'DObject'.
+'tests::TestCategoryBeanAbstract' is a specialization of 'DObject'.
+'tests::TestCategoryBase' is a specialization of 'DObject'.
+'tests::TestCategoryBeanB' is a specialization of 'DObject'.
+'tests::TestParameter' is a specialization of 'DObject'.
+'tests::TestCategoryAllProperty' is a specialization of 'DObject'.
+'tests::TestCategoryComposition' is a specialization of 'DObject'.
+'tests::TestCategoryBeanConcrete' is a specialization of 'dmf::DObject'.
+'tests::TestCategoryComposition' (role 'tests_TestCategoryComposition', cardinality 0..*) is associated with 'tests::TestCategoryAllProperty' (role 'tests_TestCategoryAllProperty', cardinality 0..*).
+'tests::TestCategoryCompositionArray' (role 'tests_TestCategoryCompositionArray', cardinality 0..*) is associated with 'tests::TestCategoryAllProperty' (role 'tests_TestCategoryAllProperty4', cardinality 0..*).
+'tests::TestCategoryAllProperty' (role 'tests_TestCategoryAllProperty2', cardinality 0..*) is associated with 'tests::TestCategoryReference' (role 'tests_TestCategoryReference', cardinality 0..*).
+'tests::TestParameter' (role 'tests_TestParameter', cardinality 0..*) is associated with 'tests::TestMassParameters' (role 'tests_TestMassParameters', cardinality 0..*).
+'tests::TestCategoryAllProperty' (role 'tests_TestCategoryAllProperty12', cardinality 0..*) is associated with 'tests::TestCategoryReferenceArray' (role 'tests_TestCategoryReferenceArray11', cardinality 0..*).
+'tests::EReferenceTest' (role 'tests_EReferenceTest', cardinality 0..*) is associated with 'tests::ExternalTestType' (role 'tests_ExternalTestType', cardinality 0..*).
+'tests::TestCategoryCompositionArray' (role 'tests_TestCategoryCompositionArray6', cardinality 0..*) is associated with 'tests::TestCategoryAllProperty' (role 'tests_TestCategoryAllProperty7', cardinality 0..*).
+'tests::TestCategoryBase' (role 'tests_TestCategoryBase15', cardinality 0..*) is associated with 'tests::TestCategoryBase' (role 'tests_TestCategoryBase17', cardinality 0..*).
+'tests::TestCategoryReferenceArray' (role 'tests_TestCategoryReferenceArray', cardinality 0..*) is associated with 'tests::TestCategoryAllProperty' (role 'tests_TestCategoryAllProperty9', cardinality 0..*).
+'tests::TestCategoryBase' (role 'tests_TestCategoryBase13', cardinality 0..*) is associated with 'tests::TestCategoryBase' (role 'tests_TestCategoryBase', cardinality 0..*).

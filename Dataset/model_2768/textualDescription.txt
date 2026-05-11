@@ -1,0 +1,24 @@
+The model has 10 class(es).
+The class 'ref3::T' has no attributes.
+The class 'ref3::D' has no attributes.
+The class 'ref3::B' has no attributes.
+The class 'ref3::A' has no attributes.
+The class 'T' has no attributes.
+The class 'ref3::E' has no attributes.
+The class 'ref3::N' has no attributes.
+The class 'Named' has no attributes.
+The class 'D' has no attributes.
+The class 'ref3::Named' has the following attributes: 'name' of type str.
+'ref3::E' is a specialization of 'Named'.
+'ref3::D' is a specialization of 'T'.
+'ref3::N' is a specialization of 'Named'.
+'ref3::T' is a specialization of 'Named'.
+'ref3::B' is a specialization of 'Named'.
+'ref3::E' is a specialization of 'D'.
+'ref3::A' is a specialization of 'Named'.
+'ref3::A' (role 'ref3_A6', cardinality 0..*) is associated with 'ref3::D' (role 'ref3_D', cardinality 0..*).
+'ref3::B' (role 'ref3_B8', cardinality 0..*) is associated with 'ref3::D' (role 'ref3_D9', cardinality 0..*).
+'ref3::D' (role 'ref3_D11', cardinality 0..*) is associated with 'ref3::E' (role 'ref3_E', cardinality 0..*).
+'ref3::B' (role 'ref3_B', cardinality 0..*) is associated with 'ref3::N' (role 'ref3_N4', cardinality 0..*).
+'ref3::N' (role 'ref3_N', cardinality 0..*) is associated with 'ref3::T' (role 'ref3_T', cardinality 0..*).
+'ref3::A' (role 'ref3_A', cardinality 0..*) is associated with 'ref3::N' (role 'ref3_N2', cardinality 0..*).

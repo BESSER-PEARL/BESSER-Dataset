@@ -1,0 +1,61 @@
+The model has 28 class(es).
+The class 'model6::C' has no attributes.
+The class 'model6::UnsettableAttributes' has the following attributes: 'attrFloat' of type float; 'attrBoolean' of type bool; 'attrBigDecimal' of type str; 'attrBigInteger' of type str; 'attrByte' of type str; 'attrString' of type str; 'attrBooleanObject' of type str; 'attrDoubleObject' of type str; 'attrByteObject' of type str; 'attrFloatObject' of type str; 'attrDate' of type date; 'attrShortObject' of type str; 'attrInt' of type int; 'attrLongObject' of type str; 'attrDouble' of type float; 'attrShort' of type str; 'attrCharacterObject' of type str; 'attrChar' of type str; 'attrJavaClass' of type str; 'attrIntegerObject' of type str; 'attrLong' of type str; 'attrJavaObject' of type str; 'attrByteArray' of type str.
+The class 'model6::BaseObject' has the following attributes: 'attributeOptional' of type str; 'attributeList' of type str; 'attributeRequired' of type str.
+The class 'model6::F' has no attributes.
+The class 'model6::B' has no attributes.
+The class 'model6::PropertiesMap' has the following attributes: 'label' of type str.
+The class 'model6::Holdable' has the following attributes: 'name' of type str.
+The class 'model6::A' has no attributes.
+The class 'model6::EmptyStringDefault' has the following attributes: 'attribute' of type str.
+The class 'model6::E' has no attributes.
+The class 'model6::UnorderedList' has no attributes.
+The class 'model6::Thing' has no attributes.
+The class 'model6::PropertiesMapEntryValue' has the following attributes: 'label' of type str.
+The class 'model6::ReferenceObject' has no attributes.
+The class 'model6::PropertiesMapEntry' has the following attributes: 'key' of type str.
+The class 'model6::EObject' has no attributes.
+The class 'model6::Holder' has no attributes.
+The class 'model6::CanReferenceLegacy' has no attributes.
+The class 'model6::G' has the following attributes: 'dummy' of type str.
+The class 'model6::EmptyStringDefaultUnsettable' has the following attributes: 'attribute' of type str.
+The class 'model6::ContainmentObject' has no attributes.
+The class 'model6::Root' has no attributes.
+The class 'model6::D' has no attributes.
+The class 'model6::MyEnumListUnsettable' has the following attributes: 'myEnum' of type str.
+The class 'model6::HasNillableAttribute' has the following attributes: 'nillable' of type str.
+The class 'Holdable' has no attributes.
+The class 'model6::MyEnumList' has the following attributes: 'myEnum' of type str.
+The class 'BaseObject' has no attributes.
+The enumeration 'MyEnum' has the following literals: 'ONE', 'THREE', 'ZERO', 'TWO'.
+'model6::ContainmentObject' is a specialization of 'BaseObject'.
+'model6::Thing' is a specialization of 'Holdable'.
+'model6::Holder' is a specialization of 'Holdable'.
+'model6::ReferenceObject' is a specialization of 'BaseObject'.
+'model6::BaseObject' (role 'model6_BaseObject11', cardinality 0..*) is associated with 'model6::ReferenceObject' (role 'model6_ReferenceObject', cardinality 0..*).
+'model6::A' (role 'model6_A33', cardinality 0..*) is associated with 'model6::B' (role 'model6_B', cardinality 0..*).
+'model6::PropertiesMapEntry' (role 'model6_PropertiesMapEntry30', cardinality 0..*) is associated with 'model6::PropertiesMapEntryValue' (role 'model6_PropertiesMapEntryValue', cardinality 0..*).
+'model6::F' (role 'model6_F', cardinality 0..*) is associated with 'model6::E' (role 'model6_E41', cardinality 0..*).
+'model6::EObject' (role 'model6_EObject61', cardinality 0..*) is associated with 'model6::CanReferenceLegacy' (role 'model6_CanReferenceLegacy60', cardinality 0..*).
+'model6::BaseObject' (role 'model6_BaseObject43', cardinality 0..*) is associated with 'model6::G' (role 'model6_G', cardinality 0..*).
+'model6::UnorderedList' (role 'model6_UnorderedList20', cardinality 0..*) is associated with 'model6::UnorderedList' (role 'model6_UnorderedList', cardinality 0..*).
+'model6::PropertiesMapEntry' (role 'model6_PropertiesMapEntry', cardinality 0..*) is associated with 'model6::PropertiesMap' (role 'model6_PropertiesMap', cardinality 0..*).
+'model6::PropertiesMapEntry' (role 'model6_PropertiesMapEntry28', cardinality 0..*) is associated with 'model6::PropertiesMap' (role 'model6_PropertiesMap27', cardinality 0..*).
+'model6::Holdable' (role 'model6_Holdable50', cardinality 0..*) is associated with 'model6::Holder' (role 'model6_Holder49', cardinality 0..*).
+'model6::BaseObject' (role 'model6_BaseObject9', cardinality 0..*) is associated with 'model6::Root' (role 'model6_Root8', cardinality 0..*).
+'model6::A' (role 'model6_A39', cardinality 0..*) is associated with 'model6::E' (role 'model6_E', cardinality 0..*).
+'model6::ContainmentObject' (role 'model6_ContainmentObject18', cardinality 0..*) is associated with 'model6::BaseObject' (role 'model6_BaseObject19', cardinality 0..*).
+'model6::Root' (role 'model6_Root', cardinality 0..*) is associated with 'model6::BaseObject' (role 'model6_BaseObject', cardinality 0..*).
+'model6::BaseObject' (role 'model6_BaseObject6', cardinality 0..*) is associated with 'model6::Root' (role 'model6_Root5', cardinality 0..*).
+'model6::BaseObject' (role 'model6_BaseObject16', cardinality 0..*) is associated with 'model6::ContainmentObject' (role 'model6_ContainmentObject', cardinality 0..*).
+'model6::G' (role 'model6_G45', cardinality 0..*) is associated with 'model6::BaseObject' (role 'model6_BaseObject46', cardinality 0..*).
+'model6::D' (role 'model6_D', cardinality 0..*) is associated with 'model6::A' (role 'model6_A', cardinality 0..*).
+'model6::EObject' (role 'model6_EObject52', cardinality 0..*) is associated with 'model6::CanReferenceLegacy' (role 'model6_CanReferenceLegacy', cardinality 0..*).
+'model6::BaseObject' (role 'model6_BaseObject14', cardinality 0..*) is associated with 'model6::ReferenceObject' (role 'model6_ReferenceObject13', cardinality 0..*).
+'model6::CanReferenceLegacy' (role 'model6_CanReferenceLegacy54', cardinality 0..*) is associated with 'model6::EObject' (role 'model6_EObject55', cardinality 0..*).
+'model6::D' (role 'model6_D37', cardinality 0..*) is associated with 'model6::EObject' (role 'model6_EObject', cardinality 0..*).
+'model6::Holder' (role 'model6_Holder', cardinality 0..*) is associated with 'model6::Holdable' (role 'model6_Holdable', cardinality 0..*).
+'model6::EObject' (role 'model6_EObject58', cardinality 0..*) is associated with 'model6::CanReferenceLegacy' (role 'model6_CanReferenceLegacy57', cardinality 0..*).
+'model6::BaseObject' (role 'model6_BaseObject3', cardinality 0..*) is associated with 'model6::Root' (role 'model6_Root2', cardinality 0..*).
+'model6::UnorderedList' (role 'model6_UnorderedList22', cardinality 0..*) is associated with 'model6::UnorderedList' (role 'model6_UnorderedList24', cardinality 0..*).
+'model6::B' (role 'model6_B35', cardinality 0..*) is associated with 'model6::C' (role 'model6_C', cardinality 0..*).

@@ -1,0 +1,166 @@
+The model has 78 class(es).
+The class 'mm::styles::RenderingStyle' has no attributes.
+The class 'mm::styles::PrecisionPoint' has the following attributes: 'y' of type float; 'x' of type float.
+The class 'Connection' has no attributes.
+The class 'PictogramLink' has no attributes.
+The class 'mm::styles::Point' has the following attributes: 'y' of type int; 'x' of type int; 'before' of type int; 'after' of type int.
+The class 'ContainerShape' has no attributes.
+The class 'mm::algorithms::Rectangle' has no attributes.
+The class 'pictograms::ContainerShape' has no attributes.
+The class 'mm::pictograms::Anchor' has no attributes.
+The class 'mm::GraphicsAlgorithmContainer' has no attributes.
+The class 'mm::styles::TextStyleRegion' has the following attributes: 'start' of type int; 'end' of type int.
+The class 'mm::pictograms::ManhattanConnection' has no attributes.
+The class 'styles::GradientColoredArea' has no attributes.
+The class 'StyleContainer' has no attributes.
+The class 'ConnectionDecorator' has no attributes.
+The class 'AbstractText' has no attributes.
+The class 'mm::algorithms::Text' has no attributes.
+The class 'mm::pictograms::BoxRelativeAnchor' has the following attributes: 'relativeHeight' of type float; 'relativeWidth' of type float.
+The class 'Diagram' has no attributes.
+The class 'mm::pictograms::ChopboxAnchor' has no attributes.
+The class 'PictogramElement' has no attributes.
+The class 'mm::algorithms::Image' has the following attributes: 'stretchH' of type str; 'stretchV' of type str; 'proportional' of type str; 'id' of type str.
+The class 'mm::algorithms::GraphicsAlgorithm' has the following attributes: 'height' of type int; 'x' of type int; 'width' of type int; 'y' of type int.
+The class 'styles::GradientColoredLocation' has no attributes.
+The class 'mm::pictograms::CurvedConnection' has no attributes.
+The class 'mm::pictograms::ConnectionDecorator' has the following attributes: 'location' of type float; 'locationRelative' of type bool.
+The class 'mm::algorithms::PlatformGraphicsAlgorithm' has the following attributes: 'id' of type str.
+The class 'mm::pictograms::PictogramElement' has the following attributes: 'active' of type bool; 'visible' of type bool.
+The class 'mm::styles::AdaptedGradientColoredAreas' has the following attributes: 'gradientType' of type str; 'definedStyleId' of type str.
+The class 'styles::Color' has no attributes.
+The class 'mm::algorithms::Polygon' has no attributes.
+The class 'mm::pictograms::AdvancedAnchor' has the following attributes: 'useAnchorLocationAsConnectionEndpoint' of type bool.
+The class 'mm::styles::GradientColoredAreas' has the following attributes: 'styleAdaption' of type str.
+The class 'styles::mm::StyleContainer' has no attributes.
+The class 'mm::pictograms::AnchorContainer' has no attributes.
+The class 'AnchorContainer' has no attributes.
+The class 'styles::RenderingStyle' has no attributes.
+The class 'mm::algorithms::RoundedRectangle' has the following attributes: 'cornerWidth' of type int; 'cornerHeight' of type int.
+The class 'mm::algorithms::MultiText' has no attributes.
+The class 'mm::pictograms::Shape' has no attributes.
+The class 'mm::algorithms::Polyline' has no attributes.
+The class 'AdvancedAnchor' has no attributes.
+The class 'Polyline' has no attributes.
+The class 'CurvedConnection' has no attributes.
+The class 'mm::styles::AbstractStyle' has the following attributes: 'lineVisible' of type str; 'transparency' of type str; 'lineWidth' of type str; 'lineStyle' of type str; 'filled' of type str.
+The class 'mm::StyleContainer' has no attributes.
+The class 'mm::pictograms::FixPointAnchor' has no attributes.
+The class 'GraphicsAlgorithm' has no attributes.
+The class 'mm::styles::Style' has the following attributes: 'description' of type str; 'stretchH' of type str; 'id' of type str; 'proportional' of type str; 'verticalAlignment' of type str; 'stretchV' of type str; 'angle' of type str; 'horizontalAlignment' of type str; 'rotation' of type str.
+The class 'mm::styles::GradientColoredLocation' has the following attributes: 'locationType' of type str; 'locationValue' of type str.
+The class 'styles::PrecisionPoint' has no attributes.
+The class 'Anchor' has no attributes.
+The class 'mm::pictograms::ContainerShape' has no attributes.
+The class 'mm::styles::Font' has the following attributes: 'name' of type str; 'size' of type int; 'bold' of type bool; 'italic' of type bool.
+The class 'mm::pictograms::Diagram' has the following attributes: 'version' of type str; 'name' of type str; 'verticalGridUnit' of type int; 'showGuides' of type bool; 'diagramTypeId' of type str; 'snapToGrid' of type bool; 'gridUnit' of type int.
+The class 'mm::algorithms::AbstractText' has the following attributes: 'verticalAlignment' of type str; 'rotation' of type str; 'angle' of type str; 'horizontalAlignment' of type str; 'value' of type str.
+The class 'styles::AdaptedGradientColoredAreas' has no attributes.
+The class 'mm::pictograms::CompositeConnection' has no attributes.
+The class 'PropertyContainer' has no attributes.
+The class 'Shape' has no attributes.
+The class 'mm::styles::TextStyle' has the following attributes: 'strikeout' of type bool; 'underline' of type bool; 'underlineStyle' of type str.
+The class 'mm::pictograms::PictogramLink' has no attributes.
+The class 'styles::GradientColoredAreas' has no attributes.
+The class 'styles::Font' has no attributes.
+The class 'mm::pictograms::Connection' has no attributes.
+The class 'mm::styles::Color' has the following attributes: 'blue' of type int; 'green' of type int; 'red' of type int.
+The class 'GraphicsAlgorithmContainer' has no attributes.
+The class 'mm::styles::GradientColoredArea' has no attributes.
+The class 'mm::PropertyContainer' has no attributes.
+The class 'mm::algorithms::Ellipse' has no attributes.
+The class 'mm::Property' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'styles::Style' has no attributes.
+The class 'styles::Point' has no attributes.
+The class 'styles::TextStyleRegion' has no attributes.
+The class 'mm::pictograms::FreeFormConnection' has no attributes.
+The class 'styles::TextStyle' has no attributes.
+The class 'pictograms::mm::EObject' has no attributes.
+The class 'styles::AbstractStyle' has no attributes.
+The enumeration 'LocationType' has the following literals: 'LOCATION_TYPE_ABSOLUTE_END', 'LOCATION_TYPE_RELATIVE', 'LOCATION_TYPE_ABSOLUTE_START'.
+The enumeration 'Orientation' has the following literals: 'ALIGNMENT_MIDDLE', 'ALIGNMENT_TOP', 'UNSPECIFIED', 'ALIGNMENT_RIGHT', 'ALIGNMENT_LEFT', 'ALIGNMENT_BOTTOM', 'ALIGNMENT_CENTER'.
+The enumeration 'UnderlineStyle' has the following literals: 'UNDERLINE_SQUIGGLE', 'UNDERLINE_SINGLE', 'UNDERLINE_ERROR', 'UNDERLINE_DOUBLE'.
+The enumeration 'LineStyle' has the following literals: 'DASHDOT', 'UNSPECIFIED', 'DASHDOTDOT', 'DASH', 'SOLID', 'DOT'.
+'mm::pictograms::PictogramLink' is a specialization of 'PropertyContainer'.
+'mm::pictograms::Diagram' is a specialization of 'pictograms::ContainerShape'.
+'mm::algorithms::MultiText' is a specialization of 'AbstractText'.
+'mm::algorithms::RoundedRectangle' is a specialization of 'GraphicsAlgorithm'.
+'mm::algorithms::GraphicsAlgorithm' is a specialization of 'styles::AbstractStyle'.
+'mm::pictograms::CompositeConnection' is a specialization of 'Connection'.
+'mm::pictograms::AnchorContainer' is a specialization of 'PictogramElement'.
+'mm::pictograms::AdvancedAnchor' is a specialization of 'Anchor'.
+'mm::algorithms::PlatformGraphicsAlgorithm' is a specialization of 'GraphicsAlgorithm'.
+'mm::pictograms::Diagram' is a specialization of 'StyleContainer'.
+'mm::algorithms::Rectangle' is a specialization of 'GraphicsAlgorithm'.
+'mm::GraphicsAlgorithmContainer' is a specialization of 'PropertyContainer'.
+'mm::algorithms::Text' is a specialization of 'AbstractText'.
+'mm::algorithms::Ellipse' is a specialization of 'GraphicsAlgorithm'.
+'mm::pictograms::ContainerShape' is a specialization of 'Shape'.
+'mm::pictograms::FixPointAnchor' is a specialization of 'AdvancedAnchor'.
+'mm::pictograms::ChopboxAnchor' is a specialization of 'Anchor'.
+'mm::pictograms::ConnectionDecorator' is a specialization of 'Shape'.
+'mm::styles::Style' is a specialization of 'styles::AbstractStyle'.
+'mm::algorithms::AbstractText' is a specialization of 'GraphicsAlgorithm'.
+'mm::pictograms::Shape' is a specialization of 'AnchorContainer'.
+'mm::algorithms::Polygon' is a specialization of 'Polyline'.
+'mm::pictograms::BoxRelativeAnchor' is a specialization of 'AdvancedAnchor'.
+'mm::algorithms::Polyline' is a specialization of 'GraphicsAlgorithm'.
+'mm::pictograms::PictogramElement' is a specialization of 'GraphicsAlgorithmContainer'.
+'mm::pictograms::FreeFormConnection' is a specialization of 'Connection'.
+'mm::styles::Style' is a specialization of 'StyleContainer'.
+'mm::pictograms::CurvedConnection' is a specialization of 'Connection'.
+'mm::algorithms::Image' is a specialization of 'GraphicsAlgorithm'.
+'mm::pictograms::Anchor' is a specialization of 'PictogramElement'.
+'mm::algorithms::GraphicsAlgorithm' is a specialization of 'GraphicsAlgorithmContainer'.
+'mm::pictograms::ManhattanConnection' is a specialization of 'Connection'.
+'mm::pictograms::Connection' is a specialization of 'AnchorContainer'.
+'mm::PropertyContainer' (role 'mm_PropertyContainer', cardinality 0..*) is associated with 'mm::Property' (role 'mm_Property', cardinality 0..*).
+'styles::Font' (role 'styles_Font48', cardinality 0..*) is associated with 'mm::algorithms::AbstractText' (role 'mm_algorithms_AbstractText', cardinality 0..*).
+'GraphicsAlgorithm' (role 'GraphicsAlgorithm', cardinality 0..*) is associated with 'mm::pictograms::PictogramElement' (role 'pictogramElement', cardinality 0..*).
+'mm::pictograms::Anchor' (role 'end', cardinality 0..*) is associated with 'Connection' (role 'Connection23', cardinality 0..*).
+'mm::styles::TextStyle' (role 'mm_styles_TextStyle', cardinality 0..*) is associated with 'styles::Font' (role 'styles_Font71', cardinality 0..*).
+'mm::pictograms::CompositeConnection' (role 'mm_pictograms_CompositeConnection', cardinality 0..*) is associated with 'CurvedConnection' (role 'CurvedConnection', cardinality 0..*).
+'GraphicsAlgorithm' (role 'GraphicsAlgorithm39', cardinality 0..*) is associated with 'mm::algorithms::GraphicsAlgorithm' (role 'parentGraphicsAlgorithm', cardinality 0..*).
+'mm::styles::GradientColoredLocation' (role 'mm_styles_GradientColoredLocation', cardinality 0..*) is associated with 'styles::Color' (role 'styles_Color63', cardinality 0..*).
+'mm::styles::GradientColoredAreas' (role 'mm_styles_GradientColoredAreas', cardinality 0..*) is associated with 'styles::GradientColoredArea' (role 'styles_GradientColoredArea', cardinality 0..*).
+'mm::algorithms::GraphicsAlgorithm' (role 'graphicsAlgorithmChildren', cardinality 0..*) is associated with 'GraphicsAlgorithm' (role 'GraphicsAlgorithm41', cardinality 0..*).
+'mm::algorithms::GraphicsAlgorithm' (role 'graphicsAlgorithm', cardinality 0..*) is associated with 'PictogramElement' (role 'PictogramElement43', cardinality 0..*).
+'styles::AdaptedGradientColoredAreas' (role 'styles_AdaptedGradientColoredAreas', cardinality 0..*) is associated with 'mm::styles::RenderingStyle' (role 'mm_styles_RenderingStyle', cardinality 0..*).
+'mm::styles::AdaptedGradientColoredAreas' (role 'mm_styles_AdaptedGradientColoredAreas', cardinality 0..*) is associated with 'styles::GradientColoredAreas' (role 'styles_GradientColoredAreas', cardinality 0..*).
+'mm::algorithms::AbstractText' (role 'mm_algorithms_AbstractText50', cardinality 0..*) is associated with 'styles::TextStyleRegion' (role 'styles_TextStyleRegion', cardinality 0..*).
+'mm::pictograms::Anchor' (role 'anchors', cardinality 0..*) is associated with 'AnchorContainer' (role 'AnchorContainer', cardinality 0..*).
+'mm::pictograms::Connection' (role 'connections', cardinality 0..*) is associated with 'Diagram' (role 'Diagram', cardinality 0..*).
+'Anchor' (role 'Anchor', cardinality 0..*) is associated with 'mm::pictograms::Connection' (role 'outgoingConnections', cardinality 0..*).
+'mm::algorithms::Polyline' (role 'mm_algorithms_Polyline', cardinality 0..*) is associated with 'styles::Point' (role 'styles_Point46', cardinality 0..*).
+'mm::StyleContainer' (role 'styleContainer', cardinality 0..*) is associated with 'styles::Style' (role 'Style', cardinality 0..*).
+'mm::styles::AbstractStyle' (role 'mm_styles_AbstractStyle61', cardinality 0..*) is associated with 'styles::RenderingStyle' (role 'styles_RenderingStyle', cardinality 0..*).
+'styles::Color' (role 'styles_Color83', cardinality 0..*) is associated with 'mm::styles::TextStyle' (role 'mm_styles_TextStyle82', cardinality 0..*).
+'mm::pictograms::AnchorContainer' (role 'parent27', cardinality 0..*) is associated with 'Anchor' (role 'Anchor28', cardinality 0..*).
+'GraphicsAlgorithm' (role 'GraphicsAlgorithm25', cardinality 0..*) is associated with 'mm::pictograms::Anchor' (role 'mm_pictograms_Anchor', cardinality 0..*).
+'styles::Font' (role 'styles_Font', cardinality 0..*) is associated with 'mm::pictograms::Diagram' (role 'mm_pictograms_Diagram7', cardinality 0..*).
+'mm::pictograms::Diagram' (role 'mm_pictograms_Diagram9', cardinality 0..*) is associated with 'PictogramLink' (role 'PictogramLink', cardinality 0..*).
+'styles::GradientColoredLocation' (role 'styles_GradientColoredLocation', cardinality 0..*) is associated with 'mm::styles::GradientColoredArea' (role 'mm_styles_GradientColoredArea', cardinality 0..*).
+'styles::GradientColoredLocation' (role 'styles_GradientColoredLocation67', cardinality 0..*) is associated with 'mm::styles::GradientColoredArea' (role 'mm_styles_GradientColoredArea66', cardinality 0..*).
+'styles::Color' (role 'styles_Color77', cardinality 0..*) is associated with 'mm::styles::TextStyle' (role 'mm_styles_TextStyle76', cardinality 0..*).
+'PictogramElement' (role 'PictogramElement', cardinality 0..*) is associated with 'mm::pictograms::PictogramLink' (role 'link', cardinality 0..*).
+'styles::Style' (role 'styles_Style', cardinality 0..*) is associated with 'mm::algorithms::GraphicsAlgorithm' (role 'mm_algorithms_GraphicsAlgorithm', cardinality 0..*).
+'styles::Color' (role 'styles_Color', cardinality 0..*) is associated with 'mm::pictograms::Diagram' (role 'mm_pictograms_Diagram', cardinality 0..*).
+'mm::pictograms::FixPointAnchor' (role 'mm_pictograms_FixPointAnchor', cardinality 0..*) is associated with 'styles::Point' (role 'styles_Point', cardinality 0..*).
+'Shape' (role 'Shape', cardinality 0..*) is associated with 'mm::pictograms::ContainerShape' (role 'container', cardinality 0..*).
+'mm::styles::TextStyleRegion' (role 'mm_styles_TextStyleRegion', cardinality 0..*) is associated with 'styles::TextStyle' (role 'styles_TextStyle', cardinality 0..*).
+'Anchor' (role 'Anchor16', cardinality 0..*) is associated with 'mm::pictograms::Connection' (role 'incomingConnections', cardinality 0..*).
+'mm::styles::Style' (role 'styles', cardinality 0..*) is associated with 'styles::mm::StyleContainer' (role 'StyleContainer', cardinality 0..*).
+'pictograms::mm::EObject' (role 'pictograms_mm_EObject', cardinality 0..*) is associated with 'mm::pictograms::PictogramLink' (role 'mm_pictograms_PictogramLink', cardinality 0..*).
+'mm::pictograms::ConnectionDecorator' (role 'connectionDecorators', cardinality 0..*) is associated with 'Connection' (role 'Connection31', cardinality 0..*).
+'mm::styles::TextStyle' (role 'mm_styles_TextStyle73', cardinality 0..*) is associated with 'styles::Color' (role 'styles_Color74', cardinality 0..*).
+'mm::pictograms::Diagram' (role 'parent', cardinality 0..*) is associated with 'Connection' (role 'Connection', cardinality 0..*).
+'mm::pictograms::Shape' (role 'children', cardinality 0..*) is associated with 'ContainerShape' (role 'ContainerShape', cardinality 0..*).
+'mm::pictograms::FreeFormConnection' (role 'mm_pictograms_FreeFormConnection', cardinality 0..*) is associated with 'styles::Point' (role 'styles_Point33', cardinality 0..*).
+'ConnectionDecorator' (role 'ConnectionDecorator', cardinality 0..*) is associated with 'mm::pictograms::Connection' (role 'connection', cardinality 0..*).
+'styles::PrecisionPoint' (role 'styles_PrecisionPoint', cardinality 0..*) is associated with 'mm::pictograms::CurvedConnection' (role 'mm_pictograms_CurvedConnection', cardinality 0..*).
+'Connection' (role 'Connection21', cardinality 0..*) is associated with 'mm::pictograms::Anchor' (role 'start', cardinality 0..*).
+'styles::Color' (role 'styles_Color59', cardinality 0..*) is associated with 'mm::styles::AbstractStyle' (role 'mm_styles_AbstractStyle58', cardinality 0..*).
+'styles::Font' (role 'styles_Font53', cardinality 0..*) is associated with 'mm::styles::Style' (role 'mm_styles_Style', cardinality 0..*).
+'mm::styles::TextStyle' (role 'mm_styles_TextStyle79', cardinality 0..*) is associated with 'styles::Color' (role 'styles_Color80', cardinality 0..*).
+'mm::styles::AbstractStyle' (role 'mm_styles_AbstractStyle', cardinality 0..*) is associated with 'styles::Color' (role 'styles_Color56', cardinality 0..*).
+'mm::pictograms::PictogramElement' (role 'pictogramElement12', cardinality 0..*) is associated with 'PictogramLink' (role 'PictogramLink13', cardinality 0..*).

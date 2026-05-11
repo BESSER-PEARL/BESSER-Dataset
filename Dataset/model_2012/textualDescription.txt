@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'trace::Exception' has the following attributes: 'message' of type str.
+The class 'trace::Log' has the following attributes: 'timestamp' of type date; 'message' of type str; 'source' of type str; 'level' of type str.
+The class 'trace::Trace' has no attributes.
+The enumeration 'LogLevel' has the following literals: 'WARNING', 'FINER', 'SEVERE', 'FINEST', 'FINE', 'INFO', 'CONFIG'.
+'trace::Exception' (role 'trace_Exception', cardinality 0..*) is associated with 'trace::Log' (role 'trace_Log2', cardinality 0..*).
+'trace::Log' (role 'trace_Log', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace', cardinality 0..*).

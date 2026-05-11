@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'Tree::Node' has the following attributes: 'id' of type str.
+The class 'Node' has no attributes.
+The class 'Tree::Tree' has no attributes.
+'Tree::Tree' is a specialization of 'Node'.
+'Tree::Node' (role 'parent', cardinality 0..*) is associated with 'Tree::Node' (role 'Node', cardinality 0..*).
+'Tree::Node' (role 'childs', cardinality 0..*) is associated with 'Tree::Node' (role 'Node4', cardinality 0..*).

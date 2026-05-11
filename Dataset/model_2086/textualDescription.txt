@@ -1,0 +1,43 @@
+The model has 19 class(es).
+The class 'VSpec' has no attributes.
+The class 'cvlmodel::VSpec' has the following attributes: 'name' of type str; 'mandatory' of type str.
+The class 'VariationPoint' has no attributes.
+The class 'cvlmodel::VariationPoint' has the following attributes: 'modelTransformationSourceURL' of type str; 'negativeVariability' of type str; 'name' of type str; 'modelTransformationURL' of type str.
+The class 'cvlmodel::Choice' has no attributes.
+The class 'VSpecResolution' has no attributes.
+The class 'cvlmodel::Multiplicity' has the following attributes: 'min' of type str; 'max' of type str.
+The class 'cvlmodel::VClassifierResolution' has the following attributes: 'instance' of type str.
+The class 'cvlmodel::MOFRef' has the following attributes: 'id' of type str.
+The class 'cvlmodel::VariableResolution' has the following attributes: 'value' of type str.
+The class 'cvlmodel::VClassifier' has no attributes.
+The class 'cvlmodel::CVLModel' has the following attributes: 'name' of type str.
+The class 'cvlmodel::ChoiceResolution' has the following attributes: 'decision' of type str.
+The class 'cvlmodel::StringToMOFRefMap' has the following attributes: 'key' of type str.
+The class 'cvlmodel::VSpecTree' has no attributes.
+The class 'cvlmodel::Variable' has the following attributes: 'type' of type str.
+The class 'cvlmodel::ObjectExistence' has the following attributes: 'target' of type str.
+The class 'cvlmodel::ResolutionModel' has the following attributes: 'name' of type str.
+The class 'cvlmodel::VSpecResolution' has the following attributes: 'name' of type str.
+The enumeration 'PrimitiveTypeEnum' has the following literals: 'UnlimitedNatural', 'Integer', 'Boolean', 'String', 'Real'.
+'cvlmodel::VClassifierResolution' is a specialization of 'VSpecResolution'.
+'cvlmodel::ObjectExistence' is a specialization of 'VariationPoint'.
+'cvlmodel::Choice' is a specialization of 'VSpec'.
+'cvlmodel::ChoiceResolution' is a specialization of 'VSpecResolution'.
+'cvlmodel::VClassifier' is a specialization of 'VSpec'.
+'cvlmodel::VariableResolution' is a specialization of 'VSpecResolution'.
+'cvlmodel::Variable' is a specialization of 'VSpec'.
+'cvlmodel::VClassifier' (role 'cvlmodel_VClassifier', cardinality 0..*) is associated with 'cvlmodel::Multiplicity' (role 'cvlmodel_Multiplicity11', cardinality 0..*).
+'cvlmodel::ResolutionModel' (role 'cvlmodel_ResolutionModel', cardinality 0..*) is associated with 'cvlmodel::VSpecResolution' (role 'cvlmodel_VSpecResolution26', cardinality 0..*).
+'cvlmodel::VSpec' (role 'cvlmodel_VSpec6', cardinality 0..*) is associated with 'cvlmodel::VSpec' (role 'cvlmodel_VSpec4', cardinality 0..*).
+'cvlmodel::VSpecResolution' (role 'cvlmodel_VSpecResolution', cardinality 0..*) is associated with 'cvlmodel::VSpec' (role 'cvlmodel_VSpec13', cardinality 0..*).
+'cvlmodel::VariationPoint' (role 'cvlmodel_VariationPoint', cardinality 0..*) is associated with 'cvlmodel::VSpec' (role 'cvlmodel_VSpec15', cardinality 0..*).
+'cvlmodel::VSpecTree' (role 'cvlmodel_VSpecTree', cardinality 0..*) is associated with 'cvlmodel::VSpec' (role 'cvlmodel_VSpec21', cardinality 0..*).
+'cvlmodel::Multiplicity' (role 'cvlmodel_Multiplicity8', cardinality 0..*) is associated with 'cvlmodel::VSpec' (role 'cvlmodel_VSpec9', cardinality 0..*).
+'cvlmodel::Multiplicity' (role 'cvlmodel_Multiplicity', cardinality 0..*) is associated with 'cvlmodel::VSpec' (role 'cvlmodel_VSpec', cardinality 0..*).
+'cvlmodel::VSpecTree' (role 'cvlmodel_VSpecTree23', cardinality 0..*) is associated with 'cvlmodel::VSpec' (role 'cvlmodel_VSpec24', cardinality 0..*).
+'cvlmodel::VSpec' (role 'cvlmodel_VSpec1', cardinality 0..*) is associated with 'cvlmodel::VSpec' (role 'cvlmodel_VSpec3', cardinality 0..*).
+'cvlmodel::VariationPoint' (role 'cvlmodel_VariationPoint34', cardinality 0..*) is associated with 'cvlmodel::CVLModel' (role 'cvlmodel_CVLModel33', cardinality 0..*).
+'cvlmodel::ResolutionModel' (role 'cvlmodel_ResolutionModel28', cardinality 0..*) is associated with 'cvlmodel::VSpecTree' (role 'cvlmodel_VSpecTree29', cardinality 0..*).
+'cvlmodel::VSpecTree' (role 'cvlmodel_VSpecTree31', cardinality 0..*) is associated with 'cvlmodel::CVLModel' (role 'cvlmodel_CVLModel', cardinality 0..*).
+'cvlmodel::StringToMOFRefMap' (role 'cvlmodel_StringToMOFRefMap19', cardinality 0..*) is associated with 'cvlmodel::MOFRef' (role 'cvlmodel_MOFRef', cardinality 0..*).
+'cvlmodel::VariationPoint' (role 'cvlmodel_VariationPoint17', cardinality 0..*) is associated with 'cvlmodel::StringToMOFRefMap' (role 'cvlmodel_StringToMOFRefMap', cardinality 0..*).

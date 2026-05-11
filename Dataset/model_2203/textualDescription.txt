@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'MMTree::TreeElement' has the following attributes: 'name' of type str.
+The class 'MMTree::Leaf' has the following attributes: 'size' of type str.
+The class 'TreeElement' has no attributes.
+The class 'MMTree::Node' has no attributes.
+The enumeration 'LeafSize' has the following literals: 'medium', 'big', 'small'.
+'MMTree::Leaf' is a specialization of 'TreeElement'.
+'MMTree::Node' is a specialization of 'TreeElement'.
+'MMTree::Node' (role 'MMTree_Node', cardinality 0..*) is associated with 'MMTree::TreeElement' (role 'MMTree_TreeElement', cardinality 0..*).

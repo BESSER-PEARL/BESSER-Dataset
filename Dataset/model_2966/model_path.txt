@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/KristopherBorn/atomicCPA/org.eclipse.emf.henshin.cpa.atomic/testData/jevsTests/attribute/attribute.ecore

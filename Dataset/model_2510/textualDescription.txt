@@ -1,0 +1,20 @@
+The model has 7 class(es).
+The class 'refact::D' has no attributes.
+The class 'refact::E' has no attributes.
+The class 'refact::C' has no attributes.
+The class 'refact::B' has no attributes.
+The class 'Named' has no attributes.
+The class 'refact::Named' has the following attributes: 'name' of type str.
+The class 'refact::A' has no attributes.
+'refact::D' is a specialization of 'Named'.
+'refact::B' is a specialization of 'Named'.
+'refact::E' is a specialization of 'Named'.
+'refact::C' is a specialization of 'Named'.
+'refact::A' (role 'refact_A', cardinality 0..*) is associated with 'refact::B' (role 'refact_B', cardinality 0..*).
+'refact::B' (role 'refact_B6', cardinality 0..*) is associated with 'refact::E' (role 'refact_E7', cardinality 0..*).
+'refact::A' (role 'refact_A2', cardinality 0..*) is associated with 'refact::E' (role 'refact_E', cardinality 0..*).
+'refact::C' (role 'refact_C', cardinality 0..*) is associated with 'refact::B' (role 'refact_B9', cardinality 0..*).
+'refact::D' (role 'refact_D17', cardinality 0..*) is associated with 'refact::E' (role 'refact_E18', cardinality 0..*).
+'refact::D' (role 'refact_D', cardinality 0..*) is associated with 'refact::B' (role 'refact_B4', cardinality 0..*).
+'refact::C' (role 'refact_C14', cardinality 0..*) is associated with 'refact::B' (role 'refact_B15', cardinality 0..*).
+'refact::B' (role 'refact_B12', cardinality 0..*) is associated with 'refact::C' (role 'refact_C11', cardinality 0..*).

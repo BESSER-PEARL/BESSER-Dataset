@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/maattss/tdt4250-assignment/model/studyplan.ecore

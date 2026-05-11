@@ -1,0 +1,343 @@
+The model has 145 class(es).
+The class 'avm::Component' has the following attributes: 'Supercedes' of type str; 'Version' of type str; 'SchemaVersion' of type str; 'Classifications' of type str; 'ID' of type str; 'Name' of type str.
+The class 'DomainModelPort' has no attributes.
+The class 'avm::DomainModel_' has the following attributes: 'Author' of type str; 'Notes' of type str; 'XPosition' of type str; 'YPosition' of type str; 'Name' of type str.
+The class 'avm::modelica::Parameter' has the following attributes: 'Locator' of type str.
+The class 'avm::Formula' has the following attributes: 'YPosition' of type str; 'Name' of type str; 'XPosition' of type str.
+The class 'DomainModelParameter' has no attributes.
+The class 'avm::Property' has the following attributes: 'Notes' of type str; 'Definition' of type str; 'ID' of type str; 'XPosition' of type str; 'Name' of type str; 'YPosition' of type str; 'OnDataSheet' of type str.
+The class 'modelica::avm::Value' has no attributes.
+The class 'avm::Resource' has the following attributes: 'XPosition' of type str; 'Name' of type str; 'YPosition' of type str; 'Path' of type str; 'Hash' of type str; 'ID' of type str; 'Notes' of type str.
+The class 'avm::modelica::Metric' has the following attributes: 'Locator' of type str.
+The class 'avm::Connector' has the following attributes: 'YPosition' of type str; 'Definition' of type str; 'Name' of type str; 'Notes' of type str; 'XPosition' of type str.
+The class 'DomainModelMetric' has no attributes.
+The class 'avm::DistributionRestriction' has the following attributes: 'Notes' of type str.
+The class 'avm::modelica::Limit' has the following attributes: 'ToleranceTimeWindow' of type str; 'Notes' of type str; 'VariableLocator' of type str; 'BoundType' of type str; 'Name' of type str.
+The class 'avm::Port' has the following attributes: 'Definition' of type str; 'YPosition' of type str; 'Name' of type str; 'Notes' of type str; 'XPosition' of type str.
+The class 'avm::cad::Datum' has the following attributes: 'DatumName' of type str.
+The class 'avm::AnalysisConstruct' has no attributes.
+The class 'avm::modelica::Redeclare' has the following attributes: 'Type' of type str; 'Locator' of type str.
+The class 'avm::Value' has the following attributes: 'DataType' of type str; 'DimensionType' of type str; 'Unit' of type str; 'Dimensions' of type str.
+The class 'avm::modelica::SolverSettings' has the following attributes: 'Solver' of type str; 'NumberOfIntervals' of type str; 'JobManagerToolSelection' of type str; 'IntervalLength' of type str; 'ToolSpecificAnnotations' of type str; 'StartTime' of type str; 'Tolerance' of type str; 'StopTime' of type str; 'IntervalMethod' of type str.
+The class 'ValueNode' has no attributes.
+The class 'Settings' has no attributes.
+The class 'avm::ValueExpressionType' has no attributes.
+The class 'avm::cad::CADModel' has no attributes.
+The class 'avm::DataSource' has the following attributes: 'Notes' of type str.
+The class 'Datum' has no attributes.
+The class 'avm::FixedValue' has the following attributes: 'Value' of type str; 'Uncertainty' of type str.
+The class 'avm::cad::Geometry2D' has no attributes.
+The class 'ValueExpressionType' has no attributes.
+The class 'Geometry' has no attributes.
+The class 'avm::CalculatedValue' has the following attributes: 'Type' of type str; 'Expression' of type str.
+The class 'avm::cad::Geometry3D' has no attributes.
+The class 'avm::DerivedValue' has no attributes.
+The class 'avm::cad::Circle' has no attributes.
+The class 'avm::ValueNode' has the following attributes: 'ID' of type str.
+The class 'Geometry2D' has no attributes.
+The class 'ConnectorCompositionTarget' has no attributes.
+The class 'PointReference' has no attributes.
+The class 'avm::assemblyDetail' has no attributes.
+The class 'avm::cad::Parameter' has the following attributes: 'Name' of type str.
+The class 'avm::ConnectorFeature' has no attributes.
+The class 'cad::avm::Value' has no attributes.
+The class 'PortMapTarget' has no attributes.
+The class 'avm::cad::Point' has no attributes.
+The class 'avm::DomainModelPort' has no attributes.
+The class 'avm::cad::Axis' has no attributes.
+The class 'Port' has no attributes.
+The class 'avm::cad::Plane' has no attributes.
+The class 'avm::modelica::Connector' has the following attributes: 'Locator' of type str; 'Class' of type str.
+The class 'avm::DomainModelParameter' has the following attributes: 'YPosition' of type str; 'XPosition' of type str; 'Notes' of type str.
+The class 'Plane' has no attributes.
+The class 'avm::ParametricValue' has no attributes.
+The class 'avm::cad::CoordinateSystem' has no attributes.
+The class 'avm::UniformDistribution' has no attributes.
+The class 'avm::cad::Metric' has the following attributes: 'Name' of type str.
+The class 'avm::PrimitiveProperty' has no attributes.
+The class 'avm::cad::Geometry' has the following attributes: 'PartIntersectionModifier' of type str; 'GeometryQualifier' of type str.
+The class 'AnalysisConstruct' has no attributes.
+The class 'Property' has no attributes.
+The class 'avm::cad::PointReference' has no attributes.
+The class 'avm::ProbabilisticValue' has no attributes.
+The class 'Point' has no attributes.
+The class 'avm::NormalDistribution' has no attributes.
+The class 'avm::cad::Polygon' has no attributes.
+The class 'ProbabilisticValue' has no attributes.
+The class 'avm::cad::Surface' has no attributes.
+The class 'avm::SecurityClassification' has the following attributes: 'Level' of type str.
+The class 'avm::cad::ExtrudedGeometry' has no attributes.
+The class 'DistributionRestriction' has no attributes.
+The class 'Geometry3D' has no attributes.
+The class 'avm::Proprietary' has the following attributes: 'Organization' of type str.
+The class 'avm::cad::Sphere' has no attributes.
+The class 'avm::ITAR' has no attributes.
+The class 'avm::cad::CustomGeometry' has no attributes.
+The class 'avm::DomainModelMetric' has the following attributes: 'ID' of type str; 'YPosition' of type str; 'Notes' of type str; 'XPosition' of type str.
+The class 'CustomGeometryInput' has no attributes.
+The class 'avm::ComponentInstance' has the following attributes: 'YPosition' of type str; 'ComponentID' of type str; 'ID' of type str; 'Name' of type str; 'DesignSpaceSrcComponentID' of type str; 'XPosition' of type str.
+The class 'avm::cad::CustomGeometryInput' has the following attributes: 'Operation' of type str.
+The class 'avm::CompoundProperty' has no attributes.
+The class 'avm::cad::TranslationalJointSpec' has no attributes.
+The class 'avm::ParametricEnumeratedValue' has no attributes.
+The class 'PlaneReference' has no attributes.
+The class 'avm::AbstractPort' has no attributes.
+The class 'avm::Design' has the following attributes: 'DesignSpaceSrcID' of type str; 'Name' of type str; 'DesignID' of type str; 'SchemaVersion' of type str.
+The class 'avm::cad::PlaneReference' has no attributes.
+The class 'avm::Container' has the following attributes: 'YPosition' of type str; 'XPosition' of type str; 'Name' of type str.
+The class 'avm::cad::GuideDatum' has no attributes.
+The class 'avm::DesignDomainFeature' has no attributes.
+The class 'ConnectorFeature' has no attributes.
+The class 'avm::ConnectorCompositionTarget' has the following attributes: 'ID' of type str.
+The class 'avm::cad::AssemblyRoot' has no attributes.
+The class 'avm::Compound' has no attributes.
+The class 'DesignDomainFeature' has no attributes.
+The class 'Container' has no attributes.
+The class 'cad::avm::ComponentInstance' has no attributes.
+The class 'avm::Optional' has no attributes.
+The class 'avm::cad::KinematicJointSpec' has no attributes.
+The class 'DesignSpaceContainer' has no attributes.
+The class 'avm::cad::RevoluteJointSpec' has no attributes.
+The class 'avm::Alternative' has no attributes.
+The class 'KinematicJointSpec' has no attributes.
+The class 'avm::ValueFlowMux' has no attributes.
+The class 'Axis' has no attributes.
+The class 'avm::ComponentPortInstance' has the following attributes: 'IDinComponentModel' of type str.
+The class 'avm::adamsCar::AdamsCarModel' has no attributes.
+The class 'avm::ComponentPrimitivePropertyInstance' has the following attributes: 'IDinComponentModel' of type str.
+The class 'FileReference' has no attributes.
+The class 'avm::ComponentConnectorInstance' has the following attributes: 'IDinComponentModel' of type str.
+The class 'avm::adamsCar::Parameter' has the following attributes: 'ID' of type str; 'Name' of type str.
+The class 'avm::DesignSpaceContainer' has no attributes.
+The class 'adamsCar::avm::Value' has no attributes.
+The class 'avm::PortMapTarget' has the following attributes: 'ID' of type str.
+The class 'avm::adamsCar::FileReference' has the following attributes: 'ID' of type str; 'Name' of type str; 'FilePath' of type str.
+The class 'avm::Parameter' has no attributes.
+The class 'avm::manufacturing::ManufacturingModel' has no attributes.
+The class 'avm::Metric' has no attributes.
+The class 'avm::manufacturing::Parameter' has the following attributes: 'Locator' of type str; 'Name' of type str.
+The class 'avm::TestInjectionPoint' has no attributes.
+The class 'manufacturing::avm::Value' has no attributes.
+The class 'avm::SimpleFormula' has the following attributes: 'Operation' of type str.
+The class 'avm::manufacturing::Metric' has the following attributes: 'Name' of type str.
+The class 'Formula' has no attributes.
+The class 'avm::cyber::CyberModel' has the following attributes: 'Type' of type str; 'Locator' of type str; 'Class' of type str.
+The class 'avm::ComplexFormula' has the following attributes: 'Expression' of type str.
+The class 'avm::Operand' has the following attributes: 'Symbol' of type str.
+The class 'avm::DoDDistributionStatement' has the following attributes: 'Type' of type str.
+The class 'avm::TestBench' has the following attributes: 'Name' of type str.
+The class 'avm::TopLevelSystemUnderTest' has the following attributes: 'DesignID' of type str.
+The class 'avm::InterpreterTask' has the following attributes: 'Parameters' of type str; 'COMName' of type str.
+The class 'WorkflowTaskBase' has no attributes.
+The class 'avm::ExecutionTask' has the following attributes: 'Invocation' of type str; 'Description' of type str.
+The class 'avm::Workflow' has the following attributes: 'Name' of type str.
+The class 'avm::Settings' has no attributes.
+The class 'ContainerInstanceBase' has no attributes.
+The class 'TestBenchValueBase' has no attributes.
+The class 'avm::ContainerInstanceBase' has the following attributes: 'IDinSourceModel' of type str; 'YPosition' of type str; 'XPosition' of type str.
+The class 'avm::TestBenchValueBase' has the following attributes: 'YPosition' of type str; 'ID' of type str; 'Name' of type str; 'Notes' of type str; 'XPosition' of type str.
+The class 'avm::WorkflowTaskBase' has the following attributes: 'Name' of type str.
+The class 'avm::modelica::ModelicaModel' has the following attributes: 'Class' of type str.
+The class 'DomainModel_' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'Connector' has no attributes.
+The class 'Metric' has no attributes.
+The class 'Limit' has no attributes.
+The class 'Redeclare' has no attributes.
+The enumeration 'ModelType' has the following literals: 'SignalFlow', 'ESMoL', 'Simulink'.
+The enumeration 'DimensionTypeEnum' has the following literals: 'Matrix', 'Scalar', 'Vector'.
+The enumeration 'SimpleFormulaOperation' has the following literals: 'ArithmeticMean', 'GeometricMean', 'Maximum', 'Minimum', 'Addition', 'Multiplication'.
+The enumeration 'DoDDistributionStatementEnum' has the following literals: 'StatementA', 'StatementB', 'StatementC', 'StatementD', 'StatementE'.
+The enumeration 'BoundTypeEnum' has the following literals: 'MustExceedOrEqual', 'MustExceed', 'MustNotExceed', 'MustNotMeetOrExceed'.
+The enumeration 'RedeclareTypeEnum' has the following literals: 'Model', 'Record', 'Block', 'Package', 'Connector', 'Function', 'Class'.
+The enumeration 'IntervalMethod' has the following literals: 'IntervalLength', 'NumberOfIntervals'.
+The enumeration 'CalculationTypeEnum' has the following literals: 'Declarative', 'Python'.
+The enumeration 'JobManagerToolSelection' has the following literals: 'Dymola_2014', 'Dymola_2013', 'OpenModelica_latest', 'JModelica_1_12', 'Dymola_latest'.
+The enumeration 'CustomGeometryInputOperationEnum' has the following literals: 'Intersection', 'Union', 'Subtraction'.
+The enumeration 'PartIntersectionEnum' has the following literals: 'IntersectionWithAnyParts', 'None_', 'IntersectionWithReferencedParts'.
+The enumeration 'DataTypeEnum' has the following literals: 'Boolean', 'Integer', 'String', 'Real'.
+The enumeration 'GeometryQualifierEnum' has the following literals: 'InteriorOnly', 'InteriorAndBoundary', 'BoundaryOnly'.
+'avm::SimpleFormula' is a specialization of 'Formula'.
+'avm::cad::Parameter' is a specialization of 'DomainModelParameter'.
+'avm::Connector' is a specialization of 'ConnectorCompositionTarget'.
+'avm::ComplexFormula' is a specialization of 'Formula'.
+'avm::cad::Point' is a specialization of 'Datum'.
+'avm::Port' is a specialization of 'PortMapTarget'.
+'avm::DoDDistributionStatement' is a specialization of 'DistributionRestriction'.
+'avm::cad::Axis' is a specialization of 'Datum'.
+'avm::DomainModelPort' is a specialization of 'Port'.
+'avm::cyber::CyberModel' is a specialization of 'DomainModel_'.
+'avm::InterpreterTask' is a specialization of 'WorkflowTaskBase'.
+'avm::cad::Plane' is a specialization of 'Datum'.
+'avm::ParametricValue' is a specialization of 'ValueExpressionType'.
+'avm::manufacturing::ManufacturingModel' is a specialization of 'DomainModel_'.
+'avm::ExecutionTask' is a specialization of 'WorkflowTaskBase'.
+'avm::cad::CoordinateSystem' is a specialization of 'Datum'.
+'avm::UniformDistribution' is a specialization of 'ProbabilisticValue'.
+'avm::TopLevelSystemUnderTest' is a specialization of 'ContainerInstanceBase'.
+'avm::cad::Metric' is a specialization of 'DomainModelMetric'.
+'avm::PrimitiveProperty' is a specialization of 'Property'.
+'avm::Parameter' is a specialization of 'TestBenchValueBase'.
+'avm::cad::Geometry' is a specialization of 'AnalysisConstruct'.
+'avm::ProbabilisticValue' is a specialization of 'ValueExpressionType'.
+'avm::Metric' is a specialization of 'TestBenchValueBase'.
+'avm::cad::Polygon' is a specialization of 'Geometry2D'.
+'avm::NormalDistribution' is a specialization of 'ProbabilisticValue'.
+'avm::TestInjectionPoint' is a specialization of 'ContainerInstanceBase'.
+'avm::SecurityClassification' is a specialization of 'DistributionRestriction'.
+'avm::cad::Surface' is a specialization of 'Geometry3D'.
+'avm::manufacturing::Parameter' is a specialization of 'DomainModelParameter'.
+'avm::ValueFlowMux' is a specialization of 'ValueNode'.
+'avm::Proprietary' is a specialization of 'DistributionRestriction'.
+'avm::cad::ExtrudedGeometry' is a specialization of 'Geometry3D'.
+'avm::modelica::ModelicaModel' is a specialization of 'DomainModel_'.
+'avm::ITAR' is a specialization of 'DistributionRestriction'.
+'avm::cad::Sphere' is a specialization of 'Geometry3D'.
+'avm::modelica::Connector' is a specialization of 'DomainModelPort'.
+'avm::CompoundProperty' is a specialization of 'Property'.
+'avm::cad::CustomGeometry' is a specialization of 'Geometry'.
+'avm::modelica::Parameter' is a specialization of 'DomainModelParameter'.
+'avm::ParametricEnumeratedValue' is a specialization of 'ValueExpressionType'.
+'avm::cad::TranslationalJointSpec' is a specialization of 'KinematicJointSpec'.
+'avm::modelica::Metric' is a specialization of 'DomainModelMetric'.
+'avm::AbstractPort' is a specialization of 'Port'.
+'avm::cad::GuideDatum' is a specialization of 'ConnectorFeature'.
+'avm::cad::Datum' is a specialization of 'DomainModelPort'.
+'avm::ComponentConnectorInstance' is a specialization of 'ConnectorCompositionTarget'.
+'avm::cad::AssemblyRoot' is a specialization of 'DesignDomainFeature'.
+'avm::modelica::Redeclare' is a specialization of 'DomainModelParameter'.
+'avm::Compound' is a specialization of 'Container'.
+'avm::cad::KinematicJointSpec' is a specialization of 'ConnectorFeature'.
+'avm::modelica::SolverSettings' is a specialization of 'Settings'.
+'avm::Optional' is a specialization of 'DesignSpaceContainer'.
+'avm::Value' is a specialization of 'ValueNode'.
+'avm::cad::RevoluteJointSpec' is a specialization of 'KinematicJointSpec'.
+'avm::cad::CADModel' is a specialization of 'DomainModel_'.
+'avm::manufacturing::Metric' is a specialization of 'DomainModelMetric'.
+'avm::Alternative' is a specialization of 'DesignSpaceContainer'.
+'avm::adamsCar::AdamsCarModel' is a specialization of 'DomainModel_'.
+'avm::cad::Geometry2D' is a specialization of 'Geometry'.
+'avm::ComponentPortInstance' is a specialization of 'PortMapTarget'.
+'avm::FixedValue' is a specialization of 'ValueExpressionType'.
+'avm::adamsCar::Parameter' is a specialization of 'DomainModelParameter'.
+'avm::cad::Geometry3D' is a specialization of 'Geometry'.
+'avm::DesignSpaceContainer' is a specialization of 'Container'.
+'avm::CalculatedValue' is a specialization of 'ValueExpressionType'.
+'avm::Formula' is a specialization of 'ValueNode'.
+'avm::cad::Circle' is a specialization of 'Geometry2D'.
+'avm::DerivedValue' is a specialization of 'ValueExpressionType'.
+'Metric' (role 'Metric233', cardinality 0..*) is associated with 'avm::manufacturing::ManufacturingModel' (role 'avm_manufacturing_ManufacturingModel232', cardinality 0..*).
+'avm::ValueExpressionType' (role 'avm_ValueExpressionType', cardinality 0..*) is associated with 'avm::Value' (role 'avm_Value', cardinality 0..*).
+'avm::Container' (role 'avm_Container79', cardinality 0..*) is associated with 'avm::Port' (role 'avm_Port80', cardinality 0..*).
+'avm::ComponentConnectorInstance' (role 'avm_ComponentConnectorInstance', cardinality 0..*) is associated with 'avm::ComponentInstance' (role 'avm_ComponentInstance96', cardinality 0..*).
+'avm::ValueNode' (role 'avm_ValueNode136', cardinality 0..*) is associated with 'avm::ValueFlowMux' (role 'avm_ValueFlowMux135', cardinality 0..*).
+'Metric' (role 'Metric168', cardinality 0..*) is associated with 'avm::cad::CoordinateSystem' (role 'avm_cad_CoordinateSystem', cardinality 0..*).
+'cad::avm::Value' (role 'cad_avm_Value225', cardinality 0..*) is associated with 'avm::cad::TranslationalJointSpec' (role 'avm_cad_TranslationalJointSpec224', cardinality 0..*).
+'manufacturing::avm::Value' (role 'manufacturing_avm_Value', cardinality 0..*) is associated with 'avm::manufacturing::Parameter' (role 'avm_manufacturing_Parameter', cardinality 0..*).
+'avm::DataSource' (role 'avm_DataSource', cardinality 0..*) is associated with 'avm::Value' (role 'avm_Value20', cardinality 0..*).
+'avm::CompoundProperty' (role 'avm_CompoundProperty', cardinality 0..*) is associated with 'avm::CompoundProperty' (role 'avm_CompoundProperty55', cardinality 0..*).
+'avm::Value' (role 'avm_Value99', cardinality 0..*) is associated with 'avm::ComponentPrimitivePropertyInstance' (role 'avm_ComponentPrimitivePropertyInstance98', cardinality 0..*).
+'avm::modelica::ModelicaModel' (role 'avm_modelica_ModelicaModel', cardinality 0..*) is associated with 'Parameter' (role 'Parameter', cardinality 0..*).
+'avm::cad::CustomGeometryInput' (role 'avm_cad_CustomGeometryInput', cardinality 0..*) is associated with 'Geometry' (role 'Geometry', cardinality 0..*).
+'Plane' (role 'Plane228', cardinality 0..*) is associated with 'avm::cad::TranslationalJointSpec' (role 'avm_cad_TranslationalJointSpec227', cardinality 0..*).
+'Connector' (role 'Connector236', cardinality 0..*) is associated with 'avm::cyber::CyberModel' (role 'avm_cyber_CyberModel', cardinality 0..*).
+'avm::ParametricValue' (role 'avm_ParametricValue', cardinality 0..*) is associated with 'avm::ValueExpressionType' (role 'avm_ValueExpressionType36', cardinality 0..*).
+'avm::CompoundProperty' (role 'avm_CompoundProperty58', cardinality 0..*) is associated with 'avm::PrimitiveProperty' (role 'avm_PrimitiveProperty59', cardinality 0..*).
+'avm::Parameter' (role 'avm_Parameter', cardinality 0..*) is associated with 'avm::TestBench' (role 'avm_TestBench115', cardinality 0..*).
+'Connector' (role 'Connector', cardinality 0..*) is associated with 'avm::modelica::ModelicaModel' (role 'avm_modelica_ModelicaModel139', cardinality 0..*).
+'Point' (role 'Point', cardinality 0..*) is associated with 'avm::cad::PointReference' (role 'avm_cad_PointReference', cardinality 0..*).
+'avm::cad::Surface' (role 'avm_cad_Surface', cardinality 0..*) is associated with 'PlaneReference' (role 'PlaneReference', cardinality 0..*).
+'avm::cyber::CyberModel' (role 'avm_cyber_CyberModel238', cardinality 0..*) is associated with 'Parameter' (role 'Parameter239', cardinality 0..*).
+'avm::ValueExpressionType' (role 'avm_ValueExpressionType39', cardinality 0..*) is associated with 'avm::ParametricValue' (role 'avm_ParametricValue38', cardinality 0..*).
+'avm::TestBench' (role 'avm_TestBench117', cardinality 0..*) is associated with 'avm::Metric' (role 'avm_Metric', cardinality 0..*).
+'avm::FixedValue' (role 'avm_FixedValue', cardinality 0..*) is associated with 'avm::ParametricEnumeratedValue' (role 'avm_ParametricEnumeratedValue', cardinality 0..*).
+'Metric' (role 'Metric', cardinality 0..*) is associated with 'avm::modelica::ModelicaModel' (role 'avm_modelica_ModelicaModel141', cardinality 0..*).
+'PointReference' (role 'PointReference172', cardinality 0..*) is associated with 'avm::cad::Circle' (role 'avm_cad_Circle171', cardinality 0..*).
+'Plane' (role 'Plane192', cardinality 0..*) is associated with 'avm::cad::PlaneReference' (role 'avm_cad_PlaneReference', cardinality 0..*).
+'avm::ValueExpressionType' (role 'avm_ValueExpressionType42', cardinality 0..*) is associated with 'avm::ParametricValue' (role 'avm_ParametricValue41', cardinality 0..*).
+'avm::ParametricEnumeratedValue' (role 'avm_ParametricEnumeratedValue62', cardinality 0..*) is associated with 'avm::ValueExpressionType' (role 'avm_ValueExpressionType63', cardinality 0..*).
+'avm::TestBench' (role 'avm_TestBench119', cardinality 0..*) is associated with 'avm::TestInjectionPoint' (role 'avm_TestInjectionPoint', cardinality 0..*).
+'avm::modelica::ModelicaModel' (role 'avm_modelica_ModelicaModel143', cardinality 0..*) is associated with 'Limit' (role 'Limit', cardinality 0..*).
+'PointReference' (role 'PointReference174', cardinality 0..*) is associated with 'avm::cad::Polygon' (role 'avm_cad_Polygon', cardinality 0..*).
+'Datum' (role 'Datum194', cardinality 0..*) is associated with 'avm::cad::GuideDatum' (role 'avm_cad_GuideDatum', cardinality 0..*).
+'avm::ValueExpressionType' (role 'avm_ValueExpressionType45', cardinality 0..*) is associated with 'avm::ParametricValue' (role 'avm_ParametricValue44', cardinality 0..*).
+'avm::Resource' (role 'avm_Resource66', cardinality 0..*) is associated with 'avm::DataSource' (role 'avm_DataSource65', cardinality 0..*).
+'avm::assemblyDetail' (role 'avm_assemblyDetail106', cardinality 0..*) is associated with 'avm::ConnectorCompositionTarget' (role 'avm_ConnectorCompositionTarget105', cardinality 0..*).
+'Redeclare' (role 'Redeclare', cardinality 0..*) is associated with 'avm::modelica::ModelicaModel' (role 'avm_modelica_ModelicaModel145', cardinality 0..*).
+'avm::cad::ExtrudedGeometry' (role 'avm_cad_ExtrudedGeometry', cardinality 0..*) is associated with 'PointReference' (role 'PointReference176', cardinality 0..*).
+'cad::avm::ComponentInstance' (role 'cad_avm_ComponentInstance', cardinality 0..*) is associated with 'avm::cad::AssemblyRoot' (role 'avm_cad_AssemblyRoot', cardinality 0..*).
+'avm::Connector' (role 'avm_Connector23', cardinality 0..*) is associated with 'avm::Port' (role 'avm_Port24', cardinality 0..*).
+'avm::Container' (role 'avm_Container', cardinality 0..*) is associated with 'avm::Design' (role 'avm_Design', cardinality 0..*).
+'avm::ValueNode' (role 'avm_ValueNode108', cardinality 0..*) is associated with 'avm::SimpleFormula' (role 'avm_SimpleFormula', cardinality 0..*).
+'Parameter' (role 'Parameter147', cardinality 0..*) is associated with 'avm::modelica::Connector' (role 'avm_modelica_Connector', cardinality 0..*).
+'Geometry2D' (role 'Geometry2D', cardinality 0..*) is associated with 'avm::cad::ExtrudedGeometry' (role 'avm_cad_ExtrudedGeometry178', cardinality 0..*).
+'avm::DomainModel_' (role 'avm_DomainModel', cardinality 0..*) is associated with 'avm::Component' (role 'avm_Component', cardinality 0..*).
+'Plane' (role 'Plane197', cardinality 0..*) is associated with 'avm::cad::RevoluteJointSpec' (role 'avm_cad_RevoluteJointSpec', cardinality 0..*).
+'avm::Property' (role 'avm_Property27', cardinality 0..*) is associated with 'avm::Connector' (role 'avm_Connector26', cardinality 0..*).
+'avm::DesignDomainFeature' (role 'avm_DesignDomainFeature', cardinality 0..*) is associated with 'avm::Design' (role 'avm_Design69', cardinality 0..*).
+'avm::ComplexFormula' (role 'avm_ComplexFormula', cardinality 0..*) is associated with 'avm::Operand' (role 'avm_Operand', cardinality 0..*).
+'Redeclare' (role 'Redeclare150', cardinality 0..*) is associated with 'avm::modelica::Connector' (role 'avm_modelica_Connector149', cardinality 0..*).
+'PointReference' (role 'PointReference181', cardinality 0..*) is associated with 'avm::cad::ExtrudedGeometry' (role 'avm_cad_ExtrudedGeometry180', cardinality 0..*).
+'avm::Component' (role 'avm_Component14', cardinality 0..*) is associated with 'avm::Formula' (role 'avm_Formula', cardinality 0..*).
+'avm::cad::RevoluteJointSpec' (role 'avm_cad_RevoluteJointSpec199', cardinality 0..*) is associated with 'Axis' (role 'Axis', cardinality 0..*).
+'avm::assemblyDetail' (role 'avm_assemblyDetail', cardinality 0..*) is associated with 'avm::Connector' (role 'avm_Connector29', cardinality 0..*).
+'avm::Container' (role 'avm_Container70', cardinality 0..*) is associated with 'avm::Container' (role 'avm_Container72', cardinality 0..*).
+'avm::ValueNode' (role 'avm_ValueNode112', cardinality 0..*) is associated with 'avm::Operand' (role 'avm_Operand111', cardinality 0..*).
+'avm::modelica::Parameter' (role 'avm_modelica_Parameter', cardinality 0..*) is associated with 'modelica::avm::Value' (role 'modelica_avm_Value', cardinality 0..*).
+'PointReference' (role 'PointReference183', cardinality 0..*) is associated with 'avm::cad::Sphere' (role 'avm_cad_Sphere', cardinality 0..*).
+'avm::Property' (role 'avm_Property', cardinality 0..*) is associated with 'avm::Component' (role 'avm_Component2', cardinality 0..*).
+'Plane' (role 'Plane202', cardinality 0..*) is associated with 'avm::cad::RevoluteJointSpec' (role 'avm_cad_RevoluteJointSpec201', cardinality 0..*).
+'avm::Connector' (role 'avm_Connector32', cardinality 0..*) is associated with 'avm::Connector' (role 'avm_Connector30', cardinality 0..*).
+'avm::PortMapTarget' (role 'avm_PortMapTarget', cardinality 0..*) is associated with 'avm::PortMapTarget' (role 'avm_PortMapTarget100', cardinality 0..*).
+'avm::TopLevelSystemUnderTest' (role 'avm_TopLevelSystemUnderTest', cardinality 0..*) is associated with 'avm::TestBench' (role 'avm_TestBench', cardinality 0..*).
+'avm::cad::Sphere' (role 'avm_cad_Sphere185', cardinality 0..*) is associated with 'PointReference' (role 'PointReference186', cardinality 0..*).
+'Metric' (role 'Metric164', cardinality 0..*) is associated with 'avm::cad::Datum' (role 'avm_cad_Datum', cardinality 0..*).
+'avm::ValueNode' (role 'avm_ValueNode', cardinality 0..*) is associated with 'avm::DerivedValue' (role 'avm_DerivedValue', cardinality 0..*).
+'cad::avm::Value' (role 'cad_avm_Value205', cardinality 0..*) is associated with 'avm::cad::RevoluteJointSpec' (role 'avm_cad_RevoluteJointSpec204', cardinality 0..*).
+'avm::Connector' (role 'avm_Connector34', cardinality 0..*) is associated with 'avm::ConnectorFeature' (role 'avm_ConnectorFeature', cardinality 0..*).
+'avm::ConnectorCompositionTarget' (role 'avm_ConnectorCompositionTarget', cardinality 0..*) is associated with 'avm::ConnectorCompositionTarget' (role 'avm_ConnectorCompositionTarget102', cardinality 0..*).
+'avm::TestBench' (role 'avm_TestBench121', cardinality 0..*) is associated with 'avm::ComponentInstance' (role 'avm_ComponentInstance122', cardinality 0..*).
+'CustomGeometryInput' (role 'CustomGeometryInput', cardinality 0..*) is associated with 'avm::cad::CustomGeometry' (role 'avm_cad_CustomGeometry', cardinality 0..*).
+'avm::modelica::Redeclare' (role 'avm_modelica_Redeclare', cardinality 0..*) is associated with 'modelica::avm::Value' (role 'modelica_avm_Value155', cardinality 0..*).
+'avm::Resource' (role 'avm_Resource', cardinality 0..*) is associated with 'avm::Component' (role 'avm_Component4', cardinality 0..*).
+'Parameter' (role 'Parameter241', cardinality 0..*) is associated with 'avm::adamsCar::AdamsCarModel' (role 'avm_adamsCar_AdamsCarModel', cardinality 0..*).
+'avm::Value' (role 'avm_Value54', cardinality 0..*) is associated with 'avm::PrimitiveProperty' (role 'avm_PrimitiveProperty', cardinality 0..*).
+'avm::Connector' (role 'avm_Connector83', cardinality 0..*) is associated with 'avm::Container' (role 'avm_Container82', cardinality 0..*).
+'avm::Workflow' (role 'avm_Workflow', cardinality 0..*) is associated with 'avm::TestBench' (role 'avm_TestBench124', cardinality 0..*).
+'cad::avm::Value' (role 'cad_avm_Value208', cardinality 0..*) is associated with 'avm::cad::RevoluteJointSpec' (role 'avm_cad_RevoluteJointSpec207', cardinality 0..*).
+'Datum' (role 'Datum', cardinality 0..*) is associated with 'avm::cad::CADModel' (role 'avm_cad_CADModel', cardinality 0..*).
+'avm::DomainModel_' (role 'avm_DomainModel16', cardinality 0..*) is associated with 'avm::Resource' (role 'avm_Resource17', cardinality 0..*).
+'avm::adamsCar::AdamsCarModel' (role 'avm_adamsCar_AdamsCarModel243', cardinality 0..*) is associated with 'FileReference' (role 'FileReference', cardinality 0..*).
+'avm::ValueExpressionType' (role 'avm_ValueExpressionType47', cardinality 0..*) is associated with 'avm::NormalDistribution' (role 'avm_NormalDistribution', cardinality 0..*).
+'avm::Container' (role 'avm_Container85', cardinality 0..*) is associated with 'avm::assemblyDetail' (role 'avm_assemblyDetail86', cardinality 0..*).
+'avm::Settings' (role 'avm_Settings', cardinality 0..*) is associated with 'avm::TestBench' (role 'avm_TestBench126', cardinality 0..*).
+'cad::avm::Value' (role 'cad_avm_Value211', cardinality 0..*) is associated with 'avm::cad::RevoluteJointSpec' (role 'avm_cad_RevoluteJointSpec210', cardinality 0..*).
+'Parameter' (role 'Parameter159', cardinality 0..*) is associated with 'avm::cad::CADModel' (role 'avm_cad_CADModel158', cardinality 0..*).
+'avm::Connector' (role 'avm_Connector', cardinality 0..*) is associated with 'avm::Component' (role 'avm_Component6', cardinality 0..*).
+'adamsCar::avm::Value' (role 'adamsCar_avm_Value', cardinality 0..*) is associated with 'avm::adamsCar::Parameter' (role 'avm_adamsCar_Parameter', cardinality 0..*).
+'avm::ValueExpressionType' (role 'avm_ValueExpressionType50', cardinality 0..*) is associated with 'avm::NormalDistribution' (role 'avm_NormalDistribution49', cardinality 0..*).
+'avm::Formula' (role 'avm_Formula89', cardinality 0..*) is associated with 'avm::Container' (role 'avm_Container88', cardinality 0..*).
+'avm::DomainModel_' (role 'avm_DomainModel129', cardinality 0..*) is associated with 'avm::TestBench' (role 'avm_TestBench128', cardinality 0..*).
+'avm::cad::TranslationalJointSpec' (role 'avm_cad_TranslationalJointSpec', cardinality 0..*) is associated with 'Plane' (role 'Plane213', cardinality 0..*).
+'Metric' (role 'Metric162', cardinality 0..*) is associated with 'avm::cad::CADModel' (role 'avm_cad_CADModel161', cardinality 0..*).
+'avm::DistributionRestriction' (role 'avm_DistributionRestriction', cardinality 0..*) is associated with 'avm::Component' (role 'avm_Component8', cardinality 0..*).
+'Parameter' (role 'Parameter246', cardinality 0..*) is associated with 'avm::adamsCar::FileReference' (role 'avm_adamsCar_FileReference', cardinality 0..*).
+'avm::Value' (role 'avm_Value52', cardinality 0..*) is associated with 'avm::DomainModelMetric' (role 'avm_DomainModelMetric', cardinality 0..*).
+'avm::ValueFlowMux' (role 'avm_ValueFlowMux', cardinality 0..*) is associated with 'avm::Alternative' (role 'avm_Alternative', cardinality 0..*).
+'avm::TestBenchValueBase' (role 'avm_TestBenchValueBase', cardinality 0..*) is associated with 'avm::Value' (role 'avm_Value131', cardinality 0..*).
+'Axis' (role 'Axis216', cardinality 0..*) is associated with 'avm::cad::TranslationalJointSpec' (role 'avm_cad_TranslationalJointSpec215', cardinality 0..*).
+'avm::cad::Circle' (role 'avm_cad_Circle', cardinality 0..*) is associated with 'PointReference' (role 'PointReference', cardinality 0..*).
+'avm::Port' (role 'avm_Port', cardinality 0..*) is associated with 'avm::Component' (role 'avm_Component10', cardinality 0..*).
+'FileReference' (role 'FileReference249', cardinality 0..*) is associated with 'avm::adamsCar::FileReference' (role 'avm_adamsCar_FileReference248', cardinality 0..*).
+'avm::Property' (role 'avm_Property75', cardinality 0..*) is associated with 'avm::Container' (role 'avm_Container74', cardinality 0..*).
+'avm::ComponentPortInstance' (role 'avm_ComponentPortInstance', cardinality 0..*) is associated with 'avm::ComponentInstance' (role 'avm_ComponentInstance92', cardinality 0..*).
+'avm::WorkflowTaskBase' (role 'avm_WorkflowTaskBase', cardinality 0..*) is associated with 'avm::Workflow' (role 'avm_Workflow133', cardinality 0..*).
+'cad::avm::Value' (role 'cad_avm_Value219', cardinality 0..*) is associated with 'avm::cad::TranslationalJointSpec' (role 'avm_cad_TranslationalJointSpec218', cardinality 0..*).
+'cad::avm::Value' (role 'cad_avm_Value', cardinality 0..*) is associated with 'avm::cad::Parameter' (role 'avm_cad_Parameter', cardinality 0..*).
+'avm::manufacturing::ManufacturingModel' (role 'avm_manufacturing_ManufacturingModel', cardinality 0..*) is associated with 'Parameter' (role 'Parameter230', cardinality 0..*).
+'avm::AnalysisConstruct' (role 'avm_AnalysisConstruct', cardinality 0..*) is associated with 'avm::Component' (role 'avm_Component12', cardinality 0..*).
+'avm::ComponentInstance' (role 'avm_ComponentInstance', cardinality 0..*) is associated with 'avm::Container' (role 'avm_Container77', cardinality 0..*).
+'avm::ComponentInstance' (role 'avm_ComponentInstance94', cardinality 0..*) is associated with 'avm::ComponentPrimitivePropertyInstance' (role 'avm_ComponentPrimitivePropertyInstance', cardinality 0..*).
+'modelica::avm::Value' (role 'modelica_avm_Value153', cardinality 0..*) is associated with 'avm::modelica::Limit' (role 'avm_modelica_Limit', cardinality 0..*).
+'cad::avm::Value' (role 'cad_avm_Value222', cardinality 0..*) is associated with 'avm::cad::TranslationalJointSpec' (role 'avm_cad_TranslationalJointSpec221', cardinality 0..*).
+'Plane' (role 'Plane', cardinality 0..*) is associated with 'avm::cad::Plane' (role 'avm_cad_Plane', cardinality 0..*).

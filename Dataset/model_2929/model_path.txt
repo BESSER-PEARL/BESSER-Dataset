@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Excilyano/Domain-specific-language/workspace_J2/fr.imta.tp2.tutorial/model/generated/MyTuto.ecore

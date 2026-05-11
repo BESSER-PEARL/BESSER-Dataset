@@ -1,0 +1,76 @@
+The model has 26 class(es).
+The class 'graph::GraphConstant' has no attributes.
+The class 'graph::Program' has no attributes.
+The class 'graph::Declaration' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'graph::ParticleConstant' has no attributes.
+The class 'graph::Expr' has no attributes.
+The class 'Expr' has no attributes.
+The class 'graph::IntConstant' has the following attributes: 'value' of type int.
+The class 'graph::StringConstant' has the following attributes: 'value' of type str.
+The class 'graph::Vertex' has the following attributes: 'name' of type str.
+The class 'graph::AssignStmt' has no attributes.
+The class 'graph::PathExistence' has no attributes.
+The class 'graph::Comparison' has the following attributes: 'op' of type str.
+The class 'graph::VariableRef' has no attributes.
+The class 'graph::WhileStmt' has no attributes.
+The class 'graph::PrintStmt' has no attributes.
+The class 'graph::MulOrDiv' has the following attributes: 'op' of type str.
+The class 'Statement' has no attributes.
+The class 'graph::And' has no attributes.
+The class 'graph::Or' has no attributes.
+The class 'graph::Not' has no attributes.
+The class 'graph::PlusOrMin' has the following attributes: 'op' of type str.
+The class 'graph::Statement' has no attributes.
+The class 'graph::MoveStmt' has no attributes.
+The class 'graph::BoolConstant' has the following attributes: 'value' of type str.
+The class 'graph::IfStmt' has no attributes.
+The class 'graph::Edge' has no attributes.
+'graph::Not' is a specialization of 'Expr'.
+'graph::GraphConstant' is a specialization of 'Expr'.
+'graph::ParticleConstant' is a specialization of 'Expr'.
+'graph::Comparison' is a specialization of 'Expr'.
+'graph::IfStmt' is a specialization of 'Statement'.
+'graph::WhileStmt' is a specialization of 'Statement'.
+'graph::MoveStmt' is a specialization of 'Statement'.
+'graph::VariableRef' is a specialization of 'Expr'.
+'graph::AssignStmt' is a specialization of 'Statement'.
+'graph::BoolConstant' is a specialization of 'Expr'.
+'graph::IntConstant' is a specialization of 'Expr'.
+'graph::PlusOrMin' is a specialization of 'Expr'.
+'graph::MulOrDiv' is a specialization of 'Expr'.
+'graph::PathExistence' is a specialization of 'Expr'.
+'graph::PrintStmt' is a specialization of 'Statement'.
+'graph::Or' is a specialization of 'Expr'.
+'graph::StringConstant' is a specialization of 'Expr'.
+'graph::And' is a specialization of 'Expr'.
+'graph::Program' (role 'graph_Program2', cardinality 0..*) is associated with 'graph::Statement' (role 'graph_Statement', cardinality 0..*).
+'graph::Comparison' (role 'graph_Comparison', cardinality 0..*) is associated with 'graph::Expr' (role 'graph_Expr44', cardinality 0..*).
+'graph::Not' (role 'graph_Not', cardinality 0..*) is associated with 'graph::Expr' (role 'graph_Expr59', cardinality 0..*).
+'graph::Vertex' (role 'graph_Vertex71', cardinality 0..*) is associated with 'graph::ParticleConstant' (role 'graph_ParticleConstant70', cardinality 0..*).
+'graph::PathExistence' (role 'graph_PathExistence', cardinality 0..*) is associated with 'graph::Expr' (role 'graph_Expr39', cardinality 0..*).
+'graph::And' (role 'graph_And', cardinality 0..*) is associated with 'graph::Expr' (role 'graph_Expr34', cardinality 0..*).
+'graph::Edge' (role 'graph_Edge26', cardinality 0..*) is associated with 'graph::Vertex' (role 'graph_Vertex27', cardinality 0..*).
+'graph::WhileStmt' (role 'graph_WhileStmt', cardinality 0..*) is associated with 'graph::Expr' (role 'graph_Expr18', cardinality 0..*).
+'graph::Edge' (role 'graph_Edge', cardinality 0..*) is associated with 'graph::Vertex' (role 'graph_Vertex', cardinality 0..*).
+'graph::PlusOrMin' (role 'graph_PlusOrMin51', cardinality 0..*) is associated with 'graph::Expr' (role 'graph_Expr52', cardinality 0..*).
+'graph::Expr' (role 'graph_Expr57', cardinality 0..*) is associated with 'graph::MulOrDiv' (role 'graph_MulOrDiv56', cardinality 0..*).
+'graph::VariableRef' (role 'graph_VariableRef', cardinality 0..*) is associated with 'graph::Declaration' (role 'graph_Declaration61', cardinality 0..*).
+'graph::Expr' (role 'graph_Expr8', cardinality 0..*) is associated with 'graph::PrintStmt' (role 'graph_PrintStmt', cardinality 0..*).
+'graph::Expr' (role 'graph_Expr37', cardinality 0..*) is associated with 'graph::And' (role 'graph_And36', cardinality 0..*).
+'graph::Expr' (role 'graph_Expr32', cardinality 0..*) is associated with 'graph::Or' (role 'graph_Or31', cardinality 0..*).
+'graph::Statement' (role 'graph_Statement21', cardinality 0..*) is associated with 'graph::WhileStmt' (role 'graph_WhileStmt20', cardinality 0..*).
+'graph::GraphConstant' (role 'graph_GraphConstant', cardinality 0..*) is associated with 'graph::Vertex' (role 'graph_Vertex63', cardinality 0..*).
+'graph::Declaration' (role 'graph_Declaration', cardinality 0..*) is associated with 'graph::Program' (role 'graph_Program', cardinality 0..*).
+'graph::AssignStmt' (role 'graph_AssignStmt', cardinality 0..*) is associated with 'graph::Declaration' (role 'graph_Declaration4', cardinality 0..*).
+'graph::Expr' (role 'graph_Expr42', cardinality 0..*) is associated with 'graph::PathExistence' (role 'graph_PathExistence41', cardinality 0..*).
+'graph::GraphConstant' (role 'graph_GraphConstant65', cardinality 0..*) is associated with 'graph::Edge' (role 'graph_Edge66', cardinality 0..*).
+'graph::IfStmt' (role 'graph_IfStmt15', cardinality 0..*) is associated with 'graph::Statement' (role 'graph_Statement16', cardinality 0..*).
+'graph::Expr' (role 'graph_Expr29', cardinality 0..*) is associated with 'graph::Or' (role 'graph_Or', cardinality 0..*).
+'graph::Expr' (role 'graph_Expr47', cardinality 0..*) is associated with 'graph::Comparison' (role 'graph_Comparison46', cardinality 0..*).
+'graph::PlusOrMin' (role 'graph_PlusOrMin', cardinality 0..*) is associated with 'graph::Expr' (role 'graph_Expr49', cardinality 0..*).
+'graph::Expr' (role 'graph_Expr10', cardinality 0..*) is associated with 'graph::IfStmt' (role 'graph_IfStmt', cardinality 0..*).
+'graph::Statement' (role 'graph_Statement13', cardinality 0..*) is associated with 'graph::IfStmt' (role 'graph_IfStmt12', cardinality 0..*).
+'graph::Expr' (role 'graph_Expr68', cardinality 0..*) is associated with 'graph::ParticleConstant' (role 'graph_ParticleConstant', cardinality 0..*).
+'graph::MulOrDiv' (role 'graph_MulOrDiv', cardinality 0..*) is associated with 'graph::Expr' (role 'graph_Expr54', cardinality 0..*).
+'graph::AssignStmt' (role 'graph_AssignStmt6', cardinality 0..*) is associated with 'graph::Expr' (role 'graph_Expr', cardinality 0..*).
+'graph::Declaration' (role 'graph_Declaration23', cardinality 0..*) is associated with 'graph::MoveStmt' (role 'graph_MoveStmt', cardinality 0..*).

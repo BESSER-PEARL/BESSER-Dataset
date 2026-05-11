@@ -1,0 +1,12 @@
+The model has 4 class(es).
+The class 'TestMM5::TestSet' has the following attributes: 'name' of type str.
+The class 'TestMM5::Action' has the following attributes: 'xpath' of type str; 'id' of type str; 'value' of type str; 'description' of type str; 'type' of type str.
+The class 'TestMM5::Test' has the following attributes: 'id' of type str.
+The class 'TestMM5::Metadata' has the following attributes: 'taglist' of type str; 'date' of type str; 'user' of type str; 'webpage' of type str.
+The enumeration 'ActionType' has the following literals: 'copy', 'click', 'comment', 'insert'.
+'TestMM5::Test' (role 'Test6', cardinality 0..*) is associated with 'TestMM5::Metadata' (role 'md', cardinality 0..*).
+'TestMM5::Action' (role 'Action', cardinality 0..*) is associated with 'TestMM5::Test' (role 'te4', cardinality 0..*).
+'TestMM5::Test' (role 'ts', cardinality 0..*) is associated with 'TestMM5::TestSet' (role 'TestSet', cardinality 0..*).
+'TestMM5::Test' (role 'te', cardinality 0..*) is associated with 'TestMM5::Metadata' (role 'Metadata', cardinality 0..*).
+'TestMM5::Test' (role 'Test', cardinality 0..*) is associated with 'TestMM5::TestSet' (role 'tst', cardinality 0..*).
+'TestMM5::Test' (role 'Test8', cardinality 0..*) is associated with 'TestMM5::Action' (role 'act', cardinality 0..*).

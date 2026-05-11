@@ -1,0 +1,17 @@
+The model has 7 class(es).
+The class 'region::RgState' has the following attributes: 'entry' of type str; 'exit' of type str; 'isFinal' of type bool.
+The class 'Named' has no attributes.
+The class 'region::RgRegion' has the following attributes: 'containerClass' of type str.
+The class 'region::RgTransition' has the following attributes: 'message' of type str; 'event' of type str; 'effect' of type str.
+The class 'Referenced' has no attributes.
+The class 'ModelRoot' has no attributes.
+The class 'region::RgInitialPseudostate' has no attributes.
+'region::RgRegion' is a specialization of 'ModelRoot'.
+'region::RgState' is a specialization of 'Named'.
+'region::RgTransition' is a specialization of 'Referenced'.
+'region::RgInitialPseudostate' is a specialization of 'Named'.
+'region::RgTransition' (role 'region_RgTransition7', cardinality 0..*) is associated with 'region::RgState' (role 'region_RgState6', cardinality 0..*).
+'region::RgInitialPseudostate' (role 'region_RgInitialPseudostate4', cardinality 0..*) is associated with 'region::RgTransition' (role 'region_RgTransition', cardinality 0..*).
+'region::RgState' (role 'region_RgState', cardinality 0..*) is associated with 'region::RgRegion' (role 'region_RgRegion2', cardinality 0..*).
+'region::RgState' (role 'region_RgState10', cardinality 0..*) is associated with 'region::RgTransition' (role 'region_RgTransition9', cardinality 0..*).
+'region::RgRegion' (role 'region_RgRegion', cardinality 0..*) is associated with 'region::RgInitialPseudostate' (role 'region_RgInitialPseudostate', cardinality 0..*).

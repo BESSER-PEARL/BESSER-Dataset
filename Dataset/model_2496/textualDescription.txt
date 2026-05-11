@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'y5fsm::State' has the following attributes: 'id' of type str.
+The class 'y5fsm::Foo' has the following attributes: 'zoo' of type str.
+The class 'y5fsm::Region' has no attributes.
+The class 'y5fsm::Bar' has the following attributes: 'baz' of type str.
+'y5fsm::State' (role 'y5fsm_State', cardinality 0..*) is associated with 'y5fsm::Region' (role 'y5fsm_Region', cardinality 0..*).
+'y5fsm::State' (role 'y5fsm_State2', cardinality 0..*) is associated with 'y5fsm::Foo' (role 'y5fsm_Foo', cardinality 0..*).
+'y5fsm::State' (role 'y5fsm_State4', cardinality 0..*) is associated with 'y5fsm::Bar' (role 'y5fsm_Bar', cardinality 0..*).

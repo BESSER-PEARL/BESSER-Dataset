@@ -1,0 +1,26 @@
+The model has 7 class(es).
+The class 'simpleRdbms::Column' has the following attributes: 'type' of type str.
+The class 'RModelElement' has no attributes.
+The class 'simpleRdbms::RModelElement' has the following attributes: 'name' of type str; 'kind' of type str.
+The class 'simpleRdbms::ForeignKey' has no attributes.
+The class 'simpleRdbms::Key' has no attributes.
+The class 'simpleRdbms::Schema' has no attributes.
+The class 'simpleRdbms::Table' has no attributes.
+'simpleRdbms::Schema' is a specialization of 'RModelElement'.
+'simpleRdbms::Column' is a specialization of 'RModelElement'.
+'simpleRdbms::ForeignKey' is a specialization of 'RModelElement'.
+'simpleRdbms::Table' is a specialization of 'RModelElement'.
+'simpleRdbms::Key' is a specialization of 'RModelElement'.
+'simpleRdbms::Table' (role 'tables', cardinality 0..*) is associated with 'simpleRdbms::Schema' (role 'Schema', cardinality 0..*).
+'simpleRdbms::Table' (role 'owner6', cardinality 0..*) is associated with 'simpleRdbms::ForeignKey' (role 'ForeignKey', cardinality 0..*).
+'simpleRdbms::Key' (role 'Key11', cardinality 0..*) is associated with 'simpleRdbms::Column' (role 'column10', cardinality 0..*).
+'simpleRdbms::Key' (role 'simpleRdbms_Key', cardinality 0..*) is associated with 'simpleRdbms::ForeignKey' (role 'simpleRdbms_ForeignKey', cardinality 0..*).
+'simpleRdbms::Column' (role 'Column21', cardinality 0..*) is associated with 'simpleRdbms::ForeignKey' (role 'foreignKey', cardinality 0..*).
+'simpleRdbms::Schema' (role 'schema', cardinality 0..*) is associated with 'simpleRdbms::Table' (role 'Table', cardinality 0..*).
+'simpleRdbms::Key' (role 'key', cardinality 0..*) is associated with 'simpleRdbms::Column' (role 'Column16', cardinality 0..*).
+'simpleRdbms::Column' (role 'Column', cardinality 0..*) is associated with 'simpleRdbms::Table' (role 'owner', cardinality 0..*).
+'simpleRdbms::Key' (role 'key18', cardinality 0..*) is associated with 'simpleRdbms::Table' (role 'Table19', cardinality 0..*).
+'simpleRdbms::Key' (role 'Key', cardinality 0..*) is associated with 'simpleRdbms::Table' (role 'owner4', cardinality 0..*).
+'simpleRdbms::ForeignKey' (role 'foreignKey24', cardinality 0..*) is associated with 'simpleRdbms::Table' (role 'Table25', cardinality 0..*).
+'simpleRdbms::Column' (role 'column', cardinality 0..*) is associated with 'simpleRdbms::Table' (role 'Table8', cardinality 0..*).
+'simpleRdbms::Column' (role 'column13', cardinality 0..*) is associated with 'simpleRdbms::ForeignKey' (role 'ForeignKey14', cardinality 0..*).

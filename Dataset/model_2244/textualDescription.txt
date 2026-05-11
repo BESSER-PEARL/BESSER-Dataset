@@ -1,0 +1,33 @@
+The model has 12 class(es).
+The class 'tdt4250case::ExaminationActivity' has the following attributes: 'weighting' of type str; 'evaluationForm' of type str.
+The class 'tdt4250case::Course' has the following attributes: 'name' of type str; 'code' of type str; 'credits' of type float; 'content' of type str.
+The class 'tdt4250case::CourseInstance' has the following attributes: 'semester' of type str.
+The class 'tdt4250case::CourseRole' has the following attributes: 'name' of type str.
+The class 'tdt4250case::Timetable' has no attributes.
+The class 'tdt4250case::ScheduledActivity' has the following attributes: 'timeslot' of type str; 'activity' of type str; 'room' of type str.
+The class 'tdt4250case::CreditReductionCourse' has the following attributes: 'from_' of type date; 'to' of type date; 'reduction' of type float.
+The class 'tdt4250case::Studyprogram' has the following attributes: 'code' of type str.
+The class 'tdt4250case::Department' has the following attributes: 'code' of type str; 'name' of type str.
+The class 'tdt4250case::CourseWork' has the following attributes: 'hours' of type int; 'type' of type str.
+The class 'tdt4250case::Person' has the following attributes: 'username' of type str; 'name' of type str.
+The class 'tdt4250case::Examination' has no attributes.
+'tdt4250case::CreditReductionCourse' (role 'tdt4250case_CreditReductionCourse', cardinality 0..*) is associated with 'tdt4250case::Course' (role 'tdt4250case_Course7', cardinality 0..*).
+'tdt4250case::Studyprogram' (role 'studyprogram', cardinality 0..*) is associated with 'tdt4250case::Course' (role 'Course', cardinality 0..*).
+'tdt4250case::Course' (role 'tdt4250case_Course14', cardinality 0..*) is associated with 'tdt4250case::CreditReductionCourse' (role 'tdt4250case_CreditReductionCourse13', cardinality 0..*).
+'tdt4250case::ScheduledActivity' (role 'tdt4250case_ScheduledActivity', cardinality 0..*) is associated with 'tdt4250case::Timetable' (role 'tdt4250case_Timetable30', cardinality 0..*).
+'tdt4250case::Department' (role 'tdt4250case_Department34', cardinality 0..*) is associated with 'tdt4250case::Person' (role 'tdt4250case_Person35', cardinality 0..*).
+'tdt4250case::CourseRole' (role 'CourseRole', cardinality 0..*) is associated with 'tdt4250case::Person' (role 'person', cardinality 0..*).
+'tdt4250case::Person' (role 'Person', cardinality 0..*) is associated with 'tdt4250case::CourseRole' (role 'role', cardinality 0..*).
+'tdt4250case::Department' (role 'tdt4250case_Department', cardinality 0..*) is associated with 'tdt4250case::CourseInstance' (role 'tdt4250case_CourseInstance20', cardinality 0..*).
+'tdt4250case::Course' (role 'course', cardinality 0..*) is associated with 'tdt4250case::Studyprogram' (role 'Studyprogram', cardinality 0..*).
+'tdt4250case::Person' (role 'tdt4250case_Person', cardinality 0..*) is associated with 'tdt4250case::CourseInstance' (role 'tdt4250case_CourseInstance24', cardinality 0..*).
+'tdt4250case::Timetable' (role 'tdt4250case_Timetable', cardinality 0..*) is associated with 'tdt4250case::CourseInstance' (role 'tdt4250case_CourseInstance18', cardinality 0..*).
+'tdt4250case::Course' (role 'tdt4250case_Course', cardinality 0..*) is associated with 'tdt4250case::Course' (role 'tdt4250case_Course1', cardinality 0..*).
+'tdt4250case::Course' (role 'course9', cardinality 0..*) is associated with 'tdt4250case::CourseInstance' (role 'CourseInstance', cardinality 0..*).
+'tdt4250case::Course' (role 'tdt4250case_Course3', cardinality 0..*) is associated with 'tdt4250case::Course' (role 'tdt4250case_Course5', cardinality 0..*).
+'tdt4250case::ScheduledActivity' (role 'tdt4250case_ScheduledActivity32', cardinality 0..*) is associated with 'tdt4250case::Studyprogram' (role 'tdt4250case_Studyprogram', cardinality 0..*).
+'tdt4250case::CourseRole' (role 'tdt4250case_CourseRole', cardinality 0..*) is associated with 'tdt4250case::CourseInstance' (role 'tdt4250case_CourseInstance22', cardinality 0..*).
+'tdt4250case::Examination' (role 'tdt4250case_Examination28', cardinality 0..*) is associated with 'tdt4250case::ExaminationActivity' (role 'tdt4250case_ExaminationActivity', cardinality 0..*).
+'tdt4250case::Course' (role 'tdt4250case_Course11', cardinality 0..*) is associated with 'tdt4250case::CourseWork' (role 'tdt4250case_CourseWork', cardinality 0..*).
+'tdt4250case::CourseInstance' (role 'instance', cardinality 0..*) is associated with 'tdt4250case::Course' (role 'Course26', cardinality 0..*).
+'tdt4250case::Examination' (role 'tdt4250case_Examination', cardinality 0..*) is associated with 'tdt4250case::CourseInstance' (role 'tdt4250case_CourseInstance', cardinality 0..*).

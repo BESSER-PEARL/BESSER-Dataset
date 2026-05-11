@@ -1,0 +1,31 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class model6_EmptyStringDefault  {
+
+    private String attribute;
+
+
+
+    public model6_EmptyStringDefault(
+        String attribute    ) {
+        this.attribute = attribute;
+    }
+
+
+    public String getAttribute() {
+        return attribute;
+    }
+
+    public void setAttribute(String attribute) {
+        this.attribute = attribute;
+    }
+
+
+}

@@ -1,0 +1,267 @@
+The model has 88 class(es).
+The class 'ir::Node' has the following attributes: 'id' of type str.
+The class 'ir::PortWrite' has no attributes.
+The class 'ir::TypeActor' has the following attributes: 'namespace' of type str; 'name' of type str.
+The class 'ir::VariableImport' has the following attributes: 'namespace' of type str.
+The class 'ir::FunctionCall' has no attributes.
+The class 'ir::VariableExpression' has no attributes.
+The class 'ir::StringLiteral' has the following attributes: 'value' of type str.
+The class 'ir::ForEach' has no attributes.
+The class 'ir::VariableExternal' has no attributes.
+The class 'ir::TypeDeclarationImport' has the following attributes: 'namespace' of type str.
+The class 'Block' has no attributes.
+The class 'ir::Member' has the following attributes: 'name' of type str.
+The class 'ir::Statement' has no attributes.
+The class 'ir::TypeDeclaration' has no attributes.
+The class 'ir::BinaryExpression' has the following attributes: 'operator' of type str.
+The class 'PortAccess' has no attributes.
+The class 'ir::ProcExpression' has no attributes.
+The class 'ir::Expression' has no attributes.
+The class 'ir::Guard' has no attributes.
+The class 'ir::TaggedExpression' has the following attributes: 'tag' of type str.
+The class 'ir::Type' has no attributes.
+The class 'ir::Scope' has no attributes.
+The class 'Connection' has no attributes.
+The class 'Variable' has no attributes.
+The class 'ir::FromSource' has no attributes.
+The class 'ir::ExternalActor' has no attributes.
+The class 'AbstractActor' has no attributes.
+The class 'Declaration' has no attributes.
+The class 'ir::TypeConstructorCall' has the following attributes: 'name' of type str.
+The class 'ir::Action' has the following attributes: 'tag' of type str.
+The class 'ir::LambdaExpression' has no attributes.
+The class 'ir::Generator' has no attributes.
+The class 'LiteralExpression' has no attributes.
+The class 'ir::IntegerLiteral' has the following attributes: 'value' of type str.
+The class 'ir::Connection' has no attributes.
+The class 'ir::PortRead' has no attributes.
+The class 'ir::ListExpression' has no attributes.
+The class 'ir::TypeRecord' has no attributes.
+The class 'ir::TypeUndef' has no attributes.
+The class 'LambdaExpression' has no attributes.
+The class 'ir::PortAccess' has no attributes.
+The class 'ir::IfExpression' has no attributes.
+The class 'ir::Assign' has no attributes.
+The class 'Expression' has no attributes.
+The class 'ir::Block' has no attributes.
+The class 'ir::Port' has the following attributes: 'name' of type str.
+The class 'ir::PortPeek' has the following attributes: 'position' of type int.
+The class 'ir::TypeUint' has no attributes.
+The class 'ir::TypeString' has no attributes.
+The class 'ir::BooleanLiteral' has the following attributes: 'value' of type bool.
+The class 'ir::Schedule' has the following attributes: 'PriorityGraph' of type str.
+The class 'ir::AnnotationArgument' has the following attributes: 'value' of type str; 'id' of type str.
+The class 'ir::State' has the following attributes: 'PriorityGraph' of type str; 'Action2TargetMap' of type str; 'name' of type str.
+The class 'ir::ProcCall' has no attributes.
+The class 'ir::ForwardDeclaration' has no attributes.
+The class 'ir::Point2PointConnection' has no attributes.
+The class 'ir::Network' has no attributes.
+The class 'ir::IfStatement' has no attributes.
+The class 'ir::ToSink' has no attributes.
+The class 'ir::TypeFloat' has no attributes.
+The class 'ExpressionCall' has no attributes.
+The class 'ir::LiteralExpression' has no attributes.
+The class 'ir::TypeUser' has no attributes.
+The class 'Type' has no attributes.
+The class 'ir::FloatLiteral' has the following attributes: 'value' of type float.
+The class 'ir::PortInstance' has the following attributes: 'name' of type str.
+The class 'ir::TypeList' has no attributes.
+The class 'ir::TypeLambda' has no attributes.
+The class 'ir::TypeConstructor' has no attributes.
+The class 'ir::TypeInt' has no attributes.
+The class 'ir::ActorInstance' has no attributes.
+The class 'Node' has no attributes.
+The class 'ir::Annotation' has the following attributes: 'name' of type str.
+The class 'ir::TypeBool' has no attributes.
+The class 'ir::Variable' has the following attributes: 'constant' of type bool; 'parameter' of type bool.
+The class 'ir::UnaryExpression' has the following attributes: 'operator' of type str.
+The class 'ir::ReturnValue' has no attributes.
+The class 'ir::Actor' has no attributes.
+The class 'ir::WhileLoop' has no attributes.
+The class 'ir::Namespace' has the following attributes: 'name' of type str.
+The class 'Scope' has no attributes.
+The class 'ir::Declaration' has the following attributes: 'name' of type str.
+The class 'ir::VariableReference' has no attributes.
+The class 'Statement' has no attributes.
+The class 'ir::TypeProc' has no attributes.
+The class 'ir::TypeExternal' has the following attributes: 'name' of type str; 'scopeName' of type str.
+The class 'ir::AbstractActor' has no attributes.
+The class 'ir::ExpressionCall' has no attributes.
+'ir::ActorInstance' is a specialization of 'Variable'.
+'ir::IfStatement' is a specialization of 'Statement'.
+'ir::PortPeek' is a specialization of 'PortAccess'.
+'ir::TypeUndef' is a specialization of 'Type'.
+'ir::Point2PointConnection' is a specialization of 'Connection'.
+'ir::TypeProc' is a specialization of 'Type'.
+'ir::VariableReference' is a specialization of 'Node'.
+'ir::IfExpression' is a specialization of 'Expression'.
+'ir::BinaryExpression' is a specialization of 'Expression'.
+'ir::ToSink' is a specialization of 'Connection'.
+'ir::TypeInt' is a specialization of 'Type'.
+'ir::Declaration' is a specialization of 'Node'.
+'ir::PortInstance' is a specialization of 'Node'.
+'ir::ForEach' is a specialization of 'Statement'.
+'ir::Actor' is a specialization of 'AbstractActor'.
+'ir::BooleanLiteral' is a specialization of 'LiteralExpression'.
+'ir::Generator' is a specialization of 'Scope'.
+'ir::AbstractActor' is a specialization of 'Scope'.
+'ir::ProcExpression' is a specialization of 'Scope'.
+'ir::TypeConstructor' is a specialization of 'Declaration'.
+'ir::TypeActor' is a specialization of 'Type'.
+'ir::Variable' is a specialization of 'Declaration'.
+'ir::TypeDeclaration' is a specialization of 'Declaration'.
+'ir::TypeList' is a specialization of 'Type'.
+'ir::FunctionCall' is a specialization of 'ExpressionCall'.
+'ir::VariableImport' is a specialization of 'Declaration'.
+'ir::FloatLiteral' is a specialization of 'LiteralExpression'.
+'ir::PortRead' is a specialization of 'PortAccess'.
+'ir::TypeUint' is a specialization of 'Type'.
+'ir::PortWrite' is a specialization of 'Block'.
+'ir::TypeUser' is a specialization of 'Type'.
+'ir::Port' is a specialization of 'Node'.
+'ir::TypeRecord' is a specialization of 'Node'.
+'ir::ExpressionCall' is a specialization of 'Expression'.
+'ir::Block' is a specialization of 'Scope'.
+'ir::LambdaExpression' is a specialization of 'Expression'.
+'ir::VariableExpression' is a specialization of 'Expression'.
+'ir::Scope' is a specialization of 'Node'.
+'ir::UnaryExpression' is a specialization of 'Expression'.
+'ir::WhileLoop' is a specialization of 'Statement'.
+'ir::LambdaExpression' is a specialization of 'Scope'.
+'ir::TypeString' is a specialization of 'Type'.
+'ir::PortWrite' is a specialization of 'PortAccess'.
+'ir::Member' is a specialization of 'Node'.
+'ir::Statement' is a specialization of 'Node'.
+'ir::Action' is a specialization of 'Scope'.
+'ir::ProcCall' is a specialization of 'Statement'.
+'ir::ProcExpression' is a specialization of 'Expression'.
+'ir::Expression' is a specialization of 'Node'.
+'ir::ExternalActor' is a specialization of 'AbstractActor'.
+'ir::PortAccess' is a specialization of 'Node'.
+'ir::ForwardDeclaration' is a specialization of 'Declaration'.
+'ir::Namespace' is a specialization of 'Scope'.
+'ir::TypeFloat' is a specialization of 'Type'.
+'ir::ListExpression' is a specialization of 'Expression'.
+'ir::Assign' is a specialization of 'Statement'.
+'ir::FromSource' is a specialization of 'Connection'.
+'ir::Network' is a specialization of 'AbstractActor'.
+'ir::TypeBool' is a specialization of 'Type'.
+'ir::VariableExternal' is a specialization of 'Declaration'.
+'ir::Connection' is a specialization of 'Node'.
+'ir::StringLiteral' is a specialization of 'LiteralExpression'.
+'ir::LiteralExpression' is a specialization of 'Expression'.
+'ir::Block' is a specialization of 'Statement'.
+'ir::TypeExternal' is a specialization of 'Type'.
+'ir::TypeConstructorCall' is a specialization of 'ExpressionCall'.
+'ir::ReturnValue' is a specialization of 'Statement'.
+'ir::IntegerLiteral' is a specialization of 'LiteralExpression'.
+'ir::TypeLambda' is a specialization of 'Type'.
+'ir::TypeDeclarationImport' is a specialization of 'Declaration'.
+'ir::Guard' is a specialization of 'LambdaExpression'.
+'ir::TypeRecord' is a specialization of 'Type'.
+'ir::TypeUint' (role 'ir_TypeUint', cardinality 0..*) is associated with 'ir::Expression' (role 'ir_Expression222', cardinality 0..*).
+'ir::IfStatement' (role 'ir_IfStatement', cardinality 0..*) is associated with 'ir::Block' (role 'ir_Block148', cardinality 0..*).
+'ir::Guard' (role 'ir_Guard210', cardinality 0..*) is associated with 'ir::PortPeek' (role 'ir_PortPeek211', cardinality 0..*).
+'ir::Variable' (role 'ir_Variable186', cardinality 0..*) is associated with 'ir::Type' (role 'ir_Type187', cardinality 0..*).
+'ir::Network' (role 'ir_Network', cardinality 0..*) is associated with 'ir::Connection' (role 'ir_Connection', cardinality 0..*).
+'ir::Action' (role 'ir_Action', cardinality 0..*) is associated with 'ir::Actor' (role 'ir_Actor', cardinality 0..*).
+'ir::AbstractActor' (role 'ir_AbstractActor10', cardinality 0..*) is associated with 'ir::Port' (role 'ir_Port', cardinality 0..*).
+'ir::Actor' (role 'ir_Actor18', cardinality 0..*) is associated with 'ir::Action' (role 'ir_Action19', cardinality 0..*).
+'ir::WhileLoop' (role 'ir_WhileLoop140', cardinality 0..*) is associated with 'ir::Expression' (role 'ir_Expression141', cardinality 0..*).
+'ir::AbstractActor' (role 'ir_AbstractActor8', cardinality 0..*) is associated with 'ir::TypeActor' (role 'ir_TypeActor', cardinality 0..*).
+'ir::Declaration' (role 'ir_Declaration172', cardinality 0..*) is associated with 'ir::Scope' (role 'ir_Scope173', cardinality 0..*).
+'ir::FromSource' (role 'ir_FromSource105', cardinality 0..*) is associated with 'ir::Port' (role 'ir_Port106', cardinality 0..*).
+'ir::Expression' (role 'ir_Expression56', cardinality 0..*) is associated with 'ir::TaggedExpression' (role 'ir_TaggedExpression55', cardinality 0..*).
+'ir::Type' (role 'ir_Type181', cardinality 0..*) is associated with 'ir::ForwardDeclaration' (role 'ir_ForwardDeclaration180', cardinality 0..*).
+'ir::Action' (role 'ir_Action32', cardinality 0..*) is associated with 'ir::Statement' (role 'ir_Statement', cardinality 0..*).
+'ir::Schedule' (role 'ir_Schedule253', cardinality 0..*) is associated with 'ir::State' (role 'ir_State254', cardinality 0..*).
+'ir::Type' (role 'ir_Type228', cardinality 0..*) is associated with 'ir::TypeLambda' (role 'ir_TypeLambda', cardinality 0..*).
+'ir::PortInstance' (role 'ir_PortInstance108', cardinality 0..*) is associated with 'ir::ToSink' (role 'ir_ToSink', cardinality 0..*).
+'ir::Type' (role 'ir_Type76', cardinality 0..*) is associated with 'ir::Member' (role 'ir_Member75', cardinality 0..*).
+'ir::Block' (role 'ir_Block156', cardinality 0..*) is associated with 'ir::Statement' (role 'ir_Statement157', cardinality 0..*).
+'ir::ForEach' (role 'ir_ForEach', cardinality 0..*) is associated with 'ir::Block' (role 'ir_Block143', cardinality 0..*).
+'ir::Variable' (role 'ir_Variable194', cardinality 0..*) is associated with 'ir::ProcExpression' (role 'ir_ProcExpression', cardinality 0..*).
+'ir::IfExpression' (role 'ir_IfExpression204', cardinality 0..*) is associated with 'ir::Expression' (role 'ir_Expression205', cardinality 0..*).
+'ir::Port' (role 'ir_Port13', cardinality 0..*) is associated with 'ir::AbstractActor' (role 'ir_AbstractActor12', cardinality 0..*).
+'ir::Action' (role 'ir_Action28', cardinality 0..*) is associated with 'ir::PortWrite' (role 'ir_PortWrite', cardinality 0..*).
+'ir::PortInstance' (role 'ir_PortInstance101', cardinality 0..*) is associated with 'ir::Point2PointConnection' (role 'ir_Point2PointConnection100', cardinality 0..*).
+'ir::ProcCall' (role 'ir_ProcCall133', cardinality 0..*) is associated with 'ir::VariableReference' (role 'ir_VariableReference134', cardinality 0..*).
+'ir::TypeConstructor' (role 'ir_TypeConstructor239', cardinality 0..*) is associated with 'ir::Variable' (role 'ir_Variable240', cardinality 0..*).
+'ir::Expression' (role 'ir_Expression162', cardinality 0..*) is associated with 'ir::PortAccess' (role 'ir_PortAccess161', cardinality 0..*).
+'ir::AbstractActor' (role 'ir_AbstractActor', cardinality 0..*) is associated with 'ir::Namespace' (role 'ir_Namespace', cardinality 0..*).
+'ir::Scope' (role 'ir_Scope3', cardinality 0..*) is associated with 'ir::Scope' (role 'ir_Scope1', cardinality 0..*).
+'ir::Schedule' (role 'ir_Schedule', cardinality 0..*) is associated with 'ir::Actor' (role 'ir_Actor21', cardinality 0..*).
+'ir::Type' (role 'ir_Type231', cardinality 0..*) is associated with 'ir::TypeLambda' (role 'ir_TypeLambda230', cardinality 0..*).
+'ir::ListExpression' (role 'ir_ListExpression66', cardinality 0..*) is associated with 'ir::Expression' (role 'ir_Expression67', cardinality 0..*).
+'ir::Assign' (role 'ir_Assign126', cardinality 0..*) is associated with 'ir::Expression' (role 'ir_Expression127', cardinality 0..*).
+'ir::Action' (role 'ir_Action26', cardinality 0..*) is associated with 'ir::Guard' (role 'ir_Guard', cardinality 0..*).
+'ir::Expression' (role 'ir_Expression52', cardinality 0..*) is associated with 'ir::Scope' (role 'ir_Scope53', cardinality 0..*).
+'ir::Expression' (role 'ir_Expression217', cardinality 0..*) is associated with 'ir::TypeList' (role 'ir_TypeList', cardinality 0..*).
+'ir::VariableReference' (role 'ir_VariableReference118', cardinality 0..*) is associated with 'ir::Member' (role 'ir_Member119', cardinality 0..*).
+'ir::Type' (role 'ir_Type35', cardinality 0..*) is associated with 'ir::Port' (role 'ir_Port34', cardinality 0..*).
+'ir::PortRead' (role 'ir_PortRead167', cardinality 0..*) is associated with 'ir::VariableReference' (role 'ir_VariableReference168', cardinality 0..*).
+'ir::Declaration' (role 'ir_Declaration137', cardinality 0..*) is associated with 'ir::ProcCall' (role 'ir_ProcCall136', cardinality 0..*).
+'ir::PortInstance' (role 'ir_PortInstance44', cardinality 0..*) is associated with 'ir::Connection' (role 'ir_Connection45', cardinality 0..*).
+'ir::TypeDeclaration' (role 'ir_TypeDeclaration245', cardinality 0..*) is associated with 'ir::TypeConstructor' (role 'ir_TypeConstructor246', cardinality 0..*).
+'ir::Port' (role 'ir_Port159', cardinality 0..*) is associated with 'ir::PortAccess' (role 'ir_PortAccess', cardinality 0..*).
+'ir::Block' (role 'ir_Block151', cardinality 0..*) is associated with 'ir::IfStatement' (role 'ir_IfStatement150', cardinality 0..*).
+'ir::Network' (role 'ir_Network24', cardinality 0..*) is associated with 'ir::ActorInstance' (role 'ir_ActorInstance', cardinality 0..*).
+'ir::Expression' (role 'ir_Expression61', cardinality 0..*) is associated with 'ir::VariableExpression' (role 'ir_VariableExpression60', cardinality 0..*).
+'ir::Expression' (role 'ir_Expression90', cardinality 0..*) is associated with 'ir::TypeConstructorCall' (role 'ir_TypeConstructorCall', cardinality 0..*).
+'ir::Variable' (role 'ir_Variable197', cardinality 0..*) is associated with 'ir::ProcExpression' (role 'ir_ProcExpression196', cardinality 0..*).
+'ir::Expression' (role 'ir_Expression165', cardinality 0..*) is associated with 'ir::PortWrite' (role 'ir_PortWrite164', cardinality 0..*).
+'ir::LambdaExpression' (role 'ir_LambdaExpression191', cardinality 0..*) is associated with 'ir::Expression' (role 'ir_Expression192', cardinality 0..*).
+'ir::Action' (role 'ir_Action30', cardinality 0..*) is associated with 'ir::PortRead' (role 'ir_PortRead', cardinality 0..*).
+'ir::BinaryExpression' (role 'ir_BinaryExpression', cardinality 0..*) is associated with 'ir::Expression' (role 'ir_Expression78', cardinality 0..*).
+'ir::ActorInstance' (role 'ir_ActorInstance42', cardinality 0..*) is associated with 'ir::TaggedExpression' (role 'ir_TaggedExpression', cardinality 0..*).
+'ir::Variable' (role 'ir_Variable', cardinality 0..*) is associated with 'ir::AbstractActor' (role 'ir_AbstractActor15', cardinality 0..*).
+'ir::Expression' (role 'ir_Expression116', cardinality 0..*) is associated with 'ir::VariableReference' (role 'ir_VariableReference115', cardinality 0..*).
+'ir::Type' (role 'ir_Type50', cardinality 0..*) is associated with 'ir::Expression' (role 'ir_Expression', cardinality 0..*).
+'ir::IfStatement' (role 'ir_IfStatement153', cardinality 0..*) is associated with 'ir::Expression' (role 'ir_Expression154', cardinality 0..*).
+'ir::VariableExternal' (role 'ir_VariableExternal', cardinality 0..*) is associated with 'ir::Type' (role 'ir_Type', cardinality 0..*).
+'ir::PortInstance' (role 'ir_PortInstance47', cardinality 0..*) is associated with 'ir::ActorInstance' (role 'ir_ActorInstance48', cardinality 0..*).
+'ir::BinaryExpression' (role 'ir_BinaryExpression80', cardinality 0..*) is associated with 'ir::Expression' (role 'ir_Expression81', cardinality 0..*).
+'ir::TypeExternal' (role 'ir_TypeExternal', cardinality 0..*) is associated with 'ir::TaggedExpression' (role 'ir_TaggedExpression213', cardinality 0..*).
+'ir::Member' (role 'ir_Member72', cardinality 0..*) is associated with 'ir::Expression' (role 'ir_Expression73', cardinality 0..*).
+'ir::ProcCall' (role 'ir_ProcCall', cardinality 0..*) is associated with 'ir::Expression' (role 'ir_Expression131', cardinality 0..*).
+'ir::Declaration' (role 'ir_Declaration93', cardinality 0..*) is associated with 'ir::TypeConstructorCall' (role 'ir_TypeConstructorCall92', cardinality 0..*).
+'ir::ForwardDeclaration' (role 'ir_ForwardDeclaration', cardinality 0..*) is associated with 'ir::Declaration' (role 'ir_Declaration178', cardinality 0..*).
+'ir::TypeUser' (role 'ir_TypeUser', cardinality 0..*) is associated with 'ir::Declaration' (role 'ir_Declaration226', cardinality 0..*).
+'ir::Expression' (role 'ir_Expression208', cardinality 0..*) is associated with 'ir::IfExpression' (role 'ir_IfExpression207', cardinality 0..*).
+'ir::Variable' (role 'ir_Variable183', cardinality 0..*) is associated with 'ir::Expression' (role 'ir_Expression184', cardinality 0..*).
+'ir::Annotation' (role 'ir_Annotation256', cardinality 0..*) is associated with 'ir::AnnotationArgument' (role 'ir_AnnotationArgument', cardinality 0..*).
+'ir::VariableReference' (role 'ir_VariableReference170', cardinality 0..*) is associated with 'ir::PortPeek' (role 'ir_PortPeek', cardinality 0..*).
+'ir::Member' (role 'ir_Member', cardinality 0..*) is associated with 'ir::VariableExpression' (role 'ir_VariableExpression63', cardinality 0..*).
+'ir::Type' (role 'ir_Type220', cardinality 0..*) is associated with 'ir::TypeList' (role 'ir_TypeList219', cardinality 0..*).
+'ir::TypeProc' (role 'ir_TypeProc235', cardinality 0..*) is associated with 'ir::Type' (role 'ir_Type236', cardinality 0..*).
+'ir::Expression' (role 'ir_Expression129', cardinality 0..*) is associated with 'ir::ReturnValue' (role 'ir_ReturnValue', cardinality 0..*).
+'ir::Type' (role 'ir_Type243', cardinality 0..*) is associated with 'ir::TypeDeclaration' (role 'ir_TypeDeclaration242', cardinality 0..*).
+'ir::Expression' (role 'ir_Expression202', cardinality 0..*) is associated with 'ir::IfExpression' (role 'ir_IfExpression', cardinality 0..*).
+'ir::Type' (role 'ir_Type233', cardinality 0..*) is associated with 'ir::TypeProc' (role 'ir_TypeProc', cardinality 0..*).
+'ir::PortInstance' (role 'ir_PortInstance', cardinality 0..*) is associated with 'ir::ActorInstance' (role 'ir_ActorInstance37', cardinality 0..*).
+'ir::Generator' (role 'ir_Generator146', cardinality 0..*) is associated with 'ir::ForEach' (role 'ir_ForEach145', cardinality 0..*).
+'ir::Port' (role 'ir_Port111', cardinality 0..*) is associated with 'ir::ToSink' (role 'ir_ToSink110', cardinality 0..*).
+'ir::TypeConstructor' (role 'ir_TypeConstructor', cardinality 0..*) is associated with 'ir::TypeDeclaration' (role 'ir_TypeDeclaration', cardinality 0..*).
+'ir::VariableReference' (role 'ir_VariableReference121', cardinality 0..*) is associated with 'ir::Type' (role 'ir_Type122', cardinality 0..*).
+'ir::ActorInstance' (role 'ir_ActorInstance39', cardinality 0..*) is associated with 'ir::PortInstance' (role 'ir_PortInstance40', cardinality 0..*).
+'ir::Generator' (role 'ir_Generator69', cardinality 0..*) is associated with 'ir::Expression' (role 'ir_Expression70', cardinality 0..*).
+'ir::Annotation' (role 'ir_Annotation', cardinality 0..*) is associated with 'ir::Node' (role 'ir_Node', cardinality 0..*).
+'ir::Schedule' (role 'ir_Schedule248', cardinality 0..*) is associated with 'ir::State' (role 'ir_State', cardinality 0..*).
+'ir::Declaration' (role 'ir_Declaration58', cardinality 0..*) is associated with 'ir::VariableExpression' (role 'ir_VariableExpression', cardinality 0..*).
+'ir::TypeRecord' (role 'ir_TypeRecord', cardinality 0..*) is associated with 'ir::Variable' (role 'ir_Variable224', cardinality 0..*).
+'ir::Variable' (role 'ir_Variable113', cardinality 0..*) is associated with 'ir::VariableReference' (role 'ir_VariableReference', cardinality 0..*).
+'ir::LambdaExpression' (role 'ir_LambdaExpression', cardinality 0..*) is associated with 'ir::Variable' (role 'ir_Variable189', cardinality 0..*).
+'ir::Generator' (role 'ir_Generator', cardinality 0..*) is associated with 'ir::ListExpression' (role 'ir_ListExpression', cardinality 0..*).
+'ir::Action' (role 'ir_Action251', cardinality 0..*) is associated with 'ir::Schedule' (role 'ir_Schedule250', cardinality 0..*).
+'ir::TaggedExpression' (role 'ir_TaggedExpression176', cardinality 0..*) is associated with 'ir::Declaration' (role 'ir_Declaration175', cardinality 0..*).
+'ir::Point2PointConnection' (role 'ir_Point2PointConnection', cardinality 0..*) is associated with 'ir::PortInstance' (role 'ir_PortInstance98', cardinality 0..*).
+'ir::TaggedExpression' (role 'ir_TaggedExpression96', cardinality 0..*) is associated with 'ir::Connection' (role 'ir_Connection95', cardinality 0..*).
+'ir::Expression' (role 'ir_Expression88', cardinality 0..*) is associated with 'ir::FunctionCall' (role 'ir_FunctionCall87', cardinality 0..*).
+'ir::Expression' (role 'ir_Expression215', cardinality 0..*) is associated with 'ir::TypeInt' (role 'ir_TypeInt', cardinality 0..*).
+'ir::ProcExpression' (role 'ir_ProcExpression199', cardinality 0..*) is associated with 'ir::Block' (role 'ir_Block200', cardinality 0..*).
+'ir::Declaration' (role 'ir_Declaration', cardinality 0..*) is associated with 'ir::Scope' (role 'ir_Scope', cardinality 0..*).
+'ir::VariableReference' (role 'ir_VariableReference124', cardinality 0..*) is associated with 'ir::Assign' (role 'ir_Assign', cardinality 0..*).
+'ir::UnaryExpression' (role 'ir_UnaryExpression', cardinality 0..*) is associated with 'ir::Expression' (role 'ir_Expression83', cardinality 0..*).
+'ir::PortInstance' (role 'ir_PortInstance103', cardinality 0..*) is associated with 'ir::FromSource' (role 'ir_FromSource', cardinality 0..*).
+'ir::Block' (role 'ir_Block', cardinality 0..*) is associated with 'ir::WhileLoop' (role 'ir_WhileLoop', cardinality 0..*).
+'ir::Expression' (role 'ir_Expression85', cardinality 0..*) is associated with 'ir::FunctionCall' (role 'ir_FunctionCall', cardinality 0..*).

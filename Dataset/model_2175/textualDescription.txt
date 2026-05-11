@@ -1,0 +1,13 @@
+The model has 5 class(es).
+The class 'controlflow::Node' has no attributes.
+The class 'controlflow::Command' has no attributes.
+The class 'controlflow::Graph' has no attributes.
+The class 'controlflow::Branch' has no attributes.
+The class 'Node' has no attributes.
+'controlflow::Command' is a specialization of 'Node'.
+'controlflow::Branch' is a specialization of 'Node'.
+'controlflow::Node' (role 'controlflow_Node8', cardinality 0..*) is associated with 'controlflow::Branch' (role 'controlflow_Branch', cardinality 0..*).
+'controlflow::Branch' (role 'controlflow_Branch10', cardinality 0..*) is associated with 'controlflow::Node' (role 'controlflow_Node11', cardinality 0..*).
+'controlflow::Node' (role 'controlflow_Node6', cardinality 0..*) is associated with 'controlflow::Graph' (role 'controlflow_Graph5', cardinality 0..*).
+'controlflow::Graph' (role 'controlflow_Graph', cardinality 0..*) is associated with 'controlflow::Node' (role 'controlflow_Node3', cardinality 0..*).
+'controlflow::Node' (role 'controlflow_Node0', cardinality 0..*) is associated with 'controlflow::Node' (role 'controlflow_Node', cardinality 0..*).

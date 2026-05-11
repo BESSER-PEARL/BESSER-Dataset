@@ -1,0 +1,176 @@
+The model has 58 class(es).
+The class 'lobj::ThemeNode' has no attributes.
+The class 'lobj::ResrcFolder' has the following attributes: 'deleteScheduled' of type bool.
+The class 'lobj::Course' has the following attributes: 'outlineAsXml' of type str.
+The class 'lobj::SimpleDidacMeta' has the following attributes: 'id' of type str; 'description' of type str; 'title' of type str; 'keywords' of type str.
+The class 'lobj::CorrBlock' has the following attributes: 'id' of type str.
+The class 'lobj::Note' has the following attributes: 'noteAuthor' of type str; 'date' of type date; 'id' of type str; 'content' of type str.
+The class 'lobj::ExternalMetadata' has the following attributes: 'file' of type str; 'ref' of type str; 'id' of type str.
+The class 'lobj::Language' has the following attributes: 'language' of type str; 'code' of type str.
+The class 'lobj::BlockFolder' has no attributes.
+The class 'lobj::AuthorizationTypes' has the following attributes: 'authType' of type str; 'readOnly' of type bool; 'authTypeDesc' of type str; 'id' of type str.
+The class 'lobj::ResrcFiletype' has the following attributes: 'applet' of type bool; 'filetypeExtension' of type str; 'image' of type bool; 'filetypeDesc' of type str; 'id' of type str; 'filetypeImageBif' of type str; 'filetypeImageSmall' of type str.
+The class 'Node' has no attributes.
+The class 'lobj::Coursetype' has the following attributes: 'title' of type str; 'id' of type str; 'description' of type str.
+The class 'Block' has no attributes.
+The class 'lobj::User' has the following attributes: 'inchatsince' of type date; 'datafilter' of type str; 'contchatdate' of type date; 'lastname' of type str; 'loginname' of type str; 'lastcoursematerialnr' of type str; 'onlinestatus' of type str; 'dossierasxml' of type str; 'currlogindate' of type date; 'firstname' of type str; 'photochanged' of type str; 'photo' of type str; 'authenticateldap' of type str; 'lastlogindate' of type date; 'entryasxml' of type str; 'lastcoursematerialviewnr' of type str; 'chatroomnr' of type str; 'icqnumber' of type str; 'scn' of type str; 'password' of type str; 'icqpassword' of type str; 'id' of type str; 'onlinedate' of type date; 'fromext' of type str; 'notificationprofileasxml' of type str; 'matriculationnr' of type str; 'languagenr' of type str.
+The class 'lobj::Person' has the following attributes: 'firstname' of type str; 'honorific' of type str; 'id' of type str; 'contrib' of type str; 'personblurb' of type str; 'surname' of type str.
+The class 'lobj::Category' has no attributes.
+The class 'lobj::AccessControl' has the following attributes: 'status' of type str; 'lastModified' of type date; 'id' of type str; 'lastStatusChange' of type date; 'globalAccess' of type bool.
+The class 'lobj::ModuleFolder' has no attributes.
+The class 'lobj::ModuleMeta' has the following attributes: 'creationDate' of type date.
+The class 'lobj::DidacMeta' has the following attributes: 'goal' of type str.
+The class 'lobj::HypertextContent' has the following attributes: 'content' of type str.
+The class 'lobj::ResrcMeta' has the following attributes: 'lastModified' of type date; 'description' of type str; 'title' of type str; 'filename' of type str; 'keywords' of type str; 'parameters' of type str; 'width' of type int; 'height' of type int; 'creationDate' of type date.
+The class 'lobj::LearningObject' has the following attributes: 'timestamp' of type date; 'id' of type str; 'synchronized' of type bool.
+The class 'LearningObject' has no attributes.
+The class 'SimpleDidacMeta' has no attributes.
+The class 'lobj::Block' has no attributes.
+The class 'lobj::LuFolder' has no attributes.
+The class 'lobj::Affiliation' has the following attributes: 'orgdiv' of type str; 'id' of type str; 'shortaffil' of type str; 'jobtitle' of type str; 'orgname' of type str.
+The class 'lobj::Edition' has the following attributes: 'lastVersionNumber' of type str; 'id' of type str; 'status' of type str; 'editedBy' of type str; 'editionCreationDate' of type date; 'version' of type str; 'editionNr' of type str.
+The class 'lobj::BlockMeta' has the following attributes: 'lastModified' of type date; 'lod' of type str; 'creationDate' of type date; 'rendering' of type str.
+The class 'lobj::Theme' has no attributes.
+The class 'lobj::LuNode' has no attributes.
+The class 'lobj::Blocktype' has the following attributes: 'creationDate' of type date; 'styleRef' of type str; 'description' of type str; 'id' of type str; 'name' of type str.
+The class 'lobj::Module' has the following attributes: 'treeAsXml' of type str; 'moduleFile' of type str.
+The class 'lobj::Userauthorization' has the following attributes: 'id' of type str.
+The class 'AbstractContent' has no attributes.
+The class 'lobj::Sharednotes' has the following attributes: 'id' of type str.
+The class 'lobj::Item' has the following attributes: 'id' of type str; 'luRef' of type str.
+The class 'lobj::PublishInfo' has the following attributes: 'pubdate' of type date; 'releaseinfo' of type str; 'edition' of type str; 'id' of type str; 'pubsnumber' of type str.
+The class 'lobj::Publisher' has the following attributes: 'publishername' of type str; 'id' of type str.
+The class 'lobj::Source' has the following attributes: 'subtitle' of type str; 'publishedIn' of type str; 'id' of type str; 'title' of type str; 'publishedBy' of type str; 'pp' of type str; 'publishDate' of type str.
+The class 'lobj::ResrcFile' has the following attributes: 'filesize' of type int; 'originalextension' of type str; 'resrcHref' of type str; 'file_tn' of type str; 'file' of type str.
+The class 'lobj::Domain' has the following attributes: 'creationDate' of type date; 'serverURL' of type str; 'id' of type str; 'name' of type str; 'description' of type str.
+The class 'lobj::Precognition' has the following attributes: 'id' of type str; 'precog' of type str.
+The class 'lobj::LearningUnit' has the following attributes: 'luFile' of type str; 'treeAsXml' of type str.
+The class 'lobj::CourseMeta' has the following attributes: 'lvanr' of type str; 'creationDate' of type date; 'columnfilterasxml' of type str; 'hours' of type int; 'fromext' of type str.
+The class 'lobj::Address' has the following attributes: 'city' of type str; 'email' of type str; 'id' of type str; 'phone' of type str; 'fax' of type str; 'country' of type str; 'state' of type str; 'street' of type str; 'otheraddr' of type str; 'postcode' of type str.
+The class 'lobj::FolderMeta' has the following attributes: 'creationDate' of type date; 'description' of type str; 'title' of type str.
+The class 'lobj::LuMeta' has the following attributes: 'creationDate' of type date.
+The class 'lobj::HypertextBlock' has no attributes.
+The class 'lobj::InternalRef' has the following attributes: 'id' of type str; 'reftype' of type str; 'ref' of type str; 'file' of type str.
+The class 'lobj::Author' has the following attributes: 'credittype' of type str; 'email' of type str; 'id' of type str.
+The class 'lobj::BlockAudiofile' has the following attributes: 'file' of type str; 'filesize' of type int; 'originalextension' of type str; 'resrcHref' of type str.
+The class 'lobj::AbstractContent' has the following attributes: 'heading' of type str.
+The class 'lobj::Node' has the following attributes: 'visible' of type bool; 'id' of type str.
+The class 'lobj::TitleMeta' has the following attributes: 'id' of type str; 'title' of type str.
+The class 'lobj::PresentationBlock' has the following attributes: 'lod' of type int; 'id' of type str; 'rendering' of type str.
+'lobj::Course' is a specialization of 'LearningObject'.
+'lobj::ModuleMeta' is a specialization of 'LearningObject'.
+'lobj::LearningUnit' is a specialization of 'LearningObject'.
+'lobj::Block' is a specialization of 'LearningObject'.
+'lobj::DidacMeta' is a specialization of 'SimpleDidacMeta'.
+'lobj::ModuleFolder' is a specialization of 'LearningObject'.
+'lobj::ResrcFolder' is a specialization of 'LearningObject'.
+'lobj::ThemeNode' is a specialization of 'Node'.
+'lobj::FolderMeta' is a specialization of 'LearningObject'.
+'lobj::HypertextBlock' is a specialization of 'Block'.
+'lobj::BlockMeta' is a specialization of 'LearningObject'.
+'lobj::Category' is a specialization of 'LearningObject'.
+'lobj::CourseMeta' is a specialization of 'LearningObject'.
+'lobj::BlockAudiofile' is a specialization of 'LearningObject'.
+'lobj::Theme' is a specialization of 'LearningObject'.
+'lobj::Module' is a specialization of 'LearningObject'.
+'lobj::AbstractContent' is a specialization of 'LearningObject'.
+'lobj::ResrcMeta' is a specialization of 'LearningObject'.
+'lobj::ResrcFile' is a specialization of 'LearningObject'.
+'lobj::BlockFolder' is a specialization of 'LearningObject'.
+'lobj::HypertextContent' is a specialization of 'AbstractContent'.
+'lobj::LuMeta' is a specialization of 'LearningObject'.
+'lobj::LuFolder' is a specialization of 'LearningObject'.
+'lobj::LuNode' is a specialization of 'Node'.
+'lobj::SimpleDidacMeta' (role 'lobj_SimpleDidacMeta', cardinality 0..*) is associated with 'lobj::Theme' (role 'lobj_Theme', cardinality 0..*).
+'lobj::AccessControl' (role 'lobj_AccessControl133', cardinality 0..*) is associated with 'lobj::Edition' (role 'lobj_Edition', cardinality 0..*).
+'lobj::Precognition' (role 'lobj_Precognition', cardinality 0..*) is associated with 'lobj::DidacMeta' (role 'lobj_DidacMeta163', cardinality 0..*).
+'lobj::ModuleFolder' (role 'lobj_ModuleFolder', cardinality 0..*) is associated with 'lobj::FolderMeta' (role 'lobj_FolderMeta75', cardinality 0..*).
+'lobj::CourseMeta' (role 'lobj_CourseMeta', cardinality 0..*) is associated with 'lobj::Course' (role 'lobj_Course30', cardinality 0..*).
+'lobj::ResrcFolder' (role 'lobj_ResrcFolder87', cardinality 0..*) is associated with 'lobj::ResrcFolder' (role 'lobj_ResrcFolder89', cardinality 0..*).
+'lobj::Affiliation' (role 'lobj_Affiliation', cardinality 0..*) is associated with 'lobj::Address' (role 'lobj_Address', cardinality 0..*).
+'lobj::InternalRef' (role 'lobj_InternalRef', cardinality 0..*) is associated with 'lobj::Precognition' (role 'lobj_Precognition197', cardinality 0..*).
+'lobj::PublishInfo' (role 'lobj_PublishInfo189', cardinality 0..*) is associated with 'lobj::Publisher' (role 'lobj_Publisher190', cardinality 0..*).
+'lobj::BlockAudiofile' (role 'lobj_BlockAudiofile118', cardinality 0..*) is associated with 'lobj::ResrcFiletype' (role 'lobj_ResrcFiletype119', cardinality 0..*).
+'lobj::Item' (role 'lobj_Item', cardinality 0..*) is associated with 'lobj::CorrBlock' (role 'lobj_CorrBlock39', cardinality 0..*).
+'lobj::LearningUnit' (role 'lobj_LearningUnit105', cardinality 0..*) is associated with 'lobj::LuNode' (role 'lobj_LuNode', cardinality 0..*).
+'lobj::ExternalMetadata' (role 'lobj_ExternalMetadata33', cardinality 0..*) is associated with 'lobj::Course' (role 'lobj_Course32', cardinality 0..*).
+'lobj::Person' (role 'lobj_Person', cardinality 0..*) is associated with 'lobj::Author' (role 'lobj_Author', cardinality 0..*).
+'lobj::ModuleFolder' (role 'lobj_ModuleFolder83', cardinality 0..*) is associated with 'lobj::AccessControl' (role 'lobj_AccessControl84', cardinality 0..*).
+'lobj::Category' (role 'lobj_Category24', cardinality 0..*) is associated with 'lobj::Course' (role 'lobj_Course', cardinality 0..*).
+'lobj::Userauthorization' (role 'lobj_Userauthorization179', cardinality 0..*) is associated with 'lobj::User' (role 'lobj_User180', cardinality 0..*).
+'lobj::Language' (role 'lobj_Language177', cardinality 0..*) is associated with 'lobj::LuMeta' (role 'lobj_LuMeta176', cardinality 0..*).
+'lobj::ThemeNode' (role 'lobj_ThemeNode102', cardinality 0..*) is associated with 'lobj::Node' (role 'lobj_Node103', cardinality 0..*).
+'lobj::Userauthorization' (role 'lobj_Userauthorization', cardinality 0..*) is associated with 'lobj::AccessControl' (role 'lobj_AccessControl131', cardinality 0..*).
+'lobj::BlockFolder' (role 'lobj_BlockFolder20', cardinality 0..*) is associated with 'lobj::AccessControl' (role 'lobj_AccessControl21', cardinality 0..*).
+'lobj::ThemeNode' (role 'lobj_ThemeNode', cardinality 0..*) is associated with 'lobj::Theme' (role 'lobj_Theme100', cardinality 0..*).
+'lobj::ModuleMeta' (role 'lobj_ModuleMeta211', cardinality 0..*) is associated with 'lobj::Language' (role 'lobj_Language212', cardinality 0..*).
+'lobj::Blocktype' (role 'Blocktype', cardinality 0..*) is associated with 'lobj::Domain' (role 'domains', cardinality 0..*).
+'lobj::User' (role 'lobj_User127', cardinality 0..*) is associated with 'lobj::AccessControl' (role 'lobj_AccessControl126', cardinality 0..*).
+'lobj::Note' (role 'lobj_Note', cardinality 0..*) is associated with 'lobj::Sharednotes' (role 'lobj_Sharednotes192', cardinality 0..*).
+'lobj::Sharednotes' (role 'lobj_Sharednotes', cardinality 0..*) is associated with 'lobj::AccessControl' (role 'lobj_AccessControl129', cardinality 0..*).
+'lobj::Language' (role 'lobj_Language161', cardinality 0..*) is associated with 'lobj::SimpleDidacMeta' (role 'lobj_SimpleDidacMeta160', cardinality 0..*).
+'lobj::ResrcFile' (role 'lobj_ResrcFile112', cardinality 0..*) is associated with 'lobj::Source' (role 'lobj_Source113', cardinality 0..*).
+'lobj::ModuleFolder' (role 'lobj_ModuleFolder80', cardinality 0..*) is associated with 'lobj::Module' (role 'lobj_Module81', cardinality 0..*).
+'lobj::Module' (role 'lobj_Module67', cardinality 0..*) is associated with 'lobj::ExternalMetadata' (role 'lobj_ExternalMetadata68', cardinality 0..*).
+'lobj::CorrBlock' (role 'lobj_CorrBlock27', cardinality 0..*) is associated with 'lobj::TitleMeta' (role 'lobj_TitleMeta28', cardinality 0..*).
+'lobj::Userauthorization' (role 'lobj_Userauthorization182', cardinality 0..*) is associated with 'lobj::AuthorizationTypes' (role 'lobj_AuthorizationTypes', cardinality 0..*).
+'lobj::Domain' (role 'lobj_Domain', cardinality 0..*) is associated with 'lobj::LuMeta' (role 'lobj_LuMeta169', cardinality 0..*).
+'lobj::Author' (role 'lobj_Author206', cardinality 0..*) is associated with 'lobj::ModuleMeta' (role 'lobj_ModuleMeta205', cardinality 0..*).
+'lobj::Module' (role 'lobj_Module65', cardinality 0..*) is associated with 'lobj::ModuleMeta' (role 'lobj_ModuleMeta', cardinality 0..*).
+'lobj::AbstractContent' (role 'lobj_AbstractContent8', cardinality 0..*) is associated with 'lobj::Source' (role 'lobj_Source', cardinality 0..*).
+'lobj::FolderMeta' (role 'lobj_FolderMeta54', cardinality 0..*) is associated with 'lobj::LuFolder' (role 'lobj_LuFolder', cardinality 0..*).
+'lobj::BlockMeta' (role 'lobj_BlockMeta142', cardinality 0..*) is associated with 'lobj::SimpleDidacMeta' (role 'lobj_SimpleDidacMeta143', cardinality 0..*).
+'lobj::DidacMeta' (role 'lobj_DidacMeta203', cardinality 0..*) is associated with 'lobj::ModuleMeta' (role 'lobj_ModuleMeta202', cardinality 0..*).
+'lobj::ResrcFile' (role 'lobj_ResrcFile116', cardinality 0..*) is associated with 'lobj::ResrcMeta' (role 'lobj_ResrcMeta', cardinality 0..*).
+'lobj::BlockFolder' (role 'lobj_BlockFolder15', cardinality 0..*) is associated with 'lobj::BlockFolder' (role 'lobj_BlockFolder13', cardinality 0..*).
+'lobj::LearningUnit' (role 'lobj_LearningUnit60', cardinality 0..*) is associated with 'lobj::LuFolder' (role 'lobj_LuFolder59', cardinality 0..*).
+'lobj::ResrcFolder' (role 'lobj_ResrcFolder91', cardinality 0..*) is associated with 'lobj::AccessControl' (role 'lobj_AccessControl92', cardinality 0..*).
+'lobj::Author' (role 'lobj_Author215', cardinality 0..*) is associated with 'lobj::Source' (role 'lobj_Source214', cardinality 0..*).
+'lobj::Item' (role 'lobj_Item52', cardinality 0..*) is associated with 'lobj::LearningUnit' (role 'lobj_LearningUnit51', cardinality 0..*).
+'lobj::Language' (role 'lobj_Language', cardinality 0..*) is associated with 'lobj::AbstractContent' (role 'lobj_AbstractContent', cardinality 0..*).
+'lobj::PublishInfo' (role 'lobj_PublishInfo', cardinality 0..*) is associated with 'lobj::LuMeta' (role 'lobj_LuMeta174', cardinality 0..*).
+'lobj::Node' (role 'lobj_Node', cardinality 0..*) is associated with 'lobj::Module' (role 'lobj_Module70', cardinality 0..*).
+'lobj::AccessControl' (role 'lobj_AccessControl73', cardinality 0..*) is associated with 'lobj::Module' (role 'lobj_Module72', cardinality 0..*).
+'lobj::LuMeta' (role 'lobj_LuMeta166', cardinality 0..*) is associated with 'lobj::DidacMeta' (role 'lobj_DidacMeta167', cardinality 0..*).
+'lobj::CourseMeta' (role 'lobj_CourseMeta154', cardinality 0..*) is associated with 'lobj::User' (role 'lobj_User155', cardinality 0..*).
+'lobj::AccessControl' (role 'lobj_AccessControl63', cardinality 0..*) is associated with 'lobj::LuFolder' (role 'lobj_LuFolder62', cardinality 0..*).
+'lobj::Coursetype' (role 'lobj_Coursetype', cardinality 0..*) is associated with 'lobj::Course' (role 'lobj_Course35', cardinality 0..*).
+'lobj::ResrcFiletype' (role 'lobj_ResrcFiletype', cardinality 0..*) is associated with 'lobj::ResrcFile' (role 'lobj_ResrcFile110', cardinality 0..*).
+'lobj::HypertextBlock' (role 'lobj_HypertextBlock', cardinality 0..*) is associated with 'lobj::HypertextContent' (role 'lobj_HypertextContent', cardinality 0..*).
+'lobj::ResrcFile' (role 'lobj_ResrcFile', cardinality 0..*) is associated with 'lobj::ResrcFolder' (role 'lobj_ResrcFolder94', cardinality 0..*).
+'lobj::User' (role 'lobj_User124', cardinality 0..*) is associated with 'lobj::AccessControl' (role 'lobj_AccessControl123', cardinality 0..*).
+'lobj::FolderMeta' (role 'lobj_FolderMeta', cardinality 0..*) is associated with 'lobj::BlockFolder' (role 'lobj_BlockFolder', cardinality 0..*).
+'lobj::Block' (role 'lobj_Block18', cardinality 0..*) is associated with 'lobj::BlockFolder' (role 'lobj_BlockFolder17', cardinality 0..*).
+'lobj::LearningUnit' (role 'lobj_LearningUnit45', cardinality 0..*) is associated with 'lobj::ExternalMetadata' (role 'lobj_ExternalMetadata46', cardinality 0..*).
+'lobj::Item' (role 'lobj_Item42', cardinality 0..*) is associated with 'lobj::Item' (role 'lobj_Item40', cardinality 0..*).
+'lobj::ResrcFile' (role 'resrcFile', cardinality 0..*) is associated with 'lobj::HypertextContent' (role 'HypertextContent', cardinality 0..*).
+'lobj::Blocktype' (role 'blocktypes', cardinality 0..*) is associated with 'lobj::Domain' (role 'Domain', cardinality 0..*).
+'lobj::CourseMeta' (role 'lobj_CourseMeta157', cardinality 0..*) is associated with 'lobj::Language' (role 'lobj_Language158', cardinality 0..*).
+'lobj::ResrcFile' (role 'ResrcFile', cardinality 0..*) is associated with 'lobj::HypertextContent' (role 'hypertextContent', cardinality 0..*).
+'lobj::PublishInfo' (role 'lobj_PublishInfo209', cardinality 0..*) is associated with 'lobj::ModuleMeta' (role 'lobj_ModuleMeta208', cardinality 0..*).
+'lobj::CorrBlock' (role 'lobj_CorrBlock', cardinality 0..*) is associated with 'lobj::PresentationBlock' (role 'lobj_PresentationBlock', cardinality 0..*).
+'lobj::HypertextContent' (role 'lobj_HypertextContent10', cardinality 0..*) is associated with 'lobj::BlockAudiofile' (role 'lobj_BlockAudiofile', cardinality 0..*).
+'lobj::LuFolder' (role 'lobj_LuFolder55', cardinality 0..*) is associated with 'lobj::LuFolder' (role 'lobj_LuFolder57', cardinality 0..*).
+'lobj::Block' (role 'lobj_Block', cardinality 0..*) is associated with 'lobj::BlockMeta' (role 'lobj_BlockMeta', cardinality 0..*).
+'lobj::LuMeta' (role 'lobj_LuMeta', cardinality 0..*) is associated with 'lobj::LearningUnit' (role 'lobj_LearningUnit', cardinality 0..*).
+'lobj::LuMeta' (role 'lobj_LuMeta171', cardinality 0..*) is associated with 'lobj::Author' (role 'lobj_Author172', cardinality 0..*).
+'lobj::BlockMeta' (role 'lobj_BlockMeta145', cardinality 0..*) is associated with 'lobj::Language' (role 'lobj_Language146', cardinality 0..*).
+'lobj::ModuleFolder' (role 'lobj_ModuleFolder76', cardinality 0..*) is associated with 'lobj::ModuleFolder' (role 'lobj_ModuleFolder78', cardinality 0..*).
+'lobj::User' (role 'lobj_User217', cardinality 0..*) is associated with 'lobj::AuthorizationTypes' (role 'lobj_AuthorizationTypes218', cardinality 0..*).
+'lobj::Blocktype' (role 'lobj_Blocktype', cardinality 0..*) is associated with 'lobj::BlockMeta' (role 'lobj_BlockMeta140', cardinality 0..*).
+'lobj::AccessControl' (role 'lobj_AccessControl108', cardinality 0..*) is associated with 'lobj::ResrcFile' (role 'lobj_ResrcFile107', cardinality 0..*).
+'lobj::Language' (role 'lobj_Language195', cardinality 0..*) is associated with 'lobj::Coursetype' (role 'lobj_Coursetype194', cardinality 0..*).
+'lobj::Publisher' (role 'lobj_Publisher', cardinality 0..*) is associated with 'lobj::Address' (role 'lobj_Address187', cardinality 0..*).
+'lobj::Course' (role 'lobj_Course37', cardinality 0..*) is associated with 'lobj::Module' (role 'lobj_Module', cardinality 0..*).
+'lobj::Address' (role 'lobj_Address138', cardinality 0..*) is associated with 'lobj::Author' (role 'lobj_Author137', cardinality 0..*).
+'lobj::ExternalMetadata' (role 'lobj_ExternalMetadata', cardinality 0..*) is associated with 'lobj::Block' (role 'lobj_Block2', cardinality 0..*).
+'lobj::Language' (role 'lobj_Language150', cardinality 0..*) is associated with 'lobj::TitleMeta' (role 'lobj_TitleMeta149', cardinality 0..*).
+'lobj::Block' (role 'lobj_Block98', cardinality 0..*) is associated with 'lobj::PresentationBlock' (role 'lobj_PresentationBlock97', cardinality 0..*).
+'lobj::Block' (role 'lobj_Block4', cardinality 0..*) is associated with 'lobj::AccessControl' (role 'lobj_AccessControl', cardinality 0..*).
+'lobj::LearningUnit' (role 'lobj_LearningUnit48', cardinality 0..*) is associated with 'lobj::AccessControl' (role 'lobj_AccessControl49', cardinality 0..*).
+'lobj::Affiliation' (role 'lobj_Affiliation185', cardinality 0..*) is associated with 'lobj::Person' (role 'lobj_Person184', cardinality 0..*).
+'lobj::FolderMeta' (role 'lobj_FolderMeta86', cardinality 0..*) is associated with 'lobj::ResrcFolder' (role 'lobj_ResrcFolder', cardinality 0..*).
+'lobj::DidacMeta' (role 'lobj_DidacMeta', cardinality 0..*) is associated with 'lobj::CourseMeta' (role 'lobj_CourseMeta152', cardinality 0..*).
+'lobj::User' (role 'lobj_User', cardinality 0..*) is associated with 'lobj::AccessControl' (role 'lobj_AccessControl121', cardinality 0..*).
+'lobj::Language' (role 'lobj_Language200', cardinality 0..*) is associated with 'lobj::InternalRef' (role 'lobj_InternalRef199', cardinality 0..*).
+'lobj::TitleMeta' (role 'lobj_TitleMeta', cardinality 0..*) is associated with 'lobj::Category' (role 'lobj_Category', cardinality 0..*).

@@ -1,0 +1,110 @@
+The model has 51 class(es).
+The class 'Input' has no attributes.
+The class 'metamodeloArquitecturaPila::Date' has no attributes.
+The class 'metamodeloArquitecturaPila::View' has the following attributes: 'name' of type str.
+The class 'metamodeloArquitecturaPila::Entity' has the following attributes: 'name' of type str.
+The class 'metamodeloArquitecturaPila::Integer' has no attributes.
+The class 'metamodeloArquitecturaPila::Other' has no attributes.
+The class 'metamodeloArquitecturaPila::Boolean' has no attributes.
+The class 'metamodeloArquitecturaPila::BusinessLogic' has the following attributes: 'name' of type str.
+The class 'DataType' has no attributes.
+The class 'metamodeloArquitecturaPila::Text' has no attributes.
+The class 'ComplexComponent' has no attributes.
+The class 'metamodeloArquitecturaPila::Method' has the following attributes: 'name' of type str.
+The class 'metamodeloArquitecturaPila::Select' has no attributes.
+The class 'metamodeloArquitecturaPila::Architecture' has the following attributes: 'name' of type str.
+The class 'metamodeloArquitecturaPila::Radio' has no attributes.
+The class 'SimpleComponent' has no attributes.
+The class 'metamodeloArquitecturaPila::Body' has the following attributes: 'content' of type str.
+The class 'metamodeloArquitecturaPila::ListItem' has the following attributes: 'action' of type str; 'isSelected' of type str.
+The class 'metamodeloArquitecturaPila::Input' has the following attributes: 'action' of type str.
+The class 'metamodeloArquitecturaPila::BusinessModel' has no attributes.
+The class 'metamodeloArquitecturaPila::SimpleComponent' has the following attributes: 'value' of type str.
+The class 'metamodeloArquitecturaPila::Form' has the following attributes: 'name' of type str; 'id' of type str.
+The class 'metamodeloArquitecturaPila::TextArea' has the following attributes: 'visibleLines' of type str.
+The class 'metamodeloArquitecturaPila::Check' has no attributes.
+The class 'metamodeloArquitecturaPila::Create' has no attributes.
+The class 'metamodeloArquitecturaPila::Number' has no attributes.
+The class 'metamodeloArquitecturaPila::Function' has the following attributes: 'name' of type str.
+The class 'metamodeloArquitecturaPila::Attribute' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'metamodeloArquitecturaPila::Button' has the following attributes: 'action' of type str.
+The class 'metamodeloArquitecturaPila::String' has no attributes.
+The class 'metamodeloArquitecturaPila::TitleBar' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'metamodeloArquitecturaPila::ComplexComponent' has no attributes.
+The class 'metamodeloArquitecturaPila::Service' has the following attributes: 'name' of type str.
+The class 'metamodeloArquitecturaPila::Grid' has the following attributes: 'rows' of type str; 'cols' of type str.
+The class 'metamodeloArquitecturaPila::DatePicker' has no attributes.
+The class 'metamodeloArquitecturaPila::Parameter' has the following attributes: 'name' of type str.
+The class 'ServiceType' has no attributes.
+The class 'metamodeloArquitecturaPila::GraphicalComponent' has the following attributes: 'height' of type str; 'displayName' of type str; 'id' of type str; 'length' of type str; 'name' of type str.
+The class 'metamodeloArquitecturaPila::DropdownList' has no attributes.
+The class 'metamodeloArquitecturaPila::Menu' has the following attributes: 'name' of type str; 'id' of type str.
+The class 'metamodeloArquitecturaPila::ServiceType' has the following attributes: 'name' of type str.
+The class 'metamodeloArquitecturaPila::Delete' has no attributes.
+The class 'metamodeloArquitecturaPila::MenuItem' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'metamodeloArquitecturaPila::Label' has no attributes.
+The class 'metamodeloArquitecturaPila::Enum' has no attributes.
+The class 'metamodeloArquitecturaPila::Read' has no attributes.
+The class 'GraphicalComponent' has no attributes.
+The class 'metamodeloArquitecturaPila::FunctionBody' has the following attributes: 'content' of type str.
+The class 'metamodeloArquitecturaPila::Float' has no attributes.
+The class 'metamodeloArquitecturaPila::DataType' has the following attributes: 'name' of type str.
+The class 'metamodeloArquitecturaPila::Update' has no attributes.
+'metamodeloArquitecturaPila::Create' is a specialization of 'ServiceType'.
+'metamodeloArquitecturaPila::ComplexComponent' is a specialization of 'GraphicalComponent'.
+'metamodeloArquitecturaPila::Delete' is a specialization of 'ServiceType'.
+'metamodeloArquitecturaPila::Select' is a specialization of 'ComplexComponent'.
+'metamodeloArquitecturaPila::DatePicker' is a specialization of 'Input'.
+'metamodeloArquitecturaPila::Input' is a specialization of 'SimpleComponent'.
+'metamodeloArquitecturaPila::Update' is a specialization of 'ServiceType'.
+'metamodeloArquitecturaPila::Boolean' is a specialization of 'DataType'.
+'metamodeloArquitecturaPila::Text' is a specialization of 'Input'.
+'metamodeloArquitecturaPila::Button' is a specialization of 'SimpleComponent'.
+'metamodeloArquitecturaPila::Check' is a specialization of 'Input'.
+'metamodeloArquitecturaPila::Date' is a specialization of 'DataType'.
+'metamodeloArquitecturaPila::String' is a specialization of 'DataType'.
+'metamodeloArquitecturaPila::Integer' is a specialization of 'DataType'.
+'metamodeloArquitecturaPila::Read' is a specialization of 'ServiceType'.
+'metamodeloArquitecturaPila::DropdownList' is a specialization of 'SimpleComponent'.
+'metamodeloArquitecturaPila::Other' is a specialization of 'DataType'.
+'metamodeloArquitecturaPila::Enum' is a specialization of 'DataType'.
+'metamodeloArquitecturaPila::Float' is a specialization of 'DataType'.
+'metamodeloArquitecturaPila::Grid' is a specialization of 'ComplexComponent'.
+'metamodeloArquitecturaPila::SimpleComponent' is a specialization of 'GraphicalComponent'.
+'metamodeloArquitecturaPila::Number' is a specialization of 'Input'.
+'metamodeloArquitecturaPila::Label' is a specialization of 'SimpleComponent'.
+'metamodeloArquitecturaPila::Radio' is a specialization of 'Input'.
+'metamodeloArquitecturaPila::TextArea' is a specialization of 'ComplexComponent'.
+'metamodeloArquitecturaPila::Entity' (role 'metamodeloArquitecturaPila_Entity48', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::Method' (role 'metamodeloArquitecturaPila_Method', cardinality 0..*).
+'metamodeloArquitecturaPila::ServiceType' (role 'metamodeloArquitecturaPila_ServiceType33', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::Service' (role 'metamodeloArquitecturaPila_Service32', cardinality 0..*).
+'metamodeloArquitecturaPila::Service' (role 'metamodeloArquitecturaPila_Service40', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::Function' (role 'metamodeloArquitecturaPila_Function', cardinality 0..*).
+'metamodeloArquitecturaPila::ServiceType' (role 'metamodeloArquitecturaPila_ServiceType', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::Architecture' (role 'metamodeloArquitecturaPila_Architecture6', cardinality 0..*).
+'metamodeloArquitecturaPila::Menu' (role 'metamodeloArquitecturaPila_Menu23', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::MenuItem' (role 'metamodeloArquitecturaPila_MenuItem', cardinality 0..*).
+'metamodeloArquitecturaPila::Architecture' (role 'metamodeloArquitecturaPila_Architecture4', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::Service' (role 'metamodeloArquitecturaPila_Service', cardinality 0..*).
+'metamodeloArquitecturaPila::Parameter' (role 'metamodeloArquitecturaPila_Parameter38', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::Service' (role 'metamodeloArquitecturaPila_Service37', cardinality 0..*).
+'metamodeloArquitecturaPila::Parameter' (role 'metamodeloArquitecturaPila_Parameter68', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::Function' (role 'metamodeloArquitecturaPila_Function67', cardinality 0..*).
+'metamodeloArquitecturaPila::DataType' (role 'metamodeloArquitecturaPila_DataType54', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::Attribute' (role 'metamodeloArquitecturaPila_Attribute53', cardinality 0..*).
+'metamodeloArquitecturaPila::Entity' (role 'metamodeloArquitecturaPila_Entity51', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::Entity' (role 'metamodeloArquitecturaPila_Entity49', cardinality 0..*).
+'metamodeloArquitecturaPila::Architecture' (role 'metamodeloArquitecturaPila_Architecture2', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::BusinessModel' (role 'metamodeloArquitecturaPila_BusinessModel', cardinality 0..*).
+'metamodeloArquitecturaPila::ListItem' (role 'metamodeloArquitecturaPila_ListItem', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::DropdownList' (role 'metamodeloArquitecturaPila_DropdownList', cardinality 0..*).
+'metamodeloArquitecturaPila::BusinessModel' (role 'metamodeloArquitecturaPila_BusinessModel42', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::Entity' (role 'metamodeloArquitecturaPila_Entity', cardinality 0..*).
+'metamodeloArquitecturaPila::View' (role 'metamodeloArquitecturaPila_View12', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::Menu' (role 'metamodeloArquitecturaPila_Menu', cardinality 0..*).
+'metamodeloArquitecturaPila::Function' (role 'metamodeloArquitecturaPila_Function73', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::FunctionBody' (role 'metamodeloArquitecturaPila_FunctionBody', cardinality 0..*).
+'metamodeloArquitecturaPila::DataType' (role 'metamodeloArquitecturaPila_DataType76', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::Parameter' (role 'metamodeloArquitecturaPila_Parameter75', cardinality 0..*).
+'metamodeloArquitecturaPila::Function' (role 'metamodeloArquitecturaPila_Function70', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::Parameter' (role 'metamodeloArquitecturaPila_Parameter71', cardinality 0..*).
+'metamodeloArquitecturaPila::View' (role 'metamodeloArquitecturaPila_View10', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::TitleBar' (role 'metamodeloArquitecturaPila_TitleBar', cardinality 0..*).
+'metamodeloArquitecturaPila::Entity' (role 'metamodeloArquitecturaPila_Entity46', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::Attribute' (role 'metamodeloArquitecturaPila_Attribute', cardinality 0..*).
+'metamodeloArquitecturaPila::Architecture' (role 'metamodeloArquitecturaPila_Architecture', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::View' (role 'metamodeloArquitecturaPila_View', cardinality 0..*).
+'metamodeloArquitecturaPila::SimpleComponent' (role 'metamodeloArquitecturaPila_SimpleComponent', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::TitleBar' (role 'metamodeloArquitecturaPila_TitleBar21', cardinality 0..*).
+'metamodeloArquitecturaPila::GraphicalComponent' (role 'metamodeloArquitecturaPila_GraphicalComponent26', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::Form' (role 'metamodeloArquitecturaPila_Form25', cardinality 0..*).
+'metamodeloArquitecturaPila::Function' (role 'metamodeloArquitecturaPila_Function65', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::BusinessLogic' (role 'metamodeloArquitecturaPila_BusinessLogic64', cardinality 0..*).
+'metamodeloArquitecturaPila::Service' (role 'metamodeloArquitecturaPila_Service35', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::Parameter' (role 'metamodeloArquitecturaPila_Parameter', cardinality 0..*).
+'metamodeloArquitecturaPila::View' (role 'metamodeloArquitecturaPila_View14', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::Form' (role 'metamodeloArquitecturaPila_Form', cardinality 0..*).
+'metamodeloArquitecturaPila::View' (role 'metamodeloArquitecturaPila_View16', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::GraphicalComponent' (role 'metamodeloArquitecturaPila_GraphicalComponent', cardinality 0..*).
+'metamodeloArquitecturaPila::Method' (role 'metamodeloArquitecturaPila_Method56', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::Parameter' (role 'metamodeloArquitecturaPila_Parameter57', cardinality 0..*).
+'metamodeloArquitecturaPila::DataType' (role 'metamodeloArquitecturaPila_DataType', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::BusinessModel' (role 'metamodeloArquitecturaPila_BusinessModel44', cardinality 0..*).
+'metamodeloArquitecturaPila::Body' (role 'metamodeloArquitecturaPila_Body', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::Method' (role 'metamodeloArquitecturaPila_Method62', cardinality 0..*).
+'metamodeloArquitecturaPila::BusinessLogic' (role 'metamodeloArquitecturaPila_BusinessLogic', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::Architecture' (role 'metamodeloArquitecturaPila_Architecture8', cardinality 0..*).
+'metamodeloArquitecturaPila::SimpleComponent' (role 'metamodeloArquitecturaPila_SimpleComponent29', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::MenuItem' (role 'metamodeloArquitecturaPila_MenuItem28', cardinality 0..*).
+'metamodeloArquitecturaPila::View' (role 'metamodeloArquitecturaPila_View17', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::View' (role 'metamodeloArquitecturaPila_View19', cardinality 0..*).
+'metamodeloArquitecturaPila::Parameter' (role 'metamodeloArquitecturaPila_Parameter60', cardinality 0..*) is associated with 'metamodeloArquitecturaPila::Method' (role 'metamodeloArquitecturaPila_Method59', cardinality 0..*).

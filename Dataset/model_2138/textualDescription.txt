@@ -1,0 +1,14 @@
+The model has 5 class(es).
+The class 'flowchart::Flowchart' has no attributes.
+The class 'flowchart::Transition' has the following attributes: 'label' of type str.
+The class 'flowchart::Node' has the following attributes: 'name' of type str.
+The class 'flowchart::Decision' has the following attributes: 'condition' of type str; 'isDecision' of type bool.
+The class 'flowchart::Action' has the following attributes: 'isAction' of type bool.
+'flowchart::Decision' (role 'flowchart_Decision', cardinality 0..*) is associated with 'flowchart::Node' (role 'flowchart_Node9', cardinality 0..*).
+'flowchart::Node' (role 'Node', cardinality 0..*) is associated with 'flowchart::Transition' (role 'outgoing', cardinality 0..*).
+'flowchart::Transition' (role 'Transition', cardinality 0..*) is associated with 'flowchart::Node' (role 'target', cardinality 0..*).
+'flowchart::Node' (role 'Node12', cardinality 0..*) is associated with 'flowchart::Transition' (role 'incoming', cardinality 0..*).
+'flowchart::Transition' (role 'flowchart_Transition', cardinality 0..*) is associated with 'flowchart::Flowchart' (role 'flowchart_Flowchart2', cardinality 0..*).
+'flowchart::Transition' (role 'Transition5', cardinality 0..*) is associated with 'flowchart::Node' (role 'source', cardinality 0..*).
+'flowchart::Node' (role 'flowchart_Node', cardinality 0..*) is associated with 'flowchart::Flowchart' (role 'flowchart_Flowchart', cardinality 0..*).
+'flowchart::Action' (role 'flowchart_Action', cardinality 0..*) is associated with 'flowchart::Node' (role 'flowchart_Node7', cardinality 0..*).

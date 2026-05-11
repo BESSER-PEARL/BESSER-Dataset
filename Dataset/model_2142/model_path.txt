@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Sorour-j/Epsilon/tests/org.eclipse.epsilon.emc.emf.test/src/org/eclipse/epsilon/emc/emf/xml/fragmented/WT_DesignPatterns.ecore

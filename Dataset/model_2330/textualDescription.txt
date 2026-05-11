@@ -1,0 +1,228 @@
+The model has 96 class(es).
+The class 'Actions::StructuredActions::ActionInputPin' has no attributes.
+The class 'Actions::BasicActions::Action' has no attributes.
+The class 'Trigger' has no attributes.
+The class 'WriteLinkAction' has no attributes.
+The class 'Actions::BasicActions::Signal' has no attributes.
+The class 'Actions::BasicActions::InputPin' has no attributes.
+The class 'Actions::IntermediateActions::Property' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'LinkAction' has no attributes.
+The class 'Actions::StructuredActions::ReadVariableAction' has no attributes.
+The class 'Pin' has no attributes.
+The class 'AcceptEventAction' has no attributes.
+The class 'Actions::IntermediateActions::CreateObjectAction' has no attributes.
+The class 'Actions::BasicActions::ValuePin' has no attributes.
+The class 'Variable' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Actions::IntermediateActions::DestroyObjectAction' has no attributes.
+The class 'Actions::CompleteActions::ReplyAction' has no attributes.
+The class 'Actions::BasicActions::CallAction' has the following attributes: 'isSynchronous' of type bool.
+The class 'Actions::IntermediateActions::ReadSelfAction' has no attributes.
+The class 'Signal' has no attributes.
+The class 'Actions::CompleteActions::ReclassifyObjectAction' has the following attributes: 'isReplaceAll' of type bool.
+The class 'LinkEndData' has no attributes.
+The class 'WriteStructuralFeatureAction' has no attributes.
+The class 'QualifierValue' has no attributes.
+The class 'Actions::StructuredActions::VariableAction' has no attributes.
+The class 'BasicActions::TypedElement' has no attributes.
+The class 'Actions::IntermediateActions::SendObjectAction' has no attributes.
+The class 'Behavior' has no attributes.
+The class 'Actions::IntermediateActions::ReadLinkAction' has no attributes.
+The class 'BasicActions::MultiplicityElement' has no attributes.
+The class 'Actions::CompleteActions::QualifierValue' has no attributes.
+The class 'Element' has no attributes.
+The class 'InputPin' has no attributes.
+The class 'Actions::IntermediateActions::DestroyLinkAction' has no attributes.
+The class 'Actions::CompleteActions::StartObjectBehaviorAction' has no attributes.
+The class 'CallAction' has no attributes.
+The class 'Actions::CompleteActions::AcceptCallAction' has no attributes.
+The class 'Actions::IntermediateActions::AddStructuralFeatureValueAction' has no attributes.
+The class 'Actions::BasicActions::Operation' has no attributes.
+The class 'Actions::BasicActions::NamedElement' has no attributes.
+The class 'Actions::IntermediateActions::ValueSpecificationAction' has no attributes.
+The class 'Actions::StructuredActions::ClearVariableAction' has no attributes.
+The class 'Actions::StructuredActions::AddVariableValueAction' has no attributes.
+The class 'Actions::BasicActions::OutputPin' has no attributes.
+The class 'Actions::BasicActions::ValueSpecification' has no attributes.
+The class 'Operation' has no attributes.
+The class 'Actions::IntermediateActions::LinkAction' has no attributes.
+The class 'Actions::CompleteActions::AcceptEventAction' has the following attributes: 'isUnmarshall' of type bool.
+The class 'Actions::CompleteActions::ReadLinkObjectEndQualifierAction' has no attributes.
+The class 'ValueSpecification' has no attributes.
+The class 'Actions::IntermediateActions::TestIdentityAction' has no attributes.
+The class 'Actions::CompleteActions::ReadlsClassifiedObjectAction' has no attributes.
+The class 'Actions::CompleteActions::StartClassifierBehaviorAction' has no attributes.
+The class 'Actions::BasicActions::MultiplicityElement' has no attributes.
+The class 'Actions::IntermediateActions::WriteStructuralFeatureAction' has no attributes.
+The class 'Actions::CompleteActions::ReduceAction' has the following attributes: 'isOrdered' of type bool.
+The class 'Actions::IntermediateActions::ClearStructuralFeatureAction' has no attributes.
+The class 'Actions::StructuredActions::RaiseExceptionAction' has no attributes.
+The class 'CreateLinkAction' has no attributes.
+The class 'Actions::BasicActions::InvocationAction' has no attributes.
+The class 'OutputPin' has no attributes.
+The class 'Actions::BasicActions::OpaqueAction' has the following attributes: 'body' of type str; 'language' of type str.
+The class 'Property' has no attributes.
+The class 'Actions::CompleteActions::Trigger' has no attributes.
+The class 'Actions::BasicActions::TypedElement' has no attributes.
+The class 'StructuralFeatureAction' has no attributes.
+The class 'Actions::BasicActions::SendSignalAction' has no attributes.
+The class 'Actions::CompleteActions::CreateLinkObjectAction' has no attributes.
+The class 'Actions::BasicActions::CallBehaviorAction' has no attributes.
+The class 'StructuralFeature' has no attributes.
+The class 'Actions::IntermediateActions::BroadcastSignalAction' has no attributes.
+The class 'Actions::StructuredActions::Variable' has no attributes.
+The class 'Actions::IntermediateActions::LinkEndCreationData' has the following attributes: 'isReplaceAll' of type bool.
+The class 'Actions::CompleteActions::UnmarshallAction' has no attributes.
+The class 'Actions::IntermediateActions::LinkEndDestructionData' has the following attributes: 'isDestroyDuplicates' of type bool.
+The class 'InvocationAction' has no attributes.
+The class 'Actions::StructuredActions::RemoveVariableValueAction' has no attributes.
+The class 'Actions::BasicActions::Classifier' has no attributes.
+The class 'Actions::IntermediateActions::StructuralFeatureAction' has no attributes.
+The class 'Actions::IntermediateActions::LinkEndData' has no attributes.
+The class 'Actions::BasicActions::Behavior' has no attributes.
+The class 'Actions::BasicActions::CallOperationAction' has no attributes.
+The class 'Actions::IntermediateActions::RemoveStructuralFeatureValueAction' has no attributes.
+The class 'Actions::IntermediateActions::CreateLinkAction' has no attributes.
+The class 'Actions::BasicActions::Pin' has no attributes.
+The class 'Actions::CompleteActions::ReadExtendAction' has no attributes.
+The class 'VariableAction' has no attributes.
+The class 'Actions::CompleteActions::ReadLinkObjectEndAction' has no attributes.
+The class 'WriteVariableAction' has no attributes.
+The class 'Actions::IntermediateActions::Element' has no attributes.
+The class 'Actions::IntermediateActions::StructuralFeature' has no attributes.
+The class 'Actions::StructuredActions::WriteVariableAction' has no attributes.
+The class 'Action' has no attributes.
+The class 'Actions::IntermediateActions::WriteLinkAction' has no attributes.
+The class 'Actions::IntermediateActions::ReadStructuralFeatureAction' has no attributes.
+'Actions::BasicActions::SendSignalAction' is a specialization of 'InvocationAction'.
+'Actions::BasicActions::Action' is a specialization of 'NamedElement'.
+'Actions::IntermediateActions::StructuralFeatureAction' is a specialization of 'Action'.
+'Actions::CompleteActions::ReadLinkObjectEndAction' is a specialization of 'Action'.
+'Actions::CompleteActions::ReadLinkObjectEndQualifierAction' is a specialization of 'Action'.
+'Actions::IntermediateActions::BroadcastSignalAction' is a specialization of 'InvocationAction'.
+'Actions::CompleteActions::UnmarshallAction' is a specialization of 'Action'.
+'Actions::CompleteActions::ReclassifyObjectAction' is a specialization of 'Action'.
+'Actions::StructuredActions::WriteVariableAction' is a specialization of 'VariableAction'.
+'Actions::BasicActions::OutputPin' is a specialization of 'Pin'.
+'Actions::IntermediateActions::DestroyLinkAction' is a specialization of 'WriteLinkAction'.
+'Actions::IntermediateActions::DestroyObjectAction' is a specialization of 'Action'.
+'Actions::CompleteActions::QualifierValue' is a specialization of 'Element'.
+'Actions::CompleteActions::AcceptCallAction' is a specialization of 'AcceptEventAction'.
+'Actions::IntermediateActions::WriteStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+'Actions::IntermediateActions::LinkAction' is a specialization of 'Action'.
+'Actions::StructuredActions::ReadVariableAction' is a specialization of 'VariableAction'.
+'Actions::IntermediateActions::AddStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+'Actions::StructuredActions::RemoveVariableValueAction' is a specialization of 'WriteVariableAction'.
+'Actions::BasicActions::Pin' is a specialization of 'BasicActions::TypedElement'.
+'Actions::IntermediateActions::LinkEndCreationData' is a specialization of 'LinkEndData'.
+'Actions::IntermediateActions::WriteLinkAction' is a specialization of 'LinkAction'.
+'Actions::CompleteActions::StartObjectBehaviorAction' is a specialization of 'CallAction'.
+'Actions::StructuredActions::ActionInputPin' is a specialization of 'InputPin'.
+'Actions::BasicActions::CallBehaviorAction' is a specialization of 'CallAction'.
+'Actions::IntermediateActions::ValueSpecificationAction' is a specialization of 'Action'.
+'Actions::StructuredActions::AddVariableValueAction' is a specialization of 'WriteVariableAction'.
+'Actions::CompleteActions::ReduceAction' is a specialization of 'Action'.
+'Actions::BasicActions::Pin' is a specialization of 'BasicActions::MultiplicityElement'.
+'Actions::BasicActions::OpaqueAction' is a specialization of 'Action'.
+'Actions::IntermediateActions::ReadStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+'Actions::StructuredActions::ClearVariableAction' is a specialization of 'VariableAction'.
+'Actions::CompleteActions::ReplyAction' is a specialization of 'Action'.
+'Actions::StructuredActions::VariableAction' is a specialization of 'Action'.
+'Actions::IntermediateActions::RemoveStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+'Actions::IntermediateActions::SendObjectAction' is a specialization of 'InvocationAction'.
+'Actions::BasicActions::InputPin' is a specialization of 'Pin'.
+'Actions::BasicActions::InvocationAction' is a specialization of 'Action'.
+'Actions::IntermediateActions::CreateLinkAction' is a specialization of 'WriteLinkAction'.
+'Actions::IntermediateActions::ReadLinkAction' is a specialization of 'LinkAction'.
+'Actions::CompleteActions::CreateLinkObjectAction' is a specialization of 'CreateLinkAction'.
+'Actions::IntermediateActions::LinkEndData' is a specialization of 'Element'.
+'Actions::BasicActions::ValuePin' is a specialization of 'InputPin'.
+'Actions::BasicActions::CallAction' is a specialization of 'InvocationAction'.
+'Actions::StructuredActions::RaiseExceptionAction' is a specialization of 'Action'.
+'Actions::CompleteActions::StartClassifierBehaviorAction' is a specialization of 'Action'.
+'Actions::IntermediateActions::LinkEndDestructionData' is a specialization of 'LinkEndData'.
+'Actions::IntermediateActions::ClearStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+'Actions::CompleteActions::AcceptEventAction' is a specialization of 'Action'.
+'Actions::IntermediateActions::ReadSelfAction' is a specialization of 'Action'.
+'Actions::CompleteActions::ReadExtendAction' is a specialization of 'Action'.
+'Actions::IntermediateActions::TestIdentityAction' is a specialization of 'Action'.
+'Actions::IntermediateActions::CreateObjectAction' is a specialization of 'Action'.
+'Actions::CompleteActions::ReduceAction' (role 'Actions_CompleteActions_ReduceAction', cardinality 0..*) is associated with 'OutputPin' (role 'OutputPin154', cardinality 0..*).
+'OutputPin' (role 'OutputPin35', cardinality 0..*) is associated with 'Actions::IntermediateActions::CreateObjectAction' (role 'Actions_IntermediateActions_CreateObjectAction34', cardinality 0..*).
+'Behavior' (role 'Behavior160', cardinality 0..*) is associated with 'Actions::CompleteActions::ReduceAction' (role 'Actions_CompleteActions_ReduceAction159', cardinality 0..*).
+'Actions::CompleteActions::ReadlsClassifiedObjectAction' (role 'Actions_CompleteActions_ReadlsClassifiedObjectAction124', cardinality 0..*) is associated with 'InputPin' (role 'InputPin125', cardinality 0..*).
+'Actions::IntermediateActions::DestroyObjectAction' (role 'Actions_IntermediateActions_DestroyObjectAction', cardinality 0..*) is associated with 'InputPin' (role 'InputPin37', cardinality 0..*).
+'OutputPin' (role 'OutputPin142', cardinality 0..*) is associated with 'Actions::CompleteActions::ReadLinkObjectEndAction' (role 'Actions_CompleteActions_ReadLinkObjectEndAction141', cardinality 0..*).
+'Actions::CompleteActions::ReduceAction' (role 'Actions_CompleteActions_ReduceAction156', cardinality 0..*) is associated with 'InputPin' (role 'InputPin157', cardinality 0..*).
+'Actions::CompleteActions::UnmarshallAction' (role 'Actions_CompleteActions_UnmarshallAction99', cardinality 0..*) is associated with 'OutputPin' (role 'OutputPin100', cardinality 0..*).
+'Actions::CompleteActions::ReclassifyObjectAction' (role 'Actions_CompleteActions_ReclassifyObjectAction116', cardinality 0..*) is associated with 'Classifier' (role 'Classifier117', cardinality 0..*).
+'InputPin' (role 'InputPin134', cardinality 0..*) is associated with 'Actions::CompleteActions::QualifierValue' (role 'Actions_CompleteActions_QualifierValue133', cardinality 0..*).
+'Actions::StructuredActions::ReadVariableAction' (role 'Actions_StructuredActions_ReadVariableAction', cardinality 0..*) is associated with 'OutputPin' (role 'OutputPin163', cardinality 0..*).
+'Actions::CompleteActions::ReclassifyObjectAction' (role 'Actions_CompleteActions_ReclassifyObjectAction', cardinality 0..*) is associated with 'InputPin' (role 'InputPin114', cardinality 0..*).
+'Actions::StructuredActions::AddVariableValueAction' (role 'Actions_StructuredActions_AddVariableValueAction', cardinality 0..*) is associated with 'InputPin' (role 'InputPin167', cardinality 0..*).
+'OutputPin' (role 'OutputPin122', cardinality 0..*) is associated with 'Actions::CompleteActions::ReadlsClassifiedObjectAction' (role 'Actions_CompleteActions_ReadlsClassifiedObjectAction', cardinality 0..*).
+'OutputPin' (role 'OutputPin147', cardinality 0..*) is associated with 'Actions::CompleteActions::ReadLinkObjectEndQualifierAction' (role 'Actions_CompleteActions_ReadLinkObjectEndQualifierAction146', cardinality 0..*).
+'Actions::CompleteActions::AcceptEventAction' (role 'Actions_CompleteActions_AcceptEventAction', cardinality 0..*) is associated with 'OutputPin' (role 'OutputPin102', cardinality 0..*).
+'InputPin' (role 'InputPin129', cardinality 0..*) is associated with 'Actions::CompleteActions::StartObjectBehaviorAction' (role 'Actions_CompleteActions_StartObjectBehaviorAction', cardinality 0..*).
+'Actions::BasicActions::CallOperationAction' (role 'Actions_BasicActions_CallOperationAction18', cardinality 0..*) is associated with 'InputPin' (role 'InputPin19', cardinality 0..*).
+'InputPin' (role 'InputPin83', cardinality 0..*) is associated with 'Actions::IntermediateActions::LinkEndCreationData' (role 'Actions_IntermediateActions_LinkEndCreationData', cardinality 0..*).
+'Actions::CompleteActions::QualifierValue' (role 'Actions_CompleteActions_QualifierValue', cardinality 0..*) is associated with 'Property' (role 'Property131', cardinality 0..*).
+'Actions::StructuredActions::ActionInputPin' (role 'Actions_StructuredActions_ActionInputPin', cardinality 0..*) is associated with 'Action' (role 'Action', cardinality 0..*).
+'Operation' (role 'Operation', cardinality 0..*) is associated with 'Actions::BasicActions::CallOperationAction' (role 'Actions_BasicActions_CallOperationAction', cardinality 0..*).
+'OutputPin' (role 'OutputPin81', cardinality 0..*) is associated with 'Actions::IntermediateActions::ReadLinkAction' (role 'Actions_IntermediateActions_ReadLinkAction', cardinality 0..*).
+'Actions::CompleteActions::ReadLinkObjectEndQualifierAction' (role 'Actions_CompleteActions_ReadLinkObjectEndQualifierAction149', cardinality 0..*) is associated with 'Property' (role 'Property150', cardinality 0..*).
+'Classifier' (role 'Classifier120', cardinality 0..*) is associated with 'Actions::CompleteActions::ReclassifyObjectAction' (role 'Actions_CompleteActions_ReclassifyObjectAction119', cardinality 0..*).
+'ValueSpecification' (role 'ValueSpecification', cardinality 0..*) is associated with 'Actions::BasicActions::ValuePin' (role 'Actions_BasicActions_ValuePin', cardinality 0..*).
+'InputPin' (role 'InputPin127', cardinality 0..*) is associated with 'Actions::CompleteActions::StartClassifierBehaviorAction' (role 'Actions_CompleteActions_StartClassifierBehaviorAction', cardinality 0..*).
+'InputPin' (role 'InputPin6', cardinality 0..*) is associated with 'Actions::BasicActions::OpaqueAction' (role 'Actions_BasicActions_OpaqueAction', cardinality 0..*).
+'InputPin' (role 'InputPin42', cardinality 0..*) is associated with 'Actions::IntermediateActions::TestIdentityAction' (role 'Actions_IntermediateActions_TestIdentityAction41', cardinality 0..*).
+'OutputPin' (role 'OutputPin39', cardinality 0..*) is associated with 'Actions::IntermediateActions::TestIdentityAction' (role 'Actions_IntermediateActions_TestIdentityAction', cardinality 0..*).
+'InputPin' (role 'InputPin94', cardinality 0..*) is associated with 'Actions::CompleteActions::UnmarshallAction' (role 'Actions_CompleteActions_UnmarshallAction', cardinality 0..*).
+'Actions::IntermediateActions::LinkAction' (role 'Actions_IntermediateActions_LinkAction', cardinality 0..*) is associated with 'InputPin' (role 'InputPin71', cardinality 0..*).
+'OutputPin' (role 'OutputPin152', cardinality 0..*) is associated with 'Actions::CompleteActions::CreateLinkObjectAction' (role 'Actions_CompleteActions_CreateLinkObjectAction', cardinality 0..*).
+'Signal' (role 'Signal', cardinality 0..*) is associated with 'Actions::BasicActions::SendSignalAction' (role 'Actions_BasicActions_SendSignalAction23', cardinality 0..*).
+'InputPin' (role 'InputPin60', cardinality 0..*) is associated with 'Actions::IntermediateActions::WriteStructuralFeatureAction' (role 'Actions_IntermediateActions_WriteStructuralFeatureAction', cardinality 0..*).
+'InputPin' (role 'InputPin27', cardinality 0..*) is associated with 'Actions::IntermediateActions::SendObjectAction' (role 'Actions_IntermediateActions_SendObjectAction', cardinality 0..*).
+'Actions::CompleteActions::ReadLinkObjectEndAction' (role 'Actions_CompleteActions_ReadLinkObjectEndAction138', cardinality 0..*) is associated with 'InputPin' (role 'InputPin139', cardinality 0..*).
+'InputPin' (role 'InputPin169', cardinality 0..*) is associated with 'Actions::StructuredActions::RemoveVariableValueAction' (role 'Actions_StructuredActions_RemoveVariableValueAction', cardinality 0..*).
+'Actions::BasicActions::Action' (role 'Actions_BasicActions_Action2', cardinality 0..*) is associated with 'InputPin' (role 'InputPin', cardinality 0..*).
+'Actions::CompleteActions::ReplyAction' (role 'Actions_CompleteActions_ReplyAction89', cardinality 0..*) is associated with 'InputPin' (role 'InputPin90', cardinality 0..*).
+'Actions::IntermediateActions::ValueSpecificationAction' (role 'Actions_IntermediateActions_ValueSpecificationAction51', cardinality 0..*) is associated with 'ValueSpecification' (role 'ValueSpecification52', cardinality 0..*).
+'Actions::CompleteActions::UnmarshallAction' (role 'Actions_CompleteActions_UnmarshallAction96', cardinality 0..*) is associated with 'Classifier' (role 'Classifier97', cardinality 0..*).
+'Actions::CompleteActions::ReadLinkObjectEndAction' (role 'Actions_CompleteActions_ReadLinkObjectEndAction', cardinality 0..*) is associated with 'Property' (role 'Property136', cardinality 0..*).
+'Actions::IntermediateActions::ReadSelfAction' (role 'Actions_IntermediateActions_ReadSelfAction', cardinality 0..*) is associated with 'OutputPin' (role 'OutputPin47', cardinality 0..*).
+'InputPin' (role 'InputPin30', cardinality 0..*) is associated with 'Actions::IntermediateActions::SendObjectAction' (role 'Actions_IntermediateActions_SendObjectAction29', cardinality 0..*).
+'Actions::IntermediateActions::WriteStructuralFeatureAction' (role 'Actions_IntermediateActions_WriteStructuralFeatureAction62', cardinality 0..*) is associated with 'OutputPin' (role 'OutputPin63', cardinality 0..*).
+'Actions::IntermediateActions::CreateObjectAction' (role 'Actions_IntermediateActions_CreateObjectAction', cardinality 0..*) is associated with 'Classifier' (role 'Classifier32', cardinality 0..*).
+'InputPin' (role 'InputPin65', cardinality 0..*) is associated with 'Actions::IntermediateActions::AddStructuralFeatureValueAction' (role 'Actions_IntermediateActions_AddStructuralFeatureValueAction', cardinality 0..*).
+'Classifier' (role 'Classifier112', cardinality 0..*) is associated with 'Actions::CompleteActions::ReadExtendAction' (role 'Actions_CompleteActions_ReadExtendAction111', cardinality 0..*).
+'Actions::BasicActions::Action' (role 'Actions_BasicActions_Action4', cardinality 0..*) is associated with 'OutputPin' (role 'OutputPin', cardinality 0..*).
+'Actions::IntermediateActions::LinkEndData' (role 'Actions_IntermediateActions_LinkEndData77', cardinality 0..*) is associated with 'Property' (role 'Property', cardinality 0..*).
+'OutputPin' (role 'OutputPin14', cardinality 0..*) is associated with 'Actions::BasicActions::CallAction' (role 'Actions_BasicActions_CallAction', cardinality 0..*).
+'InputPin' (role 'InputPin56', cardinality 0..*) is associated with 'Actions::IntermediateActions::StructuralFeatureAction' (role 'Actions_IntermediateActions_StructuralFeatureAction55', cardinality 0..*).
+'Actions::IntermediateActions::RemoveStructuralFeatureValueAction' (role 'Actions_IntermediateActions_RemoveStructuralFeatureValueAction', cardinality 0..*) is associated with 'InputPin' (role 'InputPin67', cardinality 0..*).
+'OutputPin' (role 'OutputPin69', cardinality 0..*) is associated with 'Actions::IntermediateActions::ClearStructuralFeatureAction' (role 'Actions_IntermediateActions_ClearStructuralFeatureAction', cardinality 0..*).
+'InputPin' (role 'InputPin12', cardinality 0..*) is associated with 'Actions::BasicActions::InvocationAction' (role 'Actions_BasicActions_InvocationAction', cardinality 0..*).
+'QualifierValue' (role 'QualifierValue', cardinality 0..*) is associated with 'Actions::IntermediateActions::LinkEndData' (role 'Actions_IntermediateActions_LinkEndData79', cardinality 0..*).
+'Actions::BasicActions::SendSignalAction' (role 'Actions_BasicActions_SendSignalAction', cardinality 0..*) is associated with 'InputPin' (role 'InputPin21', cardinality 0..*).
+'Actions::CompleteActions::ReplyAction' (role 'Actions_CompleteActions_ReplyAction', cardinality 0..*) is associated with 'InputPin' (role 'InputPin87', cardinality 0..*).
+'Actions::IntermediateActions::TestIdentityAction' (role 'Actions_IntermediateActions_TestIdentityAction44', cardinality 0..*) is associated with 'InputPin' (role 'InputPin45', cardinality 0..*).
+'Actions::StructuredActions::RaiseExceptionAction' (role 'Actions_StructuredActions_RaiseExceptionAction', cardinality 0..*) is associated with 'InputPin' (role 'InputPin171', cardinality 0..*).
+'Actions::BasicActions::CallBehaviorAction' (role 'Actions_BasicActions_CallBehaviorAction', cardinality 0..*) is associated with 'Behavior' (role 'Behavior', cardinality 0..*).
+'OutputPin' (role 'OutputPin49', cardinality 0..*) is associated with 'Actions::IntermediateActions::ValueSpecificationAction' (role 'Actions_IntermediateActions_ValueSpecificationAction', cardinality 0..*).
+'Actions::IntermediateActions::LinkEndDestructionData' (role 'Actions_IntermediateActions_LinkEndDestructionData', cardinality 0..*) is associated with 'InputPin' (role 'InputPin85', cardinality 0..*).
+'Actions::BasicActions::OpaqueAction' (role 'Actions_BasicActions_OpaqueAction8', cardinality 0..*) is associated with 'OutputPin' (role 'OutputPin9', cardinality 0..*).
+'Actions::CompleteActions::AcceptEventAction' (role 'Actions_CompleteActions_AcceptEventAction104', cardinality 0..*) is associated with 'Trigger' (role 'Trigger105', cardinality 0..*).
+'OutputPin' (role 'OutputPin109', cardinality 0..*) is associated with 'Actions::CompleteActions::ReadExtendAction' (role 'Actions_CompleteActions_ReadExtendAction', cardinality 0..*).
+'StructuralFeature' (role 'StructuralFeature', cardinality 0..*) is associated with 'Actions::IntermediateActions::StructuralFeatureAction' (role 'Actions_IntermediateActions_StructuralFeatureAction', cardinality 0..*).
+'Classifier' (role 'Classifier', cardinality 0..*) is associated with 'Actions::BasicActions::Action' (role 'Actions_BasicActions_Action', cardinality 0..*).
+'Trigger' (role 'Trigger', cardinality 0..*) is associated with 'Actions::CompleteActions::ReplyAction' (role 'Actions_CompleteActions_ReplyAction92', cardinality 0..*).
+'InputPin' (role 'InputPin165', cardinality 0..*) is associated with 'Actions::StructuredActions::WriteVariableAction' (role 'Actions_StructuredActions_WriteVariableAction', cardinality 0..*).
+'Variable' (role 'Variable', cardinality 0..*) is associated with 'Actions::StructuredActions::VariableAction' (role 'Actions_StructuredActions_VariableAction', cardinality 0..*).
+'Actions::IntermediateActions::LinkAction' (role 'Actions_IntermediateActions_LinkAction73', cardinality 0..*) is associated with 'LinkEndData' (role 'LinkEndData', cardinality 0..*).
+'Actions::CompleteActions::ReadLinkObjectEndQualifierAction' (role 'Actions_CompleteActions_ReadLinkObjectEndQualifierAction', cardinality 0..*) is associated with 'InputPin' (role 'InputPin144', cardinality 0..*).
+'OutputPin' (role 'OutputPin58', cardinality 0..*) is associated with 'Actions::IntermediateActions::ReadStructuralFeatureAction' (role 'Actions_IntermediateActions_ReadStructuralFeatureAction', cardinality 0..*).
+'Actions::CompleteActions::AcceptCallAction' (role 'Actions_CompleteActions_AcceptCallAction', cardinality 0..*) is associated with 'OutputPin' (role 'OutputPin107', cardinality 0..*).
+'Actions::IntermediateActions::BroadcastSignalAction' (role 'Actions_IntermediateActions_BroadcastSignalAction', cardinality 0..*) is associated with 'Signal' (role 'Signal25', cardinality 0..*).
+'InputPin' (role 'InputPin75', cardinality 0..*) is associated with 'Actions::IntermediateActions::LinkEndData' (role 'Actions_IntermediateActions_LinkEndData', cardinality 0..*).

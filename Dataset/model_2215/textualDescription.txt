@@ -1,0 +1,34 @@
+The model has 9 class(es).
+The class 'studyProgramStructure::Student' has the following attributes: 'name' of type str.
+The class 'studyProgramStructure::Course' has the following attributes: 'level' of type int; 'credits' of type float; 'name' of type str; 'code' of type str.
+The class 'studyProgramStructure::CourseAllocation' has the following attributes: 'grade' of type str.
+The class 'studyProgramStructure::Semester' has the following attributes: 'year' of type int; 'season' of type str.
+The class 'studyProgramStructure::University' has the following attributes: 'name' of type str.
+The class 'studyProgramStructure::Specialization' has the following attributes: 'numOfSemesters' of type int; 'name' of type str.
+The class 'studyProgramStructure::StudyPlan' has no attributes.
+The class 'studyProgramStructure::CourseGroup' has the following attributes: 'name' of type str; 'status' of type str.
+The class 'studyProgramStructure::Program' has the following attributes: 'code' of type str; 'numOfSemestersForBaseSpecialization' of type int; 'numOfYears' of type int; 'name' of type str.
+The enumeration 'Grade' has the following literals: 'F', 'B', 'A', 'E', 'D', 'C'.
+The enumeration 'Season' has the following literals: 'fall', 'spring'.
+The enumeration 'CourseStatus' has the following literals: 'elective', 'mandatory'.
+'studyProgramStructure::Student' (role 'Student', cardinality 0..*) is associated with 'studyProgramStructure::StudyPlan' (role 'studyPlan', cardinality 0..*).
+'studyProgramStructure::Course' (role 'studyProgramStructure_Course24', cardinality 0..*) is associated with 'studyProgramStructure::University' (role 'studyProgramStructure_University23', cardinality 0..*).
+'studyProgramStructure::Student' (role 'studyProgramStructure_Student32', cardinality 0..*) is associated with 'studyProgramStructure::Specialization' (role 'studyProgramStructure_Specialization', cardinality 0..*).
+'studyProgramStructure::Semester' (role 'studyProgramStructure_Semester', cardinality 0..*) is associated with 'studyProgramStructure::StudyPlan' (role 'studyProgramStructure_StudyPlan', cardinality 0..*).
+'studyProgramStructure::Course' (role 'studyProgramStructure_Course39', cardinality 0..*) is associated with 'studyProgramStructure::CourseAllocation' (role 'studyProgramStructure_CourseAllocation38', cardinality 0..*).
+'studyProgramStructure::Student' (role 'student', cardinality 0..*) is associated with 'studyProgramStructure::StudyPlan' (role 'StudyPlan', cardinality 0..*).
+'studyProgramStructure::Program' (role 'studyProgramStructure_Program', cardinality 0..*) is associated with 'studyProgramStructure::University' (role 'studyProgramStructure_University', cardinality 0..*).
+'studyProgramStructure::CourseAllocation' (role 'studyProgramStructure_CourseAllocation', cardinality 0..*) is associated with 'studyProgramStructure::StudyPlan' (role 'studyProgramStructure_StudyPlan35', cardinality 0..*).
+'studyProgramStructure::Semester' (role 'Semester10', cardinality 0..*) is associated with 'studyProgramStructure::Specialization' (role 'specialization', cardinality 0..*).
+'studyProgramStructure::Semester' (role 'Semester', cardinality 0..*) is associated with 'studyProgramStructure::Program' (role 'program2', cardinality 0..*).
+'studyProgramStructure::CourseGroup' (role 'courseGroups', cardinality 0..*) is associated with 'studyProgramStructure::Semester' (role 'Semester19', cardinality 0..*).
+'studyProgramStructure::Semester' (role 'semesters16', cardinality 0..*) is associated with 'studyProgramStructure::Specialization' (role 'Specialization17', cardinality 0..*).
+'studyProgramStructure::Program' (role 'Program14', cardinality 0..*) is associated with 'studyProgramStructure::Semester' (role 'semesters', cardinality 0..*).
+'studyProgramStructure::CourseGroup' (role 'studyProgramStructure_CourseGroup', cardinality 0..*) is associated with 'studyProgramStructure::Course' (role 'studyProgramStructure_Course', cardinality 0..*).
+'studyProgramStructure::Specialization' (role 'specializations', cardinality 0..*) is associated with 'studyProgramStructure::Program' (role 'Program', cardinality 0..*).
+'studyProgramStructure::Student' (role 'studyProgramStructure_Student', cardinality 0..*) is associated with 'studyProgramStructure::University' (role 'studyProgramStructure_University26', cardinality 0..*).
+'studyProgramStructure::Specialization' (role 'Specialization5', cardinality 0..*) is associated with 'studyProgramStructure::Specialization' (role 'baseSpecialization', cardinality 0..*).
+'studyProgramStructure::Specialization' (role 'Specialization', cardinality 0..*) is associated with 'studyProgramStructure::Program' (role 'program', cardinality 0..*).
+'studyProgramStructure::Specialization' (role 'Specialization8', cardinality 0..*) is associated with 'studyProgramStructure::Specialization' (role 'furtherSpecializations', cardinality 0..*).
+'studyProgramStructure::CourseGroup' (role 'CourseGroup', cardinality 0..*) is associated with 'studyProgramStructure::Semester' (role 'semester', cardinality 0..*).
+'studyProgramStructure::Program' (role 'studyProgramStructure_Program30', cardinality 0..*) is associated with 'studyProgramStructure::Student' (role 'studyProgramStructure_Student29', cardinality 0..*).

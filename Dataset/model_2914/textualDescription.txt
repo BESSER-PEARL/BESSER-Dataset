@@ -1,0 +1,21 @@
+The model has 10 class(es).
+The class 'Type' has no attributes.
+The class 'myDsl::Entity' has no attributes.
+The class 'myDsl::Model' has no attributes.
+The class 'myDsl::DataType' has no attributes.
+The class 'myDsl::Type' has the following attributes: 'name' of type str.
+The class 'myDsl::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'AbstractElement' has no attributes.
+The class 'myDsl::AbstractElement' has no attributes.
+The class 'myDsl::PackageDeclaration' has the following attributes: 'name' of type str.
+The class 'myDsl::Feature' has the following attributes: 'many' of type bool; 'name' of type str.
+'myDsl::Entity' is a specialization of 'Type'.
+'myDsl::Import' is a specialization of 'AbstractElement'.
+'myDsl::PackageDeclaration' is a specialization of 'AbstractElement'.
+'myDsl::Type' is a specialization of 'AbstractElement'.
+'myDsl::DataType' is a specialization of 'Type'.
+'myDsl::PackageDeclaration' (role 'myDsl_PackageDeclaration', cardinality 0..*) is associated with 'myDsl::AbstractElement' (role 'myDsl_AbstractElement2', cardinality 0..*).
+'myDsl::Feature' (role 'myDsl_Feature', cardinality 0..*) is associated with 'myDsl::Entity' (role 'myDsl_Entity6', cardinality 0..*).
+'myDsl::Feature' (role 'myDsl_Feature8', cardinality 0..*) is associated with 'myDsl::Type' (role 'myDsl_Type', cardinality 0..*).
+'myDsl::Entity' (role 'myDsl_Entity3', cardinality 0..*) is associated with 'myDsl::Entity' (role 'myDsl_Entity', cardinality 0..*).
+'myDsl::AbstractElement' (role 'myDsl_AbstractElement', cardinality 0..*) is associated with 'myDsl::Model' (role 'myDsl_Model', cardinality 0..*).

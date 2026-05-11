@@ -1,0 +1,30 @@
+The model has 15 class(es).
+The class 'behavior::SessionRepository' has no attributes.
+The class 'behavior::BehaviorModelRelative' has no attributes.
+The class 'AbstractUseCaseExecution' has no attributes.
+The class 'behavior::AbstractUseCaseExecution' has no attributes.
+The class 'behavior::Transition' has the following attributes: 'value' of type float; 'timeDiffs' of type str; 'thinkTimeParams' of type str.
+The class 'behavior::BehaviorModelAbsolute' has no attributes.
+The class 'behavior::UseCaseRepository' has no attributes.
+The class 'behavior::BehaviorMixEntry' has the following attributes: 'behaviorModelName' of type str; 'relativeFrequency' of type float.
+The class 'behavior::AbstractBehaviorModelGraph' has the following attributes: 'transactionType' of type str.
+The class 'behavior::ObservedUseCaseExecution' has the following attributes: 'startTime' of type str; 'endTime' of type str.
+The class 'behavior::Vertex' has no attributes.
+The class 'behavior::UseCase' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'AbstractBehaviorModelGraph' has no attributes.
+The class 'behavior::BehaviorMix' has no attributes.
+The class 'behavior::Session' has the following attributes: 'startTime' of type str; 'endTime' of type str; 'id' of type str; 'transactionType' of type str.
+'behavior::BehaviorModelAbsolute' is a specialization of 'AbstractBehaviorModelGraph'.
+'behavior::Vertex' is a specialization of 'AbstractUseCaseExecution'.
+'behavior::ObservedUseCaseExecution' is a specialization of 'AbstractUseCaseExecution'.
+'behavior::BehaviorModelRelative' is a specialization of 'AbstractBehaviorModelGraph'.
+'behavior::AbstractBehaviorModelGraph' (role 'behavior_AbstractBehaviorModelGraph', cardinality 0..*) is associated with 'behavior::Vertex' (role 'behavior_Vertex', cardinality 0..*).
+'behavior::AbstractUseCaseExecution' (role 'behavior_AbstractUseCaseExecution', cardinality 0..*) is associated with 'behavior::UseCase' (role 'behavior_UseCase5', cardinality 0..*).
+'behavior::Transition' (role 'behavior_Transition10', cardinality 0..*) is associated with 'behavior::Vertex' (role 'behavior_Vertex11', cardinality 0..*).
+'behavior::Vertex' (role 'behavior_Vertex14', cardinality 0..*) is associated with 'behavior::Transition' (role 'behavior_Transition13', cardinality 0..*).
+'behavior::Vertex' (role 'behavior_Vertex8', cardinality 0..*) is associated with 'behavior::Transition' (role 'behavior_Transition', cardinality 0..*).
+'behavior::SessionRepository' (role 'behavior_SessionRepository', cardinality 0..*) is associated with 'behavior::Session' (role 'behavior_Session', cardinality 0..*).
+'behavior::BehaviorMixEntry' (role 'behavior_BehaviorMixEntry17', cardinality 0..*) is associated with 'behavior::BehaviorModelRelative' (role 'behavior_BehaviorModelRelative', cardinality 0..*).
+'behavior::Session' (role 'behavior_Session3', cardinality 0..*) is associated with 'behavior::ObservedUseCaseExecution' (role 'behavior_ObservedUseCaseExecution', cardinality 0..*).
+'behavior::UseCase' (role 'behavior_UseCase', cardinality 0..*) is associated with 'behavior::UseCaseRepository' (role 'behavior_UseCaseRepository', cardinality 0..*).
+'behavior::BehaviorMix' (role 'behavior_BehaviorMix', cardinality 0..*) is associated with 'behavior::BehaviorMixEntry' (role 'behavior_BehaviorMixEntry', cardinality 0..*).

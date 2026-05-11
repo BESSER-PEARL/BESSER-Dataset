@@ -1,0 +1,11 @@
+The model has 6 class(es).
+The class 'TestPackage::AbstractTestClass' has the following attributes: 'name' of type str.
+The class 'TestPackage::TestIndex' has no attributes.
+The class 'TestPackage::TestClass2' has no attributes.
+The class 'AbstractTestClass' has no attributes.
+The class 'TestPackage::TestClass1' has the following attributes: 'theAttributeToListen' of type str.
+The class 'TestPackage::TestIndexEntry' has no attributes.
+'TestPackage::TestClass2' is a specialization of 'AbstractTestClass'.
+'TestPackage::TestClass1' is a specialization of 'AbstractTestClass'.
+'TestPackage::AbstractTestClass' (role 'TestPackage_AbstractTestClass', cardinality 0..*) is associated with 'TestPackage::TestIndexEntry' (role 'TestPackage_TestIndexEntry2', cardinality 0..*).
+'TestPackage::TestIndexEntry' (role 'TestPackage_TestIndexEntry', cardinality 0..*) is associated with 'TestPackage::TestIndex' (role 'TestPackage_TestIndex', cardinality 0..*).

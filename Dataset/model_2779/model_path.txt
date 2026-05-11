@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/gemoc/ale-lang-compiler/archive/plzoo-testbench-workspace/testbidirectionalrelation/src/testbidirectionalrelation.ecore

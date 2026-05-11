@@ -1,0 +1,181 @@
+The model has 67 class(es).
+The class 'SQL2003::V2::Column' has the following attributes: 'default' of type str.
+The class 'SQL2003::V2::View' has no attributes.
+The class 'Feature' has no attributes.
+The class 'SQL2003::V2::Function' has no attributes.
+The class 'SQL2003::V2::ColumnConstraint' has no attributes.
+The class 'SQL2003::V2::CharacterStringType' has the following attributes: 'descriptor' of type str; 'length_def' of type str.
+The class 'SQL2003::V2::BaseTable' has no attributes.
+The class 'PredefinedType' has no attributes.
+The class 'SQL2003::V2::DataType' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'SQL2003::V2::UniqueConstraint' has no attributes.
+The class 'SQL2003::V2::TableConstraint' has the following attributes: 'name' of type str.
+The class 'ConstructedType' has no attributes.
+The class 'SQL2003::V2::Table' has the following attributes: 'name' of type str.
+The class 'SQL2003::V2::ReferentialConstraint' has the following attributes: 'delete_action' of type str; 'match' of type str; 'update_action' of type str.
+The class 'SQL2003::V2::Feature' has no attributes.
+The class 'Table' has no attributes.
+The class 'SQL2003::V2::ParameterWithMode' has the following attributes: 'mode' of type str.
+The class 'SQL2003::V2::StructuredType' has the following attributes: 'is_instantiable' of type bool; 'is_final' of type bool.
+The class 'SQL2003::V2::TypedTable' has no attributes.
+The class 'SQL2003::V2::PredefinedType' has no attributes.
+The class 'SQL2003::V2::Method' has the following attributes: 'name' of type str; 'body' of type str.
+The class 'SQL2003::V2::Parameter' has the following attributes: 'name' of type str.
+The class 'SQL2003::V2::NumericFeature' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'SQL2003::V2::CollectionType' has no attributes.
+The class 'SQL2003::V2::DatetimeFeature' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'SQL2003::V2::StringFeature' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'SQL2003::V2::IntervalType' has the following attributes: 'descriptor' of type str.
+The class 'UserDefinedType' has no attributes.
+The class 'SQL2003::V2::UserDefinedType' has the following attributes: 'name' of type str.
+The class 'SQL2003::V2::ConstructedType' has the following attributes: 'name' of type str.
+The class 'ColumnConstraint' has no attributes.
+The class 'StructuralComponent' has no attributes.
+The class 'SQL2003::V2::TriggerDescriptor' has the following attributes: 'level' of type str; 'actionTime' of type str; 'event' of type str; 'triggeredAction' of type str.
+The class 'DerivedTable' has no attributes.
+The class 'SQL2003::V2::DistinctType' has no attributes.
+The class 'SQL2003::V2::Attribute' has the following attributes: 'default' of type str.
+The class 'Restriction' has no attributes.
+The class 'UniqueConstraint' has no attributes.
+The class 'SQL2003::V2::DerivedTable' has the following attributes: 'query_expression' of type str.
+The class 'SQL2003::V2::BinaryStringType' has the following attributes: 'length_def' of type str; 'descriptor' of type str.
+The class 'SQL2003::V2::BooleanType' has the following attributes: 'descriptor' of type str.
+The class 'TableConstraint' has no attributes.
+The class 'SQL2003::V2::Procedure' has no attributes.
+The class 'SQL2003::V2::TableCheckConstraint' has the following attributes: 'expression' of type str.
+The class 'SQL2003::V2::NotNull' has no attributes.
+The class 'SQL2003::V2::ROW' has no attributes.
+The class 'SQL2003::V2::XMLType' has the following attributes: 'descriptor' of type str.
+The class 'SQL2003::V2::NumericType' has the following attributes: 'descriptor' of type str.
+The class 'SQL2003::V2::StructuralComponent' has the following attributes: 'name' of type str.
+The class 'SQL2003::V2::MULTISET' has no attributes.
+The class 'SQL2003::V2::Field' has no attributes.
+The class 'BaseTable' has no attributes.
+The class 'SQL2003::V2::Trigger' has the following attributes: 'name' of type str.
+The class 'SQL2003::V2::Schema' has the following attributes: 'name' of type str.
+The class 'SQL2003::V2::DatetimeType' has the following attributes: 'descriptor' of type str.
+The class 'SQL2003::V2::Restriction' has no attributes.
+The class 'SQL2003::V2::ARRAY' has the following attributes: 'num_elements' of type str.
+The class 'CollectionType' has no attributes.
+The class 'SQL2003::V2::MethodParameter' has no attributes.
+The class 'DataType' has no attributes.
+The class 'SQL2003::V2::BehaviouralComponent' has the following attributes: 'body' of type str; 'name' of type str.
+The class 'BehaviouralComponent' has no attributes.
+The class 'SQL2003::V2::PrimaryKey' has no attributes.
+The class 'SQL2003::V2::ReferenceType' has no attributes.
+The class 'SQL2003::V2::Domain' has the following attributes: 'expression' of type str; 'name' of type str; 'default' of type str.
+The class 'SQL2003::V2::IntervalFeature' has the following attributes: 'key' of type str; 'value' of type str.
+The enumeration 'Multiplier' has the following literals: 'G', 'M', 'P', 'K', 'T'.
+The enumeration 'TriggerEvent' has the following literals: 'INSERT', 'DELETE', 'UPDATE'.
+The enumeration 'ParameterMode' has the following literals: 'OUT', 'IN', 'INOUT'.
+The enumeration 'DatetimeTypes' has the following literals: 'DATE', 'TIMESTAMPWITHOUTTIMEZONE', 'TIMEWITHTIMEZONE', 'TIMEWITHOUTTIMEZONE', 'TIMESTAMPWITHTIMEZONE'.
+The enumeration 'XMLTypes' has the following literals: 'XMLTYPE'.
+The enumeration 'BooleanTypes' has the following literals: 'BOOLEAN'.
+The enumeration 'ReferentialAction' has the following literals: 'CASCADE', 'SET_DEFAULT', 'NO_ACTION', 'SET_NULL', 'RESTRICT'.
+The enumeration 'NumericRadix' has the following literals: 'BINARY', 'DECIMAL'.
+The enumeration 'TriggerLevel' has the following literals: 'STATEMENT_LEVEL', 'ROW_LEVEL'.
+The enumeration 'BinaryStringTypes' has the following literals: 'BINARYVARYING', 'BINARYLARGEOBJECT', 'BINARY'.
+The enumeration 'DatetimeFeatures' has the following literals: 'precision'.
+The enumeration 'TriggerActionTime' has the following literals: 'BEFORE', 'AFTER'.
+The enumeration 'CharacterStringTypes' has the following literals: 'CHARACTERLARGEOBJECT', 'CHARACTER', 'CHARACTERVARYING'.
+The enumeration 'Unit' has the following literals: 'CHARACTERS', 'OCTETS'.
+The enumeration 'NumericTypes' has the following literals: 'BIGINT', 'DOUBLEPRECISION', 'FLOAT', 'REAL', 'INTEGER', 'NUMERIC', 'SMALLINT', 'DECIMAL'.
+The enumeration 'IntervalTypes' has the following literals: 'SECOND', 'HOUR_SECOND', 'DAY_MINUTE', 'DAY_SECOND', 'HOUR_MINUTE', 'HOUR', 'DAY_HOUR', 'YEAR', 'MINUTE_SECOND', 'YEAR_MONTH', 'DAY', 'MONTH', 'MINUTE'.
+The enumeration 'MatchTypes' has the following literals: 'TOTAL', 'PARTIAL', 'SIMPLE'.
+The enumeration 'IntervalFeatures' has the following literals: 'leading_precision', 'end_leading_precision', 'second_precision', 'start_leading_precision'.
+The enumeration 'StringFeatures' has the following literals: 'multiplier', 'length', 'unit'.
+The enumeration 'NumericFeatures' has the following literals: 'scale', 'radix', 'precision'.
+'SQL2003::V2::PredefinedType' is a specialization of 'DataType'.
+'SQL2003::V2::MethodParameter' is a specialization of 'Parameter'.
+'SQL2003::V2::BooleanType' is a specialization of 'PredefinedType'.
+'SQL2003::V2::TableConstraint' is a specialization of 'Restriction'.
+'SQL2003::V2::View' is a specialization of 'DerivedTable'.
+'SQL2003::V2::Procedure' is a specialization of 'BehaviouralComponent'.
+'SQL2003::V2::ReferenceType' is a specialization of 'ConstructedType'.
+'SQL2003::V2::BinaryStringType' is a specialization of 'PredefinedType'.
+'SQL2003::V2::IntervalType' is a specialization of 'PredefinedType'.
+'SQL2003::V2::DatetimeFeature' is a specialization of 'Feature'.
+'SQL2003::V2::UniqueConstraint' is a specialization of 'TableConstraint'.
+'SQL2003::V2::TableCheckConstraint' is a specialization of 'TableConstraint'.
+'SQL2003::V2::StructuredType' is a specialization of 'UserDefinedType'.
+'SQL2003::V2::StringFeature' is a specialization of 'Feature'.
+'SQL2003::V2::UserDefinedType' is a specialization of 'DataType'.
+'SQL2003::V2::DistinctType' is a specialization of 'UserDefinedType'.
+'SQL2003::V2::MULTISET' is a specialization of 'CollectionType'.
+'SQL2003::V2::ARRAY' is a specialization of 'CollectionType'.
+'SQL2003::V2::IntervalFeature' is a specialization of 'Feature'.
+'SQL2003::V2::BaseTable' is a specialization of 'Table'.
+'SQL2003::V2::Field' is a specialization of 'StructuralComponent'.
+'SQL2003::V2::CollectionType' is a specialization of 'ConstructedType'.
+'SQL2003::V2::XMLType' is a specialization of 'PredefinedType'.
+'SQL2003::V2::Attribute' is a specialization of 'StructuralComponent'.
+'SQL2003::V2::NumericFeature' is a specialization of 'Feature'.
+'SQL2003::V2::TypedTable' is a specialization of 'BaseTable'.
+'SQL2003::V2::ColumnConstraint' is a specialization of 'Restriction'.
+'SQL2003::V2::NotNull' is a specialization of 'ColumnConstraint'.
+'SQL2003::V2::PrimaryKey' is a specialization of 'UniqueConstraint'.
+'SQL2003::V2::ReferentialConstraint' is a specialization of 'TableConstraint'.
+'SQL2003::V2::Function' is a specialization of 'BehaviouralComponent'.
+'SQL2003::V2::ROW' is a specialization of 'ConstructedType'.
+'SQL2003::V2::DatetimeType' is a specialization of 'PredefinedType'.
+'SQL2003::V2::ConstructedType' is a specialization of 'DataType'.
+'SQL2003::V2::NumericType' is a specialization of 'PredefinedType'.
+'SQL2003::V2::Column' is a specialization of 'StructuralComponent'.
+'SQL2003::V2::DerivedTable' is a specialization of 'Table'.
+'SQL2003::V2::CharacterStringType' is a specialization of 'PredefinedType'.
+'SQL2003::V2::ParameterWithMode' is a specialization of 'Parameter'.
+'SQL2003::V2::Trigger' is a specialization of 'Restriction'.
+'SQL2003::V2::ReferenceType' (role 'SQL2003_V2_ReferenceType', cardinality 0..*) is associated with 'SQL2003::V2::StructuredType' (role 'SQL2003_V2_StructuredType', cardinality 0..*).
+'SQL2003::V2::Method' (role 'Method', cardinality 0..*) is associated with 'SQL2003::V2::MethodParameter' (role 'parameters', cardinality 0..*).
+'SQL2003::V2::TypedTable' (role 'TypedTable89', cardinality 0..*) is associated with 'SQL2003::V2::TypedTable' (role 'supertable', cardinality 0..*).
+'SQL2003::V2::Schema' (role 'Schema70', cardinality 0..*) is associated with 'SQL2003::V2::Table' (role 'tables', cardinality 0..*).
+'SQL2003::V2::BehaviouralComponent' (role 'behaviouralComponent', cardinality 0..*) is associated with 'SQL2003::V2::ParameterWithMode' (role 'ParameterWithMode', cardinality 0..*).
+'SQL2003::V2::Schema' (role 'Schema', cardinality 0..*) is associated with 'SQL2003::V2::BehaviouralComponent' (role 'behaviouralComponents', cardinality 0..*).
+'SQL2003::V2::ROW' (role 'ROW30', cardinality 0..*) is associated with 'SQL2003::V2::ROW' (role 'sub_types', cardinality 0..*).
+'SQL2003::V2::CollectionType' (role 'SQL2003_V2_CollectionType3', cardinality 0..*) is associated with 'SQL2003::V2::CollectionType' (role 'SQL2003_V2_CollectionType', cardinality 0..*).
+'SQL2003::V2::MethodParameter' (role 'MethodParameter', cardinality 0..*) is associated with 'SQL2003::V2::Method' (role 'method', cardinality 0..*).
+'SQL2003::V2::Field' (role 'Field', cardinality 0..*) is associated with 'SQL2003::V2::ROW' (role 'row', cardinality 0..*).
+'SQL2003::V2::ROW' (role 'ROW34', cardinality 0..*) is associated with 'SQL2003::V2::ROW' (role 'super_type', cardinality 0..*).
+'SQL2003::V2::DataType' (role 'DataType', cardinality 0..*) is associated with 'SQL2003::V2::Schema' (role 'schema44', cardinality 0..*).
+'SQL2003::V2::StructuralComponent' (role 'defines', cardinality 0..*) is associated with 'SQL2003::V2::Domain' (role 'Domain59', cardinality 0..*).
+'SQL2003::V2::Restriction' (role 'restrictions', cardinality 0..*) is associated with 'SQL2003::V2::Table' (role 'Table38', cardinality 0..*).
+'SQL2003::V2::StructuralComponent' (role 'StructuralComponent', cardinality 0..*) is associated with 'SQL2003::V2::Restriction' (role 'restrictions40', cardinality 0..*).
+'SQL2003::V2::Table' (role 'Table', cardinality 0..*) is associated with 'SQL2003::V2::Column' (role 'columns', cardinality 0..*).
+'SQL2003::V2::TriggerDescriptor' (role 'description', cardinality 0..*) is associated with 'SQL2003::V2::Trigger' (role 'Trigger', cardinality 0..*).
+'SQL2003::V2::Schema' (role 'schema', cardinality 0..*) is associated with 'SQL2003::V2::BehaviouralComponent' (role 'BehaviouralComponent42', cardinality 0..*).
+'SQL2003::V2::DistinctType' (role 'SQL2003_V2_DistinctType', cardinality 0..*) is associated with 'SQL2003::V2::Feature' (role 'SQL2003_V2_Feature', cardinality 0..*).
+'SQL2003::V2::View' (role 'View', cardinality 0..*) is associated with 'SQL2003::V2::StructuralComponent' (role 'components', cardinality 0..*).
+'SQL2003::V2::Attribute' (role 'Attribute', cardinality 0..*) is associated with 'SQL2003::V2::StructuredType' (role 'structured', cardinality 0..*).
+'SQL2003::V2::StructuredType' (role 'structured68', cardinality 0..*) is associated with 'SQL2003::V2::TypedTable' (role 'TypedTable', cardinality 0..*).
+'SQL2003::V2::StructuredType' (role 'StructuredType83', cardinality 0..*) is associated with 'SQL2003::V2::TypedTable' (role 'typed', cardinality 0..*).
+'SQL2003::V2::Field' (role 'fields', cardinality 0..*) is associated with 'SQL2003::V2::ROW' (role 'ROW', cardinality 0..*).
+'SQL2003::V2::StructuralComponent' (role 'columns54', cardinality 0..*) is associated with 'SQL2003::V2::Restriction' (role 'Restriction', cardinality 0..*).
+'SQL2003::V2::Table' (role 'table76', cardinality 0..*) is associated with 'SQL2003::V2::Restriction' (role 'Restriction77', cardinality 0..*).
+'SQL2003::V2::Parameter' (role 'SQL2003_V2_Parameter', cardinality 0..*) is associated with 'SQL2003::V2::DataType' (role 'SQL2003_V2_DataType25', cardinality 0..*).
+'SQL2003::V2::DistinctType' (role 'DistinctType', cardinality 0..*) is associated with 'SQL2003::V2::PredefinedType' (role 'source_type', cardinality 0..*).
+'SQL2003::V2::View' (role 'View74', cardinality 0..*) is associated with 'SQL2003::V2::Table' (role 'tables73', cardinality 0..*).
+'SQL2003::V2::DataType' (role 'SQL2003_V2_DataType21', cardinality 0..*) is associated with 'SQL2003::V2::Method' (role 'SQL2003_V2_Method20', cardinality 0..*).
+'SQL2003::V2::StructuralComponent' (role 'SQL2003_V2_StructuralComponent56', cardinality 0..*) is associated with 'SQL2003::V2::Feature' (role 'SQL2003_V2_Feature57', cardinality 0..*).
+'SQL2003::V2::TypedTable' (role 'subtables', cardinality 0..*) is associated with 'SQL2003::V2::TypedTable' (role 'TypedTable86', cardinality 0..*).
+'SQL2003::V2::Domain' (role 'domains', cardinality 0..*) is associated with 'SQL2003::V2::Schema' (role 'Schema96', cardinality 0..*).
+'SQL2003::V2::StructuralComponent' (role 'StructuralComponent94', cardinality 0..*) is associated with 'SQL2003::V2::View' (role 'views93', cardinality 0..*).
+'SQL2003::V2::CollectionType' (role 'SQL2003_V2_CollectionType6', cardinality 0..*) is associated with 'SQL2003::V2::DataType' (role 'SQL2003_V2_DataType', cardinality 0..*).
+'SQL2003::V2::View' (role 'views', cardinality 0..*) is associated with 'SQL2003::V2::Table' (role 'Table91', cardinality 0..*).
+'SQL2003::V2::Schema' (role 'Schema9', cardinality 0..*) is associated with 'SQL2003::V2::DataType' (role 'datatypes', cardinality 0..*).
+'SQL2003::V2::Table' (role 'table', cardinality 0..*) is associated with 'SQL2003::V2::Column' (role 'Column', cardinality 0..*).
+'SQL2003::V2::UniqueConstraint' (role 'SQL2003_V2_UniqueConstraint', cardinality 0..*) is associated with 'SQL2003::V2::ReferentialConstraint' (role 'SQL2003_V2_ReferentialConstraint', cardinality 0..*).
+'SQL2003::V2::Method' (role 'Method66', cardinality 0..*) is associated with 'SQL2003::V2::StructuredType' (role 'structured65', cardinality 0..*).
+'SQL2003::V2::StructuredType' (role 'StructuredType18', cardinality 0..*) is associated with 'SQL2003::V2::Method' (role 'methods', cardinality 0..*).
+'SQL2003::V2::DataType' (role 'SQL2003_V2_DataType51', cardinality 0..*) is associated with 'SQL2003::V2::StructuralComponent' (role 'SQL2003_V2_StructuralComponent', cardinality 0..*).
+'SQL2003::V2::Attribute' (role 'attributes', cardinality 0..*) is associated with 'SQL2003::V2::StructuredType' (role 'StructuredType', cardinality 0..*).
+'SQL2003::V2::Schema' (role 'schema49', cardinality 0..*) is associated with 'SQL2003::V2::Domain' (role 'Domain', cardinality 0..*).
+'SQL2003::V2::TriggerDescriptor' (role 'TriggerDescriptor', cardinality 0..*) is associated with 'SQL2003::V2::Trigger' (role 'trigger', cardinality 0..*).
+'SQL2003::V2::StructuredType' (role 'SQL2003_V2_StructuredType62', cardinality 0..*) is associated with 'SQL2003::V2::StructuredType' (role 'SQL2003_V2_StructuredType60', cardinality 0..*).
+'SQL2003::V2::StructuralComponent' (role 'StructuralComponent98', cardinality 0..*) is associated with 'SQL2003::V2::Domain' (role 'has_domain', cardinality 0..*).
+'SQL2003::V2::Table' (role 'Table47', cardinality 0..*) is associated with 'SQL2003::V2::Schema' (role 'schema46', cardinality 0..*).
+'SQL2003::V2::Method' (role 'SQL2003_V2_Method', cardinality 0..*) is associated with 'SQL2003::V2::Method' (role 'SQL2003_V2_Method15', cardinality 0..*).
+'SQL2003::V2::ParameterWithMode' (role 'parametersWithMode', cardinality 0..*) is associated with 'SQL2003::V2::BehaviouralComponent' (role 'BehaviouralComponent', cardinality 0..*).
+'SQL2003::V2::DataType' (role 'SQL2003_V2_DataType14', cardinality 0..*) is associated with 'SQL2003::V2::Function' (role 'SQL2003_V2_Function', cardinality 0..*).
+'SQL2003::V2::Trigger' (role 'SQL2003_V2_Trigger', cardinality 0..*) is associated with 'SQL2003::V2::StructuralComponent' (role 'SQL2003_V2_StructuralComponent80', cardinality 0..*).
+'SQL2003::V2::DistinctType' (role 'is_source_of', cardinality 0..*) is associated with 'SQL2003::V2::PredefinedType' (role 'PredefinedType', cardinality 0..*).

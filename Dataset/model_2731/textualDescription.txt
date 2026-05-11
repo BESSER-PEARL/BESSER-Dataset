@@ -1,0 +1,10 @@
+The model has 4 class(es).
+The class 'hExample::6::LHS::B' has the following attributes: 'name' of type str.
+The class 'hExample::6::LHS::A' has the following attributes: 'name' of type str.
+The class 'hExample::6::LHS::model' has no attributes.
+The class 'hExample::6::LHS::C' has the following attributes: 'name' of type str.
+'hExample::6::LHS::model' (role 'hExample_6_LHS_model', cardinality 0..*) is associated with 'hExample::6::LHS::A' (role 'hExample_6_LHS_A', cardinality 0..*).
+'hExample::6::LHS::B' (role 'hExample_6_LHS_B7', cardinality 0..*) is associated with 'hExample::6::LHS::A' (role 'hExample_6_LHS_A6', cardinality 0..*).
+'hExample::6::LHS::A' (role 'hExample_6_LHS_A9', cardinality 0..*) is associated with 'hExample::6::LHS::C' (role 'hExample_6_LHS_C10', cardinality 0..*).
+'hExample::6::LHS::model' (role 'hExample_6_LHS_model4', cardinality 0..*) is associated with 'hExample::6::LHS::C' (role 'hExample_6_LHS_C', cardinality 0..*).
+'hExample::6::LHS::B' (role 'hExample_6_LHS_B', cardinality 0..*) is associated with 'hExample::6::LHS::model' (role 'hExample_6_LHS_model2', cardinality 0..*).

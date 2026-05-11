@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'ValidationModel::UnitTest' has the following attributes: 'name' of type str; 'isTested' of type bool; 'id' of type str.
+The class 'ValidationModel::TestContainer' has no attributes.
+'ValidationModel::UnitTest' (role 'ValidationModel_UnitTest', cardinality 0..*) is associated with 'ValidationModel::TestContainer' (role 'ValidationModel_TestContainer', cardinality 0..*).

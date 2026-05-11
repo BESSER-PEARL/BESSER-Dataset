@@ -1,0 +1,188 @@
+The model has 84 class(es).
+The class 'domainmodel::InterfaceOperation' has the following attributes: 'restOperation' of type str.
+The class 'domainmodel::BusinessModule' has no attributes.
+The class 'domainmodel::InitActionFeature' has no attributes.
+The class 'Type' has no attributes.
+The class 'domainmodel::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'BusinessModule' has no attributes.
+The class 'AbstractNamespaceElement' has no attributes.
+The class 'domainmodel::BusinessFeatures' has no attributes.
+The class 'domainmodel::InterfaceDeclaration' has the following attributes: 'name' of type str.
+The class 'domainmodel::ControllerModule' has no attributes.
+The class 'ScreenModule' has no attributes.
+The class 'BusinessFeatureType' has no attributes.
+The class 'domainmodel::SetRestCallReceiverReturnTypeParameter' has no attributes.
+The class 'domainmodel::ViewModule' has no attributes.
+The class 'domainmodel::MethodParameter' has the following attributes: 'name' of type str.
+The class 'domainmodel::ValidatorRule' has the following attributes: 'stringRule' of type str.
+The class 'domainmodel::AbstractElement' has the following attributes: 'name' of type str.
+The class 'domainmodel::InterfaceOperationUsageRule' has the following attributes: 'name' of type str.
+The class 'domainmodel::SystemModule' has no attributes.
+The class 'domainmodel::NavigateToAction' has no attributes.
+The class 'domainmodel::DomainRepository' has the following attributes: 'name' of type str.
+The class 'domainmodel::ControllerElement' has no attributes.
+The class 'domainmodel::ContainerElement' has the following attributes: 'container' of type str.
+The class 'domainmodel::ScreenFeature' has the following attributes: 'name' of type str.
+The class 'domainmodel::ValidateAction' has no attributes.
+The class 'domainmodel::InterfaceMethodCall' has no attributes.
+The class 'domainmodel::ModelFeature' has the following attributes: 'name' of type str.
+The class 'domainmodel::InterfaceMethodCallParameters' has no attributes.
+The class 'domainmodel::BindEnumSource' has the following attributes: 'enumType' of type str.
+The class 'domainmodel::ScreenModelParameters' has no attributes.
+The class 'domainmodel::BindAction' has the following attributes: 'attribute' of type str.
+The class 'domainmodel::Type' has no attributes.
+The class 'domainmodel::ScreenModule' has no attributes.
+The class 'domainmodel::InitActionModule' has no attributes.
+The class 'domainmodel::ExecuteAction' has no attributes.
+The class 'domainmodel::SetRestCallReceiverIDParameter' has the following attributes: 'parameterType' of type str.
+The class 'BindSource' has no attributes.
+The class 'ViewElement' has no attributes.
+The class 'domainmodel::Domainmodel' has no attributes.
+The class 'domainmodel::DomainEntity' has the following attributes: 'name' of type str.
+The class 'SetActionReceiver' has no attributes.
+The class 'domainmodel::MethodParameters' has no attributes.
+The class 'domainmodel::SetAction' has no attributes.
+The class 'domainmodel::ScreenModelParameter' has the following attributes: 'modelFeatureValue' of type str.
+The class 'domainmodel::SetRestCallReceiverParameter' has no attributes.
+The class 'domainmodel::BusinessFeatureType' has no attributes.
+The class 'domainmodel::AbstractNamespaceElement' has no attributes.
+The class 'domainmodel::ContentElement' has the following attributes: 'contentElement' of type str.
+The class 'domainmodel::ValidatorRules' has no attributes.
+The class 'domainmodel::InterfaceMethodCallParameter' has the following attributes: 'parameterType' of type str.
+The class 'domainmodel::NamespaceDeclaration' has no attributes.
+The class 'domainmodel::MethodCall' has the following attributes: 'name' of type str.
+The class 'SystemModule' has no attributes.
+The class 'domainmodel::DataType' has the following attributes: 'name' of type str; 'mappedType' of type str; 'initValue' of type str.
+The class 'domainmodel::ElementFeature' has the following attributes: 'propertyValue' of type str; 'propertyName' of type str.
+The class 'domainmodel::UIActionFeature' has no attributes.
+The class 'domainmodel::InterfaceOperationsUsageRule' has no attributes.
+The class 'domainmodel::UIFeature' has no attributes.
+The class 'domainmodel::SetUIElementReceiver' has the following attributes: 'uiKey' of type str.
+The class 'domainmodel::ModelModule' has no attributes.
+The class 'domainmodel::UIModule' has no attributes.
+The class 'UIFeature' has no attributes.
+The class 'domainmodel::ValidatorFeature' has the following attributes: 'name' of type str.
+The class 'domainmodel::MainFeature' has no attributes.
+The class 'domainmodel::StatelessComponent' has the following attributes: 'name' of type str.
+The class 'domainmodel::BindSource' has no attributes.
+The class 'domainmodel::AttachAction' has no attributes.
+The class 'SetRestCallReceiverParameter' has no attributes.
+The class 'domainmodel::SetRestCallReceiver' has no attributes.
+The class 'UIActionFeature' has no attributes.
+The class 'AbstractElement' has no attributes.
+The class 'domainmodel::ValidatorModule' has no attributes.
+The class 'domainmodel::EntryParametersModule' has no attributes.
+The class 'domainmodel::Feature' has the following attributes: 'mappingOption' of type str; 'mapName' of type str; 'name' of type str.
+The class 'domainmodel::SetRestCallReceiverParameters' has no attributes.
+The class 'domainmodel::SystemDefinition' has no attributes.
+The class 'domainmodel::ViewElement' has the following attributes: 'name' of type str.
+The class 'domainmodel::MainFeatureOption' has the following attributes: 'name' of type str.
+The class 'domainmodel::BusinessFeature' has the following attributes: 'connectPoint1' of type str; 'connectEnd' of type str; 'name' of type str.
+The class 'domainmodel::UIActionModule' has the following attributes: 'name' of type str.
+The class 'domainmodel::SetActionReceiver' has no attributes.
+The class 'domainmodel::SetRestCallReceiverURLParameter' has the following attributes: 'parameterType' of type str.
+The class 'InitActionFeature' has no attributes.
+The class 'ControllerElement' has no attributes.
+The enumeration 'PropertyNameLiteral' has the following literals: 'COLUMNS', 'PATH', 'TOOLTIP', 'LABEL_PROVIDER', 'STYLE', 'TYPE', 'RESOURCE_KEY', 'CSS_ITEM'.
+The enumeration 'ContentElementLiteral' has the following literals: 'IMAGE', 'TEXT', 'LIST', 'LABEL', 'BUTTON'.
+The enumeration 'UIElementReceiverKey' has the following literals: 'VALUES_', 'ON_SELECTION', 'SELECTION', 'TEXT'.
+The enumeration 'ContainerElementLiteral' has the following literals: 'LAYOUT', 'SCREEN'.
+'domainmodel::SetAction' is a specialization of 'UIActionFeature'.
+'domainmodel::InterfaceMethodCall' is a specialization of 'UIActionFeature'.
+'domainmodel::SetAction' is a specialization of 'InitActionFeature'.
+'domainmodel::BusinessModule' is a specialization of 'SystemModule'.
+'domainmodel::ContentElement' is a specialization of 'ViewElement'.
+'domainmodel::BindEnumSource' is a specialization of 'BindSource'.
+'domainmodel::SystemDefinition' is a specialization of 'AbstractElement'.
+'domainmodel::NavigateToAction' is a specialization of 'UIActionFeature'.
+'domainmodel::BusinessFeatures' is a specialization of 'BusinessModule'.
+'domainmodel::ValidatorModule' is a specialization of 'ControllerElement'.
+'domainmodel::NamespaceDeclaration' is a specialization of 'AbstractElement'.
+'domainmodel::MainFeature' is a specialization of 'UIFeature'.
+'domainmodel::InterfaceDeclaration' is a specialization of 'BusinessFeatureType'.
+'domainmodel::BindAction' is a specialization of 'InitActionFeature'.
+'domainmodel::DataType' is a specialization of 'AbstractNamespaceElement'.
+'domainmodel::DomainRepository' is a specialization of 'AbstractNamespaceElement'.
+'domainmodel::SetUIElementReceiver' is a specialization of 'SetActionReceiver'.
+'domainmodel::DataType' is a specialization of 'Type'.
+'domainmodel::ControllerModule' is a specialization of 'ScreenModule'.
+'domainmodel::ExecuteAction' is a specialization of 'UIActionFeature'.
+'domainmodel::UIActionModule' is a specialization of 'ControllerElement'.
+'domainmodel::SetRestCallReceiverURLParameter' is a specialization of 'SetRestCallReceiverParameter'.
+'domainmodel::AttachAction' is a specialization of 'InitActionFeature'.
+'domainmodel::ViewModule' is a specialization of 'ScreenModule'.
+'domainmodel::StatelessComponent' is a specialization of 'AbstractNamespaceElement'.
+'domainmodel::Import' is a specialization of 'AbstractNamespaceElement'.
+'domainmodel::InterfaceDeclaration' is a specialization of 'AbstractNamespaceElement'.
+'domainmodel::ScreenFeature' is a specialization of 'UIFeature'.
+'domainmodel::DomainEntity' is a specialization of 'Type'.
+'domainmodel::DomainEntity' is a specialization of 'AbstractNamespaceElement'.
+'domainmodel::SetRestCallReceiverReturnTypeParameter' is a specialization of 'SetRestCallReceiverParameter'.
+'domainmodel::DomainRepository' is a specialization of 'BusinessFeatureType'.
+'domainmodel::SetRestCallReceiver' is a specialization of 'SetActionReceiver'.
+'domainmodel::EntryParametersModule' is a specialization of 'ScreenModule'.
+'domainmodel::StatelessComponent' is a specialization of 'BusinessFeatureType'.
+'domainmodel::ContainerElement' is a specialization of 'ViewElement'.
+'domainmodel::SetRestCallReceiverIDParameter' is a specialization of 'SetRestCallReceiverParameter'.
+'domainmodel::InitActionModule' is a specialization of 'ControllerElement'.
+'domainmodel::ValidateAction' is a specialization of 'InitActionFeature'.
+'domainmodel::UIModule' is a specialization of 'SystemModule'.
+'domainmodel::ModelModule' is a specialization of 'ScreenModule'.
+'domainmodel::ElementFeature' (role 'domainmodel_ElementFeature', cardinality 0..*) is associated with 'domainmodel::ViewElement' (role 'domainmodel_ViewElement37', cardinality 0..*).
+'domainmodel::InterfaceDeclaration' (role 'domainmodel_InterfaceDeclaration', cardinality 0..*) is associated with 'domainmodel::InterfaceOperation' (role 'domainmodel_InterfaceOperation17', cardinality 0..*).
+'domainmodel::SetUIElementReceiver' (role 'domainmodel_SetUIElementReceiver', cardinality 0..*) is associated with 'domainmodel::ValidateAction' (role 'domainmodel_ValidateAction42', cardinality 0..*).
+'domainmodel::Type' (role 'domainmodel_Type6', cardinality 0..*) is associated with 'domainmodel::MethodParameter' (role 'domainmodel_MethodParameter', cardinality 0..*).
+'domainmodel::InterfaceDeclaration' (role 'domainmodel_InterfaceDeclaration19', cardinality 0..*) is associated with 'domainmodel::InterfaceOperationUsageRule' (role 'domainmodel_InterfaceOperationUsageRule', cardinality 0..*).
+'domainmodel::BusinessFeature' (role 'domainmodel_BusinessFeature110', cardinality 0..*) is associated with 'domainmodel::BusinessFeatures' (role 'domainmodel_BusinessFeatures', cardinality 0..*).
+'domainmodel::MethodCall' (role 'domainmodel_MethodCall93', cardinality 0..*) is associated with 'domainmodel::InterfaceMethodCall' (role 'domainmodel_InterfaceMethodCall92', cardinality 0..*).
+'domainmodel::SetRestCallReceiverReturnTypeParameter' (role 'domainmodel_SetRestCallReceiverReturnTypeParameter', cardinality 0..*) is associated with 'domainmodel::Type' (role 'domainmodel_Type75', cardinality 0..*).
+'domainmodel::Type' (role 'domainmodel_Type15', cardinality 0..*) is associated with 'domainmodel::InterfaceOperation' (role 'domainmodel_InterfaceOperation14', cardinality 0..*).
+'domainmodel::BindAction' (role 'domainmodel_BindAction', cardinality 0..*) is associated with 'domainmodel::BindSource' (role 'domainmodel_BindSource50', cardinality 0..*).
+'domainmodel::ScreenModelParameters' (role 'domainmodel_ScreenModelParameters', cardinality 0..*) is associated with 'domainmodel::ScreenModelParameter' (role 'domainmodel_ScreenModelParameter67', cardinality 0..*).
+'domainmodel::SetRestCallReceiverParameter' (role 'domainmodel_SetRestCallReceiverParameter', cardinality 0..*) is associated with 'domainmodel::SetRestCallReceiverParameters' (role 'domainmodel_SetRestCallReceiverParameters', cardinality 0..*).
+'domainmodel::ControllerModule' (role 'domainmodel_ControllerModule', cardinality 0..*) is associated with 'domainmodel::ControllerElement' (role 'domainmodel_ControllerElement', cardinality 0..*).
+'domainmodel::ValidatorRule' (role 'domainmodel_ValidatorRule', cardinality 0..*) is associated with 'domainmodel::ValidatorFeature' (role 'domainmodel_ValidatorFeature56', cardinality 0..*).
+'domainmodel::MainFeatureOption' (role 'domainmodel_MainFeatureOption', cardinality 0..*) is associated with 'domainmodel::MainFeature' (role 'domainmodel_MainFeature', cardinality 0..*).
+'domainmodel::ScreenModelParameters' (role 'domainmodel_ScreenModelParameters71', cardinality 0..*) is associated with 'domainmodel::NavigateToAction' (role 'domainmodel_NavigateToAction70', cardinality 0..*).
+'domainmodel::DomainRepository' (role 'domainmodel_DomainRepository27', cardinality 0..*) is associated with 'domainmodel::InterfaceOperationsUsageRule' (role 'domainmodel_InterfaceOperationsUsageRule28', cardinality 0..*).
+'domainmodel::ContainerElement' (role 'domainmodel_ContainerElement', cardinality 0..*) is associated with 'domainmodel::ViewElement' (role 'domainmodel_ViewElement', cardinality 0..*).
+'domainmodel::BindSource' (role 'domainmodel_BindSource', cardinality 0..*) is associated with 'domainmodel::ModelFeature' (role 'domainmodel_ModelFeature48', cardinality 0..*).
+'domainmodel::SetRestCallReceiverParameters' (role 'domainmodel_SetRestCallReceiverParameters78', cardinality 0..*) is associated with 'domainmodel::SetRestCallReceiver' (role 'domainmodel_SetRestCallReceiver', cardinality 0..*).
+'domainmodel::UIFeature' (role 'domainmodel_UIFeature', cardinality 0..*) is associated with 'domainmodel::UIModule' (role 'domainmodel_UIModule', cardinality 0..*).
+'domainmodel::ModelFeature' (role 'domainmodel_ModelFeature65', cardinality 0..*) is associated with 'domainmodel::ScreenModelParameter' (role 'domainmodel_ScreenModelParameter', cardinality 0..*).
+'domainmodel::BusinessFeature' (role 'domainmodel_BusinessFeature105', cardinality 0..*) is associated with 'domainmodel::BusinessFeatureType' (role 'domainmodel_BusinessFeatureType', cardinality 0..*).
+'domainmodel::DomainRepository' (role 'domainmodel_DomainRepository', cardinality 0..*) is associated with 'domainmodel::DomainEntity' (role 'domainmodel_DomainEntity25', cardinality 0..*).
+'domainmodel::SetUIElementReceiver' (role 'domainmodel_SetUIElementReceiver46', cardinality 0..*) is associated with 'domainmodel::AttachAction' (role 'domainmodel_AttachAction45', cardinality 0..*).
+'domainmodel::NavigateToAction' (role 'domainmodel_NavigateToAction', cardinality 0..*) is associated with 'domainmodel::ScreenFeature' (role 'domainmodel_ScreenFeature', cardinality 0..*).
+'domainmodel::AttachAction' (role 'domainmodel_AttachAction', cardinality 0..*) is associated with 'domainmodel::UIActionModule' (role 'domainmodel_UIActionModule', cardinality 0..*).
+'domainmodel::MethodParameter' (role 'domainmodel_MethodParameter8', cardinality 0..*) is associated with 'domainmodel::MethodParameters' (role 'domainmodel_MethodParameters', cardinality 0..*).
+'domainmodel::DomainEntity' (role 'domainmodel_DomainEntity', cardinality 0..*) is associated with 'domainmodel::Feature' (role 'domainmodel_Feature4', cardinality 0..*).
+'domainmodel::ViewElement' (role 'domainmodel_ViewElement39', cardinality 0..*) is associated with 'domainmodel::ViewModule' (role 'domainmodel_ViewModule', cardinality 0..*).
+'domainmodel::ValidatorFeature' (role 'domainmodel_ValidatorFeature60', cardinality 0..*) is associated with 'domainmodel::ValidatorRules' (role 'domainmodel_ValidatorRules61', cardinality 0..*).
+'domainmodel::UIActionModule' (role 'domainmodel_UIActionModule73', cardinality 0..*) is associated with 'domainmodel::ExecuteAction' (role 'domainmodel_ExecuteAction', cardinality 0..*).
+'domainmodel::InterfaceMethodCallParameter' (role 'domainmodel_InterfaceMethodCallParameter89', cardinality 0..*) is associated with 'domainmodel::InterfaceMethodCallParameters' (role 'domainmodel_InterfaceMethodCallParameters', cardinality 0..*).
+'domainmodel::InterfaceOperation' (role 'domainmodel_InterfaceOperation', cardinality 0..*) is associated with 'domainmodel::MethodCall' (role 'domainmodel_MethodCall12', cardinality 0..*).
+'domainmodel::InitActionFeature' (role 'domainmodel_InitActionFeature', cardinality 0..*) is associated with 'domainmodel::InitActionModule' (role 'domainmodel_InitActionModule', cardinality 0..*).
+'domainmodel::UIActionModule' (role 'domainmodel_UIActionModule98', cardinality 0..*) is associated with 'domainmodel::UIActionFeature' (role 'domainmodel_UIActionFeature', cardinality 0..*).
+'domainmodel::SetActionReceiver' (role 'domainmodel_SetActionReceiver', cardinality 0..*) is associated with 'domainmodel::SetAction' (role 'domainmodel_SetAction85', cardinality 0..*).
+'domainmodel::ScreenModule' (role 'domainmodel_ScreenModule', cardinality 0..*) is associated with 'domainmodel::ScreenFeature' (role 'domainmodel_ScreenFeature101', cardinality 0..*).
+'domainmodel::SystemModule' (role 'domainmodel_SystemModule', cardinality 0..*) is associated with 'domainmodel::SystemDefinition' (role 'domainmodel_SystemDefinition', cardinality 0..*).
+'domainmodel::InterfaceOperationsUsageRule' (role 'domainmodel_InterfaceOperationsUsageRule23', cardinality 0..*) is associated with 'domainmodel::StatelessComponent' (role 'domainmodel_StatelessComponent', cardinality 0..*).
+'domainmodel::InterfaceMethodCall' (role 'domainmodel_InterfaceMethodCall', cardinality 0..*) is associated with 'domainmodel::BusinessFeature' (role 'domainmodel_BusinessFeature', cardinality 0..*).
+'domainmodel::ValidatorFeature' (role 'domainmodel_ValidatorFeature63', cardinality 0..*) is associated with 'domainmodel::ValidatorModule' (role 'domainmodel_ValidatorModule', cardinality 0..*).
+'domainmodel::Type' (role 'domainmodel_Type', cardinality 0..*) is associated with 'domainmodel::Feature' (role 'domainmodel_Feature', cardinality 0..*).
+'domainmodel::InterfaceMethodCallParameter' (role 'domainmodel_InterfaceMethodCallParameter', cardinality 0..*) is associated with 'domainmodel::MethodParameter' (role 'domainmodel_MethodParameter87', cardinality 0..*).
+'domainmodel::ModelFeature' (role 'domainmodel_ModelFeature34', cardinality 0..*) is associated with 'domainmodel::ModelModule' (role 'domainmodel_ModelModule', cardinality 0..*).
+'domainmodel::InterfaceOperationsUsageRule' (role 'domainmodel_InterfaceOperationsUsageRule', cardinality 0..*) is associated with 'domainmodel::InterfaceOperationUsageRule' (role 'domainmodel_InterfaceOperationUsageRule21', cardinality 0..*).
+'domainmodel::ValidatorRule' (role 'domainmodel_ValidatorRule58', cardinality 0..*) is associated with 'domainmodel::ValidatorRules' (role 'domainmodel_ValidatorRules', cardinality 0..*).
+'domainmodel::ViewElement' (role 'domainmodel_ViewElement81', cardinality 0..*) is associated with 'domainmodel::SetUIElementReceiver' (role 'domainmodel_SetUIElementReceiver80', cardinality 0..*).
+'domainmodel::ModelFeature' (role 'domainmodel_ModelFeature83', cardinality 0..*) is associated with 'domainmodel::SetAction' (role 'domainmodel_SetAction', cardinality 0..*).
+'domainmodel::ModelFeature' (role 'domainmodel_ModelFeature', cardinality 0..*) is associated with 'domainmodel::EntryParametersModule' (role 'domainmodel_EntryParametersModule', cardinality 0..*).
+'domainmodel::BindAction' (role 'domainmodel_BindAction52', cardinality 0..*) is associated with 'domainmodel::SetUIElementReceiver' (role 'domainmodel_SetUIElementReceiver53', cardinality 0..*).
+'domainmodel::ValidatorFeature' (role 'domainmodel_ValidatorFeature', cardinality 0..*) is associated with 'domainmodel::ValidateAction' (role 'domainmodel_ValidateAction', cardinality 0..*).
+'domainmodel::ModelFeature' (role 'domainmodel_ModelFeature31', cardinality 0..*) is associated with 'domainmodel::Type' (role 'domainmodel_Type32', cardinality 0..*).
+'domainmodel::InterfaceMethodCall' (role 'domainmodel_InterfaceMethodCall95', cardinality 0..*) is associated with 'domainmodel::InterfaceMethodCallParameters' (role 'domainmodel_InterfaceMethodCallParameters96', cardinality 0..*).
+'domainmodel::AbstractElement' (role 'domainmodel_AbstractElement', cardinality 0..*) is associated with 'domainmodel::Domainmodel' (role 'domainmodel_Domainmodel', cardinality 0..*).
+'domainmodel::MethodParameters' (role 'domainmodel_MethodParameters10', cardinality 0..*) is associated with 'domainmodel::MethodCall' (role 'domainmodel_MethodCall', cardinality 0..*).
+'domainmodel::AbstractNamespaceElement' (role 'domainmodel_AbstractNamespaceElement', cardinality 0..*) is associated with 'domainmodel::NamespaceDeclaration' (role 'domainmodel_NamespaceDeclaration', cardinality 0..*).
+'domainmodel::BusinessFeature' (role 'domainmodel_BusinessFeature108', cardinality 0..*) is associated with 'domainmodel::BusinessFeature' (role 'domainmodel_BusinessFeature106', cardinality 0..*).

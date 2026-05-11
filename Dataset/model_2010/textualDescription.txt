@@ -1,0 +1,27 @@
+The model has 7 class(es).
+The class 'trace::ModuleElement' has the following attributes: 'module_id' of type str.
+The class 'TraceElement' has no attributes.
+The class 'trace::TraceElement' has the following attributes: 'id' of type str.
+The class 'trace::ModelElement' has the following attributes: 'element_id' of type str.
+The class 'trace::Property' has the following attributes: 'name' of type str.
+The class 'trace::Trace' has no attributes.
+The class 'trace::ExecutionContext' has the following attributes: 'scriptId' of type str; 'modelsIds' of type str.
+'trace::Property' is a specialization of 'TraceElement'.
+'trace::ModuleElement' is a specialization of 'TraceElement'.
+'trace::Trace' is a specialization of 'TraceElement'.
+'trace::ModelElement' is a specialization of 'TraceElement'.
+'trace::ExecutionContext' is a specialization of 'TraceElement'.
+'trace::ExecutionContext' (role 'executionContext', cardinality 0..*) is associated with 'trace::Trace' (role 'Trace', cardinality 0..*).
+'trace::Property' (role 'owns', cardinality 0..*) is associated with 'trace::ModelElement' (role 'ModelElement24', cardinality 0..*).
+'trace::Trace' (role 'Trace26', cardinality 0..*) is associated with 'trace::Property' (role 'accesses', cardinality 0..*).
+'trace::Trace' (role 'traces16', cardinality 0..*) is associated with 'trace::Property' (role 'Property', cardinality 0..*).
+'trace::ModuleElement' (role 'traces', cardinality 0..*) is associated with 'trace::Trace' (role 'Trace6', cardinality 0..*).
+'trace::Trace' (role 'traces13', cardinality 0..*) is associated with 'trace::ModelElement' (role 'ModelElement14', cardinality 0..*).
+'trace::ExecutionContext' (role 'ExecutionContext18', cardinality 0..*) is associated with 'trace::ModelElement' (role 'involves', cardinality 0..*).
+'trace::ExecutionContext' (role 'ExecutionContext8', cardinality 0..*) is associated with 'trace::Trace' (role 'contains', cardinality 0..*).
+'trace::Property' (role 'Property22', cardinality 0..*) is associated with 'trace::ModelElement' (role 'modelElement', cardinality 0..*).
+'trace::ModuleElement' (role 'for_', cardinality 0..*) is associated with 'trace::ExecutionContext' (role 'ExecutionContext', cardinality 0..*).
+'trace::ExecutionContext' (role 'executionContext3', cardinality 0..*) is associated with 'trace::ModelElement' (role 'ModelElement', cardinality 0..*).
+'trace::ModuleElement' (role 'ModuleElement', cardinality 0..*) is associated with 'trace::ExecutionContext' (role 'executionContexts', cardinality 0..*).
+'trace::ModelElement' (role 'reaches', cardinality 0..*) is associated with 'trace::Trace' (role 'Trace20', cardinality 0..*).
+'trace::ModuleElement' (role 'ModuleElement11', cardinality 0..*) is associated with 'trace::Trace' (role 'traces10', cardinality 0..*).

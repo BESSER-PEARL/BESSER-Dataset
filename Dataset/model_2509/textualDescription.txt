@@ -1,0 +1,18 @@
+The model has 9 class(es).
+The class 'ex1::A' has the following attributes: 'a1' of type int.
+The class 'ex1::G' has no attributes.
+The class 'A' has no attributes.
+The class 'F' has no attributes.
+The class 'ex1::C' has no attributes.
+The class 'ex1::E' has no attributes.
+The class 'ex1::B' has no attributes.
+The class 'ex1::D' has the following attributes: 'dAttr' of type bool.
+The class 'ex1::F' has no attributes.
+'ex1::A' is a specialization of 'F'.
+'ex1::B' is a specialization of 'A'.
+'ex1::C' is a specialization of 'A'.
+'ex1::A' (role 'ex1_A', cardinality 0..*) is associated with 'ex1::D' (role 'ex1_D', cardinality 0..*).
+'ex1::F' (role 'ex1_F', cardinality 0..*) is associated with 'ex1::G' (role 'ex1_G', cardinality 0..*).
+'ex1::D' (role 'ex1_D7', cardinality 0..*) is associated with 'ex1::E' (role 'ex1_E8', cardinality 0..*).
+'ex1::A' (role 'ex1_A3', cardinality 0..*) is associated with 'ex1::A' (role 'ex1_A1', cardinality 0..*).
+'ex1::C' (role 'ex1_C', cardinality 0..*) is associated with 'ex1::E' (role 'ex1_E', cardinality 0..*).

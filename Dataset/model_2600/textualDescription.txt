@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'SubpackageMetaClass' has no attributes.
+The class 'test::MyMetaClass' has the following attributes: 'enumAttr' of type str; 'name' of type str.
+The class 'test::subpackage::SubpackageMetaClass' has the following attributes: 'name' of type str.
+The enumeration 'MyEnum' has the following literals: 'X', 'Y'.
+'test::MyMetaClass' (role 'test_MyMetaClass0', cardinality 0..*) is associated with 'test::MyMetaClass' (role 'test_MyMetaClass', cardinality 0..*).
+'test::MyMetaClass' (role 'test_MyMetaClass3', cardinality 0..*) is associated with 'SubpackageMetaClass' (role 'SubpackageMetaClass', cardinality 0..*).

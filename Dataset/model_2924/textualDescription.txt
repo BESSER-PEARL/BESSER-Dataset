@@ -1,0 +1,21 @@
+The model has 10 class(es).
+The class 'Type' has no attributes.
+The class 'aGES::Entity' has no attributes.
+The class 'aGES::Type' has the following attributes: 'name' of type str.
+The class 'aGES::PackageDeclaration' has the following attributes: 'name' of type str.
+The class 'aGES::AbstractElement' has no attributes.
+The class 'aGES::Feature' has the following attributes: 'many' of type bool; 'name' of type str.
+The class 'AbstractElement' has no attributes.
+The class 'aGES::DataType' has no attributes.
+The class 'aGES::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'aGES::Domainmodel' has no attributes.
+'aGES::Import' is a specialization of 'AbstractElement'.
+'aGES::Type' is a specialization of 'AbstractElement'.
+'aGES::DataType' is a specialization of 'Type'.
+'aGES::Entity' is a specialization of 'Type'.
+'aGES::PackageDeclaration' is a specialization of 'AbstractElement'.
+'aGES::Domainmodel' (role 'aGES_Domainmodel', cardinality 0..*) is associated with 'aGES::AbstractElement' (role 'aGES_AbstractElement', cardinality 0..*).
+'aGES::Entity' (role 'aGES_Entity3', cardinality 0..*) is associated with 'aGES::Entity' (role 'aGES_Entity', cardinality 0..*).
+'aGES::Feature' (role 'aGES_Feature', cardinality 0..*) is associated with 'aGES::Entity' (role 'aGES_Entity6', cardinality 0..*).
+'aGES::Type' (role 'aGES_Type', cardinality 0..*) is associated with 'aGES::Feature' (role 'aGES_Feature8', cardinality 0..*).
+'aGES::AbstractElement' (role 'aGES_AbstractElement2', cardinality 0..*) is associated with 'aGES::PackageDeclaration' (role 'aGES_PackageDeclaration', cardinality 0..*).

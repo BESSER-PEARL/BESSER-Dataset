@@ -1,0 +1,158 @@
+The model has 85 class(es).
+The class 'commons::Removed' has no attributes.
+The class 'commons::EventBusProgressMonitor' has the following attributes: 'trackingId' of type str; 'eventBus' of type str.
+The class 'commons::EObject' has no attributes.
+The class 'commons::Colorable' has the following attributes: 'color' of type str.
+The class 'commons::CategoryInfo' has the following attributes: 'googleFormalId' of type str; 'primaryUri' of type str.
+The class 'commons::ProgressMonitorWrapper' has no attributes.
+The class 'commons::AddedMany' has no attributes.
+The class 'Timestamped' has no attributes.
+The class 'commons::Imageable' has no attributes.
+The class 'commons::CategoryLike' has the following attributes: 'categoryCount' of type str; 'imageId' of type str; 'color' of type str; 'level' of type str; 'slugPath' of type str.
+The class 'commons::RemovedMany' has no attributes.
+The class 'commons::TwitterAccessible' has the following attributes: 'twitterAccessToken' of type str; 'twitterAccessTokenSecret' of type str.
+The class 'commons::Nameable' has no attributes.
+The class 'commons::Person' has the following attributes: 'lastName' of type str; 'nickname' of type str; 'activationTime' of type str; 'googlePlusId' of type str; 'archivalStatus' of type str; 'password' of type str; 'zendeskIntegration' of type bool; 'customerRole' of type str; 'currencyCode' of type str; 'passwordResetExpiryTime' of type str; 'referrerId' of type str; 'virtualMail' of type str; 'type' of type str; 'debitCurrency' of type str; 'birthMonth' of type str; 'managerRole' of type str; 'validationTime' of type str; 'lastIpAddress' of type str; 'verifyCode' of type str; 'ipAddress' of type str; 'birthDay' of type str; 'folder' of type str; 'passwordResetCode' of type str; 'schemaVersion' of type str; 'lastTimeSynchronizeWithZendesk' of type str; 'verificationTime' of type str; 'signupSourceType' of type str; 'accountStatus' of type str; 'publicationStatus' of type str; 'clientAccessToken' of type str; 'signupSource' of type str; 'debitBalance' of type str; 'customerRoleEditTime' of type str; 'securityRoleIds' of type str; 'referrerType' of type str; 'religion' of type str; 'socialSharingEnabled' of type str; 'newsletterSubscriptionTime' of type str; 'birthYear' of type str; 'lastLoginTime' of type str; 'memberRole' of type str; 'timeZone' of type str; 'gender' of type str; 'timeZoneId' of type str; 'firstName' of type str; 'birthDate' of type str; 'googleUsername' of type str; 'zendeskUserId' of type str; 'language' of type str; 'currency' of type str; 'newsletterSubscriptionEnabled' of type str.
+The class 'commons::PostalAddress' has the following attributes: 'primaryMobile' of type str; 'primaryShipping' of type bool; 'primaryEmail' of type str; 'mobiles' of type str; 'street' of type str; 'organization' of type str; 'primary' of type bool; 'schemaVersion' of type str; 'homePhones' of type str; 'postalCode' of type str; 'country' of type str; 'primaryPhone' of type str; 'primaryHomePhone' of type str; 'validationTime' of type str; 'primaryWorkPhone' of type str; 'countryCode' of type str; 'description' of type str; 'emails' of type str; 'district' of type str; 'jneAreaCode' of type str; 'workPhones' of type str; 'city' of type str; 'primaryBilling' of type bool; 'phones' of type str; 'province' of type str.
+The class 'commons::CustomerRole' has the following attributes: 'reviewReminderEnabled' of type bool; 'dropshipEnabled' of type bool; 'zendeskOrganizationId' of type str; 'bookingExpiryTimeInMinutes' of type int; 'schemaVersion' of type str; 'transactionHistoryEnabled' of type bool; 'salesOrderReportEnabled' of type bool; 'readOnly' of type bool; 'historySalesOrderEnabled' of type bool; 'status' of type str; 'paymentGatewayEnabled' of type bool; 'agentSalesReportEnabled' of type bool; 'quickShopEnabled' of type bool; 'bookingEnabled' of type bool; 'zendeskIntegration' of type bool.
+The class 'commons::FacebookAccessible' has the following attributes: 'facebookAccessToken' of type str.
+The class 'Expandable' has no attributes.
+The class 'commons::ThingInfo' has the following attributes: 'imageId' of type str.
+The class 'commons::EAttribute' has no attributes.
+The class 'NsPrefixable' has no attributes.
+The class 'SysConfig' has no attributes.
+The class 'commons::PhoneNumber' has the following attributes: 'phoneNumber' of type str; 'primary' of type bool; 'validationTime' of type str.
+The class 'commons::PersonCatalog' has no attributes.
+The class 'commons::AttributeUnset' has no attributes.
+The class 'commons::StyleConfiguration' has no attributes.
+The class 'Identifiable' has no attributes.
+The class 'commons::Sluggable' has the following attributes: 'slug' of type str.
+The class 'commons::NameContainer' has the following attributes: 'name' of type str.
+The class 'commons::BundleAware' has the following attributes: 'bundle' of type str.
+The class 'commons::EClass' has no attributes.
+The class 'ResourceAware' has no attributes.
+The class 'commons::SchemaVersionable' has no attributes.
+The class 'Imageable' has no attributes.
+The class 'commons::JavaClassLinked' has the following attributes: 'javaClassName' of type str; 'javaClass' of type str; 'javaClassStatus' of type str.
+The class 'SchemaVersionable' has no attributes.
+The class 'commons::Geolocation' has the following attributes: 'longitude' of type str; 'latitude' of type str; 'elevation' of type str.
+The class 'commons::GeneralSysConfig' has the following attributes: 'sslSupported' of type str.
+The class 'commons::Identifiable' has the following attributes: 'id' of type str.
+The class 'NameContainer' has no attributes.
+The class 'Describable' has no attributes.
+The class 'commons::EFactoryLinked' has the following attributes: 'eFactory' of type str.
+The class 'commons::TranslationMessageEntry' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'commons::Organization' has the following attributes: 'website' of type str; 'twitterAccessTokenSecret' of type str; 'facebookId' of type str; 'facebookPageUri' of type str; 'blackBerryPin' of type str; 'facebookUserName' of type str; 'schemaVersion' of type str; 'twitterScreenName' of type str; 'twitterAccessToken' of type str; 'facebookAccessToken' of type str; 'twitterId' of type str.
+The class 'commons::Informer' has no attributes.
+The class 'commons::EObjectLinked' has no attributes.
+The class 'commons::NsPrefixable' has the following attributes: 'nsPrefix' of type str.
+The class 'commons::FacebookIdentity' has the following attributes: 'facebookId' of type str; 'facebookUsername' of type str.
+The class 'ProgressMonitor' has no attributes.
+The class 'commons::AppManifest' has the following attributes: 'defaultCurrency' of type str; 'reminderPeriod' of type str; 'kursDollarDpex' of type str; 'letterSalutation' of type str; 'kursDollarPaypal' of type str; 'generalEmailPrd' of type str; 'summary' of type str; 'defaultCountryCode' of type str; 'shipmentLogoUriTemplate' of type str; 'defaultVariation' of type str; 'reminderScheduleStr' of type str; 'domainStg' of type str; 'organizationAddress' of type str; 'supportEmail' of type str; 'organizationName' of type str; 'generalEmailDev' of type str; 'domain' of type str; 'domainPrd' of type str; 'letterClosing' of type str; 'defaultLanguageTag' of type str; 'reminderPeriodStr' of type str; 'headTitle' of type str; 'defaultTimeZone' of type str; 'footnote' of type str; 'generalEmail' of type str; 'headNote' of type str; 'emailLogoUriTemplate' of type str; 'generalEmailStg' of type str; 'defaultCurrencyCode' of type str; 'reminderSchedule' of type str; 'wwwUsed' of type str; 'domainDev' of type str; 'description' of type str; 'defaultTimeZoneId' of type str; 'defaultStyle' of type str; 'title' of type str; 'defaultCategoryUName' of type str; 'organizationPhoneNumbers' of type str.
+The class 'commons::MongoSysConfig' has the following attributes: 'mongoUri' of type str.
+The class 'commons::TranslationEntry' has the following attributes: 'key' of type str.
+The class 'commons::ObjectNotification' has the following attributes: 'object' of type str.
+The class 'Sluggable' has no attributes.
+The class 'commons::WebAddress' has the following attributes: 'imagesUri' of type str; 'secureImagesUri' of type str; 'skinUri' of type str; 'baseUri' of type str; 'secureJsUri' of type str; 'secureSkinUri' of type str; 'basePath' of type str; 'apiPath' of type str; 'secureBaseUri' of type str; 'jsUri' of type str.
+The class 'commons::CanonicalSluggable' has the following attributes: 'canonicalSlug' of type str.
+The class 'commons::Parentable' has no attributes.
+The class 'commons::Translation' has the following attributes: 'language' of type str.
+The class 'commons::ShellProgressMonitor' has no attributes.
+The class 'commons::ModelNotification' has no attributes.
+The class 'PhotoIdContainer' has no attributes.
+The class 'PersonLike' has no attributes.
+The class 'commons::ObjectsNotification' has the following attributes: 'objects' of type str.
+The class 'BundleAware' has no attributes.
+The class 'commons::ResourceAware' has the following attributes: 'resourceType' of type str; 'resourceUri' of type str; 'resourceName' of type str.
+The class 'Positionable' has no attributes.
+The class 'commons::SysConfig' has the following attributes: 'tenantId' of type str.
+The class 'commons::Expandable' has the following attributes: 'expansionState' of type str.
+The class 'commons::Revisionable' has the following attributes: 'guid' of type str; 'revision' of type str.
+The class 'commons::EClassLinked' has the following attributes: 'ePackageName' of type str; 'eClassStatus' of type str; 'ePackageNsPrefix' of type str; 'eClassName' of type str.
+The class 'commons::Positionable' has the following attributes: 'positioner' of type str.
+The class 'commons::TranslationManager' has no attributes.
+The class 'commons::AttributeNotification' has the following attributes: 'oldValue' of type str; 'object' of type str; 'newValue' of type str.
+The class 'commons::Translatable' has the following attributes: 'originalLanguage' of type str; 'language' of type str; 'translationState' of type str.
+The class 'commons::Describable' has the following attributes: 'description' of type str.
+The class 'commons::AttributeSet' has the following attributes: 'principals' of type str.
+The class 'commons::Email' has the following attributes: 'email' of type str; 'primary' of type bool; 'validationTime' of type str.
+The class 'commons::TwitterIdentity' has the following attributes: 'twitterScreenName' of type str; 'twitterId' of type str.
+The class 'commons::PersonLike' has no attributes.
+The class 'Nameable' has no attributes.
+The class 'commons::ProgressMonitor' has the following attributes: 'canceled' of type bool; 'taskName' of type str.
+The class 'commons::Added' has no attributes.
+The class 'commons::PhotoIdContainer' has the following attributes: 'photoId' of type str.
+The class 'commons::Timestamped' has the following attributes: 'modificationTime' of type str; 'creationTime' of type str.
+The class 'commons::PersonInfo' has the following attributes: 'email' of type str; 'mobileNumber' of type str; 'gender' of type str.
+The enumeration 'EntityKind' has the following literals: 'person', 'article', 'task', 'page', 'tag', 'category', 'place', 'product', 'product_release', 'shop', 'banner_shop'.
+The enumeration 'GenericStatus' has the following literals: 'inactive', 'booked', 'draft', 'void'.
+The enumeration 'AccountStatus' has the following literals: 'void', 'active', 'verified', 'draft', 'inactive', 'validated', 'unregister'.
+The enumeration 'ExpansionState' has the following literals: 'expanded', 'unexpanded'.
+The enumeration 'EClassStatus' has the following literals: 'resolved', 'unresolved'.
+The enumeration 'TranslationState' has the following literals: 'original', 'translated'.
+The enumeration 'ResourceType' has the following literals: 'classpath', 'database', 'file', 'bundle'.
+The enumeration 'CustomerRoleStatus' has the following literals: 'active', 'void', 'inactive'.
+The enumeration 'ProgressStatus' has the following literals: 'skipped', 'ok', 'warning', 'deleted', 'error'.
+The enumeration 'TenantSource' has the following literals: 'classpath', 'config', 'repository'.
+The enumeration 'ArchivalStatus' has the following literals: 'fresh', 'archived'.
+The enumeration 'Gender' has the following literals: 'female', 'unknown', 'male'.
+The enumeration 'SignupSourceType' has the following literals: 'facebook_ads', 'other', 'google_search', 'alia_magazine', 'facebook_friend', 'google_ads'.
+The enumeration 'PublicationStatus' has the following literals: 'draft', 'published', 'unpublished'.
+The enumeration 'JavaClassStatus' has the following literals: 'unresolved', 'resolved'.
+'commons::PersonInfo' is a specialization of 'Identifiable'.
+'commons::PersonInfo' is a specialization of 'PersonLike'.
+'commons::ThingInfo' is a specialization of 'Identifiable'.
+'commons::WebAddress' is a specialization of 'Expandable'.
+'commons::CategoryLike' is a specialization of 'Positionable'.
+'commons::ThingInfo' is a specialization of 'NameContainer'.
+'commons::ThingInfo' is a specialization of 'Imageable'.
+'commons::CategoryLike' is a specialization of 'Imageable'.
+'commons::WebAddress' is a specialization of 'ResourceAware'.
+'commons::AppManifest' is a specialization of 'Positionable'.
+'commons::AppManifest' is a specialization of 'Expandable'.
+'commons::CategoryLike' is a specialization of 'NsPrefixable'.
+'commons::Organization' is a specialization of 'Identifiable'.
+'commons::CategoryLike' is a specialization of 'Identifiable'.
+'commons::CustomerRole' is a specialization of 'Timestamped'.
+'commons::CategoryLike' is a specialization of 'NameContainer'.
+'commons::PersonInfo' is a specialization of 'Sluggable'.
+'commons::ThingInfo' is a specialization of 'Sluggable'.
+'commons::PostalAddress' is a specialization of 'Identifiable'.
+'commons::CustomerRole' is a specialization of 'SchemaVersionable'.
+'commons::CategoryLike' is a specialization of 'Sluggable'.
+'commons::SysConfig' is a specialization of 'Timestamped'.
+'commons::CustomerRole' is a specialization of 'Identifiable'.
+'commons::PhotoIdContainer' is a specialization of 'Imageable'.
+'commons::ProgressMonitorWrapper' is a specialization of 'ProgressMonitor'.
+'commons::AppManifest' is a specialization of 'ResourceAware'.
+'commons::WebAddress' is a specialization of 'Positionable'.
+'commons::Organization' is a specialization of 'SchemaVersionable'.
+'commons::CustomerRole' is a specialization of 'Describable'.
+'commons::AppManifest' is a specialization of 'BundleAware'.
+'commons::PersonInfo' is a specialization of 'PhotoIdContainer'.
+'commons::ShellProgressMonitor' is a specialization of 'ProgressMonitor'.
+'commons::PostalAddress' is a specialization of 'SchemaVersionable'.
+'commons::GeneralSysConfig' is a specialization of 'Expandable'.
+'commons::PersonInfo' is a specialization of 'NameContainer'.
+'commons::WebAddress' is a specialization of 'BundleAware'.
+'commons::Organization' is a specialization of 'NameContainer'.
+'commons::CanonicalSluggable' is a specialization of 'Sluggable'.
+'commons::EventBusProgressMonitor' is a specialization of 'ProgressMonitor'.
+'commons::NameContainer' is a specialization of 'Nameable'.
+'commons::PostalAddress' is a specialization of 'NameContainer'.
+'commons::GeneralSysConfig' is a specialization of 'SysConfig'.
+'commons::CustomerRole' is a specialization of 'NameContainer'.
+'commons::PersonCatalog' (role 'commons_PersonCatalog', cardinality 0..*) is associated with 'commons::Person' (role 'commons_Person22', cardinality 0..*).
+'commons::CategoryInfo' (role 'commons_CategoryInfo', cardinality 0..*) is associated with 'commons::CategoryInfo' (role 'commons_CategoryInfo3', cardinality 0..*).
+'commons::PhoneNumber' (role 'commons_PhoneNumber16', cardinality 0..*) is associated with 'commons::Person' (role 'commons_Person15', cardinality 0..*).
+'commons::PostalAddress' (role 'commons_PostalAddress', cardinality 0..*) is associated with 'commons::Person' (role 'commons_Person18', cardinality 0..*).
+'commons::ModelNotification' (role 'commons_ModelNotification', cardinality 0..*) is associated with 'commons::EObject' (role 'commons_EObject', cardinality 0..*).
+'commons::Translatable' (role 'commons_Translatable', cardinality 0..*) is associated with 'commons::TranslationEntry' (role 'commons_TranslationEntry', cardinality 0..*).
+'commons::EClass' (role 'commons_EClass', cardinality 0..*) is associated with 'commons::EClassLinked' (role 'commons_EClassLinked', cardinality 0..*).
+'commons::TranslationMessageEntry' (role 'commons_TranslationMessageEntry', cardinality 0..*) is associated with 'commons::Translation' (role 'commons_Translation', cardinality 0..*).
+'commons::Email' (role 'commons_Email', cardinality 0..*) is associated with 'commons::Person' (role 'commons_Person13', cardinality 0..*).
+'commons::Person' (role 'commons_Person20', cardinality 0..*) is associated with 'commons::Organization' (role 'commons_Organization', cardinality 0..*).
+'commons::PhoneNumber' (role 'commons_PhoneNumber', cardinality 0..*) is associated with 'commons::Person' (role 'commons_Person', cardinality 0..*).
+'commons::TranslationEntry' (role 'commons_TranslationEntry9', cardinality 0..*) is associated with 'commons::Translation' (role 'commons_Translation10', cardinality 0..*).
+'commons::ProgressMonitorWrapper' (role 'commons_ProgressMonitorWrapper', cardinality 0..*) is associated with 'commons::ProgressMonitor' (role 'commons_ProgressMonitor', cardinality 0..*).
+'commons::EAttribute' (role 'commons_EAttribute', cardinality 0..*) is associated with 'commons::AttributeNotification' (role 'commons_AttributeNotification', cardinality 0..*).

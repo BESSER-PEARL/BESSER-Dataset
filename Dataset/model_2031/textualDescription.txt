@@ -1,0 +1,151 @@
+The model has 63 class(es).
+The class 'ioT::metamodel::DeviceActuator' has no attributes.
+The class 'ioT::metamodel::User' has no attributes.
+The class 'ioT::metamodel::Transition' has no attributes.
+The class 'ioT::metamodel::Service::Resource' has no attributes.
+The class 'ioT::metamodel::VM' has no attributes.
+The class 'ioT::metamodel::Communicator' has the following attributes: 'Type' of type str; 'ports_number' of type int.
+The class 'Actuator' has no attributes.
+The class 'ioT::metamodel::Policy::Repository' has no attributes.
+The class 'ioT::metamodel::Tag' has the following attributes: 'Name' of type str.
+The class 'ioT::metamodel::Actuator' has the following attributes: 'name' of type str.
+The class 'ioT::metamodel::Attribute' has the following attributes: 'name' of type str; 'Type' of type str.
+The class 'ioT::metamodel::Sensor' has the following attributes: 'Name' of type str; 'frequency' of type float; 'State' of type bool.
+The class 'ioT::metamodel::Device::Resource' has no attributes.
+The class 'ioT::metamodel::InformationResource' has no attributes.
+The class 'User' has no attributes.
+The class 'ioT::metamodel::Reference::Monitor' has no attributes.
+The class 'ioT::metamodel::PhysicalThing' has no attributes.
+The class 'ioT::metamodel::FogNode' has no attributes.
+The class 'ioT::metamodel::Cloud' has no attributes.
+The class 'ioT::metamodel::DataStreamAttributes' has the following attributes: 'DataFormat' of type str; 'DeviceID' of type str; 'MeanBitRate' of type str; 'MaxBitrate' of type str; 'Timestamp' of type str; 'DataEncoding' of type str; 'Description' of type str.
+The class 'ioT::metamodel::Analytics::Engine' has no attributes.
+The class 'ioT::metamodel::Database' has no attributes.
+The class 'ioT::metamodel::DeviceState' has the following attributes: 'Enabled' of type bool.
+The class 'ioT::metamodel::Device' has the following attributes: 'Technology' of type str.
+The class 'Device' has no attributes.
+The class 'ioT::metamodel::Digital::Artifact' has no attributes.
+The class 'ioT::metamodel::Human::User' has no attributes.
+The class 'Entity' has no attributes.
+The class 'ioT::metamodel::Network::Resource' has no attributes.
+The class 'Passive::Digital::Artifact' has no attributes.
+The class 'ioT::metamodel::DataStreams' has no attributes.
+The class 'ioT::metamodel::Port' has no attributes.
+The class 'ioT::metamodel::ExternalSensor' has no attributes.
+The class 'Active::Digital::Artifact' has no attributes.
+The class 'DeviceState' has no attributes.
+The class 'ioT::metamodel::Active::Digital::Artifact' has no attributes.
+The class 'ioT::metamodel::JavaEvaluator' has no attributes.
+The class 'ioT::metamodel::Operations' has no attributes.
+The class 'PhysicalThing' has no attributes.
+The class 'ioT::metamodel::Property' has the following attributes: 'changeable' of type bool.
+The class 'ioT::metamodel::Action' has the following attributes: 'Description' of type str.
+The class 'ioT::metamodel::Authorizor' has no attributes.
+The class 'ioT::metamodel::DeviceSensor' has no attributes.
+The class 'ioT::metamodel::CompositeState' has no attributes.
+The class 'InformationResource' has no attributes.
+The class 'ioT::metamodel::Rule' has the following attributes: 'conditionLiteral' of type str; 'conditionValue' of type float.
+The class 'ioT::metamodel::ExternalActuator' has no attributes.
+The class 'ioT::metamodel::Information' has no attributes.
+The class 'ioT::metamodel::Container' has the following attributes: 'ID' of type str; 'IP_address' of type str.
+The class 'ioT::metamodel::VirtualThing' has the following attributes: 'URI' of type str.
+The class 'ioT::metamodel::Thing' has the following attributes: 'name' of type str.
+The class 'Evaluators' has no attributes.
+The class 'ioT::metamodel::Evaluators' has no attributes.
+The class 'ioT::metamodel::AtomicDataAttributes' has the following attributes: 'DeviceID' of type str; 'DataEncoding' of type str.
+The class 'ioT::metamodel::Passive::Digital::Artifact' has no attributes.
+The class 'ioT::metamodel::Entity' has no attributes.
+The class 'ioT::metamodel::Fog' has no attributes.
+The class 'ioT::metamodel::AtomicData' has no attributes.
+The class 'ioT::metamodel::Fog::Services' has no attributes.
+The class 'ioT::metamodel::On::Device::Resource' has no attributes.
+The class 'ioT::metamodel::ScriptEvaluator' has no attributes.
+The class 'Sensor' has no attributes.
+The class 'Digital::Artifact' has no attributes.
+'ioT::metamodel::User' is a specialization of 'Entity'.
+'ioT::metamodel::VirtualThing' is a specialization of 'Passive::Digital::Artifact'.
+'ioT::metamodel::Actuator' is a specialization of 'Device'.
+'ioT::metamodel::Thing' is a specialization of 'Entity'.
+'ioT::metamodel::ExternalSensor' is a specialization of 'Sensor'.
+'ioT::metamodel::Human::User' is a specialization of 'User'.
+'ioT::metamodel::Sensor' is a specialization of 'Device'.
+'ioT::metamodel::Active::Digital::Artifact' is a specialization of 'Digital::Artifact'.
+'ioT::metamodel::JavaEvaluator' is a specialization of 'Evaluators'.
+'ioT::metamodel::VirtualThing' is a specialization of 'Active::Digital::Artifact'.
+'ioT::metamodel::Network::Resource' is a specialization of 'InformationResource'.
+'ioT::metamodel::On::Device::Resource' is a specialization of 'InformationResource'.
+'ioT::metamodel::Attribute' is a specialization of 'Entity'.
+'ioT::metamodel::ScriptEvaluator' is a specialization of 'Evaluators'.
+'ioT::metamodel::CompositeState' is a specialization of 'DeviceState'.
+'ioT::metamodel::Passive::Digital::Artifact' is a specialization of 'Digital::Artifact'.
+'ioT::metamodel::ExternalActuator' is a specialization of 'Actuator'.
+'ioT::metamodel::DeviceSensor' is a specialization of 'Sensor'.
+'ioT::metamodel::DeviceActuator' is a specialization of 'Actuator'.
+'ioT::metamodel::Tag' is a specialization of 'Device'.
+'ioT::metamodel::Active::Digital::Artifact' is a specialization of 'User'.
+'ioT::metamodel::Device' is a specialization of 'PhysicalThing'.
+'ioT::metamodel::Device' (role 'ioT_metamodel_Device37', cardinality 0..*) is associated with 'ioT::metamodel::Communicator' (role 'ioT_metamodel_Communicator', cardinality 0..*).
+'ioT::metamodel::InformationResource' (role 'ioT_metamodel_InformationResource76', cardinality 0..*) is associated with 'ioT::metamodel::Information' (role 'ioT_metamodel_Information', cardinality 0..*).
+'ioT::metamodel::Fog' (role 'Fog', cardinality 0..*) is associated with 'ioT::metamodel::Thing' (role 'request_service', cardinality 0..*).
+'ioT::metamodel::DeviceState' (role 'ioT_metamodel_DeviceState67', cardinality 0..*) is associated with 'ioT::metamodel::Transition' (role 'ioT_metamodel_Transition66', cardinality 0..*).
+'ioT::metamodel::Device' (role 'has', cardinality 0..*) is associated with 'ioT::metamodel::PhysicalThing' (role 'PhysicalThing', cardinality 0..*).
+'ioT::metamodel::Device' (role 'ioT_metamodel_Device35', cardinality 0..*) is associated with 'ioT::metamodel::DeviceState' (role 'ioT_metamodel_DeviceState', cardinality 0..*).
+'ioT::metamodel::Analytics::Engine' (role 'ioT_metamodel_Analytics_Engine', cardinality 0..*) is associated with 'ioT::metamodel::FogNode' (role 'ioT_metamodel_FogNode26', cardinality 0..*).
+'ioT::metamodel::DataStreams' (role 'ioT_metamodel_DataStreams108', cardinality 0..*) is associated with 'ioT::metamodel::DataStreamAttributes' (role 'ioT_metamodel_DataStreamAttributes', cardinality 0..*).
+'ioT::metamodel::Evaluators' (role 'ioT_metamodel_Evaluators', cardinality 0..*) is associated with 'ioT::metamodel::Operations' (role 'ioT_metamodel_Operations126', cardinality 0..*).
+'ioT::metamodel::InformationResource' (role 'ioT_metamodel_InformationResource73', cardinality 0..*) is associated with 'ioT::metamodel::PhysicalThing' (role 'ioT_metamodel_PhysicalThing74', cardinality 0..*).
+'ioT::metamodel::VirtualThing' (role 'ioT_metamodel_VirtualThing13', cardinality 0..*) is associated with 'ioT::metamodel::InformationResource' (role 'ioT_metamodel_InformationResource', cardinality 0..*).
+'ioT::metamodel::Reference::Monitor' (role 'ioT_metamodel_Reference_Monitor', cardinality 0..*) is associated with 'ioT::metamodel::Authorizor' (role 'ioT_metamodel_Authorizor97', cardinality 0..*).
+'ioT::metamodel::Operations' (role 'ioT_metamodel_Operations131', cardinality 0..*) is associated with 'ioT::metamodel::InformationResource' (role 'ioT_metamodel_InformationResource132', cardinality 0..*).
+'ioT::metamodel::Network::Resource' (role 'ioT_metamodel_Network_Resource', cardinality 0..*) is associated with 'ioT::metamodel::Device::Resource' (role 'ioT_metamodel_Device_Resource84', cardinality 0..*).
+'ioT::metamodel::Container' (role 'ioT_metamodel_Container', cardinality 0..*) is associated with 'ioT::metamodel::FogNode' (role 'ioT_metamodel_FogNode24', cardinality 0..*).
+'ioT::metamodel::Thing' (role 'ioT_metamodel_Thing6', cardinality 0..*) is associated with 'ioT::metamodel::Thing' (role 'ioT_metamodel_Thing4', cardinality 0..*).
+'ioT::metamodel::FogNode' (role 'ioT_metamodel_FogNode22', cardinality 0..*) is associated with 'ioT::metamodel::VM' (role 'ioT_metamodel_VM', cardinality 0..*).
+'ioT::metamodel::Actuator' (role 'ioT_metamodel_Actuator', cardinality 0..*) is associated with 'ioT::metamodel::PhysicalThing' (role 'ioT_metamodel_PhysicalThing41', cardinality 0..*).
+'ioT::metamodel::On::Device::Resource' (role 'ioT_metamodel_On_Device_Resource80', cardinality 0..*) is associated with 'ioT::metamodel::Device::Resource' (role 'ioT_metamodel_Device_Resource', cardinality 0..*).
+'ioT::metamodel::Thing' (role 'ioT_metamodel_Thing', cardinality 0..*) is associated with 'ioT::metamodel::VirtualThing' (role 'ioT_metamodel_VirtualThing', cardinality 0..*).
+'ioT::metamodel::Transition' (role 'ioT_metamodel_Transition', cardinality 0..*) is associated with 'ioT::metamodel::Action' (role 'ioT_metamodel_Action61', cardinality 0..*).
+'ioT::metamodel::AtomicData' (role 'ioT_metamodel_AtomicData', cardinality 0..*) is associated with 'ioT::metamodel::Information' (role 'ioT_metamodel_Information101', cardinality 0..*).
+'ioT::metamodel::Rule' (role 'ioT_metamodel_Rule53', cardinality 0..*) is associated with 'ioT::metamodel::Action' (role 'ioT_metamodel_Action', cardinality 0..*).
+'ioT::metamodel::Reference::Monitor' (role 'interacts_with', cardinality 0..*) is associated with 'ioT::metamodel::Policy::Repository' (role 'Policy_Repository', cardinality 0..*).
+'ioT::metamodel::Cloud' (role 'request_cloud_service', cardinality 0..*) is associated with 'ioT::metamodel::Fog' (role 'Fog89', cardinality 0..*).
+'ioT::metamodel::Action' (role 'ioT_metamodel_Action134', cardinality 0..*) is associated with 'ioT::metamodel::DeviceSensor' (role 'ioT_metamodel_DeviceSensor', cardinality 0..*).
+'ioT::metamodel::Operations' (role 'ioT_metamodel_Operations', cardinality 0..*) is associated with 'ioT::metamodel::Fog::Services' (role 'ioT_metamodel_Fog_Services115', cardinality 0..*).
+'ioT::metamodel::Fog' (role 'ioT_metamodel_Fog19', cardinality 0..*) is associated with 'ioT::metamodel::Database' (role 'ioT_metamodel_Database', cardinality 0..*).
+'ioT::metamodel::Fog::Services' (role 'ioT_metamodel_Fog_Services120', cardinality 0..*) is associated with 'ioT::metamodel::InformationResource' (role 'ioT_metamodel_InformationResource121', cardinality 0..*).
+'ioT::metamodel::On::Device::Resource' (role 'ioT_metamodel_On_Device_Resource', cardinality 0..*) is associated with 'ioT::metamodel::Device' (role 'ioT_metamodel_Device39', cardinality 0..*).
+'ioT::metamodel::DeviceState' (role 'ioT_metamodel_DeviceState64', cardinality 0..*) is associated with 'ioT::metamodel::Transition' (role 'ioT_metamodel_Transition63', cardinality 0..*).
+'ioT::metamodel::Container' (role 'ioT_metamodel_Container113', cardinality 0..*) is associated with 'ioT::metamodel::Fog::Services' (role 'ioT_metamodel_Fog_Services112', cardinality 0..*).
+'ioT::metamodel::Attribute' (role 'ioT_metamodel_Attribute', cardinality 0..*) is associated with 'ioT::metamodel::InformationResource' (role 'ioT_metamodel_InformationResource78', cardinality 0..*).
+'ioT::metamodel::VirtualThing' (role 'ioT_metamodel_VirtualThing10', cardinality 0..*) is associated with 'ioT::metamodel::PhysicalThing' (role 'ioT_metamodel_PhysicalThing11', cardinality 0..*).
+'ioT::metamodel::Service::Resource' (role 'ioT_metamodel_Service_Resource87', cardinality 0..*) is associated with 'ioT::metamodel::Network::Resource' (role 'ioT_metamodel_Network_Resource86', cardinality 0..*).
+'ioT::metamodel::Thing' (role 'ioT_metamodel_Thing8', cardinality 0..*) is associated with 'ioT::metamodel::Property' (role 'ioT_metamodel_Property', cardinality 0..*).
+'ioT::metamodel::PhysicalThing' (role 'ioT_metamodel_PhysicalThing48', cardinality 0..*) is associated with 'ioT::metamodel::Sensor' (role 'ioT_metamodel_Sensor', cardinality 0..*).
+'ioT::metamodel::Authorizor' (role 'ioT_metamodel_Authorizor', cardinality 0..*) is associated with 'ioT::metamodel::Policy::Repository' (role 'ioT_metamodel_Policy_Repository94', cardinality 0..*).
+'ioT::metamodel::AtomicData' (role 'ioT_metamodel_AtomicData110', cardinality 0..*) is associated with 'ioT::metamodel::AtomicDataAttributes' (role 'ioT_metamodel_AtomicDataAttributes', cardinality 0..*).
+'ioT::metamodel::DeviceState' (role 'ioT_metamodel_DeviceState51', cardinality 0..*) is associated with 'ioT::metamodel::Sensor' (role 'ioT_metamodel_Sensor50', cardinality 0..*).
+'ioT::metamodel::DeviceActuator' (role 'ioT_metamodel_DeviceActuator', cardinality 0..*) is associated with 'ioT::metamodel::Action' (role 'ioT_metamodel_Action57', cardinality 0..*).
+'ioT::metamodel::PhysicalThing' (role 'ioT_metamodel_PhysicalThing', cardinality 0..*) is associated with 'ioT::metamodel::Thing' (role 'ioT_metamodel_Thing3', cardinality 0..*).
+'ioT::metamodel::ExternalActuator' (role 'ioT_metamodel_ExternalActuator', cardinality 0..*) is associated with 'ioT::metamodel::Action' (role 'ioT_metamodel_Action59', cardinality 0..*).
+'ioT::metamodel::Fog::Services' (role 'ioT_metamodel_Fog_Services69', cardinality 0..*) is associated with 'ioT::metamodel::User' (role 'ioT_metamodel_User', cardinality 0..*).
+'ioT::metamodel::Thing' (role 'Thing', cardinality 0..*) is associated with 'ioT::metamodel::Fog' (role 'fog', cardinality 0..*).
+'ioT::metamodel::Rule' (role 'ioT_metamodel_Rule', cardinality 0..*) is associated with 'ioT::metamodel::Device' (role 'ioT_metamodel_Device33', cardinality 0..*).
+'ioT::metamodel::Service::Resource' (role 'ioT_metamodel_Service_Resource', cardinality 0..*) is associated with 'ioT::metamodel::On::Device::Resource' (role 'ioT_metamodel_On_Device_Resource82', cardinality 0..*).
+'ioT::metamodel::Policy::Repository' (role 'ioT_metamodel_Policy_Repository', cardinality 0..*) is associated with 'ioT::metamodel::Database' (role 'ioT_metamodel_Database91', cardinality 0..*).
+'ioT::metamodel::DeviceState' (role 'ioT_metamodel_DeviceState44', cardinality 0..*) is associated with 'ioT::metamodel::Actuator' (role 'ioT_metamodel_Actuator43', cardinality 0..*).
+'ioT::metamodel::Fog' (role 'connects_with', cardinality 0..*) is associated with 'ioT::metamodel::Authorizor' (role 'Authorizor', cardinality 0..*).
+'ioT::metamodel::PhysicalThing' (role 'ioT_metamodel_PhysicalThing46', cardinality 0..*) is associated with 'ioT::metamodel::Tag' (role 'ioT_metamodel_Tag', cardinality 0..*).
+'ioT::metamodel::Cloud' (role 'Cloud', cardinality 0..*) is associated with 'ioT::metamodel::Fog' (role 'respond_to_fog', cardinality 0..*).
+'ioT::metamodel::DataStreams' (role 'ioT_metamodel_DataStreams', cardinality 0..*) is associated with 'ioT::metamodel::Information' (role 'ioT_metamodel_Information103', cardinality 0..*).
+'ioT::metamodel::Fog::Services' (role 'ioT_metamodel_Fog_Services', cardinality 0..*) is associated with 'ioT::metamodel::FogNode' (role 'ioT_metamodel_FogNode28', cardinality 0..*).
+'ioT::metamodel::FogNode' (role 'ioT_metamodel_FogNode', cardinality 0..*) is associated with 'ioT::metamodel::Fog' (role 'ioT_metamodel_Fog', cardinality 0..*).
+'ioT::metamodel::Policy::Repository' (role 'orchestrate_policies', cardinality 0..*) is associated with 'ioT::metamodel::Reference::Monitor' (role 'Reference_Monitor', cardinality 0..*).
+'ioT::metamodel::Fog::Services' (role 'ioT_metamodel_Fog_Services123', cardinality 0..*) is associated with 'ioT::metamodel::VirtualThing' (role 'ioT_metamodel_VirtualThing124', cardinality 0..*).
+'ioT::metamodel::ExternalSensor' (role 'ioT_metamodel_ExternalSensor', cardinality 0..*) is associated with 'ioT::metamodel::Action' (role 'ioT_metamodel_Action55', cardinality 0..*).
+'ioT::metamodel::PhysicalThing' (role 'is_attached_to', cardinality 0..*) is associated with 'ioT::metamodel::Device' (role 'Device', cardinality 0..*).
+'ioT::metamodel::DataStreams' (role 'ioT_metamodel_DataStreams105', cardinality 0..*) is associated with 'ioT::metamodel::AtomicData' (role 'ioT_metamodel_AtomicData106', cardinality 0..*).
+'ioT::metamodel::Device' (role 'ioT_metamodel_Device30', cardinality 0..*) is associated with 'ioT::metamodel::Device' (role 'ioT_metamodel_Device', cardinality 0..*).
+'ioT::metamodel::Container' (role 'ioT_metamodel_Container129', cardinality 0..*) is associated with 'ioT::metamodel::Operations' (role 'ioT_metamodel_Operations128', cardinality 0..*).
+'ioT::metamodel::Port' (role 'ioT_metamodel_Port', cardinality 0..*) is associated with 'ioT::metamodel::Communicator' (role 'ioT_metamodel_Communicator71', cardinality 0..*).
+'ioT::metamodel::Fog::Services' (role 'ioT_metamodel_Fog_Services118', cardinality 0..*) is associated with 'ioT::metamodel::Fog::Services' (role 'ioT_metamodel_Fog_Services116', cardinality 0..*).
+'ioT::metamodel::Authorizor' (role 'define_control_policies_to', cardinality 0..*) is associated with 'ioT::metamodel::Fog' (role 'Fog99', cardinality 0..*).

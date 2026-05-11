@@ -1,0 +1,27 @@
+The model has 14 class(es).
+The class 'OclExpression' has no attributes.
+The class 'operators::StringExp' has the following attributes: 'stringSymbol' of type str.
+The class 'operators::BinaryOperatorCallExp' has no attributes.
+The class 'operators::UnaryOperatorCallExp' has no attributes.
+The class 'operators::PrimitiveExp' has no attributes.
+The class 'OperatorCallExp' has no attributes.
+The class 'operators::OclExpression' has no attributes.
+The class 'NumericExp' has no attributes.
+The class 'operators::RealExp' has the following attributes: 'realSymbol' of type str.
+The class 'operators::BooleanExp' has the following attributes: 'booleanSymbol' of type str.
+The class 'PrimitiveExp' has no attributes.
+The class 'operators::OperatorCallExp' has the following attributes: 'name' of type str.
+The class 'operators::NumericExp' has no attributes.
+The class 'operators::IntegerExp' has the following attributes: 'integerSymbol' of type str.
+'operators::BooleanExp' is a specialization of 'PrimitiveExp'.
+'operators::BinaryOperatorCallExp' is a specialization of 'OperatorCallExp'.
+'operators::UnaryOperatorCallExp' is a specialization of 'OperatorCallExp'.
+'operators::RealExp' is a specialization of 'NumericExp'.
+'operators::StringExp' is a specialization of 'PrimitiveExp'.
+'operators::NumericExp' is a specialization of 'PrimitiveExp'.
+'operators::PrimitiveExp' is a specialization of 'OclExpression'.
+'operators::IntegerExp' is a specialization of 'NumericExp'.
+'operators::OperatorCallExp' is a specialization of 'OclExpression'.
+'operators::OclExpression' (role 'operators_OclExpression5', cardinality 0..*) is associated with 'operators::UnaryOperatorCallExp' (role 'operators_UnaryOperatorCallExp', cardinality 0..*).
+'operators::OclExpression' (role 'operators_OclExpression3', cardinality 0..*) is associated with 'operators::BinaryOperatorCallExp' (role 'operators_BinaryOperatorCallExp2', cardinality 0..*).
+'operators::BinaryOperatorCallExp' (role 'operators_BinaryOperatorCallExp', cardinality 0..*) is associated with 'operators::OclExpression' (role 'operators_OclExpression', cardinality 0..*).

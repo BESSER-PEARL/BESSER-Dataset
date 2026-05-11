@@ -1,0 +1,10 @@
+The model has 4 class(es).
+The class 'test::SomeTestClass' has the following attributes: 'attribute' of type str.
+The class 'SomeTestClass' has no attributes.
+The class 'test::PatchTestModel' has the following attributes: 'multiAttribute' of type str; 'oneAttribute' of type str; 'id' of type str.
+The class 'test::SomeTestClassWithID' has the following attributes: 'id' of type str.
+'test::SomeTestClassWithID' is a specialization of 'SomeTestClass'.
+'test::PatchTestModel' (role 'test_PatchTestModel8', cardinality 0..*) is associated with 'test::SomeTestClass' (role 'test_SomeTestClass9', cardinality 0..*).
+'test::SomeTestClass' (role 'test_SomeTestClass', cardinality 0..*) is associated with 'test::PatchTestModel' (role 'test_PatchTestModel', cardinality 0..*).
+'test::PatchTestModel' (role 'test_PatchTestModel5', cardinality 0..*) is associated with 'test::SomeTestClass' (role 'test_SomeTestClass6', cardinality 0..*).
+'test::PatchTestModel' (role 'test_PatchTestModel2', cardinality 0..*) is associated with 'test::SomeTestClass' (role 'test_SomeTestClass3', cardinality 0..*).

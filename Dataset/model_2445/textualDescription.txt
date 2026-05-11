@@ -1,0 +1,11 @@
+The model has 3 class(es).
+The class 'fsa::Transition' has the following attributes: 'event' of type str.
+The class 'fsa::FSA' has no attributes.
+The class 'fsa::State' has the following attributes: 'name' of type str; 'accepting' of type bool.
+'fsa::State' (role 'State11', cardinality 0..*) is associated with 'fsa::Transition' (role 'incomingTransitions', cardinality 0..*).
+'fsa::State' (role 'fromState', cardinality 0..*) is associated with 'fsa::Transition' (role 'Transition', cardinality 0..*).
+'fsa::State' (role 'toState', cardinality 0..*) is associated with 'fsa::Transition' (role 'Transition8', cardinality 0..*).
+'fsa::FSA' (role 'fsa_FSA', cardinality 0..*) is associated with 'fsa::State' (role 'fsa_State', cardinality 0..*).
+'fsa::FSA' (role 'fsa_FSA4', cardinality 0..*) is associated with 'fsa::State' (role 'fsa_State5', cardinality 0..*).
+'fsa::FSA' (role 'fsa_FSA2', cardinality 0..*) is associated with 'fsa::Transition' (role 'fsa_Transition', cardinality 0..*).
+'fsa::State' (role 'State', cardinality 0..*) is associated with 'fsa::Transition' (role 'outgoingTransitions', cardinality 0..*).

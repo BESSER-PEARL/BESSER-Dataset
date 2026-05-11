@@ -1,0 +1,54 @@
+The model has 25 class(es).
+The class 'AbstractSuperclass' has no attributes.
+The class 'grammar::features::SecondRoot' has no attributes.
+The class 'grammar::features::MandatoryNonContainment' has no attributes.
+The class 'grammar::features::OptionalPrefix' has no attributes.
+The class 'grammar::features::AbstractSuperclass' has no attributes.
+The class 'grammar::features::Root' has no attributes.
+The class 'grammar::features::StarContainment' has no attributes.
+The class 'grammar::features::AlternativeSyntax' has no attributes.
+The class 'grammar::features::CompoundPlus' has no attributes.
+The class 'grammar::features::ClassWithAttributes' has the following attributes: 'a1' of type str; 'a2' of type bool.
+The class 'grammar::features::StarNonContainment' has no attributes.
+The class 'grammar::features::X' has the following attributes: 'name' of type str.
+The class 'grammar::features::PlusContainment' has no attributes.
+The class 'grammar::features::OptionalNonContainment' has no attributes.
+The class 'grammar::features::CompoundOptional' has no attributes.
+The class 'grammar::features::ConcreteSubclassB' has no attributes.
+The class 'grammar::features::CompoundStar' has no attributes.
+The class 'grammar::features::PlusPrefix' has no attributes.
+The class 'grammar::features::MandatoryContainment' has no attributes.
+The class 'grammar::features::Child' has no attributes.
+The class 'grammar::features::StarPrefix' has no attributes.
+The class 'Child' has no attributes.
+The class 'grammar::features::PlusNonContainment' has no attributes.
+The class 'grammar::features::ConcreteSubclassA' has no attributes.
+The class 'grammar::features::OptionalContainment' has no attributes.
+'grammar::features::OptionalPrefix' is a specialization of 'Child'.
+'grammar::features::StarNonContainment' is a specialization of 'Child'.
+'grammar::features::OptionalNonContainment' is a specialization of 'Child'.
+'grammar::features::CompoundPlus' is a specialization of 'Child'.
+'grammar::features::OptionalContainment' is a specialization of 'Child'.
+'grammar::features::CompoundOptional' is a specialization of 'Child'.
+'grammar::features::StarPrefix' is a specialization of 'Child'.
+'grammar::features::StarContainment' is a specialization of 'Child'.
+'grammar::features::PlusContainment' is a specialization of 'Child'.
+'grammar::features::AbstractSuperclass' is a specialization of 'Child'.
+'grammar::features::PlusNonContainment' is a specialization of 'Child'.
+'grammar::features::ConcreteSubclassB' is a specialization of 'AbstractSuperclass'.
+'grammar::features::CompoundStar' is a specialization of 'Child'.
+'grammar::features::MandatoryNonContainment' is a specialization of 'Child'.
+'grammar::features::AlternativeSyntax' is a specialization of 'Child'.
+'grammar::features::ClassWithAttributes' is a specialization of 'Child'.
+'grammar::features::MandatoryContainment' is a specialization of 'Child'.
+'grammar::features::PlusPrefix' is a specialization of 'Child'.
+'grammar::features::ConcreteSubclassA' is a specialization of 'AbstractSuperclass'.
+'grammar::features::Child' (role 'grammar_features_Child', cardinality 0..*) is associated with 'grammar::features::Root' (role 'grammar_features_Root', cardinality 0..*).
+'grammar::features::X' (role 'grammar_features_X7', cardinality 0..*) is associated with 'grammar::features::StarContainment' (role 'grammar_features_StarContainment', cardinality 0..*).
+'grammar::features::MandatoryContainment' (role 'grammar_features_MandatoryContainment', cardinality 0..*) is associated with 'grammar::features::X' (role 'grammar_features_X3', cardinality 0..*).
+'grammar::features::StarNonContainment' (role 'grammar_features_StarNonContainment', cardinality 0..*) is associated with 'grammar::features::X' (role 'grammar_features_X15', cardinality 0..*).
+'grammar::features::X' (role 'grammar_features_X9', cardinality 0..*) is associated with 'grammar::features::OptionalNonContainment' (role 'grammar_features_OptionalNonContainment', cardinality 0..*).
+'grammar::features::X' (role 'grammar_features_X11', cardinality 0..*) is associated with 'grammar::features::MandatoryNonContainment' (role 'grammar_features_MandatoryNonContainment', cardinality 0..*).
+'grammar::features::X' (role 'grammar_features_X', cardinality 0..*) is associated with 'grammar::features::OptionalContainment' (role 'grammar_features_OptionalContainment', cardinality 0..*).
+'grammar::features::PlusContainment' (role 'grammar_features_PlusContainment', cardinality 0..*) is associated with 'grammar::features::X' (role 'grammar_features_X5', cardinality 0..*).
+'grammar::features::PlusNonContainment' (role 'grammar_features_PlusNonContainment', cardinality 0..*) is associated with 'grammar::features::X' (role 'grammar_features_X13', cardinality 0..*).

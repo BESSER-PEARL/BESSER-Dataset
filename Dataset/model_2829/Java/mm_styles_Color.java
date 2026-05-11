@@ -1,0 +1,49 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class mm_styles_Color  {
+
+    private int blue;
+    private int red;
+    private int green;
+
+
+
+    public mm_styles_Color(
+        int blue,        int red,        int green    ) {
+        this.blue = blue;
+        this.red = red;
+        this.green = green;
+    }
+
+
+    public int getBlue() {
+        return blue;
+    }
+
+    public void setBlue(int blue) {
+        this.blue = blue;
+    }
+    public int getRed() {
+        return red;
+    }
+
+    public void setRed(int red) {
+        this.red = red;
+    }
+    public int getGreen() {
+        return green;
+    }
+
+    public void setGreen(int green) {
+        this.green = green;
+    }
+
+
+}

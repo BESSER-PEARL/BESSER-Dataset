@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'person::CompanyType' has no attributes.
+The class 'person::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'person::PersonType' has the following attributes: 'email' of type str; 'country' of type str; 'name' of type str; 'age' of type str.
+The class 'person::EStringToStringMapEntry' has no attributes.
+'person::EStringToStringMapEntry' (role 'person_EStringToStringMapEntry4', cardinality 0..*) is associated with 'person::DocumentRoot' (role 'person_DocumentRoot3', cardinality 0..*).
+'person::PersonType' (role 'person_PersonType', cardinality 0..*) is associated with 'person::CompanyType' (role 'person_CompanyType', cardinality 0..*).
+'person::CompanyType' (role 'person_CompanyType7', cardinality 0..*) is associated with 'person::DocumentRoot' (role 'person_DocumentRoot6', cardinality 0..*).
+'person::DocumentRoot' (role 'person_DocumentRoot', cardinality 0..*) is associated with 'person::EStringToStringMapEntry' (role 'person_EStringToStringMapEntry', cardinality 0..*).

@@ -1,0 +1,159 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class synccharts_State extends Scope {
+
+    private boolean isInitial;
+    private String type;
+    private boolean isFinal;
+
+
+
+
+
+    private synccharts_Region synccharts_region;
+
+
+
+
+    private List<synccharts_Transition> synccharts_transitions;
+
+
+
+
+    private List<synccharts_Transition> synccharts_transitions;
+
+
+
+
+    private synccharts_Transition synccharts_transition;
+
+
+
+
+    private List<synccharts_Region> synccharts_regions;
+
+
+
+
+    private synccharts_Region synccharts_region;
+
+
+
+
+    private synccharts_Region synccharts_region;
+
+
+
+
+    private synccharts_Transition synccharts_transition;
+
+
+    public synccharts_State(
+        boolean isInitial,        String type,        boolean isFinal    ) {
+        super(
+        );
+        this.isInitial = isInitial;
+        this.type = type;
+        this.isFinal = isFinal;
+        this.synccharts_transitions = new ArrayList<>();
+        this.synccharts_transitions = new ArrayList<>();
+        this.synccharts_regions = new ArrayList<>();
+    }
+
+    public synccharts_State(
+        boolean isInitial,        String type,        boolean isFinal        ArrayList<synccharts_Transition> synccharts_transitions,        ArrayList<synccharts_Transition> synccharts_transitions,        ArrayList<synccharts_Region> synccharts_regions    ) {
+        this.isInitial = isInitial;
+        this.type = type;
+        this.isFinal = isFinal;
+        this.synccharts_transitions = synccharts_transitions;
+        this.synccharts_transitions = synccharts_transitions;
+        this.synccharts_regions = synccharts_regions;
+    }
+
+    public boolean getIsinitial() {
+        return isInitial;
+    }
+
+    public void setIsinitial(boolean isInitial) {
+        this.isInitial = isInitial;
+    }
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+    public boolean getIsfinal() {
+        return isFinal;
+    }
+
+    public void setIsfinal(boolean isFinal) {
+        this.isFinal = isFinal;
+    }
+
+    public synccharts_Region getSynccharts_region() {
+        return synccharts_region;
+    }
+
+    public void setSynccharts_region(synccharts_Region synccharts_region) {
+        this.synccharts_region = synccharts_region;
+    }
+    public List<synccharts_Transition> getSynccharts_transitions() {
+        return synccharts_transitions;
+    }
+
+    public void addSynccharts_transition(Synccharts_transition synccharts_transition) {
+        this.synccharts_transitions.add(synccharts_transition);
+    }
+    public List<synccharts_Transition> getSynccharts_transitions() {
+        return synccharts_transitions;
+    }
+
+    public void addSynccharts_transition(Synccharts_transition synccharts_transition) {
+        this.synccharts_transitions.add(synccharts_transition);
+    }
+    public synccharts_Transition getSynccharts_transition() {
+        return synccharts_transition;
+    }
+
+    public void setSynccharts_transition(synccharts_Transition synccharts_transition) {
+        this.synccharts_transition = synccharts_transition;
+    }
+    public List<synccharts_Region> getSynccharts_regions() {
+        return synccharts_regions;
+    }
+
+    public void addSynccharts_region(Synccharts_region synccharts_region) {
+        this.synccharts_regions.add(synccharts_region);
+    }
+    public synccharts_Region getSynccharts_region() {
+        return synccharts_region;
+    }
+
+    public void setSynccharts_region(synccharts_Region synccharts_region) {
+        this.synccharts_region = synccharts_region;
+    }
+    public synccharts_Region getSynccharts_region() {
+        return synccharts_region;
+    }
+
+    public void setSynccharts_region(synccharts_Region synccharts_region) {
+        this.synccharts_region = synccharts_region;
+    }
+    public synccharts_Transition getSynccharts_transition() {
+        return synccharts_transition;
+    }
+
+    public void setSynccharts_transition(synccharts_Transition synccharts_transition) {
+        this.synccharts_transition = synccharts_transition;
+    }
+
+}

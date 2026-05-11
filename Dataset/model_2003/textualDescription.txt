@@ -1,0 +1,35 @@
+The model has 18 class(es).
+The class 'Value' has no attributes.
+The class 'trace::Step' has the following attributes: 'number' of type str; 'thread' of type str; 'hidden' of type str.
+The class 'Step' has no attributes.
+The class 'trace::ArrayValue' has no attributes.
+The class 'trace::Value' has the following attributes: 'type' of type str.
+The class 'trace::Assignment' has the following attributes: 'id' of type str; 'assignmentType' of type str; 'baseName' of type str; 'displayName' of type str.
+The class 'trace::SimpleValue' has the following attributes: 'value' of type str.
+The class 'trace::FunctionReturn' has the following attributes: 'id' of type str; 'displayName' of type str.
+The class 'trace::NameToValueMap' has the following attributes: 'key' of type str.
+The class 'trace::Trace' has no attributes.
+The class 'trace::Location' has the following attributes: 'line' of type str; 'function' of type str; 'file' of type str.
+The class 'trace::LocationOnly' has no attributes.
+The class 'trace::Output' has the following attributes: 'text' of type str.
+The class 'trace::Failure' has the following attributes: 'reason' of type str.
+The class 'trace::FunctionCall' has the following attributes: 'displayName' of type str; 'id' of type str.
+The class 'trace::StructValue' has no attributes.
+The class 'StructValue' has no attributes.
+The class 'trace::UnionValue' has no attributes.
+'trace::SimpleValue' is a specialization of 'Value'.
+'trace::LocationOnly' is a specialization of 'Step'.
+'trace::FunctionReturn' is a specialization of 'Step'.
+'trace::UnionValue' is a specialization of 'StructValue'.
+'trace::Assignment' is a specialization of 'Step'.
+'trace::ArrayValue' is a specialization of 'Value'.
+'trace::Output' is a specialization of 'Step'.
+'trace::StructValue' is a specialization of 'Value'.
+'trace::Failure' is a specialization of 'Step'.
+'trace::FunctionCall' is a specialization of 'Step'.
+'trace::NameToValueMap' (role 'trace_NameToValueMap7', cardinality 0..*) is associated with 'trace::StructValue' (role 'trace_StructValue', cardinality 0..*).
+'trace::Value' (role 'trace_Value', cardinality 0..*) is associated with 'trace::ArrayValue' (role 'trace_ArrayValue', cardinality 0..*).
+'trace::Step' (role 'trace_Step', cardinality 0..*) is associated with 'trace::Location' (role 'trace_Location', cardinality 0..*).
+'trace::Step' (role 'trace_Step9', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace', cardinality 0..*).
+'trace::Value' (role 'trace_Value4', cardinality 0..*) is associated with 'trace::NameToValueMap' (role 'trace_NameToValueMap', cardinality 0..*).
+'trace::Value' (role 'trace_Value2', cardinality 0..*) is associated with 'trace::Assignment' (role 'trace_Assignment', cardinality 0..*).

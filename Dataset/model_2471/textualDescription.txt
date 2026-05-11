@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'SimpleTrace::EObject' has no attributes.
+The class 'SimpleTrace::Trace' has no attributes.
+The class 'SimpleTrace::TraceLink' has the following attributes: 'description' of type str.
+'SimpleTrace::TraceLink' (role 'SimpleTrace_TraceLink', cardinality 0..*) is associated with 'SimpleTrace::Trace' (role 'SimpleTrace_Trace', cardinality 0..*).
+'SimpleTrace::EObject' (role 'SimpleTrace_EObject5', cardinality 0..*) is associated with 'SimpleTrace::TraceLink' (role 'SimpleTrace_TraceLink4', cardinality 0..*).
+'SimpleTrace::TraceLink' (role 'SimpleTrace_TraceLink2', cardinality 0..*) is associated with 'SimpleTrace::EObject' (role 'SimpleTrace_EObject', cardinality 0..*).

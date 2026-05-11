@@ -1,0 +1,21 @@
+The model has 10 class(es).
+The class 'domainModel::DataType' has no attributes.
+The class 'domainModel::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'domainModel::Feature' has the following attributes: 'many' of type bool; 'name' of type str.
+The class 'domainModel::Domainmodel' has no attributes.
+The class 'domainModel::Type' has the following attributes: 'name' of type str.
+The class 'domainModel::PackageDecl' has the following attributes: 'name' of type str.
+The class 'domainModel::AbstractElement' has no attributes.
+The class 'domainModel::Entity' has no attributes.
+The class 'AbstractElement' has no attributes.
+The class 'Type' has no attributes.
+'domainModel::PackageDecl' is a specialization of 'AbstractElement'.
+'domainModel::Entity' is a specialization of 'Type'.
+'domainModel::Import' is a specialization of 'AbstractElement'.
+'domainModel::Type' is a specialization of 'AbstractElement'.
+'domainModel::DataType' is a specialization of 'Type'.
+'domainModel::Entity' (role 'domainModel_Entity6', cardinality 0..*) is associated with 'domainModel::Feature' (role 'domainModel_Feature', cardinality 0..*).
+'domainModel::AbstractElement' (role 'domainModel_AbstractElement2', cardinality 0..*) is associated with 'domainModel::PackageDecl' (role 'domainModel_PackageDecl', cardinality 0..*).
+'domainModel::Entity' (role 'domainModel_Entity', cardinality 0..*) is associated with 'domainModel::Entity' (role 'domainModel_Entity3', cardinality 0..*).
+'domainModel::AbstractElement' (role 'domainModel_AbstractElement', cardinality 0..*) is associated with 'domainModel::Domainmodel' (role 'domainModel_Domainmodel', cardinality 0..*).
+'domainModel::Feature' (role 'domainModel_Feature8', cardinality 0..*) is associated with 'domainModel::Type' (role 'domainModel_Type', cardinality 0..*).

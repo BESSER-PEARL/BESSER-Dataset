@@ -1,0 +1,27 @@
+The model has 10 class(es).
+The class 'datamodel::SliceRepository' has no attributes.
+The class 'datamodel::Slice' has the following attributes: 'diagram' of type str; 'name' of type str.
+The class 'Ensemble' has no attributes.
+The class 'datamodel::ConcreteEnsemble' has no attributes.
+The class 'datamodel::Ensemble' has the following attributes: 'derived' of type bool; 'description' of type str; 'name' of type str; 'query' of type str.
+The class 'datamodel::EnsembleRepository' has no attributes.
+The class 'TreeNode' has no attributes.
+The class 'datamodel::TreeNode' has no attributes.
+The class 'datamodel::EmptyEnsemble' has no attributes.
+The class 'datamodel::Constraint' has the following attributes: 'dependencyKind' of type str; 'constraintType' of type str.
+The enumeration 'ConstraintType' has the following literals: 'Expected', 'Undefined', 'GlobalOutgoing', 'LocalIncoming', 'GlobalIncoming', 'LocalOutgoing', 'NotAllowed'.
+'datamodel::EmptyEnsemble' is a specialization of 'Ensemble'.
+'datamodel::ConcreteEnsemble' is a specialization of 'Ensemble'.
+'datamodel::EnsembleRepository' is a specialization of 'TreeNode'.
+'datamodel::Ensemble' is a specialization of 'TreeNode'.
+'datamodel::Constraint' (role 'datamodel_Constraint13', cardinality 0..*) is associated with 'datamodel::Slice' (role 'datamodel_Slice', cardinality 0..*).
+'datamodel::Ensemble' (role 'datamodel_Ensemble4', cardinality 0..*) is associated with 'datamodel::Constraint' (role 'datamodel_Constraint3', cardinality 0..*).
+'datamodel::SliceRepository' (role 'sliceRepository', cardinality 0..*) is associated with 'datamodel::Slice' (role 'Slice9', cardinality 0..*).
+'datamodel::Constraint' (role 'datamodel_Constraint6', cardinality 0..*) is associated with 'datamodel::Ensemble' (role 'datamodel_Ensemble7', cardinality 0..*).
+'datamodel::SliceRepository' (role 'SliceRepository', cardinality 0..*) is associated with 'datamodel::Slice' (role 'slices16', cardinality 0..*).
+'datamodel::Ensemble' (role 'datamodel_Ensemble11', cardinality 0..*) is associated with 'datamodel::SliceRepository' (role 'datamodel_SliceRepository', cardinality 0..*).
+'datamodel::TreeNode' (role 'TreeNode21', cardinality 0..*) is associated with 'datamodel::TreeNode' (role 'parent', cardinality 0..*).
+'datamodel::Ensemble' (role 'datamodel_Ensemble', cardinality 0..*) is associated with 'datamodel::Constraint' (role 'datamodel_Constraint', cardinality 0..*).
+'datamodel::TreeNode' (role 'TreeNode', cardinality 0..*) is associated with 'datamodel::TreeNode' (role 'children', cardinality 0..*).
+'datamodel::Ensemble' (role 'ensembles', cardinality 0..*) is associated with 'datamodel::Slice' (role 'Slice', cardinality 0..*).
+'datamodel::Slice' (role 'slices', cardinality 0..*) is associated with 'datamodel::Ensemble' (role 'Ensemble', cardinality 0..*).

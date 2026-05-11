@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'Type' has no attributes.
+The class 'metamodel::Datatype' has no attributes.
+The class 'metamodel::Model' has no attributes.
+The class 'metamodel::Type' has the following attributes: 'name' of type str.
+The class 'metamodel::Entity' has no attributes.
+The class 'metamodel::Feature' has the following attributes: 'name' of type str.
+'metamodel::Entity' is a specialization of 'Type'.
+'metamodel::Datatype' is a specialization of 'Type'.
+'metamodel::Entity' (role 'metamodel_Entity', cardinality 0..*) is associated with 'metamodel::Feature' (role 'metamodel_Feature', cardinality 0..*).
+'metamodel::Type' (role 'metamodel_Type', cardinality 0..*) is associated with 'metamodel::Model' (role 'metamodel_Model', cardinality 0..*).
+'metamodel::Type' (role 'metamodel_Type4', cardinality 0..*) is associated with 'metamodel::Feature' (role 'metamodel_Feature3', cardinality 0..*).

@@ -1,0 +1,28 @@
+The model has 13 class(es).
+The class 'cfgraph::ControlFlowVertex' has no attributes.
+The class 'cfgraph::StatementVertex' has no attributes.
+The class 'BodyVertex' has no attributes.
+The class 'cfgraph::BranchingVertex' has no attributes.
+The class 'cfgraph::BodyVertex' has no attributes.
+The class 'StatementVertex' has no attributes.
+The class 'cfgraph::CallVertex' has no attributes.
+The class 'cfgraph::ControlFlowEdge' has the following attributes: 'backward' of type bool.
+The class 'cfgraph::ControlFlowGraph' has no attributes.
+The class 'cfgraph::SimpleStatementVertex' has no attributes.
+The class 'cfgraph::StartVertex' has no attributes.
+The class 'ControlFlowVertex' has no attributes.
+The class 'cfgraph::EndVertex' has no attributes.
+'cfgraph::BodyVertex' is a specialization of 'ControlFlowVertex'.
+'cfgraph::BranchingVertex' is a specialization of 'BodyVertex'.
+'cfgraph::EndVertex' is a specialization of 'BodyVertex'.
+'cfgraph::CallVertex' is a specialization of 'StatementVertex'.
+'cfgraph::StartVertex' is a specialization of 'ControlFlowVertex'.
+'cfgraph::StatementVertex' is a specialization of 'BodyVertex'.
+'cfgraph::SimpleStatementVertex' is a specialization of 'StatementVertex'.
+'cfgraph::StartVertex' (role 'cfgraph_StartVertex8', cardinality 0..*) is associated with 'cfgraph::CallVertex' (role 'cfgraph_CallVertex', cardinality 0..*).
+'cfgraph::StartVertex' (role 'cfgraph_StartVertex3', cardinality 0..*) is associated with 'cfgraph::ControlFlowEdge' (role 'cfgraph_ControlFlowEdge', cardinality 0..*).
+'cfgraph::ControlFlowEdge' (role 'ControlFlowEdge', cardinality 0..*) is associated with 'cfgraph::BodyVertex' (role 'end', cardinality 0..*).
+'cfgraph::BodyVertex' (role 'BodyVertex', cardinality 0..*) is associated with 'cfgraph::ControlFlowEdge' (role 'incomingEdges', cardinality 0..*).
+'cfgraph::BranchingVertex' (role 'cfgraph_BranchingVertex', cardinality 0..*) is associated with 'cfgraph::ControlFlowEdge' (role 'cfgraph_ControlFlowEdge10', cardinality 0..*).
+'cfgraph::StatementVertex' (role 'cfgraph_StatementVertex', cardinality 0..*) is associated with 'cfgraph::ControlFlowEdge' (role 'cfgraph_ControlFlowEdge6', cardinality 0..*).
+'cfgraph::StartVertex' (role 'cfgraph_StartVertex', cardinality 0..*) is associated with 'cfgraph::ControlFlowGraph' (role 'cfgraph_ControlFlowGraph', cardinality 0..*).

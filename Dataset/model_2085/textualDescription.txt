@@ -1,0 +1,70 @@
+The model has 32 class(es).
+The class 'Literal' has no attributes.
+The class 'VariableFeature' has no attributes.
+The class 'sxfm::ContainerElement' has no attributes.
+The class 'sxfm::GroupedFeature' has no attributes.
+The class 'Feature' has no attributes.
+The class 'CommonFeature' has no attributes.
+The class 'sxfm::CardinalizedElement' has the following attributes: 'minCardinality' of type int; 'maxCardinality' of type int.
+The class 'sxfm::Root' has no attributes.
+The class 'sxfm::Data' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'sxfm::Not' has no attributes.
+The class 'sxfm::Or' has no attributes.
+The class 'sxfm::ConstraintsSet' has no attributes.
+The class 'sxfm::Optional' has no attributes.
+The class 'sxfm::CommonFeature' has no attributes.
+The class 'sxfm::Mandatory' has no attributes.
+The class 'sxfm::MetadataSet' has no attributes.
+The class 'sxfm::ConstraintableElement' has no attributes.
+The class 'sxfm::FeatureModelConfiguaration' has no attributes.
+The class 'CardinalizedElement' has no attributes.
+The class 'ContainerElement' has no attributes.
+The class 'sxfm::FeatureModel' has the following attributes: 'name' of type str.
+The class 'sxfm::Feature' has the following attributes: 'name' of type str; 'description' of type str; 'id' of type str; 'treeLevel' of type int.
+The class 'sxfm::VariableFeature' has no attributes.
+The class 'sxfm::Atom' has no attributes.
+The class 'sxfm::FeatureTree' has no attributes.
+The class 'ConstraintableElement' has no attributes.
+The class 'sxfm::FeatureChoice' has the following attributes: 'decisionType' of type str; 'selected' of type bool; 'decisionStep' of type int.
+The class 'sxfm::Constraint' has the following attributes: 'id' of type int.
+The class 'sxfm::Literal' has no attributes.
+The class 'sxfm::ContainableElement' has no attributes.
+The class 'sxfm::Group' has the following attributes: 'id' of type str.
+The class 'ContainableElement' has no attributes.
+The enumeration 'DecisionType' has the following literals: 'manual', 'autocompleted', 'propagated'.
+'sxfm::GroupedFeature' is a specialization of 'Feature'.
+'sxfm::GroupedFeature' is a specialization of 'VariableFeature'.
+'sxfm::Optional' is a specialization of 'ConstraintableElement'.
+'sxfm::Optional' is a specialization of 'VariableFeature'.
+'sxfm::Mandatory' is a specialization of 'ConstraintableElement'.
+'sxfm::Optional' is a specialization of 'ContainerElement'.
+'sxfm::Root' is a specialization of 'CommonFeature'.
+'sxfm::Root' is a specialization of 'ContainerElement'.
+'sxfm::Mandatory' is a specialization of 'ContainerElement'.
+'sxfm::GroupedFeature' is a specialization of 'ContainerElement'.
+'sxfm::Optional' is a specialization of 'Feature'.
+'sxfm::Mandatory' is a specialization of 'Feature'.
+'sxfm::Group' is a specialization of 'CardinalizedElement'.
+'sxfm::Not' is a specialization of 'Literal'.
+'sxfm::GroupedFeature' is a specialization of 'ConstraintableElement'.
+'sxfm::Atom' is a specialization of 'Literal'.
+'sxfm::Root' is a specialization of 'Feature'.
+'sxfm::Mandatory' is a specialization of 'CommonFeature'.
+'sxfm::Optional' is a specialization of 'ContainableElement'.
+'sxfm::Mandatory' is a specialization of 'ContainableElement'.
+'sxfm::FeatureModel' (role 'sxfm_FeatureModel8', cardinality 0..*) is associated with 'sxfm::MetadataSet' (role 'sxfm_MetadataSet', cardinality 0..*).
+'sxfm::Or' (role 'sxfm_Or19', cardinality 0..*) is associated with 'sxfm::Literal' (role 'sxfm_Literal', cardinality 0..*).
+'sxfm::ConstraintableElement' (role 'sxfm_ConstraintableElement', cardinality 0..*) is associated with 'sxfm::Atom' (role 'sxfm_Atom21', cardinality 0..*).
+'sxfm::Group' (role 'sxfm_Group', cardinality 0..*) is associated with 'sxfm::Feature' (role 'sxfm_Feature', cardinality 0..*).
+'sxfm::Constraint' (role 'sxfm_Constraint', cardinality 0..*) is associated with 'sxfm::Or' (role 'sxfm_Or', cardinality 0..*).
+'sxfm::FeatureChoice' (role 'sxfm_FeatureChoice', cardinality 0..*) is associated with 'sxfm::FeatureModelConfiguaration' (role 'sxfm_FeatureModelConfiguaration25', cardinality 0..*).
+'sxfm::FeatureModel' (role 'sxfm_FeatureModel', cardinality 0..*) is associated with 'sxfm::ConstraintsSet' (role 'sxfm_ConstraintsSet', cardinality 0..*).
+'sxfm::ContainableElement' (role 'sxfm_ContainableElement', cardinality 0..*) is associated with 'sxfm::ContainerElement' (role 'sxfm_ContainerElement', cardinality 0..*).
+'sxfm::FeatureTree' (role 'sxfm_FeatureTree', cardinality 0..*) is associated with 'sxfm::FeatureModel' (role 'sxfm_FeatureModel6', cardinality 0..*).
+'sxfm::Feature' (role 'sxfm_Feature28', cardinality 0..*) is associated with 'sxfm::FeatureChoice' (role 'sxfm_FeatureChoice27', cardinality 0..*).
+'sxfm::FeatureTree' (role 'sxfm_FeatureTree12', cardinality 0..*) is associated with 'sxfm::Root' (role 'sxfm_Root', cardinality 0..*).
+'sxfm::ConstraintsSet' (role 'sxfm_ConstraintsSet14', cardinality 0..*) is associated with 'sxfm::Constraint' (role 'sxfm_Constraint15', cardinality 0..*).
+'sxfm::Group' (role 'sxfm_Group2', cardinality 0..*) is associated with 'sxfm::GroupedFeature' (role 'sxfm_GroupedFeature', cardinality 0..*).
+'sxfm::MetadataSet' (role 'sxfm_MetadataSet23', cardinality 0..*) is associated with 'sxfm::Data' (role 'sxfm_Data', cardinality 0..*).
+'sxfm::FeatureModelConfiguaration' (role 'sxfm_FeatureModelConfiguaration', cardinality 0..*) is associated with 'sxfm::FeatureModel' (role 'sxfm_FeatureModel10', cardinality 0..*).
+'sxfm::Atom' (role 'sxfm_Atom', cardinality 0..*) is associated with 'sxfm::Not' (role 'sxfm_Not', cardinality 0..*).

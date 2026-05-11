@@ -1,0 +1,95 @@
+The model has 44 class(es).
+The class 'tTCTest::Propose::Pullup::Method::Refactoring' has no attributes.
+The class 'tTCTest::Expect::False' has no attributes.
+The class 'tTCTest::Pull::Up::Refactoring' has no attributes.
+The class 'tTCTest::Fields' has the following attributes: 'name' of type str.
+The class 'tTCTest::Methods' has the following attributes: 'name' of type str.
+The class 'tTCTest::Synchronize' has no attributes.
+The class 'tTCTest::Contains' has no attributes.
+The class 'tTCTest::No::Refactoring' has no attributes.
+The class 'tTCTest::Create::Superclass::Refactoring' has no attributes.
+The class 'tTCTest::Expect::True' has no attributes.
+The class 'Condition' has no attributes.
+The class 'tTCTest::Assert::False' has no attributes.
+The class 'tTCTest::Test::Step::Element' has no attributes.
+The class 'tTCTest::Java::Field' has the following attributes: 'field_name' of type str.
+The class 'tTCTest::Warning' has the following attributes: 'message' of type str.
+The class 'Propose::Refactoring' has no attributes.
+The class 'tTCTest::Compile' has no attributes.
+The class 'tTCTest::Assertion' has no attributes.
+The class 'tTCTest::Java::Class' has the following attributes: 'package' of type str; 'class_name' of type str; 'name' of type str.
+The class 'Assertion' has no attributes.
+The class 'tTCTest::Implementation' has no attributes.
+The class 'Test::Step::Element' has no attributes.
+The class 'tTCTest::Propose::Create::Superclass::Refactoring' has no attributes.
+The class 'tTCTest::Implements' has no attributes.
+The class 'tTCTest::Test::Case' has the following attributes: 'description' of type str; 'name' of type str; 'java_program' of type str.
+The class 'tTCTest::Contains::Not' has no attributes.
+The class 'tTCTest::Java::Method' has the following attributes: 'method_name' of type str.
+The class 'tTCTest::Condition' has no attributes.
+The class 'Implementation' has no attributes.
+The class 'tTCTest::Assert::True' has no attributes.
+The class 'tTCTest::Refactoring::Instance' has the following attributes: 'name' of type str.
+The class 'tTCTest::Test::Flow' has no attributes.
+The class 'tTCTest::Refactoring' has no attributes.
+The class 'tTCTest::Test::File' has the following attributes: 'name' of type str.
+The class 'tTCTest::Test::Step' has no attributes.
+The class 'tTCTest::Propose::Refactoring' has no attributes.
+The class 'Refactoring::Instance' has no attributes.
+The class 'tTCTest::Class::Element' has the following attributes: 'name' of type str.
+The class 'tTCTest::Containment' has no attributes.
+The class 'tTCTest::Classes' has the following attributes: 'name' of type str.
+The class 'Class::Element' has no attributes.
+The class 'Refactoring' has no attributes.
+The class 'tTCTest::Implements::Not' has no attributes.
+The class 'Containment' has no attributes.
+'tTCTest::Test::Step' is a specialization of 'Test::Step::Element'.
+'tTCTest::Expect::True' is a specialization of 'Condition'.
+'tTCTest::Refactoring::Instance' is a specialization of 'Refactoring'.
+'tTCTest::Expect::False' is a specialization of 'Condition'.
+'tTCTest::Java::Field' is a specialization of 'Class::Element'.
+'tTCTest::Assertion' is a specialization of 'Test::Step::Element'.
+'tTCTest::Assert::True' is a specialization of 'Assertion'.
+'tTCTest::Synchronize' is a specialization of 'Test::Step::Element'.
+'tTCTest::Contains' is a specialization of 'Containment'.
+'tTCTest::Create::Superclass::Refactoring' is a specialization of 'Refactoring::Instance'.
+'tTCTest::Assert::False' is a specialization of 'Assertion'.
+'tTCTest::Contains::Not' is a specialization of 'Containment'.
+'tTCTest::Containment' is a specialization of 'Test::Step::Element'.
+'tTCTest::Implements::Not' is a specialization of 'Implementation'.
+'tTCTest::Propose::Create::Superclass::Refactoring' is a specialization of 'Propose::Refactoring'.
+'tTCTest::Implements' is a specialization of 'Implementation'.
+'tTCTest::Implementation' is a specialization of 'Test::Step::Element'.
+'tTCTest::Propose::Pullup::Method::Refactoring' is a specialization of 'Propose::Refactoring'.
+'tTCTest::Condition' is a specialization of 'Test::Step::Element'.
+'tTCTest::Java::Method' is a specialization of 'Class::Element'.
+'tTCTest::No::Refactoring' is a specialization of 'Refactoring'.
+'tTCTest::Pull::Up::Refactoring' is a specialization of 'Refactoring::Instance'.
+'tTCTest::Compile' is a specialization of 'Test::Step::Element'.
+'tTCTest::Refactoring' (role 'tTCTest_Refactoring49', cardinality 0..*) is associated with 'tTCTest::Propose::Refactoring' (role 'tTCTest_Propose_Refactoring', cardinality 0..*).
+'tTCTest::Java::Class' (role 'tTCTest_Java_Class32', cardinality 0..*) is associated with 'tTCTest::Create::Superclass::Refactoring' (role 'tTCTest_Create_Superclass_Refactoring31', cardinality 0..*).
+'tTCTest::Containment' (role 'tTCTest_Containment', cardinality 0..*) is associated with 'tTCTest::Java::Class' (role 'tTCTest_Java_Class51', cardinality 0..*).
+'tTCTest::Java::Class' (role 'tTCTest_Java_Class', cardinality 0..*) is associated with 'tTCTest::Test::File' (role 'tTCTest_Test_File2', cardinality 0..*).
+'tTCTest::Refactoring' (role 'tTCTest_Refactoring', cardinality 0..*) is associated with 'tTCTest::Assertion' (role 'tTCTest_Assertion', cardinality 0..*).
+'tTCTest::Java::Class' (role 'tTCTest_Java_Class18', cardinality 0..*) is associated with 'tTCTest::Java::Field' (role 'tTCTest_Java_Field', cardinality 0..*).
+'tTCTest::Condition' (role 'tTCTest_Condition46', cardinality 0..*) is associated with 'tTCTest::Test::Step::Element' (role 'tTCTest_Test_Step_Element47', cardinality 0..*).
+'tTCTest::Classes' (role 'tTCTest_Classes10', cardinality 0..*) is associated with 'tTCTest::Java::Class' (role 'tTCTest_Java_Class11', cardinality 0..*).
+'tTCTest::Test::File' (role 'tTCTest_Test_File', cardinality 0..*) is associated with 'tTCTest::Test::Case' (role 'tTCTest_Test_Case', cardinality 0..*).
+'tTCTest::Test::Step::Element' (role 'tTCTest_Test_Step_Element', cardinality 0..*) is associated with 'tTCTest::Test::Flow' (role 'tTCTest_Test_Flow34', cardinality 0..*).
+'tTCTest::Classes' (role 'tTCTest_Classes29', cardinality 0..*) is associated with 'tTCTest::Create::Superclass::Refactoring' (role 'tTCTest_Create_Superclass_Refactoring', cardinality 0..*).
+'tTCTest::Pull::Up::Refactoring' (role 'tTCTest_Pull_Up_Refactoring26', cardinality 0..*) is associated with 'tTCTest::Java::Method' (role 'tTCTest_Java_Method27', cardinality 0..*).
+'tTCTest::Refactoring::Instance' (role 'tTCTest_Refactoring_Instance', cardinality 0..*) is associated with 'tTCTest::Test::File' (role 'tTCTest_Test_File8', cardinality 0..*).
+'tTCTest::Implementation' (role 'tTCTest_Implementation', cardinality 0..*) is associated with 'tTCTest::Java::Class' (role 'tTCTest_Java_Class55', cardinality 0..*).
+'tTCTest::Java::Field' (role 'tTCTest_Java_Field20', cardinality 0..*) is associated with 'tTCTest::Fields' (role 'tTCTest_Fields', cardinality 0..*).
+'tTCTest::Methods' (role 'tTCTest_Methods', cardinality 0..*) is associated with 'tTCTest::Java::Method' (role 'tTCTest_Java_Method16', cardinality 0..*).
+'tTCTest::Containment' (role 'tTCTest_Containment53', cardinality 0..*) is associated with 'tTCTest::Class::Element' (role 'tTCTest_Class_Element', cardinality 0..*).
+'tTCTest::Test::Step::Element' (role 'tTCTest_Test_Step_Element42', cardinality 0..*) is associated with 'tTCTest::Condition' (role 'tTCTest_Condition41', cardinality 0..*).
+'tTCTest::Java::Method' (role 'tTCTest_Java_Method', cardinality 0..*) is associated with 'tTCTest::Test::File' (role 'tTCTest_Test_File6', cardinality 0..*).
+'tTCTest::Refactoring' (role 'tTCTest_Refactoring39', cardinality 0..*) is associated with 'tTCTest::Condition' (role 'tTCTest_Condition', cardinality 0..*).
+'tTCTest::Warning' (role 'tTCTest_Warning', cardinality 0..*) is associated with 'tTCTest::Condition' (role 'tTCTest_Condition44', cardinality 0..*).
+'tTCTest::Test::Flow' (role 'tTCTest_Test_Flow', cardinality 0..*) is associated with 'tTCTest::Test::Case' (role 'tTCTest_Test_Case22', cardinality 0..*).
+'tTCTest::Java::Class' (role 'tTCTest_Java_Class14', cardinality 0..*) is associated with 'tTCTest::Java::Method' (role 'tTCTest_Java_Method13', cardinality 0..*).
+'tTCTest::Java::Class' (role 'tTCTest_Java_Class58', cardinality 0..*) is associated with 'tTCTest::Implementation' (role 'tTCTest_Implementation57', cardinality 0..*).
+'tTCTest::Test::Step' (role 'tTCTest_Test_Step', cardinality 0..*) is associated with 'tTCTest::Test::Step::Element' (role 'tTCTest_Test_Step_Element36', cardinality 0..*).
+'tTCTest::Test::File' (role 'tTCTest_Test_File4', cardinality 0..*) is associated with 'tTCTest::Classes' (role 'tTCTest_Classes', cardinality 0..*).
+'tTCTest::Pull::Up::Refactoring' (role 'tTCTest_Pull_Up_Refactoring', cardinality 0..*) is associated with 'tTCTest::Java::Class' (role 'tTCTest_Java_Class24', cardinality 0..*).

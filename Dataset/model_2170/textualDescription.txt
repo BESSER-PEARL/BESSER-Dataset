@@ -1,0 +1,32 @@
+The model has 15 class(es).
+The class 'dgf::DGraphElement' has the following attributes: 'name' of type str.
+The class 'dgf::DVertex' has no attributes.
+The class 'dgf::DReference' has the following attributes: '_property' of type bool.
+The class 'DTypedElement' has no attributes.
+The class 'DVertex' has no attributes.
+The class 'dgf::DNode' has the following attributes: 'pointOfView' of type str.
+The class 'DGraphElement' has no attributes.
+The class 'DContainedElement' has no attributes.
+The class 'DContainedVertex' has no attributes.
+The class 'dgf::DContainment' has the following attributes: 'compartment' of type str.
+The class 'dgf::DLink' has no attributes.
+The class 'dgf::Graph' has no attributes.
+The class 'dgf::DTypedElement' has no attributes.
+The class 'dgf::DContainedVertex' has no attributes.
+The class 'dgf::DContainedElement' has no attributes.
+'dgf::DLink' is a specialization of 'DTypedElement'.
+'dgf::DLink' is a specialization of 'DContainedVertex'.
+'dgf::DContainedVertex' is a specialization of 'DVertex'.
+'dgf::DContainment' is a specialization of 'DContainedVertex'.
+'dgf::DNode' is a specialization of 'DGraphElement'.
+'dgf::DContainedVertex' is a specialization of 'DContainedElement'.
+'dgf::DContainedElement' is a specialization of 'DGraphElement'.
+'dgf::DNode' is a specialization of 'DContainedElement'.
+'dgf::DReference' is a specialization of 'DVertex'.
+'dgf::DVertex' is a specialization of 'DGraphElement'.
+'dgf::DNode' is a specialization of 'DTypedElement'.
+'dgf::Graph' (role 'dgf_Graph', cardinality 0..*) is associated with 'dgf::DGraphElement' (role 'dgf_DGraphElement', cardinality 0..*).
+'dgf::DNode' (role 'dgf_DNode3', cardinality 0..*) is associated with 'dgf::DVertex' (role 'dgf_DVertex2', cardinality 0..*).
+'dgf::DVertex' (role 'dgf_DVertex', cardinality 0..*) is associated with 'dgf::DNode' (role 'dgf_DNode', cardinality 0..*).
+'dgf::DNode' (role 'dgf_DNode5', cardinality 0..*) is associated with 'dgf::DVertex' (role 'dgf_DVertex6', cardinality 0..*).
+'dgf::DNode' (role 'dgf_DNode9', cardinality 0..*) is associated with 'dgf::DContainedElement' (role 'dgf_DContainedElement', cardinality 0..*).

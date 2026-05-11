@@ -1,0 +1,218 @@
+The model has 47 class(es).
+The class 'jpdl31::NodeType' has the following attributes: 'nodeContentElements' of type str; 'name' of type str; 'async_' of type str; 'description' of type str.
+The class 'jpdl31::ActionType' has the following attributes: 'class_' of type str; 'acceptPropagatedEvents' of type str; 'mixed' of type str; 'name' of type str; 'any' of type str; 'refName' of type str; 'configType' of type str; 'expression' of type str; 'async_' of type str.
+The class 'jpdl31::Factor' has the following attributes: 'isTreament' of type str; 'name' of type str.
+The class 'jpdl31::JoinType' has the following attributes: 'name' of type str; 'async_' of type str; 'nodeContentElements' of type str.
+The class 'jpdl31::TransitionType1' has the following attributes: 'group' of type str; 'to' of type str; 'name' of type str.
+The class 'jpdl31::Model' has no attributes.
+The class 'jpdl31::EventType' has the following attributes: 'actionElements' of type str; 'type' of type str.
+The class 'jpdl31::ScriptType' has the following attributes: 'mixed' of type str; 'name' of type str; 'acceptPropagatedEvents' of type str; 'any' of type str.
+The class 'jpdl31::Question' has the following attributes: 'required' of type str; 'description' of type str; 'type' of type str.
+The class 'jpdl31::Level' has the following attributes: 'name' of type str.
+The class 'jpdl31::AssignmentType' has the following attributes: 'actorId' of type str; 'pooledActors' of type str; 'expression' of type str.
+The class 'jpdl31::CancelTimerType' has the following attributes: 'name' of type str.
+The class 'jpdl31::Metric' has the following attributes: 'name' of type str; 'refname' of type str; 'description' of type str; 'type' of type str.
+The class 'jpdl31::TaskNodeType' has the following attributes: 'group' of type str; 'description' of type str; 'createTasks' of type str; 'async_' of type str; 'signal' of type str; 'endTasks' of type str; 'name' of type str.
+The class 'jpdl31::MetricInfo' has the following attributes: 'name' of type str.
+The class 'jpdl31::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'jpdl31::Design' has the following attributes: 'DoE' of type str.
+The class 'jpdl31::DependentVariable' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'jpdl31::ProcessStateType' has the following attributes: 'group' of type str; 'name' of type str; 'async_' of type str.
+The class 'jpdl31::StateType' has the following attributes: 'async_' of type str; 'name' of type str; 'nodeContentElements' of type str.
+The class 'jpdl31::DecisionType' has the following attributes: 'async_' of type str; 'name' of type str; 'group' of type str; 'expression' of type str.
+The class 'jpdl31::SubProcessType' has the following attributes: 'version' of type str; 'name' of type str.
+The class 'jpdl31::VariableType' has the following attributes: 'any' of type str; 'access' of type str; 'mappedName' of type str; 'name' of type str.
+The class 'jpdl31::Delegation' has the following attributes: 'class_' of type str; 'configType' of type str; 'mixed' of type str; 'any' of type str.
+The class 'jpdl31::Alternative' has the following attributes: 'description' of type str.
+The class 'Delegation' has no attributes.
+The class 'jpdl31::TransitionType' has the following attributes: 'name' of type str; 'to' of type str; 'group' of type str.
+The class 'jpdl31::StatisticalTest' has no attributes.
+The class 'jpdl31::CreateTimerType' has the following attributes: 'duedate' of type str; 'name' of type str; 'transition' of type str; 'repeat' of type str.
+The class 'jpdl31::Hyphotesis' has the following attributes: 'description' of type str; 'type' of type str; 'id' of type str; 'relationOp' of type str.
+The class 'jpdl31::EndStateType' has the following attributes: 'group' of type str; 'name' of type str.
+The class 'jpdl31::ConditionType' has the following attributes: 'group' of type str; 'any' of type str; 'mixed' of type str; 'expression' of type str.
+The class 'jpdl31::TimerType' has the following attributes: 'name' of type str; 'repeat' of type str; 'transition' of type str; 'duedate' of type str.
+The class 'jpdl31::SwimlaneType' has the following attributes: 'name' of type str.
+The class 'jpdl31::ExceptionHandlerType' has the following attributes: 'exceptionClass' of type str; 'group' of type str.
+The class 'jpdl31::ForkType' has the following attributes: 'group' of type str; 'async_' of type str; 'name' of type str.
+The class 'jpdl31::Artefact' has the following attributes: 'name' of type str; 'type' of type str; 'description' of type str.
+The class 'jpdl31::TaskType' has the following attributes: 'description' of type str; 'blocking' of type str; 'duedate' of type str; 'name' of type str; 'swimlane' of type str; 'signalling' of type str; 'group' of type str; 'priority' of type str.
+The class 'jpdl31::Subhypotheses' has the following attributes: 'relationOp' of type str.
+The class 'jpdl31::ProcessDefinitionType' has the following attributes: 'group' of type str; 'name' of type str; 'quantity' of type str.
+The class 'jpdl31::EStringToStringMapEntry' has no attributes.
+The class 'jpdl31::Questionnaire' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'jpdl31::Parameter' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'jpdl31::ExperimentalPlan' has no attributes.
+The class 'jpdl31::SuperStateType' has the following attributes: 'name' of type str; 'group' of type str; 'async_' of type str.
+The class 'jpdl31::StartStateType' has the following attributes: 'name' of type str; 'group' of type str.
+The class 'jpdl31::Goal' has the following attributes: 'description' of type str; 'id' of type str.
+The enumeration 'ArtefactType' has the following literals: 'input', 'output', 'inoutput'.
+The enumeration 'ConfigTypeType' has the following literals: 'bean', 'constructor', 'configurationProperty', 'field'.
+The enumeration 'SignalType' has the following literals: 'first', 'never', 'unsynchronized', 'firstWait', 'last', 'lastWait'.
+The enumeration 'AnswerType' has the following literals: 'comboBox', 'text', 'checkBox', 'paragraphText'.
+The enumeration 'BooleanType' has the following literals: 'no', 'true', 'off', 'on', 'false', 'yes'.
+The enumeration 'RelationOperator' has the following literals: 'different', 'equal', 'lessequalthan', 'moreequalthan', 'lessthan', 'morethan'.
+The enumeration 'PriorityTypeMember0' has the following literals: 'lowest', 'high', 'highest', 'low', 'normal'.
+The enumeration 'ConfigTypeType1' has the following literals: 'bean', 'constructor', 'field', 'configurationProperty'.
+The enumeration 'HypothesisType' has the following literals: 'null_', 'alternative'.
+The enumeration 'DoEType' has the following literals: 'LS', 'RCBD', 'other', 'CRD'.
+The enumeration 'QuestionnaireType' has the following literals: 'Post', 'Pre'.
+The enumeration 'TypeTypeMember1' has the following literals: 'superstateLeave', 'afterSignal', 'superstateEnter', 'subprocessCreated', 'taskCreate', 'timerCreate', 'processStart', 'taskAssign', 'taskStart', 'nodeLeave', 'nodeEnter', 'processEnd', 'beforeSignal', 'subprocessEnd', 'taskEnd'.
+The enumeration 'ConfigType' has the following literals: 'bean', 'field', 'configurationProperty', 'constructor'.
+The enumeration 'MetricType' has the following literals: 'quest', 'collectedData', 'time', 'artefact'.
+'jpdl31::AssignmentType' is a specialization of 'Delegation'.
+'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot12', cardinality 0..*) is associated with 'jpdl31::EStringToStringMapEntry' (role 'jpdl31_EStringToStringMapEntry13', cardinality 0..*).
+'jpdl31::TimerType' (role 'jpdl31_TimerType110', cardinality 0..*) is associated with 'jpdl31::ForkType' (role 'jpdl31_ForkType109', cardinality 0..*).
+'jpdl31::TaskNodeType' (role 'jpdl31_TaskNodeType253', cardinality 0..*) is associated with 'jpdl31::SuperStateType' (role 'jpdl31_SuperStateType252', cardinality 0..*).
+'jpdl31::TaskType' (role 'jpdl31_TaskType310', cardinality 0..*) is associated with 'jpdl31::Delegation' (role 'jpdl31_Delegation311', cardinality 0..*).
+'jpdl31::Hyphotesis' (role 'jpdl31_Hyphotesis373', cardinality 0..*) is associated with 'jpdl31::DependentVariable' (role 'jpdl31_DependentVariable', cardinality 0..*).
+'jpdl31::TransitionType' (role 'jpdl31_TransitionType149', cardinality 0..*) is associated with 'jpdl31::NodeType' (role 'jpdl31_NodeType148', cardinality 0..*).
+'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot56', cardinality 0..*) is associated with 'jpdl31::SuperStateType' (role 'jpdl31_SuperStateType', cardinality 0..*).
+'jpdl31::TransitionType' (role 'jpdl31_TransitionType244', cardinality 0..*) is associated with 'jpdl31::StateType' (role 'jpdl31_StateType243', cardinality 0..*).
+'jpdl31::TaskType' (role 'jpdl31_TaskType', cardinality 0..*) is associated with 'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot60', cardinality 0..*).
+'jpdl31::EventType' (role 'jpdl31_EventType82', cardinality 0..*) is associated with 'jpdl31::ActionType' (role 'jpdl31_ActionType83', cardinality 0..*).
+'jpdl31::Delegation' (role 'jpdl31_Delegation', cardinality 0..*) is associated with 'jpdl31::DecisionType' (role 'jpdl31_DecisionType', cardinality 0..*).
+'jpdl31::ForkType' (role 'jpdl31_ForkType', cardinality 0..*) is associated with 'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot39', cardinality 0..*).
+'jpdl31::ActionType' (role 'jpdl31_ActionType349', cardinality 0..*) is associated with 'jpdl31::TransitionType1' (role 'jpdl31_TransitionType1348', cardinality 0..*).
+'jpdl31::TransitionType1' (role 'jpdl31_TransitionType1346', cardinality 0..*) is associated with 'jpdl31::ConditionType' (role 'jpdl31_ConditionType', cardinality 0..*).
+'jpdl31::Goal' (role 'jpdl31_Goal', cardinality 0..*) is associated with 'jpdl31::Hyphotesis' (role 'jpdl31_Hyphotesis369', cardinality 0..*).
+'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot41', cardinality 0..*) is associated with 'jpdl31::JoinType' (role 'jpdl31_JoinType', cardinality 0..*).
+'jpdl31::SuperStateType' (role 'jpdl31_SuperStateType282', cardinality 0..*) is associated with 'jpdl31::TransitionType' (role 'jpdl31_TransitionType283', cardinality 0..*).
+'jpdl31::DependentVariable' (role 'jpdl31_DependentVariable379', cardinality 0..*) is associated with 'jpdl31::Subhypotheses' (role 'jpdl31_Subhypotheses378', cardinality 0..*).
+'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot36', cardinality 0..*) is associated with 'jpdl31::ExceptionHandlerType' (role 'jpdl31_ExceptionHandlerType37', cardinality 0..*).
+'jpdl31::TransitionType' (role 'jpdl31_TransitionType340', cardinality 0..*) is associated with 'jpdl31::CancelTimerType' (role 'jpdl31_CancelTimerType341', cardinality 0..*).
+'jpdl31::TaskNodeType' (role 'jpdl31_TaskNodeType294', cardinality 0..*) is associated with 'jpdl31::ExceptionHandlerType' (role 'jpdl31_ExceptionHandlerType295', cardinality 0..*).
+'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot25', cardinality 0..*) is associated with 'jpdl31::CreateTimerType' (role 'jpdl31_CreateTimerType26', cardinality 0..*).
+'jpdl31::Metric' (role 'jpdl31_Metric366', cardinality 0..*) is associated with 'jpdl31::MetricInfo' (role 'jpdl31_MetricInfo365', cardinality 0..*).
+'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot58', cardinality 0..*) is associated with 'jpdl31::SwimlaneType' (role 'jpdl31_SwimlaneType', cardinality 0..*).
+'jpdl31::SuperStateType' (role 'jpdl31_SuperStateType256', cardinality 0..*) is associated with 'jpdl31::SuperStateType' (role 'jpdl31_SuperStateType254', cardinality 0..*).
+'jpdl31::ProcessDefinitionType' (role 'jpdl31_ProcessDefinitionType175', cardinality 0..*) is associated with 'jpdl31::JoinType' (role 'jpdl31_JoinType176', cardinality 0..*).
+'jpdl31::TaskNodeType' (role 'jpdl31_TaskNodeType305', cardinality 0..*) is associated with 'jpdl31::MetricInfo' (role 'jpdl31_MetricInfo', cardinality 0..*).
+'jpdl31::EStringToStringMapEntry' (role 'jpdl31_EStringToStringMapEntry', cardinality 0..*) is associated with 'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot', cardinality 0..*).
+'jpdl31::JoinType' (role 'jpdl31_JoinType115', cardinality 0..*) is associated with 'jpdl31::EventType' (role 'jpdl31_EventType116', cardinality 0..*).
+'jpdl31::ExceptionHandlerType' (role 'jpdl31_ExceptionHandlerType119', cardinality 0..*) is associated with 'jpdl31::JoinType' (role 'jpdl31_JoinType118', cardinality 0..*).
+'jpdl31::ActionType' (role 'jpdl31_ActionType16', cardinality 0..*) is associated with 'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot15', cardinality 0..*).
+'jpdl31::ScriptType' (role 'jpdl31_ScriptType335', cardinality 0..*) is associated with 'jpdl31::TransitionType' (role 'jpdl31_TransitionType334', cardinality 0..*).
+'jpdl31::Design' (role 'jpdl31_Design410', cardinality 0..*) is associated with 'jpdl31::Factor' (role 'jpdl31_Factor411', cardinality 0..*).
+'jpdl31::Hyphotesis' (role 'jpdl31_Hyphotesis406', cardinality 0..*) is associated with 'jpdl31::ExperimentalPlan' (role 'jpdl31_ExperimentalPlan405', cardinality 0..*).
+'jpdl31::Goal' (role 'jpdl31_Goal399', cardinality 0..*) is associated with 'jpdl31::Hyphotesis' (role 'jpdl31_Hyphotesis400', cardinality 0..*).
+'jpdl31::ForkType' (role 'jpdl31_ForkType112', cardinality 0..*) is associated with 'jpdl31::TransitionType' (role 'jpdl31_TransitionType113', cardinality 0..*).
+'jpdl31::ExceptionHandlerType' (role 'jpdl31_ExceptionHandlerType277', cardinality 0..*) is associated with 'jpdl31::SuperStateType' (role 'jpdl31_SuperStateType276', cardinality 0..*).
+'jpdl31::Hyphotesis' (role 'jpdl31_Hyphotesis371', cardinality 0..*) is associated with 'jpdl31::Level' (role 'jpdl31_Level', cardinality 0..*).
+'jpdl31::ExceptionHandlerType' (role 'jpdl31_ExceptionHandlerType', cardinality 0..*) is associated with 'jpdl31::DecisionType' (role 'jpdl31_DecisionType7', cardinality 0..*).
+'jpdl31::EventType' (role 'jpdl31_EventType88', cardinality 0..*) is associated with 'jpdl31::CreateTimerType' (role 'jpdl31_CreateTimerType89', cardinality 0..*).
+'jpdl31::JoinType' (role 'jpdl31_JoinType121', cardinality 0..*) is associated with 'jpdl31::TimerType' (role 'jpdl31_TimerType122', cardinality 0..*).
+'jpdl31::ScriptType' (role 'jpdl31_ScriptType50', cardinality 0..*) is associated with 'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot49', cardinality 0..*).
+'jpdl31::Alternative' (role 'jpdl31_Alternative', cardinality 0..*) is associated with 'jpdl31::Question' (role 'jpdl31_Question394', cardinality 0..*).
+'jpdl31::SuperStateType' (role 'jpdl31_SuperStateType264', cardinality 0..*) is associated with 'jpdl31::JoinType' (role 'jpdl31_JoinType265', cardinality 0..*).
+'jpdl31::ProcessDefinitionType' (role 'jpdl31_ProcessDefinitionType187', cardinality 0..*) is associated with 'jpdl31::ScriptType' (role 'jpdl31_ScriptType188', cardinality 0..*).
+'jpdl31::StateType' (role 'jpdl31_StateType237', cardinality 0..*) is associated with 'jpdl31::ExceptionHandlerType' (role 'jpdl31_ExceptionHandlerType238', cardinality 0..*).
+'jpdl31::CancelTimerType' (role 'jpdl31_CancelTimerType92', cardinality 0..*) is associated with 'jpdl31::EventType' (role 'jpdl31_EventType91', cardinality 0..*).
+'jpdl31::ProcessDefinitionType' (role 'jpdl31_ProcessDefinitionType181', cardinality 0..*) is associated with 'jpdl31::EndStateType' (role 'jpdl31_EndStateType182', cardinality 0..*).
+'jpdl31::TaskType' (role 'jpdl31_TaskType307', cardinality 0..*) is associated with 'jpdl31::AssignmentType' (role 'jpdl31_AssignmentType308', cardinality 0..*).
+'jpdl31::TimerType' (role 'jpdl31_TimerType146', cardinality 0..*) is associated with 'jpdl31::NodeType' (role 'jpdl31_NodeType145', cardinality 0..*).
+'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot20', cardinality 0..*) is associated with 'jpdl31::CancelTimerType' (role 'jpdl31_CancelTimerType', cardinality 0..*).
+'jpdl31::Artefact' (role 'jpdl31_Artefact320', cardinality 0..*) is associated with 'jpdl31::TaskType' (role 'jpdl31_TaskType319', cardinality 0..*).
+'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot52', cardinality 0..*) is associated with 'jpdl31::StartStateType' (role 'jpdl31_StartStateType', cardinality 0..*).
+'jpdl31::ProcessStateType' (role 'jpdl31_ProcessStateType216', cardinality 0..*) is associated with 'jpdl31::TimerType' (role 'jpdl31_TimerType217', cardinality 0..*).
+'jpdl31::CreateTimerType' (role 'jpdl31_CreateTimerType2', cardinality 0..*) is associated with 'jpdl31::ScriptType' (role 'jpdl31_ScriptType', cardinality 0..*).
+'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot74', cardinality 0..*) is associated with 'jpdl31::Metric' (role 'jpdl31_Metric', cardinality 0..*).
+'jpdl31::TimerType' (role 'jpdl31_TimerType', cardinality 0..*) is associated with 'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot64', cardinality 0..*).
+'jpdl31::ProcessStateType' (role 'jpdl31_ProcessStateType210', cardinality 0..*) is associated with 'jpdl31::EventType' (role 'jpdl31_EventType211', cardinality 0..*).
+'jpdl31::ActionType' (role 'jpdl31_ActionType332', cardinality 0..*) is associated with 'jpdl31::TransitionType' (role 'jpdl31_TransitionType331', cardinality 0..*).
+'jpdl31::ForkType' (role 'jpdl31_ForkType103', cardinality 0..*) is associated with 'jpdl31::EventType' (role 'jpdl31_EventType104', cardinality 0..*).
+'jpdl31::ProcessDefinitionType' (role 'jpdl31_ProcessDefinitionType392', cardinality 0..*) is associated with 'jpdl31::Questionnaire' (role 'jpdl31_Questionnaire391', cardinality 0..*).
+'jpdl31::TimerType' (role 'jpdl31_TimerType325', cardinality 0..*) is associated with 'jpdl31::ActionType' (role 'jpdl31_ActionType326', cardinality 0..*).
+'jpdl31::Goal' (role 'jpdl31_Goal403', cardinality 0..*) is associated with 'jpdl31::ExperimentalPlan' (role 'jpdl31_ExperimentalPlan402', cardinality 0..*).
+'jpdl31::NodeType' (role 'jpdl31_NodeType130', cardinality 0..*) is associated with 'jpdl31::ScriptType' (role 'jpdl31_ScriptType131', cardinality 0..*).
+'jpdl31::Metric' (role 'jpdl31_Metric382', cardinality 0..*) is associated with 'jpdl31::DependentVariable' (role 'jpdl31_DependentVariable381', cardinality 0..*).
+'jpdl31::ProcessStateType' (role 'jpdl31_ProcessStateType207', cardinality 0..*) is associated with 'jpdl31::VariableType' (role 'jpdl31_VariableType208', cardinality 0..*).
+'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot45', cardinality 0..*) is associated with 'jpdl31::ProcessDefinitionType' (role 'jpdl31_ProcessDefinitionType', cardinality 0..*).
+'jpdl31::ProcessDefinitionType' (role 'jpdl31_ProcessDefinitionType163', cardinality 0..*) is associated with 'jpdl31::TaskNodeType' (role 'jpdl31_TaskNodeType164', cardinality 0..*).
+'jpdl31::EventType' (role 'jpdl31_EventType140', cardinality 0..*) is associated with 'jpdl31::NodeType' (role 'jpdl31_NodeType139', cardinality 0..*).
+'jpdl31::MetricInfo' (role 'jpdl31_MetricInfo323', cardinality 0..*) is associated with 'jpdl31::TaskType' (role 'jpdl31_TaskType322', cardinality 0..*).
+'jpdl31::ActionType' (role 'jpdl31_ActionType128', cardinality 0..*) is associated with 'jpdl31::NodeType' (role 'jpdl31_NodeType127', cardinality 0..*).
+'jpdl31::ScriptType' (role 'jpdl31_ScriptType329', cardinality 0..*) is associated with 'jpdl31::TimerType' (role 'jpdl31_TimerType328', cardinality 0..*).
+'jpdl31::ProcessDefinitionType' (role 'jpdl31_ProcessDefinitionType199', cardinality 0..*) is associated with 'jpdl31::ExceptionHandlerType' (role 'jpdl31_ExceptionHandlerType200', cardinality 0..*).
+'jpdl31::NodeType' (role 'jpdl31_NodeType136', cardinality 0..*) is associated with 'jpdl31::CancelTimerType' (role 'jpdl31_CancelTimerType137', cardinality 0..*).
+'jpdl31::TransitionType1' (role 'jpdl31_TransitionType1', cardinality 0..*) is associated with 'jpdl31::DecisionType' (role 'jpdl31_DecisionType9', cardinality 0..*).
+'jpdl31::ProcessDefinitionType' (role 'jpdl31_ProcessDefinitionType154', cardinality 0..*) is associated with 'jpdl31::StartStateType' (role 'jpdl31_StartStateType155', cardinality 0..*).
+'jpdl31::SuperStateType' (role 'jpdl31_SuperStateType167', cardinality 0..*) is associated with 'jpdl31::ProcessDefinitionType' (role 'jpdl31_ProcessDefinitionType166', cardinality 0..*).
+'jpdl31::SwimlaneType' (role 'jpdl31_SwimlaneType152', cardinality 0..*) is associated with 'jpdl31::ProcessDefinitionType' (role 'jpdl31_ProcessDefinitionType151', cardinality 0..*).
+'jpdl31::Delegation' (role 'jpdl31_Delegation23', cardinality 0..*) is associated with 'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot22', cardinality 0..*).
+'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot62', cardinality 0..*) is associated with 'jpdl31::TaskNodeType' (role 'jpdl31_TaskNodeType', cardinality 0..*).
+'jpdl31::Hyphotesis' (role 'jpdl31_Hyphotesis', cardinality 0..*) is associated with 'jpdl31::Subhypotheses' (role 'jpdl31_Subhypotheses', cardinality 0..*).
+'jpdl31::ProcessDefinitionType' (role 'jpdl31_ProcessDefinitionType196', cardinality 0..*) is associated with 'jpdl31::EventType' (role 'jpdl31_EventType197', cardinality 0..*).
+'jpdl31::ExceptionHandlerType' (role 'jpdl31_ExceptionHandlerType361', cardinality 0..*) is associated with 'jpdl31::TransitionType1' (role 'jpdl31_TransitionType1360', cardinality 0..*).
+'jpdl31::SuperStateType' (role 'jpdl31_SuperStateType270', cardinality 0..*) is associated with 'jpdl31::EndStateType' (role 'jpdl31_EndStateType271', cardinality 0..*).
+'jpdl31::ExceptionHandlerType' (role 'jpdl31_ExceptionHandlerType97', cardinality 0..*) is associated with 'jpdl31::ScriptType' (role 'jpdl31_ScriptType98', cardinality 0..*).
+'jpdl31::CreateTimerType' (role 'jpdl31_CreateTimerType134', cardinality 0..*) is associated with 'jpdl31::NodeType' (role 'jpdl31_NodeType133', cardinality 0..*).
+'jpdl31::ForkType' (role 'jpdl31_ForkType262', cardinality 0..*) is associated with 'jpdl31::SuperStateType' (role 'jpdl31_SuperStateType261', cardinality 0..*).
+'jpdl31::Design' (role 'jpdl31_Design415', cardinality 0..*) is associated with 'jpdl31::StatisticalTest' (role 'jpdl31_StatisticalTest', cardinality 0..*).
+'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot18', cardinality 0..*) is associated with 'jpdl31::AssignmentType' (role 'jpdl31_AssignmentType', cardinality 0..*).
+'jpdl31::AssignmentType' (role 'jpdl31_AssignmentType286', cardinality 0..*) is associated with 'jpdl31::SwimlaneType' (role 'jpdl31_SwimlaneType285', cardinality 0..*).
+'jpdl31::EndStateType' (role 'jpdl31_EndStateType', cardinality 0..*) is associated with 'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot31', cardinality 0..*).
+'jpdl31::EndStateType' (role 'jpdl31_EndStateType76', cardinality 0..*) is associated with 'jpdl31::EventType' (role 'jpdl31_EventType77', cardinality 0..*).
+'jpdl31::TransitionType' (role 'jpdl31_TransitionType301', cardinality 0..*) is associated with 'jpdl31::TaskNodeType' (role 'jpdl31_TaskNodeType300', cardinality 0..*).
+'jpdl31::StartStateType' (role 'jpdl31_StartStateType222', cardinality 0..*) is associated with 'jpdl31::TaskType' (role 'jpdl31_TaskType223', cardinality 0..*).
+'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot68', cardinality 0..*) is associated with 'jpdl31::VariableType' (role 'jpdl31_VariableType', cardinality 0..*).
+'jpdl31::ScriptType' (role 'jpdl31_ScriptType352', cardinality 0..*) is associated with 'jpdl31::TransitionType1' (role 'jpdl31_TransitionType1351', cardinality 0..*).
+'jpdl31::Level' (role 'jpdl31_Level376', cardinality 0..*) is associated with 'jpdl31::Subhypotheses' (role 'jpdl31_Subhypotheses375', cardinality 0..*).
+'jpdl31::Question' (role 'jpdl31_Question395', cardinality 0..*) is associated with 'jpdl31::Question' (role 'jpdl31_Question397', cardinality 0..*).
+'jpdl31::SuperStateType' (role 'jpdl31_SuperStateType267', cardinality 0..*) is associated with 'jpdl31::DecisionType' (role 'jpdl31_DecisionType268', cardinality 0..*).
+'jpdl31::DecisionType' (role 'jpdl31_DecisionType179', cardinality 0..*) is associated with 'jpdl31::ProcessDefinitionType' (role 'jpdl31_ProcessDefinitionType178', cardinality 0..*).
+'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot43', cardinality 0..*) is associated with 'jpdl31::NodeType' (role 'jpdl31_NodeType', cardinality 0..*).
+'jpdl31::ProcessDefinitionType' (role 'jpdl31_ProcessDefinitionType387', cardinality 0..*) is associated with 'jpdl31::Metric' (role 'jpdl31_Metric386', cardinality 0..*).
+'jpdl31::Design' (role 'jpdl31_Design417', cardinality 0..*) is associated with 'jpdl31::DependentVariable' (role 'jpdl31_DependentVariable418', cardinality 0..*).
+'jpdl31::StateType' (role 'jpdl31_StateType161', cardinality 0..*) is associated with 'jpdl31::ProcessDefinitionType' (role 'jpdl31_ProcessDefinitionType160', cardinality 0..*).
+'jpdl31::ExceptionHandlerType' (role 'jpdl31_ExceptionHandlerType94', cardinality 0..*) is associated with 'jpdl31::ActionType' (role 'jpdl31_ActionType95', cardinality 0..*).
+'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot66', cardinality 0..*) is associated with 'jpdl31::TransitionType' (role 'jpdl31_TransitionType', cardinality 0..*).
+'jpdl31::ExceptionHandlerType' (role 'jpdl31_ExceptionHandlerType232', cardinality 0..*) is associated with 'jpdl31::StartStateType' (role 'jpdl31_StartStateType231', cardinality 0..*).
+'jpdl31::ExperimentalPlan' (role 'jpdl31_ExperimentalPlan', cardinality 0..*) is associated with 'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot72', cardinality 0..*).
+'jpdl31::TaskNodeType' (role 'jpdl31_TaskNodeType297', cardinality 0..*) is associated with 'jpdl31::TimerType' (role 'jpdl31_TimerType298', cardinality 0..*).
+'jpdl31::TaskType' (role 'jpdl31_TaskType313', cardinality 0..*) is associated with 'jpdl31::EventType' (role 'jpdl31_EventType314', cardinality 0..*).
+'jpdl31::DecisionType' (role 'jpdl31_DecisionType5', cardinality 0..*) is associated with 'jpdl31::EventType' (role 'jpdl31_EventType', cardinality 0..*).
+'jpdl31::EventType' (role 'jpdl31_EventType85', cardinality 0..*) is associated with 'jpdl31::ScriptType' (role 'jpdl31_ScriptType86', cardinality 0..*).
+'jpdl31::StartStateType' (role 'jpdl31_StartStateType225', cardinality 0..*) is associated with 'jpdl31::TransitionType' (role 'jpdl31_TransitionType226', cardinality 0..*).
+'jpdl31::Level' (role 'jpdl31_Level384', cardinality 0..*) is associated with 'jpdl31::Factor' (role 'jpdl31_Factor', cardinality 0..*).
+'jpdl31::ProcessStateType' (role 'jpdl31_ProcessStateType170', cardinality 0..*) is associated with 'jpdl31::ProcessDefinitionType' (role 'jpdl31_ProcessDefinitionType169', cardinality 0..*).
+'jpdl31::Questionnaire' (role 'jpdl31_Questionnaire', cardinality 0..*) is associated with 'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot70', cardinality 0..*).
+'jpdl31::ProcessStateType' (role 'jpdl31_ProcessStateType259', cardinality 0..*) is associated with 'jpdl31::SuperStateType' (role 'jpdl31_SuperStateType258', cardinality 0..*).
+'jpdl31::TaskNodeType' (role 'jpdl31_TaskNodeType303', cardinality 0..*) is associated with 'jpdl31::Artefact' (role 'jpdl31_Artefact', cardinality 0..*).
+'jpdl31::ActionType' (role 'jpdl31_ActionType', cardinality 0..*) is associated with 'jpdl31::CreateTimerType' (role 'jpdl31_CreateTimerType', cardinality 0..*).
+'jpdl31::ForkType' (role 'jpdl31_ForkType173', cardinality 0..*) is associated with 'jpdl31::ProcessDefinitionType' (role 'jpdl31_ProcessDefinitionType172', cardinality 0..*).
+'jpdl31::StateType' (role 'jpdl31_StateType250', cardinality 0..*) is associated with 'jpdl31::SuperStateType' (role 'jpdl31_SuperStateType249', cardinality 0..*).
+'jpdl31::TransitionType' (role 'jpdl31_TransitionType125', cardinality 0..*) is associated with 'jpdl31::JoinType' (role 'jpdl31_JoinType124', cardinality 0..*).
+'jpdl31::TaskType' (role 'jpdl31_TaskType203', cardinality 0..*) is associated with 'jpdl31::ProcessDefinitionType' (role 'jpdl31_ProcessDefinitionType202', cardinality 0..*).
+'jpdl31::Design' (role 'jpdl31_Design413', cardinality 0..*) is associated with 'jpdl31::Parameter' (role 'jpdl31_Parameter', cardinality 0..*).
+'jpdl31::TransitionType' (role 'jpdl31_TransitionType343', cardinality 0..*) is associated with 'jpdl31::ExceptionHandlerType' (role 'jpdl31_ExceptionHandlerType344', cardinality 0..*).
+'jpdl31::ExceptionHandlerType' (role 'jpdl31_ExceptionHandlerType80', cardinality 0..*) is associated with 'jpdl31::EndStateType' (role 'jpdl31_EndStateType79', cardinality 0..*).
+'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot54', cardinality 0..*) is associated with 'jpdl31::StateType' (role 'jpdl31_StateType', cardinality 0..*).
+'jpdl31::EventType' (role 'jpdl31_EventType235', cardinality 0..*) is associated with 'jpdl31::StateType' (role 'jpdl31_StateType234', cardinality 0..*).
+'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot47', cardinality 0..*) is associated with 'jpdl31::ProcessStateType' (role 'jpdl31_ProcessStateType', cardinality 0..*).
+'jpdl31::CancelTimerType' (role 'jpdl31_CancelTimerType194', cardinality 0..*) is associated with 'jpdl31::ProcessDefinitionType' (role 'jpdl31_ProcessDefinitionType193', cardinality 0..*).
+'jpdl31::StartStateType' (role 'jpdl31_StartStateType228', cardinality 0..*) is associated with 'jpdl31::EventType' (role 'jpdl31_EventType229', cardinality 0..*).
+'jpdl31::Question' (role 'jpdl31_Question', cardinality 0..*) is associated with 'jpdl31::Questionnaire' (role 'jpdl31_Questionnaire389', cardinality 0..*).
+'jpdl31::StateType' (role 'jpdl31_StateType240', cardinality 0..*) is associated with 'jpdl31::TimerType' (role 'jpdl31_TimerType241', cardinality 0..*).
+'jpdl31::ExceptionHandlerType' (role 'jpdl31_ExceptionHandlerType107', cardinality 0..*) is associated with 'jpdl31::ForkType' (role 'jpdl31_ForkType106', cardinality 0..*).
+'jpdl31::Design' (role 'jpdl31_Design', cardinality 0..*) is associated with 'jpdl31::ExperimentalPlan' (role 'jpdl31_ExperimentalPlan408', cardinality 0..*).
+'jpdl31::ProcessDefinitionType' (role 'jpdl31_ProcessDefinitionType157', cardinality 0..*) is associated with 'jpdl31::NodeType' (role 'jpdl31_NodeType158', cardinality 0..*).
+'jpdl31::ProcessStateType' (role 'jpdl31_ProcessStateType219', cardinality 0..*) is associated with 'jpdl31::TransitionType' (role 'jpdl31_TransitionType220', cardinality 0..*).
+'jpdl31::TransitionType1' (role 'jpdl31_TransitionType1354', cardinality 0..*) is associated with 'jpdl31::CreateTimerType' (role 'jpdl31_CreateTimerType355', cardinality 0..*).
+'jpdl31::CreateTimerType' (role 'jpdl31_CreateTimerType338', cardinality 0..*) is associated with 'jpdl31::TransitionType' (role 'jpdl31_TransitionType337', cardinality 0..*).
+'jpdl31::ExceptionHandlerType' (role 'jpdl31_ExceptionHandlerType143', cardinality 0..*) is associated with 'jpdl31::NodeType' (role 'jpdl31_NodeType142', cardinality 0..*).
+'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot33', cardinality 0..*) is associated with 'jpdl31::EventType' (role 'jpdl31_EventType34', cardinality 0..*).
+'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot28', cardinality 0..*) is associated with 'jpdl31::DecisionType' (role 'jpdl31_DecisionType29', cardinality 0..*).
+'jpdl31::TaskNodeType' (role 'jpdl31_TaskNodeType291', cardinality 0..*) is associated with 'jpdl31::EventType' (role 'jpdl31_EventType292', cardinality 0..*).
+'jpdl31::TimerType' (role 'jpdl31_TimerType280', cardinality 0..*) is associated with 'jpdl31::SuperStateType' (role 'jpdl31_SuperStateType279', cardinality 0..*).
+'jpdl31::ScriptType' (role 'jpdl31_ScriptType101', cardinality 0..*) is associated with 'jpdl31::ForkType' (role 'jpdl31_ForkType100', cardinality 0..*).
+'jpdl31::SuperStateType' (role 'jpdl31_SuperStateType273', cardinality 0..*) is associated with 'jpdl31::EventType' (role 'jpdl31_EventType274', cardinality 0..*).
+'jpdl31::TaskType' (role 'jpdl31_TaskType289', cardinality 0..*) is associated with 'jpdl31::TaskNodeType' (role 'jpdl31_TaskNodeType288', cardinality 0..*).
+'jpdl31::ExceptionHandlerType' (role 'jpdl31_ExceptionHandlerType214', cardinality 0..*) is associated with 'jpdl31::ProcessStateType' (role 'jpdl31_ProcessStateType213', cardinality 0..*).
+'jpdl31::SuperStateType' (role 'jpdl31_SuperStateType246', cardinality 0..*) is associated with 'jpdl31::NodeType' (role 'jpdl31_NodeType247', cardinality 0..*).
+'jpdl31::SubProcessType' (role 'jpdl31_SubProcessType', cardinality 0..*) is associated with 'jpdl31::ProcessStateType' (role 'jpdl31_ProcessStateType205', cardinality 0..*).
+'jpdl31::ActionType' (role 'jpdl31_ActionType185', cardinality 0..*) is associated with 'jpdl31::ProcessDefinitionType' (role 'jpdl31_ProcessDefinitionType184', cardinality 0..*).
+'jpdl31::DocumentRoot' (role 'jpdl31_DocumentRoot363', cardinality 0..*) is associated with 'jpdl31::Model' (role 'jpdl31_Model', cardinality 0..*).
+'jpdl31::TimerType' (role 'jpdl31_TimerType317', cardinality 0..*) is associated with 'jpdl31::TaskType' (role 'jpdl31_TaskType316', cardinality 0..*).
+'jpdl31::CreateTimerType' (role 'jpdl31_CreateTimerType191', cardinality 0..*) is associated with 'jpdl31::ProcessDefinitionType' (role 'jpdl31_ProcessDefinitionType190', cardinality 0..*).
+'jpdl31::CancelTimerType' (role 'jpdl31_CancelTimerType358', cardinality 0..*) is associated with 'jpdl31::TransitionType1' (role 'jpdl31_TransitionType1357', cardinality 0..*).

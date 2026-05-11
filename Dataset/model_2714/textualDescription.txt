@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'x::C' has no attributes.
+The class 'x::A' has no attributes.
+The class 'x::B' has no attributes.
+'x::C' (role 'x_C', cardinality 0..*) is associated with 'x::A' (role 'x_A', cardinality 0..*).
+'x::B' (role 'x_B', cardinality 0..*) is associated with 'x::C' (role 'x_C2', cardinality 0..*).

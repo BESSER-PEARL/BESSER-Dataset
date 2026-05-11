@@ -1,0 +1,18 @@
+The model has 6 class(es).
+The class 'Relational::Column' has no attributes.
+The class 'Relational::Named' has the following attributes: 'name' of type str.
+The class 'Relational::Type' has no attributes.
+The class 'Relational::Database' has no attributes.
+The class 'Relational::Table' has no attributes.
+The class 'Named' has no attributes.
+'Relational::Table' is a specialization of 'Named'.
+'Relational::Database' is a specialization of 'Named'.
+'Relational::Type' is a specialization of 'Named'.
+'Relational::Column' is a specialization of 'Named'.
+'Relational::Type' (role 'Relational_Type', cardinality 0..*) is associated with 'Relational::Column' (role 'Relational_Column', cardinality 0..*).
+'Relational::Type' (role 'Relational_Type10', cardinality 0..*) is associated with 'Relational::Database' (role 'Relational_Database9', cardinality 0..*).
+'Relational::Table' (role 'Table5', cardinality 0..*) is associated with 'Relational::Column' (role 'key', cardinality 0..*).
+'Relational::Column' (role 'Column2', cardinality 0..*) is associated with 'Relational::Table' (role 'keyOf', cardinality 0..*).
+'Relational::Table' (role 'owner', cardinality 0..*) is associated with 'Relational::Column' (role 'Column', cardinality 0..*).
+'Relational::Table' (role 'Table', cardinality 0..*) is associated with 'Relational::Column' (role 'col', cardinality 0..*).
+'Relational::Database' (role 'Relational_Database', cardinality 0..*) is associated with 'Relational::Table' (role 'Relational_Table', cardinality 0..*).

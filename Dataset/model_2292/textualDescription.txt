@@ -1,0 +1,52 @@
+The model has 23 class(es).
+The class 'Professor' has no attributes.
+The class 'Event' has no attributes.
+The class 'universityextended::administration::Tutorial' has no attributes.
+The class 'universityextended::people::Person' has the following attributes: 'name' of type str.
+The class 'Room' has no attributes.
+The class 'universityextended::University' has no attributes.
+The class 'universityextended::administration::Event' has the following attributes: 'title' of type str.
+The class 'universityextended::people::Student' has the following attributes: 'matriculationnumber' of type str.
+The class 'universityextended::administration::Room' has the following attributes: 'floor' of type int; 'roomnumber' of type int; 'building' of type str.
+The class 'Time' has no attributes.
+The class 'Person' has no attributes.
+The class 'Course' has no attributes.
+The class 'Tutorial' has no attributes.
+The class 'universityextended::administration::Lecture' has the following attributes: 'captions' of type str.
+The class 'Lecture' has no attributes.
+The class 'universityextended::administration::Time' has the following attributes: 'endHour' of type int; 'startHour' of type int; 'day' of type str.
+The class 'Assistant' has no attributes.
+The class 'universityextended::people::Professor' has the following attributes: 'rank' of type str.
+The class 'universityextended::administration::Course' has the following attributes: 'title' of type str; 'endOfCourse' of type date; 'startOfCourse' of type date.
+The class 'Student' has no attributes.
+The class 'universityextended::people::Assistant' has the following attributes: 'isDoctoralCandidate' of type bool.
+The class 'universityextended::connection::Visits' has the following attributes: 'motivation' of type str.
+The class 'Visits' has no attributes.
+The enumeration 'Building' has the following literals: 'D', 'C', 'H', 'B', 'G', 'F', 'A', 'E'.
+The enumeration 'SalaryRank' has the following literals: 'W2', 'W1', 'W3'.
+The enumeration 'DayOfWeek' has the following literals: 'Thursday', 'Wednesday', 'Friday', 'Monday', 'Tuesday'.
+The enumeration 'Motivation' has the following literals: 'HIGH_INTEREST', 'LOW_INTEREST', 'AVERAGE_INTEREST'.
+'universityextended::people::Assistant' is a specialization of 'Person'.
+'universityextended::administration::Tutorial' is a specialization of 'Event'.
+'universityextended::people::Student' is a specialization of 'Person'.
+'universityextended::people::Professor' is a specialization of 'Person'.
+'universityextended::administration::Lecture' is a specialization of 'Event'.
+'universityextended::administration::Event' (role 'universityextended_administration_Event31', cardinality 0..*) is associated with 'Room' (role 'Room32', cardinality 0..*).
+'Tutorial' (role 'Tutorial17', cardinality 0..*) is associated with 'universityextended::administration::Course' (role 'course16', cardinality 0..*).
+'Time' (role 'Time', cardinality 0..*) is associated with 'universityextended::University' (role 'universityextended_University6', cardinality 0..*).
+'universityextended::administration::Tutorial' (role 'tutorial', cardinality 0..*) is associated with 'Course' (role 'Course25', cardinality 0..*).
+'Lecture' (role 'Lecture', cardinality 0..*) is associated with 'universityextended::people::Professor' (role 'lecturer', cardinality 0..*).
+'Visits' (role 'Visits20', cardinality 0..*) is associated with 'universityextended::administration::Course' (role 'course19', cardinality 0..*).
+'Visits' (role 'Visits10', cardinality 0..*) is associated with 'universityextended::people::Student' (role 'student', cardinality 0..*).
+'Lecture' (role 'Lecture14', cardinality 0..*) is associated with 'universityextended::administration::Course' (role 'course', cardinality 0..*).
+'universityextended::administration::Event' (role 'universityextended_administration_Event', cardinality 0..*) is associated with 'Time' (role 'Time29', cardinality 0..*).
+'universityextended::people::Assistant' (role 'tutor', cardinality 0..*) is associated with 'Tutorial' (role 'Tutorial', cardinality 0..*).
+'Course' (role 'Course34', cardinality 0..*) is associated with 'universityextended::connection::Visits' (role 'visitor', cardinality 0..*).
+'universityextended::connection::Visits' (role 'courseVisit', cardinality 0..*) is associated with 'Student' (role 'Student', cardinality 0..*).
+'universityextended::administration::Lecture' (role 'lectures', cardinality 0..*) is associated with 'Professor' (role 'Professor', cardinality 0..*).
+'universityextended::University' (role 'universityextended_University', cardinality 0..*) is associated with 'Person' (role 'Person', cardinality 0..*).
+'Course' (role 'Course', cardinality 0..*) is associated with 'universityextended::University' (role 'universityextended_University4', cardinality 0..*).
+'universityextended::administration::Lecture' (role 'lecture', cardinality 0..*) is associated with 'Course' (role 'Course22', cardinality 0..*).
+'universityextended::administration::Tutorial' (role 'tutorial27', cardinality 0..*) is associated with 'Assistant' (role 'Assistant', cardinality 0..*).
+'Room' (role 'Room', cardinality 0..*) is associated with 'universityextended::University' (role 'universityextended_University8', cardinality 0..*).
+'universityextended::University' (role 'universityextended_University2', cardinality 0..*) is associated with 'Visits' (role 'Visits', cardinality 0..*).

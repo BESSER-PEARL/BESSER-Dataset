@@ -1,0 +1,66 @@
+The model has 25 class(es).
+The class 'DU' has no attributes.
+The class 'ref::C4' has no attributes.
+The class 'ref::C1' has no attributes.
+The class 'ref::D' has no attributes.
+The class 'ref::unsettable::CU' has no attributes.
+The class 'ref::A' has no attributes.
+The class 'C4U' has no attributes.
+The class 'ref::unsettable::BU' has no attributes.
+The class 'ref::unsettable::DU' has no attributes.
+The class 'ref::unsettable::EU' has the following attributes: 'ids' of type str; 'labels' of type str; 'name' of type str.
+The class 'ref::unsettable::C4U' has no attributes.
+The class 'ref::unsettable::C2U' has no attributes.
+The class 'ref::C2' has no attributes.
+The class 'BU' has no attributes.
+The class 'ref::unsettable::AU' has no attributes.
+The class 'C2U' has no attributes.
+The class 'EU' has no attributes.
+The class 'AU' has no attributes.
+The class 'ref::unsettable::C1U' has no attributes.
+The class 'ref::B' has no attributes.
+The class 'CU' has no attributes.
+The class 'ref::C3' has no attributes.
+The class 'ref::C' has no attributes.
+The class 'ref::unsettable::C3U' has no attributes.
+The class 'ref::E' has the following attributes: 'labels' of type str; 'ids' of type str; 'name' of type str.
+'ref::unsettable::BU' (role 'bu', cardinality 0..*) is associated with 'AU' (role 'AU54', cardinality 0..*).
+'C4U' (role 'C4U', cardinality 0..*) is associated with 'ref::unsettable::CU' (role 'cu62', cardinality 0..*).
+'ref::D' (role 'd', cardinality 0..*) is associated with 'ref::C' (role 'C', cardinality 0..*).
+'ref::unsettable::AU' (role 'au51', cardinality 0..*) is associated with 'C2U' (role 'C2U', cardinality 0..*).
+'ref::unsettable::C4U' (role 'c4u73', cardinality 0..*) is associated with 'DU' (role 'DU74', cardinality 0..*).
+'ref::C' (role 'c21', cardinality 0..*) is associated with 'ref::C4' (role 'C4', cardinality 0..*).
+'ref::C1' (role 'ref_C1', cardinality 0..*) is associated with 'ref::A' (role 'ref_A10', cardinality 0..*).
+'ref::C3' (role 'ref_C3', cardinality 0..*) is associated with 'ref::D' (role 'ref_D36', cardinality 0..*).
+'ref::C' (role 'ref_C', cardinality 0..*) is associated with 'ref::A' (role 'ref_A', cardinality 0..*).
+'ref::C' (role 'C31', cardinality 0..*) is associated with 'ref::C4' (role 'c4', cardinality 0..*).
+'ref::D' (role 'D29', cardinality 0..*) is associated with 'ref::E' (role 'e', cardinality 0..*).
+'ref::C2' (role 'C2', cardinality 0..*) is associated with 'ref::A' (role 'a2', cardinality 0..*).
+'DU' (role 'DU79', cardinality 0..*) is associated with 'ref::unsettable::C3U' (role 'ref_unsettable_C3U78', cardinality 0..*).
+'ref::C1' (role 'ref_C112', cardinality 0..*) is associated with 'ref::B' (role 'ref_B13', cardinality 0..*).
+'ref::unsettable::BU' (role 'bu56', cardinality 0..*) is associated with 'C2U' (role 'C2U57', cardinality 0..*).
+'ref::C3' (role 'ref_C338', cardinality 0..*) is associated with 'ref::C' (role 'ref_C39', cardinality 0..*).
+'ref::C2' (role 'c2', cardinality 0..*) is associated with 'ref::B' (role 'B15', cardinality 0..*).
+'ref::unsettable::DU' (role 'du66', cardinality 0..*) is associated with 'C4U' (role 'C4U67', cardinality 0..*).
+'ref::unsettable::DU' (role 'du', cardinality 0..*) is associated with 'CU' (role 'CU64', cardinality 0..*).
+'EU' (role 'EU', cardinality 0..*) is associated with 'ref::unsettable::DU' (role 'du69', cardinality 0..*).
+'CU' (role 'CU76', cardinality 0..*) is associated with 'ref::unsettable::C3U' (role 'ref_unsettable_C3U', cardinality 0..*).
+'ref::unsettable::AU' (role 'au', cardinality 0..*) is associated with 'BU' (role 'BU49', cardinality 0..*).
+'ref::D' (role 'd24', cardinality 0..*) is associated with 'ref::E' (role 'E', cardinality 0..*).
+'ref::B' (role 'ref_B', cardinality 0..*) is associated with 'ref::D' (role 'ref_D', cardinality 0..*).
+'AU' (role 'AU', cardinality 0..*) is associated with 'ref::unsettable::C1U' (role 'ref_unsettable_C1U', cardinality 0..*).
+'ref::C2' (role 'C27', cardinality 0..*) is associated with 'ref::B' (role 'b6', cardinality 0..*).
+'DU' (role 'DU81', cardinality 0..*) is associated with 'ref::unsettable::EU' (role 'eu', cardinality 0..*).
+'ref::unsettable::CU' (role 'cu', cardinality 0..*) is associated with 'DU' (role 'DU60', cardinality 0..*).
+'ref::A' (role 'A', cardinality 0..*) is associated with 'ref::B' (role 'b', cardinality 0..*).
+'ref::D' (role 'd26', cardinality 0..*) is associated with 'ref::C4' (role 'C427', cardinality 0..*).
+'ref::D' (role 'D34', cardinality 0..*) is associated with 'ref::C4' (role 'c433', cardinality 0..*).
+'ref::C' (role 'c', cardinality 0..*) is associated with 'ref::D' (role 'D', cardinality 0..*).
+'ref::unsettable::C4U' (role 'c4u', cardinality 0..*) is associated with 'CU' (role 'CU71', cardinality 0..*).
+'BU' (role 'BU47', cardinality 0..*) is associated with 'ref::unsettable::C2U' (role 'c2u46', cardinality 0..*).
+'AU' (role 'AU44', cardinality 0..*) is associated with 'ref::unsettable::C2U' (role 'c2u', cardinality 0..*).
+'ref::C2' (role 'c217', cardinality 0..*) is associated with 'ref::A' (role 'A18', cardinality 0..*).
+'ref::unsettable::BU' (role 'ref_unsettable_BU', cardinality 0..*) is associated with 'DU' (role 'DU', cardinality 0..*).
+'BU' (role 'BU', cardinality 0..*) is associated with 'ref::unsettable::C1U' (role 'ref_unsettable_C1U42', cardinality 0..*).
+'CU' (role 'CU', cardinality 0..*) is associated with 'ref::unsettable::AU' (role 'ref_unsettable_AU', cardinality 0..*).
+'ref::A' (role 'a', cardinality 0..*) is associated with 'ref::B' (role 'B', cardinality 0..*).

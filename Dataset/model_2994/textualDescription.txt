@@ -1,0 +1,38 @@
+The model has 13 class(es).
+The class 'remember::Folder' has no attributes.
+The class 'remember::Node' has the following attributes: 'dateModified' of type date; 'name' of type str; 'parentNodeType' of type str; 'nodeId' of type str; 'markedForDeletion' of type bool; 'description' of type str; 'sequence' of type int; 'nodeType' of type str; 'parentNodeId' of type str; 'dateCreated' of type date.
+The class 'remember::Project' has the following attributes: 'projectId' of type str; 'description' of type str; 'projectNumber' of type str.
+The class 'remember::InvoiceSpecification' has the following attributes: 'month' of type int.
+The class 'Node' has no attributes.
+The class 'remember::TimeSpent' has the following attributes: 'date' of type date; 'comment' of type str; 'timeSpentId' of type str; 'invoiced' of type bool; 'minutes' of type int.
+The class 'remember::Customers' has no attributes.
+The class 'remember::Year' has the following attributes: 'year' of type int.
+The class 'remember::Customer' has the following attributes: 'name' of type str; 'customerId' of type str.
+The class 'remember::KeyIdPair' has the following attributes: 'id' of type str; 'key' of type str.
+The class 'remember::KeyManager' has no attributes.
+The class 'remember::Task' has the following attributes: 'priority' of type str; 'done' of type bool; 'taskId' of type int; 'text' of type str; 'budget' of type str; 'status' of type str.
+The class 'remember::Years' has no attributes.
+'remember::Task' is a specialization of 'Node'.
+'remember::Folder' is a specialization of 'Node'.
+'remember::TimeSpent' (role 'timeSpent29', cardinality 0..*) is associated with 'remember::InvoiceSpecification' (role 'InvoiceSpecification', cardinality 0..*).
+'remember::Year' (role 'Year38', cardinality 0..*) is associated with 'remember::Years' (role 'years', cardinality 0..*).
+'remember::Node' (role 'Node', cardinality 0..*) is associated with 'remember::Customer' (role 'customer18', cardinality 0..*).
+'remember::Project' (role 'remember_Project', cardinality 0..*) is associated with 'remember::TimeSpent' (role 'remember_TimeSpent', cardinality 0..*).
+'remember::Folder' (role 'parent3', cardinality 0..*) is associated with 'remember::Folder' (role 'Folder', cardinality 0..*).
+'remember::Task' (role 'Task', cardinality 0..*) is associated with 'remember::Folder' (role 'parent', cardinality 0..*).
+'remember::TimeSpent' (role 'TimeSpent35', cardinality 0..*) is associated with 'remember::InvoiceSpecification' (role 'invoiceSpecification', cardinality 0..*).
+'remember::Year' (role 'year', cardinality 0..*) is associated with 'remember::InvoiceSpecification' (role 'InvoiceSpecification31', cardinality 0..*).
+'remember::Folder' (role 'Folder6', cardinality 0..*) is associated with 'remember::Folder' (role 'folders', cardinality 0..*).
+'remember::Project' (role 'project', cardinality 0..*) is associated with 'remember::Node' (role 'Node22', cardinality 0..*).
+'remember::Task' (role 'Tasks', cardinality 0..*) is associated with 'remember::Folder' (role 'Folder9', cardinality 0..*).
+'remember::Customers' (role 'remember_Customers', cardinality 0..*) is associated with 'remember::Folder' (role 'remember_Folder', cardinality 0..*).
+'remember::Project' (role 'Project16', cardinality 0..*) is associated with 'remember::Customer' (role 'customer', cardinality 0..*).
+'remember::Customer' (role 'remember_Customer', cardinality 0..*) is associated with 'remember::Customers' (role 'remember_Customers24', cardinality 0..*).
+'remember::TimeSpent' (role 'TimeSpent', cardinality 0..*) is associated with 'remember::Task' (role 'task', cardinality 0..*).
+'remember::KeyManager' (role 'remember_KeyManager', cardinality 0..*) is associated with 'remember::KeyIdPair' (role 'remember_KeyIdPair', cardinality 0..*).
+'remember::Years' (role 'Years', cardinality 0..*) is associated with 'remember::Year' (role 'year33', cardinality 0..*).
+'remember::Project' (role 'projects', cardinality 0..*) is associated with 'remember::Customer' (role 'Customer20', cardinality 0..*).
+'remember::InvoiceSpecification' (role 'invoiceSpecifications', cardinality 0..*) is associated with 'remember::Year' (role 'Year', cardinality 0..*).
+'remember::Project' (role 'Project', cardinality 0..*) is associated with 'remember::Node' (role 'nodes13', cardinality 0..*).
+'remember::Node' (role 'nodes', cardinality 0..*) is associated with 'remember::Customer' (role 'Customer', cardinality 0..*).
+'remember::TimeSpent' (role 'timeSpent', cardinality 0..*) is associated with 'remember::Task' (role 'Task27', cardinality 0..*).

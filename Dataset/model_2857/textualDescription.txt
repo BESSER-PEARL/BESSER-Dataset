@@ -1,0 +1,90 @@
+The model has 33 class(es).
+The class 'simplejava::SimpleStatement' has no attributes.
+The class 'simplejava::Import' has the following attributes: 'imported' of type str.
+The class 'simplejava::ForInStatement' has no attributes.
+The class 'simplejava::Statement' has no attributes.
+The class 'simplejava::PackageDeclaration' has the following attributes: 'name' of type str.
+The class 'simplejava::ConstantExpression' has no attributes.
+The class 'SimpleVariableDeclaration' has no attributes.
+The class 'simplejava::WhileStatement' has no attributes.
+The class 'simplejava::Assignment' has no attributes.
+The class 'simplejava::NullExpression' has no attributes.
+The class 'simplejava::ParanthesisOrBinaryExpression' has the following attributes: 'type' of type str.
+The class 'simplejava::ClassDeclaration' has the following attributes: 'name' of type str.
+The class 'simplejava::ForStatement' has no attributes.
+The class 'simplejava::VariableExpression' has no attributes.
+The class 'simplejava::StringExpression' has the following attributes: 'value' of type str.
+The class 'simplejava::IfStatement' has no attributes.
+The class 'simplejava::BooleanExpression' has the following attributes: 'value' of type bool.
+The class 'simplejava::SimpleVariableDeclaration' has no attributes.
+The class 'simplejava::GenericExpression' has no attributes.
+The class 'simplejava::SimpleJava' has no attributes.
+The class 'Statement' has no attributes.
+The class 'simplejava::IntegerExpression' has the following attributes: 'value' of type int.
+The class 'simplejava::Type' has the following attributes: 'typeName' of type str.
+The class 'simplejava::MethodBlock' has the following attributes: 'generated' of type bool.
+The class 'GenericExpression' has no attributes.
+The class 'ConstantExpression' has no attributes.
+The class 'simplejava::Parameter' has the following attributes: 'name' of type str.
+The class 'simplejava::MethodCall' has the following attributes: 'methodName' of type str; 'thisObject' of type bool.
+The class 'simplejava::ReturnStatement' has no attributes.
+The class 'simplejava::UnaryExpression' has the following attributes: 'type' of type str.
+The class 'simplejava::Method' has the following attributes: 'static' of type bool; 'name' of type str.
+The class 'SimpleStatement' has no attributes.
+The class 'simplejava::VariableDeclaration' has no attributes.
+'simplejava::VariableDeclaration' is a specialization of 'SimpleVariableDeclaration'.
+'simplejava::VariableExpression' is a specialization of 'GenericExpression'.
+'simplejava::IntegerExpression' is a specialization of 'ConstantExpression'.
+'simplejava::SimpleVariableDeclaration' is a specialization of 'SimpleStatement'.
+'simplejava::MethodCall' is a specialization of 'GenericExpression'.
+'simplejava::UnaryExpression' is a specialization of 'GenericExpression'.
+'simplejava::Assignment' is a specialization of 'Statement'.
+'simplejava::StringExpression' is a specialization of 'ConstantExpression'.
+'simplejava::WhileStatement' is a specialization of 'Statement'.
+'simplejava::ForStatement' is a specialization of 'Statement'.
+'simplejava::ParanthesisOrBinaryExpression' is a specialization of 'GenericExpression'.
+'simplejava::Assignment' is a specialization of 'SimpleStatement'.
+'simplejava::ReturnStatement' is a specialization of 'Statement'.
+'simplejava::NullExpression' is a specialization of 'ConstantExpression'.
+'simplejava::MethodCall' is a specialization of 'Statement'.
+'simplejava::VariableDeclaration' is a specialization of 'Statement'.
+'simplejava::ConstantExpression' is a specialization of 'GenericExpression'.
+'simplejava::BooleanExpression' is a specialization of 'ConstantExpression'.
+'simplejava::IfStatement' is a specialization of 'Statement'.
+'simplejava::MethodBlock' is a specialization of 'Statement'.
+'simplejava::ForInStatement' is a specialization of 'Statement'.
+'simplejava::MethodCall' (role 'simplejava_MethodCall68', cardinality 0..*) is associated with 'simplejava::Method' (role 'simplejava_Method69', cardinality 0..*).
+'simplejava::Parameter' (role 'simplejava_Parameter25', cardinality 0..*) is associated with 'simplejava::VariableDeclaration' (role 'simplejava_VariableDeclaration', cardinality 0..*).
+'simplejava::VariableExpression' (role 'simplejava_VariableExpression', cardinality 0..*) is associated with 'simplejava::Parameter' (role 'simplejava_Parameter76', cardinality 0..*).
+'simplejava::IfStatement' (role 'simplejava_IfStatement', cardinality 0..*) is associated with 'simplejava::ParanthesisOrBinaryExpression' (role 'simplejava_ParanthesisOrBinaryExpression', cardinality 0..*).
+'simplejava::ForStatement' (role 'simplejava_ForStatement48', cardinality 0..*) is associated with 'simplejava::Statement' (role 'simplejava_Statement49', cardinality 0..*).
+'simplejava::IfStatement' (role 'simplejava_IfStatement38', cardinality 0..*) is associated with 'simplejava::MethodBlock' (role 'simplejava_MethodBlock39', cardinality 0..*).
+'simplejava::GenericExpression' (role 'simplejava_GenericExpression64', cardinality 0..*) is associated with 'simplejava::ReturnStatement' (role 'simplejava_ReturnStatement', cardinality 0..*).
+'simplejava::ForStatement' (role 'simplejava_ForStatement45', cardinality 0..*) is associated with 'simplejava::SimpleStatement' (role 'simplejava_SimpleStatement46', cardinality 0..*).
+'simplejava::GenericExpression' (role 'simplejava_GenericExpression72', cardinality 0..*) is associated with 'simplejava::MethodCall' (role 'simplejava_MethodCall71', cardinality 0..*).
+'simplejava::WhileStatement' (role 'simplejava_WhileStatement', cardinality 0..*) is associated with 'simplejava::ParanthesisOrBinaryExpression' (role 'simplejava_ParanthesisOrBinaryExpression59', cardinality 0..*).
+'simplejava::ForInStatement' (role 'simplejava_ForInStatement', cardinality 0..*) is associated with 'simplejava::Parameter' (role 'simplejava_Parameter51', cardinality 0..*).
+'simplejava::ForStatement' (role 'simplejava_ForStatement42', cardinality 0..*) is associated with 'simplejava::GenericExpression' (role 'simplejava_GenericExpression43', cardinality 0..*).
+'simplejava::ParanthesisOrBinaryExpression' (role 'simplejava_ParanthesisOrBinaryExpression78', cardinality 0..*) is associated with 'simplejava::GenericExpression' (role 'simplejava_GenericExpression79', cardinality 0..*).
+'simplejava::Parameter' (role 'simplejava_Parameter', cardinality 0..*) is associated with 'simplejava::ClassDeclaration' (role 'simplejava_ClassDeclaration6', cardinality 0..*).
+'simplejava::MethodCall' (role 'simplejava_MethodCall', cardinality 0..*) is associated with 'simplejava::Parameter' (role 'simplejava_Parameter66', cardinality 0..*).
+'simplejava::ClassDeclaration' (role 'simplejava_ClassDeclaration8', cardinality 0..*) is associated with 'simplejava::Method' (role 'simplejava_Method', cardinality 0..*).
+'simplejava::PackageDeclaration' (role 'simplejava_PackageDeclaration', cardinality 0..*) is associated with 'simplejava::SimpleJava' (role 'simplejava_SimpleJava', cardinality 0..*).
+'simplejava::ParanthesisOrBinaryExpression' (role 'simplejava_ParanthesisOrBinaryExpression81', cardinality 0..*) is associated with 'simplejava::GenericExpression' (role 'simplejava_GenericExpression82', cardinality 0..*).
+'simplejava::GenericExpression' (role 'simplejava_GenericExpression', cardinality 0..*) is associated with 'simplejava::VariableDeclaration' (role 'simplejava_VariableDeclaration27', cardinality 0..*).
+'simplejava::GenericExpression' (role 'simplejava_GenericExpression74', cardinality 0..*) is associated with 'simplejava::UnaryExpression' (role 'simplejava_UnaryExpression', cardinality 0..*).
+'simplejava::SimpleJava' (role 'simplejava_SimpleJava2', cardinality 0..*) is associated with 'simplejava::Import' (role 'simplejava_Import', cardinality 0..*).
+'simplejava::ForInStatement' (role 'simplejava_ForInStatement56', cardinality 0..*) is associated with 'simplejava::Statement' (role 'simplejava_Statement57', cardinality 0..*).
+'simplejava::Type' (role 'simplejava_Type', cardinality 0..*) is associated with 'simplejava::Parameter' (role 'simplejava_Parameter10', cardinality 0..*).
+'simplejava::SimpleJava' (role 'simplejava_SimpleJava4', cardinality 0..*) is associated with 'simplejava::ClassDeclaration' (role 'simplejava_ClassDeclaration', cardinality 0..*).
+'simplejava::Method' (role 'simplejava_Method21', cardinality 0..*) is associated with 'simplejava::MethodBlock' (role 'simplejava_MethodBlock', cardinality 0..*).
+'simplejava::Parameter' (role 'simplejava_Parameter29', cardinality 0..*) is associated with 'simplejava::Assignment' (role 'simplejava_Assignment', cardinality 0..*).
+'simplejava::Type' (role 'simplejava_Type16', cardinality 0..*) is associated with 'simplejava::Method' (role 'simplejava_Method15', cardinality 0..*).
+'simplejava::IfStatement' (role 'simplejava_IfStatement35', cardinality 0..*) is associated with 'simplejava::MethodBlock' (role 'simplejava_MethodBlock36', cardinality 0..*).
+'simplejava::Parameter' (role 'simplejava_Parameter19', cardinality 0..*) is associated with 'simplejava::Method' (role 'simplejava_Method18', cardinality 0..*).
+'simplejava::ForInStatement' (role 'simplejava_ForInStatement53', cardinality 0..*) is associated with 'simplejava::GenericExpression' (role 'simplejava_GenericExpression54', cardinality 0..*).
+'simplejava::Assignment' (role 'simplejava_Assignment31', cardinality 0..*) is associated with 'simplejava::GenericExpression' (role 'simplejava_GenericExpression32', cardinality 0..*).
+'simplejava::SimpleStatement' (role 'simplejava_SimpleStatement', cardinality 0..*) is associated with 'simplejava::ForStatement' (role 'simplejava_ForStatement', cardinality 0..*).
+'simplejava::Type' (role 'simplejava_Type12', cardinality 0..*) is associated with 'simplejava::ClassDeclaration' (role 'simplejava_ClassDeclaration13', cardinality 0..*).
+'simplejava::WhileStatement' (role 'simplejava_WhileStatement61', cardinality 0..*) is associated with 'simplejava::Statement' (role 'simplejava_Statement62', cardinality 0..*).
+'simplejava::MethodBlock' (role 'simplejava_MethodBlock23', cardinality 0..*) is associated with 'simplejava::Statement' (role 'simplejava_Statement', cardinality 0..*).

@@ -1,0 +1,14 @@
+The model has 4 class(es).
+The class 'kreq103::Gggg' has the following attributes: 'id' of type str.
+The class 'kreq103::Bbbb' has no attributes.
+The class 'kreq103::Cccc' has the following attributes: 'id' of type str.
+The class 'kreq103::Ffff' has the following attributes: 'id' of type str.
+The enumeration 'CategoryType' has the following literals: 'Interface', 'Functional', 'Constraints', 'Operational', 'VandV', 'Non_Functional'.
+The enumeration 'BasicFlowTransformationType' has the following literals: 'Store', 'EEnumLiteral0', 'Control', 'Wait', 'Transiform', 'Measure', 'Check_Verify_Validate', 'Decide'.
+The enumeration 'ComponentPosition' has the following literals: 'Local', 'Environmental_context', 'Not_yet_defined'.
+The enumeration 'ComponentType' has the following literals: 'Other', 'Operational_system', 'Physical_component', 'Organization_Unit', 'Role', 'Information_system', 'Tool', 'Not_yet_desighed', 'Logical_component', 'Process', 'Activity', 'System', 'Serrvice', 'Actor', 'Site'.
+The enumeration 'RequirementOrigin' has the following literals: 'Originating', 'DesignChoise_induced', 'Derived'.
+'kreq103::Ffff' (role 'kreq103_Ffff5', cardinality 0..*) is associated with 'kreq103::Ffff' (role 'kreq103_Ffff7', cardinality 0..*).
+'kreq103::Gggg' (role 'kreq103_Gggg', cardinality 0..*) is associated with 'kreq103::Bbbb' (role 'kreq103_Bbbb2', cardinality 0..*).
+'kreq103::Cccc' (role 'kreq103_Cccc', cardinality 0..*) is associated with 'kreq103::Bbbb' (role 'kreq103_Bbbb', cardinality 0..*).
+'kreq103::Ffff' (role 'kreq103_Ffff', cardinality 0..*) is associated with 'kreq103::Cccc' (role 'kreq103_Cccc4', cardinality 0..*).

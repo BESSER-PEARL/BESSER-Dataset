@@ -1,0 +1,3 @@
+The model has 1 class(es).
+The class 'trees::Node' has no attributes.
+'trees::Node' (role 'trees_Node', cardinality 0..*) is associated with 'trees::Node' (role 'trees_Node0', cardinality 0..*).

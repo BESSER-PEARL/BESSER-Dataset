@@ -1,0 +1,17 @@
+The model has 7 class(es).
+The class 'University::Person' has the following attributes: 'email' of type str; 'name' of type str.
+The class 'University::Student' has the following attributes: 'matriculationNumber' of type int.
+The class 'University::UniversityManagementSystem' has no attributes.
+The class 'Person' has no attributes.
+The class 'University::Course' has the following attributes: 'courseType' of type str; 'name' of type str; 'courseNumber' of type int.
+The class 'University::Exam' has the following attributes: 'examID' of type str.
+The class 'University::Professor' has the following attributes: 'employeeNumber' of type int.
+The enumeration 'CourseType' has the following literals: 'SEM', 'PR', 'UE', 'VO'.
+'University::Student' is a specialization of 'Person'.
+'University::Professor' is a specialization of 'Person'.
+'University::Course' (role 'University_Course5', cardinality 0..*) is associated with 'University::Course' (role 'University_Course3', cardinality 0..*).
+'University::Course' (role 'University_Course', cardinality 0..*) is associated with 'University::Student' (role 'University_Student', cardinality 0..*).
+'University::UniversityManagementSystem' (role 'University_UniversityManagementSystem', cardinality 0..*) is associated with 'University::Course' (role 'University_Course9', cardinality 0..*).
+'University::Professor' (role 'University_Professor', cardinality 0..*) is associated with 'University::Course' (role 'University_Course2', cardinality 0..*).
+'University::Course' (role 'University_Course7', cardinality 0..*) is associated with 'University::Exam' (role 'University_Exam', cardinality 0..*).
+'University::UniversityManagementSystem' (role 'University_UniversityManagementSystem11', cardinality 0..*) is associated with 'University::Person' (role 'University_Person', cardinality 0..*).

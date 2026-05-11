@@ -1,0 +1,8 @@
+The model has 6 class(es).
+The class 'genericTest::SomeType' has no attributes.
+The class 'genericTest::C' has no attributes.
+The class 'genericTest::B' has no attributes.
+The class 'genericTest::A' has no attributes.
+The class 'genericTest::OtherType' has no attributes.
+The class 'genericTest::D' has no attributes.
+'genericTest::SomeType' (role 'genericTest_SomeType', cardinality 0..*) is associated with 'genericTest::A' (role 'genericTest_A', cardinality 0..*).

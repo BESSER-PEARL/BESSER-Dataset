@@ -1,0 +1,19 @@
+The model has 11 class(es).
+The class 'testmerge::SubB' has no attributes.
+The class 'testmerge::A' has no attributes.
+The class 'testmerge::B' has the following attributes: 'anAttribute' of type str.
+The class 'A' has no attributes.
+The class 'B' has no attributes.
+The class 'testmerge::SuperA' has no attributes.
+The class 'testmerge::AAA' has no attributes.
+The class 'testmerge::C' has no attributes.
+The class 'AA' has no attributes.
+The class 'SuperA' has no attributes.
+The class 'testmerge::AA' has no attributes.
+'testmerge::AAA' is a specialization of 'AA'.
+'testmerge::A' is a specialization of 'SuperA'.
+'testmerge::AA' is a specialization of 'A'.
+'testmerge::SubB' is a specialization of 'B'.
+'testmerge::A' (role 'toA', cardinality 0..*) is associated with 'testmerge::B' (role 'B', cardinality 0..*).
+'testmerge::AAA' (role 'testmerge_AAA', cardinality 0..*) is associated with 'testmerge::C' (role 'testmerge_C', cardinality 0..*).
+'testmerge::B' (role 'toB', cardinality 0..*) is associated with 'testmerge::A' (role 'A', cardinality 0..*).

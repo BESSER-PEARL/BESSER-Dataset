@@ -1,0 +1,10 @@
+The model has 6 class(es).
+The class 'fsm::FSM' has no attributes.
+The class 'NoAnnotationSuper' has no attributes.
+The class 'fsm::NoAnnotationSuper' has no attributes.
+The class 'fsm::Transition' has no attributes.
+The class 'fsm::NoAnnotation' has the following attributes: 'a' of type str; 'b' of type str.
+The class 'fsm::State' has no attributes.
+'fsm::NoAnnotation' is a specialization of 'NoAnnotationSuper'.
+'fsm::FSM' (role 'fsm_FSM', cardinality 0..*) is associated with 'fsm::NoAnnotation' (role 'fsm_NoAnnotation2', cardinality 0..*).
+'fsm::State' (role 'fsm_State', cardinality 0..*) is associated with 'fsm::NoAnnotation' (role 'fsm_NoAnnotation', cardinality 0..*).

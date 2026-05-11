@@ -1,0 +1,17 @@
+The model has 7 class(es).
+The class 'ChangingOverTime::TimeStampedElement' has the following attributes: 'effectiveDate' of type date; 'expirationDate' of type date.
+The class 'ChangingOverTime::LinkKind' has no attributes.
+The class 'ChangingOverTime::NodeKind' has no attributes.
+The class 'ChangingOverTime::Entity' has no attributes.
+The class 'TimeStampedElement' has no attributes.
+The class 'ChangingOverTime::BindingKind' has no attributes.
+The class 'ChangingOverTime::Tree' has no attributes.
+'ChangingOverTime::Entity' is a specialization of 'TimeStampedElement'.
+'ChangingOverTime::BindingKind' is a specialization of 'TimeStampedElement'.
+'ChangingOverTime::NodeKind' is a specialization of 'TimeStampedElement'.
+'ChangingOverTime::BindingKind' (role 'ChangingOverTime_BindingKind', cardinality 0..*) is associated with 'ChangingOverTime::NodeKind' (role 'ChangingOverTime_NodeKind', cardinality 0..*).
+'ChangingOverTime::NodeKind' (role 'ChangingOverTime_NodeKind9', cardinality 0..*) is associated with 'ChangingOverTime::LinkKind' (role 'ChangingOverTime_LinkKind8', cardinality 0..*).
+'ChangingOverTime::Tree' (role 'Tree', cardinality 0..*) is associated with 'ChangingOverTime::NodeKind' (role 'root', cardinality 0..*).
+'ChangingOverTime::Tree' (role 'tree', cardinality 0..*) is associated with 'ChangingOverTime::NodeKind' (role 'NodeKind', cardinality 0..*).
+'ChangingOverTime::LinkKind' (role 'ChangingOverTime_LinkKind', cardinality 0..*) is associated with 'ChangingOverTime::NodeKind' (role 'ChangingOverTime_NodeKind6', cardinality 0..*).
+'ChangingOverTime::Entity' (role 'ChangingOverTime_Entity', cardinality 0..*) is associated with 'ChangingOverTime::BindingKind' (role 'ChangingOverTime_BindingKind4', cardinality 0..*).

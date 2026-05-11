@@ -1,0 +1,15 @@
+The model has 7 class(es).
+The class 'viewers::TableViewerInput' has no attributes.
+The class 'viewers::TreeViewerInput' has no attributes.
+The class 'viewers::ListViewerInput' has no attributes.
+The class 'viewers::ListViewerElement' has the following attributes: 'label' of type str.
+The class 'viewers::TreeViewerElement' has the following attributes: 'label' of type str.
+The class 'viewers::TableViewerElement' has the following attributes: 'label' of type str; 'name' of type str.
+The class 'viewers::ViewerInputs' has no attributes.
+'viewers::TableViewerElement' (role 'viewers_TableViewerElement', cardinality 0..*) is associated with 'viewers::TableViewerInput' (role 'viewers_TableViewerInput', cardinality 0..*).
+'viewers::TreeViewerInput' (role 'viewers_TreeViewerInput13', cardinality 0..*) is associated with 'viewers::ViewerInputs' (role 'viewers_ViewerInputs12', cardinality 0..*).
+'viewers::ViewerInputs' (role 'viewers_ViewerInputs9', cardinality 0..*) is associated with 'viewers::TableViewerInput' (role 'viewers_TableViewerInput10', cardinality 0..*).
+'viewers::ListViewerElement' (role 'viewers_ListViewerElement', cardinality 0..*) is associated with 'viewers::ListViewerInput' (role 'viewers_ListViewerInput', cardinality 0..*).
+'viewers::TreeViewerInput' (role 'viewers_TreeViewerInput', cardinality 0..*) is associated with 'viewers::TreeViewerElement' (role 'viewers_TreeViewerElement', cardinality 0..*).
+'viewers::TreeViewerElement' (role 'viewers_TreeViewerElement5', cardinality 0..*) is associated with 'viewers::TreeViewerElement' (role 'viewers_TreeViewerElement3', cardinality 0..*).
+'viewers::ListViewerInput' (role 'viewers_ListViewerInput7', cardinality 0..*) is associated with 'viewers::ViewerInputs' (role 'viewers_ViewerInputs', cardinality 0..*).

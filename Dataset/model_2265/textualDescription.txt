@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'university::University' has the following attributes: 'name' of type str.
+The class 'university::Course' has the following attributes: 'name' of type str; 'id' of type str.
+The class 'university::Student' has the following attributes: 'id' of type str; 'name' of type str.
+'university::Student' (role 'university_Student', cardinality 0..*) is associated with 'university::University' (role 'university_University2', cardinality 0..*).
+'university::University' (role 'university_University', cardinality 0..*) is associated with 'university::Course' (role 'university_Course', cardinality 0..*).
+'university::Course' (role 'Course', cardinality 0..*) is associated with 'university::Student' (role 'student', cardinality 0..*).
+'university::Student' (role 'Student', cardinality 0..*) is associated with 'university::Course' (role 'course', cardinality 0..*).

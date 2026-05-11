@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/markus1978/RandomEMF/plugins/de.hub.rcore.example/model/output.ecore

@@ -1,0 +1,10 @@
+The model has 3 class(es).
+The class 'tp1::StateMachine' has the following attributes: 'name' of type str.
+The class 'tp1::Transition' has the following attributes: 'name' of type str.
+The class 'tp1::State' has the following attributes: 'name' of type str.
+'tp1::State' (role 'State', cardinality 0..*) is associated with 'tp1::Transition' (role 'outcoming', cardinality 0..*).
+'tp1::StateMachine' (role 'tp1_StateMachine2', cardinality 0..*) is associated with 'tp1::State' (role 'tp1_State', cardinality 0..*).
+'tp1::State' (role 'State8', cardinality 0..*) is associated with 'tp1::Transition' (role 'incoming', cardinality 0..*).
+'tp1::State' (role 'to', cardinality 0..*) is associated with 'tp1::Transition' (role 'Transition5', cardinality 0..*).
+'tp1::Transition' (role 'tp1_Transition', cardinality 0..*) is associated with 'tp1::StateMachine' (role 'tp1_StateMachine', cardinality 0..*).
+'tp1::Transition' (role 'Transition', cardinality 0..*) is associated with 'tp1::State' (role 'from_', cardinality 0..*).

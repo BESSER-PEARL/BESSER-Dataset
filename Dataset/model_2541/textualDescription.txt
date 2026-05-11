@@ -1,0 +1,25 @@
+The model has 15 class(es).
+The class 'test::ClassF' has no attributes.
+The class 'test::Itf2' has no attributes.
+The class 'ClassC' has no attributes.
+The class 'test::ClassC' has no attributes.
+The class 'ClassB' has no attributes.
+The class 'test::Interface4' has no attributes.
+The class 'test::ClassD' has no attributes.
+The class 'test::Interface3' has no attributes.
+The class 'test::ClassB' has no attributes.
+The class 'test::ClassE' has no attributes.
+The class 'Itf1' has no attributes.
+The class 'Itf2' has no attributes.
+The class 'test::Itf1' has no attributes.
+The class 'Interface3' has no attributes.
+The class 'test::ClassA' has no attributes.
+'test::ClassB' is a specialization of 'Itf1'.
+'test::ClassE' is a specialization of 'Interface3'.
+'test::ClassD' is a specialization of 'Itf2'.
+'test::ClassC' is a specialization of 'ClassB'.
+'test::ClassD' is a specialization of 'Itf1'.
+'test::ClassE' is a specialization of 'ClassC'.
+'test::ClassD' is a specialization of 'Interface3'.
+'test::ClassA' (role 'test_ClassA3', cardinality 0..*) is associated with 'test::ClassC' (role 'test_ClassC', cardinality 0..*).
+'test::ClassA' (role 'test_ClassA', cardinality 0..*) is associated with 'test::ClassA' (role 'test_ClassA0', cardinality 0..*).

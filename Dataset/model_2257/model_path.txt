@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/rbill/virtualedit/at.ac.tuwien.big.virtlang.examples.school/model/school.ecore

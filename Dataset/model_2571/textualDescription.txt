@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'NamedElement' has no attributes.
+The class 'testpackage::NamedElement' has the following attributes: 'name' of type str.
+The class 'testpackage::Group' has no attributes.
+The class 'testpackage::User' has the following attributes: 'password' of type str.
+'testpackage::User' is a specialization of 'NamedElement'.
+'testpackage::Group' is a specialization of 'NamedElement'.
+'testpackage::Group' (role 'testpackage_Group', cardinality 0..*) is associated with 'testpackage::User' (role 'testpackage_User', cardinality 0..*).

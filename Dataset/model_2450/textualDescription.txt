@@ -1,0 +1,22 @@
+The model has 9 class(es).
+The class 'cstat1::Transition' has the following attributes: 'event' of type str; 'guard' of type str.
+The class 'cstat1::StateChart' has no attributes.
+The class 'cstat1::SubState1' has no attributes.
+The class 'cstat1::EClass0' has no attributes.
+The class 'AbstractState' has no attributes.
+The class 'cstat1::Action' has the following attributes: 'mode' of type str; 'expression' of type str.
+The class 'cstat1::State' has no attributes.
+The class 'cstat1::AbstractState' has the following attributes: 'id' of type str; 'type' of type str.
+The class 'cstat1::SubState2' has no attributes.
+The enumeration 'ActionMode' has the following literals: 'EXIT', 'ENTRY'.
+The enumeration 'StateType' has the following literals: 'INITIAL', 'SIMPLE', 'FINAL'.
+'cstat1::State' is a specialization of 'AbstractState'.
+'cstat1::SubState2' is a specialization of 'AbstractState'.
+'cstat1::SubState1' is a specialization of 'AbstractState'.
+'cstat1::State' (role 'cstat1_State', cardinality 0..*) is associated with 'cstat1::StateChart' (role 'cstat1_StateChart', cardinality 0..*).
+'cstat1::SubState1' (role 'cstat1_SubState1', cardinality 0..*) is associated with 'cstat1::SubState2' (role 'cstat1_SubState2', cardinality 0..*).
+'cstat1::AbstractState' (role 'cstat1_AbstractState10', cardinality 0..*) is associated with 'cstat1::Transition' (role 'cstat1_Transition11', cardinality 0..*).
+'cstat1::AbstractState' (role 'cstat1_AbstractState8', cardinality 0..*) is associated with 'cstat1::Transition' (role 'cstat1_Transition7', cardinality 0..*).
+'cstat1::State' (role 'cstat1_State3', cardinality 0..*) is associated with 'cstat1::SubState1' (role 'cstat1_SubState14', cardinality 0..*).
+'cstat1::Action' (role 'cstat1_Action', cardinality 0..*) is associated with 'cstat1::AbstractState' (role 'cstat1_AbstractState13', cardinality 0..*).
+'cstat1::AbstractState' (role 'cstat1_AbstractState', cardinality 0..*) is associated with 'cstat1::Transition' (role 'cstat1_Transition', cardinality 0..*).

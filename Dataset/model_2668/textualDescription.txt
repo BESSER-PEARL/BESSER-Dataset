@@ -1,0 +1,18 @@
+The model has 6 class(es).
+The class 'semlink::A' has no attributes.
+The class 'semlink::G' has no attributes.
+The class 'semlink::C' has no attributes.
+The class 'semlink::B' has no attributes.
+The class 'semlink::NamedElement' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+'semlink::A' is a specialization of 'NamedElement'.
+'semlink::B' is a specialization of 'NamedElement'.
+'semlink::G' is a specialization of 'NamedElement'.
+'semlink::C' is a specialization of 'NamedElement'.
+'semlink::C' (role 'semlink_C8', cardinality 0..*) is associated with 'semlink::A' (role 'semlink_A7', cardinality 0..*).
+'semlink::A' (role 'semlink_A10', cardinality 0..*) is associated with 'semlink::B' (role 'semlink_B', cardinality 0..*).
+'semlink::C' (role 'semlink_C', cardinality 0..*) is associated with 'semlink::G' (role 'semlink_G5', cardinality 0..*).
+'semlink::G' (role 'semlink_G', cardinality 0..*) is associated with 'semlink::G' (role 'semlink_G0', cardinality 0..*).
+'semlink::B' (role 'semlink_B12', cardinality 0..*) is associated with 'semlink::A' (role 'semlink_A13', cardinality 0..*).
+'semlink::B' (role 'semlink_B15', cardinality 0..*) is associated with 'semlink::C' (role 'semlink_C16', cardinality 0..*).
+'semlink::A' (role 'semlink_A', cardinality 0..*) is associated with 'semlink::G' (role 'semlink_G3', cardinality 0..*).

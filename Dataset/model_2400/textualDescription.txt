@@ -1,0 +1,15 @@
+The model has 7 class(es).
+The class 'rdb::ForeignKey' has no attributes.
+The class 'rdb::Table' has the following attributes: 'name' of type str.
+The class 'rdb::Column' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'rdb::Key' has no attributes.
+The class 'rdb::PrimaryKey' has no attributes.
+The class 'rdb::Schema' has the following attributes: 'name' of type str.
+The class 'Key' has no attributes.
+'rdb::PrimaryKey' is a specialization of 'Key'.
+'rdb::ForeignKey' is a specialization of 'Key'.
+'rdb::Table' (role 'rdb_Table2', cardinality 0..*) is associated with 'rdb::Column' (role 'rdb_Column', cardinality 0..*).
+'rdb::Table' (role 'rdb_Table', cardinality 0..*) is associated with 'rdb::Schema' (role 'rdb_Schema', cardinality 0..*).
+'rdb::Column' (role 'rdb_Column9', cardinality 0..*) is associated with 'rdb::ForeignKey' (role 'rdb_ForeignKey', cardinality 0..*).
+'rdb::Column' (role 'rdb_Column7', cardinality 0..*) is associated with 'rdb::Key' (role 'rdb_Key6', cardinality 0..*).
+'rdb::Key' (role 'rdb_Key', cardinality 0..*) is associated with 'rdb::Table' (role 'rdb_Table4', cardinality 0..*).

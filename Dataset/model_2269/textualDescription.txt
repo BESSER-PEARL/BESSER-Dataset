@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'university::Course' has the following attributes: 'id' of type str; 'name' of type str; 'etcs' of type int.
+The class 'university::CourseCatalog' has no attributes.
+'university::Course' (role 'university_Course', cardinality 0..*) is associated with 'university::CourseCatalog' (role 'university_CourseCatalog', cardinality 0..*).

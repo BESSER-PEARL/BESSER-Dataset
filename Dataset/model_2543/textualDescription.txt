@@ -1,0 +1,54 @@
+The model has 17 class(es).
+The class 'content::D' has no attributes.
+The class 'content::G' has no attributes.
+The class 'content::W' has the following attributes: 'name' of type str.
+The class 'content::I' has no attributes.
+The class 'content::H' has no attributes.
+The class 'content::P' has no attributes.
+The class 'W' has no attributes.
+The class 'content::N' has no attributes.
+The class 'content::M' has no attributes.
+The class 'content::R' has no attributes.
+The class 'content::A' has no attributes.
+The class 'content::B' has no attributes.
+The class 'content::F' has no attributes.
+The class 'content::Q' has no attributes.
+The class 'content::E' has no attributes.
+The class 'content::C' has no attributes.
+The class 'content::J' has the following attributes: 'linkName' of type str; 'cardinality' of type int.
+'content::F' is a specialization of 'W'.
+'content::P' is a specialization of 'W'.
+'content::H' is a specialization of 'W'.
+'content::M' is a specialization of 'W'.
+'content::G' is a specialization of 'W'.
+'content::D' is a specialization of 'W'.
+'content::R' is a specialization of 'W'.
+'content::B' is a specialization of 'W'.
+'content::N' is a specialization of 'W'.
+'content::J' is a specialization of 'W'.
+'content::C' is a specialization of 'W'.
+'content::I' is a specialization of 'W'.
+'content::A' is a specialization of 'W'.
+'content::E' is a specialization of 'W'.
+'content::Q' is a specialization of 'W'.
+'content::E' (role 'content_E27', cardinality 0..*) is associated with 'content::H' (role 'content_H26', cardinality 0..*).
+'content::F' (role 'content_F18', cardinality 0..*) is associated with 'content::J' (role 'content_J', cardinality 0..*).
+'content::G' (role 'content_G20', cardinality 0..*) is associated with 'content::H' (role 'content_H', cardinality 0..*).
+'content::D' (role 'content_D', cardinality 0..*) is associated with 'content::A' (role 'content_A4', cardinality 0..*).
+'content::H' (role 'content_H29', cardinality 0..*) is associated with 'content::Q' (role 'content_Q30', cardinality 0..*).
+'content::G' (role 'content_G22', cardinality 0..*) is associated with 'content::I' (role 'content_I', cardinality 0..*).
+'content::A' (role 'content_A11', cardinality 0..*) is associated with 'content::A' (role 'content_A9', cardinality 0..*).
+'content::G' (role 'content_G', cardinality 0..*) is associated with 'content::C' (role 'content_C13', cardinality 0..*).
+'content::A' (role 'content_A2', cardinality 0..*) is associated with 'content::C' (role 'content_C', cardinality 0..*).
+'content::M' (role 'content_M41', cardinality 0..*) is associated with 'content::N' (role 'content_N', cardinality 0..*).
+'content::R' (role 'content_R', cardinality 0..*) is associated with 'content::H' (role 'content_H32', cardinality 0..*).
+'content::A' (role 'content_A', cardinality 0..*) is associated with 'content::B' (role 'content_B', cardinality 0..*).
+'content::A' (role 'content_A6', cardinality 0..*) is associated with 'content::F' (role 'content_F', cardinality 0..*).
+'content::I' (role 'content_I34', cardinality 0..*) is associated with 'content::P' (role 'content_P', cardinality 0..*).
+'content::J' (role 'content_J36', cardinality 0..*) is associated with 'content::H' (role 'content_H37', cardinality 0..*).
+'content::M' (role 'content_M', cardinality 0..*) is associated with 'content::A' (role 'content_A39', cardinality 0..*).
+'content::D' (role 'content_D15', cardinality 0..*) is associated with 'content::E' (role 'content_E16', cardinality 0..*).
+'content::R' (role 'content_R46', cardinality 0..*) is associated with 'content::P' (role 'content_P47', cardinality 0..*).
+'content::P' (role 'content_P43', cardinality 0..*) is associated with 'content::Q' (role 'content_Q44', cardinality 0..*).
+'content::A' (role 'content_A8', cardinality 0..*) is associated with 'content::E' (role 'content_E', cardinality 0..*).
+'content::Q' (role 'content_Q', cardinality 0..*) is associated with 'content::G' (role 'content_G24', cardinality 0..*).

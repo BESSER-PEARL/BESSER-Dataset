@@ -1,0 +1,502 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Events_traceSystem_EObject  {
+
+
+
+
+
+
+    private traceSystem_Events_Activity_getEnabledNodesExitEventOccurrence tracesystem_events_activity_getenablednodesexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_Activity_initializeEntryEventOccurrence tracesystem_events_activity_initializeentryeventoccurrence;
+
+
+
+
+    private traceSystem_Events_ActivityEdge_sendOfferEntryEventOccurrence tracesystem_events_activityedge_sendofferentryeventoccurrence;
+
+
+
+
+    private traceSystem_Events_ActivityNode_isRunningExitEventOccurrence tracesystem_events_activitynode_isrunningexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_BooleanBinaryExpression_evaluateANDExitEventOccurrence tracesystem_events_booleanbinaryexpression_evaluateandexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_MergeNode_hasOffers_mergeNodeExitEventOccurrence tracesystem_events_mergenode_hasoffers_mergenodeexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_ActivityNode_sendOffersEntryEventOccurrence tracesystem_events_activitynode_sendoffersentryeventoccurrence;
+
+
+
+
+    private traceSystem_Events_BooleanVariable_getCurrentValueValue_booleanVariableExitEventOccurrence tracesystem_events_booleanvariable_getcurrentvaluevalue_booleanvariableexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_IntegerCalculationExpression_evaluateSUBTRACTExitEventOccurrence tracesystem_events_integercalculationexpression_evaluatesubtractexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_Activity_selectNextNodeExitEventOccurrence tracesystem_events_activity_selectnextnodeexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_IntegerComparisonExpression_evaluateGREATERExitEventOccurrence tracesystem_events_integercomparisonexpression_evaluategreaterexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_ActivityNode_addTokensEntryEventOccurrence tracesystem_events_activitynode_addtokensentryeventoccurrence;
+
+
+
+
+    private traceSystem_Events_Activity_getInitialNodeExitEventOccurrence tracesystem_events_activity_getinitialnodeexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_InitialNode_isReady_InitialNodeExitEventOccurrence tracesystem_events_initialnode_isready_initialnodeexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_Token_transferEntryEventOccurrence tracesystem_events_token_transferentryeventoccurrence;
+
+
+
+
+    private traceSystem_Events_IntegerCalculationExpression_evaluateADDExitEventOccurrence tracesystem_events_integercalculationexpression_evaluateaddexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_Offer_hasTokensExitEventOccurrence tracesystem_events_offer_hastokensexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_IntegerComparisonExpression_evaluateSMALLERExitEventOccurrence tracesystem_events_integercomparisonexpression_evaluatesmallerexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_Token_transferExitEventOccurrence tracesystem_events_token_transferexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_Token_isWithdrawnExitEventOccurrence tracesystem_events_token_iswithdrawnexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_IntegerVariable_getCurrentValueValue_integerVariableExitEventOccurrence tracesystem_events_integervariable_getcurrentvaluevalue_integervariableexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_Activity_fireNodeEntryEventOccurrence tracesystem_events_activity_firenodeentryeventoccurrence;
+
+
+
+
+    private traceSystem_Events_ControlNode_isReady_ControlNodeExitEventOccurrence tracesystem_events_controlnode_isready_controlnodeexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_Activity_selectNextNodeEntryEventOccurrence tracesystem_events_activity_selectnextnodeentryeventoccurrence;
+
+
+
+
+    private traceSystem_Events_BooleanBinaryExpression_evaluateORExitEventOccurrence tracesystem_events_booleanbinaryexpression_evaluateorexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_ActivityNode_hasOffersExitEventOccurrence tracesystem_events_activitynode_hasoffersexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_ActivityNode_removeTokenEntryEventOccurrence tracesystem_events_activitynode_removetokenentryeventoccurrence;
+
+
+
+
+    private traceSystem_Events_ActivityEdge_hasOfferExitEventOccurrence tracesystem_events_activityedge_hasofferexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_ActivityEdge_takeOfferedTokens_activityEdgeExitEventOccurrence tracesystem_events_activityedge_takeofferedtokens_activityedgeexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_Action_isReady_actionExitEventOccurrence tracesystem_events_action_isready_actionexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_ActivityNode_takeOfferedTokensExitEventOccurrence tracesystem_events_activitynode_takeofferedtokensexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_Activity_mainEntryEventOccurrence tracesystem_events_activity_mainentryeventoccurrence;
+
+
+
+
+    private traceSystem_Events_IntegerComparisonExpression_evaluateSMALLER_EQUALSExitEventOccurrence tracesystem_events_integercomparisonexpression_evaluatesmaller_equalsexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_ActivityNode_isReadyExitEventOccurrence tracesystem_events_activitynode_isreadyexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_IntegerExpression_getOperandCurrentValuesExitEventOccurrence tracesystem_events_integerexpression_getoperandcurrentvaluesexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_BooleanUnaryExpression_evaluateNOTExitEventOccurrence tracesystem_events_booleanunaryexpression_evaluatenotexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_IntegerComparisonExpression_evaluateGREATER_EQUALSExitEventOccurrence tracesystem_events_integercomparisonexpression_evaluategreater_equalsexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_StringVariable_getCurrentValueValue_stringVariableExitEventOccurrence tracesystem_events_stringvariable_getcurrentvaluevalue_stringvariableexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_IntegerComparisonExpression_evaluateEQUALSExitEventOccurrence tracesystem_events_integercomparisonexpression_evaluateequalsexiteventoccurrence;
+
+
+
+
+    private traceSystem_Events_IntegerExpression_getOperandCurrentValuesExitEventOccurrence tracesystem_events_integerexpression_getoperandcurrentvaluesexiteventoccurrence;
+
+
+    public Events_traceSystem_EObject(
+    ) {
+    }
+
+
+
+    public traceSystem_Events_Activity_getEnabledNodesExitEventOccurrence getTracesystem_events_activity_getenablednodesexiteventoccurrence() {
+        return tracesystem_events_activity_getenablednodesexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_activity_getenablednodesexiteventoccurrence(traceSystem_Events_Activity_getEnabledNodesExitEventOccurrence tracesystem_events_activity_getenablednodesexiteventoccurrence) {
+        this.tracesystem_events_activity_getenablednodesexiteventoccurrence = tracesystem_events_activity_getenablednodesexiteventoccurrence;
+    }
+    public traceSystem_Events_Activity_initializeEntryEventOccurrence getTracesystem_events_activity_initializeentryeventoccurrence() {
+        return tracesystem_events_activity_initializeentryeventoccurrence;
+    }
+
+    public void setTracesystem_events_activity_initializeentryeventoccurrence(traceSystem_Events_Activity_initializeEntryEventOccurrence tracesystem_events_activity_initializeentryeventoccurrence) {
+        this.tracesystem_events_activity_initializeentryeventoccurrence = tracesystem_events_activity_initializeentryeventoccurrence;
+    }
+    public traceSystem_Events_ActivityEdge_sendOfferEntryEventOccurrence getTracesystem_events_activityedge_sendofferentryeventoccurrence() {
+        return tracesystem_events_activityedge_sendofferentryeventoccurrence;
+    }
+
+    public void setTracesystem_events_activityedge_sendofferentryeventoccurrence(traceSystem_Events_ActivityEdge_sendOfferEntryEventOccurrence tracesystem_events_activityedge_sendofferentryeventoccurrence) {
+        this.tracesystem_events_activityedge_sendofferentryeventoccurrence = tracesystem_events_activityedge_sendofferentryeventoccurrence;
+    }
+    public traceSystem_Events_ActivityNode_isRunningExitEventOccurrence getTracesystem_events_activitynode_isrunningexiteventoccurrence() {
+        return tracesystem_events_activitynode_isrunningexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_activitynode_isrunningexiteventoccurrence(traceSystem_Events_ActivityNode_isRunningExitEventOccurrence tracesystem_events_activitynode_isrunningexiteventoccurrence) {
+        this.tracesystem_events_activitynode_isrunningexiteventoccurrence = tracesystem_events_activitynode_isrunningexiteventoccurrence;
+    }
+    public traceSystem_Events_BooleanBinaryExpression_evaluateANDExitEventOccurrence getTracesystem_events_booleanbinaryexpression_evaluateandexiteventoccurrence() {
+        return tracesystem_events_booleanbinaryexpression_evaluateandexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_booleanbinaryexpression_evaluateandexiteventoccurrence(traceSystem_Events_BooleanBinaryExpression_evaluateANDExitEventOccurrence tracesystem_events_booleanbinaryexpression_evaluateandexiteventoccurrence) {
+        this.tracesystem_events_booleanbinaryexpression_evaluateandexiteventoccurrence = tracesystem_events_booleanbinaryexpression_evaluateandexiteventoccurrence;
+    }
+    public traceSystem_Events_MergeNode_hasOffers_mergeNodeExitEventOccurrence getTracesystem_events_mergenode_hasoffers_mergenodeexiteventoccurrence() {
+        return tracesystem_events_mergenode_hasoffers_mergenodeexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_mergenode_hasoffers_mergenodeexiteventoccurrence(traceSystem_Events_MergeNode_hasOffers_mergeNodeExitEventOccurrence tracesystem_events_mergenode_hasoffers_mergenodeexiteventoccurrence) {
+        this.tracesystem_events_mergenode_hasoffers_mergenodeexiteventoccurrence = tracesystem_events_mergenode_hasoffers_mergenodeexiteventoccurrence;
+    }
+    public traceSystem_Events_ActivityNode_sendOffersEntryEventOccurrence getTracesystem_events_activitynode_sendoffersentryeventoccurrence() {
+        return tracesystem_events_activitynode_sendoffersentryeventoccurrence;
+    }
+
+    public void setTracesystem_events_activitynode_sendoffersentryeventoccurrence(traceSystem_Events_ActivityNode_sendOffersEntryEventOccurrence tracesystem_events_activitynode_sendoffersentryeventoccurrence) {
+        this.tracesystem_events_activitynode_sendoffersentryeventoccurrence = tracesystem_events_activitynode_sendoffersentryeventoccurrence;
+    }
+    public traceSystem_Events_BooleanVariable_getCurrentValueValue_booleanVariableExitEventOccurrence getTracesystem_events_booleanvariable_getcurrentvaluevalue_booleanvariableexiteventoccurrence() {
+        return tracesystem_events_booleanvariable_getcurrentvaluevalue_booleanvariableexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_booleanvariable_getcurrentvaluevalue_booleanvariableexiteventoccurrence(traceSystem_Events_BooleanVariable_getCurrentValueValue_booleanVariableExitEventOccurrence tracesystem_events_booleanvariable_getcurrentvaluevalue_booleanvariableexiteventoccurrence) {
+        this.tracesystem_events_booleanvariable_getcurrentvaluevalue_booleanvariableexiteventoccurrence = tracesystem_events_booleanvariable_getcurrentvaluevalue_booleanvariableexiteventoccurrence;
+    }
+    public traceSystem_Events_IntegerCalculationExpression_evaluateSUBTRACTExitEventOccurrence getTracesystem_events_integercalculationexpression_evaluatesubtractexiteventoccurrence() {
+        return tracesystem_events_integercalculationexpression_evaluatesubtractexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_integercalculationexpression_evaluatesubtractexiteventoccurrence(traceSystem_Events_IntegerCalculationExpression_evaluateSUBTRACTExitEventOccurrence tracesystem_events_integercalculationexpression_evaluatesubtractexiteventoccurrence) {
+        this.tracesystem_events_integercalculationexpression_evaluatesubtractexiteventoccurrence = tracesystem_events_integercalculationexpression_evaluatesubtractexiteventoccurrence;
+    }
+    public traceSystem_Events_Activity_selectNextNodeExitEventOccurrence getTracesystem_events_activity_selectnextnodeexiteventoccurrence() {
+        return tracesystem_events_activity_selectnextnodeexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_activity_selectnextnodeexiteventoccurrence(traceSystem_Events_Activity_selectNextNodeExitEventOccurrence tracesystem_events_activity_selectnextnodeexiteventoccurrence) {
+        this.tracesystem_events_activity_selectnextnodeexiteventoccurrence = tracesystem_events_activity_selectnextnodeexiteventoccurrence;
+    }
+    public traceSystem_Events_IntegerComparisonExpression_evaluateGREATERExitEventOccurrence getTracesystem_events_integercomparisonexpression_evaluategreaterexiteventoccurrence() {
+        return tracesystem_events_integercomparisonexpression_evaluategreaterexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_integercomparisonexpression_evaluategreaterexiteventoccurrence(traceSystem_Events_IntegerComparisonExpression_evaluateGREATERExitEventOccurrence tracesystem_events_integercomparisonexpression_evaluategreaterexiteventoccurrence) {
+        this.tracesystem_events_integercomparisonexpression_evaluategreaterexiteventoccurrence = tracesystem_events_integercomparisonexpression_evaluategreaterexiteventoccurrence;
+    }
+    public traceSystem_Events_ActivityNode_addTokensEntryEventOccurrence getTracesystem_events_activitynode_addtokensentryeventoccurrence() {
+        return tracesystem_events_activitynode_addtokensentryeventoccurrence;
+    }
+
+    public void setTracesystem_events_activitynode_addtokensentryeventoccurrence(traceSystem_Events_ActivityNode_addTokensEntryEventOccurrence tracesystem_events_activitynode_addtokensentryeventoccurrence) {
+        this.tracesystem_events_activitynode_addtokensentryeventoccurrence = tracesystem_events_activitynode_addtokensentryeventoccurrence;
+    }
+    public traceSystem_Events_Activity_getInitialNodeExitEventOccurrence getTracesystem_events_activity_getinitialnodeexiteventoccurrence() {
+        return tracesystem_events_activity_getinitialnodeexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_activity_getinitialnodeexiteventoccurrence(traceSystem_Events_Activity_getInitialNodeExitEventOccurrence tracesystem_events_activity_getinitialnodeexiteventoccurrence) {
+        this.tracesystem_events_activity_getinitialnodeexiteventoccurrence = tracesystem_events_activity_getinitialnodeexiteventoccurrence;
+    }
+    public traceSystem_Events_InitialNode_isReady_InitialNodeExitEventOccurrence getTracesystem_events_initialnode_isready_initialnodeexiteventoccurrence() {
+        return tracesystem_events_initialnode_isready_initialnodeexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_initialnode_isready_initialnodeexiteventoccurrence(traceSystem_Events_InitialNode_isReady_InitialNodeExitEventOccurrence tracesystem_events_initialnode_isready_initialnodeexiteventoccurrence) {
+        this.tracesystem_events_initialnode_isready_initialnodeexiteventoccurrence = tracesystem_events_initialnode_isready_initialnodeexiteventoccurrence;
+    }
+    public traceSystem_Events_Token_transferEntryEventOccurrence getTracesystem_events_token_transferentryeventoccurrence() {
+        return tracesystem_events_token_transferentryeventoccurrence;
+    }
+
+    public void setTracesystem_events_token_transferentryeventoccurrence(traceSystem_Events_Token_transferEntryEventOccurrence tracesystem_events_token_transferentryeventoccurrence) {
+        this.tracesystem_events_token_transferentryeventoccurrence = tracesystem_events_token_transferentryeventoccurrence;
+    }
+    public traceSystem_Events_IntegerCalculationExpression_evaluateADDExitEventOccurrence getTracesystem_events_integercalculationexpression_evaluateaddexiteventoccurrence() {
+        return tracesystem_events_integercalculationexpression_evaluateaddexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_integercalculationexpression_evaluateaddexiteventoccurrence(traceSystem_Events_IntegerCalculationExpression_evaluateADDExitEventOccurrence tracesystem_events_integercalculationexpression_evaluateaddexiteventoccurrence) {
+        this.tracesystem_events_integercalculationexpression_evaluateaddexiteventoccurrence = tracesystem_events_integercalculationexpression_evaluateaddexiteventoccurrence;
+    }
+    public traceSystem_Events_Offer_hasTokensExitEventOccurrence getTracesystem_events_offer_hastokensexiteventoccurrence() {
+        return tracesystem_events_offer_hastokensexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_offer_hastokensexiteventoccurrence(traceSystem_Events_Offer_hasTokensExitEventOccurrence tracesystem_events_offer_hastokensexiteventoccurrence) {
+        this.tracesystem_events_offer_hastokensexiteventoccurrence = tracesystem_events_offer_hastokensexiteventoccurrence;
+    }
+    public traceSystem_Events_IntegerComparisonExpression_evaluateSMALLERExitEventOccurrence getTracesystem_events_integercomparisonexpression_evaluatesmallerexiteventoccurrence() {
+        return tracesystem_events_integercomparisonexpression_evaluatesmallerexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_integercomparisonexpression_evaluatesmallerexiteventoccurrence(traceSystem_Events_IntegerComparisonExpression_evaluateSMALLERExitEventOccurrence tracesystem_events_integercomparisonexpression_evaluatesmallerexiteventoccurrence) {
+        this.tracesystem_events_integercomparisonexpression_evaluatesmallerexiteventoccurrence = tracesystem_events_integercomparisonexpression_evaluatesmallerexiteventoccurrence;
+    }
+    public traceSystem_Events_Token_transferExitEventOccurrence getTracesystem_events_token_transferexiteventoccurrence() {
+        return tracesystem_events_token_transferexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_token_transferexiteventoccurrence(traceSystem_Events_Token_transferExitEventOccurrence tracesystem_events_token_transferexiteventoccurrence) {
+        this.tracesystem_events_token_transferexiteventoccurrence = tracesystem_events_token_transferexiteventoccurrence;
+    }
+    public traceSystem_Events_Token_isWithdrawnExitEventOccurrence getTracesystem_events_token_iswithdrawnexiteventoccurrence() {
+        return tracesystem_events_token_iswithdrawnexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_token_iswithdrawnexiteventoccurrence(traceSystem_Events_Token_isWithdrawnExitEventOccurrence tracesystem_events_token_iswithdrawnexiteventoccurrence) {
+        this.tracesystem_events_token_iswithdrawnexiteventoccurrence = tracesystem_events_token_iswithdrawnexiteventoccurrence;
+    }
+    public traceSystem_Events_IntegerVariable_getCurrentValueValue_integerVariableExitEventOccurrence getTracesystem_events_integervariable_getcurrentvaluevalue_integervariableexiteventoccurrence() {
+        return tracesystem_events_integervariable_getcurrentvaluevalue_integervariableexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_integervariable_getcurrentvaluevalue_integervariableexiteventoccurrence(traceSystem_Events_IntegerVariable_getCurrentValueValue_integerVariableExitEventOccurrence tracesystem_events_integervariable_getcurrentvaluevalue_integervariableexiteventoccurrence) {
+        this.tracesystem_events_integervariable_getcurrentvaluevalue_integervariableexiteventoccurrence = tracesystem_events_integervariable_getcurrentvaluevalue_integervariableexiteventoccurrence;
+    }
+    public traceSystem_Events_Activity_fireNodeEntryEventOccurrence getTracesystem_events_activity_firenodeentryeventoccurrence() {
+        return tracesystem_events_activity_firenodeentryeventoccurrence;
+    }
+
+    public void setTracesystem_events_activity_firenodeentryeventoccurrence(traceSystem_Events_Activity_fireNodeEntryEventOccurrence tracesystem_events_activity_firenodeentryeventoccurrence) {
+        this.tracesystem_events_activity_firenodeentryeventoccurrence = tracesystem_events_activity_firenodeentryeventoccurrence;
+    }
+    public traceSystem_Events_ControlNode_isReady_ControlNodeExitEventOccurrence getTracesystem_events_controlnode_isready_controlnodeexiteventoccurrence() {
+        return tracesystem_events_controlnode_isready_controlnodeexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_controlnode_isready_controlnodeexiteventoccurrence(traceSystem_Events_ControlNode_isReady_ControlNodeExitEventOccurrence tracesystem_events_controlnode_isready_controlnodeexiteventoccurrence) {
+        this.tracesystem_events_controlnode_isready_controlnodeexiteventoccurrence = tracesystem_events_controlnode_isready_controlnodeexiteventoccurrence;
+    }
+    public traceSystem_Events_Activity_selectNextNodeEntryEventOccurrence getTracesystem_events_activity_selectnextnodeentryeventoccurrence() {
+        return tracesystem_events_activity_selectnextnodeentryeventoccurrence;
+    }
+
+    public void setTracesystem_events_activity_selectnextnodeentryeventoccurrence(traceSystem_Events_Activity_selectNextNodeEntryEventOccurrence tracesystem_events_activity_selectnextnodeentryeventoccurrence) {
+        this.tracesystem_events_activity_selectnextnodeentryeventoccurrence = tracesystem_events_activity_selectnextnodeentryeventoccurrence;
+    }
+    public traceSystem_Events_BooleanBinaryExpression_evaluateORExitEventOccurrence getTracesystem_events_booleanbinaryexpression_evaluateorexiteventoccurrence() {
+        return tracesystem_events_booleanbinaryexpression_evaluateorexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_booleanbinaryexpression_evaluateorexiteventoccurrence(traceSystem_Events_BooleanBinaryExpression_evaluateORExitEventOccurrence tracesystem_events_booleanbinaryexpression_evaluateorexiteventoccurrence) {
+        this.tracesystem_events_booleanbinaryexpression_evaluateorexiteventoccurrence = tracesystem_events_booleanbinaryexpression_evaluateorexiteventoccurrence;
+    }
+    public traceSystem_Events_ActivityNode_hasOffersExitEventOccurrence getTracesystem_events_activitynode_hasoffersexiteventoccurrence() {
+        return tracesystem_events_activitynode_hasoffersexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_activitynode_hasoffersexiteventoccurrence(traceSystem_Events_ActivityNode_hasOffersExitEventOccurrence tracesystem_events_activitynode_hasoffersexiteventoccurrence) {
+        this.tracesystem_events_activitynode_hasoffersexiteventoccurrence = tracesystem_events_activitynode_hasoffersexiteventoccurrence;
+    }
+    public traceSystem_Events_ActivityNode_removeTokenEntryEventOccurrence getTracesystem_events_activitynode_removetokenentryeventoccurrence() {
+        return tracesystem_events_activitynode_removetokenentryeventoccurrence;
+    }
+
+    public void setTracesystem_events_activitynode_removetokenentryeventoccurrence(traceSystem_Events_ActivityNode_removeTokenEntryEventOccurrence tracesystem_events_activitynode_removetokenentryeventoccurrence) {
+        this.tracesystem_events_activitynode_removetokenentryeventoccurrence = tracesystem_events_activitynode_removetokenentryeventoccurrence;
+    }
+    public traceSystem_Events_ActivityEdge_hasOfferExitEventOccurrence getTracesystem_events_activityedge_hasofferexiteventoccurrence() {
+        return tracesystem_events_activityedge_hasofferexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_activityedge_hasofferexiteventoccurrence(traceSystem_Events_ActivityEdge_hasOfferExitEventOccurrence tracesystem_events_activityedge_hasofferexiteventoccurrence) {
+        this.tracesystem_events_activityedge_hasofferexiteventoccurrence = tracesystem_events_activityedge_hasofferexiteventoccurrence;
+    }
+    public traceSystem_Events_ActivityEdge_takeOfferedTokens_activityEdgeExitEventOccurrence getTracesystem_events_activityedge_takeofferedtokens_activityedgeexiteventoccurrence() {
+        return tracesystem_events_activityedge_takeofferedtokens_activityedgeexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_activityedge_takeofferedtokens_activityedgeexiteventoccurrence(traceSystem_Events_ActivityEdge_takeOfferedTokens_activityEdgeExitEventOccurrence tracesystem_events_activityedge_takeofferedtokens_activityedgeexiteventoccurrence) {
+        this.tracesystem_events_activityedge_takeofferedtokens_activityedgeexiteventoccurrence = tracesystem_events_activityedge_takeofferedtokens_activityedgeexiteventoccurrence;
+    }
+    public traceSystem_Events_Action_isReady_actionExitEventOccurrence getTracesystem_events_action_isready_actionexiteventoccurrence() {
+        return tracesystem_events_action_isready_actionexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_action_isready_actionexiteventoccurrence(traceSystem_Events_Action_isReady_actionExitEventOccurrence tracesystem_events_action_isready_actionexiteventoccurrence) {
+        this.tracesystem_events_action_isready_actionexiteventoccurrence = tracesystem_events_action_isready_actionexiteventoccurrence;
+    }
+    public traceSystem_Events_ActivityNode_takeOfferedTokensExitEventOccurrence getTracesystem_events_activitynode_takeofferedtokensexiteventoccurrence() {
+        return tracesystem_events_activitynode_takeofferedtokensexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_activitynode_takeofferedtokensexiteventoccurrence(traceSystem_Events_ActivityNode_takeOfferedTokensExitEventOccurrence tracesystem_events_activitynode_takeofferedtokensexiteventoccurrence) {
+        this.tracesystem_events_activitynode_takeofferedtokensexiteventoccurrence = tracesystem_events_activitynode_takeofferedtokensexiteventoccurrence;
+    }
+    public traceSystem_Events_Activity_mainEntryEventOccurrence getTracesystem_events_activity_mainentryeventoccurrence() {
+        return tracesystem_events_activity_mainentryeventoccurrence;
+    }
+
+    public void setTracesystem_events_activity_mainentryeventoccurrence(traceSystem_Events_Activity_mainEntryEventOccurrence tracesystem_events_activity_mainentryeventoccurrence) {
+        this.tracesystem_events_activity_mainentryeventoccurrence = tracesystem_events_activity_mainentryeventoccurrence;
+    }
+    public traceSystem_Events_IntegerComparisonExpression_evaluateSMALLER_EQUALSExitEventOccurrence getTracesystem_events_integercomparisonexpression_evaluatesmaller_equalsexiteventoccurrence() {
+        return tracesystem_events_integercomparisonexpression_evaluatesmaller_equalsexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_integercomparisonexpression_evaluatesmaller_equalsexiteventoccurrence(traceSystem_Events_IntegerComparisonExpression_evaluateSMALLER_EQUALSExitEventOccurrence tracesystem_events_integercomparisonexpression_evaluatesmaller_equalsexiteventoccurrence) {
+        this.tracesystem_events_integercomparisonexpression_evaluatesmaller_equalsexiteventoccurrence = tracesystem_events_integercomparisonexpression_evaluatesmaller_equalsexiteventoccurrence;
+    }
+    public traceSystem_Events_ActivityNode_isReadyExitEventOccurrence getTracesystem_events_activitynode_isreadyexiteventoccurrence() {
+        return tracesystem_events_activitynode_isreadyexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_activitynode_isreadyexiteventoccurrence(traceSystem_Events_ActivityNode_isReadyExitEventOccurrence tracesystem_events_activitynode_isreadyexiteventoccurrence) {
+        this.tracesystem_events_activitynode_isreadyexiteventoccurrence = tracesystem_events_activitynode_isreadyexiteventoccurrence;
+    }
+    public traceSystem_Events_IntegerExpression_getOperandCurrentValuesExitEventOccurrence getTracesystem_events_integerexpression_getoperandcurrentvaluesexiteventoccurrence() {
+        return tracesystem_events_integerexpression_getoperandcurrentvaluesexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_integerexpression_getoperandcurrentvaluesexiteventoccurrence(traceSystem_Events_IntegerExpression_getOperandCurrentValuesExitEventOccurrence tracesystem_events_integerexpression_getoperandcurrentvaluesexiteventoccurrence) {
+        this.tracesystem_events_integerexpression_getoperandcurrentvaluesexiteventoccurrence = tracesystem_events_integerexpression_getoperandcurrentvaluesexiteventoccurrence;
+    }
+    public traceSystem_Events_BooleanUnaryExpression_evaluateNOTExitEventOccurrence getTracesystem_events_booleanunaryexpression_evaluatenotexiteventoccurrence() {
+        return tracesystem_events_booleanunaryexpression_evaluatenotexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_booleanunaryexpression_evaluatenotexiteventoccurrence(traceSystem_Events_BooleanUnaryExpression_evaluateNOTExitEventOccurrence tracesystem_events_booleanunaryexpression_evaluatenotexiteventoccurrence) {
+        this.tracesystem_events_booleanunaryexpression_evaluatenotexiteventoccurrence = tracesystem_events_booleanunaryexpression_evaluatenotexiteventoccurrence;
+    }
+    public traceSystem_Events_IntegerComparisonExpression_evaluateGREATER_EQUALSExitEventOccurrence getTracesystem_events_integercomparisonexpression_evaluategreater_equalsexiteventoccurrence() {
+        return tracesystem_events_integercomparisonexpression_evaluategreater_equalsexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_integercomparisonexpression_evaluategreater_equalsexiteventoccurrence(traceSystem_Events_IntegerComparisonExpression_evaluateGREATER_EQUALSExitEventOccurrence tracesystem_events_integercomparisonexpression_evaluategreater_equalsexiteventoccurrence) {
+        this.tracesystem_events_integercomparisonexpression_evaluategreater_equalsexiteventoccurrence = tracesystem_events_integercomparisonexpression_evaluategreater_equalsexiteventoccurrence;
+    }
+    public traceSystem_Events_StringVariable_getCurrentValueValue_stringVariableExitEventOccurrence getTracesystem_events_stringvariable_getcurrentvaluevalue_stringvariableexiteventoccurrence() {
+        return tracesystem_events_stringvariable_getcurrentvaluevalue_stringvariableexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_stringvariable_getcurrentvaluevalue_stringvariableexiteventoccurrence(traceSystem_Events_StringVariable_getCurrentValueValue_stringVariableExitEventOccurrence tracesystem_events_stringvariable_getcurrentvaluevalue_stringvariableexiteventoccurrence) {
+        this.tracesystem_events_stringvariable_getcurrentvaluevalue_stringvariableexiteventoccurrence = tracesystem_events_stringvariable_getcurrentvaluevalue_stringvariableexiteventoccurrence;
+    }
+    public traceSystem_Events_IntegerComparisonExpression_evaluateEQUALSExitEventOccurrence getTracesystem_events_integercomparisonexpression_evaluateequalsexiteventoccurrence() {
+        return tracesystem_events_integercomparisonexpression_evaluateequalsexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_integercomparisonexpression_evaluateequalsexiteventoccurrence(traceSystem_Events_IntegerComparisonExpression_evaluateEQUALSExitEventOccurrence tracesystem_events_integercomparisonexpression_evaluateequalsexiteventoccurrence) {
+        this.tracesystem_events_integercomparisonexpression_evaluateequalsexiteventoccurrence = tracesystem_events_integercomparisonexpression_evaluateequalsexiteventoccurrence;
+    }
+    public traceSystem_Events_IntegerExpression_getOperandCurrentValuesExitEventOccurrence getTracesystem_events_integerexpression_getoperandcurrentvaluesexiteventoccurrence() {
+        return tracesystem_events_integerexpression_getoperandcurrentvaluesexiteventoccurrence;
+    }
+
+    public void setTracesystem_events_integerexpression_getoperandcurrentvaluesexiteventoccurrence(traceSystem_Events_IntegerExpression_getOperandCurrentValuesExitEventOccurrence tracesystem_events_integerexpression_getoperandcurrentvaluesexiteventoccurrence) {
+        this.tracesystem_events_integerexpression_getoperandcurrentvaluesexiteventoccurrence = tracesystem_events_integerexpression_getoperandcurrentvaluesexiteventoccurrence;
+    }
+
+}

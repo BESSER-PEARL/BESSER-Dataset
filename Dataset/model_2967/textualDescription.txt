@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'Mapping' has no attributes.
+The class 'facademapping::StereotypedMapping' has the following attributes: 'kind' of type str.
+The class 'facademapping::EObject' has no attributes.
+The class 'facademapping::FacadeMappping' has no attributes.
+The class 'facademapping::Mapping' has no attributes.
+The enumeration 'ExtensionDefinitionKind' has the following literals: 'Fusion', 'Association', 'Generalization', 'MultiGeneralization'.
+'facademapping::StereotypedMapping' is a specialization of 'Mapping'.
+'facademapping::Mapping' (role 'facademapping_Mapping', cardinality 0..*) is associated with 'facademapping::EObject' (role 'facademapping_EObject', cardinality 0..*).
+'facademapping::FacadeMappping' (role 'facademapping_FacadeMappping', cardinality 0..*) is associated with 'facademapping::Mapping' (role 'facademapping_Mapping7', cardinality 0..*).
+'facademapping::EObject' (role 'facademapping_EObject5', cardinality 0..*) is associated with 'facademapping::StereotypedMapping' (role 'facademapping_StereotypedMapping', cardinality 0..*).
+'facademapping::Mapping' (role 'facademapping_Mapping2', cardinality 0..*) is associated with 'facademapping::EObject' (role 'facademapping_EObject3', cardinality 0..*).

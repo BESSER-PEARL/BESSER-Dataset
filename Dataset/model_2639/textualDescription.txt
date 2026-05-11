@@ -1,0 +1,26 @@
+The model has 9 class(es).
+The class 'TestPackage::TestInterface' has the following attributes: 'testAttr' of type str.
+The class 'TestPackage::UberClass' has no attributes.
+The class 'UberClass' has no attributes.
+The class 'TestPackage::TestClass' has no attributes.
+The class 'TestPackage::SubPackage::SubTestClass' has no attributes.
+The class 'SuperClass' has no attributes.
+The class 'SubTestClass' has no attributes.
+The class 'TestPackage::SuperClass' has no attributes.
+The class 'TestPackage::SubPackage::SubTestInterface' has no attributes.
+The enumeration 'SubTestEnum' does not specify any literals.
+The enumeration 'TestEnum' does not specify any literals.
+'TestPackage::TestClass' is a specialization of 'UberClass'.
+'TestPackage::TestClass' is a specialization of 'SuperClass'.
+'TestPackage::TestInterface' is a specialization of 'SuperClass'.
+'SubTestClass' (role 'SubTestClass', cardinality 0..*) is associated with 'TestPackage::TestClass' (role 'TestPackage_TestClass', cardinality 0..*).
+'TestPackage::TestClass' (role 'TestPackage_TestClass2', cardinality 0..*) is associated with 'TestPackage::TestInterface' (role 'TestPackage_TestInterface', cardinality 0..*).
+'TestPackage::TestClass' (role 'TestPackage_TestClass13', cardinality 0..*) is associated with 'TestPackage::TestInterface' (role 'TestPackage_TestInterface14', cardinality 0..*).
+'TestPackage::TestClass' (role 'TestPackage_TestClass22', cardinality 0..*) is associated with 'TestPackage::TestInterface' (role 'TestPackage_TestInterface23', cardinality 0..*).
+'TestPackage::TestInterface' (role 'TestPackage_TestInterface5', cardinality 0..*) is associated with 'TestPackage::TestClass' (role 'TestPackage_TestClass4', cardinality 0..*).
+'TestPackage::TestInterface' (role 'TestPackage_TestInterface20', cardinality 0..*) is associated with 'TestPackage::TestClass' (role 'TestPackage_TestClass19', cardinality 0..*).
+'TestPackage::TestClass' (role 'TestPackage_TestClass25', cardinality 0..*) is associated with 'TestPackage::TestInterface' (role 'TestPackage_TestInterface26', cardinality 0..*).
+'TestPackage::TestClass' (role 'TestPackage_TestClass16', cardinality 0..*) is associated with 'TestPackage::TestInterface' (role 'TestPackage_TestInterface17', cardinality 0..*).
+'TestPackage::TestInterface' (role 'TestPackage_TestInterface29', cardinality 0..*) is associated with 'TestPackage::TestClass' (role 'TestPackage_TestClass28', cardinality 0..*).
+'TestPackage::TestInterface' (role 'TestPackage_TestInterface11', cardinality 0..*) is associated with 'TestPackage::TestClass' (role 'TestPackage_TestClass10', cardinality 0..*).
+'TestPackage::TestClass' (role 'TestPackage_TestClass7', cardinality 0..*) is associated with 'TestPackage::TestInterface' (role 'TestPackage_TestInterface8', cardinality 0..*).

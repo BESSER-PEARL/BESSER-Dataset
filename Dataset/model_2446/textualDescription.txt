@@ -1,0 +1,23 @@
+The model has 8 class(es).
+The class 'ioautomaton::Automaton' has the following attributes: 'sender' of type str.
+The class 'ioautomaton::AutomatonContainer' has no attributes.
+The class 'ioautomaton::OutMessage' has no attributes.
+The class 'ioautomaton::Return' has the following attributes: 'value' of type str.
+The class 'ioautomaton::Transition' has no attributes.
+The class 'ioautomaton::Operation' has the following attributes: 'name' of type str.
+The class 'ioautomaton::State' has the following attributes: 'name' of type str.
+The class 'ioautomaton::Object' has the following attributes: 'name' of type str.
+'ioautomaton::Automaton' (role 'ioautomaton_Automaton6', cardinality 0..*) is associated with 'ioautomaton::State' (role 'ioautomaton_State7', cardinality 0..*).
+'ioautomaton::State' (role 'State19', cardinality 0..*) is associated with 'ioautomaton::Transition' (role 'incomingtransition', cardinality 0..*).
+'ioautomaton::Transition' (role 'Transition', cardinality 0..*) is associated with 'ioautomaton::State' (role 'prestate', cardinality 0..*).
+'ioautomaton::OutMessage' (role 'ioautomaton_OutMessage24', cardinality 0..*) is associated with 'ioautomaton::Object' (role 'ioautomaton_Object', cardinality 0..*).
+'ioautomaton::Automaton' (role 'ioautomaton_Automaton4', cardinality 0..*) is associated with 'ioautomaton::Transition' (role 'ioautomaton_Transition', cardinality 0..*).
+'ioautomaton::State' (role 'State', cardinality 0..*) is associated with 'ioautomaton::Transition' (role 'outgoingtransition', cardinality 0..*).
+'ioautomaton::OutMessage' (role 'ioautomaton_OutMessage21', cardinality 0..*) is associated with 'ioautomaton::Return' (role 'ioautomaton_Return22', cardinality 0..*).
+'ioautomaton::State' (role 'ioautomaton_State', cardinality 0..*) is associated with 'ioautomaton::Automaton' (role 'ioautomaton_Automaton2', cardinality 0..*).
+'ioautomaton::OutMessage' (role 'ioautomaton_OutMessage', cardinality 0..*) is associated with 'ioautomaton::Transition' (role 'ioautomaton_Transition16', cardinality 0..*).
+'ioautomaton::Operation' (role 'ioautomaton_Operation27', cardinality 0..*) is associated with 'ioautomaton::OutMessage' (role 'ioautomaton_OutMessage26', cardinality 0..*).
+'ioautomaton::Transition' (role 'Transition10', cardinality 0..*) is associated with 'ioautomaton::State' (role 'poststate', cardinality 0..*).
+'ioautomaton::Automaton' (role 'ioautomaton_Automaton', cardinality 0..*) is associated with 'ioautomaton::AutomatonContainer' (role 'ioautomaton_AutomatonContainer', cardinality 0..*).
+'ioautomaton::Operation' (role 'ioautomaton_Operation', cardinality 0..*) is associated with 'ioautomaton::Transition' (role 'ioautomaton_Transition12', cardinality 0..*).
+'ioautomaton::Return' (role 'ioautomaton_Return', cardinality 0..*) is associated with 'ioautomaton::Transition' (role 'ioautomaton_Transition14', cardinality 0..*).

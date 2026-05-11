@@ -1,0 +1,6 @@
+The model has 2 class(es).
+The class 'graph::Vertex' has the following attributes: 'internalId' of type str.
+The class 'graph::Graph' has the following attributes: 'graphName' of type str.
+'graph::Vertex' (role 'graph_Vertex4', cardinality 0..*) is associated with 'graph::Vertex' (role 'graph_Vertex6', cardinality 0..*).
+'graph::Vertex' (role 'graph_Vertex', cardinality 0..*) is associated with 'graph::Graph' (role 'graph_Graph', cardinality 0..*).
+'graph::Graph' (role 'graph_Graph2', cardinality 0..*) is associated with 'graph::Vertex' (role 'graph_Vertex3', cardinality 0..*).

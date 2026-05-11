@@ -1,0 +1,46 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Events_traceSystem_BooleanUnaryExpression  {
+
+
+
+
+
+
+    private traceSystem_Events_BooleanUnaryExpression_execute_booleanUnaryExpressionEntryEventOccurrence tracesystem_events_booleanunaryexpression_execute_booleanunaryexpressionentryeventoccurrence;
+
+
+
+
+    private traceSystem_Events_BooleanUnaryExpression_evaluateNOTEntryEventOccurrence tracesystem_events_booleanunaryexpression_evaluatenotentryeventoccurrence;
+
+
+    public Events_traceSystem_BooleanUnaryExpression(
+    ) {
+    }
+
+
+
+    public traceSystem_Events_BooleanUnaryExpression_execute_booleanUnaryExpressionEntryEventOccurrence getTracesystem_events_booleanunaryexpression_execute_booleanunaryexpressionentryeventoccurrence() {
+        return tracesystem_events_booleanunaryexpression_execute_booleanunaryexpressionentryeventoccurrence;
+    }
+
+    public void setTracesystem_events_booleanunaryexpression_execute_booleanunaryexpressionentryeventoccurrence(traceSystem_Events_BooleanUnaryExpression_execute_booleanUnaryExpressionEntryEventOccurrence tracesystem_events_booleanunaryexpression_execute_booleanunaryexpressionentryeventoccurrence) {
+        this.tracesystem_events_booleanunaryexpression_execute_booleanunaryexpressionentryeventoccurrence = tracesystem_events_booleanunaryexpression_execute_booleanunaryexpressionentryeventoccurrence;
+    }
+    public traceSystem_Events_BooleanUnaryExpression_evaluateNOTEntryEventOccurrence getTracesystem_events_booleanunaryexpression_evaluatenotentryeventoccurrence() {
+        return tracesystem_events_booleanunaryexpression_evaluatenotentryeventoccurrence;
+    }
+
+    public void setTracesystem_events_booleanunaryexpression_evaluatenotentryeventoccurrence(traceSystem_Events_BooleanUnaryExpression_evaluateNOTEntryEventOccurrence tracesystem_events_booleanunaryexpression_evaluatenotentryeventoccurrence) {
+        this.tracesystem_events_booleanunaryexpression_evaluatenotentryeventoccurrence = tracesystem_events_booleanunaryexpression_evaluatenotentryeventoccurrence;
+    }
+
+}

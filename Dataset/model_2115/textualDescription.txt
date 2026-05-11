@@ -1,0 +1,37 @@
+The model has 14 class(es).
+The class 'xtextTest::Element' has the following attributes: 'importing' of type str; 'name' of type str.
+The class 'xtextTest::Tokens' has no attributes.
+The class 'xtextTest::Before' has no attributes.
+The class 'xtextTest::CodeCall' has the following attributes: 'myclass' of type str; 'method' of type str; 'params' of type str.
+The class 'xtextTest::XtextTest' has the following attributes: 'boolean' of type str; 'timeOut' of type int; 'package' of type str; 'lang' of type str; 'imports' of type str.
+The class 'xtextTest::Import' has the following attributes: 'alias' of type str; 'id' of type str.
+The class 'xtextTest::ReplacePatterns' has the following attributes: 'regex' of type str; 'replace' of type str.
+The class 'xtextTest::Generator' has the following attributes: 'patternFile' of type str; 'expected' of type str; 'output' of type str; 'exception' of type str; 'isSameAsInputFile' of type bool.
+The class 'xtextTest::Inner' has the following attributes: 'isNull' of type bool; 'value' of type str; 'assignAsBool' of type str; 'parameter' of type str; 'isEmpty' of type bool; 'assignAsData' of type str; 'isNotNull' of type bool.
+The class 'xtextTest::MyTokens' has the following attributes: 'count' of type int; 'token' of type str; 'string' of type str.
+The class 'xtextTest::Input' has the following attributes: 'text' of type str; 'file' of type str.
+The class 'xtextTest::EmfTest' has the following attributes: 'package' of type str; 'mydefault' of type str; 'file' of type str; 'timeOut' of type int.
+The class 'xtextTest::Model' has no attributes.
+The class 'xtextTest::After' has no attributes.
+'xtextTest::Generator' (role 'xtextTest_Generator45', cardinality 0..*) is associated with 'xtextTest::ReplacePatterns' (role 'xtextTest_ReplacePatterns', cardinality 0..*).
+'xtextTest::EmfTest' (role 'xtextTest_EmfTest', cardinality 0..*) is associated with 'xtextTest::Model' (role 'xtextTest_Model2', cardinality 0..*).
+'xtextTest::Element' (role 'xtextTest_Element37', cardinality 0..*) is associated with 'xtextTest::Inner' (role 'xtextTest_Inner', cardinality 0..*).
+'xtextTest::XtextTest' (role 'xtextTest_XtextTest', cardinality 0..*) is associated with 'xtextTest::Model' (role 'xtextTest_Model', cardinality 0..*).
+'xtextTest::Import' (role 'xtextTest_Import', cardinality 0..*) is associated with 'xtextTest::EmfTest' (role 'xtextTest_EmfTest16', cardinality 0..*).
+'xtextTest::After' (role 'xtextTest_After33', cardinality 0..*) is associated with 'xtextTest::EmfTest' (role 'xtextTest_EmfTest32', cardinality 0..*).
+'xtextTest::CodeCall' (role 'xtextTest_CodeCall', cardinality 0..*) is associated with 'xtextTest::EmfTest' (role 'xtextTest_EmfTest18', cardinality 0..*).
+'xtextTest::EmfTest' (role 'xtextTest_EmfTest29', cardinality 0..*) is associated with 'xtextTest::Before' (role 'xtextTest_Before30', cardinality 0..*).
+'xtextTest::XtextTest' (role 'xtextTest_XtextTest8', cardinality 0..*) is associated with 'xtextTest::Element' (role 'xtextTest_Element', cardinality 0..*).
+'xtextTest::CodeCall' (role 'xtextTest_CodeCall48', cardinality 0..*) is associated with 'xtextTest::Before' (role 'xtextTest_Before47', cardinality 0..*).
+'xtextTest::Tokens' (role 'xtextTest_Tokens35', cardinality 0..*) is associated with 'xtextTest::MyTokens' (role 'xtextTest_MyTokens', cardinality 0..*).
+'xtextTest::CodeCall' (role 'xtextTest_CodeCall24', cardinality 0..*) is associated with 'xtextTest::EmfTest' (role 'xtextTest_EmfTest23', cardinality 0..*).
+'xtextTest::XtextTest' (role 'xtextTest_XtextTest12', cardinality 0..*) is associated with 'xtextTest::Before' (role 'xtextTest_Before', cardinality 0..*).
+'xtextTest::EmfTest' (role 'xtextTest_EmfTest26', cardinality 0..*) is associated with 'xtextTest::Element' (role 'xtextTest_Element27', cardinality 0..*).
+'xtextTest::After' (role 'xtextTest_After', cardinality 0..*) is associated with 'xtextTest::XtextTest' (role 'xtextTest_XtextTest14', cardinality 0..*).
+'xtextTest::XtextTest' (role 'xtextTest_XtextTest4', cardinality 0..*) is associated with 'xtextTest::Input' (role 'xtextTest_Input', cardinality 0..*).
+'xtextTest::CodeCall' (role 'xtextTest_CodeCall51', cardinality 0..*) is associated with 'xtextTest::After' (role 'xtextTest_After50', cardinality 0..*).
+'xtextTest::Tokens' (role 'xtextTest_Tokens', cardinality 0..*) is associated with 'xtextTest::XtextTest' (role 'xtextTest_XtextTest6', cardinality 0..*).
+'xtextTest::Generator' (role 'xtextTest_Generator', cardinality 0..*) is associated with 'xtextTest::XtextTest' (role 'xtextTest_XtextTest10', cardinality 0..*).
+'xtextTest::Inner' (role 'xtextTest_Inner42', cardinality 0..*) is associated with 'xtextTest::Element' (role 'xtextTest_Element43', cardinality 0..*).
+'xtextTest::CodeCall' (role 'xtextTest_CodeCall21', cardinality 0..*) is associated with 'xtextTest::EmfTest' (role 'xtextTest_EmfTest20', cardinality 0..*).
+'xtextTest::Element' (role 'xtextTest_Element40', cardinality 0..*) is associated with 'xtextTest::Inner' (role 'xtextTest_Inner39', cardinality 0..*).

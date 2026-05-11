@@ -1,0 +1,23 @@
+The model has 10 class(es).
+The class 'case4::A' has no attributes.
+The class 'case4::B' has no attributes.
+The class 'case4::Named' has the following attributes: 'name' of type str.
+The class 'case4::T' has no attributes.
+The class 'case4::E' has no attributes.
+The class 'Named' has no attributes.
+The class 'T' has no attributes.
+The class 'D' has no attributes.
+The class 'case4::N' has no attributes.
+The class 'case4::D' has no attributes.
+'case4::T' is a specialization of 'Named'.
+'case4::A' is a specialization of 'Named'.
+'case4::B' is a specialization of 'Named'.
+'case4::D' is a specialization of 'T'.
+'case4::N' is a specialization of 'Named'.
+'case4::E' is a specialization of 'Named'.
+'case4::E' is a specialization of 'D'.
+'case4::N' (role 'case4_N4', cardinality 0..*) is associated with 'case4::B' (role 'case4_B', cardinality 0..*).
+'case4::B' (role 'case4_B8', cardinality 0..*) is associated with 'case4::D' (role 'case4_D9', cardinality 0..*).
+'case4::N' (role 'case4_N', cardinality 0..*) is associated with 'case4::T' (role 'case4_T', cardinality 0..*).
+'case4::A' (role 'case4_A6', cardinality 0..*) is associated with 'case4::D' (role 'case4_D', cardinality 0..*).
+'case4::A' (role 'case4_A', cardinality 0..*) is associated with 'case4::N' (role 'case4_N2', cardinality 0..*).

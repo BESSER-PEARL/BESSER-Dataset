@@ -1,0 +1,668 @@
+The model has 259 class(es).
+The class 'vhdl::declaration::BranchQuantityDeclaration' has no attributes.
+The class 'vhdl::statement::SimpleSimultaneousStatement' has no attributes.
+The class 'declaration::vhdl::Name' has no attributes.
+The class 'type::TypeDefinition' has no attributes.
+The class 'PackageReference' has no attributes.
+The class 'expression::Expression' has no attributes.
+The class 'vhdl::ams::Spectrum' has no attributes.
+The class 'vhdl::statement::CaseStatement' has no attributes.
+The class 'vhdl::expression::MultiExpression' has no attributes.
+The class 'vhdl::Named' has no attributes.
+The class 'vhdl::declaration::LimitDeclaration' has no attributes.
+The class 'Configuration' has no attributes.
+The class 'vhdl::PortMaps' has no attributes.
+The class 'vhdl::expression::SubnatureIndicationExpression' has no attributes.
+The class 'vhdl::EntityResolvedReference' has no attributes.
+The class 'vhdl::configuration::ConfigurationItem' has no attributes.
+The class 'vhdl::declaration::SubnatureDeclaration' has no attributes.
+The class 'vhdl::MultiName' has no attributes.
+The class 'GenerationScheme' has no attributes.
+The class 'BlockConfiguration' has no attributes.
+The class 'configuration::vhdl::EntityReference' has no attributes.
+The class 'vhdl::type::PhysicalTypeDefinition' has the following attributes: 'primary' of type str.
+The class 'vhdl::statement::ProcedureCallStatement' has the following attributes: 'postponed' of type bool.
+The class 'ConfigurationReference' has no attributes.
+The class 'vhdl::expression::OpenExpression' has no attributes.
+The class 'vhdl::statement::DelayMechanism' has no attributes.
+The class 'Named' has no attributes.
+The class 'vhdl::statement::ProcessStatement' has the following attributes: 'postponed' of type bool.
+The class 'vhdl::statement::LoopStatement' has no attributes.
+The class 'vhdl::declaration::SubprogramBody' has no attributes.
+The class 'vhdl::PackageReference' has no attributes.
+The class 'vhdl::statement::WaitStatement' has no attributes.
+The class 'vhdl::nature::ConstrainedArrayNatureDefinition' has no attributes.
+The class 'vhdl::statement::SimultaneousProceduralStatement' has no attributes.
+The class 'ValueDeclaration' has no attributes.
+The class 'vhdl::statement::ExitStatement' has the following attributes: 'exit' of type str.
+The class 'vhdl::statement::ReturnStatement' has no attributes.
+The class 'vhdl::statement::IterationScheme' has no attributes.
+The class 'MultiName' has no attributes.
+The class 'vhdl::expression::NameExpression' has no attributes.
+The class 'vhdl::configuration::ConfigurationResolvedReference' has no attributes.
+The class 'vhdl::DesignUnit' has the following attributes: 'library' of type str.
+The class 'vhdl::statement::SequentialSignalAssignmentStatement' has no attributes.
+The class 'statement::vhdl::ComponentReference' has no attributes.
+The class 'vhdl::EntityReference' has no attributes.
+The class 'ArrayTypeDefinition' has no attributes.
+The class 'vhdl::statement::IfStatementTest' has no attributes.
+The class 'vhdl::type::TypeDefinition' has no attributes.
+The class 'vhdl::declaration::AttributeDeclaration' has no attributes.
+The class 'NatureReference' has no attributes.
+The class 'InstantiationStatement' has no attributes.
+The class 'ComponentReference' has no attributes.
+The class 'CallReference' has no attributes.
+The class 'expression::vhdl::Signature' has no attributes.
+The class 'expression::IndicationExpression' has no attributes.
+The class 'configuration::vhdl::PortMaps' has no attributes.
+The class 'vhdl::Signature' has no attributes.
+The class 'vhdl::declaration::UseClauseDeclaration' has no attributes.
+The class 'vhdl::type::TypeReference' has no attributes.
+The class 'vhdl::statement::WhileIterationScheme' has no attributes.
+The class 'vhdl::declaration::GroupDeclaration' has no attributes.
+The class 'MultiNamed' has no attributes.
+The class 'vhdl::nature::NatureDefinition' has no attributes.
+The class 'vhdl::nature::ScalarNatureDefinition' has no attributes.
+The class 'vhdl::configuration::ComponentConfiguration' has no attributes.
+The class 'vhdl::type::ArrayTypeDefinition' has no attributes.
+The class 'statement::vhdl::Name' has no attributes.
+The class 'vhdl::expression::ValueExpression' has the following attributes: 'value' of type str.
+The class 'vhdl::expression::ConditionalWaveformExpression' has no attributes.
+The class 'vhdl::type::CompositeTypeDefinition' has no attributes.
+The class 'BinaryExpression' has no attributes.
+The class 'TypeReference' has no attributes.
+The class 'declaration::vhdl::EntityReference' has no attributes.
+The class 'nature::CompositeNatureDefinition' has no attributes.
+The class 'vhdl::declaration::ValueDeclaration' has no attributes.
+The class 'expression::vhdl::Name' has no attributes.
+The class 'NatureDefinition' has no attributes.
+The class 'vhdl::MultiNamed' has no attributes.
+The class 'vhdl::expression::UnaryExpression' has the following attributes: 'operator' of type str.
+The class 'vhdl::declaration::FunctionDeclaration' has the following attributes: 'purity' of type str.
+The class 'vhdl::statement::ExpressionStatement' has no attributes.
+The class 'configuration::vhdl::Name' has no attributes.
+The class 'vhdl::declaration::NatureDeclaration' has no attributes.
+The class 'RecordTypeElement' has no attributes.
+The class 'vhdl::statement::NextStatement' has the following attributes: 'next' of type str.
+The class 'vhdl::type::EnumerationLiteral' has no attributes.
+The class 'TypeDefinition' has no attributes.
+The class 'vhdl::statement::SimultaneousCaseStatement' has no attributes.
+The class 'vhdl::Package' has no attributes.
+The class 'statement::vhdl::Ports' has no attributes.
+The class 'vhdl::declaration::DisconnectionSpecification' has no attributes.
+The class 'vhdl::declaration::Declaration' has no attributes.
+The class 'vhdl::expression::OthersExpression' has no attributes.
+The class 'Statement' has no attributes.
+The class 'vhdl::expression::AllExpression' has no attributes.
+The class 'vhdl::VhdlObject' has the following attributes: 'id' of type str.
+The class 'EnumerationLiteral' has no attributes.
+The class 'vhdl::declaration::ConfigurationSpecification' has no attributes.
+The class 'declaration::vhdl::ComponentReference' has no attributes.
+The class 'vhdl::NameList' has no attributes.
+The class 'vhdl::expression::UnitValueExpression' has no attributes.
+The class 'vhdl::statement::SignalAssignmentStatement' has the following attributes: 'postponed' of type bool; 'guarded' of type bool.
+The class 'vhdl::declaration::TerminalDeclaration' has no attributes.
+The class 'vhdl::declaration::SubprogramDeclaration' has no attributes.
+The class 'vhdl::type::FileTypeDefinition' has no attributes.
+The class 'CompositeTypeDefinition' has no attributes.
+The class 'vhdl::declaration::GroupTemplateDeclaration' has the following attributes: 'entry' of type str.
+The class 'RecordNatureElement' has no attributes.
+The class 'vhdl::declaration::FreeQuantityDeclaration' has no attributes.
+The class 'vhdl::type::PhysicalTypeDefinitionSecondary' has the following attributes: 'number' of type str; 'name' of type str.
+The class 'declaration::SubprogramDeclaration' has no attributes.
+The class 'vhdl::expression::MultiplyingExpression' has the following attributes: 'operator' of type str.
+The class 'vhdl::Component' has no attributes.
+The class 'vhdl::type::RecordTypeDefinition' has no attributes.
+The class 'vhdl::configuration::Configuration' has no attributes.
+The class 'vhdl::Entity' has no attributes.
+The class 'CaseStatement' has no attributes.
+The class 'Name' has no attributes.
+The class 'IfStatement' has no attributes.
+The class 'vhdl::nature::RecordNatureDefinition' has no attributes.
+The class 'EntityReference' has no attributes.
+The class 'ConfigurationItem' has no attributes.
+The class 'vhdl::statement::InstantiationStatement' has no attributes.
+The class 'nature::vhdl::Name' has no attributes.
+The class 'vhdl::expression::RangeExpression' has the following attributes: 'direction' of type str.
+The class 'nature::NatureReference' has no attributes.
+The class 'vhdl::expression::LogicalExpression' has the following attributes: 'operator' of type str.
+The class 'vhdl::declaration::VariableDeclaration' has the following attributes: 'mode' of type str; 'shared' of type bool.
+The class 'vhdl::nature::Natured' has no attributes.
+The class 'vhdl::nature::NatureReference' has no attributes.
+The class 'type::vhdl::Name' has no attributes.
+The class 'CompositeNatureDefinition' has no attributes.
+The class 'statement::vhdl::GenericMaps' has no attributes.
+The class 'vhdl::Ports' has no attributes.
+The class 'configuration::ConfigurationReference' has no attributes.
+The class 'vhdl::expression::CharacterExpression' has no attributes.
+The class 'SignalAssignmentStatement' has no attributes.
+The class 'vhdl::statement::ConfigurationInstantiationStatement' has no attributes.
+The class 'PhysicalTypeDefinitionSecondary' has no attributes.
+The class 'vhdl::PackageResolvedReference' has no attributes.
+The class 'AssociationExpression' has no attributes.
+The class 'vhdl::expression::SignExpression' has the following attributes: 'sign' of type str.
+The class 'SubprogramBody' has no attributes.
+The class 'statement::vhdl::CallReference' has no attributes.
+The class 'vhdl::nature::ArrayNatureDefinition' has no attributes.
+The class 'vhdl::CallResolvedReference' has no attributes.
+The class 'vhdl::expression::Expression' has no attributes.
+The class 'vhdl::type::RecordTypeElement' has no attributes.
+The class 'vhdl::statement::ForGenerationScheme' has the following attributes: 'variable' of type str.
+The class 'ConditionalSignalAssignmentStatement' has no attributes.
+The class 'vhdl::expression::IdentifierExpression' has no attributes.
+The class 'vhdl::configuration::BlockConfiguration' has no attributes.
+The class 'vhdl::declaration::SourceQuantityDeclaration' has no attributes.
+The class 'ArrayNatureDefinition' has no attributes.
+The class 'vhdl::ams::SourceAspect' has no attributes.
+The class 'declaration::vhdl::MultiName' has no attributes.
+The class 'statement::vhdl::MultiName' has no attributes.
+The class 'declaration::vhdl::PortMaps' has no attributes.
+The class 'expression::ValueExpression' has no attributes.
+The class 'vhdl::ams::Noise' has no attributes.
+The class 'vhdl::expression::AttributeExpression' has no attributes.
+The class 'vhdl::statement::BlockStatement' has no attributes.
+The class 'vhdl::statement::TransportMechanism' has no attributes.
+The class 'configuration::vhdl::MultiName' has no attributes.
+The class 'vhdl::expression::StringExpression' has no attributes.
+The class 'vhdl::statement::ForIterationScheme' has the following attributes: 'variable' of type str.
+The class 'vhdl::statement::BreakStatementItem' has no attributes.
+The class 'type::Typed' has no attributes.
+The class 'vhdl::declaration::AttributeSpecification' has the following attributes: 'class_' of type str.
+The class 'expression::BinaryExpression' has no attributes.
+The class 'vhdl::expression::WaveformExpression' has no attributes.
+The class 'vhdl::statement::CaseAlternative' has no attributes.
+The class 'vhdl::statement::GenerateStatement' has no attributes.
+The class 'vhdl::declaration::ConstantDeclaration' has no attributes.
+The class 'Expression' has no attributes.
+The class 'vhdl::nature::CompositeNatureDefinition' has no attributes.
+The class 'vhdl::expression::AggregateExpression' has no attributes.
+The class 'vhdl::expression::AddingExpression' has the following attributes: 'operator' of type str.
+The class 'configuration::vhdl::GenericMaps' has no attributes.
+The class 'ValueExpression' has no attributes.
+The class 'vhdl::declaration::ProcedureDeclaration' has no attributes.
+The class 'vhdl::Generics' has no attributes.
+The class 'vhdl::type::Typed' has no attributes.
+The class 'vhdl::expression::AllocatorExpression' has no attributes.
+The class 'vhdl::statement::IfStatement' has no attributes.
+The class 'vhdl::statement::IfGenerationScheme' has no attributes.
+The class 'vhdl::type::EnumerationTypeDefinition' has no attributes.
+The class 'vhdl::statement::AssertionStatement' has the following attributes: 'postponed' of type bool.
+The class 'declaration::Declaration' has no attributes.
+The class 'VhdlObject' has no attributes.
+The class 'vhdl::declaration::QuantityDeclaration' has no attributes.
+The class 'vhdl::ComponentReference' has no attributes.
+The class 'CaseAlternative' has no attributes.
+The class 'statement::vhdl::EntityReference' has no attributes.
+The class 'type::TypeReference' has no attributes.
+The class 'vhdl::declaration::SubtypeDeclaration' has no attributes.
+The class 'Declaration' has no attributes.
+The class 'declaration::QuantityDeclaration' has no attributes.
+The class 'vhdl::statement::ConditionalSignalAssignmentStatement' has no attributes.
+The class 'DelayMechanism' has no attributes.
+The class 'QuantityDeclaration' has no attributes.
+The class 'vhdl::Architecture' has no attributes.
+The class 'statement::vhdl::Generics' has no attributes.
+The class 'vhdl::nature::RecordNatureElement' has no attributes.
+The class 'vhdl::expression::SubtypeIndicationExpression' has no attributes.
+The class 'vhdl::Module' has no attributes.
+The class 'vhdl::type::AccessTypeDefinition' has no attributes.
+The class 'declaration::vhdl::GenericMaps' has no attributes.
+The class 'vhdl::Model' has no attributes.
+The class 'vhdl::expression::ShiftExpression' has the following attributes: 'operator' of type str.
+The class 'expression::MultiExpression' has no attributes.
+The class 'vhdl::statement::VariableAssignmentStatement' has no attributes.
+The class 'vhdl::expression::AssociationExpression' has no attributes.
+The class 'vhdl::declaration::TypeDeclaration' has no attributes.
+The class 'vhdl::statement::BreakStatement' has no attributes.
+The class 'vhdl::statement::ReportStatement' has no attributes.
+The class 'vhdl::expression::SignatureExpression' has no attributes.
+The class 'IfStatementTest' has no attributes.
+The class 'vhdl::expression::PowerExpression' has no attributes.
+The class 'ExpressionStatement' has no attributes.
+The class 'vhdl::type::UnconstrainedArrayTypeDefinition' has no attributes.
+The class 'nature::Natured' has no attributes.
+The class 'vhdl::statement::Statement' has the following attributes: 'label' of type str.
+The class 'SourceAspect' has no attributes.
+The class 'vhdl::statement::SimultaneousIfStatement' has no attributes.
+The class 'Module' has no attributes.
+The class 'vhdl::expression::UnaffectedExpression' has no attributes.
+The class 'vhdl::declaration::SignalDeclaration' has the following attributes: 'kind' of type str; 'mode' of type str.
+The class 'SubprogramDeclaration' has no attributes.
+The class 'configuration::ConfigurationItem' has no attributes.
+The class 'vhdl::GenericMaps' has no attributes.
+The class 'vhdl::expression::TypeQualificationExpression' has no attributes.
+The class 'vhdl::ams::QuantityAspect' has no attributes.
+The class 'vhdl::ComponentResolvedReference' has no attributes.
+The class 'vhdl::statement::RejectMechanism' has no attributes.
+The class 'vhdl::nature::UnconstrainedArrayNatureDefinition' has no attributes.
+The class 'vhdl::type::RangeTypeDefinition' has the following attributes: 'direction' of type str.
+The class 'vhdl::expression::BitStringExpression' has no attributes.
+The class 'vhdl::expression::RelationalExpression' has the following attributes: 'operator' of type str.
+The class 'BreakStatementItem' has no attributes.
+The class 'vhdl::expression::NullExpression' has no attributes.
+The class 'type::CompositeTypeDefinition' has no attributes.
+The class 'vhdl::statement::ComponentInstantiationStatement' has no attributes.
+The class 'statement::vhdl::PortMaps' has no attributes.
+The class 'vhdl::statement::EntityInstantiationStatement' has no attributes.
+The class 'vhdl::PackageBody' has no attributes.
+The class 'vhdl::declaration::FileDeclaration' has no attributes.
+The class 'vhdl::expression::BinaryExpression' has no attributes.
+The class 'QuantityAspect' has no attributes.
+The class 'vhdl::type::ConstrainedArrayTypeDefinition' has no attributes.
+The class 'vhdl::Name' has no attributes.
+The class 'vhdl::expression::IndicationExpression' has no attributes.
+The class 'IterationScheme' has no attributes.
+The class 'vhdl::statement::GenerationScheme' has no attributes.
+The class 'vhdl::declaration::AliasDeclaration' has no attributes.
+The class 'vhdl::configuration::ConfigurationReference' has no attributes.
+The class 'type::EnumerationLiteral' has no attributes.
+The class 'vhdl::statement::SelectedSignalAssignmentStatement' has no attributes.
+The class 'vhdl::CallReference' has no attributes.
+The enumeration 'RangeDirection' has the following literals: 'TO', 'DOWNTO'.
+The enumeration 'ShiftOperator' has the following literals: 'SRL', 'SLA', 'ROL', 'SRA', 'SLL', 'ROR'.
+The enumeration 'Mode' has the following literals: 'BUFFER', 'LINKAGE', 'IN', 'INOUT', 'OUT'.
+The enumeration 'MultiplyingOperator' has the following literals: 'DIV', 'REM', 'MOD', 'MUL'.
+The enumeration 'EntityClass' has the following literals: 'ENTITY', 'ARCHITECTURE', 'SUBTYPE', 'FUNCTION', 'UNITS', 'TYPE', 'FILE', 'QUANTITY', 'NATURE', 'GROUP', 'CONSTANT', 'PACKAGE', 'CONFIGURATION', 'SUBNATURE', 'LITERAL', 'VARIABLE', 'COMPONENT', 'PROCEDURE', 'LABEL', 'SIGNAL', 'TERMINAL'.
+The enumeration 'Sign' has the following literals: 'MINUS', 'PLUS'.
+The enumeration 'RelationalOperator' has the following literals: 'GREATERTHAN', 'LE', 'LOWERTHAN', 'EQ', 'NEQ', 'GE'.
+The enumeration 'AddingOperator' has the following literals: 'AMPERSAND', 'PLUS', 'MINUS'.
+The enumeration 'Purity' has the following literals: 'IMPURE', 'PURE'.
+The enumeration 'LogicalOperator' has the following literals: 'XNOR', 'AND', 'NAND', 'OR', 'NOR', 'XOR'.
+The enumeration 'SignalKind' has the following literals: 'BUS', 'REGISTER'.
+The enumeration 'UnaryOperator' has the following literals: 'NOT', 'ABS'.
+'vhdl::declaration::AliasDeclaration' is a specialization of 'Named'.
+'vhdl::statement::IterationScheme' is a specialization of 'VhdlObject'.
+'vhdl::expression::CharacterExpression' is a specialization of 'type::EnumerationLiteral'.
+'vhdl::expression::UnaffectedExpression' is a specialization of 'Expression'.
+'vhdl::configuration::ComponentConfiguration' is a specialization of 'ConfigurationItem'.
+'vhdl::expression::IdentifierExpression' is a specialization of 'expression::ValueExpression'.
+'vhdl::nature::ScalarNatureDefinition' is a specialization of 'NatureDefinition'.
+'vhdl::statement::GenerateStatement' is a specialization of 'Statement'.
+'vhdl::nature::ConstrainedArrayNatureDefinition' is a specialization of 'ArrayNatureDefinition'.
+'vhdl::nature::ArrayNatureDefinition' is a specialization of 'nature::CompositeNatureDefinition'.
+'vhdl::expression::ShiftExpression' is a specialization of 'BinaryExpression'.
+'vhdl::expression::Expression' is a specialization of 'VhdlObject'.
+'vhdl::type::ConstrainedArrayTypeDefinition' is a specialization of 'ArrayTypeDefinition'.
+'vhdl::statement::IfStatement' is a specialization of 'Statement'.
+'vhdl::expression::BinaryExpression' is a specialization of 'Expression'.
+'vhdl::declaration::TerminalDeclaration' is a specialization of 'declaration::Declaration'.
+'vhdl::expression::StringExpression' is a specialization of 'Name'.
+'vhdl::expression::AttributeExpression' is a specialization of 'expression::ValueExpression'.
+'vhdl::declaration::BranchQuantityDeclaration' is a specialization of 'QuantityDeclaration'.
+'vhdl::statement::ExpressionStatement' is a specialization of 'Statement'.
+'vhdl::Component' is a specialization of 'Named'.
+'vhdl::expression::SubtypeIndicationExpression' is a specialization of 'Named'.
+'vhdl::Name' is a specialization of 'EntityReference'.
+'vhdl::PackageBody' is a specialization of 'Module'.
+'vhdl::expression::SignatureExpression' is a specialization of 'expression::Expression'.
+'vhdl::statement::WhileIterationScheme' is a specialization of 'IterationScheme'.
+'vhdl::expression::AggregateExpression' is a specialization of 'expression::MultiExpression'.
+'vhdl::declaration::TypeDeclaration' is a specialization of 'Named'.
+'vhdl::statement::IfStatementTest' is a specialization of 'VhdlObject'.
+'vhdl::statement::ForIterationScheme' is a specialization of 'IterationScheme'.
+'vhdl::expression::IdentifierExpression' is a specialization of 'Name'.
+'vhdl::NameList' is a specialization of 'VhdlObject'.
+'vhdl::GenericMaps' is a specialization of 'VhdlObject'.
+'vhdl::declaration::ValueDeclaration' is a specialization of 'MultiNamed'.
+'vhdl::DesignUnit' is a specialization of 'VhdlObject'.
+'vhdl::expression::SubtypeIndicationExpression' is a specialization of 'type::TypeReference'.
+'vhdl::declaration::NatureDeclaration' is a specialization of 'declaration::Declaration'.
+'vhdl::statement::ComponentInstantiationStatement' is a specialization of 'InstantiationStatement'.
+'vhdl::expression::NullExpression' is a specialization of 'Expression'.
+'vhdl::statement::DelayMechanism' is a specialization of 'VhdlObject'.
+'vhdl::Architecture' is a specialization of 'Named'.
+'vhdl::declaration::SourceQuantityDeclaration' is a specialization of 'type::Typed'.
+'vhdl::expression::UnaryExpression' is a specialization of 'Expression'.
+'vhdl::ams::Noise' is a specialization of 'SourceAspect'.
+'vhdl::statement::BlockStatement' is a specialization of 'Statement'.
+'vhdl::declaration::TypeDeclaration' is a specialization of 'declaration::Declaration'.
+'vhdl::configuration::Configuration' is a specialization of 'Module'.
+'vhdl::expression::UnitValueExpression' is a specialization of 'ValueExpression'.
+'vhdl::statement::IfGenerationScheme' is a specialization of 'GenerationScheme'.
+'vhdl::declaration::ValueDeclaration' is a specialization of 'type::Typed'.
+'vhdl::Name' is a specialization of 'nature::NatureReference'.
+'vhdl::declaration::AttributeSpecification' is a specialization of 'Named'.
+'vhdl::Name' is a specialization of 'CallReference'.
+'vhdl::nature::RecordNatureElement' is a specialization of 'nature::Natured'.
+'vhdl::statement::NextStatement' is a specialization of 'Statement'.
+'vhdl::statement::AssertionStatement' is a specialization of 'Statement'.
+'vhdl::Package' is a specialization of 'Named'.
+'vhdl::declaration::LimitDeclaration' is a specialization of 'declaration::Declaration'.
+'vhdl::expression::AllExpression' is a specialization of 'Name'.
+'vhdl::Signature' is a specialization of 'VhdlObject'.
+'vhdl::expression::MultiplyingExpression' is a specialization of 'BinaryExpression'.
+'vhdl::expression::OthersExpression' is a specialization of 'expression::Expression'.
+'vhdl::declaration::SubprogramBody' is a specialization of 'VhdlObject'.
+'vhdl::expression::RangeExpression' is a specialization of 'expression::BinaryExpression'.
+'vhdl::declaration::AttributeDeclaration' is a specialization of 'Named'.
+'vhdl::declaration::FileDeclaration' is a specialization of 'MultiNamed'.
+'vhdl::statement::ConfigurationInstantiationStatement' is a specialization of 'InstantiationStatement'.
+'vhdl::expression::AllocatorExpression' is a specialization of 'expression::Expression'.
+'vhdl::configuration::ConfigurationResolvedReference' is a specialization of 'VhdlObject'.
+'vhdl::declaration::UseClauseDeclaration' is a specialization of 'Declaration'.
+'vhdl::type::RecordTypeElement' is a specialization of 'MultiNamed'.
+'vhdl::declaration::GroupTemplateDeclaration' is a specialization of 'Named'.
+'vhdl::ams::QuantityAspect' is a specialization of 'VhdlObject'.
+'vhdl::statement::SimultaneousIfStatement' is a specialization of 'IfStatement'.
+'vhdl::expression::AssociationExpression' is a specialization of 'Expression'.
+'vhdl::configuration::BlockConfiguration' is a specialization of 'configuration::ConfigurationItem'.
+'vhdl::statement::SequentialSignalAssignmentStatement' is a specialization of 'SignalAssignmentStatement'.
+'vhdl::declaration::SubtypeDeclaration' is a specialization of 'declaration::Declaration'.
+'vhdl::statement::ForGenerationScheme' is a specialization of 'GenerationScheme'.
+'vhdl::declaration::FileDeclaration' is a specialization of 'declaration::Declaration'.
+'vhdl::NameList' is a specialization of 'MultiName'.
+'vhdl::type::PhysicalTypeDefinition' is a specialization of 'TypeDefinition'.
+'vhdl::Package' is a specialization of 'Module'.
+'vhdl::declaration::SubtypeDeclaration' is a specialization of 'type::Typed'.
+'vhdl::CallResolvedReference' is a specialization of 'CallReference'.
+'vhdl::declaration::ConfigurationSpecification' is a specialization of 'Declaration'.
+'vhdl::configuration::BlockConfiguration' is a specialization of 'Named'.
+'vhdl::expression::CharacterExpression' is a specialization of 'expression::ValueExpression'.
+'vhdl::Name' is a specialization of 'type::TypeReference'.
+'vhdl::Name' is a specialization of 'MultiName'.
+'vhdl::expression::MultiExpression' is a specialization of 'Expression'.
+'vhdl::declaration::SourceQuantityDeclaration' is a specialization of 'declaration::QuantityDeclaration'.
+'vhdl::expression::SubtypeIndicationExpression' is a specialization of 'expression::IndicationExpression'.
+'vhdl::declaration::DisconnectionSpecification' is a specialization of 'type::Typed'.
+'vhdl::expression::NameExpression' is a specialization of 'expression::Expression'.
+'vhdl::type::AccessTypeDefinition' is a specialization of 'type::Typed'.
+'vhdl::type::RecordTypeElement' is a specialization of 'VhdlObject'.
+'vhdl::declaration::TerminalDeclaration' is a specialization of 'nature::Natured'.
+'vhdl::ComponentResolvedReference' is a specialization of 'ComponentReference'.
+'vhdl::expression::AddingExpression' is a specialization of 'BinaryExpression'.
+'vhdl::declaration::AttributeSpecification' is a specialization of 'declaration::Declaration'.
+'vhdl::declaration::FileDeclaration' is a specialization of 'type::Typed'.
+'vhdl::statement::SimpleSimultaneousStatement' is a specialization of 'Statement'.
+'vhdl::type::EnumerationTypeDefinition' is a specialization of 'TypeDefinition'.
+'vhdl::declaration::GroupTemplateDeclaration' is a specialization of 'declaration::Declaration'.
+'vhdl::expression::ValueExpression' is a specialization of 'Expression'.
+'vhdl::nature::RecordNatureElement' is a specialization of 'MultiNamed'.
+'vhdl::statement::SimultaneousProceduralStatement' is a specialization of 'Statement'.
+'vhdl::Module' is a specialization of 'VhdlObject'.
+'vhdl::declaration::SubtypeDeclaration' is a specialization of 'Named'.
+'vhdl::statement::EntityInstantiationStatement' is a specialization of 'InstantiationStatement'.
+'vhdl::declaration::SubnatureDeclaration' is a specialization of 'nature::Natured'.
+'vhdl::expression::WaveformExpression' is a specialization of 'Expression'.
+'vhdl::expression::OpenExpression' is a specialization of 'Expression'.
+'vhdl::nature::NatureDefinition' is a specialization of 'VhdlObject'.
+'vhdl::declaration::SignalDeclaration' is a specialization of 'ValueDeclaration'.
+'vhdl::type::UnconstrainedArrayTypeDefinition' is a specialization of 'ArrayTypeDefinition'.
+'vhdl::configuration::ConfigurationItem' is a specialization of 'VhdlObject'.
+'vhdl::statement::BreakStatement' is a specialization of 'Statement'.
+'vhdl::expression::LogicalExpression' is a specialization of 'BinaryExpression'.
+'vhdl::declaration::SubnatureDeclaration' is a specialization of 'declaration::Declaration'.
+'vhdl::expression::AllExpression' is a specialization of 'expression::Expression'.
+'vhdl::Generics' is a specialization of 'VhdlObject'.
+'vhdl::declaration::ConstantDeclaration' is a specialization of 'ValueDeclaration'.
+'vhdl::expression::SubnatureIndicationExpression' is a specialization of 'expression::IndicationExpression'.
+'vhdl::statement::WaitStatement' is a specialization of 'Statement'.
+'vhdl::statement::ConditionalSignalAssignmentStatement' is a specialization of 'SignalAssignmentStatement'.
+'vhdl::expression::IdentifierExpression' is a specialization of 'type::EnumerationLiteral'.
+'vhdl::nature::RecordNatureElement' is a specialization of 'VhdlObject'.
+'vhdl::Ports' is a specialization of 'VhdlObject'.
+'vhdl::expression::StringExpression' is a specialization of 'expression::ValueExpression'.
+'vhdl::declaration::DisconnectionSpecification' is a specialization of 'declaration::Declaration'.
+'vhdl::declaration::GroupDeclaration' is a specialization of 'declaration::Declaration'.
+'vhdl::type::RecordTypeElement' is a specialization of 'type::Typed'.
+'vhdl::statement::RejectMechanism' is a specialization of 'DelayMechanism'.
+'vhdl::expression::IndicationExpression' is a specialization of 'Expression'.
+'vhdl::expression::TypeQualificationExpression' is a specialization of 'expression::Expression'.
+'vhdl::ams::Spectrum' is a specialization of 'SourceAspect'.
+'vhdl::statement::TransportMechanism' is a specialization of 'DelayMechanism'.
+'vhdl::statement::ExitStatement' is a specialization of 'Statement'.
+'vhdl::ComponentResolvedReference' is a specialization of 'VhdlObject'.
+'vhdl::statement::GenerationScheme' is a specialization of 'VhdlObject'.
+'vhdl::declaration::FreeQuantityDeclaration' is a specialization of 'type::Typed'.
+'vhdl::statement::SignalAssignmentStatement' is a specialization of 'Statement'.
+'vhdl::PackageResolvedReference' is a specialization of 'PackageReference'.
+'vhdl::Name' is a specialization of 'configuration::ConfigurationReference'.
+'vhdl::statement::ProcedureCallStatement' is a specialization of 'Statement'.
+'vhdl::expression::SubnatureIndicationExpression' is a specialization of 'nature::NatureReference'.
+'vhdl::type::ArrayTypeDefinition' is a specialization of 'type::Typed'.
+'vhdl::expression::SignatureExpression' is a specialization of 'Name'.
+'vhdl::statement::ReportStatement' is a specialization of 'Statement'.
+'vhdl::configuration::ConfigurationResolvedReference' is a specialization of 'configuration::ConfigurationReference'.
+'vhdl::declaration::LimitDeclaration' is a specialization of 'MultiNamed'.
+'vhdl::declaration::QuantityDeclaration' is a specialization of 'Declaration'.
+'vhdl::statement::SelectedSignalAssignmentStatement' is a specialization of 'ConditionalSignalAssignmentStatement'.
+'vhdl::declaration::LimitDeclaration' is a specialization of 'type::Typed'.
+'vhdl::Component' is a specialization of 'declaration::Declaration'.
+'vhdl::Architecture' is a specialization of 'Module'.
+'vhdl::expression::ConditionalWaveformExpression' is a specialization of 'AssociationExpression'.
+'vhdl::Name' is a specialization of 'ComponentReference'.
+'vhdl::EntityResolvedReference' is a specialization of 'VhdlObject'.
+'vhdl::declaration::FunctionDeclaration' is a specialization of 'declaration::SubprogramDeclaration'.
+'vhdl::type::ArrayTypeDefinition' is a specialization of 'type::CompositeTypeDefinition'.
+'vhdl::statement::CaseAlternative' is a specialization of 'VhdlObject'.
+'vhdl::declaration::ProcedureDeclaration' is a specialization of 'SubprogramDeclaration'.
+'vhdl::expression::AttributeExpression' is a specialization of 'Name'.
+'vhdl::expression::NameExpression' is a specialization of 'Name'.
+'vhdl::declaration::SubprogramDeclaration' is a specialization of 'declaration::Declaration'.
+'vhdl::statement::ReturnStatement' is a specialization of 'ExpressionStatement'.
+'vhdl::declaration::AttributeDeclaration' is a specialization of 'declaration::Declaration'.
+'vhdl::expression::AggregateExpression' is a specialization of 'Name'.
+'vhdl::declaration::FreeQuantityDeclaration' is a specialization of 'MultiNamed'.
+'vhdl::configuration::Configuration' is a specialization of 'Named'.
+'vhdl::statement::Statement' is a specialization of 'VhdlObject'.
+'vhdl::declaration::SubprogramDeclaration' is a specialization of 'Named'.
+'vhdl::declaration::FunctionDeclaration' is a specialization of 'type::Typed'.
+'vhdl::statement::BreakStatementItem' is a specialization of 'VhdlObject'.
+'vhdl::declaration::SubnatureDeclaration' is a specialization of 'Named'.
+'vhdl::Entity' is a specialization of 'Module'.
+'vhdl::expression::RangeExpression' is a specialization of 'Name'.
+'vhdl::declaration::AliasDeclaration' is a specialization of 'declaration::Declaration'.
+'vhdl::nature::CompositeNatureDefinition' is a specialization of 'NatureDefinition'.
+'vhdl::Entity' is a specialization of 'Named'.
+'vhdl::ams::QuantityAspect' is a specialization of 'MultiNamed'.
+'vhdl::PackageResolvedReference' is a specialization of 'VhdlObject'.
+'vhdl::Name' is a specialization of 'PackageReference'.
+'vhdl::nature::RecordNatureDefinition' is a specialization of 'CompositeNatureDefinition'.
+'vhdl::statement::LoopStatement' is a specialization of 'Statement'.
+'vhdl::type::RecordTypeDefinition' is a specialization of 'CompositeTypeDefinition'.
+'vhdl::statement::SimultaneousCaseStatement' is a specialization of 'CaseStatement'.
+'vhdl::statement::ProcessStatement' is a specialization of 'Statement'.
+'vhdl::EntityResolvedReference' is a specialization of 'EntityReference'.
+'vhdl::type::FileTypeDefinition' is a specialization of 'type::Typed'.
+'vhdl::Model' is a specialization of 'VhdlObject'.
+'vhdl::type::FileTypeDefinition' is a specialization of 'type::TypeDefinition'.
+'vhdl::expression::CharacterExpression' is a specialization of 'Name'.
+'vhdl::type::TypeDefinition' is a specialization of 'VhdlObject'.
+'vhdl::expression::OthersExpression' is a specialization of 'Name'.
+'vhdl::declaration::SourceQuantityDeclaration' is a specialization of 'MultiNamed'.
+'vhdl::statement::VariableAssignmentStatement' is a specialization of 'Statement'.
+'vhdl::expression::BitStringExpression' is a specialization of 'ValueExpression'.
+'vhdl::PortMaps' is a specialization of 'VhdlObject'.
+'vhdl::ams::SourceAspect' is a specialization of 'VhdlObject'.
+'vhdl::declaration::TerminalDeclaration' is a specialization of 'MultiNamed'.
+'vhdl::declaration::FreeQuantityDeclaration' is a specialization of 'declaration::QuantityDeclaration'.
+'vhdl::nature::ArrayNatureDefinition' is a specialization of 'nature::Natured'.
+'vhdl::type::AccessTypeDefinition' is a specialization of 'type::TypeDefinition'.
+'vhdl::declaration::AttributeDeclaration' is a specialization of 'type::Typed'.
+'vhdl::expression::PowerExpression' is a specialization of 'BinaryExpression'.
+'vhdl::declaration::GroupDeclaration' is a specialization of 'Named'.
+'vhdl::declaration::NatureDeclaration' is a specialization of 'Named'.
+'vhdl::expression::AllocatorExpression' is a specialization of 'type::Typed'.
+'vhdl::declaration::VariableDeclaration' is a specialization of 'ValueDeclaration'.
+'vhdl::type::CompositeTypeDefinition' is a specialization of 'TypeDefinition'.
+'vhdl::declaration::ValueDeclaration' is a specialization of 'declaration::Declaration'.
+'vhdl::expression::SignExpression' is a specialization of 'Expression'.
+'vhdl::type::RangeTypeDefinition' is a specialization of 'TypeDefinition'.
+'vhdl::expression::RelationalExpression' is a specialization of 'BinaryExpression'.
+'vhdl::nature::UnconstrainedArrayNatureDefinition' is a specialization of 'ArrayNatureDefinition'.
+'vhdl::statement::InstantiationStatement' is a specialization of 'Statement'.
+'vhdl::expression::TypeQualificationExpression' is a specialization of 'Name'.
+'vhdl::statement::CaseStatement' is a specialization of 'Statement'.
+'vhdl::declaration::Declaration' is a specialization of 'VhdlObject'.
+'Expression' (role 'Expression74', cardinality 0..*) is associated with 'vhdl::statement::CaseStatement' (role 'vhdl_statement_CaseStatement', cardinality 0..*).
+'BlockConfiguration' (role 'BlockConfiguration361', cardinality 0..*) is associated with 'vhdl::configuration::Configuration' (role 'vhdl_configuration_Configuration360', cardinality 0..*).
+'vhdl::Entity' (role 'vhdl_Entity', cardinality 0..*) is associated with 'vhdl::Generics' (role 'vhdl_Generics12', cardinality 0..*).
+'vhdl::Ports' (role 'vhdl_Ports15', cardinality 0..*) is associated with 'vhdl::Entity' (role 'vhdl_Entity14', cardinality 0..*).
+'IterationScheme' (role 'IterationScheme', cardinality 0..*) is associated with 'vhdl::statement::LoopStatement' (role 'vhdl_statement_LoopStatement', cardinality 0..*).
+'type::vhdl::Name' (role 'type_vhdl_Name', cardinality 0..*) is associated with 'vhdl::type::PhysicalTypeDefinitionSecondary' (role 'vhdl_type_PhysicalTypeDefinitionSecondary', cardinality 0..*).
+'vhdl::ams::QuantityAspect' (role 'vhdl_ams_QuantityAspect330', cardinality 0..*) is associated with 'Expression' (role 'Expression331', cardinality 0..*).
+'vhdl::statement::BreakStatementItem' (role 'vhdl_statement_BreakStatementItem138', cardinality 0..*) is associated with 'statement::vhdl::Name' (role 'statement_vhdl_Name139', cardinality 0..*).
+'Expression' (role 'Expression302', cardinality 0..*) is associated with 'vhdl::type::PhysicalTypeDefinition' (role 'vhdl_type_PhysicalTypeDefinition', cardinality 0..*).
+'Expression' (role 'Expression190', cardinality 0..*) is associated with 'vhdl::expression::AssociationExpression' (role 'vhdl_expression_AssociationExpression189', cardinality 0..*).
+'Statement' (role 'Statement260', cardinality 0..*) is associated with 'vhdl::declaration::SubprogramBody' (role 'vhdl_declaration_SubprogramBody259', cardinality 0..*).
+'Expression' (role 'Expression226', cardinality 0..*) is associated with 'vhdl::expression::MultiExpression' (role 'vhdl_expression_MultiExpression', cardinality 0..*).
+'vhdl::Component' (role 'vhdl_Component5', cardinality 0..*) is associated with 'vhdl::Ports' (role 'vhdl_Ports', cardinality 0..*).
+'Expression' (role 'Expression221', cardinality 0..*) is associated with 'vhdl::expression::WaveformExpression' (role 'vhdl_expression_WaveformExpression', cardinality 0..*).
+'TypeReference' (role 'TypeReference299', cardinality 0..*) is associated with 'vhdl::type::UnconstrainedArrayTypeDefinition' (role 'vhdl_type_UnconstrainedArrayTypeDefinition', cardinality 0..*).
+'vhdl::statement::ProcessStatement' (role 'vhdl_statement_ProcessStatement103', cardinality 0..*) is associated with 'statement::vhdl::MultiName' (role 'statement_vhdl_MultiName104', cardinality 0..*).
+'IfStatementTest' (role 'IfStatementTest', cardinality 0..*) is associated with 'vhdl::statement::IfStatement' (role 'vhdl_statement_IfStatement', cardinality 0..*).
+'vhdl::statement::BreakStatement' (role 'vhdl_statement_BreakStatement134', cardinality 0..*) is associated with 'statement::vhdl::MultiName' (role 'statement_vhdl_MultiName135', cardinality 0..*).
+'Expression' (role 'Expression236', cardinality 0..*) is associated with 'vhdl::declaration::AttributeSpecification' (role 'vhdl_declaration_AttributeSpecification235', cardinality 0..*).
+'expression::vhdl::Signature' (role 'expression_vhdl_Signature', cardinality 0..*) is associated with 'vhdl::expression::AttributeExpression' (role 'vhdl_expression_AttributeExpression', cardinality 0..*).
+'vhdl::statement::CaseAlternative' (role 'vhdl_statement_CaseAlternative', cardinality 0..*) is associated with 'Expression' (role 'Expression78', cardinality 0..*).
+'Expression' (role 'Expression310', cardinality 0..*) is associated with 'vhdl::type::RangeTypeDefinition' (role 'vhdl_type_RangeTypeDefinition309', cardinality 0..*).
+'Expression' (role 'Expression106', cardinality 0..*) is associated with 'vhdl::statement::AssertionStatement' (role 'vhdl_statement_AssertionStatement', cardinality 0..*).
+'vhdl::statement::SequentialSignalAssignmentStatement' (role 'vhdl_statement_SequentialSignalAssignmentStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression56', cardinality 0..*).
+'Declaration' (role 'Declaration98', cardinality 0..*) is associated with 'vhdl::statement::ProcessStatement' (role 'vhdl_statement_ProcessStatement', cardinality 0..*).
+'vhdl::Module' (role 'vhdl_Module10', cardinality 0..*) is associated with 'Declaration' (role 'Declaration', cardinality 0..*).
+'vhdl::statement::ComponentInstantiationStatement' (role 'vhdl_statement_ComponentInstantiationStatement', cardinality 0..*) is associated with 'statement::vhdl::ComponentReference' (role 'statement_vhdl_ComponentReference', cardinality 0..*).
+'vhdl::declaration::NatureDeclaration' (role 'vhdl_declaration_NatureDeclaration', cardinality 0..*) is associated with 'NatureDefinition' (role 'NatureDefinition', cardinality 0..*).
+'vhdl::Architecture' (role 'vhdl_Architecture', cardinality 0..*) is associated with 'vhdl::EntityReference' (role 'vhdl_EntityReference', cardinality 0..*).
+'vhdl::declaration::ConfigurationSpecification' (role 'vhdl_declaration_ConfigurationSpecification264', cardinality 0..*) is associated with 'declaration::vhdl::ComponentReference' (role 'declaration_vhdl_ComponentReference', cardinality 0..*).
+'expression::vhdl::Name' (role 'expression_vhdl_Name219', cardinality 0..*) is associated with 'vhdl::expression::UnitValueExpression' (role 'vhdl_expression_UnitValueExpression', cardinality 0..*).
+'vhdl::statement::ExitStatement' (role 'vhdl_statement_ExitStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression160', cardinality 0..*).
+'Expression' (role 'Expression114', cardinality 0..*) is associated with 'vhdl::statement::BlockStatement' (role 'vhdl_statement_BlockStatement', cardinality 0..*).
+'vhdl::Signature' (role 'vhdl_Signature33', cardinality 0..*) is associated with 'TypeReference' (role 'TypeReference34', cardinality 0..*).
+'configuration::vhdl::PortMaps' (role 'configuration_vhdl_PortMaps', cardinality 0..*) is associated with 'vhdl::configuration::ComponentConfiguration' (role 'vhdl_configuration_ComponentConfiguration355', cardinality 0..*).
+'vhdl::Component' (role 'vhdl_Component', cardinality 0..*) is associated with 'vhdl::Generics' (role 'vhdl_Generics', cardinality 0..*).
+'Expression' (role 'Expression158', cardinality 0..*) is associated with 'vhdl::statement::SimpleSimultaneousStatement' (role 'vhdl_statement_SimpleSimultaneousStatement157', cardinality 0..*).
+'vhdl::declaration::BranchQuantityDeclaration' (role 'vhdl_declaration_BranchQuantityDeclaration245', cardinality 0..*) is associated with 'declaration::vhdl::Name' (role 'declaration_vhdl_Name246', cardinality 0..*).
+'Expression' (role 'Expression87', cardinality 0..*) is associated with 'vhdl::statement::IfStatementTest' (role 'vhdl_statement_IfStatementTest', cardinality 0..*).
+'vhdl::configuration::ComponentConfiguration' (role 'vhdl_configuration_ComponentConfiguration347', cardinality 0..*) is associated with 'configuration::vhdl::Name' (role 'configuration_vhdl_Name348', cardinality 0..*).
+'vhdl::Component' (role 'vhdl_Component44', cardinality 0..*) is associated with 'vhdl::ComponentResolvedReference' (role 'vhdl_ComponentResolvedReference', cardinality 0..*).
+'vhdl::Module' (role 'vhdl_Module', cardinality 0..*) is associated with 'vhdl::DesignUnit' (role 'vhdl_DesignUnit8', cardinality 0..*).
+'vhdl::GenericMaps' (role 'vhdl_GenericMaps', cardinality 0..*) is associated with 'Expression' (role 'Expression', cardinality 0..*).
+'vhdl::declaration::ConfigurationSpecification' (role 'vhdl_declaration_ConfigurationSpecification266', cardinality 0..*) is associated with 'declaration::vhdl::EntityReference' (role 'declaration_vhdl_EntityReference', cardinality 0..*).
+'Expression' (role 'Expression152', cardinality 0..*) is associated with 'vhdl::statement::SimpleSimultaneousStatement' (role 'vhdl_statement_SimpleSimultaneousStatement', cardinality 0..*).
+'Expression' (role 'Expression193', cardinality 0..*) is associated with 'vhdl::expression::BinaryExpression' (role 'vhdl_expression_BinaryExpression', cardinality 0..*).
+'Expression' (role 'Expression217', cardinality 0..*) is associated with 'vhdl::expression::UnaryExpression' (role 'vhdl_expression_UnaryExpression', cardinality 0..*).
+'vhdl::declaration::DisconnectionSpecification' (role 'vhdl_declaration_DisconnectionSpecification', cardinality 0..*) is associated with 'declaration::vhdl::MultiName' (role 'declaration_vhdl_MultiName275', cardinality 0..*).
+'DelayMechanism' (role 'DelayMechanism', cardinality 0..*) is associated with 'vhdl::statement::SignalAssignmentStatement' (role 'vhdl_statement_SignalAssignmentStatement60', cardinality 0..*).
+'statement::vhdl::MultiName' (role 'statement_vhdl_MultiName', cardinality 0..*) is associated with 'vhdl::statement::WaitStatement' (role 'vhdl_statement_WaitStatement', cardinality 0..*).
+'configuration::vhdl::Name' (role 'configuration_vhdl_Name345', cardinality 0..*) is associated with 'vhdl::configuration::ComponentConfiguration' (role 'vhdl_configuration_ComponentConfiguration344', cardinality 0..*).
+'vhdl::declaration::TypeDeclaration' (role 'vhdl_declaration_TypeDeclaration', cardinality 0..*) is associated with 'TypeDefinition' (role 'TypeDefinition', cardinality 0..*).
+'expression::vhdl::Signature' (role 'expression_vhdl_Signature210', cardinality 0..*) is associated with 'vhdl::expression::SignatureExpression' (role 'vhdl_expression_SignatureExpression', cardinality 0..*).
+'Expression' (role 'Expression307', cardinality 0..*) is associated with 'vhdl::type::RangeTypeDefinition' (role 'vhdl_type_RangeTypeDefinition', cardinality 0..*).
+'vhdl::declaration::FileDeclaration' (role 'vhdl_declaration_FileDeclaration282', cardinality 0..*) is associated with 'Expression' (role 'Expression283', cardinality 0..*).
+'vhdl::statement::ExpressionStatement' (role 'vhdl_statement_ExpressionStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression177', cardinality 0..*).
+'statement::vhdl::Ports' (role 'statement_vhdl_Ports', cardinality 0..*) is associated with 'vhdl::statement::BlockStatement' (role 'vhdl_statement_BlockStatement120', cardinality 0..*).
+'Expression' (role 'Expression132', cardinality 0..*) is associated with 'vhdl::statement::BreakStatement' (role 'vhdl_statement_BreakStatement131', cardinality 0..*).
+'NatureReference' (role 'NatureReference', cardinality 0..*) is associated with 'vhdl::expression::SubnatureIndicationExpression' (role 'vhdl_expression_SubnatureIndicationExpression', cardinality 0..*).
+'vhdl::PortMaps' (role 'vhdl_PortMaps', cardinality 0..*) is associated with 'Expression' (role 'Expression30', cardinality 0..*).
+'Expression' (role 'Expression215', cardinality 0..*) is associated with 'vhdl::expression::SignExpression' (role 'vhdl_expression_SignExpression', cardinality 0..*).
+'vhdl::declaration::UseClauseDeclaration' (role 'vhdl_declaration_UseClauseDeclaration', cardinality 0..*) is associated with 'declaration::vhdl::MultiName' (role 'declaration_vhdl_MultiName292', cardinality 0..*).
+'vhdl::nature::RecordNatureDefinition' (role 'vhdl_nature_RecordNatureDefinition', cardinality 0..*) is associated with 'RecordNatureElement' (role 'RecordNatureElement', cardinality 0..*).
+'vhdl::Entity' (role 'vhdl_Entity17', cardinality 0..*) is associated with 'Statement' (role 'Statement18', cardinality 0..*).
+'Declaration' (role 'Declaration93', cardinality 0..*) is associated with 'vhdl::statement::SimultaneousProceduralStatement' (role 'vhdl_statement_SimultaneousProceduralStatement', cardinality 0..*).
+'vhdl::expression::IndicationExpression' (role 'vhdl_expression_IndicationExpression203', cardinality 0..*) is associated with 'Expression' (role 'Expression204', cardinality 0..*).
+'vhdl::declaration::FreeQuantityDeclaration' (role 'vhdl_declaration_FreeQuantityDeclaration', cardinality 0..*) is associated with 'Expression' (role 'Expression248', cardinality 0..*).
+'Expression' (role 'Expression109', cardinality 0..*) is associated with 'vhdl::statement::AssertionStatement' (role 'vhdl_statement_AssertionStatement108', cardinality 0..*).
+'vhdl::statement::IfGenerationScheme' (role 'vhdl_statement_IfGenerationScheme', cardinality 0..*) is associated with 'Expression' (role 'Expression183', cardinality 0..*).
+'vhdl::declaration::BranchQuantityDeclaration' (role 'vhdl_declaration_BranchQuantityDeclaration239', cardinality 0..*) is associated with 'QuantityAspect' (role 'QuantityAspect240', cardinality 0..*).
+'EnumerationLiteral' (role 'EnumerationLiteral', cardinality 0..*) is associated with 'vhdl::type::EnumerationTypeDefinition' (role 'vhdl_type_EnumerationTypeDefinition', cardinality 0..*).
+'vhdl::statement::ReportStatement' (role 'vhdl_statement_ReportStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression47', cardinality 0..*).
+'Expression' (role 'Expression228', cardinality 0..*) is associated with 'vhdl::expression::TypeQualificationExpression' (role 'vhdl_expression_TypeQualificationExpression', cardinality 0..*).
+'vhdl::statement::BlockStatement' (role 'vhdl_statement_BlockStatement116', cardinality 0..*) is associated with 'statement::vhdl::Generics' (role 'statement_vhdl_Generics', cardinality 0..*).
+'Statement' (role 'Statement128', cardinality 0..*) is associated with 'vhdl::statement::BlockStatement' (role 'vhdl_statement_BlockStatement127', cardinality 0..*).
+'Expression' (role 'Expression250', cardinality 0..*) is associated with 'vhdl::declaration::LimitDeclaration' (role 'vhdl_declaration_LimitDeclaration', cardinality 0..*).
+'vhdl::statement::LoopStatement' (role 'vhdl_statement_LoopStatement170', cardinality 0..*) is associated with 'Statement' (role 'Statement171', cardinality 0..*).
+'declaration::vhdl::MultiName' (role 'declaration_vhdl_MultiName262', cardinality 0..*) is associated with 'vhdl::declaration::ConfigurationSpecification' (role 'vhdl_declaration_ConfigurationSpecification', cardinality 0..*).
+'statement::vhdl::PortMaps' (role 'statement_vhdl_PortMaps', cardinality 0..*) is associated with 'vhdl::statement::BlockStatement' (role 'vhdl_statement_BlockStatement122', cardinality 0..*).
+'vhdl::nature::ScalarNatureDefinition' (role 'vhdl_nature_ScalarNatureDefinition321', cardinality 0..*) is associated with 'nature::vhdl::Name' (role 'nature_vhdl_Name322', cardinality 0..*).
+'Declaration' (role 'Declaration253', cardinality 0..*) is associated with 'vhdl::declaration::SubprogramDeclaration' (role 'vhdl_declaration_SubprogramDeclaration', cardinality 0..*).
+'vhdl::Architecture' (role 'vhdl_Architecture2', cardinality 0..*) is associated with 'Statement' (role 'Statement', cardinality 0..*).
+'vhdl::statement::GenerateStatement' (role 'vhdl_statement_GenerateStatement166', cardinality 0..*) is associated with 'Statement' (role 'Statement167', cardinality 0..*).
+'ConfigurationReference' (role 'ConfigurationReference269', cardinality 0..*) is associated with 'vhdl::declaration::ConfigurationSpecification' (role 'vhdl_declaration_ConfigurationSpecification268', cardinality 0..*).
+'vhdl::expression::BinaryExpression' (role 'vhdl_expression_BinaryExpression195', cardinality 0..*) is associated with 'Expression' (role 'Expression196', cardinality 0..*).
+'Expression' (role 'Expression280', cardinality 0..*) is associated with 'vhdl::declaration::FileDeclaration' (role 'vhdl_declaration_FileDeclaration', cardinality 0..*).
+'vhdl::nature::ScalarNatureDefinition' (role 'vhdl_nature_ScalarNatureDefinition', cardinality 0..*) is associated with 'nature::vhdl::Name' (role 'nature_vhdl_Name', cardinality 0..*).
+'Expression' (role 'Expression50', cardinality 0..*) is associated with 'vhdl::statement::ReportStatement' (role 'vhdl_statement_ReportStatement49', cardinality 0..*).
+'vhdl::Model' (role 'vhdl_Model', cardinality 0..*) is associated with 'vhdl::DesignUnit' (role 'vhdl_DesignUnit24', cardinality 0..*).
+'Expression' (role 'Expression67', cardinality 0..*) is associated with 'vhdl::statement::WaitStatement' (role 'vhdl_statement_WaitStatement66', cardinality 0..*).
+'vhdl::statement::GenerateStatement' (role 'vhdl_statement_GenerateStatement163', cardinality 0..*) is associated with 'Declaration' (role 'Declaration164', cardinality 0..*).
+'vhdl::ams::QuantityAspect' (role 'vhdl_ams_QuantityAspect', cardinality 0..*) is associated with 'Expression' (role 'Expression328', cardinality 0..*).
+'vhdl::expression::IndicationExpression' (role 'vhdl_expression_IndicationExpression', cardinality 0..*) is associated with 'Expression' (role 'Expression198', cardinality 0..*).
+'vhdl::statement::BlockStatement' (role 'vhdl_statement_BlockStatement124', cardinality 0..*) is associated with 'Declaration' (role 'Declaration125', cardinality 0..*).
+'Statement' (role 'Statement101', cardinality 0..*) is associated with 'vhdl::statement::ProcessStatement' (role 'vhdl_statement_ProcessStatement100', cardinality 0..*).
+'vhdl::statement::AssertionStatement' (role 'vhdl_statement_AssertionStatement111', cardinality 0..*) is associated with 'Expression' (role 'Expression112', cardinality 0..*).
+'declaration::vhdl::Name' (role 'declaration_vhdl_Name', cardinality 0..*) is associated with 'vhdl::declaration::AliasDeclaration' (role 'vhdl_declaration_AliasDeclaration232', cardinality 0..*).
+'vhdl::Package' (role 'vhdl_Package', cardinality 0..*) is associated with 'vhdl::PackageResolvedReference' (role 'vhdl_PackageResolvedReference', cardinality 0..*).
+'Expression' (role 'Expression69', cardinality 0..*) is associated with 'vhdl::statement::VariableAssignmentStatement' (role 'vhdl_statement_VariableAssignmentStatement', cardinality 0..*).
+'vhdl::statement::BreakStatementItem' (role 'vhdl_statement_BreakStatementItem', cardinality 0..*) is associated with 'statement::vhdl::Name' (role 'statement_vhdl_Name', cardinality 0..*).
+'vhdl::Signature' (role 'vhdl_Signature', cardinality 0..*) is associated with 'TypeReference' (role 'TypeReference', cardinality 0..*).
+'vhdl::statement::ForIterationScheme' (role 'vhdl_statement_ForIterationScheme', cardinality 0..*) is associated with 'Expression' (role 'Expression181', cardinality 0..*).
+'vhdl::configuration::ComponentConfiguration' (role 'vhdl_configuration_ComponentConfiguration', cardinality 0..*) is associated with 'configuration::vhdl::MultiName' (role 'configuration_vhdl_MultiName', cardinality 0..*).
+'TypeReference' (role 'TypeReference312', cardinality 0..*) is associated with 'vhdl::type::Typed' (role 'vhdl_type_Typed', cardinality 0..*).
+'expression::vhdl::Name' (role 'expression_vhdl_Name', cardinality 0..*) is associated with 'vhdl::expression::NameExpression' (role 'vhdl_expression_NameExpression', cardinality 0..*).
+'declaration::vhdl::MultiName' (role 'declaration_vhdl_MultiName289', cardinality 0..*) is associated with 'vhdl::declaration::GroupDeclaration' (role 'vhdl_declaration_GroupDeclaration288', cardinality 0..*).
+'vhdl::statement::SelectedSignalAssignmentStatement' (role 'vhdl_statement_SelectedSignalAssignmentStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression54', cardinality 0..*).
+'vhdl::statement::EntityInstantiationStatement' (role 'vhdl_statement_EntityInstantiationStatement', cardinality 0..*) is associated with 'statement::vhdl::EntityReference' (role 'statement_vhdl_EntityReference', cardinality 0..*).
+'vhdl::expression::AssociationExpression' (role 'vhdl_expression_AssociationExpression', cardinality 0..*) is associated with 'Expression' (role 'Expression187', cardinality 0..*).
+'vhdl::nature::ConstrainedArrayNatureDefinition' (role 'vhdl_nature_ConstrainedArrayNatureDefinition', cardinality 0..*) is associated with 'Expression' (role 'Expression314', cardinality 0..*).
+'BreakStatementItem' (role 'BreakStatementItem', cardinality 0..*) is associated with 'vhdl::statement::BreakStatement' (role 'vhdl_statement_BreakStatement', cardinality 0..*).
+'vhdl::statement::IfStatementTest' (role 'vhdl_statement_IfStatementTest89', cardinality 0..*) is associated with 'Statement' (role 'Statement90', cardinality 0..*).
+'vhdl::declaration::SubprogramBody' (role 'vhdl_declaration_SubprogramBody', cardinality 0..*) is associated with 'Declaration' (role 'Declaration257', cardinality 0..*).
+'SubprogramDeclaration' (role 'SubprogramDeclaration', cardinality 0..*) is associated with 'vhdl::CallResolvedReference' (role 'vhdl_CallResolvedReference', cardinality 0..*).
+'vhdl::statement::ForGenerationScheme' (role 'vhdl_statement_ForGenerationScheme', cardinality 0..*) is associated with 'Expression' (role 'Expression179', cardinality 0..*).
+'TypeReference' (role 'TypeReference230', cardinality 0..*) is associated with 'vhdl::declaration::AliasDeclaration' (role 'vhdl_declaration_AliasDeclaration', cardinality 0..*).
+'vhdl::Entity' (role 'vhdl_Entity41', cardinality 0..*) is associated with 'vhdl::EntityResolvedReference' (role 'vhdl_EntityResolvedReference', cardinality 0..*).
+'Expression' (role 'Expression201', cardinality 0..*) is associated with 'vhdl::expression::IndicationExpression' (role 'vhdl_expression_IndicationExpression200', cardinality 0..*).
+'declaration::vhdl::Name' (role 'declaration_vhdl_Name243', cardinality 0..*) is associated with 'vhdl::declaration::BranchQuantityDeclaration' (role 'vhdl_declaration_BranchQuantityDeclaration242', cardinality 0..*).
+'vhdl::statement::SimpleSimultaneousStatement' (role 'vhdl_statement_SimpleSimultaneousStatement154', cardinality 0..*) is associated with 'Expression' (role 'Expression155', cardinality 0..*).
+'SubprogramBody' (role 'SubprogramBody', cardinality 0..*) is associated with 'vhdl::declaration::SubprogramDeclaration' (role 'vhdl_declaration_SubprogramDeclaration255', cardinality 0..*).
+'BlockConfiguration' (role 'BlockConfiguration', cardinality 0..*) is associated with 'vhdl::configuration::ComponentConfiguration' (role 'vhdl_configuration_ComponentConfiguration357', cardinality 0..*).
+'QuantityAspect' (role 'QuantityAspect', cardinality 0..*) is associated with 'vhdl::declaration::BranchQuantityDeclaration' (role 'vhdl_declaration_BranchQuantityDeclaration', cardinality 0..*).
+'Expression' (role 'Expression52', cardinality 0..*) is associated with 'vhdl::statement::ConditionalSignalAssignmentStatement' (role 'vhdl_statement_ConditionalSignalAssignmentStatement', cardinality 0..*).
+'vhdl::declaration::ConfigurationSpecification' (role 'vhdl_declaration_ConfigurationSpecification271', cardinality 0..*) is associated with 'declaration::vhdl::GenericMaps' (role 'declaration_vhdl_GenericMaps', cardinality 0..*).
+'TypeReference' (role 'TypeReference206', cardinality 0..*) is associated with 'vhdl::expression::SubtypeIndicationExpression' (role 'vhdl_expression_SubtypeIndicationExpression', cardinality 0..*).
+'vhdl::statement::VariableAssignmentStatement' (role 'vhdl_statement_VariableAssignmentStatement71', cardinality 0..*) is associated with 'Expression' (role 'Expression72', cardinality 0..*).
+'vhdl::configuration::ConfigurationResolvedReference' (role 'vhdl_configuration_ConfigurationResolvedReference', cardinality 0..*) is associated with 'Configuration' (role 'Configuration', cardinality 0..*).
+'RecordTypeElement' (role 'RecordTypeElement', cardinality 0..*) is associated with 'vhdl::type::RecordTypeDefinition' (role 'vhdl_type_RecordTypeDefinition', cardinality 0..*).
+'vhdl::declaration::DisconnectionSpecification' (role 'vhdl_declaration_DisconnectionSpecification277', cardinality 0..*) is associated with 'Expression' (role 'Expression278', cardinality 0..*).
+'vhdl::statement::InstantiationStatement' (role 'vhdl_statement_InstantiationStatement', cardinality 0..*) is associated with 'statement::vhdl::GenericMaps' (role 'statement_vhdl_GenericMaps145', cardinality 0..*).
+'vhdl::expression::SignatureExpression' (role 'vhdl_expression_SignatureExpression212', cardinality 0..*) is associated with 'expression::vhdl::Name' (role 'expression_vhdl_Name213', cardinality 0..*).
+'Expression' (role 'Expression224', cardinality 0..*) is associated with 'vhdl::expression::WaveformExpression' (role 'vhdl_expression_WaveformExpression223', cardinality 0..*).
+'TypeReference' (role 'TypeReference324', cardinality 0..*) is associated with 'vhdl::nature::UnconstrainedArrayNatureDefinition' (role 'vhdl_nature_UnconstrainedArrayNatureDefinition', cardinality 0..*).
+'vhdl::MultiName' (role 'vhdl_MultiName', cardinality 0..*) is associated with 'vhdl::MultiNamed' (role 'vhdl_MultiNamed', cardinality 0..*).
+'statement::vhdl::PortMaps' (role 'statement_vhdl_PortMaps148', cardinality 0..*) is associated with 'vhdl::statement::InstantiationStatement' (role 'vhdl_statement_InstantiationStatement147', cardinality 0..*).
+'vhdl::statement::SignalAssignmentStatement' (role 'vhdl_statement_SignalAssignmentStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression58', cardinality 0..*).
+'NatureReference' (role 'NatureReference326', cardinality 0..*) is associated with 'vhdl::nature::Natured' (role 'vhdl_nature_Natured', cardinality 0..*).
+'Expression' (role 'Expression64', cardinality 0..*) is associated with 'vhdl::statement::WaitStatement' (role 'vhdl_statement_WaitStatement63', cardinality 0..*).
+'configuration::vhdl::GenericMaps' (role 'configuration_vhdl_GenericMaps', cardinality 0..*) is associated with 'vhdl::configuration::ComponentConfiguration' (role 'vhdl_configuration_ComponentConfiguration353', cardinality 0..*).
+'Expression' (role 'Expression175', cardinality 0..*) is associated with 'vhdl::statement::WhileIterationScheme' (role 'vhdl_statement_WhileIterationScheme', cardinality 0..*).
+'vhdl::declaration::GroupDeclaration' (role 'vhdl_declaration_GroupDeclaration', cardinality 0..*) is associated with 'declaration::vhdl::Name' (role 'declaration_vhdl_Name286', cardinality 0..*).
+'vhdl::statement::CaseAlternative' (role 'vhdl_statement_CaseAlternative80', cardinality 0..*) is associated with 'Statement' (role 'Statement81', cardinality 0..*).
+'Expression' (role 'Expression142', cardinality 0..*) is associated with 'vhdl::statement::BreakStatementItem' (role 'vhdl_statement_BreakStatementItem141', cardinality 0..*).
+'nature::vhdl::Name' (role 'nature_vhdl_Name319', cardinality 0..*) is associated with 'vhdl::nature::ScalarNatureDefinition' (role 'vhdl_nature_ScalarNatureDefinition318', cardinality 0..*).
+'configuration::vhdl::EntityReference' (role 'configuration_vhdl_EntityReference', cardinality 0..*) is associated with 'vhdl::configuration::Configuration' (role 'vhdl_configuration_Configuration', cardinality 0..*).
+'Declaration' (role 'Declaration22', cardinality 0..*) is associated with 'vhdl::Generics' (role 'vhdl_Generics21', cardinality 0..*).
+'vhdl::statement::CaseStatement' (role 'vhdl_statement_CaseStatement76', cardinality 0..*) is associated with 'CaseAlternative' (role 'CaseAlternative', cardinality 0..*).
+'statement::vhdl::GenericMaps' (role 'statement_vhdl_GenericMaps', cardinality 0..*) is associated with 'vhdl::statement::BlockStatement' (role 'vhdl_statement_BlockStatement118', cardinality 0..*).
+'Expression' (role 'Expression173', cardinality 0..*) is associated with 'vhdl::statement::NextStatement' (role 'vhdl_statement_NextStatement', cardinality 0..*).
+'vhdl::ams::Spectrum' (role 'vhdl_ams_Spectrum', cardinality 0..*) is associated with 'Expression' (role 'Expression333', cardinality 0..*).
+'configuration::vhdl::Name' (role 'configuration_vhdl_Name', cardinality 0..*) is associated with 'vhdl::configuration::BlockConfiguration' (role 'vhdl_configuration_BlockConfiguration', cardinality 0..*).
+'Statement' (role 'Statement85', cardinality 0..*) is associated with 'vhdl::statement::IfStatement' (role 'vhdl_statement_IfStatement84', cardinality 0..*).
+'vhdl::Ports' (role 'vhdl_Ports27', cardinality 0..*) is associated with 'Declaration' (role 'Declaration28', cardinality 0..*).
+'Statement' (role 'Statement96', cardinality 0..*) is associated with 'vhdl::statement::SimultaneousProceduralStatement' (role 'vhdl_statement_SimultaneousProceduralStatement95', cardinality 0..*).
+'vhdl::statement::RejectMechanism' (role 'vhdl_statement_RejectMechanism', cardinality 0..*) is associated with 'Expression' (role 'Expression185', cardinality 0..*).
+'vhdl::declaration::ValueDeclaration' (role 'vhdl_declaration_ValueDeclaration', cardinality 0..*) is associated with 'Expression' (role 'Expression294', cardinality 0..*).
+'vhdl::declaration::SourceQuantityDeclaration' (role 'vhdl_declaration_SourceQuantityDeclaration', cardinality 0..*) is associated with 'SourceAspect' (role 'SourceAspect', cardinality 0..*).
+'declaration::vhdl::PortMaps' (role 'declaration_vhdl_PortMaps', cardinality 0..*) is associated with 'vhdl::declaration::ConfigurationSpecification' (role 'vhdl_declaration_ConfigurationSpecification273', cardinality 0..*).
+'vhdl::configuration::BlockConfiguration' (role 'vhdl_configuration_BlockConfiguration341', cardinality 0..*) is associated with 'ConfigurationItem' (role 'ConfigurationItem', cardinality 0..*).
+'Expression' (role 'Expression338', cardinality 0..*) is associated with 'vhdl::ams::Noise' (role 'vhdl_ams_Noise', cardinality 0..*).
+'statement::vhdl::CallReference' (role 'statement_vhdl_CallReference', cardinality 0..*) is associated with 'vhdl::statement::ProcedureCallStatement' (role 'vhdl_statement_ProcedureCallStatement', cardinality 0..*).
+'vhdl::PackageReference' (role 'vhdl_PackageReference', cardinality 0..*) is associated with 'vhdl::PackageBody' (role 'vhdl_PackageBody', cardinality 0..*).
+'PhysicalTypeDefinitionSecondary' (role 'PhysicalTypeDefinitionSecondary', cardinality 0..*) is associated with 'vhdl::type::PhysicalTypeDefinition' (role 'vhdl_type_PhysicalTypeDefinition304', cardinality 0..*).
+'vhdl::ams::Spectrum' (role 'vhdl_ams_Spectrum335', cardinality 0..*) is associated with 'Expression' (role 'Expression336', cardinality 0..*).
+'vhdl::statement::GenerateStatement' (role 'vhdl_statement_GenerateStatement', cardinality 0..*) is associated with 'GenerationScheme' (role 'GenerationScheme', cardinality 0..*).
+'vhdl::DesignUnit' (role 'vhdl_DesignUnit', cardinality 0..*) is associated with 'vhdl::Name' (role 'vhdl_Name', cardinality 0..*).
+'configuration::vhdl::Name' (role 'configuration_vhdl_Name351', cardinality 0..*) is associated with 'vhdl::configuration::ComponentConfiguration' (role 'vhdl_configuration_ComponentConfiguration350', cardinality 0..*).
+'vhdl::statement::ConfigurationInstantiationStatement' (role 'vhdl_statement_ConfigurationInstantiationStatement', cardinality 0..*) is associated with 'ConfigurationReference' (role 'ConfigurationReference', cardinality 0..*).
+'vhdl::Name' (role 'vhdl_Name39', cardinality 0..*) is associated with 'vhdl::NameList' (role 'vhdl_NameList', cardinality 0..*).
+'vhdl::Name' (role 'vhdl_Name36', cardinality 0..*) is associated with 'vhdl::Named' (role 'vhdl_Named', cardinality 0..*).
+'vhdl::declaration::AttributeSpecification' (role 'vhdl_declaration_AttributeSpecification', cardinality 0..*) is associated with 'declaration::vhdl::MultiName' (role 'declaration_vhdl_MultiName', cardinality 0..*).
+'Expression' (role 'Expression297', cardinality 0..*) is associated with 'vhdl::type::ConstrainedArrayTypeDefinition' (role 'vhdl_type_ConstrainedArrayTypeDefinition', cardinality 0..*).

@@ -1,0 +1,34 @@
+The model has 15 class(es).
+The class 'model::BasicNotificationDefinition' has the following attributes: 'active' of type bool; 'notificationEventId' of type str; 'description' of type str; 'identifier' of type str.
+The class 'model::BasicCode' has the following attributes: 'domain' of type int; 'active' of type bool; 'structure' of type bool; 'descriptions' of type str; 'id' of type str; 'names' of type str; 'sortHint' of type int.
+The class 'model::Attachment' has the following attributes: 'objectId' of type str; 'key' of type str; 'data' of type str.
+The class 'model::NotificationParticipant' has the following attributes: 'id' of type str; 'mailAddress' of type str; 'groupId' of type str.
+The class 'model::TreeNode' has the following attributes: 'name' of type str.
+The class 'model::Category' has the following attributes: 'associatedClassifier' of type str; 'classifier' of type str.
+The class 'BasicObject' has no attributes.
+The class 'model::Code' has no attributes.
+The class 'BasicCode' has no attributes.
+The class 'model::NotificationDefinition' has the following attributes: 'excludeFilter' of type str; 'includeFilter' of type str; 'template' of type bool.
+The class 'model::TreeNodeChild' has the following attributes: 'nodeId' of type str.
+The class 'BasicNotificationDefinition' has no attributes.
+The class 'model::ObjectRef' has the following attributes: 'domain' of type int; 'appId' of type str; 'type' of type str; 'state' of type str; 'labels' of type str; 'id' of type str; 'nature' of type str.
+The class 'model::BasicObject' has the following attributes: 'locale' of type str; 'domain' of type int; 'id' of type str.
+The class 'model::CodeEntry' has the following attributes: 'value' of type str; 'id' of type str; 'key' of type str.
+The enumeration 'ObjectState' has the following literals: 'DELETION', 'PRODUCTION', 'MODIFICATION', 'NEW'.
+'model::NotificationDefinition' is a specialization of 'BasicNotificationDefinition'.
+'model::BasicNotificationDefinition' is a specialization of 'BasicObject'.
+'model::Category' is a specialization of 'BasicCode'.
+'model::Code' is a specialization of 'BasicCode'.
+'model::TreeNode' is a specialization of 'BasicObject'.
+'model::Attachment' is a specialization of 'BasicObject'.
+'model::TreeNodeChild' (role 'childs', cardinality 0..*) is associated with 'model::TreeNode' (role 'TreeNode', cardinality 0..*).
+'model::BasicNotificationDefinition' (role 'model_BasicNotificationDefinition18', cardinality 0..*) is associated with 'model::NotificationParticipant' (role 'model_NotificationParticipant19', cardinality 0..*).
+'model::Code' (role 'model_Code', cardinality 0..*) is associated with 'model::BasicNotificationDefinition' (role 'model_BasicNotificationDefinition21', cardinality 0..*).
+'model::ObjectRef' (role 'model_ObjectRef8', cardinality 0..*) is associated with 'model::NotificationParticipant' (role 'model_NotificationParticipant', cardinality 0..*).
+'model::BasicCode' (role 'model_BasicCode3', cardinality 0..*) is associated with 'model::BasicCode' (role 'model_BasicCode', cardinality 0..*).
+'model::NotificationParticipant' (role 'model_NotificationParticipant16', cardinality 0..*) is associated with 'model::BasicNotificationDefinition' (role 'model_BasicNotificationDefinition15', cardinality 0..*).
+'model::TreeNode' (role 'parent', cardinality 0..*) is associated with 'model::TreeNodeChild' (role 'TreeNodeChild', cardinality 0..*).
+'model::NotificationParticipant' (role 'model_NotificationParticipant10', cardinality 0..*) is associated with 'model::BasicNotificationDefinition' (role 'model_BasicNotificationDefinition', cardinality 0..*).
+'model::BasicNotificationDefinition' (role 'model_BasicNotificationDefinition12', cardinality 0..*) is associated with 'model::NotificationParticipant' (role 'model_NotificationParticipant13', cardinality 0..*).
+'model::BasicCode' (role 'model_BasicCode6', cardinality 0..*) is associated with 'model::CodeEntry' (role 'model_CodeEntry', cardinality 0..*).
+'model::TreeNode' (role 'model_TreeNode', cardinality 0..*) is associated with 'model::ObjectRef' (role 'model_ObjectRef', cardinality 0..*).

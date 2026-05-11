@@ -1,0 +1,71 @@
+The model has 35 class(es).
+The class 'draw2d::Polygon' has no attributes.
+The class 'draw2d::XYAnchor' has the following attributes: 'location' of type str.
+The class 'draw2d::Figure' has the following attributes: 'minimumSize' of type str; 'bounds' of type str; 'opaque' of type bool; 'preferredSize' of type str; 'visible' of type bool; 'focusTraversable' of type bool; 'maximumSize' of type str; 'enabled' of type bool.
+The class 'Figure' has no attributes.
+The class 'draw2d::Border' has the following attributes: 'opaque' of type bool.
+The class 'draw2d::FlowBorder' has the following attributes: 'bottomMargin' of type int; 'leftMargin' of type int; 'topMargin' of type int; 'rightMargin' of type int.
+The class 'PointListShape' has no attributes.
+The class 'Polyline' has no attributes.
+The class 'Border' has no attributes.
+The class 'Canvas' has no attributes.
+The class 'draw2d::RectangleFigure' has no attributes.
+The class 'draw2d::Draw2DCanvas' has no attributes.
+The class 'draw2d::PointListShape' has the following attributes: 'pointList' of type int.
+The class 'draw2d::BlockFlow' has the following attributes: 'orientation' of type str.
+The class 'draw2d::RoundedRectangle' has the following attributes: 'cornerDimensions' of type str.
+The class 'draw2d::LabeledBorder' has the following attributes: 'label' of type str.
+The class 'draw2d::ColoredLabeledBorder' has no attributes.
+The class 'draw2d::FrameBorder' has no attributes.
+The class 'draw2d::ConnectionAnchor' has no attributes.
+The class 'draw2d::Shape' has the following attributes: 'fillXOR' of type bool; 'lineJoin' of type str; 'lineDash' of type float; 'lineDashOffset' of type float; 'lineWidthFloat' of type float; 'outlineXOR' of type bool; 'antialias' of type str; 'lineCap' of type str; 'lineMiterLimit' of type float; 'fill' of type bool; 'outline' of type bool; 'lineStyle' of type str; 'alpha' of type str.
+The class 'LabeledBorder' has no attributes.
+The class 'draw2d::TitleBarBorder' has no attributes.
+The class 'draw2d::Label' has the following attributes: 'iconAlignment' of type str; 'iconTextGap' of type int; 'textPlacement' of type str; 'text' of type str; 'icon' of type str; 'textAlignment' of type str.
+The class 'draw2d::Font' has no attributes.
+The class 'draw2d::GroupBoxBorder' has no attributes.
+The class 'ColoredLabeledBorder' has no attributes.
+The class 'ConnectionAnchor' has no attributes.
+The class 'draw2d::ImageFigure' has the following attributes: 'image' of type str.
+The class 'draw2d::PolygonShape' has no attributes.
+The class 'draw2d::Ellipse' has no attributes.
+The class 'draw2d::Polyline' has the following attributes: 'tolerance' of type int.
+The class 'Shape' has no attributes.
+The class 'draw2d::Triangle' has the following attributes: 'orientation' of type str; 'direction' of type str.
+The class 'draw2d::Color' has no attributes.
+The class 'draw2d::PolylineShape' has the following attributes: 'tolerance' of type int.
+The enumeration 'Alignment' has the following literals: 'TOP', 'CENTER', 'MIDDLE', 'LEFT', 'RIGHT', 'BOTTOM'.
+The enumeration 'Orientation' has the following literals: 'HORIZONTAL', 'VERTICAL'.
+The enumeration 'Direction' has the following literals: 'WEST', 'SOUTH', 'EAST', 'NORTH'.
+'draw2d::Triangle' is a specialization of 'Shape'.
+'draw2d::FrameBorder' is a specialization of 'LabeledBorder'.
+'draw2d::Shape' is a specialization of 'Figure'.
+'draw2d::Polygon' is a specialization of 'Polyline'.
+'draw2d::Label' is a specialization of 'Figure'.
+'draw2d::Polyline' is a specialization of 'PointListShape'.
+'draw2d::PointListShape' is a specialization of 'Shape'.
+'draw2d::BlockFlow' is a specialization of 'Figure'.
+'draw2d::PolylineShape' is a specialization of 'PointListShape'.
+'draw2d::RectangleFigure' is a specialization of 'Shape'.
+'draw2d::ImageFigure' is a specialization of 'Figure'.
+'draw2d::LabeledBorder' is a specialization of 'Border'.
+'draw2d::ColoredLabeledBorder' is a specialization of 'LabeledBorder'.
+'draw2d::XYAnchor' is a specialization of 'ConnectionAnchor'.
+'draw2d::PolygonShape' is a specialization of 'PointListShape'.
+'draw2d::Draw2DCanvas' is a specialization of 'Canvas'.
+'draw2d::TitleBarBorder' is a specialization of 'ColoredLabeledBorder'.
+'draw2d::FlowBorder' is a specialization of 'Border'.
+'draw2d::GroupBoxBorder' is a specialization of 'ColoredLabeledBorder'.
+'draw2d::Ellipse' is a specialization of 'Shape'.
+'draw2d::RoundedRectangle' is a specialization of 'Shape'.
+'draw2d::Figure' (role 'Figure', cardinality 0..*) is associated with 'draw2d::Figure' (role 'parent', cardinality 0..*).
+'draw2d::Font' (role 'draw2d_Font', cardinality 0..*) is associated with 'draw2d::Figure' (role 'draw2d_Figure15', cardinality 0..*).
+'draw2d::Figure' (role 'draw2d_Figure10', cardinality 0..*) is associated with 'draw2d::Color' (role 'draw2d_Color', cardinality 0..*).
+'draw2d::Font' (role 'draw2d_Font21', cardinality 0..*) is associated with 'draw2d::LabeledBorder' (role 'draw2d_LabeledBorder', cardinality 0..*).
+'draw2d::Figure' (role 'draw2d_Figure8', cardinality 0..*) is associated with 'draw2d::Figure' (role 'draw2d_Figure6', cardinality 0..*).
+'draw2d::Figure' (role 'children', cardinality 0..*) is associated with 'draw2d::Figure' (role 'Figure5', cardinality 0..*).
+'draw2d::Color' (role 'draw2d_Color23', cardinality 0..*) is associated with 'draw2d::ColoredLabeledBorder' (role 'draw2d_ColoredLabeledBorder', cardinality 0..*).
+'draw2d::Draw2DCanvas' (role 'draw2d_Draw2DCanvas', cardinality 0..*) is associated with 'draw2d::Figure' (role 'draw2d_Figure', cardinality 0..*).
+'draw2d::Figure' (role 'draw2d_Figure12', cardinality 0..*) is associated with 'draw2d::Color' (role 'draw2d_Color13', cardinality 0..*).
+'draw2d::Border' (role 'draw2d_Border', cardinality 0..*) is associated with 'draw2d::Figure' (role 'draw2d_Figure17', cardinality 0..*).
+'draw2d::ConnectionAnchor' (role 'draw2d_ConnectionAnchor', cardinality 0..*) is associated with 'draw2d::Figure' (role 'draw2d_Figure19', cardinality 0..*).

@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'simplea::A' has the following attributes: 'name' of type str.
+The class 'simplea::B' has no attributes.
+'simplea::B' (role 'simplea_B', cardinality 0..*) is associated with 'simplea::A' (role 'simplea_A', cardinality 0..*).

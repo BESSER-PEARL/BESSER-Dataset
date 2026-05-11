@@ -1,0 +1,17 @@
+The model has 7 class(es).
+The class 'dmm::Student' has the following attributes: 'matriculationNumber' of type int.
+The class 'dmm::Person' has the following attributes: 'name' of type str; 'email' of type str.
+The class 'dmm::UniversityManagementSystem' has no attributes.
+The class 'dmm::Exam' has the following attributes: 'examID' of type str.
+The class 'dmm::Course' has the following attributes: 'courseType' of type str; 'courseNumber' of type int; 'name' of type str.
+The class 'dmm::Professor' has the following attributes: 'employeeNumber' of type int.
+The class 'Person' has no attributes.
+The enumeration 'CourseType' has the following literals: 'SEM', 'PR', 'VO', 'UE'.
+'dmm::Student' is a specialization of 'Person'.
+'dmm::Professor' is a specialization of 'Person'.
+'dmm::Professor' (role 'dmm_Professor', cardinality 0..*) is associated with 'dmm::Course' (role 'dmm_Course2', cardinality 0..*).
+'dmm::Person' (role 'dmm_Person', cardinality 0..*) is associated with 'dmm::UniversityManagementSystem' (role 'dmm_UniversityManagementSystem11', cardinality 0..*).
+'dmm::Course' (role 'dmm_Course9', cardinality 0..*) is associated with 'dmm::UniversityManagementSystem' (role 'dmm_UniversityManagementSystem', cardinality 0..*).
+'dmm::Student' (role 'dmm_Student', cardinality 0..*) is associated with 'dmm::Course' (role 'dmm_Course', cardinality 0..*).
+'dmm::Course' (role 'dmm_Course3', cardinality 0..*) is associated with 'dmm::Course' (role 'dmm_Course5', cardinality 0..*).
+'dmm::Course' (role 'dmm_Course7', cardinality 0..*) is associated with 'dmm::Exam' (role 'dmm_Exam', cardinality 0..*).

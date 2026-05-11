@@ -1,0 +1,23 @@
+The model has 7 class(es).
+The class 'relational::4relational2UML::Column' has the following attributes: 'isPrimaryKey' of type bool; 'type' of type str; 'name' of type str; 'isUnique' of type bool.
+The class 'relational::4relational2UML::ModelElement' has the following attributes: 'comment' of type str.
+The class 'ModelElement' has no attributes.
+The class 'relational::4relational2UML::ForeignKey' has the following attributes: 'name' of type str.
+The class 'relational::4relational2UML::Database' has the following attributes: 'url' of type str; 'name' of type str.
+The class 'relational::4relational2UML::Table' has the following attributes: 'name' of type str.
+The class 'relational::4relational2UML::Schema' has the following attributes: 'name' of type str.
+The enumeration 'Type' has the following literals: 'NUMERIC', 'VARCHAR', 'CHAR', 'DATE', 'TIME', 'FLOAT'.
+'relational::4relational2UML::Column' is a specialization of 'ModelElement'.
+'relational::4relational2UML::Schema' is a specialization of 'ModelElement'.
+'relational::4relational2UML::ForeignKey' is a specialization of 'ModelElement'.
+'relational::4relational2UML::Database' is a specialization of 'ModelElement'.
+'relational::4relational2UML::Table' is a specialization of 'ModelElement'.
+'relational::4relational2UML::Table' (role 'owner5', cardinality 0..*) is associated with 'relational::4relational2UML::Column' (role 'Column', cardinality 0..*).
+'relational::4relational2UML::Table' (role 'Table13', cardinality 0..*) is associated with 'relational::4relational2UML::Column' (role 'ownedColumns', cardinality 0..*).
+'relational::4relational2UML::Table' (role 'Table10', cardinality 0..*) is associated with 'relational::4relational2UML::ForeignKey' (role 'ownedForeignKeys', cardinality 0..*).
+'relational::4relational2UML::Database' (role 'owner', cardinality 0..*) is associated with 'relational::4relational2UML::Schema' (role 'Schema', cardinality 0..*).
+'relational::4relational2UML::Database' (role 'Database', cardinality 0..*) is associated with 'relational::4relational2UML::Schema' (role 'ownedSchemas', cardinality 0..*).
+'relational::4relational2UML::ForeignKey' (role 'relational_4relational2UML_ForeignKey', cardinality 0..*) is associated with 'relational::4relational2UML::Table' (role 'relational_4relational2UML_Table', cardinality 0..*).
+'relational::4relational2UML::Schema' (role 'owner2', cardinality 0..*) is associated with 'relational::4relational2UML::Table' (role 'Table', cardinality 0..*).
+'relational::4relational2UML::ForeignKey' (role 'ForeignKey', cardinality 0..*) is associated with 'relational::4relational2UML::Table' (role 'foreignTable', cardinality 0..*).
+'relational::4relational2UML::Schema' (role 'Schema8', cardinality 0..*) is associated with 'relational::4relational2UML::Table' (role 'ownedTables', cardinality 0..*).

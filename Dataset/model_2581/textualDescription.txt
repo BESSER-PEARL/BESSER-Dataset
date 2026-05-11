@@ -1,0 +1,75 @@
+The model has 30 class(es).
+The class 'esper::SelectAttributesDefinition' has the following attributes: 'operator' of type str.
+The class 'ExtraParenthesisRule' has no attributes.
+The class 'esper::Name' has the following attributes: 'name' of type str.
+The class 'esper::FollowBy' has no attributes.
+The class 'esper::FollowByWhere' has no attributes.
+The class 'esper::KindSelectAttributesDefinition' has the following attributes: 'string' of type str; 'int' of type int.
+The class 'esper::AbstractFollowBy' has no attributes.
+The class 'esper::AttributesDefinition' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'esper::Domainmodel' has no attributes.
+The class 'esper::DefaultMethods' has the following attributes: 'name' of type str.
+The class 'esper::Priority' has the following attributes: 'priorityInt' of type int.
+The class 'esper::Insert' has no attributes.
+The class 'esper::TerminalExpression' has the following attributes: 'every' of type bool; 'parenthesis' of type bool.
+The class 'esper::JoinFollowBy' has the following attributes: 'operator' of type str.
+The class 'esper::Event' has no attributes.
+The class 'esper::Attributes' has no attributes.
+The class 'esper::Win' has no attributes.
+The class 'esper::Timer' has no attributes.
+The class 'esper::RuleParts' has no attributes.
+The class 'esper::Anything' has the following attributes: 'operator' of type str.
+The class 'esper::ExtraParenthesisRule' has no attributes.
+The class 'KindOfEvent' has no attributes.
+The class 'esper::SingleSelectDefinition' has the following attributes: 'attribute' of type str.
+The class 'esper::Having' has the following attributes: 'operator' of type str.
+The class 'esper::KindOfEvent' has the following attributes: 'name' of type str.
+The class 'esper::From' has no attributes.
+The class 'esper::GroupBy' has no attributes.
+The class 'esper::Pattern' has no attributes.
+The class 'esper::SingleDefinition' has the following attributes: 'name' of type str.
+The class 'esper::Select' has the following attributes: 'alias' of type str; 'asterisk' of type bool.
+The enumeration 'Operators' has the following literals: 'between', 'or_', 'lessThan', 'and_', 'plus', 'moreEqualThan', 'not_', 'in_', 'notIn', 'moreThan', 'isnot', 'multiplication', 'equal', 'lessEqualThan', 'minus'.
+'esper::Insert' is a specialization of 'KindOfEvent'.
+'esper::Anything' is a specialization of 'ExtraParenthesisRule'.
+'esper::Event' is a specialization of 'KindOfEvent'.
+'esper::GroupBy' (role 'esper_GroupBy79', cardinality 0..*) is associated with 'esper::Anything' (role 'esper_Anything80', cardinality 0..*).
+'esper::FollowBy' (role 'esper_FollowBy52', cardinality 0..*) is associated with 'esper::TerminalExpression' (role 'esper_TerminalExpression', cardinality 0..*).
+'esper::Anything' (role 'esper_Anything86', cardinality 0..*) is associated with 'esper::Having' (role 'esper_Having85', cardinality 0..*).
+'esper::AbstractFollowBy' (role 'esper_AbstractFollowBy', cardinality 0..*) is associated with 'esper::JoinFollowBy' (role 'esper_JoinFollowBy46', cardinality 0..*).
+'esper::Win' (role 'esper_Win71', cardinality 0..*) is associated with 'esper::DefaultMethods' (role 'esper_DefaultMethods72', cardinality 0..*).
+'esper::DefaultMethods' (role 'esper_DefaultMethods88', cardinality 0..*) is associated with 'esper::Anything' (role 'esper_Anything89', cardinality 0..*).
+'esper::Event' (role 'esper_Event', cardinality 0..*) is associated with 'esper::Domainmodel' (role 'esper_Domainmodel2', cardinality 0..*).
+'esper::FollowBy' (role 'esper_FollowBy54', cardinality 0..*) is associated with 'esper::TerminalExpression' (role 'esper_TerminalExpression55', cardinality 0..*).
+'esper::SelectAttributesDefinition' (role 'esper_SelectAttributesDefinition27', cardinality 0..*) is associated with 'esper::KindSelectAttributesDefinition' (role 'esper_KindSelectAttributesDefinition28', cardinality 0..*).
+'esper::Domainmodel' (role 'esper_Domainmodel', cardinality 0..*) is associated with 'esper::RuleParts' (role 'esper_RuleParts', cardinality 0..*).
+'esper::AbstractFollowBy' (role 'esper_AbstractFollowBy50', cardinality 0..*) is associated with 'esper::FollowByWhere' (role 'esper_FollowByWhere', cardinality 0..*).
+'esper::AbstractFollowBy' (role 'esper_AbstractFollowBy48', cardinality 0..*) is associated with 'esper::FollowBy' (role 'esper_FollowBy', cardinality 0..*).
+'esper::DefaultMethods' (role 'esper_DefaultMethods83', cardinality 0..*) is associated with 'esper::Having' (role 'esper_Having82', cardinality 0..*).
+'esper::TerminalExpression' (role 'esper_TerminalExpression60', cardinality 0..*) is associated with 'esper::FollowBy' (role 'esper_FollowBy61', cardinality 0..*).
+'esper::Select' (role 'esper_Select', cardinality 0..*) is associated with 'esper::RuleParts' (role 'esper_RuleParts14', cardinality 0..*).
+'esper::KindSelectAttributesDefinition' (role 'esper_KindSelectAttributesDefinition', cardinality 0..*) is associated with 'esper::SingleSelectDefinition' (role 'esper_SingleSelectDefinition', cardinality 0..*).
+'esper::From' (role 'esper_From', cardinality 0..*) is associated with 'esper::RuleParts' (role 'esper_RuleParts16', cardinality 0..*).
+'esper::KindSelectAttributesDefinition' (role 'esper_KindSelectAttributesDefinition31', cardinality 0..*) is associated with 'esper::SelectAttributesDefinition' (role 'esper_SelectAttributesDefinition30', cardinality 0..*).
+'esper::FollowBy' (role 'esper_FollowBy58', cardinality 0..*) is associated with 'esper::TerminalExpression' (role 'esper_TerminalExpression57', cardinality 0..*).
+'esper::AttributesDefinition' (role 'esper_AttributesDefinition', cardinality 0..*) is associated with 'esper::Attributes' (role 'esper_Attributes6', cardinality 0..*).
+'esper::From' (role 'esper_From40', cardinality 0..*) is associated with 'esper::Pattern' (role 'esper_Pattern', cardinality 0..*).
+'esper::SingleDefinition' (role 'esper_SingleDefinition66', cardinality 0..*) is associated with 'esper::KindOfEvent' (role 'esper_KindOfEvent', cardinality 0..*).
+'esper::FollowByWhere' (role 'esper_FollowByWhere74', cardinality 0..*) is associated with 'esper::Timer' (role 'esper_Timer', cardinality 0..*).
+'esper::Anything' (role 'esper_Anything69', cardinality 0..*) is associated with 'esper::SingleDefinition' (role 'esper_SingleDefinition68', cardinality 0..*).
+'esper::Name' (role 'esper_Name', cardinality 0..*) is associated with 'esper::RuleParts' (role 'esper_RuleParts8', cardinality 0..*).
+'esper::Event' (role 'esper_Event36', cardinality 0..*) is associated with 'esper::From' (role 'esper_From35', cardinality 0..*).
+'esper::GroupBy' (role 'esper_GroupBy', cardinality 0..*) is associated with 'esper::RuleParts' (role 'esper_RuleParts18', cardinality 0..*).
+'esper::Priority' (role 'esper_Priority', cardinality 0..*) is associated with 'esper::RuleParts' (role 'esper_RuleParts12', cardinality 0..*).
+'esper::TerminalExpression' (role 'esper_TerminalExpression63', cardinality 0..*) is associated with 'esper::SingleDefinition' (role 'esper_SingleDefinition64', cardinality 0..*).
+'esper::SelectAttributesDefinition' (role 'esper_SelectAttributesDefinition', cardinality 0..*) is associated with 'esper::Select' (role 'esper_Select22', cardinality 0..*).
+'esper::Win' (role 'esper_Win', cardinality 0..*) is associated with 'esper::Pattern' (role 'esper_Pattern44', cardinality 0..*).
+'esper::SingleDefinition' (role 'esper_SingleDefinition', cardinality 0..*) is associated with 'esper::SingleSelectDefinition' (role 'esper_SingleSelectDefinition33', cardinality 0..*).
+'esper::Pattern' (role 'esper_Pattern42', cardinality 0..*) is associated with 'esper::JoinFollowBy' (role 'esper_JoinFollowBy', cardinality 0..*).
+'esper::Attributes' (role 'esper_Attributes', cardinality 0..*) is associated with 'esper::Event' (role 'esper_Event4', cardinality 0..*).
+'esper::Anything' (role 'esper_Anything91', cardinality 0..*) is associated with 'esper::ExtraParenthesisRule' (role 'esper_ExtraParenthesisRule', cardinality 0..*).
+'esper::Insert' (role 'esper_Insert', cardinality 0..*) is associated with 'esper::RuleParts' (role 'esper_RuleParts10', cardinality 0..*).
+'esper::DefaultMethods' (role 'esper_DefaultMethods77', cardinality 0..*) is associated with 'esper::Timer' (role 'esper_Timer76', cardinality 0..*).
+'esper::Anything' (role 'esper_Anything', cardinality 0..*) is associated with 'esper::From' (role 'esper_From38', cardinality 0..*).
+'esper::KindSelectAttributesDefinition' (role 'esper_KindSelectAttributesDefinition25', cardinality 0..*) is associated with 'esper::DefaultMethods' (role 'esper_DefaultMethods', cardinality 0..*).
+'esper::RuleParts' (role 'esper_RuleParts20', cardinality 0..*) is associated with 'esper::Having' (role 'esper_Having', cardinality 0..*).

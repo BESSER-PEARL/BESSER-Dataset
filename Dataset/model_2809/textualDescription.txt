@@ -1,0 +1,49 @@
+The model has 19 class(es).
+The class 'CSElement' has no attributes.
+The class 'cs::CSElement' has the following attributes: 'minZoom' of type str; 'maxZoom' of type str; 'templateRoot' of type bool; 'resizable' of type bool; 'selectable' of type str; 'draggable' of type bool.
+The class 'cs::CSText' has the following attributes: 'text' of type str.
+The class 'cs::CSPoint' has the following attributes: 'x' of type float; 'y' of type float.
+The class 'cs::EObject' has no attributes.
+The class 'cs::CSTransform' has the following attributes: 'm21' of type float; 'm11' of type float; 'm01' of type float; 'm12' of type float; 'm00' of type float; 'm02' of type float; 'm22' of type float; 'm10' of type float; 'm20' of type float.
+The class 'cs::CSLayout' has no attributes.
+The class 'cs::CSNode' has the following attributes: 'minWidth' of type str; 'x' of type str; 'widthRatioToParent' of type str; 'maxWidth' of type str; 'maxHeight' of type str; 'heightRatioToParent' of type str; 'minHeight' of type str; 'y' of type str; 'width' of type str; 'height' of type str; 'verticalAlign' of type str; 'horizontalAlign' of type str.
+The class 'cs::EClass' has no attributes.
+The class 'cs::CSConnection' has no attributes.
+The class 'cs::CSShape' has the following attributes: 'closed' of type bool.
+The class 'ENamedElement' has no attributes.
+The class 'CSNode' has no attributes.
+The class 'cs::CSConnectionEnd' has the following attributes: 'tipType' of type int.
+The class 'cs::CSTemplateDescription' has the following attributes: 'scale' of type float.
+The class 'cs::EStructuralFeature' has no attributes.
+The class 'cs::CSStroke' has the following attributes: 'dash_phase' of type float; 'miterlimit' of type float; 'dash' of type float; 'width' of type float; 'join' of type int; 'cap' of type int.
+The class 'cs::CSColor' has the following attributes: 'r' of type float; 'a' of type float; 'g' of type float; 'b' of type float.
+The class 'cs::CSRoot' has no attributes.
+The enumeration 'CSFitType' has the following literals: 'AUTO_EXPAND', 'FIT_TO_CHILDREN'.
+The enumeration 'CSOrientation' has the following literals: 'VERTICAL', 'HORIZONTAL'.
+'cs::CSRoot' is a specialization of 'CSElement'.
+'cs::CSElement' is a specialization of 'ENamedElement'.
+'cs::CSTemplateDescription' is a specialization of 'CSNode'.
+'cs::CSNode' is a specialization of 'CSElement'.
+'cs::CSText' is a specialization of 'CSNode'.
+'cs::CSConnection' is a specialization of 'CSElement'.
+'cs::CSShape' is a specialization of 'ENamedElement'.
+'cs::CSElement' (role 'cs_CSElement16', cardinality 0..*) is associated with 'cs::EObject' (role 'cs_EObject', cardinality 0..*).
+'cs::CSElement' (role 'cs_CSElement35', cardinality 0..*) is associated with 'cs::CSTemplateDescription' (role 'cs_CSTemplateDescription34', cardinality 0..*).
+'cs::EStructuralFeature' (role 'cs_EStructuralFeature32', cardinality 0..*) is associated with 'cs::CSTemplateDescription' (role 'cs_CSTemplateDescription31', cardinality 0..*).
+'cs::CSPoint' (role 'cs_CSPoint', cardinality 0..*) is associated with 'cs::CSShape' (role 'cs_CSShape25', cardinality 0..*).
+'cs::CSElement' (role 'cs_CSElement7', cardinality 0..*) is associated with 'cs::CSColor' (role 'cs_CSColor', cardinality 0..*).
+'cs::EStructuralFeature' (role 'cs_EStructuralFeature', cardinality 0..*) is associated with 'cs::CSElement' (role 'cs_CSElement18', cardinality 0..*).
+'cs::CSElement' (role 'CSElement5', cardinality 0..*) is associated with 'cs::CSElement' (role 'children', cardinality 0..*).
+'cs::EClass' (role 'cs_EClass', cardinality 0..*) is associated with 'cs::CSTemplateDescription' (role 'cs_CSTemplateDescription', cardinality 0..*).
+'cs::CSElement' (role 'cs_CSElement9', cardinality 0..*) is associated with 'cs::CSColor' (role 'cs_CSColor10', cardinality 0..*).
+'cs::CSConnectionEnd' (role 'cs_CSConnectionEnd37', cardinality 0..*) is associated with 'cs::CSNode' (role 'cs_CSNode38', cardinality 0..*).
+'cs::CSElement' (role 'parent', cardinality 0..*) is associated with 'cs::CSElement' (role 'CSElement', cardinality 0..*).
+'cs::CSLayout' (role 'cs_CSLayout', cardinality 0..*) is associated with 'cs::CSElement' (role 'cs_CSElement20', cardinality 0..*).
+'cs::CSElement' (role 'cs_CSElement14', cardinality 0..*) is associated with 'cs::CSTransform' (role 'cs_CSTransform', cardinality 0..*).
+'cs::CSConnection' (role 'cs_CSConnection23', cardinality 0..*) is associated with 'cs::CSConnectionEnd' (role 'cs_CSConnectionEnd', cardinality 0..*).
+'cs::EStructuralFeature' (role 'cs_EStructuralFeature44', cardinality 0..*) is associated with 'cs::CSConnectionEnd' (role 'cs_CSConnectionEnd43', cardinality 0..*).
+'cs::CSElement' (role 'cs_CSElement12', cardinality 0..*) is associated with 'cs::CSShape' (role 'cs_CSShape', cardinality 0..*).
+'cs::CSElement' (role 'cs_CSElement', cardinality 0..*) is associated with 'cs::CSStroke' (role 'cs_CSStroke', cardinality 0..*).
+'cs::CSTemplateDescription' (role 'cs_CSTemplateDescription28', cardinality 0..*) is associated with 'cs::EClass' (role 'cs_EClass29', cardinality 0..*).
+'cs::EStructuralFeature' (role 'cs_EStructuralFeature41', cardinality 0..*) is associated with 'cs::CSConnectionEnd' (role 'cs_CSConnectionEnd40', cardinality 0..*).
+'cs::CSNode' (role 'cs_CSNode', cardinality 0..*) is associated with 'cs::CSConnection' (role 'cs_CSConnection', cardinality 0..*).

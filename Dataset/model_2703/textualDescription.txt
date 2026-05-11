@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'sample::C' has no attributes.
+The class 'sample::A' has the following attributes: 'quantity' of type int; 'valid' of type bool; 'name' of type str.
+The class 'sample::B' has the following attributes: 'label' of type str.
+The class 'A' has no attributes.
+'sample::B' is a specialization of 'A'.
+'sample::C' (role 'sample_C', cardinality 0..*) is associated with 'sample::B' (role 'sample_B', cardinality 0..*).
+'sample::C' (role 'sample_C2', cardinality 0..*) is associated with 'sample::A' (role 'sample_A', cardinality 0..*).

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/rquinio/ck2xtext/ck2xtext/model/generated/Ck2Gfx.ecore

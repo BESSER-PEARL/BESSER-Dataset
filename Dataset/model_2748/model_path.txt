@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tiagojrg/BX-Tools-CaseStudies/CaseStudies/A2B/echo/files/B.ecore

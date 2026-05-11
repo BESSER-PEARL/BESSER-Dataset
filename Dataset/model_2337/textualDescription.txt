@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'persons::Person' has the following attributes: 'name' of type str.
+The class 'persons::PersonGroup' has no attributes.
+'persons::Person' (role 'persons_Person', cardinality 0..*) is associated with 'persons::PersonGroup' (role 'persons_PersonGroup', cardinality 0..*).

@@ -1,0 +1,23 @@
+The model has 9 class(es).
+The class 'execTraces::BoolLiteral' has the following attributes: 'bool' of type str.
+The class 'execTraces::ExecTraces' has the following attributes: 'ComponentName' of type str.
+The class 'execTraces::RealLiteral' has the following attributes: 'intPart' of type int; 'decimalPart' of type int.
+The class 'Literal' has no attributes.
+The class 'execTraces::Node' has the following attributes: 'status' of type str; 'name' of type str; 'level' of type int; 'id' of type int; 'constraints' of type str.
+The class 'execTraces::Literal' has no attributes.
+The class 'execTraces::Variable' has the following attributes: 'name' of type str.
+The class 'execTraces::IntLiteral' has the following attributes: 'int' of type int.
+The class 'execTraces::Edge' has the following attributes: 'trigger' of type str; 'guard' of type str; 'status' of type str; 'actions' of type str.
+The enumeration 'TransStatus' has the following literals: 'normal', 'redundantTrans', 'unsafeTrans', 'error'.
+The enumeration 'StateStatus' has the following literals: 'Repeated', 'new', 'unSafeState'.
+'execTraces::BoolLiteral' is a specialization of 'Literal'.
+'execTraces::IntLiteral' is a specialization of 'Literal'.
+'execTraces::RealLiteral' is a specialization of 'Literal'.
+'execTraces::Node' (role 'execTraces_Node8', cardinality 0..*) is associated with 'execTraces::Edge' (role 'execTraces_Edge7', cardinality 0..*).
+'execTraces::Node' (role 'execTraces_Node5', cardinality 0..*) is associated with 'execTraces::Edge' (role 'execTraces_Edge4', cardinality 0..*).
+'execTraces::Node' (role 'execTraces_Node10', cardinality 0..*) is associated with 'execTraces::Variable' (role 'execTraces_Variable', cardinality 0..*).
+'execTraces::Node' (role 'execTraces_Node', cardinality 0..*) is associated with 'execTraces::ExecTraces' (role 'execTraces_ExecTraces', cardinality 0..*).
+'execTraces::Variable' (role 'execTraces_Variable18', cardinality 0..*) is associated with 'execTraces::Literal' (role 'execTraces_Literal', cardinality 0..*).
+'execTraces::Edge' (role 'execTraces_Edge16', cardinality 0..*) is associated with 'execTraces::Node' (role 'execTraces_Node15', cardinality 0..*).
+'execTraces::Node' (role 'execTraces_Node12', cardinality 0..*) is associated with 'execTraces::Edge' (role 'execTraces_Edge13', cardinality 0..*).
+'execTraces::Edge' (role 'execTraces_Edge', cardinality 0..*) is associated with 'execTraces::ExecTraces' (role 'execTraces_ExecTraces2', cardinality 0..*).

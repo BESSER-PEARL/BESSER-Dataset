@@ -1,0 +1,21 @@
+The model has 10 class(es).
+The class 'Type' has no attributes.
+The class 'wh::Type' has the following attributes: 'name' of type str.
+The class 'wh::PackageDeclaration' has the following attributes: 'name' of type str.
+The class 'wh::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'wh::Feature' has the following attributes: 'many' of type bool; 'name' of type str.
+The class 'wh::Wh' has no attributes.
+The class 'wh::DataType' has no attributes.
+The class 'AbstractElement' has no attributes.
+The class 'wh::Entity' has no attributes.
+The class 'wh::AbstractElement' has no attributes.
+'wh::Import' is a specialization of 'AbstractElement'.
+'wh::Type' is a specialization of 'AbstractElement'.
+'wh::Entity' is a specialization of 'Type'.
+'wh::DataType' is a specialization of 'Type'.
+'wh::PackageDeclaration' is a specialization of 'AbstractElement'.
+'wh::AbstractElement' (role 'wh_AbstractElement2', cardinality 0..*) is associated with 'wh::PackageDeclaration' (role 'wh_PackageDeclaration', cardinality 0..*).
+'wh::Feature' (role 'wh_Feature', cardinality 0..*) is associated with 'wh::Entity' (role 'wh_Entity6', cardinality 0..*).
+'wh::Type' (role 'wh_Type', cardinality 0..*) is associated with 'wh::Feature' (role 'wh_Feature8', cardinality 0..*).
+'wh::Wh' (role 'wh_Wh', cardinality 0..*) is associated with 'wh::AbstractElement' (role 'wh_AbstractElement', cardinality 0..*).
+'wh::Entity' (role 'wh_Entity', cardinality 0..*) is associated with 'wh::Entity' (role 'wh_Entity3', cardinality 0..*).

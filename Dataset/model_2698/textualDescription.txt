@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'NamedElement' has no attributes.
+The class 'abc::C' has no attributes.
+The class 'abc::A' has no attributes.
+The class 'abc::NamedElement' has the following attributes: 'name' of type str.
+The class 'abc::B' has no attributes.
+'abc::A' is a specialization of 'NamedElement'.
+'abc::C' is a specialization of 'NamedElement'.
+'abc::B' is a specialization of 'NamedElement'.
+'abc::B' (role 'abc_B4', cardinality 0..*) is associated with 'abc::A' (role 'abc_A5', cardinality 0..*).
+'abc::B' (role 'abc_B', cardinality 0..*) is associated with 'abc::C' (role 'abc_C2', cardinality 0..*).
+'abc::C' (role 'abc_C', cardinality 0..*) is associated with 'abc::A' (role 'abc_A', cardinality 0..*).

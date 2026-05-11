@@ -1,0 +1,37 @@
+The model has 17 class(es).
+The class 'sedml::dataGenerator' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'sedml::algorithm' has the following attributes: 'kisaoID' of type str.
+The class 'sedml::task' has the following attributes: 'name' of type str; 'id' of type str.
+The class 'sedml::variable' has the following attributes: 'target' of type str; 'symbol' of type str; 'id' of type str.
+The class 'sedml::sedML' has the following attributes: 'version' of type int; 'level' of type int.
+The class 'sedml::listOfModels' has no attributes.
+The class 'sedml::listOfVariables' has no attributes.
+The class 'sedml::uniformTimeCourse' has the following attributes: 'id' of type str; 'outputEndTime' of type int; 'initialTime' of type int; 'outputStartTime' of type int; 'numberOfPoints' of type int.
+The class 'sedml::listOfTasks' has no attributes.
+The class 'sedml::curve' has the following attributes: 'logY' of type str; 'logX' of type str; 'id' of type str; 'yDataReference' of type str; 'xDataReference' of type str.
+The class 'sedml::model' has the following attributes: 'source' of type str; 'name' of type str; 'language' of type str; 'id' of type str.
+The class 'sedml::listOfDataGenerators' has no attributes.
+The class 'sedml::listOfOutputs' has no attributes.
+The class 'sedml::listOfCurves' has no attributes.
+The class 'sedml::listOfSimulations' has no attributes.
+The class 'sedml::plot2D' has the following attributes: 'name' of type str; 'id' of type str.
+The class 'sedml::math' has the following attributes: 'xlms' of type str.
+'sedml::sedML' (role 'sedml_sedML2', cardinality 0..*) is associated with 'sedml::listOfModels' (role 'sedml_listOfModels', cardinality 0..*).
+'sedml::dataGenerator' (role 'sedml_dataGenerator34', cardinality 0..*) is associated with 'sedml::math' (role 'sedml_math', cardinality 0..*).
+'sedml::listOfCurves' (role 'sedml_listOfCurves', cardinality 0..*) is associated with 'sedml::plot2D' (role 'sedml_plot2D28', cardinality 0..*).
+'sedml::algorithm' (role 'sedml_algorithm', cardinality 0..*) is associated with 'sedml::uniformTimeCourse' (role 'sedml_uniformTimeCourse20', cardinality 0..*).
+'sedml::task' (role 'sedml_task25', cardinality 0..*) is associated with 'sedml::uniformTimeCourse' (role 'sedml_uniformTimeCourse26', cardinality 0..*).
+'sedml::listOfDataGenerators' (role 'sedml_listOfDataGenerators', cardinality 0..*) is associated with 'sedml::sedML' (role 'sedml_sedML6', cardinality 0..*).
+'sedml::sedML' (role 'sedml_sedML4', cardinality 0..*) is associated with 'sedml::listOfTasks' (role 'sedml_listOfTasks', cardinality 0..*).
+'sedml::dataGenerator' (role 'sedml_dataGenerator', cardinality 0..*) is associated with 'sedml::listOfDataGenerators' (role 'sedml_listOfDataGenerators16', cardinality 0..*).
+'sedml::variable' (role 'sedml_variable38', cardinality 0..*) is associated with 'sedml::task' (role 'sedml_task39', cardinality 0..*).
+'sedml::sedML' (role 'sedml_sedML8', cardinality 0..*) is associated with 'sedml::listOfOutputs' (role 'sedml_listOfOutputs', cardinality 0..*).
+'sedml::task' (role 'sedml_task22', cardinality 0..*) is associated with 'sedml::model' (role 'sedml_model23', cardinality 0..*).
+'sedml::listOfModels' (role 'sedml_listOfModels12', cardinality 0..*) is associated with 'sedml::model' (role 'sedml_model', cardinality 0..*).
+'sedml::listOfVariables' (role 'sedml_listOfVariables', cardinality 0..*) is associated with 'sedml::dataGenerator' (role 'sedml_dataGenerator32', cardinality 0..*).
+'sedml::variable' (role 'sedml_variable', cardinality 0..*) is associated with 'sedml::listOfVariables' (role 'sedml_listOfVariables36', cardinality 0..*).
+'sedml::listOfSimulations' (role 'sedml_listOfSimulations', cardinality 0..*) is associated with 'sedml::sedML' (role 'sedml_sedML', cardinality 0..*).
+'sedml::listOfOutputs' (role 'sedml_listOfOutputs18', cardinality 0..*) is associated with 'sedml::plot2D' (role 'sedml_plot2D', cardinality 0..*).
+'sedml::listOfCurves' (role 'sedml_listOfCurves30', cardinality 0..*) is associated with 'sedml::curve' (role 'sedml_curve', cardinality 0..*).
+'sedml::listOfSimulations' (role 'sedml_listOfSimulations10', cardinality 0..*) is associated with 'sedml::uniformTimeCourse' (role 'sedml_uniformTimeCourse', cardinality 0..*).
+'sedml::task' (role 'sedml_task', cardinality 0..*) is associated with 'sedml::listOfTasks' (role 'sedml_listOfTasks14', cardinality 0..*).

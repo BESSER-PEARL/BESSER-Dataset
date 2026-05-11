@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/scribble/scribble-eclipse/plugins/org.scribble.trace.editor/model/generated/ScribbleTraceDsl.ecore

@@ -1,0 +1,13 @@
+The model has 4 class(es).
+The class 'prosjekt::Semester' has the following attributes: 'name' of type str.
+The class 'prosjekt::CourseCoordinator' has the following attributes: 'name' of type str.
+The class 'prosjekt::Institute' has the following attributes: 'name' of type str; 'shortName' of type str.
+The class 'prosjekt::Course' has the following attributes: 'code' of type str; 'name' of type str; 'avgGrade' of type int; 'studyPoints' of type float.
+'prosjekt::Semester' (role 'Semester', cardinality 0..*) is associated with 'prosjekt::Course' (role 'course5', cardinality 0..*).
+'prosjekt::CourseCoordinator' (role 'CourseCoordinator', cardinality 0..*) is associated with 'prosjekt::Institute' (role 'institute2', cardinality 0..*).
+'prosjekt::Institute' (role 'Institute15', cardinality 0..*) is associated with 'prosjekt::CourseCoordinator' (role 'courseCoordinator14', cardinality 0..*).
+'prosjekt::CourseCoordinator' (role 'courseCoordinator', cardinality 0..*) is associated with 'prosjekt::Course' (role 'Course12', cardinality 0..*).
+'prosjekt::Course' (role 'course', cardinality 0..*) is associated with 'prosjekt::Institute' (role 'Institute', cardinality 0..*).
+'prosjekt::Institute' (role 'institute', cardinality 0..*) is associated with 'prosjekt::Course' (role 'Course', cardinality 0..*).
+'prosjekt::Course' (role 'course7', cardinality 0..*) is associated with 'prosjekt::CourseCoordinator' (role 'CourseCoordinator8', cardinality 0..*).
+'prosjekt::Semester' (role 'semester', cardinality 0..*) is associated with 'prosjekt::Course' (role 'Course10', cardinality 0..*).

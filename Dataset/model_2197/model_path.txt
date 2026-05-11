@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tub-aset/daf/dafcore/src/main/emf/de/jpwinkler/daf/doors/Doors.ecore

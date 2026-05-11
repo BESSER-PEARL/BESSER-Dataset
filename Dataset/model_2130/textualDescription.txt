@@ -1,0 +1,24 @@
+The model has 11 class(es).
+The class 'uitf::UIControl' has the following attributes: 'id' of type str.
+The class 'uitf::Statement' has the following attributes: 'kind' of type str; 'description' of type str.
+The class 'uitf::Variable' has the following attributes: 'id' of type str.
+The class 'uitf::TestSuite' has the following attributes: 'id' of type str.
+The class 'uitf::AssertInState' has the following attributes: 'stateId' of type str.
+The class 'uitf::UIControlVariable' has no attributes.
+The class 'uitf::TriggeredTransition' has the following attributes: 'scriptStr' of type str; 'transitionId' of type str.
+The class 'uitf::TestCase' has the following attributes: 'id' of type str.
+The class 'Statement' has no attributes.
+The class 'Variable' has no attributes.
+The class 'uitf::UISUT' has the following attributes: 'objectURI' of type str.
+The enumeration 'UserInstructionEnum' has the following literals: 'ManipulateUIControl', 'AssertUIValue', 'InstantiateUISUT', 'SetUIValue', 'SendUITrigger', 'AssertUIState'.
+'uitf::AssertInState' is a specialization of 'Statement'.
+'uitf::UISUT' is a specialization of 'Variable'.
+'uitf::UIControlVariable' is a specialization of 'Variable'.
+'uitf::TriggeredTransition' is a specialization of 'Statement'.
+'uitf::TestCase' (role 'uitf_TestCase2', cardinality 0..*) is associated with 'uitf::Statement' (role 'uitf_Statement', cardinality 0..*).
+'uitf::TestCase' (role 'uitf_TestCase4', cardinality 0..*) is associated with 'uitf::TestSuite' (role 'uitf_TestSuite', cardinality 0..*).
+'uitf::UIControl' (role 'uitf_UIControl', cardinality 0..*) is associated with 'uitf::UISUT' (role 'uitf_UISUT8', cardinality 0..*).
+'uitf::Variable' (role 'uitf_Variable14', cardinality 0..*) is associated with 'uitf::UIControl' (role 'uitf_UIControl13', cardinality 0..*).
+'uitf::Statement' (role 'uitf_Statement10', cardinality 0..*) is associated with 'uitf::Variable' (role 'uitf_Variable11', cardinality 0..*).
+'uitf::Variable' (role 'uitf_Variable', cardinality 0..*) is associated with 'uitf::UISUT' (role 'uitf_UISUT6', cardinality 0..*).
+'uitf::TestCase' (role 'uitf_TestCase', cardinality 0..*) is associated with 'uitf::UISUT' (role 'uitf_UISUT', cardinality 0..*).

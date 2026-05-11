@@ -1,0 +1,20 @@
+The model has 8 class(es).
+The class 'DatabaseElement' has no attributes.
+The class 'DB::NamedElement' has the following attributes: 'name' of type str.
+The class 'DB::Column' has the following attributes: 'type' of type str.
+The class 'DB::Table' has no attributes.
+The class 'DB::ForeignKey' has the following attributes: 'isMany' of type str.
+The class 'DB::Database' has no attributes.
+The class 'DB::DatabaseElement' has no attributes.
+The class 'NamedElement' has no attributes.
+'DB::Column' is a specialization of 'DatabaseElement'.
+'DB::DatabaseElement' is a specialization of 'NamedElement'.
+'DB::ForeignKey' is a specialization of 'DatabaseElement'.
+'DB::Table' is a specialization of 'DatabaseElement'.
+'DB::Column' (role 'DB_Column', cardinality 0..*) is associated with 'DB::Table' (role 'DB_Table', cardinality 0..*).
+'DB::Database' (role 'database', cardinality 0..*) is associated with 'DB::DatabaseElement' (role 'DatabaseElement', cardinality 0..*).
+'DB::Table' (role 'Table', cardinality 0..*) is associated with 'DB::Column' (role 'columns', cardinality 0..*).
+'DB::Table' (role 'table', cardinality 0..*) is associated with 'DB::Column' (role 'Column', cardinality 0..*).
+'DB::DatabaseElement' (role 'contents', cardinality 0..*) is associated with 'DB::Database' (role 'Database', cardinality 0..*).
+'DB::Column' (role 'DB_Column6', cardinality 0..*) is associated with 'DB::ForeignKey' (role 'DB_ForeignKey', cardinality 0..*).
+'DB::Column' (role 'DB_Column9', cardinality 0..*) is associated with 'DB::ForeignKey' (role 'DB_ForeignKey8', cardinality 0..*).

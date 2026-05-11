@@ -1,0 +1,127 @@
+The model has 57 class(es).
+The class 'model::Node' has no attributes.
+The class 'model::LineWidth' has the following attributes: 'width' of type int.
+The class 'model::Size' has the following attributes: 'widthRelative' of type bool; 'resizable' of type bool; 'width' of type int; 'heightRelative' of type bool; 'height' of type int.
+The class 'Value' has no attributes.
+The class 'model::EnumValue' has the following attributes: 'name' of type str.
+The class 'model::Anchor' has the following attributes: 'direction' of type str; 'max' of type int.
+The class 'model::Corner' has the following attributes: 'angle' of type int.
+The class 'model::TextPart' has the following attributes: 'editable' of type bool; 'text' of type str.
+The class 'model::EReference' has no attributes.
+The class 'model::Point' has the following attributes: 'x' of type int; 'y' of type int.
+The class 'model::Image' has the following attributes: 'imageId' of type str.
+The class 'model::BooleanValue' has the following attributes: 'value' of type str.
+The class 'model::Triangle' has no attributes.
+The class 'model::ImportStatement' has the following attributes: 'importedNamespace' of type str.
+The class 'model::Arrow' has no attributes.
+The class 'model::Visible' has no attributes.
+The class 'model::StringValue' has the following attributes: 'value' of type str; 'null' of type bool.
+The class 'model::FeatureContainer' has no attributes.
+The class 'model::Diagram' has no attributes.
+The class 'model::IntValue' has the following attributes: 'value' of type int.
+The class 'model::LineStyle' has the following attributes: 'style' of type str; 'manhattan' of type bool.
+The class 'model::XDiagram' has no attributes.
+The class 'model::Colors' has no attributes.
+The class 'FeatureContainer' has no attributes.
+The class 'model::DoubleValue' has the following attributes: 'valueDecimal' of type int; 'valueInt' of type int.
+The class 'model::Layout' has the following attributes: 'horizontal' of type bool; 'vertical' of type bool; 'margin' of type int.
+The class 'model::Polyline' has the following attributes: 'polyline' of type bool; 'polygon' of type bool.
+The class 'model::Feature' has no attributes.
+The class 'model::CustomColor' has the following attributes: 'B' of type int; 'R' of type int; 'G' of type int; 'name' of type str.
+The class 'model::Line' has the following attributes: 'horizontal' of type bool; 'vertical' of type bool.
+The class 'model::FontProperties' has the following attributes: 'size' of type int; 'italics' of type bool; 'face' of type str; 'bold' of type bool.
+The class 'model::Ellipse' has the following attributes: 'ellipse' of type bool; 'circle' of type bool.
+The class 'model::Rectangle' has the following attributes: 'square' of type bool; 'rectangle' of type bool.
+The class 'model::ColorFeature' has the following attributes: 'type' of type str.
+The class 'model::ConnectableElement' has no attributes.
+The class 'model::CustomFigure' has the following attributes: 'name' of type str.
+The class 'model::Color' has the following attributes: 'default' of type str.
+The class 'DiagramElement' has no attributes.
+The class 'model::Link' has the following attributes: 'complex' of type bool; 'reference' of type bool.
+The class 'model::Transparency' has the following attributes: 'percent' of type int.
+The class 'model::Position' has the following attributes: 'x' of type int; 'y' of type int; 'yRelative' of type bool; 'xRelative' of type bool.
+The class 'Feature' has no attributes.
+The class 'ConnectableElement' has no attributes.
+The class 'model::DiagramElement' has no attributes.
+The class 'model::Invisible' has no attributes.
+The class 'model::Decorator' has no attributes.
+The class 'model::FeatureConditional' has the following attributes: 'operator' of type str.
+The class 'model::TextAlign' has the following attributes: 'value' of type str.
+The class 'model::Value' has no attributes.
+The class 'model::MetaModel' has the following attributes: 'plugin' of type str; 'ecorePath' of type str.
+The class 'model::EAttribute' has no attributes.
+The class 'model::TextValue' has no attributes.
+The class 'model::Contains' has no attributes.
+The class 'model::Custom' has no attributes.
+The class 'model::EClass' has no attributes.
+The class 'model::Label' has no attributes.
+The class 'model::Rhombus' has no attributes.
+The enumeration 'DefaultColor' has the following literals: 'GRAY', 'LIME', 'SILVER', 'TEAL', 'WHITE', 'GREEN', 'BLUE', 'FUCHSIA', 'PURPLE', 'BLACK', 'AQUA', 'NAVY', 'YELLOW', 'MAROON', 'OLIVE', 'RED'.
+The enumeration 'AnchorDirection' has the following literals: 'INCOMING', 'OUTGOING'.
+The enumeration 'BooleanLiteral' has the following literals: 'TRUE', 'FALSE'.
+The enumeration 'TextAlignValue' has the following literals: 'CENTER', 'RIGHT', 'LEFT'.
+The enumeration 'Operator' has the following literals: 'EQUAL', 'DIFFERENT'.
+The enumeration 'LineType' has the following literals: 'DOT', 'SOLID', 'DASH'.
+'model::Link' is a specialization of 'FeatureContainer'.
+'model::IntValue' is a specialization of 'Value'.
+'model::LineWidth' is a specialization of 'Feature'.
+'model::Polyline' is a specialization of 'ConnectableElement'.
+'model::EnumValue' is a specialization of 'Value'.
+'model::Size' is a specialization of 'Feature'.
+'model::Triangle' is a specialization of 'ConnectableElement'.
+'model::Line' is a specialization of 'FeatureContainer'.
+'model::Anchor' is a specialization of 'Feature'.
+'model::Ellipse' is a specialization of 'ConnectableElement'.
+'model::Visible' is a specialization of 'Feature'.
+'model::Corner' is a specialization of 'Feature'.
+'model::BooleanValue' is a specialization of 'Value'.
+'model::Point' is a specialization of 'Feature'.
+'model::TextAlign' is a specialization of 'Feature'.
+'model::Node' is a specialization of 'DiagramElement'.
+'model::Custom' is a specialization of 'ConnectableElement'.
+'model::Contains' is a specialization of 'Feature'.
+'model::ColorFeature' is a specialization of 'Feature'.
+'model::DoubleValue' is a specialization of 'Value'.
+'model::Arrow' is a specialization of 'FeatureContainer'.
+'model::Rhombus' is a specialization of 'ConnectableElement'.
+'model::Rectangle' is a specialization of 'ConnectableElement'.
+'model::Invisible' is a specialization of 'ConnectableElement'.
+'model::Image' is a specialization of 'ConnectableElement'.
+'model::Transparency' is a specialization of 'Feature'.
+'model::Link' is a specialization of 'DiagramElement'.
+'model::StringValue' is a specialization of 'Value'.
+'model::LineStyle' is a specialization of 'Feature'.
+'model::Position' is a specialization of 'Feature'.
+'model::ConnectableElement' is a specialization of 'FeatureContainer'.
+'model::Label' is a specialization of 'ConnectableElement'.
+'model::TextValue' is a specialization of 'Feature'.
+'model::Layout' is a specialization of 'Feature'.
+'model::FontProperties' is a specialization of 'Feature'.
+'model::Custom' (role 'model_Custom', cardinality 0..*) is associated with 'model::CustomFigure' (role 'model_CustomFigure49', cardinality 0..*).
+'model::FeatureContainer' (role 'model_FeatureContainer35', cardinality 0..*) is associated with 'model::Decorator' (role 'model_Decorator34', cardinality 0..*).
+'model::CustomColor' (role 'model_CustomColor41', cardinality 0..*) is associated with 'model::Color' (role 'model_Color', cardinality 0..*).
+'model::DiagramElement' (role 'model_DiagramElement14', cardinality 0..*) is associated with 'model::EClass' (role 'model_EClass15', cardinality 0..*).
+'model::EAttribute' (role 'model_EAttribute', cardinality 0..*) is associated with 'model::FeatureConditional' (role 'model_FeatureConditional20', cardinality 0..*).
+'model::Feature' (role 'model_Feature', cardinality 0..*) is associated with 'model::FeatureConditional' (role 'model_FeatureConditional', cardinality 0..*).
+'model::Decorator' (role 'model_Decorator', cardinality 0..*) is associated with 'model::Link' (role 'model_Link32', cardinality 0..*).
+'model::CustomFigure' (role 'model_CustomFigure46', cardinality 0..*) is associated with 'model::ConnectableElement' (role 'model_ConnectableElement47', cardinality 0..*).
+'model::Contains' (role 'model_Contains', cardinality 0..*) is associated with 'model::Diagram' (role 'model_Diagram12', cardinality 0..*).
+'model::Colors' (role 'model_Colors', cardinality 0..*) is associated with 'model::XDiagram' (role 'model_XDiagram4', cardinality 0..*).
+'model::XDiagram' (role 'model_XDiagram8', cardinality 0..*) is associated with 'model::CustomFigure' (role 'model_CustomFigure', cardinality 0..*).
+'model::EReference' (role 'model_EReference37', cardinality 0..*) is associated with 'model::Anchor' (role 'model_Anchor', cardinality 0..*).
+'model::TextPart' (role 'model_TextPart', cardinality 0..*) is associated with 'model::TextValue' (role 'model_TextValue', cardinality 0..*).
+'model::Feature' (role 'model_Feature18', cardinality 0..*) is associated with 'model::FeatureContainer' (role 'model_FeatureContainer', cardinality 0..*).
+'model::DiagramElement' (role 'model_DiagramElement', cardinality 0..*) is associated with 'model::XDiagram' (role 'model_XDiagram6', cardinality 0..*).
+'model::CustomColor' (role 'model_CustomColor', cardinality 0..*) is associated with 'model::Colors' (role 'model_Colors39', cardinality 0..*).
+'model::MetaModel' (role 'model_MetaModel', cardinality 0..*) is associated with 'model::XDiagram' (role 'model_XDiagram', cardinality 0..*).
+'model::EClass' (role 'model_EClass', cardinality 0..*) is associated with 'model::Diagram' (role 'model_Diagram10', cardinality 0..*).
+'model::EReference' (role 'model_EReference', cardinality 0..*) is associated with 'model::Link' (role 'model_Link', cardinality 0..*).
+'model::Link' (role 'model_Link29', cardinality 0..*) is associated with 'model::EReference' (role 'model_EReference30', cardinality 0..*).
+'model::TextPart' (role 'model_TextPart57', cardinality 0..*) is associated with 'model::EAttribute' (role 'model_EAttribute58', cardinality 0..*).
+'model::Color' (role 'model_Color54', cardinality 0..*) is associated with 'model::ColorFeature' (role 'model_ColorFeature', cardinality 0..*).
+'model::EReference' (role 'model_EReference52', cardinality 0..*) is associated with 'model::Contains' (role 'model_Contains51', cardinality 0..*).
+'model::ConnectableElement' (role 'model_ConnectableElement', cardinality 0..*) is associated with 'model::Node' (role 'model_Node', cardinality 0..*).
+'model::Diagram' (role 'model_Diagram', cardinality 0..*) is associated with 'model::XDiagram' (role 'model_XDiagram2', cardinality 0..*).
+'model::Value' (role 'model_Value', cardinality 0..*) is associated with 'model::FeatureConditional' (role 'model_FeatureConditional22', cardinality 0..*).
+'model::Link' (role 'model_Link26', cardinality 0..*) is associated with 'model::EReference' (role 'model_EReference27', cardinality 0..*).
+'model::FeatureContainer' (role 'model_FeatureContainer44', cardinality 0..*) is associated with 'model::ConnectableElement' (role 'model_ConnectableElement43', cardinality 0..*).

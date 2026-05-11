@@ -1,0 +1,34 @@
+The model has 17 class(es).
+The class 'ClassDiagram::Named' has the following attributes: 'name' of type str.
+The class 'Attribute' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'ClassDiagram::Attribute' has the following attributes: 'multiValued' of type str.
+The class 'ClassDiagram::Class' has the following attributes: 'isAbstract' of type str.
+The class 'Class' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'ClassDiagram::NamedElement' has the following attributes: 'name' of type str.
+The class 'ClassDiagram::DataType' has no attributes.
+The class 'ClassDiagram::Classifier' has no attributes.
+The class 'Column' has no attributes.
+The class 'ClassDiagram::Column' has no attributes.
+The class 'ClassDiagram::Type' has no attributes.
+The class 'Type' has no attributes.
+The class 'Table' has no attributes.
+The class 'Named' has no attributes.
+The class 'ClassDiagram::Table' has no attributes.
+'ClassDiagram::Classifier' is a specialization of 'NamedElement'.
+'ClassDiagram::Class' is a specialization of 'Classifier'.
+'ClassDiagram::Attribute' is a specialization of 'NamedElement'.
+'ClassDiagram::Column' is a specialization of 'Named'.
+'ClassDiagram::DataType' is a specialization of 'Classifier'.
+'ClassDiagram::Table' is a specialization of 'Named'.
+'ClassDiagram::Type' is a specialization of 'Named'.
+'ClassDiagram::Column' (role 'ClassDiagram_Column', cardinality 0..*) is associated with 'Type' (role 'Type', cardinality 0..*).
+'ClassDiagram::Column' (role 'key', cardinality 0..*) is associated with 'Table' (role 'Table11', cardinality 0..*).
+'Column' (role 'Column', cardinality 0..*) is associated with 'ClassDiagram::Table' (role 'owner6', cardinality 0..*).
+'ClassDiagram::Column' (role 'col', cardinality 0..*) is associated with 'Table' (role 'Table', cardinality 0..*).
+'Column' (role 'Column8', cardinality 0..*) is associated with 'ClassDiagram::Table' (role 'keyOf', cardinality 0..*).
+'ClassDiagram::Class' (role 'owner', cardinality 0..*) is associated with 'Attribute' (role 'Attribute', cardinality 0..*).
+'Class' (role 'Class4', cardinality 0..*) is associated with 'ClassDiagram::Attribute' (role 'attr', cardinality 0..*).
+'Class' (role 'Class', cardinality 0..*) is associated with 'ClassDiagram::Class' (role 'ClassDiagram_Class', cardinality 0..*).
+'Classifier' (role 'Classifier', cardinality 0..*) is associated with 'ClassDiagram::Attribute' (role 'ClassDiagram_Attribute', cardinality 0..*).

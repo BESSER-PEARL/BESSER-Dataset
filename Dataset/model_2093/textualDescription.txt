@@ -1,0 +1,21 @@
+The model has 10 class(es).
+The class 'DecisionTree::DecisionTreeNode' has no attributes.
+The class 'DecisionTree::PropertySpec2' has the following attributes: 'needsTypeCheck' of type bool.
+The class 'DecisionTree::DecisionTrees' has the following attributes: 'name' of type str.
+The class 'DecisionTree::IntermediateNode' has no attributes.
+The class 'DecisionTree::DecisionTreeForEntity' has no attributes.
+The class 'DecisionTree::StructuralVariation' has no attributes.
+The class 'DecisionTree::Property' has no attributes.
+The class 'DecisionTreeNode' has no attributes.
+The class 'DecisionTree::LeafNode' has no attributes.
+The class 'DecisionTree::EntityType' has no attributes.
+'DecisionTree::LeafNode' is a specialization of 'DecisionTreeNode'.
+'DecisionTree::IntermediateNode' is a specialization of 'DecisionTreeNode'.
+'DecisionTree::Property' (role 'DecisionTree_Property', cardinality 0..*) is associated with 'DecisionTree::PropertySpec2' (role 'DecisionTree_PropertySpec214', cardinality 0..*).
+'DecisionTree::DecisionTreeForEntity' (role 'DecisionTree_DecisionTreeForEntity10', cardinality 0..*) is associated with 'DecisionTree::EntityType' (role 'DecisionTree_EntityType', cardinality 0..*).
+'DecisionTree::StructuralVariation' (role 'DecisionTree_StructuralVariation', cardinality 0..*) is associated with 'DecisionTree::LeafNode' (role 'DecisionTree_LeafNode', cardinality 0..*).
+'DecisionTree::DecisionTreeNode' (role 'DecisionTree_DecisionTreeNode0', cardinality 0..*) is associated with 'DecisionTree::DecisionTreeNode' (role 'DecisionTree_DecisionTreeNode', cardinality 0..*).
+'DecisionTree::PropertySpec2' (role 'DecisionTree_PropertySpec2', cardinality 0..*) is associated with 'DecisionTree::IntermediateNode' (role 'DecisionTree_IntermediateNode', cardinality 0..*).
+'DecisionTree::DecisionTrees' (role 'DecisionTree_DecisionTrees', cardinality 0..*) is associated with 'DecisionTree::DecisionTreeForEntity' (role 'DecisionTree_DecisionTreeForEntity12', cardinality 0..*).
+'DecisionTree::DecisionTreeNode' (role 'DecisionTree_DecisionTreeNode4', cardinality 0..*) is associated with 'DecisionTree::DecisionTreeNode' (role 'DecisionTree_DecisionTreeNode2', cardinality 0..*).
+'DecisionTree::DecisionTreeNode' (role 'DecisionTree_DecisionTreeNode8', cardinality 0..*) is associated with 'DecisionTree::DecisionTreeForEntity' (role 'DecisionTree_DecisionTreeForEntity', cardinality 0..*).

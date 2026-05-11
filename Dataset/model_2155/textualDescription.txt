@@ -1,0 +1,10 @@
+The model has 3 class(es).
+The class 'dfg::DfgEdge' has the following attributes: 'label' of type str.
+The class 'dfg::DfgGraph' has no attributes.
+The class 'dfg::DfgVertex' has the following attributes: 'mappings' of type str.
+'dfg::DfgEdge' (role 'dfg_DfgEdge10', cardinality 0..*) is associated with 'dfg::DfgVertex' (role 'dfg_DfgVertex11', cardinality 0..*).
+'dfg::DfgEdge' (role 'dfg_DfgEdge13', cardinality 0..*) is associated with 'dfg::DfgVertex' (role 'dfg_DfgVertex14', cardinality 0..*).
+'dfg::DfgVertex' (role 'dfg_DfgVertex7', cardinality 0..*) is associated with 'dfg::DfgEdge' (role 'dfg_DfgEdge8', cardinality 0..*).
+'dfg::DfgVertex' (role 'dfg_DfgVertex3', cardinality 0..*) is associated with 'dfg::DfgVertex' (role 'dfg_DfgVertex5', cardinality 0..*).
+'dfg::DfgEdge' (role 'dfg_DfgEdge', cardinality 0..*) is associated with 'dfg::DfgGraph' (role 'dfg_DfgGraph2', cardinality 0..*).
+'dfg::DfgGraph' (role 'dfg_DfgGraph', cardinality 0..*) is associated with 'dfg::DfgVertex' (role 'dfg_DfgVertex', cardinality 0..*).

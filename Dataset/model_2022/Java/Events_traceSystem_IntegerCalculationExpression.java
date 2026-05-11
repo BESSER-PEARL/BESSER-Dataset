@@ -1,0 +1,58 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Events_traceSystem_IntegerCalculationExpression  {
+
+
+
+
+
+
+    private traceSystem_Events_IntegerCalculationExpression_evaluateSUBTRACTEntryEventOccurrence tracesystem_events_integercalculationexpression_evaluatesubtractentryeventoccurrence;
+
+
+
+
+    private traceSystem_Events_IntegerCalculationExpression_evaluateADDEntryEventOccurrence tracesystem_events_integercalculationexpression_evaluateaddentryeventoccurrence;
+
+
+
+
+    private traceSystem_Events_IntegerCalculationExpression_execute_integerCalculationExpressionEntryEventOccurrence tracesystem_events_integercalculationexpression_execute_integercalculationexpressionentryeventoccurrence;
+
+
+    public Events_traceSystem_IntegerCalculationExpression(
+    ) {
+    }
+
+
+
+    public traceSystem_Events_IntegerCalculationExpression_evaluateSUBTRACTEntryEventOccurrence getTracesystem_events_integercalculationexpression_evaluatesubtractentryeventoccurrence() {
+        return tracesystem_events_integercalculationexpression_evaluatesubtractentryeventoccurrence;
+    }
+
+    public void setTracesystem_events_integercalculationexpression_evaluatesubtractentryeventoccurrence(traceSystem_Events_IntegerCalculationExpression_evaluateSUBTRACTEntryEventOccurrence tracesystem_events_integercalculationexpression_evaluatesubtractentryeventoccurrence) {
+        this.tracesystem_events_integercalculationexpression_evaluatesubtractentryeventoccurrence = tracesystem_events_integercalculationexpression_evaluatesubtractentryeventoccurrence;
+    }
+    public traceSystem_Events_IntegerCalculationExpression_evaluateADDEntryEventOccurrence getTracesystem_events_integercalculationexpression_evaluateaddentryeventoccurrence() {
+        return tracesystem_events_integercalculationexpression_evaluateaddentryeventoccurrence;
+    }
+
+    public void setTracesystem_events_integercalculationexpression_evaluateaddentryeventoccurrence(traceSystem_Events_IntegerCalculationExpression_evaluateADDEntryEventOccurrence tracesystem_events_integercalculationexpression_evaluateaddentryeventoccurrence) {
+        this.tracesystem_events_integercalculationexpression_evaluateaddentryeventoccurrence = tracesystem_events_integercalculationexpression_evaluateaddentryeventoccurrence;
+    }
+    public traceSystem_Events_IntegerCalculationExpression_execute_integerCalculationExpressionEntryEventOccurrence getTracesystem_events_integercalculationexpression_execute_integercalculationexpressionentryeventoccurrence() {
+        return tracesystem_events_integercalculationexpression_execute_integercalculationexpressionentryeventoccurrence;
+    }
+
+    public void setTracesystem_events_integercalculationexpression_execute_integercalculationexpressionentryeventoccurrence(traceSystem_Events_IntegerCalculationExpression_execute_integerCalculationExpressionEntryEventOccurrence tracesystem_events_integercalculationexpression_execute_integercalculationexpressionentryeventoccurrence) {
+        this.tracesystem_events_integercalculationexpression_execute_integercalculationexpressionentryeventoccurrence = tracesystem_events_integercalculationexpression_execute_integercalculationexpressionentryeventoccurrence;
+    }
+
+}

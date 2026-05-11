@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'AClass' has no attributes.
+The class 'testModel::BClass' has the following attributes: 'BClassAttr1' of type bool; 'BClassAttr2' of type str.
+The class 'testModel::EObject' has no attributes.
+The class 'testModel::CClass' has the following attributes: 'CClassAttr2' of type str; 'CClassAttr1' of type bool.
+The class 'testModel::AClass' has the following attributes: 'AClassAttr2' of type str; 'AClassAttr1' of type bool.
+The class 'BClass' has no attributes.
+'testModel::BClass' is a specialization of 'AClass'.
+'testModel::CClass' is a specialization of 'BClass'.
+'testModel::CClass' (role 'testModel_CClass', cardinality 0..*) is associated with 'testModel::BClass' (role 'testModel_BClass2', cardinality 0..*).
+'testModel::CClass' (role 'testModel_CClass4', cardinality 0..*) is associated with 'testModel::EObject' (role 'testModel_EObject', cardinality 0..*).
+'testModel::AClass' (role 'testModel_AClass', cardinality 0..*) is associated with 'testModel::BClass' (role 'testModel_BClass', cardinality 0..*).

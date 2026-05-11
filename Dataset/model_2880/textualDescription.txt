@@ -1,0 +1,277 @@
+The model has 151 class(es).
+The class 'presentation::stimulus::StimulusList' has no attributes.
+The class 'presentation::picture::Bitmap' has the following attributes: 'bitmap_parameters' of type str.
+The class 'presentation::statements::StatementList' has no attributes.
+The class 'FilenameLiteral' has no attributes.
+The class 'presentation::literal::FilenameLiteral' has no attributes.
+The class 'presentation::scenario::SDL' has no attributes.
+The class 'Header' has no attributes.
+The class 'presentation::sound::Sound' has no attributes.
+The class 'presentation::parameter::HeaderParameter' has no attributes.
+The class 'presentation::operators::Equal' has no attributes.
+The class 'PictureParameter' has no attributes.
+The class 'presentation::program::Block' has no attributes.
+The class 'presentation::stimulus::ScenarioObject' has no attributes.
+The class 'Statement' has no attributes.
+The class 'picture::PicturePart' has no attributes.
+The class 'presentation::literal::Literal' has no attributes.
+The class 'FilenameParameter' has no attributes.
+The class 'presentation::literal::BooleanLiteral' has the following attributes: 'value' of type bool.
+The class 'presentation::types::String' has no attributes.
+The class 'BitmapParameter' has no attributes.
+The class 'AtomExpression' has no attributes.
+The class 'presentation::picture::Picture' has no attributes.
+The class 'presentation::operators::AssignmentOperator' has no attributes.
+The class 'StimulusEvent' has no attributes.
+The class 'presentation::parameter::TimeParameter' has no attributes.
+The class 'AssignmentOperator' has no attributes.
+The class 'statements::StatementList' has no attributes.
+The class 'BooleanExpression' has no attributes.
+The class 'presentation::operators::MultiplicativeOperator' has no attributes.
+The class 'presentation::parameter::PictureParameter' has no attributes.
+The class 'presentation::expressions::Expression' has no attributes.
+The class 'presentation::statements::VariableDeclarator' has no attributes.
+The class 'statements::Statement' has no attributes.
+The class 'NumericLiteral' has no attributes.
+The class 'presentation::stimulus::Stimulus' has no attributes.
+The class 'presentation::parameter::ScenarioNameParameter' has no attributes.
+The class 'presentation::stimulus::StimulusEvent' has no attributes.
+The class 'presentation::literal::TextLiteral' has the following attributes: 'value' of type str.
+The class 'presentation::expressions::AndExpression' has no attributes.
+The class 'presentation::statements::Statement' has no attributes.
+The class 'Stimulus' has no attributes.
+The class 'common::VariableInitializer' has no attributes.
+The class 'presentation::statements::DeclarationStatement' has no attributes.
+The class 'Graphic2D' has no attributes.
+The class 'presentation::expressions::NotExpression' has no attributes.
+The class 'presentation::picture::BitmapStimulus' has no attributes.
+The class 'presentation::scenario::Header' has no attributes.
+The class 'presentation::parameter::StimulusEventParameter' has no attributes.
+The class 'StimulusEventParameter' has no attributes.
+The class 'types::Type' has no attributes.
+The class 'presentation::picture::PictureStimulusEvent' has no attributes.
+The class 'presentation::expressions::StatementExpression' has no attributes.
+The class 'presentation::expressions::AtomExpression' has no attributes.
+The class 'presentation::operators::Less' has no attributes.
+The class 'presentation::expressions::EqualsExpression' has no attributes.
+The class 'presentation::picture::Graphic2D' has no attributes.
+The class 'presentation::types::Double' has no attributes.
+The class 'presentation::parameter::CodeParameter' has no attributes.
+The class 'presentation::picture::Box' has no attributes.
+The class 'CoordinateDefinition' has no attributes.
+The class 'picture::Text' has no attributes.
+The class 'presentation::expressions::OrExpression' has no attributes.
+The class 'picture::Box' has no attributes.
+The class 'presentation::operators::Assignment' has no attributes.
+The class 'presentation::general::CoordinateDefinition' has the following attributes: 'right_bottom' of type str; 'coordinate' of type str; 'type' of type str.
+The class 'presentation::operators::RelationOperator' has no attributes.
+The class 'PicturePart' has no attributes.
+The class 'presentation::types::Bool' has no attributes.
+The class 'StimulusList' has no attributes.
+The class 'presentation::literal::NumericLiteral' has no attributes.
+The class 'GeneralLiteral' has no attributes.
+The class 'statements::VariableDeclaration' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'presentation::parameter::FilenameParameter' has no attributes.
+The class 'presentation::statements::Inclusion' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'CaptionParameter' has no attributes.
+The class 'presentation::parameter::BitmapParameter' has no attributes.
+The class 'presentation::picture::BoxStimulus' has no attributes.
+The class 'BooleanLiteral' has no attributes.
+The class 'BasicType' has no attributes.
+The class 'presentation::statements::ResourceAcquisition' has no attributes.
+The class 'ScenarioFile' has no attributes.
+The class 'presentation::operators::UnaryOperator' has no attributes.
+The class 'presentation::operators::LessOrEqual' has no attributes.
+The class 'presentation::picture::PicturePart' has no attributes.
+The class 'presentation::operators::Operator' has no attributes.
+The class 'presentation::picture::TextStimulus' has no attributes.
+The class 'presentation::literal::NumberLiteral' has the following attributes: 'value' of type int.
+The class 'presentation::scenario::Scenario' has no attributes.
+The class 'operators::AssignmentOperator' has no attributes.
+The class 'presentation::parameter::TargetButtonParameter' has no attributes.
+The class 'statements::ResourceAcquisition' has no attributes.
+The class 'presentation::operators::Greater' has no attributes.
+The class 'presentation::parameter::ActiveButtonsParameter' has no attributes.
+The class 'Expression' has no attributes.
+The class 'picture::Bitmap' has no attributes.
+The class 'presentation::literal::GeneralLiteral' has no attributes.
+The class 'EqualityOperator' has no attributes.
+The class 'TextLiteral' has no attributes.
+The class 'HeaderParameter' has no attributes.
+The class 'SDL' has no attributes.
+The class 'presentation::operators::NotEqual' has no attributes.
+The class 'presentation::operators::GreaterOrEqual' has no attributes.
+The class 'statements::VariableDeclarator' has no attributes.
+The class 'presentation::literal::NameLiteral' has no attributes.
+The class 'presentation::statements::Assignment' has no attributes.
+The class 'presentation::expressions::BooleanExpression' has no attributes.
+The class 'statements::ForInitializer' has no attributes.
+The class 'presentation::parameter::BackgroundColorParameter' has no attributes.
+The class 'presentation::expressions::AssignmentExpression' has no attributes.
+The class 'presentation::parameter::Parameter' has no attributes.
+The class 'presentation::common::VariableInitializer' has no attributes.
+The class 'presentation::expressions::BoolExpression' has no attributes.
+The class 'presentation::general::NamedElement' has the following attributes: 'name' of type str.
+The class 'presentation::operators::AdditiveOperator' has no attributes.
+The class 'Literal' has no attributes.
+The class 'presentation::statements::ForInitializer' has no attributes.
+The class 'expressions::BooleanExpression' has no attributes.
+The class 'Operator' has no attributes.
+The class 'presentation::common::Identifier' has no attributes.
+The class 'VariableInitializer' has no attributes.
+The class 'NameLiteral' has no attributes.
+The class 'presentation::parameter::CaptionParameter' has no attributes.
+The class 'TrialParameter' has no attributes.
+The class 'expressions::Expression' has no attributes.
+The class 'presentation::picture::Text' has no attributes.
+The class 'presentation::common::NamedElement' has the following attributes: 'name' of type str.
+The class 'PCL' has no attributes.
+The class 'presentation::expressions::PrimaryExpression' has no attributes.
+The class 'NumberLiteral' has no attributes.
+The class 'presentation::scenario::PCL' has no attributes.
+The class 'presentation::types::BasicType' has no attributes.
+The class 'Type' has no attributes.
+The class 'presentation::parameter::ButtonCodesParameter' has no attributes.
+The class 'RelationOperator' has no attributes.
+The class 'picture::Picture' has no attributes.
+The class 'TextParameter' has no attributes.
+The class 'presentation::parameter::TrialParameter' has no attributes.
+The class 'presentation::picture::Stimulus2D' has no attributes.
+The class 'presentation::statements::VariableDeclaration' has no attributes.
+The class 'presentation::types::Int' has no attributes.
+The class 'presentation::operators::EqualityOperator' has no attributes.
+The class 'expressions::StatementExpression' has no attributes.
+The class 'Stimulus2D' has no attributes.
+The class 'ScenarioObject' has no attributes.
+The class 'presentation::stimulus::Trial' has no attributes.
+The class 'presentation::statements::Loop' has no attributes.
+The class 'presentation::scenario::ScenarioFile' has no attributes.
+The class 'presentation::parameter::TextParameter' has no attributes.
+The class 'presentation::types::Type' has no attributes.
+The enumeration 'CoordinateType' has the following literals: 'Y', 'TOP_Y', 'X', 'CENTER_X', 'CENTER_Y', 'LEFT_X'.
+'presentation::statements::Assignment' is a specialization of 'Statement'.
+'presentation::parameter::ScenarioNameParameter' is a specialization of 'HeaderParameter'.
+'presentation::expressions::NotExpression' is a specialization of 'BooleanExpression'.
+'presentation::operators::Equal' is a specialization of 'EqualityOperator'.
+'presentation::operators::NotEqual' is a specialization of 'EqualityOperator'.
+'presentation::operators::MultiplicativeOperator' is a specialization of 'Operator'.
+'presentation::common::Identifier' is a specialization of 'NamedElement'.
+'presentation::scenario::PCL' is a specialization of 'ScenarioFile'.
+'presentation::operators::GreaterOrEqual' is a specialization of 'RelationOperator'.
+'presentation::sound::Sound' is a specialization of 'Stimulus'.
+'presentation::statements::DeclarationStatement' is a specialization of 'Statement'.
+'presentation::picture::BoxStimulus' is a specialization of 'Stimulus2D'.
+'presentation::stimulus::Trial' is a specialization of 'ScenarioObject'.
+'presentation::picture::TextStimulus' is a specialization of 'Stimulus2D'.
+'presentation::operators::EqualityOperator' is a specialization of 'Operator'.
+'presentation::literal::GeneralLiteral' is a specialization of 'Literal'.
+'presentation::picture::Picture' is a specialization of 'Stimulus'.
+'presentation::operators::Less' is a specialization of 'RelationOperator'.
+'presentation::literal::BooleanLiteral' is a specialization of 'GeneralLiteral'.
+'presentation::picture::PicturePart' is a specialization of 'ScenarioObject'.
+'presentation::literal::NumberLiteral' is a specialization of 'NumericLiteral'.
+'presentation::parameter::BackgroundColorParameter' is a specialization of 'PictureParameter'.
+'presentation::parameter::ActiveButtonsParameter' is a specialization of 'HeaderParameter'.
+'presentation::statements::Inclusion' is a specialization of 'Statement'.
+'presentation::scenario::Header' is a specialization of 'ScenarioFile'.
+'presentation::parameter::HeaderParameter' is a specialization of 'Parameter'.
+'presentation::operators::RelationOperator' is a specialization of 'Operator'.
+'presentation::picture::Bitmap' is a specialization of 'Graphic2D'.
+'presentation::literal::NumericLiteral' is a specialization of 'Literal'.
+'presentation::parameter::ButtonCodesParameter' is a specialization of 'HeaderParameter'.
+'presentation::parameter::CodeParameter' is a specialization of 'StimulusEventParameter'.
+'presentation::parameter::TargetButtonParameter' is a specialization of 'StimulusEventParameter'.
+'presentation::statements::VariableDeclaration' is a specialization of 'statements::ForInitializer'.
+'presentation::operators::Greater' is a specialization of 'RelationOperator'.
+'presentation::types::Int' is a specialization of 'BasicType'.
+'presentation::parameter::TimeParameter' is a specialization of 'StimulusEventParameter'.
+'presentation::picture::BitmapStimulus' is a specialization of 'Stimulus2D'.
+'presentation::expressions::AndExpression' is a specialization of 'BooleanExpression'.
+'presentation::parameter::StimulusEventParameter' is a specialization of 'Parameter'.
+'presentation::expressions::BooleanExpression' is a specialization of 'Expression'.
+'presentation::expressions::AssignmentExpression' is a specialization of 'expressions::Expression'.
+'presentation::picture::PictureStimulusEvent' is a specialization of 'StimulusEvent'.
+'presentation::operators::Assignment' is a specialization of 'AssignmentOperator'.
+'presentation::types::Double' is a specialization of 'BasicType'.
+'presentation::statements::VariableDeclaration' is a specialization of 'statements::ResourceAcquisition'.
+'presentation::stimulus::ScenarioObject' is a specialization of 'NamedElement'.
+'presentation::operators::UnaryOperator' is a specialization of 'Operator'.
+'presentation::stimulus::Stimulus' is a specialization of 'ScenarioObject'.
+'presentation::operators::LessOrEqual' is a specialization of 'RelationOperator'.
+'presentation::scenario::SDL' is a specialization of 'ScenarioFile'.
+'presentation::expressions::AtomExpression' is a specialization of 'BooleanExpression'.
+'presentation::statements::VariableDeclarator' is a specialization of 'NamedElement'.
+'presentation::literal::TextLiteral' is a specialization of 'GeneralLiteral'.
+'presentation::types::BasicType' is a specialization of 'Type'.
+'presentation::stimulus::StimulusEvent' is a specialization of 'ScenarioObject'.
+'presentation::literal::NameLiteral' is a specialization of 'TextLiteral'.
+'presentation::types::String' is a specialization of 'BasicType'.
+'presentation::expressions::OrExpression' is a specialization of 'BooleanExpression'.
+'presentation::expressions::BoolExpression' is a specialization of 'AtomExpression'.
+'presentation::expressions::AssignmentExpression' is a specialization of 'expressions::StatementExpression'.
+'presentation::parameter::FilenameParameter' is a specialization of 'BitmapParameter'.
+'presentation::parameter::TextParameter' is a specialization of 'Parameter'.
+'presentation::parameter::TrialParameter' is a specialization of 'Parameter'.
+'presentation::statements::Loop' is a specialization of 'Statement'.
+'presentation::parameter::CaptionParameter' is a specialization of 'TextParameter'.
+'presentation::literal::FilenameLiteral' is a specialization of 'TextLiteral'.
+'presentation::picture::Graphic2D' is a specialization of 'ScenarioObject'.
+'presentation::scenario::Scenario' is a specialization of 'NamedElement'.
+'presentation::picture::Box' is a specialization of 'Graphic2D'.
+'presentation::types::Bool' is a specialization of 'BasicType'.
+'presentation::picture::Stimulus2D' is a specialization of 'PicturePart'.
+'presentation::expressions::Expression' is a specialization of 'VariableInitializer'.
+'presentation::parameter::PictureParameter' is a specialization of 'Parameter'.
+'presentation::operators::AdditiveOperator' is a specialization of 'Operator'.
+'presentation::picture::Text' is a specialization of 'Graphic2D'.
+'presentation::expressions::EqualsExpression' is a specialization of 'AtomExpression'.
+'presentation::operators::AssignmentOperator' is a specialization of 'Operator'.
+'StimulusEvent' (role 'StimulusEvent', cardinality 0..*) is associated with 'presentation::stimulus::StimulusList' (role 'presentation_stimulus_StimulusList', cardinality 0..*).
+'presentation::picture::Text' (role 'presentation_picture_Text', cardinality 0..*) is associated with 'CaptionParameter' (role 'CaptionParameter', cardinality 0..*).
+'presentation::picture::BoxStimulus' (role 'presentation_picture_BoxStimulus', cardinality 0..*) is associated with 'picture::Box' (role 'picture_Box', cardinality 0..*).
+'presentation::scenario::Scenario' (role 'presentation_scenario_Scenario7', cardinality 0..*) is associated with 'PCL' (role 'PCL', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression56', cardinality 0..*) is associated with 'presentation::statements::Assignment' (role 'presentation_statements_Assignment', cardinality 0..*).
+'presentation::statements::DeclarationStatement' (role 'presentation_statements_DeclarationStatement', cardinality 0..*) is associated with 'statements::VariableDeclaration' (role 'statements_VariableDeclaration', cardinality 0..*).
+'presentation::statements::VariableDeclarator' (role 'presentation_statements_VariableDeclarator', cardinality 0..*) is associated with 'common::VariableInitializer' (role 'common_VariableInitializer', cardinality 0..*).
+'presentation::scenario::Header' (role 'presentation_scenario_Header', cardinality 0..*) is associated with 'HeaderParameter' (role 'HeaderParameter', cardinality 0..*).
+'expressions::BooleanExpression' (role 'expressions_BooleanExpression44', cardinality 0..*) is associated with 'presentation::expressions::AndExpression' (role 'presentation_expressions_AndExpression', cardinality 0..*).
+'presentation::scenario::SDL' (role 'presentation_scenario_SDL', cardinality 0..*) is associated with 'ScenarioObject' (role 'ScenarioObject', cardinality 0..*).
+'presentation::stimulus::StimulusEvent' (role 'presentation_stimulus_StimulusEvent', cardinality 0..*) is associated with 'StimulusEventParameter' (role 'StimulusEventParameter', cardinality 0..*).
+'expressions::BooleanExpression' (role 'expressions_BooleanExpression', cardinality 0..*) is associated with 'presentation::expressions::OrExpression' (role 'presentation_expressions_OrExpression', cardinality 0..*).
+'statements::Statement' (role 'statements_Statement54', cardinality 0..*) is associated with 'presentation::statements::StatementList' (role 'presentation_statements_StatementList', cardinality 0..*).
+'NameLiteral' (role 'NameLiteral', cardinality 0..*) is associated with 'presentation::parameter::ScenarioNameParameter' (role 'presentation_parameter_ScenarioNameParameter', cardinality 0..*).
+'presentation::program::Block' (role 'presentation_program_Block', cardinality 0..*) is associated with 'statements::Statement' (role 'statements_Statement70', cardinality 0..*).
+'presentation::expressions::AssignmentExpression' (role 'presentation_expressions_AssignmentExpression', cardinality 0..*) is associated with 'operators::AssignmentOperator' (role 'operators_AssignmentOperator', cardinality 0..*).
+'presentation::parameter::ActiveButtonsParameter' (role 'presentation_parameter_ActiveButtonsParameter', cardinality 0..*) is associated with 'NumberLiteral' (role 'NumberLiteral', cardinality 0..*).
+'presentation::stimulus::Trial' (role 'presentation_stimulus_Trial26', cardinality 0..*) is associated with 'TrialParameter' (role 'TrialParameter', cardinality 0..*).
+'CoordinateDefinition' (role 'CoordinateDefinition38', cardinality 0..*) is associated with 'presentation::picture::Stimulus2D' (role 'presentation_picture_Stimulus2D37', cardinality 0..*).
+'TextLiteral' (role 'TextLiteral', cardinality 0..*) is associated with 'presentation::parameter::CodeParameter' (role 'presentation_parameter_CodeParameter', cardinality 0..*).
+'presentation::statements::Loop' (role 'presentation_statements_Loop59', cardinality 0..*) is associated with 'statements::StatementList' (role 'statements_StatementList60', cardinality 0..*).
+'TextLiteral' (role 'TextLiteral20', cardinality 0..*) is associated with 'presentation::parameter::CaptionParameter' (role 'presentation_parameter_CaptionParameter', cardinality 0..*).
+'StimulusList' (role 'StimulusList', cardinality 0..*) is associated with 'presentation::stimulus::Trial' (role 'presentation_stimulus_Trial', cardinality 0..*).
+'presentation::scenario::PCL' (role 'presentation_scenario_PCL', cardinality 0..*) is associated with 'statements::Statement' (role 'statements_Statement', cardinality 0..*).
+'presentation::parameter::ButtonCodesParameter' (role 'presentation_parameter_ButtonCodesParameter', cardinality 0..*) is associated with 'NumberLiteral' (role 'NumberLiteral10', cardinality 0..*).
+'TextParameter' (role 'TextParameter', cardinality 0..*) is associated with 'presentation::picture::Text' (role 'presentation_picture_Text34', cardinality 0..*).
+'presentation::parameter::FilenameParameter' (role 'presentation_parameter_FilenameParameter', cardinality 0..*) is associated with 'FilenameLiteral' (role 'FilenameLiteral', cardinality 0..*).
+'presentation::statements::VariableDeclaration' (role 'presentation_statements_VariableDeclaration', cardinality 0..*) is associated with 'types::Type' (role 'types_Type', cardinality 0..*).
+'PictureParameter' (role 'PictureParameter', cardinality 0..*) is associated with 'presentation::picture::Picture' (role 'presentation_picture_Picture29', cardinality 0..*).
+'presentation::expressions::NotExpression' (role 'presentation_expressions_NotExpression', cardinality 0..*) is associated with 'expressions::BooleanExpression' (role 'expressions_BooleanExpression46', cardinality 0..*).
+'presentation::expressions::AssignmentExpression' (role 'presentation_expressions_AssignmentExpression51', cardinality 0..*) is associated with 'expressions::Expression' (role 'expressions_Expression52', cardinality 0..*).
+'FilenameParameter' (role 'FilenameParameter', cardinality 0..*) is associated with 'presentation::picture::Bitmap' (role 'presentation_picture_Bitmap', cardinality 0..*).
+'picture::PicturePart' (role 'picture_PicturePart', cardinality 0..*) is associated with 'presentation::picture::Picture' (role 'presentation_picture_Picture', cardinality 0..*).
+'BooleanLiteral' (role 'BooleanLiteral', cardinality 0..*) is associated with 'presentation::expressions::BoolExpression' (role 'presentation_expressions_BoolExpression', cardinality 0..*).
+'presentation::statements::Loop' (role 'presentation_statements_Loop', cardinality 0..*) is associated with 'statements::StatementList' (role 'statements_StatementList', cardinality 0..*).
+'presentation::picture::BitmapStimulus' (role 'presentation_picture_BitmapStimulus', cardinality 0..*) is associated with 'picture::Bitmap' (role 'picture_Bitmap', cardinality 0..*).
+'presentation::picture::TextStimulus' (role 'presentation_picture_TextStimulus', cardinality 0..*) is associated with 'picture::Text' (role 'picture_Text', cardinality 0..*).
+'presentation::statements::VariableDeclaration' (role 'presentation_statements_VariableDeclaration66', cardinality 0..*) is associated with 'statements::VariableDeclarator' (role 'statements_VariableDeclarator', cardinality 0..*).
+'NumberLiteral' (role 'NumberLiteral18', cardinality 0..*) is associated with 'presentation::parameter::BackgroundColorParameter' (role 'presentation_parameter_BackgroundColorParameter', cardinality 0..*).
+'presentation::picture::PictureStimulusEvent' (role 'presentation_picture_PictureStimulusEvent', cardinality 0..*) is associated with 'picture::Picture' (role 'picture_Picture', cardinality 0..*).
+'expressions::BooleanExpression' (role 'expressions_BooleanExpression63', cardinality 0..*) is associated with 'presentation::statements::Loop' (role 'presentation_statements_Loop62', cardinality 0..*).
+'Header' (role 'Header', cardinality 0..*) is associated with 'presentation::scenario::Scenario' (role 'presentation_scenario_Scenario', cardinality 0..*).
+'presentation::scenario::Scenario' (role 'presentation_scenario_Scenario5', cardinality 0..*) is associated with 'SDL' (role 'SDL', cardinality 0..*).
+'presentation::picture::Stimulus2D' (role 'presentation_picture_Stimulus2D', cardinality 0..*) is associated with 'CoordinateDefinition' (role 'CoordinateDefinition', cardinality 0..*).
+'NumberLiteral' (role 'NumberLiteral13', cardinality 0..*) is associated with 'presentation::parameter::TimeParameter' (role 'presentation_parameter_TimeParameter', cardinality 0..*).
+'presentation::parameter::TargetButtonParameter' (role 'presentation_parameter_TargetButtonParameter', cardinality 0..*) is associated with 'NumberLiteral' (role 'NumberLiteral15', cardinality 0..*).
+'expressions::Expression' (role 'expressions_Expression', cardinality 0..*) is associated with 'presentation::expressions::EqualsExpression' (role 'presentation_expressions_EqualsExpression', cardinality 0..*).

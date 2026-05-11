@@ -1,0 +1,21 @@
+The model has 8 class(es).
+The class 'etrace::CompositeLink' has no attributes.
+The class 'etrace::EObject' has no attributes.
+The class 'CompositeLink' has no attributes.
+The class 'etrace::LinkType' has the following attributes: 'name' of type str; 'description' of type str; 'example' of type str; 'uses' of type str; 'purpose' of type str.
+The class 'etrace::ETrace' has the following attributes: 'name' of type str.
+The class 'etrace::AbstractLink' has no attributes.
+The class 'etrace::Link' has no attributes.
+The class 'AbstractLink' has no attributes.
+'etrace::ETrace' is a specialization of 'CompositeLink'.
+'etrace::Link' is a specialization of 'AbstractLink'.
+'etrace::CompositeLink' is a specialization of 'AbstractLink'.
+'etrace::LinkType' (role 'superType', cardinality 0..*) is associated with 'etrace::LinkType' (role 'LinkType', cardinality 0..*).
+'etrace::LinkType' (role 'subType', cardinality 0..*) is associated with 'etrace::LinkType' (role 'LinkType10', cardinality 0..*).
+'etrace::EObject' (role 'etrace_EObject', cardinality 0..*) is associated with 'etrace::AbstractLink' (role 'etrace_AbstractLink', cardinality 0..*).
+'etrace::EObject' (role 'etrace_EObject18', cardinality 0..*) is associated with 'etrace::ETrace' (role 'etrace_ETrace17', cardinality 0..*).
+'etrace::AbstractLink' (role 'etrace_AbstractLink20', cardinality 0..*) is associated with 'etrace::CompositeLink' (role 'etrace_CompositeLink', cardinality 0..*).
+'etrace::EObject' (role 'etrace_EObject3', cardinality 0..*) is associated with 'etrace::AbstractLink' (role 'etrace_AbstractLink2', cardinality 0..*).
+'etrace::EObject' (role 'etrace_EObject15', cardinality 0..*) is associated with 'etrace::ETrace' (role 'etrace_ETrace14', cardinality 0..*).
+'etrace::AbstractLink' (role 'etrace_AbstractLink5', cardinality 0..*) is associated with 'etrace::LinkType' (role 'etrace_LinkType', cardinality 0..*).
+'etrace::LinkType' (role 'etrace_LinkType12', cardinality 0..*) is associated with 'etrace::ETrace' (role 'etrace_ETrace', cardinality 0..*).

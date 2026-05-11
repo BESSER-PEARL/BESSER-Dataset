@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tamasborbas/org.eclipse.viatra/cep/plugins/org.eclipse.viatra.cep.core.metamodels/models/Cep.ecore

@@ -1,0 +1,30 @@
+The model has 9 class(es).
+The class 'stm::Parameter' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'stm::Guard' has the following attributes: 'name' of type str.
+The class 'stm::GuardCall' has the following attributes: 'parameters' of type str.
+The class 'stm::Statemachine' has no attributes.
+The class 'stm::Event' has the following attributes: 'name' of type str.
+The class 'stm::State' has the following attributes: 'name' of type str.
+The class 'stm::Command' has the following attributes: 'name' of type str.
+The class 'stm::SelfEvent' has no attributes.
+The class 'stm::Transition' has no attributes.
+'stm::GuardCall' (role 'stm_GuardCall47', cardinality 0..*) is associated with 'stm::Guard' (role 'stm_Guard48', cardinality 0..*).
+'stm::SelfEvent' (role 'stm_SelfEvent', cardinality 0..*) is associated with 'stm::State' (role 'stm_State20', cardinality 0..*).
+'stm::Command' (role 'stm_Command15', cardinality 0..*) is associated with 'stm::State' (role 'stm_State14', cardinality 0..*).
+'stm::Command' (role 'stm_Command', cardinality 0..*) is associated with 'stm::Statemachine' (role 'stm_Statemachine2', cardinality 0..*).
+'stm::Command' (role 'stm_Command9', cardinality 0..*) is associated with 'stm::State' (role 'stm_State8', cardinality 0..*).
+'stm::Transition' (role 'stm_Transition27', cardinality 0..*) is associated with 'stm::Event' (role 'stm_Event28', cardinality 0..*).
+'stm::Command' (role 'stm_Command45', cardinality 0..*) is associated with 'stm::SelfEvent' (role 'stm_SelfEvent44', cardinality 0..*).
+'stm::GuardCall' (role 'stm_GuardCall42', cardinality 0..*) is associated with 'stm::SelfEvent' (role 'stm_SelfEvent41', cardinality 0..*).
+'stm::Guard' (role 'stm_Guard50', cardinality 0..*) is associated with 'stm::Parameter' (role 'stm_Parameter', cardinality 0..*).
+'stm::Command' (role 'stm_Command25', cardinality 0..*) is associated with 'stm::State' (role 'stm_State24', cardinality 0..*).
+'stm::State' (role 'stm_State16', cardinality 0..*) is associated with 'stm::State' (role 'stm_State18', cardinality 0..*).
+'stm::Command' (role 'stm_Command36', cardinality 0..*) is associated with 'stm::Transition' (role 'stm_Transition35', cardinality 0..*).
+'stm::State' (role 'stm_State11', cardinality 0..*) is associated with 'stm::Command' (role 'stm_Command12', cardinality 0..*).
+'stm::State' (role 'stm_State', cardinality 0..*) is associated with 'stm::Statemachine' (role 'stm_Statemachine6', cardinality 0..*).
+'stm::GuardCall' (role 'stm_GuardCall', cardinality 0..*) is associated with 'stm::Transition' (role 'stm_Transition30', cardinality 0..*).
+'stm::Statemachine' (role 'stm_Statemachine4', cardinality 0..*) is associated with 'stm::Guard' (role 'stm_Guard', cardinality 0..*).
+'stm::Transition' (role 'stm_Transition', cardinality 0..*) is associated with 'stm::State' (role 'stm_State22', cardinality 0..*).
+'stm::State' (role 'stm_State33', cardinality 0..*) is associated with 'stm::Transition' (role 'stm_Transition32', cardinality 0..*).
+'stm::SelfEvent' (role 'stm_SelfEvent38', cardinality 0..*) is associated with 'stm::Event' (role 'stm_Event39', cardinality 0..*).
+'stm::Event' (role 'stm_Event', cardinality 0..*) is associated with 'stm::Statemachine' (role 'stm_Statemachine', cardinality 0..*).

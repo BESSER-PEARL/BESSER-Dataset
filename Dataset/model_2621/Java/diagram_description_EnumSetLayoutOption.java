@@ -1,0 +1,24 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class diagram_description_EnumSetLayoutOption extends EnumOption {
+
+
+
+
+    public diagram_description_EnumSetLayoutOption(
+    ) {
+        super(
+        );
+    }
+
+
+
+
+}

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eclipse/atl/plugins/org.eclipse.m2m.atl.emftvm.trace/model/trace.ecore

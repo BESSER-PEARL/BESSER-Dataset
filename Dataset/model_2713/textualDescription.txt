@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'test::C' has no attributes.
+The class 'A' has no attributes.
+The class 'test::A' has no attributes.
+The class 'test::Program' has no attributes.
+The class 'test::B' has no attributes.
+'test::B' is a specialization of 'A'.
+'test::C' (role 'test_C7', cardinality 0..*) is associated with 'test::Program' (role 'test_Program6', cardinality 0..*).
+'test::C' (role 'test_C', cardinality 0..*) is associated with 'test::B' (role 'test_B', cardinality 0..*).
+'test::A' (role 'test_A', cardinality 0..*) is associated with 'test::C' (role 'test_C2', cardinality 0..*).
+'test::A' (role 'test_A4', cardinality 0..*) is associated with 'test::Program' (role 'test_Program', cardinality 0..*).

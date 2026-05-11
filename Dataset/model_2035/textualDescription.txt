@@ -1,0 +1,16 @@
+The model has 5 class(es).
+The class 'dsl::Event' has the following attributes: 'code' of type str; 'name' of type str.
+The class 'dsl::State' has the following attributes: 'name' of type str.
+The class 'dsl::Transition' has no attributes.
+The class 'dsl::Command' has the following attributes: 'name' of type str; 'code' of type str.
+The class 'dsl::Statemachine' has no attributes.
+'dsl::Event' (role 'dsl_Event3', cardinality 0..*) is associated with 'dsl::Statemachine' (role 'dsl_Statemachine2', cardinality 0..*).
+'dsl::Command' (role 'dsl_Command13', cardinality 0..*) is associated with 'dsl::State' (role 'dsl_State12', cardinality 0..*).
+'dsl::Statemachine' (role 'dsl_Statemachine5', cardinality 0..*) is associated with 'dsl::State' (role 'dsl_State', cardinality 0..*).
+'dsl::State' (role 'dsl_State18', cardinality 0..*) is associated with 'dsl::State' (role 'dsl_State16', cardinality 0..*).
+'dsl::State' (role 'dsl_State15', cardinality 0..*) is associated with 'dsl::Transition' (role 'dsl_Transition', cardinality 0..*).
+'dsl::Transition' (role 'dsl_Transition23', cardinality 0..*) is associated with 'dsl::State' (role 'dsl_State24', cardinality 0..*).
+'dsl::Statemachine' (role 'dsl_Statemachine', cardinality 0..*) is associated with 'dsl::Event' (role 'dsl_Event', cardinality 0..*).
+'dsl::Event' (role 'dsl_Event21', cardinality 0..*) is associated with 'dsl::Transition' (role 'dsl_Transition20', cardinality 0..*).
+'dsl::Command' (role 'dsl_Command', cardinality 0..*) is associated with 'dsl::Statemachine' (role 'dsl_Statemachine7', cardinality 0..*).
+'dsl::Statemachine' (role 'dsl_Statemachine9', cardinality 0..*) is associated with 'dsl::State' (role 'dsl_State10', cardinality 0..*).

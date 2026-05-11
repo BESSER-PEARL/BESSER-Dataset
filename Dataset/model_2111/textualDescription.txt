@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'TestMM2::Test' has the following attributes: 'id' of type str.
+The class 'TestMM2::Metadata' has the following attributes: 'webpage' of type str; 'date' of type str; 'user' of type str; 'taglist' of type str.
+'TestMM2::Metadata' (role 'md', cardinality 0..*) is associated with 'TestMM2::Test' (role 'Test', cardinality 0..*).
+'TestMM2::Metadata' (role 'Metadata', cardinality 0..*) is associated with 'TestMM2::Test' (role 'te', cardinality 0..*).

@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'reference::C' has no attributes.
+The class 'reference::B' has no attributes.
+The class 'reference::X' has no attributes.
+The class 'reference::A' has no attributes.
+The class 'reference::Y' has no attributes.
+'reference::A' (role 'a3', cardinality 0..*) is associated with 'reference::Y' (role 'Y', cardinality 0..*).
+'reference::C' (role 'reference_C', cardinality 0..*) is associated with 'reference::B' (role 'reference_B5', cardinality 0..*).
+'reference::Y' (role 'y', cardinality 0..*) is associated with 'reference::A' (role 'A8', cardinality 0..*).
+'reference::X' (role 'x', cardinality 0..*) is associated with 'reference::A' (role 'A', cardinality 0..*).
+'reference::X' (role 'X', cardinality 0..*) is associated with 'reference::A' (role 'a', cardinality 0..*).
+'reference::B' (role 'reference_B', cardinality 0..*) is associated with 'reference::A' (role 'reference_A', cardinality 0..*).

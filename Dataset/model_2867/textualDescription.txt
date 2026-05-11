@@ -1,0 +1,260 @@
+The model has 103 class(es).
+The class 'fiacre::DeterministicAssignment' has no attributes.
+The class 'fiacre::Priority' has no attributes.
+The class 'fiacre::VarRef' has no attributes.
+The class 'fiacre::Seq' has no attributes.
+The class 'fiacre::UnExp' has the following attributes: 'unop' of type str.
+The class 'fiacre::ConstrExp' has the following attributes: 'name' of type str.
+The class 'Communication' has no attributes.
+The class 'LabeledType' has no attributes.
+The class 'Literal' has no attributes.
+The class 'PortDecl' has no attributes.
+The class 'fiacre::Constr' has no attributes.
+The class 'MaxBound' has no attributes.
+The class 'Statement' has no attributes.
+The class 'fiacre::Synchronization' has no attributes.
+The class 'fiacre::Statement' has the following attributes: 'comment' of type str.
+The class 'fiacre::ArrayElem' has no attributes.
+The class 'fiacre::ChannelDecl' has no attributes.
+The class 'fiacre::WhileStmt' has no attributes.
+The class 'fiacre::Variable' has the following attributes: 'name' of type str.
+The class 'fiacre::Instance' has the following attributes: 'name' of type str.
+The class 'fiacre::Exp' has no attributes.
+The class 'fiacre::Select' has no attributes.
+The class 'fiacre::Transition' has the following attributes: 'name' of type str.
+The class 'fiacre::TypeId' has no attributes.
+The class 'fiacre::Composition' has no attributes.
+The class 'Composition' has no attributes.
+The class 'fiacre::InlineCollection' has no attributes.
+The class 'fiacre::FiniteBound' has the following attributes: 'strict' of type bool; 'val' of type int.
+The class 'fiacre::Array' has no attributes.
+The class 'fiacre::NullStmt' has no attributes.
+The class 'fiacre::InfiniteBound' has no attributes.
+The class 'fiacre::Literal' has no attributes.
+The class 'BasicType' has no attributes.
+The class 'fiacre::InlineArray' has no attributes.
+The class 'fiacre::InlineQueue' has no attributes.
+The class 'fiacre::NatType' has no attributes.
+The class 'Type' has no attributes.
+The class 'fiacre::IfStmt' has no attributes.
+The class 'fiacre::Reception' has no attributes.
+The class 'fiacre::ConstantRef' has no attributes.
+The class 'fiacre::Par' has no attributes.
+The class 'fiacre::InlineRecord' has no attributes.
+The class 'fiacre::BoolLiteral' has the following attributes: 'value' of type bool.
+The class 'fiacre::NodeDecl' has no attributes.
+The class 'fiacre::NonDeterministicAssignment' has no attributes.
+The class 'fiacre::ArgumentVariable' has the following attributes: 'read' of type bool; 'write' of type bool; 'ref' of type bool.
+The class 'Exp' has no attributes.
+The class 'fiacre::CondExp' has no attributes.
+The class 'fiacre::LabeledType' has the following attributes: 'name' of type str.
+The class 'fiacre::FieldPattern' has the following attributes: 'field' of type str.
+The class 'fiacre::ArrayPattern' has no attributes.
+The class 'fiacre::BinExp' has the following attributes: 'binOp' of type str.
+The class 'fiacre::Arg' has no attributes.
+The class 'MinBound' has no attributes.
+The class 'fiacre::ProcessDecl' has no attributes.
+The class 'fiacre::Communication' has no attributes.
+The class 'fiacre::BoolType' has no attributes.
+The class 'fiacre::Field' has no attributes.
+The class 'fiacre::IntType' has no attributes.
+The class 'fiacre::RefArg' has no attributes.
+The class 'fiacre::State' has the following attributes: 'name' of type str.
+The class 'fiacre::ConstrPattern' has the following attributes: 'name' of type str.
+The class 'Pattern' has no attributes.
+The class 'fiacre::To' has no attributes.
+The class 'fiacre::ValuedField' has the following attributes: 'field' of type str.
+The class 'fiacre::Interval' has no attributes.
+The class 'fiacre::Rule' has no attributes.
+The class 'fiacre::ParamPortDecl' has no attributes.
+The class 'fiacre::Union' has no attributes.
+The class 'fiacre::Wait' has no attributes.
+The class 'fiacre::Foreach' has no attributes.
+The class 'fiacre::Channel' has no attributes.
+The class 'Channel' has no attributes.
+The class 'fiacre::PortDecl' has the following attributes: 'out' of type bool; 'name' of type str; 'in_' of type bool.
+The class 'InlineCollection' has no attributes.
+The class 'fiacre::Queue' has no attributes.
+The class 'fiacre::MinBound' has no attributes.
+The class 'NodeDecl' has no attributes.
+The class 'fiacre::SingleAssignment' has no attributes.
+The class 'fiacre::TypeDecl' has no attributes.
+The class 'Arg' has no attributes.
+The class 'Variable' has no attributes.
+The class 'fiacre::LocalPortDecl' has no attributes.
+The class 'fiacre::Record' has no attributes.
+The class 'fiacre::Program' has no attributes.
+The class 'fiacre::RecordElem' has the following attributes: 'field' of type str.
+The class 'fiacre::InterfacedComp' has no attributes.
+The class 'fiacre::Emission' has no attributes.
+The class 'fiacre::BasicType' has no attributes.
+The class 'fiacre::ConstantDecl' has no attributes.
+The class 'fiacre::ComponentDecl' has no attributes.
+The class 'Assignment' has no attributes.
+The class 'fiacre::NatLiteral' has the following attributes: 'value' of type int.
+The class 'Declaration' has no attributes.
+The class 'fiacre::Type' has no attributes.
+The class 'fiacre::Pattern' has no attributes.
+The class 'fiacre::Profile' has no attributes.
+The class 'fiacre::Declaration' has the following attributes: 'name' of type str.
+The class 'fiacre::LocalVariable' has the following attributes: 'constant' of type bool.
+The class 'fiacre::CaseStmt' has no attributes.
+The class 'fiacre::Assignment' has no attributes.
+The class 'fiacre::AnyPattern' has no attributes.
+The class 'fiacre::MaxBound' has no attributes.
+The enumeration 'BinOp' has the following literals: 'BADD', 'BGT', 'BMOD', 'BMINUS', 'BEQ', 'BLT', 'ENQUEUE', 'BOR', 'BGE', 'BDIV', 'APPEND', 'BMUL', 'BLE', 'BNE', 'BAND'.
+The enumeration 'UnOp' has the following literals: 'UNOT', 'UEMPTY', 'UFULL', 'UMINUS', 'UDOLLAR', 'FIRST', 'DEQUEUE'.
+'fiacre::IntType' is a specialization of 'BasicType'.
+'fiacre::ConstantRef' is a specialization of 'Exp'.
+'fiacre::WhileStmt' is a specialization of 'Statement'.
+'fiacre::LocalVariable' is a specialization of 'Variable'.
+'fiacre::RecordElem' is a specialization of 'Exp'.
+'fiacre::BinExp' is a specialization of 'Exp'.
+'fiacre::ArgumentVariable' is a specialization of 'Variable'.
+'fiacre::FiniteBound' is a specialization of 'MaxBound'.
+'fiacre::Instance' is a specialization of 'Composition'.
+'fiacre::Record' is a specialization of 'Type'.
+'fiacre::Literal' is a specialization of 'Exp'.
+'fiacre::FiniteBound' is a specialization of 'MinBound'.
+'fiacre::InlineQueue' is a specialization of 'InlineCollection'.
+'fiacre::CondExp' is a specialization of 'Exp'.
+'fiacre::ConstantDecl' is a specialization of 'Declaration'.
+'fiacre::Reception' is a specialization of 'Communication'.
+'fiacre::LocalPortDecl' is a specialization of 'PortDecl'.
+'fiacre::Constr' is a specialization of 'LabeledType'.
+'fiacre::ParamPortDecl' is a specialization of 'PortDecl'.
+'fiacre::IfStmt' is a specialization of 'Statement'.
+'fiacre::TypeDecl' is a specialization of 'Declaration'.
+'fiacre::ArrayElem' is a specialization of 'Exp'.
+'fiacre::ChannelDecl' is a specialization of 'Declaration'.
+'fiacre::Select' is a specialization of 'Statement'.
+'fiacre::BasicType' is a specialization of 'Type'.
+'fiacre::NatType' is a specialization of 'BasicType'.
+'fiacre::Field' is a specialization of 'LabeledType'.
+'fiacre::InlineArray' is a specialization of 'InlineCollection'.
+'fiacre::InfiniteBound' is a specialization of 'MaxBound'.
+'fiacre::NullStmt' is a specialization of 'Statement'.
+'fiacre::NonDeterministicAssignment' is a specialization of 'Assignment'.
+'fiacre::Queue' is a specialization of 'Type'.
+'fiacre::Exp' is a specialization of 'Arg'.
+'fiacre::Profile' is a specialization of 'Channel'.
+'fiacre::To' is a specialization of 'Statement'.
+'fiacre::NatLiteral' is a specialization of 'Literal'.
+'fiacre::Synchronization' is a specialization of 'Communication'.
+'fiacre::ArrayPattern' is a specialization of 'Pattern'.
+'fiacre::ProcessDecl' is a specialization of 'NodeDecl'.
+'fiacre::VarRef' is a specialization of 'Pattern'.
+'fiacre::VarRef' is a specialization of 'Exp'.
+'fiacre::ConstrExp' is a specialization of 'Exp'.
+'fiacre::Foreach' is a specialization of 'Statement'.
+'fiacre::DeterministicAssignment' is a specialization of 'Assignment'.
+'fiacre::Interval' is a specialization of 'Type'.
+'fiacre::Array' is a specialization of 'Type'.
+'fiacre::InlineRecord' is a specialization of 'Exp'.
+'fiacre::AnyPattern' is a specialization of 'Pattern'.
+'fiacre::TypeId' is a specialization of 'Type'.
+'fiacre::CaseStmt' is a specialization of 'Statement'.
+'fiacre::Seq' is a specialization of 'Statement'.
+'fiacre::BoolType' is a specialization of 'BasicType'.
+'fiacre::Communication' is a specialization of 'Statement'.
+'fiacre::Emission' is a specialization of 'Communication'.
+'fiacre::ConstantRef' is a specialization of 'Pattern'.
+'fiacre::BoolLiteral' is a specialization of 'Literal'.
+'fiacre::RefArg' is a specialization of 'Arg'.
+'fiacre::NodeDecl' is a specialization of 'Declaration'.
+'fiacre::UnExp' is a specialization of 'Exp'.
+'fiacre::Wait' is a specialization of 'Statement'.
+'fiacre::Assignment' is a specialization of 'Statement'.
+'fiacre::Literal' is a specialization of 'Pattern'.
+'fiacre::FieldPattern' is a specialization of 'Pattern'.
+'fiacre::Union' is a specialization of 'Type'.
+'fiacre::ComponentDecl' is a specialization of 'NodeDecl'.
+'fiacre::Par' is a specialization of 'Composition'.
+'fiacre::InlineCollection' is a specialization of 'Exp'.
+'fiacre::ConstrPattern' is a specialization of 'Pattern'.
+'fiacre::LabeledType' (role 'fiacre_LabeledType', cardinality 0..*) is associated with 'fiacre::Type' (role 'fiacre_Type175', cardinality 0..*).
+'fiacre::TypeDecl' (role 'fiacre_TypeDecl110', cardinality 0..*) is associated with 'fiacre::TypeId' (role 'fiacre_TypeId', cardinality 0..*).
+'fiacre::IfStmt' (role 'fiacre_IfStmt58', cardinality 0..*) is associated with 'fiacre::Statement' (role 'fiacre_Statement59', cardinality 0..*).
+'fiacre::Record' (role 'fiacre_Record', cardinality 0..*) is associated with 'fiacre::Field' (role 'fiacre_Field', cardinality 0..*).
+'fiacre::Type' (role 'fiacre_Type105', cardinality 0..*) is associated with 'fiacre::Queue' (role 'fiacre_Queue', cardinality 0..*).
+'fiacre::SingleAssignment' (role 'fiacre_SingleAssignment76', cardinality 0..*) is associated with 'fiacre::Exp' (role 'fiacre_Exp77', cardinality 0..*).
+'fiacre::Arg' (role 'fiacre_Arg', cardinality 0..*) is associated with 'fiacre::Instance' (role 'fiacre_Instance29', cardinality 0..*).
+'fiacre::Type' (role 'fiacre_Type166', cardinality 0..*) is associated with 'fiacre::ConstantDecl' (role 'fiacre_ConstantDecl', cardinality 0..*).
+'fiacre::RecordElem' (role 'fiacre_RecordElem', cardinality 0..*) is associated with 'fiacre::Exp' (role 'fiacre_Exp92', cardinality 0..*).
+'fiacre::Variable' (role 'fiacre_Variable164', cardinality 0..*) is associated with 'fiacre::RefArg' (role 'fiacre_RefArg', cardinality 0..*).
+'fiacre::NodeDecl' (role 'fiacre_NodeDecl10', cardinality 0..*) is associated with 'fiacre::LocalPortDecl' (role 'fiacre_LocalPortDecl', cardinality 0..*).
+'fiacre::IfStmt' (role 'fiacre_IfStmt', cardinality 0..*) is associated with 'fiacre::Exp' (role 'fiacre_Exp53', cardinality 0..*).
+'fiacre::SingleAssignment' (role 'fiacre_SingleAssignment73', cardinality 0..*) is associated with 'fiacre::Pattern' (role 'fiacre_Pattern74', cardinality 0..*).
+'fiacre::ConstantDecl' (role 'fiacre_ConstantDecl171', cardinality 0..*) is associated with 'fiacre::ConstantRef' (role 'fiacre_ConstantRef', cardinality 0..*).
+'fiacre::Exp' (role 'fiacre_Exp108', cardinality 0..*) is associated with 'fiacre::Queue' (role 'fiacre_Queue107', cardinality 0..*).
+'fiacre::Statement' (role 'fiacre_Statement44', cardinality 0..*) is associated with 'fiacre::Transition' (role 'fiacre_Transition43', cardinality 0..*).
+'fiacre::ArrayElem' (role 'fiacre_ArrayElem', cardinality 0..*) is associated with 'fiacre::Exp' (role 'fiacre_Exp87', cardinality 0..*).
+'fiacre::InterfacedComp' (role 'fiacre_InterfacedComp34', cardinality 0..*) is associated with 'fiacre::Composition' (role 'fiacre_Composition35', cardinality 0..*).
+'fiacre::Exp' (role 'fiacre_Exp116', cardinality 0..*) is associated with 'fiacre::ValuedField' (role 'fiacre_ValuedField115', cardinality 0..*).
+'fiacre::BinExp' (role 'fiacre_BinExp', cardinality 0..*) is associated with 'fiacre::Exp' (role 'fiacre_Exp81', cardinality 0..*).
+'fiacre::Declaration' (role 'fiacre_Declaration', cardinality 0..*) is associated with 'fiacre::Program' (role 'fiacre_Program', cardinality 0..*).
+'fiacre::Variable' (role 'fiacre_Variable', cardinality 0..*) is associated with 'fiacre::VarRef' (role 'fiacre_VarRef', cardinality 0..*).
+'fiacre::FieldPattern' (role 'fiacre_FieldPattern', cardinality 0..*) is associated with 'fiacre::Pattern' (role 'fiacre_Pattern152', cardinality 0..*).
+'fiacre::Statement' (role 'fiacre_Statement125', cardinality 0..*) is associated with 'fiacre::Seq' (role 'fiacre_Seq', cardinality 0..*).
+'fiacre::Transition' (role 'fiacre_Transition', cardinality 0..*) is associated with 'fiacre::ProcessDecl' (role 'fiacre_ProcessDecl20', cardinality 0..*).
+'fiacre::Communication' (role 'fiacre_Communication', cardinality 0..*) is associated with 'fiacre::PortDecl' (role 'fiacre_PortDecl46', cardinality 0..*).
+'fiacre::Pattern' (role 'fiacre_Pattern', cardinality 0..*) is associated with 'fiacre::NonDeterministicAssignment' (role 'fiacre_NonDeterministicAssignment', cardinality 0..*).
+'fiacre::ArrayPattern' (role 'fiacre_ArrayPattern149', cardinality 0..*) is associated with 'fiacre::Pattern' (role 'fiacre_Pattern150', cardinality 0..*).
+'fiacre::State' (role 'fiacre_State41', cardinality 0..*) is associated with 'fiacre::Transition' (role 'fiacre_Transition40', cardinality 0..*).
+'fiacre::ChannelDecl' (role 'fiacre_ChannelDecl', cardinality 0..*) is associated with 'fiacre::Channel' (role 'fiacre_Channel', cardinality 0..*).
+'fiacre::Union' (role 'fiacre_Union', cardinality 0..*) is associated with 'fiacre::Constr' (role 'fiacre_Constr', cardinality 0..*).
+'fiacre::Statement' (role 'fiacre_Statement', cardinality 0..*) is associated with 'fiacre::NodeDecl' (role 'fiacre_NodeDecl12', cardinality 0..*).
+'fiacre::Pattern' (role 'fiacre_Pattern159', cardinality 0..*) is associated with 'fiacre::Rule' (role 'fiacre_Rule158', cardinality 0..*).
+'fiacre::Foreach' (role 'fiacre_Foreach187', cardinality 0..*) is associated with 'fiacre::LocalVariable' (role 'fiacre_LocalVariable188', cardinality 0..*).
+'fiacre::Channel' (role 'fiacre_Channel22', cardinality 0..*) is associated with 'fiacre::PortDecl' (role 'fiacre_PortDecl', cardinality 0..*).
+'fiacre::ArgumentVariable' (role 'fiacre_ArgumentVariable', cardinality 0..*) is associated with 'fiacre::NodeDecl' (role 'fiacre_NodeDecl4', cardinality 0..*).
+'fiacre::LocalVariable' (role 'fiacre_LocalVariable', cardinality 0..*) is associated with 'fiacre::NodeDecl' (role 'fiacre_NodeDecl6', cardinality 0..*).
+'fiacre::Emission' (role 'fiacre_Emission', cardinality 0..*) is associated with 'fiacre::Exp' (role 'fiacre_Exp123', cardinality 0..*).
+'fiacre::Rule' (role 'fiacre_Rule161', cardinality 0..*) is associated with 'fiacre::Statement' (role 'fiacre_Statement162', cardinality 0..*).
+'fiacre::LocalPortDecl' (role 'fiacre_LocalPortDecl130', cardinality 0..*) is associated with 'fiacre::MaxBound' (role 'fiacre_MaxBound131', cardinality 0..*).
+'fiacre::Statement' (role 'fiacre_Statement56', cardinality 0..*) is associated with 'fiacre::IfStmt' (role 'fiacre_IfStmt55', cardinality 0..*).
+'fiacre::MinBound' (role 'fiacre_MinBound128', cardinality 0..*) is associated with 'fiacre::LocalPortDecl' (role 'fiacre_LocalPortDecl127', cardinality 0..*).
+'fiacre::Exp' (role 'fiacre_Exp142', cardinality 0..*) is associated with 'fiacre::ConstrExp' (role 'fiacre_ConstrExp', cardinality 0..*).
+'fiacre::WhileStmt' (role 'fiacre_WhileStmt50', cardinality 0..*) is associated with 'fiacre::Statement' (role 'fiacre_Statement51', cardinality 0..*).
+'fiacre::State' (role 'fiacre_State', cardinality 0..*) is associated with 'fiacre::ProcessDecl' (role 'fiacre_ProcessDecl', cardinality 0..*).
+'fiacre::CondExp' (role 'fiacre_CondExp179', cardinality 0..*) is associated with 'fiacre::Exp' (role 'fiacre_Exp180', cardinality 0..*).
+'fiacre::Reception' (role 'fiacre_Reception', cardinality 0..*) is associated with 'fiacre::Pattern' (role 'fiacre_Pattern118', cardinality 0..*).
+'fiacre::ComponentDecl' (role 'fiacre_ComponentDecl17', cardinality 0..*) is associated with 'fiacre::Priority' (role 'fiacre_Priority', cardinality 0..*).
+'fiacre::MinBound' (role 'fiacre_MinBound', cardinality 0..*) is associated with 'fiacre::Wait' (role 'fiacre_Wait', cardinality 0..*).
+'fiacre::Par' (role 'fiacre_Par', cardinality 0..*) is associated with 'fiacre::InterfacedComp' (role 'fiacre_InterfacedComp', cardinality 0..*).
+'fiacre::NodeDecl' (role 'fiacre_NodeDecl27', cardinality 0..*) is associated with 'fiacre::Instance' (role 'fiacre_Instance', cardinality 0..*).
+'fiacre::MaxBound' (role 'fiacre_MaxBound', cardinality 0..*) is associated with 'fiacre::Wait' (role 'fiacre_Wait66', cardinality 0..*).
+'fiacre::InterfacedComp' (role 'fiacre_InterfacedComp37', cardinality 0..*) is associated with 'fiacre::PortDecl' (role 'fiacre_PortDecl38', cardinality 0..*).
+'fiacre::Pattern' (role 'fiacre_Pattern145', cardinality 0..*) is associated with 'fiacre::ConstrPattern' (role 'fiacre_ConstrPattern', cardinality 0..*).
+'fiacre::Exp' (role 'fiacre_Exp71', cardinality 0..*) is associated with 'fiacre::NonDeterministicAssignment' (role 'fiacre_NonDeterministicAssignment70', cardinality 0..*).
+'fiacre::Exp' (role 'fiacre_Exp94', cardinality 0..*) is associated with 'fiacre::Interval' (role 'fiacre_Interval', cardinality 0..*).
+'fiacre::ConstantDecl' (role 'fiacre_ConstantDecl168', cardinality 0..*) is associated with 'fiacre::Exp' (role 'fiacre_Exp169', cardinality 0..*).
+'fiacre::UnExp' (role 'fiacre_UnExp', cardinality 0..*) is associated with 'fiacre::Exp' (role 'fiacre_Exp79', cardinality 0..*).
+'fiacre::Program' (role 'fiacre_Program2', cardinality 0..*) is associated with 'fiacre::NodeDecl' (role 'fiacre_NodeDecl', cardinality 0..*).
+'fiacre::Variable' (role 'fiacre_Variable133', cardinality 0..*) is associated with 'fiacre::Type' (role 'fiacre_Type134', cardinality 0..*).
+'fiacre::Exp' (role 'fiacre_Exp183', cardinality 0..*) is associated with 'fiacre::CondExp' (role 'fiacre_CondExp182', cardinality 0..*).
+'fiacre::TypeDecl' (role 'fiacre_TypeDecl', cardinality 0..*) is associated with 'fiacre::Type' (role 'fiacre_Type', cardinality 0..*).
+'fiacre::Exp' (role 'fiacre_Exp147', cardinality 0..*) is associated with 'fiacre::ArrayPattern' (role 'fiacre_ArrayPattern', cardinality 0..*).
+'fiacre::CaseStmt' (role 'fiacre_CaseStmt', cardinality 0..*) is associated with 'fiacre::Rule' (role 'fiacre_Rule', cardinality 0..*).
+'fiacre::Array' (role 'fiacre_Array102', cardinality 0..*) is associated with 'fiacre::Type' (role 'fiacre_Type103', cardinality 0..*).
+'fiacre::To' (role 'fiacre_To', cardinality 0..*) is associated with 'fiacre::State' (role 'fiacre_State63', cardinality 0..*).
+'fiacre::Reception' (role 'fiacre_Reception120', cardinality 0..*) is associated with 'fiacre::Exp' (role 'fiacre_Exp121', cardinality 0..*).
+'fiacre::Exp' (role 'fiacre_Exp173', cardinality 0..*) is associated with 'fiacre::InlineCollection' (role 'fiacre_InlineCollection', cardinality 0..*).
+'fiacre::WhileStmt' (role 'fiacre_WhileStmt', cardinality 0..*) is associated with 'fiacre::Exp' (role 'fiacre_Exp48', cardinality 0..*).
+'fiacre::Priority' (role 'fiacre_Priority139', cardinality 0..*) is associated with 'fiacre::PortDecl' (role 'fiacre_PortDecl140', cardinality 0..*).
+'fiacre::Statement' (role 'fiacre_Statement185', cardinality 0..*) is associated with 'fiacre::Foreach' (role 'fiacre_Foreach', cardinality 0..*).
+'fiacre::Select' (role 'fiacre_Select', cardinality 0..*) is associated with 'fiacre::Statement' (role 'fiacre_Statement61', cardinality 0..*).
+'fiacre::InlineRecord' (role 'fiacre_InlineRecord', cardinality 0..*) is associated with 'fiacre::ValuedField' (role 'fiacre_ValuedField', cardinality 0..*).
+'fiacre::Interval' (role 'fiacre_Interval96', cardinality 0..*) is associated with 'fiacre::Exp' (role 'fiacre_Exp97', cardinality 0..*).
+'fiacre::Exp' (role 'fiacre_Exp156', cardinality 0..*) is associated with 'fiacre::CaseStmt' (role 'fiacre_CaseStmt155', cardinality 0..*).
+'fiacre::CondExp' (role 'fiacre_CondExp', cardinality 0..*) is associated with 'fiacre::Exp' (role 'fiacre_Exp177', cardinality 0..*).
+'fiacre::ParamPortDecl' (role 'fiacre_ParamPortDecl', cardinality 0..*) is associated with 'fiacre::NodeDecl' (role 'fiacre_NodeDecl8', cardinality 0..*).
+'fiacre::SingleAssignment' (role 'fiacre_SingleAssignment', cardinality 0..*) is associated with 'fiacre::DeterministicAssignment' (role 'fiacre_DeterministicAssignment', cardinality 0..*).
+'fiacre::Array' (role 'fiacre_Array', cardinality 0..*) is associated with 'fiacre::Exp' (role 'fiacre_Exp100', cardinality 0..*).
+'fiacre::Composition' (role 'fiacre_Composition', cardinality 0..*) is associated with 'fiacre::ComponentDecl' (role 'fiacre_ComponentDecl', cardinality 0..*).
+'fiacre::Type' (role 'fiacre_Type112', cardinality 0..*) is associated with 'fiacre::Profile' (role 'fiacre_Profile', cardinality 0..*).
+'fiacre::Exp' (role 'fiacre_Exp', cardinality 0..*) is associated with 'fiacre::LocalVariable' (role 'fiacre_LocalVariable24', cardinality 0..*).
+'fiacre::ArrayElem' (role 'fiacre_ArrayElem89', cardinality 0..*) is associated with 'fiacre::Exp' (role 'fiacre_Exp90', cardinality 0..*).
+'fiacre::PortDecl' (role 'fiacre_PortDecl137', cardinality 0..*) is associated with 'fiacre::Priority' (role 'fiacre_Priority136', cardinality 0..*).
+'fiacre::PortDecl' (role 'fiacre_PortDecl32', cardinality 0..*) is associated with 'fiacre::Instance' (role 'fiacre_Instance31', cardinality 0..*).
+'fiacre::BinExp' (role 'fiacre_BinExp83', cardinality 0..*) is associated with 'fiacre::Exp' (role 'fiacre_Exp84', cardinality 0..*).

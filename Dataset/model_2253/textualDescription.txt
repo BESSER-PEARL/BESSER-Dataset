@@ -1,0 +1,35 @@
+The model has 13 class(es).
+The class 'dXP::Org' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'dXP::Metadata' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'dXP::OrgUnit' has no attributes.
+The class 'dXP::UserId' has the following attributes: 'identifier' of type str; 'type' of type str.
+The class 'dXP::OneRoster' has no attributes.
+The class 'dXP::User' has the following attributes: 'enabledUser' of type str; 'identifier' of type str; 'role' of type str; 'userName' of type str.
+The class 'dXP::Course' has the following attributes: 'courseCode' of type str; 'title' of type str.
+The class 'dXP::Enrolment' has the following attributes: 'primary' of type str; 'role' of type str.
+The class 'Base' has no attributes.
+The class 'dXP::Base' has the following attributes: 'status' of type str; 'sourceId' of type str; 'dateLastModified' of type str.
+The class 'Org' has no attributes.
+The class 'dXP::AcademicSession' has the following attributes: 'schoolYear' of type str; 'type' of type str; 'endDate' of type str; 'title' of type str; 'startDate' of type str.
+The class 'dXP::Class' has the following attributes: 'classType' of type str; 'classCode' of type str; 'title' of type str; 'location' of type str.
+The enumeration 'Role' has the following literals: 'student', 'teacher'.
+The enumeration 'OrgType' has the following literals: 'Misc', 'Discipline', 'department', 'Specjalization', 'school', 'major'.
+'dXP::OrgUnit' is a specialization of 'Org'.
+'dXP::Class' is a specialization of 'Base'.
+'dXP::User' is a specialization of 'Base'.
+'dXP::Course' is a specialization of 'Base'.
+'dXP::AcademicSession' is a specialization of 'Base'.
+'dXP::Enrolment' is a specialization of 'Base'.
+'dXP::Org' is a specialization of 'Base'.
+'dXP::User' (role 'dXP_User', cardinality 0..*) is associated with 'dXP::AcademicSession' (role 'dXP_AcademicSession11', cardinality 0..*).
+'dXP::Class' (role 'dXP_Class21', cardinality 0..*) is associated with 'dXP::Enrolment' (role 'dXP_Enrolment20', cardinality 0..*).
+'dXP::OneRoster' (role 'dXP_OneRoster4', cardinality 0..*) is associated with 'dXP::Enrolment' (role 'dXP_Enrolment', cardinality 0..*).
+'dXP::Enrolment' (role 'dXP_Enrolment17', cardinality 0..*) is associated with 'dXP::User' (role 'dXP_User18', cardinality 0..*).
+'dXP::Course' (role 'dXP_Course9', cardinality 0..*) is associated with 'dXP::AcademicSession' (role 'dXP_AcademicSession8', cardinality 0..*).
+'dXP::OrgUnit' (role 'dXP_OrgUnit', cardinality 0..*) is associated with 'dXP::Org' (role 'dXP_Org15', cardinality 0..*).
+'dXP::OneRoster' (role 'dXP_OneRoster', cardinality 0..*) is associated with 'dXP::AcademicSession' (role 'dXP_AcademicSession', cardinality 0..*).
+'dXP::Enrolment' (role 'dXP_Enrolment23', cardinality 0..*) is associated with 'dXP::OrgUnit' (role 'dXP_OrgUnit24', cardinality 0..*).
+'dXP::Class' (role 'dXP_Class', cardinality 0..*) is associated with 'dXP::Course' (role 'dXP_Course', cardinality 0..*).
+'dXP::Base' (role 'dXP_Base', cardinality 0..*) is associated with 'dXP::Metadata' (role 'dXP_Metadata', cardinality 0..*).
+'dXP::User' (role 'dXP_User13', cardinality 0..*) is associated with 'dXP::UserId' (role 'dXP_UserId', cardinality 0..*).
+'dXP::OneRoster' (role 'dXP_OneRoster2', cardinality 0..*) is associated with 'dXP::Org' (role 'dXP_Org', cardinality 0..*).

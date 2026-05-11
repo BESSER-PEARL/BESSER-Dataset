@@ -1,0 +1,127 @@
+The model has 57 class(es).
+The class 'scxml::Log' has the following attributes: 'level' of type str; 'label' of type str; 'expr' of type str.
+The class 'State' has no attributes.
+The class 'scxml::InitialState' has no attributes.
+The class 'IAdaptable' has no attributes.
+The class 'Donedata' has no attributes.
+The class 'scxml::Invoke' has the following attributes: 'idlocation' of type str; 'namelist' of type str; 'autoforward' of type str; 'typeexpr' of type str; 'srcexpr' of type str; 'type' of type str; 'id' of type str; 'src' of type str.
+The class 'InitialState' has no attributes.
+The class 'scxml::Donedata' has no attributes.
+The class 'scxml::AbstractState' has no attributes.
+The class 'scxml::CondEventTransition' has the following attributes: 'event' of type str; 'cond' of type str.
+The class 'scxml::IAdaptable' has no attributes.
+The class 'AbstractSimpleState' has no attributes.
+The class 'Transition' has no attributes.
+The class 'scxml::Cancel' has the following attributes: 'sendid' of type str; 'sendidexpr' of type str.
+The class 'scxml::Conditional' has the following attributes: 'cond' of type str.
+The class 'scxml::OnExit' has no attributes.
+The class 'scxml::Raise' has the following attributes: 'event' of type str.
+The class 'scxml::ParallelState' has no attributes.
+The class 'Data' has no attributes.
+The class 'scxml::Node' has no attributes.
+The class 'scxml::DescriptionContainer' has no attributes.
+The class 'scxml::FinalState' has no attributes.
+The class 'scxml::TransitionSource' has no attributes.
+The class 'scxml::XObject' has the following attributes: 'exchange' of type bool; 'classifierName' of type str; 'nsUri' of type str.
+The class 'TransitionTarget' has no attributes.
+The class 'AbstractState' has no attributes.
+The class 'DatamodelContainer' has no attributes.
+The class 'scxml::EObject' has no attributes.
+The class 'scxml::ElseIf' has no attributes.
+The class 'scxml::Content' has the following attributes: 'value' of type str.
+The class 'scxml::AbstractSimpleState' has no attributes.
+The class 'TransitionSource' has no attributes.
+The class 'scxml::SimpleState' has no attributes.
+The class 'ExecutableContent' has no attributes.
+The class 'scxml::HistoryState' has the following attributes: 'type' of type str.
+The class 'scxml::Else' has no attributes.
+The class 'scxml::Validate' has the following attributes: 'schema' of type str; 'location' of type str.
+The class 'scxml::Data' has the following attributes: 'expr' of type str; 'id' of type str; 'src' of type str.
+The class 'scxml::DatamodelContainer' has no attributes.
+The class 'DescriptionContainer' has no attributes.
+The class 'scxml::Send' has the following attributes: 'type' of type str; 'delay' of type str; 'targetexpr' of type str; 'id' of type str; 'namelist' of type str; 'hintsexpr' of type str; 'target' of type str; 'idlocation' of type str; 'delayexpr' of type str; 'typeexpr' of type str; 'eventexpr' of type str; 'hints' of type str; 'event' of type str.
+The class 'scxml::OnEntry' has no attributes.
+The class 'scxml::XData' has no attributes.
+The class 'scxml::StateChart' has the following attributes: 'profile' of type str; 'id' of type str; 'version' of type str; 'exmode' of type str; 'xmlns' of type str.
+The class 'scxml::Datamodel' has the following attributes: 'schema' of type str.
+The class 'scxml::Param' has the following attributes: 'expr' of type str; 'name' of type str.
+The class 'Node' has no attributes.
+The class 'scxml::ExecutableContent' has the following attributes: 'group' of type str.
+The class 'scxml::Description' has the following attributes: 'value' of type str.
+The class 'scxml::TransitionTarget' has the following attributes: 'id' of type str.
+The class 'scxml::If' has no attributes.
+The class 'scxml::Script' has the following attributes: 'value' of type str.
+The class 'scxml::EClass' has no attributes.
+The class 'scxml::State' has no attributes.
+The class 'scxml::Assign' has the following attributes: 'name' of type str; 'location' of type str; 'expr' of type str.
+The class 'scxml::Transition' has no attributes.
+The class 'Conditional' has no attributes.
+The enumeration 'HistoryTypeDatatype' has the following literals: 'deep', 'shallow'.
+The enumeration 'ExmodeDatatype' has the following literals: 'lax', 'strict'.
+The enumeration 'AdapterToken' has the following literals: 'DESCRIPTION', 'DATAMODEL'.
+'scxml::ElseIf' is a specialization of 'Conditional'.
+'scxml::Data' is a specialization of 'DescriptionContainer'.
+'scxml::Raise' is a specialization of 'Donedata'.
+'scxml::SimpleState' is a specialization of 'State'.
+'scxml::State' is a specialization of 'TransitionSource'.
+'scxml::If' is a specialization of 'Conditional'.
+'scxml::ParallelState' is a specialization of 'State'.
+'scxml::StateChart' is a specialization of 'DescriptionContainer'.
+'scxml::TransitionTarget' is a specialization of 'Node'.
+'scxml::SimpleState' is a specialization of 'AbstractSimpleState'.
+'scxml::StateChart' is a specialization of 'AbstractState'.
+'scxml::XData' is a specialization of 'Data'.
+'scxml::CondEventTransition' is a specialization of 'Transition'.
+'scxml::DescriptionContainer' is a specialization of 'IAdaptable'.
+'scxml::Invoke' is a specialization of 'Donedata'.
+'scxml::StateChart' is a specialization of 'DatamodelContainer'.
+'scxml::InitialState' is a specialization of 'DescriptionContainer'.
+'scxml::State' is a specialization of 'TransitionTarget'.
+'scxml::HistoryState' is a specialization of 'InitialState'.
+'scxml::OnExit' is a specialization of 'ExecutableContent'.
+'scxml::Transition' is a specialization of 'ExecutableContent'.
+'scxml::If' is a specialization of 'ExecutableContent'.
+'scxml::State' is a specialization of 'AbstractState'.
+'scxml::Send' is a specialization of 'Donedata'.
+'scxml::Node' is a specialization of 'DescriptionContainer'.
+'scxml::Datamodel' is a specialization of 'DescriptionContainer'.
+'scxml::State' is a specialization of 'DatamodelContainer'.
+'scxml::FinalState' is a specialization of 'TransitionTarget'.
+'scxml::OnEntry' is a specialization of 'ExecutableContent'.
+'scxml::Transition' is a specialization of 'DescriptionContainer'.
+'scxml::HistoryState' is a specialization of 'TransitionTarget'.
+'scxml::TransitionSource' is a specialization of 'Node'.
+'scxml::DatamodelContainer' is a specialization of 'IAdaptable'.
+'scxml::StateChart' is a specialization of 'AbstractSimpleState'.
+'scxml::EObject' (role 'scxml_EObject51', cardinality 0..*) is associated with 'scxml::XData' (role 'scxml_XData', cardinality 0..*).
+'scxml::Donedata' (role 'scxml_Donedata16', cardinality 0..*) is associated with 'scxml::FinalState' (role 'scxml_FinalState', cardinality 0..*).
+'scxml::EClass' (role 'scxml_EClass', cardinality 0..*) is associated with 'scxml::XObject' (role 'scxml_XObject', cardinality 0..*).
+'scxml::If' (role 'scxml_If44', cardinality 0..*) is associated with 'scxml::ElseIf' (role 'scxml_ElseIf', cardinality 0..*).
+'scxml::Node' (role 'scxml_Node3', cardinality 0..*) is associated with 'scxml::OnExit' (role 'scxml_OnExit', cardinality 0..*).
+'scxml::SimpleState' (role 'scxml_SimpleState', cardinality 0..*) is associated with 'scxml::AbstractState' (role 'scxml_AbstractState', cardinality 0..*).
+'scxml::OnEntry' (role 'scxml_OnEntry', cardinality 0..*) is associated with 'scxml::Node' (role 'scxml_Node', cardinality 0..*).
+'scxml::Cancel' (role 'scxml_Cancel', cardinality 0..*) is associated with 'scxml::ExecutableContent' (role 'scxml_ExecutableContent35', cardinality 0..*).
+'scxml::AbstractSimpleState' (role 'scxml_AbstractSimpleState20', cardinality 0..*) is associated with 'scxml::InitialState' (role 'scxml_InitialState21', cardinality 0..*).
+'scxml::StateChart' (role 'scxml_StateChart', cardinality 0..*) is associated with 'scxml::Script' (role 'scxml_Script', cardinality 0..*).
+'scxml::ExecutableContent' (role 'scxml_ExecutableContent33', cardinality 0..*) is associated with 'scxml::Send' (role 'scxml_Send', cardinality 0..*).
+'scxml::ExecutableContent' (role 'scxml_ExecutableContent39', cardinality 0..*) is associated with 'scxml::Validate' (role 'scxml_Validate', cardinality 0..*).
+'scxml::If' (role 'scxml_If46', cardinality 0..*) is associated with 'scxml::Else' (role 'scxml_Else', cardinality 0..*).
+'scxml::DatamodelContainer' (role 'scxml_DatamodelContainer', cardinality 0..*) is associated with 'scxml::Datamodel' (role 'scxml_Datamodel55', cardinality 0..*).
+'scxml::State' (role 'scxml_State', cardinality 0..*) is associated with 'scxml::HistoryState' (role 'scxml_HistoryState', cardinality 0..*).
+'scxml::ExecutableContent' (role 'scxml_ExecutableContent31', cardinality 0..*) is associated with 'scxml::Raise' (role 'scxml_Raise', cardinality 0..*).
+'scxml::AbstractSimpleState' (role 'scxml_AbstractSimpleState23', cardinality 0..*) is associated with 'scxml::FinalState' (role 'scxml_FinalState24', cardinality 0..*).
+'scxml::SimpleState' (role 'scxml_SimpleState26', cardinality 0..*) is associated with 'scxml::Invoke' (role 'scxml_Invoke', cardinality 0..*).
+'scxml::Donedata' (role 'scxml_Donedata', cardinality 0..*) is associated with 'scxml::Param' (role 'scxml_Param', cardinality 0..*).
+'scxml::InitialState' (role 'scxml_InitialState', cardinality 0..*) is associated with 'scxml::Transition' (role 'scxml_Transition11', cardinality 0..*).
+'scxml::AbstractSimpleState' (role 'scxml_AbstractSimpleState', cardinality 0..*) is associated with 'scxml::TransitionTarget' (role 'scxml_TransitionTarget18', cardinality 0..*).
+'scxml::Description' (role 'scxml_Description', cardinality 0..*) is associated with 'scxml::DescriptionContainer' (role 'scxml_DescriptionContainer', cardinality 0..*).
+'scxml::Assign' (role 'scxml_Assign', cardinality 0..*) is associated with 'scxml::ExecutableContent' (role 'scxml_ExecutableContent37', cardinality 0..*).
+'scxml::Data' (role 'scxml_Data', cardinality 0..*) is associated with 'scxml::Datamodel' (role 'scxml_Datamodel', cardinality 0..*).
+'scxml::CondEventTransition' (role 'scxml_CondEventTransition', cardinality 0..*) is associated with 'scxml::TransitionSource' (role 'scxml_TransitionSource', cardinality 0..*).
+'scxml::ExecutableContent' (role 'scxml_ExecutableContent49', cardinality 0..*) is associated with 'scxml::Invoke' (role 'scxml_Invoke48', cardinality 0..*).
+'scxml::If' (role 'scxml_If', cardinality 0..*) is associated with 'scxml::ExecutableContent' (role 'scxml_ExecutableContent', cardinality 0..*).
+'scxml::EObject' (role 'scxml_EObject', cardinality 0..*) is associated with 'scxml::Donedata' (role 'scxml_Donedata14', cardinality 0..*).
+'scxml::TransitionTarget' (role 'scxml_TransitionTarget', cardinality 0..*) is associated with 'scxml::Transition' (role 'scxml_Transition', cardinality 0..*).
+'scxml::Script' (role 'scxml_Script42', cardinality 0..*) is associated with 'scxml::ExecutableContent' (role 'scxml_ExecutableContent41', cardinality 0..*).
+'scxml::Log' (role 'scxml_Log', cardinality 0..*) is associated with 'scxml::ExecutableContent' (role 'scxml_ExecutableContent29', cardinality 0..*).
+'scxml::ParallelState' (role 'scxml_ParallelState', cardinality 0..*) is associated with 'scxml::AbstractState' (role 'scxml_AbstractState7', cardinality 0..*).

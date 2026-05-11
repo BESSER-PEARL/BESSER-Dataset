@@ -1,0 +1,48 @@
+The model has 17 class(es).
+The class 'samplemodel::NodeTargetD' has no attributes.
+The class 'samplemodel::NodeTargetB' has the following attributes: 'title' of type str.
+The class 'samplemodel::LinkFromLink' has no attributes.
+The class 'samplemodel::Child' has the following attributes: 'childLabel' of type str.
+The class 'samplemodel::LinkAtoC::Cardinality2' has no attributes.
+The class 'samplemodel::LinkCrossLink' has no attributes.
+The class 'samplemodel::LinkAtoA' has no attributes.
+The class 'CommonBaseClass' has no attributes.
+The class 'NodeTargetB' has no attributes.
+The class 'samplemodel::LinkAtoC::Cardinality1' has no attributes.
+The class 'samplemodel::Child2' has the following attributes: 'childLabel' of type str.
+The class 'samplemodel::CommonBaseClass' has no attributes.
+The class 'samplemodel::UltimateContainer' has the following attributes: 'diagramAttribute' of type str.
+The class 'samplemodel::LinkAtoC' has no attributes.
+The class 'samplemodel::NodeTargetC' has no attributes.
+The class 'samplemodel::Link2Link' has no attributes.
+The class 'samplemodel::NodeSrcA' has the following attributes: 'label' of type str.
+'samplemodel::NodeTargetB' is a specialization of 'CommonBaseClass'.
+'samplemodel::NodeTargetC' is a specialization of 'NodeTargetB'.
+'samplemodel::NodeSrcA' is a specialization of 'CommonBaseClass'.
+'samplemodel::NodeTargetD' is a specialization of 'NodeTargetB'.
+'samplemodel::Child' (role 'samplemodel_Child51', cardinality 0..*) is associated with 'samplemodel::Child' (role 'samplemodel_Child53', cardinality 0..*).
+'samplemodel::NodeSrcA' (role 'samplemodel_NodeSrcA14', cardinality 0..*) is associated with 'samplemodel::LinkAtoC::Cardinality2' (role 'samplemodel_LinkAtoC_Cardinality2', cardinality 0..*).
+'samplemodel::NodeSrcA' (role 'samplemodel_NodeSrcA22', cardinality 0..*) is associated with 'samplemodel::Child2' (role 'samplemodel_Child2', cardinality 0..*).
+'samplemodel::Link2Link' (role 'samplemodel_Link2Link55', cardinality 0..*) is associated with 'samplemodel::LinkAtoC' (role 'samplemodel_LinkAtoC56', cardinality 0..*).
+'samplemodel::NodeSrcA' (role 'samplemodel_NodeSrcA8', cardinality 0..*) is associated with 'samplemodel::NodeSrcA' (role 'samplemodel_NodeSrcA10', cardinality 0..*).
+'samplemodel::NodeTargetC' (role 'samplemodel_NodeTargetC47', cardinality 0..*) is associated with 'samplemodel::LinkAtoC::Cardinality1' (role 'samplemodel_LinkAtoC_Cardinality146', cardinality 0..*).
+'samplemodel::NodeSrcA' (role 'samplemodel_NodeSrcA', cardinality 0..*) is associated with 'samplemodel::NodeTargetB' (role 'samplemodel_NodeTargetB', cardinality 0..*).
+'samplemodel::NodeTargetD' (role 'samplemodel_NodeTargetD59', cardinality 0..*) is associated with 'samplemodel::LinkFromLink' (role 'samplemodel_LinkFromLink58', cardinality 0..*).
+'samplemodel::NodeTargetD' (role 'samplemodel_NodeTargetD29', cardinality 0..*) is associated with 'samplemodel::Link2Link' (role 'samplemodel_Link2Link', cardinality 0..*).
+'samplemodel::CommonBaseClass' (role 'samplemodel_CommonBaseClass', cardinality 0..*) is associated with 'samplemodel::UltimateContainer' (role 'samplemodel_UltimateContainer', cardinality 0..*).
+'samplemodel::LinkAtoC::Cardinality2' (role 'samplemodel_LinkAtoC_Cardinality243', cardinality 0..*) is associated with 'samplemodel::NodeTargetC' (role 'samplemodel_NodeTargetC44', cardinality 0..*).
+'samplemodel::NodeTargetB' (role 'samplemodel_NodeTargetB24', cardinality 0..*) is associated with 'samplemodel::Child' (role 'samplemodel_Child25', cardinality 0..*).
+'samplemodel::NodeSrcA' (role 'samplemodel_NodeSrcA16', cardinality 0..*) is associated with 'samplemodel::LinkAtoC::Cardinality1' (role 'samplemodel_LinkAtoC_Cardinality1', cardinality 0..*).
+'samplemodel::LinkFromLink' (role 'samplemodel_LinkFromLink', cardinality 0..*) is associated with 'samplemodel::LinkAtoC' (role 'samplemodel_LinkAtoC39', cardinality 0..*).
+'samplemodel::LinkAtoC' (role 'samplemodel_LinkAtoC31', cardinality 0..*) is associated with 'samplemodel::NodeTargetD' (role 'samplemodel_NodeTargetD32', cardinality 0..*).
+'samplemodel::LinkAtoC' (role 'samplemodel_LinkAtoC27', cardinality 0..*) is associated with 'samplemodel::NodeTargetD' (role 'samplemodel_NodeTargetD', cardinality 0..*).
+'samplemodel::NodeSrcA' (role 'samplemodel_NodeSrcA3', cardinality 0..*) is associated with 'samplemodel::NodeTargetB' (role 'samplemodel_NodeTargetB4', cardinality 0..*).
+'samplemodel::LinkAtoA' (role 'samplemodel_LinkAtoA', cardinality 0..*) is associated with 'samplemodel::NodeSrcA' (role 'samplemodel_NodeSrcA18', cardinality 0..*).
+'samplemodel::NodeSrcA' (role 'samplemodel_NodeSrcA20', cardinality 0..*) is associated with 'samplemodel::Child' (role 'samplemodel_Child', cardinality 0..*).
+'samplemodel::LinkAtoC' (role 'samplemodel_LinkAtoC62', cardinality 0..*) is associated with 'samplemodel::LinkCrossLink' (role 'samplemodel_LinkCrossLink61', cardinality 0..*).
+'samplemodel::NodeTargetC' (role 'samplemodel_NodeTargetC', cardinality 0..*) is associated with 'samplemodel::LinkAtoC' (role 'samplemodel_LinkAtoC37', cardinality 0..*).
+'samplemodel::LinkAtoC' (role 'samplemodel_LinkAtoC35', cardinality 0..*) is associated with 'samplemodel::LinkAtoC' (role 'samplemodel_LinkAtoC33', cardinality 0..*).
+'samplemodel::NodeSrcA' (role 'samplemodel_NodeSrcA6', cardinality 0..*) is associated with 'samplemodel::NodeTargetB' (role 'samplemodel_NodeTargetB7', cardinality 0..*).
+'samplemodel::LinkAtoC' (role 'samplemodel_LinkAtoC41', cardinality 0..*) is associated with 'samplemodel::LinkCrossLink' (role 'samplemodel_LinkCrossLink', cardinality 0..*).
+'samplemodel::NodeSrcA' (role 'samplemodel_NodeSrcA12', cardinality 0..*) is associated with 'samplemodel::LinkAtoC' (role 'samplemodel_LinkAtoC', cardinality 0..*).
+'samplemodel::LinkAtoA' (role 'samplemodel_LinkAtoA49', cardinality 0..*) is associated with 'samplemodel::NodeSrcA' (role 'samplemodel_NodeSrcA50', cardinality 0..*).

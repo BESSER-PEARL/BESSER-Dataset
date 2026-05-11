@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/cedricvidal/emf-customizer/sources/com.proxiad.emfcustomizer.samples.entity2ddlxtend/src/ddl/ddl.ecore

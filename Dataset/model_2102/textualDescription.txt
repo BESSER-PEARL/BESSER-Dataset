@@ -1,0 +1,23 @@
+The model has 8 class(es).
+The class 'TreeElement' has no attributes.
+The class 'SimpleTree::Folder' has no attributes.
+The class 'SimpleTree::Node' has the following attributes: 'stopLineIndex' of type int; 'startLineIndex' of type int; 'stopIndex' of type int; 'startIndex' of type int.
+The class 'Text' has no attributes.
+The class 'SimpleTree::File' has no attributes.
+The class 'SimpleTree::Attribute' has the following attributes: 'value' of type str.
+The class 'SimpleTree::Text' has no attributes.
+The class 'SimpleTree::TreeElement' has the following attributes: 'index' of type int; 'name' of type str.
+'SimpleTree::Attribute' is a specialization of 'TreeElement'.
+'SimpleTree::Text' is a specialization of 'TreeElement'.
+'SimpleTree::Node' is a specialization of 'Text'.
+'SimpleTree::Folder' is a specialization of 'TreeElement'.
+'SimpleTree::File' is a specialization of 'TreeElement'.
+'SimpleTree::Node' (role 'parentNode', cardinality 0..*) is associated with 'SimpleTree::Text' (role 'Text', cardinality 0..*).
+'SimpleTree::File' (role 'SimpleTree_File', cardinality 0..*) is associated with 'SimpleTree::TreeElement' (role 'SimpleTree_TreeElement', cardinality 0..*).
+'SimpleTree::Folder' (role 'parentFolder', cardinality 0..*) is associated with 'SimpleTree::Folder' (role 'Folder5', cardinality 0..*).
+'SimpleTree::Folder' (role 'subFolder', cardinality 0..*) is associated with 'SimpleTree::Folder' (role 'Folder8', cardinality 0..*).
+'SimpleTree::Text' (role 'children', cardinality 0..*) is associated with 'SimpleTree::Node' (role 'Node13', cardinality 0..*).
+'SimpleTree::Folder' (role 'Folder', cardinality 0..*) is associated with 'SimpleTree::File' (role 'file', cardinality 0..*).
+'SimpleTree::Folder' (role 'folder', cardinality 0..*) is associated with 'SimpleTree::File' (role 'File', cardinality 0..*).
+'SimpleTree::Node' (role 'node', cardinality 0..*) is associated with 'SimpleTree::Attribute' (role 'Attribute', cardinality 0..*).
+'SimpleTree::Node' (role 'Node', cardinality 0..*) is associated with 'SimpleTree::Attribute' (role 'attribute', cardinality 0..*).

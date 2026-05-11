@@ -1,0 +1,46 @@
+The model has 25 class(es).
+The class 'Root' has no attributes.
+The class 'Skeleton' has no attributes.
+The class 'sgf::tree::Coordinator' has no attributes.
+The class 'sgf::tree::Simulator' has no attributes.
+The class 'sgf::tree::Node' has the following attributes: 'ID' of type str.
+The class 'sgf::skeleton::Skeleton' has the following attributes: 'ID' of type str.
+The class 'sgf::graph::Mapping' has the following attributes: 'ID' of type str.
+The class 'sgf::bundle::Process' has the following attributes: 'ID' of type str.
+The class 'BasicNode' has no attributes.
+The class 'sgf::tree::Root' has no attributes.
+The class 'Coordinator' has no attributes.
+The class 'Node' has no attributes.
+The class 'Mapping' has no attributes.
+The class 'sgf::vm::VM' has the following attributes: 'protocol' of type str; 'ID' of type str.
+The class 'Simulator' has no attributes.
+The class 'Tree' has no attributes.
+The class 'VM' has no attributes.
+The class 'sgf::vm::Processor' has the following attributes: 'ID' of type str; 'IP' of type str.
+The class 'Process' has no attributes.
+The class 'sgf::tree::Tree' has the following attributes: 'ID' of type str.
+The class 'sgf::graph::Graph' has the following attributes: 'ID' of type str.
+The class 'Bundle' has no attributes.
+The class 'Processor' has no attributes.
+The class 'sgf::bundle::Bundle' has the following attributes: 'ID' of type str.
+The class 'sgf::tree::BasicNode' has the following attributes: 'modelName' of type str.
+'sgf::tree::Coordinator' is a specialization of 'BasicNode'.
+'sgf::tree::Simulator' is a specialization of 'BasicNode'.
+'sgf::tree::Root' is a specialization of 'Node'.
+'sgf::tree::BasicNode' is a specialization of 'Node'.
+'sgf::tree::Tree' (role 'sgf_tree_Tree2', cardinality 0..*) is associated with 'Coordinator' (role 'Coordinator', cardinality 0..*).
+'Root' (role 'Root11', cardinality 0..*) is associated with 'sgf::skeleton::Skeleton' (role 'sgf_skeleton_Skeleton10', cardinality 0..*).
+'Process' (role 'Process', cardinality 0..*) is associated with 'sgf::bundle::Bundle' (role 'sgf_bundle_Bundle14', cardinality 0..*).
+'Processor' (role 'Processor', cardinality 0..*) is associated with 'sgf::vm::VM' (role 'sgf_vm_VM', cardinality 0..*).
+'Bundle' (role 'Bundle', cardinality 0..*) is associated with 'sgf::graph::Graph' (role 'sgf_graph_Graph', cardinality 0..*).
+'BasicNode' (role 'BasicNode', cardinality 0..*) is associated with 'sgf::tree::Root' (role 'sgf_tree_Root', cardinality 0..*).
+'Root' (role 'Root', cardinality 0..*) is associated with 'sgf::tree::Tree' (role 'sgf_tree_Tree', cardinality 0..*).
+'sgf::graph::Mapping' (role 'sgf_graph_Mapping25', cardinality 0..*) is associated with 'Processor' (role 'Processor26', cardinality 0..*).
+'Process' (role 'Process23', cardinality 0..*) is associated with 'sgf::graph::Mapping' (role 'sgf_graph_Mapping', cardinality 0..*).
+'Simulator' (role 'Simulator', cardinality 0..*) is associated with 'sgf::tree::Tree' (role 'sgf_tree_Tree4', cardinality 0..*).
+'Tree' (role 'Tree', cardinality 0..*) is associated with 'sgf::skeleton::Skeleton' (role 'sgf_skeleton_Skeleton', cardinality 0..*).
+'sgf::graph::Graph' (role 'sgf_graph_Graph21', cardinality 0..*) is associated with 'Mapping' (role 'Mapping', cardinality 0..*).
+'BasicNode' (role 'BasicNode7', cardinality 0..*) is associated with 'sgf::tree::Coordinator' (role 'sgf_tree_Coordinator', cardinality 0..*).
+'Skeleton' (role 'Skeleton', cardinality 0..*) is associated with 'sgf::bundle::Bundle' (role 'sgf_bundle_Bundle', cardinality 0..*).
+'Node' (role 'Node', cardinality 0..*) is associated with 'sgf::bundle::Process' (role 'sgf_bundle_Process', cardinality 0..*).
+'VM' (role 'VM', cardinality 0..*) is associated with 'sgf::graph::Graph' (role 'sgf_graph_Graph19', cardinality 0..*).

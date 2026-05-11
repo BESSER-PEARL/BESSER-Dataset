@@ -1,0 +1,10 @@
+The model has 4 class(es).
+The class 'scaffolds::ScaffoldGraph' has no attributes.
+The class 'scaffolds::Edge' has the following attributes: 'weight' of type int; 'distance' of type int.
+The class 'scaffolds::Contig' has the following attributes: 'length' of type int; 'multiplicity' of type int.
+The class 'scaffolds::Vertex' has the following attributes: 'num' of type int.
+'scaffolds::ScaffoldGraph' (role 'scaffolds_ScaffoldGraph2', cardinality 0..*) is associated with 'scaffolds::Edge' (role 'scaffolds_Edge', cardinality 0..*).
+'scaffolds::Vertex' (role 'scaffolds_Vertex', cardinality 0..*) is associated with 'scaffolds::Contig' (role 'scaffolds_Contig4', cardinality 0..*).
+'scaffolds::Contig' (role 'scaffolds_Contig', cardinality 0..*) is associated with 'scaffolds::ScaffoldGraph' (role 'scaffolds_ScaffoldGraph', cardinality 0..*).
+'scaffolds::Edge' (role 'edges', cardinality 0..*) is associated with 'scaffolds::Vertex' (role 'Vertex', cardinality 0..*).
+'scaffolds::Vertex' (role 'vertices', cardinality 0..*) is associated with 'scaffolds::Edge' (role 'Edge', cardinality 0..*).

@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'testing::TestCase' has the following attributes: 'input' of type str; 'output' of type str.
+The class 'testing::TestCoverage' has no attributes.
+The class 'testing::Adapter' has no attributes.
+The class 'testing::Transition' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'testing::TestSuite' has the following attributes: 'sutName' of type str.
+'testing::TestCase' (role 'testing_TestCase', cardinality 0..*) is associated with 'testing::TestCoverage' (role 'testing_TestCoverage6', cardinality 0..*).
+'testing::TestCoverage' (role 'testing_TestCoverage', cardinality 0..*) is associated with 'testing::TestSuite' (role 'testing_TestSuite', cardinality 0..*).
+'testing::TestSuite' (role 'testing_TestSuite2', cardinality 0..*) is associated with 'testing::Adapter' (role 'testing_Adapter', cardinality 0..*).
+'testing::Transition' (role 'testing_Transition', cardinality 0..*) is associated with 'testing::Adapter' (role 'testing_Adapter4', cardinality 0..*).

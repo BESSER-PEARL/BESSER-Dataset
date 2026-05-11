@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'trace::Trace' has no attributes.
+The class 'trace::TraceElement' has the following attributes: 'timestamp' of type int; 'event' of type str.
+'trace::Trace' (role 'trace_Trace', cardinality 0..*) is associated with 'trace::TraceElement' (role 'trace_TraceElement', cardinality 0..*).

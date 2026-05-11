@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'ABC::C' has no attributes.
+The class 'ABC::D' has no attributes.
+The class 'ABC::A' has no attributes.
+The class 'ABC::B' has no attributes.
+'ABC::B' (role 'ABC_B4', cardinality 0..*) is associated with 'ABC::D' (role 'ABC_D', cardinality 0..*).
+'ABC::A' (role 'ABC_A', cardinality 0..*) is associated with 'ABC::B' (role 'ABC_B', cardinality 0..*).
+'ABC::C' (role 'ABC_C', cardinality 0..*) is associated with 'ABC::A' (role 'ABC_A2', cardinality 0..*).

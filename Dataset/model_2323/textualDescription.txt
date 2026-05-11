@@ -1,0 +1,7 @@
+The model has 4 class(es).
+The class 'Person' has no attributes.
+The class 'persons::Person' has the following attributes: 'fullName' of type str.
+The class 'persons::Male' has no attributes.
+The class 'persons::Female' has no attributes.
+'persons::Male' is a specialization of 'Person'.
+'persons::Female' is a specialization of 'Person'.

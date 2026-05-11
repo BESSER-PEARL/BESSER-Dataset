@@ -1,0 +1,10 @@
+The model has 3 class(es).
+The class 'PersonCompany::Company' has the following attributes: 'name' of type str.
+The class 'PersonCompany::Person' has the following attributes: 'name' of type str.
+The class 'PersonCompany::Job' has the following attributes: 'salary' of type int.
+'PersonCompany::Company' (role 'CompanyJob_Company_role_employer', cardinality 0..*) is associated with 'PersonCompany::Job' (role 'Job2', cardinality 0..*).
+'PersonCompany::Job' (role 'Job10', cardinality 0..*) is associated with 'PersonCompany::Job' (role 'BossWorker_Job_role_worker', cardinality 0..*).
+'PersonCompany::Job' (role 'BossWorker_Job_role_boss', cardinality 0..*) is associated with 'PersonCompany::Job' (role 'Job7', cardinality 0..*).
+'PersonCompany::Company' (role 'Company', cardinality 0..*) is associated with 'PersonCompany::Job' (role 'CompanyJob_Job_role_job', cardinality 0..*).
+'PersonCompany::Person' (role 'PersonJob_Person_role_employee', cardinality 0..*) is associated with 'PersonCompany::Job' (role 'Job', cardinality 0..*).
+'PersonCompany::Job' (role 'PersonJob_Job_role_job', cardinality 0..*) is associated with 'PersonCompany::Person' (role 'Person', cardinality 0..*).

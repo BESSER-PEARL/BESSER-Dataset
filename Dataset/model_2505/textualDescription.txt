@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'A::E' has no attributes.
+The class 'A::B' has no attributes.
+The class 'A::D' has no attributes.
+The class 'A::A' has no attributes.
+The class 'A::C' has no attributes.
+'A::B' (role 'A_B4', cardinality 0..*) is associated with 'A::D' (role 'A_D', cardinality 0..*).
+'A::A' (role 'A_A', cardinality 0..*) is associated with 'A::B' (role 'A_B', cardinality 0..*).
+'A::E' (role 'A_E', cardinality 0..*) is associated with 'A::C' (role 'A_C9', cardinality 0..*).
+'A::B' (role 'A_B2', cardinality 0..*) is associated with 'A::C' (role 'A_C', cardinality 0..*).
+'A::B' (role 'A_B7', cardinality 0..*) is associated with 'A::B' (role 'A_B5', cardinality 0..*).

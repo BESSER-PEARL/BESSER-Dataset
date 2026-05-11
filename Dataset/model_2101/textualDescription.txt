@@ -1,0 +1,40 @@
+The model has 19 class(es).
+The class 'afmmm::Feature' has the following attributes: 'name' of type str.
+The class 'afmmm::CrossTreeConstraint' has no attributes.
+The class 'afmmm::Or' has no attributes.
+The class 'afmmm::Relation' has no attributes.
+The class 'afmmm::Domain' has no attributes.
+The class 'afmmm::Integer' has no attributes.
+The class 'afmmm::Optional' has no attributes.
+The class 'afmmm::AttributedFeatureModel' has no attributes.
+The class 'afmmm::Real' has no attributes.
+The class 'afmmm::Enum' has the following attributes: 'literals' of type str.
+The class 'afmmm::Mandatory' has no attributes.
+The class 'afmmm::Attribute' has the following attributes: 'name' of type str.
+The class 'afmmm::Boolean' has no attributes.
+The class 'Domain' has no attributes.
+The class 'afmmm::Mutex' has no attributes.
+The class 'afmmm::XOr' has no attributes.
+The class 'afmmm::AttributedFeatureDiagram' has no attributes.
+The class 'Relation' has no attributes.
+The class 'afmmm::EClass0' has no attributes.
+'afmmm::Real' is a specialization of 'Domain'.
+'afmmm::Mutex' is a specialization of 'Relation'.
+'afmmm::XOr' is a specialization of 'Relation'.
+'afmmm::Optional' is a specialization of 'Relation'.
+'afmmm::Boolean' is a specialization of 'Domain'.
+'afmmm::Enum' is a specialization of 'Domain'.
+'afmmm::Mandatory' is a specialization of 'Relation'.
+'afmmm::Integer' is a specialization of 'Domain'.
+'afmmm::Or' is a specialization of 'Relation'.
+'afmmm::AttributedFeatureDiagram' (role 'afmmm_AttributedFeatureDiagram5', cardinality 0..*) is associated with 'afmmm::CrossTreeConstraint' (role 'afmmm_CrossTreeConstraint', cardinality 0..*).
+'afmmm::Relation' (role 'afmmm_Relation14', cardinality 0..*) is associated with 'afmmm::Feature' (role 'afmmm_Feature15', cardinality 0..*).
+'afmmm::Feature' (role 'afmmm_Feature12', cardinality 0..*) is associated with 'afmmm::Relation' (role 'afmmm_Relation11', cardinality 0..*).
+'afmmm::AttributedFeatureDiagram' (role 'afmmm_AttributedFeatureDiagram', cardinality 0..*) is associated with 'afmmm::Feature' (role 'afmmm_Feature', cardinality 0..*).
+'afmmm::AttributedFeatureModel' (role 'afmmm_AttributedFeatureModel19', cardinality 0..*) is associated with 'afmmm::CrossTreeConstraint' (role 'afmmm_CrossTreeConstraint20', cardinality 0..*).
+'afmmm::AttributedFeatureModel' (role 'afmmm_AttributedFeatureModel', cardinality 0..*) is associated with 'afmmm::AttributedFeatureDiagram' (role 'afmmm_AttributedFeatureDiagram17', cardinality 0..*).
+'afmmm::Attribute' (role 'afmmm_Attribute', cardinality 0..*) is associated with 'afmmm::Feature' (role 'afmmm_Feature9', cardinality 0..*).
+'afmmm::AttributedFeatureModel' (role 'afmmm_AttributedFeatureModel22', cardinality 0..*) is associated with 'afmmm::Domain' (role 'afmmm_Domain', cardinality 0..*).
+'afmmm::AttributedFeatureDiagram' (role 'afmmm_AttributedFeatureDiagram7', cardinality 0..*) is associated with 'afmmm::Relation' (role 'afmmm_Relation', cardinality 0..*).
+'afmmm::Attribute' (role 'afmmm_Attribute24', cardinality 0..*) is associated with 'afmmm::Domain' (role 'afmmm_Domain25', cardinality 0..*).
+'afmmm::Feature' (role 'afmmm_Feature3', cardinality 0..*) is associated with 'afmmm::AttributedFeatureDiagram' (role 'afmmm_AttributedFeatureDiagram2', cardinality 0..*).

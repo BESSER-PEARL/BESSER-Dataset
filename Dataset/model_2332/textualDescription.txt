@@ -1,0 +1,129 @@
+The model has 65 class(es).
+The class 'CommonBehavior::SimpleTime::Duration' has no attributes.
+The class 'ValueSpecification' has no attributes.
+The class 'CommonBehavior::Communications::Property' has no attributes.
+The class 'Observation' has no attributes.
+The class 'Reception' has no attributes.
+The class 'CommonBehavior::BasicBehavior::OpaqueBehavior' has the following attributes: 'language' of type str; 'body' of type str.
+The class 'CommonBehavior::BasicBehavior::Parameter' has no attributes.
+The class 'Class' has no attributes.
+The class 'CommonBehavior::Communications::NamedElement' has no attributes.
+The class 'CommonBehavior::SimpleTime::Interval' has no attributes.
+The class 'CommonBehavior::BasicBehavior::Behavior' has the following attributes: 'isReentrant' of type bool.
+The class 'CommonBehavior::Communications::SignalEvent' has no attributes.
+The class 'TimeExpression' has no attributes.
+The class 'CommonBehavior::Communications::Operation' has no attributes.
+The class 'CommonBehavior::BasicBehavior::OpaqueExpression' has no attributes.
+The class 'CommonBehavior::BasicBehavior::FunctionBehavior' has no attributes.
+The class 'Interval' has no attributes.
+The class 'CommonBehavior::SimpleTime::TimeExpression' has no attributes.
+The class 'CommonBehavior::BasicBehavior::BehavioredClassifier' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'MessageEvent' has no attributes.
+The class 'CommonBehavior::Communications::CallEvent' has no attributes.
+The class 'CommonBehavior::Communications::MessageEvent' has no attributes.
+The class 'BehavioralFeature' has no attributes.
+The class 'DurationInterval' has no attributes.
+The class 'CommonBehavior::Communications::Signal' has no attributes.
+The class 'CommonBehavior::BasicBehavior::Constraint' has no attributes.
+The class 'Operation' has no attributes.
+The class 'CommonBehavior::Communications::Reception' has no attributes.
+The class 'CommonBehavior::SimpleTime::TimeEvent' has the following attributes: 'isRelative' of type bool.
+The class 'CommonBehavior::SimpleTime::DurationObservation' has the following attributes: 'firstEvent' of type bool.
+The class 'CommonBehavior::BasicBehavior::Class' has no attributes.
+The class 'CommonBehavior::BasicBehavior::Classifier' has no attributes.
+The class 'BasicBehavior::BehavioredClassifier' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'CommonBehavior::Communications::PackageableElement' has no attributes.
+The class 'Duration' has no attributes.
+The class 'CommonBehavior::SimpleTime::TimeConstraint' has the following attributes: 'firstEvent' of type bool.
+The class 'Event' has no attributes.
+The class 'CommonBehavior::BasicBehavior::RedefinableElement' has no attributes.
+The class 'TimeInterval' has no attributes.
+The class 'CommonBehavior::Communications::Trigger' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'Behavior' has no attributes.
+The class 'RedefinableElement' has no attributes.
+The class 'OpaqueBehavior' has no attributes.
+The class 'CommonBehavior::Communications::ChangeEvent' has no attributes.
+The class 'CommonBehavior::SimpleTime::TimeObservation' has the following attributes: 'firstEvent' of type bool.
+The class 'CommonBehavior::Communications::AnyReceiveEvent' has no attributes.
+The class 'CommonBehavior::SimpleTime::DurationInterval' has no attributes.
+The class 'CommonBehavior::Communications::Interface' has no attributes.
+The class 'CommonBehavior::Communications::ValueSpecification' has no attributes.
+The class 'CommonBehavior::BasicBehavior::BehavioralFeature' has the following attributes: 'concurrency' of type str.
+The class 'Signal' has no attributes.
+The class 'BehavioredClassifier' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'CommonBehavior::SimpleTime::TimeInterval' has no attributes.
+The class 'Property' has no attributes.
+The class 'CommonBehavior::SimpleTime::Observation' has no attributes.
+The class 'CommonBehavior::Communications::Event' has no attributes.
+The class 'IntervalConstraint' has no attributes.
+The class 'CommonBehavior::SimpleTime::IntervalConstraint' has no attributes.
+The class 'CommonBehavior::SimpleTime::DurationConstraint' has the following attributes: 'firstEvent' of type bool.
+The class 'BasicBehavior::Classifier' has no attributes.
+The class 'PackageableElement' has no attributes.
+The enumeration 'CallConcurrencyFeature' has the following literals: 'guarded', 'sequential', 'concurrent'.
+'CommonBehavior::SimpleTime::Observation' is a specialization of 'PackageableElement'.
+'CommonBehavior::BasicBehavior::OpaqueBehavior' is a specialization of 'Behavior'.
+'CommonBehavior::Communications::Signal' is a specialization of 'Classifier'.
+'CommonBehavior::Communications::CallEvent' is a specialization of 'MessageEvent'.
+'CommonBehavior::SimpleTime::TimeObservation' is a specialization of 'Observation'.
+'CommonBehavior::SimpleTime::IntervalConstraint' is a specialization of 'Constraint'.
+'CommonBehavior::BasicBehavior::Classifier' is a specialization of 'RedefinableElement'.
+'CommonBehavior::BasicBehavior::Class' is a specialization of 'BasicBehavior::BehavioredClassifier'.
+'CommonBehavior::SimpleTime::Duration' is a specialization of 'ValueSpecification'.
+'CommonBehavior::Communications::Interface' is a specialization of 'Classifier'.
+'CommonBehavior::BasicBehavior::Behavior' is a specialization of 'Class'.
+'CommonBehavior::SimpleTime::TimeConstraint' is a specialization of 'IntervalConstraint'.
+'CommonBehavior::Communications::ChangeEvent' is a specialization of 'Event'.
+'CommonBehavior::SimpleTime::TimeInterval' is a specialization of 'Interval'.
+'CommonBehavior::SimpleTime::Interval' is a specialization of 'ValueSpecification'.
+'CommonBehavior::SimpleTime::DurationConstraint' is a specialization of 'IntervalConstraint'.
+'CommonBehavior::SimpleTime::DurationInterval' is a specialization of 'Interval'.
+'CommonBehavior::Communications::SignalEvent' is a specialization of 'MessageEvent'.
+'CommonBehavior::Communications::Event' is a specialization of 'PackageableElement'.
+'CommonBehavior::Communications::AnyReceiveEvent' is a specialization of 'MessageEvent'.
+'CommonBehavior::BasicBehavior::BehavioredClassifier' is a specialization of 'Classifier'.
+'CommonBehavior::SimpleTime::DurationObservation' is a specialization of 'Observation'.
+'CommonBehavior::Communications::MessageEvent' is a specialization of 'Event'.
+'CommonBehavior::Communications::Trigger' is a specialization of 'NamedElement'.
+'CommonBehavior::BasicBehavior::Class' is a specialization of 'BasicBehavior::Classifier'.
+'CommonBehavior::BasicBehavior::FunctionBehavior' is a specialization of 'OpaqueBehavior'.
+'CommonBehavior::SimpleTime::TimeExpression' is a specialization of 'ValueSpecification'.
+'CommonBehavior::Communications::Reception' is a specialization of 'BehavioralFeature'.
+'DurationInterval' (role 'DurationInterval', cardinality 0..*) is associated with 'CommonBehavior::SimpleTime::DurationConstraint' (role 'CommonBehavior_SimpleTime_DurationConstraint', cardinality 0..*).
+'CommonBehavior::SimpleTime::TimeInterval' (role 'CommonBehavior_SimpleTime_TimeInterval', cardinality 0..*) is associated with 'TimeExpression' (role 'TimeExpression52', cardinality 0..*).
+'CommonBehavior::Communications::Signal' (role 'CommonBehavior_Communications_Signal', cardinality 0..*) is associated with 'Property' (role 'Property', cardinality 0..*).
+'Behavior' (role 'Behavior8', cardinality 0..*) is associated with 'CommonBehavior::BasicBehavior::Behavior' (role 'CommonBehavior_BasicBehavior_Behavior7', cardinality 0..*).
+'ValueSpecification' (role 'ValueSpecification', cardinality 0..*) is associated with 'CommonBehavior::Communications::ChangeEvent' (role 'CommonBehavior_Communications_ChangeEvent', cardinality 0..*).
+'CommonBehavior::BasicBehavior::OpaqueExpression' (role 'CommonBehavior_BasicBehavior_OpaqueExpression', cardinality 0..*) is associated with 'Parameter' (role 'Parameter20', cardinality 0..*).
+'CommonBehavior::BasicBehavior::Behavior' (role 'CommonBehavior_BasicBehavior_Behavior', cardinality 0..*) is associated with 'BehavioredClassifier' (role 'BehavioredClassifier', cardinality 0..*).
+'Reception' (role 'Reception27', cardinality 0..*) is associated with 'CommonBehavior::Communications::Interface' (role 'CommonBehavior_Communications_Interface', cardinality 0..*).
+'CommonBehavior::BasicBehavior::BehavioralFeature' (role 'specification', cardinality 0..*) is associated with 'Behavior' (role 'Behavior18', cardinality 0..*).
+'CommonBehavior::SimpleTime::TimeObservation' (role 'CommonBehavior_SimpleTime_TimeObservation', cardinality 0..*) is associated with 'NamedElement' (role 'NamedElement', cardinality 0..*).
+'CommonBehavior::BasicBehavior::Behavior' (role 'CommonBehavior_BasicBehavior_Behavior15', cardinality 0..*) is associated with 'Constraint' (role 'Constraint16', cardinality 0..*).
+'Duration' (role 'Duration', cardinality 0..*) is associated with 'CommonBehavior::SimpleTime::DurationInterval' (role 'CommonBehavior_SimpleTime_DurationInterval', cardinality 0..*).
+'CommonBehavior::SimpleTime::Duration' (role 'CommonBehavior_SimpleTime_Duration', cardinality 0..*) is associated with 'ValueSpecification' (role 'ValueSpecification42', cardinality 0..*).
+'Behavior' (role 'Behavior23', cardinality 0..*) is associated with 'CommonBehavior::BasicBehavior::OpaqueExpression' (role 'CommonBehavior_BasicBehavior_OpaqueExpression22', cardinality 0..*).
+'CommonBehavior::SimpleTime::Interval' (role 'CommonBehavior_SimpleTime_Interval49', cardinality 0..*) is associated with 'ValueSpecification' (role 'ValueSpecification50', cardinality 0..*).
+'CommonBehavior::BasicBehavior::Behavior' (role 'method', cardinality 0..*) is associated with 'BehavioralFeature' (role 'BehavioralFeature', cardinality 0..*).
+'Parameter' (role 'Parameter', cardinality 0..*) is associated with 'CommonBehavior::BasicBehavior::Behavior' (role 'CommonBehavior_BasicBehavior_Behavior11', cardinality 0..*).
+'CommonBehavior::Communications::Trigger' (role 'CommonBehavior_Communications_Trigger', cardinality 0..*) is associated with 'Event' (role 'Event', cardinality 0..*).
+'CommonBehavior::Communications::SignalEvent' (role 'CommonBehavior_Communications_SignalEvent', cardinality 0..*) is associated with 'Signal' (role 'Signal30', cardinality 0..*).
+'CommonBehavior::SimpleTime::Interval' (role 'CommonBehavior_SimpleTime_Interval', cardinality 0..*) is associated with 'ValueSpecification' (role 'ValueSpecification47', cardinality 0..*).
+'CommonBehavior::BasicBehavior::BehavioredClassifier' (role 'CommonBehavior_BasicBehavior_BehavioredClassifier2', cardinality 0..*) is associated with 'Behavior' (role 'Behavior3', cardinality 0..*).
+'CommonBehavior::Communications::Reception' (role 'CommonBehavior_Communications_Reception', cardinality 0..*) is associated with 'Signal' (role 'Signal', cardinality 0..*).
+'CommonBehavior::SimpleTime::Duration' (role 'CommonBehavior_SimpleTime_Duration44', cardinality 0..*) is associated with 'Observation' (role 'Observation45', cardinality 0..*).
+'CommonBehavior::SimpleTime::TimeExpression' (role 'CommonBehavior_SimpleTime_TimeExpression37', cardinality 0..*) is associated with 'Observation' (role 'Observation', cardinality 0..*).
+'Duration' (role 'Duration59', cardinality 0..*) is associated with 'CommonBehavior::SimpleTime::DurationInterval' (role 'CommonBehavior_SimpleTime_DurationInterval58', cardinality 0..*).
+'Behavior' (role 'Behavior', cardinality 0..*) is associated with 'CommonBehavior::BasicBehavior::BehavioredClassifier' (role 'CommonBehavior_BasicBehavior_BehavioredClassifier', cardinality 0..*).
+'ValueSpecification' (role 'ValueSpecification35', cardinality 0..*) is associated with 'CommonBehavior::SimpleTime::TimeExpression' (role 'CommonBehavior_SimpleTime_TimeExpression', cardinality 0..*).
+'TimeExpression' (role 'TimeExpression', cardinality 0..*) is associated with 'CommonBehavior::SimpleTime::TimeEvent' (role 'CommonBehavior_SimpleTime_TimeEvent', cardinality 0..*).
+'CommonBehavior::SimpleTime::DurationObservation' (role 'CommonBehavior_SimpleTime_DurationObservation', cardinality 0..*) is associated with 'NamedElement' (role 'NamedElement40', cardinality 0..*).
+'TimeInterval' (role 'TimeInterval', cardinality 0..*) is associated with 'CommonBehavior::SimpleTime::TimeConstraint' (role 'CommonBehavior_SimpleTime_TimeConstraint', cardinality 0..*).
+'TimeExpression' (role 'TimeExpression55', cardinality 0..*) is associated with 'CommonBehavior::SimpleTime::TimeInterval' (role 'CommonBehavior_SimpleTime_TimeInterval54', cardinality 0..*).
+'CommonBehavior::Communications::CallEvent' (role 'CommonBehavior_Communications_CallEvent', cardinality 0..*) is associated with 'Operation' (role 'Operation', cardinality 0..*).
+'CommonBehavior::BasicBehavior::Behavior' (role 'CommonBehavior_BasicBehavior_Behavior13', cardinality 0..*) is associated with 'Constraint' (role 'Constraint', cardinality 0..*).
+'CommonBehavior::BasicBehavior::Class' (role 'CommonBehavior_BasicBehavior_Class', cardinality 0..*) is associated with 'Reception' (role 'Reception', cardinality 0..*).

@@ -1,0 +1,17 @@
+The model has 8 class(es).
+The class 'entities::AttributeType' has the following attributes: 'array' of type bool; 'length' of type int.
+The class 'entities::EntityType' has no attributes.
+The class 'ElementType' has no attributes.
+The class 'entities::Entity' has the following attributes: 'name' of type str.
+The class 'entities::BasicType' has the following attributes: 'typeName' of type str.
+The class 'entities::Attribute' has the following attributes: 'name' of type str.
+The class 'entities::Model' has no attributes.
+The class 'entities::ElementType' has no attributes.
+'entities::BasicType' is a specialization of 'ElementType'.
+'entities::EntityType' is a specialization of 'ElementType'.
+'entities::Attribute' (role 'entities_Attribute7', cardinality 0..*) is associated with 'entities::AttributeType' (role 'entities_AttributeType', cardinality 0..*).
+'entities::Entity' (role 'entities_Entity', cardinality 0..*) is associated with 'entities::Model' (role 'entities_Model', cardinality 0..*).
+'entities::Entity' (role 'entities_Entity5', cardinality 0..*) is associated with 'entities::Attribute' (role 'entities_Attribute', cardinality 0..*).
+'entities::Entity' (role 'entities_Entity3', cardinality 0..*) is associated with 'entities::Entity' (role 'entities_Entity1', cardinality 0..*).
+'entities::Entity' (role 'entities_Entity11', cardinality 0..*) is associated with 'entities::EntityType' (role 'entities_EntityType', cardinality 0..*).
+'entities::AttributeType' (role 'entities_AttributeType9', cardinality 0..*) is associated with 'entities::ElementType' (role 'entities_ElementType', cardinality 0..*).

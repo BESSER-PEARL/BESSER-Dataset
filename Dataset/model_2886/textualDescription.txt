@@ -1,0 +1,19 @@
+The model has 8 class(es).
+The class 'metamodel::Model' has no attributes.
+The class 'Type' has no attributes.
+The class 'metamodel::Entity' has no attributes.
+The class 'metamodel::Query' has the following attributes: 'queryString' of type str; 'methodName' of type str.
+The class 'metamodel::Type' has the following attributes: 'name' of type str.
+The class 'metamodel::Datatype' has no attributes.
+The class 'metamodel::parameter' has the following attributes: 'name' of type str.
+The class 'metamodel::Feature' has the following attributes: 'annotation' of type str; 'name' of type str; 'mappedBy' of type str.
+The enumeration 'Annotation' has the following literals: 'OneToOne', 'OneToMany', 'Id', 'ManyToManyMapped', 'None_', 'ManyToOne', 'ManyToMany'.
+'metamodel::Entity' is a specialization of 'Type'.
+'metamodel::Datatype' is a specialization of 'Type'.
+'metamodel::Type' (role 'metamodel_Type6', cardinality 0..*) is associated with 'metamodel::Feature' (role 'metamodel_Feature5', cardinality 0..*).
+'metamodel::Type' (role 'metamodel_Type', cardinality 0..*) is associated with 'metamodel::Model' (role 'metamodel_Model', cardinality 0..*).
+'metamodel::Feature' (role 'metamodel_Feature', cardinality 0..*) is associated with 'metamodel::Entity' (role 'metamodel_Entity', cardinality 0..*).
+'metamodel::Query' (role 'metamodel_Query8', cardinality 0..*) is associated with 'metamodel::Entity' (role 'metamodel_Entity9', cardinality 0..*).
+'metamodel::Query' (role 'metamodel_Query11', cardinality 0..*) is associated with 'metamodel::parameter' (role 'metamodel_parameter', cardinality 0..*).
+'metamodel::parameter' (role 'metamodel_parameter13', cardinality 0..*) is associated with 'metamodel::Type' (role 'metamodel_Type14', cardinality 0..*).
+'metamodel::Entity' (role 'metamodel_Entity3', cardinality 0..*) is associated with 'metamodel::Query' (role 'metamodel_Query', cardinality 0..*).

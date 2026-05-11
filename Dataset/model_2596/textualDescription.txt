@@ -1,0 +1,9 @@
+The model has 6 class(es).
+The class 'root::ClassA' has no attributes.
+The class 'ClassB' has no attributes.
+The class 'root::subpackage::SuperB' has no attributes.
+The class 'SuperB' has no attributes.
+The class 'root::subpackage::SubA' has no attributes.
+The class 'root::subpackage::ClassB' has no attributes.
+'root::subpackage::ClassB' is a specialization of 'SuperB'.
+'root::subpackage::SubA' is a specialization of 'ClassB'.

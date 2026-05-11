@@ -1,0 +1,9 @@
+The model has 3 class(es).
+The class 'egraphs::EHyperEdge' has the following attributes: 'label' of type str.
+The class 'egraphs::EGraph' has no attributes.
+The class 'egraphs::ENode' has the following attributes: 'element' of type str.
+'egraphs::ENode' (role 'egraphs_ENode', cardinality 0..*) is associated with 'egraphs::EGraph' (role 'egraphs_EGraph', cardinality 0..*).
+'egraphs::ENode' (role 'source', cardinality 0..*) is associated with 'egraphs::EHyperEdge' (role 'EHyperEdge', cardinality 0..*).
+'egraphs::ENode' (role 'ENode', cardinality 0..*) is associated with 'egraphs::EHyperEdge' (role 'outgoing', cardinality 0..*).
+'egraphs::EHyperEdge' (role 'incoming', cardinality 0..*) is associated with 'egraphs::ENode' (role 'ENode6', cardinality 0..*).
+'egraphs::EHyperEdge' (role 'EHyperEdge3', cardinality 0..*) is associated with 'egraphs::ENode' (role 'targets', cardinality 0..*).

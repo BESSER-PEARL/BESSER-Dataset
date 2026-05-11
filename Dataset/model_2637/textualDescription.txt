@@ -1,0 +1,35 @@
+The model has 17 class(es).
+The class 'model3::PolygonWithDuplicates' has the following attributes: 'points' of type str.
+The class 'model3::Polygon' has the following attributes: 'points' of type str.
+The class 'model3::ClassWithIDAttribute' has the following attributes: 'id' of type str.
+The class 'model3::MetaRef' has no attributes.
+The class 'model3::EReference' has no attributes.
+The class 'model3::NodeB' has the following attributes: 'name' of type str.
+The class 'model3::NodeD' has the following attributes: 'name' of type str.
+The class 'model3::NodeA' has the following attributes: 'name' of type str.
+The class 'model3::EClass' has no attributes.
+The class 'model3::File' has the following attributes: 'data' of type str; 'name' of type str.
+The class 'Class2' has no attributes.
+The class 'model3::Image' has the following attributes: 'data' of type str; 'width' of type int; 'height' of type int.
+The class 'model3::NodeC' has the following attributes: 'name' of type str.
+The class 'subpackage::model3::Class1' has no attributes.
+The class 'model3::Class1' has no attributes.
+The class 'model3::EPackage' has no attributes.
+The class 'model3::subpackage::Class2' has no attributes.
+'model3::NodeC' (role 'NodeC', cardinality 0..*) is associated with 'model3::NodeC' (role 'parent18', cardinality 0..*).
+'model3::NodeC' (role 'NodeC25', cardinality 0..*) is associated with 'model3::NodeC' (role 'oppositeNodes', cardinality 0..*).
+'model3::NodeA' (role 'model3_NodeA6', cardinality 0..*) is associated with 'model3::NodeA' (role 'model3_NodeA', cardinality 0..*).
+'model3::NodeB' (role 'NodeB15', cardinality 0..*) is associated with 'model3::NodeB' (role 'children', cardinality 0..*).
+'model3::NodeD' (role 'children34', cardinality 0..*) is associated with 'model3::NodeD' (role 'NodeD35', cardinality 0..*).
+'model3::NodeC' (role 'NodeC22', cardinality 0..*) is associated with 'model3::NodeC' (role 'children21', cardinality 0..*).
+'model3::MetaRef' (role 'model3_MetaRef', cardinality 0..*) is associated with 'model3::EPackage' (role 'model3_EPackage', cardinality 0..*).
+'model3::NodeD' (role 'NodeD', cardinality 0..*) is associated with 'model3::NodeD' (role 'parent31', cardinality 0..*).
+'model3::NodeC' (role 'NodeC28', cardinality 0..*) is associated with 'model3::NodeC' (role 'otherNodes', cardinality 0..*).
+'model3::NodeD' (role 'oppositeNode', cardinality 0..*) is associated with 'model3::NodeD' (role 'NodeD38', cardinality 0..*).
+'model3::MetaRef' (role 'model3_MetaRef3', cardinality 0..*) is associated with 'model3::EClass' (role 'model3_EClass', cardinality 0..*).
+'model3::EReference' (role 'model3_EReference', cardinality 0..*) is associated with 'model3::MetaRef' (role 'model3_MetaRef5', cardinality 0..*).
+'model3::NodeA' (role 'model3_NodeA10', cardinality 0..*) is associated with 'model3::NodeA' (role 'model3_NodeA8', cardinality 0..*).
+'model3::subpackage::Class2' (role 'class2', cardinality 0..*) is associated with 'subpackage::model3::Class1' (role 'Class1', cardinality 0..*).
+'model3::NodeB' (role 'parent', cardinality 0..*) is associated with 'model3::NodeB' (role 'NodeB', cardinality 0..*).
+'model3::NodeD' (role 'otherNodes41', cardinality 0..*) is associated with 'model3::NodeD' (role 'NodeD42', cardinality 0..*).
+'model3::Class1' (role 'class1', cardinality 0..*) is associated with 'Class2' (role 'Class2', cardinality 0..*).

@@ -1,0 +1,26 @@
+The model has 7 class(es).
+The class 'RModelElement' has no attributes.
+The class 'rdbms::Schema' has no attributes.
+The class 'rdbms::Key' has no attributes.
+The class 'rdbms::ForeignKey' has no attributes.
+The class 'rdbms::RModelElement' has the following attributes: 'kind' of type str; 'name' of type str.
+The class 'rdbms::Column' has the following attributes: 'type' of type str.
+The class 'rdbms::Table' has no attributes.
+'rdbms::Key' is a specialization of 'RModelElement'.
+'rdbms::ForeignKey' is a specialization of 'RModelElement'.
+'rdbms::Column' is a specialization of 'RModelElement'.
+'rdbms::Schema' is a specialization of 'RModelElement'.
+'rdbms::Table' is a specialization of 'RModelElement'.
+'rdbms::Key' (role 'Key21', cardinality 0..*) is associated with 'rdbms::Table' (role 'owner20', cardinality 0..*).
+'rdbms::ForeignKey' (role 'ForeignKey', cardinality 0..*) is associated with 'rdbms::Column' (role 'columns2', cardinality 0..*).
+'rdbms::Schema' (role 'Schema', cardinality 0..*) is associated with 'rdbms::Table' (role 'tables', cardinality 0..*).
+'rdbms::Column' (role 'column', cardinality 0..*) is associated with 'rdbms::Key' (role 'Key', cardinality 0..*).
+'rdbms::ForeignKey' (role 'ForeignKey24', cardinality 0..*) is associated with 'rdbms::Table' (role 'owner23', cardinality 0..*).
+'rdbms::Table' (role 'Table15', cardinality 0..*) is associated with 'rdbms::Schema' (role 'schema', cardinality 0..*).
+'rdbms::Column' (role 'Column17', cardinality 0..*) is associated with 'rdbms::Table' (role 'owner', cardinality 0..*).
+'rdbms::Table' (role 'Table', cardinality 0..*) is associated with 'rdbms::Column' (role 'columns', cardinality 0..*).
+'rdbms::Key' (role 'keys', cardinality 0..*) is associated with 'rdbms::Table' (role 'Table10', cardinality 0..*).
+'rdbms::Column' (role 'Column', cardinality 0..*) is associated with 'rdbms::ForeignKey' (role 'foreignKeys', cardinality 0..*).
+'rdbms::Table' (role 'Table8', cardinality 0..*) is associated with 'rdbms::ForeignKey' (role 'foreignKeys7', cardinality 0..*).
+'rdbms::ForeignKey' (role 'rdbms_ForeignKey', cardinality 0..*) is associated with 'rdbms::Key' (role 'rdbms_Key', cardinality 0..*).
+'rdbms::Column' (role 'Column13', cardinality 0..*) is associated with 'rdbms::Key' (role 'keys12', cardinality 0..*).

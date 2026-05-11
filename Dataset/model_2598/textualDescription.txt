@@ -1,0 +1,6 @@
+The model has 4 class(es).
+The class 'ClassInOtherPackage' has no attributes.
+The class 'test::containmentwalker::dependency::Foo' has no attributes.
+The class 'test::containmentwalker::dependency::subpackage::ClassInOtherPackage' has no attributes.
+The class 'test::containmentwalker::dependency::IsolatedClassInReachablePackage' has no attributes.
+'ClassInOtherPackage' (role 'ClassInOtherPackage', cardinality 0..*) is associated with 'test::containmentwalker::dependency::Foo' (role 'test_containmentwalker_dependency_Foo', cardinality 0..*).

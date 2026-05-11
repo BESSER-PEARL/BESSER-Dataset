@@ -1,0 +1,40 @@
+The model has 21 class(es).
+The class 'events::OR' has no attributes.
+The class 'events::Infinite' has no attributes.
+The class 'events::FOLLOWS' has no attributes.
+The class 'events::Multiplicity' has the following attributes: 'value' of type int.
+The class 'events::EventSource' has no attributes.
+The class 'events::EventModel' has no attributes.
+The class 'events::AND' has no attributes.
+The class 'events::EventPatternReference' has the following attributes: 'parameterSymbolicNames' of type str.
+The class 'events::Event' has the following attributes: 'isProcessed' of type bool; 'type' of type str; 'timestamp' of type str.
+The class 'events::ComplexEventOperator' has no attributes.
+The class 'AbstractMultiplicity' has no attributes.
+The class 'events::ComplexEventPattern' has no attributes.
+The class 'events::Automaton' has no attributes.
+The class 'events::AtomicEventPattern' has the following attributes: 'type' of type str.
+The class 'events::AbstractMultiplicity' has no attributes.
+The class 'events::NEG' has no attributes.
+The class 'events::EventPattern' has the following attributes: 'id' of type str.
+The class 'events::AtLeastOne' has no attributes.
+The class 'events::Timewindow' has the following attributes: 'time' of type str.
+The class 'ComplexEventOperator' has no attributes.
+The class 'EventPattern' has no attributes.
+'events::FOLLOWS' is a specialization of 'ComplexEventOperator'.
+'events::ComplexEventPattern' is a specialization of 'EventPattern'.
+'events::NEG' is a specialization of 'ComplexEventOperator'.
+'events::Multiplicity' is a specialization of 'AbstractMultiplicity'.
+'events::AND' is a specialization of 'ComplexEventOperator'.
+'events::AtomicEventPattern' is a specialization of 'EventPattern'.
+'events::AtLeastOne' is a specialization of 'AbstractMultiplicity'.
+'events::OR' is a specialization of 'ComplexEventOperator'.
+'events::Infinite' is a specialization of 'AbstractMultiplicity'.
+'events::EventPatternReference' (role 'events_EventPatternReference9', cardinality 0..*) is associated with 'events::EventPattern' (role 'events_EventPattern10', cardinality 0..*).
+'events::ComplexEventPattern' (role 'events_ComplexEventPattern', cardinality 0..*) is associated with 'events::ComplexEventOperator' (role 'events_ComplexEventOperator', cardinality 0..*).
+'events::ComplexEventPattern' (role 'events_ComplexEventPattern5', cardinality 0..*) is associated with 'events::Timewindow' (role 'events_Timewindow', cardinality 0..*).
+'events::Automaton' (role 'events_Automaton', cardinality 0..*) is associated with 'events::EventPattern' (role 'events_EventPattern', cardinality 0..*).
+'events::EventPattern' (role 'EventPattern', cardinality 0..*) is associated with 'events::EventModel' (role 'eventModel', cardinality 0..*).
+'events::EventPatternReference' (role 'events_EventPatternReference12', cardinality 0..*) is associated with 'events::AbstractMultiplicity' (role 'events_AbstractMultiplicity', cardinality 0..*).
+'events::EventSource' (role 'events_EventSource', cardinality 0..*) is associated with 'events::Event' (role 'events_Event', cardinality 0..*).
+'events::EventPatternReference' (role 'events_EventPatternReference', cardinality 0..*) is associated with 'events::ComplexEventPattern' (role 'events_ComplexEventPattern7', cardinality 0..*).
+'events::EventModel' (role 'EventModel', cardinality 0..*) is associated with 'events::EventPattern' (role 'eventPatterns', cardinality 0..*).

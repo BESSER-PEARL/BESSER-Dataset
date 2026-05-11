@@ -1,0 +1,8 @@
+The model has 2 class(es).
+The class 'eCoreContainemntTree::Node' has the following attributes: 'name' of type str.
+The class 'eCoreContainemntTree::EObject' has no attributes.
+'eCoreContainemntTree::Node' (role 'eCoreContainemntTree_Node', cardinality 0..*) is associated with 'eCoreContainemntTree::EObject' (role 'eCoreContainemntTree_EObject', cardinality 0..*).
+'eCoreContainemntTree::Node' (role 'Node11', cardinality 0..*) is associated with 'eCoreContainemntTree::Node' (role 'subTypes', cardinality 0..*).
+'eCoreContainemntTree::Node' (role 'children', cardinality 0..*) is associated with 'eCoreContainemntTree::Node' (role 'Node', cardinality 0..*).
+'eCoreContainemntTree::Node' (role 'Node8', cardinality 0..*) is associated with 'eCoreContainemntTree::Node' (role 'superTypes', cardinality 0..*).
+'eCoreContainemntTree::Node' (role 'parent', cardinality 0..*) is associated with 'eCoreContainemntTree::Node' (role 'Node4', cardinality 0..*).

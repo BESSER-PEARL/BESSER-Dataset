@@ -1,0 +1,26 @@
+The model has 9 class(es).
+The class 'traceability::EObject' has no attributes.
+The class 'traceability::Trace' has the following attributes: 'value' of type str; 'description' of type str; 'comment' of type str.
+The class 'traceability::TraceDiff' has the following attributes: 'comment' of type str.
+The class 'traceability::Category' has the following attributes: 'name' of type str.
+The class 'traceability::Traces' has the following attributes: 'originalSourceURL' of type str; 'username' of type str; 'uriMap' of type str; 'location' of type str; 'fullName' of type str; 'date' of type date; 'comments' of type str.
+The class 'traceability::LogEntry' has the following attributes: 'severity' of type int; 'comment' of type str; 'message' of type str; 'messageType' of type int.
+The class 'traceability::TraceDiffs' has no attributes.
+The class 'traceability::TraceComment' has the following attributes: 'column' of type str; 'comment' of type str; 'date' of type date; 'username' of type str.
+The class 'traceability::DiffCategory' has the following attributes: 'unequal' of type bool; 'name' of type str; 'modelIndex' of type int.
+'traceability::TraceComment' (role 'traceability_TraceComment28', cardinality 0..*) is associated with 'traceability::TraceDiff' (role 'traceability_TraceDiff27', cardinality 0..*).
+'traceability::Trace' (role 'traceability_Trace2', cardinality 0..*) is associated with 'traceability::EObject' (role 'traceability_EObject3', cardinality 0..*).
+'traceability::EObject' (role 'traceability_EObject12', cardinality 0..*) is associated with 'traceability::LogEntry' (role 'traceability_LogEntry', cardinality 0..*).
+'traceability::EObject' (role 'traceability_EObject25', cardinality 0..*) is associated with 'traceability::TraceDiff' (role 'traceability_TraceDiff', cardinality 0..*).
+'traceability::EObject' (role 'traceability_EObject37', cardinality 0..*) is associated with 'traceability::TraceComment' (role 'traceability_TraceComment36', cardinality 0..*).
+'traceability::TraceComment' (role 'traceability_TraceComment', cardinality 0..*) is associated with 'traceability::Trace' (role 'traceability_Trace10', cardinality 0..*).
+'traceability::EObject' (role 'traceability_EObject20', cardinality 0..*) is associated with 'traceability::Traces' (role 'traceability_Traces19', cardinality 0..*).
+'traceability::Trace' (role 'children', cardinality 0..*) is associated with 'traceability::Trace' (role 'Trace8', cardinality 0..*).
+'traceability::TraceDiff' (role 'traceability_TraceDiff30', cardinality 0..*) is associated with 'traceability::DiffCategory' (role 'traceability_DiffCategory', cardinality 0..*).
+'traceability::Traces' (role 'traceability_Traces', cardinality 0..*) is associated with 'traceability::EObject' (role 'traceability_EObject17', cardinality 0..*).
+'traceability::EObject' (role 'traceability_EObject23', cardinality 0..*) is associated with 'traceability::Traces' (role 'traceability_Traces22', cardinality 0..*).
+'traceability::Traces' (role 'traceability_Traces32', cardinality 0..*) is associated with 'traceability::TraceDiffs' (role 'traceability_TraceDiffs', cardinality 0..*).
+'traceability::Trace' (role 'Trace', cardinality 0..*) is associated with 'traceability::Trace' (role 'parent', cardinality 0..*).
+'traceability::TraceComment' (role 'traceability_TraceComment15', cardinality 0..*) is associated with 'traceability::LogEntry' (role 'traceability_LogEntry14', cardinality 0..*).
+'traceability::Category' (role 'traceability_Category', cardinality 0..*) is associated with 'traceability::EObject' (role 'traceability_EObject34', cardinality 0..*).
+'traceability::Trace' (role 'traceability_Trace', cardinality 0..*) is associated with 'traceability::EObject' (role 'traceability_EObject', cardinality 0..*).

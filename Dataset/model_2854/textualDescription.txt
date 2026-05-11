@@ -1,0 +1,220 @@
+The model has 73 class(es).
+The class 'AstTop' has no attributes.
+The class 'cal::AstAction' has no attributes.
+The class 'cal::AstAnnotation' has the following attributes: 'name' of type str.
+The class 'cal::AstExpression' has no attributes.
+The class 'cal::AstActorVariableReference' has no attributes.
+The class 'AstAbstractActor' has no attributes.
+The class 'cal::AstStatementIf' has no attributes.
+The class 'cal::AstExternalActor' has no attributes.
+The class 'cal::AstExpressionBinary' has the following attributes: 'operator' of type str.
+The class 'cal::AstStatementAssign' has no attributes.
+The class 'AstPackage' has no attributes.
+The class 'cal::AstInputPattern' has no attributes.
+The class 'cal::AstExpressionIf' has no attributes.
+The class 'cal::AstEntity' has no attributes.
+The class 'cal::AstFunction' has the following attributes: 'name' of type str.
+The class 'cal::AstExternalFunction' has no attributes.
+The class 'cal::AstTransition' has no attributes.
+The class 'cal::AstTypeName' has the following attributes: 'name' of type str.
+The class 'cal::AstExpressionCall' has no attributes.
+The class 'cal::AstState' has the following attributes: 'name' of type str.
+The class 'cal::AstExpressionUnary' has the following attributes: 'unaryOperator' of type str.
+The class 'cal::AstInitialize' has no attributes.
+The class 'cal::AstForeachGenerator' has no attributes.
+The class 'cal::AstAssignParameter' has the following attributes: 'name' of type str.
+The class 'cal::AstVariable' has the following attributes: 'name' of type str; 'constant' of type bool.
+The class 'AstAction' has no attributes.
+The class 'AstExternalProcedure' has no attributes.
+The class 'cal::AstSchedule' has no attributes.
+The class 'AstStatement' has no attributes.
+The class 'cal::AstConnection' has the following attributes: 'outPort' of type str; 'inPort' of type str.
+The class 'cal::AstExpressionString' has the following attributes: 'value' of type str.
+The class 'cal::AstVariableReference' has no attributes.
+The class 'AstUnit' has no attributes.
+The class 'cal::AstAnnotationArgument' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'cal::AstStatementBlock' has no attributes.
+The class 'cal::AstExpressionBoolean' has the following attributes: 'value' of type bool.
+The class 'cal::AstNamespace' has the following attributes: 'name' of type str.
+The class 'cal::AstNetwork' has no attributes.
+The class 'cal::AstGenerator' has no attributes.
+The class 'cal::AstPort' has the following attributes: 'name' of type str.
+The class 'cal::AstTypeParameterList' has no attributes.
+The class 'cal::AstAbstractActor' has the following attributes: 'name' of type str.
+The class 'cal::AstStatementCall' has no attributes.
+The class 'cal::AstTypeParam' has the following attributes: 'name' of type str.
+The class 'cal::AstStatement' has no attributes.
+The class 'cal::AstActorVariable' has the following attributes: 'name' of type str.
+The class 'cal::AstExpressionFloat' has the following attributes: 'value' of type float.
+The class 'cal::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'cal::AstTypeDefinitionParameter' has no attributes.
+The class 'cal::AstUnit' has no attributes.
+The class 'cal::AstType' has the following attributes: 'builtin' of type str.
+The class 'cal::AstMemberAccess' has the following attributes: 'name' of type str.
+The class 'cal::AstExpressionInteger' has the following attributes: 'value' of type str.
+The class 'cal::AstExpressionLiteral' has no attributes.
+The class 'cal::AstActor' has no attributes.
+The class 'cal::AstExpressionList' has no attributes.
+The class 'cal::AstExpressionVariable' has no attributes.
+The class 'cal::AstProcedure' has the following attributes: 'name' of type str.
+The class 'AstExpression' has no attributes.
+The class 'cal::AstPriority' has no attributes.
+The class 'cal::AstStructure' has no attributes.
+The class 'cal::AstInequality' has no attributes.
+The class 'cal::AstStatementWhile' has no attributes.
+The class 'AstExpressionLiteral' has no attributes.
+The class 'cal::AstOutputPattern' has no attributes.
+The class 'AstExternalFunction' has no attributes.
+The class 'cal::AstTag' has the following attributes: 'identifiers' of type str.
+The class 'cal::AstStatementForeach' has no attributes.
+The class 'cal::AstPackage' has no attributes.
+The class 'cal::AstConnectionAttribute' has the following attributes: 'name' of type str.
+The class 'cal::AstExternalProcedure' has no attributes.
+The class 'cal::EObject' has no attributes.
+The class 'cal::AstTop' has no attributes.
+'cal::AstExpressionVariable' is a specialization of 'AstExpression'.
+'cal::AstExpressionInteger' is a specialization of 'AstExpressionLiteral'.
+'cal::AstStatementCall' is a specialization of 'AstStatement'.
+'cal::AstStatementAssign' is a specialization of 'AstStatement'.
+'cal::AstStatementForeach' is a specialization of 'AstStatement'.
+'cal::AstExpressionString' is a specialization of 'AstExpressionLiteral'.
+'cal::AstNamespace' is a specialization of 'AstUnit'.
+'cal::AstExpressionCall' is a specialization of 'AstExpression'.
+'cal::AstActor' is a specialization of 'AstAbstractActor'.
+'cal::AstExpressionFloat' is a specialization of 'AstExpressionLiteral'.
+'cal::AstStatementIf' is a specialization of 'AstStatement'.
+'cal::AstPackage' is a specialization of 'AstTop'.
+'cal::AstFunction' is a specialization of 'AstExternalFunction'.
+'cal::AstNetwork' is a specialization of 'AstAbstractActor'.
+'cal::AstStatementWhile' is a specialization of 'AstStatement'.
+'cal::AstExpressionBoolean' is a specialization of 'AstExpressionLiteral'.
+'cal::AstExternalActor' is a specialization of 'AstAbstractActor'.
+'cal::AstExpressionList' is a specialization of 'AstExpression'.
+'cal::AstNamespace' is a specialization of 'AstPackage'.
+'cal::AstExpressionIf' is a specialization of 'AstExpression'.
+'cal::AstExpressionBinary' is a specialization of 'AstExpression'.
+'cal::AstExpressionLiteral' is a specialization of 'AstExpression'.
+'cal::AstInitialize' is a specialization of 'AstAction'.
+'cal::AstProcedure' is a specialization of 'AstExternalProcedure'.
+'cal::AstNamespace' is a specialization of 'AstTop'.
+'cal::AstStatementBlock' is a specialization of 'AstStatement'.
+'cal::AstExpressionUnary' is a specialization of 'AstExpression'.
+'cal::AstTag' (role 'cal_AstTag', cardinality 0..*) is associated with 'cal::AstInequality' (role 'cal_AstInequality', cardinality 0..*).
+'cal::AstAnnotation' (role 'cal_AstAnnotation126', cardinality 0..*) is associated with 'cal::AstProcedure' (role 'cal_AstProcedure125', cardinality 0..*).
+'cal::AstVariable' (role 'cal_AstVariable167', cardinality 0..*) is associated with 'cal::AstAction' (role 'cal_AstAction166', cardinality 0..*).
+'cal::AstInputPattern' (role 'cal_AstInputPattern172', cardinality 0..*) is associated with 'cal::AstPort' (role 'cal_AstPort173', cardinality 0..*).
+'cal::AstExpression' (role 'cal_AstExpression215', cardinality 0..*) is associated with 'cal::AstForeachGenerator' (role 'cal_AstForeachGenerator214', cardinality 0..*).
+'cal::AstStatementCall' (role 'cal_AstStatementCall', cardinality 0..*) is associated with 'cal::AstProcedure' (role 'cal_AstProcedure199', cardinality 0..*).
+'cal::AstExpressionIf' (role 'cal_AstExpressionIf245', cardinality 0..*) is associated with 'cal::AstExpression' (role 'cal_AstExpression246', cardinality 0..*).
+'cal::AstExpressionList' (role 'cal_AstExpressionList250', cardinality 0..*) is associated with 'cal::AstGenerator' (role 'cal_AstGenerator', cardinality 0..*).
+'cal::AstActorVariable' (role 'cal_AstActorVariable55', cardinality 0..*) is associated with 'cal::AstActorVariableReference' (role 'cal_AstActorVariableReference54', cardinality 0..*).
+'cal::AstTransition' (role 'cal_AstTransition144', cardinality 0..*) is associated with 'cal::AstState' (role 'cal_AstState145', cardinality 0..*).
+'cal::AstNetwork' (role 'cal_AstNetwork', cardinality 0..*) is associated with 'cal::AstVariable' (role 'cal_AstVariable32', cardinality 0..*).
+'cal::AstOutputPattern' (role 'cal_AstOutputPattern184', cardinality 0..*) is associated with 'cal::AstExpression' (role 'cal_AstExpression185', cardinality 0..*).
+'cal::AstTypeParam' (role 'cal_AstTypeParam', cardinality 0..*) is associated with 'cal::AstTypeParameterList' (role 'cal_AstTypeParameterList283', cardinality 0..*).
+'cal::AstTypeName' (role 'cal_AstTypeName', cardinality 0..*) is associated with 'cal::AstNamespace' (role 'cal_AstNamespace14', cardinality 0..*).
+'cal::AstVariable' (role 'cal_AstVariable66', cardinality 0..*) is associated with 'cal::AstType' (role 'cal_AstType', cardinality 0..*).
+'cal::AstExpressionCall' (role 'cal_AstExpressionCall', cardinality 0..*) is associated with 'cal::AstFunction' (role 'cal_AstFunction235', cardinality 0..*).
+'cal::AstStatementForeach' (role 'cal_AstStatementForeach208', cardinality 0..*) is associated with 'cal::AstStatement' (role 'cal_AstStatement209', cardinality 0..*).
+'cal::AstExpressionCall' (role 'cal_AstExpressionCall237', cardinality 0..*) is associated with 'cal::AstExpression' (role 'cal_AstExpression238', cardinality 0..*).
+'cal::AstNetwork' (role 'cal_AstNetwork36', cardinality 0..*) is associated with 'cal::AstStructure' (role 'cal_AstStructure', cardinality 0..*).
+'cal::AstInequality' (role 'cal_AstInequality138', cardinality 0..*) is associated with 'cal::AstPriority' (role 'cal_AstPriority137', cardinality 0..*).
+'cal::AstEntity' (role 'cal_AstEntity39', cardinality 0..*) is associated with 'cal::AstActorVariable' (role 'cal_AstActorVariable38', cardinality 0..*).
+'cal::AstExpression' (role 'cal_AstExpression58', cardinality 0..*) is associated with 'cal::AstConnectionAttribute' (role 'cal_AstConnectionAttribute57', cardinality 0..*).
+'cal::AstExpression' (role 'cal_AstExpression230', cardinality 0..*) is associated with 'cal::AstStatementWhile' (role 'cal_AstStatementWhile', cardinality 0..*).
+'cal::AstAbstractActor' (role 'cal_AstAbstractActor27', cardinality 0..*) is associated with 'cal::AstPort' (role 'cal_AstPort', cardinality 0..*).
+'cal::AstNamespace' (role 'cal_AstNamespace15', cardinality 0..*) is associated with 'cal::AstNamespace' (role 'cal_AstNamespace17', cardinality 0..*).
+'cal::AstExpression' (role 'cal_AstExpression243', cardinality 0..*) is associated with 'cal::AstExpressionIf' (role 'cal_AstExpressionIf242', cardinality 0..*).
+'cal::AstProcedure' (role 'cal_AstProcedure', cardinality 0..*) is associated with 'cal::AstActor' (role 'cal_AstActor105', cardinality 0..*).
+'cal::AstConnection' (role 'cal_AstConnection49', cardinality 0..*) is associated with 'cal::AstActorVariableReference' (role 'cal_AstActorVariableReference50', cardinality 0..*).
+'cal::AstFunction' (role 'cal_AstFunction103', cardinality 0..*) is associated with 'cal::AstActor' (role 'cal_AstActor', cardinality 0..*).
+'cal::AstStatementBlock' (role 'cal_AstStatementBlock', cardinality 0..*) is associated with 'cal::AstVariable' (role 'cal_AstVariable217', cardinality 0..*).
+'cal::AstConnectionAttribute' (role 'cal_AstConnectionAttribute', cardinality 0..*) is associated with 'cal::AstConnection' (role 'cal_AstConnection52', cardinality 0..*).
+'cal::AstType' (role 'cal_AstType123', cardinality 0..*) is associated with 'cal::AstPort' (role 'cal_AstPort122', cardinality 0..*).
+'cal::AstExpressionVariable' (role 'cal_AstExpressionVariable260', cardinality 0..*) is associated with 'cal::AstExpression' (role 'cal_AstExpression261', cardinality 0..*).
+'cal::AstMemberAccess' (role 'cal_AstMemberAccess294', cardinality 0..*) is associated with 'cal::AstExpression' (role 'cal_AstExpression295', cardinality 0..*).
+'cal::AstExpressionVariable' (role 'cal_AstExpressionVariable263', cardinality 0..*) is associated with 'cal::AstMemberAccess' (role 'cal_AstMemberAccess264', cardinality 0..*).
+'cal::AstVariableReference' (role 'cal_AstVariableReference258', cardinality 0..*) is associated with 'cal::AstExpressionVariable' (role 'cal_AstExpressionVariable', cardinality 0..*).
+'cal::AstExpressionBinary' (role 'cal_AstExpressionBinary', cardinality 0..*) is associated with 'cal::AstExpression' (role 'cal_AstExpression299', cardinality 0..*).
+'cal::AstAbstractActor' (role 'cal_AstAbstractActor', cardinality 0..*) is associated with 'cal::AstEntity' (role 'cal_AstEntity22', cardinality 0..*).
+'cal::AstActorVariable' (role 'cal_AstActorVariable', cardinality 0..*) is associated with 'cal::AstNetwork' (role 'cal_AstNetwork34', cardinality 0..*).
+'cal::AstPort' (role 'cal_AstPort30', cardinality 0..*) is associated with 'cal::AstAbstractActor' (role 'cal_AstAbstractActor29', cardinality 0..*).
+'cal::AstInputPattern' (role 'cal_AstInputPattern175', cardinality 0..*) is associated with 'cal::AstVariable' (role 'cal_AstVariable176', cardinality 0..*).
+'cal::AstExpression' (role 'cal_AstExpression69', cardinality 0..*) is associated with 'cal::AstVariable' (role 'cal_AstVariable68', cardinality 0..*).
+'cal::AstExpressionIf' (role 'cal_AstExpressionIf', cardinality 0..*) is associated with 'cal::AstExpression' (role 'cal_AstExpression240', cardinality 0..*).
+'cal::AstUnit' (role 'cal_AstUnit', cardinality 0..*) is associated with 'cal::AstNamespace' (role 'cal_AstNamespace4', cardinality 0..*).
+'cal::AstEntity' (role 'cal_AstEntity19', cardinality 0..*) is associated with 'cal::AstAnnotation' (role 'cal_AstAnnotation20', cardinality 0..*).
+'cal::AstSchedule' (role 'cal_AstSchedule', cardinality 0..*) is associated with 'cal::AstActor' (role 'cal_AstActor115', cardinality 0..*).
+'cal::AstGenerator' (role 'cal_AstGenerator255', cardinality 0..*) is associated with 'cal::AstExpression' (role 'cal_AstExpression256', cardinality 0..*).
+'cal::AstAction' (role 'cal_AstAction156', cardinality 0..*) is associated with 'cal::AstTag' (role 'cal_AstTag157', cardinality 0..*).
+'cal::AstInputPattern' (role 'cal_AstInputPattern178', cardinality 0..*) is associated with 'cal::AstExpression' (role 'cal_AstExpression179', cardinality 0..*).
+'cal::AstSchedule' (role 'cal_AstSchedule142', cardinality 0..*) is associated with 'cal::AstTransition' (role 'cal_AstTransition', cardinality 0..*).
+'cal::AstExpressionUnary' (role 'cal_AstExpressionUnary', cardinality 0..*) is associated with 'cal::AstExpression' (role 'cal_AstExpression304', cardinality 0..*).
+'cal::AstExpressionList' (role 'cal_AstExpressionList', cardinality 0..*) is associated with 'cal::AstExpression' (role 'cal_AstExpression248', cardinality 0..*).
+'cal::AstTypeParam' (role 'cal_AstTypeParam285', cardinality 0..*) is associated with 'cal::AstExpression' (role 'cal_AstExpression286', cardinality 0..*).
+'cal::AstFunction' (role 'cal_AstFunction97', cardinality 0..*) is associated with 'cal::AstVariable' (role 'cal_AstVariable98', cardinality 0..*).
+'cal::AstVariable' (role 'cal_AstVariable86', cardinality 0..*) is associated with 'cal::AstFunction' (role 'cal_AstFunction85', cardinality 0..*).
+'cal::AstTypeDefinitionParameter' (role 'cal_AstTypeDefinitionParameter79', cardinality 0..*) is associated with 'cal::AstVariable' (role 'cal_AstVariable80', cardinality 0..*).
+'cal::AstConnection' (role 'cal_AstConnection', cardinality 0..*) is associated with 'cal::AstStructure' (role 'cal_AstStructure45', cardinality 0..*).
+'cal::AstStatementAssign' (role 'cal_AstStatementAssign191', cardinality 0..*) is associated with 'cal::AstExpression' (role 'cal_AstExpression192', cardinality 0..*).
+'cal::AstNamespace' (role 'cal_AstNamespace12', cardinality 0..*) is associated with 'cal::AstAnnotation' (role 'cal_AstAnnotation', cardinality 0..*).
+'cal::AstStatementAssign' (role 'cal_AstStatementAssign194', cardinality 0..*) is associated with 'cal::AstMemberAccess' (role 'cal_AstMemberAccess', cardinality 0..*).
+'cal::AstStatementIf' (role 'cal_AstStatementIf', cardinality 0..*) is associated with 'cal::AstExpression' (role 'cal_AstExpression222', cardinality 0..*).
+'cal::AstType' (role 'cal_AstType77', cardinality 0..*) is associated with 'cal::AstTypeName' (role 'cal_AstTypeName76', cardinality 0..*).
+'cal::AstFunction' (role 'cal_AstFunction88', cardinality 0..*) is associated with 'cal::AstAnnotation' (role 'cal_AstAnnotation89', cardinality 0..*).
+'cal::AstTypeDefinitionParameter' (role 'cal_AstTypeDefinitionParameter82', cardinality 0..*) is associated with 'cal::AstTypeName' (role 'cal_AstTypeName83', cardinality 0..*).
+'cal::AstActorVariableReference' (role 'cal_AstActorVariableReference', cardinality 0..*) is associated with 'cal::AstConnection' (role 'cal_AstConnection47', cardinality 0..*).
+'cal::AstActor' (role 'cal_AstActor109', cardinality 0..*) is associated with 'cal::AstAction' (role 'cal_AstAction110', cardinality 0..*).
+'cal::AstPort' (role 'cal_AstPort119', cardinality 0..*) is associated with 'cal::AstAnnotation' (role 'cal_AstAnnotation120', cardinality 0..*).
+'cal::AstFunction' (role 'cal_AstFunction91', cardinality 0..*) is associated with 'cal::AstVariable' (role 'cal_AstVariable92', cardinality 0..*).
+'cal::AstAction' (role 'cal_AstAction169', cardinality 0..*) is associated with 'cal::AstStatement' (role 'cal_AstStatement170', cardinality 0..*).
+'cal::AstVariable' (role 'cal_AstVariable63', cardinality 0..*) is associated with 'cal::AstAnnotation' (role 'cal_AstAnnotation64', cardinality 0..*).
+'cal::AstType' (role 'cal_AstType268', cardinality 0..*) is associated with 'cal::AstExpression' (role 'cal_AstExpression269', cardinality 0..*).
+'cal::AstPriority' (role 'cal_AstPriority', cardinality 0..*) is associated with 'cal::AstActor' (role 'cal_AstActor117', cardinality 0..*).
+'cal::AstAnnotation' (role 'cal_AstAnnotation297', cardinality 0..*) is associated with 'cal::AstAnnotationArgument' (role 'cal_AstAnnotationArgument', cardinality 0..*).
+'cal::AstStatementForeach' (role 'cal_AstStatementForeach', cardinality 0..*) is associated with 'cal::AstForeachGenerator' (role 'cal_AstForeachGenerator', cardinality 0..*).
+'cal::AstType' (role 'cal_AstType273', cardinality 0..*) is associated with 'cal::AstType' (role 'cal_AstType275', cardinality 0..*).
+'cal::AstOutputPattern' (role 'cal_AstOutputPattern181', cardinality 0..*) is associated with 'cal::AstPort' (role 'cal_AstPort182', cardinality 0..*).
+'cal::AstExpressionBinary' (role 'cal_AstExpressionBinary301', cardinality 0..*) is associated with 'cal::AstExpression' (role 'cal_AstExpression302', cardinality 0..*).
+'cal::AstType' (role 'cal_AstType289', cardinality 0..*) is associated with 'cal::AstTypeParam' (role 'cal_AstTypeParam288', cardinality 0..*).
+'cal::AstAction' (role 'cal_AstAction', cardinality 0..*) is associated with 'cal::AstActor' (role 'cal_AstActor107', cardinality 0..*).
+'cal::AstVariableReference' (role 'cal_AstVariableReference', cardinality 0..*) is associated with 'cal::AstStatementAssign' (role 'cal_AstStatementAssign', cardinality 0..*).
+'cal::AstGenerator' (role 'cal_AstGenerator252', cardinality 0..*) is associated with 'cal::AstVariable' (role 'cal_AstVariable253', cardinality 0..*).
+'cal::AstOutputPattern' (role 'cal_AstOutputPattern', cardinality 0..*) is associated with 'cal::AstAction' (role 'cal_AstAction161', cardinality 0..*).
+'cal::AstType' (role 'cal_AstType95', cardinality 0..*) is associated with 'cal::AstFunction' (role 'cal_AstFunction94', cardinality 0..*).
+'cal::AstExpression' (role 'cal_AstExpression61', cardinality 0..*) is associated with 'cal::AstVariable' (role 'cal_AstVariable60', cardinality 0..*).
+'cal::AstStatementBlock' (role 'cal_AstStatementBlock219', cardinality 0..*) is associated with 'cal::AstStatement' (role 'cal_AstStatement220', cardinality 0..*).
+'cal::AstTypeName' (role 'cal_AstTypeName73', cardinality 0..*) is associated with 'cal::AstFunction' (role 'cal_AstFunction74', cardinality 0..*).
+'cal::AstStatementIf' (role 'cal_AstStatementIf227', cardinality 0..*) is associated with 'cal::AstStatement' (role 'cal_AstStatement228', cardinality 0..*).
+'cal::AstTypeParameterList' (role 'cal_AstTypeParameterList', cardinality 0..*) is associated with 'cal::AstType' (role 'cal_AstType266', cardinality 0..*).
+'cal::AstInputPattern' (role 'cal_AstInputPattern', cardinality 0..*) is associated with 'cal::AstAction' (role 'cal_AstAction159', cardinality 0..*).
+'cal::AstVariable' (role 'cal_AstVariable25', cardinality 0..*) is associated with 'cal::AstAbstractActor' (role 'cal_AstAbstractActor24', cardinality 0..*).
+'cal::AstAnnotation' (role 'cal_AstAnnotation154', cardinality 0..*) is associated with 'cal::AstAction' (role 'cal_AstAction153', cardinality 0..*).
+'cal::AstTypeName' (role 'cal_AstTypeName71', cardinality 0..*) is associated with 'cal::AstTypeDefinitionParameter' (role 'cal_AstTypeDefinitionParameter', cardinality 0..*).
+'cal::AstVariable' (role 'cal_AstVariable132', cardinality 0..*) is associated with 'cal::AstProcedure' (role 'cal_AstProcedure131', cardinality 0..*).
+'cal::AstStatementCall' (role 'cal_AstStatementCall201', cardinality 0..*) is associated with 'cal::AstExpression' (role 'cal_AstExpression202', cardinality 0..*).
+'cal::AstVariable' (role 'cal_AstVariable', cardinality 0..*) is associated with 'cal::AstNamespace' (role 'cal_AstNamespace8', cardinality 0..*).
+'cal::AstNamespace' (role 'cal_AstNamespace10', cardinality 0..*) is associated with 'cal::EObject' (role 'cal_EObject', cardinality 0..*).
+'cal::Import' (role 'cal_Import', cardinality 0..*) is associated with 'cal::AstNamespace' (role 'cal_AstNamespace2', cardinality 0..*).
+'cal::AstState' (role 'cal_AstState151', cardinality 0..*) is associated with 'cal::AstTransition' (role 'cal_AstTransition150', cardinality 0..*).
+'cal::AstType' (role 'cal_AstType271', cardinality 0..*) is associated with 'cal::AstTypeName' (role 'cal_AstTypeName272', cardinality 0..*).
+'cal::AstVariable' (role 'cal_AstVariable281', cardinality 0..*) is associated with 'cal::AstType' (role 'cal_AstType280', cardinality 0..*).
+'cal::AstVariable' (role 'cal_AstVariable212', cardinality 0..*) is associated with 'cal::AstForeachGenerator' (role 'cal_AstForeachGenerator211', cardinality 0..*).
+'cal::AstAssignParameter' (role 'cal_AstAssignParameter', cardinality 0..*) is associated with 'cal::AstActorVariable' (role 'cal_AstActorVariable41', cardinality 0..*).
+'cal::AstFunction' (role 'cal_AstFunction100', cardinality 0..*) is associated with 'cal::AstExpression' (role 'cal_AstExpression101', cardinality 0..*).
+'cal::AstType' (role 'cal_AstType276', cardinality 0..*) is associated with 'cal::AstType' (role 'cal_AstType278', cardinality 0..*).
+'cal::AstProcedure' (role 'cal_AstProcedure134', cardinality 0..*) is associated with 'cal::AstStatement' (role 'cal_AstStatement', cardinality 0..*).
+'cal::AstEntity' (role 'cal_AstEntity', cardinality 0..*) is associated with 'cal::AstNamespace' (role 'cal_AstNamespace', cardinality 0..*).
+'cal::AstFunction' (role 'cal_AstFunction', cardinality 0..*) is associated with 'cal::AstNamespace' (role 'cal_AstNamespace6', cardinality 0..*).
+'cal::AstActor' (role 'cal_AstActor112', cardinality 0..*) is associated with 'cal::AstVariable' (role 'cal_AstVariable113', cardinality 0..*).
+'cal::AstVariable' (role 'cal_AstVariable292', cardinality 0..*) is associated with 'cal::AstVariableReference' (role 'cal_AstVariableReference291', cardinality 0..*).
+'cal::AstSchedule' (role 'cal_AstSchedule140', cardinality 0..*) is associated with 'cal::AstState' (role 'cal_AstState', cardinality 0..*).
+'cal::AstExpression' (role 'cal_AstExpression197', cardinality 0..*) is associated with 'cal::AstStatementAssign' (role 'cal_AstStatementAssign196', cardinality 0..*).
+'cal::AstAction' (role 'cal_AstAction163', cardinality 0..*) is associated with 'cal::AstExpression' (role 'cal_AstExpression164', cardinality 0..*).
+'cal::AstStatementForeach' (role 'cal_AstStatementForeach205', cardinality 0..*) is associated with 'cal::AstVariable' (role 'cal_AstVariable206', cardinality 0..*).
+'cal::AstStatement' (role 'cal_AstStatement233', cardinality 0..*) is associated with 'cal::AstStatementWhile' (role 'cal_AstStatementWhile232', cardinality 0..*).
+'cal::AstStatement' (role 'cal_AstStatement225', cardinality 0..*) is associated with 'cal::AstStatementIf' (role 'cal_AstStatementIf224', cardinality 0..*).
+'cal::AstOutputPattern' (role 'cal_AstOutputPattern187', cardinality 0..*) is associated with 'cal::AstExpression' (role 'cal_AstExpression188', cardinality 0..*).
+'cal::AstAssignParameter' (role 'cal_AstAssignParameter43', cardinality 0..*) is associated with 'cal::AstExpression' (role 'cal_AstExpression', cardinality 0..*).
+'cal::AstVariable' (role 'cal_AstVariable129', cardinality 0..*) is associated with 'cal::AstProcedure' (role 'cal_AstProcedure128', cardinality 0..*).
+'cal::AstTag' (role 'cal_AstTag148', cardinality 0..*) is associated with 'cal::AstTransition' (role 'cal_AstTransition147', cardinality 0..*).

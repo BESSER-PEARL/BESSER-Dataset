@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/code4ash/QVTo-Families2Persons/metamodel/Persons.ecore

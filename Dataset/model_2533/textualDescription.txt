@@ -1,0 +1,39 @@
+The model has 21 class(es).
+The class 'raas::small::test::MergingE1AndE2' has the following attributes: 'optionalAttrString' of type str.
+The class 'raas::small::test::TopClassD' has the following attributes: 'multi2lowerAttrInt' of type int; 'singleAttrInt' of type int; 'optionalAttrInt' of type int; 'optionalTimeZone' of type str; 'raasRef' of type str.
+The class 'raas::small::test::#11832905' has no attributes.
+The class 'raas::small::test::#16551649' has no attributes.
+The class 'raas::small::test::#10382437' has no attributes.
+The class 'raas::small::test::TopClassB' has the following attributes: 'singleAttrInt' of type int; 'multi2lowerAttrInt' of type int; 'raasRef' of type str; 'optionalAttrInt' of type int.
+The class 'raas::small::test::#19723516' has no attributes.
+The class 'raas::small::test::UnderClassF' has the following attributes: 'raasRef' of type str; 'singleAttrInt' of type int.
+The class 'raas::small::test::#29373817' has no attributes.
+The class 'raas::small::test::#5656663' has no attributes.
+The class 'raas::small::test::#7345254' has no attributes.
+The class 'raas::small::test::UnderClassE' has the following attributes: 'raasRef' of type str.
+The class 'raas::small::test::TopClassM' has the following attributes: 'singleAttrInt' of type int.
+The class 'raas::small::test::TopClassC' has the following attributes: 'singleAttrInt' of type int; 'multi2lowerAttrInt' of type int; 'raasRef' of type str; 'optionalAttrInt' of type int.
+The class 'raas::small::test::ThirdLevelClassJ' has the following attributes: 'raasRef' of type str; 'optionalAttrInt' of type int; 'singleAttrInt' of type int; 'multi2lowerAttrInt' of type int.
+The class 'raas::small::test::DerivedUnderClassE1' has no attributes.
+The class 'raas::small::test::TopClassA' has the following attributes: 'raasRef' of type str.
+The class 'raas::small::test::ReposRoot' has the following attributes: 'multiAttrString' of type str; 'singleAttrString' of type str; 'raasRef' of type str.
+The class 'raas::small::test::FourthLevelClassK' has the following attributes: 'raasRef' of type str; 'optionalAttrInt' of type int; 'singleAttrInt' of type int; 'multi2lowerAttrInt' of type int.
+The class 'raas::small::test::DerivedUnderClassE2' has no attributes.
+The class 'raas::small::test::#30911270' has no attributes.
+'raas::small::test::MergingE1AndE2' is a specialization of 'raas::small::test::DerivedUnderClassE1'.
+'raas::small::test::MergingE1AndE2' is a specialization of 'raas::small::test::DerivedUnderClassE2'.
+'raas::small::test::DerivedUnderClassE1' is a specialization of 'raas::small::test::UnderClassE'.
+'raas::small::test::DerivedUnderClassE2' is a specialization of 'raas::small::test::UnderClassE'.
+'raas::small::test::TopClassM' is a specialization of 'raas::small::test::UnderClassE'.
+'raas::small::test::#10382437' (role 'raas_small_test_10382437', cardinality 0..*) is associated with 'raas::small::test::ThirdLevelClassJ' (role 'raas_small_test_ThirdLevelClassJ', cardinality 0..*).
+'raas::small::test::DerivedUnderClassE2' (role 'raas_small_test_DerivedUnderClassE2', cardinality 0..*) is associated with 'raas::small::test::#30911270' (role 'raas_small_test_30911270', cardinality 0..*).
+'raas::small::test::#11832905' (role 'raas_small_test_1183290518', cardinality 0..*) is associated with 'raas::small::test::DerivedUnderClassE1' (role 'raas_small_test_DerivedUnderClassE1', cardinality 0..*).
+'raas::small::test::#11832905' (role 'raas_small_test_11832905', cardinality 0..*) is associated with 'raas::small::test::ReposRoot' (role 'raas_small_test_ReposRoot6', cardinality 0..*).
+'raas::small::test::#16551649' (role 'raas_small_test_1655164915', cardinality 0..*) is associated with 'raas::small::test::TopClassC' (role 'raas_small_test_TopClassC', cardinality 0..*).
+'raas::small::test::TopClassB' (role 'raas_small_test_TopClassB', cardinality 0..*) is associated with 'raas::small::test::#5656663' (role 'raas_small_test_565666313', cardinality 0..*).
+'raas::small::test::#16551649' (role 'raas_small_test_16551649', cardinality 0..*) is associated with 'raas::small::test::TopClassA' (role 'raas_small_test_TopClassA11', cardinality 0..*).
+'raas::small::test::#5656663' (role 'raas_small_test_5656663', cardinality 0..*) is associated with 'raas::small::test::TopClassA' (role 'raas_small_test_TopClassA', cardinality 0..*).
+'raas::small::test::TopClassM' (role 'raas_small_test_TopClassM', cardinality 0..*) is associated with 'raas::small::test::ReposRoot' (role 'raas_small_test_ReposRoot8', cardinality 0..*).
+'raas::small::test::ReposRoot' (role 'raas_small_test_ReposRoot4', cardinality 0..*) is associated with 'raas::small::test::#7345254' (role 'raas_small_test_7345254', cardinality 0..*).
+'raas::small::test::#19723516' (role 'raas_small_test_19723516', cardinality 0..*) is associated with 'raas::small::test::ReposRoot' (role 'raas_small_test_ReposRoot2', cardinality 0..*).
+'raas::small::test::#29373817' (role 'raas_small_test_29373817', cardinality 0..*) is associated with 'raas::small::test::ReposRoot' (role 'raas_small_test_ReposRoot', cardinality 0..*).

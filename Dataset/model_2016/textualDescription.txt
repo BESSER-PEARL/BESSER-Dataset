@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'trace::DebugTraceRegion' has the following attributes: 'myOffset' of type int; 'useForDebugging' of type bool; 'myEndOffset' of type int; 'myLength' of type int; 'label' of type str; 'myLineNumber' of type int; 'myEndLineNumber' of type int.
+The class 'trace::DebugLocationData' has the following attributes: 'path' of type str; 'lineNumber' of type int; 'offset' of type int; 'endOffset' of type int; 'length' of type int; 'endLineNumber' of type int; 'label' of type str.
+'trace::DebugTraceRegion' (role 'trace_DebugTraceRegion0', cardinality 0..*) is associated with 'trace::DebugTraceRegion' (role 'trace_DebugTraceRegion', cardinality 0..*).
+'trace::DebugLocationData' (role 'trace_DebugLocationData', cardinality 0..*) is associated with 'trace::DebugTraceRegion' (role 'trace_DebugTraceRegion3', cardinality 0..*).

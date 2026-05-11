@@ -1,0 +1,34 @@
+The model has 11 class(es).
+The class 'link::A' has no attributes.
+The class 'link::N99' has no attributes.
+The class 'link::D' has no attributes.
+The class 'link::K' has no attributes.
+The class 'link::C' has no attributes.
+The class 'Named' has no attributes.
+The class 'link::B' has no attributes.
+The class 'link::W' has no attributes.
+The class 'link::M' has no attributes.
+The class 'link::Named' has the following attributes: 'name' of type str.
+The class 'link::X' has no attributes.
+'link::B' is a specialization of 'Named'.
+'link::K' is a specialization of 'Named'.
+'link::N99' is a specialization of 'Named'.
+'link::M' is a specialization of 'Named'.
+'link::C' is a specialization of 'Named'.
+'link::D' is a specialization of 'Named'.
+'link::X' is a specialization of 'Named'.
+'link::W' is a specialization of 'Named'.
+'link::A' is a specialization of 'Named'.
+'link::D' (role 'link_D', cardinality 0..*) is associated with 'link::C' (role 'link_C13', cardinality 0..*).
+'link::X' (role 'link_X', cardinality 0..*) is associated with 'link::A' (role 'link_A15', cardinality 0..*).
+'link::A' (role 'link_A6', cardinality 0..*) is associated with 'link::M' (role 'link_M', cardinality 0..*).
+'link::W' (role 'link_W', cardinality 0..*) is associated with 'link::A' (role 'link_A4', cardinality 0..*).
+'link::B' (role 'link_B', cardinality 0..*) is associated with 'link::A' (role 'link_A', cardinality 0..*).
+'link::K' (role 'link_K23', cardinality 0..*) is associated with 'link::M' (role 'link_M22', cardinality 0..*).
+'link::A' (role 'link_A2', cardinality 0..*) is associated with 'link::C' (role 'link_C', cardinality 0..*).
+'link::N99' (role 'link_N9928', cardinality 0..*) is associated with 'link::K' (role 'link_K29', cardinality 0..*).
+'link::K' (role 'link_K', cardinality 0..*) is associated with 'link::X' (role 'link_X17', cardinality 0..*).
+'link::C' (role 'link_C10', cardinality 0..*) is associated with 'link::B' (role 'link_B11', cardinality 0..*).
+'link::A' (role 'link_A26', cardinality 0..*) is associated with 'link::M' (role 'link_M25', cardinality 0..*).
+'link::A' (role 'link_A8', cardinality 0..*) is associated with 'link::N99' (role 'link_N99', cardinality 0..*).
+'link::W' (role 'link_W19', cardinality 0..*) is associated with 'link::C' (role 'link_C20', cardinality 0..*).

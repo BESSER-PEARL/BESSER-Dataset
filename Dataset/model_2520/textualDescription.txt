@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'ext::F' has the following attributes: 'id' of type str.
+The class 'ext::ExtE' has the following attributes: 'value' of type int.
+The class 'E' has no attributes.
+'ext::ExtE' is a specialization of 'E'.
+'ext::ExtE' (role 'ExtE', cardinality 0..*) is associated with 'ext::F' (role 'f', cardinality 0..*).
+'ext::ExtE' (role 'e', cardinality 0..*) is associated with 'ext::F' (role 'F', cardinality 0..*).

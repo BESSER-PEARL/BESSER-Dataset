@@ -1,0 +1,9 @@
+The model has 3 class(es).
+The class 'testmodel::Val' has the following attributes: 'intvl' of type int; 'valname' of type str; 'intlist' of type int.
+The class 'testmodel::cont' has no attributes.
+The class 'testmodel::Node' has the following attributes: 'nodename' of type str.
+'testmodel::Node' (role 'Node', cardinality 0..*) is associated with 'testmodel::Node' (role 'childNodes', cardinality 0..*).
+'testmodel::cont' (role 'testmodel_cont', cardinality 0..*) is associated with 'testmodel::Node' (role 'testmodel_Node', cardinality 0..*).
+'testmodel::Node' (role 'Node10', cardinality 0..*) is associated with 'testmodel::Node' (role 'parentNode', cardinality 0..*).
+'testmodel::cont' (role 'testmodel_cont2', cardinality 0..*) is associated with 'testmodel::Val' (role 'testmodel_Val', cardinality 0..*).
+'testmodel::Val' (role 'testmodel_Val5', cardinality 0..*) is associated with 'testmodel::Node' (role 'testmodel_Node4', cardinality 0..*).

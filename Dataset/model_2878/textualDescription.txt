@@ -1,0 +1,44 @@
+The model has 16 class(es).
+The class 'parameterizedExpressionsTestLanguage::AssignmentExpression' has the following attributes: 'op' of type str.
+The class 'parameterizedExpressionsTestLanguage::IndexedAccessExpression' has no attributes.
+The class 'parameterizedExpressionsTestLanguage::ExpressionStatement' has no attributes.
+The class 'parameterizedExpressionsTestLanguage::Statement' has no attributes.
+The class 'Expression' has no attributes.
+The class 'parameterizedExpressionsTestLanguage::Expression' has no attributes.
+The class 'parameterizedExpressionsTestLanguage::YieldExpression' has the following attributes: 'many' of type bool.
+The class 'parameterizedExpressionsTestLanguage::CommaExpression' has no attributes.
+The class 'parameterizedExpressionsTestLanguage::ShiftExpression' has the following attributes: 'op' of type str.
+The class 'parameterizedExpressionsTestLanguage::ParameterizedPropertyAccessExpression' has the following attributes: '_property' of type str.
+The class 'parameterizedExpressionsTestLanguage::FunctionDeclaration' has the following attributes: 'name' of type str; 'generator' of type bool.
+The class 'Statement' has no attributes.
+The class 'parameterizedExpressionsTestLanguage::LabelledStatement' has the following attributes: 'name' of type str.
+The class 'parameterizedExpressionsTestLanguage::IdentifierRef' has the following attributes: 'id' of type str.
+The class 'parameterizedExpressionsTestLanguage::Block' has no attributes.
+The class 'parameterizedExpressionsTestLanguage::RelationalExpression' has the following attributes: 'op' of type str.
+'parameterizedExpressionsTestLanguage::LabelledStatement' is a specialization of 'Statement'.
+'parameterizedExpressionsTestLanguage::CommaExpression' is a specialization of 'Expression'.
+'parameterizedExpressionsTestLanguage::IdentifierRef' is a specialization of 'Expression'.
+'parameterizedExpressionsTestLanguage::ParameterizedPropertyAccessExpression' is a specialization of 'Expression'.
+'parameterizedExpressionsTestLanguage::ShiftExpression' is a specialization of 'Expression'.
+'parameterizedExpressionsTestLanguage::FunctionDeclaration' is a specialization of 'Statement'.
+'parameterizedExpressionsTestLanguage::ExpressionStatement' is a specialization of 'Statement'.
+'parameterizedExpressionsTestLanguage::YieldExpression' is a specialization of 'Expression'.
+'parameterizedExpressionsTestLanguage::IndexedAccessExpression' is a specialization of 'Expression'.
+'parameterizedExpressionsTestLanguage::Block' is a specialization of 'Statement'.
+'parameterizedExpressionsTestLanguage::AssignmentExpression' is a specialization of 'Expression'.
+'parameterizedExpressionsTestLanguage::RelationalExpression' is a specialization of 'Expression'.
+'parameterizedExpressionsTestLanguage::Statement' (role 'parameterizedExpressionsTestLanguage_Statement5', cardinality 0..*) is associated with 'parameterizedExpressionsTestLanguage::LabelledStatement' (role 'parameterizedExpressionsTestLanguage_LabelledStatement', cardinality 0..*).
+'parameterizedExpressionsTestLanguage::IndexedAccessExpression' (role 'parameterizedExpressionsTestLanguage_IndexedAccessExpression', cardinality 0..*) is associated with 'parameterizedExpressionsTestLanguage::Expression' (role 'parameterizedExpressionsTestLanguage_Expression7', cardinality 0..*).
+'parameterizedExpressionsTestLanguage::Expression' (role 'parameterizedExpressionsTestLanguage_Expression22', cardinality 0..*) is associated with 'parameterizedExpressionsTestLanguage::RelationalExpression' (role 'parameterizedExpressionsTestLanguage_RelationalExpression21', cardinality 0..*).
+'parameterizedExpressionsTestLanguage::Expression' (role 'parameterizedExpressionsTestLanguage_Expression19', cardinality 0..*) is associated with 'parameterizedExpressionsTestLanguage::RelationalExpression' (role 'parameterizedExpressionsTestLanguage_RelationalExpression', cardinality 0..*).
+'parameterizedExpressionsTestLanguage::Expression' (role 'parameterizedExpressionsTestLanguage_Expression27', cardinality 0..*) is associated with 'parameterizedExpressionsTestLanguage::AssignmentExpression' (role 'parameterizedExpressionsTestLanguage_AssignmentExpression26', cardinality 0..*).
+'parameterizedExpressionsTestLanguage::Block' (role 'parameterizedExpressionsTestLanguage_Block', cardinality 0..*) is associated with 'parameterizedExpressionsTestLanguage::FunctionDeclaration' (role 'parameterizedExpressionsTestLanguage_FunctionDeclaration', cardinality 0..*).
+'parameterizedExpressionsTestLanguage::YieldExpression' (role 'parameterizedExpressionsTestLanguage_YieldExpression', cardinality 0..*) is associated with 'parameterizedExpressionsTestLanguage::Expression' (role 'parameterizedExpressionsTestLanguage_Expression29', cardinality 0..*).
+'parameterizedExpressionsTestLanguage::Block' (role 'parameterizedExpressionsTestLanguage_Block2', cardinality 0..*) is associated with 'parameterizedExpressionsTestLanguage::Statement' (role 'parameterizedExpressionsTestLanguage_Statement', cardinality 0..*).
+'parameterizedExpressionsTestLanguage::ShiftExpression' (role 'parameterizedExpressionsTestLanguage_ShiftExpression16', cardinality 0..*) is associated with 'parameterizedExpressionsTestLanguage::Expression' (role 'parameterizedExpressionsTestLanguage_Expression17', cardinality 0..*).
+'parameterizedExpressionsTestLanguage::Expression' (role 'parameterizedExpressionsTestLanguage_Expression24', cardinality 0..*) is associated with 'parameterizedExpressionsTestLanguage::AssignmentExpression' (role 'parameterizedExpressionsTestLanguage_AssignmentExpression', cardinality 0..*).
+'parameterizedExpressionsTestLanguage::CommaExpression' (role 'parameterizedExpressionsTestLanguage_CommaExpression', cardinality 0..*) is associated with 'parameterizedExpressionsTestLanguage::Expression' (role 'parameterizedExpressionsTestLanguage_Expression31', cardinality 0..*).
+'parameterizedExpressionsTestLanguage::ExpressionStatement' (role 'parameterizedExpressionsTestLanguage_ExpressionStatement', cardinality 0..*) is associated with 'parameterizedExpressionsTestLanguage::Expression' (role 'parameterizedExpressionsTestLanguage_Expression', cardinality 0..*).
+'parameterizedExpressionsTestLanguage::IndexedAccessExpression' (role 'parameterizedExpressionsTestLanguage_IndexedAccessExpression9', cardinality 0..*) is associated with 'parameterizedExpressionsTestLanguage::Expression' (role 'parameterizedExpressionsTestLanguage_Expression10', cardinality 0..*).
+'parameterizedExpressionsTestLanguage::ShiftExpression' (role 'parameterizedExpressionsTestLanguage_ShiftExpression', cardinality 0..*) is associated with 'parameterizedExpressionsTestLanguage::Expression' (role 'parameterizedExpressionsTestLanguage_Expression14', cardinality 0..*).
+'parameterizedExpressionsTestLanguage::ParameterizedPropertyAccessExpression' (role 'parameterizedExpressionsTestLanguage_ParameterizedPropertyAccessExpression', cardinality 0..*) is associated with 'parameterizedExpressionsTestLanguage::Expression' (role 'parameterizedExpressionsTestLanguage_Expression12', cardinality 0..*).

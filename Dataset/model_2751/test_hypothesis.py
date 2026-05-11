@@ -1,0 +1,95 @@
+import inspect
+import pytest
+from hypothesis import given, assume, settings
+import hypothesis.strategies as st
+import copy
+from datetime import date
+
+from classes import (
+    simplea::B,
+    simplea::A,
+)
+
+# =============================================================================
+# SECTION 1 — STRUCTURAL TESTS
+# =============================================================================
+
+
+
+def test_simplea::b_is_not_abstract():
+    assert not inspect.isabstract(simplea::B)
+
+
+def test_simplea::b_constructor_exists():
+    assert callable(simplea::B.__init__)
+
+
+def test_simplea::b_constructor_args():
+    sig = inspect.signature(simplea::B.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simplea::a_is_not_abstract():
+    assert not inspect.isabstract(simplea::A)
+
+
+def test_simplea::a_constructor_exists():
+    assert callable(simplea::A.__init__)
+
+
+def test_simplea::a_constructor_args():
+    sig = inspect.signature(simplea::A.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_simplea::a_has_name():
+    assert hasattr(simplea::A, "name")
+    descriptor = None
+    for klass in simplea::A.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+# =============================================================================
+# HYPOTHESIS STRATEGIES
+# =============================================================================
+
+safe_text = st.text(
+    alphabet=st.characters(
+        whitelist_categories=("Ll", "Lu", "Nd"),
+        whitelist_characters="_",
+    ),
+    min_size=1,
+).filter(lambda s: s[0].isalpha())
+simplea::B_strategy = st.builds(
+    simplea::B,
+)
+simplea::A_strategy = st.builds(
+    simplea::A,
+    name=
+        safe_text
+)
+
+@given(instance=simplea::B_strategy)
+@settings(max_examples=50)
+def test_simplea::b_instantiation(instance):
+    assert isinstance(instance, simplea::B)
+
+@given(instance=simplea::A_strategy)
+@settings(max_examples=50)
+def test_simplea::a_instantiation(instance):
+    assert isinstance(instance, simplea::A)
+
+@given(instance=simplea::A_strategy)
+def test_simplea::a_name_type(instance):
+    assert isinstance(instance.name, str)
+
+
+@given(instance=simplea::A_strategy)
+def test_simplea::a_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original

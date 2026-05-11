@@ -1,0 +1,6 @@
+The model has 2 class(es).
+The class 'tree::TreeNode' has no attributes.
+The class 'tree::EObject' has no attributes.
+'tree::EObject' (role 'tree_EObject', cardinality 0..*) is associated with 'tree::TreeNode' (role 'tree_TreeNode', cardinality 0..*).
+'tree::TreeNode' (role 'TreeNode4', cardinality 0..*) is associated with 'tree::TreeNode' (role 'parent', cardinality 0..*).
+'tree::TreeNode' (role 'TreeNode', cardinality 0..*) is associated with 'tree::TreeNode' (role 'children', cardinality 0..*).

@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'abc::A' has the following attributes: 'x' of type int.
+The class 'abc::C' has the following attributes: 'x' of type int.
+The class 'abc::B' has the following attributes: 'x' of type int.
+'abc::B' (role 'B', cardinality 0..*) is associated with 'abc::A' (role 'a', cardinality 0..*).
+'abc::A' (role 'A', cardinality 0..*) is associated with 'abc::B' (role 'b', cardinality 0..*).
+'abc::C' (role 'abc_C', cardinality 0..*) is associated with 'abc::B' (role 'abc_B', cardinality 0..*).
+'abc::A' (role 'abc_A', cardinality 0..*) is associated with 'abc::C' (role 'abc_C3', cardinality 0..*).

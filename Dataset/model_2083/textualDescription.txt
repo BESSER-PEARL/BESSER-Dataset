@@ -1,0 +1,44 @@
+The model has 18 class(es).
+The class 'Connector' has no attributes.
+The class 'UATMM::structure::KofN' has the following attributes: 'Threshold' of type int.
+The class 'UATMM::structure::TreeMetaData' has the following attributes: 'Value' of type str; 'Key' of type str.
+The class 'UATMM::structure::OR' has no attributes.
+The class 'UATMM::structure::XOR' has no attributes.
+The class 'UATMM::structure::Weighted' has the following attributes: 'Treshold' of type float; 'Weights' of type float.
+The class 'UATMM::structure::SOR' has no attributes.
+The class 'UATMM::structure::TAND' has no attributes.
+The class 'UATMM::structure::AND' has no attributes.
+The class 'UATMM::structure::AttackTree' has no attributes.
+The class 'UATMM::structure::RDEP' has the following attributes: 'factor' of type float.
+The class 'UATMM::structure::FDEP' has no attributes.
+The class 'UATMM::structure::PAND' has no attributes.
+The class 'UATMM::structure::Edge' has the following attributes: 'edgeKind' of type str.
+The class 'UATMM::structure::Node' has the following attributes: 'id' of type str; 'role' of type str; 'nature' of type str; 'label' of type str.
+The class 'UATMM::structure::Connector' has no attributes.
+The class 'UATMM::structure::SAND' has no attributes.
+The class 'UATMM::structure::Spare' has no attributes.
+The enumeration 'Nature' has the following literals: 'Fault', 'Attack', 'Hybrid'.
+The enumeration 'RoleType' has the following literals: 'Counteracting', 'Contributing'.
+The enumeration 'EdgeKind' has the following literals: 'TRIGGER', 'DEPENDENCY'.
+'UATMM::structure::XOR' is a specialization of 'Connector'.
+'UATMM::structure::PAND' is a specialization of 'Connector'.
+'UATMM::structure::AND' is a specialization of 'Connector'.
+'UATMM::structure::SOR' is a specialization of 'Connector'.
+'UATMM::structure::KofN' is a specialization of 'Connector'.
+'UATMM::structure::OR' is a specialization of 'Connector'.
+'UATMM::structure::FDEP' is a specialization of 'Connector'.
+'UATMM::structure::TAND' is a specialization of 'Connector'.
+'UATMM::structure::Spare' is a specialization of 'Connector'.
+'UATMM::structure::RDEP' is a specialization of 'Connector'.
+'UATMM::structure::SAND' is a specialization of 'Connector'.
+'UATMM::structure::Weighted' is a specialization of 'Connector'.
+'UATMM::structure::Node' (role 'children', cardinality 0..*) is associated with 'UATMM::structure::Node' (role 'Node13', cardinality 0..*).
+'UATMM::structure::Node' (role 'Node', cardinality 0..*) is associated with 'UATMM::structure::Node' (role 'parents', cardinality 0..*).
+'UATMM::structure::TreeMetaData' (role 'UATMM_structure_TreeMetaData', cardinality 0..*) is associated with 'UATMM::structure::AttackTree' (role 'UATMM_structure_AttackTree7', cardinality 0..*).
+'UATMM::structure::Node' (role 'gate', cardinality 0..*) is associated with 'UATMM::structure::Connector' (role 'Connector', cardinality 0..*).
+'UATMM::structure::Connector' (role 'connector', cardinality 0..*) is associated with 'UATMM::structure::Node' (role 'Node21', cardinality 0..*).
+'UATMM::structure::AttackTree' (role 'UATMM_structure_AttackTree2', cardinality 0..*) is associated with 'UATMM::structure::Node' (role 'UATMM_structure_Node3', cardinality 0..*).
+'UATMM::structure::AttackTree' (role 'UATMM_structure_AttackTree5', cardinality 0..*) is associated with 'UATMM::structure::Edge' (role 'UATMM_structure_Edge', cardinality 0..*).
+'UATMM::structure::Edge' (role 'UATMM_structure_Edge15', cardinality 0..*) is associated with 'UATMM::structure::Node' (role 'UATMM_structure_Node16', cardinality 0..*).
+'UATMM::structure::AttackTree' (role 'UATMM_structure_AttackTree', cardinality 0..*) is associated with 'UATMM::structure::Node' (role 'UATMM_structure_Node', cardinality 0..*).
+'UATMM::structure::Node' (role 'UATMM_structure_Node19', cardinality 0..*) is associated with 'UATMM::structure::Edge' (role 'UATMM_structure_Edge18', cardinality 0..*).

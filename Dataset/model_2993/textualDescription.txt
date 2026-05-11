@@ -1,0 +1,48 @@
+The model has 26 class(es).
+The class 'model::Role' has no attributes.
+The class 'model::WikiProject' has no attributes.
+The class 'Administrator' has no attributes.
+The class 'model::Article' has the following attributes: 'typePrefix' of type str; 'content' of type str.
+The class 'Internal' has no attributes.
+The class 'model::Media' has the following attributes: 'typePrefix' of type str.
+The class 'model::Node' has the following attributes: 'nodeName' of type str; 'nodePrefix' of type str.
+The class 'model::Administrator' has no attributes.
+The class 'model::VersionHistory' has no attributes.
+The class 'model::Discussion' has the following attributes: 'discussions' of type str.
+The class 'UnregisteredUser' has no attributes.
+The class 'RegisteredUser' has no attributes.
+The class 'model::Revision' has the following attributes: 'creationDate' of type str; 'content' of type str.
+The class 'model::AutoConfirmedUser' has no attributes.
+The class 'model::Internal' has the following attributes: 'typePrefix' of type str; 'content' of type str.
+The class 'Role' has no attributes.
+The class 'model::SysOp' has no attributes.
+The class 'model::RegisteredUser' has no attributes.
+The class 'model::Talk' has no attributes.
+The class 'Content' has no attributes.
+The class 'model::User' has the following attributes: 'isBlocked' of type str; 'typePrefix' of type str; 'isEditor' of type str; 'isReader' of type str.
+The class 'model::MetaData' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'Node' has no attributes.
+The class 'model::UnregisteredUser' has no attributes.
+The class 'model::Content' has no attributes.
+The class 'AutoConfirmedUser' has no attributes.
+'model::Administrator' is a specialization of 'AutoConfirmedUser'.
+'model::WikiProject' is a specialization of 'Internal'.
+'model::Content' is a specialization of 'Node'.
+'model::SysOp' is a specialization of 'Administrator'.
+'model::UnregisteredUser' is a specialization of 'Role'.
+'model::Media' is a specialization of 'Content'.
+'model::Article' is a specialization of 'Content'.
+'model::User' is a specialization of 'Node'.
+'model::RegisteredUser' is a specialization of 'UnregisteredUser'.
+'model::AutoConfirmedUser' is a specialization of 'RegisteredUser'.
+'model::Internal' is a specialization of 'Content'.
+'model::Media' (role 'model_Media', cardinality 0..*) is associated with 'model::Article' (role 'model_Article', cardinality 0..*).
+'model::VersionHistory' (role 'model_VersionHistory', cardinality 0..*) is associated with 'model::Content' (role 'model_Content7', cardinality 0..*).
+'model::MetaData' (role 'model_MetaData', cardinality 0..*) is associated with 'model::Media' (role 'model_Media10', cardinality 0..*).
+'model::User' (role 'model_User17', cardinality 0..*) is associated with 'model::WikiProject' (role 'model_WikiProject', cardinality 0..*).
+'model::User' (role 'model_User14', cardinality 0..*) is associated with 'model::Revision' (role 'model_Revision13', cardinality 0..*).
+'model::User' (role 'model_User', cardinality 0..*) is associated with 'model::Role' (role 'model_Role', cardinality 0..*).
+'model::Content' (role 'model_Content', cardinality 0..*) is associated with 'model::Revision' (role 'model_Revision', cardinality 0..*).
+'model::Revision' (role 'model_Revision5', cardinality 0..*) is associated with 'model::Content' (role 'model_Content4', cardinality 0..*).
+'model::RegisteredUser' (role 'model_RegisteredUser', cardinality 0..*) is associated with 'model::Talk' (role 'model_Talk', cardinality 0..*).
+'model::Discussion' (role 'model_Discussion', cardinality 0..*) is associated with 'model::Content' (role 'model_Content2', cardinality 0..*).

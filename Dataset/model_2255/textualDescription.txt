@@ -1,0 +1,28 @@
+The model has 8 class(es).
+The class 'schoolIncqDerived::SchoolClass' has the following attributes: 'code' of type str.
+The class 'schoolIncqDerived::Year' has the following attributes: 'startingDate' of type int.
+The class 'Course' has no attributes.
+The class 'schoolIncqDerived::School' has the following attributes: 'address' of type str; 'currentYear' of type int; 'name' of type str; 'numberOfTeachers' of type int.
+The class 'schoolIncqDerived::Course' has the following attributes: 'subject' of type str; 'weight' of type int.
+The class 'schoolIncqDerived::SpecialisationCourse' has the following attributes: 'specialisation' of type str.
+The class 'schoolIncqDerived::Teacher' has the following attributes: 'name' of type str.
+The class 'schoolIncqDerived::Student' has the following attributes: 'name' of type str.
+'schoolIncqDerived::SpecialisationCourse' is a specialization of 'Course'.
+'schoolIncqDerived::School' (role 'school7', cardinality 0..*) is associated with 'schoolIncqDerived::Teacher' (role 'Teacher8', cardinality 0..*).
+'schoolIncqDerived::Course' (role 'Course27', cardinality 0..*) is associated with 'schoolIncqDerived::Teacher' (role 'teacher', cardinality 0..*).
+'schoolIncqDerived::SchoolClass' (role 'SchoolClass', cardinality 0..*) is associated with 'schoolIncqDerived::Course' (role 'courses4', cardinality 0..*).
+'schoolIncqDerived::SchoolClass' (role 'SchoolClass34', cardinality 0..*) is associated with 'schoolIncqDerived::Year' (role 'year', cardinality 0..*).
+'schoolIncqDerived::SchoolClass' (role 'schoolIncqDerived_SchoolClass', cardinality 0..*) is associated with 'schoolIncqDerived::Teacher' (role 'schoolIncqDerived_Teacher21', cardinality 0..*).
+'schoolIncqDerived::School' (role 'school', cardinality 0..*) is associated with 'schoolIncqDerived::Year' (role 'Year', cardinality 0..*).
+'schoolIncqDerived::School' (role 'School25', cardinality 0..*) is associated with 'schoolIncqDerived::Teacher' (role 'teachers', cardinality 0..*).
+'schoolIncqDerived::Year' (role 'Year15', cardinality 0..*) is associated with 'schoolIncqDerived::SchoolClass' (role 'schoolClasses', cardinality 0..*).
+'schoolIncqDerived::School' (role 'schoolIncqDerived_School', cardinality 0..*) is associated with 'schoolIncqDerived::Teacher' (role 'schoolIncqDerived_Teacher', cardinality 0..*).
+'schoolIncqDerived::School' (role 'School32', cardinality 0..*) is associated with 'schoolIncqDerived::Year' (role 'years', cardinality 0..*).
+'schoolIncqDerived::School' (role 'School', cardinality 0..*) is associated with 'schoolIncqDerived::Course' (role 'courses', cardinality 0..*).
+'schoolIncqDerived::Teacher' (role 'schoolIncqDerived_Teacher29', cardinality 0..*) is associated with 'schoolIncqDerived::SchoolClass' (role 'schoolIncqDerived_SchoolClass30', cardinality 0..*).
+'schoolIncqDerived::Student' (role 'Student', cardinality 0..*) is associated with 'schoolIncqDerived::SchoolClass' (role 'schoolClass', cardinality 0..*).
+'schoolIncqDerived::Course' (role 'courses2', cardinality 0..*) is associated with 'schoolIncqDerived::Teacher' (role 'Teacher', cardinality 0..*).
+'schoolIncqDerived::SchoolClass' (role 'schoolClass18', cardinality 0..*) is associated with 'schoolIncqDerived::Course' (role 'Course19', cardinality 0..*).
+'schoolIncqDerived::Year' (role 'schoolIncqDerived_Year', cardinality 0..*) is associated with 'schoolIncqDerived::School' (role 'schoolIncqDerived_School13', cardinality 0..*).
+'schoolIncqDerived::Course' (role 'Course', cardinality 0..*) is associated with 'schoolIncqDerived::School' (role 'school10', cardinality 0..*).
+'schoolIncqDerived::Student' (role 'students', cardinality 0..*) is associated with 'schoolIncqDerived::SchoolClass' (role 'SchoolClass23', cardinality 0..*).

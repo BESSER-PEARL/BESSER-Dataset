@@ -1,0 +1,34 @@
+The model has 13 class(es).
+The class 'traces::C' has the following attributes: 'name' of type str.
+The class 'traces::B' has the following attributes: 'name' of type str.
+The class 'Trace' has no attributes.
+The class 'traces::E' has the following attributes: 'name' of type str.
+The class 'traces::Trace' has no attributes.
+The class 'traces::R2::Trace' has no attributes.
+The class 'traces::A' has the following attributes: 'name' of type str.
+The class 'RootIn' has no attributes.
+The class 'traces::R1::Trace' has no attributes.
+The class 'traces::D' has the following attributes: 'name' of type str.
+The class 'RootOut' has no attributes.
+The class 'traces::RootOut' has no attributes.
+The class 'traces::RootIn' has no attributes.
+'traces::A' is a specialization of 'RootIn'.
+'traces::C' is a specialization of 'RootIn'.
+'traces::B' is a specialization of 'RootIn'.
+'traces::R2::Trace' is a specialization of 'Trace'.
+'traces::R1::Trace' is a specialization of 'Trace'.
+'traces::D' is a specialization of 'RootOut'.
+'traces::E' is a specialization of 'RootOut'.
+'traces::B' (role 'traces_B', cardinality 0..*) is associated with 'traces::R2::Trace' (role 'traces_R2_Trace', cardinality 0..*).
+'traces::D' (role 'traces_D', cardinality 0..*) is associated with 'traces::R1::Trace' (role 'traces_R1_Trace5', cardinality 0..*).
+'traces::R1::Trace' (role 'traces_R1_Trace', cardinality 0..*) is associated with 'traces::A' (role 'traces_A', cardinality 0..*).
+'traces::R2::Trace' (role 'traces_R2_Trace11', cardinality 0..*) is associated with 'traces::E' (role 'traces_E', cardinality 0..*).
+'traces::B' (role 'traces_B14', cardinality 0..*) is associated with 'traces::A' (role 'traces_A13', cardinality 0..*).
+'traces::D' (role 'traces_D25', cardinality 0..*) is associated with 'traces::D' (role 'traces_D23', cardinality 0..*).
+'traces::A' (role 'traces_A16', cardinality 0..*) is associated with 'traces::C' (role 'traces_C', cardinality 0..*).
+'traces::RootIn' (role 'traces_RootIn', cardinality 0..*) is associated with 'traces::Trace' (role 'traces_Trace', cardinality 0..*).
+'traces::E' (role 'traces_E22', cardinality 0..*) is associated with 'traces::D' (role 'traces_D21', cardinality 0..*).
+'traces::D' (role 'traces_D28', cardinality 0..*) is associated with 'traces::E' (role 'traces_E27', cardinality 0..*).
+'traces::Trace' (role 'traces_Trace2', cardinality 0..*) is associated with 'traces::RootOut' (role 'traces_RootOut', cardinality 0..*).
+'traces::B' (role 'traces_B18', cardinality 0..*) is associated with 'traces::A' (role 'traces_A19', cardinality 0..*).
+'traces::R1::Trace' (role 'traces_R1_Trace7', cardinality 0..*) is associated with 'traces::D' (role 'traces_D8', cardinality 0..*).

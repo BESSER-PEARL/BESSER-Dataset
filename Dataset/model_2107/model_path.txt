@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/alfonsodelavega/epsilonFork/examples/org.eclipse.epsilon.examples.hawk.suspectlinks/tests.ecore

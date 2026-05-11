@@ -1,0 +1,12 @@
+The model has 4 class(es).
+The class 'tdt4250::Specialisation' has the following attributes: 'name' of type str.
+The class 'tdt4250::StudyProgram' has the following attributes: 'name' of type str; 'number_of_semesters' of type int.
+The class 'tdt4250::Student' has the following attributes: 'current_semester' of type int; 'studentID' of type int.
+The class 'tdt4250::Course' has the following attributes: 'level' of type str; 'study_points' of type float; 'name' of type str; 'code' of type str.
+'tdt4250::Course' (role 'tdt4250_Course16', cardinality 0..*) is associated with 'tdt4250::Specialisation' (role 'tdt4250_Specialisation15', cardinality 0..*).
+'tdt4250::Course' (role 'tdt4250_Course', cardinality 0..*) is associated with 'tdt4250::StudyProgram' (role 'tdt4250_StudyProgram4', cardinality 0..*).
+'tdt4250::Course' (role 'tdt4250_Course7', cardinality 0..*) is associated with 'tdt4250::Student' (role 'tdt4250_Student6', cardinality 0..*).
+'tdt4250::Student' (role 'tdt4250_Student', cardinality 0..*) is associated with 'tdt4250::StudyProgram' (role 'tdt4250_StudyProgram', cardinality 0..*).
+'tdt4250::Specialisation' (role 'tdt4250_Specialisation', cardinality 0..*) is associated with 'tdt4250::StudyProgram' (role 'tdt4250_StudyProgram2', cardinality 0..*).
+'tdt4250::Course' (role 'tdt4250_Course13', cardinality 0..*) is associated with 'tdt4250::Specialisation' (role 'tdt4250_Specialisation12', cardinality 0..*).
+'tdt4250::Specialisation' (role 'tdt4250_Specialisation9', cardinality 0..*) is associated with 'tdt4250::Student' (role 'tdt4250_Student10', cardinality 0..*).

@@ -1,0 +1,24 @@
+The model has 7 class(es).
+The class 'ra::Specialization' has the following attributes: 'name' of type str.
+The class 'ra::Course' has the following attributes: 'code' of type str; 'name' of type str.
+The class 'ra::StudyPlan' has no attributes.
+The class 'ra::Semester' has the following attributes: 'totalPoints' of type float; 'semesterNumber' of type int.
+The class 'ra::Programme' has the following attributes: 'name' of type str; 'mCode' of type str.
+The class 'ra::Department' has no attributes.
+The class 'ra::MandatoryCourse' has the following attributes: 'credit' of type float; 'mandatory' of type bool.
+The enumeration 'programmeCode' has the following literals: 'Informatikk', 'Datateknologi2', 'Datateknologi5'.
+'ra::Course' (role 'ra_Course', cardinality 0..*) is associated with 'ra::Department' (role 'ra_Department2', cardinality 0..*).
+'ra::Programme' (role 'Programme', cardinality 0..*) is associated with 'ra::StudyPlan' (role 'studyPlan', cardinality 0..*).
+'ra::Course' (role 'course', cardinality 0..*) is associated with 'ra::MandatoryCourse' (role 'MandatoryCourse', cardinality 0..*).
+'ra::Department' (role 'ra_Department', cardinality 0..*) is associated with 'ra::Programme' (role 'ra_Programme', cardinality 0..*).
+'ra::Specialization' (role 'ra_Specialization18', cardinality 0..*) is associated with 'ra::Semester' (role 'ra_Semester19', cardinality 0..*).
+'ra::StudyPlan' (role 'ra_StudyPlan11', cardinality 0..*) is associated with 'ra::Specialization' (role 'ra_Specialization12', cardinality 0..*).
+'ra::MandatoryCourse' (role 'mandatoryCourse', cardinality 0..*) is associated with 'ra::Semester' (role 'Semester', cardinality 0..*).
+'ra::StudyPlan' (role 'StudyPlan', cardinality 0..*) is associated with 'ra::Programme' (role 'programme', cardinality 0..*).
+'ra::Course' (role 'Course', cardinality 0..*) is associated with 'ra::MandatoryCourse' (role 'mandatoryCourse27', cardinality 0..*).
+'ra::StudyPlan' (role 'ra_StudyPlan14', cardinality 0..*) is associated with 'ra::Semester' (role 'ra_Semester', cardinality 0..*).
+'ra::Department' (role 'ra_Department6', cardinality 0..*) is associated with 'ra::Specialization' (role 'ra_Specialization', cardinality 0..*).
+'ra::Semester' (role 'ra_Semester21', cardinality 0..*) is associated with 'ra::Course' (role 'ra_Course22', cardinality 0..*).
+'ra::StudyPlan' (role 'ra_StudyPlan16', cardinality 0..*) is associated with 'ra::MandatoryCourse' (role 'ra_MandatoryCourse', cardinality 0..*).
+'ra::Semester' (role 'semester', cardinality 0..*) is associated with 'ra::MandatoryCourse' (role 'MandatoryCourse24', cardinality 0..*).
+'ra::Department' (role 'ra_Department4', cardinality 0..*) is associated with 'ra::StudyPlan' (role 'ra_StudyPlan', cardinality 0..*).

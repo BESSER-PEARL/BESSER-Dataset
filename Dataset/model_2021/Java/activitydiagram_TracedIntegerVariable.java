@@ -1,0 +1,46 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class activitydiagram_TracedIntegerVariable  {
+
+
+
+
+
+
+    private trace_Events_IntegerVariable_getCurrentValueValue_integerVariableEntryEventOccurrence trace_events_integervariable_getcurrentvaluevalue_integervariableentryeventoccurrence;
+
+
+
+
+    private trace_Events_IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence trace_events_integervariable_setcurrentvalue_integervariableentryeventoccurrence;
+
+
+    public activitydiagram_TracedIntegerVariable(
+    ) {
+    }
+
+
+
+    public trace_Events_IntegerVariable_getCurrentValueValue_integerVariableEntryEventOccurrence getTrace_events_integervariable_getcurrentvaluevalue_integervariableentryeventoccurrence() {
+        return trace_events_integervariable_getcurrentvaluevalue_integervariableentryeventoccurrence;
+    }
+
+    public void setTrace_events_integervariable_getcurrentvaluevalue_integervariableentryeventoccurrence(trace_Events_IntegerVariable_getCurrentValueValue_integerVariableEntryEventOccurrence trace_events_integervariable_getcurrentvaluevalue_integervariableentryeventoccurrence) {
+        this.trace_events_integervariable_getcurrentvaluevalue_integervariableentryeventoccurrence = trace_events_integervariable_getcurrentvaluevalue_integervariableentryeventoccurrence;
+    }
+    public trace_Events_IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence getTrace_events_integervariable_setcurrentvalue_integervariableentryeventoccurrence() {
+        return trace_events_integervariable_setcurrentvalue_integervariableentryeventoccurrence;
+    }
+
+    public void setTrace_events_integervariable_setcurrentvalue_integervariableentryeventoccurrence(trace_Events_IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence trace_events_integervariable_setcurrentvalue_integervariableentryeventoccurrence) {
+        this.trace_events_integervariable_setcurrentvalue_integervariableentryeventoccurrence = trace_events_integervariable_setcurrentvalue_integervariableentryeventoccurrence;
+    }
+
+}

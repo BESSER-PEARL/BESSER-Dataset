@@ -1,0 +1,531 @@
+The model has 245 class(es).
+The class 'gmf::all::tooldef::Toolbar' has no attributes.
+The class 'gmf::all::mappings::FeatureValueSpec' has no attributes.
+The class 'gmf::all::mappings::MappingEntry' has no attributes.
+The class 'AbstractFigure' has no attributes.
+The class 'gmf::all::mappings::OclChoiceLabelMapping' has no attributes.
+The class 'Border' has no attributes.
+The class 'gmf::all::gmfgraph::StackLayout' has no attributes.
+The class 'gmf::all::tooldef::PaletteSeparator' has no attributes.
+The class 'VisualFacet' has no attributes.
+The class 'gmf::all::mappings::Measurable' has no attributes.
+The class 'gmf::all::mappings::DiagramElementTarget' has no attributes.
+The class 'gmf::all::gmfgraph::GradientFacet' has the following attributes: 'direction' of type str.
+The class 'gmf::all::mappings::NotationElementTarget' has no attributes.
+The class 'FeatureInitializer' has no attributes.
+The class 'mappings::gmf::all::EReference' has no attributes.
+The class 'FigureGallery' has no attributes.
+The class 'gmfgraph::CustomClass' has no attributes.
+The class 'FeatureSeqInitializer' has no attributes.
+The class 'gmf::all::gmfgraph::PolylineConnection' has no attributes.
+The class 'gmfgraph::LayoutData' has no attributes.
+The class 'gmf::all::tooldef::GenericTool' has the following attributes: 'toolClass' of type str.
+The class 'gmf::all::mappings::FeatureSeqInitializer' has no attributes.
+The class 'AbstractNode' has no attributes.
+The class 'gmf::all::gmfgraph::CustomAttributeOwner' has no attributes.
+The class 'gmf::all::gmfgraph::DiagramLabel' has the following attributes: 'external' of type bool; 'elementIcon' of type bool.
+The class 'gmf::all::mappings::AuditedMetricTarget' has no attributes.
+The class 'gmf::all::tooldef::MainMenu' has the following attributes: 'title' of type str.
+The class 'gmf::all::gmfgraph::XYLayoutData' has no attributes.
+The class 'gmf::all::gmfgraph::ScalablePolygon' has no attributes.
+The class 'gmf::all::gmfgraph::BorderRef' has no attributes.
+The class 'gmf::all::mappings::ValueExpression' has the following attributes: 'body' of type str; 'langName' of type str; 'language' of type str.
+The class 'gmf::all::tooldef::MenuAction' has the following attributes: 'kind' of type str; 'hotKey' of type str.
+The class 'gmf::all::gmfgraph::Pin' has no attributes.
+The class 'gmfgraph::ConnectionFigure' has no attributes.
+The class 'mappings::gmf::all::EStructuralFeature' has no attributes.
+The class 'gmf::all::gmfgraph::LineBorder' has the following attributes: 'width' of type int.
+The class 'gmf::all::mappings::LabelMapping' has the following attributes: 'readOnly' of type bool.
+The class 'mappings::NeedsContainment' has no attributes.
+The class 'StyleSelector' has no attributes.
+The class 'gmf::all::mappings::AuditRule' has the following attributes: 'useInLiveMode' of type bool; 'message' of type str; 'severity' of type str; 'id' of type str.
+The class 'gmf::all::gmfgraph::Label' has the following attributes: 'text' of type str.
+The class 'SVGProperty' has no attributes.
+The class 'gmf::all::gmfgraph::CustomBorder' has no attributes.
+The class 'gmf::all::gmfgraph::PinOwner' has no attributes.
+The class 'gmf::all::mappings::RuleBase' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'gmfgraph::PinOwner' has no attributes.
+The class 'gmf::all::tooldef::AbstractTool' has the following attributes: 'description' of type str; 'title' of type str.
+The class 'gmf::all::tooldef::StandardTool' has the following attributes: 'toolKind' of type str.
+The class 'Insets' has no attributes.
+The class 'gmf::all::mappings::FeatureInitializer' has no attributes.
+The class 'gmf::all::mappings::ElementInitializer' has no attributes.
+The class 'gmf::all::gmfgraph::RGBColor' has the following attributes: 'blue' of type int; 'green' of type int; 'red' of type int.
+The class 'Measurable' has no attributes.
+The class 'Image' has no attributes.
+The class 'gmf::all::gmfgraph::FigureRef' has no attributes.
+The class 'gmf::all::mappings::ToolOwner' has no attributes.
+The class 'Identity' has no attributes.
+The class 'DiagramElement' has no attributes.
+The class 'gmf::all::mappings::CanvasMapping' has no attributes.
+The class 'mappings::gmf::all::EClass' has no attributes.
+The class 'gmf::all::gmfgraph::DefaultSizeFacet' has no attributes.
+The class 'gmf::all::tooldef::PredefinedMenu' has no attributes.
+The class 'gmf::all::gmfgraph::Rectangle' has no attributes.
+The class 'gmf::all::gmfgraph::CustomLayout' has no attributes.
+The class 'gmf::all::gmfgraph::Compartment' has the following attributes: 'collapsible' of type bool; 'needsTitle' of type bool.
+The class 'gmf::all::gmfgraph::PolygonDecoration' has no attributes.
+The class 'MainMenu' has no attributes.
+The class 'DecorationFigure' has no attributes.
+The class 'gmf::all::mappings::CompartmentMapping' has no attributes.
+The class 'LinkConstraints' has no attributes.
+The class 'gmf::all::tooldef::GenericStyleSelector' has the following attributes: 'values' of type str.
+The class 'gmf::all::gmfgraph::Connection' has no attributes.
+The class 'gmf::all::mappings::ReferenceNewElementSpec' has no attributes.
+The class 'FigureDescriptor' has no attributes.
+The class 'gmf::all::gmfgraph::Node' has the following attributes: 'resizeConstraint' of type str; 'affixedParentSide' of type str.
+The class 'gmf::all::tooldef::ItemRef' has no attributes.
+The class 'TopNodeReference' has no attributes.
+The class 'gmf::all::mappings::Mapping' has no attributes.
+The class 'Polyline' has no attributes.
+The class 'gmf::all::gmfgraph::ColorPin' has the following attributes: 'backgroundNotForeground' of type bool.
+The class 'Font' has no attributes.
+The class 'AbstractTool' has no attributes.
+The class 'gmf::all::mappings::NodeMapping' has no attributes.
+The class 'gmf::all::mappings::DomainElementTarget' has no attributes.
+The class 'ChildAccess' has no attributes.
+The class 'mappings::gmf::all::EAttribute' has no attributes.
+The class 'gmf::all::gmfgraph::AbstractNode' has no attributes.
+The class 'gmf::all::gmfgraph::Layoutable' has no attributes.
+The class 'gmf::all::gmfgraph::CustomLayoutData' has no attributes.
+The class 'gmf::all::gmfgraph::LabeledContainer' has no attributes.
+The class 'gmf::all::gmfgraph::VisiblePin' has no attributes.
+The class 'Point' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'gmf::all::gmfgraph::FigureAccessor' has the following attributes: 'accessor' of type str.
+The class 'gmf::all::gmfgraph::LayoutData' has no attributes.
+The class 'gmfgraph::Layout' has no attributes.
+The class 'gmf::all::mappings::ChildReference' has no attributes.
+The class 'mappings::MappingEntry' has no attributes.
+The class 'gmf::all::gmfgraph::Ellipse' has no attributes.
+The class 'gmf::all::gmfgraph::CustomPin' has the following attributes: 'customOperationType' of type str; 'customOperationName' of type str.
+The class 'CanvasMapping' has no attributes.
+The class 'gmf::all::mappings::ExpressionLabelMapping' has no attributes.
+The class 'Shape' has no attributes.
+The class 'gmf::all::mappings::VisualEffectMapping' has the following attributes: 'oclExpression' of type str.
+The class 'gmf::all::tooldef::ToolRegistry' has no attributes.
+The class 'gmf::all::gmfgraph::XYLayout' has no attributes.
+The class 'gmf::all::tooldef::ToolContainer' has no attributes.
+The class 'gmf::all::gmfgraph::DecorationFigure' has no attributes.
+The class 'ContextMenu' has no attributes.
+The class 'gmf::all::gmfgraph::FlowLayout' has the following attributes: 'minorSpacing' of type int; 'vertical' of type bool; 'majorSpacing' of type int; 'matchMinorSize' of type bool; 'forceSingleLine' of type bool; 'minorAlignment' of type str; 'majorAlignment' of type str.
+The class 'Auditable' has no attributes.
+The class 'gmf::all::gmfgraph::AlignmentFacet' has the following attributes: 'alignment' of type str.
+The class 'gmf::all::tooldef::StyleSelector' has no attributes.
+The class 'LinkMapping' has no attributes.
+The class 'gmf::all::mappings::DesignLabelMapping' has no attributes.
+The class 'gmf::all::gmfgraph::Polyline' has no attributes.
+The class 'CustomAttributeOwner' has no attributes.
+The class 'gmf::all::gmfgraph::Insets' has the following attributes: 'top' of type int; 'left' of type int; 'right' of type int; 'bottom' of type int.
+The class 'gmf::all::mappings::MenuOwner' has no attributes.
+The class 'Color' has no attributes.
+The class 'gmf::all::gmfgraph::CustomConnection' has no attributes.
+The class 'gmf::all::tooldef::BundleImage' has the following attributes: 'path' of type str; 'bundle' of type str.
+The class 'ReferenceNewElementSpec' has no attributes.
+The class 'gmf::all::gmfgraph::CompoundBorder' has no attributes.
+The class 'Rectangle2D' has no attributes.
+The class 'gmf::all::gmfgraph::LabelOffsetFacet' has the following attributes: 'x' of type int; 'y' of type int.
+The class 'NodeMapping' has no attributes.
+The class 'gmfgraph::CustomAttributeOwner' has no attributes.
+The class 'ToolContainer' has no attributes.
+The class 'gmf::all::gmfgraph::RoundedRectangle' has the following attributes: 'cornerHeight' of type int; 'cornerWidth' of type int.
+The class 'gmfgraph::CustomFigure' has no attributes.
+The class 'Layoutable' has no attributes.
+The class 'mappings::ToolOwner' has no attributes.
+The class 'mappings::Auditable' has no attributes.
+The class 'gmf::all::gmfgraph::Identity' has the following attributes: 'name' of type str.
+The class 'ContributionItem' has no attributes.
+The class 'gmf::all::mappings::NeedsContainment' has no attributes.
+The class 'Compartment' has no attributes.
+The class 'Connection' has no attributes.
+The class 'gmf::all::gmfgraph::Dimension' has the following attributes: 'dx' of type int; 'dy' of type int.
+The class 'gmf::all::tooldef::PopupMenu' has the following attributes: 'iD' of type str.
+The class 'gmf::all::gmfgraph::Font' has no attributes.
+The class 'gmfgraph::Polyline' has no attributes.
+The class 'gmfgraph::DecorationFigure' has no attributes.
+The class 'gmf::all::tooldef::ContributionItem' has the following attributes: 'title' of type str.
+The class 'tooldef::PredefinedItem' has no attributes.
+The class 'Palette' has no attributes.
+The class 'Menu' has no attributes.
+The class 'gmf::all::tooldef::Separator' has the following attributes: 'name' of type str.
+The class 'LabelMapping' has no attributes.
+The class 'mappings::Measurable' has no attributes.
+The class 'MetricContainer' has no attributes.
+The class 'MetricRule' has no attributes.
+The class 'gmf::all::gmfgraph::VisualFacet' has no attributes.
+The class 'ValueExpression' has no attributes.
+The class 'gmf::all::gmfgraph::DiagramElement' has no attributes.
+The class 'gmf::all::gmfgraph::BorderLayoutData' has the following attributes: 'alignment' of type str; 'vertical' of type bool.
+The class 'gmf::all::mappings::AppearanceSteward' has no attributes.
+The class 'VisualEffectMapping' has no attributes.
+The class 'mappings::AppearanceSteward' has no attributes.
+The class 'gmf::all::gmfgraph::Figure' has no attributes.
+The class 'gmf::all::gmfgraph::Rectangle2D' has the following attributes: 'height' of type float; 'x' of type float; 'y' of type float; 'width' of type float.
+The class 'gmf::all::gmfgraph::GridLayout' has the following attributes: 'numColumns' of type int; 'equalWidth' of type bool.
+The class 'MenuAction' has no attributes.
+The class 'NeedsContainment' has no attributes.
+The class 'gmf::all::gmfgraph::BasicFont' has the following attributes: 'style' of type str; 'faceName' of type str; 'height' of type int.
+The class 'CompartmentMapping' has no attributes.
+The class 'gmf::all::gmfgraph::AbstractFigure' has no attributes.
+The class 'gmf::all::gmfgraph::GridLayoutData' has the following attributes: 'verticalAlignment' of type str; 'grabExcessHorizontalSpace' of type bool; 'horizontalSpan' of type int; 'grabExcessVerticalSpace' of type bool; 'verticalSpan' of type int; 'horizontalIndent' of type int; 'horizontalAlignment' of type str.
+The class 'gmf::all::tooldef::ToolGroup' has the following attributes: 'collapsible' of type bool; 'stack' of type bool.
+The class 'gmf::all::mappings::DomainAttributeTarget' has the following attributes: 'nullAsError' of type bool.
+The class 'gmf::all::gmfgraph::Polygon' has no attributes.
+The class 'gmf::all::mappings::AuditContainer' has the following attributes: 'description' of type str; 'id' of type str; 'name' of type str.
+The class 'tooldef::ContributionItem' has no attributes.
+The class 'gmf::all::gmfgraph::GeneralFacet' has the following attributes: 'identifier' of type str; 'data' of type str.
+The class 'gmf::all::tooldef::DefaultImage' has no attributes.
+The class 'gmf::all::gmfgraph::CustomAttribute' has the following attributes: 'multiStatementValue' of type bool; 'name' of type str; 'value' of type str; 'directAccess' of type bool.
+The class 'gmf::all::mappings::Auditable' has no attributes.
+The class 'Canvas' has no attributes.
+The class 'gmf::all::gmfgraph::PolylineDecoration' has no attributes.
+The class 'AuditContainer' has no attributes.
+The class 'gmf::all::mappings::MetricRule' has the following attributes: 'key' of type str; 'highLimit' of type str; 'lowLimit' of type str.
+The class 'gmf::all::gmfgraph::CustomDecoration' has no attributes.
+The class 'ElementInitializer' has no attributes.
+The class 'gmf::all::gmfgraph::VerticalLabel' has the following attributes: 'text' of type str.
+The class 'gmfgraph::AbstractFigure' has no attributes.
+The class 'Toolbar' has no attributes.
+The class 'gmf::all::tooldef::PredefinedItem' has the following attributes: 'identifier' of type str.
+The class 'NodeReference' has no attributes.
+The class 'gmf::all::gmfgraph::FigureGallery' has the following attributes: 'implementationBundle' of type str.
+The class 'Figure' has no attributes.
+The class 'gmf::all::gmfgraph::SVGFigure' has the following attributes: 'documentURI' of type str; 'noCanvasWidth' of type bool; 'noCanvasHeight' of type bool.
+The class 'gmf::all::gmfgraph::ConstantColor' has the following attributes: 'value' of type str.
+The class 'gmf::all::mappings::NodeReference' has no attributes.
+The class 'Layout' has no attributes.
+The class 'gmf::all::gmfgraph::ConnectionFigure' has no attributes.
+The class 'gmf::all::gmfgraph::BorderLayout' has no attributes.
+The class 'gmf::all::mappings::FeatureLabelMapping' has the following attributes: 'editMethod' of type str; 'viewMethod' of type str; 'editPattern' of type str; 'editorPattern' of type str; 'viewPattern' of type str.
+The class 'gmf::all::tooldef::CreationTool' has no attributes.
+The class 'gmf::all::gmfgraph::ChildAccess' has the following attributes: 'accessor' of type str.
+The class 'gmf::all::gmfgraph::Point' has the following attributes: 'y' of type int; 'x' of type int.
+The class 'Node' has no attributes.
+The class 'mappings::MenuOwner' has no attributes.
+The class 'AuditRule' has no attributes.
+The class 'Polygon' has no attributes.
+The class 'mappings::gmf::all::EPackage' has no attributes.
+The class 'gmf::all::gmfgraph::MarginBorder' has no attributes.
+The class 'gmf::all::mappings::Constraint' has no attributes.
+The class 'gmf::all::mappings::LinkConstraints' has no attributes.
+The class 'gmf::all::mappings::MetricContainer' has no attributes.
+The class 'gmf::all::tooldef::ItemBase' has no attributes.
+The class 'gmfgraph::Polygon' has no attributes.
+The class 'DiagramLabel' has no attributes.
+The class 'ChildReference' has no attributes.
+The class 'Dimension' has no attributes.
+The class 'gmf::all::gmfgraph::LayoutRef' has no attributes.
+The class 'gmfgraph::Border' has no attributes.
+The class 'gmf::all::mappings::LinkMapping' has no attributes.
+The class 'gmf::all::mappings::TopNodeReference' has no attributes.
+The class 'gmf::all::gmfgraph::SVGProperty' has the following attributes: 'type' of type str; 'getter' of type str; 'setter' of type str; 'query' of type str; 'attribute' of type str; 'callSuper' of type bool.
+The class 'gmf::all::gmfgraph::Layout' has no attributes.
+The class 'gmf::all::tooldef::Menu' has no attributes.
+The class 'RealFigure' has no attributes.
+The class 'FigureAccessor' has no attributes.
+The class 'gmf::all::gmfgraph::Shape' has the following attributes: 'lineWidth' of type int; 'outline' of type bool; 'lineKind' of type str; 'fill' of type bool; 'xorOutline' of type bool; 'xorFill' of type bool.
+The class 'gmf::all::gmfgraph::CustomFigure' has no attributes.
+The class 'gmf::all::gmfgraph::Color' has no attributes.
+The class 'gmf::all::gmfgraph::InvisibleRectangle' has no attributes.
+The class 'CustomAttribute' has no attributes.
+The class 'gmf::all::tooldef::Palette' has no attributes.
+The class 'tooldef::Menu' has no attributes.
+The class 'gmf::all::gmfgraph::CustomClass' has the following attributes: 'qualifiedClassName' of type str.
+The class 'RuleBase' has no attributes.
+The class 'gmf::all::tooldef::ContextMenu' has no attributes.
+The class 'gmf::all::gmfgraph::CenterLayout' has no attributes.
+The class 'gmf::all::gmfgraph::FigureDescriptor' has no attributes.
+The class 'gmf::all::tooldef::Image' has no attributes.
+The class 'LayoutData' has no attributes.
+The class 'gmf::all::gmfgraph::RealFigure' has the following attributes: 'name' of type str.
+The class 'MappingEntry' has no attributes.
+The class 'ItemBase' has no attributes.
+The class 'gmf::all::gmfgraph::Border' has no attributes.
+The class 'gmfgraph::RealFigure' has no attributes.
+The class 'Pin' has no attributes.
+The class 'gmf::all::gmfgraph::Canvas' has no attributes.
+The enumeration 'StandardToolKind' has the following literals: 'SELECT', 'MARQUEE', 'ZOOM_OUT', 'SELECT_PAN', 'ZOOM_IN', 'ZOOM_PAN'.
+The enumeration 'LabelTextAccessMethod' has the following literals: 'MESSAGE_FORMAT', 'NATIVE', 'REGEXP', 'PRINTF'.
+The enumeration 'SVGPropertyType' has the following literals: 'STRING', 'COLOR', 'FLOAT'.
+The enumeration 'Direction' has the following literals: 'NORTH_WEST', 'NONE', 'SOUTH', 'NORTH_EAST', 'WEST', 'NORTH', 'SOUTH_WEST', 'SOUTH_EAST', 'NORTH_SOUTH', 'EAST', 'NSEW', 'EAST_WEST'.
+The enumeration 'Language' has the following literals: 'java', 'ocl', 'literal', 'regexp', 'nregexp'.
+The enumeration 'Severity' has the following literals: 'WARNING', 'ERROR', 'INFO'.
+The enumeration 'FontStyle' has the following literals: 'BOLD', 'NORMAL', 'ITALIC'.
+The enumeration 'Alignment' has the following literals: 'END', 'FILL', 'BEGINNING', 'CENTER'.
+The enumeration 'ActionKind' has the following literals: 'PROPCHANGE', 'CREATE', 'PROCESS', 'CUSTOM', 'MODIFY'.
+The enumeration 'ColorConstants' has the following literals: 'red', 'lightGreen', 'cyan', 'darkBlue', 'lightGray', 'black', 'yellow', 'white', 'gray', 'lightBlue', 'blue', 'orange', 'darkGreen', 'green', 'darkGray'.
+The enumeration 'AppearanceStyle' has the following literals: 'Font', 'Fill', 'Line'.
+The enumeration 'LineKind' has the following literals: 'LINE_DOT', 'LINE_CUSTOM', 'LINE_DASH', 'LINE_DASHDOTDOT', 'LINE_SOLID', 'LINE_DASHDOT'.
+'gmf::all::mappings::OclChoiceLabelMapping' is a specialization of 'LabelMapping'.
+'gmf::all::gmfgraph::XYLayoutData' is a specialization of 'LayoutData'.
+'gmf::all::mappings::AuditedMetricTarget' is a specialization of 'Auditable'.
+'gmf::all::gmfgraph::CustomFigure' is a specialization of 'gmfgraph::RealFigure'.
+'gmf::all::mappings::NodeMapping' is a specialization of 'mappings::ToolOwner'.
+'gmf::all::gmfgraph::LabeledContainer' is a specialization of 'RealFigure'.
+'gmf::all::gmfgraph::CenterLayout' is a specialization of 'Layout'.
+'gmf::all::mappings::ExpressionLabelMapping' is a specialization of 'LabelMapping'.
+'gmf::all::gmfgraph::CompoundBorder' is a specialization of 'Border'.
+'gmf::all::gmfgraph::GeneralFacet' is a specialization of 'VisualFacet'.
+'gmf::all::gmfgraph::PolylineConnection' is a specialization of 'gmfgraph::Polyline'.
+'gmf::all::tooldef::ContextMenu' is a specialization of 'Menu'.
+'gmf::all::gmfgraph::Shape' is a specialization of 'RealFigure'.
+'gmf::all::gmfgraph::ScalablePolygon' is a specialization of 'Polygon'.
+'gmf::all::gmfgraph::FigureGallery' is a specialization of 'Identity'.
+'gmf::all::mappings::FeatureSeqInitializer' is a specialization of 'ElementInitializer'.
+'gmf::all::tooldef::CreationTool' is a specialization of 'AbstractTool'.
+'gmf::all::gmfgraph::PolylineDecoration' is a specialization of 'gmfgraph::Polyline'.
+'gmf::all::gmfgraph::Ellipse' is a specialization of 'Shape'.
+'gmf::all::gmfgraph::RealFigure' is a specialization of 'gmfgraph::AbstractFigure'.
+'gmf::all::gmfgraph::RealFigure' is a specialization of 'gmfgraph::CustomAttributeOwner'.
+'gmf::all::tooldef::GenericStyleSelector' is a specialization of 'StyleSelector'.
+'gmf::all::gmfgraph::FigureDescriptor' is a specialization of 'Identity'.
+'gmf::all::gmfgraph::Polyline' is a specialization of 'Shape'.
+'gmf::all::gmfgraph::BorderRef' is a specialization of 'Border'.
+'gmf::all::gmfgraph::SVGFigure' is a specialization of 'RealFigure'.
+'gmf::all::mappings::ReferenceNewElementSpec' is a specialization of 'FeatureInitializer'.
+'gmf::all::tooldef::GenericTool' is a specialization of 'AbstractTool'.
+'gmf::all::mappings::DesignLabelMapping' is a specialization of 'LabelMapping'.
+'gmf::all::gmfgraph::InvisibleRectangle' is a specialization of 'RealFigure'.
+'gmf::all::gmfgraph::LineBorder' is a specialization of 'Border'.
+'gmf::all::tooldef::Palette' is a specialization of 'ToolContainer'.
+'gmf::all::tooldef::PredefinedMenu' is a specialization of 'tooldef::PredefinedItem'.
+'gmf::all::gmfgraph::CustomBorder' is a specialization of 'gmfgraph::Border'.
+'gmf::all::gmfgraph::StackLayout' is a specialization of 'Layout'.
+'gmf::all::gmfgraph::PolygonDecoration' is a specialization of 'gmfgraph::DecorationFigure'.
+'gmf::all::gmfgraph::Node' is a specialization of 'AbstractNode'.
+'gmf::all::gmfgraph::BorderLayoutData' is a specialization of 'LayoutData'.
+'gmf::all::mappings::NotationElementTarget' is a specialization of 'mappings::Auditable'.
+'gmf::all::mappings::LinkMapping' is a specialization of 'mappings::ToolOwner'.
+'gmf::all::mappings::FeatureValueSpec' is a specialization of 'FeatureInitializer'.
+'gmf::all::gmfgraph::DecorationFigure' is a specialization of 'RealFigure'.
+'gmf::all::mappings::ChildReference' is a specialization of 'NodeReference'.
+'gmf::all::gmfgraph::CustomPin' is a specialization of 'Pin'.
+'gmf::all::tooldef::StandardTool' is a specialization of 'AbstractTool'.
+'gmf::all::tooldef::PopupMenu' is a specialization of 'tooldef::Menu'.
+'gmf::all::gmfgraph::FlowLayout' is a specialization of 'Layout'.
+'gmf::all::mappings::DomainElementTarget' is a specialization of 'mappings::Measurable'.
+'gmf::all::mappings::DomainElementTarget' is a specialization of 'mappings::Auditable'.
+'gmf::all::gmfgraph::VerticalLabel' is a specialization of 'RealFigure'.
+'gmf::all::tooldef::PredefinedItem' is a specialization of 'ItemBase'.
+'gmf::all::gmfgraph::Figure' is a specialization of 'Layoutable'.
+'gmf::all::gmfgraph::AbstractNode' is a specialization of 'DiagramElement'.
+'gmf::all::mappings::FeatureLabelMapping' is a specialization of 'LabelMapping'.
+'gmf::all::gmfgraph::RGBColor' is a specialization of 'Color'.
+'gmf::all::tooldef::DefaultImage' is a specialization of 'Image'.
+'gmf::all::gmfgraph::PolylineConnection' is a specialization of 'gmfgraph::ConnectionFigure'.
+'gmf::all::tooldef::PopupMenu' is a specialization of 'tooldef::ContributionItem'.
+'gmf::all::mappings::LinkMapping' is a specialization of 'mappings::AppearanceSteward'.
+'gmf::all::tooldef::BundleImage' is a specialization of 'Image'.
+'gmf::all::mappings::TopNodeReference' is a specialization of 'NodeReference'.
+'gmf::all::gmfgraph::Canvas' is a specialization of 'Identity'.
+'gmf::all::mappings::NodeReference' is a specialization of 'NeedsContainment'.
+'gmf::all::gmfgraph::BorderLayout' is a specialization of 'Layout'.
+'gmf::all::gmfgraph::CustomFigure' is a specialization of 'gmfgraph::CustomClass'.
+'gmf::all::mappings::DiagramElementTarget' is a specialization of 'mappings::Auditable'.
+'gmf::all::gmfgraph::PolygonDecoration' is a specialization of 'gmfgraph::Polygon'.
+'gmf::all::gmfgraph::Rectangle' is a specialization of 'Shape'.
+'gmf::all::mappings::DomainAttributeTarget' is a specialization of 'Auditable'.
+'gmf::all::gmfgraph::LayoutRef' is a specialization of 'Layout'.
+'gmf::all::mappings::DiagramElementTarget' is a specialization of 'mappings::Measurable'.
+'gmf::all::gmfgraph::RoundedRectangle' is a specialization of 'Shape'.
+'gmf::all::gmfgraph::Polygon' is a specialization of 'Polyline'.
+'gmf::all::gmfgraph::ColorPin' is a specialization of 'Pin'.
+'gmf::all::gmfgraph::Label' is a specialization of 'RealFigure'.
+'gmf::all::mappings::NodeMapping' is a specialization of 'mappings::MenuOwner'.
+'gmf::all::gmfgraph::PolylineDecoration' is a specialization of 'gmfgraph::DecorationFigure'.
+'gmf::all::gmfgraph::CustomLayoutData' is a specialization of 'gmfgraph::CustomClass'.
+'gmf::all::gmfgraph::VisiblePin' is a specialization of 'Pin'.
+'gmf::all::gmfgraph::MarginBorder' is a specialization of 'Border'.
+'gmf::all::gmfgraph::GradientFacet' is a specialization of 'VisualFacet'.
+'gmf::all::gmfgraph::CustomBorder' is a specialization of 'gmfgraph::CustomClass'.
+'gmf::all::gmfgraph::FigureRef' is a specialization of 'AbstractFigure'.
+'gmf::all::tooldef::ContributionItem' is a specialization of 'ItemBase'.
+'gmf::all::gmfgraph::RealFigure' is a specialization of 'gmfgraph::PinOwner'.
+'gmf::all::tooldef::ToolContainer' is a specialization of 'AbstractTool'.
+'gmf::all::gmfgraph::DiagramLabel' is a specialization of 'Node'.
+'gmf::all::gmfgraph::CustomDecoration' is a specialization of 'gmfgraph::CustomFigure'.
+'gmf::all::tooldef::PredefinedMenu' is a specialization of 'tooldef::Menu'.
+'gmf::all::mappings::LinkMapping' is a specialization of 'mappings::MenuOwner'.
+'gmf::all::mappings::LinkMapping' is a specialization of 'mappings::MappingEntry'.
+'gmf::all::gmfgraph::CustomClass' is a specialization of 'CustomAttributeOwner'.
+'gmf::all::gmfgraph::XYLayout' is a specialization of 'Layout'.
+'gmf::all::mappings::NodeMapping' is a specialization of 'mappings::AppearanceSteward'.
+'gmf::all::tooldef::MainMenu' is a specialization of 'Menu'.
+'gmf::all::gmfgraph::CustomConnection' is a specialization of 'gmfgraph::CustomFigure'.
+'gmf::all::mappings::NotationElementTarget' is a specialization of 'mappings::Measurable'.
+'gmf::all::gmfgraph::Connection' is a specialization of 'DiagramElement'.
+'gmf::all::gmfgraph::CustomConnection' is a specialization of 'gmfgraph::ConnectionFigure'.
+'gmf::all::gmfgraph::GridLayoutData' is a specialization of 'LayoutData'.
+'gmf::all::gmfgraph::LabelOffsetFacet' is a specialization of 'VisualFacet'.
+'gmf::all::mappings::Constraint' is a specialization of 'ValueExpression'.
+'gmf::all::mappings::NodeMapping' is a specialization of 'mappings::MappingEntry'.
+'gmf::all::tooldef::ItemRef' is a specialization of 'ItemBase'.
+'gmf::all::gmfgraph::Pin' is a specialization of 'Identity'.
+'gmf::all::gmfgraph::CustomDecoration' is a specialization of 'gmfgraph::DecorationFigure'.
+'gmf::all::gmfgraph::CustomLayout' is a specialization of 'gmfgraph::Layout'.
+'gmf::all::tooldef::PaletteSeparator' is a specialization of 'AbstractTool'.
+'gmf::all::tooldef::MenuAction' is a specialization of 'ContributionItem'.
+'gmf::all::gmfgraph::CustomLayout' is a specialization of 'gmfgraph::CustomClass'.
+'gmf::all::mappings::LinkMapping' is a specialization of 'mappings::NeedsContainment'.
+'gmf::all::mappings::MetricRule' is a specialization of 'RuleBase'.
+'gmf::all::gmfgraph::ConstantColor' is a specialization of 'Color'.
+'gmf::all::gmfgraph::GridLayout' is a specialization of 'Layout'.
+'gmf::all::gmfgraph::AlignmentFacet' is a specialization of 'VisualFacet'.
+'gmf::all::gmfgraph::BasicFont' is a specialization of 'Font'.
+'gmf::all::gmfgraph::CustomLayoutData' is a specialization of 'gmfgraph::LayoutData'.
+'gmf::all::gmfgraph::ConnectionFigure' is a specialization of 'RealFigure'.
+'gmf::all::gmfgraph::Compartment' is a specialization of 'DiagramElement'.
+'gmf::all::tooldef::Separator' is a specialization of 'ItemBase'.
+'gmf::all::gmfgraph::AbstractFigure' is a specialization of 'Figure'.
+'gmf::all::mappings::AuditRule' is a specialization of 'RuleBase'.
+'gmf::all::gmfgraph::DiagramElement' is a specialization of 'Identity'.
+'gmf::all::gmfgraph::DefaultSizeFacet' is a specialization of 'VisualFacet'.
+'gmf::all::tooldef::Toolbar' is a specialization of 'Menu'.
+'gmf::all::tooldef::ToolGroup' is a specialization of 'ToolContainer'.
+'mappings::gmf::all::EStructuralFeature' (role 'mappings_gmf_all_EStructuralFeature52', cardinality 0..*) is associated with 'gmf::all::mappings::LinkMapping' (role 'gmf_all_mappings_LinkMapping51', cardinality 0..*).
+'mappings::gmf::all::EClass' (role 'mappings_gmf_all_EClass123', cardinality 0..*) is associated with 'gmf::all::mappings::DomainElementTarget' (role 'gmf_all_mappings_DomainElementTarget', cardinality 0..*).
+'gmf::all::gmfgraph::PolylineConnection' (role 'gmf_all_gmfgraph_PolylineConnection', cardinality 0..*) is associated with 'DecorationFigure' (role 'DecorationFigure', cardinality 0..*).
+'Dimension' (role 'Dimension276', cardinality 0..*) is associated with 'gmf::all::gmfgraph::BorderLayout' (role 'gmf_all_gmfgraph_BorderLayout', cardinality 0..*).
+'LayoutData' (role 'LayoutData', cardinality 0..*) is associated with 'gmf::all::gmfgraph::Layoutable' (role 'owner265', cardinality 0..*).
+'gmf::all::gmfgraph::FigureDescriptor' (role 'gmf_all_gmfgraph_FigureDescriptor', cardinality 0..*) is associated with 'Figure' (role 'Figure', cardinality 0..*).
+'gmf::all::mappings::FeatureSeqInitializer' (role 'newElementInitializers', cardinality 0..*) is associated with 'ReferenceNewElementSpec' (role 'ReferenceNewElementSpec', cardinality 0..*).
+'gmf::all::gmfgraph::LayoutRef' (role 'gmf_all_gmfgraph_LayoutRef', cardinality 0..*) is associated with 'Layout' (role 'Layout269', cardinality 0..*).
+'TopNodeReference' (role 'TopNodeReference', cardinality 0..*) is associated with 'gmf::all::mappings::Mapping' (role 'gmf_all_mappings_Mapping', cardinality 0..*).
+'Insets' (role 'Insets', cardinality 0..*) is associated with 'gmf::all::gmfgraph::Figure' (role 'gmf_all_gmfgraph_Figure218', cardinality 0..*).
+'gmf::all::gmfgraph::Figure' (role 'gmf_all_gmfgraph_Figure216', cardinality 0..*) is associated with 'Font' (role 'Font', cardinality 0..*).
+'gmf::all::mappings::AppearanceSteward' (role 'gmf_all_mappings_AppearanceSteward', cardinality 0..*) is associated with 'StyleSelector' (role 'StyleSelector110', cardinality 0..*).
+'gmf::all::mappings::MappingEntry' (role 'mapEntry', cardinality 0..*) is associated with 'LabelMapping' (role 'LabelMapping', cardinality 0..*).
+'gmf::all::tooldef::ToolGroup' (role 'gmf_all_tooldef_ToolGroup', cardinality 0..*) is associated with 'AbstractTool' (role 'AbstractTool156', cardinality 0..*).
+'ChildAccess' (role 'ChildAccess192', cardinality 0..*) is associated with 'gmf::all::gmfgraph::Compartment' (role 'gmf_all_gmfgraph_Compartment', cardinality 0..*).
+'Dimension' (role 'Dimension274', cardinality 0..*) is associated with 'gmf::all::gmfgraph::GridLayout' (role 'gmf_all_gmfgraph_GridLayout273', cardinality 0..*).
+'ChildReference' (role 'ChildReference46', cardinality 0..*) is associated with 'gmf::all::mappings::CompartmentMapping' (role 'compartment', cardinality 0..*).
+'DiagramLabel' (role 'DiagramLabel178', cardinality 0..*) is associated with 'gmf::all::gmfgraph::Canvas' (role 'gmf_all_gmfgraph_Canvas177', cardinality 0..*).
+'gmf::all::mappings::ElementInitializer' (role 'gmf_all_mappings_ElementInitializer', cardinality 0..*) is associated with 'MappingEntry' (role 'MappingEntry95', cardinality 0..*).
+'gmf::all::gmfgraph::FigureDescriptor' (role 'owner', cardinality 0..*) is associated with 'ChildAccess' (role 'ChildAccess229', cardinality 0..*).
+'FigureDescriptor' (role 'FigureDescriptor', cardinality 0..*) is associated with 'gmf::all::gmfgraph::FigureGallery' (role 'gmf_all_gmfgraph_FigureGallery181', cardinality 0..*).
+'gmf::all::mappings::LinkMapping' (role 'gmf_all_mappings_LinkMapping', cardinality 0..*) is associated with 'Connection' (role 'Connection', cardinality 0..*).
+'SVGProperty' (role 'SVGProperty', cardinality 0..*) is associated with 'gmf::all::gmfgraph::SVGFigure' (role 'gmf_all_gmfgraph_SVGFigure', cardinality 0..*).
+'Compartment' (role 'Compartment', cardinality 0..*) is associated with 'gmf::all::mappings::CompartmentMapping' (role 'gmf_all_mappings_CompartmentMapping', cardinality 0..*).
+'mappings::gmf::all::EReference' (role 'mappings_gmf_all_EReference', cardinality 0..*) is associated with 'gmf::all::mappings::NeedsContainment' (role 'gmf_all_mappings_NeedsContainment', cardinality 0..*).
+'CanvasMapping' (role 'CanvasMapping', cardinality 0..*) is associated with 'gmf::all::mappings::Mapping' (role 'gmf_all_mappings_Mapping4', cardinality 0..*).
+'Point' (role 'Point', cardinality 0..*) is associated with 'gmf::all::gmfgraph::Figure' (role 'gmf_all_gmfgraph_Figure223', cardinality 0..*).
+'CustomAttribute' (role 'CustomAttribute', cardinality 0..*) is associated with 'gmf::all::gmfgraph::CustomAttributeOwner' (role 'gmf_all_gmfgraph_CustomAttributeOwner', cardinality 0..*).
+'Border' (role 'Border260', cardinality 0..*) is associated with 'gmf::all::gmfgraph::CompoundBorder' (role 'gmf_all_gmfgraph_CompoundBorder259', cardinality 0..*).
+'mappings::gmf::all::EClass' (role 'mappings_gmf_all_EClass', cardinality 0..*) is associated with 'gmf::all::mappings::MappingEntry' (role 'gmf_all_mappings_MappingEntry', cardinality 0..*).
+'ValueExpression' (role 'ValueExpression80', cardinality 0..*) is associated with 'gmf::all::mappings::ExpressionLabelMapping' (role 'gmf_all_mappings_ExpressionLabelMapping', cardinality 0..*).
+'gmf::all::mappings::TopNodeReference' (role 'gmf_all_mappings_TopNodeReference', cardinality 0..*) is associated with 'NodeMapping' (role 'NodeMapping36', cardinality 0..*).
+'DiagramLabel' (role 'DiagramLabel', cardinality 0..*) is associated with 'gmf::all::mappings::LabelMapping' (role 'gmf_all_mappings_LabelMapping', cardinality 0..*).
+'NodeMapping' (role 'NodeMapping27', cardinality 0..*) is associated with 'gmf::all::mappings::ChildReference' (role 'children', cardinality 0..*).
+'Point' (role 'Point278', cardinality 0..*) is associated with 'gmf::all::gmfgraph::XYLayoutData' (role 'gmf_all_gmfgraph_XYLayoutData', cardinality 0..*).
+'mappings::gmf::all::EAttribute' (role 'mappings_gmf_all_EAttribute71', cardinality 0..*) is associated with 'gmf::all::mappings::FeatureLabelMapping' (role 'gmf_all_mappings_FeatureLabelMapping70', cardinality 0..*).
+'Dimension' (role 'Dimension208', cardinality 0..*) is associated with 'gmf::all::gmfgraph::Figure' (role 'gmf_all_gmfgraph_Figure207', cardinality 0..*).
+'gmf::all::mappings::MappingEntry' (role 'parentMapEntry', cardinality 0..*) is associated with 'VisualEffectMapping' (role 'VisualEffectMapping', cardinality 0..*).
+'gmf::all::mappings::LinkConstraints' (role 'gmf_all_mappings_LinkConstraints92', cardinality 0..*) is associated with 'Constraint' (role 'Constraint93', cardinality 0..*).
+'gmf::all::tooldef::ToolRegistry' (role 'gmf_all_tooldef_ToolRegistry', cardinality 0..*) is associated with 'MenuAction' (role 'MenuAction', cardinality 0..*).
+'Dimension' (role 'Dimension211', cardinality 0..*) is associated with 'gmf::all::gmfgraph::Figure' (role 'gmf_all_gmfgraph_Figure210', cardinality 0..*).
+'NodeMapping' (role 'NodeMapping44', cardinality 0..*) is associated with 'gmf::all::mappings::CompartmentMapping' (role 'compartments', cardinality 0..*).
+'MetricRule' (role 'MetricRule139', cardinality 0..*) is associated with 'gmf::all::mappings::AuditedMetricTarget' (role 'gmf_all_mappings_AuditedMetricTarget', cardinality 0..*).
+'gmf::all::mappings::Mapping' (role 'gmf_all_mappings_Mapping6', cardinality 0..*) is associated with 'StyleSelector' (role 'StyleSelector', cardinality 0..*).
+'gmf::all::mappings::FeatureLabelMapping' (role 'gmf_all_mappings_FeatureLabelMapping', cardinality 0..*) is associated with 'mappings::gmf::all::EAttribute' (role 'mappings_gmf_all_EAttribute', cardinality 0..*).
+'ChildAccess' (role 'ChildAccess', cardinality 0..*) is associated with 'gmf::all::gmfgraph::Node' (role 'gmf_all_gmfgraph_Node', cardinality 0..*).
+'gmf::all::mappings::ToolOwner' (role 'gmf_all_mappings_ToolOwner', cardinality 0..*) is associated with 'AbstractTool' (role 'AbstractTool', cardinality 0..*).
+'gmf::all::mappings::VisualEffectMapping' (role 'visualEffects', cardinality 0..*) is associated with 'MappingEntry' (role 'MappingEntry142', cardinality 0..*).
+'gmf::all::tooldef::ContributionItem' (role 'gmf_all_tooldef_ContributionItem', cardinality 0..*) is associated with 'Image' (role 'Image161', cardinality 0..*).
+'gmf::all::mappings::AuditContainer' (role 'parentContainer', cardinality 0..*) is associated with 'AuditContainer' (role 'AuditContainer115', cardinality 0..*).
+'gmf::all::mappings::FeatureSeqInitializer' (role 'featureSeqInitializer', cardinality 0..*) is associated with 'FeatureInitializer' (role 'FeatureInitializer', cardinality 0..*).
+'DecorationFigure' (role 'DecorationFigure245', cardinality 0..*) is associated with 'gmf::all::gmfgraph::PolylineConnection' (role 'gmf_all_gmfgraph_PolylineConnection244', cardinality 0..*).
+'AuditContainer' (role 'AuditContainer121', cardinality 0..*) is associated with 'gmf::all::mappings::AuditRule' (role 'audits', cardinality 0..*).
+'gmf::all::mappings::ChildReference' (role 'children29', cardinality 0..*) is associated with 'CompartmentMapping' (role 'CompartmentMapping', cardinality 0..*).
+'gmf::all::gmfgraph::FigureAccessor' (role 'gmf_all_gmfgraph_FigureAccessor', cardinality 0..*) is associated with 'RealFigure' (role 'RealFigure248', cardinality 0..*).
+'mappings::gmf::all::EStructuralFeature' (role 'mappings_gmf_all_EStructuralFeature', cardinality 0..*) is associated with 'gmf::all::mappings::LinkMapping' (role 'gmf_all_mappings_LinkMapping49', cardinality 0..*).
+'gmf::all::mappings::AuditContainer' (role 'childContainers', cardinality 0..*) is associated with 'AuditContainer' (role 'AuditContainer112', cardinality 0..*).
+'gmf::all::mappings::NodeMapping' (role 'parentNode40', cardinality 0..*) is associated with 'CompartmentMapping' (role 'CompartmentMapping41', cardinality 0..*).
+'Measurable' (role 'Measurable', cardinality 0..*) is associated with 'gmf::all::mappings::MetricRule' (role 'gmf_all_mappings_MetricRule135', cardinality 0..*).
+'NodeMapping' (role 'NodeMapping', cardinality 0..*) is associated with 'gmf::all::mappings::NodeReference' (role 'gmf_all_mappings_NodeReference25', cardinality 0..*).
+'gmf::all::mappings::NodeMapping' (role 'parentNode', cardinality 0..*) is associated with 'ChildReference' (role 'ChildReference', cardinality 0..*).
+'Compartment' (role 'Compartment175', cardinality 0..*) is associated with 'gmf::all::gmfgraph::Canvas' (role 'gmf_all_gmfgraph_Canvas174', cardinality 0..*).
+'mappings::gmf::all::EClass' (role 'mappings_gmf_all_EClass59', cardinality 0..*) is associated with 'gmf::all::mappings::CanvasMapping' (role 'gmf_all_mappings_CanvasMapping58', cardinality 0..*).
+'FeatureSeqInitializer' (role 'FeatureSeqInitializer', cardinality 0..*) is associated with 'gmf::all::mappings::FeatureInitializer' (role 'initializers', cardinality 0..*).
+'Toolbar' (role 'Toolbar', cardinality 0..*) is associated with 'gmf::all::mappings::CanvasMapping' (role 'gmf_all_mappings_CanvasMapping65', cardinality 0..*).
+'gmf::all::mappings::OclChoiceLabelMapping' (role 'gmf_all_mappings_OclChoiceLabelMapping', cardinality 0..*) is associated with 'mappings::gmf::all::EStructuralFeature' (role 'mappings_gmf_all_EStructuralFeature73', cardinality 0..*).
+'ValueExpression' (role 'ValueExpression133', cardinality 0..*) is associated with 'gmf::all::mappings::MetricRule' (role 'gmf_all_mappings_MetricRule', cardinality 0..*).
+'Image' (role 'Image152', cardinality 0..*) is associated with 'gmf::all::tooldef::AbstractTool' (role 'gmf_all_tooldef_AbstractTool151', cardinality 0..*).
+'NodeMapping' (role 'NodeMapping31', cardinality 0..*) is associated with 'gmf::all::mappings::ChildReference' (role 'gmf_all_mappings_ChildReference', cardinality 0..*).
+'gmf::all::tooldef::ToolRegistry' (role 'gmf_all_tooldef_ToolRegistry147', cardinality 0..*) is associated with 'Palette' (role 'Palette148', cardinality 0..*).
+'Figure' (role 'Figure239', cardinality 0..*) is associated with 'gmf::all::gmfgraph::Shape' (role 'gmf_all_gmfgraph_Shape', cardinality 0..*).
+'gmf::all::gmfgraph::Figure' (role 'gmf_all_gmfgraph_Figure213', cardinality 0..*) is associated with 'Dimension' (role 'Dimension214', cardinality 0..*).
+'AbstractTool' (role 'AbstractTool154', cardinality 0..*) is associated with 'gmf::all::tooldef::ToolContainer' (role 'gmf_all_tooldef_ToolContainer', cardinality 0..*).
+'FigureDescriptor' (role 'FigureDescriptor231', cardinality 0..*) is associated with 'gmf::all::gmfgraph::ChildAccess' (role 'accessors', cardinality 0..*).
+'MappingEntry' (role 'MappingEntry', cardinality 0..*) is associated with 'gmf::all::mappings::LabelMapping' (role 'labelMappings', cardinality 0..*).
+'Node' (role 'Node169', cardinality 0..*) is associated with 'gmf::all::gmfgraph::Canvas' (role 'gmf_all_gmfgraph_Canvas168', cardinality 0..*).
+'Border' (role 'Border251', cardinality 0..*) is associated with 'gmf::all::gmfgraph::BorderRef' (role 'gmf_all_gmfgraph_BorderRef', cardinality 0..*).
+'MetricContainer' (role 'MetricContainer', cardinality 0..*) is associated with 'gmf::all::mappings::Mapping' (role 'gmf_all_mappings_Mapping10', cardinality 0..*).
+'gmf::all::mappings::FeatureSeqInitializer' (role 'gmf_all_mappings_FeatureSeqInitializer', cardinality 0..*) is associated with 'mappings::gmf::all::EClass' (role 'mappings_gmf_all_EClass98', cardinality 0..*).
+'AuditRule' (role 'AuditRule', cardinality 0..*) is associated with 'gmf::all::mappings::AuditContainer' (role 'container', cardinality 0..*).
+'Dimension' (role 'Dimension263', cardinality 0..*) is associated with 'gmf::all::gmfgraph::GridLayoutData' (role 'gmf_all_gmfgraph_GridLayoutData', cardinality 0..*).
+'gmf::all::gmfgraph::GridLayout' (role 'gmf_all_gmfgraph_GridLayout', cardinality 0..*) is associated with 'Dimension' (role 'Dimension271', cardinality 0..*).
+'Image' (role 'Image', cardinality 0..*) is associated with 'gmf::all::tooldef::AbstractTool' (role 'gmf_all_tooldef_AbstractTool', cardinality 0..*).
+'MetricRule' (role 'MetricRule', cardinality 0..*) is associated with 'gmf::all::mappings::MetricContainer' (role 'container131', cardinality 0..*).
+'gmf::all::gmfgraph::ChildAccess' (role 'gmf_all_gmfgraph_ChildAccess', cardinality 0..*) is associated with 'Figure' (role 'Figure233', cardinality 0..*).
+'gmf::all::gmfgraph::LineBorder' (role 'gmf_all_gmfgraph_LineBorder', cardinality 0..*) is associated with 'Color' (role 'Color253', cardinality 0..*).
+'gmf::all::mappings::CanvasMapping' (role 'gmf_all_mappings_CanvasMapping56', cardinality 0..*) is associated with 'mappings::gmf::all::EPackage' (role 'mappings_gmf_all_EPackage', cardinality 0..*).
+'CanvasMapping' (role 'CanvasMapping19', cardinality 0..*) is associated with 'gmf::all::mappings::MappingEntry' (role 'gmf_all_mappings_MappingEntry18', cardinality 0..*).
+'gmf::all::mappings::ExpressionLabelMapping' (role 'gmf_all_mappings_ExpressionLabelMapping85', cardinality 0..*) is associated with 'Constraint' (role 'Constraint86', cardinality 0..*).
+'MetricContainer' (role 'MetricContainer137', cardinality 0..*) is associated with 'gmf::all::mappings::MetricRule' (role 'metrics', cardinality 0..*).
+'gmf::all::mappings::MappingEntry' (role 'gmf_all_mappings_MappingEntry15', cardinality 0..*) is associated with 'ElementInitializer' (role 'ElementInitializer', cardinality 0..*).
+'gmf::all::gmfgraph::DiagramLabel' (role 'gmf_all_gmfgraph_DiagramLabel', cardinality 0..*) is associated with 'ChildAccess' (role 'ChildAccess194', cardinality 0..*).
+'FigureAccessor' (role 'FigureAccessor', cardinality 0..*) is associated with 'gmf::all::gmfgraph::CustomFigure' (role 'gmf_all_gmfgraph_CustomFigure', cardinality 0..*).
+'Node' (role 'Node', cardinality 0..*) is associated with 'gmf::all::mappings::NodeMapping' (role 'gmf_all_mappings_NodeMapping', cardinality 0..*).
+'gmf::all::gmfgraph::XYLayoutData' (role 'gmf_all_gmfgraph_XYLayoutData280', cardinality 0..*) is associated with 'Dimension' (role 'Dimension281', cardinality 0..*).
+'gmf::all::gmfgraph::FigureRef' (role 'gmf_all_gmfgraph_FigureRef', cardinality 0..*) is associated with 'RealFigure' (role 'RealFigure237', cardinality 0..*).
+'gmf::all::mappings::CanvasMapping' (role 'gmf_all_mappings_CanvasMapping61', cardinality 0..*) is associated with 'Palette' (role 'Palette', cardinality 0..*).
+'Constraint' (role 'Constraint117', cardinality 0..*) is associated with 'gmf::all::mappings::AuditRule' (role 'gmf_all_mappings_AuditRule', cardinality 0..*).
+'gmf::all::gmfgraph::FigureGallery' (role 'gmf_all_gmfgraph_FigureGallery185', cardinality 0..*) is associated with 'Layout' (role 'Layout', cardinality 0..*).
+'gmf::all::gmfgraph::Figure' (role 'gmf_all_gmfgraph_Figure220', cardinality 0..*) is associated with 'Border' (role 'Border221', cardinality 0..*).
+'Layout' (role 'Layout267', cardinality 0..*) is associated with 'gmf::all::gmfgraph::Layoutable' (role 'gmf_all_gmfgraph_Layoutable', cardinality 0..*).
+'gmf::all::gmfgraph::FigureGallery' (role 'gmf_all_gmfgraph_FigureGallery', cardinality 0..*) is associated with 'RealFigure' (role 'RealFigure', cardinality 0..*).
+'LinkConstraints' (role 'LinkConstraints', cardinality 0..*) is associated with 'gmf::all::mappings::LinkMapping' (role 'linkMapping', cardinality 0..*).
+'gmf::all::gmfgraph::CompoundBorder' (role 'gmf_all_gmfgraph_CompoundBorder', cardinality 0..*) is associated with 'Border' (role 'Border257', cardinality 0..*).
+'ValueExpression' (role 'ValueExpression78', cardinality 0..*) is associated with 'gmf::all::mappings::OclChoiceLabelMapping' (role 'gmf_all_mappings_OclChoiceLabelMapping77', cardinality 0..*).
+'gmf::all::mappings::ReferenceNewElementSpec' (role 'creatingInitializer', cardinality 0..*) is associated with 'FeatureSeqInitializer' (role 'FeatureSeqInitializer106', cardinality 0..*).
+'gmf::all::gmfgraph::Polyline' (role 'gmf_all_gmfgraph_Polyline', cardinality 0..*) is associated with 'Point' (role 'Point241', cardinality 0..*).
+'gmf::all::tooldef::ToolRegistry' (role 'gmf_all_tooldef_ToolRegistry145', cardinality 0..*) is associated with 'Menu' (role 'Menu', cardinality 0..*).
+'gmf::all::mappings::MenuOwner' (role 'gmf_all_mappings_MenuOwner', cardinality 0..*) is associated with 'ContextMenu' (role 'ContextMenu', cardinality 0..*).
+'ValueExpression' (role 'ValueExpression104', cardinality 0..*) is associated with 'gmf::all::mappings::FeatureValueSpec' (role 'gmf_all_mappings_FeatureValueSpec', cardinality 0..*).
+'gmf::all::mappings::LinkConstraints' (role 'gmf_all_mappings_LinkConstraints', cardinality 0..*) is associated with 'Constraint' (role 'Constraint90', cardinality 0..*).
+'gmf::all::gmfgraph::Figure' (role 'gmf_all_gmfgraph_Figure202', cardinality 0..*) is associated with 'Color' (role 'Color', cardinality 0..*).
+'gmf::all::mappings::AuditRule' (role 'gmf_all_mappings_AuditRule119', cardinality 0..*) is associated with 'Auditable' (role 'Auditable', cardinality 0..*).
+'gmf::all::gmfgraph::DiagramElement' (role 'gmf_all_gmfgraph_DiagramElement', cardinality 0..*) is associated with 'FigureDescriptor' (role 'FigureDescriptor187', cardinality 0..*).
+'Dimension' (role 'Dimension', cardinality 0..*) is associated with 'gmf::all::gmfgraph::DefaultSizeFacet' (role 'gmf_all_gmfgraph_DefaultSizeFacet', cardinality 0..*).
+'AbstractTool' (role 'AbstractTool158', cardinality 0..*) is associated with 'gmf::all::tooldef::Palette' (role 'gmf_all_tooldef_Palette', cardinality 0..*).
+'gmf::all::gmfgraph::SVGFigure' (role 'gmf_all_gmfgraph_SVGFigure284', cardinality 0..*) is associated with 'Rectangle2D' (role 'Rectangle2D', cardinality 0..*).
+'gmf::all::mappings::VisualEffectMapping' (role 'gmf_all_mappings_VisualEffectMapping', cardinality 0..*) is associated with 'Pin' (role 'Pin', cardinality 0..*).
+'gmf::all::gmfgraph::RealFigure' (role 'gmf_all_gmfgraph_RealFigure', cardinality 0..*) is associated with 'Figure' (role 'Figure235', cardinality 0..*).
+'ChildAccess' (role 'ChildAccess197', cardinality 0..*) is associated with 'gmf::all::gmfgraph::DiagramLabel' (role 'gmf_all_gmfgraph_DiagramLabel196', cardinality 0..*).
+'mappings::gmf::all::EStructuralFeature' (role 'mappings_gmf_all_EStructuralFeature101', cardinality 0..*) is associated with 'gmf::all::mappings::FeatureInitializer' (role 'gmf_all_mappings_FeatureInitializer', cardinality 0..*).
+'gmf::all::mappings::NotationElementTarget' (role 'gmf_all_mappings_NotationElementTarget', cardinality 0..*) is associated with 'mappings::gmf::all::EClass' (role 'mappings_gmf_all_EClass129', cardinality 0..*).
+'Insets' (role 'Insets255', cardinality 0..*) is associated with 'gmf::all::gmfgraph::MarginBorder' (role 'gmf_all_gmfgraph_MarginBorder', cardinality 0..*).
+'ItemBase' (role 'ItemBase', cardinality 0..*) is associated with 'gmf::all::tooldef::Menu' (role 'gmf_all_tooldef_Menu', cardinality 0..*).
+'Layoutable' (role 'Layoutable', cardinality 0..*) is associated with 'gmf::all::gmfgraph::LayoutData' (role 'layoutData', cardinality 0..*).
+'Constraint' (role 'Constraint', cardinality 0..*) is associated with 'gmf::all::mappings::MappingEntry' (role 'gmf_all_mappings_MappingEntry13', cardinality 0..*).
+'gmf::all::mappings::CanvasMapping' (role 'gmf_all_mappings_CanvasMapping63', cardinality 0..*) is associated with 'MainMenu' (role 'MainMenu', cardinality 0..*).
+'gmf::all::tooldef::ContextMenu' (role 'gmf_all_tooldef_ContextMenu', cardinality 0..*) is associated with 'MenuAction' (role 'MenuAction165', cardinality 0..*).
+'VisualFacet' (role 'VisualFacet', cardinality 0..*) is associated with 'gmf::all::gmfgraph::DiagramElement' (role 'gmf_all_gmfgraph_DiagramElement189', cardinality 0..*).
+'Border' (role 'Border', cardinality 0..*) is associated with 'gmf::all::gmfgraph::FigureGallery' (role 'gmf_all_gmfgraph_FigureGallery183', cardinality 0..*).
+'mappings::gmf::all::EReference' (role 'mappings_gmf_all_EReference23', cardinality 0..*) is associated with 'gmf::all::mappings::NodeReference' (role 'gmf_all_mappings_NodeReference', cardinality 0..*).
+'Color' (role 'Color205', cardinality 0..*) is associated with 'gmf::all::gmfgraph::Figure' (role 'gmf_all_gmfgraph_Figure204', cardinality 0..*).
+'gmf::all::gmfgraph::Figure' (role 'gmf_all_gmfgraph_Figure225', cardinality 0..*) is associated with 'Point' (role 'Point226', cardinality 0..*).
+'gmf::all::mappings::Mapping' (role 'gmf_all_mappings_Mapping8', cardinality 0..*) is associated with 'AuditContainer' (role 'AuditContainer', cardinality 0..*).
+'gmf::all::mappings::ChildReference' (role 'gmf_all_mappings_ChildReference33', cardinality 0..*) is associated with 'NodeMapping' (role 'NodeMapping34', cardinality 0..*).
+'gmf::all::gmfgraph::Canvas' (role 'gmf_all_gmfgraph_Canvas171', cardinality 0..*) is associated with 'Connection' (role 'Connection172', cardinality 0..*).
+'ValueExpression' (role 'ValueExpression83', cardinality 0..*) is associated with 'gmf::all::mappings::ExpressionLabelMapping' (role 'gmf_all_mappings_ExpressionLabelMapping82', cardinality 0..*).
+'mappings::gmf::all::EAttribute' (role 'mappings_gmf_all_EAttribute125', cardinality 0..*) is associated with 'gmf::all::mappings::DomainAttributeTarget' (role 'gmf_all_mappings_DomainAttributeTarget', cardinality 0..*).
+'ItemBase' (role 'ItemBase163', cardinality 0..*) is associated with 'gmf::all::tooldef::ItemRef' (role 'gmf_all_tooldef_ItemRef', cardinality 0..*).
+'MappingEntry' (role 'MappingEntry127', cardinality 0..*) is associated with 'gmf::all::mappings::DiagramElementTarget' (role 'gmf_all_mappings_DiagramElementTarget', cardinality 0..*).
+'FigureGallery' (role 'FigureGallery', cardinality 0..*) is associated with 'gmf::all::gmfgraph::Canvas' (role 'gmf_all_gmfgraph_Canvas', cardinality 0..*).
+'gmf::all::mappings::OclChoiceLabelMapping' (role 'gmf_all_mappings_OclChoiceLabelMapping75', cardinality 0..*) is associated with 'ValueExpression' (role 'ValueExpression', cardinality 0..*).
+'gmf::all::mappings::LinkConstraints' (role 'creationConstraints', cardinality 0..*) is associated with 'LinkMapping' (role 'LinkMapping88', cardinality 0..*).
+'FigureDescriptor' (role 'FigureDescriptor200', cardinality 0..*) is associated with 'gmf::all::gmfgraph::Figure' (role 'gmf_all_gmfgraph_Figure', cardinality 0..*).
+'gmf::all::mappings::CanvasMapping' (role 'gmf_all_mappings_CanvasMapping', cardinality 0..*) is associated with 'Canvas' (role 'Canvas', cardinality 0..*).
+'gmf::all::gmfgraph::PinOwner' (role 'gmf_all_gmfgraph_PinOwner', cardinality 0..*) is associated with 'Pin' (role 'Pin286', cardinality 0..*).
+'LinkMapping' (role 'LinkMapping', cardinality 0..*) is associated with 'gmf::all::mappings::Mapping' (role 'gmf_all_mappings_Mapping2', cardinality 0..*).

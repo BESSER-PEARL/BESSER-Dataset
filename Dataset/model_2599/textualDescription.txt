@@ -1,0 +1,9 @@
+The model has 6 class(es).
+The class 'MainPackage::EObject' has no attributes.
+The class 'MainPackage::Subpackage::ClassInSubpackage' has no attributes.
+The class 'ClassInMainPackage' has no attributes.
+The class 'MainPackage::Model' has no attributes.
+The class 'MainPackage::Subpackage::InheritingClass' has no attributes.
+The class 'MainPackage::ClassInMainPackage' has the following attributes: 'name' of type str.
+'MainPackage::Subpackage::InheritingClass' is a specialization of 'ClassInMainPackage'.
+'MainPackage::EObject' (role 'MainPackage_EObject', cardinality 0..*) is associated with 'MainPackage::Model' (role 'MainPackage_Model', cardinality 0..*).

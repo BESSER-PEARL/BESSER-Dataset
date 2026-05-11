@@ -1,0 +1,15 @@
+The model has 6 class(es).
+The class 'simpletest::B' has no attributes.
+The class 'simpletest::A' has no attributes.
+The class 'simpletest::X' has no attributes.
+The class 'simpletest::L' has no attributes.
+The class 'simpletest::N' has the following attributes: 'name' of type str.
+The class 'N' has no attributes.
+'simpletest::A' is a specialization of 'N'.
+'simpletest::B' is a specialization of 'N'.
+'simpletest::L' is a specialization of 'N'.
+'simpletest::L' (role 'simpletest_L', cardinality 0..*) is associated with 'simpletest::A' (role 'simpletest_A2', cardinality 0..*).
+'simpletest::X' (role 'simpletest_X', cardinality 0..*) is associated with 'simpletest::A' (role 'simpletest_A4', cardinality 0..*).
+'simpletest::A' (role 'simpletest_A7', cardinality 0..*) is associated with 'simpletest::L' (role 'simpletest_L6', cardinality 0..*).
+'simpletest::A' (role 'simpletest_A', cardinality 0..*) is associated with 'simpletest::B' (role 'simpletest_B', cardinality 0..*).
+'simpletest::B' (role 'simpletest_B10', cardinality 0..*) is associated with 'simpletest::L' (role 'simpletest_L9', cardinality 0..*).

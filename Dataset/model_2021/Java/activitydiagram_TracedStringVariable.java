@@ -1,0 +1,46 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class activitydiagram_TracedStringVariable  {
+
+
+
+
+
+
+    private trace_Events_StringVariable_setCurrentValue_stringVariableEntryEventOccurrence trace_events_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence;
+
+
+
+
+    private trace_Events_StringVariable_getCurrentValueValue_stringVariableEntryEventOccurrence trace_events_stringvariable_getcurrentvaluevalue_stringvariableentryeventoccurrence;
+
+
+    public activitydiagram_TracedStringVariable(
+    ) {
+    }
+
+
+
+    public trace_Events_StringVariable_setCurrentValue_stringVariableEntryEventOccurrence getTrace_events_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence() {
+        return trace_events_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence;
+    }
+
+    public void setTrace_events_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence(trace_Events_StringVariable_setCurrentValue_stringVariableEntryEventOccurrence trace_events_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence) {
+        this.trace_events_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence = trace_events_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence;
+    }
+    public trace_Events_StringVariable_getCurrentValueValue_stringVariableEntryEventOccurrence getTrace_events_stringvariable_getcurrentvaluevalue_stringvariableentryeventoccurrence() {
+        return trace_events_stringvariable_getcurrentvaluevalue_stringvariableentryeventoccurrence;
+    }
+
+    public void setTrace_events_stringvariable_getcurrentvaluevalue_stringvariableentryeventoccurrence(trace_Events_StringVariable_getCurrentValueValue_stringVariableEntryEventOccurrence trace_events_stringvariable_getcurrentvaluevalue_stringvariableentryeventoccurrence) {
+        this.trace_events_stringvariable_getcurrentvaluevalue_stringvariableentryeventoccurrence = trace_events_stringvariable_getcurrentvaluevalue_stringvariableentryeventoccurrence;
+    }
+
+}

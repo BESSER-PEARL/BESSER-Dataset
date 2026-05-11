@@ -1,0 +1,143 @@
+The model has 63 class(es).
+The class 'vql::RelationType' has no attributes.
+The class 'vql::EEnum' has no attributes.
+The class 'vql::PatternCall' has no attributes.
+The class 'vql::Pattern' has the following attributes: 'name' of type str.
+The class 'Variable' has no attributes.
+The class 'vql::Modifiers' has the following attributes: 'private' of type bool; 'execution' of type str.
+The class 'vql::BoolValue' has no attributes.
+The class 'vql::Annotation' has the following attributes: 'name' of type str.
+The class 'vql::EnumValue' has no attributes.
+The class 'vql::PatternImport' has the following attributes: 'packageName' of type str.
+The class 'vql::PathExpressionConstraint' has no attributes.
+The class 'vql::VariableReference' has the following attributes: 'aggregator' of type bool; 'var' of type str.
+The class 'vql::FunctionEvaluationValue' has no attributes.
+The class 'vql::PackageImport' has the following attributes: 'alias' of type str.
+The class 'RelationType' has no attributes.
+The class 'vql::EntityType' has no attributes.
+The class 'vql::XBooleanLiteral' has no attributes.
+The class 'vql::PatternModel' has the following attributes: 'packageName' of type str.
+The class 'vql::PatternBody' has the following attributes: 'name' of type str.
+The class 'vql::VQLImportSection' has no attributes.
+The class 'vql::StringValue' has the following attributes: 'value' of type str.
+The class 'vql::EStructuralFeature' has no attributes.
+The class 'vql::JvmType' has no attributes.
+The class 'vql::LocalVariable' has no attributes.
+The class 'vql::ParameterRef' has no attributes.
+The class 'vql::EClassifierConstraint' has no attributes.
+The class 'vql::XExpression' has no attributes.
+The class 'CallableRelation' has no attributes.
+The class 'EntityType' has no attributes.
+The class 'vql::JavaType' has no attributes.
+The class 'vql::CheckConstraint' has no attributes.
+The class 'vql::Expression' has no attributes.
+The class 'vql::TypeCheckConstraint' has no attributes.
+The class 'vql::AggregatedValue' has no attributes.
+The class 'LiteralValueReference' has no attributes.
+The class 'vql::LiteralValueReference' has no attributes.
+The class 'ComputationValue' has no attributes.
+The class 'vql::CallableRelation' has the following attributes: 'transitive' of type str.
+The class 'vql::AnnotationParameter' has the following attributes: 'name' of type str.
+The class 'vql::ValueReference' has no attributes.
+The class 'vql::EEnumLiteral' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'vql::EClassifier' has no attributes.
+The class 'vql::UnaryTypeConstraint' has no attributes.
+The class 'Type' has no attributes.
+The class 'vql::Parameter' has the following attributes: 'direction' of type str.
+The class 'vql::NumberValue' has the following attributes: 'negative' of type bool.
+The class 'XImportSection' has no attributes.
+The class 'vql::XNumberLiteral' has no attributes.
+The class 'ValueReference' has no attributes.
+The class 'UnaryTypeConstraint' has no attributes.
+The class 'vql::Type' has the following attributes: 'typename' of type str.
+The class 'Expression' has no attributes.
+The class 'vql::ComputationValue' has no attributes.
+The class 'vql::EPackage' has no attributes.
+The class 'vql::ClassType' has no attributes.
+The class 'vql::Constraint' has no attributes.
+The class 'vql::ListValue' has no attributes.
+The class 'vql::ReferenceType' has no attributes.
+The class 'vql::Variable' has the following attributes: 'name' of type str.
+The class 'vql::JvmDeclaredType' has no attributes.
+The class 'vql::CompareConstraint' has the following attributes: 'feature' of type str.
+The class 'vql::PatternCompositionConstraint' has the following attributes: 'negative' of type bool.
+The enumeration 'ParameterDirection' has the following literals: 'out', 'inout', 'in_'.
+The enumeration 'CompareFeature' has the following literals: 'equality', 'inequality'.
+The enumeration 'ExecutionType' has the following literals: 'unspecified', 'search', 'incremental'.
+The enumeration 'ClosureType' has the following literals: 'original', 'transitive', 'reflexive_transitive'.
+'vql::Variable' is a specialization of 'Expression'.
+'vql::PathExpressionConstraint' is a specialization of 'CallableRelation'.
+'vql::PatternCall' is a specialization of 'CallableRelation'.
+'vql::AggregatedValue' is a specialization of 'ComputationValue'.
+'vql::VQLImportSection' is a specialization of 'XImportSection'.
+'vql::LocalVariable' is a specialization of 'Variable'.
+'vql::TypeCheckConstraint' is a specialization of 'Constraint'.
+'vql::ParameterRef' is a specialization of 'Variable'.
+'vql::UnaryTypeConstraint' is a specialization of 'CallableRelation'.
+'vql::CompareConstraint' is a specialization of 'Constraint'.
+'vql::VariableReference' is a specialization of 'ValueReference'.
+'vql::JavaType' is a specialization of 'EntityType'.
+'vql::PathExpressionConstraint' is a specialization of 'Constraint'.
+'vql::RelationType' is a specialization of 'Type'.
+'vql::ComputationValue' is a specialization of 'ValueReference'.
+'vql::EntityType' is a specialization of 'Type'.
+'vql::CheckConstraint' is a specialization of 'Constraint'.
+'vql::BoolValue' is a specialization of 'LiteralValueReference'.
+'vql::TypeCheckConstraint' is a specialization of 'UnaryTypeConstraint'.
+'vql::EnumValue' is a specialization of 'ValueReference'.
+'vql::ListValue' is a specialization of 'LiteralValueReference'.
+'vql::ReferenceType' is a specialization of 'RelationType'.
+'vql::ClassType' is a specialization of 'EntityType'.
+'vql::Parameter' is a specialization of 'Variable'.
+'vql::NumberValue' is a specialization of 'LiteralValueReference'.
+'vql::LiteralValueReference' is a specialization of 'ValueReference'.
+'vql::PatternCompositionConstraint' is a specialization of 'Constraint'.
+'vql::EClassifierConstraint' is a specialization of 'UnaryTypeConstraint'.
+'vql::StringValue' is a specialization of 'LiteralValueReference'.
+'vql::FunctionEvaluationValue' is a specialization of 'ComputationValue'.
+'vql::EClassifierConstraint' is a specialization of 'Constraint'.
+'vql::ValueReference' is a specialization of 'Expression'.
+'vql::EntityType' (role 'vql_EntityType', cardinality 0..*) is associated with 'vql::UnaryTypeConstraint' (role 'vql_UnaryTypeConstraint', cardinality 0..*).
+'vql::Pattern' (role 'vql_Pattern9', cardinality 0..*) is associated with 'vql::PatternImport' (role 'vql_PatternImport8', cardinality 0..*).
+'vql::AnnotationParameter' (role 'vql_AnnotationParameter34', cardinality 0..*) is associated with 'vql::ValueReference' (role 'vql_ValueReference', cardinality 0..*).
+'vql::PatternCall' (role 'vql_PatternCall', cardinality 0..*) is associated with 'vql::Pattern' (role 'vql_Pattern45', cardinality 0..*).
+'vql::Modifiers' (role 'vql_Modifiers', cardinality 0..*) is associated with 'vql::Pattern' (role 'vql_Pattern26', cardinality 0..*).
+'vql::EStructuralFeature' (role 'vql_EStructuralFeature', cardinality 0..*) is associated with 'vql::ReferenceType' (role 'vql_ReferenceType', cardinality 0..*).
+'vql::VariableReference' (role 'vql_VariableReference86', cardinality 0..*) is associated with 'vql::UnaryTypeConstraint' (role 'vql_UnaryTypeConstraint85', cardinality 0..*).
+'vql::ParameterRef' (role 'vql_ParameterRef', cardinality 0..*) is associated with 'vql::Variable' (role 'vql_Variable50', cardinality 0..*).
+'vql::XNumberLiteral' (role 'vql_XNumberLiteral', cardinality 0..*) is associated with 'vql::NumberValue' (role 'vql_NumberValue', cardinality 0..*).
+'vql::JvmType' (role 'vql_JvmType', cardinality 0..*) is associated with 'vql::AggregatedValue' (role 'vql_AggregatedValue82', cardinality 0..*).
+'vql::BoolValue' (role 'vql_BoolValue', cardinality 0..*) is associated with 'vql::XBooleanLiteral' (role 'vql_XBooleanLiteral', cardinality 0..*).
+'vql::ClassType' (role 'vql_ClassType63', cardinality 0..*) is associated with 'vql::PathExpressionConstraint' (role 'vql_PathExpressionConstraint62', cardinality 0..*).
+'vql::EEnumLiteral' (role 'vql_EEnumLiteral', cardinality 0..*) is associated with 'vql::EnumValue' (role 'vql_EnumValue12', cardinality 0..*).
+'vql::VQLImportSection' (role 'vql_VQLImportSection14', cardinality 0..*) is associated with 'vql::PatternModel' (role 'vql_PatternModel', cardinality 0..*).
+'vql::CheckConstraint' (role 'vql_CheckConstraint', cardinality 0..*) is associated with 'vql::XExpression' (role 'vql_XExpression', cardinality 0..*).
+'vql::PatternCall' (role 'vql_PatternCall47', cardinality 0..*) is associated with 'vql::ValueReference' (role 'vql_ValueReference48', cardinality 0..*).
+'vql::FunctionEvaluationValue' (role 'vql_FunctionEvaluationValue', cardinality 0..*) is associated with 'vql::XExpression' (role 'vql_XExpression75', cardinality 0..*).
+'vql::PackageImport' (role 'vql_PackageImport19', cardinality 0..*) is associated with 'vql::ClassType' (role 'vql_ClassType', cardinality 0..*).
+'vql::PathExpressionConstraint' (role 'vql_PathExpressionConstraint68', cardinality 0..*) is associated with 'vql::ValueReference' (role 'vql_ValueReference69', cardinality 0..*).
+'vql::Annotation' (role 'vql_Annotation32', cardinality 0..*) is associated with 'vql::AnnotationParameter' (role 'vql_AnnotationParameter', cardinality 0..*).
+'vql::CallableRelation' (role 'vql_CallableRelation80', cardinality 0..*) is associated with 'vql::AggregatedValue' (role 'vql_AggregatedValue79', cardinality 0..*).
+'vql::CompareConstraint' (role 'vql_CompareConstraint', cardinality 0..*) is associated with 'vql::ValueReference' (role 'vql_ValueReference54', cardinality 0..*).
+'vql::ClassType' (role 'vql_ClassType21', cardinality 0..*) is associated with 'vql::EClassifier' (role 'vql_EClassifier', cardinality 0..*).
+'vql::PatternImport' (role 'vql_PatternImport', cardinality 0..*) is associated with 'vql::VQLImportSection' (role 'vql_VQLImportSection2', cardinality 0..*).
+'vql::ValueReference' (role 'vql_ValueReference73', cardinality 0..*) is associated with 'vql::ListValue' (role 'vql_ListValue', cardinality 0..*).
+'vql::VQLImportSection' (role 'vql_VQLImportSection', cardinality 0..*) is associated with 'vql::PackageImport' (role 'vql_PackageImport', cardinality 0..*).
+'vql::EnumValue' (role 'vql_EnumValue', cardinality 0..*) is associated with 'vql::EEnum' (role 'vql_EEnum', cardinality 0..*).
+'vql::PatternBody' (role 'vql_PatternBody', cardinality 0..*) is associated with 'vql::Pattern' (role 'vql_Pattern30', cardinality 0..*).
+'vql::EPackage' (role 'vql_EPackage', cardinality 0..*) is associated with 'vql::PackageImport' (role 'vql_PackageImport4', cardinality 0..*).
+'vql::Pattern' (role 'vql_Pattern24', cardinality 0..*) is associated with 'vql::Annotation' (role 'vql_Annotation', cardinality 0..*).
+'vql::ReferenceType' (role 'vql_ReferenceType60', cardinality 0..*) is associated with 'vql::PathExpressionConstraint' (role 'vql_PathExpressionConstraint', cardinality 0..*).
+'vql::PathExpressionConstraint' (role 'vql_PathExpressionConstraint65', cardinality 0..*) is associated with 'vql::VariableReference' (role 'vql_VariableReference66', cardinality 0..*).
+'vql::JavaType' (role 'vql_JavaType', cardinality 0..*) is associated with 'vql::JvmDeclaredType' (role 'vql_JvmDeclaredType', cardinality 0..*).
+'vql::Variable' (role 'vql_Variable', cardinality 0..*) is associated with 'vql::Pattern' (role 'vql_Pattern28', cardinality 0..*).
+'vql::CallableRelation' (role 'vql_CallableRelation', cardinality 0..*) is associated with 'vql::PatternCompositionConstraint' (role 'vql_PatternCompositionConstraint', cardinality 0..*).
+'vql::PatternImport' (role 'vql_PatternImport6', cardinality 0..*) is associated with 'vql::Pattern' (role 'vql_Pattern', cardinality 0..*).
+'vql::Variable' (role 'vql_Variable36', cardinality 0..*) is associated with 'vql::Type' (role 'vql_Type', cardinality 0..*).
+'vql::VariableReference' (role 'vql_VariableReference', cardinality 0..*) is associated with 'vql::Variable' (role 'vql_Variable38', cardinality 0..*).
+'vql::JvmDeclaredType' (role 'vql_JvmDeclaredType77', cardinality 0..*) is associated with 'vql::AggregatedValue' (role 'vql_AggregatedValue', cardinality 0..*).
+'vql::PatternBody' (role 'vql_PatternBody42', cardinality 0..*) is associated with 'vql::Variable' (role 'vql_Variable43', cardinality 0..*).
+'vql::Constraint' (role 'vql_Constraint', cardinality 0..*) is associated with 'vql::PatternBody' (role 'vql_PatternBody40', cardinality 0..*).
+'vql::Pattern' (role 'vql_Pattern17', cardinality 0..*) is associated with 'vql::PatternModel' (role 'vql_PatternModel16', cardinality 0..*).
+'vql::ValueReference' (role 'vql_ValueReference57', cardinality 0..*) is associated with 'vql::CompareConstraint' (role 'vql_CompareConstraint56', cardinality 0..*).

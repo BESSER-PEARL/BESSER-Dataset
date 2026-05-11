@@ -1,0 +1,17 @@
+The model has 6 class(es).
+The class 'database::DataBaseElement' has the following attributes: 'name' of type str.
+The class 'DataBaseElement' has no attributes.
+The class 'database::Table' has no attributes.
+The class 'database::Schema' has no attributes.
+The class 'database::Column' has the following attributes: 'type' of type str.
+The class 'database::ForeignKey' has no attributes.
+The enumeration 'RailsData' has the following literals: 'float', 'timestamp', 'binary', 'time', 'decimal', 'boolean', 'integer', 'string', 'dateTime', 'text', 'date'.
+'database::Table' is a specialization of 'DataBaseElement'.
+'database::Column' is a specialization of 'DataBaseElement'.
+'database::Schema' is a specialization of 'DataBaseElement'.
+'database::ForeignKey' (role 'database_ForeignKey12', cardinality 0..*) is associated with 'database::Table' (role 'database_Table13', cardinality 0..*).
+'database::Column' (role 'database_Column', cardinality 0..*) is associated with 'database::Table' (role 'database_Table2', cardinality 0..*).
+'database::Column' (role 'database_Column5', cardinality 0..*) is associated with 'database::Table' (role 'database_Table4', cardinality 0..*).
+'database::Schema' (role 'database_Schema', cardinality 0..*) is associated with 'database::Table' (role 'database_Table', cardinality 0..*).
+'database::ForeignKey' (role 'database_ForeignKey', cardinality 0..*) is associated with 'database::Table' (role 'database_Table7', cardinality 0..*).
+'database::ForeignKey' (role 'database_ForeignKey9', cardinality 0..*) is associated with 'database::Column' (role 'database_Column10', cardinality 0..*).

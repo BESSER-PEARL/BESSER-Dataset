@@ -1,0 +1,7 @@
+The model has 4 class(es).
+The class 'test1::ConceptB' has no attributes.
+The class 'ConceptA' has no attributes.
+The class 'test1::ConceptC' has the following attributes: 'cool' of type bool; 'nbr' of type int.
+The class 'test1::ConceptA' has no attributes.
+'test1::ConceptB' is a specialization of 'ConceptA'.
+'test1::ConceptC' (role 'test1_ConceptC', cardinality 0..*) is associated with 'test1::ConceptA' (role 'test1_ConceptA', cardinality 0..*).

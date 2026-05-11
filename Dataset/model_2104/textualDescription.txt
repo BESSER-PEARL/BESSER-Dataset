@@ -1,0 +1,29 @@
+The model has 9 class(es).
+The class 'MocaTree::Text' has no attributes.
+The class 'MocaTree::Node' has the following attributes: 'stopLineIndex' of type int; 'startIndex' of type int; 'stopIndex' of type int; 'startLineIndex' of type int.
+The class 'MocaTree::Folder' has no attributes.
+The class 'MocaTree::File' has no attributes.
+The class 'MocaTree::Link' has no attributes.
+The class 'MocaTree::TreeElement' has the following attributes: 'name' of type str; 'index' of type int.
+The class 'TreeElement' has no attributes.
+The class 'MocaTree::Attribute' has the following attributes: 'value' of type str.
+The class 'Text' has no attributes.
+'MocaTree::Link' is a specialization of 'TreeElement'.
+'MocaTree::Node' is a specialization of 'Text'.
+'MocaTree::File' is a specialization of 'TreeElement'.
+'MocaTree::Attribute' is a specialization of 'TreeElement'.
+'MocaTree::Text' is a specialization of 'TreeElement'.
+'MocaTree::Folder' is a specialization of 'TreeElement'.
+'MocaTree::File' (role 'File16', cardinality 0..*) is associated with 'MocaTree::Node' (role 'rootNode', cardinality 0..*).
+'MocaTree::Node' (role 'Node4', cardinality 0..*) is associated with 'MocaTree::File' (role 'file3', cardinality 0..*).
+'MocaTree::Attribute' (role 'MocaTree_Attribute', cardinality 0..*) is associated with 'MocaTree::Link' (role 'MocaTree_Link14', cardinality 0..*).
+'MocaTree::TreeElement' (role 'MocaTree_TreeElement', cardinality 0..*) is associated with 'MocaTree::Link' (role 'MocaTree_Link', cardinality 0..*).
+'MocaTree::Folder' (role 'Folder', cardinality 0..*) is associated with 'MocaTree::File' (role 'file', cardinality 0..*).
+'MocaTree::Text' (role 'Text', cardinality 0..*) is associated with 'MocaTree::Node' (role 'parentNode', cardinality 0..*).
+'MocaTree::Node' (role 'node', cardinality 0..*) is associated with 'MocaTree::Attribute' (role 'Attribute', cardinality 0..*).
+'MocaTree::Folder' (role 'parentFolder', cardinality 0..*) is associated with 'MocaTree::Folder' (role 'Folder7', cardinality 0..*).
+'MocaTree::Text' (role 'children', cardinality 0..*) is associated with 'MocaTree::Node' (role 'Node20', cardinality 0..*).
+'MocaTree::Folder' (role 'folder', cardinality 0..*) is associated with 'MocaTree::File' (role 'File', cardinality 0..*).
+'MocaTree::Node' (role 'Node', cardinality 0..*) is associated with 'MocaTree::Attribute' (role 'attribute', cardinality 0..*).
+'MocaTree::Folder' (role 'subFolder', cardinality 0..*) is associated with 'MocaTree::Folder' (role 'Folder10', cardinality 0..*).
+'MocaTree::Link' (role 'MocaTree_Link23', cardinality 0..*) is associated with 'MocaTree::TreeElement' (role 'MocaTree_TreeElement22', cardinality 0..*).

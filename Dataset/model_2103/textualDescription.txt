@@ -1,0 +1,17 @@
+The model has 7 class(es).
+The class 'dft::Named' has the following attributes: 'typeName' of type str.
+The class 'dft::GalileoFaultTreeNode' has the following attributes: 'lambda_' of type str; 'repair' of type str; 'dorm' of type str; 'name' of type str.
+The class 'dft::GalileoDft' has no attributes.
+The class 'dft::Observer' has the following attributes: 'observationRate' of type str.
+The class 'dft::GalileoNodeType' has no attributes.
+The class 'GalileoNodeType' has no attributes.
+The class 'dft::Parametrized' has the following attributes: 'parameter' of type str; 'typeName' of type str.
+'dft::Observer' is a specialization of 'GalileoNodeType'.
+'dft::Named' is a specialization of 'GalileoNodeType'.
+'dft::Parametrized' is a specialization of 'GalileoNodeType'.
+'dft::GalileoDft' (role 'dft_GalileoDft', cardinality 0..*) is associated with 'dft::GalileoFaultTreeNode' (role 'dft_GalileoFaultTreeNode', cardinality 0..*).
+'dft::GalileoDft' (role 'dft_GalileoDft5', cardinality 0..*) is associated with 'dft::GalileoFaultTreeNode' (role 'dft_GalileoFaultTreeNode6', cardinality 0..*).
+'dft::GalileoDft' (role 'dft_GalileoDft2', cardinality 0..*) is associated with 'dft::GalileoFaultTreeNode' (role 'dft_GalileoFaultTreeNode3', cardinality 0..*).
+'dft::GalileoNodeType' (role 'dft_GalileoNodeType', cardinality 0..*) is associated with 'dft::GalileoFaultTreeNode' (role 'dft_GalileoFaultTreeNode8', cardinality 0..*).
+'dft::GalileoFaultTreeNode' (role 'dft_GalileoFaultTreeNode11', cardinality 0..*) is associated with 'dft::GalileoFaultTreeNode' (role 'dft_GalileoFaultTreeNode9', cardinality 0..*).
+'dft::Observer' (role 'dft_Observer', cardinality 0..*) is associated with 'dft::GalileoFaultTreeNode' (role 'dft_GalileoFaultTreeNode13', cardinality 0..*).

@@ -1,0 +1,17 @@
+The model has 8 class(es).
+The class 'bombXML::Feature' has the following attributes: 'kind' of type str.
+The class 'bombXML::Entity' has the following attributes: 'abstract' of type bool.
+The class 'Type' has no attributes.
+The class 'bombXML::DataType' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'bombXML::Type' has no attributes.
+The class 'bombXML::NamedElement' has the following attributes: 'name' of type str.
+The class 'bombXML::EntityModel' has no attributes.
+The enumeration 'FeatureKind' has the following literals: 'reference', 'containment', 'attribute'.
+'bombXML::Entity' is a specialization of 'Type'.
+'bombXML::Type' is a specialization of 'NamedElement'.
+'bombXML::DataType' is a specialization of 'Type'.
+'bombXML::Feature' is a specialization of 'NamedElement'.
+'bombXML::Feature' (role 'bombXML_Feature3', cardinality 0..*) is associated with 'bombXML::Type' (role 'bombXML_Type4', cardinality 0..*).
+'bombXML::Feature' (role 'bombXML_Feature', cardinality 0..*) is associated with 'bombXML::Entity' (role 'bombXML_Entity', cardinality 0..*).
+'bombXML::Type' (role 'bombXML_Type', cardinality 0..*) is associated with 'bombXML::EntityModel' (role 'bombXML_EntityModel', cardinality 0..*).

@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'LHS::C' has the following attributes: 'name' of type str.
+The class 'LHS::A' has the following attributes: 'name' of type str.
+The class 'LHS::B' has the following attributes: 'name' of type str.
+The class 'LHS::D' has the following attributes: 'name' of type str.
+'LHS::A' (role 'LHS_A2', cardinality 0..*) is associated with 'LHS::C' (role 'LHS_C', cardinality 0..*).
+'LHS::B' (role 'LHS_B4', cardinality 0..*) is associated with 'LHS::D' (role 'LHS_D', cardinality 0..*).
+'LHS::B' (role 'LHS_B', cardinality 0..*) is associated with 'LHS::A' (role 'LHS_A', cardinality 0..*).

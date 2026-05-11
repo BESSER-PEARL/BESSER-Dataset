@@ -1,0 +1,37 @@
+The model has 11 class(es).
+The class 'school::Course' has the following attributes: 'courseNumber' of type str; 'name' of type str.
+The class 'school::SchoolDatabase' has no attributes.
+The class 'school::Student' has the following attributes: 'studentNumber' of type str; 'name' of type str.
+The class 'school::Where' has no attributes.
+The class 'school::Query' has the following attributes: 'type' of type str.
+The class 'school::CourseResult' has the following attributes: 'grade' of type str.
+The class 'school::CourseOfStudy' has the following attributes: 'name' of type str.
+The class 'school::Faculty' has the following attributes: 'name' of type str.
+The class 'school::BooleanExpr' has the following attributes: 'rhs' of type str; 'lhs' of type str; 'operator' of type str.
+The class 'school::School' has the following attributes: 'name' of type str.
+The class 'school::Teacher' has the following attributes: 'name' of type str.
+The enumeration 'SchoolElement' has the following literals: 'Course', 'CourseOfStudy', 'School', 'Teacher', 'Faculty', 'Student'.
+'school::SchoolDatabase' (role 'school_SchoolDatabase44', cardinality 0..*) is associated with 'school::Query' (role 'school_Query45', cardinality 0..*).
+'school::CourseOfStudy' (role 'school_CourseOfStudy', cardinality 0..*) is associated with 'school::School' (role 'school_School2', cardinality 0..*).
+'school::Course' (role 'Course', cardinality 0..*) is associated with 'school::Student' (role 'enrolledStudent', cardinality 0..*).
+'school::Query' (role 'school_Query', cardinality 0..*) is associated with 'school::Student' (role 'school_Student30', cardinality 0..*).
+'school::CourseOfStudy' (role 'courseofstudy', cardinality 0..*) is associated with 'school::Faculty' (role 'Faculty', cardinality 0..*).
+'school::Where' (role 'school_Where34', cardinality 0..*) is associated with 'school::BooleanExpr' (role 'school_BooleanExpr', cardinality 0..*).
+'school::Faculty' (role 'school_Faculty', cardinality 0..*) is associated with 'school::School' (role 'school_School', cardinality 0..*).
+'school::Student' (role 'student', cardinality 0..*) is associated with 'school::CourseOfStudy' (role 'CourseOfStudy22', cardinality 0..*).
+'school::BooleanExpr' (role 'school_BooleanExpr37', cardinality 0..*) is associated with 'school::BooleanExpr' (role 'school_BooleanExpr35', cardinality 0..*).
+'school::Query' (role 'school_Query32', cardinality 0..*) is associated with 'school::Where' (role 'school_Where', cardinality 0..*).
+'school::Student' (role 'school_Student26', cardinality 0..*) is associated with 'school::CourseResult' (role 'school_CourseResult', cardinality 0..*).
+'school::Course' (role 'Course24', cardinality 0..*) is associated with 'school::Teacher' (role 'taughtBy', cardinality 0..*).
+'school::Course' (role 'teaches', cardinality 0..*) is associated with 'school::Teacher' (role 'Teacher', cardinality 0..*).
+'school::CourseOfStudy' (role 'CourseOfStudy', cardinality 0..*) is associated with 'school::Faculty' (role 'faculty', cardinality 0..*).
+'school::Course' (role 'enrolledIn', cardinality 0..*) is associated with 'school::Student' (role 'Student17', cardinality 0..*).
+'school::School' (role 'school_School8', cardinality 0..*) is associated with 'school::Teacher' (role 'school_Teacher', cardinality 0..*).
+'school::CourseOfStudy' (role 'courseofstudy15', cardinality 0..*) is associated with 'school::Student' (role 'Student', cardinality 0..*).
+'school::Course' (role 'school_Course', cardinality 0..*) is associated with 'school::School' (role 'school_School4', cardinality 0..*).
+'school::Course' (role 'Course28', cardinality 0..*) is associated with 'school::CourseResult' (role 'courseresult', cardinality 0..*).
+'school::BooleanExpr' (role 'school_BooleanExpr38', cardinality 0..*) is associated with 'school::BooleanExpr' (role 'school_BooleanExpr40', cardinality 0..*).
+'school::Student' (role 'school_Student', cardinality 0..*) is associated with 'school::School' (role 'school_School6', cardinality 0..*).
+'school::Course' (role 'school_Course12', cardinality 0..*) is associated with 'school::CourseOfStudy' (role 'school_CourseOfStudy11', cardinality 0..*).
+'school::Course' (role 'course', cardinality 0..*) is associated with 'school::CourseResult' (role 'CourseResult', cardinality 0..*).
+'school::SchoolDatabase' (role 'school_SchoolDatabase', cardinality 0..*) is associated with 'school::School' (role 'school_School42', cardinality 0..*).

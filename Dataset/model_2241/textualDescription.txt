@@ -1,0 +1,44 @@
+The model has 15 class(es).
+The class 'coursePages::CourseWork' has no attributes.
+The class 'coursePages::CourseWorker' has the following attributes: 'courseRole' of type str.
+The class 'coursePages::CourseWorkObject' has the following attributes: 'courseWorkType' of type str; 'start' of type date; 'end' of type date; 'room' of type str; 'day' of type str.
+The class 'coursePages::Person' has the following attributes: 'surName' of type str; 'phoneNummber' of type str; 'email' of type str; 'firstName' of type str.
+The class 'coursePages::StudyPrograms' has the following attributes: 'studyProgramName' of type str; 'studyProgramCode' of type str.
+The class 'coursePages::EvaluationObject' has the following attributes: 'evaluationsForm' of type str; 'term' of type str; 'credits' of type int; 'date' of type date.
+The class 'Person' has no attributes.
+The class 'coursePages::Precondition' has the following attributes: 'preconditionStatus' of type str.
+The class 'coursePages::Student' has the following attributes: 'studentID' of type str.
+The class 'coursePages::Department' has the following attributes: 'phoneNummber' of type str; 'departmentName' of type str; 'email' of type str.
+The class 'coursePages::CourseInstance' has the following attributes: 'term' of type str; 'courseYear' of type str.
+The class 'coursePages::Employee' has the following attributes: 'position' of type str.
+The class 'coursePages::Reduction' has the following attributes: 'creditReduction' of type float.
+The class 'coursePages::Course' has the following attributes: 'courseCredits' of type float; 'courseContent' of type str; 'courseName' of type str; 'courseCode' of type str.
+The class 'coursePages::Evaluations' has no attributes.
+The enumeration 'TermType' has the following literals: 'Fall', 'Summer', 'Spring'.
+The enumeration 'EvaluationType' has the following literals: 'Participated', 'Assignments', 'OralExam', 'WrittenExam', 'PracticalExam'.
+The enumeration 'CourseWorkType' has the following literals: 'Exercise', 'Lecture', 'Lab'.
+The enumeration 'personRoleType' has the following literals: 'CourseCordinator', 'Lecture'.
+The enumeration 'PrecondistionType' has the following literals: 'Recommended', 'Required'.
+'coursePages::Student' is a specialization of 'Person'.
+'coursePages::Employee' is a specialization of 'Person'.
+'coursePages::Reduction' (role 'coursePages_Reduction', cardinality 0..*) is associated with 'coursePages::Course' (role 'coursePages_Course25', cardinality 0..*).
+'coursePages::CourseInstance' (role 'coursePages_CourseInstance30', cardinality 0..*) is associated with 'coursePages::Evaluations' (role 'coursePages_Evaluations31', cardinality 0..*).
+'coursePages::StudyPrograms' (role 'studyprograms11', cardinality 0..*) is associated with 'coursePages::Student' (role 'Student', cardinality 0..*).
+'coursePages::StudyPrograms' (role 'studyprograms13', cardinality 0..*) is associated with 'coursePages::Course' (role 'Course', cardinality 0..*).
+'coursePages::EvaluationObject' (role 'coursePages_EvaluationObject', cardinality 0..*) is associated with 'coursePages::Evaluations' (role 'coursePages_Evaluations', cardinality 0..*).
+'coursePages::StudyPrograms' (role 'StudyPrograms5', cardinality 0..*) is associated with 'coursePages::Department' (role 'belongsToDepartment', cardinality 0..*).
+'coursePages::Course' (role 'coursePages_Course39', cardinality 0..*) is associated with 'coursePages::Reduction' (role 'coursePages_Reduction38', cardinality 0..*).
+'coursePages::CourseWorker' (role 'coursePages_CourseWorker33', cardinality 0..*) is associated with 'coursePages::Employee' (role 'coursePages_Employee', cardinality 0..*).
+'coursePages::StudyPrograms' (role 'studyprograms', cardinality 0..*) is associated with 'coursePages::Department' (role 'Department9', cardinality 0..*).
+'coursePages::CourseInstance' (role 'coursePages_CourseInstance27', cardinality 0..*) is associated with 'coursePages::CourseWork' (role 'coursePages_CourseWork28', cardinality 0..*).
+'coursePages::Student' (role 'student', cardinality 0..*) is associated with 'coursePages::StudyPrograms' (role 'StudyPrograms', cardinality 0..*).
+'coursePages::Employee' (role 'Employee', cardinality 0..*) is associated with 'coursePages::Department' (role 'department', cardinality 0..*).
+'coursePages::CourseWorker' (role 'coursePages_CourseWorker', cardinality 0..*) is associated with 'coursePages::Course' (role 'coursePages_Course21', cardinality 0..*).
+'coursePages::CourseWork' (role 'coursePages_CourseWork', cardinality 0..*) is associated with 'coursePages::CourseWorkObject' (role 'coursePages_CourseWorkObject', cardinality 0..*).
+'coursePages::Course' (role 'coursePages_Course23', cardinality 0..*) is associated with 'coursePages::Precondition' (role 'coursePages_Precondition', cardinality 0..*).
+'coursePages::Course' (role 'course', cardinality 0..*) is associated with 'coursePages::StudyPrograms' (role 'StudyPrograms19', cardinality 0..*).
+'coursePages::Department' (role 'Department', cardinality 0..*) is associated with 'coursePages::Employee' (role 'employee', cardinality 0..*).
+'coursePages::Course' (role 'coursePages_Course7', cardinality 0..*) is associated with 'coursePages::Department' (role 'coursePages_Department', cardinality 0..*).
+'coursePages::Course' (role 'coursePages_Course17', cardinality 0..*) is associated with 'coursePages::CourseInstance' (role 'coursePages_CourseInstance', cardinality 0..*).
+'coursePages::Student' (role 'coursePages_Student', cardinality 0..*) is associated with 'coursePages::Course' (role 'coursePages_Course', cardinality 0..*).
+'coursePages::Precondition' (role 'coursePages_Precondition35', cardinality 0..*) is associated with 'coursePages::Course' (role 'coursePages_Course36', cardinality 0..*).

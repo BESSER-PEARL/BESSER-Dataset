@@ -1,0 +1,25 @@
+The model has 8 class(es).
+The class 'graphdb::Element' has no attributes.
+The class 'graphdb::Graph' has the following attributes: 'rawDatabase' of type str.
+The class 'graphdb::Vertex' has the following attributes: 'name' of type str; 'labels' of type str.
+The class 'graphdb::GraphElement' has no attributes.
+The class 'graphdb::Property' has the following attributes: 'key' of type str; 'type' of type str.
+The class 'GraphElement' has no attributes.
+The class 'Element' has no attributes.
+The class 'graphdb::Edge' has the following attributes: 'type' of type str; 'name' of type str.
+The enumeration 'PrimitiveType' has the following literals: 'UmlToNoSQLID', 'Object', 'Boolean', 'String', 'Integer'.
+The enumeration 'DatabaseKind' has the following literals: 'GREMLIN'.
+'graphdb::GraphElement' is a specialization of 'Element'.
+'graphdb::Edge' is a specialization of 'GraphElement'.
+'graphdb::Vertex' is a specialization of 'GraphElement'.
+'graphdb::Property' is a specialization of 'Element'.
+'graphdb::Graph' (role 'graph2', cardinality 0..*) is associated with 'graphdb::Edge' (role 'Edge', cardinality 0..*).
+'graphdb::Vertex' (role 'Vertex10', cardinality 0..*) is associated with 'graphdb::Edge' (role 'outEdges', cardinality 0..*).
+'graphdb::GraphElement' (role 'owner', cardinality 0..*) is associated with 'graphdb::Property' (role 'Property', cardinality 0..*).
+'graphdb::Vertex' (role 'tail', cardinality 0..*) is associated with 'graphdb::Edge' (role 'Edge7', cardinality 0..*).
+'graphdb::Graph' (role 'Graph14', cardinality 0..*) is associated with 'graphdb::Edge' (role 'edges', cardinality 0..*).
+'graphdb::Property' (role 'properties', cardinality 0..*) is associated with 'graphdb::GraphElement' (role 'GraphElement', cardinality 0..*).
+'graphdb::Edge' (role 'Edge5', cardinality 0..*) is associated with 'graphdb::Vertex' (role 'head', cardinality 0..*).
+'graphdb::Graph' (role 'graph', cardinality 0..*) is associated with 'graphdb::Vertex' (role 'Vertex', cardinality 0..*).
+'graphdb::Vertex' (role 'vertices', cardinality 0..*) is associated with 'graphdb::Graph' (role 'Graph', cardinality 0..*).
+'graphdb::Vertex' (role 'Vertex12', cardinality 0..*) is associated with 'graphdb::Edge' (role 'inEdges', cardinality 0..*).

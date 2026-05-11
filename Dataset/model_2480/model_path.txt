@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/viatra/iq-sirius-integration/host/org.eclipse.incquery.viewmodel/model/traceability.ecore

@@ -1,0 +1,11 @@
+The model has 6 class(es).
+The class 'Persons::PersonsModel' has no attributes.
+The class 'Person' has no attributes.
+The class 'Persons::Person' has the following attributes: 'fullName' of type str.
+The class 'Persons::Male' has the following attributes: 'age' of type int.
+The class 'Persons::Female' has the following attributes: 'age' of type int.
+The class 'PersonsModel' has no attributes.
+'Persons::Male' is a specialization of 'Person'.
+'Persons::Female' is a specialization of 'Person'.
+'Persons::PersonsModel' (role 'model', cardinality 0..*) is associated with 'Person' (role 'Person', cardinality 0..*).
+'Persons::Person' (role 'persons', cardinality 0..*) is associated with 'PersonsModel' (role 'PersonsModel', cardinality 0..*).

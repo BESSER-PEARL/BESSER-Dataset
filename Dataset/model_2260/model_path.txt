@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/simonstastny/Modellbasert-utvikling-av-informasjonssystemer/1-model-and-data/model/tdt4250.ecore

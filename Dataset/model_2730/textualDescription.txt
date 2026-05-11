@@ -1,0 +1,17 @@
+The model has 8 class(es).
+The class 'A' has no attributes.
+The class 'e::C' has the following attributes: 'c' of type int.
+The class 'e::X' has no attributes.
+The class 'Y' has no attributes.
+The class 'e::Y' has the following attributes: 'a' of type str.
+The class 'e::B' has the following attributes: 'c' of type float.
+The class 'e::Z' has the following attributes: 'b' of type int.
+The class 'e::A' has the following attributes: 'b' of type str; 'a' of type str.
+'e::X' is a specialization of 'A'.
+'e::C' is a specialization of 'A'.
+'e::B' is a specialization of 'Y'.
+'e::B' (role 'B', cardinality 0..*) is associated with 'e::C' (role 'cc8', cardinality 0..*).
+'e::B' (role 'e_B', cardinality 0..*) is associated with 'e::A' (role 'e_A', cardinality 0..*).
+'e::C' (role 'C', cardinality 0..*) is associated with 'e::B' (role 'cc', cardinality 0..*).
+'e::Z' (role 'e_Z', cardinality 0..*) is associated with 'e::B' (role 'e_B5', cardinality 0..*).
+'e::A' (role 'e_A2', cardinality 0..*) is associated with 'e::B' (role 'e_B3', cardinality 0..*).

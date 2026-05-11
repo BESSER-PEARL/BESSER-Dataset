@@ -1,0 +1,158 @@
+The model has 75 class(es).
+The class 'DSemanticDecorator' has no attributes.
+The class 'tool::ContainerViewVariable' has no attributes.
+The class 'TreeDescription' has no attributes.
+The class 'DRepresentation' has no attributes.
+The class 'TreeItemDragTool' has no attributes.
+The class 'tree::description::TreeItemCreationTool' has no attributes.
+The class 'DTreeElement' has no attributes.
+The class 'tree::description::TreeItemDeletionTool' has no attributes.
+The class 'tool::ModelOperation' has no attributes.
+The class 'tool::RepresentationCreationDescription' has no attributes.
+The class 'TreeItemMappingContainer' has no attributes.
+The class 'AbstractToolDescription' has no attributes.
+The class 'DRepresentationElement' has no attributes.
+The class 'TreeItemCreationTool' has no attributes.
+The class 'description::TreeMapping' has no attributes.
+The class 'RepresentationElementMapping' has no attributes.
+The class 'tree::description::TreeItemMapping' has the following attributes: 'domainClass' of type str; 'semanticCandidatesExpression' of type str; 'preconditionExpression' of type str.
+The class 'tool::ElementDropVariable' has no attributes.
+The class 'RepresentationNavigationDescription' has no attributes.
+The class 'tool::MenuItemOrRef' has no attributes.
+The class 'tree::DTreeElement' has no attributes.
+The class 'TreeItemUpdater' has no attributes.
+The class 'tool::MappingBasedToolDescription' has no attributes.
+The class 'PrecedingSiblingsVariables' has no attributes.
+The class 'description::TreeItemTool' has no attributes.
+The class 'tool::DropContainerVariable' has no attributes.
+The class 'TreeMapping' has no attributes.
+The class 'TreePopupMenu' has no attributes.
+The class 'description::TreeItemMappingContainer' has no attributes.
+The class 'RepresentationCreationDescription' has no attributes.
+The class 'description::StyleUpdater' has no attributes.
+The class 'DTreeItemContainer' has no attributes.
+The class 'TreeItemEditionTool' has no attributes.
+The class 'description::AbstractVariable' has no attributes.
+The class 'tree::description::TreeItemDragTool' has the following attributes: 'dragSourceType' of type str.
+The class 'TreeItemDeletionTool' has no attributes.
+The class 'tree::description::PrecedingSiblingsVariables' has no attributes.
+The class 'tree::description::ConditionalTreeItemStyleDescription' has no attributes.
+The class 'tree::description::TreeItemTool' has no attributes.
+The class 'tree::description::TreeNavigationDescription' has no attributes.
+The class 'tool::EditMaskVariables' has no attributes.
+The class 'style::LabelStyleDescription' has no attributes.
+The class 'ConditionalTreeItemStyleDescription' has no attributes.
+The class 'description::RepresentationDescription' has no attributes.
+The class 'tree::EObject' has no attributes.
+The class 'TreeItemStyleDescription' has no attributes.
+The class 'ConditionalStyleDescription' has no attributes.
+The class 'tree::DTree' has no attributes.
+The class 'TreeItemMapping' has no attributes.
+The class 'tree::description::StyleUpdater' has no attributes.
+The class 'tree::description::TreeCreationDescription' has no attributes.
+The class 'ColorDescription' has no attributes.
+The class 'description::TreeItemUpdater' has no attributes.
+The class 'tree::description::TreeItemUpdater' has no attributes.
+The class 'tree::description::TreeVariable' has the following attributes: 'documentation' of type str.
+The class 'LabelStyle' has no attributes.
+The class 'tree::DTreeElementSynchronizer' has no attributes.
+The class 'tree::description::TreeItemEditionTool' has no attributes.
+The class 'style::StyleDescription' has no attributes.
+The class 'tool::VariableContainer' has no attributes.
+The class 'StyleUpdater' has no attributes.
+The class 'tree::description::TreeItemContainerDropTool' has the following attributes: 'dragSource' of type str.
+The class 'tree::TreeItemStyle' has the following attributes: 'backgroundColor' of type str.
+The class 'tool::RepresentationNavigationDescription' has no attributes.
+The class 'tree::DTreeItem' has the following attributes: 'expanded' of type bool.
+The class 'TreeItemContainerDropTool' has no attributes.
+The class 'tree::description::TreeDescription' has the following attributes: 'domainClass' of type str; 'preconditionExpression' of type str.
+The class 'TreeVariable' has no attributes.
+The class 'tree::description::TreeItemStyleDescription' has no attributes.
+The class 'tree::description::TreeItemMappingContainer' has no attributes.
+The class 'tree::description::TreeMapping' has the following attributes: 'semanticElements' of type str.
+The class 'TreeItemTool' has no attributes.
+The class 'tree::DTreeItemContainer' has no attributes.
+The class 'Style' has no attributes.
+The class 'tree::description::TreePopupMenu' has no attributes.
+The enumeration 'TreeDragSource' has the following literals: 'PROJECT_EXPLORER', 'TREE', 'BOTH'.
+'tree::description::TreeDescription' is a specialization of 'description::RepresentationDescription'.
+'tree::description::TreeItemDragTool' is a specialization of 'description::TreeItemTool'.
+'tree::description::TreeItemMapping' is a specialization of 'description::StyleUpdater'.
+'tree::DTreeItem' is a specialization of 'DTreeItemContainer'.
+'tree::DTree' is a specialization of 'DTreeItemContainer'.
+'tree::description::TreeCreationDescription' is a specialization of 'RepresentationCreationDescription'.
+'tree::DTreeItem' is a specialization of 'DTreeElement'.
+'tree::description::TreePopupMenu' is a specialization of 'AbstractToolDescription'.
+'tree::description::ConditionalTreeItemStyleDescription' is a specialization of 'ConditionalStyleDescription'.
+'tree::DTreeItemContainer' is a specialization of 'DSemanticDecorator'.
+'tree::description::TreeItemContainerDropTool' is a specialization of 'description::TreeItemTool'.
+'tree::description::TreeItemMapping' is a specialization of 'description::TreeItemMappingContainer'.
+'tree::description::TreeVariable' is a specialization of 'description::AbstractVariable'.
+'tree::description::TreeItemCreationTool' is a specialization of 'tool::MappingBasedToolDescription'.
+'tree::description::TreeVariable' is a specialization of 'tool::VariableContainer'.
+'tree::description::TreeItemEditionTool' is a specialization of 'TreeItemTool'.
+'tree::TreeItemStyle' is a specialization of 'LabelStyle'.
+'tree::description::TreeDescription' is a specialization of 'description::TreeItemMappingContainer'.
+'tree::description::PrecedingSiblingsVariables' is a specialization of 'TreeVariable'.
+'tree::description::TreeNavigationDescription' is a specialization of 'RepresentationNavigationDescription'.
+'tree::description::TreeItemCreationTool' is a specialization of 'description::TreeItemTool'.
+'tree::description::TreeItemContainerDropTool' is a specialization of 'tool::MappingBasedToolDescription'.
+'tree::description::TreeItemMapping' is a specialization of 'description::TreeItemUpdater'.
+'tree::DTree' is a specialization of 'DRepresentation'.
+'tree::description::TreeMapping' is a specialization of 'RepresentationElementMapping'.
+'tree::description::TreeItemDeletionTool' is a specialization of 'TreeItemTool'.
+'tree::description::TreeItemMapping' is a specialization of 'description::TreeMapping'.
+'tree::description::TreeItemDragTool' is a specialization of 'tool::MappingBasedToolDescription'.
+'tree::description::TreeItemStyleDescription' is a specialization of 'style::LabelStyleDescription'.
+'tree::description::TreeItemStyleDescription' is a specialization of 'style::StyleDescription'.
+'tree::DTreeElement' is a specialization of 'DRepresentationElement'.
+'tree::TreeItemStyle' is a specialization of 'Style'.
+'tree::description::TreeItemTool' is a specialization of 'AbstractToolDescription'.
+'tree::description::TreeItemContainerDropTool' (role 'tree_description_TreeItemContainerDropTool63', cardinality 0..*) is associated with 'PrecedingSiblingsVariables' (role 'PrecedingSiblingsVariables64', cardinality 0..*).
+'tree::description::TreeItemMapping' (role 'tree_description_TreeItemMapping24', cardinality 0..*) is associated with 'TreeItemMapping' (role 'TreeItemMapping25', cardinality 0..*).
+'tree::description::TreeItemContainerDropTool' (role 'tree_description_TreeItemContainerDropTool60', cardinality 0..*) is associated with 'tool::ContainerViewVariable' (role 'tool_ContainerViewVariable61', cardinality 0..*).
+'TreeItemMapping' (role 'TreeItemMapping19', cardinality 0..*) is associated with 'tree::description::TreeItemMapping' (role 'tree_description_TreeItemMapping', cardinality 0..*).
+'TreeVariable' (role 'TreeVariable', cardinality 0..*) is associated with 'tree::description::TreeItemTool' (role 'tree_description_TreeItemTool38', cardinality 0..*).
+'tree::description::TreeItemDragTool' (role 'tree_description_TreeItemDragTool46', cardinality 0..*) is associated with 'tool::ContainerViewVariable' (role 'tool_ContainerViewVariable', cardinality 0..*).
+'tree::description::TreeItemMappingContainer' (role 'tree_description_TreeItemMappingContainer', cardinality 0..*) is associated with 'TreeItemMapping' (role 'TreeItemMapping89', cardinality 0..*).
+'TreeItemMappingContainer' (role 'TreeItemMappingContainer', cardinality 0..*) is associated with 'tree::description::TreeItemDragTool' (role 'tree_description_TreeItemDragTool48', cardinality 0..*).
+'tree::description::TreeItemDragTool' (role 'tree_description_TreeItemDragTool', cardinality 0..*) is associated with 'tool::DropContainerVariable' (role 'tool_DropContainerVariable', cardinality 0..*).
+'tree::description::TreeItemTool' (role 'tree_description_TreeItemTool', cardinality 0..*) is associated with 'tool::ModelOperation' (role 'tool_ModelOperation', cardinality 0..*).
+'TreePopupMenu' (role 'TreePopupMenu', cardinality 0..*) is associated with 'tree::description::TreeItemMapping' (role 'tree_description_TreeItemMapping33', cardinality 0..*).
+'tree::DTree' (role 'tree_DTree', cardinality 0..*) is associated with 'tree::EObject' (role 'tree_EObject', cardinality 0..*).
+'TreeItemUpdater' (role 'TreeItemUpdater', cardinality 0..*) is associated with 'tree::DTreeItem' (role 'tree_DTreeItem12', cardinality 0..*).
+'ConditionalTreeItemStyleDescription' (role 'ConditionalTreeItemStyleDescription', cardinality 0..*) is associated with 'tree::description::StyleUpdater' (role 'tree_description_StyleUpdater86', cardinality 0..*).
+'tree::DTreeItem' (role 'tree_DTreeItem10', cardinality 0..*) is associated with 'StyleUpdater' (role 'StyleUpdater', cardinality 0..*).
+'tree::description::TreeItemUpdater' (role 'tree_description_TreeItemUpdater', cardinality 0..*) is associated with 'TreeItemEditionTool' (role 'TreeItemEditionTool', cardinality 0..*).
+'tree::DTreeItem' (role 'ownedTreeItems', cardinality 0..*) is associated with 'tree::DTreeItemContainer' (role 'DTreeItemContainer', cardinality 0..*).
+'TreeItemStyleDescription' (role 'TreeItemStyleDescription84', cardinality 0..*) is associated with 'tree::description::StyleUpdater' (role 'tree_description_StyleUpdater', cardinality 0..*).
+'tree::description::TreeItemContainerDropTool' (role 'tree_description_TreeItemContainerDropTool54', cardinality 0..*) is associated with 'tool::DropContainerVariable' (role 'tool_DropContainerVariable55', cardinality 0..*).
+'TreeItemMapping' (role 'TreeItemMapping70', cardinality 0..*) is associated with 'tree::description::TreeItemEditionTool' (role 'tree_description_TreeItemEditionTool69', cardinality 0..*).
+'tree::description::TreeItemDragTool' (role 'tree_description_TreeItemDragTool44', cardinality 0..*) is associated with 'tool::ElementDropVariable' (role 'tool_ElementDropVariable', cardinality 0..*).
+'tool::ElementDropVariable' (role 'tool_ElementDropVariable73', cardinality 0..*) is associated with 'tree::description::TreeItemEditionTool' (role 'tree_description_TreeItemEditionTool72', cardinality 0..*).
+'tool::RepresentationNavigationDescription' (role 'tool_RepresentationNavigationDescription', cardinality 0..*) is associated with 'tree::description::TreeDescription' (role 'tree_description_TreeDescription17', cardinality 0..*).
+'TreeItemContainerDropTool' (role 'TreeItemContainerDropTool', cardinality 0..*) is associated with 'tree::description::TreeItemMappingContainer' (role 'tree_description_TreeItemMappingContainer91', cardinality 0..*).
+'tool::RepresentationCreationDescription' (role 'tool_RepresentationCreationDescription', cardinality 0..*) is associated with 'tree::description::TreeDescription' (role 'tree_description_TreeDescription15', cardinality 0..*).
+'tree::description::ConditionalTreeItemStyleDescription' (role 'tree_description_ConditionalTreeItemStyleDescription', cardinality 0..*) is associated with 'TreeItemStyleDescription' (role 'TreeItemStyleDescription', cardinality 0..*).
+'tree::description::TreeItemMapping' (role 'mapping', cardinality 0..*) is associated with 'TreeItemDeletionTool' (role 'TreeItemDeletionTool', cardinality 0..*).
+'TreeDescription' (role 'TreeDescription82', cardinality 0..*) is associated with 'tree::description::TreeNavigationDescription' (role 'tree_description_TreeNavigationDescription', cardinality 0..*).
+'tool::MenuItemOrRef' (role 'tool_MenuItemOrRef', cardinality 0..*) is associated with 'tree::description::TreePopupMenu' (role 'tree_description_TreePopupMenu', cardinality 0..*).
+'tree::TreeItemStyle' (role 'tree_TreeItemStyle', cardinality 0..*) is associated with 'tree::DTreeItem' (role 'tree_DTreeItem', cardinality 0..*).
+'tool::DropContainerVariable' (role 'tool_DropContainerVariable42', cardinality 0..*) is associated with 'tree::description::TreeItemDragTool' (role 'tree_description_TreeItemDragTool41', cardinality 0..*).
+'tool::ElementDropVariable' (role 'tool_ElementDropVariable58', cardinality 0..*) is associated with 'tree::description::TreeItemContainerDropTool' (role 'tree_description_TreeItemContainerDropTool57', cardinality 0..*).
+'tool::EditMaskVariables' (role 'tool_EditMaskVariables', cardinality 0..*) is associated with 'tree::description::TreeItemEditionTool' (role 'tree_description_TreeItemEditionTool', cardinality 0..*).
+'tree::description::TreeItemMapping' (role 'tree_description_TreeItemMapping21', cardinality 0..*) is associated with 'TreeItemMapping' (role 'TreeItemMapping22', cardinality 0..*).
+'TreeItemMapping' (role 'TreeItemMapping78', cardinality 0..*) is associated with 'tree::description::TreeItemDeletionTool' (role 'delete', cardinality 0..*).
+'tree::description::TreeItemMapping' (role 'tree_description_TreeItemMapping31', cardinality 0..*) is associated with 'TreeItemDragTool' (role 'TreeItemDragTool', cardinality 0..*).
+'tree::description::TreeDescription' (role 'tree_description_TreeDescription', cardinality 0..*) is associated with 'TreeItemCreationTool' (role 'TreeItemCreationTool', cardinality 0..*).
+'tree::description::TreeItemEditionTool' (role 'tree_description_TreeItemEditionTool75', cardinality 0..*) is associated with 'tool::ElementDropVariable' (role 'tool_ElementDropVariable76', cardinality 0..*).
+'TreeItemCreationTool' (role 'TreeItemCreationTool29', cardinality 0..*) is associated with 'tree::description::TreeItemMapping' (role 'tree_description_TreeItemMapping28', cardinality 0..*).
+'tree::description::TreeItemContainerDropTool' (role 'tree_description_TreeItemContainerDropTool', cardinality 0..*) is associated with 'tool::DropContainerVariable' (role 'tool_DropContainerVariable52', cardinality 0..*).
+'TreeDescription' (role 'TreeDescription', cardinality 0..*) is associated with 'tree::DTree' (role 'tree_DTree2', cardinality 0..*).
+'tree::description::TreeItemStyleDescription' (role 'tree_description_TreeItemStyleDescription', cardinality 0..*) is associated with 'ColorDescription' (role 'ColorDescription', cardinality 0..*).
+'TreeItemMapping' (role 'TreeItemMapping66', cardinality 0..*) is associated with 'tree::description::TreeItemCreationTool' (role 'tree_description_TreeItemCreationTool', cardinality 0..*).
+'PrecedingSiblingsVariables' (role 'PrecedingSiblingsVariables', cardinality 0..*) is associated with 'tree::description::TreeItemDragTool' (role 'tree_description_TreeItemDragTool50', cardinality 0..*).
+'tree::description::TreeCreationDescription' (role 'tree_description_TreeCreationDescription', cardinality 0..*) is associated with 'TreeDescription' (role 'TreeDescription80', cardinality 0..*).
+'TreeItemMapping' (role 'TreeItemMapping', cardinality 0..*) is associated with 'tree::DTreeItem' (role 'tree_DTreeItem7', cardinality 0..*).
+'TreeMapping' (role 'TreeMapping', cardinality 0..*) is associated with 'tree::DTreeElement' (role 'tree_DTreeElement', cardinality 0..*).
+'tree::DTreeItem' (role 'DTreeItem', cardinality 0..*) is associated with 'tree::DTreeItemContainer' (role 'container', cardinality 0..*).

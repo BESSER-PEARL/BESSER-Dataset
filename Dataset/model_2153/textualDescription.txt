@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'jgrapht::Graph' has no attributes.
+The class 'jgrapht::Vertex' has the following attributes: 'name' of type str.
+The class 'jgrapht::Edge' has the following attributes: 'relation' of type str.
+'jgrapht::Edge' (role 'jgrapht_Edge7', cardinality 0..*) is associated with 'jgrapht::Vertex' (role 'jgrapht_Vertex8', cardinality 0..*).
+'jgrapht::Edge' (role 'jgrapht_Edge', cardinality 0..*) is associated with 'jgrapht::Graph' (role 'jgrapht_Graph', cardinality 0..*).
+'jgrapht::Graph' (role 'jgrapht_Graph2', cardinality 0..*) is associated with 'jgrapht::Vertex' (role 'jgrapht_Vertex', cardinality 0..*).
+'jgrapht::Vertex' (role 'jgrapht_Vertex5', cardinality 0..*) is associated with 'jgrapht::Edge' (role 'jgrapht_Edge4', cardinality 0..*).

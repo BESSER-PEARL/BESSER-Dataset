@@ -1,0 +1,69 @@
+The model has 23 class(es).
+The class 'AbstractTable' has no attributes.
+The class 'database::IndexElement' has the following attributes: 'asc' of type bool.
+The class 'DatabaseElement' has no attributes.
+The class 'database::AbstractTable' has no attributes.
+The class 'database::Schema' has no attributes.
+The class 'database::NamedElement' has the following attributes: 'name' of type str.
+The class 'database::ForeignKeyElement' has no attributes.
+The class 'TableContainer' has no attributes.
+The class 'database::Type' has no attributes.
+The class 'database::Constraint' has the following attributes: 'expression' of type str.
+The class 'database::DatabaseElement' has the following attributes: 'ID' of type str; 'comments' of type str.
+The class 'NamedElement' has no attributes.
+The class 'database::TableContainer' has no attributes.
+The class 'database::UserDefinedTypesLibrary' has no attributes.
+The class 'database::Sequence' has the following attributes: 'maxValue' of type int; 'minValue' of type int; 'increment' of type int; 'start' of type int.
+The class 'database::DataBase' has the following attributes: 'url' of type str.
+The class 'TypesLibraryUser' has no attributes.
+The class 'database::PrimaryKey' has no attributes.
+The class 'database::Index' has the following attributes: 'unique' of type bool; 'cardinality' of type int; 'qualifier' of type str; 'indexType' of type str.
+The class 'database::View' has the following attributes: 'query' of type str.
+The class 'database::Column' has the following attributes: 'inPrimaryKey' of type bool; 'autoincrement' of type bool; 'nullable' of type bool; 'unique' of type bool; 'defaultValue' of type str; 'inForeignKey' of type bool.
+The class 'database::ForeignKey' has no attributes.
+The class 'database::Table' has no attributes.
+'database::ForeignKey' is a specialization of 'NamedElement'.
+'database::Sequence' is a specialization of 'NamedElement'.
+'database::PrimaryKey' is a specialization of 'NamedElement'.
+'database::TableContainer' is a specialization of 'NamedElement'.
+'database::AbstractTable' is a specialization of 'NamedElement'.
+'database::View' is a specialization of 'AbstractTable'.
+'database::Index' is a specialization of 'NamedElement'.
+'database::NamedElement' is a specialization of 'DatabaseElement'.
+'database::DataBase' is a specialization of 'TableContainer'.
+'database::Constraint' is a specialization of 'NamedElement'.
+'database::DataBase' is a specialization of 'TypesLibraryUser'.
+'database::IndexElement' is a specialization of 'DatabaseElement'.
+'database::Table' is a specialization of 'AbstractTable'.
+'database::Column' is a specialization of 'NamedElement'.
+'database::ForeignKeyElement' is a specialization of 'DatabaseElement'.
+'database::Schema' is a specialization of 'TableContainer'.
+'database::PrimaryKey' (role 'primaryKey32', cardinality 0..*) is associated with 'database::Table' (role 'Table33', cardinality 0..*).
+'database::Column' (role 'column', cardinality 0..*) is associated with 'database::IndexElement' (role 'IndexElement', cardinality 0..*).
+'database::IndexElement' (role 'database_IndexElement', cardinality 0..*) is associated with 'database::Index' (role 'database_Index18', cardinality 0..*).
+'database::Table' (role 'Table37', cardinality 0..*) is associated with 'database::ForeignKey' (role 'foreignKeys', cardinality 0..*).
+'database::Index' (role 'database_Index', cardinality 0..*) is associated with 'database::Column' (role 'database_Column', cardinality 0..*).
+'database::PrimaryKey' (role 'PrimaryKey', cardinality 0..*) is associated with 'database::Column' (role 'columns', cardinality 0..*).
+'database::Index' (role 'indexes', cardinality 0..*) is associated with 'database::Table' (role 'Table', cardinality 0..*).
+'database::Column' (role 'database_Column9', cardinality 0..*) is associated with 'database::ForeignKey' (role 'database_ForeignKey', cardinality 0..*).
+'database::DataBase' (role 'database_DataBase2', cardinality 0..*) is associated with 'database::UserDefinedTypesLibrary' (role 'database_UserDefinedTypesLibrary', cardinality 0..*).
+'database::TableContainer' (role 'database_TableContainer', cardinality 0..*) is associated with 'database::Sequence' (role 'database_Sequence53', cardinality 0..*).
+'database::ForeignKey' (role 'database_ForeignKey39', cardinality 0..*) is associated with 'database::Table' (role 'database_Table', cardinality 0..*).
+'database::Table' (role 'Table48', cardinality 0..*) is associated with 'database::Constraint' (role 'constraints', cardinality 0..*).
+'database::Table' (role 'owner26', cardinality 0..*) is associated with 'database::Constraint' (role 'Constraint', cardinality 0..*).
+'database::ForeignKey' (role 'ForeignKey', cardinality 0..*) is associated with 'database::Table' (role 'owner24', cardinality 0..*).
+'database::PrimaryKey' (role 'primaryKey', cardinality 0..*) is associated with 'database::Column' (role 'Column30', cardinality 0..*).
+'database::Column' (role 'database_Column12', cardinality 0..*) is associated with 'database::Type' (role 'database_Type', cardinality 0..*).
+'database::ForeignKeyElement' (role 'foreignKeyElements', cardinality 0..*) is associated with 'database::Column' (role 'Column41', cardinality 0..*).
+'database::IndexElement' (role 'indexElements', cardinality 0..*) is associated with 'database::Column' (role 'Column46', cardinality 0..*).
+'database::Table' (role 'owner21', cardinality 0..*) is associated with 'database::PrimaryKey' (role 'PrimaryKey22', cardinality 0..*).
+'database::Schema' (role 'database_Schema', cardinality 0..*) is associated with 'database::DataBase' (role 'database_DataBase', cardinality 0..*).
+'database::AbstractTable' (role 'AbstractTable', cardinality 0..*) is associated with 'database::Column' (role 'columns16', cardinality 0..*).
+'database::TableContainer' (role 'TableContainer', cardinality 0..*) is associated with 'database::AbstractTable' (role 'tables', cardinality 0..*).
+'database::Sequence' (role 'database_Sequence', cardinality 0..*) is associated with 'database::Column' (role 'database_Column14', cardinality 0..*).
+'database::ForeignKeyElement' (role 'ForeignKeyElement', cardinality 0..*) is associated with 'database::Column' (role 'fkColumn', cardinality 0..*).
+'database::Column' (role 'database_Column44', cardinality 0..*) is associated with 'database::ForeignKeyElement' (role 'database_ForeignKeyElement43', cardinality 0..*).
+'database::Table' (role 'owner28', cardinality 0..*) is associated with 'database::Index' (role 'Index', cardinality 0..*).
+'database::ForeignKey' (role 'database_ForeignKey35', cardinality 0..*) is associated with 'database::ForeignKeyElement' (role 'database_ForeignKeyElement', cardinality 0..*).
+'database::Column' (role 'Column', cardinality 0..*) is associated with 'database::AbstractTable' (role 'owner', cardinality 0..*).
+'database::AbstractTable' (role 'AbstractTable51', cardinality 0..*) is associated with 'database::TableContainer' (role 'owner50', cardinality 0..*).

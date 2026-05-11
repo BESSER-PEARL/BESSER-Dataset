@@ -1,0 +1,10 @@
+The model has 3 class(es).
+The class 'dag::Vertex' has the following attributes: 'id' of type str.
+The class 'dag::Edge' has the following attributes: 'id' of type str.
+The class 'dag::DAG' has no attributes.
+'dag::Vertex' (role 'dag_Vertex', cardinality 0..*) is associated with 'dag::DAG' (role 'dag_DAG', cardinality 0..*).
+'dag::Edge' (role 'outgoing', cardinality 0..*) is associated with 'dag::Vertex' (role 'Vertex', cardinality 0..*).
+'dag::Edge' (role 'Edge', cardinality 0..*) is associated with 'dag::Vertex' (role 'from_', cardinality 0..*).
+'dag::Edge' (role 'dag_Edge', cardinality 0..*) is associated with 'dag::DAG' (role 'dag_DAG2', cardinality 0..*).
+'dag::Vertex' (role 'to', cardinality 0..*) is associated with 'dag::Edge' (role 'Edge5', cardinality 0..*).
+'dag::Vertex' (role 'Vertex8', cardinality 0..*) is associated with 'dag::Edge' (role 'incoming', cardinality 0..*).

@@ -1,0 +1,58 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Events_traceSystem_BooleanBinaryExpression  {
+
+
+
+
+
+
+    private traceSystem_Events_BooleanBinaryExpression_evaluateOREntryEventOccurrence tracesystem_events_booleanbinaryexpression_evaluateorentryeventoccurrence;
+
+
+
+
+    private traceSystem_Events_BooleanBinaryExpression_execute_booleanBinaryExpressionEntryEventOccurrence tracesystem_events_booleanbinaryexpression_execute_booleanbinaryexpressionentryeventoccurrence;
+
+
+
+
+    private traceSystem_Events_BooleanBinaryExpression_evaluateANDEntryEventOccurrence tracesystem_events_booleanbinaryexpression_evaluateandentryeventoccurrence;
+
+
+    public Events_traceSystem_BooleanBinaryExpression(
+    ) {
+    }
+
+
+
+    public traceSystem_Events_BooleanBinaryExpression_evaluateOREntryEventOccurrence getTracesystem_events_booleanbinaryexpression_evaluateorentryeventoccurrence() {
+        return tracesystem_events_booleanbinaryexpression_evaluateorentryeventoccurrence;
+    }
+
+    public void setTracesystem_events_booleanbinaryexpression_evaluateorentryeventoccurrence(traceSystem_Events_BooleanBinaryExpression_evaluateOREntryEventOccurrence tracesystem_events_booleanbinaryexpression_evaluateorentryeventoccurrence) {
+        this.tracesystem_events_booleanbinaryexpression_evaluateorentryeventoccurrence = tracesystem_events_booleanbinaryexpression_evaluateorentryeventoccurrence;
+    }
+    public traceSystem_Events_BooleanBinaryExpression_execute_booleanBinaryExpressionEntryEventOccurrence getTracesystem_events_booleanbinaryexpression_execute_booleanbinaryexpressionentryeventoccurrence() {
+        return tracesystem_events_booleanbinaryexpression_execute_booleanbinaryexpressionentryeventoccurrence;
+    }
+
+    public void setTracesystem_events_booleanbinaryexpression_execute_booleanbinaryexpressionentryeventoccurrence(traceSystem_Events_BooleanBinaryExpression_execute_booleanBinaryExpressionEntryEventOccurrence tracesystem_events_booleanbinaryexpression_execute_booleanbinaryexpressionentryeventoccurrence) {
+        this.tracesystem_events_booleanbinaryexpression_execute_booleanbinaryexpressionentryeventoccurrence = tracesystem_events_booleanbinaryexpression_execute_booleanbinaryexpressionentryeventoccurrence;
+    }
+    public traceSystem_Events_BooleanBinaryExpression_evaluateANDEntryEventOccurrence getTracesystem_events_booleanbinaryexpression_evaluateandentryeventoccurrence() {
+        return tracesystem_events_booleanbinaryexpression_evaluateandentryeventoccurrence;
+    }
+
+    public void setTracesystem_events_booleanbinaryexpression_evaluateandentryeventoccurrence(traceSystem_Events_BooleanBinaryExpression_evaluateANDEntryEventOccurrence tracesystem_events_booleanbinaryexpression_evaluateandentryeventoccurrence) {
+        this.tracesystem_events_booleanbinaryexpression_evaluateandentryeventoccurrence = tracesystem_events_booleanbinaryexpression_evaluateandentryeventoccurrence;
+    }
+
+}

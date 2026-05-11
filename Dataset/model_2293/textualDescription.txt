@@ -1,0 +1,49 @@
+The model has 20 class(es).
+The class 'zlvp::Geschlecht' has the following attributes: 'id' of type int; 'name' of type str.
+The class 'zlvp::ZeltDetail' has the following attributes: 'name' of type str; 'id' of type int.
+The class 'zlvp::Lagerort' has the following attributes: 'id' of type int; 'name' of type str.
+The class 'zlvp::Jahr' has the following attributes: 'name' of type str; 'id' of type int.
+The class 'zlvp::Anrede' has the following attributes: 'name' of type str; 'id' of type int.
+The class 'zlvp::Gruppen' has the following attributes: 'name' of type str; 'id' of type int; 'spruch' of type str.
+The class 'zlvp::LegendaTyp' has the following attributes: 'id' of type int; 'name' of type str.
+The class 'zlvp::Essen' has the following attributes: 'vormittag' of type str; 'id' of type int; 'datum' of type date; 'nacht' of type str; 'nachmittag' of type str.
+The class 'zlvp::Legenda' has the following attributes: 'firma' of type str; 'id' of type int; 'plz' of type str; 'telNr' of type str; 'bemerkung' of type str; 'strasse' of type str; 'nachname' of type str; 'vorname' of type str; 'handyNr' of type str; 'faxNr' of type str; 'email' of type str; 'ort' of type str.
+The class 'zlvp::Verleih' has the following attributes: 'id' of type int; 'bemerkung' of type str; 'person' of type str; 'datum' of type date.
+The class 'zlvp::Lager' has the following attributes: 'thema' of type str; 'stop' of type date; 'name' of type str; 'ort' of type str; 'id' of type int; 'start' of type date.
+The class 'zlvp::Zelt' has the following attributes: 'name' of type str; 'id' of type int.
+The class 'zlvp::Programm' has the following attributes: 'nacht' of type str; 'id' of type int; 'nachmittag' of type str; 'datum' of type date; 'vormittag' of type str.
+The class 'zlvp::Funktion' has the following attributes: 'id' of type int; 'name' of type str.
+The class 'zlvp::Leiter' has the following attributes: 'id' of type int.
+The class 'zlvp::ZeltDetailBezeichnung' has the following attributes: 'name' of type str; 'id' of type int.
+The class 'zlvp::Person' has the following attributes: 'plz' of type str; 'notTelNr' of type str; 'handyNr' of type str; 'strasse' of type str; 'nachname' of type str; 'telNr' of type str; 'email' of type str; 'gebDat' of type date; 'vorname' of type str; 'version' of type str; 'id' of type int; 'ort' of type str.
+The class 'zlvp::Schaeden' has the following attributes: 'id' of type int; 'bezeichnung' of type str; 'datum' of type date.
+The class 'zlvp::Stab' has the following attributes: 'id' of type int.
+The class 'zlvp::Teilnehmer' has the following attributes: 'id' of type int.
+'zlvp::Person' (role 'zlvp_Person12', cardinality 0..*) is associated with 'zlvp::Leiter' (role 'zlvp_Leiter11', cardinality 0..*).
+'zlvp::Person' (role 'zlvp_Person34', cardinality 0..*) is associated with 'zlvp::Lager' (role 'zlvp_Lager33', cardinality 0..*).
+'zlvp::Anrede' (role 'zlvp_Anrede55', cardinality 0..*) is associated with 'zlvp::Legenda' (role 'zlvp_Legenda', cardinality 0..*).
+'zlvp::Anrede' (role 'zlvp_Anrede', cardinality 0..*) is associated with 'zlvp::Person' (role 'zlvp_Person2', cardinality 0..*).
+'zlvp::Lager' (role 'zlvp_Lager63', cardinality 0..*) is associated with 'zlvp::Lagerort' (role 'zlvp_Lagerort62', cardinality 0..*).
+'zlvp::Lager' (role 'zlvp_Lager31', cardinality 0..*) is associated with 'zlvp::Zelt' (role 'zlvp_Zelt', cardinality 0..*).
+'zlvp::Lagerort' (role 'zlvp_Lagerort59', cardinality 0..*) is associated with 'zlvp::Legenda' (role 'zlvp_Legenda60', cardinality 0..*).
+'zlvp::Funktion' (role 'zlvp_Funktion', cardinality 0..*) is associated with 'zlvp::Stab' (role 'zlvp_Stab8', cardinality 0..*).
+'zlvp::Person' (role 'zlvp_Person', cardinality 0..*) is associated with 'zlvp::Geschlecht' (role 'zlvp_Geschlecht', cardinality 0..*).
+'zlvp::ZeltDetailBezeichnung' (role 'zlvp_ZeltDetailBezeichnung', cardinality 0..*) is associated with 'zlvp::ZeltDetail' (role 'zlvp_ZeltDetail53', cardinality 0..*).
+'zlvp::Gruppen' (role 'zlvp_Gruppen38', cardinality 0..*) is associated with 'zlvp::Leiter' (role 'zlvp_Leiter39', cardinality 0..*).
+'zlvp::Lager' (role 'zlvp_Lager', cardinality 0..*) is associated with 'zlvp::Stab' (role 'zlvp_Stab', cardinality 0..*).
+'zlvp::Person' (role 'zlvp_Person17', cardinality 0..*) is associated with 'zlvp::Teilnehmer' (role 'zlvp_Teilnehmer16', cardinality 0..*).
+'zlvp::Lager' (role 'zlvp_Lager36', cardinality 0..*) is associated with 'zlvp::Lagerort' (role 'zlvp_Lagerort', cardinality 0..*).
+'zlvp::Stab' (role 'zlvp_Stab5', cardinality 0..*) is associated with 'zlvp::Person' (role 'zlvp_Person6', cardinality 0..*).
+'zlvp::Gruppen' (role 'zlvp_Gruppen', cardinality 0..*) is associated with 'zlvp::Leiter' (role 'zlvp_Leiter', cardinality 0..*).
+'zlvp::Lager' (role 'zlvp_Lager51', cardinality 0..*) is associated with 'zlvp::Zelt' (role 'zlvp_Zelt50', cardinality 0..*).
+'zlvp::Verleih' (role 'zlvp_Verleih', cardinality 0..*) is associated with 'zlvp::Zelt' (role 'zlvp_Zelt48', cardinality 0..*).
+'zlvp::Gruppen' (role 'zlvp_Gruppen14', cardinality 0..*) is associated with 'zlvp::Teilnehmer' (role 'zlvp_Teilnehmer', cardinality 0..*).
+'zlvp::Teilnehmer' (role 'zlvp_Teilnehmer42', cardinality 0..*) is associated with 'zlvp::Gruppen' (role 'zlvp_Gruppen41', cardinality 0..*).
+'zlvp::Gruppen' (role 'zlvp_Gruppen22', cardinality 0..*) is associated with 'zlvp::Lager' (role 'zlvp_Lager21', cardinality 0..*).
+'zlvp::Jahr' (role 'zlvp_Jahr', cardinality 0..*) is associated with 'zlvp::Lager' (role 'zlvp_Lager19', cardinality 0..*).
+'zlvp::Stab' (role 'zlvp_Stab25', cardinality 0..*) is associated with 'zlvp::Lager' (role 'zlvp_Lager24', cardinality 0..*).
+'zlvp::Legenda' (role 'zlvp_Legenda57', cardinality 0..*) is associated with 'zlvp::LegendaTyp' (role 'zlvp_LegendaTyp', cardinality 0..*).
+'zlvp::Programm' (role 'zlvp_Programm', cardinality 0..*) is associated with 'zlvp::Lager' (role 'zlvp_Lager29', cardinality 0..*).
+'zlvp::Essen' (role 'zlvp_Essen', cardinality 0..*) is associated with 'zlvp::Lager' (role 'zlvp_Lager27', cardinality 0..*).
+'zlvp::Schaeden' (role 'zlvp_Schaeden', cardinality 0..*) is associated with 'zlvp::Zelt' (role 'zlvp_Zelt46', cardinality 0..*).
+'zlvp::Zelt' (role 'zlvp_Zelt44', cardinality 0..*) is associated with 'zlvp::ZeltDetail' (role 'zlvp_ZeltDetail', cardinality 0..*).

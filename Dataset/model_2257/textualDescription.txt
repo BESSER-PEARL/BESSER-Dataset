@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'school::Pupil' has the following attributes: 'inclass' of type str; 'name' of type str.
+The class 'school::Course' has the following attributes: 'name' of type str.
+The class 'Grade' has no attributes.
+The class 'school::School' has no attributes.
+The class 'school::Grade' has the following attributes: 'year' of type str; 'grade' of type str.
+The class 'school::Grade2' has no attributes.
+'school::Grade2' is a specialization of 'Grade'.
+'school::Grade' (role 'school_Grade6', cardinality 0..*) is associated with 'school::Course' (role 'school_Course7', cardinality 0..*).
+'school::Grade' (role 'school_Grade', cardinality 0..*) is associated with 'school::Pupil' (role 'school_Pupil4', cardinality 0..*).
+'school::School' (role 'school_School', cardinality 0..*) is associated with 'school::Pupil' (role 'school_Pupil', cardinality 0..*).
+'school::School' (role 'school_School2', cardinality 0..*) is associated with 'school::Course' (role 'school_Course', cardinality 0..*).

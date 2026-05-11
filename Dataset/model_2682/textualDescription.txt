@@ -1,0 +1,30 @@
+The model has 11 class(es).
+The class 'manypov::B' has no attributes.
+The class 'manypov::J' has no attributes.
+The class 'manypov::F' has no attributes.
+The class 'manypov::JK' has no attributes.
+The class 'manypov::Named' has the following attributes: 'name' of type str.
+The class 'manypov::A' has no attributes.
+The class 'manypov::C' has no attributes.
+The class 'manypov::M' has no attributes.
+The class 'Named' has no attributes.
+The class 'manypov::E' has no attributes.
+The class 'manypov::K' has no attributes.
+'manypov::M' is a specialization of 'Named'.
+'manypov::J' is a specialization of 'Named'.
+'manypov::E' is a specialization of 'Named'.
+'manypov::B' is a specialization of 'Named'.
+'manypov::JK' is a specialization of 'Named'.
+'manypov::A' is a specialization of 'Named'.
+'manypov::K' is a specialization of 'Named'.
+'manypov::F' is a specialization of 'Named'.
+'manypov::C' is a specialization of 'Named'.
+'manypov::JK' (role 'manypov_JK', cardinality 0..*) is associated with 'manypov::J' (role 'manypov_J10', cardinality 0..*).
+'manypov::A' (role 'manypov_A4', cardinality 0..*) is associated with 'manypov::J' (role 'manypov_J', cardinality 0..*).
+'manypov::F' (role 'manypov_F', cardinality 0..*) is associated with 'manypov::E' (role 'manypov_E8', cardinality 0..*).
+'manypov::B' (role 'manypov_B6', cardinality 0..*) is associated with 'manypov::C' (role 'manypov_C', cardinality 0..*).
+'manypov::K' (role 'manypov_K13', cardinality 0..*) is associated with 'manypov::C' (role 'manypov_C14', cardinality 0..*).
+'manypov::K' (role 'manypov_K17', cardinality 0..*) is associated with 'manypov::JK' (role 'manypov_JK16', cardinality 0..*).
+'manypov::M' (role 'manypov_M', cardinality 0..*) is associated with 'manypov::K' (role 'manypov_K', cardinality 0..*).
+'manypov::A' (role 'manypov_A', cardinality 0..*) is associated with 'manypov::B' (role 'manypov_B', cardinality 0..*).
+'manypov::E' (role 'manypov_E', cardinality 0..*) is associated with 'manypov::A' (role 'manypov_A2', cardinality 0..*).

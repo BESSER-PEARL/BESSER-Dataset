@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/thm-mni-ii/JooMDD/de.thm.icampus.joomdd.ejsl.parent/de.thm.icampus.joomdd.ejsl/constraints/EJSL.ecore

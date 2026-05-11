@@ -1,0 +1,72 @@
+The model has 33 class(es).
+The class 'DOwnedElement' has no attributes.
+The class 'diagraph::DLabel' has the following attributes: 'propagated' of type bool; 'abztract' of type bool; 'inferred' of type bool.
+The class 'diagraph::DLineEdge' has the following attributes: 'arrows' of type str.
+The class 'diagraph::DLabeledElement' has the following attributes: 'labls' of type str; 'expression' of type str.
+The class 'diagraph::DNestedEdge' has no attributes.
+The class 'diagraph::DContainment' has the following attributes: 'name' of type str.
+The class 'diagraph::DNavigationEdge' has no attributes.
+The class 'DLabeledElement' has no attributes.
+The class 'diagraph::DNode' has the following attributes: 'layout' of type bool; 'navigationLink' of type str; 'shape' of type str.
+The class 'diagraph::DSimpleEdge' has no attributes.
+The class 'DSimpleEdge' has no attributes.
+The class 'diagraph::DGraphElement' has the following attributes: 'name' of type str; 'icon' of type str; 'abztract' of type bool.
+The class 'diagraph::EReference' has no attributes.
+The class 'diagraph::DOwnedEdge' has no attributes.
+The class 'DNode' has no attributes.
+The class 'diagraph::DGraph' has the following attributes: 'viewName' of type str; 'facade2' of type str; 'facade1' of type str.
+The class 'DLineEdge' has no attributes.
+The class 'diagraph::DPointOfView' has no attributes.
+The class 'diagraph::ENamedElement' has no attributes.
+The class 'diagraph::DOwnedElement' has no attributes.
+The class 'diagraph::DEdge' has the following attributes: 'propagated' of type bool.
+The class 'DGraphElement' has no attributes.
+The class 'diagraph::DLabeledEdge' has no attributes.
+The class 'diagraph::DCompartmentEdge' has the following attributes: 'depth' of type int; 'partitionName' of type str.
+The class 'diagraph::DViewNavigation' has the following attributes: 'id' of type str.
+The class 'diagraph::EClass' has no attributes.
+The class 'DOwnedEdge' has no attributes.
+The class 'diagraph::EAttribute' has no attributes.
+The class 'diagraph::DGeneric' has no attributes.
+The class 'diagraph::DReference' has no attributes.
+The class 'DEdge' has no attributes.
+The class 'DNestedEdge' has no attributes.
+The class 'diagraph::DAffixedEdge' has no attributes.
+The enumeration 'DShape' has the following literals: 'circle', 'vee', 'dot', 'rectangle', 'roundedRect', 'triangle'.
+'diagraph::DEdge' is a specialization of 'DGraphElement'.
+'diagraph::DOwnedEdge' is a specialization of 'DEdge'.
+'diagraph::DLineEdge' is a specialization of 'DSimpleEdge'.
+'diagraph::DReference' is a specialization of 'DLineEdge'.
+'diagraph::DOwnedEdge' is a specialization of 'DOwnedElement'.
+'diagraph::DLabeledEdge' is a specialization of 'DOwnedEdge'.
+'diagraph::DNode' is a specialization of 'DOwnedElement'.
+'diagraph::DNestedEdge' is a specialization of 'DOwnedEdge'.
+'diagraph::DCompartmentEdge' is a specialization of 'DNestedEdge'.
+'diagraph::DNavigationEdge' is a specialization of 'DSimpleEdge'.
+'diagraph::DSimpleEdge' is a specialization of 'DEdge'.
+'diagraph::DAffixedEdge' is a specialization of 'DNestedEdge'.
+'diagraph::DGeneric' is a specialization of 'DLabeledElement'.
+'diagraph::DLabeledEdge' is a specialization of 'DLineEdge'.
+'diagraph::DPointOfView' is a specialization of 'DNode'.
+'diagraph::DLabeledElement' is a specialization of 'DGraphElement'.
+'diagraph::DNode' is a specialization of 'DLabeledElement'.
+'diagraph::DLabeledEdge' is a specialization of 'DLabeledElement'.
+'diagraph::DViewNavigation' (role 'viewNavigation', cardinality 0..*) is associated with 'diagraph::DNode' (role 'DNode', cardinality 0..*).
+'diagraph::DLabeledElement' (role 'diagraph_DLabeledElement', cardinality 0..*) is associated with 'diagraph::EClass' (role 'diagraph_EClass', cardinality 0..*).
+'diagraph::DLabel' (role 'diagraph_DLabel', cardinality 0..*) is associated with 'diagraph::DLabeledElement' (role 'diagraph_DLabeledElement14', cardinality 0..*).
+'diagraph::DGraph' (role 'diagraph_DGraph18', cardinality 0..*) is associated with 'diagraph::DViewNavigation' (role 'diagraph_DViewNavigation', cardinality 0..*).
+'diagraph::DEdge' (role 'diagraph_DEdge', cardinality 0..*) is associated with 'diagraph::DNode' (role 'diagraph_DNode', cardinality 0..*).
+'diagraph::DNestedEdge' (role 'diagraph_DNestedEdge', cardinality 0..*) is associated with 'diagraph::DContainment' (role 'diagraph_DContainment', cardinality 0..*).
+'diagraph::DNode' (role 'node', cardinality 0..*) is associated with 'diagraph::DContainment' (role 'DContainment', cardinality 0..*).
+'diagraph::DLabel' (role 'diagraph_DLabel21', cardinality 0..*) is associated with 'diagraph::EAttribute' (role 'diagraph_EAttribute', cardinality 0..*).
+'diagraph::DSimpleEdge' (role 'diagraph_DSimpleEdge', cardinality 0..*) is associated with 'diagraph::DNode' (role 'diagraph_DNode28', cardinality 0..*).
+'diagraph::DGraphElement' (role 'diagraph_DGraphElement', cardinality 0..*) is associated with 'diagraph::ENamedElement' (role 'diagraph_ENamedElement', cardinality 0..*).
+'diagraph::DGraphElement' (role 'DGraphElement', cardinality 0..*) is associated with 'diagraph::DGraph' (role 'graph', cardinality 0..*).
+'diagraph::DEdge' (role 'diagraph_DEdge2', cardinality 0..*) is associated with 'diagraph::EReference' (role 'diagraph_EReference', cardinality 0..*).
+'diagraph::DOwnedElement' (role 'diagraph_DOwnedElement', cardinality 0..*) is associated with 'diagraph::DNode' (role 'diagraph_DNode16', cardinality 0..*).
+'diagraph::DNode' (role 'navigationSource', cardinality 0..*) is associated with 'diagraph::DViewNavigation' (role 'DViewNavigation', cardinality 0..*).
+'diagraph::DGraph' (role 'diagraph_DGraph', cardinality 0..*) is associated with 'diagraph::DPointOfView' (role 'diagraph_DPointOfView', cardinality 0..*).
+'diagraph::DGraphElement' (role 'elements', cardinality 0..*) is associated with 'diagraph::DGraph' (role 'DGraph', cardinality 0..*).
+'diagraph::DLabeledEdge' (role 'diagraph_DLabeledEdge', cardinality 0..*) is associated with 'diagraph::EReference' (role 'diagraph_EReference8', cardinality 0..*).
+'diagraph::DNode' (role 'DNode23', cardinality 0..*) is associated with 'diagraph::DContainment' (role 'containments', cardinality 0..*).
+'diagraph::DContainment' (role 'diagraph_DContainment25', cardinality 0..*) is associated with 'diagraph::DNestedEdge' (role 'diagraph_DNestedEdge26', cardinality 0..*).

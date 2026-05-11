@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/fridlutz/UNIVIE/ASE/UE/Task 1/at.ac.univie.swa.ase2015.a9902268.task1.model/model/model.ecore

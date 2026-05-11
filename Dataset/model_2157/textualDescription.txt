@@ -1,0 +1,75 @@
+The model has 21 class(es).
+The class 'graphgrammar::Grammar' has the following attributes: 'name' of type str.
+The class 'graphgrammar::Vertex' has the following attributes: 'id' of type str.
+The class 'graphgrammar::Symbol' has the following attributes: 'name' of type str; 'subscript' of type str; 'superscript' of type str.
+The class 'graphgrammar::VertexToStringMap' has the following attributes: 'value' of type str.
+The class 'graphgrammar::ParsingTree' has no attributes.
+The class 'graphgrammar::Edge' has no attributes.
+The class 'graphgrammar::Rule' has the following attributes: 'name' of type str; 'id' of type str.
+The class 'graphgrammar::VertexToVertexMap' has no attributes.
+The class 'graphgrammar::ZoneVertex' has no attributes.
+The class 'graphgrammar::TripleRule' has no attributes.
+The class 'graphgrammar::VertexToSymbolSymbolsPairMap' has no attributes.
+The class 'graphgrammar::StringToVertexMap' has the following attributes: 'key' of type str.
+The class 'Vertex' has no attributes.
+The class 'graphgrammar::Graph' has no attributes.
+The class 'graphgrammar::ResolutionStep' has no attributes.
+The class 'graphgrammar::Resolution' has no attributes.
+The class 'graphgrammar::Derivation' has no attributes.
+The class 'graphgrammar::DerivationStep' has no attributes.
+The class 'graphgrammar::TripleGrammar' has the following attributes: 'name' of type str.
+The class 'graphgrammar::SymbolSymbolsPair' has no attributes.
+The class 'graphgrammar::TripleGraph' has no attributes.
+'graphgrammar::ZoneVertex' is a specialization of 'Vertex'.
+'graphgrammar::Symbol' (role 'graphgrammar_Symbol81', cardinality 0..*) is associated with 'graphgrammar::Edge' (role 'graphgrammar_Edge80', cardinality 0..*).
+'graphgrammar::Symbol' (role 'graphgrammar_Symbol11', cardinality 0..*) is associated with 'graphgrammar::Grammar' (role 'graphgrammar_Grammar10', cardinality 0..*).
+'graphgrammar::Rule' (role 'graphgrammar_Rule16', cardinality 0..*) is associated with 'graphgrammar::Graph' (role 'graphgrammar_Graph', cardinality 0..*).
+'graphgrammar::Rule' (role 'graphgrammar_Rule97', cardinality 0..*) is associated with 'graphgrammar::TripleRule' (role 'graphgrammar_TripleRule96', cardinality 0..*).
+'graphgrammar::Edge' (role 'graphgrammar_Edge74', cardinality 0..*) is associated with 'graphgrammar::Vertex' (role 'graphgrammar_Vertex75', cardinality 0..*).
+'graphgrammar::ResolutionStep' (role 'graphgrammar_ResolutionStep58', cardinality 0..*) is associated with 'graphgrammar::Resolution' (role 'graphgrammar_Resolution57', cardinality 0..*).
+'graphgrammar::Symbol' (role 'graphgrammar_Symbol83', cardinality 0..*) is associated with 'graphgrammar::TripleGrammar' (role 'graphgrammar_TripleGrammar', cardinality 0..*).
+'graphgrammar::Rule' (role 'graphgrammar_Rule20', cardinality 0..*) is associated with 'graphgrammar::Vertex' (role 'graphgrammar_Vertex', cardinality 0..*).
+'graphgrammar::Symbol' (role 'graphgrammar_Symbol94', cardinality 0..*) is associated with 'graphgrammar::TripleGrammar' (role 'graphgrammar_TripleGrammar93', cardinality 0..*).
+'graphgrammar::Symbol' (role 'graphgrammar_Symbol89', cardinality 0..*) is associated with 'graphgrammar::TripleGrammar' (role 'graphgrammar_TripleGrammar88', cardinality 0..*).
+'graphgrammar::Grammar' (role 'graphgrammar_Grammar8', cardinality 0..*) is associated with 'graphgrammar::Rule' (role 'graphgrammar_Rule', cardinality 0..*).
+'graphgrammar::Vertex' (role 'graphgrammar_Vertex69', cardinality 0..*) is associated with 'graphgrammar::ZoneVertex' (role 'graphgrammar_ZoneVertex68', cardinality 0..*).
+'graphgrammar::Symbol' (role 'graphgrammar_Symbol6', cardinality 0..*) is associated with 'graphgrammar::Grammar' (role 'graphgrammar_Grammar5', cardinality 0..*).
+'graphgrammar::VertexToSymbolSymbolsPairMap' (role 'graphgrammar_VertexToSymbolSymbolsPairMap27', cardinality 0..*) is associated with 'graphgrammar::Vertex' (role 'graphgrammar_Vertex28', cardinality 0..*).
+'graphgrammar::Symbol' (role 'graphgrammar_Symbol3', cardinality 0..*) is associated with 'graphgrammar::Grammar' (role 'graphgrammar_Grammar2', cardinality 0..*).
+'graphgrammar::Derivation' (role 'graphgrammar_Derivation', cardinality 0..*) is associated with 'graphgrammar::DerivationStep' (role 'graphgrammar_DerivationStep46', cardinality 0..*).
+'graphgrammar::Rule' (role 'graphgrammar_Rule13', cardinality 0..*) is associated with 'graphgrammar::Symbol' (role 'graphgrammar_Symbol14', cardinality 0..*).
+'graphgrammar::Symbol' (role 'graphgrammar_Symbol22', cardinality 0..*) is associated with 'graphgrammar::SymbolSymbolsPair' (role 'graphgrammar_SymbolSymbolsPair', cardinality 0..*).
+'graphgrammar::Vertex' (role 'graphgrammar_Vertex65', cardinality 0..*) is associated with 'graphgrammar::Symbol' (role 'graphgrammar_Symbol66', cardinality 0..*).
+'graphgrammar::Graph' (role 'graphgrammar_Graph111', cardinality 0..*) is associated with 'graphgrammar::TripleGraph' (role 'graphgrammar_TripleGraph', cardinality 0..*).
+'graphgrammar::TripleGraph' (role 'graphgrammar_TripleGraph119', cardinality 0..*) is associated with 'graphgrammar::VertexToVertexMap' (role 'graphgrammar_VertexToVertexMap120', cardinality 0..*).
+'graphgrammar::Vertex' (role 'graphgrammar_Vertex132', cardinality 0..*) is associated with 'graphgrammar::VertexToStringMap' (role 'graphgrammar_VertexToStringMap131', cardinality 0..*).
+'graphgrammar::Symbol' (role 'graphgrammar_Symbol', cardinality 0..*) is associated with 'graphgrammar::Grammar' (role 'graphgrammar_Grammar', cardinality 0..*).
+'graphgrammar::Rule' (role 'graphgrammar_Rule103', cardinality 0..*) is associated with 'graphgrammar::TripleRule' (role 'graphgrammar_TripleRule102', cardinality 0..*).
+'graphgrammar::VertexToStringMap' (role 'graphgrammar_VertexToStringMap', cardinality 0..*) is associated with 'graphgrammar::ResolutionStep' (role 'graphgrammar_ResolutionStep', cardinality 0..*).
+'graphgrammar::ParsingTree' (role 'graphgrammar_ParsingTree53', cardinality 0..*) is associated with 'graphgrammar::ParsingTree' (role 'graphgrammar_ParsingTree51', cardinality 0..*).
+'graphgrammar::Vertex' (role 'graphgrammar_Vertex129', cardinality 0..*) is associated with 'graphgrammar::VertexToVertexMap' (role 'graphgrammar_VertexToVertexMap128', cardinality 0..*).
+'graphgrammar::TripleGrammar' (role 'graphgrammar_TripleGrammar85', cardinality 0..*) is associated with 'graphgrammar::Symbol' (role 'graphgrammar_Symbol86', cardinality 0..*).
+'graphgrammar::VertexToVertexMap' (role 'graphgrammar_VertexToVertexMap106', cardinality 0..*) is associated with 'graphgrammar::TripleRule' (role 'graphgrammar_TripleRule105', cardinality 0..*).
+'graphgrammar::Vertex' (role 'graphgrammar_Vertex36', cardinality 0..*) is associated with 'graphgrammar::DerivationStep' (role 'graphgrammar_DerivationStep35', cardinality 0..*).
+'graphgrammar::TripleRule' (role 'graphgrammar_TripleRule108', cardinality 0..*) is associated with 'graphgrammar::VertexToVertexMap' (role 'graphgrammar_VertexToVertexMap109', cardinality 0..*).
+'graphgrammar::Rule' (role 'graphgrammar_Rule18', cardinality 0..*) is associated with 'graphgrammar::VertexToSymbolSymbolsPairMap' (role 'graphgrammar_VertexToSymbolSymbolsPairMap', cardinality 0..*).
+'graphgrammar::DerivationStep' (role 'graphgrammar_DerivationStep', cardinality 0..*) is associated with 'graphgrammar::Rule' (role 'graphgrammar_Rule33', cardinality 0..*).
+'graphgrammar::TripleGraph' (role 'graphgrammar_TripleGraph122', cardinality 0..*) is associated with 'graphgrammar::VertexToVertexMap' (role 'graphgrammar_VertexToVertexMap123', cardinality 0..*).
+'graphgrammar::Vertex' (role 'graphgrammar_Vertex72', cardinality 0..*) is associated with 'graphgrammar::ZoneVertex' (role 'graphgrammar_ZoneVertex71', cardinality 0..*).
+'graphgrammar::TripleGraph' (role 'graphgrammar_TripleGraph116', cardinality 0..*) is associated with 'graphgrammar::Graph' (role 'graphgrammar_Graph117', cardinality 0..*).
+'graphgrammar::DerivationStep' (role 'graphgrammar_DerivationStep38', cardinality 0..*) is associated with 'graphgrammar::Graph' (role 'graphgrammar_Graph39', cardinality 0..*).
+'graphgrammar::Vertex' (role 'graphgrammar_Vertex126', cardinality 0..*) is associated with 'graphgrammar::VertexToVertexMap' (role 'graphgrammar_VertexToVertexMap125', cardinality 0..*).
+'graphgrammar::Rule' (role 'graphgrammar_Rule100', cardinality 0..*) is associated with 'graphgrammar::TripleRule' (role 'graphgrammar_TripleRule99', cardinality 0..*).
+'graphgrammar::Vertex' (role 'graphgrammar_Vertex78', cardinality 0..*) is associated with 'graphgrammar::Edge' (role 'graphgrammar_Edge77', cardinality 0..*).
+'graphgrammar::TripleGrammar' (role 'graphgrammar_TripleGrammar91', cardinality 0..*) is associated with 'graphgrammar::TripleRule' (role 'graphgrammar_TripleRule', cardinality 0..*).
+'graphgrammar::ParsingTree' (role 'graphgrammar_ParsingTree49', cardinality 0..*) is associated with 'graphgrammar::DerivationStep' (role 'graphgrammar_DerivationStep50', cardinality 0..*).
+'graphgrammar::DerivationStep' (role 'graphgrammar_DerivationStep41', cardinality 0..*) is associated with 'graphgrammar::Graph' (role 'graphgrammar_Graph42', cardinality 0..*).
+'graphgrammar::SymbolSymbolsPair' (role 'graphgrammar_SymbolSymbolsPair31', cardinality 0..*) is associated with 'graphgrammar::VertexToSymbolSymbolsPairMap' (role 'graphgrammar_VertexToSymbolSymbolsPairMap30', cardinality 0..*).
+'graphgrammar::VertexToVertexMap' (role 'graphgrammar_VertexToVertexMap', cardinality 0..*) is associated with 'graphgrammar::DerivationStep' (role 'graphgrammar_DerivationStep44', cardinality 0..*).
+'graphgrammar::Graph' (role 'graphgrammar_Graph114', cardinality 0..*) is associated with 'graphgrammar::TripleGraph' (role 'graphgrammar_TripleGraph113', cardinality 0..*).
+'graphgrammar::Graph' (role 'graphgrammar_Graph63', cardinality 0..*) is associated with 'graphgrammar::Edge' (role 'graphgrammar_Edge', cardinality 0..*).
+'graphgrammar::ParsingTree' (role 'graphgrammar_ParsingTree', cardinality 0..*) is associated with 'graphgrammar::ZoneVertex' (role 'graphgrammar_ZoneVertex', cardinality 0..*).
+'graphgrammar::StringToVertexMap' (role 'graphgrammar_StringToVertexMap134', cardinality 0..*) is associated with 'graphgrammar::Vertex' (role 'graphgrammar_Vertex135', cardinality 0..*).
+'graphgrammar::Symbol' (role 'graphgrammar_Symbol25', cardinality 0..*) is associated with 'graphgrammar::SymbolSymbolsPair' (role 'graphgrammar_SymbolSymbolsPair24', cardinality 0..*).
+'graphgrammar::StringToVertexMap' (role 'graphgrammar_StringToVertexMap', cardinality 0..*) is associated with 'graphgrammar::Resolution' (role 'graphgrammar_Resolution', cardinality 0..*).
+'graphgrammar::Graph' (role 'graphgrammar_Graph60', cardinality 0..*) is associated with 'graphgrammar::Vertex' (role 'graphgrammar_Vertex61', cardinality 0..*).

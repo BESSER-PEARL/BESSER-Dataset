@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'Lqn2umlTrace::Trace' has no attributes.
+The class 'Lqn2umlTrace::TraceLink' has the following attributes: 'description' of type str; 'sources' of type str; 'targets' of type str.
+'Lqn2umlTrace::Trace' (role 'Lqn2umlTrace_Trace', cardinality 0..*) is associated with 'Lqn2umlTrace::TraceLink' (role 'Lqn2umlTrace_TraceLink', cardinality 0..*).

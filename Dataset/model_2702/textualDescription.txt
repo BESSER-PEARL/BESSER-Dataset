@@ -1,0 +1,27 @@
+The model has 14 class(es).
+The class 'Y' has no attributes.
+The class 'B' has no attributes.
+The class 'ktest206::B' has no attributes.
+The class 'ktest206::Y' has no attributes.
+The class 'ktest206::E' has no attributes.
+The class 'ktest206::X' has no attributes.
+The class 'A' has no attributes.
+The class 'ktest206::A' has no attributes.
+The class 'ktest206::C' has the following attributes: 'name' of type str.
+The class 'ktest206::W' has no attributes.
+The class 'N' has no attributes.
+The class 'ktest206::V' has no attributes.
+The class 'ktest206::N' has the following attributes: 'name' of type str.
+The class 'ktest206::D' has the following attributes: 'name' of type str.
+'ktest206::B' is a specialization of 'N'.
+'ktest206::E' is a specialization of 'N'.
+'ktest206::V' is a specialization of 'Y'.
+'ktest206::Y' is a specialization of 'A'.
+'ktest206::A' is a specialization of 'B'.
+'ktest206::W' is a specialization of 'N'.
+'ktest206::X' is a specialization of 'Y'.
+'ktest206::W' (role 'ktest206_W5', cardinality 0..*) is associated with 'ktest206::V' (role 'ktest206_V', cardinality 0..*).
+'ktest206::C' (role 'ktest206_C', cardinality 0..*) is associated with 'ktest206::B' (role 'ktest206_B', cardinality 0..*).
+'ktest206::A' (role 'ktest206_A', cardinality 0..*) is associated with 'ktest206::D' (role 'ktest206_D', cardinality 0..*).
+'ktest206::Y' (role 'ktest206_Y', cardinality 0..*) is associated with 'ktest206::E' (role 'ktest206_E', cardinality 0..*).
+'ktest206::X' (role 'ktest206_X', cardinality 0..*) is associated with 'ktest206::W' (role 'ktest206_W', cardinality 0..*).

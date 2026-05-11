@@ -1,0 +1,20 @@
+The model has 8 class(es).
+The class 'refac::N99' has no attributes.
+The class 'refac::K' has no attributes.
+The class 'refac::M' has no attributes.
+The class 'refac::B' has no attributes.
+The class 'refac::W' has the following attributes: 'name' of type str.
+The class 'refac::A' has no attributes.
+The class 'refac::C' has no attributes.
+The class 'refac::X' has no attributes.
+'refac::M' (role 'refac_M', cardinality 0..*) is associated with 'refac::A' (role 'refac_A6', cardinality 0..*).
+'refac::A' (role 'refac_A13', cardinality 0..*) is associated with 'refac::X' (role 'refac_X', cardinality 0..*).
+'refac::W' (role 'refac_W17', cardinality 0..*) is associated with 'refac::C' (role 'refac_C18', cardinality 0..*).
+'refac::X' (role 'refac_X15', cardinality 0..*) is associated with 'refac::K' (role 'refac_K', cardinality 0..*).
+'refac::M' (role 'refac_M20', cardinality 0..*) is associated with 'refac::K' (role 'refac_K21', cardinality 0..*).
+'refac::B' (role 'refac_B11', cardinality 0..*) is associated with 'refac::C' (role 'refac_C10', cardinality 0..*).
+'refac::N99' (role 'refac_N9923', cardinality 0..*) is associated with 'refac::K' (role 'refac_K24', cardinality 0..*).
+'refac::C' (role 'refac_C', cardinality 0..*) is associated with 'refac::A' (role 'refac_A2', cardinality 0..*).
+'refac::W' (role 'refac_W', cardinality 0..*) is associated with 'refac::A' (role 'refac_A4', cardinality 0..*).
+'refac::N99' (role 'refac_N99', cardinality 0..*) is associated with 'refac::A' (role 'refac_A8', cardinality 0..*).
+'refac::A' (role 'refac_A', cardinality 0..*) is associated with 'refac::B' (role 'refac_B', cardinality 0..*).

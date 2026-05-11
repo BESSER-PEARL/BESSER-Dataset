@@ -1,0 +1,38 @@
+The model has 15 class(es).
+The class 'lSGL::Enum' has no attributes.
+The class 'lSGL::Entity' has no attributes.
+The class 'lSGL::GeneratorAnnotation' has no attributes.
+The class 'lSGL::AttributeType' has the following attributes: 'typeName' of type str; 'nullable' of type bool.
+The class 'lSGL::Generator' has the following attributes: 'name' of type str.
+The class 'lSGL::Type' has the following attributes: 'name' of type str.
+The class 'lSGL::ConfigProperty' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'Type' has no attributes.
+The class 'lSGL::GeneratorConfig' has the following attributes: 'cfgName' of type str; 'values' of type str.
+The class 'lSGL::Attribute' has the following attributes: 'name' of type str; 'isMap' of type bool; 'isList' of type bool; 'isArray' of type bool.
+The class 'lSGL::Model' has no attributes.
+The class 'lSGL::Projection' has the following attributes: 'name' of type str; 'excluding' of type bool.
+The class 'lSGL::EnumItem' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'lSGL::Annotation' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'lSGL::Config' has the following attributes: 'name' of type str.
+'lSGL::Entity' is a specialization of 'Type'.
+'lSGL::Enum' is a specialization of 'Type'.
+'lSGL::Enum' (role 'lSGL_Enum', cardinality 0..*) is associated with 'lSGL::EnumItem' (role 'lSGL_EnumItem', cardinality 0..*).
+'lSGL::ConfigProperty' (role 'lSGL_ConfigProperty', cardinality 0..*) is associated with 'lSGL::Generator' (role 'lSGL_Generator6', cardinality 0..*).
+'lSGL::Model' (role 'lSGL_Model2', cardinality 0..*) is associated with 'lSGL::Type' (role 'lSGL_Type', cardinality 0..*).
+'lSGL::AttributeType' (role 'lSGL_AttributeType', cardinality 0..*) is associated with 'lSGL::Type' (role 'lSGL_Type20', cardinality 0..*).
+'lSGL::Config' (role 'lSGL_Config', cardinality 0..*) is associated with 'lSGL::Generator' (role 'lSGL_Generator8', cardinality 0..*).
+'lSGL::Entity' (role 'lSGL_Entity42', cardinality 0..*) is associated with 'lSGL::Projection' (role 'lSGL_Projection41', cardinality 0..*).
+'lSGL::Annotation' (role 'lSGL_Annotation', cardinality 0..*) is associated with 'lSGL::Attribute' (role 'lSGL_Attribute22', cardinality 0..*).
+'lSGL::Projection' (role 'lSGL_Projection', cardinality 0..*) is associated with 'lSGL::Model' (role 'lSGL_Model4', cardinality 0..*).
+'lSGL::AttributeType' (role 'lSGL_AttributeType28', cardinality 0..*) is associated with 'lSGL::Attribute' (role 'lSGL_Attribute27', cardinality 0..*).
+'lSGL::Attribute' (role 'lSGL_Attribute', cardinality 0..*) is associated with 'lSGL::Entity' (role 'lSGL_Entity18', cardinality 0..*).
+'lSGL::GeneratorAnnotation' (role 'lSGL_GeneratorAnnotation33', cardinality 0..*) is associated with 'lSGL::Config' (role 'lSGL_Config34', cardinality 0..*).
+'lSGL::GeneratorAnnotation' (role 'lSGL_GeneratorAnnotation30', cardinality 0..*) is associated with 'lSGL::Generator' (role 'lSGL_Generator31', cardinality 0..*).
+'lSGL::Projection' (role 'lSGL_Projection38', cardinality 0..*) is associated with 'lSGL::GeneratorAnnotation' (role 'lSGL_GeneratorAnnotation39', cardinality 0..*).
+'lSGL::GeneratorAnnotation' (role 'lSGL_GeneratorAnnotation36', cardinality 0..*) is associated with 'lSGL::GeneratorConfig' (role 'lSGL_GeneratorConfig', cardinality 0..*).
+'lSGL::AttributeType' (role 'lSGL_AttributeType25', cardinality 0..*) is associated with 'lSGL::Attribute' (role 'lSGL_Attribute24', cardinality 0..*).
+'lSGL::Model' (role 'lSGL_Model', cardinality 0..*) is associated with 'lSGL::Generator' (role 'lSGL_Generator', cardinality 0..*).
+'lSGL::ConfigProperty' (role 'lSGL_ConfigProperty11', cardinality 0..*) is associated with 'lSGL::Config' (role 'lSGL_Config10', cardinality 0..*).
+'lSGL::GeneratorAnnotation' (role 'lSGL_GeneratorAnnotation', cardinality 0..*) is associated with 'lSGL::Entity' (role 'lSGL_Entity', cardinality 0..*).
+'lSGL::Entity' (role 'lSGL_Entity16', cardinality 0..*) is associated with 'lSGL::Entity' (role 'lSGL_Entity14', cardinality 0..*).
+'lSGL::Projection' (role 'lSGL_Projection44', cardinality 0..*) is associated with 'lSGL::Attribute' (role 'lSGL_Attribute45', cardinality 0..*).

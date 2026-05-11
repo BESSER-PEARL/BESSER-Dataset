@@ -1,0 +1,66 @@
+The model has 29 class(es).
+The class 'swml::WebApplication' has the following attributes: 'name' of type str.
+The class 'swml::KOLink' has no attributes.
+The class 'swml::ContentModel' has no attributes.
+The class 'swml::DynamicPage' has no attributes.
+The class 'swml::LinkJoinNode' has no attributes.
+The class 'swml::Enumeration' has the following attributes: 'name' of type str.
+The class 'Link' has no attributes.
+The class 'swml::Node' has no attributes.
+The class 'swml::Relationship' has the following attributes: 'name' of type str; 'lower' of type int; 'upper' of type int.
+The class 'swml::Page' has the following attributes: 'name' of type str.
+The class 'swml::Literal' has the following attributes: 'name' of type str.
+The class 'swml::DeletePage' has no attributes.
+The class 'swml::Parameter' has the following attributes: 'ValueSpec' of type str.
+The class 'swml::UpdatePage' has no attributes.
+The class 'swml::NonContextualLink' has no attributes.
+The class 'swml::ContextualLink' has no attributes.
+The class 'swml::StaticPage' has no attributes.
+The class 'EntityPage' has no attributes.
+The class 'Node' has no attributes.
+The class 'Page' has no attributes.
+The class 'swml::HypertextModel' has no attributes.
+The class 'DynamicPage' has no attributes.
+The class 'swml::CreatePage' has no attributes.
+The class 'swml::EntityType' has the following attributes: 'name' of type str; 'isAbstract' of type bool.
+The class 'swml::IndexPage' has no attributes.
+The class 'swml::Link' has no attributes.
+The class 'swml::OKLink' has no attributes.
+The class 'swml::EntityPage' has no attributes.
+The class 'swml::Attribute' has the following attributes: 'name' of type str; 'type' of type str.
+The enumeration 'SWMLType' has the following literals: 'Boolean', 'String', 'Email', 'Float', 'Time', 'Integer', 'Date'.
+'swml::StaticPage' is a specialization of 'Page'.
+'swml::CreatePage' is a specialization of 'EntityPage'.
+'swml::UpdatePage' is a specialization of 'EntityPage'.
+'swml::IndexPage' is a specialization of 'DynamicPage'.
+'swml::KOLink' is a specialization of 'Link'.
+'swml::LinkJoinNode' is a specialization of 'Page'.
+'swml::NonContextualLink' is a specialization of 'Link'.
+'swml::DynamicPage' is a specialization of 'Page'.
+'swml::OKLink' is a specialization of 'Link'.
+'swml::DeletePage' is a specialization of 'EntityPage'.
+'swml::ContextualLink' is a specialization of 'Link'.
+'swml::EntityPage' is a specialization of 'DynamicPage'.
+'swml::LinkJoinNode' is a specialization of 'Node'.
+'swml::Page' is a specialization of 'Node'.
+'swml::Relationship' (role 'swml_Relationship25', cardinality 0..*) is associated with 'swml::EntityType' (role 'swml_EntityType26', cardinality 0..*).
+'swml::EntityType' (role 'EntityType', cardinality 0..*) is associated with 'swml::Relationship' (role 'relationship', cardinality 0..*).
+'swml::EntityType' (role 'swml_EntityType10', cardinality 0..*) is associated with 'swml::EntityType' (role 'swml_EntityType8', cardinality 0..*).
+'swml::HypertextModel' (role 'swml_HypertextModel36', cardinality 0..*) is associated with 'swml::Node' (role 'swml_Node37', cardinality 0..*).
+'swml::Enumeration' (role 'swml_Enumeration28', cardinality 0..*) is associated with 'swml::Literal' (role 'swml_Literal', cardinality 0..*).
+'swml::Link' (role 'link', cardinality 0..*) is associated with 'swml::Node' (role 'Node', cardinality 0..*).
+'swml::StaticPage' (role 'swml_StaticPage', cardinality 0..*) is associated with 'swml::HypertextModel' (role 'swml_HypertextModel39', cardinality 0..*).
+'swml::Enumeration' (role 'swml_Enumeration', cardinality 0..*) is associated with 'swml::Attribute' (role 'swml_Attribute12', cardinality 0..*).
+'swml::Relationship' (role 'Relationship', cardinality 0..*) is associated with 'swml::EntityType' (role 'entityType', cardinality 0..*).
+'swml::Parameter' (role 'swml_Parameter', cardinality 0..*) is associated with 'swml::Link' (role 'swml_Link16', cardinality 0..*).
+'swml::EntityType' (role 'swml_EntityType5', cardinality 0..*) is associated with 'swml::Attribute' (role 'swml_Attribute6', cardinality 0..*).
+'swml::EntityPage' (role 'swml_EntityPage', cardinality 0..*) is associated with 'swml::DynamicPage' (role 'swml_DynamicPage', cardinality 0..*).
+'swml::WebApplication' (role 'swml_WebApplication', cardinality 0..*) is associated with 'swml::ContentModel' (role 'swml_ContentModel', cardinality 0..*).
+'swml::ContentModel' (role 'swml_ContentModel33', cardinality 0..*) is associated with 'swml::EntityType' (role 'swml_EntityType34', cardinality 0..*).
+'swml::Node' (role 'source', cardinality 0..*) is associated with 'swml::Link' (role 'Link', cardinality 0..*).
+'swml::Attribute' (role 'swml_Attribute', cardinality 0..*) is associated with 'swml::EntityType' (role 'swml_EntityType', cardinality 0..*).
+'swml::ContentModel' (role 'swml_ContentModel30', cardinality 0..*) is associated with 'swml::Enumeration' (role 'swml_Enumeration31', cardinality 0..*).
+'swml::Link' (role 'swml_Link', cardinality 0..*) is associated with 'swml::Node' (role 'swml_Node', cardinality 0..*).
+'swml::Relationship' (role 'swml_Relationship22', cardinality 0..*) is associated with 'swml::Relationship' (role 'swml_Relationship', cardinality 0..*).
+'swml::HypertextModel' (role 'swml_HypertextModel', cardinality 0..*) is associated with 'swml::WebApplication' (role 'swml_WebApplication2', cardinality 0..*).
+'swml::EntityType' (role 'swml_EntityType20', cardinality 0..*) is associated with 'swml::DynamicPage' (role 'swml_DynamicPage19', cardinality 0..*).

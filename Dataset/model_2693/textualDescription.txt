@@ -1,0 +1,32 @@
+The model has 11 class(es).
+The class 'multiview3::E' has no attributes.
+The class 'multiview3::F' has no attributes.
+The class 'multiview3::A' has no attributes.
+The class 'Named' has no attributes.
+The class 'multiview3::B' has no attributes.
+The class 'multiview3::M' has no attributes.
+The class 'multiview3::W' has no attributes.
+The class 'multiview3::C' has no attributes.
+The class 'multiview3::K' has no attributes.
+The class 'multiview3::H' has no attributes.
+The class 'multiview3::Named' has the following attributes: 'name' of type str.
+'multiview3::E' is a specialization of 'Named'.
+'multiview3::B' is a specialization of 'Named'.
+'multiview3::M' is a specialization of 'Named'.
+'multiview3::F' is a specialization of 'Named'.
+'multiview3::C' is a specialization of 'Named'.
+'multiview3::W' is a specialization of 'Named'.
+'multiview3::K' is a specialization of 'Named'.
+'multiview3::H' is a specialization of 'Named'.
+'multiview3::A' is a specialization of 'Named'.
+'multiview3::E' (role 'multiview3_E18', cardinality 0..*) is associated with 'multiview3::W' (role 'multiview3_W', cardinality 0..*).
+'multiview3::C' (role 'multiview3_C', cardinality 0..*) is associated with 'multiview3::B' (role 'multiview3_B6', cardinality 0..*).
+'multiview3::H' (role 'multiview3_H', cardinality 0..*) is associated with 'multiview3::C' (role 'multiview3_C10', cardinality 0..*).
+'multiview3::C' (role 'multiview3_C12', cardinality 0..*) is associated with 'multiview3::K' (role 'multiview3_K13', cardinality 0..*).
+'multiview3::E' (role 'multiview3_E', cardinality 0..*) is associated with 'multiview3::A' (role 'multiview3_A2', cardinality 0..*).
+'multiview3::C' (role 'multiview3_C23', cardinality 0..*) is associated with 'multiview3::W' (role 'multiview3_W22', cardinality 0..*).
+'multiview3::K' (role 'multiview3_K', cardinality 0..*) is associated with 'multiview3::A' (role 'multiview3_A4', cardinality 0..*).
+'multiview3::F' (role 'multiview3_F', cardinality 0..*) is associated with 'multiview3::B' (role 'multiview3_B8', cardinality 0..*).
+'multiview3::B' (role 'multiview3_B', cardinality 0..*) is associated with 'multiview3::A' (role 'multiview3_A', cardinality 0..*).
+'multiview3::E' (role 'multiview3_E15', cardinality 0..*) is associated with 'multiview3::F' (role 'multiview3_F16', cardinality 0..*).
+'multiview3::F' (role 'multiview3_F20', cardinality 0..*) is associated with 'multiview3::M' (role 'multiview3_M', cardinality 0..*).

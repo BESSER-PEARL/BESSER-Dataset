@@ -1,0 +1,26 @@
+The model has 9 class(es).
+The class 'refs::H' has no attributes.
+The class 'refs::B' has no attributes.
+The class 'Named' has no attributes.
+The class 'refs::Named' has the following attributes: 'name' of type str.
+The class 'refs::E' has no attributes.
+The class 'refs::G' has no attributes.
+The class 'refs::C' has no attributes.
+The class 'refs::A' has no attributes.
+The class 'refs::F' has no attributes.
+'refs::H' is a specialization of 'Named'.
+'refs::C' is a specialization of 'Named'.
+'refs::B' is a specialization of 'Named'.
+'refs::G' is a specialization of 'Named'.
+'refs::A' is a specialization of 'Named'.
+'refs::E' is a specialization of 'Named'.
+'refs::F' is a specialization of 'Named'.
+'refs::G' (role 'refs_G18', cardinality 0..*) is associated with 'refs::H' (role 'refs_H19', cardinality 0..*).
+'refs::G' (role 'refs_G14', cardinality 0..*) is associated with 'refs::B' (role 'refs_B13', cardinality 0..*).
+'refs::B' (role 'refs_B', cardinality 0..*) is associated with 'refs::A' (role 'refs_A', cardinality 0..*).
+'refs::A' (role 'refs_A8', cardinality 0..*) is associated with 'refs::H' (role 'refs_H', cardinality 0..*).
+'refs::C' (role 'refs_C11', cardinality 0..*) is associated with 'refs::B' (role 'refs_B10', cardinality 0..*).
+'refs::E' (role 'refs_E16', cardinality 0..*) is associated with 'refs::F' (role 'refs_F', cardinality 0..*).
+'refs::C' (role 'refs_C', cardinality 0..*) is associated with 'refs::A' (role 'refs_A4', cardinality 0..*).
+'refs::E' (role 'refs_E', cardinality 0..*) is associated with 'refs::A' (role 'refs_A2', cardinality 0..*).
+'refs::G' (role 'refs_G', cardinality 0..*) is associated with 'refs::A' (role 'refs_A6', cardinality 0..*).

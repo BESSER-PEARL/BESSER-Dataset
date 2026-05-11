@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'y2fsm::AbstractState' has the following attributes: 'id' of type str.
+The class 'y2fsm::Region' has the following attributes: 'name' of type str.
+The class 'y2fsm::Foo' has the following attributes: 'id' of type str.
+The class 'AbstractState' has no attributes.
+'y2fsm::Region' is a specialization of 'AbstractState'.
+'y2fsm::Foo' (role 'y2fsm_Foo5', cardinality 0..*) is associated with 'y2fsm::AbstractState' (role 'y2fsm_AbstractState4', cardinality 0..*).
+'y2fsm::Region' (role 'y2fsm_Region', cardinality 0..*) is associated with 'y2fsm::AbstractState' (role 'y2fsm_AbstractState', cardinality 0..*).
+'y2fsm::Region' (role 'y2fsm_Region2', cardinality 0..*) is associated with 'y2fsm::Foo' (role 'y2fsm_Foo', cardinality 0..*).

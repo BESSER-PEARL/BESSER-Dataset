@@ -1,0 +1,4 @@
+The model has 1 class(es).
+The class 'tree::Node' has the following attributes: 'name' of type str.
+'tree::Node' (role 'tree_Node', cardinality 0..*) is associated with 'tree::Node' (role 'tree_Node0', cardinality 0..*).
+'tree::Node' (role 'tree_Node4', cardinality 0..*) is associated with 'tree::Node' (role 'tree_Node2', cardinality 0..*).

@@ -1,0 +1,63 @@
+The model has 26 class(es).
+The class 'DClassElement' has no attributes.
+The class 'dsml::EClass' has no attributes.
+The class 'dsml::EReference' has no attributes.
+The class 'dsml::DContainedEdge' has no attributes.
+The class 'dsml::Diagraph' has no attributes.
+The class 'DEdge' has no attributes.
+The class 'dsml::DSemanticBridge' has no attributes.
+The class 'dsml::DReference' has the following attributes: 'nonGraphicalProperty' of type bool.
+The class 'dsml::DReferenceBridge' has no attributes.
+The class 'dsml::DContainedElement' has no attributes.
+The class 'DGraphElement' has no attributes.
+The class 'dsml::DGraphElement' has the following attributes: 'name' of type str.
+The class 'dsml::DClassElement' has no attributes.
+The class 'dsml::DModelElementBridge' has the following attributes: 'ecorePath' of type str; 'ecoreName' of type str.
+The class 'dsml::DClassBridge' has no attributes.
+The class 'dsml::DAttributeBridge' has no attributes.
+The class 'dsml::DGraph' has no attributes.
+The class 'DContainedElement' has no attributes.
+The class 'dsml::DLabel' has the following attributes: 'name' of type str.
+The class 'dsml::EAttribute' has no attributes.
+The class 'dsml::DContainment' has the following attributes: 'compartment' of type bool.
+The class 'dsml::DEdge' has no attributes.
+The class 'dsml::DLink' has no attributes.
+The class 'dsml::DNode' has the following attributes: 'pointOfViewName' of type str; 'pointOfView' of type bool.
+The class 'DContainedEdge' has no attributes.
+The class 'DModelElementBridge' has no attributes.
+'dsml::DAttributeBridge' is a specialization of 'DModelElementBridge'.
+'dsml::DNode' is a specialization of 'DGraphElement'.
+'dsml::DClassBridge' is a specialization of 'DModelElementBridge'.
+'dsml::DContainment' is a specialization of 'DContainedEdge'.
+'dsml::DReference' is a specialization of 'DEdge'.
+'dsml::DEdge' is a specialization of 'DGraphElement'.
+'dsml::DContainedEdge' is a specialization of 'DContainedElement'.
+'dsml::DReferenceBridge' is a specialization of 'DModelElementBridge'.
+'dsml::DContainedElement' is a specialization of 'DGraphElement'.
+'dsml::DNode' is a specialization of 'DContainedElement'.
+'dsml::DLink' is a specialization of 'DContainedEdge'.
+'dsml::DNode' is a specialization of 'DClassElement'.
+'dsml::DContainedEdge' is a specialization of 'DEdge'.
+'dsml::DLink' is a specialization of 'DClassElement'.
+'dsml::DModelElementBridge' (role 'dsml_DModelElementBridge', cardinality 0..*) is associated with 'dsml::DSemanticBridge' (role 'dsml_DSemanticBridge46', cardinality 0..*).
+'dsml::DEdge' (role 'dsml_DEdge7', cardinality 0..*) is associated with 'dsml::DReferenceBridge' (role 'dsml_DReferenceBridge', cardinality 0..*).
+'dsml::DNode' (role 'dsml_DNode5', cardinality 0..*) is associated with 'dsml::DEdge' (role 'dsml_DEdge4', cardinality 0..*).
+'dsml::DNode' (role 'dsml_DNode9', cardinality 0..*) is associated with 'dsml::DEdge' (role 'dsml_DEdge10', cardinality 0..*).
+'dsml::DLabel' (role 'dsml_DLabel', cardinality 0..*) is associated with 'dsml::DNode' (role 'dsml_DNode17', cardinality 0..*).
+'dsml::Diagraph' (role 'dsml_Diagraph44', cardinality 0..*) is associated with 'dsml::DSemanticBridge' (role 'dsml_DSemanticBridge', cardinality 0..*).
+'dsml::DLink' (role 'dsml_DLink', cardinality 0..*) is associated with 'dsml::EReference' (role 'dsml_EReference19', cardinality 0..*).
+'dsml::DNode' (role 'parentPointOfView', cardinality 0..*) is associated with 'dsml::DNode' (role 'DNode15', cardinality 0..*).
+'dsml::DClassElement' (role 'dsml_DClassElement', cardinality 0..*) is associated with 'dsml::EClass' (role 'dsml_EClass', cardinality 0..*).
+'dsml::DLabel' (role 'dsml_DLabel25', cardinality 0..*) is associated with 'dsml::DLink' (role 'dsml_DLink24', cardinality 0..*).
+'dsml::DGraph' (role 'dsml_DGraph', cardinality 0..*) is associated with 'dsml::DNode' (role 'dsml_DNode27', cardinality 0..*).
+'dsml::DClassElement' (role 'dsml_DClassElement35', cardinality 0..*) is associated with 'dsml::DClassBridge' (role 'dsml_DClassBridge', cardinality 0..*).
+'dsml::DNode' (role 'dsml_DNode37', cardinality 0..*) is associated with 'dsml::DContainedElement' (role 'dsml_DContainedElement', cardinality 0..*).
+'dsml::DNode' (role 'childrenPointOfView', cardinality 0..*) is associated with 'dsml::DNode' (role 'DNode', cardinality 0..*).
+'dsml::DContainedElement' (role 'dsml_DContainedElement39', cardinality 0..*) is associated with 'dsml::DReferenceBridge' (role 'dsml_DReferenceBridge40', cardinality 0..*).
+'dsml::DEdge' (role 'dsml_DEdge', cardinality 0..*) is associated with 'dsml::DNode' (role 'dsml_DNode', cardinality 0..*).
+'dsml::DAttributeBridge' (role 'dsml_DAttributeBridge', cardinality 0..*) is associated with 'dsml::DLabel' (role 'dsml_DLabel48', cardinality 0..*).
+'dsml::DGraph' (role 'dsml_DGraph42', cardinality 0..*) is associated with 'dsml::Diagraph' (role 'dsml_Diagraph', cardinality 0..*).
+'dsml::EAttribute' (role 'dsml_EAttribute', cardinality 0..*) is associated with 'dsml::DClassElement' (role 'dsml_DClassElement33', cardinality 0..*).
+'dsml::DEdge' (role 'dsml_DEdge2', cardinality 0..*) is associated with 'dsml::EReference' (role 'dsml_EReference', cardinality 0..*).
+'dsml::DGraph' (role 'dsml_DGraph29', cardinality 0..*) is associated with 'dsml::DNode' (role 'dsml_DNode30', cardinality 0..*).
+'dsml::DReferenceBridge' (role 'dsml_DReferenceBridge22', cardinality 0..*) is associated with 'dsml::DLink' (role 'dsml_DLink21', cardinality 0..*).

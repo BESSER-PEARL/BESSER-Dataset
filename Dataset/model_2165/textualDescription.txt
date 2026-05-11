@@ -1,0 +1,25 @@
+The model has 9 class(es).
+The class 'graphEditor::Variablenode' has the following attributes: 'type' of type str; 'values' of type float; 'isKnown' of type bool.
+The class 'graphEditor::Node' has the following attributes: 'name' of type str.
+The class 'graphEditor::GraphElement' has the following attributes: 'id' of type str.
+The class 'GraphElement' has no attributes.
+The class 'Node' has no attributes.
+The class 'graphEditor::Graph' has the following attributes: 'result' of type str; 'name' of type str.
+The class 'graphEditor::Factornode' has the following attributes: 'type' of type str; 'values' of type str.
+The class 'graphEditor::Message' has the following attributes: 'count' of type int; 'type' of type str.
+The class 'graphEditor::Edge' has no attributes.
+The enumeration 'FunctionType' has the following literals: 'Boolean', 'Gausian'.
+The enumeration 'VariableType' has the following literals: 'Boolean', 'Real', 'Categorial'.
+The enumeration 'MessageType' has the following literals: 'VariableToFactor', 'MarginalEdge'.
+'graphEditor::Variablenode' is a specialization of 'Node'.
+'graphEditor::Factornode' is a specialization of 'Node'.
+'graphEditor::Edge' is a specialization of 'GraphElement'.
+'graphEditor::Message' is a specialization of 'GraphElement'.
+'graphEditor::Node' is a specialization of 'GraphElement'.
+'graphEditor::Graph' (role 'graphEditor_Graph2', cardinality 0..*) is associated with 'graphEditor::Edge' (role 'graphEditor_Edge', cardinality 0..*).
+'graphEditor::Message' (role 'graphEditor_Message9', cardinality 0..*) is associated with 'graphEditor::Node' (role 'graphEditor_Node10', cardinality 0..*).
+'graphEditor::Message' (role 'graphEditor_Message', cardinality 0..*) is associated with 'graphEditor::Graph' (role 'graphEditor_Graph4', cardinality 0..*).
+'graphEditor::Node' (role 'graphEditor_Node7', cardinality 0..*) is associated with 'graphEditor::Message' (role 'graphEditor_Message6', cardinality 0..*).
+'graphEditor::Node' (role 'graphEditor_Node', cardinality 0..*) is associated with 'graphEditor::Graph' (role 'graphEditor_Graph', cardinality 0..*).
+'graphEditor::Edge' (role 'graphEditor_Edge15', cardinality 0..*) is associated with 'graphEditor::Node' (role 'graphEditor_Node16', cardinality 0..*).
+'graphEditor::Edge' (role 'graphEditor_Edge12', cardinality 0..*) is associated with 'graphEditor::Node' (role 'graphEditor_Node13', cardinality 0..*).

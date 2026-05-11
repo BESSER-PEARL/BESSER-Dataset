@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'tracelinks::TraceLink' has no attributes.
+The class 'tracelinks::TraceLinkEnd' has the following attributes: 'id' of type str; 'version' of type str.
+The class 'tracelinks::TraceLinksModel' has no attributes.
+'tracelinks::TraceLinksModel' (role 'tracelinks_TraceLinksModel', cardinality 0..*) is associated with 'tracelinks::TraceLink' (role 'tracelinks_TraceLink', cardinality 0..*).
+'tracelinks::TraceLink' (role 'tracelinks_TraceLink2', cardinality 0..*) is associated with 'tracelinks::TraceLinkEnd' (role 'tracelinks_TraceLinkEnd', cardinality 0..*).
+'tracelinks::TraceLink' (role 'tracelinks_TraceLink4', cardinality 0..*) is associated with 'tracelinks::TraceLinkEnd' (role 'tracelinks_TraceLinkEnd5', cardinality 0..*).

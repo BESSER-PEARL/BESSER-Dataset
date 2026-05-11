@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'ConceptA' has no attributes.
+The class 'democea::ConceptC' has the following attributes: 'value' of type int.
+The class 'democea::ConceptA' has no attributes.
+The class 'democea::ConceptB' has no attributes.
+'democea::ConceptB' is a specialization of 'ConceptA'.
+'democea::ConceptC' (role 'democea_ConceptC2', cardinality 0..*) is associated with 'democea::ConceptB' (role 'democea_ConceptB3', cardinality 0..*).
+'democea::ConceptB' (role 'democea_ConceptB', cardinality 0..*) is associated with 'democea::ConceptC' (role 'democea_ConceptC', cardinality 0..*).

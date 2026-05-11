@@ -1,0 +1,14 @@
+The model has 4 class(es).
+The class 'PersonList::LivingPlace' has the following attributes: 'address' of type str.
+The class 'PersonList::List' has no attributes.
+The class 'PersonList::Person' has the following attributes: 'firstname' of type str; 'lastname' of type str; 'gender' of type str.
+The class 'PersonList::WorkPlace' has the following attributes: 'address' of type str.
+The enumeration 'Gender' has the following literals: 'Female', 'Male'.
+'PersonList::List' (role 'PersonList_List', cardinality 0..*) is associated with 'PersonList::WorkPlace' (role 'PersonList_WorkPlace', cardinality 0..*).
+'PersonList::List' (role 'list', cardinality 0..*) is associated with 'PersonList::Person' (role 'Person', cardinality 0..*).
+'PersonList::Person' (role 'Person11', cardinality 0..*) is associated with 'PersonList::LivingPlace' (role 'home', cardinality 0..*).
+'PersonList::Person' (role 'persons7', cardinality 0..*) is associated with 'PersonList::LivingPlace' (role 'LivingPlace', cardinality 0..*).
+'PersonList::List' (role 'List', cardinality 0..*) is associated with 'PersonList::Person' (role 'members', cardinality 0..*).
+'PersonList::LivingPlace' (role 'PersonList_LivingPlace', cardinality 0..*) is associated with 'PersonList::List' (role 'PersonList_List3', cardinality 0..*).
+'PersonList::WorkPlace' (role 'works', cardinality 0..*) is associated with 'PersonList::Person' (role 'Person9', cardinality 0..*).
+'PersonList::Person' (role 'persons', cardinality 0..*) is associated with 'PersonList::WorkPlace' (role 'WorkPlace', cardinality 0..*).

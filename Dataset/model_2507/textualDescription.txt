@@ -1,0 +1,16 @@
+The model has 8 class(es).
+The class 'dummy::G' has the following attributes: 'gString' of type str.
+The class 'dummy::E' has the following attributes: 'eName' of type str.
+The class 'dummy::C' has the following attributes: 'k' of type float.
+The class 'dummy::F' has the following attributes: 'fDouble' of type float; 'fString' of type str.
+The class 'dummy::D' has the following attributes: 'm' of type float; 'name' of type str; 'l' of type float.
+The class 'E' has no attributes.
+The class 'dummy::B' has the following attributes: 'z' of type float; 'y' of type float.
+The class 'dummy::A' has the following attributes: 'en' of type str; 'x' of type float.
+The enumeration 'EnumExample' has the following literals: 'value3', 'value1', 'value2'.
+'dummy::G' is a specialization of 'E'.
+'dummy::F' is a specialization of 'E'.
+'dummy::C' (role 'dummy_C', cardinality 0..*) is associated with 'dummy::B' (role 'dummy_B6', cardinality 0..*).
+'dummy::A' (role 'dummy_A', cardinality 0..*) is associated with 'dummy::B' (role 'dummy_B', cardinality 0..*).
+'dummy::A' (role 'dummy_A4', cardinality 0..*) is associated with 'dummy::E' (role 'dummy_E', cardinality 0..*).
+'dummy::D' (role 'dummy_D', cardinality 0..*) is associated with 'dummy::A' (role 'dummy_A2', cardinality 0..*).

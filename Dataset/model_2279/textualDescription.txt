@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'lMS::LMS' has the following attributes: 'description' of type str.
+The class 'lMS::Course' has the following attributes: 'name' of type str.
+'lMS::LMS' (role 'lMS_LMS', cardinality 0..*) is associated with 'lMS::Course' (role 'lMS_Course', cardinality 0..*).

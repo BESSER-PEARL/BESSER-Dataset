@@ -1,0 +1,19 @@
+The model has 7 class(es).
+The class 'lts::IntermediateState' has no attributes.
+The class 'lts::FinalState' has no attributes.
+The class 'lts::Transition' has the following attributes: 'label' of type str.
+The class 'lts::State' has the following attributes: 'Id' of type str.
+The class 'lts::InitialState' has no attributes.
+The class 'lts::LTS' has the following attributes: 'name' of type str.
+The class 'State' has no attributes.
+'lts::FinalState' is a specialization of 'State'.
+'lts::InitialState' is a specialization of 'State'.
+'lts::IntermediateState' is a specialization of 'State'.
+'lts::Transition' (role 'lts_Transition', cardinality 0..*) is associated with 'lts::LTS' (role 'lts_LTS', cardinality 0..*).
+'lts::Transition' (role 'outgoing', cardinality 0..*) is associated with 'lts::State' (role 'State9', cardinality 0..*).
+'lts::State' (role 'target', cardinality 0..*) is associated with 'lts::Transition' (role 'Transition', cardinality 0..*).
+'lts::FinalState' (role 'lts_FinalState', cardinality 0..*) is associated with 'lts::LTS' (role 'lts_LTS6', cardinality 0..*).
+'lts::Transition' (role 'incoming', cardinality 0..*) is associated with 'lts::State' (role 'State', cardinality 0..*).
+'lts::State' (role 'source', cardinality 0..*) is associated with 'lts::Transition' (role 'Transition12', cardinality 0..*).
+'lts::InitialState' (role 'lts_InitialState', cardinality 0..*) is associated with 'lts::LTS' (role 'lts_LTS2', cardinality 0..*).
+'lts::LTS' (role 'lts_LTS4', cardinality 0..*) is associated with 'lts::IntermediateState' (role 'lts_IntermediateState', cardinality 0..*).

@@ -1,0 +1,85 @@
+The model has 34 class(es).
+The class 'Statement' has no attributes.
+The class 'SwitchCaseStatement' has no attributes.
+The class 'eol::statements::ForStatement' has no attributes.
+The class 'eol::statements::BreakAllStatement' has no attributes.
+The class 'eol::statements::ExecutableAnnotationStatement' has no attributes.
+The class 'eol::statements::DeleteStatement' has no attributes.
+The class 'eol::statements::SwitchStatement' has no attributes.
+The class 'eol::statements::WhileStatement' has no attributes.
+The class 'eol::statements::IfStatement' has no attributes.
+The class 'eol::statements::Expression' has no attributes.
+The class 'eol::statements::NameExpression' has no attributes.
+The class 'eol::statements::SwitchCaseExpressionStatement' has no attributes.
+The class 'eol::statements::AssignmentStatement' has no attributes.
+The class 'eol::statements::StringExpression' has no attributes.
+The class 'eol::statements::ExpressionOrStatementBlock' has no attributes.
+The class 'AssignmentStatement' has no attributes.
+The class 'eol::statements::FormalParameterExpression' has no attributes.
+The class 'eol::statements::ModelDeclarationStatement' has no attributes.
+The class 'AnnotationStatement' has no attributes.
+The class 'eol::statements::SpecialAssignmentStatement' has no attributes.
+The class 'eol::statements::ReturnStatement' has no attributes.
+The class 'eol::statements::ContinueStatement' has no attributes.
+The class 'eol::statements::ExpressionStatement' has no attributes.
+The class 'eol::statements::SimpleAnnotationStatement' has no attributes.
+The class 'eol::statements::AbortStatement' has no attributes.
+The class 'eol::statements::Statement' has no attributes.
+The class 'eol::statements::ThrowStatement' has no attributes.
+The class 'eol::statements::AnnotationStatement' has no attributes.
+The class 'eol::statements::ModelDeclarationParameter' has no attributes.
+The class 'eol::statements::VariableDeclarationExpression' has no attributes.
+The class 'eol::statements::SwitchCaseStatement' has no attributes.
+The class 'eol::statements::SwitchCaseDefaultStatement' has no attributes.
+The class 'Expression' has no attributes.
+The class 'eol::statements::BreakStatement' has no attributes.
+'eol::statements::BreakStatement' is a specialization of 'Statement'.
+'eol::statements::BreakAllStatement' is a specialization of 'Statement'.
+'eol::statements::ThrowStatement' is a specialization of 'Statement'.
+'eol::statements::IfStatement' is a specialization of 'Statement'.
+'eol::statements::SwitchStatement' is a specialization of 'Statement'.
+'eol::statements::SwitchCaseExpressionStatement' is a specialization of 'SwitchCaseStatement'.
+'eol::statements::AbortStatement' is a specialization of 'Statement'.
+'eol::statements::SwitchCaseDefaultStatement' is a specialization of 'SwitchCaseStatement'.
+'eol::statements::ExpressionStatement' is a specialization of 'Statement'.
+'eol::statements::VariableDeclarationExpression' is a specialization of 'Expression'.
+'eol::statements::AssignmentStatement' is a specialization of 'Statement'.
+'eol::statements::AnnotationStatement' is a specialization of 'Statement'.
+'eol::statements::NameExpression' is a specialization of 'Expression'.
+'eol::statements::ModelDeclarationStatement' is a specialization of 'Statement'.
+'eol::statements::SwitchCaseStatement' is a specialization of 'Statement'.
+'eol::statements::WhileStatement' is a specialization of 'Statement'.
+'eol::statements::SimpleAnnotationStatement' is a specialization of 'AnnotationStatement'.
+'eol::statements::DeleteStatement' is a specialization of 'Statement'.
+'eol::statements::SpecialAssignmentStatement' is a specialization of 'AssignmentStatement'.
+'eol::statements::ForStatement' is a specialization of 'Statement'.
+'eol::statements::ContinueStatement' is a specialization of 'Statement'.
+'eol::statements::ExecutableAnnotationStatement' is a specialization of 'AnnotationStatement'.
+'eol::statements::ReturnStatement' is a specialization of 'Statement'.
+'eol::statements::ExpressionStatement' (role 'eol_statements_ExpressionStatement', cardinality 0..*) is associated with 'eol::statements::Expression' (role 'eol_statements_Expression', cardinality 0..*).
+'eol::statements::DeleteStatement' (role 'eol_statements_DeleteStatement', cardinality 0..*) is associated with 'eol::statements::Expression' (role 'eol_statements_Expression39', cardinality 0..*).
+'eol::statements::WhileStatement' (role 'eol_statements_WhileStatement32', cardinality 0..*) is associated with 'eol::statements::ExpressionOrStatementBlock' (role 'eol_statements_ExpressionOrStatementBlock33', cardinality 0..*).
+'eol::statements::IfStatement' (role 'eol_statements_IfStatement', cardinality 0..*) is associated with 'eol::statements::Expression' (role 'eol_statements_Expression12', cardinality 0..*).
+'eol::statements::FormalParameterExpression' (role 'eol_statements_FormalParameterExpression', cardinality 0..*) is associated with 'eol::statements::ForStatement' (role 'eol_statements_ForStatement', cardinality 0..*).
+'eol::statements::Expression' (role 'eol_statements_Expression37', cardinality 0..*) is associated with 'eol::statements::ThrowStatement' (role 'eol_statements_ThrowStatement', cardinality 0..*).
+'eol::statements::AssignmentStatement' (role 'eol_statements_AssignmentStatement', cardinality 0..*) is associated with 'eol::statements::Expression' (role 'eol_statements_Expression41', cardinality 0..*).
+'eol::statements::ExpressionOrStatementBlock' (role 'eol_statements_ExpressionOrStatementBlock21', cardinality 0..*) is associated with 'eol::statements::IfStatement' (role 'eol_statements_IfStatement20', cardinality 0..*).
+'eol::statements::ModelDeclarationStatement' (role 'eol_statements_ModelDeclarationStatement', cardinality 0..*) is associated with 'eol::statements::VariableDeclarationExpression' (role 'eol_statements_VariableDeclarationExpression', cardinality 0..*).
+'eol::statements::Expression' (role 'eol_statements_Expression44', cardinality 0..*) is associated with 'eol::statements::AssignmentStatement' (role 'eol_statements_AssignmentStatement43', cardinality 0..*).
+'eol::statements::Expression' (role 'eol_statements_Expression35', cardinality 0..*) is associated with 'eol::statements::ReturnStatement' (role 'eol_statements_ReturnStatement', cardinality 0..*).
+'eol::statements::ModelDeclarationParameter' (role 'eol_statements_ModelDeclarationParameter', cardinality 0..*) is associated with 'eol::statements::ModelDeclarationStatement' (role 'eol_statements_ModelDeclarationStatement57', cardinality 0..*).
+'eol::statements::SimpleAnnotationStatement' (role 'eol_statements_SimpleAnnotationStatement', cardinality 0..*) is associated with 'eol::statements::StringExpression' (role 'eol_statements_StringExpression', cardinality 0..*).
+'eol::statements::WhileStatement' (role 'eol_statements_WhileStatement', cardinality 0..*) is associated with 'eol::statements::Expression' (role 'eol_statements_Expression30', cardinality 0..*).
+'eol::statements::ExpressionOrStatementBlock' (role 'eol_statements_ExpressionOrStatementBlock15', cardinality 0..*) is associated with 'eol::statements::IfStatement' (role 'eol_statements_IfStatement14', cardinality 0..*).
+'eol::statements::VariableDeclarationExpression' (role 'eol_statements_VariableDeclarationExpression55', cardinality 0..*) is associated with 'eol::statements::ModelDeclarationStatement' (role 'eol_statements_ModelDeclarationStatement54', cardinality 0..*).
+'eol::statements::IfStatement' (role 'eol_statements_IfStatement17', cardinality 0..*) is associated with 'eol::statements::ExpressionOrStatementBlock' (role 'eol_statements_ExpressionOrStatementBlock18', cardinality 0..*).
+'eol::statements::Expression' (role 'eol_statements_Expression10', cardinality 0..*) is associated with 'eol::statements::SwitchCaseExpressionStatement' (role 'eol_statements_SwitchCaseExpressionStatement9', cardinality 0..*).
+'eol::statements::AnnotationStatement' (role 'eol_statements_AnnotationStatement', cardinality 0..*) is associated with 'eol::statements::NameExpression' (role 'eol_statements_NameExpression', cardinality 0..*).
+'eol::statements::ExpressionOrStatementBlock' (role 'eol_statements_ExpressionOrStatementBlock28', cardinality 0..*) is associated with 'eol::statements::ForStatement' (role 'eol_statements_ForStatement27', cardinality 0..*).
+'eol::statements::ExecutableAnnotationStatement' (role 'eol_statements_ExecutableAnnotationStatement', cardinality 0..*) is associated with 'eol::statements::Expression' (role 'eol_statements_Expression48', cardinality 0..*).
+'eol::statements::SwitchCaseDefaultStatement' (role 'eol_statements_SwitchCaseDefaultStatement', cardinality 0..*) is associated with 'eol::statements::SwitchStatement' (role 'eol_statements_SwitchStatement6', cardinality 0..*).
+'eol::statements::Expression' (role 'eol_statements_Expression25', cardinality 0..*) is associated with 'eol::statements::ForStatement' (role 'eol_statements_ForStatement24', cardinality 0..*).
+'eol::statements::SwitchCaseStatement' (role 'eol_statements_SwitchCaseStatement', cardinality 0..*) is associated with 'eol::statements::ExpressionOrStatementBlock' (role 'eol_statements_ExpressionOrStatementBlock', cardinality 0..*).
+'eol::statements::SwitchStatement' (role 'eol_statements_SwitchStatement4', cardinality 0..*) is associated with 'eol::statements::SwitchCaseExpressionStatement' (role 'eol_statements_SwitchCaseExpressionStatement', cardinality 0..*).
+'eol::statements::Expression' (role 'eol_statements_Expression2', cardinality 0..*) is associated with 'eol::statements::SwitchStatement' (role 'eol_statements_SwitchStatement', cardinality 0..*).
+'eol::statements::ModelDeclarationStatement' (role 'eol_statements_ModelDeclarationStatement51', cardinality 0..*) is associated with 'eol::statements::NameExpression' (role 'eol_statements_NameExpression52', cardinality 0..*).

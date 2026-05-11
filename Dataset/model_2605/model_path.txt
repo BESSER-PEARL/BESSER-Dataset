@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/Overruler/org.eclipse.emf/examples/org.eclipse.emf.examples.databinding.project.core.model/model/Project.ecore

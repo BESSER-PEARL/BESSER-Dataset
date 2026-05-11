@@ -1,0 +1,134 @@
+The model has 53 class(es).
+The class 'shape::Ellipse' has no attributes.
+The class 'shape::LineLayout' has no attributes.
+The class 'shape::CompartmentRectangle' has no attributes.
+The class 'shape::RoundedRectangleLayout' has the following attributes: 'curveHeight' of type int; 'curveWidth' of type int.
+The class 'AnchorType' has no attributes.
+The class 'shape::AnchorFixPointPosition' has the following attributes: 'ycor' of type int; 'xcor' of type int.
+The class 'shape::CompartmentInfo' has the following attributes: 'margin' of type int; 'spacing' of type int; 'invisible' of type bool; 'compartmentLayout' of type str; 'stretchV' of type str; 'stretchH' of type str.
+The class 'shape::Point' has the following attributes: 'curveAfter' of type int; 'curveBefore' of type int; 'xcor' of type str; 'ycor' of type str.
+The class 'shape::PlacingDefinition' has the following attributes: 'offset' of type str; 'distance' of type int; 'angle' of type int.
+The class 'shape::AnchorType' has no attributes.
+The class 'shape::ShapestyleLayout' has no attributes.
+The class 'shape::AnchorRelativePosition' has the following attributes: 'xoffset' of type str; 'yoffset' of type str.
+The class 'shape::RectangleEllipseLayout' has no attributes.
+The class 'shape::Shape' has the following attributes: 'style' of type str.
+The class 'shape::CDPolygon' has no attributes.
+The class 'shape::AnchorPosition' has no attributes.
+The class 'shape::ShapeContainer' has no attributes.
+The class 'shape::CDText' has the following attributes: 'texttype' of type str.
+The class 'shape::ShapeLayout' has the following attributes: 'maxwidth' of type int; 'minwidth' of type int; 'stretchV' of type str; 'proportional' of type str; 'stretchH' of type str; 'minheight' of type int; 'maxheight' of type int.
+The class 'shape::CompartmentShape' has no attributes.
+The class 'AnchorPositionPos' has no attributes.
+The class 'shape::Description' has the following attributes: 'style' of type str; 'vAlign' of type str; 'hAlign' of type str.
+The class 'shape::CompartmentEllipse' has no attributes.
+The class 'shape::CDRoundedRectangle' has no attributes.
+The class 'shape::CDEllipse' has no attributes.
+The class 'shape::ShapeContainerElement' has the following attributes: 'name' of type str; 'style' of type str.
+The class 'Shape' has no attributes.
+The class 'shape::AnchorManual' has no attributes.
+The class 'shape::RoundedRectangle' has no attributes.
+The class 'shape::Polygon' has no attributes.
+The class 'shape::TextLayout' has the following attributes: 'hAlign' of type str; 'vAlign' of type str.
+The class 'shape::CommonLayout' has the following attributes: 'ycor' of type int; 'xcor' of type int; 'width' of type int; 'heigth' of type int.
+The class 'shape::Polyline' has no attributes.
+The class 'shape::ConnectionDefinition' has the following attributes: 'connectionStyle' of type str.
+The class 'shape::TextBody' has the following attributes: 'value' of type str.
+The class 'shape::CDRectangle' has no attributes.
+The class 'shape::ShapeConnection' has the following attributes: 'style' of type str.
+The class 'shape::AnchorPositionPos' has no attributes.
+The class 'shape::Rectangle' has no attributes.
+The class 'shape::CompartmentRoundedRectangle' has no attributes.
+The class 'shape::ShapeDefinition' has no attributes.
+The class 'shape::Compartment' has the following attributes: 'compartmentLayout' of type str.
+The class 'ShapeConnection' has no attributes.
+The class 'CompartmentShape' has no attributes.
+The class 'shape::Text' has the following attributes: 'texttype' of type str.
+The class 'shape::PolyLineLayout' has no attributes.
+The class 'shape::CDLine' has no attributes.
+The class 'shape::CDPolyline' has no attributes.
+The class 'shape::Line' has no attributes.
+The class 'shape::CompartmentPolygon' has no attributes.
+The class 'shape::Anchor' has no attributes.
+The class 'shape::AnchorPredefinied' has the following attributes: 'value' of type str.
+The class 'ShapeContainerElement' has no attributes.
+The enumeration 'TextType' has the following literals: 'default', 'multiline'.
+The enumeration 'VAlign' has the following literals: 'TOP', 'BOTTOM', 'MIDDLE'.
+The enumeration 'ConnectionStyle' has the following literals: 'manhatten', 'freeform'.
+The enumeration 'HAlign' has the following literals: 'CENTER', 'LEFT', 'RIGHT'.
+The enumeration 'CompartmentLayout' has the following literals: 'FIT', 'FIXED', 'VERTICAL', 'HORIZONTAL'.
+The enumeration 'AnchorPredefiniedEnum' has the following literals: 'corners', 'center'.
+'shape::Line' is a specialization of 'Shape'.
+'shape::CDRoundedRectangle' is a specialization of 'ShapeConnection'.
+'shape::CDText' is a specialization of 'ShapeConnection'.
+'shape::Polyline' is a specialization of 'Shape'.
+'shape::Ellipse' is a specialization of 'Shape'.
+'shape::CDEllipse' is a specialization of 'ShapeConnection'.
+'shape::CDPolygon' is a specialization of 'ShapeConnection'.
+'shape::CDPolyline' is a specialization of 'ShapeConnection'.
+'shape::CDLine' is a specialization of 'ShapeConnection'.
+'shape::Rectangle' is a specialization of 'Shape'.
+'shape::CDRectangle' is a specialization of 'ShapeConnection'.
+'shape::CompartmentEllipse' is a specialization of 'CompartmentShape'.
+'shape::ConnectionDefinition' is a specialization of 'ShapeContainerElement'.
+'shape::CompartmentRectangle' is a specialization of 'CompartmentShape'.
+'shape::AnchorRelativePosition' is a specialization of 'AnchorPositionPos'.
+'shape::AnchorPredefinied' is a specialization of 'AnchorType'.
+'shape::Text' is a specialization of 'Shape'.
+'shape::ShapeDefinition' is a specialization of 'ShapeContainerElement'.
+'shape::AnchorManual' is a specialization of 'AnchorType'.
+'shape::RoundedRectangle' is a specialization of 'Shape'.
+'shape::Polygon' is a specialization of 'Shape'.
+'shape::AnchorFixPointPosition' is a specialization of 'AnchorPositionPos'.
+'shape::Line' (role 'shape_Line', cardinality 0..*) is associated with 'shape::LineLayout' (role 'shape_LineLayout30', cardinality 0..*).
+'shape::Compartment' (role 'shape_Compartment', cardinality 0..*) is associated with 'shape::CompartmentShape' (role 'shape_CompartmentShape', cardinality 0..*).
+'shape::TextLayout' (role 'shape_TextLayout112', cardinality 0..*) is associated with 'shape::ShapestyleLayout' (role 'shape_ShapestyleLayout113', cardinality 0..*).
+'shape::CommonLayout' (role 'shape_CommonLayout110', cardinality 0..*) is associated with 'shape::TextLayout' (role 'shape_TextLayout109', cardinality 0..*).
+'shape::TextBody' (role 'shape_TextBody65', cardinality 0..*) is associated with 'shape::CompartmentInfo' (role 'shape_CompartmentInfo64', cardinality 0..*).
+'shape::PolyLineLayout' (role 'shape_PolyLineLayout46', cardinality 0..*) is associated with 'shape::Polygon' (role 'shape_Polygon', cardinality 0..*).
+'shape::ShapeDefinition' (role 'shape_ShapeDefinition6', cardinality 0..*) is associated with 'shape::Shape' (role 'shape_Shape', cardinality 0..*).
+'shape::ConnectionDefinition' (role 'shape_ConnectionDefinition3', cardinality 0..*) is associated with 'shape::PlacingDefinition' (role 'shape_PlacingDefinition', cardinality 0..*).
+'shape::RoundedRectangleLayout' (role 'shape_RoundedRectangleLayout106', cardinality 0..*) is associated with 'shape::ShapestyleLayout' (role 'shape_ShapestyleLayout107', cardinality 0..*).
+'shape::RectangleEllipseLayout' (role 'shape_RectangleEllipseLayout', cardinality 0..*) is associated with 'shape::CDRectangle' (role 'shape_CDRectangle', cardinality 0..*).
+'shape::Point' (role 'shape_Point', cardinality 0..*) is associated with 'shape::LineLayout' (role 'shape_LineLayout92', cardinality 0..*).
+'shape::TextBody' (role 'shape_TextBody77', cardinality 0..*) is associated with 'shape::CompartmentRoundedRectangle' (role 'shape_CompartmentRoundedRectangle76', cardinality 0..*).
+'shape::CDText' (role 'shape_CDText', cardinality 0..*) is associated with 'shape::TextLayout' (role 'shape_TextLayout', cardinality 0..*).
+'shape::ShapestyleLayout' (role 'shape_ShapestyleLayout101', cardinality 0..*) is associated with 'shape::PolyLineLayout' (role 'shape_PolyLineLayout100', cardinality 0..*).
+'shape::PolyLineLayout' (role 'shape_PolyLineLayout', cardinality 0..*) is associated with 'shape::CDPolyline' (role 'shape_CDPolyline', cardinality 0..*).
+'shape::CDLine' (role 'shape_CDLine', cardinality 0..*) is associated with 'shape::LineLayout' (role 'shape_LineLayout', cardinality 0..*).
+'shape::RectangleEllipseLayout' (role 'shape_RectangleEllipseLayout89', cardinality 0..*) is associated with 'shape::ShapestyleLayout' (role 'shape_ShapestyleLayout90', cardinality 0..*).
+'shape::ShapeDefinition' (role 'shape_ShapeDefinition8', cardinality 0..*) is associated with 'shape::Description' (role 'shape_Description', cardinality 0..*).
+'shape::Anchor' (role 'shape_Anchor14', cardinality 0..*) is associated with 'shape::AnchorType' (role 'shape_AnchorType', cardinality 0..*).
+'shape::PolyLineLayout' (role 'shape_PolyLineLayout32', cardinality 0..*) is associated with 'shape::Polyline' (role 'shape_Polyline', cardinality 0..*).
+'shape::TextBody' (role 'shape_TextBody82', cardinality 0..*) is associated with 'shape::CompartmentPolygon' (role 'shape_CompartmentPolygon81', cardinality 0..*).
+'shape::ShapeLayout' (role 'shape_ShapeLayout', cardinality 0..*) is associated with 'shape::ShapeDefinition' (role 'shape_ShapeDefinition', cardinality 0..*).
+'shape::CompartmentPolygon' (role 'shape_CompartmentPolygon', cardinality 0..*) is associated with 'shape::PolyLineLayout' (role 'shape_PolyLineLayout79', cardinality 0..*).
+'shape::TextBody' (role 'shape_TextBody', cardinality 0..*) is associated with 'shape::CDText' (role 'shape_CDText28', cardinality 0..*).
+'shape::CompartmentInfo' (role 'shape_CompartmentInfo', cardinality 0..*) is associated with 'shape::Rectangle' (role 'shape_Rectangle', cardinality 0..*).
+'shape::TextLayout' (role 'shape_TextLayout59', cardinality 0..*) is associated with 'shape::Text' (role 'shape_Text', cardinality 0..*).
+'shape::Description' (role 'shape_Description84', cardinality 0..*) is associated with 'shape::TextBody' (role 'shape_TextBody85', cardinality 0..*).
+'shape::Rectangle' (role 'shape_Rectangle38', cardinality 0..*) is associated with 'shape::Shape' (role 'shape_Shape39', cardinality 0..*).
+'shape::ShapestyleLayout' (role 'shape_ShapestyleLayout', cardinality 0..*) is associated with 'shape::ConnectionDefinition' (role 'shape_ConnectionDefinition', cardinality 0..*).
+'shape::Ellipse' (role 'shape_Ellipse', cardinality 0..*) is associated with 'shape::CompartmentInfo' (role 'shape_CompartmentInfo51', cardinality 0..*).
+'shape::PlacingDefinition' (role 'shape_PlacingDefinition12', cardinality 0..*) is associated with 'shape::ShapeConnection' (role 'shape_ShapeConnection', cardinality 0..*).
+'shape::ShapeContainerElement' (role 'shape_ShapeContainerElement', cardinality 0..*) is associated with 'shape::ShapeContainer' (role 'shape_ShapeContainer', cardinality 0..*).
+'shape::RoundedRectangleLayout' (role 'shape_RoundedRectangleLayout', cardinality 0..*) is associated with 'shape::CDRoundedRectangle' (role 'shape_CDRoundedRectangle', cardinality 0..*).
+'shape::RectangleEllipseLayout' (role 'shape_RectangleEllipseLayout69', cardinality 0..*) is associated with 'shape::CompartmentShape' (role 'shape_CompartmentShape68', cardinality 0..*).
+'shape::RoundedRectangleLayout' (role 'shape_RoundedRectangleLayout41', cardinality 0..*) is associated with 'shape::RoundedRectangle' (role 'shape_RoundedRectangle', cardinality 0..*).
+'shape::Polygon' (role 'shape_Polygon48', cardinality 0..*) is associated with 'shape::Shape' (role 'shape_Shape49', cardinality 0..*).
+'shape::RectangleEllipseLayout' (role 'shape_RectangleEllipseLayout54', cardinality 0..*) is associated with 'shape::Ellipse' (role 'shape_Ellipse53', cardinality 0..*).
+'shape::Point' (role 'shape_Point98', cardinality 0..*) is associated with 'shape::PolyLineLayout' (role 'shape_PolyLineLayout97', cardinality 0..*).
+'shape::CDPolygon' (role 'shape_CDPolygon', cardinality 0..*) is associated with 'shape::PolyLineLayout' (role 'shape_PolyLineLayout23', cardinality 0..*).
+'shape::RoundedRectangleLayout' (role 'shape_RoundedRectangleLayout74', cardinality 0..*) is associated with 'shape::CompartmentRoundedRectangle' (role 'shape_CompartmentRoundedRectangle', cardinality 0..*).
+'shape::Text' (role 'shape_Text61', cardinality 0..*) is associated with 'shape::TextBody' (role 'shape_TextBody62', cardinality 0..*).
+'shape::CommonLayout' (role 'shape_CommonLayout', cardinality 0..*) is associated with 'shape::RectangleEllipseLayout' (role 'shape_RectangleEllipseLayout87', cardinality 0..*).
+'shape::CDEllipse' (role 'shape_CDEllipse', cardinality 0..*) is associated with 'shape::RectangleEllipseLayout' (role 'shape_RectangleEllipseLayout25', cardinality 0..*).
+'shape::AnchorPosition' (role 'shape_AnchorPosition17', cardinality 0..*) is associated with 'shape::AnchorPositionPos' (role 'shape_AnchorPositionPos', cardinality 0..*).
+'shape::TextBody' (role 'shape_TextBody72', cardinality 0..*) is associated with 'shape::CompartmentShape' (role 'shape_CompartmentShape71', cardinality 0..*).
+'shape::RoundedRectangleLayout' (role 'shape_RoundedRectangleLayout103', cardinality 0..*) is associated with 'shape::CommonLayout' (role 'shape_CommonLayout104', cardinality 0..*).
+'shape::AnchorManual' (role 'shape_AnchorManual', cardinality 0..*) is associated with 'shape::AnchorPosition' (role 'shape_AnchorPosition', cardinality 0..*).
+'shape::RectangleEllipseLayout' (role 'shape_RectangleEllipseLayout36', cardinality 0..*) is associated with 'shape::Rectangle' (role 'shape_Rectangle35', cardinality 0..*).
+'shape::RoundedRectangle' (role 'shape_RoundedRectangle43', cardinality 0..*) is associated with 'shape::Shape' (role 'shape_Shape44', cardinality 0..*).
+'shape::Shape' (role 'shape_Shape57', cardinality 0..*) is associated with 'shape::Ellipse' (role 'shape_Ellipse56', cardinality 0..*).
+'shape::ShapestyleLayout' (role 'shape_ShapestyleLayout95', cardinality 0..*) is associated with 'shape::LineLayout' (role 'shape_LineLayout94', cardinality 0..*).
+'shape::Anchor' (role 'shape_Anchor', cardinality 0..*) is associated with 'shape::ShapeDefinition' (role 'shape_ShapeDefinition10', cardinality 0..*).

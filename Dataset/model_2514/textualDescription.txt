@@ -1,0 +1,29 @@
+The model has 12 class(es).
+The class 'B' has no attributes.
+The class 'A' has no attributes.
+The class 'test::ntas::Root' has no attributes.
+The class 'test::ntas::B' has no attributes.
+The class 'test::ntas::C' has the following attributes: 'someTerminal' of type str.
+The class 'test::ast::E' has the following attributes: 'derivedBool' of type bool; 'lazyBool' of type bool.
+The class 'test::ast::D' has the following attributes: 'index' of type int; 'name' of type str; 'someOtherBool' of type str; 'someQCollection' of type str; 'someBool' of type bool; 'someCollection' of type str.
+The class 'AbstractD' has no attributes.
+The class 'C' has no attributes.
+The class 'test::ast::AbstractD' has the following attributes: 'derivedString' of type str.
+The class 'test::ntas::A' has the following attributes: 'name' of type str.
+The class 'D' has no attributes.
+'test::ast::E' is a specialization of 'D'.
+'test::ast::D' is a specialization of 'AbstractD'.
+'test::ast::D' (role 'test_ast_D13', cardinality 0..*) is associated with 'C' (role 'C14', cardinality 0..*).
+'test::ast::AbstractD' (role 'test_ast_AbstractD', cardinality 0..*) is associated with 'A' (role 'A34', cardinality 0..*).
+'C' (role 'C20', cardinality 0..*) is associated with 'test::ast::D' (role 'test_ast_D19', cardinality 0..*).
+'test::ast::D' (role 'test_ast_D16', cardinality 0..*) is associated with 'D' (role 'D17', cardinality 0..*).
+'test::ntas::Root' (role 'test_ntas_Root2', cardinality 0..*) is associated with 'B' (role 'B', cardinality 0..*).
+'C' (role 'C', cardinality 0..*) is associated with 'test::ntas::Root' (role 'test_ntas_Root4', cardinality 0..*).
+'test::ntas::Root' (role 'test_ntas_Root8', cardinality 0..*) is associated with 'A' (role 'A9', cardinality 0..*).
+'D' (role 'D23', cardinality 0..*) is associated with 'test::ast::D' (role 'test_ast_D22', cardinality 0..*).
+'C' (role 'C26', cardinality 0..*) is associated with 'test::ast::D' (role 'test_ast_D25', cardinality 0..*).
+'test::ntas::Root' (role 'test_ntas_Root', cardinality 0..*) is associated with 'A' (role 'A', cardinality 0..*).
+'test::ast::D' (role 'test_ast_D31', cardinality 0..*) is associated with 'A' (role 'A32', cardinality 0..*).
+'A' (role 'A29', cardinality 0..*) is associated with 'test::ast::D' (role 'test_ast_D28', cardinality 0..*).
+'test::ntas::Root' (role 'test_ntas_Root6', cardinality 0..*) is associated with 'D' (role 'D', cardinality 0..*).
+'D' (role 'D11', cardinality 0..*) is associated with 'test::ast::D' (role 'test_ast_D', cardinality 0..*).

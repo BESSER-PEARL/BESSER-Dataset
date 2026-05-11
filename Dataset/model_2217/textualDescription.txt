@@ -1,0 +1,26 @@
+The model has 7 class(es).
+The class 'ntnustudies::Course' has the following attributes: 'level' of type str; 'code' of type str; 'semesters' of type str; 'name' of type str; 'type' of type str; 'credtis' of type float.
+The class 'ntnustudies::Department' has the following attributes: 'shortName' of type str; 'name' of type str.
+The class 'ntnustudies::StudyPlan' has no attributes.
+The class 'ntnustudies::Programme' has the following attributes: 'years' of type int; 'name' of type str.
+The class 'ntnustudies::Semester' has the following attributes: 'type' of type str; 'year' of type int.
+The class 'ntnustudies::ChosenSemester' has no attributes.
+The class 'ntnustudies::Specialization' has the following attributes: 'specializationChoicePointSemester' of type int; 'name' of type str.
+The enumeration 'courseType' has the following literals: 'elective', 'mandatory'.
+The enumeration 'courseLevel' has the following literals: 'medium', 'high', 'basic'.
+The enumeration 'semesterType' has the following literals: 'fall', 'spring'.
+'ntnustudies::Specialization' (role 'Specialization', cardinality 0..*) is associated with 'ntnustudies::Programme' (role 'programme', cardinality 0..*).
+'ntnustudies::Course' (role 'ntnustudies_Course12', cardinality 0..*) is associated with 'ntnustudies::Semester' (role 'ntnustudies_Semester11', cardinality 0..*).
+'ntnustudies::Semester' (role 'Semester', cardinality 0..*) is associated with 'ntnustudies::Programme' (role 'programme2', cardinality 0..*).
+'ntnustudies::Programme' (role 'ntnustudies_Programme31', cardinality 0..*) is associated with 'ntnustudies::Department' (role 'ntnustudies_Department30', cardinality 0..*).
+'ntnustudies::Specialization' (role 'ntnustudies_Specialization7', cardinality 0..*) is associated with 'ntnustudies::Specialization' (role 'ntnustudies_Specialization5', cardinality 0..*).
+'ntnustudies::Programme' (role 'Programme14', cardinality 0..*) is associated with 'ntnustudies::Semester' (role 'semesters', cardinality 0..*).
+'ntnustudies::StudyPlan' (role 'ntnustudies_StudyPlan25', cardinality 0..*) is associated with 'ntnustudies::ChosenSemester' (role 'ntnustudies_ChosenSemester26', cardinality 0..*).
+'ntnustudies::Specialization' (role 'ntnustudies_Specialization23', cardinality 0..*) is associated with 'ntnustudies::StudyPlan' (role 'ntnustudies_StudyPlan22', cardinality 0..*).
+'ntnustudies::Specialization' (role 'ntnustudies_Specialization', cardinality 0..*) is associated with 'ntnustudies::Course' (role 'ntnustudies_Course', cardinality 0..*).
+'ntnustudies::Department' (role 'ntnustudies_Department', cardinality 0..*) is associated with 'ntnustudies::Course' (role 'ntnustudies_Course28', cardinality 0..*).
+'ntnustudies::Specialization' (role 'specializations', cardinality 0..*) is associated with 'ntnustudies::Programme' (role 'Programme', cardinality 0..*).
+'ntnustudies::StudyPlan' (role 'ntnustudies_StudyPlan', cardinality 0..*) is associated with 'ntnustudies::Programme' (role 'ntnustudies_Programme', cardinality 0..*).
+'ntnustudies::ChosenSemester' (role 'ntnustudies_ChosenSemester', cardinality 0..*) is associated with 'ntnustudies::Semester' (role 'ntnustudies_Semester16', cardinality 0..*).
+'ntnustudies::Course' (role 'ntnustudies_Course19', cardinality 0..*) is associated with 'ntnustudies::ChosenSemester' (role 'ntnustudies_ChosenSemester18', cardinality 0..*).
+'ntnustudies::Semester' (role 'ntnustudies_Semester', cardinality 0..*) is associated with 'ntnustudies::Specialization' (role 'ntnustudies_Specialization9', cardinality 0..*).

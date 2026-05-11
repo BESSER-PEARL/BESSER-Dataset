@@ -1,0 +1,37 @@
+The model has 17 class(es).
+The class 'refinher::B' has no attributes.
+The class 'refinher::H' has no attributes.
+The class 'refinher::K' has no attributes.
+The class 'refinher::E' has no attributes.
+The class 'refinher::D' has no attributes.
+The class 'refinher::I' has no attributes.
+The class 'F' has no attributes.
+The class 'refinher::G' has no attributes.
+The class 'Named' has no attributes.
+The class 'K' has no attributes.
+The class 'refinher::F' has no attributes.
+The class 'refinher::C' has no attributes.
+The class 'refinher::A' has no attributes.
+The class 'D' has no attributes.
+The class 'refinher::L' has no attributes.
+The class 'B' has no attributes.
+The class 'refinher::Named' has the following attributes: 'name' of type str.
+'refinher::I' is a specialization of 'F'.
+'refinher::B' is a specialization of 'Named'.
+'refinher::K' is a specialization of 'Named'.
+'refinher::D' is a specialization of 'B'.
+'refinher::L' is a specialization of 'Named'.
+'refinher::F' is a specialization of 'D'.
+'refinher::C' is a specialization of 'Named'.
+'refinher::I' is a specialization of 'K'.
+'refinher::E' is a specialization of 'Named'.
+'refinher::H' is a specialization of 'Named'.
+'refinher::G' is a specialization of 'Named'.
+'refinher::B' (role 'refinher_B', cardinality 0..*) is associated with 'refinher::A' (role 'refinher_A', cardinality 0..*).
+'refinher::A' (role 'refinher_A2', cardinality 0..*) is associated with 'refinher::K' (role 'refinher_K', cardinality 0..*).
+'refinher::L' (role 'refinher_L', cardinality 0..*) is associated with 'refinher::K' (role 'refinher_K12', cardinality 0..*).
+'refinher::E' (role 'refinher_E', cardinality 0..*) is associated with 'refinher::D' (role 'refinher_D', cardinality 0..*).
+'refinher::H' (role 'refinher_H', cardinality 0..*) is associated with 'refinher::F' (role 'refinher_F10', cardinality 0..*).
+'refinher::C' (role 'refinher_C', cardinality 0..*) is associated with 'refinher::B' (role 'refinher_B6', cardinality 0..*).
+'refinher::G' (role 'refinher_G', cardinality 0..*) is associated with 'refinher::F' (role 'refinher_F', cardinality 0..*).
+'refinher::Named' (role 'refinher_Named', cardinality 0..*) is associated with 'refinher::A' (role 'refinher_A4', cardinality 0..*).

@@ -1,0 +1,2 @@
+The model has 1 class(es).
+The class 'persons::Person' has the following attributes: 'id' of type str; 'lastName' of type str; 'firstName' of type str.

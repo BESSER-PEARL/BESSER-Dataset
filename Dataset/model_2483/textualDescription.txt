@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'fsm::FSM' has no attributes.
+The class 'fsm::Transition' has no attributes.
+The class 'fsm::State' has no attributes.
+'fsm::State' (role 'fsm_State3', cardinality 0..*) is associated with 'fsm::FSM' (role 'fsm_FSM', cardinality 0..*).
+'fsm::Transition' (role 'fsm_Transition', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State5', cardinality 0..*).
+'fsm::State' (role 'fsm_State', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State0', cardinality 0..*).

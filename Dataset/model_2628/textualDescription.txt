@@ -1,0 +1,32 @@
+The model has 12 class(es).
+The class 'Link' has no attributes.
+The class 'cevinedit::Diagram' has the following attributes: 'modelExtension' of type str; 'name' of type str.
+The class 'cevinedit::CompartmentEReferenceCont' has the following attributes: 'collapsible' of type bool; 'layout' of type str.
+The class 'cevinedit::LinkEReferenceNonCont' has no attributes.
+The class 'cevinedit::Link' has the following attributes: 'texture' of type str; 'width' of type int; 'targetDecoration' of type str; 'color' of type str; 'sourceDecoration' of type str; 'brightness' of type str; 'labelFontStyle' of type str; 'label' of type str.
+The class 'cevinedit::LinkEClass' has the following attributes: 'source' of type str; 'target' of type str.
+The class 'cevinedit::CEViNEditRoot' has the following attributes: 'sourceMM' of type str.
+The class 'cevinedit::PersonalizedElement' has the following attributes: 'name' of type str; 'icon' of type str.
+The class 'cevinedit::NodeEClass' has the following attributes: 'borderWidth' of type int; 'figure' of type str; 'listPointsPolygon' of type str; 'labelPlacement' of type str; 'resizable' of type bool; 'backgroundColor' of type str; 'brightness' of type str; 'size' of type str; 'labelFontStyle' of type str; 'imagePath' of type str; 'borderTexture' of type str; 'borderColor' of type str; 'label' of type str.
+The class 'cevinedit::LabelEAttribute' has no attributes.
+The class 'PersonalizedElement' has no attributes.
+The class 'cevinedit::AffixedEReferenceCont' has no attributes.
+The enumeration 'FontStyle' has the following literals: 'Italic', 'Bold', 'Default'.
+The enumeration 'Texture' has the following literals: 'Dash', 'Dot', 'Default', 'Solid'.
+The enumeration 'LayoutCompartment' has the following literals: 'Free', 'List'.
+The enumeration 'Color' has the following literals: 'Green', 'Black', 'Blue', 'Yellow', 'Orange', 'Default', 'White', 'Cyan', 'Gray', 'Red'.
+The enumeration 'NodeFigure' has the following literals: 'Image', 'Polygon', 'Ellipse', 'SVG', 'Rounded', 'Default', 'Rectangle'.
+The enumeration 'Brightness' has the following literals: 'Default', 'Light', 'Dark'.
+The enumeration 'LinkFigure' has the following literals: 'Square', 'Arrow', 'FilledSquare', 'Rhomb', 'FilledRhomb', 'None_', 'ClosedArrow', 'FilledClosedArrow', 'Default'.
+The enumeration 'Placement' has the following literals: 'None_', 'Internal', 'External'.
+'cevinedit::LinkEClass' is a specialization of 'PersonalizedElement'.
+'cevinedit::LinkEClass' is a specialization of 'Link'.
+'cevinedit::Link' is a specialization of 'PersonalizedElement'.
+'cevinedit::LinkEReferenceNonCont' is a specialization of 'Link'.
+'cevinedit::NodeEClass' is a specialization of 'PersonalizedElement'.
+'cevinedit::AffixedEReferenceCont' is a specialization of 'PersonalizedElement'.
+'cevinedit::CompartmentEReferenceCont' is a specialization of 'PersonalizedElement'.
+'cevinedit::LinkEReferenceNonCont' is a specialization of 'PersonalizedElement'.
+'cevinedit::LabelEAttribute' is a specialization of 'PersonalizedElement'.
+'cevinedit::CEViNEditRoot' (role 'cevinedit_CEViNEditRoot', cardinality 0..*) is associated with 'cevinedit::Diagram' (role 'cevinedit_Diagram', cardinality 0..*).
+'cevinedit::Diagram' (role 'cevinedit_Diagram2', cardinality 0..*) is associated with 'cevinedit::PersonalizedElement' (role 'cevinedit_PersonalizedElement', cardinality 0..*).

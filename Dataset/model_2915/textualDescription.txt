@@ -1,0 +1,42 @@
+The model has 18 class(es).
+The class 'metamodel::ValueRestriction::Value' has the following attributes: 'value' of type str.
+The class 'metamodel::Type' has the following attributes: 'name' of type str.
+The class 'metamodel::Variable' has the following attributes: 'name' of type str.
+The class 'metamodel::Extension::MQPublishing' has the following attributes: 'queue' of type str.
+The class 'metamodel::TransientVariable' has no attributes.
+The class 'metamodel::Entity' has the following attributes: 'base' of type str.
+The class 'metamodel::PlainVariable' has no attributes.
+The class 'metamodel::View' has no attributes.
+The class 'metamodel::EntityObserver' has no attributes.
+The class 'Variable' has no attributes.
+The class 'metamodel::ConnectionToEntity' has the following attributes: 'name' of type str; 'cardinalityMany' of type bool.
+The class 'metamodel::Validation::ValueRestriction' has no attributes.
+The class 'Type' has no attributes.
+The class 'metamodel::Controller' has no attributes.
+The class 'metamodel::Model' has no attributes.
+The class 'metamodel::Datatype' has no attributes.
+The class 'metamodel::ActsAs' has the following attributes: 'actsAsWhat' of type str.
+The class 'metamodel::StaticVariable' has no attributes.
+'metamodel::Controller' is a specialization of 'Type'.
+'metamodel::StaticVariable' is a specialization of 'Variable'.
+'metamodel::PlainVariable' is a specialization of 'Variable'.
+'metamodel::View' is a specialization of 'Type'.
+'metamodel::Model' is a specialization of 'Type'.
+'metamodel::Datatype' is a specialization of 'Type'.
+'metamodel::TransientVariable' is a specialization of 'Variable'.
+'metamodel::Entity' is a specialization of 'Type'.
+'metamodel::View' (role 'metamodel_View26', cardinality 0..*) is associated with 'metamodel::Model' (role 'metamodel_Model25', cardinality 0..*).
+'metamodel::Variable' (role 'metamodel_Variable17', cardinality 0..*) is associated with 'metamodel::Validation::ValueRestriction' (role 'metamodel_Validation_ValueRestriction18', cardinality 0..*).
+'metamodel::View' (role 'metamodel_View', cardinality 0..*) is associated with 'metamodel::Controller' (role 'metamodel_Controller', cardinality 0..*).
+'metamodel::EntityObserver' (role 'metamodel_EntityObserver20', cardinality 0..*) is associated with 'metamodel::Extension::MQPublishing' (role 'metamodel_Extension_MQPublishing', cardinality 0..*).
+'metamodel::ConnectionToEntity' (role 'metamodel_ConnectionToEntity12', cardinality 0..*) is associated with 'metamodel::Entity' (role 'metamodel_Entity13', cardinality 0..*).
+'metamodel::Variable' (role 'metamodel_Variable', cardinality 0..*) is associated with 'metamodel::Entity' (role 'metamodel_Entity', cardinality 0..*).
+'metamodel::Variable' (role 'metamodel_Variable15', cardinality 0..*) is associated with 'metamodel::Type' (role 'metamodel_Type', cardinality 0..*).
+'metamodel::Entity' (role 'metamodel_Entity7', cardinality 0..*) is associated with 'metamodel::EntityObserver' (role 'metamodel_EntityObserver', cardinality 0..*).
+'metamodel::Model' (role 'metamodel_Model28', cardinality 0..*) is associated with 'metamodel::Entity' (role 'metamodel_Entity29', cardinality 0..*).
+'metamodel::ConnectionToEntity' (role 'metamodel_ConnectionToEntity', cardinality 0..*) is associated with 'metamodel::Entity' (role 'metamodel_Entity2', cardinality 0..*).
+'metamodel::Type' (role 'metamodel_Type32', cardinality 0..*) is associated with 'metamodel::Model' (role 'metamodel_Model31', cardinality 0..*).
+'metamodel::Entity' (role 'metamodel_Entity9', cardinality 0..*) is associated with 'metamodel::ActsAs' (role 'metamodel_ActsAs', cardinality 0..*).
+'metamodel::Entity' (role 'metamodel_Entity4', cardinality 0..*) is associated with 'metamodel::ConnectionToEntity' (role 'metamodel_ConnectionToEntity5', cardinality 0..*).
+'metamodel::Controller' (role 'metamodel_Controller23', cardinality 0..*) is associated with 'metamodel::Model' (role 'metamodel_Model', cardinality 0..*).
+'metamodel::ValueRestriction::Value' (role 'metamodel_ValueRestriction_Value', cardinality 0..*) is associated with 'metamodel::Validation::ValueRestriction' (role 'metamodel_Validation_ValueRestriction', cardinality 0..*).

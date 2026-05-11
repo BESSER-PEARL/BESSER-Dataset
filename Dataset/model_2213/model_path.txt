@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/timmychan97/TDT4250-delivery/assignment1/model/studyPlan.ecore

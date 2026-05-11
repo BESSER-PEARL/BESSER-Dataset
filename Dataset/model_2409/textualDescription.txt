@@ -1,0 +1,176 @@
+The model has 66 class(es).
+The class 'SQL2003::evo::BooleanType' has the following attributes: 'descriptor' of type str.
+The class 'SQL2003::evo::NumericFeature' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'SQL2003::evo::View' has no attributes.
+The class 'SQL2003::evo::Parameter' has the following attributes: 'name' of type str.
+The class 'SQL2003::evo::BehaviouralComponent' has the following attributes: 'name' of type str; 'body' of type str.
+The class 'SQL2003::evo::ReferentialConstraint' has the following attributes: 'match' of type str; 'update_action' of type str; 'delete_action' of type str.
+The class 'SQL2003::evo::StructuralComponent' has the following attributes: 'name' of type str.
+The class 'SQL2003::evo::ParameterWithMode' has the following attributes: 'mode' of type str.
+The class 'SQL2003::evo::Feature' has no attributes.
+The class 'SQL2003::evo::PredefinedType' has no attributes.
+The class 'PredefinedType' has no attributes.
+The class 'SQL2003::evo::TypedTable' has no attributes.
+The class 'SQL2003::evo::MULTISET' has no attributes.
+The class 'SQL2003::evo::BaseTable' has no attributes.
+The class 'SQL2003::evo::Restriction' has no attributes.
+The class 'SQL2003::evo::DatetimeType' has the following attributes: 'descriptor' of type str.
+The class 'UniqueConstraint' has no attributes.
+The class 'SQL2003::evo::Method' has the following attributes: 'body' of type str; 'name' of type str.
+The class 'BaseTable' has no attributes.
+The class 'SQL2003::evo::NotNull' has no attributes.
+The class 'SQL2003::evo::Attribute' has the following attributes: 'default' of type str.
+The class 'SQL2003::evo::TableConstraint' has the following attributes: 'name' of type str.
+The class 'SQL2003::evo::ConstructedType' has the following attributes: 'name' of type str.
+The class 'BehaviouralComponent' has no attributes.
+The class 'TableConstraint' has no attributes.
+The class 'ColumnConstraint' has no attributes.
+The class 'SQL2003::evo::StructuredType' has the following attributes: 'is_final' of type bool; 'is_instantiable' of type bool.
+The class 'ConstructedType' has no attributes.
+The class 'SQL2003::evo::Field' has no attributes.
+The class 'SQL2003::evo::ARRAY' has the following attributes: 'num_elements' of type str.
+The class 'SQL2003::evo::Procedure' has no attributes.
+The class 'SQL2003::evo::ColumnConstraint' has no attributes.
+The class 'DerivedTable' has no attributes.
+The class 'SQL2003::evo::UniqueConstraint' has no attributes.
+The class 'SQL2003::evo::CollectionType' has no attributes.
+The class 'Table' has no attributes.
+The class 'SQL2003::evo::DataType' has no attributes.
+The class 'SQL2003::evo::IntervalType' has the following attributes: 'descriptor' of type str.
+The class 'SQL2003::evo::DatetimeFeature' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'SQL2003::evo::StringFeature' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'SQL2003::evo::CharacterStringType' has the following attributes: 'length_def' of type str; 'descriptor' of type str.
+The class 'SQL2003::evo::ROW' has no attributes.
+The class 'SQL2003::evo::Table' has the following attributes: 'name' of type str.
+The class 'Feature' has no attributes.
+The class 'SQL2003::evo::BinaryStringType' has the following attributes: 'length_def' of type str; 'descriptor' of type str.
+The class 'SQL2003::evo::MethodParameter' has no attributes.
+The class 'SQL2003::evo::Function' has no attributes.
+The class 'SQL2003::evo::Schema' has the following attributes: 'name' of type str.
+The class 'SQL2003::evo::TriggerDescriptor' has the following attributes: 'event' of type str; 'triggeredAction' of type str; 'level' of type str; 'actionTime' of type str.
+The class 'Restriction' has no attributes.
+The class 'CollectionType' has no attributes.
+The class 'SQL2003::evo::DerivedTable' has the following attributes: 'query_expression' of type str.
+The class 'SQL2003::evo::ReferenceType' has no attributes.
+The class 'SQL2003::evo::IntervalFeature' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'SQL2003::evo::XMLType' has the following attributes: 'descriptor' of type str.
+The class 'UserDefinedType' has no attributes.
+The class 'StructuralComponent' has no attributes.
+The class 'SQL2003::evo::PrimaryKey' has no attributes.
+The class 'SQL2003::evo::TableCheckConstraint' has the following attributes: 'expression' of type str.
+The class 'SQL2003::evo::Trigger' has the following attributes: 'name' of type str.
+The class 'SQL2003::evo::NumericType' has the following attributes: 'descriptor' of type str.
+The class 'DataType' has no attributes.
+The class 'Parameter' has no attributes.
+The class 'SQL2003::evo::UserDefinedType' has the following attributes: 'name' of type str.
+The class 'SQL2003::evo::Column' has the following attributes: 'default' of type str.
+The class 'SQL2003::evo::DistinctType' has no attributes.
+The enumeration 'BinaryStringTypes' has the following literals: 'BINARYLARGEOBJECT', 'BINARYVARYING', 'BINARY'.
+The enumeration 'BooleanTypes' has the following literals: 'BOOLEAN'.
+The enumeration 'Unit' has the following literals: 'CHARACTERS', 'OCTETS'.
+The enumeration 'NumericTypes' has the following literals: 'BIGINT', 'NUMERIC', 'SMALLINT', 'REAL', 'DOUBLEPRECISION', 'INTEGER', 'DECIMAL', 'FLOAT'.
+The enumeration 'TriggerActionTime' has the following literals: 'BEFORE', 'AFTER'.
+The enumeration 'ParameterMode' has the following literals: 'IN', 'OUT', 'INOUT'.
+The enumeration 'Multiplier' has the following literals: 'P', 'M', 'K', 'T', 'G'.
+The enumeration 'IntervalTypes' has the following literals: 'MONTH', 'MINUTE_SECOND', 'HOUR_MINUTE', 'HOUR', 'HOUR_SECOND', 'DAY', 'DAY_HOUR', 'YEAR_MONTH', 'DAY_MINUTE', 'SECOND', 'MINUTE', 'YEAR', 'DAY_SECOND'.
+The enumeration 'TriggerLevel' has the following literals: 'ROW_LEVEL', 'STATEMENT_LEVEL'.
+The enumeration 'NumericFeatures' has the following literals: 'precision', 'scale', 'radix'.
+The enumeration 'NumericRadix' has the following literals: 'DECIMAL', 'BINARY'.
+The enumeration 'StringFeatures' has the following literals: 'length', 'multiplier', 'unit'.
+The enumeration 'DatetimeTypes' has the following literals: 'TIMESTAMPWITHOUTTIMEZONE', 'DATE', 'TIMESTAMPWITHTIMEZONE', 'TIMEWITHOUTTIMEZONE', 'TIMEWITHTIMEZONE'.
+The enumeration 'XMLTypes' has the following literals: 'XMLTYPE'.
+The enumeration 'ReferentialAction' has the following literals: 'CASCADE', 'SET_NULL', 'SET_DEFAULT', 'RESTRICT', 'NO_ACTION'.
+The enumeration 'MatchTypes' has the following literals: 'TOTAL', 'SIMPLE', 'PARTIAL'.
+The enumeration 'TriggerEvent' has the following literals: 'UPDATE', 'INSERT', 'DELETE'.
+The enumeration 'DatetimeFeatures' has the following literals: 'precision'.
+The enumeration 'CharacterStringTypes' has the following literals: 'CHARACTERLARGEOBJECT', 'CHARACTERVARYING', 'CHARACTER'.
+The enumeration 'IntervalFeatures' has the following literals: 'leading_precision', 'start_leading_precision', 'end_leading_precision', 'second_precision'.
+'SQL2003::evo::CollectionType' is a specialization of 'ConstructedType'.
+'SQL2003::evo::MethodParameter' is a specialization of 'Parameter'.
+'SQL2003::evo::DerivedTable' is a specialization of 'Table'.
+'SQL2003::evo::NotNull' is a specialization of 'ColumnConstraint'.
+'SQL2003::evo::IntervalFeature' is a specialization of 'Feature'.
+'SQL2003::evo::CharacterStringType' is a specialization of 'PredefinedType'.
+'SQL2003::evo::BaseTable' is a specialization of 'Table'.
+'SQL2003::evo::ConstructedType' is a specialization of 'DataType'.
+'SQL2003::evo::NumericType' is a specialization of 'PredefinedType'.
+'SQL2003::evo::DatetimeFeature' is a specialization of 'Feature'.
+'SQL2003::evo::TypedTable' is a specialization of 'BaseTable'.
+'SQL2003::evo::UniqueConstraint' is a specialization of 'TableConstraint'.
+'SQL2003::evo::ReferentialConstraint' is a specialization of 'TableConstraint'.
+'SQL2003::evo::View' is a specialization of 'DerivedTable'.
+'SQL2003::evo::Attribute' is a specialization of 'StructuralComponent'.
+'SQL2003::evo::DatetimeType' is a specialization of 'PredefinedType'.
+'SQL2003::evo::BinaryStringType' is a specialization of 'PredefinedType'.
+'SQL2003::evo::Trigger' is a specialization of 'Restriction'.
+'SQL2003::evo::ReferenceType' is a specialization of 'ConstructedType'.
+'SQL2003::evo::PrimaryKey' is a specialization of 'UniqueConstraint'.
+'SQL2003::evo::Procedure' is a specialization of 'BehaviouralComponent'.
+'SQL2003::evo::ROW' is a specialization of 'ConstructedType'.
+'SQL2003::evo::BooleanType' is a specialization of 'PredefinedType'.
+'SQL2003::evo::IntervalType' is a specialization of 'PredefinedType'.
+'SQL2003::evo::ParameterWithMode' is a specialization of 'Parameter'.
+'SQL2003::evo::TableConstraint' is a specialization of 'Restriction'.
+'SQL2003::evo::Function' is a specialization of 'BehaviouralComponent'.
+'SQL2003::evo::ColumnConstraint' is a specialization of 'Restriction'.
+'SQL2003::evo::ARRAY' is a specialization of 'CollectionType'.
+'SQL2003::evo::UserDefinedType' is a specialization of 'DataType'.
+'SQL2003::evo::StructuredType' is a specialization of 'UserDefinedType'.
+'SQL2003::evo::Column' is a specialization of 'StructuralComponent'.
+'SQL2003::evo::DistinctType' is a specialization of 'UserDefinedType'.
+'SQL2003::evo::MULTISET' is a specialization of 'CollectionType'.
+'SQL2003::evo::NumericFeature' is a specialization of 'Feature'.
+'SQL2003::evo::PredefinedType' is a specialization of 'DataType'.
+'SQL2003::evo::TableCheckConstraint' is a specialization of 'TableConstraint'.
+'SQL2003::evo::Field' is a specialization of 'StructuralComponent'.
+'SQL2003::evo::StringFeature' is a specialization of 'Feature'.
+'SQL2003::evo::XMLType' is a specialization of 'PredefinedType'.
+'SQL2003::evo::View' (role 'views89', cardinality 0..*) is associated with 'SQL2003::evo::StructuralComponent' (role 'StructuralComponent90', cardinality 0..*).
+'SQL2003::evo::ROW' (role 'row', cardinality 0..*) is associated with 'SQL2003::evo::Field' (role 'Field', cardinality 0..*).
+'SQL2003::evo::ParameterWithMode' (role 'parametersWithMode', cardinality 0..*) is associated with 'SQL2003::evo::BehaviouralComponent' (role 'BehaviouralComponent', cardinality 0..*).
+'SQL2003::evo::StructuredType' (role 'StructuredType79', cardinality 0..*) is associated with 'SQL2003::evo::TypedTable' (role 'typed', cardinality 0..*).
+'SQL2003::evo::Method' (role 'SQL2003_evo_Method20', cardinality 0..*) is associated with 'SQL2003::evo::DataType' (role 'SQL2003_evo_DataType21', cardinality 0..*).
+'SQL2003::evo::View' (role 'View70', cardinality 0..*) is associated with 'SQL2003::evo::Table' (role 'tables69', cardinality 0..*).
+'SQL2003::evo::StructuralComponent' (role 'StructuralComponent', cardinality 0..*) is associated with 'SQL2003::evo::Restriction' (role 'restrictions40', cardinality 0..*).
+'SQL2003::evo::StructuralComponent' (role 'SQL2003_evo_StructuralComponent', cardinality 0..*) is associated with 'SQL2003::evo::DataType' (role 'SQL2003_evo_DataType49', cardinality 0..*).
+'SQL2003::evo::TriggerDescriptor' (role 'TriggerDescriptor', cardinality 0..*) is associated with 'SQL2003::evo::Trigger' (role 'trigger', cardinality 0..*).
+'SQL2003::evo::ReferentialConstraint' (role 'SQL2003_evo_ReferentialConstraint', cardinality 0..*) is associated with 'SQL2003::evo::UniqueConstraint' (role 'SQL2003_evo_UniqueConstraint', cardinality 0..*).
+'SQL2003::evo::Method' (role 'methods', cardinality 0..*) is associated with 'SQL2003::evo::StructuredType' (role 'StructuredType18', cardinality 0..*).
+'SQL2003::evo::TypedTable' (role 'TypedTable', cardinality 0..*) is associated with 'SQL2003::evo::StructuredType' (role 'structured64', cardinality 0..*).
+'SQL2003::evo::Table' (role 'Table', cardinality 0..*) is associated with 'SQL2003::evo::Column' (role 'columns', cardinality 0..*).
+'SQL2003::evo::Restriction' (role 'Restriction', cardinality 0..*) is associated with 'SQL2003::evo::StructuralComponent' (role 'columns52', cardinality 0..*).
+'SQL2003::evo::StructuredType' (role 'StructuredType', cardinality 0..*) is associated with 'SQL2003::evo::Attribute' (role 'attributes', cardinality 0..*).
+'SQL2003::evo::PredefinedType' (role 'source_type', cardinality 0..*) is associated with 'SQL2003::evo::DistinctType' (role 'DistinctType', cardinality 0..*).
+'SQL2003::evo::PredefinedType' (role 'PredefinedType', cardinality 0..*) is associated with 'SQL2003::evo::DistinctType' (role 'is_source_of', cardinality 0..*).
+'SQL2003::evo::CollectionType' (role 'SQL2003_evo_CollectionType6', cardinality 0..*) is associated with 'SQL2003::evo::DataType' (role 'SQL2003_evo_DataType', cardinality 0..*).
+'SQL2003::evo::ReferenceType' (role 'SQL2003_evo_ReferenceType', cardinality 0..*) is associated with 'SQL2003::evo::StructuredType' (role 'SQL2003_evo_StructuredType', cardinality 0..*).
+'SQL2003::evo::StructuredType' (role 'structured', cardinality 0..*) is associated with 'SQL2003::evo::Attribute' (role 'Attribute', cardinality 0..*).
+'SQL2003::evo::TypedTable' (role 'subtables', cardinality 0..*) is associated with 'SQL2003::evo::TypedTable' (role 'TypedTable82', cardinality 0..*).
+'SQL2003::evo::Restriction' (role 'Restriction73', cardinality 0..*) is associated with 'SQL2003::evo::Table' (role 'table72', cardinality 0..*).
+'SQL2003::evo::Field' (role 'fields', cardinality 0..*) is associated with 'SQL2003::evo::ROW' (role 'ROW', cardinality 0..*).
+'SQL2003::evo::Table' (role 'table', cardinality 0..*) is associated with 'SQL2003::evo::Column' (role 'Column', cardinality 0..*).
+'SQL2003::evo::ROW' (role 'ROW34', cardinality 0..*) is associated with 'SQL2003::evo::ROW' (role 'super_type', cardinality 0..*).
+'SQL2003::evo::TypedTable' (role 'TypedTable85', cardinality 0..*) is associated with 'SQL2003::evo::TypedTable' (role 'supertable', cardinality 0..*).
+'SQL2003::evo::View' (role 'views', cardinality 0..*) is associated with 'SQL2003::evo::Table' (role 'Table87', cardinality 0..*).
+'SQL2003::evo::StructuredType' (role 'SQL2003_evo_StructuredType56', cardinality 0..*) is associated with 'SQL2003::evo::StructuredType' (role 'SQL2003_evo_StructuredType58', cardinality 0..*).
+'SQL2003::evo::Trigger' (role 'SQL2003_evo_Trigger', cardinality 0..*) is associated with 'SQL2003::evo::StructuralComponent' (role 'SQL2003_evo_StructuralComponent76', cardinality 0..*).
+'SQL2003::evo::Feature' (role 'SQL2003_evo_Feature', cardinality 0..*) is associated with 'SQL2003::evo::DistinctType' (role 'SQL2003_evo_DistinctType', cardinality 0..*).
+'SQL2003::evo::Method' (role 'Method', cardinality 0..*) is associated with 'SQL2003::evo::MethodParameter' (role 'parameters', cardinality 0..*).
+'SQL2003::evo::Trigger' (role 'Trigger', cardinality 0..*) is associated with 'SQL2003::evo::TriggerDescriptor' (role 'description', cardinality 0..*).
+'SQL2003::evo::Parameter' (role 'SQL2003_evo_Parameter', cardinality 0..*) is associated with 'SQL2003::evo::DataType' (role 'SQL2003_evo_DataType25', cardinality 0..*).
+'SQL2003::evo::Schema' (role 'schema46', cardinality 0..*) is associated with 'SQL2003::evo::Table' (role 'Table47', cardinality 0..*).
+'SQL2003::evo::Schema' (role 'Schema9', cardinality 0..*) is associated with 'SQL2003::evo::DataType' (role 'datatypes', cardinality 0..*).
+'SQL2003::evo::View' (role 'View', cardinality 0..*) is associated with 'SQL2003::evo::StructuralComponent' (role 'components', cardinality 0..*).
+'SQL2003::evo::BehaviouralComponent' (role 'behaviouralComponents', cardinality 0..*) is associated with 'SQL2003::evo::Schema' (role 'Schema', cardinality 0..*).
+'SQL2003::evo::ROW' (role 'ROW30', cardinality 0..*) is associated with 'SQL2003::evo::ROW' (role 'sub_types', cardinality 0..*).
+'SQL2003::evo::StructuredType' (role 'structured61', cardinality 0..*) is associated with 'SQL2003::evo::Method' (role 'Method62', cardinality 0..*).
+'SQL2003::evo::BehaviouralComponent' (role 'behaviouralComponent', cardinality 0..*) is associated with 'SQL2003::evo::ParameterWithMode' (role 'ParameterWithMode', cardinality 0..*).
+'SQL2003::evo::Table' (role 'Table38', cardinality 0..*) is associated with 'SQL2003::evo::Restriction' (role 'restrictions', cardinality 0..*).
+'SQL2003::evo::Schema' (role 'schema44', cardinality 0..*) is associated with 'SQL2003::evo::DataType' (role 'DataType', cardinality 0..*).
+'SQL2003::evo::CollectionType' (role 'SQL2003_evo_CollectionType', cardinality 0..*) is associated with 'SQL2003::evo::CollectionType' (role 'SQL2003_evo_CollectionType3', cardinality 0..*).
+'SQL2003::evo::StructuralComponent' (role 'SQL2003_evo_StructuralComponent54', cardinality 0..*) is associated with 'SQL2003::evo::Feature' (role 'SQL2003_evo_Feature55', cardinality 0..*).
+'SQL2003::evo::Method' (role 'SQL2003_evo_Method', cardinality 0..*) is associated with 'SQL2003::evo::Method' (role 'SQL2003_evo_Method15', cardinality 0..*).
+'SQL2003::evo::BehaviouralComponent' (role 'BehaviouralComponent42', cardinality 0..*) is associated with 'SQL2003::evo::Schema' (role 'schema', cardinality 0..*).
+'SQL2003::evo::Table' (role 'tables', cardinality 0..*) is associated with 'SQL2003::evo::Schema' (role 'Schema66', cardinality 0..*).
+'SQL2003::evo::Method' (role 'method', cardinality 0..*) is associated with 'SQL2003::evo::MethodParameter' (role 'MethodParameter', cardinality 0..*).
+'SQL2003::evo::DataType' (role 'SQL2003_evo_DataType14', cardinality 0..*) is associated with 'SQL2003::evo::Function' (role 'SQL2003_evo_Function', cardinality 0..*).

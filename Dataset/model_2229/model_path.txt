@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/martheab/TDT4250-studyprogram/org.eclipse.exercise.studyprogramsmodel/model/studyprograms.ecore

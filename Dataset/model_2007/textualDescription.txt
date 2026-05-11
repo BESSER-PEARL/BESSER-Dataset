@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'Trace::TraceLink' has the following attributes: 'targetType' of type str; 'targetName' of type str; 'sourceName' of type str; 'description' of type str; 'sourceType' of type str.
+The class 'Trace::Trace' has the following attributes: 'description' of type str.
+'Trace::TraceLink' (role 'Trace_TraceLink', cardinality 0..*) is associated with 'Trace::Trace' (role 'Trace_Trace', cardinality 0..*).

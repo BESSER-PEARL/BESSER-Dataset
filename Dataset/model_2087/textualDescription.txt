@@ -1,0 +1,9 @@
+The model has 2 class(es).
+The class 'redblacktree2::Node' has the following attributes: 'value' of type int.
+The class 'redblacktree2::Tree' has no attributes.
+The enumeration 'Type' has the following literals: 'NODE', 'ROOT', 'LEAF'.
+The enumeration 'Color' has the following literals: 'BLACK', 'RED'.
+'redblacktree2::Node' (role 'redblacktree2_Node9', cardinality 0..*) is associated with 'redblacktree2::Node' (role 'redblacktree2_Node7', cardinality 0..*).
+'redblacktree2::Node' (role 'redblacktree2_Node6', cardinality 0..*) is associated with 'redblacktree2::Node' (role 'redblacktree2_Node4', cardinality 0..*).
+'redblacktree2::Tree' (role 'redblacktree2_Tree', cardinality 0..*) is associated with 'redblacktree2::Node' (role 'redblacktree2_Node', cardinality 0..*).
+'redblacktree2::Node' (role 'redblacktree2_Node3', cardinality 0..*) is associated with 'redblacktree2::Tree' (role 'redblacktree2_Tree2', cardinality 0..*).

@@ -1,0 +1,612 @@
+The model has 275 class(es).
+The class 'InlineFeature' has no attributes.
+The class 'ClosureParameter' has no attributes.
+The class 'MatchedElement' has no attributes.
+The class 'frontend::core::InlineModel' has no attributes.
+The class 'ClassUse' has no attributes.
+The class 'frontend::mappings::Attribute2Attribute' has the following attributes: 'cardinality' of type str.
+The class 'Tag' has no attributes.
+The class 'frontend::mappings::Reference2Reference' has the following attributes: 'resolverName' of type str; 'cardinality' of type str.
+The class 'ReferenceAssignment' has no attributes.
+The class 'IteratorStatement' has no attributes.
+The class 'Variable' has no attributes.
+The class 'frontend::tao::ReferenceAssignment' has the following attributes: 'targetFeature' of type str; 'multivalued' of type bool.
+The class 'core::TypedWithClass' has no attributes.
+The class 'frontend::core::ModelReference' has no attributes.
+The class 'chain::AvailableTransformation' has no attributes.
+The class 'frontend::mappings::IntDefaultValue' has the following attributes: 'defaultValue' of type str.
+The class 'QoolQueue' has no attributes.
+The class 'frontend::qool::InvocationParameter' has the following attributes: 'calleeModelName' of type str.
+The class 'frontend::core::DoubleLiteral' has the following attributes: 'value' of type float.
+The class 'frontend::mappings::AttributeIsDouble' has the following attributes: 'doubleValue' of type str.
+The class 'NamedElement' has no attributes.
+The class 'ObjectSourceVariable' has no attributes.
+The class 'KoanRule' has no attributes.
+The class 'frontend::core::NamedElement' has the following attributes: 'name' of type str.
+The class 'InlineClass' has no attributes.
+The class 'Context' has no attributes.
+The class 'ClassMapping' has no attributes.
+The class 'frontend::qool::MatchExpression' has no attributes.
+The class 'ExternalTransformation' has no attributes.
+The class 'frontend::core::AnnotableElement' has no attributes.
+The class 'Statement' has no attributes.
+The class 'NamedInvocationParameter' has no attributes.
+The class 'frontend::core::StringLiteral' has the following attributes: 'value' of type str.
+The class 'frontend::core::TraceUse' has no attributes.
+The class 'MetamodelElementRef' has no attributes.
+The class 'frontend::core::TraceElement' has no attributes.
+The class 'frontend::mappings::MappingTransformation' has no attributes.
+The class 'frontend::qool::ModelElementQueue' has no attributes.
+The class 'frontend::qool::AccessByFeatureOptimization' has the following attributes: 'featureName' of type str; 'force' of type bool.
+The class 'frontend::core::ImplicitlyAnnotableElement' has no attributes.
+The class 'ResolveLink' has no attributes.
+The class 'frontend::core::ClosureDeclaration' has no attributes.
+The class 'frontend::mappings::Join' has no attributes.
+The class 'frontend::chain::TransformationExecution' has no attributes.
+The class 'frontend::tao::ObjectSyntax' has no attributes.
+The class 'frontend::core::TypeExpression' has no attributes.
+The class 'TemplateParameter' has no attributes.
+The class 'frontend::qool::ForEachStatement' has no attributes.
+The class 'frontend::tao::TaoTransformation' has no attributes.
+The class 'frontend::mappings::Section' has the following attributes: 'sectionType' of type str.
+The class 'core::ClassUse' has no attributes.
+The class 'ImportedModel' has no attributes.
+The class 'AttributeRef' has no attributes.
+The class 'FeatureRef' has no attributes.
+The class 'frontend::mappings::MappingElement' has no attributes.
+The class 'frontend::core::ModuleDefinition' has no attributes.
+The class 'frontend::imperative::MethodSelf' has no attributes.
+The class 'AnnotationParameter' has no attributes.
+The class 'AttributionRule' has no attributes.
+The class 'frontend::core::PutTrace' has no attributes.
+The class 'frontend::koan::Matcher' has no attributes.
+The class 'frontend::core::TraceDefinition' has no attributes.
+The class 'frontend::core::ClassUse' has the following attributes: 'className' of type str; 'strictType' of type bool.
+The class 'frontend::core::ImportedModel' has no attributes.
+The class 'frontend::patterns::PatternSpecification' has no attributes.
+The class 'koan::Matcher' has no attributes.
+The class 'frontend::attribution::AttributeUse' has no attributes.
+The class 'TraceDefinition' has no attributes.
+The class 'Converter' has no attributes.
+The class 'DefinitionParameter' has no attributes.
+The class 'frontend::core::TraceInterface' has no attributes.
+The class 'frontend::mappings::ClassMapping' has no attributes.
+The class 'frontend::core::RequireDeclaration' has the following attributes: 'name' of type str; 'default' of type str.
+The class 'frontend::mappings::AttributeIsString' has the following attributes: 'strValue' of type str.
+The class 'C2CModifier' has no attributes.
+The class 'frontend::core::PropertyWrite' has the following attributes: '_property' of type str.
+The class 'TraceElement' has no attributes.
+The class 'frontend::mappings::MetamodelElementRef' has no attributes.
+The class 'frontend::qool::QoolTransformation' has no attributes.
+The class 'frontend::mappings::Context' has no attributes.
+The class 'frontend::attribution::AttributionRule' has no attributes.
+The class 'frontend::mappings::Feature2Feature' has no attributes.
+The class 'mappings::MetamodelElementRef' has no attributes.
+The class 'frontend::core::NumLiteral' has the following attributes: 'value' of type int.
+The class 'POutputVariable' has no attributes.
+The class 'frontend::tao::SourceExpression' has no attributes.
+The class 'frontend::facilities::Copier' has no attributes.
+The class 'frontend::core::InlineReference' has no attributes.
+The class 'core::TransformationDefinition' has no attributes.
+The class 'frontend::qool::MatchPredicate' has no attributes.
+The class 'frontend::mappings::RelatedBy' has no attributes.
+The class 'Segment' has no attributes.
+The class 'frontend::attribution::AttributionTransformation' has no attributes.
+The class 'frontend::mappings::Class2Class' has the following attributes: 'cardinality' of type str.
+The class 'frontend::core::ModuleParameter' has no attributes.
+The class 'frontend::core::KeywordMethodCall' has no attributes.
+The class 'frontend::facilities::CopierCallbackDefinition' has the following attributes: 'stop' of type bool.
+The class 'frontend::core::IfBranch' has no attributes.
+The class 'core::Expression' has no attributes.
+The class 'frontend::core::LocatedElement' has the following attributes: 'row' of type int; 'column' of type int; 'file' of type str.
+The class 'frontend::qool::PropertyEqualsPredicate' has the following attributes: 'propertyName' of type str.
+The class 'frontend::core::TransformationDefinitionParameter' has no attributes.
+The class 'frontend::qool::IteratorStatement' has no attributes.
+The class 'frontend::attribution::AttributeDcl' has no attributes.
+The class 'AvailableTransformation' has no attributes.
+The class 'frontend::qool::LocalQueue' has no attributes.
+The class 'frontend::core::UseDeclaration' has the following attributes: 'as_' of type str; 'module' of type str.
+The class 'frontend::core::DefinitionParameter' has no attributes.
+The class 'PObject' has no attributes.
+The class 'frontend::core::MetamodelModelAnnotation' has the following attributes: 'metamodel' of type str.
+The class 'IfBranch' has no attributes.
+The class 'frontend::tao::TemplateParameter' has no attributes.
+The class 'core::LocatedElement' has no attributes.
+The class 'TransformationExecution' has no attributes.
+The class 'frontend::chain::GeneratedModel' has no attributes.
+The class 'Modifier' has no attributes.
+The class 'frontend::patterns::Pattern' has the following attributes: 'name' of type str.
+The class 'frontend::qool::ForAllStatement' has no attributes.
+The class 'frontend::core::ClosureParameter' has no attributes.
+The class 'frontend::attribution::AttributeInit' has no attributes.
+The class 'frontend::mappings::AttributeModifier' has no attributes.
+The class 'frontend::koan::KoanRule' has no attributes.
+The class 'QueueOptimization' has no attributes.
+The class 'frontend::core::Expression' has no attributes.
+The class 'mappings::MappingVariable' has no attributes.
+The class 'frontend::core::KeywordParameter' has the following attributes: 'keyword' of type str.
+The class 'frontend::mappings::AttributeIsResolveLink' has no attributes.
+The class 'frontend::chain::AvailableTransformation' has no attributes.
+The class 'CompositeTransformation' has no attributes.
+The class 'frontend::mappings::MappingVariable' has no attributes.
+The class 'Template' has no attributes.
+The class 'Attribute2Attribute' has no attributes.
+The class 'Section' has no attributes.
+The class 'frontend::imperative::ImperativeTransformation' has no attributes.
+The class 'GeneratedModel' has no attributes.
+The class 'DefaultValue' has no attributes.
+The class 'InvocationParameter' has no attributes.
+The class 'Expression' has no attributes.
+The class 'frontend::tao::Assignment' has no attributes.
+The class 'frontend::mappings::Delegate' has the following attributes: 'featureName' of type str; 'linkName' of type str; 'isExternal' of type str.
+The class 'frontend::patterns::PAttribute' has no attributes.
+The class 'frontend::mappings::LinkedBy' has no attributes.
+The class 'frontend::qool::EmitStatement' has no attributes.
+The class 'frontend::core::VariableReference' has no attributes.
+The class 'frontend::core::Annotation' has no attributes.
+The class 'ReferenceRef' has no attributes.
+The class 'frontend::core::BooleanLiteral' has the following attributes: 'value' of type bool.
+The class 'frontend::core::RequireParameter' has the following attributes: 'formalParameterName' of type str.
+The class 'frontend::core::Variable' has the following attributes: 'name' of type str.
+The class 'frontend::mappings::MatchedElement' has no attributes.
+The class 'frontend::imperative::MethodDefinition' has the following attributes: 'name' of type str.
+The class 'core::ModuleDefinition' has no attributes.
+The class 'frontend::qool::InvokeTransformation' has the following attributes: 'transformationName' of type str; 'entryPointName' of type str.
+The class 'frontend::qool::NamedInvocationParameter' has the following attributes: 'formalName' of type str.
+The class 'ClassRef' has no attributes.
+The class 'KeywordParameter' has no attributes.
+The class 'frontend::koan::KoanTransformation' has no attributes.
+The class 'LocatedElement' has no attributes.
+The class 'frontend::chain::CompositeTransformation' has no attributes.
+The class 'frontend::core::RepresentModel' has no attributes.
+The class 'frontend::core::ResolveLink' has the following attributes: 'linkName' of type str; 'featureName' of type str; 'isExternal' of type str.
+The class 'SourceExpression' has no attributes.
+The class 'AttributeDcl' has no attributes.
+The class 'frontend::core::PutTraceParameter' has no attributes.
+The class 'RuleSelf' has no attributes.
+The class 'frontend::tao::WithOptionalVariableExpression' has no attributes.
+The class 'frontend::core::IfExpr' has no attributes.
+The class 'frontend::qool::Segment' has no attributes.
+The class 'frontend::patterns::POutputVariable' has no attributes.
+The class 'frontend::imperative::MethodParameter' has no attributes.
+The class 'frontend::mappings::Split' has no attributes.
+The class 'frontend::attribution::SynthesizedAttributeDcl' has no attributes.
+The class 'frontend::patterns::PFeature' has the following attributes: 'name' of type str.
+The class 'frontend::mappings::ReferenceRef' has the following attributes: 'multivalued' of type bool; 'featureName' of type str.
+The class 'frontend::tao::ObjectSourceVariable' has no attributes.
+The class 'TransformationDefinition' has no attributes.
+The class 'frontend::script::ScriptedTransformation' has no attributes.
+The class 'TraceCompareExpression' has no attributes.
+The class 'PReference' has no attributes.
+The class 'frontend::mappings::FeatureRef' has the following attributes: 'multivalued' of type bool; 'featureName' of type str.
+The class 'frontend::tao::Template' has no attributes.
+The class 'frontend::core::MatchTrace' has the following attributes: 'cardinality' of type str.
+The class 'Operator' has no attributes.
+The class 'frontend::core::InlineClass' has no attributes.
+The class 'core::DefinitionParameter' has no attributes.
+The class 'Pattern' has no attributes.
+The class 'core::ImplicitlyAnnotableElement' has no attributes.
+The class 'frontend::core::TypedWithClass' has no attributes.
+The class 'RequireParameter' has no attributes.
+The class 'frontend::chain::ExternalTransformation' has no attributes.
+The class 'frontend::core::InlineAttribute' has no attributes.
+The class 'frontend::mappings::C2CModifier' has no attributes.
+The class 'frontend::koan::ForAllMatcher' has no attributes.
+The class 'AttributeRightPart' has no attributes.
+The class 'frontend::core::SingleAnnotation' has no attributes.
+The class 'MatchPredicate' has no attributes.
+The class 'Matcher' has no attributes.
+The class 'frontend::core::Statement' has no attributes.
+The class 'TemplateRootObject' has no attributes.
+The class 'frontend::qool::InvokeExternal' has the following attributes: 'traceAttributeName' of type str; 'queueName' of type str.
+The class 'frontend::tao::Invocation' has no attributes.
+The class 'frontend::core::EclecticTransformationDefinition' has no attributes.
+The class 'frontend::mappings::Converter' has the following attributes: 'converterName' of type str; 'isExternal' of type str.
+The class 'frontend::core::PotencyAnnotation' has the following attributes: 'value' of type str.
+The class 'core::RepresentModel' has no attributes.
+The class 'ModuleDefinition' has no attributes.
+The class 'frontend::qool::InvokeInternal' has no attributes.
+The class 'frontend::core::AnnotationParameter' has no attributes.
+The class 'UseDeclaration' has no attributes.
+The class 'MethodSelf' has no attributes.
+The class 'frontend::core::TraceCompareExpression' has the following attributes: 'multivaluedTag' of type bool.
+The class 'core::TypeExpression' has no attributes.
+The class 'frontend::core::RequireModelParameter' has no attributes.
+The class 'InlineModel' has no attributes.
+The class 'core::Variable' has no attributes.
+The class 'Assignment' has no attributes.
+The class 'frontend::tao::ObjectInstantiation' has no attributes.
+The class 'frontend::mappings::AttributeRightPart' has no attributes.
+The class 'frontend::tao::AttributeAssigment' has the following attributes: 'targetFeature' of type str.
+The class 'frontend::mappings::AttributeMapping' has no attributes.
+The class 'Feature2Feature' has no attributes.
+The class 'PFeature' has no attributes.
+The class 'frontend::core::BinaryExpr' has the following attributes: 'binaryOp' of type str.
+The class 'Annotation' has no attributes.
+The class 'frontend::core::InlineFeature' has the following attributes: 'multivalued' of type bool.
+The class 'frontend::DummyRootMetaclass' has no attributes.
+The class 'TypeExpression' has no attributes.
+The class 'core::AnnotableElement' has no attributes.
+The class 'ObjectInstantiation' has no attributes.
+The class 'SingleAnnotation' has no attributes.
+The class 'frontend::mappings::Modifier' has no attributes.
+The class 'frontend::attribution::InheritedAttributeDcl' has no attributes.
+The class 'frontend::qool::QoolQueue' has no attributes.
+The class 'frontend::mappings::ClassRef' has no attributes.
+The class 'frontend::attribution::RuleSelf' has no attributes.
+The class 'tao::Assignment' has no attributes.
+The class 'AnnotableElement' has no attributes.
+The class 'core::Statement' has no attributes.
+The class 'frontend::qool::KindOfPredicate' has no attributes.
+The class 'InvokeTransformation' has no attributes.
+The class 'frontend::chain::ChainTransformation' has no attributes.
+The class 'PutTraceParameter' has no attributes.
+The class 'frontend::patterns::CollectionReference' has no attributes.
+The class 'frontend::patterns::PObject' has no attributes.
+The class 'AttributeModifier' has no attributes.
+The class 'frontend::mappings::AttributeIsBoolean' has the following attributes: 'boolValue' of type str.
+The class 'frontend::core::OptimizationsAnnotation' has the following attributes: 'enabled' of type bool.
+The class 'frontend::patterns::PReference' has no attributes.
+The class 'TransformationDefinitionParameter' has no attributes.
+The class 'frontend::core::TracedModelParameter' has no attributes.
+The class 'frontend::tao::TemplateRootObject' has no attributes.
+The class 'MethodParameter' has no attributes.
+The class 'mappings::Feature2Feature' has no attributes.
+The class 'Delegate' has no attributes.
+The class 'frontend::core::DefineVariable' has no attributes.
+The class 'frontend::mappings::EqualityFilter' has the following attributes: 'filter' of type str.
+The class 'frontend::core::TransformationDefinition' has no attributes.
+The class 'frontend::mappings::Tag' has no attributes.
+The class 'frontend::mappings::AttributeIsInteger' has the following attributes: 'intValue' of type int.
+The class 'MethodDefinition' has no attributes.
+The class 'frontend::mappings::AttributeRef' has the following attributes: 'featureName' of type str; 'multivalued' of type bool.
+The class 'frontend::qool::QueueOptimization' has no attributes.
+The class 'frontend::mappings::ConvertModifier' has the following attributes: 'converter' of type str.
+The class 'frontend::core::MethodCall' has the following attributes: 'withParameters' of type bool; 'methodName' of type str.
+The class 'MappingElement' has no attributes.
+The class 'facilities::CopierCallbackDefinition' has no attributes.
+The class 'RepresentModel' has no attributes.
+The class 'frontend::mappings::DefaultValue' has no attributes.
+The class 'mappings::AttributeRightPart' has no attributes.
+The class 'TraceInterface' has no attributes.
+The class 'core::NamedElement' has no attributes.
+The class 'Class2Class' has no attributes.
+The class 'RequireDeclaration' has no attributes.
+The class 'frontend::core::GenericAnnotation' has the following attributes: 'name' of type str.
+The class 'frontend::mappings::Operator' has no attributes.
+The enumeration 'MappingCardinality' has the following literals: 'NToOne', 'OneToOne', 'OneToN'.
+The enumeration 'ResolveTraceCardinality' has the following literals: 'ZERO_OR_ONE', 'ONE_ONE', 'MANY'.
+The enumeration 'BinaryOp' has the following literals: 'ADD', 'SUB', 'EQUAL', 'MUL', 'DIV'.
+'frontend::core::NumLiteral' is a specialization of 'Expression'.
+'frontend::mappings::Attribute2Attribute' is a specialization of 'mappings::Feature2Feature'.
+'frontend::core::ModelReference' is a specialization of 'core::Expression'.
+'frontend::mappings::ClassRef' is a specialization of 'MetamodelElementRef'.
+'frontend::core::DefineVariable' is a specialization of 'core::Statement'.
+'frontend::mappings::Feature2Feature' is a specialization of 'MappingElement'.
+'frontend::koan::KoanRule' is a specialization of 'core::LocatedElement'.
+'frontend::core::TracedModelParameter' is a specialization of 'core::RepresentModel'.
+'frontend::core::ModuleDefinition' is a specialization of 'core::NamedElement'.
+'frontend::core::ImportedModel' is a specialization of 'core::RepresentModel'.
+'frontend::mappings::EqualityFilter' is a specialization of 'C2CModifier'.
+'frontend::qool::InvokeInternal' is a specialization of 'InvokeTransformation'.
+'frontend::koan::Matcher' is a specialization of 'LocatedElement'.
+'frontend::core::ModuleParameter' is a specialization of 'DefinitionParameter'.
+'frontend::qool::IteratorStatement' is a specialization of 'core::Statement'.
+'frontend::core::ModuleDefinition' is a specialization of 'core::LocatedElement'.
+'frontend::mappings::Tag' is a specialization of 'NamedElement'.
+'frontend::attribution::AttributionRule' is a specialization of 'LocatedElement'.
+'frontend::patterns::PReference' is a specialization of 'PFeature'.
+'frontend::mappings::AttributeMapping' is a specialization of 'Feature2Feature'.
+'frontend::imperative::MethodSelf' is a specialization of 'Variable'.
+'frontend::qool::QoolTransformation' is a specialization of 'TransformationDefinition'.
+'frontend::chain::GeneratedModel' is a specialization of 'core::NamedElement'.
+'frontend::patterns::PAttribute' is a specialization of 'PFeature'.
+'frontend::script::ScriptedTransformation' is a specialization of 'TransformationDefinition'.
+'frontend::tao::TemplateParameter' is a specialization of 'Variable'.
+'frontend::patterns::PObject' is a specialization of 'core::LocatedElement'.
+'frontend::core::TraceInterface' is a specialization of 'ModuleDefinition'.
+'frontend::qool::ForAllStatement' is a specialization of 'IteratorStatement'.
+'frontend::chain::GeneratedModel' is a specialization of 'core::RepresentModel'.
+'frontend::core::InlineReference' is a specialization of 'InlineFeature'.
+'frontend::qool::ModelElementQueue' is a specialization of 'QoolQueue'.
+'frontend::tao::ObjectSyntax' is a specialization of 'ReferenceAssignment'.
+'frontend::mappings::MappingTransformation' is a specialization of 'TransformationDefinition'.
+'frontend::tao::Invocation' is a specialization of 'ReferenceAssignment'.
+'frontend::core::ClassUse' is a specialization of 'core::ImplicitlyAnnotableElement'.
+'frontend::imperative::MethodDefinition' is a specialization of 'LocatedElement'.
+'frontend::core::DefinitionParameter' is a specialization of 'NamedElement'.
+'frontend::core::ModelReference' is a specialization of 'core::ClassUse'.
+'frontend::attribution::AttributionTransformation' is a specialization of 'TransformationDefinition'.
+'frontend::qool::KindOfPredicate' is a specialization of 'MatchPredicate'.
+'frontend::tao::ObjectInstantiation' is a specialization of 'core::Statement'.
+'frontend::qool::Segment' is a specialization of 'NamedElement'.
+'frontend::core::ResolveLink' is a specialization of 'Expression'.
+'frontend::core::PotencyAnnotation' is a specialization of 'SingleAnnotation'.
+'frontend::chain::ChainTransformation' is a specialization of 'TransformationDefinition'.
+'frontend::mappings::AttributeIsDouble' is a specialization of 'AttributeRightPart'.
+'frontend::core::Statement' is a specialization of 'LocatedElement'.
+'frontend::attribution::SynthesizedAttributeDcl' is a specialization of 'AttributeDcl'.
+'frontend::core::TransformationDefinitionParameter' is a specialization of 'core::DefinitionParameter'.
+'frontend::core::RequireDeclaration' is a specialization of 'RepresentModel'.
+'frontend::mappings::MatchedElement' is a specialization of 'core::ClassUse'.
+'frontend::attribution::AttributeDcl' is a specialization of 'core::Variable'.
+'frontend::core::TracedModelParameter' is a specialization of 'core::DefinitionParameter'.
+'frontend::mappings::Attribute2Attribute' is a specialization of 'mappings::AttributeRightPart'.
+'frontend::tao::SourceExpression' is a specialization of 'LocatedElement'.
+'frontend::core::InlineFeature' is a specialization of 'NamedElement'.
+'frontend::mappings::Section' is a specialization of 'LocatedElement'.
+'frontend::mappings::C2CModifier' is a specialization of 'MappingElement'.
+'frontend::qool::InvokeExternal' is a specialization of 'InvokeTransformation'.
+'frontend::core::TraceElement' is a specialization of 'NamedElement'.
+'frontend::attribution::AttributeDcl' is a specialization of 'core::TypedWithClass'.
+'frontend::facilities::Copier' is a specialization of 'Expression'.
+'frontend::core::DoubleLiteral' is a specialization of 'Expression'.
+'frontend::chain::CompositeTransformation' is a specialization of 'core::TransformationDefinition'.
+'frontend::tao::AttributeAssigment' is a specialization of 'Assignment'.
+'frontend::koan::ForAllMatcher' is a specialization of 'koan::Matcher'.
+'frontend::attribution::AttributeInit' is a specialization of 'Statement'.
+'frontend::attribution::AttributeDcl' is a specialization of 'core::LocatedElement'.
+'frontend::mappings::Class2Class' is a specialization of 'ClassMapping'.
+'frontend::tao::Assignment' is a specialization of 'Statement'.
+'frontend::attribution::InheritedAttributeDcl' is a specialization of 'AttributeDcl'.
+'frontend::core::ClosureDeclaration' is a specialization of 'Expression'.
+'frontend::core::StringLiteral' is a specialization of 'Expression'.
+'frontend::koan::ForAllMatcher' is a specialization of 'core::Variable'.
+'frontend::tao::TaoTransformation' is a specialization of 'TransformationDefinition'.
+'frontend::mappings::FeatureRef' is a specialization of 'mappings::Feature2Feature'.
+'frontend::qool::MatchExpression' is a specialization of 'Expression'.
+'frontend::mappings::Operator' is a specialization of 'LocatedElement'.
+'frontend::core::MatchTrace' is a specialization of 'Expression'.
+'frontend::mappings::LinkedBy' is a specialization of 'C2CModifier'.
+'frontend::core::OptimizationsAnnotation' is a specialization of 'Annotation'.
+'frontend::koan::KoanRule' is a specialization of 'core::NamedElement'.
+'frontend::mappings::MappingElement' is a specialization of 'LocatedElement'.
+'frontend::core::IfExpr' is a specialization of 'Expression'.
+'frontend::mappings::AttributeIsResolveLink' is a specialization of 'AttributeRightPart'.
+'frontend::mappings::MatchedElement' is a specialization of 'mappings::MappingVariable'.
+'frontend::core::TraceDefinition' is a specialization of 'NamedElement'.
+'frontend::mappings::ClassMapping' is a specialization of 'MappingElement'.
+'frontend::mappings::AttributeIsString' is a specialization of 'AttributeRightPart'.
+'frontend::tao::ObjectInstantiation' is a specialization of 'core::Variable'.
+'frontend::core::ModuleDefinition' is a specialization of 'core::AnnotableElement'.
+'frontend::attribution::AttributeUse' is a specialization of 'Expression'.
+'frontend::core::InlineModel' is a specialization of 'core::RepresentModel'.
+'frontend::chain::ExternalTransformation' is a specialization of 'chain::AvailableTransformation'.
+'frontend::attribution::RuleSelf' is a specialization of 'Variable'.
+'frontend::core::EclecticTransformationDefinition' is a specialization of 'TransformationDefinition'.
+'frontend::core::InlineClass' is a specialization of 'NamedElement'.
+'frontend::koan::KoanTransformation' is a specialization of 'TransformationDefinition'.
+'frontend::patterns::PFeature' is a specialization of 'LocatedElement'.
+'frontend::core::MethodCall' is a specialization of 'Expression'.
+'frontend::imperative::ImperativeTransformation' is a specialization of 'TransformationDefinition'.
+'frontend::core::ClassUse' is a specialization of 'core::TypeExpression'.
+'frontend::qool::AccessByFeatureOptimization' is a specialization of 'QueueOptimization'.
+'frontend::core::ImportedModel' is a specialization of 'core::NamedElement'.
+'frontend::mappings::AttributeIsInteger' is a specialization of 'AttributeRightPart'.
+'frontend::core::VariableReference' is a specialization of 'Expression'.
+'frontend::chain::TransformationExecution' is a specialization of 'LocatedElement'.
+'frontend::core::PutTrace' is a specialization of 'Expression'.
+'frontend::qool::ForEachStatement' is a specialization of 'IteratorStatement'.
+'frontend::core::RepresentModel' is a specialization of 'AnnotableElement'.
+'frontend::core::KeywordMethodCall' is a specialization of 'Expression'.
+'frontend::core::TraceUse' is a specialization of 'TypeExpression'.
+'frontend::mappings::ConvertModifier' is a specialization of 'AttributeModifier'.
+'frontend::core::TransformationDefinitionParameter' is a specialization of 'core::RepresentModel'.
+'frontend::tao::TemplateRootObject' is a specialization of 'ObjectInstantiation'.
+'frontend::core::InlineAttribute' is a specialization of 'InlineFeature'.
+'frontend::qool::InvokeTransformation' is a specialization of 'Expression'.
+'frontend::qool::PropertyEqualsPredicate' is a specialization of 'MatchPredicate'.
+'frontend::mappings::IntDefaultValue' is a specialization of 'DefaultValue'.
+'frontend::core::SingleAnnotation' is a specialization of 'Annotation'.
+'frontend::qool::LocalQueue' is a specialization of 'QoolQueue'.
+'frontend::patterns::CollectionReference' is a specialization of 'PReference'.
+'frontend::mappings::Delegate' is a specialization of 'LocatedElement'.
+'frontend::tao::Template' is a specialization of 'core::NamedElement'.
+'frontend::tao::ReferenceAssignment' is a specialization of 'core::Variable'.
+'frontend::mappings::AttributeRef' is a specialization of 'MetamodelElementRef'.
+'frontend::mappings::Reference2Reference' is a specialization of 'Feature2Feature'.
+'frontend::chain::ExternalTransformation' is a specialization of 'core::NamedElement'.
+'frontend::mappings::AttributeModifier' is a specialization of 'Modifier'.
+'frontend::imperative::MethodParameter' is a specialization of 'Variable'.
+'frontend::core::InlineModel' is a specialization of 'core::ModuleDefinition'.
+'frontend::mappings::ReferenceRef' is a specialization of 'MetamodelElementRef'.
+'frontend::patterns::PatternSpecification' is a specialization of 'TransformationDefinition'.
+'frontend::chain::CompositeTransformation' is a specialization of 'chain::AvailableTransformation'.
+'frontend::qool::IteratorStatement' is a specialization of 'core::Variable'.
+'frontend::core::ClosureParameter' is a specialization of 'Variable'.
+'frontend::tao::WithOptionalVariableExpression' is a specialization of 'SourceExpression'.
+'frontend::patterns::Pattern' is a specialization of 'LocatedElement'.
+'frontend::core::MetamodelModelAnnotation' is a specialization of 'Annotation'.
+'frontend::core::DefineVariable' is a specialization of 'core::Variable'.
+'frontend::core::PropertyWrite' is a specialization of 'Expression'.
+'frontend::tao::ObjectSourceVariable' is a specialization of 'Variable'.
+'frontend::core::Expression' is a specialization of 'Statement'.
+'frontend::mappings::FeatureRef' is a specialization of 'mappings::MetamodelElementRef'.
+'frontend::mappings::Join' is a specialization of 'Operator'.
+'frontend::core::TransformationDefinition' is a specialization of 'ModuleDefinition'.
+'frontend::mappings::DefaultValue' is a specialization of 'AttributeModifier'.
+'frontend::qool::QoolQueue' is a specialization of 'core::NamedElement'.
+'frontend::mappings::RelatedBy' is a specialization of 'C2CModifier'.
+'frontend::core::RequireModelParameter' is a specialization of 'RequireParameter'.
+'frontend::core::BinaryExpr' is a specialization of 'Expression'.
+'frontend::mappings::Split' is a specialization of 'Operator'.
+'frontend::qool::EmitStatement' is a specialization of 'Statement'.
+'frontend::mappings::MappingVariable' is a specialization of 'Variable'.
+'frontend::mappings::Context' is a specialization of 'LocatedElement'.
+'frontend::mappings::AttributeIsBoolean' is a specialization of 'AttributeRightPart'.
+'frontend::qool::QoolQueue' is a specialization of 'core::LocatedElement'.
+'frontend::patterns::PObject' is a specialization of 'core::Variable'.
+'frontend::tao::ReferenceAssignment' is a specialization of 'tao::Assignment'.
+'frontend::core::BooleanLiteral' is a specialization of 'Expression'.
+'frontend::core::UseDeclaration' is a specialization of 'RepresentModel'.
+'frontend::tao::Template' is a specialization of 'core::LocatedElement'.
+'InvocationParameter' (role 'InvocationParameter184', cardinality 0..*) is associated with 'frontend::qool::InvokeTransformation' (role 'frontend_qool_InvokeTransformation183', cardinality 0..*).
+'frontend::patterns::POutputVariable' (role 'frontend_patterns_POutputVariable', cardinality 0..*) is associated with 'PObject' (role 'PObject66', cardinality 0..*).
+'Expression' (role 'Expression180', cardinality 0..*) is associated with 'frontend::qool::PropertyEqualsPredicate' (role 'frontend_qool_PropertyEqualsPredicate', cardinality 0..*).
+'frontend::core::VariableReference' (role 'frontend_core_VariableReference', cardinality 0..*) is associated with 'Variable' (role 'Variable263', cardinality 0..*).
+'AttributeRef' (role 'AttributeRef132', cardinality 0..*) is associated with 'frontend::mappings::Attribute2Attribute' (role 'frontend_mappings_Attribute2Attribute', cardinality 0..*).
+'SourceExpression' (role 'SourceExpression', cardinality 0..*) is associated with 'frontend::tao::AttributeAssigment' (role 'frontend_tao_AttributeAssigment', cardinality 0..*).
+'frontend::tao::WithOptionalVariableExpression' (role 'frontend_tao_WithOptionalVariableExpression223', cardinality 0..*) is associated with 'Expression' (role 'Expression224', cardinality 0..*).
+'frontend::mappings::ClassRef' (role 'frontend_mappings_ClassRef', cardinality 0..*) is associated with 'ClassUse' (role 'ClassUse140', cardinality 0..*).
+'KoanRule' (role 'KoanRule', cardinality 0..*) is associated with 'frontend::koan::KoanTransformation' (role 'frontend_koan_KoanTransformation3', cardinality 0..*).
+'C2CModifier' (role 'C2CModifier', cardinality 0..*) is associated with 'frontend::mappings::Context' (role 'frontend_mappings_Context93', cardinality 0..*).
+'frontend::core::TraceCompareExpression' (role 'frontend_core_TraceCompareExpression322', cardinality 0..*) is associated with 'Expression' (role 'Expression323', cardinality 0..*).
+'ClosureParameter' (role 'ClosureParameter', cardinality 0..*) is associated with 'frontend::core::ClosureDeclaration' (role 'frontend_core_ClosureDeclaration283', cardinality 0..*).
+'frontend::core::TraceDefinition' (role 'frontend_core_TraceDefinition', cardinality 0..*) is associated with 'TraceElement' (role 'TraceElement', cardinality 0..*).
+'frontend::mappings::ReferenceRef' (role 'frontend_mappings_ReferenceRef', cardinality 0..*) is associated with 'MatchedElement' (role 'MatchedElement146', cardinality 0..*).
+'frontend::mappings::Context' (role 'frontend_mappings_Context88', cardinality 0..*) is associated with 'MatchedElement' (role 'MatchedElement89', cardinality 0..*).
+'frontend::attribution::AttributeInit' (role 'frontend_attribution_AttributeInit26', cardinality 0..*) is associated with 'Expression' (role 'Expression27', cardinality 0..*).
+'TraceDefinition' (role 'TraceDefinition307', cardinality 0..*) is associated with 'frontend::core::TraceInterface' (role 'frontend_core_TraceInterface', cardinality 0..*).
+'Expression' (role 'Expression172', cardinality 0..*) is associated with 'frontend::qool::EmitStatement' (role 'frontend_qool_EmitStatement171', cardinality 0..*).
+'NamedInvocationParameter' (role 'NamedInvocationParameter', cardinality 0..*) is associated with 'frontend::qool::InvokeTransformation' (role 'frontend_qool_InvokeTransformation186', cardinality 0..*).
+'Variable' (role 'Variable189', cardinality 0..*) is associated with 'frontend::qool::InvokeTransformation' (role 'frontend_qool_InvokeTransformation188', cardinality 0..*).
+'TraceDefinition' (role 'TraceDefinition', cardinality 0..*) is associated with 'frontend::core::TraceUse' (role 'frontend_core_TraceUse', cardinality 0..*).
+'frontend::mappings::Class2Class' (role 'frontend_mappings_Class2Class113', cardinality 0..*) is associated with 'ClassRef' (role 'ClassRef', cardinality 0..*).
+'frontend::core::IfExpr' (role 'frontend_core_IfExpr', cardinality 0..*) is associated with 'IfBranch' (role 'IfBranch', cardinality 0..*).
+'frontend::mappings::Context' (role 'frontend_mappings_Context91', cardinality 0..*) is associated with 'MappingElement' (role 'MappingElement', cardinality 0..*).
+'frontend::qool::InvokeTransformation' (role 'frontend_qool_InvokeTransformation', cardinality 0..*) is associated with 'InvocationParameter' (role 'InvocationParameter', cardinality 0..*).
+'frontend::attribution::AttributeUse' (role 'frontend_attribution_AttributeUse34', cardinality 0..*) is associated with 'AttributeDcl' (role 'AttributeDcl35', cardinality 0..*).
+'frontend::core::RequireModelParameter' (role 'frontend_core_RequireModelParameter', cardinality 0..*) is associated with 'RepresentModel' (role 'RepresentModel254', cardinality 0..*).
+'frontend::mappings::Reference2Reference' (role 'frontend_mappings_Reference2Reference', cardinality 0..*) is associated with 'ReferenceRef' (role 'ReferenceRef', cardinality 0..*).
+'KeywordParameter' (role 'KeywordParameter', cardinality 0..*) is associated with 'frontend::core::KeywordMethodCall' (role 'frontend_core_KeywordMethodCall272', cardinality 0..*).
+'frontend::qool::LocalQueue' (role 'frontend_qool_LocalQueue', cardinality 0..*) is associated with 'TypeExpression' (role 'TypeExpression', cardinality 0..*).
+'MatchedElement' (role 'MatchedElement', cardinality 0..*) is associated with 'frontend::mappings::Delegate' (role 'frontend_mappings_Delegate', cardinality 0..*).
+'TemplateRootObject' (role 'TemplateRootObject', cardinality 0..*) is associated with 'frontend::tao::Template' (role 'frontend_tao_Template219', cardinality 0..*).
+'frontend::chain::ChainTransformation' (role 'frontend_chain_ChainTransformation48', cardinality 0..*) is associated with 'ExternalTransformation' (role 'ExternalTransformation', cardinality 0..*).
+'AttributeDcl' (role 'AttributeDcl24', cardinality 0..*) is associated with 'frontend::attribution::AttributeInit' (role 'frontend_attribution_AttributeInit', cardinality 0..*).
+'facilities::CopierCallbackDefinition' (role 'facilities_CopierCallbackDefinition', cardinality 0..*) is associated with 'frontend::facilities::Copier' (role 'frontend_facilities_Copier201', cardinality 0..*).
+'frontend::mappings::MappingTransformation' (role 'frontend_mappings_MappingTransformation79', cardinality 0..*) is associated with 'Context' (role 'Context', cardinality 0..*).
+'frontend::qool::EmitStatement' (role 'frontend_qool_EmitStatement', cardinality 0..*) is associated with 'QoolQueue' (role 'QoolQueue169', cardinality 0..*).
+'frontend::patterns::PatternSpecification' (role 'frontend_patterns_PatternSpecification', cardinality 0..*) is associated with 'Pattern' (role 'Pattern', cardinality 0..*).
+'Statement' (role 'Statement45', cardinality 0..*) is associated with 'frontend::imperative::MethodDefinition' (role 'frontend_imperative_MethodDefinition44', cardinality 0..*).
+'frontend::core::InlineFeature' (role 'frontend_core_InlineFeature', cardinality 0..*) is associated with 'TypeExpression' (role 'TypeExpression314', cardinality 0..*).
+'PFeature' (role 'PFeature', cardinality 0..*) is associated with 'frontend::patterns::PObject' (role 'frontend_patterns_PObject70', cardinality 0..*).
+'frontend::core::PutTraceParameter' (role 'frontend_core_PutTraceParameter331', cardinality 0..*) is associated with 'TraceElement' (role 'TraceElement332', cardinality 0..*).
+'Tag' (role 'Tag', cardinality 0..*) is associated with 'frontend::mappings::Delegate' (role 'frontend_mappings_Delegate84', cardinality 0..*).
+'ClassUse' (role 'ClassUse68', cardinality 0..*) is associated with 'frontend::patterns::PObject' (role 'frontend_patterns_PObject', cardinality 0..*).
+'Expression' (role 'Expression', cardinality 0..*) is associated with 'frontend::attribution::AttributionRule' (role 'frontend_attribution_AttributionRule19', cardinality 0..*).
+'frontend::imperative::ImperativeTransformation' (role 'frontend_imperative_ImperativeTransformation', cardinality 0..*) is associated with 'MethodDefinition' (role 'MethodDefinition', cardinality 0..*).
+'MethodSelf' (role 'MethodSelf', cardinality 0..*) is associated with 'frontend::imperative::MethodDefinition' (role 'frontend_imperative_MethodDefinition39', cardinality 0..*).
+'AvailableTransformation' (role 'AvailableTransformation', cardinality 0..*) is associated with 'frontend::chain::TransformationExecution' (role 'frontend_chain_TransformationExecution', cardinality 0..*).
+'SingleAnnotation' (role 'SingleAnnotation', cardinality 0..*) is associated with 'frontend::core::ImplicitlyAnnotableElement' (role 'frontend_core_ImplicitlyAnnotableElement', cardinality 0..*).
+'frontend::core::TransformationDefinition' (role 'frontend_core_TransformationDefinition', cardinality 0..*) is associated with 'TransformationDefinitionParameter' (role 'TransformationDefinitionParameter235', cardinality 0..*).
+'frontend::tao::ObjectInstantiation' (role 'frontend_tao_ObjectInstantiation216', cardinality 0..*) is associated with 'Assignment' (role 'Assignment', cardinality 0..*).
+'frontend::core::MethodCall' (role 'frontend_core_MethodCall', cardinality 0..*) is associated with 'Expression' (role 'Expression265', cardinality 0..*).
+'frontend::core::BinaryExpr' (role 'frontend_core_BinaryExpr', cardinality 0..*) is associated with 'Expression' (role 'Expression276', cardinality 0..*).
+'frontend::facilities::Copier' (role 'frontend_facilities_Copier', cardinality 0..*) is associated with 'Expression' (role 'Expression199', cardinality 0..*).
+'MappingElement' (role 'MappingElement100', cardinality 0..*) is associated with 'frontend::mappings::Section' (role 'frontend_mappings_Section', cardinality 0..*).
+'Statement' (role 'Statement300', cardinality 0..*) is associated with 'frontend::core::IfBranch' (role 'frontend_core_IfBranch299', cardinality 0..*).
+'Expression' (role 'Expression268', cardinality 0..*) is associated with 'frontend::core::MethodCall' (role 'frontend_core_MethodCall267', cardinality 0..*).
+'ObjectSourceVariable' (role 'ObjectSourceVariable', cardinality 0..*) is associated with 'frontend::tao::WithOptionalVariableExpression' (role 'frontend_tao_WithOptionalVariableExpression', cardinality 0..*).
+'Statement' (role 'Statement7', cardinality 0..*) is associated with 'frontend::koan::KoanRule' (role 'frontend_koan_KoanRule6', cardinality 0..*).
+'PutTraceParameter' (role 'PutTraceParameter', cardinality 0..*) is associated with 'frontend::core::PutTrace' (role 'frontend_core_PutTrace327', cardinality 0..*).
+'frontend::facilities::CopierCallbackDefinition' (role 'frontend_facilities_CopierCallbackDefinition', cardinality 0..*) is associated with 'Expression' (role 'Expression206', cardinality 0..*).
+'frontend::qool::IteratorStatement' (role 'frontend_qool_IteratorStatement162', cardinality 0..*) is associated with 'Statement' (role 'Statement163', cardinality 0..*).
+'frontend::tao::Template' (role 'frontend_tao_Template', cardinality 0..*) is associated with 'TemplateParameter' (role 'TemplateParameter', cardinality 0..*).
+'frontend::mappings::Attribute2Attribute' (role 'frontend_mappings_Attribute2Attribute134', cardinality 0..*) is associated with 'AttributeModifier' (role 'AttributeModifier', cardinality 0..*).
+'Statement' (role 'Statement158', cardinality 0..*) is associated with 'frontend::qool::Segment' (role 'frontend_qool_Segment', cardinality 0..*).
+'frontend::koan::KoanTransformation' (role 'frontend_koan_KoanTransformation', cardinality 0..*) is associated with 'TraceInterface' (role 'TraceInterface', cardinality 0..*).
+'RepresentModel' (role 'RepresentModel302', cardinality 0..*) is associated with 'frontend::core::ClassUse' (role 'frontend_core_ClassUse', cardinality 0..*).
+'TraceElement' (role 'TraceElement320', cardinality 0..*) is associated with 'frontend::core::TraceCompareExpression' (role 'frontend_core_TraceCompareExpression', cardinality 0..*).
+'QoolQueue' (role 'QoolQueue174', cardinality 0..*) is associated with 'frontend::qool::MatchExpression' (role 'frontend_qool_MatchExpression', cardinality 0..*).
+'frontend::patterns::PAttribute' (role 'frontend_patterns_PAttribute74', cardinality 0..*) is associated with 'Variable' (role 'Variable', cardinality 0..*).
+'frontend::attribution::AttributionRule' (role 'frontend_attribution_AttributionRule21', cardinality 0..*) is associated with 'Statement' (role 'Statement22', cardinality 0..*).
+'frontend::mappings::Attribute2Attribute' (role 'scopedAttributes', cardinality 0..*) is associated with 'Class2Class' (role 'Class2Class', cardinality 0..*).
+'TransformationDefinitionParameter' (role 'TransformationDefinitionParameter', cardinality 0..*) is associated with 'frontend::qool::InvocationParameter' (role 'frontend_qool_InvocationParameter', cardinality 0..*).
+'PObject' (role 'PObject76', cardinality 0..*) is associated with 'frontend::patterns::PReference' (role 'frontend_patterns_PReference', cardinality 0..*).
+'frontend::mappings::Context' (role 'frontend_mappings_Context', cardinality 0..*) is associated with 'MatchedElement' (role 'MatchedElement86', cardinality 0..*).
+'QoolQueue' (role 'QoolQueue', cardinality 0..*) is associated with 'frontend::qool::QoolTransformation' (role 'frontend_qool_QoolTransformation', cardinality 0..*).
+'TransformationDefinitionParameter' (role 'TransformationDefinitionParameter204', cardinality 0..*) is associated with 'frontend::facilities::Copier' (role 'frontend_facilities_Copier203', cardinality 0..*).
+'UseDeclaration' (role 'UseDeclaration109', cardinality 0..*) is associated with 'frontend::mappings::Converter' (role 'frontend_mappings_Converter', cardinality 0..*).
+'frontend::core::TransformationDefinition' (role 'frontend_core_TransformationDefinition240', cardinality 0..*) is associated with 'ImportedModel' (role 'ImportedModel', cardinality 0..*).
+'TransformationDefinition' (role 'TransformationDefinition', cardinality 0..*) is associated with 'frontend::core::EclecticTransformationDefinition' (role 'frontend_core_EclecticTransformationDefinition', cardinality 0..*).
+'frontend::patterns::Pattern' (role 'frontend_patterns_Pattern', cardinality 0..*) is associated with 'PObject' (role 'PObject', cardinality 0..*).
+'UseDeclaration' (role 'UseDeclaration', cardinality 0..*) is associated with 'frontend::mappings::Delegate' (role 'frontend_mappings_Delegate82', cardinality 0..*).
+'ClassUse' (role 'ClassUse178', cardinality 0..*) is associated with 'frontend::qool::KindOfPredicate' (role 'frontend_qool_KindOfPredicate', cardinality 0..*).
+'frontend::core::InlineClass' (role 'frontend_core_InlineClass', cardinality 0..*) is associated with 'InlineFeature' (role 'InlineFeature', cardinality 0..*).
+'frontend::qool::InvokeExternal' (role 'frontend_qool_InvokeExternal', cardinality 0..*) is associated with 'Expression' (role 'Expression194', cardinality 0..*).
+'Annotation' (role 'Annotation245', cardinality 0..*) is associated with 'frontend::core::TransformationDefinition' (role 'frontend_core_TransformationDefinition244', cardinality 0..*).
+'Matcher' (role 'Matcher', cardinality 0..*) is associated with 'frontend::koan::KoanRule' (role 'frontend_koan_KoanRule', cardinality 0..*).
+'AttributionRule' (role 'AttributionRule', cardinality 0..*) is associated with 'frontend::attribution::AttributionTransformation' (role 'frontend_attribution_AttributionTransformation13', cardinality 0..*).
+'AttributeRef' (role 'AttributeRef126', cardinality 0..*) is associated with 'frontend::mappings::EqualityFilter' (role 'frontend_mappings_EqualityFilter', cardinality 0..*).
+'frontend::core::InlineModel' (role 'frontend_core_InlineModel', cardinality 0..*) is associated with 'InlineClass' (role 'InlineClass', cardinality 0..*).
+'UseDeclaration' (role 'UseDeclaration248', cardinality 0..*) is associated with 'frontend::core::TransformationDefinition' (role 'frontend_core_TransformationDefinition247', cardinality 0..*).
+'frontend::core::RequireDeclaration' (role 'frontend_core_RequireDeclaration', cardinality 0..*) is associated with 'RequireParameter' (role 'RequireParameter', cardinality 0..*).
+'frontend::qool::QoolTransformation' (role 'frontend_qool_QoolTransformation149', cardinality 0..*) is associated with 'Segment' (role 'Segment', cardinality 0..*).
+'frontend::koan::Matcher' (role 'frontend_koan_Matcher', cardinality 0..*) is associated with 'Matcher' (role 'Matcher9', cardinality 0..*).
+'RequireDeclaration' (role 'RequireDeclaration', cardinality 0..*) is associated with 'frontend::core::TransformationDefinition' (role 'frontend_core_TransformationDefinition250', cardinality 0..*).
+'TransformationExecution' (role 'TransformationExecution', cardinality 0..*) is associated with 'frontend::chain::ChainTransformation' (role 'frontend_chain_ChainTransformation52', cardinality 0..*).
+'frontend::core::ClosureDeclaration' (role 'frontend_core_ClosureDeclaration', cardinality 0..*) is associated with 'Statement' (role 'Statement281', cardinality 0..*).
+'frontend::core::TraceElement' (role 'frontend_core_TraceElement', cardinality 0..*) is associated with 'TypeExpression' (role 'TypeExpression310', cardinality 0..*).
+'ClassRef' (role 'ClassRef116', cardinality 0..*) is associated with 'frontend::mappings::Class2Class' (role 'frontend_mappings_Class2Class115', cardinality 0..*).
+'frontend::mappings::MappingTransformation' (role 'frontend_mappings_MappingTransformation', cardinality 0..*) is associated with 'Delegate' (role 'Delegate', cardinality 0..*).
+'TraceDefinition' (role 'TraceDefinition316', cardinality 0..*) is associated with 'frontend::core::MatchTrace' (role 'frontend_core_MatchTrace', cardinality 0..*).
+'RepresentModel' (role 'RepresentModel58', cardinality 0..*) is associated with 'frontend::chain::TransformationExecution' (role 'frontend_chain_TransformationExecution57', cardinality 0..*).
+'frontend::tao::TemplateParameter' (role 'frontend_tao_TemplateParameter', cardinality 0..*) is associated with 'ClassUse' (role 'ClassUse212', cardinality 0..*).
+'frontend::core::Annotation' (role 'annotatedWith', cardinality 0..*) is associated with 'AnnotableElement' (role 'AnnotableElement', cardinality 0..*).
+'frontend::imperative::MethodDefinition' (role 'frontend_imperative_MethodDefinition', cardinality 0..*) is associated with 'MethodParameter' (role 'MethodParameter', cardinality 0..*).
+'frontend::core::TransformationDefinition' (role 'frontend_core_TransformationDefinition242', cardinality 0..*) is associated with 'InlineModel' (role 'InlineModel', cardinality 0..*).
+'frontend::core::IfExpr' (role 'frontend_core_IfExpr291', cardinality 0..*) is associated with 'IfBranch' (role 'IfBranch292', cardinality 0..*).
+'frontend::chain::ChainTransformation' (role 'frontend_chain_ChainTransformation50', cardinality 0..*) is associated with 'GeneratedModel' (role 'GeneratedModel', cardinality 0..*).
+'frontend::mappings::AttributeRef' (role 'frontend_mappings_AttributeRef', cardinality 0..*) is associated with 'MatchedElement' (role 'MatchedElement144', cardinality 0..*).
+'frontend::mappings::Context' (role 'frontend_mappings_Context97', cardinality 0..*) is associated with 'Tag' (role 'Tag98', cardinality 0..*).
+'frontend::core::DefineVariable' (role 'frontend_core_DefineVariable', cardinality 0..*) is associated with 'Expression' (role 'Expression256', cardinality 0..*).
+'IfBranch' (role 'IfBranch295', cardinality 0..*) is associated with 'frontend::core::IfExpr' (role 'frontend_core_IfExpr294', cardinality 0..*).
+'Expression' (role 'Expression329', cardinality 0..*) is associated with 'frontend::core::PutTraceParameter' (role 'frontend_core_PutTraceParameter', cardinality 0..*).
+'MatchedElement' (role 'MatchedElement124', cardinality 0..*) is associated with 'frontend::mappings::LinkedBy' (role 'frontend_mappings_LinkedBy123', cardinality 0..*).
+'ClassUse' (role 'ClassUse156', cardinality 0..*) is associated with 'frontend::qool::ModelElementQueue' (role 'frontend_qool_ModelElementQueue155', cardinality 0..*).
+'frontend::mappings::Reference2Reference' (role 'frontend_mappings_Reference2Reference137', cardinality 0..*) is associated with 'ReferenceRef' (role 'ReferenceRef138', cardinality 0..*).
+'frontend::attribution::AttributeUse' (role 'frontend_attribution_AttributeUse', cardinality 0..*) is associated with 'Expression' (role 'Expression32', cardinality 0..*).
+'MatchPredicate' (role 'MatchPredicate', cardinality 0..*) is associated with 'frontend::qool::MatchExpression' (role 'frontend_qool_MatchExpression176', cardinality 0..*).
+'ClassUse' (role 'ClassUse42', cardinality 0..*) is associated with 'frontend::imperative::MethodDefinition' (role 'frontend_imperative_MethodDefinition41', cardinality 0..*).
+'C2CModifier' (role 'C2CModifier111', cardinality 0..*) is associated with 'frontend::mappings::Class2Class' (role 'frontend_mappings_Class2Class', cardinality 0..*).
+'TransformationDefinitionParameter' (role 'TransformationDefinitionParameter238', cardinality 0..*) is associated with 'frontend::core::TransformationDefinition' (role 'frontend_core_TransformationDefinition237', cardinality 0..*).
+'UseDeclaration' (role 'UseDeclaration288', cardinality 0..*) is associated with 'frontend::core::ResolveLink' (role 'frontend_core_ResolveLink287', cardinality 0..*).
+'TraceCompareExpression' (role 'TraceCompareExpression', cardinality 0..*) is associated with 'frontend::core::MatchTrace' (role 'frontend_core_MatchTrace318', cardinality 0..*).
+'FeatureRef' (role 'FeatureRef', cardinality 0..*) is associated with 'frontend::mappings::Feature2Feature' (role 'frontend_mappings_Feature2Feature', cardinality 0..*).
+'Annotation' (role 'Annotation', cardinality 0..*) is associated with 'frontend::core::AnnotableElement' (role 'annotatedElement', cardinality 0..*).
+'frontend::patterns::Pattern' (role 'frontend_patterns_Pattern64', cardinality 0..*) is associated with 'POutputVariable' (role 'POutputVariable', cardinality 0..*).
+'CompositeTransformation' (role 'CompositeTransformation', cardinality 0..*) is associated with 'frontend::chain::ChainTransformation' (role 'frontend_chain_ChainTransformation', cardinality 0..*).
+'frontend::tao::TaoTransformation' (role 'frontend_tao_TaoTransformation', cardinality 0..*) is associated with 'Template' (role 'Template', cardinality 0..*).
+'frontend::script::ScriptedTransformation' (role 'frontend_script_ScriptedTransformation', cardinality 0..*) is associated with 'Statement' (role 'Statement', cardinality 0..*).
+'QoolQueue' (role 'QoolQueue165', cardinality 0..*) is associated with 'frontend::qool::ForAllStatement' (role 'frontend_qool_ForAllStatement', cardinality 0..*).
+'frontend::qool::ForEachStatement' (role 'frontend_qool_ForEachStatement', cardinality 0..*) is associated with 'Expression' (role 'Expression167', cardinality 0..*).
+'SourceExpression' (role 'SourceExpression226', cardinality 0..*) is associated with 'frontend::tao::ReferenceAssignment' (role 'frontend_tao_ReferenceAssignment', cardinality 0..*).
+'ClassUse' (role 'ClassUse214', cardinality 0..*) is associated with 'frontend::tao::ObjectInstantiation' (role 'frontend_tao_ObjectInstantiation', cardinality 0..*).
+'frontend::qool::NamedInvocationParameter' (role 'frontend_qool_NamedInvocationParameter', cardinality 0..*) is associated with 'Expression' (role 'Expression197', cardinality 0..*).
+'Section' (role 'Section', cardinality 0..*) is associated with 'frontend::mappings::Context' (role 'frontend_mappings_Context95', cardinality 0..*).
+'frontend::attribution::AttributionRule' (role 'frontend_attribution_AttributionRule17', cardinality 0..*) is associated with 'RuleSelf' (role 'RuleSelf', cardinality 0..*).
+'Converter' (role 'Converter', cardinality 0..*) is associated with 'frontend::mappings::Feature2Feature' (role 'frontend_mappings_Feature2Feature103', cardinality 0..*).
+'frontend::facilities::CopierCallbackDefinition' (role 'frontend_facilities_CopierCallbackDefinition208', cardinality 0..*) is associated with 'Expression' (role 'Expression209', cardinality 0..*).
+'Variable' (role 'Variable258', cardinality 0..*) is associated with 'frontend::core::PropertyWrite' (role 'frontend_core_PropertyWrite', cardinality 0..*).
+'TransformationExecution' (role 'TransformationExecution60', cardinality 0..*) is associated with 'frontend::chain::CompositeTransformation' (role 'frontend_chain_CompositeTransformation', cardinality 0..*).
+'frontend::core::BinaryExpr' (role 'frontend_core_BinaryExpr278', cardinality 0..*) is associated with 'Expression' (role 'Expression279', cardinality 0..*).
+'frontend::mappings::Class2Class' (role 'context', cardinality 0..*) is associated with 'Attribute2Attribute' (role 'Attribute2Attribute', cardinality 0..*).
+'ClassUse' (role 'ClassUse305', cardinality 0..*) is associated with 'frontend::core::TypedWithClass' (role 'frontend_core_TypedWithClass', cardinality 0..*).
+'RepresentModel' (role 'RepresentModel', cardinality 0..*) is associated with 'frontend::chain::TransformationExecution' (role 'frontend_chain_TransformationExecution55', cardinality 0..*).
+'Expression' (role 'Expression192', cardinality 0..*) is associated with 'frontend::qool::InvokeTransformation' (role 'frontend_qool_InvokeTransformation191', cardinality 0..*).
+'frontend::attribution::AttributionTransformation' (role 'frontend_attribution_AttributionTransformation', cardinality 0..*) is associated with 'AttributeDcl' (role 'AttributeDcl', cardinality 0..*).
+'Template' (role 'Template229', cardinality 0..*) is associated with 'frontend::tao::Invocation' (role 'frontend_tao_Invocation', cardinality 0..*).
+'ClassUse' (role 'ClassUse15', cardinality 0..*) is associated with 'frontend::attribution::AttributionRule' (role 'frontend_attribution_AttributionRule', cardinality 0..*).
+'ClassMapping' (role 'ClassMapping129', cardinality 0..*) is associated with 'frontend::mappings::Join' (role 'frontend_mappings_Join', cardinality 0..*).
+'frontend::core::IfBranch' (role 'frontend_core_IfBranch', cardinality 0..*) is associated with 'Expression' (role 'Expression297', cardinality 0..*).
+'Expression' (role 'Expression30', cardinality 0..*) is associated with 'frontend::attribution::AttributeInit' (role 'frontend_attribution_AttributeInit29', cardinality 0..*).
+'Expression' (role 'Expression160', cardinality 0..*) is associated with 'frontend::qool::IteratorStatement' (role 'frontend_qool_IteratorStatement', cardinality 0..*).
+'AttributeRightPart' (role 'AttributeRightPart', cardinality 0..*) is associated with 'frontend::mappings::AttributeMapping' (role 'frontend_mappings_AttributeMapping106', cardinality 0..*).
+'frontend::mappings::LinkedBy' (role 'frontend_mappings_LinkedBy', cardinality 0..*) is associated with 'AttributeRef' (role 'AttributeRef121', cardinality 0..*).
+'AttributeRef' (role 'AttributeRef', cardinality 0..*) is associated with 'frontend::mappings::AttributeMapping' (role 'frontend_mappings_AttributeMapping', cardinality 0..*).
+'frontend::core::KeywordParameter' (role 'frontend_core_KeywordParameter', cardinality 0..*) is associated with 'Expression' (role 'Expression274', cardinality 0..*).
+'frontend::qool::ModelElementQueue' (role 'frontend_qool_ModelElementQueue', cardinality 0..*) is associated with 'ClassUse' (role 'ClassUse153', cardinality 0..*).
+'frontend::qool::QoolQueue' (role 'frontend_qool_QoolQueue', cardinality 0..*) is associated with 'QueueOptimization' (role 'QueueOptimization', cardinality 0..*).
+'AttributeRef' (role 'AttributeRef119', cardinality 0..*) is associated with 'frontend::mappings::RelatedBy' (role 'frontend_mappings_RelatedBy', cardinality 0..*).
+'ResolveLink' (role 'ResolveLink', cardinality 0..*) is associated with 'frontend::mappings::AttributeIsResolveLink' (role 'frontend_mappings_AttributeIsResolveLink', cardinality 0..*).
+'ClassUse' (role 'ClassUse', cardinality 0..*) is associated with 'frontend::koan::ForAllMatcher' (role 'frontend_koan_ForAllMatcher', cardinality 0..*).
+'frontend::core::ResolveLink' (role 'frontend_core_ResolveLink', cardinality 0..*) is associated with 'Expression' (role 'Expression285', cardinality 0..*).
+'frontend::tao::ObjectSyntax' (role 'frontend_tao_ObjectSyntax', cardinality 0..*) is associated with 'ObjectInstantiation' (role 'ObjectInstantiation', cardinality 0..*).
+'frontend::mappings::FeatureRef' (role 'frontend_mappings_FeatureRef', cardinality 0..*) is associated with 'MatchedElement' (role 'MatchedElement142', cardinality 0..*).
+'frontend::core::PropertyWrite' (role 'frontend_core_PropertyWrite260', cardinality 0..*) is associated with 'Expression' (role 'Expression261', cardinality 0..*).
+'Expression' (role 'Expression72', cardinality 0..*) is associated with 'frontend::patterns::PAttribute' (role 'frontend_patterns_PAttribute', cardinality 0..*).
+'Expression' (role 'Expression270', cardinality 0..*) is associated with 'frontend::core::KeywordMethodCall' (role 'frontend_core_KeywordMethodCall', cardinality 0..*).
+'TraceDefinition' (role 'TraceDefinition325', cardinality 0..*) is associated with 'frontend::core::PutTrace' (role 'frontend_core_PutTrace', cardinality 0..*).
+'frontend::mappings::Split' (role 'frontend_mappings_Split', cardinality 0..*) is associated with 'ClassMapping' (role 'ClassMapping', cardinality 0..*).
+'AnnotationParameter' (role 'AnnotationParameter', cardinality 0..*) is associated with 'frontend::core::GenericAnnotation' (role 'frontend_core_GenericAnnotation', cardinality 0..*).

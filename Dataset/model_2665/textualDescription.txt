@@ -1,0 +1,30 @@
+The model has 17 class(es).
+The class 'UML2::Behavior' has no attributes.
+The class 'UML2::Reception' has no attributes.
+The class 'StateMachine' has no attributes.
+The class 'UML2::ProtocolStateMachine' has no attributes.
+The class 'UML2::Node' has no attributes.
+The class 'UML2::AssociationClass' has no attributes.
+The class 'UML2::StateMachine' has no attributes.
+The class 'Class' has no attributes.
+The class 'UML2::Component' has no attributes.
+The class 'UML2::Stereotype' has no attributes.
+The class 'UML2::Interaction' has no attributes.
+The class 'Behavior' has no attributes.
+The class 'Node' has no attributes.
+The class 'UML2::ExecutionEnvironment' has no attributes.
+The class 'UML2::Activity' has no attributes.
+The class 'UML2::Device' has no attributes.
+The class 'UML2::Class' has the following attributes: 'isActive' of type bool.
+'UML2::ProtocolStateMachine' is a specialization of 'StateMachine'.
+'UML2::Device' is a specialization of 'Node'.
+'UML2::Behavior' is a specialization of 'Class'.
+'UML2::ExecutionEnvironment' is a specialization of 'Node'.
+'UML2::Component' is a specialization of 'Class'.
+'UML2::Activity' is a specialization of 'Behavior'.
+'UML2::Stereotype' is a specialization of 'Class'.
+'UML2::StateMachine' is a specialization of 'Behavior'.
+'UML2::AssociationClass' is a specialization of 'Class'.
+'UML2::Interaction' is a specialization of 'Behavior'.
+'UML2::Node' is a specialization of 'Class'.
+'UML2::Class' (role 'UML2_Class', cardinality 0..*) is associated with 'UML2::Reception' (role 'UML2_Reception', cardinality 0..*).

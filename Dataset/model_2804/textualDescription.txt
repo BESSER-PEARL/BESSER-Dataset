@@ -1,0 +1,11 @@
+The model has 4 class(es).
+The class 'attacktree::Vulnerability' has the following attributes: 'description' of type str; 'type' of type str; 'severity' of type int; 'name' of type str; 'tags' of type str.
+The class 'attacktree::Model' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'attacktree::EObject' has no attributes.
+The class 'attacktree::Node' has the following attributes: 'domains' of type str; 'name' of type str; 'tags' of type str; 'description' of type str.
+The enumeration 'vulnerabilityType' has the following literals: 'Isolation', 'Authentication', 'Concurrency', 'ResourceAllocation', 'Timing', 'Exposure'.
+The enumeration 'propagationType' has the following literals: 'local', 'dataFlow', 'processor', 'data', 'memory', 'bus'.
+'attacktree::Node' (role 'attacktree_Node5', cardinality 0..*) is associated with 'attacktree::EObject' (role 'attacktree_EObject', cardinality 0..*).
+'attacktree::Node' (role 'attacktree_Node1', cardinality 0..*) is associated with 'attacktree::Node' (role 'attacktree_Node3', cardinality 0..*).
+'attacktree::Vulnerability' (role 'attacktree_Vulnerability', cardinality 0..*) is associated with 'attacktree::Node' (role 'attacktree_Node', cardinality 0..*).
+'attacktree::Model' (role 'attacktree_Model', cardinality 0..*) is associated with 'attacktree::Node' (role 'attacktree_Node7', cardinality 0..*).

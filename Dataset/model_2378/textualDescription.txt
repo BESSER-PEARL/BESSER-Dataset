@@ -1,0 +1,51 @@
+The model has 22 class(es).
+The class 'FromAttributeOwner' has no attributes.
+The class 'umltordbms::PackageToSchema' has the following attributes: 'name' of type str.
+The class 'umltordbms::Table' has no attributes.
+The class 'umltordbms::FromAttribute' has the following attributes: 'kind' of type str; 'name' of type str.
+The class 'umltordbms::ForeignKey' has no attributes.
+The class 'umltordbms::PrimitiveToName' has the following attributes: 'name' of type str; 'typeName' of type str.
+The class 'umltordbms::NonLeafAttribute' has no attributes.
+The class 'umltordbms::Schema' has no attributes.
+The class 'umltordbms::Association' has no attributes.
+The class 'umltordbms::Attribute' has no attributes.
+The class 'umltordbms::Package' has no attributes.
+The class 'umltordbms::AttributeToColumn' has no attributes.
+The class 'umltordbms::Class' has no attributes.
+The class 'umltordbms::ClassToTable' has the following attributes: 'name' of type str.
+The class 'umltordbms::FromAttributeOwner' has no attributes.
+The class 'umltordbms::ToColumn' has no attributes.
+The class 'umltordbms::AssociationToForeignKey' has the following attributes: 'name' of type str.
+The class 'umltordbms::Key' has no attributes.
+The class 'umltordbms::Column' has no attributes.
+The class 'FromAttribute' has no attributes.
+The class 'ToColumn' has no attributes.
+The class 'umltordbms::PrimitiveDataType' has no attributes.
+'umltordbms::ClassToTable' is a specialization of 'FromAttributeOwner'.
+'umltordbms::AssociationToForeignKey' is a specialization of 'ToColumn'.
+'umltordbms::ClassToTable' is a specialization of 'ToColumn'.
+'umltordbms::AttributeToColumn' is a specialization of 'ToColumn'.
+'umltordbms::NonLeafAttribute' is a specialization of 'FromAttribute'.
+'umltordbms::NonLeafAttribute' is a specialization of 'FromAttributeOwner'.
+'umltordbms::AttributeToColumn' is a specialization of 'FromAttribute'.
+'umltordbms::AttributeToColumn' (role 'umltordbms_AttributeToColumn', cardinality 0..*) is associated with 'umltordbms::PrimitiveToName' (role 'umltordbms_PrimitiveToName', cardinality 0..*).
+'umltordbms::Association' (role 'umltordbms_Association', cardinality 0..*) is associated with 'umltordbms::AssociationToForeignKey' (role 'umltordbms_AssociationToForeignKey4', cardinality 0..*).
+'umltordbms::ClassToTable' (role 'umltordbms_ClassToTable12', cardinality 0..*) is associated with 'umltordbms::Table' (role 'umltordbms_Table', cardinality 0..*).
+'umltordbms::ForeignKey' (role 'umltordbms_ForeignKey', cardinality 0..*) is associated with 'umltordbms::AssociationToForeignKey' (role 'umltordbms_AssociationToForeignKey6', cardinality 0..*).
+'umltordbms::ClassToTable' (role 'ClassToTable24', cardinality 0..*) is associated with 'umltordbms::PackageToSchema' (role 'owner23', cardinality 0..*).
+'umltordbms::PrimitiveToName' (role 'primitivesToNames', cardinality 0..*) is associated with 'umltordbms::PackageToSchema' (role 'PackageToSchema31', cardinality 0..*).
+'umltordbms::FromAttribute' (role 'fromAttributes', cardinality 0..*) is associated with 'umltordbms::FromAttributeOwner' (role 'FromAttributeOwner', cardinality 0..*).
+'umltordbms::FromAttribute' (role 'umltordbms_FromAttribute', cardinality 0..*) is associated with 'umltordbms::AttributeToColumn' (role 'umltordbms_AttributeToColumn17', cardinality 0..*).
+'umltordbms::Schema' (role 'umltordbms_Schema', cardinality 0..*) is associated with 'umltordbms::PackageToSchema' (role 'umltordbms_PackageToSchema29', cardinality 0..*).
+'umltordbms::FromAttributeOwner' (role 'owner21', cardinality 0..*) is associated with 'umltordbms::FromAttribute' (role 'FromAttribute', cardinality 0..*).
+'umltordbms::ClassToTable' (role 'umltordbms_ClassToTable14', cardinality 0..*) is associated with 'umltordbms::Key' (role 'umltordbms_Key', cardinality 0..*).
+'umltordbms::ClassToTable' (role 'umltordbms_ClassToTable', cardinality 0..*) is associated with 'umltordbms::AssociationToForeignKey' (role 'umltordbms_AssociationToForeignKey', cardinality 0..*).
+'umltordbms::PrimitiveToName' (role 'PrimitiveToName', cardinality 0..*) is associated with 'umltordbms::PackageToSchema' (role 'owner26', cardinality 0..*).
+'umltordbms::Attribute' (role 'umltordbms_Attribute', cardinality 0..*) is associated with 'umltordbms::FromAttribute' (role 'umltordbms_FromAttribute19', cardinality 0..*).
+'umltordbms::AssociationToForeignKey' (role 'AssociationToForeignKey', cardinality 0..*) is associated with 'umltordbms::ClassToTable' (role 'owner', cardinality 0..*).
+'umltordbms::ClassToTable' (role 'classesToTables', cardinality 0..*) is associated with 'umltordbms::PackageToSchema' (role 'PackageToSchema', cardinality 0..*).
+'umltordbms::ToColumn' (role 'umltordbms_ToColumn', cardinality 0..*) is associated with 'umltordbms::Column' (role 'umltordbms_Column', cardinality 0..*).
+'umltordbms::AssociationToForeignKey' (role 'associationsToForeignKeys', cardinality 0..*) is associated with 'umltordbms::ClassToTable' (role 'ClassToTable', cardinality 0..*).
+'umltordbms::Class' (role 'umltordbms_Class', cardinality 0..*) is associated with 'umltordbms::ClassToTable' (role 'umltordbms_ClassToTable10', cardinality 0..*).
+'umltordbms::PrimitiveDataType' (role 'umltordbms_PrimitiveDataType', cardinality 0..*) is associated with 'umltordbms::PrimitiveToName' (role 'umltordbms_PrimitiveToName33', cardinality 0..*).
+'umltordbms::PackageToSchema' (role 'umltordbms_PackageToSchema', cardinality 0..*) is associated with 'umltordbms::Package' (role 'umltordbms_Package', cardinality 0..*).

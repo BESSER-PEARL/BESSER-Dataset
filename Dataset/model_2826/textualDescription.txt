@@ -1,0 +1,157 @@
+The model has 69 class(es).
+The class 'swt::MenuBar' has no attributes.
+The class 'swt::RGBColor' has the following attributes: 'green' of type int; 'blue' of type int; 'red' of type int.
+The class 'Item' has no attributes.
+The class 'swt::IntervalSelector' has the following attributes: 'pageIncrement' of type int; 'orientationStyle' of type str; 'increment' of type int.
+The class 'swt::SearchText' has no attributes.
+The class 'swt::GridData' has the following attributes: 'horizontalIndent' of type int; 'verticalIndent' of type int; 'widthHint' of type int; 'grabExcessVerticalSpace' of type bool; 'verticalSpan' of type int; 'horizontalAlignment' of type str; 'heightHint' of type int; 'grabExcessHorizontalSpace' of type bool; 'exclude' of type bool; 'verticalAlignment' of type str; 'horizontalSpan' of type int; 'minimumWidth' of type int; 'minimumHeight' of type int.
+The class 'swt::ToolItem' has the following attributes: 'toolTipText' of type str; 'enabled' of type bool; 'selection' of type bool; 'hotImage' of type str.
+The class 'swt::Button' has the following attributes: 'selection' of type bool; 'arrowStyle' of type str; 'buttonStyle' of type str.
+The class 'Canvas' has no attributes.
+The class 'Text' has no attributes.
+The class 'swt::Text' has the following attributes: 'message' of type str; 'echoChar' of type str; 'text' of type str; 'textLimit' of type int; 'editable' of type bool; 'tabs' of type int; 'selection' of type str; 'topIndex' of type int; 'multiplicityStyle' of type str.
+The class 'swt::SystemColor' has the following attributes: 'color' of type str.
+The class 'swt::FormData' has the following attributes: 'height' of type int; 'width' of type int.
+The class 'swt::AbstractList' has the following attributes: 'items' of type str; 'selectionIndex' of type int.
+The class 'Control' has no attributes.
+The class 'LayoutData' has no attributes.
+The class 'swt::Menu' has the following attributes: 'menuStyle' of type str.
+The class 'Widget' has no attributes.
+The class 'swt::Decorations' has the following attributes: 'maximized' of type bool; 'minimized' of type bool.
+The class 'IntervalControl' has no attributes.
+The class 'swt::CoolBar' has the following attributes: 'orientationStyle' of type str.
+The class 'swt::ToolBar' has the following attributes: 'orientationStyle' of type str.
+The class 'swt::FormLayout' has the following attributes: 'marginBottom' of type int; 'marginRight' of type int; 'marginLeft' of type int; 'marginHeight' of type int; 'marginWidth' of type int; 'spacing' of type int; 'marginTop' of type int.
+The class 'swt::CoolItem' has the following attributes: 'size' of type str; 'preferredSize' of type str; 'minimumSize' of type str.
+The class 'swt::AbstractMenu' has the following attributes: 'enabled' of type bool; 'visible' of type bool; 'textOrientationStyle' of type str.
+The class 'swt::FormAttachment' has the following attributes: 'numerator' of type int; 'offset' of type int; 'alignment' of type str; 'denominator' of type int.
+The class 'Color' has no attributes.
+The class 'IntervalSelector' has no attributes.
+The class 'swt::MenuItem' has the following attributes: 'enabled' of type bool; 'ID' of type int; 'selection' of type bool; 'accelerator' of type int; 'menuItemStyle' of type str.
+The class 'AbstractList' has no attributes.
+The class 'swt::Browser' has the following attributes: 'text' of type str; 'javascriptEnabled' of type bool; 'url' of type str.
+The class 'swt::Font' has the following attributes: 'name' of type str; 'style' of type int; 'height' of type int.
+The class 'Labeled' has no attributes.
+The class 'swt::AbstractComposite' has no attributes.
+The class 'swt::RowData' has the following attributes: 'height' of type int; 'exclude' of type bool; 'width' of type int.
+The class 'swt::LayoutData' has no attributes.
+The class 'swt::Combo' has the following attributes: 'text' of type str; 'textLimit' of type int.
+The class 'swt::Labeled' has the following attributes: 'image' of type str; 'text' of type str.
+The class 'swt::Viewer' has the following attributes: 'input' of type str.
+The class 'Decorations' has no attributes.
+The class 'swt::PasswordText' has no attributes.
+The class 'swt::TabFolder' has no attributes.
+The class 'swt::Layout' has no attributes.
+The class 'swt::List' has the following attributes: 'multiplicityStyle' of type str; 'selection' of type str; 'selectionIndices' of type int.
+The class 'swt::GridLayout' has the following attributes: 'verticalSpacing' of type int; 'marginHeight' of type int; 'horizontalSpacing' of type int; 'marginRight' of type int; 'makeColumnsEqualWidth' of type bool; 'marginBottom' of type int; 'numColumns' of type int; 'marginLeft' of type int; 'marginTop' of type int; 'marginWidth' of type int.
+The class 'swt::Tree' has the following attributes: 'sortDirection' of type str; 'headerVisible' of type bool; 'linesVisible' of type bool.
+The class 'AbstractMenu' has no attributes.
+The class 'swt::Control' has the following attributes: 'size' of type str; 'enabled' of type bool; 'visible' of type bool; 'textOrientationStyle' of type str; 'toolTipText' of type str; 'borderStyle' of type str; 'touchEnabled' of type bool.
+The class 'swt::ProgressBar' has the following attributes: 'state' of type str.
+The class 'swt::LineAttributes' has the following attributes: 'dash' of type float; 'style' of type str; 'cap' of type str; 'width' of type float; 'miterLimit' of type float; 'dashOffset' of type float; 'join' of type str.
+The class 'Composite' has no attributes.
+The class 'swt::Canvas' has no attributes.
+The class 'swt::Spinner' has the following attributes: 'digits' of type int; 'textLimit' of type int.
+The class 'swt::RowLayout' has the following attributes: 'fill' of type bool; 'marginTop' of type int; 'marginBottom' of type int; 'justify' of type bool; 'marginWidth' of type int; 'spacing' of type int; 'pack' of type bool; 'center' of type bool; 'marginRight' of type int; 'wrap' of type bool; 'orientationStyle' of type str; 'marginLeft' of type int; 'marginHeight' of type int.
+The class 'swt::IntervalControl' has the following attributes: 'selection' of type int; 'minimum' of type int; 'maximum' of type int.
+The class 'swt::Color' has no attributes.
+The class 'swt::Item' has no attributes.
+The class 'swt::TabItem' has the following attributes: 'toolTipText' of type str.
+The class 'swt::Separator' has the following attributes: 'orientationStyle' of type str.
+The class 'swt::Group' has the following attributes: 'text' of type str.
+The class 'swt::Shell' has the following attributes: 'fullScreen' of type bool; 'trimStyle' of type str; 'alpha' of type int; 'modalStyle' of type str.
+The class 'swt::FillLayout' has the following attributes: 'marginWidth' of type int; 'spacing' of type int; 'marginHeight' of type int; 'orientationStyle' of type str.
+The class 'swt::Slider' has the following attributes: 'thumb' of type int.
+The class 'swt::Widget' has the following attributes: 'style' of type int.
+The class 'swt::TreeViewer' has no attributes.
+The class 'swt::TreeColumn' has the following attributes: 'displayText' of type str; 'toolTipText' of type str.
+The class 'swt::Composite' has no attributes.
+The class 'swt::DateTime' has the following attributes: 'minutes' of type int; 'year' of type int; 'month' of type int; 'hours' of type int; 'seconds' of type int; 'day' of type int.
+The class 'swt::Label' has no attributes.
+The enumeration 'SortDirection' has the following literals: 'UP', 'DOWN', 'NONE'.
+The enumeration 'TrimStyle' has the following literals: 'NOT_TRIM', 'DIALOG_TRIM', 'SHELL_TRIM'.
+The enumeration 'ArrowStyle' has the following literals: 'UP', 'RIGHT', 'NONE', 'LEFT', 'DOWN'.
+The enumeration 'SystemColors' has the following literals: 'RED', 'BLUE', 'GREEN'.
+The enumeration 'BorderStyle' has the following literals: 'BORDER', 'NONE'.
+The enumeration 'MenuStyle' has the following literals: 'DROP_DOWN', 'POP_UP'.
+The enumeration 'ModalStyle' has the following literals: 'APPLICATION_MODAL', 'PRIMARY_MODAL', 'SYSTEM_MODAL'.
+The enumeration 'OrientationStyle' has the following literals: 'VERTICAL', 'HORIZONTAL'.
+The enumeration 'ButtonStyle' has the following literals: 'ARROW', 'TOGGLE', 'PUSH', 'CHECK', 'RADIO'.
+The enumeration 'MultiplicityStyle' has the following literals: 'SINGLE', 'MULTI'.
+The enumeration 'HorizontalAlignmentStyle' has the following literals: 'LEFT', 'RIGHT', 'CENTER', 'FILL'.
+The enumeration 'FontStyle' has the following literals: 'ITALIC', 'BOLD', 'NORMAL'.
+The enumeration 'FormAttachmentAlignment' has the following literals: 'TOP', 'RIGHT', 'BOTTOM', 'DEFAULT', 'CENTER', 'LEFT'.
+The enumeration 'TextOrientationStyle' has the following literals: 'LEFT_TO_RIGHT', 'RIGHT_TO_LEFT'.
+The enumeration 'LineStyle' has the following literals: 'CUSTOM', 'DASHDOTDOT', 'DOT', 'SOLID', 'DASHDOT', 'DASH'.
+The enumeration 'ProgressState' has the following literals: 'ERROR', 'NORMAL', 'PAUSED'.
+The enumeration 'MenuItemStyle' has the following literals: 'PUSH', 'SEPARATOR', 'CHECK', 'RADIO', 'CASCADE'.
+The enumeration 'JoinStyle' has the following literals: 'BEVEL', 'MITER', 'ROUND'.
+The enumeration 'ComboStyle' has the following literals: 'READ_ONLY', 'SIMPLE', 'DROP_DOWN'.
+The enumeration 'VerticalAlignmentStyle' has the following literals: 'BOTTOM', 'FILL', 'TOP', 'CENTER'.
+The enumeration 'CapStyle' has the following literals: 'SQUARE', 'ROUND', 'FLAT'.
+'swt::IntervalControl' is a specialization of 'Control'.
+'swt::Control' is a specialization of 'Widget'.
+'swt::SystemColor' is a specialization of 'Color'.
+'swt::Item' is a specialization of 'Labeled'.
+'swt::TabItem' is a specialization of 'Item'.
+'swt::List' is a specialization of 'AbstractList'.
+'swt::MenuItem' is a specialization of 'Item'.
+'swt::Label' is a specialization of 'Labeled'.
+'swt::Browser' is a specialization of 'Control'.
+'swt::Separator' is a specialization of 'Control'.
+'swt::GridData' is a specialization of 'LayoutData'.
+'swt::ToolBar' is a specialization of 'Control'.
+'swt::Canvas' is a specialization of 'Composite'.
+'swt::CoolItem' is a specialization of 'Item'.
+'swt::Label' is a specialization of 'Control'.
+'swt::Combo' is a specialization of 'AbstractList'.
+'swt::Shell' is a specialization of 'Decorations'.
+'swt::PasswordText' is a specialization of 'Text'.
+'swt::Button' is a specialization of 'Labeled'.
+'swt::TreeColumn' is a specialization of 'Item'.
+'swt::AbstractComposite' is a specialization of 'Control'.
+'swt::IntervalSelector' is a specialization of 'IntervalControl'.
+'swt::AbstractList' is a specialization of 'Control'.
+'swt::RowData' is a specialization of 'LayoutData'.
+'swt::Group' is a specialization of 'Composite'.
+'swt::FormData' is a specialization of 'LayoutData'.
+'swt::Text' is a specialization of 'Control'.
+'swt::Menu' is a specialization of 'AbstractMenu'.
+'swt::DateTime' is a specialization of 'Control'.
+'swt::ToolItem' is a specialization of 'Item'.
+'swt::AbstractMenu' is a specialization of 'Widget'.
+'swt::Decorations' is a specialization of 'Canvas'.
+'swt::Item' is a specialization of 'Widget'.
+'swt::SearchText' is a specialization of 'Text'.
+'swt::RGBColor' is a specialization of 'Color'.
+'swt::ProgressBar' is a specialization of 'IntervalControl'.
+'swt::TabFolder' is a specialization of 'Control'.
+'swt::MenuBar' is a specialization of 'AbstractMenu'.
+'swt::Spinner' is a specialization of 'IntervalSelector'.
+'swt::Tree' is a specialization of 'Control'.
+'swt::Button' is a specialization of 'Control'.
+'swt::Slider' is a specialization of 'IntervalSelector'.
+'swt::Control' (role 'swt_Control4', cardinality 0..*) is associated with 'swt::Font' (role 'swt_Font', cardinality 0..*).
+'swt::Tree' (role 'swt_Tree', cardinality 0..*) is associated with 'swt::TreeColumn' (role 'swt_TreeColumn', cardinality 0..*).
+'swt::MenuBar' (role 'menuBar', cardinality 0..*) is associated with 'swt::Decorations' (role 'Decorations', cardinality 0..*).
+'swt::Tree' (role 'swt_Tree42', cardinality 0..*) is associated with 'swt::TreeViewer' (role 'swt_TreeViewer', cardinality 0..*).
+'swt::TabItem' (role 'swt_TabItem22', cardinality 0..*) is associated with 'swt::Control' (role 'swt_Control23', cardinality 0..*).
+'swt::ToolBar' (role 'ToolBar', cardinality 0..*) is associated with 'swt::ToolItem' (role 'items', cardinality 0..*).
+'swt::MenuItem' (role 'swt_MenuItem', cardinality 0..*) is associated with 'swt::AbstractMenu' (role 'swt_AbstractMenu', cardinality 0..*).
+'swt::FormAttachment' (role 'swt_FormAttachment35', cardinality 0..*) is associated with 'swt::Control' (role 'swt_Control36', cardinality 0..*).
+'swt::FormData' (role 'swt_FormData32', cardinality 0..*) is associated with 'swt::FormAttachment' (role 'swt_FormAttachment33', cardinality 0..*).
+'swt::ToolItem' (role 'ToolItem', cardinality 0..*) is associated with 'swt::ToolBar' (role 'parent12', cardinality 0..*).
+'swt::FormData' (role 'swt_FormData', cardinality 0..*) is associated with 'swt::FormAttachment' (role 'swt_FormAttachment', cardinality 0..*).
+'swt::TabItem' (role 'swt_TabItem', cardinality 0..*) is associated with 'swt::TabFolder' (role 'swt_TabFolder', cardinality 0..*).
+'swt::MenuBar' (role 'MenuBar', cardinality 0..*) is associated with 'swt::Decorations' (role 'parent', cardinality 0..*).
+'swt::Control' (role 'swt_Control', cardinality 0..*) is associated with 'swt::LayoutData' (role 'swt_LayoutData', cardinality 0..*).
+'swt::CoolItem' (role 'items17', cardinality 0..*) is associated with 'swt::CoolBar' (role 'CoolBar', cardinality 0..*).
+'swt::CoolItem' (role 'swt_CoolItem', cardinality 0..*) is associated with 'swt::Control' (role 'swt_Control19', cardinality 0..*).
+'swt::MenuItem' (role 'parentItem', cardinality 0..*) is associated with 'swt::Menu' (role 'Menu', cardinality 0..*).
+'swt::Color' (role 'swt_Color', cardinality 0..*) is associated with 'swt::Control' (role 'swt_Control2', cardinality 0..*).
+'swt::CoolBar' (role 'parent15', cardinality 0..*) is associated with 'swt::CoolItem' (role 'CoolItem', cardinality 0..*).
+'swt::FormAttachment' (role 'swt_FormAttachment27', cardinality 0..*) is associated with 'swt::FormData' (role 'swt_FormData26', cardinality 0..*).
+'swt::FormData' (role 'swt_FormData29', cardinality 0..*) is associated with 'swt::FormAttachment' (role 'swt_FormAttachment30', cardinality 0..*).
+'swt::Tree' (role 'swt_Tree39', cardinality 0..*) is associated with 'swt::TreeColumn' (role 'swt_TreeColumn40', cardinality 0..*).
+'swt::Menu' (role 'menu', cardinality 0..*) is associated with 'swt::MenuItem' (role 'MenuItem', cardinality 0..*).
+'swt::Button' (role 'swt_Button', cardinality 0..*) is associated with 'swt::Shell' (role 'swt_Shell', cardinality 0..*).

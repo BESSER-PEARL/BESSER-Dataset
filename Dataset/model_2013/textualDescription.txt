@@ -1,0 +1,14 @@
+The model has 8 class(es).
+The class 'Trace' has no attributes.
+The class 'Trace::Level' has no attributes.
+The class 'Level' has no attributes.
+The class 'Call' has no attributes.
+The class 'Trace::Trace' has the following attributes: 'name' of type str.
+The class 'Trace::Call' has the following attributes: 'CPUTime' of type str; 'DBRowsNumber' of type str; 'DBAccessesNumber' of type str; 'methodName' of type str.
+The class 'Index' has no attributes.
+The class 'Trace::Index' has the following attributes: 'value' of type str.
+'Index' (role 'Index', cardinality 0..*) is associated with 'Trace::Call' (role 'Trace_Call', cardinality 0..*).
+'Trace::Level' (role 'level', cardinality 0..*) is associated with 'Call' (role 'Call', cardinality 0..*).
+'Level' (role 'Level4', cardinality 0..*) is associated with 'Trace::Call' (role 'calls', cardinality 0..*).
+'Trace::Trace' (role 'trace', cardinality 0..*) is associated with 'Level' (role 'Level', cardinality 0..*).
+'Trace::Level' (role 'levels', cardinality 0..*) is associated with 'Trace' (role 'Trace', cardinality 0..*).

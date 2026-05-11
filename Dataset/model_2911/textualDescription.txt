@@ -1,0 +1,28 @@
+The model has 11 class(es).
+The class 'agentDSL::Entity' has no attributes.
+The class 'agentDSL::Attribute' has the following attributes: 'name' of type str; 'many' of type bool.
+The class 'agentDSL::Goal' has the following attributes: 'name' of type str.
+The class 'agentDSL::Task' has no attributes.
+The class 'agentDSL::JAVAID' has the following attributes: 'name' of type str.
+The class 'agentDSL::Model' has no attributes.
+The class 'agentDSL::Function' has no attributes.
+The class 'agentDSL::Outcome' has no attributes.
+The class 'agentDSL::Type' has the following attributes: 'name' of type str.
+The class 'Type' has no attributes.
+The class 'agentDSL::TypeDef' has no attributes.
+'agentDSL::Outcome' is a specialization of 'Type'.
+'agentDSL::TypeDef' is a specialization of 'Type'.
+'agentDSL::Function' is a specialization of 'Type'.
+'agentDSL::Entity' is a specialization of 'Type'.
+'agentDSL::Task' is a specialization of 'Type'.
+'agentDSL::Attribute' (role 'agentDSL_Attribute21', cardinality 0..*) is associated with 'agentDSL::Type' (role 'agentDSL_Type22', cardinality 0..*).
+'agentDSL::Attribute' (role 'agentDSL_Attribute7', cardinality 0..*) is associated with 'agentDSL::Task' (role 'agentDSL_Task', cardinality 0..*).
+'agentDSL::Goal' (role 'agentDSL_Goal', cardinality 0..*) is associated with 'agentDSL::Outcome' (role 'agentDSL_Outcome14', cardinality 0..*).
+'agentDSL::Attribute' (role 'agentDSL_Attribute12', cardinality 0..*) is associated with 'agentDSL::Outcome' (role 'agentDSL_Outcome11', cardinality 0..*).
+'agentDSL::Attribute' (role 'agentDSL_Attribute19', cardinality 0..*) is associated with 'agentDSL::Function' (role 'agentDSL_Function', cardinality 0..*).
+'agentDSL::Attribute' (role 'agentDSL_Attribute', cardinality 0..*) is associated with 'agentDSL::Entity' (role 'agentDSL_Entity5', cardinality 0..*).
+'agentDSL::Type' (role 'agentDSL_Type', cardinality 0..*) is associated with 'agentDSL::Model' (role 'agentDSL_Model', cardinality 0..*).
+'agentDSL::Entity' (role 'agentDSL_Entity', cardinality 0..*) is associated with 'agentDSL::Entity' (role 'agentDSL_Entity2', cardinality 0..*).
+'agentDSL::Goal' (role 'agentDSL_Goal16', cardinality 0..*) is associated with 'agentDSL::Attribute' (role 'agentDSL_Attribute17', cardinality 0..*).
+'agentDSL::TypeDef' (role 'agentDSL_TypeDef', cardinality 0..*) is associated with 'agentDSL::JAVAID' (role 'agentDSL_JAVAID', cardinality 0..*).
+'agentDSL::Task' (role 'agentDSL_Task9', cardinality 0..*) is associated with 'agentDSL::Outcome' (role 'agentDSL_Outcome', cardinality 0..*).

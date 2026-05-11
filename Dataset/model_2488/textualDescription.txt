@@ -1,0 +1,9 @@
+The model has 5 class(es).
+The class 'z2fsm::State' has no attributes.
+The class 'z2fsm::Foo' has no attributes.
+The class 'z2fsm::Region' has the following attributes: 'name' of type str.
+The class 'AbstractState' has no attributes.
+The class 'z2fsm::AbstractState' has the following attributes: 'id' of type str.
+'z2fsm::State' is a specialization of 'AbstractState'.
+'z2fsm::Foo' is a specialization of 'AbstractState'.
+'z2fsm::Region' (role 'z2fsm_Region', cardinality 0..*) is associated with 'z2fsm::AbstractState' (role 'z2fsm_AbstractState', cardinality 0..*).

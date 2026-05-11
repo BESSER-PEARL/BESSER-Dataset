@@ -1,0 +1,16 @@
+The model has 4 class(es).
+The class 'database::Column' has the following attributes: 'IsPrimaryKey' of type bool; 'Name' of type str; 'Type' of type str.
+The class 'database::Database' has no attributes.
+The class 'database::ForeignKey' has the following attributes: 'Name' of type str.
+The class 'database::Table' has the following attributes: 'Name' of type str.
+The enumeration 'DataType' has the following literals: 'String', 'Date', 'Float', 'Int'.
+'database::Table' (role 'database_Table9', cardinality 0..*) is associated with 'database::ForeignKey' (role 'database_ForeignKey8', cardinality 0..*).
+'database::Table' (role 'DbTable', cardinality 0..*) is associated with 'database::Database' (role 'Database', cardinality 0..*).
+'database::Column' (role 'Column', cardinality 0..*) is associated with 'database::Table' (role 'ColumnTable', cardinality 0..*).
+'database::Table' (role 'Table5', cardinality 0..*) is associated with 'database::Column' (role 'TableColumn', cardinality 0..*).
+'database::Column' (role 'database_Column', cardinality 0..*) is associated with 'database::ForeignKey' (role 'database_ForeignKey11', cardinality 0..*).
+'database::Database' (role 'DbTableRoot', cardinality 0..*) is associated with 'database::Table' (role 'Table', cardinality 0..*).
+'database::Column' (role 'database_Column14', cardinality 0..*) is associated with 'database::ForeignKey' (role 'database_ForeignKey13', cardinality 0..*).
+'database::ForeignKey' (role 'ForeignKey', cardinality 0..*) is associated with 'database::Database' (role 'DbFkRoot', cardinality 0..*).
+'database::ForeignKey' (role 'DbFK', cardinality 0..*) is associated with 'database::Database' (role 'Database16', cardinality 0..*).
+'database::Table' (role 'database_Table', cardinality 0..*) is associated with 'database::ForeignKey' (role 'database_ForeignKey', cardinality 0..*).

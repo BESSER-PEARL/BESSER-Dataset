@@ -1,0 +1,283 @@
+The model has 103 class(es).
+The class 'moba::MobaDtoReference' has the following attributes: 'transient' of type bool; 'cascading' of type bool; 'alias' of type str; 'lazy' of type bool.
+The class 'moba::MobaNFCModule' has the following attributes: 'type' of type str.
+The class 'moba::MobaSMSTrigger' has no attributes.
+The class 'moba::MobaRegexpConstraint' has the following attributes: 'filterString' of type str.
+The class 'moba::MobaConstant' has the following attributes: 'name' of type str.
+The class 'moba::MobaMuliplicity' has the following attributes: 'upper' of type str; 'lower' of type str.
+The class 'moba::MobaFriendsAble' has no attributes.
+The class 'moba::MobaRESTHeader' has the following attributes: 'contentTypeHeader' of type bool; 'value' of type str; 'rawHeader' of type bool; 'valueString' of type str; 'key' of type str; 'keyString' of type str.
+The class 'MobaTrigger' has no attributes.
+The class 'moba::MobaEntityFeature' has no attributes.
+The class 'MobaModelFeature' has no attributes.
+The class 'moba::MobaApplication' has the following attributes: 'javaPackage' of type str.
+The class 'moba::MobaGenerator' has the following attributes: 'active' of type bool; 'name' of type str.
+The class 'moba::MobaRESTCrud' has the following attributes: 'operations' of type str.
+The class 'moba::MobaEntityReference' has the following attributes: 'lazy' of type bool; 'cascading' of type bool; 'transient' of type bool.
+The class 'moba::MobaPushTrigger' has no attributes.
+The class 'moba::MobaExternalModule' has the following attributes: 'name' of type str.
+The class 'moba::MobaDto' has the following attributes: 'name' of type str.
+The class 'MobaConstraintable' has no attributes.
+The class 'moba::MobaSettingsFeature' has no attributes.
+The class 'moba::MobaAuthorization' has the following attributes: 'name' of type str.
+The class 'moba::MobaEntityAttribute' has the following attributes: 'domainKey' of type bool; 'transient' of type bool; 'domainDescription' of type bool; 'formatString' of type str; 'lazy' of type bool.
+The class 'index::moba::MobaApplication' has no attributes.
+The class 'moba::MobaConstantValue' has the following attributes: 'valueDouble' of type str; 'valueInt' of type str; 'valueString' of type str; 'valueConstFunctions' of type str; 'valueConstToLowerCase' of type bool.
+The class 'MobaRESTAbstractAttribute' has no attributes.
+The class 'moba::MobaApplicationFeature' has no attributes.
+The class 'moba::MobaEnum' has no attributes.
+The class 'MobaREST' has no attributes.
+The class 'moba::MobaGeneratorMixinFeature' has no attributes.
+The class 'moba::MobaRESTAttribute' has the following attributes: 'formatString' of type str; 'value' of type str; 'valueString' of type str; 'key' of type str; 'keyString' of type str; 'valueInt' of type str; 'valueDouble' of type str.
+The class 'MobaExternalModule' has no attributes.
+The class 'moba::MobaSettings' has the following attributes: 'active' of type bool; 'name' of type str.
+The class 'moba::MobaRESTPayloadDefinition' has the following attributes: 'array' of type bool.
+The class 'moba::MobaConstraint' has no attributes.
+The class 'moba::MobaEntityIndex' has the following attributes: 'unique' of type bool; 'name' of type str.
+The class 'MobaEntityFeature' has no attributes.
+The class 'moba::MobaPastConstraint' has no attributes.
+The class 'moba::MobaDigitsConstraint' has the following attributes: 'filterIntegerValue' of type int; 'filterFractionValue' of type int.
+The class 'MobaMultiplicityAble' has no attributes.
+The class 'moba::MobaRESTDtoAttribute' has no attributes.
+The class 'moba::MobaRESTWorkflow' has no attributes.
+The class 'moba::MobaMaxConstraint' has the following attributes: 'filterValue' of type float.
+The class 'MobaIndexEntry' has no attributes.
+The class 'MobaFriendsAble' has no attributes.
+The class 'moba::MobaSettingsAttribute' has the following attributes: 'formatString' of type str; 'domainDescription' of type bool; 'lazy' of type bool; 'transient' of type bool; 'domainKey' of type bool.
+The class 'MobaQueueFeature' has no attributes.
+The class 'moba::MobaEntityEmbeddable' has the following attributes: 'transient' of type bool.
+The class 'moba::MobaGeneratorSlot' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'moba::index::MobaIndexEntry' has the following attributes: 'filename' of type str; 'templateId' of type str; 'relativePath' of type str; 'templateName' of type str; 'templateDescription' of type str; 'templateVersion' of type str.
+The class 'moba::MobaNullConstraint' has no attributes.
+The class 'moba::MobaNotNullConstraint' has no attributes.
+The class 'moba::MobaQueue' has the following attributes: 'name' of type str.
+The class 'moba::MobaBluetoothModule' has the following attributes: 'type' of type str.
+The class 'moba::MobaREST' has the following attributes: 'bigData' of type bool; 'url' of type str; 'path' of type str; 'name' of type str.
+The class 'moba::MobaFutureConstraint' has no attributes.
+The class 'moba::MobaDeviceStartupTrigger' has no attributes.
+The class 'moba::MobaDtoAttribute' has the following attributes: 'alias' of type str; 'transient' of type bool; 'formatString' of type str; 'domainDescription' of type bool; 'lazy' of type bool; 'domainKey' of type bool.
+The class 'moba::MobaTrigger' has the following attributes: 'name' of type str.
+The class 'moba::MobaModelFeature' has the following attributes: 'name' of type str; 'version' of type str; 'id' of type str.
+The class 'MobaData' has no attributes.
+The class 'moba::MobaDtoEmbeddable' has the following attributes: 'transient' of type bool; 'alias' of type str.
+The class 'moba::MobaPropertiesAble' has no attributes.
+The class 'moba::MobaDataType' has the following attributes: 'primitive' of type bool; 'string' of type bool; 'timestamp' of type bool; 'name' of type str; 'bool' of type bool; 'numeric' of type bool; 'decimal' of type bool; 'time' of type bool; 'array' of type bool; 'dateFormatString' of type str; 'date' of type bool; 'predefined' of type bool.
+The class 'MobaFeature' has no attributes.
+The class 'moba::MobaGeneratorIDFeature' has the following attributes: 'generatorId' of type str; 'generatorVersion' of type str.
+The class 'moba::MobaMultiplicityAble' has no attributes.
+The class 'MobaSettingsFeature' has no attributes.
+The class 'MobaGeneratorFeature' has no attributes.
+The class 'moba::MobaConstraintable' has no attributes.
+The class 'moba::MobaFriend' has the following attributes: 'valueString' of type str; 'value' of type str.
+The class 'moba::MobaTemplate' has the following attributes: 'downloadTemplate' of type str.
+The class 'moba::MobaProject' has no attributes.
+The class 'moba::MobaSettingsEntityReference' has the following attributes: 'lazy' of type bool; 'transient' of type bool; 'cascading' of type bool.
+The class 'MobaPropertiesAble' has no attributes.
+The class 'MobaConstraint' has no attributes.
+The class 'moba::MobaQueueFeature' has no attributes.
+The class 'moba::MobaPersistenceType' has the following attributes: 'name' of type str.
+The class 'moba::MobaFeature' has the following attributes: 'name' of type str.
+The class 'moba::MobaEntity' has the following attributes: 'name' of type str.
+The class 'moba::MobaRESTAbstractAttribute' has the following attributes: 'attachment' of type bool; 'alias' of type str; 'aliasString' of type str.
+The class 'moba::MobaAppUpdateTrigger' has no attributes.
+The class 'moba::MobaMinLengthConstraint' has the following attributes: 'filterValue' of type int.
+The class 'moba::MobaMaxLengthConstraint' has the following attributes: 'filterValue' of type int.
+The class 'moba::MobaAppInstallTrigger' has no attributes.
+The class 'moba::MobaData' has no attributes.
+The class 'moba::MobaQueueReference' has no attributes.
+The class 'moba::MobaEnumLiteral' has the following attributes: 'default' of type bool; 'hidden' of type bool; 'undefined' of type bool; 'name' of type str; 'literal' of type str; 'value' of type int.
+The class 'moba::MobaModel' has the following attributes: 'copyright' of type str.
+The class 'moba::MobaTimerTrigger' has no attributes.
+The class 'moba::MobaPushModule' has no attributes.
+The class 'moba::MobaRESTCustomService' has the following attributes: 'operation' of type str.
+The class 'MobaDtoFeature' has no attributes.
+The class 'moba::MobaMinConstraint' has the following attributes: 'filterValue' of type float.
+The class 'moba::index::MobaIndex' has the following attributes: 'name' of type str; 'version' of type str; 'description' of type str; 'id' of type str.
+The class 'moba::MobaEmailTrigger' has no attributes.
+The class 'moba::MobaProperty' has the following attributes: 'valueString' of type str; 'keyString' of type str; 'value' of type str; 'key' of type str.
+The class 'moba::MobaGeneratorFeature' has no attributes.
+The class 'moba::MobaServer' has the following attributes: 'urlString' of type str; 'name' of type str.
+The class 'moba::MobaDtoFeature' has no attributes.
+The class 'MobaApplicationFeature' has no attributes.
+The class 'moba::MobaGeofenceTrigger' has the following attributes: 'eventType' of type str.
+The class 'moba::MobaCache' has the following attributes: 'cacheIntervalInt' of type int; 'cacheStrategyString' of type str; 'name' of type str; 'cacheTypeString' of type str.
+The class 'moba::MobaTransportSerializationType' has the following attributes: 'name' of type str.
+The enumeration 'MobaBlueToothModuleType' has the following literals: 'BEACON', 'SPP', 'LE'.
+The enumeration 'MobaLowerBound' has the following literals: 'ZERO', 'ONE', 'ATLEASTONE', 'MANY', 'OPTIONAL'.
+The enumeration 'MobaGeofenceEvent' has the following literals: 'ENTER', 'LEAVE'.
+The enumeration 'MobaNFCModuleType' has the following literals: 'TEXT', 'ID', 'CUSTOM'.
+The enumeration 'MobaRESTMethods' has the following literals: 'POST', 'GET', 'PUT', 'DELETE'.
+The enumeration 'MobaUpperBound' has the following literals: 'ONE', 'NULL', 'MANY'.
+The enumeration 'MobaConstantValueFunction' has the following literals: 'TO_UPPER_CASE', 'TO_LOWER_CASE', 'TO_FIRST_LOWER_CASE', 'TO_FIRST_UPPER_CASE'.
+'moba::MobaDtoEmbeddable' is a specialization of 'MobaDtoFeature'.
+'moba::MobaREST' is a specialization of 'MobaApplicationFeature'.
+'moba::MobaDtoAttribute' is a specialization of 'MobaConstraintable'.
+'moba::MobaFeature' is a specialization of 'MobaFriendsAble'.
+'moba::MobaDtoAttribute' is a specialization of 'MobaMultiplicityAble'.
+'moba::MobaDtoFeature' is a specialization of 'MobaFeature'.
+'moba::MobaEntityReference' is a specialization of 'MobaEntityFeature'.
+'moba::MobaEnum' is a specialization of 'MobaApplicationFeature'.
+'moba::MobaAppInstallTrigger' is a specialization of 'MobaTrigger'.
+'moba::MobaDtoReference' is a specialization of 'MobaDtoFeature'.
+'moba::MobaData' is a specialization of 'MobaApplicationFeature'.
+'moba::MobaProject' is a specialization of 'MobaModelFeature'.
+'moba::MobaDtoReference' is a specialization of 'MobaMultiplicityAble'.
+'moba::MobaPushTrigger' is a specialization of 'MobaTrigger'.
+'moba::MobaRegexpConstraint' is a specialization of 'MobaConstraint'.
+'moba::MobaEntityEmbeddable' is a specialization of 'MobaEntityFeature'.
+'moba::MobaDtoAttribute' is a specialization of 'MobaDtoFeature'.
+'moba::MobaMaxLengthConstraint' is a specialization of 'MobaConstraint'.
+'moba::MobaSettingsEntityReference' is a specialization of 'MobaConstraintable'.
+'moba::MobaNotNullConstraint' is a specialization of 'MobaConstraint'.
+'moba::MobaSettingsAttribute' is a specialization of 'MobaSettingsFeature'.
+'moba::MobaEntityAttribute' is a specialization of 'MobaMultiplicityAble'.
+'moba::MobaPersistenceType' is a specialization of 'MobaApplicationFeature'.
+'moba::MobaSettingsEntityReference' is a specialization of 'MobaSettingsFeature'.
+'moba::MobaSettings' is a specialization of 'MobaApplicationFeature'.
+'moba::MobaSettingsEntityReference' is a specialization of 'MobaMultiplicityAble'.
+'moba::MobaGeneratorSlot' is a specialization of 'MobaApplicationFeature'.
+'moba::MobaSettingsAttribute' is a specialization of 'MobaConstraintable'.
+'moba::MobaRESTCustomService' is a specialization of 'MobaREST'.
+'moba::MobaEntityAttribute' is a specialization of 'MobaConstraintable'.
+'moba::MobaGeneratorIDFeature' is a specialization of 'MobaGeneratorFeature'.
+'moba::MobaEntity' is a specialization of 'MobaData'.
+'moba::MobaSMSTrigger' is a specialization of 'MobaTrigger'.
+'moba::MobaGenerator' is a specialization of 'MobaApplicationFeature'.
+'moba::MobaGeneratorMixinFeature' is a specialization of 'MobaGeneratorFeature'.
+'moba::MobaTimerTrigger' is a specialization of 'MobaTrigger'.
+'moba::MobaEntityEmbeddable' is a specialization of 'MobaMultiplicityAble'.
+'moba::MobaMaxConstraint' is a specialization of 'MobaConstraint'.
+'moba::MobaDataType' is a specialization of 'MobaApplicationFeature'.
+'moba::MobaGeofenceTrigger' is a specialization of 'MobaTrigger'.
+'moba::MobaApplicationFeature' is a specialization of 'MobaFriendsAble'.
+'moba::MobaNFCModule' is a specialization of 'MobaExternalModule'.
+'moba::MobaRESTDtoAttribute' is a specialization of 'MobaRESTAbstractAttribute'.
+'moba::MobaCache' is a specialization of 'MobaApplicationFeature'.
+'moba::MobaExternalModule' is a specialization of 'MobaApplicationFeature'.
+'moba::MobaTrigger' is a specialization of 'MobaApplicationFeature'.
+'moba::MobaBluetoothModule' is a specialization of 'MobaExternalModule'.
+'moba::MobaDigitsConstraint' is a specialization of 'MobaConstraint'.
+'moba::MobaConstant' is a specialization of 'MobaApplicationFeature'.
+'moba::MobaFriendsAble' is a specialization of 'MobaPropertiesAble'.
+'moba::MobaDataType' is a specialization of 'MobaConstraintable'.
+'moba::MobaEntityFeature' is a specialization of 'MobaFeature'.
+'moba::MobaTransportSerializationType' is a specialization of 'MobaApplicationFeature'.
+'moba::MobaAuthorization' is a specialization of 'MobaApplicationFeature'.
+'moba::MobaModelFeature' is a specialization of 'MobaFriendsAble'.
+'moba::MobaApplication' is a specialization of 'MobaModelFeature'.
+'moba::MobaQueueReference' is a specialization of 'MobaQueueFeature'.
+'moba::MobaRESTCrud' is a specialization of 'MobaREST'.
+'moba::MobaMinConstraint' is a specialization of 'MobaConstraint'.
+'moba::MobaQueue' is a specialization of 'MobaData'.
+'moba::MobaModel' is a specialization of 'MobaFriendsAble'.
+'moba::MobaDeviceStartupTrigger' is a specialization of 'MobaTrigger'.
+'moba::MobaPushModule' is a specialization of 'MobaExternalModule'.
+'moba::MobaAppUpdateTrigger' is a specialization of 'MobaTrigger'.
+'moba::MobaEmailTrigger' is a specialization of 'MobaTrigger'.
+'moba::MobaTemplate' is a specialization of 'MobaApplicationFeature'.
+'moba::MobaRESTWorkflow' is a specialization of 'MobaREST'.
+'moba::MobaMinLengthConstraint' is a specialization of 'MobaConstraint'.
+'moba::MobaSettingsFeature' is a specialization of 'MobaFeature'.
+'moba::MobaEntityAttribute' is a specialization of 'MobaEntityFeature'.
+'moba::MobaNullConstraint' is a specialization of 'MobaConstraint'.
+'moba::MobaServer' is a specialization of 'MobaApplicationFeature'.
+'moba::MobaRESTAttribute' is a specialization of 'MobaRESTAbstractAttribute'.
+'moba::MobaPastConstraint' is a specialization of 'MobaConstraint'.
+'moba::MobaQueueFeature' is a specialization of 'MobaFeature'.
+'moba::MobaSettingsAttribute' is a specialization of 'MobaMultiplicityAble'.
+'moba::MobaDto' is a specialization of 'MobaData'.
+'moba::MobaEntityReference' is a specialization of 'MobaMultiplicityAble'.
+'moba::MobaDtoEmbeddable' is a specialization of 'MobaMultiplicityAble'.
+'moba::MobaFutureConstraint' is a specialization of 'MobaConstraint'.
+'moba::MobaTrigger' (role 'moba_MobaTrigger199', cardinality 0..*) is associated with 'moba::MobaTrigger' (role 'moba_MobaTrigger', cardinality 0..*).
+'moba::MobaRESTPayloadDefinition' (role 'moba_MobaRESTPayloadDefinition112', cardinality 0..*) is associated with 'moba::MobaDto' (role 'moba_MobaDto113', cardinality 0..*).
+'moba::MobaDtoFeature' (role 'moba_MobaDtoFeature131', cardinality 0..*) is associated with 'moba::MobaRESTDtoAttribute' (role 'moba_MobaRESTDtoAttribute', cardinality 0..*).
+'moba::MobaRegexpConstraint' (role 'moba_MobaRegexpConstraint', cardinality 0..*) is associated with 'moba::MobaConstant' (role 'moba_MobaConstant183', cardinality 0..*).
+'moba::MobaApplication' (role 'moba_MobaApplication4', cardinality 0..*) is associated with 'moba::MobaProject' (role 'moba_MobaProject3', cardinality 0..*).
+'moba::MobaREST' (role 'moba_MobaREST96', cardinality 0..*) is associated with 'moba::MobaRESTPayloadDefinition' (role 'moba_MobaRESTPayloadDefinition', cardinality 0..*).
+'moba::MobaEnumLiteral' (role 'moba_MobaEnumLiteral', cardinality 0..*) is associated with 'moba::MobaEnum' (role 'moba_MobaEnum198', cardinality 0..*).
+'moba::MobaRESTHeader' (role 'moba_MobaRESTHeader133', cardinality 0..*) is associated with 'moba::MobaConstant' (role 'moba_MobaConstant134', cardinality 0..*).
+'moba::MobaDataType' (role 'moba_MobaDataType26', cardinality 0..*) is associated with 'moba::MobaConstant' (role 'moba_MobaConstant27', cardinality 0..*).
+'moba::MobaConstant' (role 'moba_MobaConstant187', cardinality 0..*) is associated with 'moba::MobaMaxConstraint' (role 'moba_MobaMaxConstraint', cardinality 0..*).
+'moba::MobaCache' (role 'moba_MobaCache37', cardinality 0..*) is associated with 'moba::MobaConstant' (role 'moba_MobaConstant38', cardinality 0..*).
+'moba::MobaMinConstraint' (role 'moba_MobaMinConstraint', cardinality 0..*) is associated with 'moba::MobaConstant' (role 'moba_MobaConstant185', cardinality 0..*).
+'moba::index::MobaIndexEntry' (role 'moba_index_MobaIndexEntry', cardinality 0..*) is associated with 'index::moba::MobaApplication' (role 'index_moba_MobaApplication', cardinality 0..*).
+'moba::MobaCache' (role 'moba_MobaCache', cardinality 0..*) is associated with 'moba::MobaApplication' (role 'moba_MobaApplication6', cardinality 0..*).
+'moba::MobaConstant' (role 'moba_MobaConstant171', cardinality 0..*) is associated with 'moba::MobaDtoAttribute' (role 'moba_MobaDtoAttribute170', cardinality 0..*).
+'moba::MobaGeneratorSlot' (role 'moba_MobaGeneratorSlot', cardinality 0..*) is associated with 'moba::MobaGeneratorSlot' (role 'moba_MobaGeneratorSlot22', cardinality 0..*).
+'moba::MobaEntity' (role 'moba_MobaEntity69', cardinality 0..*) is associated with 'moba::MobaEntity' (role 'moba_MobaEntity67', cardinality 0..*).
+'moba::MobaDtoEmbeddable' (role 'moba_MobaDtoEmbeddable', cardinality 0..*) is associated with 'moba::MobaDto' (role 'moba_MobaDto178', cardinality 0..*).
+'moba::MobaMuliplicity' (role 'moba_MobaMuliplicity', cardinality 0..*) is associated with 'moba::MobaMultiplicityAble' (role 'moba_MobaMultiplicityAble', cardinality 0..*).
+'moba::MobaPropertiesAble' (role 'moba_MobaPropertiesAble', cardinality 0..*) is associated with 'moba::MobaProperty' (role 'moba_MobaProperty', cardinality 0..*).
+'moba::MobaDataType' (role 'moba_MobaDataType28', cardinality 0..*) is associated with 'moba::MobaDataType' (role 'moba_MobaDataType30', cardinality 0..*).
+'moba::MobaDigitsConstraint' (role 'moba_MobaDigitsConstraint', cardinality 0..*) is associated with 'moba::MobaConstant' (role 'moba_MobaConstant193', cardinality 0..*).
+'moba::MobaConstantValue' (role 'moba_MobaConstantValue', cardinality 0..*) is associated with 'moba::MobaConstant' (role 'moba_MobaConstant32', cardinality 0..*).
+'moba::MobaApplication' (role 'moba_MobaApplication10', cardinality 0..*) is associated with 'moba::MobaTemplate' (role 'moba_MobaTemplate', cardinality 0..*).
+'moba::MobaRESTWorkflow' (role 'moba_MobaRESTWorkflow150', cardinality 0..*) is associated with 'moba::MobaRESTWorkflow' (role 'moba_MobaRESTWorkflow148', cardinality 0..*).
+'moba::MobaQueue' (role 'moba_MobaQueue94', cardinality 0..*) is associated with 'moba::MobaQueueFeature' (role 'moba_MobaQueueFeature', cardinality 0..*).
+'moba::MobaConstraint' (role 'moba_MobaConstraint', cardinality 0..*) is associated with 'moba::MobaConstraintable' (role 'moba_MobaConstraintable', cardinality 0..*).
+'moba::MobaRESTPayloadDefinition' (role 'moba_MobaRESTPayloadDefinition102', cardinality 0..*) is associated with 'moba::MobaREST' (role 'moba_MobaREST101', cardinality 0..*).
+'moba::MobaDto' (role 'moba_MobaDto', cardinality 0..*) is associated with 'moba::MobaDto' (role 'moba_MobaDto79', cardinality 0..*).
+'moba::MobaEntity' (role 'moba_MobaEntity71', cardinality 0..*) is associated with 'moba::MobaCache' (role 'moba_MobaCache72', cardinality 0..*).
+'moba::MobaRESTAttribute' (role 'moba_MobaRESTAttribute122', cardinality 0..*) is associated with 'moba::MobaConstant' (role 'moba_MobaConstant123', cardinality 0..*).
+'moba::MobaQueue' (role 'moba_MobaQueue88', cardinality 0..*) is associated with 'moba::MobaQueue' (role 'moba_MobaQueue', cardinality 0..*).
+'moba::MobaRESTPayloadDefinition' (role 'moba_MobaRESTPayloadDefinition115', cardinality 0..*) is associated with 'moba::MobaTransportSerializationType' (role 'moba_MobaTransportSerializationType116', cardinality 0..*).
+'moba::MobaExternalModule' (role 'moba_MobaExternalModule205', cardinality 0..*) is associated with 'moba::MobaExternalModule' (role 'moba_MobaExternalModule', cardinality 0..*).
+'moba::MobaMinLengthConstraint' (role 'moba_MobaMinLengthConstraint', cardinality 0..*) is associated with 'moba::MobaConstant' (role 'moba_MobaConstant189', cardinality 0..*).
+'moba::MobaConstant' (role 'moba_MobaConstant202', cardinality 0..*) is associated with 'moba::MobaFriend' (role 'moba_MobaFriend', cardinality 0..*).
+'moba::MobaREST' (role 'moba_MobaREST', cardinality 0..*) is associated with 'moba::MobaServer' (role 'moba_MobaServer16', cardinality 0..*).
+'moba::MobaDataType' (role 'moba_MobaDataType168', cardinality 0..*) is associated with 'moba::MobaDtoAttribute' (role 'moba_MobaDtoAttribute', cardinality 0..*).
+'moba::MobaTransportSerializationType' (role 'moba_MobaTransportSerializationType', cardinality 0..*) is associated with 'moba::MobaDto' (role 'moba_MobaDto87', cardinality 0..*).
+'moba::MobaModel' (role 'moba_MobaModel', cardinality 0..*) is associated with 'moba::MobaModelFeature' (role 'moba_MobaModelFeature', cardinality 0..*).
+'moba::MobaApplication' (role 'moba_MobaApplication', cardinality 0..*) is associated with 'moba::MobaProject' (role 'moba_MobaProject', cardinality 0..*).
+'moba::MobaEntity' (role 'moba_MobaEntity83', cardinality 0..*) is associated with 'moba::MobaDto' (role 'moba_MobaDto82', cardinality 0..*).
+'moba::MobaDataType' (role 'moba_MobaDataType', cardinality 0..*) is associated with 'moba::MobaEnum' (role 'moba_MobaEnum', cardinality 0..*).
+'moba::MobaDtoReference' (role 'moba_MobaDtoReference', cardinality 0..*) is associated with 'moba::MobaDto' (role 'moba_MobaDto173', cardinality 0..*).
+'moba::MobaConstant' (role 'moba_MobaConstant41', cardinality 0..*) is associated with 'moba::MobaCache' (role 'moba_MobaCache40', cardinality 0..*).
+'moba::MobaEntity' (role 'moba_MobaEntity', cardinality 0..*) is associated with 'moba::MobaSettingsEntityReference' (role 'moba_MobaSettingsEntityReference', cardinality 0..*).
+'moba::MobaRESTCustomService' (role 'moba_MobaRESTCustomService140', cardinality 0..*) is associated with 'moba::MobaRESTCustomService' (role 'moba_MobaRESTCustomService142', cardinality 0..*).
+'moba::MobaGeneratorFeature' (role 'moba_MobaGeneratorFeature', cardinality 0..*) is associated with 'moba::MobaGenerator' (role 'moba_MobaGenerator', cardinality 0..*).
+'moba::MobaREST' (role 'moba_MobaREST147', cardinality 0..*) is associated with 'moba::MobaRESTWorkflow' (role 'moba_MobaRESTWorkflow', cardinality 0..*).
+'moba::MobaEntityAttribute' (role 'moba_MobaEntityAttribute157', cardinality 0..*) is associated with 'moba::MobaConstant' (role 'moba_MobaConstant158', cardinality 0..*).
+'moba::MobaDigitsConstraint' (role 'moba_MobaDigitsConstraint195', cardinality 0..*) is associated with 'moba::MobaConstant' (role 'moba_MobaConstant196', cardinality 0..*).
+'moba::MobaApplicationFeature' (role 'moba_MobaApplicationFeature', cardinality 0..*) is associated with 'moba::MobaApplication' (role 'moba_MobaApplication8', cardinality 0..*).
+'moba::MobaAuthorization' (role 'moba_MobaAuthorization', cardinality 0..*) is associated with 'moba::MobaServer' (role 'moba_MobaServer18', cardinality 0..*).
+'moba::MobaQueue' (role 'moba_MobaQueue91', cardinality 0..*) is associated with 'moba::MobaCache' (role 'moba_MobaCache92', cardinality 0..*).
+'moba::MobaConstant' (role 'moba_MobaConstant118', cardinality 0..*) is associated with 'moba::MobaRESTAbstractAttribute' (role 'moba_MobaRESTAbstractAttribute', cardinality 0..*).
+'moba::MobaConstant' (role 'moba_MobaConstant56', cardinality 0..*) is associated with 'moba::MobaProperty' (role 'moba_MobaProperty55', cardinality 0..*).
+'moba::MobaEntity' (role 'moba_MobaEntity74', cardinality 0..*) is associated with 'moba::MobaEntityFeature' (role 'moba_MobaEntityFeature', cardinality 0..*).
+'moba::MobaRESTHeader' (role 'moba_MobaRESTHeader', cardinality 0..*) is associated with 'moba::MobaREST' (role 'moba_MobaREST107', cardinality 0..*).
+'moba::MobaCache' (role 'moba_MobaCache34', cardinality 0..*) is associated with 'moba::MobaConstant' (role 'moba_MobaConstant35', cardinality 0..*).
+'moba::MobaDtoReference' (role 'moba_MobaDtoReference174', cardinality 0..*) is associated with 'moba::MobaDtoReference' (role 'moba_MobaDtoReference176', cardinality 0..*).
+'moba::MobaSettings' (role 'moba_MobaSettings60', cardinality 0..*) is associated with 'moba::MobaSettingsFeature' (role 'moba_MobaSettingsFeature', cardinality 0..*).
+'moba::MobaCache' (role 'moba_MobaCache43', cardinality 0..*) is associated with 'moba::MobaPersistenceType' (role 'moba_MobaPersistenceType', cardinality 0..*).
+'moba::MobaSettings' (role 'moba_MobaSettings57', cardinality 0..*) is associated with 'moba::MobaSettings' (role 'moba_MobaSettings', cardinality 0..*).
+'moba::MobaRESTAttribute' (role 'moba_MobaRESTAttribute', cardinality 0..*) is associated with 'moba::MobaDataType' (role 'moba_MobaDataType120', cardinality 0..*).
+'moba::MobaQueueReference' (role 'moba_MobaQueueReference', cardinality 0..*) is associated with 'moba::MobaREST' (role 'moba_MobaREST180', cardinality 0..*).
+'moba::index::MobaIndex' (role 'moba_index_MobaIndex', cardinality 0..*) is associated with 'MobaIndexEntry' (role 'MobaIndexEntry', cardinality 0..*).
+'moba::MobaEntityReference' (role 'moba_MobaEntityReference', cardinality 0..*) is associated with 'moba::MobaEntity' (role 'moba_MobaEntity161', cardinality 0..*).
+'moba::MobaEntity' (role 'moba_MobaEntity76', cardinality 0..*) is associated with 'moba::MobaEntityIndex' (role 'moba_MobaEntityIndex', cardinality 0..*).
+'moba::MobaProperty' (role 'moba_MobaProperty52', cardinality 0..*) is associated with 'moba::MobaConstant' (role 'moba_MobaConstant53', cardinality 0..*).
+'moba::MobaConstant' (role 'moba_MobaConstant46', cardinality 0..*) is associated with 'moba::MobaConstantValue' (role 'moba_MobaConstantValue45', cardinality 0..*).
+'moba::MobaDto' (role 'moba_MobaDto85', cardinality 0..*) is associated with 'moba::MobaDtoFeature' (role 'moba_MobaDtoFeature', cardinality 0..*).
+'moba::MobaRESTHeader' (role 'moba_MobaRESTHeader136', cardinality 0..*) is associated with 'moba::MobaConstant' (role 'moba_MobaConstant137', cardinality 0..*).
+'moba::MobaRESTAbstractAttribute' (role 'moba_MobaRESTAbstractAttribute139', cardinality 0..*) is associated with 'moba::MobaRESTCustomService' (role 'moba_MobaRESTCustomService', cardinality 0..*).
+'moba::MobaREST' (role 'moba_MobaREST104', cardinality 0..*) is associated with 'moba::MobaRESTPayloadDefinition' (role 'moba_MobaRESTPayloadDefinition105', cardinality 0..*).
+'moba::MobaConstant' (role 'moba_MobaConstant126', cardinality 0..*) is associated with 'moba::MobaRESTAttribute' (role 'moba_MobaRESTAttribute125', cardinality 0..*).
+'moba::MobaSettingsAttribute' (role 'moba_MobaSettingsAttribute64', cardinality 0..*) is associated with 'moba::MobaConstant' (role 'moba_MobaConstant65', cardinality 0..*).
+'moba::MobaConstant' (role 'moba_MobaConstant129', cardinality 0..*) is associated with 'moba::MobaRESTAttribute' (role 'moba_MobaRESTAttribute128', cardinality 0..*).
+'moba::MobaFriend' (role 'moba_MobaFriend204', cardinality 0..*) is associated with 'moba::MobaFriendsAble' (role 'moba_MobaFriendsAble', cardinality 0..*).
+'moba::MobaEntity' (role 'moba_MobaEntity166', cardinality 0..*) is associated with 'moba::MobaEntityEmbeddable' (role 'moba_MobaEntityEmbeddable', cardinality 0..*).
+'moba::MobaRESTCrud' (role 'moba_MobaRESTCrud151', cardinality 0..*) is associated with 'moba::MobaRESTCrud' (role 'moba_MobaRESTCrud', cardinality 0..*).
+'moba::MobaConstantValue' (role 'moba_MobaConstantValue47', cardinality 0..*) is associated with 'moba::MobaConstantValue' (role 'moba_MobaConstantValue49', cardinality 0..*).
+'moba::MobaREST' (role 'moba_MobaREST98', cardinality 0..*) is associated with 'moba::MobaRESTPayloadDefinition' (role 'moba_MobaRESTPayloadDefinition99', cardinality 0..*).
+'moba::MobaRESTAbstractAttribute' (role 'moba_MobaRESTAbstractAttribute145', cardinality 0..*) is associated with 'moba::MobaRESTCustomService' (role 'moba_MobaRESTCustomService144', cardinality 0..*).
+'moba::MobaEntityReference' (role 'moba_MobaEntityReference164', cardinality 0..*) is associated with 'moba::MobaEntityReference' (role 'moba_MobaEntityReference162', cardinality 0..*).
+'moba::MobaMaxLengthConstraint' (role 'moba_MobaMaxLengthConstraint', cardinality 0..*) is associated with 'moba::MobaConstant' (role 'moba_MobaConstant191', cardinality 0..*).
+'moba::MobaSettingsAttribute' (role 'moba_MobaSettingsAttribute', cardinality 0..*) is associated with 'moba::MobaDataType' (role 'moba_MobaDataType62', cardinality 0..*).
+'moba::MobaGenerator' (role 'moba_MobaGenerator21', cardinality 0..*) is associated with 'moba::MobaGeneratorMixinFeature' (role 'moba_MobaGeneratorMixinFeature', cardinality 0..*).
+'moba::MobaServer' (role 'moba_MobaServer14', cardinality 0..*) is associated with 'moba::MobaServer' (role 'moba_MobaServer12', cardinality 0..*).
+'moba::MobaAuthorization' (role 'moba_MobaAuthorization110', cardinality 0..*) is associated with 'moba::MobaREST' (role 'moba_MobaREST109', cardinality 0..*).
+'moba::MobaDataType' (role 'moba_MobaDataType155', cardinality 0..*) is associated with 'moba::MobaEntityAttribute' (role 'moba_MobaEntityAttribute154', cardinality 0..*).
+'moba::MobaEntityAttribute' (role 'moba_MobaEntityAttribute', cardinality 0..*) is associated with 'moba::MobaEntityIndex' (role 'moba_MobaEntityIndex78', cardinality 0..*).
+'moba::MobaConstant' (role 'moba_MobaConstant', cardinality 0..*) is associated with 'moba::MobaServer' (role 'moba_MobaServer', cardinality 0..*).

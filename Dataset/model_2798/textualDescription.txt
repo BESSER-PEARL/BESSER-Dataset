@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'TreeNodeXML::TreeNodeAtom' has the following attributes: 'AttributeLocalName' of type str; 'AttributeValue' of type str.
+The class 'TreeNodeXML::XMLTreeNode' has the following attributes: 'ElementText' of type str; 'LocalName' of type str.
+'TreeNodeXML::XMLTreeNode' (role 'TreeNodeXML_XMLTreeNode', cardinality 0..*) is associated with 'TreeNodeXML::XMLTreeNode' (role 'TreeNodeXML_XMLTreeNode0', cardinality 0..*).
+'TreeNodeXML::XMLTreeNode' (role 'TreeNodeXML_XMLTreeNode3', cardinality 0..*) is associated with 'TreeNodeXML::TreeNodeAtom' (role 'TreeNodeXML_TreeNodeAtom', cardinality 0..*).

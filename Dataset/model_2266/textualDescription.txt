@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'TUWien::Student' has the following attributes: 'name' of type str; 'id' of type int.
+The class 'TUWien::University' has the following attributes: 'name' of type str.
+The class 'TUWien::Course' has the following attributes: 'id' of type str; 'name' of type str.
+'TUWien::Student' (role 'student', cardinality 0..*) is associated with 'TUWien::Course' (role 'Course', cardinality 0..*).
+'TUWien::Course' (role 'TUWien_Course', cardinality 0..*) is associated with 'TUWien::University' (role 'TUWien_University', cardinality 0..*).
+'TUWien::University' (role 'TUWien_University2', cardinality 0..*) is associated with 'TUWien::Student' (role 'TUWien_Student', cardinality 0..*).
+'TUWien::Student' (role 'Student', cardinality 0..*) is associated with 'TUWien::Course' (role 'course', cardinality 0..*).

@@ -1,0 +1,149 @@
+The model has 69 class(es).
+The class 'eol::expression::NotEqualsOperatorExpression' has no attributes.
+The class 'CollectionExpression' has no attributes.
+The class 'eol::expression::GreaterThanOrEqualToOperatorExpression' has no attributes.
+The class 'eol::expression::ExpressionList' has no attributes.
+The class 'eol::expression::AndOperatorExpression' has no attributes.
+The class 'eol::expression::RealExpression' has the following attributes: 'value' of type float.
+The class 'eol::expression::CollectionExpression' has no attributes.
+The class 'eol::expression::XorOperatorExpression' has no attributes.
+The class 'ComparisonOperatorExpression' has no attributes.
+The class 'BinaryOperatorExpression' has no attributes.
+The class 'eol::expression::VariableDeclarationExpression' has the following attributes: 'create' of type bool.
+The class 'eol::expression::MinusOperatorExpression' has no attributes.
+The class 'eol::expression::FOLMethodCallExpression' has no attributes.
+The class 'FeatureCallExpression' has no attributes.
+The class 'eol::expression::NotOperatorExpression' has no attributes.
+The class 'eol::expression::NewExpression' has no attributes.
+The class 'eol::expression::PropertyCallExpression' has the following attributes: 'extended' of type bool.
+The class 'eol::expression::BinaryOperatorExpression' has no attributes.
+The class 'ComparableExpression' has no attributes.
+The class 'eol::expression::ArithmeticOperatorExpression' has no attributes.
+The class 'eol::expression::LogicalOperatorExpression' has no attributes.
+The class 'ArithmeticOperatorExpression' has no attributes.
+The class 'eol::expression::StringExpression' has the following attributes: 'value' of type str.
+The class 'eol::expression::LessThanOrEqualToOperatorExpression' has no attributes.
+The class 'eol::expression::ExpressionRange' has no attributes.
+The class 'eol::expression::PrimitiveExpression' has no attributes.
+The class 'eol::expression::IntegerExpression' has the following attributes: 'value' of type int.
+The class 'eol::expression::GreaterThanOperatorExpression' has no attributes.
+The class 'eol::expression::OrOperatorExpression' has no attributes.
+The class 'eol::expression::EnumerationLiteralExpression' has no attributes.
+The class 'eol::expression::NameExpression' has the following attributes: 'name' of type str; 'isType' of type bool.
+The class 'eol::expression::Expression' has the following attributes: 'inBrackets' of type bool.
+The class 'eol::expression::UniqueCollection' has no attributes.
+The class 'eol::expression::MultiplyOperatorExpression' has no attributes.
+The class 'eol::expression::ComparisonOperatorExpression' has no attributes.
+The class 'eol::expression::BooleanExpression' has the following attributes: 'value' of type bool.
+The class 'eol::expression::SetExpression' has no attributes.
+The class 'eol::expression::SequenceExpression' has no attributes.
+The class 'eol::expression::BagExpression' has no attributes.
+The class 'eol::expression::NegativeOperatorExpression' has no attributes.
+The class 'PrimitiveExpression' has no attributes.
+The class 'eol::expression::PlusOperatorExpression' has no attributes.
+The class 'eol::expression::UnaryOperatorExpression' has no attributes.
+The class 'eol::expression::ImpliesOperatorExpression' has no attributes.
+The class 'eol::expression::Type' has no attributes.
+The class 'VariableDeclarationExpression' has no attributes.
+The class 'eol::expression::KeyValueExpression' has no attributes.
+The class 'eol::expression::MapExpression' has no attributes.
+The class 'eol::expression::OperatorExpression' has no attributes.
+The class 'eol::expression::DivideOperatorExpression' has no attributes.
+The class 'LogicalOperatorExpression' has no attributes.
+The class 'eol::expression::FormalParameterExpression' has no attributes.
+The class 'Expression' has no attributes.
+The class 'UniqueCollection' has no attributes.
+The class 'CollectionInitialisationExpression' has no attributes.
+The class 'eol::expression::LessThanOperatorExpression' has no attributes.
+The class 'eol::expression::CollectionInitialisationExpression' has no attributes.
+The class 'SummableExpression' has no attributes.
+The class 'eol::expression::MethodCallExpression' has no attributes.
+The class 'OrderedCollection' has no attributes.
+The class 'UnaryOperatorExpression' has no attributes.
+The class 'eol::expression::ComparableExpression' has no attributes.
+The class 'OperatorExpression' has no attributes.
+The class 'eol::expression::OrderedCollection' has no attributes.
+The class 'eol::expression::SummableExpression' has no attributes.
+The class 'eol::expression::OrderedSetExpression' has no attributes.
+The class 'eol::expression::Statement' has no attributes.
+The class 'eol::expression::EqualsOperatorExpression' has no attributes.
+The class 'eol::expression::FeatureCallExpression' has the following attributes: 'arrow' of type bool.
+'eol::expression::NotOperatorExpression' is a specialization of 'UnaryOperatorExpression'.
+'eol::expression::RealExpression' is a specialization of 'ComparableExpression'.
+'eol::expression::ImpliesOperatorExpression' is a specialization of 'LogicalOperatorExpression'.
+'eol::expression::RealExpression' is a specialization of 'SummableExpression'.
+'eol::expression::GreaterThanOperatorExpression' is a specialization of 'ComparisonOperatorExpression'.
+'eol::expression::NegativeOperatorExpression' is a specialization of 'UnaryOperatorExpression'.
+'eol::expression::OrderedSetExpression' is a specialization of 'UniqueCollection'.
+'eol::expression::NewExpression' is a specialization of 'Expression'.
+'eol::expression::MinusOperatorExpression' is a specialization of 'ArithmeticOperatorExpression'.
+'eol::expression::SetExpression' is a specialization of 'UniqueCollection'.
+'eol::expression::BooleanExpression' is a specialization of 'PrimitiveExpression'.
+'eol::expression::OrderedSetExpression' is a specialization of 'OrderedCollection'.
+'eol::expression::EnumerationLiteralExpression' is a specialization of 'Expression'.
+'eol::expression::UnaryOperatorExpression' is a specialization of 'OperatorExpression'.
+'eol::expression::EqualsOperatorExpression' is a specialization of 'ComparisonOperatorExpression'.
+'eol::expression::StringExpression' is a specialization of 'ComparableExpression'.
+'eol::expression::CollectionExpression' is a specialization of 'Expression'.
+'eol::expression::SequenceExpression' is a specialization of 'OrderedCollection'.
+'eol::expression::IntegerExpression' is a specialization of 'ComparableExpression'.
+'eol::expression::BinaryOperatorExpression' is a specialization of 'OperatorExpression'.
+'eol::expression::AndOperatorExpression' is a specialization of 'LogicalOperatorExpression'.
+'eol::expression::NotEqualsOperatorExpression' is a specialization of 'ComparisonOperatorExpression'.
+'eol::expression::ComparableExpression' is a specialization of 'PrimitiveExpression'.
+'eol::expression::ExpressionRange' is a specialization of 'CollectionInitialisationExpression'.
+'eol::expression::FeatureCallExpression' is a specialization of 'Expression'.
+'eol::expression::PrimitiveExpression' is a specialization of 'Expression'.
+'eol::expression::MethodCallExpression' is a specialization of 'FeatureCallExpression'.
+'eol::expression::UniqueCollection' is a specialization of 'CollectionExpression'.
+'eol::expression::PropertyCallExpression' is a specialization of 'FeatureCallExpression'.
+'eol::expression::FOLMethodCallExpression' is a specialization of 'FeatureCallExpression'.
+'eol::expression::XorOperatorExpression' is a specialization of 'LogicalOperatorExpression'.
+'eol::expression::LessThanOrEqualToOperatorExpression' is a specialization of 'ComparisonOperatorExpression'.
+'eol::expression::SummableExpression' is a specialization of 'PrimitiveExpression'.
+'eol::expression::KeyValueExpression' is a specialization of 'Expression'.
+'eol::expression::OperatorExpression' is a specialization of 'Expression'.
+'eol::expression::DivideOperatorExpression' is a specialization of 'ArithmeticOperatorExpression'.
+'eol::expression::CollectionInitialisationExpression' is a specialization of 'Expression'.
+'eol::expression::ExpressionList' is a specialization of 'CollectionInitialisationExpression'.
+'eol::expression::MapExpression' is a specialization of 'Expression'.
+'eol::expression::IntegerExpression' is a specialization of 'SummableExpression'.
+'eol::expression::GreaterThanOrEqualToOperatorExpression' is a specialization of 'ComparisonOperatorExpression'.
+'eol::expression::OrderedCollection' is a specialization of 'CollectionExpression'.
+'eol::expression::ArithmeticOperatorExpression' is a specialization of 'BinaryOperatorExpression'.
+'eol::expression::NameExpression' is a specialization of 'Expression'.
+'eol::expression::StringExpression' is a specialization of 'SummableExpression'.
+'eol::expression::FormalParameterExpression' is a specialization of 'VariableDeclarationExpression'.
+'eol::expression::PlusOperatorExpression' is a specialization of 'ArithmeticOperatorExpression'.
+'eol::expression::MultiplyOperatorExpression' is a specialization of 'ArithmeticOperatorExpression'.
+'eol::expression::OrOperatorExpression' is a specialization of 'LogicalOperatorExpression'.
+'eol::expression::LessThanOperatorExpression' is a specialization of 'ComparisonOperatorExpression'.
+'eol::expression::LogicalOperatorExpression' is a specialization of 'BinaryOperatorExpression'.
+'eol::expression::BagExpression' is a specialization of 'CollectionExpression'.
+'eol::expression::ComparisonOperatorExpression' is a specialization of 'BinaryOperatorExpression'.
+'eol::expression::VariableDeclarationExpression' is a specialization of 'Expression'.
+'eol::expression::ExpressionRange' (role 'eol_expression_ExpressionRange', cardinality 0..*) is associated with 'eol::expression::Expression' (role 'eol_expression_Expression50', cardinality 0..*).
+'eol::expression::EnumerationLiteralExpression' (role 'eol_expression_EnumerationLiteralExpression44', cardinality 0..*) is associated with 'eol::expression::NameExpression' (role 'eol_expression_NameExpression45', cardinality 0..*).
+'eol::expression::KeyValueExpression' (role 'eol_expression_KeyValueExpression36', cardinality 0..*) is associated with 'eol::expression::MapExpression' (role 'eol_expression_MapExpression', cardinality 0..*).
+'eol::expression::KeyValueExpression' (role 'eol_expression_KeyValueExpression', cardinality 0..*) is associated with 'eol::expression::Expression' (role 'eol_expression_Expression26', cardinality 0..*).
+'eol::expression::Expression' (role 'eol_expression_Expression10', cardinality 0..*) is associated with 'eol::expression::FeatureCallExpression' (role 'eol_expression_FeatureCallExpression', cardinality 0..*).
+'eol::expression::NameExpression' (role 'eol_expression_NameExpression31', cardinality 0..*) is associated with 'eol::expression::NewExpression' (role 'eol_expression_NewExpression', cardinality 0..*).
+'eol::expression::Expression' (role 'eol_expression_Expression53', cardinality 0..*) is associated with 'eol::expression::ExpressionRange' (role 'eol_expression_ExpressionRange52', cardinality 0..*).
+'eol::expression::EnumerationLiteralExpression' (role 'eol_expression_EnumerationLiteralExpression47', cardinality 0..*) is associated with 'eol::expression::NameExpression' (role 'eol_expression_NameExpression48', cardinality 0..*).
+'eol::expression::MethodCallExpression' (role 'eol_expression_MethodCallExpression14', cardinality 0..*) is associated with 'eol::expression::NameExpression' (role 'eol_expression_NameExpression15', cardinality 0..*).
+'eol::expression::Expression' (role 'eol_expression_Expression34', cardinality 0..*) is associated with 'eol::expression::NewExpression' (role 'eol_expression_NewExpression33', cardinality 0..*).
+'eol::expression::ExpressionList' (role 'eol_expression_ExpressionList', cardinality 0..*) is associated with 'eol::expression::Expression' (role 'eol_expression_Expression55', cardinality 0..*).
+'eol::expression::NameExpression' (role 'eol_expression_NameExpression', cardinality 0..*) is associated with 'eol::expression::VariableDeclarationExpression' (role 'eol_expression_VariableDeclarationExpression', cardinality 0..*).
+'eol::expression::CollectionExpression' (role 'eol_expression_CollectionExpression40', cardinality 0..*) is associated with 'eol::expression::CollectionInitialisationExpression' (role 'eol_expression_CollectionInitialisationExpression', cardinality 0..*).
+'eol::expression::Expression' (role 'eol_expression_Expression38', cardinality 0..*) is associated with 'eol::expression::CollectionExpression' (role 'eol_expression_CollectionExpression', cardinality 0..*).
+'eol::expression::Expression' (role 'eol_expression_Expression21', cardinality 0..*) is associated with 'eol::expression::FOLMethodCallExpression' (role 'eol_expression_FOLMethodCallExpression20', cardinality 0..*).
+'eol::expression::MethodCallExpression' (role 'eol_expression_MethodCallExpression', cardinality 0..*) is associated with 'eol::expression::Expression' (role 'eol_expression_Expression12', cardinality 0..*).
+'eol::expression::KeyValueExpression' (role 'eol_expression_KeyValueExpression28', cardinality 0..*) is associated with 'eol::expression::Expression' (role 'eol_expression_Expression29', cardinality 0..*).
+'eol::expression::NameExpression' (role 'eol_expression_NameExpression42', cardinality 0..*) is associated with 'eol::expression::EnumerationLiteralExpression' (role 'eol_expression_EnumerationLiteralExpression', cardinality 0..*).
+'eol::expression::UnaryOperatorExpression' (role 'eol_expression_UnaryOperatorExpression', cardinality 0..*) is associated with 'eol::expression::Expression' (role 'eol_expression_Expression2', cardinality 0..*).
+'eol::expression::Type' (role 'eol_expression_Type', cardinality 0..*) is associated with 'eol::expression::Expression' (role 'eol_expression_Expression', cardinality 0..*).
+'eol::expression::NameExpression' (role 'eol_expression_NameExpression17', cardinality 0..*) is associated with 'eol::expression::PropertyCallExpression' (role 'eol_expression_PropertyCallExpression', cardinality 0..*).
+'eol::expression::BinaryOperatorExpression' (role 'eol_expression_BinaryOperatorExpression6', cardinality 0..*) is associated with 'eol::expression::Expression' (role 'eol_expression_Expression7', cardinality 0..*).
+'eol::expression::BinaryOperatorExpression' (role 'eol_expression_BinaryOperatorExpression', cardinality 0..*) is associated with 'eol::expression::Expression' (role 'eol_expression_Expression4', cardinality 0..*).
+'eol::expression::NameExpression' (role 'eol_expression_NameExpression24', cardinality 0..*) is associated with 'eol::expression::FOLMethodCallExpression' (role 'eol_expression_FOLMethodCallExpression23', cardinality 0..*).
+'eol::expression::FOLMethodCallExpression' (role 'eol_expression_FOLMethodCallExpression', cardinality 0..*) is associated with 'eol::expression::FormalParameterExpression' (role 'eol_expression_FormalParameterExpression', cardinality 0..*).

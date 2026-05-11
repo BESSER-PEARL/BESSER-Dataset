@@ -1,0 +1,1125 @@
+The model has 486 class(es).
+The class 'viewpoint::tool::ElementViewVariable' has no attributes.
+The class 'DecorationDescription' has no attributes.
+The class 'tool::InitialOperation' has no attributes.
+The class 'tool::DeleteHookParameter' has no attributes.
+The class 'viewpoint::description::MappingBasedDecoration' has no attributes.
+The class 'description::NodeMapping' has no attributes.
+The class 'tool::DropContainerVariable' has no attributes.
+The class 'viewpoint::description::AbstractNodeMapping' has the following attributes: 'domainClass' of type str.
+The class 'tool::SelectContainerVariable' has no attributes.
+The class 'viewpoint::diagram::HideLabelFilter' has no attributes.
+The class 'viewpoint::DLabelled' has no attributes.
+The class 'viewpoint::description::EAttributeCustomization' has the following attributes: 'value' of type str; 'attributeName' of type str.
+The class 'viewpoint::DResource' has the following attributes: 'path' of type str; 'name' of type str.
+The class 'viewpoint::style::EdgeStyleDescription' has the following attributes: 'sourceArrow' of type str; 'routingStyle' of type str; 'lineStyle' of type str; 'foldingStyle' of type str; 'targetArrow' of type str; 'sizeComputationExpression' of type str.
+The class 'viewpoint::EObject' has no attributes.
+The class 'viewpoint::diagram::ShapeContainerStyle' has the following attributes: 'shape' of type str.
+The class 'viewpoint::tool::BehaviorTool' has the following attributes: 'domainClass' of type str.
+The class 'filter::Filter' has no attributes.
+The class 'ContainerModelOperation' has no attributes.
+The class 'viewpoint::style::GaugeSectionDescription' has the following attributes: 'label' of type str; 'minValueExpression' of type str; 'maxValueExpression' of type str; 'valueExpression' of type str.
+The class 'viewpoint::style::EndLabelStyleDescription' has no attributes.
+The class 'viewpoint::tool::SetObject' has the following attributes: 'featureName' of type str.
+The class 'DecorationDescriptionsSet' has no attributes.
+The class 'viewpoint::DRepresentationElement' has the following attributes: 'name' of type str.
+The class 'tool::SourceEdgeViewCreationVariable' has no attributes.
+The class 'InformationSection' has no attributes.
+The class 'Style' has no attributes.
+The class 'viewpoint::DragAndDropTarget' has no attributes.
+The class 'viewpoint::description::DocumentedElement' has the following attributes: 'documentation' of type str.
+The class 'viewpoint::tool::SubVariable' has no attributes.
+The class 'viewpoint::tool::ContainerModelOperation' has no attributes.
+The class 'FeatureExtensionDescription' has no attributes.
+The class 'tool::ExternalJavaAction' has no attributes.
+The class 'viewpoint::style::BeginLabelStyleDescription' has no attributes.
+The class 'viewpoint::validation::ValidationSet' has the following attributes: 'name' of type str.
+The class 'viewpoint::diagram::FoldingFilter' has no attributes.
+The class 'diagram::DDiagramElement' has no attributes.
+The class 'description::UserColor' has no attributes.
+The class 'viewpoint::tool::ElementSelectVariable' has no attributes.
+The class 'viewpoint::diagram::GaugeCompositeStyle' has the following attributes: 'alignment' of type str.
+The class 'viewpoint::diagram::EdgeStyle' has the following attributes: 'sourceArrow' of type str; 'lineStyle' of type str; 'foldingStyle' of type str; 'targetArrow' of type str; 'size' of type str; 'routingStyle' of type str.
+The class 'tool::ToolGroup' has no attributes.
+The class 'viewpoint::tool::ContainerViewVariable' has no attributes.
+The class 'DRefreshable' has no attributes.
+The class 'MetamodelExtensionSetting' has no attributes.
+The class 'validation::ValidationRule' has no attributes.
+The class 'viewpoint::filter::FilterDescription' has no attributes.
+The class 'diagram::viewpoint::Style' has no attributes.
+The class 'viewpoint::diagram::DDiagramElement' has the following attributes: 'tooltipText' of type str; 'visible' of type bool.
+The class 'viewpoint::concern::ConcernDescription' has no attributes.
+The class 'diagram::DDiagram' has no attributes.
+The class 'viewpoint::tool::DirectEditLabel' has the following attributes: 'inputLabelExpression' of type str.
+The class 'viewpoint::description::DragAndDropTargetDescription' has no attributes.
+The class 'style::CenterLabelStyleDescription' has no attributes.
+The class 'description::DModelElement' has no attributes.
+The class 'viewpoint::style::BundledImageDescription' has the following attributes: 'shape' of type str.
+The class 'viewpoint::tool::AbstractVariable' has the following attributes: 'name' of type str.
+The class 'viewpoint::tool::RepresentationCreationDescription' has the following attributes: 'browseExpression' of type str; 'titleExpression' of type str.
+The class 'viewpoint::DContainer' has no attributes.
+The class 'SystemColor' has no attributes.
+The class 'tool::NodeCreationVariable' has no attributes.
+The class 'viewpoint::tool::SetValue' has the following attributes: 'valueExpression' of type str; 'featureName' of type str.
+The class 'viewpoint::tool::RepresentationNavigationDescription' has the following attributes: 'browseExpression' of type str; 'navigationNameExpression' of type str.
+The class 'filter::FilterDescription' has no attributes.
+The class 'viewpoint::tool::DeleteHook' has the following attributes: 'id' of type str.
+The class 'DMappingBased' has no attributes.
+The class 'MenuItemOrRef' has no attributes.
+The class 'tool::ElementDoubleClickVariable' has no attributes.
+The class 'viewpoint::audit::TemplateInformationSection' has the following attributes: 'templatePath' of type str.
+The class 'BasicLabelStyleDescription' has no attributes.
+The class 'viewpoint::description::EdgeMapping' has the following attributes: 'targetFinderExpression' of type str; 'pathExpression' of type str; 'sourceFinderExpression' of type str; 'targetExpression' of type str; 'domainClass' of type str; 'useDomainElement' of type bool.
+The class 'description::SelectionDescription' has no attributes.
+The class 'viewpoint::description::Layout' has no attributes.
+The class 'viewpoint::tool::MappingBasedToolDescription' has no attributes.
+The class 'EdgeStyleDescription' has no attributes.
+The class 'viewpoint::tool::ToolGroupExtension' has no attributes.
+The class 'viewpoint::description::SystemColor' has the following attributes: 'name' of type str.
+The class 'tool::ToolGroupExtension' has no attributes.
+The class 'viewpoint::description::OrderedTreeLayout' has the following attributes: 'childrenExpression' of type str.
+The class 'viewpoint::DRepresentation' has the following attributes: 'name' of type str.
+The class 'tool::TargetEdgeViewCreationVariable' has no attributes.
+The class 'viewpoint::tool::EditMaskVariables' has the following attributes: 'mask' of type str.
+The class 'validation::ValidationSet' has no attributes.
+The class 'JavaExtension' has no attributes.
+The class 'viewpoint::description::DAnnotationEntry' has the following attributes: 'source' of type str; 'details' of type str.
+The class 'viewpoint::description::ContainerMappingImport' has no attributes.
+The class 'AbstractDNode' has no attributes.
+The class 'SytemColorsPalette' has no attributes.
+The class 'viewpoint::description::ConditionalContainerStyleDescription' has no attributes.
+The class 'DNode' has no attributes.
+The class 'tool::DirectEditLabel' has no attributes.
+The class 'style::LabelStyleDescription' has no attributes.
+The class 'viewpoint::filter::MappingFilter' has the following attributes: 'viewConditionExpression' of type str; 'semanticConditionExpression' of type str.
+The class 'diagram::viewpoint::RGBValues' has no attributes.
+The class 'viewpoint::tool::ElementDoubleClickVariable' has no attributes.
+The class 'description::ContainerMapping' has no attributes.
+The class 'viewpoint::tool::VariableContainer' has no attributes.
+The class 'viewpoint::description::Customization' has no attributes.
+The class 'viewpoint::tool::InitEdgeCreationOperation' has no attributes.
+The class 'description::viewpoint::EStringToStringMapEntry' has no attributes.
+The class 'DStylizable' has no attributes.
+The class 'description::AbstractNodeMapping' has no attributes.
+The class 'viewpoint::tool::ModelOperation' has no attributes.
+The class 'AbstractToolDescription' has no attributes.
+The class 'description::AbstractMappingImport' has no attributes.
+The class 'diagram::EdgeTarget' has no attributes.
+The class 'tool::ToolFilterDescription' has no attributes.
+The class 'BeginLabelStyle' has no attributes.
+The class 'viewpoint::description::ConditionalEdgeStyleDescription' has no attributes.
+The class 'viewpoint::tool::CreateView' has the following attributes: 'containerViewExpression' of type str; 'variableName' of type str.
+The class 'viewpoint::tool::FeatureChangeListener' has the following attributes: 'featureName' of type str; 'domainClass' of type str.
+The class 'viewpoint::diagram::BorderedStyle' has the following attributes: 'borderSizeComputationExpression' of type str; 'borderSize' of type str.
+The class 'tool::DeleteHook' has no attributes.
+The class 'tool::AbstractVariable' has no attributes.
+The class 'viewpoint::diagram::IndirectlyCollapseFilter' has no attributes.
+The class 'viewpoint::description::UserColorsPalette' has the following attributes: 'name' of type str.
+The class 'tool::ContainerModelOperation' has no attributes.
+The class 'viewpoint::tool::ContainerCreationDescription' has the following attributes: 'iconPath' of type str.
+The class 'tool::SubVariable' has no attributes.
+The class 'viewpoint::tool::AbstractToolDescription' has the following attributes: 'precondition' of type str; 'forceRefresh' of type bool.
+The class 'viewpoint::tool::SelectModelElementVariable' has no attributes.
+The class 'viewpoint::description::UserFixedColor' has no attributes.
+The class 'viewpoint::diagram::EdgeTarget' has no attributes.
+The class 'AbstractVariable' has no attributes.
+The class 'viewpoint::diagram::DEdge' has the following attributes: 'endLabel' of type str; 'routingStyle' of type str; 'isFold' of type bool; 'size' of type str; 'arrangeConstraints' of type str; 'beginLabel' of type str; 'isMockEdge' of type bool.
+The class 'viewpoint::LabelStyle' has the following attributes: 'labelAlignment' of type str.
+The class 'viewpoint::tool::DropContainerVariable' has no attributes.
+The class 'viewpoint::description::InterpolatedColor' has the following attributes: 'colorValueComputationExpression' of type str; 'minValueComputationExpression' of type str; 'maxValueComputationExpression' of type str.
+The class 'diagram::BorderedStyle' has no attributes.
+The class 'viewpoint::DSourceFileLink' has the following attributes: 'endPosition' of type int; 'startPosition' of type int; 'filePath' of type str.
+The class 'viewpoint::description::ColorDescription' has no attributes.
+The class 'viewpoint::tool::TargetEdgeViewCreationVariable' has no attributes.
+The class 'viewpoint::description::IVSMElementCustomization' has no attributes.
+The class 'viewpoint::tool::CreateEdgeView' has the following attributes: 'targetExpression' of type str; 'sourceExpression' of type str.
+The class 'tool::BehaviorTool' has no attributes.
+The class 'viewpoint::description::EdgeMappingImport' has the following attributes: 'inheritsAncestorFilters' of type bool.
+The class 'viewpoint::diagram::AppliedCompositeFilters' has no attributes.
+The class 'description::IEdgeMapping' has no attributes.
+The class 'style::LabelBorderStyleDescription' has no attributes.
+The class 'viewpoint::style::CenterLabelStyleDescription' has no attributes.
+The class 'viewpoint::diagram::DDiagramSet' has no attributes.
+The class 'description::IdentifiedElement' has no attributes.
+The class 'style::EndLabelStyleDescription' has no attributes.
+The class 'viewpoint::diagram::DNode' has the following attributes: 'height' of type str; 'width' of type str; 'labelPosition' of type str; 'resizeKind' of type str.
+The class 'RepresentationCreationDescription' has no attributes.
+The class 'Layer' has no attributes.
+The class 'viewpoint::SessionManagerEObject' has no attributes.
+The class 'DLabelled' has no attributes.
+The class 'style::BorderedStyleDescription' has no attributes.
+The class 'DDiagramSet' has no attributes.
+The class 'EndLabelStyle' has no attributes.
+The class 'viewpoint::tool::ElementDeleteVariable' has no attributes.
+The class 'viewpoint::DEObjectLink' has no attributes.
+The class 'style::TooltipStyleDescription' has no attributes.
+The class 'Customization' has no attributes.
+The class 'viewpoint::tool::RemoveElement' has no attributes.
+The class 'viewpoint::validation::RuleAudit' has the following attributes: 'auditExpression' of type str.
+The class 'viewpoint::DView' has the following attributes: 'initialized' of type bool.
+The class 'viewpoint::description::RepresentationTemplate' has the following attributes: 'name' of type str.
+The class 'viewpoint::filter::FilterVariable' has the following attributes: 'name' of type str.
+The class 'viewpoint::tool::Navigation' has the following attributes: 'createIfNotExistent' of type bool.
+The class 'MenuItemDescription' has no attributes.
+The class 'viewpoint::RGBValues' has the following attributes: 'green' of type int; 'blue' of type int; 'red' of type int.
+The class 'tool::ElementDeleteVariable' has no attributes.
+The class 'description::RepresentationElementMapping' has no attributes.
+The class 'viewpoint::style::SquareDescription' has the following attributes: 'width' of type str; 'height' of type str.
+The class 'viewpoint::Style' has no attributes.
+The class 'viewpoint::tool::EdgeCreationDescription' has the following attributes: 'connectionStartPrecondition' of type str; 'iconPath' of type str.
+The class 'viewpoint::tool::ExternalJavaActionCall' has no attributes.
+The class 'viewpoint::style::BasicLabelStyleDescription' has the following attributes: 'labelSize' of type int; 'labelFormat' of type str; 'showIcon' of type bool; 'iconPath' of type str; 'labelExpression' of type str.
+The class 'viewpoint::description::CompositeLayout' has the following attributes: 'padding' of type int; 'direction' of type str.
+The class 'validation::RuleAudit' has no attributes.
+The class 'viewpoint::DProject' has no attributes.
+The class 'viewpoint::style::CustomStyleDescription' has the following attributes: 'id' of type str.
+The class 'viewpoint::diagram::FoldingPointFilter' has no attributes.
+The class 'style::BeginLabelStyleDescription' has no attributes.
+The class 'SelectionDescription' has no attributes.
+The class 'viewpoint::tool::Unset' has the following attributes: 'elementExpression' of type str; 'featureName' of type str.
+The class 'tool::PasteDescription' has no attributes.
+The class 'viewpoint::diagram::DDiagram' has the following attributes: 'info' of type str; 'isInLayoutingMode' of type bool; 'headerHeight' of type int; 'synchronized' of type bool.
+The class 'description::viewpoint::EObject' has no attributes.
+The class 'CreateView' has no attributes.
+The class 'tool::ToolEntry' has no attributes.
+The class 'viewpoint::description::Layer' has the following attributes: 'icon' of type str.
+The class 'DRepresentationElement' has no attributes.
+The class 'viewpoint::description::Group' has the following attributes: 'version' of type str; 'name' of type str.
+The class 'viewpoint::style::GaugeCompositeStyleDescription' has the following attributes: 'alignment' of type str.
+The class 'tool::AbstractToolDescription' has no attributes.
+The class 'viewpoint::tool::ElementDropVariable' has no attributes.
+The class 'viewpoint::DFolder' has no attributes.
+The class 'DView' has no attributes.
+The class 'tool::viewpoint::EObject' has no attributes.
+The class 'LabelStyle' has no attributes.
+The class 'viewpoint::style::LabelBorderStyleDescription' has the following attributes: 'cornerHeight' of type int; 'name' of type str; 'cornerWidth' of type int; 'id' of type str.
+The class 'tool::VariableContainer' has no attributes.
+The class 'viewpoint::description::SemanticBasedDecoration' has the following attributes: 'domainClass' of type str.
+The class 'ConditionalStyleDescription' has no attributes.
+The class 'viewpoint::style::ContainerStyleDescription' has the following attributes: 'roundedCorner' of type bool.
+The class 'tool::MenuItemOrRef' has no attributes.
+The class 'viewpoint::tool::Default' has no attributes.
+The class 'viewpoint::style::LabelBorderStyles' has no attributes.
+The class 'ContainerStyle' has no attributes.
+The class 'tool::ElementDropVariable' has no attributes.
+The class 'ColorDescription' has no attributes.
+The class 'diagram::AbstractDNode' has no attributes.
+The class 'viewpoint::description::EReferenceCustomization' has the following attributes: 'referenceName' of type str.
+The class 'style::GaugeSectionDescription' has no attributes.
+The class 'validation::ValidationFix' has no attributes.
+The class 'DragAndDropTarget' has no attributes.
+The class 'DAnnotation' has no attributes.
+The class 'filter::CompositeFilterDescription' has no attributes.
+The class 'viewpoint::tool::DiagramNavigationDescription' has no attributes.
+The class 'DValidable' has no attributes.
+The class 'description::ConditionalContainerStyleDescription' has no attributes.
+The class 'viewpoint::diagram::GaugeSection' has the following attributes: 'max' of type str; 'value' of type str; 'min' of type str; 'label' of type str.
+The class 'description::ConditionalNodeStyleDescription' has no attributes.
+The class 'viewpoint::diagram::CustomStyle' has the following attributes: 'id' of type str.
+The class 'tool::ReconnectEdgeDescription' has no attributes.
+The class 'viewpoint::validation::ValidationFix' has the following attributes: 'name' of type str.
+The class 'viewpoint::DAnalysisSessionEObject' has the following attributes: 'blocked' of type bool; 'open' of type bool; 'controlledResources' of type str; 'resources' of type str; 'synchronizationStatus' of type str.
+The class 'viewpoint::tool::If' has the following attributes: 'conditionExpression' of type str.
+The class 'viewpoint::description::JavaExtension' has the following attributes: 'qualifiedClassName' of type str.
+The class 'viewpoint::diagram::DNodeListElement' has no attributes.
+The class 'RepresentationDescription' has no attributes.
+The class 'viewpoint::audit::InformationSection' has no attributes.
+The class 'viewpoint::tool::SelectionWizardDescription' has the following attributes: 'windowImagePath' of type str; 'windowTitle' of type str; 'iconPath' of type str.
+The class 'viewpoint::tool::SourceEdgeCreationVariable' has no attributes.
+The class 'viewpoint::tool::PaneBasedSelectionWizardDescription' has the following attributes: 'selectedValuesMessage' of type str; 'message' of type str; 'iconPath' of type str; 'choiceOfValuesMessage' of type str; 'rootExpression' of type str; 'childrenExpression' of type str; 'candidatesExpression' of type str; 'windowImagePath' of type str; 'tree' of type bool; 'preSelectedCandidatesExpression' of type str; 'windowTitle' of type str.
+The class 'viewpoint::tool::NodeCreationDescription' has the following attributes: 'iconPath' of type str.
+The class 'viewpoint::tool::SwitchChild' has no attributes.
+The class 'viewpoint::diagram::FilterVariableHistory' has no attributes.
+The class 'viewpoint::tool::InitialContainerDropOperation' has no attributes.
+The class 'Filter' has no attributes.
+The class 'DSemanticDecorator' has no attributes.
+The class 'viewpoint::diagram::Square' has the following attributes: 'width' of type str; 'height' of type str.
+The class 'ColorStep' has no attributes.
+The class 'viewpoint::description::FeatureExtensionDescription' has no attributes.
+The class 'viewpoint::diagram::DDiagramElementContainer' has the following attributes: 'height' of type str; 'width' of type str.
+The class 'viewpoint::description::ComputedColor' has the following attributes: 'red' of type str; 'green' of type str; 'blue' of type str.
+The class 'viewpoint::style::BorderedStyleDescription' has the following attributes: 'borderSizeComputationExpression' of type str.
+The class 'description::ColorDescription' has no attributes.
+The class 'ValidationRule' has no attributes.
+The class 'description::DocumentedElement' has no attributes.
+The class 'viewpoint::style::BracketEdgeStyleDescription' has no attributes.
+The class 'EdgeStyle' has no attributes.
+The class 'viewpoint::description::FixedColor' has the following attributes: 'green' of type int; 'blue' of type int; 'red' of type int.
+The class 'tool::SourceEdgeCreationVariable' has no attributes.
+The class 'viewpoint::diagram::ContainerStyle' has no attributes.
+The class 'tool::ContainerDropDescription' has no attributes.
+The class 'tool::ContainerViewVariable' has no attributes.
+The class 'tool::Default' has no attributes.
+The class 'viewpoint::tool::PopupMenu' has no attributes.
+The class 'tool::ElementVariable' has no attributes.
+The class 'viewpoint::DAnalysis' has the following attributes: 'version' of type str.
+The class 'viewpoint::style::DotDescription' has the following attributes: 'strokeSizeComputationExpression' of type str.
+The class 'ModelOperation' has no attributes.
+The class 'viewpoint::description::ColorStep' has the following attributes: 'associatedValue' of type str.
+The class 'viewpoint::diagram::NodeStyle' has the following attributes: 'hideLabelByDefault' of type bool; 'labelPosition' of type str.
+The class 'tool::ToolSection' has no attributes.
+The class 'tool::Case' has no attributes.
+The class 'viewpoint::description::SytemColorsPalette' has no attributes.
+The class 'tool::PopupMenu' has no attributes.
+The class 'viewpoint::tool::InitialNodeCreationOperation' has no attributes.
+The class 'viewpoint::description::SelectionDescription' has the following attributes: 'candidatesExpression' of type str; 'childrenExpression' of type str; 'message' of type str; 'multiple' of type bool; 'tree' of type bool; 'rootExpression' of type str.
+The class 'viewpoint::description::AnnotationEntry' has the following attributes: 'source' of type str.
+The class 'viewpoint::diagram::DNodeContainer' has the following attributes: 'childrenPresentation' of type str.
+The class 'viewpoint::description::VSMElementCustomizationReuse' has no attributes.
+The class 'viewpoint::style::EllipseNodeDescription' has the following attributes: 'verticalDiameterComputationExpression' of type str; 'horizontalDiameterComputationExpression' of type str.
+The class 'ToolEntry' has no attributes.
+The class 'viewpoint::description::RepresentationExtensionDescription' has the following attributes: 'name' of type str; 'representationName' of type str; 'viewpointURI' of type str.
+The class 'viewpoint::style::FlatContainerStyleDescription' has the following attributes: 'backgroundStyle' of type str.
+The class 'style::RoundedCornerStyleDescription' has no attributes.
+The class 'DDiagram' has no attributes.
+The class 'viewpoint::tool::ContainerDropDescription' has the following attributes: 'dragSource' of type str; 'moveEdges' of type bool.
+The class 'viewpoint::DNavigationLink' has the following attributes: 'targetType' of type str; 'label' of type str.
+The class 'diagram::viewpoint::DRepresentationContainer' has no attributes.
+The class 'AnnotationEntry' has no attributes.
+The class 'style::LabelBorderStyles' has no attributes.
+The class 'viewpoint::diagram::Lozenge' has the following attributes: 'width' of type str; 'height' of type str.
+The class 'tool::DeleteElementDescription' has no attributes.
+The class 'RepresentationTemplate' has no attributes.
+The class 'viewpoint::validation::ValidationRule' has the following attributes: 'message' of type str; 'level' of type str.
+The class 'viewpoint::diagram::Dot' has the following attributes: 'strokeSizeComputationExpression' of type str.
+The class 'viewpoint::description::PasteTargetDescription' has no attributes.
+The class 'viewpoint::DModel' has no attributes.
+The class 'diagram::NodeStyle' has no attributes.
+The class 'style::NodeStyleDescription' has no attributes.
+The class 'NodeStyle' has no attributes.
+The class 'viewpoint::DStylizable' has no attributes.
+The class 'EStructuralFeatureCustomization' has no attributes.
+The class 'viewpoint::description::UserColor' has the following attributes: 'name' of type str.
+The class 'tool::InitEdgeCreationOperation' has no attributes.
+The class 'tool::ModelOperation' has no attributes.
+The class 'viewpoint::description::ConditionalStyleDescription' has the following attributes: 'predicateExpression' of type str.
+The class 'viewpoint::filter::Filter' has the following attributes: 'filterKind' of type str.
+The class 'EdgeTarget' has no attributes.
+The class 'viewpoint::description::RepresentationDescription' has the following attributes: 'titleExpression' of type str; 'showOnStartup' of type bool; 'initialisation' of type bool.
+The class 'DocumentedElement' has no attributes.
+The class 'viewpoint::filter::CompositeFilterDescription' has no attributes.
+The class 'viewpoint::DMappingBased' has no attributes.
+The class 'DNavigable' has no attributes.
+The class 'DResource' has no attributes.
+The class 'description::Layer' has no attributes.
+The class 'tool::EditMaskVariables' has no attributes.
+The class 'RepresentationExtensionDescription' has no attributes.
+The class 'viewpoint::tool::SelectContainerVariable' has no attributes.
+The class 'viewpoint::diagram::DiagramElementMapping2ModelElement' has no attributes.
+The class 'viewpoint::diagram::DDiagramLink' has no attributes.
+The class 'UserColorsPalette' has no attributes.
+The class 'viewpoint::style::ShapeContainerStyleDescription' has the following attributes: 'shape' of type str.
+The class 'viewpoint::description::VSMElementCustomization' has the following attributes: 'predicateExpression' of type str.
+The class 'viewpoint::diagram::FlatContainerStyle' has the following attributes: 'backgroundStyle' of type str.
+The class 'ContainerVariable2StyleDescription' has no attributes.
+The class 'StyleDescription' has no attributes.
+The class 'viewpoint::DRefreshable' has no attributes.
+The class 'viewpoint::description::RepresentationImportDescription' has no attributes.
+The class 'filter::FilterVariable' has no attributes.
+The class 'viewpoint::tool::DialogVariable' has the following attributes: 'dialogPrompt' of type str.
+The class 'concern::ConcernSet' has no attributes.
+The class 'viewpoint::description::NodeMapping' has no attributes.
+The class 'viewpoint::description::AdditionalLayer' has the following attributes: 'activeByDefault' of type bool; 'optional' of type bool.
+The class 'tool::DoubleClickDescription' has no attributes.
+The class 'SwitchChild' has no attributes.
+The class 'viewpoint::style::StyleDescription' has no attributes.
+The class 'viewpoint::diagram::DSemanticDiagram' has no attributes.
+The class 'viewpoint::description::DiagramExtensionDescription' has no attributes.
+The class 'viewpoint::DResourceContainer' has no attributes.
+The class 'description::PasteTargetDescription' has no attributes.
+The class 'viewpoint::style::NodeStyleDescription' has the following attributes: 'resizeKind' of type str; 'hideLabelByDefault' of type bool; 'sizeComputationExpression' of type str; 'labelPosition' of type str.
+The class 'FilterDescription' has no attributes.
+The class 'viewpoint::tool::NameVariable' has no attributes.
+The class 'viewpoint::diagram::FilterVariableValue' has no attributes.
+The class 'viewpoint::tool::NodeCreationVariable' has no attributes.
+The class 'BasicLabelStyle' has no attributes.
+The class 'MappingBasedToolDescription' has no attributes.
+The class 'viewpoint::tool::TargetEdgeCreationVariable' has no attributes.
+The class 'description::RepresentationDescription' has no attributes.
+The class 'description::Component' has no attributes.
+The class 'Viewpoint' has no attributes.
+The class 'DEdge' has no attributes.
+The class 'description::DragAndDropTargetDescription' has no attributes.
+The class 'viewpoint::DNavigable' has no attributes.
+The class 'viewpoint::diagram::ModelElement2ViewVariable' has no attributes.
+The class 'DFile' has no attributes.
+The class 'viewpoint::tool::RequestDescription' has the following attributes: 'type' of type str.
+The class 'viewpoint::tool::DoubleClickDescription' has no attributes.
+The class 'tool::FeatureChangeListener' has no attributes.
+The class 'viewpoint::tool::ToolGroup' has no attributes.
+The class 'viewpoint::tool::ToolFilterDescription' has the following attributes: 'precondition' of type str; 'elementsToListen' of type str.
+The class 'viewpoint::diagram::ContainerVariable2StyleDescription' has no attributes.
+The class 'viewpoint::DSemanticDecorator' has no attributes.
+The class 'viewpoint::diagram::BracketEdgeStyle' has no attributes.
+The class 'viewpoint::description::EndUserDocumentedElement' has the following attributes: 'endUserDocumentation' of type str.
+The class 'viewpoint::style::SizeComputationContainerStyleDescription' has the following attributes: 'widthComputationExpression' of type str; 'heightComputationExpression' of type str.
+The class 'tool::MenuItemDescription' has no attributes.
+The class 'viewpoint::description::DiagramImportDescription' has no attributes.
+The class 'viewpoint::description::AbstractMappingImport' has the following attributes: 'hideSubMappings' of type bool; 'inheritsAncestorFilters' of type bool.
+The class 'Layout' has no attributes.
+The class 'viewpoint::style::LabelStyleDescription' has the following attributes: 'labelAlignment' of type str.
+The class 'viewpoint::style::TooltipStyleDescription' has the following attributes: 'tooltipExpression' of type str.
+The class 'viewpoint::tool::For' has the following attributes: 'iteratorName' of type str; 'expression' of type str.
+The class 'viewpoint::DFile' has no attributes.
+The class 'IdentifiedElement' has no attributes.
+The class 'NodeStyleDescription' has no attributes.
+The class 'description::AdditionalLayer' has no attributes.
+The class 'viewpoint::diagram::ComputedStyleDescriptionRegistry' has no attributes.
+The class 'viewpoint::diagram::AbsoluteBoundsFilter' has the following attributes: 'x' of type str; 'y' of type str; 'height' of type str; 'width' of type str.
+The class 'description::EdgeMapping' has no attributes.
+The class 'viewpoint::Decoration' has no attributes.
+The class 'viewpoint::diagram::ViewVariable2ContainerVariable' has no attributes.
+The class 'viewpoint::tool::ToolDescription' has the following attributes: 'iconPath' of type str.
+The class 'viewpoint::MetaModelExtension' has no attributes.
+The class 'viewpoint::tool::ChangeContext' has the following attributes: 'browseExpression' of type str.
+The class 'description::ConditionalEdgeStyleDescription' has no attributes.
+The class 'UserColor' has no attributes.
+The class 'tool::TargetEdgeCreationVariable' has no attributes.
+The class 'viewpoint::tool::MoveElement' has the following attributes: 'newContainerExpression' of type str; 'featureName' of type str.
+The class 'viewpoint::diagram::BeginLabelStyle' has no attributes.
+The class 'viewpoint::description::DAnnotation' has the following attributes: 'source' of type str.
+The class 'viewpoint::diagram::EndLabelStyle' has no attributes.
+The class 'viewpoint::description::IEdgeMapping' has no attributes.
+The class 'viewpoint::validation::SemanticValidationRule' has the following attributes: 'targetClass' of type str.
+The class 'viewpoint::diagram::Ellipse' has the following attributes: 'horizontalDiameter' of type str; 'verticalDiameter' of type str.
+The class 'viewpoint::tool::DeleteView' has no attributes.
+The class 'viewpoint::diagram::Note' has no attributes.
+The class 'style::ContainerStyleDescription' has no attributes.
+The class 'viewpoint::tool::ExternalJavaActionParameter' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'viewpoint::description::Environment' has no attributes.
+The class 'viewpoint::tool::ReconnectEdgeDescription' has the following attributes: 'reconnectionKind' of type str.
+The class 'viewpoint::tool::AcceleoVariable' has the following attributes: 'computationExpression' of type str.
+The class 'DResourceContainer' has no attributes.
+The class 'GraphicalFilter' has no attributes.
+The class 'style::SizeComputationContainerStyleDescription' has no attributes.
+The class 'viewpoint::description::DiagramElementMapping' has the following attributes: 'semanticElements' of type str; 'createElements' of type bool; 'preconditionExpression' of type str; 'synchronizationLock' of type bool; 'semanticCandidatesExpression' of type str.
+The class 'tool::InitialContainerDropOperation' has no attributes.
+The class 'viewpoint::tool::ToolSection' has the following attributes: 'icon' of type str.
+The class 'viewpoint::diagram::HideFilter' has no attributes.
+The class 'ViewVariable2ContainerVariable' has no attributes.
+The class 'diagram::viewpoint::Decoration' has no attributes.
+The class 'description::EndUserDocumentedElement' has no attributes.
+The class 'viewpoint::description::RepresentationElementMapping' has no attributes.
+The class 'description::RepresentationImportDescription' has no attributes.
+The class 'FilterVariableValue' has no attributes.
+The class 'viewpoint::tool::MenuItemDescriptionReference' has no attributes.
+The class 'diagram::viewpoint::EObject' has no attributes.
+The class 'viewpoint::description::MetamodelExtensionSetting' has no attributes.
+The class 'viewpoint::tool::ToolEntry' has no attributes.
+The class 'viewpoint::tool::ElementVariable' has no attributes.
+The class 'IVSMElementCustomization' has no attributes.
+The class 'FilterVariableHistory' has no attributes.
+The class 'DiagramElementMapping2ModelElement' has no attributes.
+The class 'description::DiagramElementMapping' has no attributes.
+The class 'viewpoint::tool::ExternalJavaAction' has the following attributes: 'id' of type str.
+The class 'ModelElement2ViewVariable' has no attributes.
+The class 'diagram::ContainerStyle' has no attributes.
+The class 'viewpoint::tool::CreateInstance' has the following attributes: 'referenceName' of type str; 'typeName' of type str; 'variableName' of type str.
+The class 'viewpoint::concern::ConcernSet' has no attributes.
+The class 'viewpoint::style::WorkspaceImageDescription' has the following attributes: 'workspacePath' of type str.
+The class 'description::Layout' has no attributes.
+The class 'viewpoint::tool::InitialOperation' has no attributes.
+The class 'description::EdgeMappingImport' has no attributes.
+The class 'viewpoint::DRepresentationContainer' has no attributes.
+The class 'DNodeListElement' has no attributes.
+The class 'DNavigationLink' has no attributes.
+The class 'CenterLabelStyle' has no attributes.
+The class 'Customizable' has no attributes.
+The class 'viewpoint::validation::ViewValidationRule' has no attributes.
+The class 'description::DiagramDescription' has no attributes.
+The class 'tool::NameVariable' has no attributes.
+The class 'viewpoint::filter::VariableFilter' has the following attributes: 'semanticConditionExpression' of type str.
+The class 'viewpoint::diagram::GraphicalFilter' has no attributes.
+The class 'viewpoint::diagram::CenterLabelStyle' has no attributes.
+The class 'viewpoint::tool::PasteDescription' has no attributes.
+The class 'viewpoint::style::NoteDescription' has no attributes.
+The class 'viewpoint::diagram::BundledImage' has the following attributes: 'shape' of type str.
+The class 'tool::ElementSelectVariable' has no attributes.
+The class 'CollapseFilter' has no attributes.
+The class 'DContainer' has no attributes.
+The class 'GaugeSection' has no attributes.
+The class 'viewpoint::description::DModelElement' has no attributes.
+The class 'tool::RepresentationNavigationDescription' has no attributes.
+The class 'viewpoint::description::IdentifiedElement' has the following attributes: 'label' of type str; 'name' of type str.
+The class 'viewpoint::BasicLabelStyle' has the following attributes: 'labelSize' of type int; 'iconPath' of type str; 'showIcon' of type bool; 'labelFormat' of type str.
+The class 'viewpoint::description::ConditionalNodeStyleDescription' has no attributes.
+The class 'viewpoint::tool::SourceEdgeViewCreationVariable' has no attributes.
+The class 'tool::RepresentationCreationDescription' has no attributes.
+The class 'tool::ExternalJavaActionParameter' has no attributes.
+The class 'DRepresentation' has no attributes.
+The class 'viewpoint::style::RoundedCornerStyleDescription' has the following attributes: 'arcWidth' of type str; 'arcHeight' of type str.
+The class 'concern::ConcernDescription' has no attributes.
+The class 'viewpoint::tool::DeleteHookParameter' has the following attributes: 'value' of type str; 'name' of type str.
+The class 'viewpoint::tool::OperationAction' has no attributes.
+The class 'DDiagramElement' has no attributes.
+The class 'description::FixedColor' has no attributes.
+The class 'viewpoint::diagram::DNodeList' has the following attributes: 'lineWidth' of type int.
+The class 'style::EdgeStyleDescription' has no attributes.
+The class 'FixedColor' has no attributes.
+The class 'viewpoint::description::Viewpoint' has the following attributes: 'reuses' of type str; 'icon' of type str; 'conflicts' of type str; 'customizes' of type str; 'modelFileExtension' of type str.
+The class 'style::StyleDescription' has no attributes.
+The class 'description::viewpoint::EPackage' has no attributes.
+The class 'viewpoint::diagram::WorkspaceImage' has the following attributes: 'workspacePath' of type str.
+The class 'viewpoint::diagram::CollapseFilter' has the following attributes: 'width' of type int; 'height' of type int.
+The class 'DDiagramElementContainer' has no attributes.
+The class 'viewpoint::DAnalysisCustomData' has the following attributes: 'key' of type str.
+The class 'tool::InitialNodeCreationOperation' has no attributes.
+The class 'viewpoint::description::DiagramDescription' has the following attributes: 'enablePopupBars' of type bool; 'preconditionExpression' of type str; 'domainClass' of type str; 'rootExpression' of type str.
+The class 'viewpoint::description::Component' has no attributes.
+The class 'viewpoint::description::NodeMappingImport' has no attributes.
+The class 'viewpoint::diagram::AbstractDNode' has the following attributes: 'arrangeConstraints' of type str.
+The class 'viewpoint::DValidable' has no attributes.
+The class 'viewpoint::description::DecorationDescriptionsSet' has no attributes.
+The class 'viewpoint::tool::DeleteElementDescription' has no attributes.
+The class 'viewpoint::Customizable' has the following attributes: 'customFeatures' of type str.
+The class 'tool::ElementViewVariable' has no attributes.
+The class 'viewpoint::tool::Switch' has no attributes.
+The class 'viewpoint::tool::MenuItemOrRef' has no attributes.
+The class 'viewpoint::style::LozengeNodeDescription' has the following attributes: 'heightComputationExpression' of type str; 'widthComputationExpression' of type str.
+The class 'RepresentationNavigationDescription' has no attributes.
+The class 'viewpoint::DFeatureExtension' has no attributes.
+The class 'viewpoint::tool::MenuItemDescription' has the following attributes: 'icon' of type str.
+The class 'viewpoint::description::ContainerMapping' has the following attributes: 'childrenPresentation' of type str.
+The class 'viewpoint::description::EStructuralFeatureCustomization' has the following attributes: 'applyOnAll' of type bool.
+The class 'viewpoint::description::DecorationDescription' has the following attributes: 'position' of type str; 'preconditionExpression' of type str; 'decoratorPath' of type str; 'name' of type str.
+The class 'viewpoint::tool::Case' has the following attributes: 'conditionExpression' of type str.
+The class 'viewpoint::tool::DiagramCreationDescription' has no attributes.
+The class 'DAnnotationEntry' has no attributes.
+The enumeration 'ReconnectionKind' has the following literals: 'RECONNECT_BOTH', 'RECONNECT_SOURCE', 'RECONNECT_TARGET'.
+The enumeration 'AlignmentKind' has the following literals: 'HORIZONTAL', 'VERTICAL', 'SQUARE'.
+The enumeration 'ERROR_LEVEL' has the following literals: 'WARNING', 'ERROR', 'INFO'.
+The enumeration 'NavigationTargetType' has the following literals: 'model', 'file'.
+The enumeration 'BackgroundStyle' has the following literals: 'GradientTopToBottom', 'GradientLeftToRight', 'Liquid'.
+The enumeration 'FilterKind' has the following literals: 'HIDE', 'COLLAPSE'.
+The enumeration 'SyncStatus' has the following literals: 'dirty', 'sync'.
+The enumeration 'LayoutDirection' has the following literals: 'TopToBottom', 'BottomToTop', 'LeftToRight'.
+The enumeration 'SystemColors' has the following literals: 'light_chocolate', 'dark_gray', 'white', 'dark_blue', 'dark_yellow', 'light_blue', 'light_red', 'light_green', 'black', 'green', 'light_orange', 'light_yellow', 'dark_purple', 'blue', 'dark_chocolate', 'light_purple', 'dark_orange', 'dark_red', 'chocolate', 'gray', 'red', 'light_gray', 'purple', 'yellow', 'dark_green', 'orange'.
+The enumeration 'LineStyle' has the following literals: 'dash_dot', 'dot', 'solid', 'dash'.
+The enumeration 'FontFormat' has the following literals: 'italic', 'normal', 'bold', 'bold_italic'.
+The enumeration 'ResizeKind' has the following literals: 'EAST_WEST', 'NSEW', 'NONE', 'NORTH_SOUTH'.
+The enumeration 'LabelPosition' has the following literals: 'border', 'node'.
+The enumeration 'ContainerLayout' has the following literals: 'FreeForm', 'List', 'VerticalStack', 'HorizontalStack'.
+The enumeration 'EdgeRouting' has the following literals: 'tree', 'straight', 'manhattan'.
+The enumeration 'Position' has the following literals: 'WEST', 'NORTH_EAST', 'NORTH', 'CENTER', 'SOUTH_EAST', 'SOUTH', 'NORTH_WEST', 'EAST', 'SOUTH_WEST'.
+The enumeration 'DragSource' has the following literals: 'PROJECT_EXPLORER', 'BOTH', 'DIAGRAM'.
+The enumeration 'BundledImageShape' has the following literals: 'stroke', 'square', 'dot', 'ring', 'triangle'.
+The enumeration 'ContainerShape' has the following literals: 'parallelogram'.
+The enumeration 'EdgeArrows' has the following literals: 'InputClosedArrow', 'NoDecoration', 'InputArrow', 'InputFillClosedArrow', 'OutputClosedArrow', 'OutputArrow', 'InputArrowWithDiamond', 'InputArrowWithFillDiamond', 'OutputFillClosedArrow', 'FillDiamond', 'Diamond'.
+The enumeration 'LabelAlignment' has the following literals: 'CENTER', 'RIGHT', 'LEFT'.
+The enumeration 'FoldingStyle' has the following literals: 'NONE', 'TARGET', 'SOURCE'.
+The enumeration 'ArrangeConstraint' has the following literals: 'KEEP_LOCATION', 'KEEP_RATIO', 'KEEP_SIZE'.
+'viewpoint::description::EdgeMapping' is a specialization of 'description::DiagramElementMapping'.
+'viewpoint::diagram::CollapseFilter' is a specialization of 'GraphicalFilter'.
+'viewpoint::diagram::DDiagramLink' is a specialization of 'DNavigationLink'.
+'viewpoint::diagram::FlatContainerStyle' is a specialization of 'ContainerStyle'.
+'viewpoint::tool::DeleteView' is a specialization of 'ContainerModelOperation'.
+'viewpoint::description::AbstractNodeMapping' is a specialization of 'description::DiagramElementMapping'.
+'viewpoint::DSourceFileLink' is a specialization of 'DNavigationLink'.
+'viewpoint::diagram::DDiagramElementContainer' is a specialization of 'DragAndDropTarget'.
+'viewpoint::tool::PaneBasedSelectionWizardDescription' is a specialization of 'AbstractToolDescription'.
+'viewpoint::diagram::GaugeCompositeStyle' is a specialization of 'NodeStyle'.
+'viewpoint::tool::CreateEdgeView' is a specialization of 'CreateView'.
+'viewpoint::description::Viewpoint' is a specialization of 'description::Component'.
+'viewpoint::diagram::Note' is a specialization of 'NodeStyle'.
+'viewpoint::filter::FilterDescription' is a specialization of 'description::IdentifiedElement'.
+'viewpoint::description::DiagramElementMapping' is a specialization of 'description::PasteTargetDescription'.
+'viewpoint::tool::ToolDescription' is a specialization of 'MappingBasedToolDescription'.
+'viewpoint::tool::NameVariable' is a specialization of 'AbstractVariable'.
+'viewpoint::description::EReferenceCustomization' is a specialization of 'EStructuralFeatureCustomization'.
+'viewpoint::diagram::GaugeSection' is a specialization of 'Customizable'.
+'viewpoint::diagram::DNode' is a specialization of 'diagram::AbstractDNode'.
+'viewpoint::style::NodeStyleDescription' is a specialization of 'style::LabelStyleDescription'.
+'viewpoint::tool::SelectModelElementVariable' is a specialization of 'tool::SubVariable'.
+'viewpoint::diagram::EndLabelStyle' is a specialization of 'BasicLabelStyle'.
+'viewpoint::DModel' is a specialization of 'DFile'.
+'viewpoint::diagram::DNode' is a specialization of 'diagram::EdgeTarget'.
+'viewpoint::diagram::DDiagramElementContainer' is a specialization of 'DContainer'.
+'viewpoint::diagram::Ellipse' is a specialization of 'NodeStyle'.
+'viewpoint::DProject' is a specialization of 'DResourceContainer'.
+'viewpoint::diagram::DDiagram' is a specialization of 'DRepresentation'.
+'viewpoint::description::Viewpoint' is a specialization of 'description::DocumentedElement'.
+'viewpoint::diagram::CenterLabelStyle' is a specialization of 'BasicLabelStyle'.
+'viewpoint::diagram::Lozenge' is a specialization of 'NodeStyle'.
+'viewpoint::style::RoundedCornerStyleDescription' is a specialization of 'StyleDescription'.
+'viewpoint::diagram::DNodeContainer' is a specialization of 'DDiagramElementContainer'.
+'viewpoint::DFolder' is a specialization of 'DResourceContainer'.
+'viewpoint::diagram::DEdge' is a specialization of 'diagram::DDiagramElement'.
+'viewpoint::tool::ExternalJavaAction' is a specialization of 'tool::MenuItemDescription'.
+'viewpoint::description::UserFixedColor' is a specialization of 'description::UserColor'.
+'viewpoint::tool::Switch' is a specialization of 'ModelOperation'.
+'viewpoint::style::WorkspaceImageDescription' is a specialization of 'style::ContainerStyleDescription'.
+'viewpoint::style::EdgeStyleDescription' is a specialization of 'StyleDescription'.
+'viewpoint::description::RepresentationElementMapping' is a specialization of 'IdentifiedElement'.
+'viewpoint::DFile' is a specialization of 'DResource'.
+'viewpoint::diagram::DDiagramElementContainer' is a specialization of 'diagram::EdgeTarget'.
+'viewpoint::tool::ToolEntry' is a specialization of 'description::IdentifiedElement'.
+'viewpoint::diagram::ShapeContainerStyle' is a specialization of 'ContainerStyle'.
+'viewpoint::diagram::IndirectlyCollapseFilter' is a specialization of 'CollapseFilter'.
+'viewpoint::style::NoteDescription' is a specialization of 'NodeStyleDescription'.
+'viewpoint::description::MappingBasedDecoration' is a specialization of 'DecorationDescription'.
+'viewpoint::description::ContainerMappingImport' is a specialization of 'description::AbstractMappingImport'.
+'viewpoint::description::SemanticBasedDecoration' is a specialization of 'DecorationDescription'.
+'viewpoint::tool::ElementDropVariable' is a specialization of 'tool::VariableContainer'.
+'viewpoint::description::Layer' is a specialization of 'description::EndUserDocumentedElement'.
+'viewpoint::diagram::EdgeStyle' is a specialization of 'Style'.
+'viewpoint::tool::AcceleoVariable' is a specialization of 'tool::SubVariable'.
+'viewpoint::description::Layer' is a specialization of 'description::IdentifiedElement'.
+'viewpoint::tool::RepresentationCreationDescription' is a specialization of 'AbstractToolDescription'.
+'viewpoint::description::Group' is a specialization of 'description::DocumentedElement'.
+'viewpoint::description::DiagramDescription' is a specialization of 'description::RepresentationDescription'.
+'viewpoint::tool::CreateView' is a specialization of 'ContainerModelOperation'.
+'viewpoint::description::NodeMappingImport' is a specialization of 'description::NodeMapping'.
+'viewpoint::description::RepresentationImportDescription' is a specialization of 'RepresentationDescription'.
+'viewpoint::style::CustomStyleDescription' is a specialization of 'NodeStyleDescription'.
+'viewpoint::tool::SelectContainerVariable' is a specialization of 'tool::AbstractVariable'.
+'viewpoint::tool::Default' is a specialization of 'SwitchChild'.
+'viewpoint::description::ConditionalContainerStyleDescription' is a specialization of 'ConditionalStyleDescription'.
+'viewpoint::tool::MenuItemDescription' is a specialization of 'tool::AbstractToolDescription'.
+'viewpoint::diagram::DSemanticDiagram' is a specialization of 'DSemanticDecorator'.
+'viewpoint::style::ContainerStyleDescription' is a specialization of 'style::RoundedCornerStyleDescription'.
+'viewpoint::tool::ContainerCreationDescription' is a specialization of 'MappingBasedToolDescription'.
+'viewpoint::tool::ExternalJavaAction' is a specialization of 'tool::ContainerModelOperation'.
+'viewpoint::LabelStyle' is a specialization of 'BasicLabelStyle'.
+'viewpoint::style::SquareDescription' is a specialization of 'NodeStyleDescription'.
+'viewpoint::diagram::ContainerStyle' is a specialization of 'LabelStyle'.
+'viewpoint::style::NodeStyleDescription' is a specialization of 'style::StyleDescription'.
+'viewpoint::tool::NodeCreationVariable' is a specialization of 'tool::VariableContainer'.
+'viewpoint::description::ComputedColor' is a specialization of 'description::UserColor'.
+'viewpoint::style::FlatContainerStyleDescription' is a specialization of 'style::ContainerStyleDescription'.
+'viewpoint::diagram::AppliedCompositeFilters' is a specialization of 'GraphicalFilter'.
+'viewpoint::description::Layer' is a specialization of 'description::DocumentedElement'.
+'viewpoint::description::SystemColor' is a specialization of 'FixedColor'.
+'viewpoint::tool::ToolGroup' is a specialization of 'ToolEntry'.
+'viewpoint::description::Viewpoint' is a specialization of 'description::EndUserDocumentedElement'.
+'viewpoint::description::DiagramImportDescription' is a specialization of 'description::RepresentationImportDescription'.
+'viewpoint::description::ConditionalEdgeStyleDescription' is a specialization of 'ConditionalStyleDescription'.
+'viewpoint::diagram::NodeStyle' is a specialization of 'diagram::BorderedStyle'.
+'viewpoint::tool::ChangeContext' is a specialization of 'ContainerModelOperation'.
+'viewpoint::description::EdgeMapping' is a specialization of 'description::IEdgeMapping'.
+'viewpoint::style::BracketEdgeStyleDescription' is a specialization of 'EdgeStyleDescription'.
+'viewpoint::description::ContainerMapping' is a specialization of 'description::AbstractNodeMapping'.
+'viewpoint::tool::ToolEntry' is a specialization of 'description::DocumentedElement'.
+'viewpoint::diagram::BundledImage' is a specialization of 'NodeStyle'.
+'viewpoint::tool::EdgeCreationDescription' is a specialization of 'MappingBasedToolDescription'.
+'viewpoint::style::LozengeNodeDescription' is a specialization of 'NodeStyleDescription'.
+'viewpoint::diagram::Dot' is a specialization of 'NodeStyle'.
+'viewpoint::description::ContainerMappingImport' is a specialization of 'description::ContainerMapping'.
+'viewpoint::description::AbstractNodeMapping' is a specialization of 'description::DocumentedElement'.
+'viewpoint::description::DiagramElementMapping' is a specialization of 'description::RepresentationElementMapping'.
+'viewpoint::description::AdditionalLayer' is a specialization of 'Layer'.
+'viewpoint::style::EndLabelStyleDescription' is a specialization of 'BasicLabelStyleDescription'.
+'viewpoint::style::ContainerStyleDescription' is a specialization of 'style::BorderedStyleDescription'.
+'viewpoint::tool::SourceEdgeViewCreationVariable' is a specialization of 'tool::AbstractVariable'.
+'viewpoint::tool::DialogVariable' is a specialization of 'AbstractVariable'.
+'viewpoint::tool::ToolSection' is a specialization of 'description::DocumentedElement'.
+'viewpoint::tool::TargetEdgeViewCreationVariable' is a specialization of 'tool::AbstractVariable'.
+'viewpoint::style::BorderedStyleDescription' is a specialization of 'StyleDescription'.
+'viewpoint::diagram::DDiagramElement' is a specialization of 'DRepresentationElement'.
+'viewpoint::tool::ElementViewVariable' is a specialization of 'tool::VariableContainer'.
+'viewpoint::description::DiagramDescription' is a specialization of 'description::PasteTargetDescription'.
+'viewpoint::style::EllipseNodeDescription' is a specialization of 'NodeStyleDescription'.
+'viewpoint::tool::SourceEdgeCreationVariable' is a specialization of 'tool::AbstractVariable'.
+'viewpoint::tool::AcceleoVariable' is a specialization of 'tool::VariableContainer'.
+'viewpoint::description::EdgeMappingImport' is a specialization of 'description::DocumentedElement'.
+'viewpoint::tool::SelectContainerVariable' is a specialization of 'tool::VariableContainer'.
+'viewpoint::description::Group' is a specialization of 'description::DModelElement'.
+'viewpoint::diagram::DNodeList' is a specialization of 'DDiagramElementContainer'.
+'viewpoint::tool::TargetEdgeViewCreationVariable' is a specialization of 'tool::VariableContainer'.
+'viewpoint::description::DiagramDescription' is a specialization of 'description::DragAndDropTargetDescription'.
+'viewpoint::description::RepresentationDescription' is a specialization of 'description::IdentifiedElement'.
+'viewpoint::diagram::BeginLabelStyle' is a specialization of 'BasicLabelStyle'.
+'viewpoint::Style' is a specialization of 'Customizable'.
+'viewpoint::style::NodeStyleDescription' is a specialization of 'style::BorderedStyleDescription'.
+'viewpoint::diagram::DSemanticDiagram' is a specialization of 'diagram::DDiagram'.
+'viewpoint::DRepresentation' is a specialization of 'DRefreshable'.
+'viewpoint::diagram::Square' is a specialization of 'NodeStyle'.
+'viewpoint::tool::ContainerModelOperation' is a specialization of 'ModelOperation'.
+'viewpoint::diagram::FoldingFilter' is a specialization of 'GraphicalFilter'.
+'viewpoint::validation::ViewValidationRule' is a specialization of 'ValidationRule'.
+'viewpoint::DRepresentationElement' is a specialization of 'DStylizable'.
+'viewpoint::tool::MenuItemDescriptionReference' is a specialization of 'MenuItemOrRef'.
+'viewpoint::diagram::DDiagram' is a specialization of 'DragAndDropTarget'.
+'viewpoint::style::FlatContainerStyleDescription' is a specialization of 'style::SizeComputationContainerStyleDescription'.
+'viewpoint::DRepresentationElement' is a specialization of 'DMappingBased'.
+'viewpoint::diagram::HideLabelFilter' is a specialization of 'GraphicalFilter'.
+'viewpoint::tool::RequestDescription' is a specialization of 'AbstractToolDescription'.
+'viewpoint::tool::SetObject' is a specialization of 'ContainerModelOperation'.
+'viewpoint::style::ContainerStyleDescription' is a specialization of 'style::LabelStyleDescription'.
+'viewpoint::tool::ExternalJavaActionCall' is a specialization of 'tool::MenuItemDescription'.
+'viewpoint::style::DotDescription' is a specialization of 'NodeStyleDescription'.
+'viewpoint::tool::DropContainerVariable' is a specialization of 'tool::AbstractVariable'.
+'viewpoint::tool::ElementDoubleClickVariable' is a specialization of 'tool::VariableContainer'.
+'viewpoint::description::VSMElementCustomizationReuse' is a specialization of 'IVSMElementCustomization'.
+'viewpoint::description::Viewpoint' is a specialization of 'description::IdentifiedElement'.
+'viewpoint::DRepresentation' is a specialization of 'description::DocumentedElement'.
+'viewpoint::diagram::DDiagramElement' is a specialization of 'DValidable'.
+'viewpoint::tool::SetValue' is a specialization of 'ContainerModelOperation'.
+'viewpoint::tool::PasteDescription' is a specialization of 'MappingBasedToolDescription'.
+'viewpoint::diagram::WorkspaceImage' is a specialization of 'diagram::NodeStyle'.
+'viewpoint::description::EdgeMappingImport' is a specialization of 'description::IEdgeMapping'.
+'viewpoint::style::LabelStyleDescription' is a specialization of 'BasicLabelStyleDescription'.
+'viewpoint::tool::CreateInstance' is a specialization of 'ContainerModelOperation'.
+'viewpoint::concern::ConcernDescription' is a specialization of 'description::IdentifiedElement'.
+'viewpoint::tool::TargetEdgeCreationVariable' is a specialization of 'tool::AbstractVariable'.
+'viewpoint::DRepresentationElement' is a specialization of 'DSemanticDecorator'.
+'viewpoint::tool::SourceEdgeCreationVariable' is a specialization of 'tool::VariableContainer'.
+'viewpoint::tool::ElementVariable' is a specialization of 'tool::AbstractVariable'.
+'viewpoint::filter::CompositeFilterDescription' is a specialization of 'FilterDescription'.
+'viewpoint::filter::MappingFilter' is a specialization of 'Filter'.
+'viewpoint::tool::MoveElement' is a specialization of 'ContainerModelOperation'.
+'viewpoint::tool::Case' is a specialization of 'SwitchChild'.
+'viewpoint::filter::VariableFilter' is a specialization of 'Filter'.
+'viewpoint::description::InterpolatedColor' is a specialization of 'description::UserColor'.
+'viewpoint::tool::MenuItemDescription' is a specialization of 'tool::MenuItemOrRef'.
+'viewpoint::diagram::CustomStyle' is a specialization of 'NodeStyle'.
+'viewpoint::description::CompositeLayout' is a specialization of 'Layout'.
+'viewpoint::diagram::DDiagramElement' is a specialization of 'DNavigable'.
+'viewpoint::concern::ConcernSet' is a specialization of 'DocumentedElement'.
+'viewpoint::tool::AbstractToolDescription' is a specialization of 'ToolEntry'.
+'viewpoint::diagram::HideFilter' is a specialization of 'GraphicalFilter'.
+'viewpoint::tool::DeleteElementDescription' is a specialization of 'MappingBasedToolDescription'.
+'viewpoint::description::FixedColor' is a specialization of 'ColorDescription'.
+'viewpoint::tool::ElementDoubleClickVariable' is a specialization of 'tool::AbstractVariable'.
+'viewpoint::tool::PopupMenu' is a specialization of 'AbstractToolDescription'.
+'viewpoint::diagram::DDiagram' is a specialization of 'DContainer'.
+'viewpoint::validation::SemanticValidationRule' is a specialization of 'ValidationRule'.
+'viewpoint::tool::SourceEdgeViewCreationVariable' is a specialization of 'tool::VariableContainer'.
+'viewpoint::DRepresentationContainer' is a specialization of 'DView'.
+'viewpoint::description::RepresentationDescription' is a specialization of 'description::EndUserDocumentedElement'.
+'viewpoint::DRepresentationElement' is a specialization of 'DRefreshable'.
+'viewpoint::concern::ConcernDescription' is a specialization of 'description::DocumentedElement'.
+'viewpoint::Style' is a specialization of 'DRefreshable'.
+'viewpoint::diagram::DNode' is a specialization of 'DragAndDropTarget'.
+'viewpoint::tool::ContainerViewVariable' is a specialization of 'tool::AbstractVariable'.
+'viewpoint::diagram::AbstractDNode' is a specialization of 'DDiagramElement'.
+'viewpoint::description::DiagramImportDescription' is a specialization of 'description::DiagramDescription'.
+'viewpoint::description::VSMElementCustomization' is a specialization of 'IVSMElementCustomization'.
+'viewpoint::diagram::ContainerStyle' is a specialization of 'diagram::BorderedStyle'.
+'viewpoint::description::NodeMapping' is a specialization of 'description::DragAndDropTargetDescription'.
+'viewpoint::diagram::DEdge' is a specialization of 'diagram::EdgeTarget'.
+'viewpoint::diagram::NodeStyle' is a specialization of 'Style'.
+'viewpoint::DRepresentation' is a specialization of 'description::DModelElement'.
+'viewpoint::diagram::ContainerStyle' is a specialization of 'Style'.
+'viewpoint::tool::MappingBasedToolDescription' is a specialization of 'AbstractToolDescription'.
+'viewpoint::tool::SelectionWizardDescription' is a specialization of 'tool::AbstractToolDescription'.
+'viewpoint::diagram::DDiagramElementContainer' is a specialization of 'diagram::AbstractDNode'.
+'viewpoint::tool::ReconnectEdgeDescription' is a specialization of 'MappingBasedToolDescription'.
+'viewpoint::style::CenterLabelStyleDescription' is a specialization of 'BasicLabelStyleDescription'.
+'viewpoint::BasicLabelStyle' is a specialization of 'Customizable'.
+'viewpoint::style::NodeStyleDescription' is a specialization of 'style::TooltipStyleDescription'.
+'viewpoint::diagram::WorkspaceImage' is a specialization of 'diagram::ContainerStyle'.
+'viewpoint::DResourceContainer' is a specialization of 'DResource'.
+'viewpoint::style::ShapeContainerStyleDescription' is a specialization of 'style::ContainerStyleDescription'.
+'viewpoint::diagram::FoldingPointFilter' is a specialization of 'GraphicalFilter'.
+'viewpoint::tool::SelectModelElementVariable' is a specialization of 'description::SelectionDescription'.
+'viewpoint::tool::ElementViewVariable' is a specialization of 'tool::AbstractVariable'.
+'viewpoint::tool::DirectEditLabel' is a specialization of 'MappingBasedToolDescription'.
+'viewpoint::tool::ElementSelectVariable' is a specialization of 'AbstractVariable'.
+'viewpoint::audit::TemplateInformationSection' is a specialization of 'InformationSection'.
+'viewpoint::tool::If' is a specialization of 'ContainerModelOperation'.
+'viewpoint::description::UserFixedColor' is a specialization of 'description::FixedColor'.
+'viewpoint::tool::ToolSection' is a specialization of 'description::IdentifiedElement'.
+'viewpoint::description::RepresentationDescription' is a specialization of 'description::DocumentedElement'.
+'viewpoint::tool::SubVariable' is a specialization of 'AbstractVariable'.
+'viewpoint::validation::ValidationSet' is a specialization of 'DocumentedElement'.
+'viewpoint::diagram::DNodeListElement' is a specialization of 'AbstractDNode'.
+'viewpoint::tool::DropContainerVariable' is a specialization of 'tool::VariableContainer'.
+'viewpoint::description::DiagramExtensionDescription' is a specialization of 'RepresentationExtensionDescription'.
+'viewpoint::DRepresentationElement' is a specialization of 'DLabelled'.
+'viewpoint::description::ComputedColor' is a specialization of 'description::ColorDescription'.
+'viewpoint::diagram::DDiagram' is a specialization of 'DValidable'.
+'viewpoint::tool::ElementDeleteVariable' is a specialization of 'tool::AbstractVariable'.
+'viewpoint::DView' is a specialization of 'DRefreshable'.
+'viewpoint::tool::Navigation' is a specialization of 'ContainerModelOperation'.
+'viewpoint::tool::RepresentationNavigationDescription' is a specialization of 'AbstractToolDescription'.
+'viewpoint::tool::Unset' is a specialization of 'ContainerModelOperation'.
+'viewpoint::description::ContainerMapping' is a specialization of 'description::DragAndDropTargetDescription'.
+'viewpoint::tool::ContainerDropDescription' is a specialization of 'MappingBasedToolDescription'.
+'viewpoint::style::BeginLabelStyleDescription' is a specialization of 'BasicLabelStyleDescription'.
+'viewpoint::filter::FilterDescription' is a specialization of 'description::DocumentedElement'.
+'viewpoint::tool::DiagramCreationDescription' is a specialization of 'RepresentationCreationDescription'.
+'viewpoint::tool::NodeCreationVariable' is a specialization of 'tool::AbstractVariable'.
+'viewpoint::tool::ExternalJavaActionCall' is a specialization of 'tool::ContainerModelOperation'.
+'viewpoint::tool::ElementVariable' is a specialization of 'tool::VariableContainer'.
+'viewpoint::style::WorkspaceImageDescription' is a specialization of 'style::NodeStyleDescription'.
+'viewpoint::tool::DiagramNavigationDescription' is a specialization of 'RepresentationNavigationDescription'.
+'viewpoint::tool::NodeCreationDescription' is a specialization of 'MappingBasedToolDescription'.
+'viewpoint::description::OrderedTreeLayout' is a specialization of 'Layout'.
+'viewpoint::description::Layout' is a specialization of 'DocumentedElement'.
+'viewpoint::description::ConditionalNodeStyleDescription' is a specialization of 'ConditionalStyleDescription'.
+'viewpoint::tool::SelectionWizardDescription' is a specialization of 'description::SelectionDescription'.
+'viewpoint::DEObjectLink' is a specialization of 'DNavigationLink'.
+'viewpoint::tool::For' is a specialization of 'ContainerModelOperation'.
+'viewpoint::description::NodeMappingImport' is a specialization of 'description::AbstractMappingImport'.
+'viewpoint::tool::OperationAction' is a specialization of 'MenuItemDescription'.
+'viewpoint::style::BundledImageDescription' is a specialization of 'NodeStyleDescription'.
+'viewpoint::tool::RemoveElement' is a specialization of 'ContainerModelOperation'.
+'viewpoint::tool::TargetEdgeCreationVariable' is a specialization of 'tool::VariableContainer'.
+'viewpoint::style::GaugeCompositeStyleDescription' is a specialization of 'NodeStyleDescription'.
+'viewpoint::filter::FilterVariable' is a specialization of 'SelectionDescription'.
+'viewpoint::diagram::DDiagram' is a specialization of 'description::DocumentedElement'.
+'viewpoint::tool::ElementDropVariable' is a specialization of 'tool::AbstractVariable'.
+'viewpoint::diagram::BracketEdgeStyle' is a specialization of 'EdgeStyle'.
+'viewpoint::tool::ContainerViewVariable' is a specialization of 'tool::VariableContainer'.
+'viewpoint::tool::DoubleClickDescription' is a specialization of 'MappingBasedToolDescription'.
+'viewpoint::style::ContainerStyleDescription' is a specialization of 'style::TooltipStyleDescription'.
+'viewpoint::description::InterpolatedColor' is a specialization of 'description::ColorDescription'.
+'viewpoint::description::NodeMapping' is a specialization of 'description::AbstractNodeMapping'.
+'viewpoint::style::ShapeContainerStyleDescription' is a specialization of 'style::SizeComputationContainerStyleDescription'.
+'viewpoint::diagram::NodeStyle' is a specialization of 'LabelStyle'.
+'viewpoint::tool::BehaviorTool' is a specialization of 'AbstractToolDescription'.
+'viewpoint::tool::ElementDeleteVariable' is a specialization of 'tool::VariableContainer'.
+'viewpoint::diagram::BorderedStyle' is a specialization of 'Style'.
+'viewpoint::description::EdgeMapping' is a specialization of 'description::DocumentedElement'.
+'viewpoint::description::EdgeMappingImport' is a specialization of 'description::IdentifiedElement'.
+'viewpoint::diagram::AbsoluteBoundsFilter' is a specialization of 'GraphicalFilter'.
+'viewpoint::description::EAttributeCustomization' is a specialization of 'EStructuralFeatureCustomization'.
+'viewpoint::tool::ToolDescription' (role 'viewpoint_tool_ToolDescription130', cardinality 0..*) is associated with 'tool::InitialOperation' (role 'tool_InitialOperation', cardinality 0..*).
+'viewpoint::tool::InitEdgeCreationOperation' (role 'viewpoint_tool_InitEdgeCreationOperation', cardinality 0..*) is associated with 'tool::ModelOperation' (role 'tool_ModelOperation215', cardinality 0..*).
+'tool::DeleteHookParameter' (role 'tool_DeleteHookParameter', cardinality 0..*) is associated with 'viewpoint::tool::DeleteHook' (role 'viewpoint_tool_DeleteHook', cardinality 0..*).
+'viewpoint::diagram::ModelElement2ViewVariable' (role 'viewpoint_diagram_ModelElement2ViewVariable395', cardinality 0..*) is associated with 'ViewVariable2ContainerVariable' (role 'ViewVariable2ContainerVariable', cardinality 0..*).
+'DNodeListElement' (role 'DNodeListElement310', cardinality 0..*) is associated with 'viewpoint::diagram::DNodeList' (role 'viewpoint_diagram_DNodeList', cardinality 0..*).
+'FixedColor' (role 'FixedColor', cardinality 0..*) is associated with 'viewpoint::description::ColorStep' (role 'viewpoint_description_ColorStep', cardinality 0..*).
+'viewpoint::diagram::DDiagram' (role 'viewpoint_diagram_DDiagram230', cardinality 0..*) is associated with 'description::DiagramDescription' (role 'description_DiagramDescription', cardinality 0..*).
+'tool::InitialNodeCreationOperation' (role 'tool_InitialNodeCreationOperation', cardinality 0..*) is associated with 'viewpoint::tool::NodeCreationDescription' (role 'viewpoint_tool_NodeCreationDescription632', cardinality 0..*).
+'tool::ModelOperation' (role 'tool_ModelOperation', cardinality 0..*) is associated with 'viewpoint::tool::ContainerModelOperation' (role 'viewpoint_tool_ContainerModelOperation', cardinality 0..*).
+'description::Layer' (role 'description_Layer', cardinality 0..*) is associated with 'viewpoint::diagram::DDiagram' (role 'viewpoint_diagram_DDiagram255', cardinality 0..*).
+'description::AbstractNodeMapping' (role 'description_AbstractNodeMapping635', cardinality 0..*) is associated with 'viewpoint::tool::NodeCreationDescription' (role 'viewpoint_tool_NodeCreationDescription634', cardinality 0..*).
+'filter::FilterDescription' (role 'filter_FilterDescription247', cardinality 0..*) is associated with 'viewpoint::diagram::DDiagram' (role 'viewpoint_diagram_DDiagram246', cardinality 0..*).
+'viewpoint::diagram::EdgeStyle' (role 'viewpoint_diagram_EdgeStyle374', cardinality 0..*) is associated with 'EndLabelStyle' (role 'EndLabelStyle', cardinality 0..*).
+'viewpoint::diagram::DDiagramElementContainer' (role 'viewpoint_diagram_DDiagramElementContainer295', cardinality 0..*) is associated with 'ContainerStyle' (role 'ContainerStyle', cardinality 0..*).
+'viewpoint::DFeatureExtension' (role 'viewpoint_DFeatureExtension', cardinality 0..*) is associated with 'viewpoint::DAnalysis' (role 'viewpoint_DAnalysis12', cardinality 0..*).
+'viewpoint::tool::PasteDescription' (role 'viewpoint_tool_PasteDescription152', cardinality 0..*) is associated with 'tool::ElementVariable' (role 'tool_ElementVariable153', cardinality 0..*).
+'viewpoint::tool::ContainerCreationDescription' (role 'viewpoint_tool_ContainerCreationDescription660', cardinality 0..*) is associated with 'tool::ContainerViewVariable' (role 'tool_ContainerViewVariable661', cardinality 0..*).
+'viewpoint::description::DiagramDescription' (role 'viewpoint_description_DiagramDescription416', cardinality 0..*) is associated with 'validation::ValidationSet' (role 'validation_ValidationSet417', cardinality 0..*).
+'viewpoint::tool::ReconnectEdgeDescription' (role 'viewpoint_tool_ReconnectEdgeDescription704', cardinality 0..*) is associated with 'tool::InitialOperation' (role 'tool_InitialOperation705', cardinality 0..*).
+'tool::ContainerViewVariable' (role 'tool_ContainerViewVariable147', cardinality 0..*) is associated with 'viewpoint::tool::PasteDescription' (role 'viewpoint_tool_PasteDescription146', cardinality 0..*).
+'viewpoint::diagram::DDiagramElement' (role 'viewpoint_diagram_DDiagramElement', cardinality 0..*) is associated with 'description::Layer' (role 'description_Layer260', cardinality 0..*).
+'description::DiagramElementMapping' (role 'description_DiagramElementMapping265', cardinality 0..*) is associated with 'viewpoint::diagram::DDiagramElement' (role 'viewpoint_diagram_DDiagramElement264', cardinality 0..*).
+'viewpoint::description::DecorationDescriptionsSet' (role 'viewpoint_description_DecorationDescriptionsSet', cardinality 0..*) is associated with 'DecorationDescription' (role 'DecorationDescription99', cardinality 0..*).
+'DAnnotationEntry' (role 'DAnnotationEntry', cardinality 0..*) is associated with 'viewpoint::DAnalysis' (role 'viewpoint_DAnalysis5', cardinality 0..*).
+'viewpoint::style::BasicLabelStyleDescription' (role 'viewpoint_style_BasicLabelStyleDescription', cardinality 0..*) is associated with 'ColorDescription' (role 'ColorDescription', cardinality 0..*).
+'tool::FeatureChangeListener' (role 'tool_FeatureChangeListener', cardinality 0..*) is associated with 'viewpoint::tool::ToolFilterDescription' (role 'viewpoint_tool_ToolFilterDescription', cardinality 0..*).
+'viewpoint::diagram::DDiagramElementContainer' (role 'viewpoint_diagram_DDiagramElementContainer303', cardinality 0..*) is associated with 'description::ContainerMapping' (role 'description_ContainerMapping', cardinality 0..*).
+'concern::ConcernDescription' (role 'concern_ConcernDescription', cardinality 0..*) is associated with 'viewpoint::diagram::DDiagram' (role 'viewpoint_diagram_DDiagram242', cardinality 0..*).
+'viewpoint::EObject' (role 'viewpoint_EObject21', cardinality 0..*) is associated with 'viewpoint::DSemanticDecorator' (role 'viewpoint_DSemanticDecorator', cardinality 0..*).
+'viewpoint::diagram::DNodeContainer' (role 'viewpoint_diagram_DNodeContainer', cardinality 0..*) is associated with 'DDiagramElement' (role 'DDiagramElement308', cardinality 0..*).
+'viewpoint::description::VSMElementCustomizationReuse' (role 'viewpoint_description_VSMElementCustomizationReuse', cardinality 0..*) is associated with 'EStructuralFeatureCustomization' (role 'EStructuralFeatureCustomization103', cardinality 0..*).
+'viewpoint::DView' (role 'viewpoint_DView', cardinality 0..*) is associated with 'viewpoint::DAnalysis' (role 'viewpoint_DAnalysis7', cardinality 0..*).
+'viewpoint::diagram::DDiagramElementContainer' (role 'viewpoint_diagram_DDiagramElementContainer297', cardinality 0..*) is associated with 'DDiagram' (role 'DDiagram298', cardinality 0..*).
+'viewpoint::diagram::ContainerVariable2StyleDescription' (role 'viewpoint_diagram_ContainerVariable2StyleDescription', cardinality 0..*) is associated with 'diagram::viewpoint::EObject' (role 'diagram_viewpoint_EObject401', cardinality 0..*).
+'DNode' (role 'DNode274', cardinality 0..*) is associated with 'viewpoint::diagram::AbstractDNode' (role 'viewpoint_diagram_AbstractDNode', cardinality 0..*).
+'EStructuralFeatureCustomization' (role 'EStructuralFeatureCustomization', cardinality 0..*) is associated with 'viewpoint::description::VSMElementCustomization' (role 'viewpoint_description_VSMElementCustomization', cardinality 0..*).
+'viewpoint::diagram::ComputedStyleDescriptionRegistry' (role 'viewpoint_diagram_ComputedStyleDescriptionRegistry', cardinality 0..*) is associated with 'style::StyleDescription' (role 'style_StyleDescription385', cardinality 0..*).
+'viewpoint::tool::ContainerCreationDescription' (role 'viewpoint_tool_ContainerCreationDescription663', cardinality 0..*) is associated with 'tool::InitialNodeCreationOperation' (role 'tool_InitialNodeCreationOperation664', cardinality 0..*).
+'viewpoint::DFeatureExtension' (role 'viewpoint_DFeatureExtension14', cardinality 0..*) is associated with 'FeatureExtensionDescription' (role 'FeatureExtensionDescription', cardinality 0..*).
+'viewpoint::DRepresentationContainer' (role 'viewpoint_DRepresentationContainer', cardinality 0..*) is associated with 'DDiagramSet' (role 'DDiagramSet', cardinality 0..*).
+'DDiagram' (role 'DDiagram270', cardinality 0..*) is associated with 'viewpoint::diagram::DDiagramLink' (role 'viewpoint_diagram_DDiagramLink', cardinality 0..*).
+'viewpoint::diagram::EdgeStyle' (role 'viewpoint_diagram_EdgeStyle370', cardinality 0..*) is associated with 'BeginLabelStyle' (role 'BeginLabelStyle', cardinality 0..*).
+'DiagramElementMapping2ModelElement' (role 'DiagramElementMapping2ModelElement', cardinality 0..*) is associated with 'viewpoint::diagram::ComputedStyleDescriptionRegistry' (role 'viewpoint_diagram_ComputedStyleDescriptionRegistry387', cardinality 0..*).
+'viewpoint::tool::EdgeCreationDescription' (role 'viewpoint_tool_EdgeCreationDescription645', cardinality 0..*) is associated with 'tool::TargetEdgeViewCreationVariable' (role 'tool_TargetEdgeViewCreationVariable', cardinality 0..*).
+'viewpoint::description::InterpolatedColor' (role 'viewpoint_description_InterpolatedColor', cardinality 0..*) is associated with 'ColorStep' (role 'ColorStep', cardinality 0..*).
+'tool::SourceEdgeViewCreationVariable' (role 'tool_SourceEdgeViewCreationVariable', cardinality 0..*) is associated with 'viewpoint::tool::EdgeCreationDescription' (role 'viewpoint_tool_EdgeCreationDescription643', cardinality 0..*).
+'viewpoint::tool::InitialOperation' (role 'viewpoint_tool_InitialOperation', cardinality 0..*) is associated with 'tool::ModelOperation' (role 'tool_ModelOperation213', cardinality 0..*).
+'DNode' (role 'DNode287', cardinality 0..*) is associated with 'viewpoint::diagram::DDiagramElementContainer' (role 'viewpoint_diagram_DDiagramElementContainer', cardinality 0..*).
+'viewpoint::tool::PaneBasedSelectionWizardDescription' (role 'viewpoint_tool_PaneBasedSelectionWizardDescription175', cardinality 0..*) is associated with 'tool::InitialOperation' (role 'tool_InitialOperation176', cardinality 0..*).
+'viewpoint::diagram::DDiagramLink' (role 'viewpoint_diagram_DDiagramLink272', cardinality 0..*) is associated with 'EdgeTarget' (role 'EdgeTarget', cardinality 0..*).
+'DDiagramElementContainer' (role 'DDiagramElementContainer', cardinality 0..*) is associated with 'viewpoint::diagram::DDiagram' (role 'viewpoint_diagram_DDiagram240', cardinality 0..*).
+'viewpoint::tool::EdgeCreationDescription' (role 'viewpoint_tool_EdgeCreationDescription649', cardinality 0..*) is associated with 'description::DiagramElementMapping' (role 'description_DiagramElementMapping650', cardinality 0..*).
+'diagram::viewpoint::RGBValues' (role 'diagram_viewpoint_RGBValues379', cardinality 0..*) is associated with 'viewpoint::diagram::Note' (role 'viewpoint_diagram_Note', cardinality 0..*).
+'concern::ConcernSet' (role 'concern_ConcernSet', cardinality 0..*) is associated with 'viewpoint::description::DiagramDescription' (role 'viewpoint_description_DiagramDescription419', cardinality 0..*).
+'tool::TargetEdgeCreationVariable' (role 'tool_TargetEdgeCreationVariable693', cardinality 0..*) is associated with 'viewpoint::tool::ReconnectEdgeDescription' (role 'viewpoint_tool_ReconnectEdgeDescription692', cardinality 0..*).
+'viewpoint::tool::EdgeCreationDescription' (role 'viewpoint_tool_EdgeCreationDescription', cardinality 0..*) is associated with 'description::EdgeMapping' (role 'description_EdgeMapping637', cardinality 0..*).
+'diagram::viewpoint::EObject' (role 'diagram_viewpoint_EObject397', cardinality 0..*) is associated with 'viewpoint::diagram::ViewVariable2ContainerVariable' (role 'viewpoint_diagram_ViewVariable2ContainerVariable', cardinality 0..*).
+'style::LabelBorderStyles' (role 'style_LabelBorderStyles', cardinality 0..*) is associated with 'viewpoint::description::Environment' (role 'viewpoint_description_Environment118', cardinality 0..*).
+'viewpoint::diagram::DDiagram' (role 'viewpoint_diagram_DDiagram', cardinality 0..*) is associated with 'DDiagramElement' (role 'DDiagramElement', cardinality 0..*).
+'description::ContainerMapping' (role 'description_ContainerMapping306', cardinality 0..*) is associated with 'viewpoint::diagram::DDiagramElementContainer' (role 'viewpoint_diagram_DDiagramElementContainer305', cardinality 0..*).
+'viewpoint::diagram::AppliedCompositeFilters' (role 'viewpoint_diagram_AppliedCompositeFilters', cardinality 0..*) is associated with 'filter::CompositeFilterDescription' (role 'filter_CompositeFilterDescription', cardinality 0..*).
+'viewpoint::diagram::DDiagramElementContainer' (role 'viewpoint_diagram_DDiagramElementContainer300', cardinality 0..*) is associated with 'diagram::viewpoint::Style' (role 'diagram_viewpoint_Style301', cardinality 0..*).
+'viewpoint::diagram::DNode' (role 'viewpoint_diagram_DNode277', cardinality 0..*) is associated with 'DDiagram' (role 'DDiagram278', cardinality 0..*).
+'viewpoint::tool::DeleteElementDescription' (role 'viewpoint_tool_DeleteElementDescription670', cardinality 0..*) is associated with 'tool::ElementDeleteVariable' (role 'tool_ElementDeleteVariable671', cardinality 0..*).
+'tool::SourceEdgeCreationVariable' (role 'tool_SourceEdgeCreationVariable', cardinality 0..*) is associated with 'viewpoint::tool::EdgeCreationDescription' (role 'viewpoint_tool_EdgeCreationDescription639', cardinality 0..*).
+'tool::RepresentationNavigationDescription' (role 'tool_RepresentationNavigationDescription', cardinality 0..*) is associated with 'viewpoint::description::RepresentationElementMapping' (role 'viewpoint_description_RepresentationElementMapping93', cardinality 0..*).
+'viewpoint::description::Customization' (role 'viewpoint_description_Customization', cardinality 0..*) is associated with 'IVSMElementCustomization' (role 'IVSMElementCustomization', cardinality 0..*).
+'description::ContainerMapping' (role 'description_ContainerMapping655', cardinality 0..*) is associated with 'viewpoint::tool::ContainerCreationDescription' (role 'viewpoint_tool_ContainerCreationDescription', cardinality 0..*).
+'viewpoint::description::PasteTargetDescription' (role 'viewpoint_description_PasteTargetDescription', cardinality 0..*) is associated with 'tool::PasteDescription' (role 'tool_PasteDescription', cardinality 0..*).
+'viewpoint::diagram::DDiagramElement' (role 'viewpoint_diagram_DDiagramElement262', cardinality 0..*) is associated with 'diagram::viewpoint::Decoration' (role 'diagram_viewpoint_Decoration', cardinality 0..*).
+'viewpoint::diagram::DDiagram' (role 'viewpoint_diagram_DDiagram251', cardinality 0..*) is associated with 'tool::BehaviorTool' (role 'tool_BehaviorTool', cardinality 0..*).
+'tool::ToolFilterDescription' (role 'tool_ToolFilterDescription', cardinality 0..*) is associated with 'viewpoint::tool::AbstractToolDescription' (role 'viewpoint_tool_AbstractToolDescription', cardinality 0..*).
+'viewpoint::tool::ToolDescription' (role 'viewpoint_tool_ToolDescription', cardinality 0..*) is associated with 'tool::ElementVariable' (role 'tool_ElementVariable', cardinality 0..*).
+'tool::ElementDoubleClickVariable' (role 'tool_ElementDoubleClickVariable684', cardinality 0..*) is associated with 'viewpoint::tool::DoubleClickDescription' (role 'viewpoint_tool_DoubleClickDescription683', cardinality 0..*).
+'viewpoint::tool::ReconnectEdgeDescription' (role 'viewpoint_tool_ReconnectEdgeDescription707', cardinality 0..*) is associated with 'tool::ElementSelectVariable' (role 'tool_ElementSelectVariable708', cardinality 0..*).
+'viewpoint::tool::ReconnectEdgeDescription' (role 'viewpoint_tool_ReconnectEdgeDescription698', cardinality 0..*) is associated with 'tool::TargetEdgeViewCreationVariable' (role 'tool_TargetEdgeViewCreationVariable699', cardinality 0..*).
+'viewpoint::description::EStructuralFeatureCustomization' (role 'viewpoint_description_EStructuralFeatureCustomization', cardinality 0..*) is associated with 'description::viewpoint::EObject' (role 'description_viewpoint_EObject108', cardinality 0..*).
+'viewpoint::description::DiagramDescription' (role 'viewpoint_description_DiagramDescription421', cardinality 0..*) is associated with 'tool::AbstractToolDescription' (role 'tool_AbstractToolDescription', cardinality 0..*).
+'viewpoint::tool::DoubleClickDescription' (role 'viewpoint_tool_DoubleClickDescription', cardinality 0..*) is associated with 'tool::ElementDoubleClickVariable' (role 'tool_ElementDoubleClickVariable', cardinality 0..*).
+'viewpoint::tool::ContainerCreationDescription' (role 'viewpoint_tool_ContainerCreationDescription657', cardinality 0..*) is associated with 'tool::NodeCreationVariable' (role 'tool_NodeCreationVariable658', cardinality 0..*).
+'viewpoint::DView' (role 'viewpoint_DView10', cardinality 0..*) is associated with 'viewpoint::DAnalysis' (role 'viewpoint_DAnalysis9', cardinality 0..*).
+'description::NodeMapping' (role 'description_NodeMapping625', cardinality 0..*) is associated with 'viewpoint::tool::NodeCreationDescription' (role 'viewpoint_tool_NodeCreationDescription', cardinality 0..*).
+'viewpoint::DNavigationLink' (role 'viewpoint_DNavigationLink', cardinality 0..*) is associated with 'viewpoint::DNavigable' (role 'viewpoint_DNavigable', cardinality 0..*).
+'viewpoint::tool::PasteDescription' (role 'viewpoint_tool_PasteDescription149', cardinality 0..*) is associated with 'tool::ElementViewVariable' (role 'tool_ElementViewVariable150', cardinality 0..*).
+'viewpoint::diagram::FilterVariableValue' (role 'viewpoint_diagram_FilterVariableValue', cardinality 0..*) is associated with 'filter::FilterVariable' (role 'filter_FilterVariable', cardinality 0..*).
+'DEdge' (role 'DEdge', cardinality 0..*) is associated with 'viewpoint::diagram::DDiagram' (role 'viewpoint_diagram_DDiagram234', cardinality 0..*).
+'tool::InitialOperation' (role 'tool_InitialOperation156', cardinality 0..*) is associated with 'viewpoint::tool::PasteDescription' (role 'viewpoint_tool_PasteDescription155', cardinality 0..*).
+'viewpoint::tool::DeleteElementDescription' (role 'viewpoint_tool_DeleteElementDescription679', cardinality 0..*) is associated with 'tool::DeleteHook' (role 'tool_DeleteHook', cardinality 0..*).
+'tool::ElementDropVariable' (role 'tool_ElementDropVariable', cardinality 0..*) is associated with 'viewpoint::tool::ContainerDropDescription' (role 'viewpoint_tool_ContainerDropDescription138', cardinality 0..*).
+'viewpoint::diagram::DEdge' (role 'viewpoint_diagram_DEdge', cardinality 0..*) is associated with 'EdgeStyle' (role 'EdgeStyle', cardinality 0..*).
+'viewpoint::diagram::DiagramElementMapping2ModelElement' (role 'viewpoint_diagram_DiagramElementMapping2ModelElement391', cardinality 0..*) is associated with 'ModelElement2ViewVariable' (role 'ModelElement2ViewVariable', cardinality 0..*).
+'viewpoint::description::Environment' (role 'viewpoint_description_Environment', cardinality 0..*) is associated with 'SytemColorsPalette' (role 'SytemColorsPalette114', cardinality 0..*).
+'ContainerVariable2StyleDescription' (role 'ContainerVariable2StyleDescription', cardinality 0..*) is associated with 'viewpoint::diagram::ViewVariable2ContainerVariable' (role 'viewpoint_diagram_ViewVariable2ContainerVariable399', cardinality 0..*).
+'viewpoint::diagram::DDiagram' (role 'viewpoint_diagram_DDiagram236', cardinality 0..*) is associated with 'DNode' (role 'DNode', cardinality 0..*).
+'viewpoint::EObject' (role 'viewpoint_EObject', cardinality 0..*) is associated with 'viewpoint::DAnalysis' (role 'viewpoint_DAnalysis3', cardinality 0..*).
+'viewpoint::tool::EdgeCreationDescription' (role 'viewpoint_tool_EdgeCreationDescription641', cardinality 0..*) is associated with 'tool::TargetEdgeCreationVariable' (role 'tool_TargetEdgeCreationVariable', cardinality 0..*).
+'viewpoint::description::Environment' (role 'viewpoint_description_Environment116', cardinality 0..*) is associated with 'tool::ToolEntry' (role 'tool_ToolEntry', cardinality 0..*).
+'viewpoint::description::DModelElement' (role 'viewpoint_description_DModelElement', cardinality 0..*) is associated with 'DAnnotation' (role 'DAnnotation', cardinality 0..*).
+'viewpoint::tool::Switch' (role 'viewpoint_tool_Switch224', cardinality 0..*) is associated with 'tool::Default' (role 'tool_Default', cardinality 0..*).
+'viewpoint::description::EReferenceCustomization' (role 'viewpoint_description_EReferenceCustomization', cardinality 0..*) is associated with 'description::viewpoint::EObject' (role 'description_viewpoint_EObject110', cardinality 0..*).
+'tool::SourceEdgeCreationVariable' (role 'tool_SourceEdgeCreationVariable690', cardinality 0..*) is associated with 'viewpoint::tool::ReconnectEdgeDescription' (role 'viewpoint_tool_ReconnectEdgeDescription', cardinality 0..*).
+'viewpoint::tool::DoubleClickDescription' (role 'doubleClickDescription', cardinality 0..*) is associated with 'description::DiagramElementMapping' (role 'DiagramElementMapping', cardinality 0..*).
+'tool::InitialOperation' (role 'tool_InitialOperation687', cardinality 0..*) is associated with 'viewpoint::tool::DoubleClickDescription' (role 'viewpoint_tool_DoubleClickDescription686', cardinality 0..*).
+'viewpoint::diagram::DDiagram' (role 'viewpoint_diagram_DDiagram227', cardinality 0..*) is associated with 'DDiagramElement' (role 'DDiagramElement228', cardinality 0..*).
+'viewpoint::tool::ReconnectEdgeDescription' (role 'viewpoint_tool_ReconnectEdgeDescription695', cardinality 0..*) is associated with 'tool::SourceEdgeViewCreationVariable' (role 'tool_SourceEdgeViewCreationVariable696', cardinality 0..*).
+'description::NodeMapping' (role 'description_NodeMapping285', cardinality 0..*) is associated with 'viewpoint::diagram::DNode' (role 'viewpoint_diagram_DNode284', cardinality 0..*).
+'tool::ModelOperation' (role 'tool_ModelOperation221', cardinality 0..*) is associated with 'viewpoint::tool::SwitchChild' (role 'viewpoint_tool_SwitchChild', cardinality 0..*).
+'viewpoint::diagram::DDiagram' (role 'viewpoint_diagram_DDiagram238', cardinality 0..*) is associated with 'DNodeListElement' (role 'DNodeListElement', cardinality 0..*).
+'tool::InitialOperation' (role 'tool_InitialOperation714', cardinality 0..*) is associated with 'viewpoint::tool::BehaviorTool' (role 'viewpoint_tool_BehaviorTool', cardinality 0..*).
+'GaugeSection' (role 'GaugeSection', cardinality 0..*) is associated with 'viewpoint::diagram::GaugeCompositeStyle' (role 'viewpoint_diagram_GaugeCompositeStyle', cardinality 0..*).
+'viewpoint::diagram::DDiagram' (role 'viewpoint_diagram_DDiagram232', cardinality 0..*) is associated with 'DDiagram' (role 'DDiagram', cardinality 0..*).
+'tool::ElementDeleteVariable' (role 'tool_ElementDeleteVariable', cardinality 0..*) is associated with 'viewpoint::tool::DeleteElementDescription' (role 'viewpoint_tool_DeleteElementDescription', cardinality 0..*).
+'viewpoint::diagram::ModelElement2ViewVariable' (role 'viewpoint_diagram_ModelElement2ViewVariable', cardinality 0..*) is associated with 'diagram::viewpoint::EObject' (role 'diagram_viewpoint_EObject393', cardinality 0..*).
+'viewpoint::description::SytemColorsPalette' (role 'viewpoint_description_SytemColorsPalette', cardinality 0..*) is associated with 'SystemColor' (role 'SystemColor', cardinality 0..*).
+'viewpoint::diagram::DDiagram' (role 'viewpoint_diagram_DDiagram244', cardinality 0..*) is associated with 'filter::FilterDescription' (role 'filter_FilterDescription', cardinality 0..*).
+'viewpoint::style::LabelBorderStyles' (role 'viewpoint_style_LabelBorderStyles', cardinality 0..*) is associated with 'style::LabelBorderStyleDescription' (role 'style_LabelBorderStyleDescription', cardinality 0..*).
+'FilterVariableHistory' (role 'FilterVariableHistory', cardinality 0..*) is associated with 'viewpoint::diagram::DDiagram' (role 'viewpoint_diagram_DDiagram253', cardinality 0..*).
+'DDiagramElement' (role 'DDiagramElement293', cardinality 0..*) is associated with 'viewpoint::diagram::DDiagramElementContainer' (role 'viewpoint_diagram_DDiagramElementContainer292', cardinality 0..*).
+'viewpoint::tool::DirectEditLabel' (role 'viewpoint_tool_DirectEditLabel711', cardinality 0..*) is associated with 'tool::InitialOperation' (role 'tool_InitialOperation712', cardinality 0..*).
+'diagram::viewpoint::RGBValues' (role 'diagram_viewpoint_RGBValues362', cardinality 0..*) is associated with 'viewpoint::diagram::BundledImage' (role 'viewpoint_diagram_BundledImage', cardinality 0..*).
+'tool::Case' (role 'tool_Case', cardinality 0..*) is associated with 'viewpoint::tool::Switch' (role 'viewpoint_tool_Switch', cardinality 0..*).
+'viewpoint::tool::DirectEditLabel' (role 'viewpoint_tool_DirectEditLabel', cardinality 0..*) is associated with 'tool::EditMaskVariables' (role 'tool_EditMaskVariables', cardinality 0..*).
+'description::DiagramDescription' (role 'description_DiagramDescription722', cardinality 0..*) is associated with 'viewpoint::tool::DiagramNavigationDescription' (role 'viewpoint_tool_DiagramNavigationDescription', cardinality 0..*).
+'tool::ModelOperation' (role 'tool_ModelOperation211', cardinality 0..*) is associated with 'viewpoint::tool::InitialNodeCreationOperation' (role 'viewpoint_tool_InitialNodeCreationOperation', cardinality 0..*).
+'tool::ContainerViewVariable' (role 'tool_ContainerViewVariable674', cardinality 0..*) is associated with 'viewpoint::tool::DeleteElementDescription' (role 'viewpoint_tool_DeleteElementDescription673', cardinality 0..*).
+'description::DiagramElementMapping' (role 'description_DiagramElementMapping716', cardinality 0..*) is associated with 'viewpoint::tool::CreateView' (role 'viewpoint_tool_CreateView', cardinality 0..*).
+'diagram::viewpoint::EObject' (role 'diagram_viewpoint_EObject', cardinality 0..*) is associated with 'viewpoint::diagram::FilterVariableValue' (role 'viewpoint_diagram_FilterVariableValue383', cardinality 0..*).
+'tool::SelectContainerVariable' (role 'tool_SelectContainerVariable173', cardinality 0..*) is associated with 'viewpoint::tool::PaneBasedSelectionWizardDescription' (role 'viewpoint_tool_PaneBasedSelectionWizardDescription172', cardinality 0..*).
+'viewpoint::diagram::DNode' (role 'viewpoint_diagram_DNode282', cardinality 0..*) is associated with 'description::NodeMapping' (role 'description_NodeMapping', cardinality 0..*).
+'FilterVariableValue' (role 'FilterVariableValue', cardinality 0..*) is associated with 'viewpoint::diagram::FilterVariableHistory' (role 'viewpoint_diagram_FilterVariableHistory', cardinality 0..*).
+'viewpoint::tool::InitialContainerDropOperation' (role 'viewpoint_tool_InitialContainerDropOperation', cardinality 0..*) is associated with 'tool::ModelOperation' (role 'tool_ModelOperation217', cardinality 0..*).
+'viewpoint::description::DAnnotation' (role 'viewpoint_description_DAnnotation', cardinality 0..*) is associated with 'description::viewpoint::EStringToStringMapEntry' (role 'description_viewpoint_EStringToStringMapEntry', cardinality 0..*).
+'NodeStyle' (role 'NodeStyle', cardinality 0..*) is associated with 'viewpoint::diagram::DNode' (role 'viewpoint_diagram_DNode', cardinality 0..*).
+'style::StyleDescription' (role 'style_StyleDescription404', cardinality 0..*) is associated with 'viewpoint::diagram::ContainerVariable2StyleDescription' (role 'viewpoint_diagram_ContainerVariable2StyleDescription403', cardinality 0..*).
+'viewpoint::tool::EdgeCreationDescription' (role 'viewpoint_tool_EdgeCreationDescription647', cardinality 0..*) is associated with 'tool::InitEdgeCreationOperation' (role 'tool_InitEdgeCreationOperation', cardinality 0..*).
+'viewpoint::tool::ToolSection' (role 'viewpoint_tool_ToolSection612', cardinality 0..*) is associated with 'tool::PopupMenu' (role 'tool_PopupMenu', cardinality 0..*).
+'viewpoint::tool::ReconnectEdgeDescription' (role 'viewpoint_tool_ReconnectEdgeDescription701', cardinality 0..*) is associated with 'tool::ElementSelectVariable' (role 'tool_ElementSelectVariable702', cardinality 0..*).
+'viewpoint::diagram::DDiagram' (role 'viewpoint_diagram_DDiagram249', cardinality 0..*) is associated with 'validation::ValidationRule' (role 'validation_ValidationRule', cardinality 0..*).
+'diagram::viewpoint::Style' (role 'diagram_viewpoint_Style', cardinality 0..*) is associated with 'viewpoint::diagram::DNode' (role 'viewpoint_diagram_DNode280', cardinality 0..*).
+'viewpoint::diagram::BorderedStyle' (role 'viewpoint_diagram_BorderedStyle', cardinality 0..*) is associated with 'diagram::viewpoint::RGBValues' (role 'diagram_viewpoint_RGBValues377', cardinality 0..*).
+'GraphicalFilter' (role 'GraphicalFilter', cardinality 0..*) is associated with 'viewpoint::diagram::DDiagramElement' (role 'viewpoint_diagram_DDiagramElement267', cardinality 0..*).
+'viewpoint::description::AnnotationEntry' (role 'viewpoint_description_AnnotationEntry', cardinality 0..*) is associated with 'description::viewpoint::EObject' (role 'description_viewpoint_EObject122', cardinality 0..*).
+'viewpoint::tool::Navigation' (role 'viewpoint_tool_Navigation', cardinality 0..*) is associated with 'description::DiagramDescription' (role 'description_DiagramDescription718', cardinality 0..*).
+'viewpoint::diagram::EdgeStyle' (role 'viewpoint_diagram_EdgeStyle372', cardinality 0..*) is associated with 'CenterLabelStyle' (role 'CenterLabelStyle', cardinality 0..*).
+'viewpoint::description::UserColorsPalette' (role 'viewpoint_description_UserColorsPalette', cardinality 0..*) is associated with 'UserColor' (role 'UserColor', cardinality 0..*).
+'tool::InitialOperation' (role 'tool_InitialOperation677', cardinality 0..*) is associated with 'viewpoint::tool::DeleteElementDescription' (role 'viewpoint_tool_DeleteElementDescription676', cardinality 0..*).
+'viewpoint::DAnalysis' (role 'viewpoint_DAnalysis', cardinality 0..*) is associated with 'viewpoint::DAnalysis' (role 'viewpoint_DAnalysis0', cardinality 0..*).
+'viewpoint::diagram::DDiagramElementContainer' (role 'viewpoint_diagram_DDiagramElementContainer289', cardinality 0..*) is associated with 'DDiagramElementContainer' (role 'DDiagramElementContainer290', cardinality 0..*).
+'description::viewpoint::EObject' (role 'description_viewpoint_EObject106', cardinality 0..*) is associated with 'viewpoint::description::VSMElementCustomizationReuse' (role 'viewpoint_description_VSMElementCustomizationReuse105', cardinality 0..*).
+'viewpoint::diagram::DiagramElementMapping2ModelElement' (role 'viewpoint_diagram_DiagramElementMapping2ModelElement', cardinality 0..*) is associated with 'description::DiagramElementMapping' (role 'description_DiagramElementMapping389', cardinality 0..*).
+'tool::NodeCreationVariable' (role 'tool_NodeCreationVariable', cardinality 0..*) is associated with 'viewpoint::tool::NodeCreationDescription' (role 'viewpoint_tool_NodeCreationDescription627', cardinality 0..*).
+'viewpoint::tool::DiagramCreationDescription' (role 'viewpoint_tool_DiagramCreationDescription', cardinality 0..*) is associated with 'description::DiagramDescription' (role 'description_DiagramDescription720', cardinality 0..*).
+'viewpoint::DRepresentationElement' (role 'viewpoint_DRepresentationElement', cardinality 0..*) is associated with 'viewpoint::DRepresentation' (role 'viewpoint_DRepresentation', cardinality 0..*).
+'tool::ContainerDropDescription' (role 'tool_ContainerDropDescription', cardinality 0..*) is associated with 'viewpoint::description::DragAndDropTargetDescription' (role 'viewpoint_description_DragAndDropTargetDescription', cardinality 0..*).
+'viewpoint::tool::ToolDescription' (role 'viewpoint_tool_ToolDescription128', cardinality 0..*) is associated with 'tool::ElementViewVariable' (role 'tool_ElementViewVariable', cardinality 0..*).
+'viewpoint::tool::SetObject' (role 'viewpoint_tool_SetObject', cardinality 0..*) is associated with 'tool::viewpoint::EObject' (role 'tool_viewpoint_EObject', cardinality 0..*).
+'viewpoint::tool::ContainerCreationDescription' (role 'viewpoint_tool_ContainerCreationDescription666', cardinality 0..*) is associated with 'description::AbstractNodeMapping' (role 'description_AbstractNodeMapping667', cardinality 0..*).
+'tool::ContainerViewVariable' (role 'tool_ContainerViewVariable630', cardinality 0..*) is associated with 'viewpoint::tool::NodeCreationDescription' (role 'viewpoint_tool_NodeCreationDescription629', cardinality 0..*).
+'viewpoint::diagram::DDiagram' (role 'viewpoint_diagram_DDiagram257', cardinality 0..*) is associated with 'DDiagramElement' (role 'DDiagramElement258', cardinality 0..*).
+'description::viewpoint::EPackage' (role 'description_viewpoint_EPackage89', cardinality 0..*) is associated with 'viewpoint::description::RepresentationExtensionDescription' (role 'viewpoint_description_RepresentationExtensionDescription', cardinality 0..*).
+'diagram::viewpoint::RGBValues' (role 'diagram_viewpoint_RGBValues', cardinality 0..*) is associated with 'viewpoint::diagram::Dot' (role 'viewpoint_diagram_Dot', cardinality 0..*).
+'tool::ContainerViewVariable' (role 'tool_ContainerViewVariable170', cardinality 0..*) is associated with 'viewpoint::tool::PaneBasedSelectionWizardDescription' (role 'viewpoint_tool_PaneBasedSelectionWizardDescription169', cardinality 0..*).
+'viewpoint::validation::ValidationRule' (role 'viewpoint_validation_ValidationRule738', cardinality 0..*) is associated with 'validation::ValidationFix' (role 'validation_ValidationFix', cardinality 0..*).
+'tool::MenuItemDescription' (role 'tool_MenuItemDescription207', cardinality 0..*) is associated with 'viewpoint::tool::PopupMenu' (role 'viewpoint_tool_PopupMenu', cardinality 0..*).
+'validation::RuleAudit' (role 'validation_RuleAudit', cardinality 0..*) is associated with 'viewpoint::validation::ValidationRule' (role 'viewpoint_validation_ValidationRule', cardinality 0..*).
+'tool::RepresentationCreationDescription' (role 'tool_RepresentationCreationDescription', cardinality 0..*) is associated with 'viewpoint::description::RepresentationElementMapping' (role 'viewpoint_description_RepresentationElementMapping', cardinality 0..*).
+'tool::ElementSelectVariable' (role 'tool_ElementSelectVariable194', cardinality 0..*) is associated with 'viewpoint::tool::RepresentationNavigationDescription' (role 'viewpoint_tool_RepresentationNavigationDescription193', cardinality 0..*).
+'viewpoint::description::DiagramDescription' (role 'viewpoint_description_DiagramDescription448', cardinality 0..*) is associated with 'description::EdgeMapping' (role 'description_EdgeMapping449', cardinality 0..*).
+'SytemColorsPalette' (role 'SytemColorsPalette', cardinality 0..*) is associated with 'viewpoint::description::Group' (role 'viewpoint_description_Group68', cardinality 0..*).
+'validation::ValidationRule' (role 'validation_ValidationRule729', cardinality 0..*) is associated with 'viewpoint::validation::ValidationSet' (role 'viewpoint_validation_ValidationSet', cardinality 0..*).
+'viewpoint::tool::RepresentationNavigationDescription' (role 'viewpoint_tool_RepresentationNavigationDescription', cardinality 0..*) is associated with 'RepresentationDescription' (role 'RepresentationDescription188', cardinality 0..*).
+'description::DiagramDescription' (role 'description_DiagramDescription464', cardinality 0..*) is associated with 'viewpoint::description::DiagramImportDescription' (role 'viewpoint_description_DiagramImportDescription', cardinality 0..*).
+'viewpoint::description::DiagramExtensionDescription' (role 'viewpoint_description_DiagramExtensionDescription468', cardinality 0..*) is associated with 'validation::ValidationSet' (role 'validation_ValidationSet469', cardinality 0..*).
+'viewpoint::style::EllipseNodeDescription' (role 'viewpoint_style_EllipseNodeDescription', cardinality 0..*) is associated with 'ColorDescription' (role 'ColorDescription575', cardinality 0..*).
+'viewpoint::description::RepresentationTemplate' (role 'viewpoint_description_RepresentationTemplate', cardinality 0..*) is associated with 'RepresentationDescription' (role 'RepresentationDescription87', cardinality 0..*).
+'description::NodeMapping' (role 'description_NodeMapping492', cardinality 0..*) is associated with 'viewpoint::description::ContainerMapping' (role 'viewpoint_description_ContainerMapping491', cardinality 0..*).
+'viewpoint::diagram::DEdge' (role 'incomingEdges', cardinality 0..*) is associated with 'EdgeTarget' (role 'EdgeTarget326', cardinality 0..*).
+'viewpoint::DRepresentation' (role 'viewpoint_DRepresentation33', cardinality 0..*) is associated with 'viewpoint::DView' (role 'viewpoint_DView32', cardinality 0..*).
+'tool::ToolSection' (role 'tool_ToolSection', cardinality 0..*) is associated with 'viewpoint::description::DiagramDescription' (role 'viewpoint_description_DiagramDescription459', cardinality 0..*).
+'viewpoint::style::FlatContainerStyleDescription' (role 'viewpoint_style_FlatContainerStyleDescription594', cardinality 0..*) is associated with 'style::LabelBorderStyleDescription' (role 'style_LabelBorderStyleDescription595', cardinality 0..*).
+'viewpoint::description::EdgeMapping' (role 'viewpoint_description_EdgeMapping522', cardinality 0..*) is associated with 'description::AbstractNodeMapping' (role 'description_AbstractNodeMapping', cardinality 0..*).
+'viewpoint::style::FlatContainerStyleDescription' (role 'viewpoint_style_FlatContainerStyleDescription591', cardinality 0..*) is associated with 'ColorDescription' (role 'ColorDescription592', cardinality 0..*).
+'viewpoint::DAnalysis' (role 'viewpoint_DAnalysis60', cardinality 0..*) is associated with 'viewpoint::DAnalysisSessionEObject' (role 'viewpoint_DAnalysisSessionEObject59', cardinality 0..*).
+'viewpoint::style::DotDescription' (role 'viewpoint_style_DotDescription', cardinality 0..*) is associated with 'ColorDescription' (role 'ColorDescription581', cardinality 0..*).
+'tool::SubVariable' (role 'tool_SubVariable', cardinality 0..*) is associated with 'viewpoint::tool::VariableContainer' (role 'viewpoint_tool_VariableContainer', cardinality 0..*).
+'description::NodeMapping' (role 'description_NodeMapping507', cardinality 0..*) is associated with 'viewpoint::description::NodeMappingImport' (role 'viewpoint_description_NodeMappingImport', cardinality 0..*).
+'viewpoint::style::GaugeCompositeStyleDescription' (role 'viewpoint_style_GaugeCompositeStyleDescription', cardinality 0..*) is associated with 'style::GaugeSectionDescription' (role 'style_GaugeSectionDescription', cardinality 0..*).
+'RepresentationTemplate' (role 'RepresentationTemplate', cardinality 0..*) is associated with 'viewpoint::description::Viewpoint' (role 'viewpoint_description_Viewpoint84', cardinality 0..*).
+'viewpoint::description::DiagramDescription' (role 'viewpoint_description_DiagramDescription439', cardinality 0..*) is associated with 'description::Layer' (role 'description_Layer440', cardinality 0..*).
+'viewpoint::description::ContainerMappingImport' (role 'viewpoint_description_ContainerMappingImport', cardinality 0..*) is associated with 'description::ContainerMapping' (role 'description_ContainerMapping509', cardinality 0..*).
+'viewpoint::description::DiagramElementMapping' (role 'mappings', cardinality 0..*) is associated with 'tool::DoubleClickDescription' (role 'DoubleClickDescription', cardinality 0..*).
+'viewpoint::DView' (role 'viewpoint_DView40', cardinality 0..*) is associated with 'viewpoint::DRepresentation' (role 'viewpoint_DRepresentation41', cardinality 0..*).
+'viewpoint::description::MetamodelExtensionSetting' (role 'viewpoint_description_MetamodelExtensionSetting', cardinality 0..*) is associated with 'description::viewpoint::EObject' (role 'description_viewpoint_EObject', cardinality 0..*).
+'viewpoint::tool::ToolSection' (role 'viewpoint_tool_ToolSection609', cardinality 0..*) is associated with 'tool::ToolSection' (role 'tool_ToolSection610', cardinality 0..*).
+'viewpoint::tool::ExternalJavaAction' (role 'viewpoint_tool_ExternalJavaAction', cardinality 0..*) is associated with 'tool::ExternalJavaActionParameter' (role 'tool_ExternalJavaActionParameter', cardinality 0..*).
+'description::EdgeMapping' (role 'description_EdgeMapping542', cardinality 0..*) is associated with 'viewpoint::description::Layer' (role 'viewpoint_description_Layer541', cardinality 0..*).
+'viewpoint::Decoration' (role 'viewpoint_Decoration', cardinality 0..*) is associated with 'DecorationDescription' (role 'DecorationDescription', cardinality 0..*).
+'description::Layout' (role 'description_Layout', cardinality 0..*) is associated with 'viewpoint::description::DiagramDescription' (role 'viewpoint_description_DiagramDescription429', cardinality 0..*).
+'viewpoint::tool::ContainerDropDescription' (role 'viewpoint_tool_ContainerDropDescription140', cardinality 0..*) is associated with 'tool::ContainerViewVariable' (role 'tool_ContainerViewVariable', cardinality 0..*).
+'viewpoint::diagram::FlatContainerStyle' (role 'viewpoint_diagram_FlatContainerStyle', cardinality 0..*) is associated with 'diagram::viewpoint::RGBValues' (role 'diagram_viewpoint_RGBValues349', cardinality 0..*).
+'description::DiagramElementMapping' (role 'description_DiagramElementMapping724', cardinality 0..*) is associated with 'viewpoint::filter::MappingFilter' (role 'viewpoint_filter_MappingFilter', cardinality 0..*).
+'viewpoint::diagram::DEdge' (role 'viewpoint_diagram_DEdge330', cardinality 0..*) is associated with 'diagram::viewpoint::Style' (role 'diagram_viewpoint_Style331', cardinality 0..*).
+'viewpoint::description::DiagramDescription' (role 'viewpoint_description_DiagramDescription408', cardinality 0..*) is associated with 'description::EdgeMapping' (role 'description_EdgeMapping', cardinality 0..*).
+'diagram::viewpoint::RGBValues' (role 'diagram_viewpoint_RGBValues352', cardinality 0..*) is associated with 'viewpoint::diagram::FlatContainerStyle' (role 'viewpoint_diagram_FlatContainerStyle351', cardinality 0..*).
+'viewpoint::description::DiagramDescription' (role 'viewpoint_description_DiagramDescription456', cardinality 0..*) is associated with 'description::DiagramElementMapping' (role 'description_DiagramElementMapping457', cardinality 0..*).
+'description::ConditionalContainerStyleDescription' (role 'description_ConditionalContainerStyleDescription', cardinality 0..*) is associated with 'viewpoint::description::ContainerMapping' (role 'viewpoint_description_ContainerMapping505', cardinality 0..*).
+'viewpoint::description::DiagramDescription' (role 'viewpoint_description_DiagramDescription410', cardinality 0..*) is associated with 'description::NodeMapping' (role 'description_NodeMapping411', cardinality 0..*).
+'FeatureExtensionDescription' (role 'FeatureExtensionDescription82', cardinality 0..*) is associated with 'viewpoint::description::Viewpoint' (role 'viewpoint_description_Viewpoint81', cardinality 0..*).
+'tool::InitialContainerDropOperation' (role 'tool_InitialContainerDropOperation', cardinality 0..*) is associated with 'viewpoint::tool::ContainerDropDescription' (role 'viewpoint_tool_ContainerDropDescription142', cardinality 0..*).
+'description::DiagramElementMapping' (role 'description_DiagramElementMapping551', cardinality 0..*) is associated with 'viewpoint::description::Layer' (role 'viewpoint_description_Layer550', cardinality 0..*).
+'description::DiagramElementMapping' (role 'description_DiagramElementMapping', cardinality 0..*) is associated with 'viewpoint::tool::ContainerDropDescription' (role 'viewpoint_tool_ContainerDropDescription', cardinality 0..*).
+'tool::DeleteElementDescription' (role 'tool_DeleteElementDescription', cardinality 0..*) is associated with 'viewpoint::description::DiagramElementMapping' (role 'viewpoint_description_DiagramElementMapping', cardinality 0..*).
+'viewpoint::description::NodeMapping' (role 'viewpoint_description_NodeMapping', cardinality 0..*) is associated with 'style::NodeStyleDescription' (role 'style_NodeStyleDescription', cardinality 0..*).
+'viewpoint::DResourceContainer' (role 'viewpoint_DResourceContainer', cardinality 0..*) is associated with 'viewpoint::DResource' (role 'viewpoint_DResource', cardinality 0..*).
+'viewpoint::description::ConditionalContainerStyleDescription' (role 'viewpoint_description_ConditionalContainerStyleDescription', cardinality 0..*) is associated with 'style::ContainerStyleDescription' (role 'style_ContainerStyleDescription533', cardinality 0..*).
+'viewpoint::DView' (role 'viewpoint_DView46', cardinality 0..*) is associated with 'Viewpoint' (role 'Viewpoint', cardinality 0..*).
+'viewpoint::tool::ToolGroupExtension' (role 'viewpoint_tool_ToolGroupExtension', cardinality 0..*) is associated with 'tool::ToolGroup' (role 'tool_ToolGroup', cardinality 0..*).
+'viewpoint::tool::ContainerDropDescription' (role 'viewpoint_tool_ContainerDropDescription135', cardinality 0..*) is associated with 'tool::DropContainerVariable' (role 'tool_DropContainerVariable136', cardinality 0..*).
+'description::NodeMapping' (role 'description_NodeMapping539', cardinality 0..*) is associated with 'viewpoint::description::Layer' (role 'viewpoint_description_Layer', cardinality 0..*).
+'viewpoint::description::Layer' (role 'viewpoint_description_Layer562', cardinality 0..*) is associated with 'DecorationDescriptionsSet' (role 'DecorationDescriptionsSet', cardinality 0..*).
+'viewpoint::style::ShapeContainerStyleDescription' (role 'viewpoint_style_ShapeContainerStyleDescription', cardinality 0..*) is associated with 'ColorDescription' (role 'ColorDescription597', cardinality 0..*).
+'viewpoint::description::EdgeMapping' (role 'viewpoint_description_EdgeMapping', cardinality 0..*) is associated with 'description::DiagramElementMapping' (role 'description_DiagramElementMapping511', cardinality 0..*).
+'description::NodeMapping' (role 'description_NodeMapping489', cardinality 0..*) is associated with 'viewpoint::description::ContainerMapping' (role 'viewpoint_description_ContainerMapping488', cardinality 0..*).
+'viewpoint::diagram::ShapeContainerStyle' (role 'viewpoint_diagram_ShapeContainerStyle', cardinality 0..*) is associated with 'diagram::viewpoint::RGBValues' (role 'diagram_viewpoint_RGBValues354', cardinality 0..*).
+'viewpoint::DAnalysisCustomData' (role 'viewpoint_DAnalysisCustomData', cardinality 0..*) is associated with 'viewpoint::EObject' (role 'viewpoint_EObject54', cardinality 0..*).
+'tool::AbstractToolDescription' (role 'tool_AbstractToolDescription462', cardinality 0..*) is associated with 'viewpoint::description::DiagramDescription' (role 'viewpoint_description_DiagramDescription461', cardinality 0..*).
+'concern::ConcernDescription' (role 'concern_ConcernDescription744', cardinality 0..*) is associated with 'viewpoint::concern::ConcernSet' (role 'viewpoint_concern_ConcernSet', cardinality 0..*).
+'viewpoint::DRepresentationContainer' (role 'viewpoint_DRepresentationContainer18', cardinality 0..*) is associated with 'viewpoint::EObject' (role 'viewpoint_EObject19', cardinality 0..*).
+'viewpoint::DRepresentation' (role 'viewpoint_DRepresentation27', cardinality 0..*) is associated with 'AnnotationEntry' (role 'AnnotationEntry', cardinality 0..*).
+'viewpoint::tool::RepresentationCreationDescription' (role 'viewpoint_tool_RepresentationCreationDescription180', cardinality 0..*) is associated with 'tool::InitialOperation' (role 'tool_InitialOperation181', cardinality 0..*).
+'RepresentationDescription' (role 'RepresentationDescription178', cardinality 0..*) is associated with 'viewpoint::tool::RepresentationCreationDescription' (role 'viewpoint_tool_RepresentationCreationDescription', cardinality 0..*).
+'DEdge' (role 'DEdge366', cardinality 0..*) is associated with 'viewpoint::diagram::EdgeTarget' (role 'targetNode', cardinality 0..*).
+'viewpoint::diagram::DNodeListElement' (role 'viewpoint_diagram_DNodeListElement317', cardinality 0..*) is associated with 'description::NodeMapping' (role 'description_NodeMapping318', cardinality 0..*).
+'viewpoint::tool::RepresentationNavigationDescription' (role 'viewpoint_tool_RepresentationNavigationDescription190', cardinality 0..*) is associated with 'tool::ContainerViewVariable' (role 'tool_ContainerViewVariable191', cardinality 0..*).
+'viewpoint::diagram::DDiagramSet' (role 'viewpoint_diagram_DDiagramSet', cardinality 0..*) is associated with 'description::DiagramDescription' (role 'description_DiagramDescription336', cardinality 0..*).
+'description::IEdgeMapping' (role 'description_IEdgeMapping524', cardinality 0..*) is associated with 'viewpoint::description::EdgeMappingImport' (role 'viewpoint_description_EdgeMappingImport', cardinality 0..*).
+'viewpoint::DAnalysisSessionEObject' (role 'viewpoint_DAnalysisSessionEObject', cardinality 0..*) is associated with 'Viewpoint' (role 'Viewpoint57', cardinality 0..*).
+'diagram::viewpoint::RGBValues' (role 'diagram_viewpoint_RGBValues344', cardinality 0..*) is associated with 'viewpoint::diagram::GaugeSection' (role 'viewpoint_diagram_GaugeSection', cardinality 0..*).
+'description::ContainerMapping' (role 'description_ContainerMapping495', cardinality 0..*) is associated with 'viewpoint::description::ContainerMapping' (role 'viewpoint_description_ContainerMapping494', cardinality 0..*).
+'tool::AbstractToolDescription' (role 'tool_AbstractToolDescription619', cardinality 0..*) is associated with 'viewpoint::tool::ToolGroup' (role 'viewpoint_tool_ToolGroup', cardinality 0..*).
+'tool::AbstractToolDescription' (role 'tool_AbstractToolDescription623', cardinality 0..*) is associated with 'viewpoint::tool::ToolGroupExtension' (role 'viewpoint_tool_ToolGroupExtension622', cardinality 0..*).
+'viewpoint::description::ContainerMapping' (role 'viewpoint_description_ContainerMapping503', cardinality 0..*) is associated with 'style::ContainerStyleDescription' (role 'style_ContainerStyleDescription', cardinality 0..*).
+'ColorDescription' (role 'ColorDescription577', cardinality 0..*) is associated with 'viewpoint::style::BundledImageDescription' (role 'viewpoint_style_BundledImageDescription', cardinality 0..*).
+'Viewpoint' (role 'Viewpoint66', cardinality 0..*) is associated with 'viewpoint::description::Group' (role 'viewpoint_description_Group', cardinality 0..*).
+'viewpoint::DRepresentationElement' (role 'viewpoint_DRepresentationElement25', cardinality 0..*) is associated with 'viewpoint::DRepresentation' (role 'viewpoint_DRepresentation24', cardinality 0..*).
+'tool::InitialOperation' (role 'tool_InitialOperation432', cardinality 0..*) is associated with 'viewpoint::description::DiagramDescription' (role 'viewpoint_description_DiagramDescription431', cardinality 0..*).
+'viewpoint::DView' (role 'viewpoint_DView43', cardinality 0..*) is associated with 'viewpoint::DRepresentation' (role 'viewpoint_DRepresentation44', cardinality 0..*).
+'viewpoint::concern::ConcernDescription' (role 'viewpoint_concern_ConcernDescription751', cardinality 0..*) is associated with 'tool::BehaviorTool' (role 'tool_BehaviorTool752', cardinality 0..*).
+'viewpoint::description::AbstractNodeMapping' (role 'viewpoint_description_AbstractNodeMapping480', cardinality 0..*) is associated with 'description::NodeMapping' (role 'description_NodeMapping481', cardinality 0..*).
+'viewpoint::style::EdgeStyleDescription' (role 'viewpoint_style_EdgeStyleDescription605', cardinality 0..*) is associated with 'style::EndLabelStyleDescription' (role 'style_EndLabelStyleDescription', cardinality 0..*).
+'viewpoint::concern::ConcernDescription' (role 'viewpoint_concern_ConcernDescription748', cardinality 0..*) is associated with 'validation::ValidationRule' (role 'validation_ValidationRule749', cardinality 0..*).
+'ColorDescription' (role 'ColorDescription571', cardinality 0..*) is associated with 'viewpoint::style::SquareDescription' (role 'viewpoint_style_SquareDescription', cardinality 0..*).
+'viewpoint::description::ConditionalNodeStyleDescription' (role 'viewpoint_description_ConditionalNodeStyleDescription', cardinality 0..*) is associated with 'style::NodeStyleDescription' (role 'style_NodeStyleDescription529', cardinality 0..*).
+'description::AdditionalLayer' (role 'description_AdditionalLayer466', cardinality 0..*) is associated with 'viewpoint::description::DiagramExtensionDescription' (role 'viewpoint_description_DiagramExtensionDescription', cardinality 0..*).
+'viewpoint::style::EdgeStyleDescription' (role 'viewpoint_style_EdgeStyleDescription', cardinality 0..*) is associated with 'ColorDescription' (role 'ColorDescription599', cardinality 0..*).
+'diagram::viewpoint::RGBValues' (role 'diagram_viewpoint_RGBValues358', cardinality 0..*) is associated with 'viewpoint::diagram::Ellipse' (role 'viewpoint_diagram_Ellipse', cardinality 0..*).
+'viewpoint::tool::OperationAction' (role 'viewpoint_tool_OperationAction202', cardinality 0..*) is associated with 'tool::InitialOperation' (role 'tool_InitialOperation203', cardinality 0..*).
+'viewpoint::tool::PasteDescription' (role 'viewpoint_tool_PasteDescription', cardinality 0..*) is associated with 'tool::DropContainerVariable' (role 'tool_DropContainerVariable144', cardinality 0..*).
+'viewpoint::tool::ExternalJavaActionCall' (role 'viewpoint_tool_ExternalJavaActionCall', cardinality 0..*) is associated with 'tool::ExternalJavaAction' (role 'tool_ExternalJavaAction', cardinality 0..*).
+'viewpoint::description::EdgeMappingImport' (role 'viewpoint_description_EdgeMappingImport526', cardinality 0..*) is associated with 'description::ConditionalEdgeStyleDescription' (role 'description_ConditionalEdgeStyleDescription527', cardinality 0..*).
+'viewpoint::description::Layer' (role 'viewpoint_description_Layer544', cardinality 0..*) is associated with 'description::EdgeMappingImport' (role 'description_EdgeMappingImport545', cardinality 0..*).
+'description::AdditionalLayer' (role 'description_AdditionalLayer', cardinality 0..*) is associated with 'viewpoint::description::DiagramDescription' (role 'viewpoint_description_DiagramDescription437', cardinality 0..*).
+'viewpoint::EObject' (role 'viewpoint_EObject30', cardinality 0..*) is associated with 'viewpoint::DRepresentationElement' (role 'viewpoint_DRepresentationElement29', cardinality 0..*).
+'viewpoint::style::EdgeStyleDescription' (role 'viewpoint_style_EdgeStyleDescription601', cardinality 0..*) is associated with 'style::BeginLabelStyleDescription' (role 'style_BeginLabelStyleDescription', cardinality 0..*).
+'description::DiagramElementMapping' (role 'description_DiagramElementMapping740', cardinality 0..*) is associated with 'viewpoint::validation::ViewValidationRule' (role 'viewpoint_validation_ViewValidationRule', cardinality 0..*).
+'viewpoint::description::ConditionalEdgeStyleDescription' (role 'viewpoint_description_ConditionalEdgeStyleDescription', cardinality 0..*) is associated with 'style::EdgeStyleDescription' (role 'style_EdgeStyleDescription531', cardinality 0..*).
+'viewpoint::diagram::DEdge' (role 'viewpoint_diagram_DEdge333', cardinality 0..*) is associated with 'EdgeTarget' (role 'EdgeTarget334', cardinality 0..*).
+'viewpoint::diagram::DEdge' (role 'outgoingEdges', cardinality 0..*) is associated with 'EdgeTarget' (role 'EdgeTarget324', cardinality 0..*).
+'description::ContainerMapping' (role 'description_ContainerMapping501', cardinality 0..*) is associated with 'viewpoint::description::ContainerMapping' (role 'viewpoint_description_ContainerMapping500', cardinality 0..*).
+'viewpoint::description::ContainerMapping' (role 'viewpoint_description_ContainerMapping', cardinality 0..*) is associated with 'description::NodeMapping' (role 'description_NodeMapping486', cardinality 0..*).
+'description::EdgeMapping' (role 'description_EdgeMapping565', cardinality 0..*) is associated with 'viewpoint::description::Layer' (role 'viewpoint_description_Layer564', cardinality 0..*).
+'viewpoint::description::DiagramDescription' (role 'viewpoint_description_DiagramDescription442', cardinality 0..*) is associated with 'tool::AbstractToolDescription' (role 'tool_AbstractToolDescription443', cardinality 0..*).
+'description::NodeMapping' (role 'description_NodeMapping321', cardinality 0..*) is associated with 'viewpoint::diagram::DNodeListElement' (role 'viewpoint_diagram_DNodeListElement320', cardinality 0..*).
+'description::EdgeMappingImport' (role 'description_EdgeMappingImport', cardinality 0..*) is associated with 'viewpoint::description::DiagramDescription' (role 'viewpoint_description_DiagramDescription451', cardinality 0..*).
+'description::DiagramElementMapping' (role 'description_DiagramElementMapping537', cardinality 0..*) is associated with 'viewpoint::description::MappingBasedDecoration' (role 'viewpoint_description_MappingBasedDecoration', cardinality 0..*).
+'validation::ValidationSet' (role 'validation_ValidationSet', cardinality 0..*) is associated with 'viewpoint::description::Viewpoint' (role 'viewpoint_description_Viewpoint', cardinality 0..*).
+'viewpoint::description::Layer' (role 'viewpoint_description_Layer553', cardinality 0..*) is associated with 'tool::AbstractToolDescription' (role 'tool_AbstractToolDescription554', cardinality 0..*).
+'tool::NameVariable' (role 'tool_NameVariable197', cardinality 0..*) is associated with 'viewpoint::tool::RepresentationNavigationDescription' (role 'viewpoint_tool_RepresentationNavigationDescription196', cardinality 0..*).
+'viewpoint::description::DiagramDescription' (role 'viewpoint_description_DiagramDescription413', cardinality 0..*) is associated with 'description::ContainerMapping' (role 'description_ContainerMapping414', cardinality 0..*).
+'viewpoint::tool::OperationAction' (role 'viewpoint_tool_OperationAction', cardinality 0..*) is associated with 'tool::ContainerViewVariable' (role 'tool_ContainerViewVariable200', cardinality 0..*).
+'viewpoint::MetaModelExtension' (role 'viewpoint_MetaModelExtension', cardinality 0..*) is associated with 'viewpoint::DView' (role 'viewpoint_DView35', cardinality 0..*).
+'ColorDescription' (role 'ColorDescription584', cardinality 0..*) is associated with 'viewpoint::style::GaugeSectionDescription' (role 'viewpoint_style_GaugeSectionDescription', cardinality 0..*).
+'viewpoint::filter::CompositeFilterDescription' (role 'viewpoint_filter_CompositeFilterDescription', cardinality 0..*) is associated with 'filter::Filter' (role 'filter_Filter', cardinality 0..*).
+'NodeStyle' (role 'NodeStyle312', cardinality 0..*) is associated with 'viewpoint::diagram::DNodeListElement' (role 'viewpoint_diagram_DNodeListElement', cardinality 0..*).
+'viewpoint::description::Layer' (role 'viewpoint_description_Layer556', cardinality 0..*) is associated with 'tool::ToolSection' (role 'tool_ToolSection557', cardinality 0..*).
+'viewpoint::description::EdgeMapping' (role 'viewpoint_description_EdgeMapping513', cardinality 0..*) is associated with 'description::DiagramElementMapping' (role 'description_DiagramElementMapping514', cardinality 0..*).
+'viewpoint::DView' (role 'viewpoint_DView37', cardinality 0..*) is associated with 'viewpoint::DRepresentation' (role 'viewpoint_DRepresentation38', cardinality 0..*).
+'tool::SelectContainerVariable' (role 'tool_SelectContainerVariable', cardinality 0..*) is associated with 'viewpoint::tool::SelectionWizardDescription' (role 'viewpoint_tool_SelectionWizardDescription162', cardinality 0..*).
+'diagram::viewpoint::RGBValues' (role 'diagram_viewpoint_RGBValues356', cardinality 0..*) is associated with 'viewpoint::diagram::Square' (role 'viewpoint_diagram_Square', cardinality 0..*).
+'viewpoint::description::EdgeMapping' (role 'viewpoint_description_EdgeMapping518', cardinality 0..*) is associated with 'description::ConditionalEdgeStyleDescription' (role 'description_ConditionalEdgeStyleDescription', cardinality 0..*).
+'viewpoint::Style' (role 'viewpoint_Style', cardinality 0..*) is associated with 'style::StyleDescription' (role 'style_StyleDescription', cardinality 0..*).
+'tool::ToolGroupExtension' (role 'tool_ToolGroupExtension', cardinality 0..*) is associated with 'viewpoint::tool::ToolSection' (role 'viewpoint_tool_ToolSection617', cardinality 0..*).
+'viewpoint::description::Layer' (role 'viewpoint_description_Layer547', cardinality 0..*) is associated with 'description::ContainerMapping' (role 'description_ContainerMapping548', cardinality 0..*).
+'viewpoint::diagram::EdgeStyle' (role 'viewpoint_diagram_EdgeStyle', cardinality 0..*) is associated with 'diagram::viewpoint::RGBValues' (role 'diagram_viewpoint_RGBValues368', cardinality 0..*).
+'viewpoint::concern::ConcernDescription' (role 'viewpoint_concern_ConcernDescription', cardinality 0..*) is associated with 'filter::FilterDescription' (role 'filter_FilterDescription746', cardinality 0..*).
+'DEdge' (role 'DEdge364', cardinality 0..*) is associated with 'viewpoint::diagram::EdgeTarget' (role 'sourceNode', cardinality 0..*).
+'description::NodeMapping' (role 'description_NodeMapping446', cardinality 0..*) is associated with 'viewpoint::description::DiagramDescription' (role 'viewpoint_description_DiagramDescription445', cardinality 0..*).
+'viewpoint::validation::ValidationSet' (role 'viewpoint_validation_ValidationSet731', cardinality 0..*) is associated with 'validation::ValidationRule' (role 'validation_ValidationRule732', cardinality 0..*).
+'tool::RepresentationCreationDescription' (role 'tool_RepresentationCreationDescription427', cardinality 0..*) is associated with 'viewpoint::description::DiagramDescription' (role 'viewpoint_description_DiagramDescription426', cardinality 0..*).
+'viewpoint::tool::ToolSection' (role 'viewpoint_tool_ToolSection614', cardinality 0..*) is associated with 'tool::ToolEntry' (role 'tool_ToolEntry615', cardinality 0..*).
+'tool::ContainerViewVariable' (role 'tool_ContainerViewVariable184', cardinality 0..*) is associated with 'viewpoint::tool::RepresentationCreationDescription' (role 'viewpoint_tool_RepresentationCreationDescription183', cardinality 0..*).
+'viewpoint::tool::ContainerDropDescription' (role 'viewpoint_tool_ContainerDropDescription133', cardinality 0..*) is associated with 'tool::DropContainerVariable' (role 'tool_DropContainerVariable', cardinality 0..*).
+'viewpoint::EObject' (role 'viewpoint_EObject49', cardinality 0..*) is associated with 'viewpoint::MetaModelExtension' (role 'viewpoint_MetaModelExtension48', cardinality 0..*).
+'viewpoint::diagram::DDiagramSet' (role 'viewpoint_diagram_DDiagramSet341', cardinality 0..*) is associated with 'diagram::viewpoint::DRepresentationContainer' (role 'diagram_viewpoint_DRepresentationContainer', cardinality 0..*).
+'viewpoint::description::AbstractNodeMapping' (role 'viewpoint_description_AbstractNodeMapping', cardinality 0..*) is associated with 'description::NodeMapping' (role 'description_NodeMapping478', cardinality 0..*).
+'viewpoint::tool::RepresentationCreationDescription' (role 'viewpoint_tool_RepresentationCreationDescription186', cardinality 0..*) is associated with 'tool::NameVariable' (role 'tool_NameVariable', cardinality 0..*).
+'viewpoint::tool::MenuItemDescriptionReference' (role 'viewpoint_tool_MenuItemDescriptionReference', cardinality 0..*) is associated with 'tool::MenuItemDescription' (role 'tool_MenuItemDescription', cardinality 0..*).
+'viewpoint::description::NodeMapping' (role 'viewpoint_description_NodeMapping484', cardinality 0..*) is associated with 'description::ConditionalNodeStyleDescription' (role 'description_ConditionalNodeStyleDescription', cardinality 0..*).
+'viewpoint::diagram::GaugeSection' (role 'viewpoint_diagram_GaugeSection346', cardinality 0..*) is associated with 'diagram::viewpoint::RGBValues' (role 'diagram_viewpoint_RGBValues347', cardinality 0..*).
+'concern::ConcernDescription' (role 'concern_ConcernDescription424', cardinality 0..*) is associated with 'viewpoint::description::DiagramDescription' (role 'viewpoint_description_DiagramDescription423', cardinality 0..*).
+'tool::DirectEditLabel' (role 'tool_DirectEditLabel', cardinality 0..*) is associated with 'viewpoint::description::DiagramElementMapping' (role 'viewpoint_description_DiagramElementMapping475', cardinality 0..*).
+'viewpoint::style::EdgeStyleDescription' (role 'viewpoint_style_EdgeStyleDescription603', cardinality 0..*) is associated with 'style::CenterLabelStyleDescription' (role 'style_CenterLabelStyleDescription', cardinality 0..*).
+'viewpoint::BasicLabelStyle' (role 'viewpoint_BasicLabelStyle', cardinality 0..*) is associated with 'viewpoint::RGBValues' (role 'viewpoint_RGBValues', cardinality 0..*).
+'viewpoint::style::FlatContainerStyleDescription' (role 'viewpoint_style_FlatContainerStyleDescription', cardinality 0..*) is associated with 'ColorDescription' (role 'ColorDescription589', cardinality 0..*).
+'viewpoint::description::RepresentationDescription' (role 'viewpoint_description_RepresentationDescription', cardinality 0..*) is associated with 'description::viewpoint::EPackage' (role 'description_viewpoint_EPackage', cardinality 0..*).
+'viewpoint::style::NoteDescription' (role 'viewpoint_style_NoteDescription', cardinality 0..*) is associated with 'ColorDescription' (role 'ColorDescription579', cardinality 0..*).
+'description::Layer' (role 'description_Layer435', cardinality 0..*) is associated with 'viewpoint::description::DiagramDescription' (role 'viewpoint_description_DiagramDescription434', cardinality 0..*).
+'viewpoint::description::Viewpoint' (role 'viewpoint_description_Viewpoint75', cardinality 0..*) is associated with 'RepresentationExtensionDescription' (role 'RepresentationExtensionDescription', cardinality 0..*).
+'viewpoint::diagram::Lozenge' (role 'viewpoint_diagram_Lozenge', cardinality 0..*) is associated with 'diagram::viewpoint::RGBValues' (role 'diagram_viewpoint_RGBValues360', cardinality 0..*).
+'filter::FilterVariable' (role 'filter_FilterVariable727', cardinality 0..*) is associated with 'viewpoint::filter::VariableFilter' (role 'viewpoint_filter_VariableFilter', cardinality 0..*).
+'ColorDescription' (role 'ColorDescription569', cardinality 0..*) is associated with 'viewpoint::style::BorderedStyleDescription' (role 'viewpoint_style_BorderedStyleDescription', cardinality 0..*).
+'filter::FilterDescription' (role 'filter_FilterDescription406', cardinality 0..*) is associated with 'viewpoint::description::DiagramDescription' (role 'viewpoint_description_DiagramDescription', cardinality 0..*).
+'viewpoint::validation::ValidationSet' (role 'viewpoint_validation_ValidationSet734', cardinality 0..*) is associated with 'validation::ValidationRule' (role 'validation_ValidationRule735', cardinality 0..*).
+'tool::ReconnectEdgeDescription' (role 'tool_ReconnectEdgeDescription', cardinality 0..*) is associated with 'viewpoint::description::EdgeMapping' (role 'viewpoint_description_EdgeMapping520', cardinality 0..*).
+'tool::InitialOperation' (role 'tool_InitialOperation742', cardinality 0..*) is associated with 'viewpoint::validation::ValidationFix' (role 'viewpoint_validation_ValidationFix', cardinality 0..*).
+'viewpoint::DEObjectLink' (role 'viewpoint_DEObjectLink', cardinality 0..*) is associated with 'viewpoint::EObject' (role 'viewpoint_EObject52', cardinality 0..*).
+'viewpoint::diagram::DDiagramSet' (role 'viewpoint_diagram_DDiagramSet338', cardinality 0..*) is associated with 'DDiagram' (role 'DDiagram339', cardinality 0..*).
+'viewpoint::description::EdgeMapping' (role 'viewpoint_description_EdgeMapping516', cardinality 0..*) is associated with 'style::EdgeStyleDescription' (role 'style_EdgeStyleDescription', cardinality 0..*).
+'viewpoint::description::Viewpoint' (role 'viewpoint_description_Viewpoint79', cardinality 0..*) is associated with 'MetamodelExtensionSetting' (role 'MetamodelExtensionSetting', cardinality 0..*).
+'tool::ElementSelectVariable' (role 'tool_ElementSelectVariable167', cardinality 0..*) is associated with 'viewpoint::tool::PaneBasedSelectionWizardDescription' (role 'viewpoint_tool_PaneBasedSelectionWizardDescription', cardinality 0..*).
+'description::AbstractNodeMapping' (role 'description_AbstractNodeMapping535', cardinality 0..*) is associated with 'viewpoint::description::OrderedTreeLayout' (role 'viewpoint_description_OrderedTreeLayout', cardinality 0..*).
+'viewpoint::style::LozengeNodeDescription' (role 'viewpoint_style_LozengeNodeDescription', cardinality 0..*) is associated with 'ColorDescription' (role 'ColorDescription573', cardinality 0..*).
+'tool::AbstractToolDescription' (role 'tool_AbstractToolDescription560', cardinality 0..*) is associated with 'viewpoint::description::Layer' (role 'viewpoint_description_Layer559', cardinality 0..*).
+'viewpoint::description::ContainerMapping' (role 'viewpoint_description_ContainerMapping497', cardinality 0..*) is associated with 'description::ContainerMapping' (role 'description_ContainerMapping498', cardinality 0..*).
+'viewpoint::diagram::DEdge' (role 'viewpoint_diagram_DEdge328', cardinality 0..*) is associated with 'description::IEdgeMapping' (role 'description_IEdgeMapping', cardinality 0..*).
+'description::DiagramElementMapping' (role 'description_DiagramElementMapping653', cardinality 0..*) is associated with 'viewpoint::tool::EdgeCreationDescription' (role 'viewpoint_tool_EdgeCreationDescription652', cardinality 0..*).
+'Customization' (role 'Customization', cardinality 0..*) is associated with 'viewpoint::description::Layer' (role 'viewpoint_description_Layer567', cardinality 0..*).
+'tool::ToolEntry' (role 'tool_ToolEntry607', cardinality 0..*) is associated with 'viewpoint::tool::ToolSection' (role 'viewpoint_tool_ToolSection', cardinality 0..*).
+'description::ContainerMapping' (role 'description_ContainerMapping454', cardinality 0..*) is associated with 'viewpoint::description::DiagramDescription' (role 'viewpoint_description_DiagramDescription453', cardinality 0..*).
+'viewpoint::style::GaugeSectionDescription' (role 'viewpoint_style_GaugeSectionDescription586', cardinality 0..*) is associated with 'ColorDescription' (role 'ColorDescription587', cardinality 0..*).
+'JavaExtension' (role 'JavaExtension', cardinality 0..*) is associated with 'viewpoint::description::Viewpoint' (role 'viewpoint_description_Viewpoint77', cardinality 0..*).
+'tool::ContainerViewVariable' (role 'tool_ContainerViewVariable160', cardinality 0..*) is associated with 'viewpoint::tool::SelectionWizardDescription' (role 'viewpoint_tool_SelectionWizardDescription159', cardinality 0..*).
+'UserColorsPalette' (role 'UserColorsPalette', cardinality 0..*) is associated with 'viewpoint::description::Group' (role 'viewpoint_description_Group70', cardinality 0..*).
+'viewpoint::SessionManagerEObject' (role 'viewpoint_SessionManagerEObject', cardinality 0..*) is associated with 'viewpoint::DAnalysisSessionEObject' (role 'viewpoint_DAnalysisSessionEObject62', cardinality 0..*).
+'tool::ElementSelectVariable' (role 'tool_ElementSelectVariable', cardinality 0..*) is associated with 'viewpoint::tool::SelectionWizardDescription' (role 'viewpoint_tool_SelectionWizardDescription', cardinality 0..*).
+'tool::InitialOperation' (role 'tool_InitialOperation165', cardinality 0..*) is associated with 'viewpoint::tool::SelectionWizardDescription' (role 'viewpoint_tool_SelectionWizardDescription164', cardinality 0..*).
+'viewpoint::diagram::DNodeListElement' (role 'viewpoint_diagram_DNodeListElement314', cardinality 0..*) is associated with 'diagram::viewpoint::Style' (role 'diagram_viewpoint_Style315', cardinality 0..*).
+'viewpoint::description::Viewpoint' (role 'viewpoint_description_Viewpoint73', cardinality 0..*) is associated with 'RepresentationDescription' (role 'RepresentationDescription', cardinality 0..*).
+'concern::ConcernSet' (role 'concern_ConcernSet472', cardinality 0..*) is associated with 'viewpoint::description::DiagramExtensionDescription' (role 'viewpoint_description_DiagramExtensionDescription471', cardinality 0..*).

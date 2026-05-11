@@ -1,0 +1,71 @@
+The model has 32 class(es).
+The class 'N' has no attributes.
+The class 'T2' has no attributes.
+The class 'k7::A' has no attributes.
+The class 'k7::Y' has the following attributes: 'y' of type int.
+The class 'k7::G' has the following attributes: 'name' of type str.
+The class 'k7::L1' has the following attributes: 'id1' of type str; 'id2' of type int.
+The class 'J' has no attributes.
+The class 'k7::L2' has the following attributes: 'l1' of type int; 'l2' of type int.
+The class 'k7::DsmlRelation' has the following attributes: 'mandatory' of type bool; 'name' of type str; 'details' of type str.
+The class 'k7::I' has no attributes.
+The class 'G' has no attributes.
+The class 'k7::P' has no attributes.
+The class 'k7::J' has no attributes.
+The class 'k7::W' has the following attributes: 'w' of type str.
+The class 'A' has no attributes.
+The class 'k7::T1' has the following attributes: 'name' of type str.
+The class 'k7::C' has no attributes.
+The class 'L1' has no attributes.
+The class 'k7::X' has no attributes.
+The class 'k7::N' has no attributes.
+The class 'k7::L3' has no attributes.
+The class 'k7::Q' has no attributes.
+The class 'k7::B' has no attributes.
+The class 'C' has no attributes.
+The class 'k7::M' has no attributes.
+The class 'k7::L4' has the following attributes: 'id' of type str.
+The class 'k7::K' has the following attributes: 'title' of type str.
+The class 'k7::Z' has the following attributes: 'z3' of type str; 'z1' of type str; 'z2' of type str.
+The class 'M' has no attributes.
+The class 'k7::T2' has the following attributes: 'id' of type str.
+The class 'B' has no attributes.
+The class 'P' has no attributes.
+'k7::M' is a specialization of 'G'.
+'k7::K' is a specialization of 'J'.
+'k7::Q' is a specialization of 'P'.
+'k7::I' is a specialization of 'G'.
+'k7::B' is a specialization of 'C'.
+'k7::C' is a specialization of 'G'.
+'k7::T1' is a specialization of 'T2'.
+'k7::N' is a specialization of 'M'.
+'k7::J' is a specialization of 'A'.
+'k7::P' is a specialization of 'N'.
+'k7::A' is a specialization of 'B'.
+'k7::L3' is a specialization of 'L1'.
+'k7::C' (role 'k7_C30', cardinality 0..*) is associated with 'k7::L1' (role 'k7_L129', cardinality 0..*).
+'k7::X' (role 'k7_X10', cardinality 0..*) is associated with 'k7::L4' (role 'k7_L4', cardinality 0..*).
+'k7::T1' (role 'k7_T1', cardinality 0..*) is associated with 'k7::X' (role 'k7_X12', cardinality 0..*).
+'k7::L2' (role 'k7_L2', cardinality 0..*) is associated with 'k7::Q' (role 'k7_Q', cardinality 0..*).
+'k7::M' (role 'k7_M33', cardinality 0..*) is associated with 'k7::L1' (role 'k7_L132', cardinality 0..*).
+'k7::L1' (role 'k7_L1', cardinality 0..*) is associated with 'k7::M' (role 'k7_M20', cardinality 0..*).
+'k7::T1' (role 'k7_T152', cardinality 0..*) is associated with 'k7::DsmlRelation' (role 'k7_DsmlRelation51', cardinality 0..*).
+'k7::T1' (role 'k7_T149', cardinality 0..*) is associated with 'k7::DsmlRelation' (role 'k7_DsmlRelation', cardinality 0..*).
+'k7::T2' (role 'k7_T2', cardinality 0..*) is associated with 'k7::T1' (role 'k7_T154', cardinality 0..*).
+'k7::L4' (role 'k7_L443', cardinality 0..*) is associated with 'k7::P' (role 'k7_P44', cardinality 0..*).
+'k7::K' (role 'k7_K39', cardinality 0..*) is associated with 'k7::L2' (role 'k7_L238', cardinality 0..*).
+'k7::Y' (role 'k7_Y', cardinality 0..*) is associated with 'k7::X' (role 'k7_X6', cardinality 0..*).
+'k7::P' (role 'k7_P26', cardinality 0..*) is associated with 'k7::J' (role 'k7_J', cardinality 0..*).
+'k7::X' (role 'k7_X2', cardinality 0..*) is associated with 'k7::P' (role 'k7_P', cardinality 0..*).
+'k7::K' (role 'k7_K', cardinality 0..*) is associated with 'k7::P' (role 'k7_P24', cardinality 0..*).
+'k7::I' (role 'k7_I', cardinality 0..*) is associated with 'k7::B' (role 'k7_B', cardinality 0..*).
+'k7::A' (role 'k7_A', cardinality 0..*) is associated with 'k7::P' (role 'k7_P22', cardinality 0..*).
+'k7::X' (role 'k7_X4', cardinality 0..*) is associated with 'k7::Z' (role 'k7_Z', cardinality 0..*).
+'k7::L3' (role 'k7_L3', cardinality 0..*) is associated with 'k7::Z' (role 'k7_Z41', cardinality 0..*).
+'k7::L4' (role 'k7_L446', cardinality 0..*) is associated with 'k7::A' (role 'k7_A47', cardinality 0..*).
+'k7::L2' (role 'k7_L235', cardinality 0..*) is associated with 'k7::Q' (role 'k7_Q36', cardinality 0..*).
+'k7::T1' (role 'k7_T156', cardinality 0..*) is associated with 'k7::DsmlRelation' (role 'k7_DsmlRelation57', cardinality 0..*).
+'k7::X' (role 'k7_X', cardinality 0..*) is associated with 'k7::C' (role 'k7_C', cardinality 0..*).
+'k7::Y' (role 'k7_Y16', cardinality 0..*) is associated with 'k7::B' (role 'k7_B15', cardinality 0..*).
+'k7::C' (role 'k7_C18', cardinality 0..*) is associated with 'k7::M' (role 'k7_M', cardinality 0..*).
+'k7::X' (role 'k7_X8', cardinality 0..*) is associated with 'k7::W' (role 'k7_W', cardinality 0..*).

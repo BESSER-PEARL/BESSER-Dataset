@@ -1,0 +1,22 @@
+The model has 5 class(es).
+The class 'ER::ForeignKey' has the following attributes: 'name' of type str.
+The class 'ER::Column' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'ER::Schema' has the following attributes: 'name' of type str.
+The class 'ER::Table' has the following attributes: 'name' of type str.
+The class 'ER::Key' has the following attributes: 'name' of type str.
+'ER::Table' (role 'Table', cardinality 0..*) is associated with 'ER::Schema' (role 'schema', cardinality 0..*).
+'ER::Key' (role 'ER_Key19', cardinality 0..*) is associated with 'ER::Column' (role 'ER_Column18', cardinality 0..*).
+'ER::Key' (role 'Key', cardinality 0..*) is associated with 'ER::Table' (role 'owner', cardinality 0..*).
+'ER::Key' (role 'ER_Key14', cardinality 0..*) is associated with 'ER::ForeignKey' (role 'ER_ForeignKey', cardinality 0..*).
+'ER::Schema' (role 'Schema', cardinality 0..*) is associated with 'ER::Table' (role 'table', cardinality 0..*).
+'ER::Key' (role 'hasKey', cardinality 0..*) is associated with 'ER::Table' (role 'Table11', cardinality 0..*).
+'ER::ForeignKey' (role 'ForeignKey', cardinality 0..*) is associated with 'ER::Schema' (role 'schema2', cardinality 0..*).
+'ER::Table' (role 'owner6', cardinality 0..*) is associated with 'ER::Column' (role 'Column', cardinality 0..*).
+'ER::Table' (role 'Table26', cardinality 0..*) is associated with 'ER::ForeignKey' (role 'hasForeignKey', cardinality 0..*).
+'ER::Column' (role 'Column29', cardinality 0..*) is associated with 'ER::ForeignKey' (role 'hasForeignKey28', cardinality 0..*).
+'ER::Column' (role 'ER_Column', cardinality 0..*) is associated with 'ER::Key' (role 'ER_Key', cardinality 0..*).
+'ER::Table' (role 'owner8', cardinality 0..*) is associated with 'ER::ForeignKey' (role 'ForeignKey9', cardinality 0..*).
+'ER::Key' (role 'ER_Key32', cardinality 0..*) is associated with 'ER::ForeignKey' (role 'ER_ForeignKey31', cardinality 0..*).
+'ER::Schema' (role 'Schema24', cardinality 0..*) is associated with 'ER::ForeignKey' (role 'foreignKey', cardinality 0..*).
+'ER::ForeignKey' (role 'ForeignKey22', cardinality 0..*) is associated with 'ER::Column' (role 'column21', cardinality 0..*).
+'ER::Column' (role 'column', cardinality 0..*) is associated with 'ER::Table' (role 'Table16', cardinality 0..*).

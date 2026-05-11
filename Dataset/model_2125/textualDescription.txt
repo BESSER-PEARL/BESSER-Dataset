@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'test::ConfigurationModel' has no attributes.
+The class 'test::AddressModel' has the following attributes: 'zipCode' of type str; 'validTo' of type date; 'street' of type str; 'validFrom' of type date; 'houseNumber' of type str; 'differentPostAddress' of type bool.
+The class 'test::TestModel' has the following attributes: 'birthDate' of type date; 'name' of type str; 'gender' of type str; 'age' of type int; 'accountBalance' of type str; 'childCount' of type str; 'isSelectable' of type str; 'overdrawAccount' of type str.
+The enumeration 'Gender' has the following literals: 'UNKNOWN', 'MALE', 'FEMALE'.
+'test::TestModel' (role 'test_TestModel', cardinality 0..*) is associated with 'test::AddressModel' (role 'test_AddressModel', cardinality 0..*).
+'test::TestModel' (role 'test_TestModel2', cardinality 0..*) is associated with 'test::ConfigurationModel' (role 'test_ConfigurationModel', cardinality 0..*).
+'test::TestModel' (role 'test_TestModel5', cardinality 0..*) is associated with 'test::ConfigurationModel' (role 'test_ConfigurationModel4', cardinality 0..*).

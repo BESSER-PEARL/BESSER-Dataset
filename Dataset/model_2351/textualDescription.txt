@@ -1,0 +1,26 @@
+The model has 7 class(es).
+The class 'simplerdbms::Key' has no attributes.
+The class 'RModelElement' has no attributes.
+The class 'simplerdbms::RModelElement' has the following attributes: 'name' of type str; 'kind' of type str.
+The class 'simplerdbms::Table' has no attributes.
+The class 'simplerdbms::Column' has the following attributes: 'type' of type str.
+The class 'simplerdbms::Schema' has no attributes.
+The class 'simplerdbms::ForeignKey' has no attributes.
+'simplerdbms::Key' is a specialization of 'RModelElement'.
+'simplerdbms::ForeignKey' is a specialization of 'RModelElement'.
+'simplerdbms::Column' is a specialization of 'RModelElement'.
+'simplerdbms::Table' is a specialization of 'RModelElement'.
+'simplerdbms::Schema' is a specialization of 'RModelElement'.
+'simplerdbms::ForeignKey' (role 'ForeignKey', cardinality 0..*) is associated with 'simplerdbms::Column' (role 'column', cardinality 0..*).
+'simplerdbms::ForeignKey' (role 'simplerdbms_ForeignKey7', cardinality 0..*) is associated with 'simplerdbms::Table' (role 'simplerdbms_Table8', cardinality 0..*).
+'simplerdbms::Table' (role 'Table15', cardinality 0..*) is associated with 'simplerdbms::Schema' (role 'schema', cardinality 0..*).
+'simplerdbms::Key' (role 'Key21', cardinality 0..*) is associated with 'simplerdbms::Table' (role 'owner', cardinality 0..*).
+'simplerdbms::ForeignKey' (role 'foreignKeys', cardinality 0..*) is associated with 'simplerdbms::Column' (role 'Column', cardinality 0..*).
+'simplerdbms::Key' (role 'Key', cardinality 0..*) is associated with 'simplerdbms::Column' (role 'column3', cardinality 0..*).
+'simplerdbms::Column' (role 'simplerdbms_Column18', cardinality 0..*) is associated with 'simplerdbms::Table' (role 'simplerdbms_Table17', cardinality 0..*).
+'simplerdbms::Table' (role 'Table', cardinality 0..*) is associated with 'simplerdbms::Key' (role 'theKey', cardinality 0..*).
+'simplerdbms::Column' (role 'Column13', cardinality 0..*) is associated with 'simplerdbms::Key' (role 'key', cardinality 0..*).
+'simplerdbms::ForeignKey' (role 'simplerdbms_ForeignKey10', cardinality 0..*) is associated with 'simplerdbms::Schema' (role 'simplerdbms_Schema', cardinality 0..*).
+'simplerdbms::Table' (role 'tables', cardinality 0..*) is associated with 'simplerdbms::Schema' (role 'Schema', cardinality 0..*).
+'simplerdbms::ForeignKey' (role 'simplerdbms_ForeignKey', cardinality 0..*) is associated with 'simplerdbms::Key' (role 'simplerdbms_Key', cardinality 0..*).
+'simplerdbms::Column' (role 'simplerdbms_Column', cardinality 0..*) is associated with 'simplerdbms::Table' (role 'simplerdbms_Table', cardinality 0..*).

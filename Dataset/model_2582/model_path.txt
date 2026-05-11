@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/viatra/org.eclipse.viatra/query/plugins/org.eclipse.viatra.query.patternlanguage.emf/model/PatternLanguage.ecore

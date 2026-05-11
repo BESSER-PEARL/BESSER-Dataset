@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'HSV2HLS::HSVNode' has no attributes.
+The class 'HSV2HLS::HLSNode' has no attributes.
+The class 'HSV2HLS::HSVNode2HLSNode' has the following attributes: 'rgb' of type str; 'name' of type str.
+'HSV2HLS::HSVNode2HLSNode' (role 'HSV2HLS_HSVNode2HLSNode7', cardinality 0..*) is associated with 'HSV2HLS::HLSNode' (role 'HSV2HLS_HLSNode', cardinality 0..*).
+'HSV2HLS::HSVNode2HLSNode' (role 'parent', cardinality 0..*) is associated with 'HSV2HLS::HSVNode2HLSNode' (role 'HSVNode2HLSNode4', cardinality 0..*).
+'HSV2HLS::HSVNode' (role 'HSV2HLS_HSVNode', cardinality 0..*) is associated with 'HSV2HLS::HSVNode2HLSNode' (role 'HSV2HLS_HSVNode2HLSNode', cardinality 0..*).
+'HSV2HLS::HSVNode2HLSNode' (role 'HSVNode2HLSNode', cardinality 0..*) is associated with 'HSV2HLS::HSVNode2HLSNode' (role 'children', cardinality 0..*).

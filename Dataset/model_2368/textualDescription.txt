@@ -1,0 +1,23 @@
+The model has 7 class(es).
+The class 'relational::obeo::Schema' has the following attributes: 'name' of type str.
+The class 'ModelElement' has no attributes.
+The class 'relational::obeo::ForeignKey' has the following attributes: 'name' of type str.
+The class 'relational::obeo::ModelElement' has the following attributes: 'comment' of type str.
+The class 'relational::obeo::Database' has the following attributes: 'name' of type str; 'url' of type str.
+The class 'relational::obeo::Table' has the following attributes: 'name' of type str.
+The class 'relational::obeo::Column' has the following attributes: 'type' of type str; 'isPrimaryKey' of type bool; 'isUnique' of type bool; 'name' of type str.
+The enumeration 'Type' has the following literals: 'TIME', 'FLOAT', 'DATE', 'NUMERIC', 'VARCHAR', 'CHAR'.
+'relational::obeo::Schema' is a specialization of 'ModelElement'.
+'relational::obeo::ForeignKey' is a specialization of 'ModelElement'.
+'relational::obeo::Database' is a specialization of 'ModelElement'.
+'relational::obeo::Column' is a specialization of 'ModelElement'.
+'relational::obeo::Table' is a specialization of 'ModelElement'.
+'relational::obeo::Column' (role 'ownedColumns', cardinality 0..*) is associated with 'relational::obeo::Table' (role 'Table13', cardinality 0..*).
+'relational::obeo::Table' (role 'Table10', cardinality 0..*) is associated with 'relational::obeo::ForeignKey' (role 'ownedForeignKeys', cardinality 0..*).
+'relational::obeo::Database' (role 'owner', cardinality 0..*) is associated with 'relational::obeo::Schema' (role 'Schema', cardinality 0..*).
+'relational::obeo::Table' (role 'Table', cardinality 0..*) is associated with 'relational::obeo::Schema' (role 'owner2', cardinality 0..*).
+'relational::obeo::Table' (role 'foreignTable', cardinality 0..*) is associated with 'relational::obeo::ForeignKey' (role 'ForeignKey', cardinality 0..*).
+'relational::obeo::Schema' (role 'ownedSchemas', cardinality 0..*) is associated with 'relational::obeo::Database' (role 'Database', cardinality 0..*).
+'relational::obeo::ForeignKey' (role 'relational_obeo_ForeignKey', cardinality 0..*) is associated with 'relational::obeo::Table' (role 'relational_obeo_Table', cardinality 0..*).
+'relational::obeo::Table' (role 'owner5', cardinality 0..*) is associated with 'relational::obeo::Column' (role 'Column', cardinality 0..*).
+'relational::obeo::Schema' (role 'Schema8', cardinality 0..*) is associated with 'relational::obeo::Table' (role 'ownedTables', cardinality 0..*).

@@ -1,0 +1,12 @@
+The model has 4 class(es).
+The class 'mealymodel::Alphabet' has the following attributes: 'characters' of type str.
+The class 'mealymodel::MealyMachine' has no attributes.
+The class 'mealymodel::Transition' has the following attributes: 'input' of type str; 'output' of type str.
+The class 'mealymodel::State' has the following attributes: 'name' of type str.
+'mealymodel::MealyMachine' (role 'mealymodel_MealyMachine10', cardinality 0..*) is associated with 'mealymodel::Transition' (role 'mealymodel_Transition', cardinality 0..*).
+'mealymodel::State' (role 'mealymodel_State13', cardinality 0..*) is associated with 'mealymodel::Transition' (role 'mealymodel_Transition12', cardinality 0..*).
+'mealymodel::State' (role 'mealymodel_State16', cardinality 0..*) is associated with 'mealymodel::Transition' (role 'mealymodel_Transition15', cardinality 0..*).
+'mealymodel::State' (role 'mealymodel_State', cardinality 0..*) is associated with 'mealymodel::MealyMachine' (role 'mealymodel_MealyMachine', cardinality 0..*).
+'mealymodel::Alphabet' (role 'mealymodel_Alphabet8', cardinality 0..*) is associated with 'mealymodel::MealyMachine' (role 'mealymodel_MealyMachine7', cardinality 0..*).
+'mealymodel::State' (role 'mealymodel_State3', cardinality 0..*) is associated with 'mealymodel::MealyMachine' (role 'mealymodel_MealyMachine2', cardinality 0..*).
+'mealymodel::Alphabet' (role 'mealymodel_Alphabet', cardinality 0..*) is associated with 'mealymodel::MealyMachine' (role 'mealymodel_MealyMachine5', cardinality 0..*).

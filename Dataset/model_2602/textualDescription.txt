@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'model::Person' has the following attributes: 'firstName' of type str.
+The class 'model::PersonList' has no attributes.
+The class 'model::Root' has no attributes.
+'model::Person' (role 'model_Person', cardinality 0..*) is associated with 'model::PersonList' (role 'model_PersonList', cardinality 0..*).
+'model::Root' (role 'model_Root', cardinality 0..*) is associated with 'model::Person' (role 'model_Person2', cardinality 0..*).
+'model::Root' (role 'model_Root4', cardinality 0..*) is associated with 'model::PersonList' (role 'model_PersonList5', cardinality 0..*).

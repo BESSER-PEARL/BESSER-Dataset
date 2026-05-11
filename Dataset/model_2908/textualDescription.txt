@@ -1,0 +1,15 @@
+The model has 7 class(es).
+The class 'entity::Attribute' has the following attributes: 'many' of type bool; 'name' of type str.
+The class 'Type' has no attributes.
+The class 'entity::Entity' has no attributes.
+The class 'entity::Type' has the following attributes: 'name' of type str.
+The class 'entity::TypeDef' has no attributes.
+The class 'entity::Model' has no attributes.
+The class 'entity::JAVAID' has the following attributes: 'name' of type str.
+'entity::Entity' is a specialization of 'Type'.
+'entity::TypeDef' is a specialization of 'Type'.
+'entity::Entity' (role 'entity_Entity', cardinality 0..*) is associated with 'entity::Entity' (role 'entity_Entity2', cardinality 0..*).
+'entity::Type' (role 'entity_Type8', cardinality 0..*) is associated with 'entity::Attribute' (role 'entity_Attribute7', cardinality 0..*).
+'entity::Type' (role 'entity_Type', cardinality 0..*) is associated with 'entity::Model' (role 'entity_Model', cardinality 0..*).
+'entity::TypeDef' (role 'entity_TypeDef', cardinality 0..*) is associated with 'entity::JAVAID' (role 'entity_JAVAID', cardinality 0..*).
+'entity::Entity' (role 'entity_Entity5', cardinality 0..*) is associated with 'entity::Attribute' (role 'entity_Attribute', cardinality 0..*).

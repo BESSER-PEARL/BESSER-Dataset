@@ -1,0 +1,43 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class modelDsl_Method  {
+
+    private String name;
+
+
+
+
+
+    private modelDsl_Entity modeldsl_entity;
+
+
+    public modelDsl_Method(
+        String name    ) {
+        this.name = name;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public modelDsl_Entity getModeldsl_entity() {
+        return modeldsl_entity;
+    }
+
+    public void setModeldsl_entity(modelDsl_Entity modeldsl_entity) {
+        this.modeldsl_entity = modeldsl_entity;
+    }
+
+}

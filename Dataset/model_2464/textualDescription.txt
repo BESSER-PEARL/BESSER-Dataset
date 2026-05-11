@@ -1,0 +1,67 @@
+The model has 25 class(es).
+The class 'operators::ResourceExpansion' has no attributes.
+The class 'operators::FunctionRelationship' has no attributes.
+The class 'operators::ResourceMonitor' has no attributes.
+The class 'operators::Service' has no attributes.
+The class 'operators::Person' has no attributes.
+The class 'operators::DiagramInfo' has no attributes.
+The class 'operators::Lifecycle' has no attributes.
+The class 'Relationship' has no attributes.
+The class 'operators::Marker' has the following attributes: 'description' of type str; 'kind' of type str.
+The class 'operators::Room' has no attributes.
+The class 'operators::Warehouse' has the following attributes: 'description' of type str; 'equipments' of type str; 'name' of type str.
+The class 'operators::Value' has no attributes.
+The class 'operators::ServiceUser' has no attributes.
+The class 'operators::Operator' has no attributes.
+The class 'operators::EquipmentRelationship' has no attributes.
+The class 'operators::Relationship' has the following attributes: 'name' of type str.
+The class 'operators::Node' has the following attributes: 'nodeID' of type str.
+The class 'Company' has no attributes.
+The class 'operators::MetricSource' has no attributes.
+The class 'operators::Protocol' has no attributes.
+The class 'operators::ExpansionExperience' has the following attributes: 'duration' of type str.
+The class 'operators::Equipment' has no attributes.
+The class 'operators::Function' has no attributes.
+The class 'operators::Network' has the following attributes: 'createdDate' of type str; 'description' of type str; 'name' of type str.
+The class 'operators::ResourceForecast' has no attributes.
+The enumeration 'MarkerKind' has the following literals: 'INTERNALEVENT', 'ACTIONNEEDED', 'value', 'THRESHOLDREACHED', 'EXTERNALEVENT'.
+'operators::Operator' is a specialization of 'Company'.
+'operators::EquipmentRelationship' is a specialization of 'Relationship'.
+'operators::FunctionRelationship' is a specialization of 'Relationship'.
+'operators::Network' (role 'operators_Network24', cardinality 0..*) is associated with 'operators::FunctionRelationship' (role 'operators_FunctionRelationship25', cardinality 0..*).
+'operators::Network' (role 'operators_Network27', cardinality 0..*) is associated with 'operators::EquipmentRelationship' (role 'operators_EquipmentRelationship28', cardinality 0..*).
+'operators::Value' (role 'operators_Value', cardinality 0..*) is associated with 'operators::Marker' (role 'operators_Marker16', cardinality 0..*).
+'operators::MetricSource' (role 'operators_MetricSource', cardinality 0..*) is associated with 'operators::Network' (role 'operators_Network30', cardinality 0..*).
+'operators::Operator' (role 'operators_Operator57', cardinality 0..*) is associated with 'operators::Service' (role 'operators_Service', cardinality 0..*).
+'operators::FunctionRelationship' (role 'operators_FunctionRelationship8', cardinality 0..*) is associated with 'operators::Function' (role 'operators_Function9', cardinality 0..*).
+'operators::Node' (role 'operators_Node51', cardinality 0..*) is associated with 'operators::Room' (role 'operators_Room', cardinality 0..*).
+'operators::Node' (role 'operators_Node39', cardinality 0..*) is associated with 'operators::Equipment' (role 'operators_Equipment40', cardinality 0..*).
+'operators::Function' (role 'operators_Function', cardinality 0..*) is associated with 'operators::FunctionRelationship' (role 'operators_FunctionRelationship', cardinality 0..*).
+'operators::Operator' (role 'operators_Operator63', cardinality 0..*) is associated with 'operators::ExpansionExperience' (role 'operators_ExpansionExperience64', cardinality 0..*).
+'operators::EquipmentRelationship' (role 'operators_EquipmentRelationship', cardinality 0..*) is associated with 'operators::Equipment' (role 'operators_Equipment', cardinality 0..*).
+'operators::Node' (role 'operators_Node34', cardinality 0..*) is associated with 'operators::Lifecycle' (role 'operators_Lifecycle', cardinality 0..*).
+'operators::Network' (role 'operators_Network20', cardinality 0..*) is associated with 'operators::Network' (role 'operators_Network22', cardinality 0..*).
+'operators::Warehouse' (role 'operators_Warehouse86', cardinality 0..*) is associated with 'operators::Node' (role 'operators_Node87', cardinality 0..*).
+'operators::Equipment' (role 'operators_Equipment77', cardinality 0..*) is associated with 'operators::ResourceExpansion' (role 'operators_ResourceExpansion76', cardinality 0..*).
+'operators::Marker' (role 'operators_Marker', cardinality 0..*) is associated with 'operators::Equipment' (role 'operators_Equipment11', cardinality 0..*).
+'operators::Network' (role 'operators_Network53', cardinality 0..*) is associated with 'operators::Operator' (role 'operators_Operator', cardinality 0..*).
+'operators::Network' (role 'operators_Network', cardinality 0..*) is associated with 'operators::DiagramInfo' (role 'operators_DiagramInfo', cardinality 0..*).
+'operators::ExpansionExperience' (role 'operators_ExpansionExperience', cardinality 0..*) is associated with 'operators::Equipment' (role 'operators_Equipment5', cardinality 0..*).
+'operators::ResourceExpansion' (role 'operators_ResourceExpansion73', cardinality 0..*) is associated with 'operators::Node' (role 'operators_Node74', cardinality 0..*).
+'operators::Person' (role 'operators_Person43', cardinality 0..*) is associated with 'operators::Node' (role 'operators_Node42', cardinality 0..*).
+'operators::Operator' (role 'operators_Operator61', cardinality 0..*) is associated with 'operators::ResourceExpansion' (role 'operators_ResourceExpansion', cardinality 0..*).
+'operators::Function' (role 'operators_Function80', cardinality 0..*) is associated with 'operators::ResourceExpansion' (role 'operators_ResourceExpansion79', cardinality 0..*).
+'operators::Node' (role 'operators_Node69', cardinality 0..*) is associated with 'operators::Relationship' (role 'operators_Relationship68', cardinality 0..*).
+'operators::Operator' (role 'operators_Operator55', cardinality 0..*) is associated with 'operators::Warehouse' (role 'operators_Warehouse', cardinality 0..*).
+'operators::EquipmentRelationship' (role 'operators_EquipmentRelationship2', cardinality 0..*) is associated with 'operators::Equipment' (role 'operators_Equipment3', cardinality 0..*).
+'operators::Node' (role 'operators_Node66', cardinality 0..*) is associated with 'operators::Relationship' (role 'operators_Relationship', cardinality 0..*).
+'operators::Relationship' (role 'operators_Relationship71', cardinality 0..*) is associated with 'operators::Protocol' (role 'operators_Protocol', cardinality 0..*).
+'operators::Node' (role 'operators_Node48', cardinality 0..*) is associated with 'operators::Function' (role 'operators_Function49', cardinality 0..*).
+'operators::Function' (role 'operators_Function14', cardinality 0..*) is associated with 'operators::Marker' (role 'operators_Marker13', cardinality 0..*).
+'operators::Node' (role 'operators_Node36', cardinality 0..*) is associated with 'operators::Function' (role 'operators_Function37', cardinality 0..*).
+'operators::Marker' (role 'operators_Marker82', cardinality 0..*) is associated with 'operators::ResourceForecast' (role 'operators_ResourceForecast', cardinality 0..*).
+'operators::ServiceUser' (role 'operators_ServiceUser', cardinality 0..*) is associated with 'operators::Operator' (role 'operators_Operator59', cardinality 0..*).
+'operators::Equipment' (role 'operators_Equipment46', cardinality 0..*) is associated with 'operators::Node' (role 'operators_Node45', cardinality 0..*).
+'operators::ResourceMonitor' (role 'operators_ResourceMonitor', cardinality 0..*) is associated with 'operators::Marker' (role 'operators_Marker84', cardinality 0..*).
+'operators::Node' (role 'operators_Node', cardinality 0..*) is associated with 'operators::Network' (role 'operators_Network19', cardinality 0..*).
+'operators::Person' (role 'operators_Person', cardinality 0..*) is associated with 'operators::Network' (role 'operators_Network32', cardinality 0..*).

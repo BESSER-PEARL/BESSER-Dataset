@@ -1,0 +1,124 @@
+The model has 54 class(es).
+The class 'Token' has no attributes.
+The class 'activitydiagram::NamedElement' has the following attributes: 'name' of type str.
+The class 'BooleanExpression' has no attributes.
+The class 'activitydiagram::BooleanExpression' has no attributes.
+The class 'activitydiagram::Value' has no attributes.
+The class 'activitydiagram::AcceptEventAction' has no attributes.
+The class 'activitydiagram::InputValue' has no attributes.
+The class 'activitydiagram::ActivityNode' has the following attributes: 'running' of type bool.
+The class 'ExecutableNode' has no attributes.
+The class 'activitydiagram::IntegerCalculationExpression' has the following attributes: 'operator' of type str.
+The class 'activitydiagram::IntegerComparisonExpression' has the following attributes: 'operator' of type str.
+The class 'activitydiagram::ActivityEdge' has no attributes.
+The class 'Signal' has no attributes.
+The class 'activitydiagram::IntegerExpression' has no attributes.
+The class 'activitydiagram::Trace' has no attributes.
+The class 'ControlNode' has no attributes.
+The class 'activitydiagram::ForkedToken' has the following attributes: 'remainingOffersCount' of type int.
+The class 'activitydiagram::FinalNode' has no attributes.
+The class 'FinalNode' has no attributes.
+The class 'activitydiagram::InitialNode' has no attributes.
+The class 'Variable' has no attributes.
+The class 'activitydiagram::Offer' has no attributes.
+The class 'activitydiagram::DecisionNode' has no attributes.
+The class 'activitydiagram::BooleanVariable' has no attributes.
+The class 'activitydiagram::SendSignalAction' has no attributes.
+The class 'activitydiagram::ForkNode' has no attributes.
+The class 'activitydiagram::JoinNode' has no attributes.
+The class 'activitydiagram::BooleanUnaryExpression' has the following attributes: 'operator' of type str.
+The class 'activitydiagram::Token' has no attributes.
+The class 'Expression' has no attributes.
+The class 'activitydiagram::Signal' has no attributes.
+The class 'activitydiagram::Activity' has the following attributes: 'inputValuePath' of type str.
+The class 'activitydiagram::ControlToken' has no attributes.
+The class 'IntegerExpression' has no attributes.
+The class 'activitydiagram::Input' has no attributes.
+The class 'activitydiagram::Variable' has the following attributes: 'name' of type str.
+The class 'activitydiagram::ActivityFinalNode' has no attributes.
+The class 'ActivityNode' has no attributes.
+The class 'activitydiagram::IntegerValue' has the following attributes: 'value' of type int.
+The class 'Action' has no attributes.
+The class 'activitydiagram::MergeNode' has no attributes.
+The class 'activitydiagram::OpaqueAction' has no attributes.
+The class 'activitydiagram::Action' has no attributes.
+The class 'activitydiagram::IntegerVariable' has no attributes.
+The class 'activitydiagram::ControlFlow' has no attributes.
+The class 'activitydiagram::Expression' has no attributes.
+The class 'activitydiagram::BooleanBinaryExpression' has the following attributes: 'operator' of type str.
+The class 'activitydiagram::ControlNode' has no attributes.
+The class 'Value' has no attributes.
+The class 'activitydiagram::BooleanValue' has the following attributes: 'value' of type bool.
+The class 'activitydiagram::ExecutableNode' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'activitydiagram::SignalEvent' has no attributes.
+The class 'ActivityEdge' has no attributes.
+The enumeration 'IntegerCalculationOperator' has the following literals: 'ADD', 'SUBRACT'.
+The enumeration 'IntegerComparisonOperator' has the following literals: 'SMALLER', 'GREATER', 'EQUALS', 'SMALLER_EQUALS', 'GREATER_EQUALS'.
+The enumeration 'BooleanBinaryOperator' has the following literals: 'OR', 'AND'.
+The enumeration 'BooleanUnaryOperator' has the following literals: 'NOT'.
+'activitydiagram::ActivityEdge' is a specialization of 'NamedElement'.
+'activitydiagram::BooleanUnaryExpression' is a specialization of 'BooleanExpression'.
+'activitydiagram::IntegerExpression' is a specialization of 'Expression'.
+'activitydiagram::IntegerComparisonExpression' is a specialization of 'IntegerExpression'.
+'activitydiagram::JoinNode' is a specialization of 'ControlNode'.
+'activitydiagram::SendSignalAction' is a specialization of 'Action'.
+'activitydiagram::DecisionNode' is a specialization of 'ControlNode'.
+'activitydiagram::BooleanExpression' is a specialization of 'Expression'.
+'activitydiagram::Action' is a specialization of 'ExecutableNode'.
+'activitydiagram::IntegerValue' is a specialization of 'Value'.
+'activitydiagram::InitialNode' is a specialization of 'ControlNode'.
+'activitydiagram::Activity' is a specialization of 'NamedElement'.
+'activitydiagram::ForkNode' is a specialization of 'ControlNode'.
+'activitydiagram::BooleanBinaryExpression' is a specialization of 'BooleanExpression'.
+'activitydiagram::SignalEvent' is a specialization of 'Signal'.
+'activitydiagram::FinalNode' is a specialization of 'ControlNode'.
+'activitydiagram::IntegerVariable' is a specialization of 'Variable'.
+'activitydiagram::ControlToken' is a specialization of 'Token'.
+'activitydiagram::ActivityFinalNode' is a specialization of 'FinalNode'.
+'activitydiagram::OpaqueAction' is a specialization of 'Action'.
+'activitydiagram::ControlNode' is a specialization of 'ActivityNode'.
+'activitydiagram::Signal' is a specialization of 'NamedElement'.
+'activitydiagram::ActivityNode' is a specialization of 'NamedElement'.
+'activitydiagram::BooleanValue' is a specialization of 'Value'.
+'activitydiagram::ExecutableNode' is a specialization of 'ActivityNode'.
+'activitydiagram::AcceptEventAction' is a specialization of 'Action'.
+'activitydiagram::MergeNode' is a specialization of 'ControlNode'.
+'activitydiagram::ControlFlow' is a specialization of 'ActivityEdge'.
+'activitydiagram::ForkedToken' is a specialization of 'Token'.
+'activitydiagram::IntegerCalculationExpression' is a specialization of 'IntegerExpression'.
+'activitydiagram::BooleanVariable' is a specialization of 'Variable'.
+'activitydiagram::ActivityNode' (role 'ActivityNode17', cardinality 0..*) is associated with 'activitydiagram::ActivityEdge' (role 'outgoing', cardinality 0..*).
+'activitydiagram::IntegerVariable' (role 'activitydiagram_IntegerVariable32', cardinality 0..*) is associated with 'activitydiagram::IntegerExpression' (role 'activitydiagram_IntegerExpression31', cardinality 0..*).
+'activitydiagram::Activity' (role 'activitydiagram_Activity8', cardinality 0..*) is associated with 'activitydiagram::Trace' (role 'activitydiagram_Trace', cardinality 0..*).
+'activitydiagram::ActivityNode' (role 'nodes', cardinality 0..*) is associated with 'activitydiagram::Activity' (role 'Activity', cardinality 0..*).
+'activitydiagram::Offer' (role 'activitydiagram_Offer47', cardinality 0..*) is associated with 'activitydiagram::Token' (role 'activitydiagram_Token', cardinality 0..*).
+'activitydiagram::BooleanVariable' (role 'activitydiagram_BooleanVariable45', cardinality 0..*) is associated with 'activitydiagram::BooleanBinaryExpression' (role 'activitydiagram_BooleanBinaryExpression44', cardinality 0..*).
+'activitydiagram::Signal' (role 'activitydiagram_Signal', cardinality 0..*) is associated with 'activitydiagram::Activity' (role 'activitydiagram_Activity10', cardinality 0..*).
+'activitydiagram::ActivityNode' (role 'activitydiagram_ActivityNode', cardinality 0..*) is associated with 'activitydiagram::Trace' (role 'activitydiagram_Trace51', cardinality 0..*).
+'activitydiagram::ActivityNode' (role 'source', cardinality 0..*) is associated with 'activitydiagram::ActivityEdge' (role 'ActivityEdge', cardinality 0..*).
+'activitydiagram::ActivityNode' (role 'ActivityNode19', cardinality 0..*) is associated with 'activitydiagram::ActivityEdge' (role 'incoming', cardinality 0..*).
+'activitydiagram::BooleanVariable' (role 'activitydiagram_BooleanVariable38', cardinality 0..*) is associated with 'activitydiagram::IntegerComparisonExpression' (role 'activitydiagram_IntegerComparisonExpression', cardinality 0..*).
+'activitydiagram::BooleanBinaryExpression' (role 'activitydiagram_BooleanBinaryExpression', cardinality 0..*) is associated with 'activitydiagram::BooleanVariable' (role 'activitydiagram_BooleanVariable42', cardinality 0..*).
+'activitydiagram::Value' (role 'activitydiagram_Value28', cardinality 0..*) is associated with 'activitydiagram::Variable' (role 'activitydiagram_Variable27', cardinality 0..*).
+'activitydiagram::InputValue' (role 'activitydiagram_InputValue58', cardinality 0..*) is associated with 'activitydiagram::Input' (role 'activitydiagram_Input', cardinality 0..*).
+'activitydiagram::ActivityEdge' (role 'activitydiagram_ActivityEdge21', cardinality 0..*) is associated with 'activitydiagram::Offer' (role 'activitydiagram_Offer', cardinality 0..*).
+'activitydiagram::AcceptEventAction' (role 'activitydiagram_AcceptEventAction', cardinality 0..*) is associated with 'activitydiagram::SignalEvent' (role 'activitydiagram_SignalEvent', cardinality 0..*).
+'activitydiagram::Token' (role 'Token', cardinality 0..*) is associated with 'activitydiagram::ActivityNode' (role 'holder', cardinality 0..*).
+'activitydiagram::IntegerCalculationExpression' (role 'activitydiagram_IntegerCalculationExpression', cardinality 0..*) is associated with 'activitydiagram::IntegerVariable' (role 'activitydiagram_IntegerVariable36', cardinality 0..*).
+'activitydiagram::ControlFlow' (role 'activitydiagram_ControlFlow', cardinality 0..*) is associated with 'activitydiagram::BooleanVariable' (role 'activitydiagram_BooleanVariable', cardinality 0..*).
+'activitydiagram::Value' (role 'activitydiagram_Value53', cardinality 0..*) is associated with 'activitydiagram::InputValue' (role 'activitydiagram_InputValue', cardinality 0..*).
+'activitydiagram::Token' (role 'heldTokens', cardinality 0..*) is associated with 'activitydiagram::ActivityNode' (role 'ActivityNode49', cardinality 0..*).
+'activitydiagram::Variable' (role 'activitydiagram_Variable6', cardinality 0..*) is associated with 'activitydiagram::Activity' (role 'activitydiagram_Activity5', cardinality 0..*).
+'activitydiagram::Signal' (role 'activitydiagram_Signal62', cardinality 0..*) is associated with 'activitydiagram::SendSignalAction' (role 'activitydiagram_SendSignalAction', cardinality 0..*).
+'activitydiagram::Variable' (role 'activitydiagram_Variable25', cardinality 0..*) is associated with 'activitydiagram::Value' (role 'activitydiagram_Value', cardinality 0..*).
+'activitydiagram::IntegerExpression' (role 'activitydiagram_IntegerExpression', cardinality 0..*) is associated with 'activitydiagram::IntegerVariable' (role 'activitydiagram_IntegerVariable', cardinality 0..*).
+'activitydiagram::Activity' (role 'activity', cardinality 0..*) is associated with 'activitydiagram::ActivityNode' (role 'ActivityNode', cardinality 0..*).
+'activitydiagram::Variable' (role 'activitydiagram_Variable', cardinality 0..*) is associated with 'activitydiagram::Activity' (role 'activitydiagram_Activity3', cardinality 0..*).
+'activitydiagram::ActivityEdge' (role 'ActivityEdge13', cardinality 0..*) is associated with 'activitydiagram::ActivityNode' (role 'target', cardinality 0..*).
+'activitydiagram::BooleanExpression' (role 'activitydiagram_BooleanExpression', cardinality 0..*) is associated with 'activitydiagram::BooleanVariable' (role 'activitydiagram_BooleanVariable34', cardinality 0..*).
+'activitydiagram::Expression' (role 'activitydiagram_Expression', cardinality 0..*) is associated with 'activitydiagram::OpaqueAction' (role 'activitydiagram_OpaqueAction', cardinality 0..*).
+'activitydiagram::ForkedToken' (role 'activitydiagram_ForkedToken', cardinality 0..*) is associated with 'activitydiagram::Token' (role 'activitydiagram_Token60', cardinality 0..*).
+'activitydiagram::BooleanUnaryExpression' (role 'activitydiagram_BooleanUnaryExpression', cardinality 0..*) is associated with 'activitydiagram::BooleanVariable' (role 'activitydiagram_BooleanVariable40', cardinality 0..*).
+'activitydiagram::InputValue' (role 'activitydiagram_InputValue55', cardinality 0..*) is associated with 'activitydiagram::Variable' (role 'activitydiagram_Variable56', cardinality 0..*).
+'activitydiagram::ActivityEdge' (role 'activitydiagram_ActivityEdge', cardinality 0..*) is associated with 'activitydiagram::Activity' (role 'activitydiagram_Activity', cardinality 0..*).

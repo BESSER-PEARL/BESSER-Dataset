@@ -1,0 +1,74 @@
+The model has 31 class(es).
+The class 'DiagonosticModel::CAPLTestCase' has the following attributes: 'name' of type str.
+The class 'DiagonosticModel::CAPLTestStep' has no attributes.
+The class 'DiagonosticModel::ImportArtifact' has the following attributes: 'path' of type str.
+The class 'DiagnosticParamValueType' has no attributes.
+The class 'DiagonosticModel::TestStep' has the following attributes: 'title' of type str.
+The class 'DiagonosticModel::TestGroup' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'DiagonosticModel::Action' has the following attributes: 'value' of type str; 'wait' of type float; 'valueTo' of type str.
+The class 'DiagonosticModel::Range' has the following attributes: 'to' of type int; 'from_' of type int.
+The class 'DiagonosticModel::DiagnosticParam' has the following attributes: 'copyToVar' of type str; 'qualifier' of type str.
+The class 'DiagonosticModel::DiagnosticResponse' has the following attributes: 'primitive' of type str.
+The class 'DiagonosticModel::CheckAction' has the following attributes: 'operator' of type str.
+The class 'TestStep' has no attributes.
+The class 'DiagonosticModel::ExternalReference' has the following attributes: 'type' of type str; 'url' of type str; 'title' of type str; 'owner' of type str.
+The class 'DiagonosticModel::Var' has the following attributes: 'name' of type str.
+The class 'Action' has no attributes.
+The class 'DiagonosticModel::TestSpecification' has the following attributes: 'author' of type str; 'functionVersion' of type str; 'version' of type str; 'name' of type str; 'description' of type str; 'functionName' of type str.
+The class 'DiagonosticModel::DiagnosticService' has the following attributes: 'service' of type str; 'ecu' of type str; 'result' of type str.
+The class 'DiagonosticModel::WhileLoop' has the following attributes: 'valueTo' of type str; 'operator' of type str; 'value' of type str.
+The class 'DiagonosticModel::TracebilityArtifact' has the following attributes: 'url' of type str; 'type' of type str.
+The class 'DiagonosticModel::WaitAction' has no attributes.
+The class 'DiagonosticModel::BlockAction' has no attributes.
+The class 'DiagonosticModel::TestCase' has the following attributes: 'requirementID' of type str; 'description' of type str; 'executionStatus' of type str; 'name' of type str; 'id' of type str; 'skip' of type bool.
+The class 'DiagonosticModel::ForLoop' has the following attributes: 'loopVar' of type str; 'stopValue' of type int; 'startValue' of type int.
+The class 'DiagonosticModel::DiagnosticParamValueType' has no attributes.
+The class 'BlockAction' has no attributes.
+The class 'DiagonosticModel::Variant' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'DiagonosticModel::DiagnosticRequest' has no attributes.
+The class 'DiagonosticModel::SetAction' has no attributes.
+The class 'DiagonosticModel::CAPLParam' has the following attributes: 'type' of type str; 'value' of type str; 'name' of type str.
+The class 'DiagonosticModel::OneOf' has the following attributes: 'values' of type str.
+The class 'DiagonosticModel::SignalType' has the following attributes: 'node' of type str; 'lookupValues' of type str; 'type' of type str; 'name' of type str; 'namespace' of type str; 'creationMode' of type str; 'MessageName' of type str.
+The enumeration 'CreationModeEnum' has the following literals: 'IMPORTED', 'USER_DEFINED'.
+The enumeration 'OperatorTypeEnum' has the following literals: 'ne', 'bt', 'lt', 'eq', 'gt'.
+The enumeration 'TraceabilityArtifactEnum' has the following literals: 'TEST', 'OTHERS', 'BUG', 'REQUIREMENT'.
+The enumeration 'SignalTypeEnum' has the following literals: 'SYSTEM', 'UNDEFINED', 'ENVIRONMENT', 'SIGNAL'.
+The enumeration 'ExecutionStatueTypeEnum' has the following literals: 'FAIL', 'PASS', 'NOT_EXECUTED'.
+'DiagonosticModel::BlockAction' is a specialization of 'TestStep'.
+'DiagonosticModel::DiagnosticService' is a specialization of 'Action'.
+'DiagonosticModel::CAPLTestStep' is a specialization of 'Action'.
+'DiagonosticModel::OneOf' is a specialization of 'DiagnosticParamValueType'.
+'DiagonosticModel::CheckAction' is a specialization of 'Action'.
+'DiagonosticModel::ForLoop' is a specialization of 'BlockAction'.
+'DiagonosticModel::WaitAction' is a specialization of 'Action'.
+'DiagonosticModel::Range' is a specialization of 'DiagnosticParamValueType'.
+'DiagonosticModel::SetAction' is a specialization of 'Action'.
+'DiagonosticModel::Var' is a specialization of 'DiagnosticParamValueType'.
+'DiagonosticModel::WhileLoop' is a specialization of 'BlockAction'.
+'DiagonosticModel::Action' is a specialization of 'TestStep'.
+'DiagonosticModel::DiagnosticRequest' (role 'DiagonosticModel_DiagnosticRequest', cardinality 0..*) is associated with 'DiagonosticModel::DiagnosticService' (role 'DiagonosticModel_DiagnosticService', cardinality 0..*).
+'DiagonosticModel::CAPLParam' (role 'DiagonosticModel_CAPLParam44', cardinality 0..*) is associated with 'DiagonosticModel::CAPLTestStep' (role 'DiagonosticModel_CAPLTestStep', cardinality 0..*).
+'DiagonosticModel::TestCase' (role 'DiagonosticModel_TestCase32', cardinality 0..*) is associated with 'DiagonosticModel::TracebilityArtifact' (role 'DiagonosticModel_TracebilityArtifact', cardinality 0..*).
+'DiagonosticModel::TestStep' (role 'DiagonosticModel_TestStep27', cardinality 0..*) is associated with 'DiagonosticModel::TestCase' (role 'DiagonosticModel_TestCase26', cardinality 0..*).
+'DiagonosticModel::DiagnosticService' (role 'DiagonosticModel_DiagnosticService40', cardinality 0..*) is associated with 'DiagonosticModel::DiagnosticResponse' (role 'DiagonosticModel_DiagnosticResponse', cardinality 0..*).
+'DiagonosticModel::TestCase' (role 'DiagonosticModel_TestCase29', cardinality 0..*) is associated with 'DiagonosticModel::ExternalReference' (role 'DiagonosticModel_ExternalReference30', cardinality 0..*).
+'DiagonosticModel::TestStep' (role 'DiagonosticModel_TestStep37', cardinality 0..*) is associated with 'DiagonosticModel::SignalType' (role 'DiagonosticModel_SignalType', cardinality 0..*).
+'DiagonosticModel::TestGroup' (role 'DiagonosticModel_TestGroup', cardinality 0..*) is associated with 'DiagonosticModel::TestSpecification' (role 'DiagonosticModel_TestSpecification', cardinality 0..*).
+'DiagonosticModel::TestSpecification' (role 'DiagonosticModel_TestSpecification4', cardinality 0..*) is associated with 'DiagonosticModel::Variant' (role 'DiagonosticModel_Variant', cardinality 0..*).
+'DiagonosticModel::TestCase' (role 'DiagonosticModel_TestCase20', cardinality 0..*) is associated with 'DiagonosticModel::Variant' (role 'DiagonosticModel_Variant21', cardinality 0..*).
+'DiagonosticModel::CAPLTestCase' (role 'DiagonosticModel_CAPLTestCase', cardinality 0..*) is associated with 'DiagonosticModel::TestSpecification' (role 'DiagonosticModel_TestSpecification2', cardinality 0..*).
+'DiagonosticModel::DiagnosticParam' (role 'DiagonosticModel_DiagnosticParam', cardinality 0..*) is associated with 'DiagonosticModel::DiagnosticRequest' (role 'DiagonosticModel_DiagnosticRequest49', cardinality 0..*).
+'DiagonosticModel::CAPLTestCase' (role 'DiagonosticModel_CAPLTestCase16', cardinality 0..*) is associated with 'DiagonosticModel::TestGroup' (role 'DiagonosticModel_TestGroup15', cardinality 0..*).
+'DiagonosticModel::DiagnosticParam' (role 'DiagonosticModel_DiagnosticParam54', cardinality 0..*) is associated with 'DiagonosticModel::DiagnosticParamValueType' (role 'DiagonosticModel_DiagnosticParamValueType', cardinality 0..*).
+'DiagonosticModel::TestGroup' (role 'DiagonosticModel_TestGroup10', cardinality 0..*) is associated with 'DiagonosticModel::ExternalReference' (role 'DiagonosticModel_ExternalReference', cardinality 0..*).
+'DiagonosticModel::ImportArtifact' (role 'DiagonosticModel_ImportArtifact46', cardinality 0..*) is associated with 'DiagonosticModel::SignalType' (role 'DiagonosticModel_SignalType47', cardinality 0..*).
+'DiagonosticModel::CAPLTestCase' (role 'DiagonosticModel_CAPLTestCase42', cardinality 0..*) is associated with 'DiagonosticModel::CAPLParam' (role 'DiagonosticModel_CAPLParam', cardinality 0..*).
+'DiagonosticModel::TestStep' (role 'DiagonosticModel_TestStep33', cardinality 0..*) is associated with 'DiagonosticModel::TestStep' (role 'DiagonosticModel_TestStep35', cardinality 0..*).
+'DiagonosticModel::BlockAction' (role 'DiagonosticModel_BlockAction', cardinality 0..*) is associated with 'DiagonosticModel::TestStep' (role 'DiagonosticModel_TestStep56', cardinality 0..*).
+'DiagonosticModel::TestStep' (role 'DiagonosticModel_TestStep', cardinality 0..*) is associated with 'DiagonosticModel::TestCase' (role 'DiagonosticModel_TestCase18', cardinality 0..*).
+'DiagonosticModel::DiagnosticResponse' (role 'DiagonosticModel_DiagnosticResponse51', cardinality 0..*) is associated with 'DiagonosticModel::DiagnosticParam' (role 'DiagonosticModel_DiagnosticParam52', cardinality 0..*).
+'DiagonosticModel::TestGroup' (role 'DiagonosticModel_TestGroup11', cardinality 0..*) is associated with 'DiagonosticModel::TestGroup' (role 'DiagonosticModel_TestGroup13', cardinality 0..*).
+'DiagonosticModel::TestSpecification' (role 'DiagonosticModel_TestSpecification6', cardinality 0..*) is associated with 'DiagonosticModel::ImportArtifact' (role 'DiagonosticModel_ImportArtifact', cardinality 0..*).
+'DiagonosticModel::TestCase' (role 'DiagonosticModel_TestCase', cardinality 0..*) is associated with 'DiagonosticModel::TestGroup' (role 'DiagonosticModel_TestGroup8', cardinality 0..*).
+'DiagonosticModel::TestCase' (role 'DiagonosticModel_TestCase23', cardinality 0..*) is associated with 'DiagonosticModel::TestStep' (role 'DiagonosticModel_TestStep24', cardinality 0..*).

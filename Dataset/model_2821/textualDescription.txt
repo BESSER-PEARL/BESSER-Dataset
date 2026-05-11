@@ -1,0 +1,38 @@
+The model has 14 class(es).
+The class 'sofiagraphics::Rectangle' has no attributes.
+The class 'sofiagraphics::Text' has the following attributes: 'text' of type str; 'halign' of type str; 'attributeName' of type str; 'valign' of type str.
+The class 'sofiagraphics::Dimension' has the following attributes: 'hrelative' of type bool; 'noresize' of type bool; 'wrelative' of type bool; 'height' of type float; 'width' of type float.
+The class 'sofiagraphics::Point' has the following attributes: 'x' of type float; 'yrelative' of type bool; 'xrelative' of type bool; 'y' of type float.
+The class 'sofiagraphics::Gesture' has no attributes.
+The class 'Rectangle' has no attributes.
+The class 'sofiagraphics::Widget' has the following attributes: 'gestureOnly' of type bool; 'portYPosition' of type float.
+The class 'sofiagraphics::RoundedRectangle' has no attributes.
+The class 'sofiagraphics::Polyline' has no attributes.
+The class 'sofiagraphics::Scene' has no attributes.
+The class 'sofiagraphics::Ellipse' has no attributes.
+The class 'sofiagraphics::Color' has the following attributes: 'a' of type float; 'b' of type float; 'r' of type float; 'g' of type float.
+The class 'Widget' has no attributes.
+The class 'sofiagraphics::Style' has the following attributes: 'filled' of type bool; 'lineWidth' of type float.
+The enumeration 'Alignment' has the following literals: 'CENTER', 'UNSPECIFIED', 'RIGHT', 'TOP', 'LEFT', 'MIDDLE', 'BOTTOM'.
+'sofiagraphics::Polyline' is a specialization of 'Widget'.
+'sofiagraphics::Text' is a specialization of 'Widget'.
+'sofiagraphics::Rectangle' is a specialization of 'Widget'.
+'sofiagraphics::Ellipse' is a specialization of 'Widget'.
+'sofiagraphics::RoundedRectangle' is a specialization of 'Rectangle'.
+'sofiagraphics::Widget' (role 'sofiagraphics_Widget15', cardinality 0..*) is associated with 'sofiagraphics::Scene' (role 'sofiagraphics_Scene', cardinality 0..*).
+'sofiagraphics::Polyline' (role 'sofiagraphics_Polyline', cardinality 0..*) is associated with 'sofiagraphics::Point' (role 'sofiagraphics_Point13', cardinality 0..*).
+'sofiagraphics::Widget' (role 'Widget5', cardinality 0..*) is associated with 'sofiagraphics::Widget' (role 'parent', cardinality 0..*).
+'sofiagraphics::Scene' (role 'sofiagraphics_Scene31', cardinality 0..*) is associated with 'sofiagraphics::Gesture' (role 'sofiagraphics_Gesture', cardinality 0..*).
+'sofiagraphics::Dimension' (role 'sofiagraphics_Dimension', cardinality 0..*) is associated with 'sofiagraphics::Widget' (role 'sofiagraphics_Widget9', cardinality 0..*).
+'sofiagraphics::Widget' (role 'sofiagraphics_Widget18', cardinality 0..*) is associated with 'sofiagraphics::Scene' (role 'sofiagraphics_Scene17', cardinality 0..*).
+'sofiagraphics::RoundedRectangle' (role 'sofiagraphics_RoundedRectangle', cardinality 0..*) is associated with 'sofiagraphics::Dimension' (role 'sofiagraphics_Dimension11', cardinality 0..*).
+'sofiagraphics::Scene' (role 'sofiagraphics_Scene26', cardinality 0..*) is associated with 'sofiagraphics::Color' (role 'sofiagraphics_Color', cardinality 0..*).
+'sofiagraphics::Widget' (role 'sofiagraphics_Widget40', cardinality 0..*) is associated with 'sofiagraphics::Gesture' (role 'sofiagraphics_Gesture39', cardinality 0..*).
+'sofiagraphics::Style' (role 'sofiagraphics_Style33', cardinality 0..*) is associated with 'sofiagraphics::Color' (role 'sofiagraphics_Color34', cardinality 0..*).
+'sofiagraphics::Widget' (role 'child', cardinality 0..*) is associated with 'sofiagraphics::Widget' (role 'Widget', cardinality 0..*).
+'sofiagraphics::Widget' (role 'sofiagraphics_Widget7', cardinality 0..*) is associated with 'sofiagraphics::Point' (role 'sofiagraphics_Point', cardinality 0..*).
+'sofiagraphics::Dimension' (role 'sofiagraphics_Dimension24', cardinality 0..*) is associated with 'sofiagraphics::Scene' (role 'sofiagraphics_Scene23', cardinality 0..*).
+'sofiagraphics::Style' (role 'sofiagraphics_Style36', cardinality 0..*) is associated with 'sofiagraphics::Color' (role 'sofiagraphics_Color37', cardinality 0..*).
+'sofiagraphics::Scene' (role 'sofiagraphics_Scene20', cardinality 0..*) is associated with 'sofiagraphics::Point' (role 'sofiagraphics_Point21', cardinality 0..*).
+'sofiagraphics::Widget' (role 'sofiagraphics_Widget', cardinality 0..*) is associated with 'sofiagraphics::Style' (role 'sofiagraphics_Style', cardinality 0..*).
+'sofiagraphics::Style' (role 'sofiagraphics_Style29', cardinality 0..*) is associated with 'sofiagraphics::Scene' (role 'sofiagraphics_Scene28', cardinality 0..*).

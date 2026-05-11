@@ -1,0 +1,32 @@
+The model has 9 class(es).
+The class 'trace::SourceElement' has the following attributes: 'mapsToSelf' of type bool.
+The class 'trace::SourceElementList' has no attributes.
+The class 'trace::TargetElement' has no attributes.
+The class 'trace::TraceLink' has the following attributes: 'overridden' of type bool.
+The class 'trace::EObject' has no attributes.
+The class 'trace::TraceElement' has the following attributes: 'name' of type str; 'runtimeObject' of type str.
+The class 'trace::TracedRule' has the following attributes: 'rule' of type str.
+The class 'trace::TraceLinkSet' has no attributes.
+The class 'TraceElement' has no attributes.
+'trace::TargetElement' is a specialization of 'TraceElement'.
+'trace::SourceElement' is a specialization of 'TraceElement'.
+'trace::SourceElement' (role 'trace_SourceElement', cardinality 0..*) is associated with 'trace::SourceElementList' (role 'trace_SourceElementList', cardinality 0..*).
+'trace::SourceElement' (role 'defaultSourceElements', cardinality 0..*) is associated with 'trace::TraceLinkSet' (role 'TraceLinkSet22', cardinality 0..*).
+'trace::SourceElement' (role 'uniqueSourceElements', cardinality 0..*) is associated with 'trace::TracedRule' (role 'TracedRule24', cardinality 0..*).
+'trace::TargetElement' (role 'TargetElement20', cardinality 0..*) is associated with 'trace::SourceElement' (role 'mapsTo', cardinality 0..*).
+'trace::TraceLinkSet' (role 'TraceLinkSet', cardinality 0..*) is associated with 'trace::TracedRule' (role 'rules', cardinality 0..*).
+'trace::TracedRule' (role 'uniqueFor', cardinality 0..*) is associated with 'trace::SourceElement' (role 'SourceElement7', cardinality 0..*).
+'trace::SourceElement' (role 'SourceElement29', cardinality 0..*) is associated with 'trace::TargetElement' (role 'mapsTo28', cardinality 0..*).
+'trace::TraceLink' (role 'targetOf', cardinality 0..*) is associated with 'trace::TargetElement' (role 'TargetElement', cardinality 0..*).
+'trace::TraceElement' (role 'trace_TraceElement', cardinality 0..*) is associated with 'trace::EObject' (role 'trace_EObject', cardinality 0..*).
+'trace::TraceLinkSet' (role 'TraceLinkSet32', cardinality 0..*) is associated with 'trace::SourceElementList' (role 'defaultSourceElementLists', cardinality 0..*).
+'trace::TraceLink' (role 'TraceLink', cardinality 0..*) is associated with 'trace::TracedRule' (role 'rule', cardinality 0..*).
+'trace::TracedRule' (role 'TracedRule15', cardinality 0..*) is associated with 'trace::TraceLink' (role 'links', cardinality 0..*).
+'trace::TracedRule' (role 'TracedRule', cardinality 0..*) is associated with 'trace::TraceLinkSet' (role 'linkSet', cardinality 0..*).
+'trace::TraceLinkSet' (role 'defaultFor3', cardinality 0..*) is associated with 'trace::SourceElementList' (role 'SourceElementList', cardinality 0..*).
+'trace::TraceLink' (role 'TraceLink18', cardinality 0..*) is associated with 'trace::SourceElement' (role 'sourceElements', cardinality 0..*).
+'trace::SourceElementList' (role 'uniqueSourceElementLists', cardinality 0..*) is associated with 'trace::TracedRule' (role 'TracedRule34', cardinality 0..*).
+'trace::TraceLinkSet' (role 'defaultFor', cardinality 0..*) is associated with 'trace::SourceElement' (role 'SourceElement', cardinality 0..*).
+'trace::SourceElementList' (role 'SourceElementList10', cardinality 0..*) is associated with 'trace::TracedRule' (role 'uniqueFor9', cardinality 0..*).
+'trace::TraceLink' (role 'TraceLink26', cardinality 0..*) is associated with 'trace::TargetElement' (role 'targetElements', cardinality 0..*).
+'trace::SourceElement' (role 'SourceElement12', cardinality 0..*) is associated with 'trace::TraceLink' (role 'sourceOf', cardinality 0..*).

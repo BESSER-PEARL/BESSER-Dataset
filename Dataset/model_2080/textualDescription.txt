@@ -1,0 +1,104 @@
+The model has 42 class(es).
+The class 'CloudElement' has no attributes.
+The class 'ddsm::SparkCluster' has the following attributes: 'maxResultSize' of type int; 'UIPort' of type int; 'driverCores' of type int; 'sparkExecutorMemory' of type int; 'driverMemory' of type int.
+The class 'ddsm::ProvidedPort' has no attributes.
+The class 'ddsm::VM' has the following attributes: 'maxCores' of type str; 'providerSpecificTypeName' of type str; 'minRam' of type str; 'maxRam' of type str; 'minStorage' of type str; 'imageId' of type str; 'genericSize' of type str; 'publicPorts' of type int; 'is64os' of type str; 'os' of type str; 'sshKey' of type str; 'instances' of type int; 'maxStorage' of type str; 'publicAddress' of type str; 'privateKey' of type str; 'securityGroup' of type str; 'minCores' of type str.
+The class 'ddsm::PeerNode' has no attributes.
+The class 'ddsm::RequiredExecutionPlatform' has the following attributes: 'isMandatory' of type bool.
+The class 'Component' has no attributes.
+The class 'ddsm::CloudElement' has the following attributes: 'description' of type str; 'elementId' of type str.
+The class 'ddsm::PeerToPeerPlatform' has no attributes.
+The class 'ddsm::Component' has no attributes.
+The class 'ddsm::DDSM' has the following attributes: 'modelId' of type str; 'description' of type str.
+The class 'ddsm::Resource' has the following attributes: 'resourceId' of type str.
+The class 'ddsm::Provider' has the following attributes: 'credentialsPath' of type str; 'type' of type str.
+The class 'ddsm::CassandraCluster' has no attributes.
+The class 'ddsm::Crontab' has the following attributes: 'min' of type int; 'dayOfWeek' of type int; 'month' of type int; 'dayOfMonth' of type int; 'hour' of type int.
+The class 'ddsm::Artifact' has the following attributes: 'arguments' of type str; 'language' of type str; 'resources' of type str; 'artifactPath' of type str.
+The class 'ddsm::ClientNode' has the following attributes: 'numberOfSubmissions' of type int; 'skipRunningJob' of type bool.
+The class 'ddsm::HDFSCluster' has no attributes.
+The class 'ddsm::Property' has the following attributes: 'propertyId' of type str; 'value' of type str.
+The class 'ddsm::ExternalComponent' has the following attributes: 'endPoint' of type str; 'serviceType' of type str; 'location' of type str; 'login' of type str; 'region' of type str; 'password' of type str.
+The class 'ddsm::ExecutionBinding' has no attributes.
+The class 'ddsm::RequiredPort' has the following attributes: 'isMandatory' of type bool.
+The class 'ddsm::Relationship' has no attributes.
+The class 'ddsm::MasterNode' has no attributes.
+The class 'ExternalComponent' has no attributes.
+The class 'ddsm::ExecutionPlatform' has no attributes.
+The class 'PeerToPeerPlatform' has no attributes.
+The class 'ddsm::InternalComponent' has no attributes.
+The class 'InternalComponent' has no attributes.
+The class 'ddsm::JobSubmission' has the following attributes: 'mainClass' of type str; 'artifactUrl' of type str; 'applicationArguments' of type str.
+The class 'ddsm::StormCluster' has the following attributes: 'queueSize' of type int; 'cpuCapacity' of type int; 'supervisorFrequency' of type int; 'retryInterval' of type int; 'workerStartTimeout' of type int; 'heartbeatFrequency' of type int; 'retryTimes' of type int; 'memoryCapacity' of type int; 'monitorFrequency' of type int; 'taskTimeout' of type int.
+The class 'ddsm::PeersQuorum' has no attributes.
+The class 'ddsm::SlaveNode' has no attributes.
+The class 'ddsm::MasterSlavePlatform' has no attributes.
+The class 'ExecutionPlatform' has no attributes.
+The class 'ddsm::KafkaCluster' has no attributes.
+The class 'ddsm::YarnCluster' has no attributes.
+The class 'Port' has no attributes.
+The class 'ddsm::ZookeeperCluster' has the following attributes: 'syncLimit' of type int; 'initLimit' of type int; 'tickTime' of type int.
+The class 'MasterSlavePlatform' has no attributes.
+The class 'ddsm::Port' has the following attributes: 'isLocal' of type bool; 'portNumber' of type str.
+The class 'ddsm::ProvidedExecutionPlatform' has no attributes.
+The enumeration 'ProviderType' has the following literals: 'FCO', 'Openstack'.
+The enumeration 'Language' has the following literals: 'BASH', 'JAVA', 'PYTHON'.
+The enumeration 'VMSize' has the following literals: 'Large', 'Medium', 'Small'.
+'ddsm::ExecutionBinding' is a specialization of 'CloudElement'.
+'ddsm::PeersQuorum' is a specialization of 'InternalComponent'.
+'ddsm::KafkaCluster' is a specialization of 'PeerToPeerPlatform'.
+'ddsm::ProvidedPort' is a specialization of 'Port'.
+'ddsm::RequiredExecutionPlatform' is a specialization of 'ExecutionPlatform'.
+'ddsm::MasterSlavePlatform' is a specialization of 'InternalComponent'.
+'ddsm::RequiredPort' is a specialization of 'Port'.
+'ddsm::HDFSCluster' is a specialization of 'MasterSlavePlatform'.
+'ddsm::PeerNode' is a specialization of 'InternalComponent'.
+'ddsm::Relationship' is a specialization of 'CloudElement'.
+'ddsm::StormCluster' is a specialization of 'MasterSlavePlatform'.
+'ddsm::Component' is a specialization of 'CloudElement'.
+'ddsm::PeerToPeerPlatform' is a specialization of 'InternalComponent'.
+'ddsm::VM' is a specialization of 'ExternalComponent'.
+'ddsm::MasterNode' is a specialization of 'InternalComponent'.
+'ddsm::ClientNode' is a specialization of 'InternalComponent'.
+'ddsm::CassandraCluster' is a specialization of 'PeerToPeerPlatform'.
+'ddsm::JobSubmission' is a specialization of 'CloudElement'.
+'ddsm::ExternalComponent' is a specialization of 'Component'.
+'ddsm::ExecutionPlatform' is a specialization of 'CloudElement'.
+'ddsm::ZookeeperCluster' is a specialization of 'PeerToPeerPlatform'.
+'ddsm::SlaveNode' is a specialization of 'InternalComponent'.
+'ddsm::ProvidedExecutionPlatform' is a specialization of 'ExecutionPlatform'.
+'ddsm::SparkCluster' is a specialization of 'MasterSlavePlatform'.
+'ddsm::YarnCluster' is a specialization of 'MasterSlavePlatform'.
+'ddsm::Provider' is a specialization of 'CloudElement'.
+'ddsm::InternalComponent' is a specialization of 'Component'.
+'ddsm::Port' is a specialization of 'CloudElement'.
+'ddsm::SlaveNode' (role 'ddsm_SlaveNode', cardinality 0..*) is associated with 'ddsm::MasterNode' (role 'ddsm_MasterNode', cardinality 0..*).
+'ddsm::ClientNode' (role 'ddsm_ClientNode', cardinality 0..*) is associated with 'ddsm::JobSubmission' (role 'ddsm_JobSubmission', cardinality 0..*).
+'ddsm::Resource' (role 'ddsm_Resource18', cardinality 0..*) is associated with 'ddsm::Artifact' (role 'ddsm_Artifact19', cardinality 0..*).
+'ddsm::MasterSlavePlatform' (role 'ddsm_MasterSlavePlatform', cardinality 0..*) is associated with 'ddsm::RequiredExecutionPlatform' (role 'ddsm_RequiredExecutionPlatform62', cardinality 0..*).
+'ddsm::Relationship' (role 'ddsm_Relationship35', cardinality 0..*) is associated with 'ddsm::RequiredPort' (role 'ddsm_RequiredPort36', cardinality 0..*).
+'ddsm::Component' (role 'ddsm_Component', cardinality 0..*) is associated with 'ddsm::ProvidedPort' (role 'ddsm_ProvidedPort', cardinality 0..*).
+'ddsm::PeersQuorum' (role 'ddsm_PeersQuorum', cardinality 0..*) is associated with 'ddsm::PeerNode' (role 'ddsm_PeerNode', cardinality 0..*).
+'ddsm::ExecutionBinding' (role 'ddsm_ExecutionBinding', cardinality 0..*) is associated with 'ddsm::RequiredExecutionPlatform' (role 'ddsm_RequiredExecutionPlatform38', cardinality 0..*).
+'ddsm::ProvidedPort' (role 'ddsm_ProvidedPort33', cardinality 0..*) is associated with 'ddsm::Relationship' (role 'ddsm_Relationship', cardinality 0..*).
+'ddsm::Resource' (role 'ddsm_Resource6', cardinality 0..*) is associated with 'ddsm::Artifact' (role 'ddsm_Artifact7', cardinality 0..*).
+'ddsm::ClientNode' (role 'ddsm_ClientNode56', cardinality 0..*) is associated with 'ddsm::Crontab' (role 'ddsm_Crontab', cardinality 0..*).
+'ddsm::InternalComponent' (role 'ddsm_InternalComponent', cardinality 0..*) is associated with 'ddsm::RequiredPort' (role 'ddsm_RequiredPort', cardinality 0..*).
+'ddsm::ExecutionBinding' (role 'ddsm_ExecutionBinding40', cardinality 0..*) is associated with 'ddsm::ProvidedExecutionPlatform' (role 'ddsm_ProvidedExecutionPlatform41', cardinality 0..*).
+'ddsm::Property' (role 'ddsm_Property', cardinality 0..*) is associated with 'ddsm::CloudElement' (role 'ddsm_CloudElement2', cardinality 0..*).
+'ddsm::ProvidedPort' (role 'ddsm_ProvidedPort27', cardinality 0..*) is associated with 'ddsm::Component' (role 'ddsm_Component28', cardinality 0..*).
+'ddsm::Artifact' (role 'ddsm_Artifact53', cardinality 0..*) is associated with 'ddsm::DDSM' (role 'ddsm_DDSM52', cardinality 0..*).
+'ddsm::Provider' (role 'ddsm_Provider', cardinality 0..*) is associated with 'ddsm::ExternalComponent' (role 'ddsm_ExternalComponent', cardinality 0..*).
+'ddsm::MasterSlavePlatform' (role 'ddsm_MasterSlavePlatform64', cardinality 0..*) is associated with 'ddsm::RequiredExecutionPlatform' (role 'ddsm_RequiredExecutionPlatform65', cardinality 0..*).
+'ddsm::RequiredExecutionPlatform' (role 'ddsm_RequiredExecutionPlatform', cardinality 0..*) is associated with 'ddsm::InternalComponent' (role 'ddsm_InternalComponent25', cardinality 0..*).
+'ddsm::Property' (role 'ddsm_Property47', cardinality 0..*) is associated with 'ddsm::DDSM' (role 'ddsm_DDSM46', cardinality 0..*).
+'ddsm::DDSM' (role 'ddsm_DDSM49', cardinality 0..*) is associated with 'ddsm::Resource' (role 'ddsm_Resource50', cardinality 0..*).
+'ddsm::DDSM' (role 'ddsm_DDSM', cardinality 0..*) is associated with 'ddsm::CloudElement' (role 'ddsm_CloudElement44', cardinality 0..*).
+'ddsm::Component' (role 'ddsm_Component31', cardinality 0..*) is associated with 'ddsm::ProvidedExecutionPlatform' (role 'ddsm_ProvidedExecutionPlatform30', cardinality 0..*).
+'ddsm::Resource' (role 'ddsm_Resource', cardinality 0..*) is associated with 'ddsm::CloudElement' (role 'ddsm_CloudElement', cardinality 0..*).
+'ddsm::Artifact' (role 'ddsm_Artifact16', cardinality 0..*) is associated with 'ddsm::Resource' (role 'ddsm_Resource15', cardinality 0..*).
+'ddsm::Resource' (role 'ddsm_Resource4', cardinality 0..*) is associated with 'ddsm::Artifact' (role 'ddsm_Artifact', cardinality 0..*).
+'ddsm::PeerToPeerPlatform' (role 'ddsm_PeerToPeerPlatform', cardinality 0..*) is associated with 'ddsm::RequiredExecutionPlatform' (role 'ddsm_RequiredExecutionPlatform60', cardinality 0..*).
+'ddsm::ProvidedExecutionPlatform' (role 'ddsm_ProvidedExecutionPlatform', cardinality 0..*) is associated with 'ddsm::Component' (role 'ddsm_Component22', cardinality 0..*).
+'ddsm::Artifact' (role 'ddsm_Artifact13', cardinality 0..*) is associated with 'ddsm::Resource' (role 'ddsm_Resource12', cardinality 0..*).
+'ddsm::Resource' (role 'ddsm_Resource9', cardinality 0..*) is associated with 'ddsm::Artifact' (role 'ddsm_Artifact10', cardinality 0..*).

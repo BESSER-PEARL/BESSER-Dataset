@@ -1,0 +1,9 @@
+The model has 6 class(es).
+The class 'test::A' has no attributes.
+The class 'test::C' has no attributes.
+The class 'A' has no attributes.
+The class 'test::D' has the following attributes: 'attr1' of type str.
+The class 'test::OptionTestClass' has the following attributes: 'attribute2' of type str; 'attribute' of type str.
+The class 'test::B' has no attributes.
+'test::B' is a specialization of 'A'.
+'test::C' is a specialization of 'A'.

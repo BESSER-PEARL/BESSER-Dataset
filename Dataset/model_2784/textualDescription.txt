@@ -1,0 +1,4 @@
+The model has 3 class(es).
+The class 'use::registered::classes::B' has no attributes.
+The class 'use::registered::classes::A' has the following attributes: 'x' of type int; 'y' of type str; 'z' of type str.
+The class 'use::registered::classes::C' has no attributes.

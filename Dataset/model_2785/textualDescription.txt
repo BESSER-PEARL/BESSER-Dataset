@@ -1,0 +1,30 @@
+The model has 16 class(es).
+The class 'EdgeAB' has no attributes.
+The class 'D' has no attributes.
+The class 'testmultipleinheritanceedgeclasses::BetterEdgeAB' has no attributes.
+The class 'testmultipleinheritanceedgeclasses::EdgeCD' has no attributes.
+The class 'testmultipleinheritanceedgeclasses::C' has no attributes.
+The class 'C' has no attributes.
+The class 'testmultipleinheritanceedgeclasses::D' has no attributes.
+The class 'testmultipleinheritanceedgeclasses::L' has no attributes.
+The class 'testmultipleinheritanceedgeclasses::A' has no attributes.
+The class 'testmultipleinheritanceedgeclasses::BetterEdgeKL' has no attributes.
+The class 'testmultipleinheritanceedgeclasses::B' has no attributes.
+The class 'EdgeKL' has no attributes.
+The class 'testmultipleinheritanceedgeclasses::EdgeAB' has no attributes.
+The class 'testmultipleinheritanceedgeclasses::K' has no attributes.
+The class 'EdgeCD' has no attributes.
+The class 'testmultipleinheritanceedgeclasses::EdgeKL' has no attributes.
+'testmultipleinheritanceedgeclasses::BetterEdgeKL' is a specialization of 'EdgeKL'.
+'testmultipleinheritanceedgeclasses::EdgeAB' is a specialization of 'EdgeCD'.
+'testmultipleinheritanceedgeclasses::B' is a specialization of 'D'.
+'testmultipleinheritanceedgeclasses::A' is a specialization of 'C'.
+'testmultipleinheritanceedgeclasses::BetterEdgeAB' is a specialization of 'EdgeAB'.
+'testmultipleinheritanceedgeclasses::EdgeAB' (role 'edgeforA', cardinality 0..*) is associated with 'testmultipleinheritanceedgeclasses::A' (role 'A', cardinality 0..*).
+'testmultipleinheritanceedgeclasses::EdgeAB' (role 'edgeforB', cardinality 0..*) is associated with 'testmultipleinheritanceedgeclasses::B' (role 'B', cardinality 0..*).
+'testmultipleinheritanceedgeclasses::L' (role 'testmultipleinheritanceedgeclasses_L', cardinality 0..*) is associated with 'testmultipleinheritanceedgeclasses::EdgeKL' (role 'testmultipleinheritanceedgeclasses_EdgeKL10', cardinality 0..*).
+'testmultipleinheritanceedgeclasses::EdgeCD' (role 'testmultipleinheritanceedgeclasses_EdgeCD', cardinality 0..*) is associated with 'testmultipleinheritanceedgeclasses::C' (role 'testmultipleinheritanceedgeclasses_C', cardinality 0..*).
+'testmultipleinheritanceedgeclasses::EdgeCD' (role 'testmultipleinheritanceedgeclasses_EdgeCD7', cardinality 0..*) is associated with 'testmultipleinheritanceedgeclasses::D' (role 'testmultipleinheritanceedgeclasses_D', cardinality 0..*).
+'testmultipleinheritanceedgeclasses::EdgeAB' (role 'EdgeAB4', cardinality 0..*) is associated with 'testmultipleinheritanceedgeclasses::B' (role 'b', cardinality 0..*).
+'testmultipleinheritanceedgeclasses::A' (role 'a', cardinality 0..*) is associated with 'testmultipleinheritanceedgeclasses::EdgeAB' (role 'EdgeAB', cardinality 0..*).
+'testmultipleinheritanceedgeclasses::EdgeKL' (role 'testmultipleinheritanceedgeclasses_EdgeKL', cardinality 0..*) is associated with 'testmultipleinheritanceedgeclasses::K' (role 'testmultipleinheritanceedgeclasses_K', cardinality 0..*).

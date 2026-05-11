@@ -1,0 +1,42 @@
+The model has 22 class(es).
+The class 'TrgFeature' has no attributes.
+The class 'TrgReference' has no attributes.
+The class 'TrgStrongReference' has no attributes.
+The class 'jointPackage::UML2ER::TrgEntityType' has no attributes.
+The class 'jointPackage::UML2ER::TrgERModel' has no attributes.
+The class 'jointPackage::UML2ER::SrcClass' has no attributes.
+The class 'SrcProperty' has no attributes.
+The class 'jointPackage::UML2ER::JointMM' has no attributes.
+The class 'SrcPackage' has no attributes.
+The class 'jointPackage::UML2ER::SrcNamedElement' has the following attributes: 'name' of type str.
+The class 'TrgEntityType' has no attributes.
+The class 'jointPackage::UML2ER::TrgStrongReference' has no attributes.
+The class 'SrcNamedElement' has no attributes.
+The class 'jointPackage::UML2ER::TrgElement' has the following attributes: 'name' of type str.
+The class 'jointPackage::UML2ER::TrgFeature' has no attributes.
+The class 'jointPackage::UML2ER::TrgReference' has no attributes.
+The class 'jointPackage::UML2ER::SrcPackage' has no attributes.
+The class 'jointPackage::UML2ER::TrgWeakReference' has no attributes.
+The class 'TrgElement' has no attributes.
+The class 'jointPackage::UML2ER::SrcProperty' has the following attributes: 'isContainment' of type bool; 'primitiveType' of type str.
+The class 'SrcClass' has no attributes.
+The class 'jointPackage::UML2ER::TrgAttribute' has the following attributes: 'type' of type str.
+'jointPackage::UML2ER::TrgWeakReference' is a specialization of 'TrgReference'.
+'jointPackage::UML2ER::TrgEntityType' is a specialization of 'TrgElement'.
+'jointPackage::UML2ER::SrcProperty' is a specialization of 'SrcNamedElement'.
+'jointPackage::UML2ER::SrcPackage' is a specialization of 'SrcNamedElement'.
+'jointPackage::UML2ER::TrgAttribute' is a specialization of 'TrgFeature'.
+'jointPackage::UML2ER::SrcClass' is a specialization of 'SrcNamedElement'.
+'jointPackage::UML2ER::TrgStrongReference' is a specialization of 'TrgReference'.
+'jointPackage::UML2ER::TrgERModel' is a specialization of 'TrgElement'.
+'jointPackage::UML2ER::TrgFeature' is a specialization of 'TrgElement'.
+'jointPackage::UML2ER::TrgReference' is a specialization of 'TrgFeature'.
+'SrcClass' (role 'SrcClass9', cardinality 0..*) is associated with 'jointPackage::UML2ER::SrcProperty' (role 'jointPackage_UML2ER_SrcProperty', cardinality 0..*).
+'jointPackage::UML2ER::JointMM' (role 'jointPackage_UML2ER_JointMM', cardinality 0..*) is associated with 'SrcPackage' (role 'SrcPackage', cardinality 0..*).
+'TrgEntityType' (role 'TrgEntityType13', cardinality 0..*) is associated with 'jointPackage::UML2ER::TrgReference' (role 'jointPackage_UML2ER_TrgReference', cardinality 0..*).
+'SrcClass' (role 'SrcClass7', cardinality 0..*) is associated with 'jointPackage::UML2ER::SrcClass' (role 'jointPackage_UML2ER_SrcClass6', cardinality 0..*).
+'SrcClass' (role 'SrcClass', cardinality 0..*) is associated with 'jointPackage::UML2ER::SrcPackage' (role 'jointPackage_UML2ER_SrcPackage', cardinality 0..*).
+'jointPackage::UML2ER::JointMM' (role 'jointPackage_UML2ER_JointMM2', cardinality 0..*) is associated with 'TrgStrongReference' (role 'TrgStrongReference', cardinality 0..*).
+'jointPackage::UML2ER::TrgEntityType' (role 'jointPackage_UML2ER_TrgEntityType', cardinality 0..*) is associated with 'TrgFeature' (role 'TrgFeature', cardinality 0..*).
+'jointPackage::UML2ER::TrgERModel' (role 'jointPackage_UML2ER_TrgERModel', cardinality 0..*) is associated with 'TrgEntityType' (role 'TrgEntityType', cardinality 0..*).
+'SrcProperty' (role 'SrcProperty', cardinality 0..*) is associated with 'jointPackage::UML2ER::SrcClass' (role 'jointPackage_UML2ER_SrcClass', cardinality 0..*).

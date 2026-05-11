@@ -1,0 +1,22 @@
+The model has 7 class(es).
+The class 'model::CourseAllocation' has the following attributes: 'factor' of type str; 'explicitFactor' of type str.
+The class 'model::Department' has the following attributes: 'name' of type str.
+The class 'model::Semester' has the following attributes: 'year' of type str; 'kind' of type str.
+The class 'model::Course' has the following attributes: 'name' of type str; 'fullName' of type str.
+The class 'model::Person' has the following attributes: 'faceUrl' of type str; 'name' of type str; 'employmentFactor' of type str; 'userName' of type str; 'email' of type str.
+The class 'model::CourseInstance' has no attributes.
+The class 'model::Role' has the following attributes: 'name' of type str; 'factor' of type str.
+The enumeration 'SemesterKind' has the following literals: 'SPRING', 'AUTUMN'.
+'model::Course' (role 'model_Course13', cardinality 0..*) is associated with 'model::CourseInstance' (role 'model_CourseInstance', cardinality 0..*).
+'model::CourseAllocation' (role 'allocations', cardinality 0..*) is associated with 'model::Person' (role 'Person', cardinality 0..*).
+'model::Semester' (role 'semester', cardinality 0..*) is associated with 'model::CourseInstance' (role 'CourseInstance', cardinality 0..*).
+'model::Department' (role 'model_Department', cardinality 0..*) is associated with 'model::Person' (role 'model_Person', cardinality 0..*).
+'model::Department' (role 'model_Department6', cardinality 0..*) is associated with 'model::Semester' (role 'model_Semester', cardinality 0..*).
+'model::CourseInstance' (role 'course', cardinality 0..*) is associated with 'model::CourseAllocation' (role 'CourseAllocation16', cardinality 0..*).
+'model::Role' (role 'model_Role19', cardinality 0..*) is associated with 'model::CourseAllocation' (role 'model_CourseAllocation', cardinality 0..*).
+'model::Course' (role 'model_Course9', cardinality 0..*) is associated with 'model::Role' (role 'model_Role10', cardinality 0..*).
+'model::Department' (role 'model_Department4', cardinality 0..*) is associated with 'model::Role' (role 'model_Role', cardinality 0..*).
+'model::Person' (role 'person', cardinality 0..*) is associated with 'model::CourseAllocation' (role 'CourseAllocation', cardinality 0..*).
+'model::Course' (role 'model_Course', cardinality 0..*) is associated with 'model::Department' (role 'model_Department2', cardinality 0..*).
+'model::CourseAllocation' (role 'allocations21', cardinality 0..*) is associated with 'model::CourseInstance' (role 'CourseInstance22', cardinality 0..*).
+'model::CourseInstance' (role 'courses', cardinality 0..*) is associated with 'model::Semester' (role 'Semester', cardinality 0..*).

@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'nestedgroup::A' has the following attributes: 'name' of type str; 'group' of type str; 'b' of type str.
+The class 'nestedgroup::CType' has the following attributes: 'cvalue' of type str; 'cname' of type str.
+The class 'nestedgroup::Element' has the following attributes: 'mixed' of type str; 'name' of type str; 'true' of type str.
+'nestedgroup::Element' (role 'nestedgroup_Element5', cardinality 0..*) is associated with 'nestedgroup::Element' (role 'nestedgroup_Element3', cardinality 0..*).
+'nestedgroup::CType' (role 'nestedgroup_CType', cardinality 0..*) is associated with 'nestedgroup::A' (role 'nestedgroup_A', cardinality 0..*).
+'nestedgroup::CType' (role 'nestedgroup_CType2', cardinality 0..*) is associated with 'nestedgroup::Element' (role 'nestedgroup_Element', cardinality 0..*).

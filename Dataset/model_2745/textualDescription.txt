@@ -1,0 +1,52 @@
+The model has 22 class(es).
+The class 'A' has no attributes.
+The class 'systemmodel::A' has the following attributes: 'name' of type str; 'multiValAtt' of type str.
+The class 'systemmodel::Test' has no attributes.
+The class 'systemmodel::Signal' has no attributes.
+The class 'systemmodel::Sum2' has no attributes.
+The class 'systemmodel::Sum' has no attributes.
+The class 'systemmodel::Sum1' has no attributes.
+The class 'systemmodel::B' has no attributes.
+The class 'systemmodel::SystemModel' has no attributes.
+The class 'systemmodel::SrcBlock' has no attributes.
+The class 'systemmodel::Block' has no attributes.
+The class 'systemmodel::Root' has no attributes.
+The class 'systemmodel::Outport' has no attributes.
+The class 'ModelElement' has no attributes.
+The class 'Sum' has no attributes.
+The class 'systemmodel::UnitDelay' has no attributes.
+The class 'Block' has no attributes.
+The class 'systemmodel::ModelElement' has no attributes.
+The class 'systemmodel::SMElement' has no attributes.
+The class 'systemmodel::C' has the following attributes: 'name' of type str.
+The class 'systemmodel::Inport' has no attributes.
+The class 'SMElement' has no attributes.
+'systemmodel::Sum' is a specialization of 'Block'.
+'systemmodel::SystemModel' is a specialization of 'SMElement'.
+'systemmodel::Block' is a specialization of 'SMElement'.
+'systemmodel::B' is a specialization of 'A'.
+'systemmodel::ModelElement' is a specialization of 'SMElement'.
+'systemmodel::A' is a specialization of 'ModelElement'.
+'systemmodel::Sum1' is a specialization of 'Sum'.
+'systemmodel::Root' is a specialization of 'SMElement'.
+'systemmodel::C' is a specialization of 'ModelElement'.
+'systemmodel::Inport' is a specialization of 'SMElement'.
+'systemmodel::SrcBlock' is a specialization of 'Block'.
+'systemmodel::Signal' is a specialization of 'SMElement'.
+'systemmodel::Sum2' is a specialization of 'Sum'.
+'systemmodel::Test' is a specialization of 'Block'.
+'systemmodel::UnitDelay' is a specialization of 'Block'.
+'systemmodel::Outport' is a specialization of 'SMElement'.
+'systemmodel::SystemModel' (role 'systemmodel_SystemModel2', cardinality 0..*) is associated with 'systemmodel::Signal' (role 'systemmodel_Signal', cardinality 0..*).
+'systemmodel::Block' (role 'systemmodel_Block4', cardinality 0..*) is associated with 'systemmodel::Inport' (role 'systemmodel_Inport', cardinality 0..*).
+'systemmodel::Signal' (role 'outSignals', cardinality 0..*) is associated with 'systemmodel::Outport' (role 'Outport7', cardinality 0..*).
+'systemmodel::Block' (role 'systemmodel_Block14', cardinality 0..*) is associated with 'systemmodel::Test' (role 'systemmodel_Test', cardinality 0..*).
+'systemmodel::Outport' (role 'srcPort', cardinality 0..*) is associated with 'systemmodel::Signal' (role 'Signal11', cardinality 0..*).
+'systemmodel::Signal' (role 'inSignal', cardinality 0..*) is associated with 'systemmodel::Inport' (role 'Inport', cardinality 0..*).
+'systemmodel::Block' (role 'parentBlock', cardinality 0..*) is associated with 'systemmodel::Outport' (role 'Outport', cardinality 0..*).
+'systemmodel::A' (role 'systemmodel_A', cardinality 0..*) is associated with 'systemmodel::B' (role 'systemmodel_B', cardinality 0..*).
+'systemmodel::C' (role 'systemmodel_C', cardinality 0..*) is associated with 'systemmodel::A' (role 'systemmodel_A17', cardinality 0..*).
+'systemmodel::Inport' (role 'dstPort', cardinality 0..*) is associated with 'systemmodel::Signal' (role 'Signal', cardinality 0..*).
+'systemmodel::Outport' (role 'outports', cardinality 0..*) is associated with 'systemmodel::Block' (role 'Block', cardinality 0..*).
+'systemmodel::Block' (role 'systemmodel_Block', cardinality 0..*) is associated with 'systemmodel::SystemModel' (role 'systemmodel_SystemModel', cardinality 0..*).
+'systemmodel::Root' (role 'systemmodel_Root', cardinality 0..*) is associated with 'systemmodel::ModelElement' (role 'systemmodel_ModelElement', cardinality 0..*).

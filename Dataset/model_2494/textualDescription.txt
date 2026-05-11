@@ -1,0 +1,19 @@
+The model has 8 class(es).
+The class 'basicFsmEnv::Trans' has the following attributes: 'event' of type str.
+The class 'basicFsmEnv::State' has the following attributes: 'name' of type str.
+The class 'basicFsmEnv::Machine' has the following attributes: 'name' of type str.
+The class 'State' has no attributes.
+The class 'basicFsmEnv::VarDecl' has the following attributes: 'name' of type str; 'value' of type str.
+The class 'basicFsmEnv::Guard' has no attributes.
+The class 'basicFsmEnv::Action' has no attributes.
+The class 'basicFsmEnv::InitialState' has no attributes.
+'basicFsmEnv::InitialState' is a specialization of 'State'.
+'basicFsmEnv::Trans' (role 'in_', cardinality 0..*) is associated with 'basicFsmEnv::State' (role 'State', cardinality 0..*).
+'basicFsmEnv::Machine' (role 'basicFsmEnv_Machine2', cardinality 0..*) is associated with 'basicFsmEnv::Trans' (role 'basicFsmEnv_Trans', cardinality 0..*).
+'basicFsmEnv::Trans' (role 'Trans', cardinality 0..*) is associated with 'basicFsmEnv::State' (role 'tgt', cardinality 0..*).
+'basicFsmEnv::Trans' (role 'out', cardinality 0..*) is associated with 'basicFsmEnv::State' (role 'State10', cardinality 0..*).
+'basicFsmEnv::Action' (role 'basicFsmEnv_Action', cardinality 0..*) is associated with 'basicFsmEnv::Trans' (role 'basicFsmEnv_Trans14', cardinality 0..*).
+'basicFsmEnv::Trans' (role 'Trans5', cardinality 0..*) is associated with 'basicFsmEnv::State' (role 'src', cardinality 0..*).
+'basicFsmEnv::Guard' (role 'basicFsmEnv_Guard', cardinality 0..*) is associated with 'basicFsmEnv::Trans' (role 'basicFsmEnv_Trans12', cardinality 0..*).
+'basicFsmEnv::VarDecl' (role 'basicFsmEnv_VarDecl', cardinality 0..*) is associated with 'basicFsmEnv::State' (role 'basicFsmEnv_State7', cardinality 0..*).
+'basicFsmEnv::State' (role 'basicFsmEnv_State', cardinality 0..*) is associated with 'basicFsmEnv::Machine' (role 'basicFsmEnv_Machine', cardinality 0..*).

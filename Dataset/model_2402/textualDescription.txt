@@ -1,0 +1,19 @@
+The model has 6 class(es).
+The class 'relational::Table' has no attributes.
+The class 'Named' has no attributes.
+The class 'relational::Column' has no attributes.
+The class 'relational::Schema' has no attributes.
+The class 'relational::Named' has the following attributes: 'name' of type str.
+The class 'relational::Type' has no attributes.
+'relational::Type' is a specialization of 'Named'.
+'relational::Table' is a specialization of 'Named'.
+'relational::Column' is a specialization of 'Named'.
+'relational::Schema' is a specialization of 'Named'.
+'relational::Schema' (role 'owner9', cardinality 0..*) is associated with 'relational::Table' (role 'Table10', cardinality 0..*).
+'relational::Column' (role 'key', cardinality 0..*) is associated with 'relational::Table' (role 'Table6', cardinality 0..*).
+'relational::Column' (role 'Column', cardinality 0..*) is associated with 'relational::Table' (role 'owner', cardinality 0..*).
+'relational::Type' (role 'relational_Type12', cardinality 0..*) is associated with 'relational::Schema' (role 'relational_Schema', cardinality 0..*).
+'relational::Column' (role 'Column2', cardinality 0..*) is associated with 'relational::Table' (role 'keyOf', cardinality 0..*).
+'relational::Column' (role 'col', cardinality 0..*) is associated with 'relational::Table' (role 'Table', cardinality 0..*).
+'relational::Type' (role 'relational_Type', cardinality 0..*) is associated with 'relational::Column' (role 'relational_Column', cardinality 0..*).
+'relational::Schema' (role 'Schema', cardinality 0..*) is associated with 'relational::Table' (role 'tables', cardinality 0..*).

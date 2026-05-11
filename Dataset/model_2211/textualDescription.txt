@@ -1,0 +1,16 @@
+The model has 6 class(es).
+The class 'StudyProgrammes::Programme' has the following attributes: 'startYear' of type int; 'semestersBeforeSpecialization' of type int; 'code' of type str; 'totalNumberOfSemesters' of type int; 'name' of type str.
+The class 'StudyProgrammes::CourseAccess' has the following attributes: 'access' of type str.
+The class 'StudyProgrammes::Semester' has the following attributes: 'semesterSeason' of type str; 'code' of type str; 'year' of type int.
+The class 'StudyProgrammes::Specialization' has the following attributes: 'startSemester' of type int; 'lengthInSemesters' of type int; 'name' of type str.
+The class 'StudyProgrammes::Department' has the following attributes: 'name' of type str.
+The class 'StudyProgrammes::Course' has the following attributes: 'availableSemesters' of type str; 'code' of type str; 'name' of type str; 'credits' of type float.
+The enumeration 'SemesterSeason' has the following literals: 'Fall', 'Spring'.
+The enumeration 'Access' has the following literals: 'NA', 'VA', 'O', 'M1A', 'M2A'.
+'StudyProgrammes::Department' (role 'StudyProgrammes_Department2', cardinality 0..*) is associated with 'StudyProgrammes::Course' (role 'StudyProgrammes_Course', cardinality 0..*).
+'StudyProgrammes::Semester' (role 'StudyProgrammes_Semester', cardinality 0..*) is associated with 'StudyProgrammes::Programme' (role 'StudyProgrammes_Programme6', cardinality 0..*).
+'StudyProgrammes::Semester' (role 'StudyProgrammes_Semester11', cardinality 0..*) is associated with 'StudyProgrammes::CourseAccess' (role 'StudyProgrammes_CourseAccess', cardinality 0..*).
+'StudyProgrammes::Semester' (role 'StudyProgrammes_Semester9', cardinality 0..*) is associated with 'StudyProgrammes::Specialization' (role 'StudyProgrammes_Specialization8', cardinality 0..*).
+'StudyProgrammes::Specialization' (role 'StudyProgrammes_Specialization', cardinality 0..*) is associated with 'StudyProgrammes::Programme' (role 'StudyProgrammes_Programme4', cardinality 0..*).
+'StudyProgrammes::Course' (role 'StudyProgrammes_Course14', cardinality 0..*) is associated with 'StudyProgrammes::CourseAccess' (role 'StudyProgrammes_CourseAccess13', cardinality 0..*).
+'StudyProgrammes::Programme' (role 'StudyProgrammes_Programme', cardinality 0..*) is associated with 'StudyProgrammes::Department' (role 'StudyProgrammes_Department', cardinality 0..*).

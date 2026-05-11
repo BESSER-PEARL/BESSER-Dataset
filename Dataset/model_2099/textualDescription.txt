@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'BasicFMmetamodel::CrossTreeConstraint' has no attributes.
+The class 'BasicFMmetamodel::FeatureModel' has the following attributes: 'name' of type str.
+The class 'Feature' has no attributes.
+The class 'BasicFMmetamodel::Alternative' has no attributes.
+The class 'BasicFMmetamodel::OrGroup' has no attributes.
+The class 'BasicFMmetamodel::Feature' has the following attributes: 'name' of type str; 'id' of type str; 'mandatory' of type bool; 'selected' of type bool.
+'BasicFMmetamodel::OrGroup' is a specialization of 'Feature'.
+'BasicFMmetamodel::Alternative' is a specialization of 'Feature'.
+'BasicFMmetamodel::FeatureModel' (role 'BasicFMmetamodel_FeatureModel2', cardinality 0..*) is associated with 'BasicFMmetamodel::CrossTreeConstraint' (role 'BasicFMmetamodel_CrossTreeConstraint', cardinality 0..*).
+'BasicFMmetamodel::Feature' (role 'parent', cardinality 0..*) is associated with 'BasicFMmetamodel::Feature' (role 'Feature', cardinality 0..*).
+'BasicFMmetamodel::FeatureModel' (role 'BasicFMmetamodel_FeatureModel', cardinality 0..*) is associated with 'BasicFMmetamodel::Feature' (role 'BasicFMmetamodel_Feature', cardinality 0..*).
+'BasicFMmetamodel::Feature' (role 'children', cardinality 0..*) is associated with 'BasicFMmetamodel::Feature' (role 'Feature7', cardinality 0..*).

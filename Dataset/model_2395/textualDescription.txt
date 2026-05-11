@@ -1,0 +1,183 @@
+The model has 94 class(es).
+The class 'sql::schema::UniqueConstraint' has the following attributes: 'kind' of type str.
+The class 'sql::literal::DateLiteral' has the following attributes: 'value' of type str.
+The class 'sql::datatype::ExactNumericType' has the following attributes: 'precision' of type str; 'scale' of type str; 'kind' of type str.
+The class 'NumericLiteral' has no attributes.
+The class 'sql::literal::DatetimeLiteral' has no attributes.
+The class 'sql::schema::LiteralDefaultOption' has no attributes.
+The class 'sql::literal::ExactNumericLiteral' has the following attributes: 'value' of type str.
+The class 'Column' has no attributes.
+The class 'sql::common::Separator' has no attributes.
+The class 'PredefinedType' has no attributes.
+The class 'sql::schema::TableElement' has no attributes.
+The class 'sql::datatype::TimeType' has the following attributes: 'precision' of type str; 'withTimeZone' of type str.
+The class 'sql::literal::NationalCharacterStringLiteral' has the following attributes: 'values' of type str.
+The class 'sql::schema::TableConstraint' has no attributes.
+The class 'schema::ReferentialConstraint' has no attributes.
+The class 'sql::datatype::NationalCharacterStringType' has the following attributes: 'length' of type str; 'kind' of type str.
+The class 'sql::common::Statement' has no attributes.
+The class 'DatetimeValueFunction' has no attributes.
+The class 'sql::schema::ReferentialConstraint' has no attributes.
+The class 'sql::expression::ImplicitlyTypedValueSpecification' has no attributes.
+The class 'sql::function::DatetimeValueFunction' has the following attributes: 'kind' of type str; 'precision' of type str.
+The class 'sql::schema::UniqueColumnConstraint' has no attributes.
+The class 'Separator' has no attributes.
+The class 'sql::datatype::DateType' has no attributes.
+The class 'TableConstraint' has no attributes.
+The class 'ImplicitlyTypedValueSpecification' has no attributes.
+The class 'sql::datatype::TimestampType' has the following attributes: 'withTimeZone' of type str; 'precision' of type str.
+The class 'schema::ColumnConstraint' has no attributes.
+The class 'sql::schema::NotNullColumnConstraint' has no attributes.
+The class 'sql::literal::NumericLiteral' has no attributes.
+The class 'GeneralLiteral' has no attributes.
+The class 'sql::schema::ReferentialColumnConstraint' has no attributes.
+The class 'sql::schema::TableColumnsConstraint' has no attributes.
+The class 'Comment' has no attributes.
+The class 'Statement' has no attributes.
+The class 'sql::literal::Literal' has no attributes.
+The class 'sql::schema::DatetimeValueFunctionDefaultOption' has no attributes.
+The class 'ColumnConstraint' has no attributes.
+The class 'sql::literal::GeneralLiteral' has no attributes.
+The class 'sql::schema::ReferentialTableConstraint' has no attributes.
+The class 'EObject' has no attributes.
+The class 'sql::common::BracketedComment' has no attributes.
+The class 'LargeObjectLength' has no attributes.
+The class 'sql::datatype::PredefinedType' has no attributes.
+The class 'sql::schema::TableReference' has the following attributes: 'schemaName' of type str; 'catalogName' of type str.
+The class 'DataType' has no attributes.
+The class 'SQLSchemaStatement' has no attributes.
+The class 'NationalCharacterStringLiteral' has no attributes.
+The class 'TableElement' has no attributes.
+The class 'DatetimeType' has no attributes.
+The class 'DatetimeLiteral' has no attributes.
+The class 'sql::literal::TimeLiteral' has the following attributes: 'value' of type str.
+The class 'sql::schema::SQLSchemaDefinitionStatement' has no attributes.
+The class 'sql::datatype::BinaryLargeObjectStringType' has the following attributes: 'kind' of type str.
+The class 'sql::literal::TimestampLiteral' has the following attributes: 'value' of type str.
+The class 'sql::common::Comment' has the following attributes: 'value' of type str.
+The class 'TableElementList' has no attributes.
+The class 'sql::schema::ColumnConstraint' has no attributes.
+The class 'Literal' has no attributes.
+The class 'TableDefinition' has no attributes.
+The class 'sql::datatype::CharacterStringType' has the following attributes: 'length' of type str; 'kind' of type str.
+The class 'sql::common::SchemaQualifiedName' has the following attributes: 'catalogName' of type str; 'schemaName' of type str; 'name' of type str.
+The class 'sql::datatype::LargeObjectLength' has the following attributes: 'multiplier' of type str; 'value' of type str; 'units' of type str.
+The class 'sql::common::DirectSQLStatement' has no attributes.
+The class 'schema::UniqueConstraint' has no attributes.
+The class 'sql::datatype::NumericType' has no attributes.
+The class 'sql::schema::TableContentsSource' has no attributes.
+The class 'TableReference' has no attributes.
+The class 'sql::schema::ImplicitlyTypedValueSpecificationDefaultOption' has no attributes.
+The class 'sql::literal::BooleanLiteral' has the following attributes: 'value' of type str.
+The class 'sql::Dummy' has no attributes.
+The class 'sql::literal::CharacterStringLiteral' has no attributes.
+The class 'schema::TableElement' has no attributes.
+The class 'sql::expression::NullSpecification' has no attributes.
+The class 'schema::TableColumnsConstraint' has no attributes.
+The class 'sql::schema::TableDefinition' has the following attributes: 'scope' of type str; 'label' of type str.
+The class 'DirectSQLStatement' has no attributes.
+The class 'schema::SQLSchemaDefinitionStatement' has no attributes.
+The class 'NumericType' has no attributes.
+The class 'SchemaQualifiedName' has no attributes.
+The class 'sql::schema::SQLSchemaStatement' has no attributes.
+The class 'sql::datatype::DatetimeType' has no attributes.
+The class 'sql::schema::DefaultOption' has no attributes.
+The class 'sql::datatype::BooleanType' has no attributes.
+The class 'TableContentsSource' has no attributes.
+The class 'sql::datatype::DataType' has no attributes.
+The class 'sql::schema::TableElementList' has no attributes.
+The class 'sql::common::SimpleComment' has no attributes.
+The class 'sql::datatype::ApproximateNumericType' has the following attributes: 'kind' of type str; 'precision' of type str.
+The class 'sql::schema::Column' has the following attributes: 'name' of type str.
+The class 'sql::schema::UniqueTableConstraint' has no attributes.
+The class 'sql::literal::ApproximateNumericLiteral' has the following attributes: 'value' of type float.
+The class 'DefaultOption' has no attributes.
+The class 'sql::common::SQLScript' has no attributes.
+The enumeration 'ExactNumericTypeKind' has the following literals: 'INT', 'SMALLINT', 'INTEGER', 'NUMERIC', 'BIGINT', 'DEC', 'DECIMAL'.
+The enumeration 'BinaryLargeObjectStringTypeKind' has the following literals: 'BLOB', 'BINARY_LARGE_OBJECT'.
+The enumeration 'DatetimeValueFunctionKind' has the following literals: 'CURRENT_TIME', 'LOCALTIME', 'CURRENT_TIMESTAMP', 'LOCALTIMESTAMP', 'CURRENT_DATE'.
+The enumeration 'TableScope' has the following literals: 'PERSISTENT', 'GLOBAL_TEMPORARY', 'LOCAL_TEMPORARY'.
+The enumeration 'NationalCharacterStringTypeKind' has the following literals: 'NCHAR', 'NATIONAL_CHARACTER', 'NATIONAL_CHARACTER_VARYING', 'NCHAR_VARYING', 'NATIONAL_CHAR_VARYING', 'NATIONAL_CHAR'.
+The enumeration 'CharLengthUnits' has the following literals: 'CODE_UNITS', 'CHARACTERS', 'OCTETS'.
+The enumeration 'Multiplier' has the following literals: 'K', 'G', 'M'.
+The enumeration 'CharacterStringTypeKind' has the following literals: 'CHARACTER_VARYING', 'CHARACTER', 'VARCHAR', 'CHAR', 'CHAR_VARYING'.
+The enumeration 'UniqueSpecificationKind' has the following literals: 'UNIQUE', 'PRIMARY_KEY'.
+The enumeration 'ApproximateNumericTypeKind' has the following literals: 'REAL', 'FLOAT', 'DOUBLE_PRECISION'.
+'sql::common::BracketedComment' is a specialization of 'Comment'.
+'sql::datatype::ExactNumericType' is a specialization of 'NumericType'.
+'sql::schema::NotNullColumnConstraint' is a specialization of 'ColumnConstraint'.
+'sql::datatype::NationalCharacterStringType' is a specialization of 'PredefinedType'.
+'sql::common::Comment' is a specialization of 'Separator'.
+'sql::schema::ReferentialColumnConstraint' is a specialization of 'schema::ReferentialConstraint'.
+'sql::expression::NullSpecification' is a specialization of 'ImplicitlyTypedValueSpecification'.
+'sql::datatype::TimestampType' is a specialization of 'DatetimeType'.
+'sql::literal::NationalCharacterStringLiteral' is a specialization of 'GeneralLiteral'.
+'sql::schema::Column' is a specialization of 'TableElement'.
+'sql::schema::TableDefinition' is a specialization of 'schema::SQLSchemaDefinitionStatement'.
+'sql::literal::ExactNumericLiteral' is a specialization of 'NumericLiteral'.
+'sql::schema::ReferentialTableConstraint' is a specialization of 'schema::ReferentialConstraint'.
+'sql::schema::SQLSchemaStatement' is a specialization of 'DirectSQLStatement'.
+'sql::datatype::TimeType' is a specialization of 'DatetimeType'.
+'sql::literal::DatetimeLiteral' is a specialization of 'GeneralLiteral'.
+'sql::datatype::ApproximateNumericType' is a specialization of 'NumericType'.
+'sql::schema::DatetimeValueFunctionDefaultOption' is a specialization of 'DefaultOption'.
+'sql::literal::GeneralLiteral' is a specialization of 'Literal'.
+'sql::literal::BooleanLiteral' is a specialization of 'GeneralLiteral'.
+'sql::datatype::BinaryLargeObjectStringType' is a specialization of 'PredefinedType'.
+'sql::datatype::PredefinedType' is a specialization of 'DataType'.
+'sql::literal::NumericLiteral' is a specialization of 'Literal'.
+'sql::schema::UniqueTableConstraint' is a specialization of 'schema::UniqueConstraint'.
+'sql::literal::ApproximateNumericLiteral' is a specialization of 'NumericLiteral'.
+'sql::literal::DateLiteral' is a specialization of 'DatetimeLiteral'.
+'sql::literal::TimeLiteral' is a specialization of 'DatetimeLiteral'.
+'sql::schema::ImplicitlyTypedValueSpecificationDefaultOption' is a specialization of 'DefaultOption'.
+'sql::common::DirectSQLStatement' is a specialization of 'Statement'.
+'sql::datatype::NumericType' is a specialization of 'PredefinedType'.
+'sql::schema::ColumnConstraint' is a specialization of 'EObject'.
+'sql::schema::ReferentialColumnConstraint' is a specialization of 'schema::ColumnConstraint'.
+'sql::schema::TableColumnsConstraint' is a specialization of 'TableConstraint'.
+'sql::literal::CharacterStringLiteral' is a specialization of 'NationalCharacterStringLiteral'.
+'sql::common::SimpleComment' is a specialization of 'Comment'.
+'sql::common::Separator' is a specialization of 'Statement'.
+'sql::schema::TableElementList' is a specialization of 'TableContentsSource'.
+'sql::datatype::DatetimeType' is a specialization of 'PredefinedType'.
+'sql::literal::TimestampLiteral' is a specialization of 'DatetimeLiteral'.
+'sql::schema::UniqueColumnConstraint' is a specialization of 'schema::UniqueConstraint'.
+'sql::schema::LiteralDefaultOption' is a specialization of 'DefaultOption'.
+'sql::schema::UniqueColumnConstraint' is a specialization of 'schema::ColumnConstraint'.
+'sql::schema::UniqueTableConstraint' is a specialization of 'schema::TableColumnsConstraint'.
+'sql::schema::SQLSchemaDefinitionStatement' is a specialization of 'SQLSchemaStatement'.
+'sql::datatype::CharacterStringType' is a specialization of 'PredefinedType'.
+'sql::schema::TableConstraint' is a specialization of 'schema::TableElement'.
+'sql::schema::ReferentialTableConstraint' is a specialization of 'schema::TableColumnsConstraint'.
+'sql::datatype::DateType' is a specialization of 'DatetimeType'.
+'sql::datatype::BooleanType' is a specialization of 'PredefinedType'.
+'sql::schema::TableDefinition' is a specialization of 'EObject'.
+'sql::schema::TableConstraint' is a specialization of 'EObject'.
+'sql::schema::TableElementList' (role 'owner15', cardinality 0..*) is associated with 'TableElement' (role 'TableElement', cardinality 0..*).
+'SchemaQualifiedName' (role 'SchemaQualifiedName4', cardinality 0..*) is associated with 'sql::datatype::CharacterStringType' (role 'sql_datatype_CharacterStringType', cardinality 0..*).
+'DatetimeValueFunction' (role 'DatetimeValueFunction', cardinality 0..*) is associated with 'sql::schema::DatetimeValueFunctionDefaultOption' (role 'sql_schema_DatetimeValueFunctionDefaultOption', cardinality 0..*).
+'ImplicitlyTypedValueSpecification' (role 'ImplicitlyTypedValueSpecification', cardinality 0..*) is associated with 'sql::schema::ImplicitlyTypedValueSpecificationDefaultOption' (role 'sql_schema_ImplicitlyTypedValueSpecificationDefaultOption', cardinality 0..*).
+'Column' (role 'Column43', cardinality 0..*) is associated with 'sql::schema::TableColumnsConstraint' (role 'sql_schema_TableColumnsConstraint', cardinality 0..*).
+'TableElementList' (role 'TableElementList', cardinality 0..*) is associated with 'sql::schema::TableElement' (role 'elements', cardinality 0..*).
+'Statement' (role 'Statement', cardinality 0..*) is associated with 'sql::common::SQLScript' (role 'sql_common_SQLScript', cardinality 0..*).
+'ColumnConstraint' (role 'ColumnConstraint', cardinality 0..*) is associated with 'sql::schema::Column' (role 'owner21', cardinality 0..*).
+'sql::schema::TableConstraint' (role 'sql_schema_TableConstraint', cardinality 0..*) is associated with 'SchemaQualifiedName' (role 'SchemaQualifiedName26', cardinality 0..*).
+'SchemaQualifiedName' (role 'SchemaQualifiedName24', cardinality 0..*) is associated with 'sql::schema::Column' (role 'sql_schema_Column23', cardinality 0..*).
+'Literal' (role 'Literal', cardinality 0..*) is associated with 'sql::schema::LiteralDefaultOption' (role 'sql_schema_LiteralDefaultOption', cardinality 0..*).
+'sql::schema::DefaultOption' (role 'defaultOption', cardinality 0..*) is associated with 'Column' (role 'Column', cardinality 0..*).
+'sql::schema::ReferentialConstraint' (role 'sql_schema_ReferentialConstraint', cardinality 0..*) is associated with 'Column' (role 'Column37', cardinality 0..*).
+'DataType' (role 'DataType', cardinality 0..*) is associated with 'sql::schema::Column' (role 'sql_schema_Column', cardinality 0..*).
+'SchemaQualifiedName' (role 'SchemaQualifiedName12', cardinality 0..*) is associated with 'sql::schema::TableDefinition' (role 'sql_schema_TableDefinition', cardinality 0..*).
+'TableDefinition' (role 'TableDefinition', cardinality 0..*) is associated with 'sql::schema::TableContentsSource' (role 'contentsSource', cardinality 0..*).
+'sql::schema::TableDefinition' (role 'owner', cardinality 0..*) is associated with 'TableContentsSource' (role 'TableContentsSource', cardinality 0..*).
+'Separator' (role 'Separator', cardinality 0..*) is associated with 'sql::literal::NationalCharacterStringLiteral' (role 'sql_literal_NationalCharacterStringLiteral', cardinality 0..*).
+'SchemaQualifiedName' (role 'SchemaQualifiedName', cardinality 0..*) is associated with 'sql::literal::CharacterStringLiteral' (role 'sql_literal_CharacterStringLiteral', cardinality 0..*).
+'sql::schema::ColumnConstraint' (role 'constraint', cardinality 0..*) is associated with 'Column' (role 'Column30', cardinality 0..*).
+'sql::datatype::BinaryLargeObjectStringType' (role 'sql_datatype_BinaryLargeObjectStringType', cardinality 0..*) is associated with 'LargeObjectLength' (role 'LargeObjectLength', cardinality 0..*).
+'sql::schema::Column' (role 'owner19', cardinality 0..*) is associated with 'DefaultOption' (role 'DefaultOption', cardinality 0..*).
+'sql::schema::ColumnConstraint' (role 'sql_schema_ColumnConstraint', cardinality 0..*) is associated with 'SchemaQualifiedName' (role 'SchemaQualifiedName32', cardinality 0..*).
+'TableDefinition' (role 'TableDefinition41', cardinality 0..*) is associated with 'sql::schema::TableReference' (role 'sql_schema_TableReference', cardinality 0..*).
+'sql::datatype::CharacterStringType' (role 'sql_datatype_CharacterStringType6', cardinality 0..*) is associated with 'SchemaQualifiedName' (role 'SchemaQualifiedName7', cardinality 0..*).
+'SchemaQualifiedName' (role 'SchemaQualifiedName9', cardinality 0..*) is associated with 'sql::datatype::NationalCharacterStringType' (role 'sql_datatype_NationalCharacterStringType', cardinality 0..*).
+'sql::schema::ReferentialConstraint' (role 'sql_schema_ReferentialConstraint39', cardinality 0..*) is associated with 'TableReference' (role 'TableReference', cardinality 0..*).

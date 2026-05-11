@@ -1,0 +1,5 @@
+The model has 4 class(es).
+The class 'root::A' has no attributes.
+The class 'root::subpackage1::B' has no attributes.
+The class 'root::subsubpackage1::D' has no attributes.
+The class 'root::subpackage2::C' has no attributes.

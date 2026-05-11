@@ -1,0 +1,11 @@
+The model has 4 class(es).
+The class 'SemanticResourceDB::TreeRoot' has the following attributes: 'rootURI' of type str.
+The class 'SemanticResourceDB::SemanticDB' has no attributes.
+The class 'SemanticResourceDB::ResourceTreeNode' has the following attributes: 'name' of type str; 'localOnly' of type bool; 'type' of type str; 'remoteURI' of type str; 'path' of type str; 'queryPart' of type str; 'sessionProperties' of type str; 'exists' of type bool; 'templateID' of type str; 'persistentProperties' of type str; 'dynamicContentProviderID' of type str.
+The class 'ResourceTreeNode' has no attributes.
+The enumeration 'TreeNodeType' has the following literals: 'PROJECT', 'UNKNOWN', 'FOLDER', 'FILE'.
+'SemanticResourceDB::TreeRoot' is a specialization of 'ResourceTreeNode'.
+'SemanticResourceDB::SemanticDB' (role 'parentDB', cardinality 0..*) is associated with 'SemanticResourceDB::TreeRoot' (role 'TreeRoot', cardinality 0..*).
+'SemanticResourceDB::ResourceTreeNode' (role 'ResourceTreeNode', cardinality 0..*) is associated with 'SemanticResourceDB::ResourceTreeNode' (role 'parent', cardinality 0..*).
+'SemanticResourceDB::ResourceTreeNode' (role 'children', cardinality 0..*) is associated with 'SemanticResourceDB::ResourceTreeNode' (role 'ResourceTreeNode4', cardinality 0..*).
+'SemanticResourceDB::SemanticDB' (role 'SemanticDB', cardinality 0..*) is associated with 'SemanticResourceDB::TreeRoot' (role 'roots', cardinality 0..*).

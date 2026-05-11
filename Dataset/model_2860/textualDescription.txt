@@ -1,0 +1,376 @@
+The model has 131 class(es).
+The class 'go::QualifiedIdent' has no attributes.
+The class 'go::ConstDecl' has no attributes.
+The class 'go::Declaration' has no attributes.
+The class 'go::IdentifierList' has no attributes.
+The class 'go::TypeDecl' has no attributes.
+The class 'go::RangeClause' has no attributes.
+The class 'go::imaginary::lit' has no attributes.
+The class 'go::BasicLit' has the following attributes: 'int_lit' of type str.
+The class 'OperandName' has no attributes.
+The class 'go::ReceiverType' has no attributes.
+The class 'go::Assignment' has the following attributes: 'assign_op' of type str.
+The class 'go::Statement' has the following attributes: 'FallthroughStmt' of type str.
+The class 'go::PrimaryExpr' has no attributes.
+The class 'go::RecvExpr' has no attributes.
+The class 'go::TypeDef' has no attributes.
+The class 'go::Conversion' has no attributes.
+The class 'go::TypeCaseClause' has no attributes.
+The class 'go::TypeName' has no attributes.
+The class 'go::Key' has no attributes.
+The class 'go::ExpressionLinha' has no attributes.
+The class 'go::PackageClause' has no attributes.
+The class 'go::KeyedElement' has no attributes.
+The class 'go::PackageName' has no attributes.
+The class 'go::RecvStmt' has no attributes.
+The class 'go::Element' has no attributes.
+The class 'go::FunctionName' has no attributes.
+The class 'go::SendStmt' has no attributes.
+The class 'go::MapType' has no attributes.
+The class 'go::EmbeddedField' has no attributes.
+The class 'go::Receiver' has no attributes.
+The class 'go::SimpleStmt' has the following attributes: 'EmptyStmt' of type str.
+The class 'go::OperandName' has no attributes.
+The class 'go::ShortVarDecl' has no attributes.
+The class 'go::AliasDecl' has no attributes.
+The class 'go::PostStmt' has no attributes.
+The class 'go::ImportDecl' has no attributes.
+The class 'go::TypeLit' has no attributes.
+The class 'go::GotoStmt' has no attributes.
+The class 'TypeSpec' has no attributes.
+The class 'go::Channel' has no attributes.
+The class 'go::TypeSwitchGuard' has no attributes.
+The class 'go::string::lit' has the following attributes: 'interpreted_string_lit' of type str; 'raw_string_lit' of type str.
+The class 'go::TypeAssertion' has no attributes.
+The class 'go::Type' has no attributes.
+The class 'go::Expression' has no attributes.
+The class 'go::ElementType' has no attributes.
+The class 'go::switch::stmt::linha' has no attributes.
+The class 'go::rune::lit' has the following attributes: 'byte_value' of type str; 'unicode_value' of type str.
+The class 'go::ParameterList' has no attributes.
+The class 'SwitchStmt' has no attributes.
+The class 'go::ExpressionList' has no attributes.
+The class 'go::ChannelType' has no attributes.
+The class 'go::SelectStmt' has no attributes.
+The class 'go::TopLevelDecl' has no attributes.
+The class 'go::MethodDecl' has no attributes.
+The class 'float::lit' has no attributes.
+The class 'go::TypeLitLinha' has no attributes.
+The class 'go::KeyType' has no attributes.
+The class 'go::VarSpec' has no attributes.
+The class 'go::GoStmt' has no attributes.
+The class 'go::IncDecStmt' has no attributes.
+The class 'go::MethodExpr' has no attributes.
+The class 'go::LiteralType' has no attributes.
+The class 'go::FunctionBody' has no attributes.
+The class 'go::BreakStmt' has no attributes.
+The class 'go::InterfaceTypeName' has no attributes.
+The class 'go::MethodName' has no attributes.
+The class 'go::TypeList' has no attributes.
+The class 'go::Block' has no attributes.
+The class 'go::topLevelDeclLinha' has no attributes.
+The class 'go::ExprCaseClause' has no attributes.
+The class 'go::ArrayLength' has no attributes.
+The class 'go::Arguments' has no attributes.
+The class 'go::ConstSpec' has no attributes.
+The class 'go::identifier' has the following attributes: 'LETTER' of type str; 'DECIMAL_DIGIT' of type str.
+The class 'go::LiteralValue' has no attributes.
+The class 'go::exponent' has no attributes.
+The class 'go::decimals' has the following attributes: 'DECIMAL_DIGIT' of type str.
+The class 'go::ForClause' has no attributes.
+The class 'go::Literal' has no attributes.
+The class 'go::FunctionLit' has no attributes.
+The class 'go::Operand' has no attributes.
+The class 'go::binary::op' has the following attributes: 'mul_op' of type str; 'add_op' of type str; 'rel_op' of type str.
+The class 'Receiver' has no attributes.
+The class 'go::Label' has no attributes.
+The class 'go::IfStmt' has no attributes.
+The class 'go::ImportSpec' has no attributes.
+The class 'go::Index' has no attributes.
+The class 'go::ContinueStmt' has no attributes.
+The class 'go::StructType' has no attributes.
+The class 'go::Signature' has no attributes.
+The class 'go::InitStmt' has no attributes.
+The class 'go::Parameters' has no attributes.
+The class 'go::ExpressionStmt' has no attributes.
+The class 'go::ExprSwitchCase' has no attributes.
+The class 'go::UnaryExpr' has the following attributes: 'unary_op' of type str.
+The class 'go::CompositeLit' has no attributes.
+The class 'go::SouceFile' has no attributes.
+The class 'go::TypeNameLinha' has no attributes.
+The class 'go::DeferStmt' has no attributes.
+The class 'go::Tag' has no attributes.
+The class 'go::float::lit' has no attributes.
+The class 'go::CommClause' has no attributes.
+The class 'go::FunctionType' has no attributes.
+The class 'go::StatementList' has no attributes.
+The class 'go::ReturnStmt' has no attributes.
+The class 'Literal' has no attributes.
+The class 'go::Result' has no attributes.
+The class 'go::PointerType' has no attributes.
+The class 'go::TypeSwitchCase' has no attributes.
+The class 'go::Slice' has no attributes.
+The class 'go::MethodSpec' has no attributes.
+The class 'go::PrimaryExprLinha' has no attributes.
+The class 'go::FieldDecl' has no attributes.
+The class 'go::CommCase' has no attributes.
+The class 'go::ParameterDecl' has no attributes.
+The class 'go::LiteralTypeLinha' has no attributes.
+The class 'go::SwitchStmt' has no attributes.
+The class 'go::TypeSpec' has no attributes.
+The class 'go::VarDecl' has no attributes.
+The class 'go::Selector' has no attributes.
+The class 'go::FunctionDecl' has no attributes.
+The class 'go::ponto' has no attributes.
+The class 'go::FieldName' has no attributes.
+The class 'go::ElementList' has no attributes.
+The class 'go::Condition' has no attributes.
+The class 'go::cochetes' has no attributes.
+The class 'go::InterfaceType' has no attributes.
+The class 'go::ForStmt' has no attributes.
+The class 'go::ImportPath' has no attributes.
+The class 'go::LabeledStmt' has no attributes.
+'go::decimals' is a specialization of 'float::lit'.
+'go::QualifiedIdent' is a specialization of 'OperandName'.
+'go::Parameters' is a specialization of 'Receiver'.
+'go::identifier' is a specialization of 'OperandName'.
+'go::AliasDecl' is a specialization of 'TypeSpec'.
+'go::TypeDef' is a specialization of 'TypeSpec'.
+'go::FunctionLit' is a specialization of 'Literal'.
+'go::SimpleStmt' is a specialization of 'SwitchStmt'.
+'go::CompositeLit' is a specialization of 'Literal'.
+'go::ElementList' (role 'go_ElementList', cardinality 0..*) is associated with 'go::LiteralValue' (role 'go_LiteralValue250', cardinality 0..*).
+'go::ConstSpec' (role 'go_ConstSpec150', cardinality 0..*) is associated with 'go::ExpressionList' (role 'go_ExpressionList', cardinality 0..*).
+'go::Parameters' (role 'go_Parameters76', cardinality 0..*) is associated with 'go::Result' (role 'go_Result75', cardinality 0..*).
+'go::MethodDecl' (role 'go_MethodDecl201', cardinality 0..*) is associated with 'go::Signature' (role 'go_Signature202', cardinality 0..*).
+'go::PointerType' (role 'go_PointerType', cardinality 0..*) is associated with 'go::TypeLit' (role 'go_TypeLit28', cardinality 0..*).
+'go::FunctionBody' (role 'go_FunctionBody193', cardinality 0..*) is associated with 'go::Block' (role 'go_Block194', cardinality 0..*).
+'go::Expression' (role 'go_Expression358', cardinality 0..*) is associated with 'go::Conversion' (role 'go_Conversion357', cardinality 0..*).
+'go::PackageName' (role 'go_PackageName554', cardinality 0..*) is associated with 'go::identifier' (role 'go_identifier555', cardinality 0..*).
+'go::Type' (role 'go_Type10', cardinality 0..*) is associated with 'go::Type' (role 'go_Type8', cardinality 0..*).
+'go::MethodName' (role 'go_MethodName199', cardinality 0..*) is associated with 'go::MethodDecl' (role 'go_MethodDecl198', cardinality 0..*).
+'go::TypeAssertion' (role 'go_TypeAssertion319', cardinality 0..*) is associated with 'go::Type' (role 'go_Type320', cardinality 0..*).
+'go::TypeLitLinha' (role 'go_TypeLitLinha', cardinality 0..*) is associated with 'go::TypeLit' (role 'go_TypeLit24', cardinality 0..*).
+'go::QualifiedIdent' (role 'go_QualifiedIdent224', cardinality 0..*) is associated with 'go::identifier' (role 'go_identifier225', cardinality 0..*).
+'go::LiteralType' (role 'go_LiteralType', cardinality 0..*) is associated with 'go::CompositeLit' (role 'go_CompositeLit', cardinality 0..*).
+'go::Statement' (role 'go_Statement388', cardinality 0..*) is associated with 'go::DeferStmt' (role 'go_DeferStmt', cardinality 0..*).
+'go::Literal' (role 'go_Literal213', cardinality 0..*) is associated with 'go::BasicLit' (role 'go_BasicLit', cardinality 0..*).
+'go::Expression' (role 'go_Expression211', cardinality 0..*) is associated with 'go::Operand' (role 'go_Operand210', cardinality 0..*).
+'go::PointerType' (role 'go_PointerType66', cardinality 0..*) is associated with 'go::Type' (role 'go_Type67', cardinality 0..*).
+'go::IdentifierList' (role 'go_IdentifierList177', cardinality 0..*) is associated with 'go::ShortVarDecl' (role 'go_ShortVarDecl', cardinality 0..*).
+'go::VarSpec' (role 'go_VarSpec171', cardinality 0..*) is associated with 'go::Type' (role 'go_Type172', cardinality 0..*).
+'go::LiteralType' (role 'go_LiteralType233', cardinality 0..*) is associated with 'go::LiteralTypeLinha' (role 'go_LiteralTypeLinha', cardinality 0..*).
+'go::IfStmt' (role 'go_IfStmt432', cardinality 0..*) is associated with 'go::Block' (role 'go_Block433', cardinality 0..*).
+'go::ParameterDecl' (role 'go_ParameterDecl85', cardinality 0..*) is associated with 'go::IdentifierList' (role 'go_IdentifierList86', cardinality 0..*).
+'go::MethodSpec' (role 'go_MethodSpec98', cardinality 0..*) is associated with 'go::InterfaceTypeName' (role 'go_InterfaceTypeName', cardinality 0..*).
+'go::Signature' (role 'go_Signature71', cardinality 0..*) is associated with 'go::Parameters' (role 'go_Parameters', cardinality 0..*).
+'go::cochetes' (role 'go_cochetes309', cardinality 0..*) is associated with 'go::Slice' (role 'go_Slice', cardinality 0..*).
+'go::FunctionDecl' (role 'go_FunctionDecl184', cardinality 0..*) is associated with 'go::Signature' (role 'go_Signature185', cardinality 0..*).
+'go::CommClause' (role 'go_CommClause517', cardinality 0..*) is associated with 'go::StatementList' (role 'go_StatementList518', cardinality 0..*).
+'go::Statement' (role 'go_Statement371', cardinality 0..*) is associated with 'go::BreakStmt' (role 'go_BreakStmt', cardinality 0..*).
+'go::ExpressionList' (role 'go_ExpressionList424', cardinality 0..*) is associated with 'go::Assignment' (role 'go_Assignment423', cardinality 0..*).
+'go::GotoStmt' (role 'go_GotoStmt545', cardinality 0..*) is associated with 'go::Label' (role 'go_Label546', cardinality 0..*).
+'go::TypeSwitchGuard' (role 'go_TypeSwitchGuard463', cardinality 0..*) is associated with 'go::PrimaryExpr' (role 'go_PrimaryExpr464', cardinality 0..*).
+'go::StatementList' (role 'go_StatementList469', cardinality 0..*) is associated with 'go::TypeCaseClause' (role 'go_TypeCaseClause468', cardinality 0..*).
+'go::Statement' (role 'go_Statement', cardinality 0..*) is associated with 'go::StatementList' (role 'go_StatementList118', cardinality 0..*).
+'go::ponto' (role 'go_ponto', cardinality 0..*) is associated with 'go::PrimaryExprLinha' (role 'go_PrimaryExprLinha293', cardinality 0..*).
+'go::Expression' (role 'go_Expression430', cardinality 0..*) is associated with 'go::IfStmt' (role 'go_IfStmt429', cardinality 0..*).
+'go::switch::stmt::linha' (role 'go_switch_stmt_linha454', cardinality 0..*) is associated with 'go::Expression' (role 'go_Expression455', cardinality 0..*).
+'go::SimpleStmt' (role 'go_SimpleStmt392', cardinality 0..*) is associated with 'go::SendStmt' (role 'go_SendStmt', cardinality 0..*).
+'go::PackageName' (role 'go_PackageName552', cardinality 0..*) is associated with 'go::PackageClause' (role 'go_PackageClause551', cardinality 0..*).
+'go::Label' (role 'go_Label540', cardinality 0..*) is associated with 'go::BreakStmt' (role 'go_BreakStmt539', cardinality 0..*).
+'go::TypeCaseClause' (role 'go_TypeCaseClause466', cardinality 0..*) is associated with 'go::TypeSwitchCase' (role 'go_TypeSwitchCase', cardinality 0..*).
+'go::RangeClause' (role 'go_RangeClause501', cardinality 0..*) is associated with 'go::ExpressionList' (role 'go_ExpressionList502', cardinality 0..*).
+'go::ExpressionLinha' (role 'go_ExpressionLinha344', cardinality 0..*) is associated with 'go::ExpressionLinha' (role 'go_ExpressionLinha346', cardinality 0..*).
+'go::LiteralValue' (role 'go_LiteralValue257', cardinality 0..*) is associated with 'go::Element' (role 'go_Element256', cardinality 0..*).
+'go::TypeSpec' (role 'go_TypeSpec163', cardinality 0..*) is associated with 'go::Type' (role 'go_Type164', cardinality 0..*).
+'go::BasicLit' (role 'go_BasicLit219', cardinality 0..*) is associated with 'go::string::lit' (role 'go_string_lit220', cardinality 0..*).
+'go::ContinueStmt' (role 'go_ContinueStmt542', cardinality 0..*) is associated with 'go::Label' (role 'go_Label543', cardinality 0..*).
+'go::PrimaryExpr' (role 'go_PrimaryExpr282', cardinality 0..*) is associated with 'go::PrimaryExprLinha' (role 'go_PrimaryExprLinha', cardinality 0..*).
+'go::ReceiverType' (role 'go_ReceiverType', cardinality 0..*) is associated with 'go::MethodExpr' (role 'go_MethodExpr328', cardinality 0..*).
+'go::decimals' (role 'go_decimals570', cardinality 0..*) is associated with 'go::exponent' (role 'go_exponent', cardinality 0..*).
+'go::CommClause' (role 'go_CommClause515', cardinality 0..*) is associated with 'go::CommCase' (role 'go_CommCase', cardinality 0..*).
+'go::TypeName' (role 'go_TypeName', cardinality 0..*) is associated with 'go::Type' (role 'go_Type', cardinality 0..*).
+'go::FieldDecl' (role 'go_FieldDecl57', cardinality 0..*) is associated with 'go::EmbeddedField' (role 'go_EmbeddedField', cardinality 0..*).
+'go::topLevelDeclLinha' (role 'go_topLevelDeclLinha130', cardinality 0..*) is associated with 'go::FunctionName' (role 'go_FunctionName', cardinality 0..*).
+'go::FunctionName' (role 'go_FunctionName182', cardinality 0..*) is associated with 'go::FunctionDecl' (role 'go_FunctionDecl', cardinality 0..*).
+'go::VarSpec' (role 'go_VarSpec', cardinality 0..*) is associated with 'go::VarDecl' (role 'go_VarDecl166', cardinality 0..*).
+'go::LiteralTypeLinha' (role 'go_LiteralTypeLinha247', cardinality 0..*) is associated with 'go::ElementType' (role 'go_ElementType248', cardinality 0..*).
+'go::Type' (role 'go_Type7', cardinality 0..*) is associated with 'go::TypeLit' (role 'go_TypeLit', cardinality 0..*).
+'go::UnaryExpr' (role 'go_UnaryExpr348', cardinality 0..*) is associated with 'go::PrimaryExpr' (role 'go_PrimaryExpr349', cardinality 0..*).
+'go::TopLevelDecl' (role 'go_TopLevelDecl128', cardinality 0..*) is associated with 'go::topLevelDeclLinha' (role 'go_topLevelDeclLinha', cardinality 0..*).
+'go::GoStmt' (role 'go_GoStmt510', cardinality 0..*) is associated with 'go::Expression' (role 'go_Expression511', cardinality 0..*).
+'go::Signature' (role 'go_Signature275', cardinality 0..*) is associated with 'go::FunctionLit' (role 'go_FunctionLit', cardinality 0..*).
+'go::Channel' (role 'go_Channel', cardinality 0..*) is associated with 'go::SendStmt' (role 'go_SendStmt412', cardinality 0..*).
+'go::RecvStmt' (role 'go_RecvStmt525', cardinality 0..*) is associated with 'go::ExpressionList' (role 'go_ExpressionList526', cardinality 0..*).
+'go::ChannelType' (role 'go_ChannelType', cardinality 0..*) is associated with 'go::TypeLit' (role 'go_TypeLit36', cardinality 0..*).
+'go::switch::stmt::linha' (role 'go_switch_stmt_linha457', cardinality 0..*) is associated with 'go::ExprCaseClause' (role 'go_ExprCaseClause458', cardinality 0..*).
+'go::identifier' (role 'go_identifier153', cardinality 0..*) is associated with 'go::IdentifierList' (role 'go_IdentifierList152', cardinality 0..*).
+'go::Statement' (role 'go_Statement360', cardinality 0..*) is associated with 'go::Declaration' (role 'go_Declaration361', cardinality 0..*).
+'go::LiteralValue' (role 'go_LiteralValue270', cardinality 0..*) is associated with 'go::Key' (role 'go_Key269', cardinality 0..*).
+'go::FieldDecl' (role 'go_FieldDecl', cardinality 0..*) is associated with 'go::StructType' (role 'go_StructType50', cardinality 0..*).
+'go::MethodExpr' (role 'go_MethodExpr330', cardinality 0..*) is associated with 'go::MethodName' (role 'go_MethodName331', cardinality 0..*).
+'go::UnaryExpr' (role 'go_UnaryExpr350', cardinality 0..*) is associated with 'go::UnaryExpr' (role 'go_UnaryExpr352', cardinality 0..*).
+'go::BasicLit' (role 'go_BasicLit215', cardinality 0..*) is associated with 'go::float::lit' (role 'go_float_lit', cardinality 0..*).
+'go::cochetes' (role 'go_cochetes304', cardinality 0..*) is associated with 'go::Index' (role 'go_Index', cardinality 0..*).
+'go::PrimaryExpr' (role 'go_PrimaryExpr284', cardinality 0..*) is associated with 'go::Conversion' (role 'go_Conversion', cardinality 0..*).
+'go::ExprSwitchCase' (role 'go_ExprSwitchCase', cardinality 0..*) is associated with 'go::ExprCaseClause' (role 'go_ExprCaseClause', cardinality 0..*).
+'go::TypeLitLinha' (role 'go_TypeLitLinha41', cardinality 0..*) is associated with 'go::TypeLitLinha' (role 'go_TypeLitLinha43', cardinality 0..*).
+'go::TypeLit' (role 'go_TypeLit26', cardinality 0..*) is associated with 'go::StructType' (role 'go_StructType', cardinality 0..*).
+'go::MethodName' (role 'go_MethodName', cardinality 0..*) is associated with 'go::MethodSpec' (role 'go_MethodSpec93', cardinality 0..*).
+'go::IdentifierList' (role 'go_IdentifierList', cardinality 0..*) is associated with 'go::FieldDecl' (role 'go_FieldDecl52', cardinality 0..*).
+'go::PrimaryExpr' (role 'go_PrimaryExpr286', cardinality 0..*) is associated with 'go::MethodExpr' (role 'go_MethodExpr', cardinality 0..*).
+'go::Arguments' (role 'go_Arguments325', cardinality 0..*) is associated with 'go::Type' (role 'go_Type326', cardinality 0..*).
+'go::Statement' (role 'go_Statement384', cardinality 0..*) is associated with 'go::SelectStmt' (role 'go_SelectStmt', cardinality 0..*).
+'go::KeyedElement' (role 'go_KeyedElement259', cardinality 0..*) is associated with 'go::Key' (role 'go_Key', cardinality 0..*).
+'go::Label' (role 'go_Label406', cardinality 0..*) is associated with 'go::identifier' (role 'go_identifier407', cardinality 0..*).
+'go::TypeName' (role 'go_TypeName242', cardinality 0..*) is associated with 'go::LiteralType' (role 'go_LiteralType241', cardinality 0..*).
+'go::Condition' (role 'go_Condition485', cardinality 0..*) is associated with 'go::Expression' (role 'go_Expression486', cardinality 0..*).
+'go::imaginary::lit' (role 'go_imaginary_lit', cardinality 0..*) is associated with 'go::decimals' (role 'go_decimals578', cardinality 0..*).
+'go::TopLevelDecl' (role 'go_TopLevelDecl', cardinality 0..*) is associated with 'go::SouceFile' (role 'go_SouceFile4', cardinality 0..*).
+'go::switch::stmt::linha' (role 'go_switch_stmt_linha', cardinality 0..*) is associated with 'go::SwitchStmt' (role 'go_SwitchStmt438', cardinality 0..*).
+'go::decimals' (role 'go_decimals572', cardinality 0..*) is associated with 'go::exponent' (role 'go_exponent573', cardinality 0..*).
+'go::ArrayLength' (role 'go_ArrayLength45', cardinality 0..*) is associated with 'go::Expression' (role 'go_Expression', cardinality 0..*).
+'go::identifier' (role 'go_identifier17', cardinality 0..*) is associated with 'go::TypeNameLinha' (role 'go_TypeNameLinha16', cardinality 0..*).
+'go::QualifiedIdent' (role 'go_QualifiedIdent222', cardinality 0..*) is associated with 'go::PackageName' (role 'go_PackageName', cardinality 0..*).
+'go::rune::lit' (role 'go_rune_lit', cardinality 0..*) is associated with 'go::BasicLit' (role 'go_BasicLit217', cardinality 0..*).
+'go::TypeName' (role 'go_TypeName62', cardinality 0..*) is associated with 'go::EmbeddedField' (role 'go_EmbeddedField61', cardinality 0..*).
+'go::Expression' (role 'go_Expression534', cardinality 0..*) is associated with 'go::RecvExpr' (role 'go_RecvExpr533', cardinality 0..*).
+'go::FieldDecl' (role 'go_FieldDecl54', cardinality 0..*) is associated with 'go::Type' (role 'go_Type55', cardinality 0..*).
+'go::IncDecStmt' (role 'go_IncDecStmt420', cardinality 0..*) is associated with 'go::Expression' (role 'go_Expression421', cardinality 0..*).
+'go::Arguments' (role 'go_Arguments', cardinality 0..*) is associated with 'go::PrimaryExprLinha' (role 'go_PrimaryExprLinha288', cardinality 0..*).
+'go::Declaration' (role 'go_Declaration126', cardinality 0..*) is associated with 'go::TopLevelDecl' (role 'go_TopLevelDecl125', cardinality 0..*).
+'go::Selector' (role 'go_Selector311', cardinality 0..*) is associated with 'go::identifier' (role 'go_identifier312', cardinality 0..*).
+'go::ponto' (role 'go_ponto299', cardinality 0..*) is associated with 'go::PrimaryExprLinha' (role 'go_PrimaryExprLinha300', cardinality 0..*).
+'go::string::lit' (role 'go_string_lit565', cardinality 0..*) is associated with 'go::ImportPath' (role 'go_ImportPath564', cardinality 0..*).
+'go::Expression' (role 'go_Expression549', cardinality 0..*) is associated with 'go::DeferStmt' (role 'go_DeferStmt548', cardinality 0..*).
+'go::ParameterDecl' (role 'go_ParameterDecl', cardinality 0..*) is associated with 'go::ParameterList' (role 'go_ParameterList83', cardinality 0..*).
+'go::ponto' (role 'go_ponto302', cardinality 0..*) is associated with 'go::TypeAssertion' (role 'go_TypeAssertion', cardinality 0..*).
+'go::ExprSwitchCase' (role 'go_ExprSwitchCase444', cardinality 0..*) is associated with 'go::ExpressionList' (role 'go_ExpressionList445', cardinality 0..*).
+'go::Signature' (role 'go_Signature133', cardinality 0..*) is associated with 'go::topLevelDeclLinha' (role 'go_topLevelDeclLinha132', cardinality 0..*).
+'go::decimals' (role 'go_decimals568', cardinality 0..*) is associated with 'go::decimals' (role 'go_decimals566', cardinality 0..*).
+'go::Parameters' (role 'go_Parameters81', cardinality 0..*) is associated with 'go::ParameterList' (role 'go_ParameterList', cardinality 0..*).
+'go::SwitchStmt' (role 'go_SwitchStmt', cardinality 0..*) is associated with 'go::Statement' (role 'go_Statement382', cardinality 0..*).
+'go::Statement' (role 'go_Statement375', cardinality 0..*) is associated with 'go::GotoStmt' (role 'go_GotoStmt', cardinality 0..*).
+'go::MapType' (role 'go_MapType', cardinality 0..*) is associated with 'go::TypeLit' (role 'go_TypeLit34', cardinality 0..*).
+'go::ForStmt' (role 'go_ForStmt482', cardinality 0..*) is associated with 'go::Block' (role 'go_Block483', cardinality 0..*).
+'go::SelectStmt' (role 'go_SelectStmt513', cardinality 0..*) is associated with 'go::CommClause' (role 'go_CommClause', cardinality 0..*).
+'go::Type' (role 'go_Type148', cardinality 0..*) is associated with 'go::ConstSpec' (role 'go_ConstSpec147', cardinality 0..*).
+'go::Statement' (role 'go_Statement365', cardinality 0..*) is associated with 'go::SimpleStmt' (role 'go_SimpleStmt', cardinality 0..*).
+'go::LiteralType' (role 'go_LiteralType235', cardinality 0..*) is associated with 'go::ElementType' (role 'go_ElementType236', cardinality 0..*).
+'go::Statement' (role 'go_Statement373', cardinality 0..*) is associated with 'go::ContinueStmt' (role 'go_ContinueStmt', cardinality 0..*).
+'go::ImportPath' (role 'go_ImportPath', cardinality 0..*) is associated with 'go::ImportSpec' (role 'go_ImportSpec562', cardinality 0..*).
+'go::CompositeLit' (role 'go_CompositeLit228', cardinality 0..*) is associated with 'go::LiteralValue' (role 'go_LiteralValue', cardinality 0..*).
+'go::TypeLitLinha' (role 'go_TypeLitLinha38', cardinality 0..*) is associated with 'go::ArrayLength' (role 'go_ArrayLength', cardinality 0..*).
+'go::Declaration' (role 'go_Declaration121', cardinality 0..*) is associated with 'go::TypeDecl' (role 'go_TypeDecl', cardinality 0..*).
+'go::Condition' (role 'go_Condition', cardinality 0..*) is associated with 'go::ForStmt' (role 'go_ForStmt476', cardinality 0..*).
+'go::ImportDecl' (role 'go_ImportDecl557', cardinality 0..*) is associated with 'go::ImportSpec' (role 'go_ImportSpec', cardinality 0..*).
+'go::ExpressionLinha' (role 'go_ExpressionLinha342', cardinality 0..*) is associated with 'go::Expression' (role 'go_Expression343', cardinality 0..*).
+'go::Declaration' (role 'go_Declaration123', cardinality 0..*) is associated with 'go::VarDecl' (role 'go_VarDecl', cardinality 0..*).
+'go::ShortVarDecl' (role 'go_ShortVarDecl179', cardinality 0..*) is associated with 'go::ExpressionList' (role 'go_ExpressionList180', cardinality 0..*).
+'go::ReturnStmt' (role 'go_ReturnStmt', cardinality 0..*) is associated with 'go::Statement' (role 'go_Statement369', cardinality 0..*).
+'go::SimpleStmt' (role 'go_SimpleStmt496', cardinality 0..*) is associated with 'go::InitStmt' (role 'go_InitStmt495', cardinality 0..*).
+'go::Slice' (role 'go_Slice317', cardinality 0..*) is associated with 'go::decimals' (role 'go_decimals', cardinality 0..*).
+'go::Expression' (role 'go_Expression418', cardinality 0..*) is associated with 'go::Channel' (role 'go_Channel417', cardinality 0..*).
+'go::VarSpec' (role 'go_VarSpec168', cardinality 0..*) is associated with 'go::IdentifierList' (role 'go_IdentifierList169', cardinality 0..*).
+'go::InterfaceType' (role 'go_InterfaceType91', cardinality 0..*) is associated with 'go::MethodSpec' (role 'go_MethodSpec', cardinality 0..*).
+'go::Statement' (role 'go_Statement380', cardinality 0..*) is associated with 'go::IfStmt' (role 'go_IfStmt', cardinality 0..*).
+'go::identifier' (role 'go_identifier161', cardinality 0..*) is associated with 'go::TypeSpec' (role 'go_TypeSpec160', cardinality 0..*).
+'go::TypeDecl' (role 'go_TypeDecl158', cardinality 0..*) is associated with 'go::TypeSpec' (role 'go_TypeSpec', cardinality 0..*).
+'go::Selector' (role 'go_Selector', cardinality 0..*) is associated with 'go::ponto' (role 'go_ponto297', cardinality 0..*).
+'go::Signature' (role 'go_Signature73', cardinality 0..*) is associated with 'go::Result' (role 'go_Result', cardinality 0..*).
+'go::Receiver' (role 'go_Receiver196', cardinality 0..*) is associated with 'go::MethodDecl' (role 'go_MethodDecl', cardinality 0..*).
+'go::Type' (role 'go_Type355', cardinality 0..*) is associated with 'go::Conversion' (role 'go_Conversion354', cardinality 0..*).
+'go::exponent' (role 'go_exponent575', cardinality 0..*) is associated with 'go::decimals' (role 'go_decimals576', cardinality 0..*).
+'go::StatementList' (role 'go_StatementList', cardinality 0..*) is associated with 'go::Block' (role 'go_Block', cardinality 0..*).
+'go::LiteralType' (role 'go_LiteralType230', cardinality 0..*) is associated with 'go::StructType' (role 'go_StructType231', cardinality 0..*).
+'go::Operand' (role 'go_Operand280', cardinality 0..*) is associated with 'go::PrimaryExpr' (role 'go_PrimaryExpr', cardinality 0..*).
+'go::ForStmt' (role 'go_ForStmt478', cardinality 0..*) is associated with 'go::ForClause' (role 'go_ForClause', cardinality 0..*).
+'go::cochetes' (role 'go_cochetes', cardinality 0..*) is associated with 'go::PrimaryExprLinha' (role 'go_PrimaryExprLinha295', cardinality 0..*).
+'go::ForClause' (role 'go_ForClause493', cardinality 0..*) is associated with 'go::PostStmt' (role 'go_PostStmt', cardinality 0..*).
+'go::Receiver' (role 'go_Receiver', cardinality 0..*) is associated with 'go::topLevelDeclLinha' (role 'go_topLevelDeclLinha137', cardinality 0..*).
+'go::Key' (role 'go_Key266', cardinality 0..*) is associated with 'go::Expression' (role 'go_Expression267', cardinality 0..*).
+'go::FunctionLit' (role 'go_FunctionLit277', cardinality 0..*) is associated with 'go::FunctionBody' (role 'go_FunctionBody278', cardinality 0..*).
+'go::Statement' (role 'go_Statement367', cardinality 0..*) is associated with 'go::GoStmt' (role 'go_GoStmt', cardinality 0..*).
+'go::FunctionDecl' (role 'go_FunctionDecl187', cardinality 0..*) is associated with 'go::FunctionBody' (role 'go_FunctionBody188', cardinality 0..*).
+'go::ExpressionLinha' (role 'go_ExpressionLinha340', cardinality 0..*) is associated with 'go::binary::op' (role 'go_binary_op', cardinality 0..*).
+'go::TypeSwitchGuard' (role 'go_TypeSwitchGuard', cardinality 0..*) is associated with 'go::switch::stmt::linha' (role 'go_switch_stmt_linha447', cardinality 0..*).
+'go::ImportSpec' (role 'go_ImportSpec559', cardinality 0..*) is associated with 'go::PackageName' (role 'go_PackageName560', cardinality 0..*).
+'go::Type' (role 'go_Type474', cardinality 0..*) is associated with 'go::TypeList' (role 'go_TypeList473', cardinality 0..*).
+'go::ExprCaseClause' (role 'go_ExprCaseClause441', cardinality 0..*) is associated with 'go::StatementList' (role 'go_StatementList442', cardinality 0..*).
+'go::CommCase' (role 'go_CommCase523', cardinality 0..*) is associated with 'go::RecvStmt' (role 'go_RecvStmt', cardinality 0..*).
+'go::MapType' (role 'go_MapType239', cardinality 0..*) is associated with 'go::LiteralType' (role 'go_LiteralType238', cardinality 0..*).
+'go::cochetes' (role 'go_cochetes306', cardinality 0..*) is associated with 'go::PrimaryExprLinha' (role 'go_PrimaryExprLinha307', cardinality 0..*).
+'go::LabeledStmt' (role 'go_LabeledStmt401', cardinality 0..*) is associated with 'go::Label' (role 'go_Label', cardinality 0..*).
+'go::IdentifierList' (role 'go_IdentifierList505', cardinality 0..*) is associated with 'go::RangeClause' (role 'go_RangeClause504', cardinality 0..*).
+'go::Index' (role 'go_Index314', cardinality 0..*) is associated with 'go::Slice' (role 'go_Slice315', cardinality 0..*).
+'go::TypeSwitchGuard' (role 'go_TypeSwitchGuard460', cardinality 0..*) is associated with 'go::identifier' (role 'go_identifier461', cardinality 0..*).
+'go::topLevelDeclLinha' (role 'go_topLevelDeclLinha135', cardinality 0..*) is associated with 'go::FunctionBody' (role 'go_FunctionBody', cardinality 0..*).
+'go::Expression' (role 'go_Expression156', cardinality 0..*) is associated with 'go::ExpressionList' (role 'go_ExpressionList155', cardinality 0..*).
+'go::Tag' (role 'go_Tag', cardinality 0..*) is associated with 'go::FieldDecl' (role 'go_FieldDecl59', cardinality 0..*).
+'go::ForStmt' (role 'go_ForStmt480', cardinality 0..*) is associated with 'go::RangeClause' (role 'go_RangeClause', cardinality 0..*).
+'go::TypeName' (role 'go_TypeName12', cardinality 0..*) is associated with 'go::identifier' (role 'go_identifier', cardinality 0..*).
+'go::ConstDecl' (role 'go_ConstDecl142', cardinality 0..*) is associated with 'go::ConstSpec' (role 'go_ConstSpec', cardinality 0..*).
+'go::TypeNameLinha' (role 'go_TypeNameLinha20', cardinality 0..*) is associated with 'go::TypeNameLinha' (role 'go_TypeNameLinha18', cardinality 0..*).
+'go::SimpleStmt' (role 'go_SimpleStmt394', cardinality 0..*) is associated with 'go::IncDecStmt' (role 'go_IncDecStmt', cardinality 0..*).
+'go::InterfaceTypeName' (role 'go_InterfaceTypeName103', cardinality 0..*) is associated with 'go::TypeName' (role 'go_TypeName104', cardinality 0..*).
+'go::PrimaryExprLinha' (role 'go_PrimaryExprLinha289', cardinality 0..*) is associated with 'go::PrimaryExprLinha' (role 'go_PrimaryExprLinha291', cardinality 0..*).
+'go::TypeNameLinha' (role 'go_TypeNameLinha', cardinality 0..*) is associated with 'go::TypeName' (role 'go_TypeName14', cardinality 0..*).
+'go::FunctionType' (role 'go_FunctionType69', cardinality 0..*) is associated with 'go::Signature' (role 'go_Signature', cardinality 0..*).
+'go::Tag' (role 'go_Tag64', cardinality 0..*) is associated with 'go::string::lit' (role 'go_string_lit', cardinality 0..*).
+'go::ElementType' (role 'go_ElementType', cardinality 0..*) is associated with 'go::TypeLitLinha' (role 'go_TypeLitLinha40', cardinality 0..*).
+'go::Declaration' (role 'go_Declaration', cardinality 0..*) is associated with 'go::ConstDecl' (role 'go_ConstDecl', cardinality 0..*).
+'go::MethodName' (role 'go_MethodName100', cardinality 0..*) is associated with 'go::identifier' (role 'go_identifier101', cardinality 0..*).
+'go::SimpleStmt' (role 'go_SimpleStmt398', cardinality 0..*) is associated with 'go::ShortVarDecl' (role 'go_ShortVarDecl399', cardinality 0..*).
+'go::KeyedElement' (role 'go_KeyedElement261', cardinality 0..*) is associated with 'go::Element' (role 'go_Element262', cardinality 0..*).
+'go::TypeNameLinha' (role 'go_TypeNameLinha22', cardinality 0..*) is associated with 'go::QualifiedIdent' (role 'go_QualifiedIdent', cardinality 0..*).
+'go::ArrayLength' (role 'go_ArrayLength245', cardinality 0..*) is associated with 'go::LiteralTypeLinha' (role 'go_LiteralTypeLinha244', cardinality 0..*).
+'go::Type' (role 'go_Type48', cardinality 0..*) is associated with 'go::ElementType' (role 'go_ElementType47', cardinality 0..*).
+'go::MethodDecl' (role 'go_MethodDecl204', cardinality 0..*) is associated with 'go::FunctionBody' (role 'go_FunctionBody205', cardinality 0..*).
+'go::SouceFile' (role 'go_SouceFile', cardinality 0..*) is associated with 'go::PackageClause' (role 'go_PackageClause', cardinality 0..*).
+'go::Arguments' (role 'go_Arguments322', cardinality 0..*) is associated with 'go::ExpressionList' (role 'go_ExpressionList323', cardinality 0..*).
+'go::IfStmt' (role 'go_IfStmt434', cardinality 0..*) is associated with 'go::IfStmt' (role 'go_IfStmt436', cardinality 0..*).
+'go::TypeLit' (role 'go_TypeLit30', cardinality 0..*) is associated with 'go::FunctionType' (role 'go_FunctionType', cardinality 0..*).
+'go::Type' (role 'go_Type112', cardinality 0..*) is associated with 'go::KeyType' (role 'go_KeyType111', cardinality 0..*).
+'go::Expression' (role 'go_Expression336', cardinality 0..*) is associated with 'go::UnaryExpr' (role 'go_UnaryExpr', cardinality 0..*).
+'go::MethodName' (role 'go_MethodName140', cardinality 0..*) is associated with 'go::topLevelDeclLinha' (role 'go_topLevelDeclLinha139', cardinality 0..*).
+'go::RecvStmt' (role 'go_RecvStmt528', cardinality 0..*) is associated with 'go::IdentifierList' (role 'go_IdentifierList529', cardinality 0..*).
+'go::Result' (role 'go_Result78', cardinality 0..*) is associated with 'go::Type' (role 'go_Type79', cardinality 0..*).
+'go::Statement' (role 'go_Statement377', cardinality 0..*) is associated with 'go::Block' (role 'go_Block378', cardinality 0..*).
+'go::LabeledStmt' (role 'go_LabeledStmt', cardinality 0..*) is associated with 'go::Statement' (role 'go_Statement363', cardinality 0..*).
+'go::Statement' (role 'go_Statement404', cardinality 0..*) is associated with 'go::LabeledStmt' (role 'go_LabeledStmt403', cardinality 0..*).
+'go::ElementType' (role 'go_ElementType115', cardinality 0..*) is associated with 'go::ChannelType' (role 'go_ChannelType114', cardinality 0..*).
+'go::InitStmt' (role 'go_InitStmt', cardinality 0..*) is associated with 'go::ForClause' (role 'go_ForClause488', cardinality 0..*).
+'go::switch::stmt::linha' (role 'go_switch_stmt_linha450', cardinality 0..*) is associated with 'go::switch::stmt::linha' (role 'go_switch_stmt_linha452', cardinality 0..*).
+'go::OperandName' (role 'go_OperandName', cardinality 0..*) is associated with 'go::Operand' (role 'go_Operand208', cardinality 0..*).
+'go::SouceFile' (role 'go_SouceFile2', cardinality 0..*) is associated with 'go::ImportDecl' (role 'go_ImportDecl', cardinality 0..*).
+'go::Expression' (role 'go_Expression254', cardinality 0..*) is associated with 'go::Element' (role 'go_Element', cardinality 0..*).
+'go::Assignment' (role 'go_Assignment', cardinality 0..*) is associated with 'go::SimpleStmt' (role 'go_SimpleStmt396', cardinality 0..*).
+'go::ElementList' (role 'go_ElementList252', cardinality 0..*) is associated with 'go::KeyedElement' (role 'go_KeyedElement', cardinality 0..*).
+'go::RecvExpr' (role 'go_RecvExpr', cardinality 0..*) is associated with 'go::RecvStmt' (role 'go_RecvStmt531', cardinality 0..*).
+'go::Type' (role 'go_Type89', cardinality 0..*) is associated with 'go::ParameterDecl' (role 'go_ParameterDecl88', cardinality 0..*).
+'go::MapType' (role 'go_MapType108', cardinality 0..*) is associated with 'go::ElementType' (role 'go_ElementType109', cardinality 0..*).
+'go::Literal' (role 'go_Literal', cardinality 0..*) is associated with 'go::Operand' (role 'go_Operand', cardinality 0..*).
+'go::ExpressionList' (role 'go_ExpressionList537', cardinality 0..*) is associated with 'go::ReturnStmt' (role 'go_ReturnStmt536', cardinality 0..*).
+'go::SendStmt' (role 'go_SendStmt521', cardinality 0..*) is associated with 'go::CommCase' (role 'go_CommCase520', cardinality 0..*).
+'go::ExpressionStmt' (role 'go_ExpressionStmt409', cardinality 0..*) is associated with 'go::Expression' (role 'go_Expression410', cardinality 0..*).
+'go::Signature' (role 'go_Signature96', cardinality 0..*) is associated with 'go::MethodSpec' (role 'go_MethodSpec95', cardinality 0..*).
+'go::MapType' (role 'go_MapType106', cardinality 0..*) is associated with 'go::KeyType' (role 'go_KeyType', cardinality 0..*).
+'go::ConstSpec' (role 'go_ConstSpec144', cardinality 0..*) is associated with 'go::IdentifierList' (role 'go_IdentifierList145', cardinality 0..*).
+'go::ExpressionList' (role 'go_ExpressionList175', cardinality 0..*) is associated with 'go::VarSpec' (role 'go_VarSpec174', cardinality 0..*).
+'go::Expression' (role 'go_Expression338', cardinality 0..*) is associated with 'go::ExpressionLinha' (role 'go_ExpressionLinha', cardinality 0..*).
+'go::ForStmt' (role 'go_ForStmt', cardinality 0..*) is associated with 'go::Statement' (role 'go_Statement386', cardinality 0..*).
+'go::Key' (role 'go_Key264', cardinality 0..*) is associated with 'go::FieldName' (role 'go_FieldName', cardinality 0..*).
+'go::PostStmt' (role 'go_PostStmt498', cardinality 0..*) is associated with 'go::SimpleStmt' (role 'go_SimpleStmt499', cardinality 0..*).
+'go::Expression' (role 'go_Expression508', cardinality 0..*) is associated with 'go::RangeClause' (role 'go_RangeClause507', cardinality 0..*).
+'go::SimpleStmt' (role 'go_SimpleStmt427', cardinality 0..*) is associated with 'go::IfStmt' (role 'go_IfStmt426', cardinality 0..*).
+'go::TypeSwitchCase' (role 'go_TypeSwitchCase471', cardinality 0..*) is associated with 'go::TypeList' (role 'go_TypeList', cardinality 0..*).
+'go::TypeCaseClause' (role 'go_TypeCaseClause', cardinality 0..*) is associated with 'go::switch::stmt::linha' (role 'go_switch_stmt_linha449', cardinality 0..*).
+'go::TypeLit' (role 'go_TypeLit32', cardinality 0..*) is associated with 'go::InterfaceType' (role 'go_InterfaceType', cardinality 0..*).
+'go::FieldName' (role 'go_FieldName272', cardinality 0..*) is associated with 'go::identifier' (role 'go_identifier273', cardinality 0..*).
+'go::Expression' (role 'go_Expression415', cardinality 0..*) is associated with 'go::SendStmt' (role 'go_SendStmt414', cardinality 0..*).
+'go::SimpleStmt' (role 'go_SimpleStmt390', cardinality 0..*) is associated with 'go::ExpressionStmt' (role 'go_ExpressionStmt', cardinality 0..*).
+'go::float::lit' (role 'go_float_lit581', cardinality 0..*) is associated with 'go::imaginary::lit' (role 'go_imaginary_lit580', cardinality 0..*).
+'go::FunctionName' (role 'go_FunctionName190', cardinality 0..*) is associated with 'go::identifier' (role 'go_identifier191', cardinality 0..*).
+'go::Type' (role 'go_Type334', cardinality 0..*) is associated with 'go::ReceiverType' (role 'go_ReceiverType333', cardinality 0..*).
+'go::Condition' (role 'go_Condition491', cardinality 0..*) is associated with 'go::ForClause' (role 'go_ForClause490', cardinality 0..*).

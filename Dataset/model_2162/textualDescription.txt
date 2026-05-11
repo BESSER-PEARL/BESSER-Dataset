@@ -1,0 +1,16 @@
+The model has 7 class(es).
+The class 'egt::ColorRegistry' has the following attributes: 'images' of type str.
+The class 'egt::DiEdge' has no attributes.
+The class 'egt::Vertex' has the following attributes: 'color' of type str; 'index' of type int; 'name' of type str.
+The class 'egt::GraphModel' has no attributes.
+The class 'egt::Edge' has the following attributes: 'weight' of type float; 'color' of type str.
+The class 'Edge' has no attributes.
+The class 'egt::SingleEdge' has no attributes.
+The enumeration 'Colors' has the following literals: 'performed', 'clean', 'touched'.
+'egt::DiEdge' is a specialization of 'Edge'.
+'egt::SingleEdge' is a specialization of 'Edge'.
+'egt::SingleEdge' (role 'egt_SingleEdge', cardinality 0..*) is associated with 'egt::SingleEdge' (role 'egt_SingleEdge8', cardinality 0..*).
+'egt::Vertex' (role 'egt_Vertex3', cardinality 0..*) is associated with 'egt::Edge' (role 'egt_Edge2', cardinality 0..*).
+'egt::ColorRegistry' (role 'egt_ColorRegistry', cardinality 0..*) is associated with 'egt::GraphModel' (role 'egt_GraphModel7', cardinality 0..*).
+'egt::Vertex' (role 'egt_Vertex', cardinality 0..*) is associated with 'egt::Edge' (role 'egt_Edge', cardinality 0..*).
+'egt::Vertex' (role 'egt_Vertex5', cardinality 0..*) is associated with 'egt::GraphModel' (role 'egt_GraphModel', cardinality 0..*).

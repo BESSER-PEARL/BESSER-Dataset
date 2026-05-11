@@ -1,0 +1,9 @@
+The model has 3 class(es).
+The class 'database::Scheme' has the following attributes: 'name' of type str.
+The class 'database::Column' has the following attributes: 'PrimaryKey' of type bool; 'type' of type str; 'NotNull' of type bool; 'name' of type str.
+The class 'database::Table' has the following attributes: 'name' of type str.
+'database::Table' (role 'Table', cardinality 0..*) is associated with 'database::Column' (role 'columns', cardinality 0..*).
+'database::Table' (role 'database_Table', cardinality 0..*) is associated with 'database::Scheme' (role 'database_Scheme', cardinality 0..*).
+'database::Table' (role 'table', cardinality 0..*) is associated with 'database::Column' (role 'Column', cardinality 0..*).
+'database::Column' (role 'database_Column5', cardinality 0..*) is associated with 'database::Column' (role 'database_Column7', cardinality 0..*).
+'database::Scheme' (role 'database_Scheme2', cardinality 0..*) is associated with 'database::Column' (role 'database_Column', cardinality 0..*).

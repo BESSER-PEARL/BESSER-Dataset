@@ -1,0 +1,138 @@
+The model has 57 class(es).
+The class 'express::LocalVar' has the following attributes: 'varname' of type str.
+The class 'BuiltInType' has no attributes.
+The class 'express::BooleanType' has no attributes.
+The class 'express::ConstantVal' has the following attributes: 'name' of type str.
+The class 'express::Statement' has no attributes.
+The class 'express::CollectionType' has the following attributes: 'lowerBound' of type int; 'name' of type str; 'opt' of type bool; 'many' of type bool; 'unique' of type bool; 'upperBound' of type int.
+The class 'express::Intervall' has the following attributes: 'expression' of type str.
+The class 'express::ReturnStatement' has the following attributes: 'expression' of type str.
+The class 'express::Assignment' has the following attributes: 'expression' of type str.
+The class 'express::IntegerType' has no attributes.
+The class 'express::IndexedVar' has no attributes.
+The class 'express::EscapeStatement' has no attributes.
+The class 'express::CaseAction' has the following attributes: 'value' of type str.
+The class 'express::ReferenceType' has no attributes.
+The class 'express::Index' has no attributes.
+The class 'express::WhereRule' has the following attributes: 'expression' of type str; 'name' of type str.
+The class 'express::AttributeVar' has no attributes.
+The class 'ExpressConcept' has no attributes.
+The class 'express::DataType' has no attributes.
+The class 'express::RealType' has no attributes.
+The class 'express::FunctionExpression' has the following attributes: 'name' of type str.
+The class 'express::Function' has the following attributes: 'name' of type str.
+The class 'express::SelectType' has no attributes.
+The class 'express::ExpressConcept' has the following attributes: 'name' of type str.
+The class 'express::EnumType' has no attributes.
+The class 'express::SequenceStatement' has the following attributes: 'expression' of type str.
+The class 'express::StringType' has the following attributes: 'size' of type int; 'fixed' of type bool.
+The class 'IndexTerminal' has no attributes.
+The class 'express::UniqueRule' has the following attributes: 'name' of type str; 'attribute' of type str.
+The class 'express::FormalParam' has the following attributes: 'paramName' of type str.
+The class 'VarOrAttrib' has no attributes.
+The class 'express::LogicalType' has no attributes.
+The class 'express::Line' has the following attributes: 'text' of type str.
+The class 'express::BuiltInType' has no attributes.
+The class 'DataType' has no attributes.
+The class 'express::NumberType' has no attributes.
+The class 'express::GenericType' has the following attributes: 'typelabel' of type str.
+The class 'express::Reference' has the following attributes: 'self' of type bool; 'optional' of type bool; 'name' of type str; 'qualifier' of type str.
+The class 'express::RepeatStatement' has the following attributes: 'idx' of type str; 'end' of type str; 'start' of type str.
+The class 'express::IntLiteral' has the following attributes: 'value' of type int.
+The class 'Index' has no attributes.
+The class 'express::IfStatement' has no attributes.
+The class 'express::Rule' has the following attributes: 'name' of type str.
+The class 'express::TypeNameList' has the following attributes: 'type' of type str.
+The class 'express::ParameterList' has no attributes.
+The class 'express::LiteralType' has the following attributes: 'name' of type str.
+The class 'Statement' has no attributes.
+The class 'express::VarOrAttrib' has no attributes.
+The class 'express::Entity' has the following attributes: 'abstract' of type bool.
+The class 'express::CaseStatement' has the following attributes: 'variable' of type str.
+The class 'express::VarLiteral' has the following attributes: 'value' of type str.
+The class 'express::Schema' has the following attributes: 'name' of type str.
+The class 'express::BinaryType' has the following attributes: 'size' of type int.
+The class 'express::IndexTerminal' has no attributes.
+The class 'express::SimpleVar' has the following attributes: 'name' of type str.
+The class 'express::Attribute' has the following attributes: 'name' of type str; 'expression' of type str; 'optional' of type bool; 'self' of type bool; 'qualifier' of type str.
+The class 'express::Type' has no attributes.
+'express::SelectType' is a specialization of 'DataType'.
+'express::StringType' is a specialization of 'BuiltInType'.
+'express::IntLiteral' is a specialization of 'IndexTerminal'.
+'express::IndexedVar' is a specialization of 'VarOrAttrib'.
+'express::IfStatement' is a specialization of 'Statement'.
+'express::SequenceStatement' is a specialization of 'Statement'.
+'express::BooleanType' is a specialization of 'BuiltInType'.
+'express::ReferenceType' is a specialization of 'DataType'.
+'express::LogicalType' is a specialization of 'BuiltInType'.
+'express::Type' is a specialization of 'ExpressConcept'.
+'express::NumberType' is a specialization of 'BuiltInType'.
+'express::SimpleVar' is a specialization of 'VarOrAttrib'.
+'express::Assignment' is a specialization of 'Statement'.
+'express::CaseStatement' is a specialization of 'Statement'.
+'express::RepeatStatement' is a specialization of 'Statement'.
+'express::ReturnStatement' is a specialization of 'Statement'.
+'express::Entity' is a specialization of 'ExpressConcept'.
+'express::IntegerType' is a specialization of 'BuiltInType'.
+'express::GenericType' is a specialization of 'DataType'.
+'express::RealType' is a specialization of 'BuiltInType'.
+'express::EnumType' is a specialization of 'DataType'.
+'express::CollectionType' is a specialization of 'DataType'.
+'express::EscapeStatement' is a specialization of 'Statement'.
+'express::IndexTerminal' is a specialization of 'Index'.
+'express::VarLiteral' is a specialization of 'IndexTerminal'.
+'express::AttributeVar' is a specialization of 'VarOrAttrib'.
+'express::BuiltInType' is a specialization of 'DataType'.
+'express::BinaryType' is a specialization of 'BuiltInType'.
+'express::DataType' (role 'express_DataType94', cardinality 0..*) is associated with 'express::CollectionType' (role 'express_CollectionType93', cardinality 0..*).
+'express::DataType' (role 'express_DataType49', cardinality 0..*) is associated with 'express::LocalVar' (role 'express_LocalVar48', cardinality 0..*).
+'express::FormalParam' (role 'express_FormalParam', cardinality 0..*) is associated with 'express::ParameterList' (role 'express_ParameterList79', cardinality 0..*).
+'express::IfStatement' (role 'express_IfStatement117', cardinality 0..*) is associated with 'express::Statement' (role 'express_Statement118', cardinality 0..*).
+'express::Schema' (role 'express_Schema2', cardinality 0..*) is associated with 'express::Entity' (role 'express_Entity', cardinality 0..*).
+'express::Entity' (role 'express_Entity22', cardinality 0..*) is associated with 'express::UniqueRule' (role 'express_UniqueRule', cardinality 0..*).
+'express::Statement' (role 'express_Statement120', cardinality 0..*) is associated with 'express::RepeatStatement' (role 'express_RepeatStatement', cardinality 0..*).
+'express::Function' (role 'express_Function', cardinality 0..*) is associated with 'express::Schema' (role 'express_Schema4', cardinality 0..*).
+'express::Rule' (role 'express_Rule40', cardinality 0..*) is associated with 'express::WhereRule' (role 'express_WhereRule41', cardinality 0..*).
+'express::Attribute' (role 'express_Attribute88', cardinality 0..*) is associated with 'express::CollectionType' (role 'express_CollectionType', cardinality 0..*).
+'express::Entity' (role 'express_Entity12', cardinality 0..*) is associated with 'express::Entity' (role 'express_Entity10', cardinality 0..*).
+'express::Entity' (role 'express_Entity20', cardinality 0..*) is associated with 'express::Attribute' (role 'express_Attribute', cardinality 0..*).
+'express::Function' (role 'express_Function70', cardinality 0..*) is associated with 'express::ConstantVal' (role 'express_ConstantVal71', cardinality 0..*).
+'express::CollectionType' (role 'express_CollectionType90', cardinality 0..*) is associated with 'express::Attribute' (role 'express_Attribute91', cardinality 0..*).
+'express::Type' (role 'express_Type9', cardinality 0..*) is associated with 'express::DataType' (role 'express_DataType', cardinality 0..*).
+'express::Entity' (role 'express_Entity13', cardinality 0..*) is associated with 'express::Entity' (role 'express_Entity15', cardinality 0..*).
+'express::CaseAction' (role 'express_CaseAction', cardinality 0..*) is associated with 'express::CaseStatement' (role 'express_CaseStatement', cardinality 0..*).
+'express::Intervall' (role 'express_Intervall', cardinality 0..*) is associated with 'express::WhereRule' (role 'express_WhereRule84', cardinality 0..*).
+'express::VarOrAttrib' (role 'express_VarOrAttrib110', cardinality 0..*) is associated with 'express::AttributeVar' (role 'express_AttributeVar', cardinality 0..*).
+'express::Line' (role 'express_Line112', cardinality 0..*) is associated with 'express::IfStatement' (role 'express_IfStatement', cardinality 0..*).
+'express::Statement' (role 'express_Statement', cardinality 0..*) is associated with 'express::Rule' (role 'express_Rule38', cardinality 0..*).
+'express::Type' (role 'express_Type', cardinality 0..*) is associated with 'express::Schema' (role 'express_Schema', cardinality 0..*).
+'express::ParameterList' (role 'express_ParameterList65', cardinality 0..*) is associated with 'express::Function' (role 'express_Function64', cardinality 0..*).
+'express::LiteralType' (role 'express_LiteralType', cardinality 0..*) is associated with 'express::EnumType' (role 'express_EnumType', cardinality 0..*).
+'express::IndexedVar' (role 'express_IndexedVar', cardinality 0..*) is associated with 'express::SimpleVar' (role 'express_SimpleVar', cardinality 0..*).
+'express::Entity' (role 'express_Entity18', cardinality 0..*) is associated with 'express::Entity' (role 'express_Entity16', cardinality 0..*).
+'express::TypeNameList' (role 'express_TypeNameList', cardinality 0..*) is associated with 'express::Rule' (role 'express_Rule32', cardinality 0..*).
+'express::DataType' (role 'express_DataType25', cardinality 0..*) is associated with 'express::Attribute' (role 'express_Attribute24', cardinality 0..*).
+'express::FunctionExpression' (role 'express_FunctionExpression55', cardinality 0..*) is associated with 'express::DataType' (role 'express_DataType56', cardinality 0..*).
+'express::Rule' (role 'express_Rule', cardinality 0..*) is associated with 'express::Schema' (role 'express_Schema6', cardinality 0..*).
+'express::CaseStatement' (role 'express_CaseStatement100', cardinality 0..*) is associated with 'express::Statement' (role 'express_Statement101', cardinality 0..*).
+'express::LocalVar' (role 'express_LocalVar51', cardinality 0..*) is associated with 'express::Line' (role 'express_Line52', cardinality 0..*).
+'express::DataType' (role 'express_DataType44', cardinality 0..*) is associated with 'express::ConstantVal' (role 'express_ConstantVal43', cardinality 0..*).
+'express::Entity' (role 'express_Entity30', cardinality 0..*) is associated with 'express::Reference' (role 'express_Reference', cardinality 0..*).
+'express::ExpressConcept' (role 'express_ExpressConcept', cardinality 0..*) is associated with 'express::WhereRule' (role 'express_WhereRule', cardinality 0..*).
+'express::Statement' (role 'express_Statement77', cardinality 0..*) is associated with 'express::Function' (role 'express_Function76', cardinality 0..*).
+'express::SelectType' (role 'express_SelectType', cardinality 0..*) is associated with 'express::ExpressConcept' (role 'express_ExpressConcept97', cardinality 0..*).
+'express::Attribute' (role 'express_Attribute26', cardinality 0..*) is associated with 'express::Attribute' (role 'express_Attribute28', cardinality 0..*).
+'express::Statement' (role 'express_Statement104', cardinality 0..*) is associated with 'express::CaseAction' (role 'express_CaseAction103', cardinality 0..*).
+'express::VarOrAttrib' (role 'express_VarOrAttrib', cardinality 0..*) is associated with 'express::Assignment' (role 'express_Assignment', cardinality 0..*).
+'express::Index' (role 'express_Index', cardinality 0..*) is associated with 'express::IndexedVar' (role 'express_IndexedVar108', cardinality 0..*).
+'express::LocalVar' (role 'express_LocalVar59', cardinality 0..*) is associated with 'express::FunctionExpression' (role 'express_FunctionExpression58', cardinality 0..*).
+'express::ParameterList' (role 'express_ParameterList', cardinality 0..*) is associated with 'express::FunctionExpression' (role 'express_FunctionExpression', cardinality 0..*).
+'express::Statement' (role 'express_Statement62', cardinality 0..*) is associated with 'express::FunctionExpression' (role 'express_FunctionExpression61', cardinality 0..*).
+'express::ReferenceType' (role 'express_ReferenceType', cardinality 0..*) is associated with 'express::ExpressConcept' (role 'express_ExpressConcept86', cardinality 0..*).
+'express::Function' (role 'express_Function73', cardinality 0..*) is associated with 'express::LocalVar' (role 'express_LocalVar74', cardinality 0..*).
+'express::ConstantVal' (role 'express_ConstantVal', cardinality 0..*) is associated with 'express::Rule' (role 'express_Rule34', cardinality 0..*).
+'express::LocalVar' (role 'express_LocalVar', cardinality 0..*) is associated with 'express::Rule' (role 'express_Rule36', cardinality 0..*).
+'express::ConstantVal' (role 'express_ConstantVal46', cardinality 0..*) is associated with 'express::Line' (role 'express_Line', cardinality 0..*).
+'express::DataType' (role 'express_DataType68', cardinality 0..*) is associated with 'express::Function' (role 'express_Function67', cardinality 0..*).
+'express::IfStatement' (role 'express_IfStatement114', cardinality 0..*) is associated with 'express::Statement' (role 'express_Statement115', cardinality 0..*).
+'express::FormalParam' (role 'express_FormalParam81', cardinality 0..*) is associated with 'express::DataType' (role 'express_DataType82', cardinality 0..*).

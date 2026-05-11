@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'ChildContaineeD' has no attributes.
+The class 'MetamodelInheritance3::ChildD' has no attributes.
+The class 'MetamodelInheritance3::ChildC' has no attributes.
+The class 'MetamodelInheritance3::BaseContaineeA' has no attributes.
+The class 'BaseContaineeC' has no attributes.
+'MetamodelInheritance3::ChildC' is a specialization of 'BaseContaineeC'.
+'MetamodelInheritance3::ChildD' is a specialization of 'ChildContaineeD'.
+'MetamodelInheritance3::ChildC' (role 'c', cardinality 0..*) is associated with 'MetamodelInheritance3::ChildD' (role 'ChildD', cardinality 0..*).
+'MetamodelInheritance3::ChildD' (role 'MetamodelInheritance3_ChildD', cardinality 0..*) is associated with 'MetamodelInheritance3::BaseContaineeA' (role 'MetamodelInheritance3_BaseContaineeA', cardinality 0..*).
+'MetamodelInheritance3::ChildC' (role 'ChildC', cardinality 0..*) is associated with 'MetamodelInheritance3::ChildD' (role 'd', cardinality 0..*).

@@ -1,0 +1,30 @@
+The model has 10 class(es).
+The class 'network::State' has no attributes.
+The class 'network::Statemachine' has no attributes.
+The class 'network::Transition' has the following attributes: 'Event' of type str.
+The class 'network::Network' has no attributes.
+The class 'network::AbstractElement' has the following attributes: 'name' of type str.
+The class 'network::RunTimeNetwork' has no attributes.
+The class 'network::ChannelBuffer' has no attributes.
+The class 'network::CurrentStateMapState' has no attributes.
+The class 'AbstractElement' has no attributes.
+The class 'network::Channel' has the following attributes: 'Type' of type str.
+The enumeration 'Event' has the following literals: 'SEND', 'RECEIVE'.
+The enumeration 'TypeOfChannel' has the following literals: 'Asynchronous', 'Synchronous'.
+'network::State' is a specialization of 'AbstractElement'.
+'network::Channel' is a specialization of 'AbstractElement'.
+'network::Network' is a specialization of 'AbstractElement'.
+'network::Statemachine' is a specialization of 'AbstractElement'.
+'network::CurrentStateMapState' (role 'network_CurrentStateMapState', cardinality 0..*) is associated with 'network::RunTimeNetwork' (role 'network_RunTimeNetwork22', cardinality 0..*).
+'network::Statemachine' (role 'network_Statemachine9', cardinality 0..*) is associated with 'network::Transition' (role 'network_Transition', cardinality 0..*).
+'network::State' (role 'network_State15', cardinality 0..*) is associated with 'network::Transition' (role 'network_Transition14', cardinality 0..*).
+'network::Transition' (role 'network_Transition17', cardinality 0..*) is associated with 'network::Channel' (role 'network_Channel18', cardinality 0..*).
+'network::Network' (role 'network_Network2', cardinality 0..*) is associated with 'network::Channel' (role 'network_Channel', cardinality 0..*).
+'network::Transition' (role 'network_Transition11', cardinality 0..*) is associated with 'network::State' (role 'network_State12', cardinality 0..*).
+'network::Statemachine' (role 'network_Statemachine', cardinality 0..*) is associated with 'network::Network' (role 'network_Network', cardinality 0..*).
+'network::State' (role 'network_State', cardinality 0..*) is associated with 'network::Statemachine' (role 'network_Statemachine4', cardinality 0..*).
+'network::CurrentStateMapState' (role 'network_CurrentStateMapState26', cardinality 0..*) is associated with 'network::State' (role 'network_State27', cardinality 0..*).
+'network::Network' (role 'network_Network20', cardinality 0..*) is associated with 'network::RunTimeNetwork' (role 'network_RunTimeNetwork', cardinality 0..*).
+'network::ChannelBuffer' (role 'network_ChannelBuffer29', cardinality 0..*) is associated with 'network::Channel' (role 'network_Channel30', cardinality 0..*).
+'network::ChannelBuffer' (role 'network_ChannelBuffer', cardinality 0..*) is associated with 'network::RunTimeNetwork' (role 'network_RunTimeNetwork24', cardinality 0..*).
+'network::State' (role 'network_State7', cardinality 0..*) is associated with 'network::Statemachine' (role 'network_Statemachine6', cardinality 0..*).

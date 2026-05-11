@@ -1,0 +1,17 @@
+The model has 6 class(es).
+The class 'StudyProgramme::Programme' has the following attributes: 'duration' of type int; 'name' of type str; 'code' of type str.
+The class 'StudyProgramme::Specialization' has the following attributes: 'name' of type str.
+The class 'StudyProgramme::Course' has the following attributes: 'name' of type str; 'code' of type str; 'level' of type str; 'credits' of type float.
+The class 'StudyProgramme::CourseGroup' has the following attributes: 'status' of type str.
+The class 'StudyProgramme::Department' has the following attributes: 'code' of type str; 'name' of type str.
+The class 'StudyProgramme::Semester' has the following attributes: 'season' of type str; 'totalCredits' of type float; 'number' of type int; 'creditConstraint' of type str.
+'StudyProgramme::CourseGroup' (role 'StudyProgramme_CourseGroup', cardinality 0..*) is associated with 'StudyProgramme::Semester' (role 'StudyProgramme_Semester6', cardinality 0..*).
+'StudyProgramme::Department' (role 'StudyProgramme_Department', cardinality 0..*) is associated with 'StudyProgramme::Programme' (role 'StudyProgramme_Programme20', cardinality 0..*).
+'StudyProgramme::Specialization' (role 'StudyProgramme_Specialization8', cardinality 0..*) is associated with 'StudyProgramme::Course' (role 'StudyProgramme_Course9', cardinality 0..*).
+'StudyProgramme::Programme' (role 'StudyProgramme_Programme2', cardinality 0..*) is associated with 'StudyProgramme::Specialization' (role 'StudyProgramme_Specialization', cardinality 0..*).
+'StudyProgramme::Course' (role 'StudyProgramme_Course23', cardinality 0..*) is associated with 'StudyProgramme::Department' (role 'StudyProgramme_Department22', cardinality 0..*).
+'StudyProgramme::Semester' (role 'StudyProgramme_Semester12', cardinality 0..*) is associated with 'StudyProgramme::Specialization' (role 'StudyProgramme_Specialization11', cardinality 0..*).
+'StudyProgramme::Specialization' (role 'StudyProgramme_Specialization15', cardinality 0..*) is associated with 'StudyProgramme::Specialization' (role 'StudyProgramme_Specialization13', cardinality 0..*).
+'StudyProgramme::Semester' (role 'StudyProgramme_Semester4', cardinality 0..*) is associated with 'StudyProgramme::Course' (role 'StudyProgramme_Course', cardinality 0..*).
+'StudyProgramme::Semester' (role 'StudyProgramme_Semester', cardinality 0..*) is associated with 'StudyProgramme::Programme' (role 'StudyProgramme_Programme', cardinality 0..*).
+'StudyProgramme::Course' (role 'StudyProgramme_Course18', cardinality 0..*) is associated with 'StudyProgramme::CourseGroup' (role 'StudyProgramme_CourseGroup17', cardinality 0..*).

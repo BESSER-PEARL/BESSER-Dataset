@@ -1,0 +1,24 @@
+The model has 6 class(es).
+The class 'rdbmsMM::Table' has the following attributes: 'name' of type str.
+The class 'rdbmsMM::ForeignKey' has the following attributes: 'name' of type str.
+The class 'rdbmsMM::dummy' has no attributes.
+The class 'rdbmsMM::Column' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'rdbmsMM::Schema' has the following attributes: 'name' of type str.
+The class 'rdbmsMM::Key' has the following attributes: 'name' of type str.
+'rdbmsMM::ForeignKey' (role 'ForeignKey24', cardinality 0..*) is associated with 'rdbmsMM::Key' (role 'refersTo', cardinality 0..*).
+'rdbmsMM::ForeignKey' (role 'ForeignKey17', cardinality 0..*) is associated with 'rdbmsMM::Column' (role 'column16', cardinality 0..*).
+'rdbmsMM::Table' (role 'owner8', cardinality 0..*) is associated with 'rdbmsMM::ForeignKey' (role 'ForeignKey9', cardinality 0..*).
+'rdbmsMM::Column' (role 'column13', cardinality 0..*) is associated with 'rdbmsMM::Key' (role 'Key14', cardinality 0..*).
+'rdbmsMM::Column' (role 'Column', cardinality 0..*) is associated with 'rdbmsMM::Table' (role 'owner', cardinality 0..*).
+'rdbmsMM::ForeignKey' (role 'foreignKey', cardinality 0..*) is associated with 'rdbmsMM::Schema' (role 'Schema26', cardinality 0..*).
+'rdbmsMM::Key' (role 'hasKey21', cardinality 0..*) is associated with 'rdbmsMM::Column' (role 'Column22', cardinality 0..*).
+'rdbmsMM::ForeignKey' (role 'hasForeignKey32', cardinality 0..*) is associated with 'rdbmsMM::Column' (role 'Column33', cardinality 0..*).
+'rdbmsMM::Key' (role 'hasKey', cardinality 0..*) is associated with 'rdbmsMM::Table' (role 'Table19', cardinality 0..*).
+'rdbmsMM::Table' (role 'Table', cardinality 0..*) is associated with 'rdbmsMM::Schema' (role 'schema', cardinality 0..*).
+'rdbmsMM::ForeignKey' (role 'referredBy', cardinality 0..*) is associated with 'rdbmsMM::Key' (role 'Key28', cardinality 0..*).
+'rdbmsMM::Schema' (role 'schema2', cardinality 0..*) is associated with 'rdbmsMM::ForeignKey' (role 'ForeignKey', cardinality 0..*).
+'rdbmsMM::Table' (role 'Table11', cardinality 0..*) is associated with 'rdbmsMM::Column' (role 'column', cardinality 0..*).
+'rdbmsMM::Schema' (role 'Schema', cardinality 0..*) is associated with 'rdbmsMM::Table' (role 'table', cardinality 0..*).
+'rdbmsMM::Table' (role 'Table30', cardinality 0..*) is associated with 'rdbmsMM::ForeignKey' (role 'hasForeignKey', cardinality 0..*).
+'rdbmsMM::Table' (role 'owner6', cardinality 0..*) is associated with 'rdbmsMM::Key' (role 'Key', cardinality 0..*).
+'rdbmsMM::dummy' (role 'rdbmsMM_dummy', cardinality 0..*) is associated with 'rdbmsMM::Schema' (role 'rdbmsMM_Schema', cardinality 0..*).

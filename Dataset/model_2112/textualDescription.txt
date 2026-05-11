@@ -1,0 +1,6 @@
+The model has 2 class(es).
+The class 'TestMM1::Action' has the following attributes: 'xpath' of type str; 'description' of type str; 'value' of type str; 'type' of type str; 'id' of type str.
+The class 'TestMM1::Test' has the following attributes: 'id' of type str.
+The enumeration 'ActionType' has the following literals: 'click', 'copy', 'comment', 'insert'.
+'TestMM1::Action' (role 'act', cardinality 0..*) is associated with 'TestMM1::Test' (role 'Test', cardinality 0..*).
+'TestMM1::Action' (role 'Action', cardinality 0..*) is associated with 'TestMM1::Test' (role 'te', cardinality 0..*).

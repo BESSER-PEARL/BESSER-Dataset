@@ -1,0 +1,16 @@
+The model has 6 class(es).
+The class 'fenix::LessonPeriod' has the following attributes: 'start' of type str; 'end' of type str.
+The class 'fenix::Shift' has the following attributes: 'name' of type str; 'types' of type str.
+The class 'fenix::Capacity' has the following attributes: 'normal' of type int; 'exam' of type int.
+The class 'fenix::Occupation' has the following attributes: 'max' of type int; 'current' of type int.
+The class 'fenix::CourseLoad' has the following attributes: 'totalQuantity' of type int; 'id' of type str; 'description' of type str; 'type' of type str; 'name' of type str; 'unitQuantity' of type int.
+The class 'fenix::scheduleOfCourse' has no attributes.
+'fenix::CourseLoad' (role 'fenix_CourseLoad10', cardinality 0..*) is associated with 'fenix::CourseLoad' (role 'fenix_CourseLoad8', cardinality 0..*).
+'fenix::Shift' (role 'fenix_Shift4', cardinality 0..*) is associated with 'fenix::CourseLoad' (role 'fenix_CourseLoad', cardinality 0..*).
+'fenix::Shift' (role 'fenix_Shift2', cardinality 0..*) is associated with 'fenix::LessonPeriod' (role 'fenix_LessonPeriod', cardinality 0..*).
+'fenix::scheduleOfCourse' (role 'fenix_scheduleOfCourse', cardinality 0..*) is associated with 'fenix::LessonPeriod' (role 'fenix_LessonPeriod14', cardinality 0..*).
+'fenix::scheduleOfCourse' (role 'fenix_scheduleOfCourse19', cardinality 0..*) is associated with 'fenix::Shift' (role 'fenix_Shift20', cardinality 0..*).
+'fenix::CourseLoad' (role 'fenix_CourseLoad7', cardinality 0..*) is associated with 'fenix::LessonPeriod' (role 'fenix_LessonPeriod6', cardinality 0..*).
+'fenix::CourseLoad' (role 'fenix_CourseLoad12', cardinality 0..*) is associated with 'fenix::Capacity' (role 'fenix_Capacity', cardinality 0..*).
+'fenix::CourseLoad' (role 'fenix_CourseLoad17', cardinality 0..*) is associated with 'fenix::scheduleOfCourse' (role 'fenix_scheduleOfCourse16', cardinality 0..*).
+'fenix::Occupation' (role 'fenix_Occupation', cardinality 0..*) is associated with 'fenix::Shift' (role 'fenix_Shift', cardinality 0..*).

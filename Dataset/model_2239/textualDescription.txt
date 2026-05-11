@@ -1,0 +1,56 @@
+The model has 17 class(es).
+The class 'course::Evaluation' has the following attributes: 'exam' of type int; 'assigments' of type int; 'project' of type int.
+The class 'course::StudyProgram' has the following attributes: 'code' of type str.
+The class 'course::TimetableEntry' has the following attributes: 'type' of type str; 'day' of type str; 'time' of type str; 'room' of type str.
+The class 'course::Person' has the following attributes: 'name' of type str.
+The class 'course::Faculty' has the following attributes: 'shortName' of type str; 'name' of type str.
+The class 'course::Lecturer' has no attributes.
+The class 'course::Department' has the following attributes: 'name' of type str; 'shortName' of type str.
+The class 'course::TA' has no attributes.
+The class 'course::Course' has the following attributes: 'credits' of type float; 'content' of type str; 'code' of type str; 'name' of type str.
+The class 'course::Student' has no attributes.
+The class 'course::Organisation' has no attributes.
+The class 'course::CourseCoordinator' has no attributes.
+The class 'course::University' has the following attributes: 'name' of type str.
+The class 'course::CourseWork' has the following attributes: 'lectureHours' of type int; 'labHours' of type int.
+The class 'course::Timetable' has no attributes.
+The class 'course::CourseInstance' has no attributes.
+The class 'Person' has no attributes.
+The enumeration 'DayOfWeek' has the following literals: 'Tuesday', 'Monday', 'Thursday', 'Friday', 'Wednesday'.
+The enumeration 'TypeOfInstruction' has the following literals: 'Lecture', 'Lab'.
+'course::CourseCoordinator' is a specialization of 'Person'.
+'course::Student' is a specialization of 'Person'.
+'course::TA' is a specialization of 'Person'.
+'course::Lecturer' is a specialization of 'Person'.
+'course::Student' (role 'students', cardinality 0..*) is associated with 'course::StudyProgram' (role 'StudyProgram', cardinality 0..*).
+'course::CourseInstance' (role 'CourseInstance44', cardinality 0..*) is associated with 'course::Timetable' (role 'timeTable', cardinality 0..*).
+'course::TimetableEntry' (role 'course_TimetableEntry', cardinality 0..*) is associated with 'course::Timetable' (role 'course_Timetable', cardinality 0..*).
+'course::StudyProgram' (role 'course_StudyProgram48', cardinality 0..*) is associated with 'course::TimetableEntry' (role 'course_TimetableEntry47', cardinality 0..*).
+'course::CourseInstance' (role 'courseInstance', cardinality 0..*) is associated with 'course::Organisation' (role 'Organisation', cardinality 0..*).
+'course::Faculty' (role 'Faculty26', cardinality 0..*) is associated with 'course::Department' (role 'departments', cardinality 0..*).
+'course::Department' (role 'Department', cardinality 0..*) is associated with 'course::Faculty' (role 'faculty', cardinality 0..*).
+'course::Organisation' (role 'Organisation55', cardinality 0..*) is associated with 'course::Lecturer' (role 'lecturer', cardinality 0..*).
+'course::Course' (role 'course_Course7', cardinality 0..*) is associated with 'course::Course' (role 'course_Course5', cardinality 0..*).
+'course::CourseInstance' (role 'CourseInstance', cardinality 0..*) is associated with 'course::Course' (role 'course', cardinality 0..*).
+'course::University' (role 'university', cardinality 0..*) is associated with 'course::Faculty' (role 'Faculty', cardinality 0..*).
+'course::Student' (role 'Student', cardinality 0..*) is associated with 'course::Evaluation' (role 'evaluation30', cardinality 0..*).
+'course::Organisation' (role 'organisation37', cardinality 0..*) is associated with 'course::CourseInstance' (role 'CourseInstance38', cardinality 0..*).
+'course::Department' (role 'Department12', cardinality 0..*) is associated with 'course::Course' (role 'courses', cardinality 0..*).
+'course::Department' (role 'department', cardinality 0..*) is associated with 'course::Course' (role 'Course22', cardinality 0..*).
+'course::StudyProgram' (role 'course_StudyProgram24', cardinality 0..*) is associated with 'course::Department' (role 'course_Department', cardinality 0..*).
+'course::CourseInstance' (role 'courseInstance20', cardinality 0..*) is associated with 'course::Timetable' (role 'Timetable', cardinality 0..*).
+'course::Organisation' (role 'organisation33', cardinality 0..*) is associated with 'course::Lecturer' (role 'Lecturer', cardinality 0..*).
+'course::Course' (role 'course_Course', cardinality 0..*) is associated with 'course::Course' (role 'course_Course3', cardinality 0..*).
+'course::CourseInstance' (role 'courseInstance18', cardinality 0..*) is associated with 'course::CourseWork' (role 'CourseWork', cardinality 0..*).
+'course::CourseWork' (role 'courseWork', cardinality 0..*) is associated with 'course::CourseInstance' (role 'CourseInstance42', cardinality 0..*).
+'course::University' (role 'University', cardinality 0..*) is associated with 'course::Faculty' (role 'faculties', cardinality 0..*).
+'course::Course' (role 'Course', cardinality 0..*) is associated with 'course::CourseInstance' (role 'courseInstances', cardinality 0..*).
+'course::Course' (role 'course_Course9', cardinality 0..*) is associated with 'course::StudyProgram' (role 'course_StudyProgram', cardinality 0..*).
+'course::Student' (role 'registeredStudents', cardinality 0..*) is associated with 'course::Evaluation' (role 'Evaluation51', cardinality 0..*).
+'course::CourseInstance' (role 'CourseInstance28', cardinality 0..*) is associated with 'course::Evaluation' (role 'evaluation', cardinality 0..*).
+'course::Organisation' (role 'Organisation57', cardinality 0..*) is associated with 'course::TA' (role 'ta', cardinality 0..*).
+'course::CourseInstance' (role 'courseInstance16', cardinality 0..*) is associated with 'course::Evaluation' (role 'Evaluation', cardinality 0..*).
+'course::Organisation' (role 'organisation35', cardinality 0..*) is associated with 'course::TA' (role 'TA', cardinality 0..*).
+'course::Student' (role 'Student40', cardinality 0..*) is associated with 'course::StudyProgram' (role 'studyProgram', cardinality 0..*).
+'course::Organisation' (role 'organisation', cardinality 0..*) is associated with 'course::CourseCoordinator' (role 'CourseCoordinator', cardinality 0..*).
+'course::Organisation' (role 'Organisation53', cardinality 0..*) is associated with 'course::CourseCoordinator' (role 'courseCoordinator', cardinality 0..*).

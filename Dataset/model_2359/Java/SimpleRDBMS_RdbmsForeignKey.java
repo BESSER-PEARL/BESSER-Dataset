@@ -1,0 +1,101 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class SimpleRDBMS_RdbmsForeignKey extends RdbmsModelElement {
+
+
+
+
+
+
+    private SimpleRDBMS_RdbmsTable simplerdbms_rdbmstable;
+
+
+
+
+    private SimpleRDBMS_RdbmsKey simplerdbms_rdbmskey;
+
+
+
+
+    private List<SimpleRDBMS_RdbmsColumn> simplerdbms_rdbmscolumns;
+
+
+
+
+    private SimpleRDBMS_RdbmsTable simplerdbms_rdbmstable;
+
+
+
+
+    private SimpleRDBMS_RdbmsColumn simplerdbms_rdbmscolumn;
+
+
+
+
+    private SimpleRDBMS_RdbmsKey simplerdbms_rdbmskey;
+
+
+    public SimpleRDBMS_RdbmsForeignKey(
+    ) {
+        super(
+        );
+        this.simplerdbms_rdbmscolumns = new ArrayList<>();
+    }
+
+    public SimpleRDBMS_RdbmsForeignKey(
+        ArrayList<SimpleRDBMS_RdbmsColumn> simplerdbms_rdbmscolumns    ) {
+        this.simplerdbms_rdbmscolumns = simplerdbms_rdbmscolumns;
+    }
+
+
+    public SimpleRDBMS_RdbmsTable getSimplerdbms_rdbmstable() {
+        return simplerdbms_rdbmstable;
+    }
+
+    public void setSimplerdbms_rdbmstable(SimpleRDBMS_RdbmsTable simplerdbms_rdbmstable) {
+        this.simplerdbms_rdbmstable = simplerdbms_rdbmstable;
+    }
+    public SimpleRDBMS_RdbmsKey getSimplerdbms_rdbmskey() {
+        return simplerdbms_rdbmskey;
+    }
+
+    public void setSimplerdbms_rdbmskey(SimpleRDBMS_RdbmsKey simplerdbms_rdbmskey) {
+        this.simplerdbms_rdbmskey = simplerdbms_rdbmskey;
+    }
+    public List<SimpleRDBMS_RdbmsColumn> getSimplerdbms_rdbmscolumns() {
+        return simplerdbms_rdbmscolumns;
+    }
+
+    public void addSimplerdbms_rdbmscolumn(Simplerdbms_rdbmscolumn simplerdbms_rdbmscolumn) {
+        this.simplerdbms_rdbmscolumns.add(simplerdbms_rdbmscolumn);
+    }
+    public SimpleRDBMS_RdbmsTable getSimplerdbms_rdbmstable() {
+        return simplerdbms_rdbmstable;
+    }
+
+    public void setSimplerdbms_rdbmstable(SimpleRDBMS_RdbmsTable simplerdbms_rdbmstable) {
+        this.simplerdbms_rdbmstable = simplerdbms_rdbmstable;
+    }
+    public SimpleRDBMS_RdbmsColumn getSimplerdbms_rdbmscolumn() {
+        return simplerdbms_rdbmscolumn;
+    }
+
+    public void setSimplerdbms_rdbmscolumn(SimpleRDBMS_RdbmsColumn simplerdbms_rdbmscolumn) {
+        this.simplerdbms_rdbmscolumn = simplerdbms_rdbmscolumn;
+    }
+    public SimpleRDBMS_RdbmsKey getSimplerdbms_rdbmskey() {
+        return simplerdbms_rdbmskey;
+    }
+
+    public void setSimplerdbms_rdbmskey(SimpleRDBMS_RdbmsKey simplerdbms_rdbmskey) {
+        this.simplerdbms_rdbmskey = simplerdbms_rdbmskey;
+    }
+
+}

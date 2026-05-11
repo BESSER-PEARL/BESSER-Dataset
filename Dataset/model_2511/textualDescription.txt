@@ -1,0 +1,16 @@
+The model has 9 class(es).
+The class 'rootPackage::aSubSubPackage::F' has no attributes.
+The class 'AbstractA' has no attributes.
+The class 'rootPackage::A' has the following attributes: 'a2' of type bool; 'a' of type int.
+The class 'rootPackage::AbstractA' has no attributes.
+The class 'rootPackage::aSubSubPackage::E' has no attributes.
+The class 'aSubSubPackage::F' has no attributes.
+The class 'rootPackage::C' has the following attributes: 'cstring' of type str.
+The class 'rootPackage::aSubPackage::D' has the following attributes: 'd' of type int.
+The class 'rootPackage::B' has the following attributes: 'bint' of type int; 'stuff' of type str.
+'rootPackage::A' is a specialization of 'AbstractA'.
+'rootPackage::C' (role 'C', cardinality 0..*) is associated with 'rootPackage::B' (role 'b', cardinality 0..*).
+'rootPackage::A' (role 'rootPackage_A2', cardinality 0..*) is associated with 'rootPackage::B' (role 'rootPackage_B', cardinality 0..*).
+'rootPackage::C' (role 'c', cardinality 0..*) is associated with 'rootPackage::B' (role 'B', cardinality 0..*).
+'rootPackage::A' (role 'rootPackage_A', cardinality 0..*) is associated with 'rootPackage::C' (role 'rootPackage_C', cardinality 0..*).
+'rootPackage::aSubSubPackage::E' (role 'rootPackage_aSubSubPackage_E', cardinality 0..*) is associated with 'aSubSubPackage::F' (role 'aSubSubPackage_F', cardinality 0..*).

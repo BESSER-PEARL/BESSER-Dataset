@@ -1,0 +1,58 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Events_trace_IntegerCalculationExpression  {
+
+
+
+
+
+
+    private trace_Events_IntegerCalculationExpression_evaluateSUBTRACTEntryEventOccurrence trace_events_integercalculationexpression_evaluatesubtractentryeventoccurrence;
+
+
+
+
+    private trace_Events_IntegerCalculationExpression_execute_integerCalculationExpressionEntryEventOccurrence trace_events_integercalculationexpression_execute_integercalculationexpressionentryeventoccurrence;
+
+
+
+
+    private trace_Events_IntegerCalculationExpression_evaluateADDEntryEventOccurrence trace_events_integercalculationexpression_evaluateaddentryeventoccurrence;
+
+
+    public Events_trace_IntegerCalculationExpression(
+    ) {
+    }
+
+
+
+    public trace_Events_IntegerCalculationExpression_evaluateSUBTRACTEntryEventOccurrence getTrace_events_integercalculationexpression_evaluatesubtractentryeventoccurrence() {
+        return trace_events_integercalculationexpression_evaluatesubtractentryeventoccurrence;
+    }
+
+    public void setTrace_events_integercalculationexpression_evaluatesubtractentryeventoccurrence(trace_Events_IntegerCalculationExpression_evaluateSUBTRACTEntryEventOccurrence trace_events_integercalculationexpression_evaluatesubtractentryeventoccurrence) {
+        this.trace_events_integercalculationexpression_evaluatesubtractentryeventoccurrence = trace_events_integercalculationexpression_evaluatesubtractentryeventoccurrence;
+    }
+    public trace_Events_IntegerCalculationExpression_execute_integerCalculationExpressionEntryEventOccurrence getTrace_events_integercalculationexpression_execute_integercalculationexpressionentryeventoccurrence() {
+        return trace_events_integercalculationexpression_execute_integercalculationexpressionentryeventoccurrence;
+    }
+
+    public void setTrace_events_integercalculationexpression_execute_integercalculationexpressionentryeventoccurrence(trace_Events_IntegerCalculationExpression_execute_integerCalculationExpressionEntryEventOccurrence trace_events_integercalculationexpression_execute_integercalculationexpressionentryeventoccurrence) {
+        this.trace_events_integercalculationexpression_execute_integercalculationexpressionentryeventoccurrence = trace_events_integercalculationexpression_execute_integercalculationexpressionentryeventoccurrence;
+    }
+    public trace_Events_IntegerCalculationExpression_evaluateADDEntryEventOccurrence getTrace_events_integercalculationexpression_evaluateaddentryeventoccurrence() {
+        return trace_events_integercalculationexpression_evaluateaddentryeventoccurrence;
+    }
+
+    public void setTrace_events_integercalculationexpression_evaluateaddentryeventoccurrence(trace_Events_IntegerCalculationExpression_evaluateADDEntryEventOccurrence trace_events_integercalculationexpression_evaluateaddentryeventoccurrence) {
+        this.trace_events_integercalculationexpression_evaluateaddentryeventoccurrence = trace_events_integercalculationexpression_evaluateaddentryeventoccurrence;
+    }
+
+}

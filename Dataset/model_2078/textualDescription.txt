@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'NodeKind' has no attributes.
+The class 'StructuredTree::Tree' has no attributes.
+The class 'StructuredTree::LeafKind' has no attributes.
+The class 'StructuredTree::BranchKind' has no attributes.
+The class 'StructuredTree::NodeKind' has no attributes.
+'StructuredTree::BranchKind' is a specialization of 'NodeKind'.
+'StructuredTree::LeafKind' is a specialization of 'NodeKind'.
+'StructuredTree::BranchKind' (role 'BranchKind', cardinality 0..*) is associated with 'StructuredTree::NodeKind' (role 'children', cardinality 0..*).
+'StructuredTree::NodeKind' (role 'NodeKind4', cardinality 0..*) is associated with 'StructuredTree::BranchKind' (role 'parent', cardinality 0..*).
+'StructuredTree::NodeKind' (role 'NodeKind', cardinality 0..*) is associated with 'StructuredTree::Tree' (role 'tree', cardinality 0..*).
+'StructuredTree::NodeKind' (role 'root', cardinality 0..*) is associated with 'StructuredTree::Tree' (role 'Tree', cardinality 0..*).

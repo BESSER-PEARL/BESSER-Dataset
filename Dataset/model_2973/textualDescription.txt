@@ -1,0 +1,19 @@
+The model has 8 class(es).
+The class 'cgimodel::Expr' has the following attributes: 'value' of type str.
+The class 'cgimodel::Transition' has no attributes.
+The class 'cgimodel::StateModel' has the following attributes: 'name' of type str.
+The class 'BaseState' has no attributes.
+The class 'cgimodel::BaseState' has the following attributes: 'name' of type str.
+The class 'cgimodel::StateModels' has no attributes.
+The class 'cgimodel::OrState' has no attributes.
+The class 'cgimodel::State' has the following attributes: 'set' of type bool.
+'cgimodel::OrState' is a specialization of 'BaseState'.
+'cgimodel::State' is a specialization of 'BaseState'.
+'cgimodel::Transition' (role 'cgimodel_Transition10', cardinality 0..*) is associated with 'cgimodel::State' (role 'cgimodel_State11', cardinality 0..*).
+'cgimodel::StateModels' (role 'cgimodel_StateModels', cardinality 0..*) is associated with 'cgimodel::StateModel' (role 'cgimodel_StateModel16', cardinality 0..*).
+'cgimodel::Transition' (role 'cgimodel_Transition13', cardinality 0..*) is associated with 'cgimodel::Expr' (role 'cgimodel_Expr14', cardinality 0..*).
+'cgimodel::StateModel' (role 'cgimodel_StateModel2', cardinality 0..*) is associated with 'cgimodel::Transition' (role 'cgimodel_Transition', cardinality 0..*).
+'cgimodel::OrState' (role 'cgimodel_OrState', cardinality 0..*) is associated with 'cgimodel::BaseState' (role 'cgimodel_BaseState5', cardinality 0..*).
+'cgimodel::BaseState' (role 'cgimodel_BaseState', cardinality 0..*) is associated with 'cgimodel::StateModel' (role 'cgimodel_StateModel', cardinality 0..*).
+'cgimodel::Transition' (role 'cgimodel_Transition7', cardinality 0..*) is associated with 'cgimodel::BaseState' (role 'cgimodel_BaseState8', cardinality 0..*).
+'cgimodel::Expr' (role 'cgimodel_Expr', cardinality 0..*) is associated with 'cgimodel::State' (role 'cgimodel_State', cardinality 0..*).

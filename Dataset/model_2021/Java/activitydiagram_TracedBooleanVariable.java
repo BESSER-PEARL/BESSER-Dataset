@@ -1,0 +1,46 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class activitydiagram_TracedBooleanVariable  {
+
+
+
+
+
+
+    private trace_Events_BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence trace_events_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence;
+
+
+
+
+    private trace_Events_BooleanVariable_getCurrentValueValue_booleanVariableEntryEventOccurrence trace_events_booleanvariable_getcurrentvaluevalue_booleanvariableentryeventoccurrence;
+
+
+    public activitydiagram_TracedBooleanVariable(
+    ) {
+    }
+
+
+
+    public trace_Events_BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence getTrace_events_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence() {
+        return trace_events_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence;
+    }
+
+    public void setTrace_events_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence(trace_Events_BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence trace_events_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence) {
+        this.trace_events_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence = trace_events_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence;
+    }
+    public trace_Events_BooleanVariable_getCurrentValueValue_booleanVariableEntryEventOccurrence getTrace_events_booleanvariable_getcurrentvaluevalue_booleanvariableentryeventoccurrence() {
+        return trace_events_booleanvariable_getcurrentvaluevalue_booleanvariableentryeventoccurrence;
+    }
+
+    public void setTrace_events_booleanvariable_getcurrentvaluevalue_booleanvariableentryeventoccurrence(trace_Events_BooleanVariable_getCurrentValueValue_booleanVariableEntryEventOccurrence trace_events_booleanvariable_getcurrentvaluevalue_booleanvariableentryeventoccurrence) {
+        this.trace_events_booleanvariable_getcurrentvaluevalue_booleanvariableentryeventoccurrence = trace_events_booleanvariable_getcurrentvaluevalue_booleanvariableentryeventoccurrence;
+    }
+
+}

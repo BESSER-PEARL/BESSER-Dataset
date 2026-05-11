@@ -1,0 +1,20 @@
+The model has 7 class(es).
+The class 'studyprograms::CourseAccess' has the following attributes: 'Access' of type str.
+The class 'studyprograms::Programme' has the following attributes: 'duration' of type int; 'name' of type str; 'code' of type str; 'startYear' of type int.
+The class 'studyprograms::Semester' has the following attributes: 'semesterCode' of type str; 'year' of type int; 'semesterType' of type str.
+The class 'studyprograms::IndividualStudyPlan' has the following attributes: 'studentNo' of type str.
+The class 'studyprograms::Specialisation' has the following attributes: 'name' of type str; 'startSemester' of type int.
+The class 'studyprograms::Course' has the following attributes: 'code' of type str; 'availableSemester' of type str; 'ects' of type float; 'level' of type str; 'name' of type str.
+The class 'studyprograms::Department' has the following attributes: 'name' of type str; 'code' of type str.
+The enumeration 'SemesterType' has the following literals: 'Fall', 'Spring'.
+The enumeration 'Level' has the following literals: 'Bachelor', 'Master'.
+The enumeration 'AvailableSemesters' has the following literals: 'Spring', 'Fall', 'Both'.
+The enumeration 'Access' has the following literals: 'M2A', 'NoAccess', 'VB', 'O', 'M1A', 'VA'.
+'studyprograms::Course' (role 'studyprograms_Course', cardinality 0..*) is associated with 'studyprograms::CourseAccess' (role 'studyprograms_CourseAccess11', cardinality 0..*).
+'studyprograms::Programme' (role 'studyprograms_Programme2', cardinality 0..*) is associated with 'studyprograms::Semester' (role 'studyprograms_Semester', cardinality 0..*).
+'studyprograms::Semester' (role 'studyprograms_Semester7', cardinality 0..*) is associated with 'studyprograms::IndividualStudyPlan' (role 'studyprograms_IndividualStudyPlan', cardinality 0..*).
+'studyprograms::CourseAccess' (role 'studyprograms_CourseAccess', cardinality 0..*) is associated with 'studyprograms::Semester' (role 'studyprograms_Semester9', cardinality 0..*).
+'studyprograms::Department' (role 'studyprograms_Department15', cardinality 0..*) is associated with 'studyprograms::Course' (role 'studyprograms_Course16', cardinality 0..*).
+'studyprograms::Department' (role 'studyprograms_Department', cardinality 0..*) is associated with 'studyprograms::Programme' (role 'studyprograms_Programme13', cardinality 0..*).
+'studyprograms::Programme' (role 'studyprograms_Programme', cardinality 0..*) is associated with 'studyprograms::Specialisation' (role 'studyprograms_Specialisation', cardinality 0..*).
+'studyprograms::Specialisation' (role 'studyprograms_Specialisation4', cardinality 0..*) is associated with 'studyprograms::Semester' (role 'studyprograms_Semester5', cardinality 0..*).

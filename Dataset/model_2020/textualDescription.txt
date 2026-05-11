@@ -1,0 +1,1199 @@
+The model has 638 class(es).
+The class 'umlTrace::uml::TracedEnumeration' has no attributes.
+The class 'umlTrace::uml::TracedDurationInterval' has no attributes.
+The class 'BasicActions::TracedOpaqueActionActivation' has no attributes.
+The class 'uml::TracedTemplateBinding' has no attributes.
+The class 'umlTrace::uml::TracedExecutionOccurrenceSpecification' has no attributes.
+The class 'uml::TracedConditionalNode' has no attributes.
+The class 'TracedPackage' has no attributes.
+The class 'TracedActivityNodeActivation' has no attributes.
+The class 'TracedCentralBufferNode' has no attributes.
+The class 'umlTrace::uml::TracedComment' has no attributes.
+The class 'uml::TracedRedefinableTemplateSignature' has no attributes.
+The class 'umlTrace::uml::TracedProtocolTransition' has no attributes.
+The class 'uml::TracedCentralBufferNode' has no attributes.
+The class 'umlTrace::uml::TracedQualifierValue' has no attributes.
+The class 'TracedTemplateParameter' has no attributes.
+The class 'uml::TracedLoopNode' has no attributes.
+The class 'umlTrace::uml::TracedReadIsClassifiedObjectAction' has no attributes.
+The class 'umlTrace::uml::TracedSendSignalAction' has no attributes.
+The class 'umlTrace::State' has no attributes.
+The class 'umlTrace::uml::TracedComponentRealization' has no attributes.
+The class 'umlTrace::uml::TracedWriteVariableAction' has no attributes.
+The class 'umlTrace::uml::TracedCollaboration' has no attributes.
+The class 'uml::TracedAcceptCallAction' has no attributes.
+The class 'umlTrace::uml::TracedInterface' has no attributes.
+The class 'uml::TracedComponentRealization' has no attributes.
+The class 'umlTrace::uml::TracedConnectableElementTemplateParameter' has no attributes.
+The class 'uml::TracedExtend' has no attributes.
+The class 'uml::TracedReception' has no attributes.
+The class 'uml::TracedExecutionOccurrenceSpecification' has no attributes.
+The class 'umlTrace::uml::TracedTemplateParameter' has no attributes.
+The class 'TracedTransition' has no attributes.
+The class 'uml::TracedSignal' has no attributes.
+The class 'umlTrace::uml::TracedInformationItem' has no attributes.
+The class 'uml::TracedOpaqueExpression' has no attributes.
+The class 'uml::TracedDestroyLinkAction' has no attributes.
+The class 'Kernel::TracedIntegerValue' has no attributes.
+The class 'uml::TracedSequenceNode' has no attributes.
+The class 'TracedOpaqueBehavior' has no attributes.
+The class 'umlTrace::uml::TracedTimeExpression' has no attributes.
+The class 'umlTrace::uml::TracedTimeObservation' has no attributes.
+The class 'umlTrace::uml::TracedPrimitiveType' has no attributes.
+The class 'uml::TracedClass' has no attributes.
+The class 'umlTrace::uml::TracedCommunicationPath' has no attributes.
+The class 'umlTrace::IntermediateActivities::TracedActivityExecution' has no attributes.
+The class 'TracedMessageEvent' has no attributes.
+The class 'uml::TracedComment' has no attributes.
+The class 'umlTrace::uml::TracedRedefinableTemplateSignature' has no attributes.
+The class 'uml::TracedInterval' has no attributes.
+The class 'uml::TracedMessageOccurrenceSpecification' has no attributes.
+The class 'umlTrace::uml::TracedVariable' has no attributes.
+The class 'umlTrace::uml::TracedDataStoreNode' has no attributes.
+The class 'uml::TracedDataStoreNode' has no attributes.
+The class 'uml::TracedExecutionEnvironment' has no attributes.
+The class 'uml::TracedPackage' has no attributes.
+The class 'umlTrace::IntermediateActivities::TracedControlNodeActivation' has no attributes.
+The class 'uml::TracedGeneralizationSet' has no attributes.
+The class 'umlTrace::IntermediateActivities::TracedActivityNodeActivation' has no attributes.
+The class 'uml::TracedDestroyObjectAction' has no attributes.
+The class 'uml::TracedReadLinkObjectEndQualifierAction' has no attributes.
+The class 'umlTrace::uml::TracedLinkEndCreationData' has no attributes.
+The class 'BasicActions::TracedCallBehaviorActionActivation' has no attributes.
+The class 'umlTrace::IntermediateActivities::TracedInitialNodeActivation' has no attributes.
+The class 'umlTrace::uml::TracedExpansionNode' has no attributes.
+The class 'uml::TracedConsiderIgnoreFragment' has no attributes.
+The class 'Values::SemanticVisitor::runtimeModelElement::Value' has no attributes.
+The class 'umlTrace::uml::TracedRegion' has no attributes.
+The class 'uml::TracedSendObjectAction' has no attributes.
+The class 'uml::TracedInformationFlow' has no attributes.
+The class 'umlTrace::uml::TracedImage' has no attributes.
+The class 'BasicActions::TracedInputPinActivation' has no attributes.
+The class 'umlTrace::uml::TracedComponent' has no attributes.
+The class 'umlTrace::uml::TracedFinalState' has no attributes.
+The class 'IntermediateActivities::TracedInitialNodeActivation' has no attributes.
+The class 'umlTrace::uml::TracedPackageMerge' has no attributes.
+The class 'TracedOccurrenceSpecification' has no attributes.
+The class 'uml::TracedSubstitution' has no attributes.
+The class 'uml::TracedFlowFinalNode' has no attributes.
+The class 'umlTrace::uml::TracedInteractionOperand' has no attributes.
+The class 'TracedControlNodeActivation' has no attributes.
+The class 'umlTrace::uml::TracedProfileApplication' has no attributes.
+The class 'uml::TracedStructuredClassifier' has no attributes.
+The class 'uml::TracedCreateLinkAction' has no attributes.
+The class 'uml::TracedPackageImport' has no attributes.
+The class 'umlTrace::IntermediateActivities::TracedObjectNodeActivation' has no attributes.
+The class 'umlTrace::uml::TracedOpaqueBehavior' has no attributes.
+The class 'umlTrace::uml::TracedTemplateParameterSubstitution' has no attributes.
+The class 'umlTrace::uml::TracedConnectorEnd' has no attributes.
+The class 'umlTrace::uml::TracedReadStructuralFeatureAction' has no attributes.
+The class 'uml::TracedPort' has no attributes.
+The class 'umlTrace::uml::TracedInteractionConstraint' has no attributes.
+The class 'umlTrace::uml::TracedBehaviorExecutionSpecification' has no attributes.
+The class 'IntermediateActivities::TracedActivityParameterNodeActivation' has no attributes.
+The class 'uml::TracedAnyReceiveEvent' has no attributes.
+The class 'uml::TracedClearVariableAction' has no attributes.
+The class 'uml::TracedCreateObjectAction' has no attributes.
+The class 'TracedExecutionSpecification' has no attributes.
+The class 'umlTrace::uml::TracedMergeNode' has no attributes.
+The class 'uml::TracedAssociationClass' has no attributes.
+The class 'umlTrace::uml::TracedOutputPin' has no attributes.
+The class 'uml::TracedNode' has no attributes.
+The class 'umlTrace::uml::TracedClassifierTemplateParameter' has no attributes.
+The class 'uml::TracedCollaborationUse' has no attributes.
+The class 'uml::TracedEnumerationLiteral' has no attributes.
+The class 'umlTrace::uml::TracedControlFlow' has no attributes.
+The class 'uml::TracedRealization' has no attributes.
+The class 'umlTrace::uml::TracedDevice' has no attributes.
+The class 'IntegerFunctions::TracedIntegerPlusFunctionBehaviorExecution' has no attributes.
+The class 'TracedFeature' has no attributes.
+The class 'umlTrace::uml::TracedActivityParameterNode' has no attributes.
+The class 'uml::TracedIntervalConstraint' has no attributes.
+The class 'IntermediateActivities::TracedDecisionNodeActivation' has no attributes.
+The class 'umlTrace::uml::TracedRemoveVariableValueAction' has no attributes.
+The class 'umlTrace::uml::TracedAddStructuralFeatureValueAction' has no attributes.
+The class 'uml::TracedStereotype' has no attributes.
+The class 'umlTrace::uml::TracedParameterSet' has no attributes.
+The class 'Values::ActionActivation::firing::Value' has no attributes.
+The class 'uml::TracedTimeInterval' has no attributes.
+The class 'IntermediateActivities::TracedActivityExecution' has no attributes.
+The class 'umlTrace::uml::TracedFunctionBehavior' has no attributes.
+The class 'umlTrace::IntermediateActions::TracedStructuralFeatureActionActivation' has no attributes.
+The class 'umlTrace::uml::TracedJoinNode' has no attributes.
+The class 'uml::TracedActivityPartition' has no attributes.
+The class 'uml::TracedModel' has no attributes.
+The class 'TracedSemanticVisitor' has no attributes.
+The class 'TracedExecution' has no attributes.
+The class 'IntermediateActivities::TracedActivityNodeActivation' has no attributes.
+The class 'TracedObjectNode' has no attributes.
+The class 'uml::TracedStartClassifierBehaviorAction' has no attributes.
+The class 'umlTrace::ecore::TracedEModelElement' has no attributes.
+The class 'umlTrace::IntermediateActivities::TracedForkNodeActivation' has no attributes.
+The class 'uml::TracedParameter' has no attributes.
+The class 'uml::TracedLifeline' has no attributes.
+The class 'uml::TracedVertex' has no attributes.
+The class 'uml::TracedInteraction' has no attributes.
+The class 'uml::TracedMessage' has no attributes.
+The class 'umlTrace::uml::TracedActionExecutionSpecification' has no attributes.
+The class 'uml::TracedDataType' has no attributes.
+The class 'uml::TracedInitialNode' has no attributes.
+The class 'umlTrace::uml::TracedManifestation' has no attributes.
+The class 'uml::TracedInputPin' has no attributes.
+The class 'uml::TracedContinuation' has no attributes.
+The class 'umlTrace::uml::TracedProfile' has no attributes.
+The class 'umlTrace::uml::TracedBehavioralFeature' has no attributes.
+The class 'uml::TracedBroadcastSignalAction' has no attributes.
+The class 'umlTrace::uml::TracedClause' has no attributes.
+The class 'umlTrace::uml::TracedExtensionEnd' has no attributes.
+The class 'umlTrace::uml::TracedAnyReceiveEvent' has no attributes.
+The class 'umlTrace::uml::TracedModel' has no attributes.
+The class 'uml::TracedDependency' has no attributes.
+The class 'uml::TracedOpaqueBehavior' has no attributes.
+The class 'uml::TracedTimeConstraint' has no attributes.
+The class 'Kernel::TracedBooleanValue' has no attributes.
+The class 'umlTrace::uml::TracedDecisionNode' has no attributes.
+The class 'umlTrace::uml::TracedConnectionPointReference' has no attributes.
+The class 'uml::TracedCallEvent' has no attributes.
+The class 'uml::TracedStateInvariant' has no attributes.
+The class 'uml::TracedCreateLinkObjectAction' has no attributes.
+The class 'Kernel::TracedLiteralIntegerEvaluation' has no attributes.
+The class 'umlTrace::uml::TracedDuration' has no attributes.
+The class 'uml::TracedProtocolStateMachine' has no attributes.
+The class 'uml::TracedInterface' has no attributes.
+The class 'umlTrace::uml::TracedCallEvent' has no attributes.
+The class 'uml::TracedStructuredActivityNode' has no attributes.
+The class 'uml::TracedConnectionPointReference' has no attributes.
+The class 'umlTrace::uml::TracedStringExpression' has no attributes.
+The class 'TracedStructuralFeatureActionActivation' has no attributes.
+The class 'umlTrace::uml::TracedGeneralization' has no attributes.
+The class 'umlTrace::IntermediateActions::TracedReadStructuralFeatureActionActivation' has no attributes.
+The class 'umlTrace::uml::TracedExtensionPoint' has no attributes.
+The class 'TracedMultiplicityElement' has no attributes.
+The class 'uml::TracedExtensionPoint' has no attributes.
+The class 'uml::TracedStateMachine' has no attributes.
+The class 'umlTrace::uml::TracedUnmarshallAction' has no attributes.
+The class 'uml::TracedConstraint' has no attributes.
+The class 'uml::TracedForkNode' has no attributes.
+The class 'umlTrace::uml::TracedOperation' has no attributes.
+The class 'IntermediateActivities::TracedForkNodeActivation' has no attributes.
+The class 'uml::TracedExceptionHandler' has no attributes.
+The class 'uml::TracedDurationConstraint' has no attributes.
+The class 'umlTrace::uml::TracedLiteralReal' has no attributes.
+The class 'uml::TracedInstanceSpecification' has no attributes.
+The class 'umlTrace::uml::TracedInterfaceRealization' has no attributes.
+The class 'uml::TracedProtocolConformance' has no attributes.
+The class 'uml::TracedDestructionOccurrenceSpecification' has no attributes.
+The class 'umlTrace::uml::TracedElementImport' has no attributes.
+The class 'uml::TracedReadStructuralFeatureAction' has no attributes.
+The class 'uml::TracedInteractionUse' has no attributes.
+The class 'uml::TracedJoinNode' has no attributes.
+The class 'uml::TracedLiteralInteger' has no attributes.
+The class 'uml::TracedChangeEvent' has no attributes.
+The class 'uml::TracedSignalEvent' has no attributes.
+The class 'umlTrace::uml::TracedMessageEvent' has no attributes.
+The class 'uml::TracedBehavioralFeature' has no attributes.
+The class 'umlTrace::uml::TracedDataType' has no attributes.
+The class 'uml::TracedInteractionConstraint' has no attributes.
+The class 'TracedDataType' has no attributes.
+The class 'uml::TracedExpansionRegion' has no attributes.
+The class 'umlTrace::uml::TracedState' has no attributes.
+The class 'TracedState' has no attributes.
+The class 'uml::TracedConnector' has no attributes.
+The class 'IntegerFunctions::TracedIntegerLessFunctionBehaviorExecution' has no attributes.
+The class 'uml::TracedValuePin' has no attributes.
+The class 'umlTrace::uml::TracedCentralBufferNode' has no attributes.
+The class 'uml::TracedExtension' has no attributes.
+The class 'uml::TracedLiteralString' has no attributes.
+The class 'uml::TracedTimeObservation' has no attributes.
+The class 'uml::TracedRelationship' has no attributes.
+The class 'uml::TracedTemplateParameter' has no attributes.
+The class 'umlTrace::uml::TracedIntervalConstraint' has no attributes.
+The class 'uml::TracedTemplateParameterSubstitution' has no attributes.
+The class 'TracedWriteLinkAction' has no attributes.
+The class 'TracedDependency' has no attributes.
+The class 'uml::TracedRemoveVariableValueAction' has no attributes.
+The class 'uml::TracedAbstraction' has no attributes.
+The class 'TracedInterval' has no attributes.
+The class 'TracedRealization' has no attributes.
+The class 'uml::TracedExpansionNode' has no attributes.
+The class 'umlTrace::uml::TracedLiteralInteger' has no attributes.
+The class 'umlTrace::uml::TracedProtocolStateMachine' has no attributes.
+The class 'umlTrace::BasicActions::TracedPinActivation' has no attributes.
+The class 'uml::TracedState' has no attributes.
+The class 'TracedVertex' has no attributes.
+The class 'umlTrace::uml::TracedArtifact' has no attributes.
+The class 'uml::TracedOperationTemplateParameter' has no attributes.
+The class 'umlTrace::BasicActions::TracedInvocationActionActivation' has no attributes.
+The class 'umlTrace::uml::TracedFeature' has no attributes.
+The class 'uml::TracedArtifact' has no attributes.
+The class 'TracedNode' has no attributes.
+The class 'umlTrace::IntermediateActions::TracedAddStructuralFeatureValueActionActivation' has no attributes.
+The class 'TracedWriteStructuralFeatureActionActivation' has no attributes.
+The class 'TracedVariableAction' has no attributes.
+The class 'TracedStructuredClassifier' has no attributes.
+The class 'umlTrace::uml::TracedRemoveStructuralFeatureValueAction' has no attributes.
+The class 'umlTrace::uml::TracedEncapsulatedClassifier' has no attributes.
+The class 'uml::TracedBehavioredClassifier' has no attributes.
+The class 'Kernel::TracedLiteralBooleanEvaluation' has no attributes.
+The class 'uml::TracedBehaviorExecutionSpecification' has no attributes.
+The class 'umlTrace::uml::TracedDestroyLinkAction' has no attributes.
+The class 'umlTrace::uml::TracedFlowFinalNode' has no attributes.
+The class 'umlTrace::uml::TracedReadSelfAction' has no attributes.
+The class 'umlTrace::uml::TracedDeployedArtifact' has no attributes.
+The class 'TracedBehavioredClassifier' has no attributes.
+The class 'uml::TracedCallOperationAction' has no attributes.
+The class 'uml::TracedElement' has no attributes.
+The class 'TracedActivityEdge' has no attributes.
+The class 'uml::TracedEnumeration' has no attributes.
+The class 'umlTrace::uml::TracedDurationConstraint' has no attributes.
+The class 'umlTrace::IntegerFunctions::TracedIntegerPlusFunctionBehaviorExecution' has no attributes.
+The class 'uml::TracedLiteralBoolean' has no attributes.
+The class 'TracedStructuredActivityNode' has no attributes.
+The class 'umlTrace::Kernel::TracedLiteralBooleanEvaluation' has no attributes.
+The class 'uml::TracedProfileApplication' has no attributes.
+The class 'TracedCreateLinkAction' has no attributes.
+The class 'umlTrace::uml::TracedRelationship' has no attributes.
+The class 'uml::TracedOccurrenceSpecification' has no attributes.
+The class 'TracedControlNode' has no attributes.
+The class 'umlTrace::uml::TracedMessageEnd' has no attributes.
+The class 'umlTrace::uml::TracedInterruptibleActivityRegion' has no attributes.
+The class 'umlTrace::uml::TracedAction' has no attributes.
+The class 'TracedValue' has no attributes.
+The class 'uml::TracedDirectedRelationship' has no attributes.
+The class 'uml::TracedSlot' has no attributes.
+The class 'uml::TracedElementImport' has no attributes.
+The class 'umlTrace::uml::TracedActivity' has no attributes.
+The class 'umlTrace::BasicActions::TracedInputPinActivation' has no attributes.
+The class 'uml::TracedFunctionBehavior' has no attributes.
+The class 'umlTrace::uml::TracedTimeConstraint' has no attributes.
+The class 'uml::TracedObjectNode' has no attributes.
+The class 'umlTrace::uml::TracedSequenceNode' has no attributes.
+The class 'uml::TracedRegion' has no attributes.
+The class 'TracedInstanceSpecification' has no attributes.
+The class 'uml::TracedProtocolTransition' has no attributes.
+The class 'umlTrace::uml::TracedRedefinableElement' has no attributes.
+The class 'uml::TracedAddStructuralFeatureValueAction' has no attributes.
+The class 'uml::TracedDeploymentTarget' has no attributes.
+The class 'uml::TracedConnectableElement' has no attributes.
+The class 'umlTrace::uml::TracedGeneralizationSet' has no attributes.
+The class 'TracedMessageOccurrenceSpecification' has no attributes.
+The class 'uml::TracedMultiplicityElement' has no attributes.
+The class 'umlTrace::uml::TracedClearStructuralFeatureAction' has no attributes.
+The class 'umlTrace::IntegerFunctions::TracedIntegerLessFunctionBehaviorExecution' has no attributes.
+The class 'uml::TracedNamedElement' has no attributes.
+The class 'umlTrace::BasicBehaviors::TracedOpaqueBehaviorExecution' has no attributes.
+The class 'umlTrace::uml::TracedTemplateBinding' has no attributes.
+The class 'umlTrace::uml::TracedReadLinkAction' has no attributes.
+The class 'uml::TracedTemplateableElement' has no attributes.
+The class 'umlTrace::uml::TracedExecutionSpecification' has no attributes.
+The class 'uml::TracedRemoveStructuralFeatureValueAction' has no attributes.
+The class 'umlTrace::Kernel::TracedCompoundValue' has no attributes.
+The class 'uml::TracedNamespace' has no attributes.
+The class 'umlTrace::uml::TracedForkNode' has no attributes.
+The class 'Traced::TracedObjects' has no attributes.
+The class 'uml::TracedTemplateSignature' has no attributes.
+The class 'uml::TracedBehavior' has no attributes.
+The class 'umlTrace::uml::TracedCollaborationUse' has no attributes.
+The class 'uml::TracedReadSelfAction' has no attributes.
+The class 'umlTrace::uml::TracedMessage' has no attributes.
+The class 'umlTrace::uml::TracedExtension' has no attributes.
+The class 'uml::TracedReadLinkAction' has no attributes.
+The class 'umlTrace::uml::TracedStartObjectBehaviorAction' has no attributes.
+The class 'uml::TracedReadLinkObjectEndAction' has no attributes.
+The class 'umlTrace::uml::TracedInitialNode' has no attributes.
+The class 'umlTrace::uml::TracedConnector' has no attributes.
+The class 'uml::TracedMessageEnd' has no attributes.
+The class 'umlTrace::uml::TracedProperty' has no attributes.
+The class 'uml::TracedClassifier' has no attributes.
+The class 'Kernel::TracedReference' has no attributes.
+The class 'uml::TracedMergeNode' has no attributes.
+The class 'umlTrace::uml::TracedReadVariableAction' has no attributes.
+The class 'uml::TracedActivityParameterNode' has no attributes.
+The class 'umlTrace::IntermediateActivities::TracedMergeNodeActivation' has no attributes.
+The class 'uml::TracedInteractionOperand' has no attributes.
+The class 'IntermediateActions::TracedAddStructuralFeatureValueActionActivation' has no attributes.
+The class 'umlTrace::uml::TracedAddVariableValueAction' has no attributes.
+The class 'umlTrace::uml::TracedLinkEndData' has no attributes.
+The class 'umlTrace::uml::TracedSubstitution' has no attributes.
+The class 'uml::TracedReduceAction' has no attributes.
+The class 'umlTrace::uml::TracedPackageImport' has no attributes.
+The class 'umlTrace::uml::TracedActor' has no attributes.
+The class 'State' has no attributes.
+The class 'umlTrace::IntermediateActions::TracedWriteStructuralFeatureActionActivation' has no attributes.
+The class 'umlTrace::uml::TracedDependency' has no attributes.
+The class 'uml::TracedOpaqueAction' has no attributes.
+The class 'TracedCompoundValue' has no attributes.
+The class 'TracedPin' has no attributes.
+The class 'umlTrace::BasicActions::TracedOpaqueActionActivation' has no attributes.
+The class 'IntermediateActivities::TracedJoinNodeActivation' has no attributes.
+The class 'umlTrace::uml::TracedElement' has no attributes.
+The class 'umlTrace::uml::TracedClass' has no attributes.
+The class 'uml::TracedLiteralNull' has no attributes.
+The class 'umlTrace::uml::TracedStructuredClassifier' has no attributes.
+The class 'TracedActivityGroup' has no attributes.
+The class 'uml::TracedDeploymentSpecification' has no attributes.
+The class 'uml::TracedAction' has no attributes.
+The class 'uml::TracedConnectableElementTemplateParameter' has no attributes.
+The class 'umlTrace::uml::TracedProtocolConformance' has no attributes.
+The class 'uml::TracedParameterableElement' has no attributes.
+The class 'umlTrace::uml::TracedDeploymentSpecification' has no attributes.
+The class 'umlTrace::uml::TracedValueSpecificationAction' has no attributes.
+The class 'uml::TracedClearStructuralFeatureAction' has no attributes.
+The class 'TracedArtifact' has no attributes.
+The class 'uml::ActivityContent' has no attributes.
+The class 'uml::TracedStringExpression' has no attributes.
+The class 'umlTrace::uml::TracedActivityNode' has no attributes.
+The class 'uml::TracedPartDecomposition' has no attributes.
+The class 'umlTrace::uml::TracedAcceptEventAction' has no attributes.
+The class 'umlTrace::uml::TracedExpression' has no attributes.
+The class 'uml::TracedTimeEvent' has no attributes.
+The class 'uml::TracedCallBehaviorAction' has no attributes.
+The class 'umlTrace::Kernel::TracedLiteralEvaluation' has no attributes.
+The class 'TracedConstraint' has no attributes.
+The class 'TracedBehavior' has no attributes.
+The class 'uml::TracedActivityFinalNode' has no attributes.
+The class 'umlTrace::uml::TracedActivityPartition' has no attributes.
+The class 'umlTrace::uml::TracedNamedElement' has no attributes.
+The class 'umlTrace::uml::TracedInformationFlow' has no attributes.
+The class 'umlTrace::uml::TracedInteractionUse' has no attributes.
+The class 'umlTrace::uml::TracedTestIdentityAction' has no attributes.
+The class 'TracedPrimitiveValue' has no attributes.
+The class 'uml::TracedCombinedFragment' has no attributes.
+The class 'umlTrace::uml::TracedStructuredActivityNode' has no attributes.
+The class 'uml::TracedDuration' has no attributes.
+The class 'umlTrace::uml::TracedStateInvariant' has no attributes.
+The class 'umlTrace::uml::TracedOccurrenceSpecification' has no attributes.
+The class 'uml::TracedStructuralFeature' has no attributes.
+The class 'umlTrace::uml::TracedWriteLinkAction' has no attributes.
+The class 'umlTrace::IntermediateActivities::TracedActivityParameterNodeActivation' has no attributes.
+The class 'umlTrace::uml::TracedObservation' has no attributes.
+The class 'umlTrace::Kernel::TracedEvaluation' has no attributes.
+The class 'TracedLiteralSpecification' has no attributes.
+The class 'umlTrace::uml::TracedCallOperationAction' has no attributes.
+The class 'TracedElement' has no attributes.
+The class 'umlTrace::uml::TracedType' has no attributes.
+The class 'umlTrace::uml::TracedBehavior' has no attributes.
+The class 'umlTrace::uml::TracedLinkAction' has no attributes.
+The class 'TracedCallAction' has no attributes.
+The class 'IntermediateActivities::TracedMergeNodeActivation' has no attributes.
+The class 'umlTrace::uml::TracedParameterableElement' has no attributes.
+The class 'umlTrace::uml::TracedConstraint' has no attributes.
+The class 'TracedEModelElement' has no attributes.
+The class 'umlTrace::uml::TracedOperationTemplateParameter' has no attributes.
+The class 'umlTrace::uml::TracedLoopNode' has no attributes.
+The class 'uml::TracedTypedElement' has no attributes.
+The class 'TracedInteractionUse' has no attributes.
+The class 'TracedObjectNodeActivation' has no attributes.
+The class 'umlTrace::BasicActions::TracedCallActionActivation' has no attributes.
+The class 'TracedPackageableElement' has no attributes.
+The class 'umlTrace::uml::TracedInclude' has no attributes.
+The class 'uml::TracedLinkEndDestructionData' has no attributes.
+The class 'TracedInvocationActionActivation' has no attributes.
+The class 'uml::TracedReadVariableAction' has no attributes.
+The class 'uml::TracedManifestation' has no attributes.
+The class 'TracedRedefinableElement' has no attributes.
+The class 'umlTrace::uml::TracedDestroyObjectAction' has no attributes.
+The class 'umlTrace::uml::TracedCombinedFragment' has no attributes.
+The class 'TracedIntervalConstraint' has no attributes.
+The class 'uml::TracedUnmarshallAction' has no attributes.
+The class 'umlTrace::uml::TracedLiteralString' has no attributes.
+The class 'umlTrace::Trace' has no attributes.
+The class 'uml::TracedProfile' has no attributes.
+The class 'uml::TracedDurationObservation' has no attributes.
+The class 'umlTrace::uml::TracedNamespace' has no attributes.
+The class 'umlTrace::uml::TracedUseCase' has no attributes.
+The class 'umlTrace::Kernel::TracedStructuredValue' has no attributes.
+The class 'uml::TracedInterruptibleActivityRegion' has no attributes.
+The class 'uml::TracedActionExecutionSpecification' has no attributes.
+The class 'umlTrace::uml::TracedContinuation' has no attributes.
+The class 'umlTrace::uml::TracedStructuralFeatureAction' has no attributes.
+The class 'umlTrace::uml::TracedCallBehaviorAction' has no attributes.
+The class 'umlTrace::uml::TracedObjectFlow' has no attributes.
+The class 'umlTrace::IntermediateActivities::TracedDecisionNodeActivation' has no attributes.
+The class 'umlTrace::uml::TracedPartDecomposition' has no attributes.
+The class 'umlTrace::uml::TracedDestructionOccurrenceSpecification' has no attributes.
+The class 'uml::TracedDeployedArtifact' has no attributes.
+The class 'umlTrace::Kernel::TracedObject' has no attributes.
+The class 'uml::TracedPackageableElement' has no attributes.
+The class 'Kernel::TracedObject' has no attributes.
+The class 'TracedEvent' has no attributes.
+The class 'uml::TracedOperation' has no attributes.
+The class 'TracedExecutableNode' has no attributes.
+The class 'umlTrace::uml::TracedFinalNode' has no attributes.
+The class 'umlTrace::uml::TracedExecutionEnvironment' has no attributes.
+The class 'TracedInvocationAction' has no attributes.
+The class 'umlTrace::uml::TracedInstanceValue' has no attributes.
+The class 'TracedClass' has no attributes.
+The class 'uml::TracedAcceptEventAction' has no attributes.
+The class 'uml::TracedInteractionFragment' has no attributes.
+The class 'uml::TracedExtensionEnd' has no attributes.
+The class 'uml::TracedEncapsulatedClassifier' has no attributes.
+The class 'TracedProperty' has no attributes.
+The class 'uml::TracedPseudostate' has no attributes.
+The class 'TracedRelationship' has no attributes.
+The class 'umlTrace::IntermediateActions::TracedCreateObjectActionActivation' has no attributes.
+The class 'TracedLinkAction' has no attributes.
+The class 'umlTrace::uml::TracedActivityFinalNode' has no attributes.
+The class 'umlTrace::Values::ActionActivation::firing::Value' has the following attributes: 'firing' of type str.
+The class 'umlTrace::uml::TracedClearAssociationAction' has no attributes.
+The class 'uml::TracedClassifierTemplateParameter' has no attributes.
+The class 'umlTrace::uml::TracedRaiseExceptionAction' has no attributes.
+The class 'TracedPinActivation' has no attributes.
+The class 'IntermediateActions::TracedReadStructuralFeatureActionActivation' has no attributes.
+The class 'umlTrace::Kernel::TracedLiteralIntegerEvaluation' has no attributes.
+The class 'umlTrace::uml::TracedCreateLinkObjectAction' has no attributes.
+The class 'umlTrace::uml::TracedTypedElement' has no attributes.
+The class 'uml::TracedInstanceValue' has no attributes.
+The class 'umlTrace::Loci::TracedSemanticVisitor' has no attributes.
+The class 'umlTrace::uml::TracedPackageableElement' has no attributes.
+The class 'umlTrace::Kernel::TracedIntegerValue' has no attributes.
+The class 'IntegerFunctions::TracedIntegerGreaterFunctionBehaviorExecution' has no attributes.
+The class 'umlTrace::uml::TracedCreateLinkAction' has no attributes.
+The class 'umlTrace::Values::SemanticVisitor::runtimeModelElement::Value' has no attributes.
+The class 'umlTrace::uml::TracedTemplateSignature' has no attributes.
+The class 'uml::TracedExpression' has no attributes.
+The class 'umlTrace::uml::TracedBroadcastSignalAction' has no attributes.
+The class 'umlTrace::uml::TracedDurationObservation' has no attributes.
+The class 'uml::TracedAssociation' has no attributes.
+The class 'uml::TracedActivityNode' has no attributes.
+The class 'TracedNamedElement' has no attributes.
+The class 'umlTrace::uml::TracedOpaqueAction' has no attributes.
+The class 'umlTrace::uml::TracedClassifier' has no attributes.
+The class 'uml::TracedActivity' has no attributes.
+The class 'umlTrace::uml::TracedTemplateableElement' has no attributes.
+The class 'TracedWriteVariableAction' has no attributes.
+The class 'umlTrace::uml::TracedLinkEndDestructionData' has no attributes.
+The class 'umlTrace::Kernel::TracedExtensionalValue' has no attributes.
+The class 'umlTrace::uml::TracedActivityEdge' has no attributes.
+The class 'umlTrace::uml::TracedSignalEvent' has no attributes.
+The class 'uml::TracedGeneralization' has no attributes.
+The class 'TracedStructuralFeatureAction' has no attributes.
+The class 'uml::TracedTrigger' has no attributes.
+The class 'uml::TracedType' has no attributes.
+The class 'umlTrace::uml::TracedStateMachine' has no attributes.
+The class 'uml::TracedTimeExpression' has no attributes.
+The class 'umlTrace::uml::TracedObjectNode' has no attributes.
+The class 'TracedObject' has no attributes.
+The class 'umlTrace::uml::TracedCallAction' has no attributes.
+The class 'umlTrace::BasicActions::TracedCallBehaviorActionActivation' has no attributes.
+The class 'umlTrace::uml::TracedChangeEvent' has no attributes.
+The class 'umlTrace::uml::TracedReadExtentAction' has no attributes.
+The class 'umlTrace::uml::TracedEvent' has no attributes.
+The class 'umlTrace::uml::TracedGate' has no attributes.
+The class 'uml::TracedLiteralReal' has no attributes.
+The class 'umlTrace::uml::TracedAssociation' has no attributes.
+The class 'umlTrace::uml::TracedControlNode' has no attributes.
+The class 'uml::TracedUsage' has no attributes.
+The class 'TracedValueSpecification' has no attributes.
+The class 'umlTrace::uml::TracedSignal' has no attributes.
+The class 'umlTrace::uml::TracedAssociationClass' has no attributes.
+The class 'uml::TracedDeployment' has no attributes.
+The class 'umlTrace::uml::TracedConsiderIgnoreFragment' has no attributes.
+The class 'TracedInteractionFragment' has no attributes.
+The class 'uml::TracedLinkEndCreationData' has no attributes.
+The class 'umlTrace::uml::TracedValuePin' has no attributes.
+The class 'uml::TracedUseCase' has no attributes.
+The class 'uml::TracedDevice' has no attributes.
+The class 'uml::TracedCollaboration' has no attributes.
+The class 'TracedStateMachine' has no attributes.
+The class 'IntermediateActions::TracedCreateObjectActionActivation' has no attributes.
+The class 'uml::TracedReadIsClassifiedObjectAction' has no attributes.
+The class 'uml::TracedPackageMerge' has no attributes.
+The class 'umlTrace::uml::TracedPseudostate' has no attributes.
+The class 'umlTrace::uml::TracedVariableAction' has no attributes.
+The class 'umlTrace::BasicActions::TracedActionActivation' has no attributes.
+The class 'uml::TracedObjectFlow' has no attributes.
+The class 'uml::TracedFeature' has no attributes.
+The class 'umlTrace::uml::TracedNode' has no attributes.
+The class 'umlTrace::uml::TracedExceptionHandler' has no attributes.
+The class 'umlTrace::uml::TracedReception' has no attributes.
+The class 'umlTrace::uml::TracedTransition' has no attributes.
+The class 'umlTrace::uml::TracedExecutableNode' has no attributes.
+The class 'umlTrace::uml::TracedValueSpecification' has no attributes.
+The class 'umlTrace::uml::TracedParameter' has no attributes.
+The class 'umlTrace::uml::TracedLifeline' has no attributes.
+The class 'umlTrace::uml::TracedPackage' has no attributes.
+The class 'TracedLinkEndData' has no attributes.
+The class 'uml::TracedProperty' has no attributes.
+The class 'umlTrace::uml::TracedTimeInterval' has no attributes.
+The class 'TracedOpaqueBehaviorExecution' has no attributes.
+The class 'umlTrace::uml::TracedInteractionFragment' has no attributes.
+The class 'TracedCombinedFragment' has no attributes.
+The class 'BasicActions::TracedActionActivation' has no attributes.
+The class 'umlTrace::uml::TracedAbstraction' has no attributes.
+The class 'uml::TracedAddVariableValueAction' has no attributes.
+The class 'umlTrace::uml::TracedActionInputPin' has no attributes.
+The class 'IntermediateActivities::TracedActivityFinalNodeActivation' has no attributes.
+The class 'umlTrace::uml::TracedReclassifyObjectAction' has no attributes.
+The class 'umlTrace::uml::TracedCreateObjectAction' has no attributes.
+The class 'umlTrace::uml::TracedInterval' has no attributes.
+The class 'umlTrace::uml::TracedActivityGroup' has no attributes.
+The class 'umlTrace::uml::TracedLiteralNull' has no attributes.
+The class 'uml::TracedReplyAction' has no attributes.
+The class 'uml::TracedInformationItem' has no attributes.
+The class 'TracedAbstraction' has no attributes.
+The class 'umlTrace::Traced::TracedObjects' has no attributes.
+The class 'TracedWriteStructuralFeatureAction' has no attributes.
+The class 'uml::TracedValueSpecificationAction' has no attributes.
+The class 'umlTrace::uml::TracedPin' has no attributes.
+The class 'uml::TracedFinalState' has no attributes.
+The class 'umlTrace::uml::TracedPort' has no attributes.
+The class 'uml::TracedReclassifyObjectAction' has no attributes.
+The class 'TracedClassifier' has no attributes.
+The class 'uml::TracedActor' has no attributes.
+The class 'umlTrace::uml::TracedDeployment' has no attributes.
+The class 'uml::TracedParameterSet' has no attributes.
+The class 'umlTrace::uml::TracedReadLinkObjectEndAction' has no attributes.
+The class 'uml::TracedLinkEndData' has no attributes.
+The class 'umlTrace::uml::TracedDirectedRelationship' has no attributes.
+The class 'TracedBehavioralFeature' has no attributes.
+The class 'umlTrace::uml::TracedConditionalNode' has no attributes.
+The class 'uml::TracedStartObjectBehaviorAction' has no attributes.
+The class 'umlTrace::uml::TracedInvocationAction' has no attributes.
+The class 'TracedAcceptEventAction' has no attributes.
+The class 'uml::TracedControlFlow' has no attributes.
+The class 'umlTrace::uml::TracedTrigger' has no attributes.
+The class 'umlTrace::uml::TracedLiteralSpecification' has no attributes.
+The class 'TracedActionActivation' has no attributes.
+The class 'TracedActivityNode' has no attributes.
+The class 'umlTrace::uml::TracedMultiplicityElement' has no attributes.
+The class 'umlTrace::IntermediateActivities::TracedJoinNodeActivation' has no attributes.
+The class 'umlTrace::uml::TracedUsage' has no attributes.
+The class 'uml::TracedDurationInterval' has no attributes.
+The class 'umlTrace::uml::TracedClearVariableAction' has no attributes.
+The class 'TracedObservation' has no attributes.
+The class 'uml::TracedImage' has no attributes.
+The class 'umlTrace::uml::TracedStereotype' has no attributes.
+The class 'uml::TracedSendSignalAction' has no attributes.
+The class 'TracedFinalNode' has no attributes.
+The class 'umlTrace::uml::TracedExpansionRegion' has no attributes.
+The class 'umlTrace::uml::TracedVertex' has no attributes.
+The class 'umlTrace::uml::TracedConnectableElement' has no attributes.
+The class 'umlTrace::Kernel::TracedValue' has no attributes.
+The class 'uml::TracedInclude' has no attributes.
+The class 'TracedAction' has no attributes.
+The class 'umlTrace::Kernel::TracedPrimitiveValue' has no attributes.
+The class 'umlTrace::uml::TracedStartClassifierBehaviorAction' has no attributes.
+The class 'uml::TracedConnectorEnd' has no attributes.
+The class 'umlTrace::BasicBehaviors::TracedExecution' has no attributes.
+The class 'umlTrace::uml::TracedSlot' has no attributes.
+The class 'uml::TracedActionInputPin' has no attributes.
+The class 'uml::TracedGate' has no attributes.
+The class 'umlTrace::uml::TracedBehavioredClassifier' has no attributes.
+The class 'uml::TracedGeneralOrdering' has no attributes.
+The class 'Loci::TracedSemanticVisitor' has no attributes.
+The class 'uml::TracedOutputPin' has no attributes.
+The class 'umlTrace::uml::TracedLiteralUnlimitedNatural' has no attributes.
+The class 'umlTrace::uml::TracedInstanceSpecification' has no attributes.
+The class 'umlTrace::IntermediateActions::TracedValueSpecificationActionActivation' has no attributes.
+The class 'umlTrace::uml::TracedInputPin' has no attributes.
+The class 'uml::TracedClearAssociationAction' has no attributes.
+The class 'umlTrace::uml::TracedOpaqueExpression' has no attributes.
+The class 'umlTrace::uml::TracedReplyAction' has no attributes.
+The class 'TracedCallActionActivation' has no attributes.
+The class 'umlTrace::uml::TracedStructuralFeature' has no attributes.
+The class 'TracedStructuredValue' has no attributes.
+The class 'IntermediateActions::TracedValueSpecificationActionActivation' has no attributes.
+The class 'umlTrace::uml::TracedInteraction' has no attributes.
+The class 'TracedEvaluation' has no attributes.
+The class 'TracedDirectedRelationship' has no attributes.
+The class 'TracedExtensionalValue' has no attributes.
+The class 'uml::TracedTestIdentityAction' has no attributes.
+The class 'uml::TracedDecisionNode' has no attributes.
+The class 'umlTrace::uml::TracedGeneralOrdering' has no attributes.
+The class 'umlTrace::Kernel::TracedReference' has no attributes.
+The class 'uml::TracedRaiseExceptionAction' has no attributes.
+The class 'uml::TracedInterfaceRealization' has no attributes.
+The class 'umlTrace::uml::TracedRealization' has no attributes.
+The class 'uml::TracedClause' has no attributes.
+The class 'umlTrace::IntermediateActivities::TracedActivityFinalNodeActivation' has no attributes.
+The class 'umlTrace::uml::TracedEnumerationLiteral' has no attributes.
+The class 'uml::TracedPrimitiveType' has no attributes.
+The class 'umlTrace::uml::TracedWriteStructuralFeatureAction' has no attributes.
+The class 'umlTrace::Kernel::TracedBooleanValue' has no attributes.
+The class 'uml::TracedQualifierValue' has no attributes.
+The class 'uml::TracedRedefinableElement' has no attributes.
+The class 'TracedInputPin' has no attributes.
+The class 'uml::TracedVariable' has no attributes.
+The class 'umlTrace::uml::TracedReadLinkObjectEndQualifierAction' has no attributes.
+The class 'uml::TracedLiteralUnlimitedNatural' has no attributes.
+The class 'umlTrace::BasicActions::TracedOutputPinActivation' has no attributes.
+The class 'ActivityContent' has no attributes.
+The class 'umlTrace::uml::TracedAcceptCallAction' has no attributes.
+The class 'umlTrace::uml::TracedDeploymentTarget' has no attributes.
+The class 'TracedAssociation' has no attributes.
+The class 'uml::TracedReadExtentAction' has no attributes.
+The class 'umlTrace::uml::TracedSendObjectAction' has no attributes.
+The class 'TracedLiteralEvaluation' has no attributes.
+The class 'umlTrace::uml::TracedMessageOccurrenceSpecification' has no attributes.
+The class 'umlTrace::uml::TracedReduceAction' has no attributes.
+The class 'umlTrace::uml::TracedTimeEvent' has no attributes.
+The class 'TracedMessageEnd' has no attributes.
+The class 'umlTrace::IntegerFunctions::TracedIntegerGreaterFunctionBehaviorExecution' has no attributes.
+The class 'BasicActions::TracedOutputPinActivation' has no attributes.
+The class 'uml::TracedTransition' has no attributes.
+The class 'umlTrace::uml::TracedExtend' has no attributes.
+The class 'umlTrace::uml::TracedLiteralBoolean' has no attributes.
+The class 'uml::TracedCommunicationPath' has no attributes.
+The class 'uml::TracedActivityGroup' has no attributes.
+The class 'uml::TracedComponent' has no attributes.
+'umlTrace::uml::TracedOutputPin' is a specialization of 'TracedPin'.
+'umlTrace::uml::TracedInclude' is a specialization of 'uml::TracedDirectedRelationship'.
+'umlTrace::IntermediateActivities::TracedJoinNodeActivation' is a specialization of 'TracedControlNodeActivation'.
+'umlTrace::uml::TracedDecisionNode' is a specialization of 'TracedControlNode'.
+'umlTrace::uml::TracedOperationTemplateParameter' is a specialization of 'TracedTemplateParameter'.
+'umlTrace::BasicActions::TracedOutputPinActivation' is a specialization of 'TracedPinActivation'.
+'umlTrace::uml::TracedUnmarshallAction' is a specialization of 'TracedAction'.
+'umlTrace::uml::TracedRegion' is a specialization of 'uml::TracedNamespace'.
+'umlTrace::uml::TracedCollaboration' is a specialization of 'uml::TracedStructuredClassifier'.
+'umlTrace::BasicActions::TracedCallBehaviorActionActivation' is a specialization of 'TracedCallActionActivation'.
+'umlTrace::BasicActions::TracedActionActivation' is a specialization of 'TracedActivityNodeActivation'.
+'umlTrace::uml::TracedAddStructuralFeatureValueAction' is a specialization of 'TracedWriteStructuralFeatureAction'.
+'umlTrace::IntermediateActivities::TracedActivityFinalNodeActivation' is a specialization of 'TracedControlNodeActivation'.
+'umlTrace::uml::TracedTimeObservation' is a specialization of 'TracedObservation'.
+'umlTrace::uml::TracedTimeEvent' is a specialization of 'TracedEvent'.
+'umlTrace::uml::TracedActionInputPin' is a specialization of 'TracedInputPin'.
+'umlTrace::uml::TracedGate' is a specialization of 'TracedMessageEnd'.
+'umlTrace::uml::TracedOperation' is a specialization of 'uml::TracedParameterableElement'.
+'umlTrace::uml::TracedCallEvent' is a specialization of 'TracedMessageEvent'.
+'umlTrace::IntermediateActivities::TracedMergeNodeActivation' is a specialization of 'TracedControlNodeActivation'.
+'umlTrace::IntermediateActivities::TracedActivityParameterNodeActivation' is a specialization of 'TracedObjectNodeActivation'.
+'umlTrace::uml::TracedFinalState' is a specialization of 'TracedState'.
+'umlTrace::uml::TracedInformationItem' is a specialization of 'TracedClassifier'.
+'umlTrace::uml::TracedElementImport' is a specialization of 'TracedDirectedRelationship'.
+'umlTrace::uml::TracedImage' is a specialization of 'TracedElement'.
+'umlTrace::uml::TracedComment' is a specialization of 'TracedElement'.
+'umlTrace::IntermediateActivities::TracedInitialNodeActivation' is a specialization of 'TracedControlNodeActivation'.
+'umlTrace::uml::TracedInteractionOperand' is a specialization of 'uml::TracedInteractionFragment'.
+'umlTrace::uml::TracedDurationInterval' is a specialization of 'TracedInterval'.
+'umlTrace::uml::TracedSendSignalAction' is a specialization of 'TracedInvocationAction'.
+'umlTrace::IntermediateActions::TracedReadStructuralFeatureActionActivation' is a specialization of 'TracedStructuralFeatureActionActivation'.
+'umlTrace::uml::TracedTimeInterval' is a specialization of 'TracedInterval'.
+'umlTrace::BasicBehaviors::TracedExecution' is a specialization of 'TracedObject'.
+'umlTrace::uml::TracedAddVariableValueAction' is a specialization of 'TracedWriteVariableAction'.
+'umlTrace::uml::TracedDataType' is a specialization of 'TracedClassifier'.
+'umlTrace::uml::TracedPartDecomposition' is a specialization of 'TracedInteractionUse'.
+'umlTrace::uml::TracedTemplateParameter' is a specialization of 'TracedElement'.
+'umlTrace::BasicActions::TracedPinActivation' is a specialization of 'TracedObjectNodeActivation'.
+'umlTrace::uml::TracedSignalEvent' is a specialization of 'TracedMessageEvent'.
+'umlTrace::IntermediateActivities::TracedControlNodeActivation' is a specialization of 'TracedActivityNodeActivation'.
+'umlTrace::uml::TracedManifestation' is a specialization of 'TracedAbstraction'.
+'umlTrace::uml::TracedTemplateParameterSubstitution' is a specialization of 'TracedElement'.
+'umlTrace::uml::TracedExtensionPoint' is a specialization of 'TracedRedefinableElement'.
+'umlTrace::IntegerFunctions::TracedIntegerLessFunctionBehaviorExecution' is a specialization of 'TracedOpaqueBehaviorExecution'.
+'umlTrace::uml::TracedExtensionEnd' is a specialization of 'TracedProperty'.
+'umlTrace::uml::TracedFunctionBehavior' is a specialization of 'TracedOpaqueBehavior'.
+'umlTrace::uml::TracedRemoveVariableValueAction' is a specialization of 'TracedWriteVariableAction'.
+'umlTrace::uml::TracedProfileApplication' is a specialization of 'TracedDirectedRelationship'.
+'umlTrace::uml::TracedBehavioralFeature' is a specialization of 'uml::TracedFeature'.
+'umlTrace::uml::TracedRegion' is a specialization of 'uml::TracedRedefinableElement'.
+'umlTrace::uml::TracedGeneralOrdering' is a specialization of 'TracedNamedElement'.
+'umlTrace::uml::TracedExpression' is a specialization of 'TracedValueSpecification'.
+'umlTrace::uml::TracedReadLinkObjectEndAction' is a specialization of 'TracedAction'.
+'umlTrace::uml::TracedModel' is a specialization of 'TracedPackage'.
+'umlTrace::BasicActions::TracedInvocationActionActivation' is a specialization of 'TracedActionActivation'.
+'umlTrace::uml::TracedClassifierTemplateParameter' is a specialization of 'TracedTemplateParameter'.
+'umlTrace::uml::TracedComponent' is a specialization of 'TracedClass'.
+'umlTrace::IntermediateActions::TracedCreateObjectActionActivation' is a specialization of 'TracedActionActivation'.
+'umlTrace::uml::TracedStartObjectBehaviorAction' is a specialization of 'TracedCallAction'.
+'umlTrace::uml::TracedActivityParameterNode' is a specialization of 'TracedObjectNode'.
+'umlTrace::uml::TracedActionExecutionSpecification' is a specialization of 'TracedExecutionSpecification'.
+'umlTrace::BasicActions::TracedCallActionActivation' is a specialization of 'TracedInvocationActionActivation'.
+'umlTrace::uml::TracedClause' is a specialization of 'TracedElement'.
+'umlTrace::uml::TracedVariable' is a specialization of 'uml::TracedConnectableElement'.
+'umlTrace::uml::TracedParameterSet' is a specialization of 'TracedNamedElement'.
+'umlTrace::uml::TracedLinkEndCreationData' is a specialization of 'TracedLinkEndData'.
+'umlTrace::BasicActions::TracedInputPinActivation' is a specialization of 'TracedPinActivation'.
+'umlTrace::uml::TracedInstanceValue' is a specialization of 'TracedValueSpecification'.
+'umlTrace::uml::TracedDurationObservation' is a specialization of 'TracedObservation'.
+'umlTrace::uml::TracedMergeNode' is a specialization of 'TracedControlNode'.
+'umlTrace::uml::TracedControlFlow' is a specialization of 'TracedActivityEdge'.
+'umlTrace::uml::TracedQualifierValue' is a specialization of 'TracedElement'.
+'umlTrace::uml::TracedOperation' is a specialization of 'uml::TracedBehavioralFeature'.
+'umlTrace::uml::TracedCentralBufferNode' is a specialization of 'TracedObjectNode'.
+'umlTrace::IntermediateActivities::TracedActivityNodeActivation' is a specialization of 'TracedSemanticVisitor'.
+'umlTrace::uml::TracedWriteVariableAction' is a specialization of 'TracedVariableAction'.
+'umlTrace::uml::TracedState' is a specialization of 'uml::TracedNamespace'.
+'umlTrace::uml::TracedGeneralization' is a specialization of 'TracedDirectedRelationship'.
+'umlTrace::IntermediateActions::TracedAddStructuralFeatureValueActionActivation' is a specialization of 'TracedWriteStructuralFeatureActionActivation'.
+'umlTrace::uml::TracedLiteralUnlimitedNatural' is a specialization of 'TracedLiteralSpecification'.
+'umlTrace::IntermediateActions::TracedStructuralFeatureActionActivation' is a specialization of 'TracedActionActivation'.
+'umlTrace::uml::TracedState' is a specialization of 'uml::TracedVertex'.
+'umlTrace::uml::TracedStringExpression' is a specialization of 'uml::TracedTemplateableElement'.
+'umlTrace::uml::TracedComponentRealization' is a specialization of 'TracedRealization'.
+'umlTrace::uml::TracedEnumeration' is a specialization of 'TracedDataType'.
+'umlTrace::uml::TracedDestroyLinkAction' is a specialization of 'TracedWriteLinkAction'.
+'umlTrace::uml::TracedDuration' is a specialization of 'TracedValueSpecification'.
+'umlTrace::uml::TracedReadExtentAction' is a specialization of 'TracedAction'.
+'umlTrace::uml::TracedCollaboration' is a specialization of 'uml::TracedBehavioredClassifier'.
+'umlTrace::uml::TracedProfile' is a specialization of 'TracedPackage'.
+'umlTrace::uml::TracedInterfaceRealization' is a specialization of 'TracedRealization'.
+'umlTrace::uml::TracedBehaviorExecutionSpecification' is a specialization of 'TracedExecutionSpecification'.
+'umlTrace::uml::TracedReadVariableAction' is a specialization of 'TracedVariableAction'.
+'umlTrace::uml::TracedJoinNode' is a specialization of 'TracedControlNode'.
+'umlTrace::IntermediateActivities::TracedObjectNodeActivation' is a specialization of 'TracedActivityNodeActivation'.
+'umlTrace::IntegerFunctions::TracedIntegerGreaterFunctionBehaviorExecution' is a specialization of 'TracedOpaqueBehaviorExecution'.
+'umlTrace::uml::TracedPrimitiveType' is a specialization of 'TracedDataType'.
+'umlTrace::IntermediateActions::TracedValueSpecificationActionActivation' is a specialization of 'TracedActionActivation'.
+'umlTrace::uml::TracedInteractionConstraint' is a specialization of 'TracedConstraint'.
+'umlTrace::uml::TracedPackageMerge' is a specialization of 'TracedDirectedRelationship'.
+'umlTrace::IntegerFunctions::TracedIntegerPlusFunctionBehaviorExecution' is a specialization of 'TracedOpaqueBehaviorExecution'.
+'umlTrace::IntermediateActivities::TracedForkNodeActivation' is a specialization of 'TracedControlNodeActivation'.
+'umlTrace::uml::TracedValueSpecificationAction' is a specialization of 'TracedAction'.
+'umlTrace::IntermediateActivities::TracedActivityExecution' is a specialization of 'TracedExecution'.
+'umlTrace::uml::TracedConnectionPointReference' is a specialization of 'TracedVertex'.
+'umlTrace::uml::TracedMessageEvent' is a specialization of 'TracedEvent'.
+'umlTrace::uml::TracedCommunicationPath' is a specialization of 'TracedAssociation'.
+'umlTrace::uml::TracedVariable' is a specialization of 'uml::TracedMultiplicityElement'.
+'umlTrace::uml::TracedAnyReceiveEvent' is a specialization of 'TracedMessageEvent'.
+'umlTrace::uml::TracedLiteralBoolean' is a specialization of 'TracedLiteralSpecification'.
+'umlTrace::IntermediateActivities::TracedDecisionNodeActivation' is a specialization of 'TracedControlNodeActivation'.
+'umlTrace::uml::TracedConnectableElementTemplateParameter' is a specialization of 'TracedTemplateParameter'.
+'umlTrace::uml::TracedInclude' is a specialization of 'uml::TracedNamedElement'.
+'umlTrace::uml::TracedDevice' is a specialization of 'TracedNode'.
+'umlTrace::uml::TracedProtocolTransition' is a specialization of 'TracedTransition'.
+'umlTrace::uml::TracedInteractionOperand' is a specialization of 'uml::TracedNamespace'.
+'umlTrace::uml::TracedTimeExpression' is a specialization of 'TracedValueSpecification'.
+'umlTrace::IntermediateActions::TracedWriteStructuralFeatureActionActivation' is a specialization of 'TracedStructuralFeatureActionActivation'.
+'umlTrace::uml::TracedLiteralReal' is a specialization of 'TracedLiteralSpecification'.
+'umlTrace::uml::TracedRedefinableTemplateSignature' is a specialization of 'uml::TracedRedefinableElement'.
+'umlTrace::uml::TracedState' is a specialization of 'uml::TracedRedefinableElement'.
+'umlTrace::uml::TracedReadIsClassifiedObjectAction' is a specialization of 'TracedAction'.
+'umlTrace::uml::TracedStringExpression' is a specialization of 'uml::TracedExpression'.
+'umlTrace::uml::TracedReadStructuralFeatureAction' is a specialization of 'TracedStructuralFeatureAction'.
+'umlTrace::uml::TracedInterface' is a specialization of 'TracedClassifier'.
+'umlTrace::uml::TracedOpaqueBehavior' is a specialization of 'TracedBehavior'.
+'umlTrace::uml::TracedTestIdentityAction' is a specialization of 'TracedAction'.
+'umlTrace::uml::TracedRedefinableTemplateSignature' is a specialization of 'uml::TracedTemplateSignature'.
+'umlTrace::uml::TracedExecutionOccurrenceSpecification' is a specialization of 'TracedOccurrenceSpecification'.
+'umlTrace::uml::TracedExpansionNode' is a specialization of 'TracedObjectNode'.
+'umlTrace::uml::TracedOperation' is a specialization of 'uml::TracedTemplateableElement'.
+'umlTrace::uml::TracedDataStoreNode' is a specialization of 'TracedCentralBufferNode'.
+'umlTrace::uml::TracedConnectorEnd' is a specialization of 'TracedMultiplicityElement'.
+'umlTrace::uml::TracedLiteralInteger' is a specialization of 'TracedLiteralSpecification'.
+'umlTrace::BasicActions::TracedOpaqueActionActivation' is a specialization of 'TracedActionActivation'.
+'umlTrace::uml::TracedActivityEdge' is a specialization of 'TracedRedefinableElement'.
+'umlTrace::uml::TracedBehavioralFeature' is a specialization of 'uml::TracedNamespace'.
+'umlTrace::uml::TracedInterruptibleActivityRegion' is a specialization of 'TracedActivityGroup'.
+'umlTrace::uml::TracedReclassifyObjectAction' is a specialization of 'TracedAction'.
+'umlTrace::uml::TracedMessageOccurrenceSpecification' is a specialization of 'uml::TracedOccurrenceSpecification'.
+'umlTrace::uml::TracedFinalNode' is a specialization of 'TracedControlNode'.
+'umlTrace::uml::TracedOpaqueAction' is a specialization of 'TracedAction'.
+'umlTrace::Kernel::TracedLiteralBooleanEvaluation' is a specialization of 'TracedLiteralEvaluation'.
+'umlTrace::uml::TracedProperty' is a specialization of 'uml::TracedConnectableElement'.
+'umlTrace::uml::TracedStateInvariant' is a specialization of 'TracedInteractionFragment'.
+'umlTrace::uml::TracedActivityNode' is a specialization of 'ActivityContent'.
+'umlTrace::uml::TracedStartClassifierBehaviorAction' is a specialization of 'TracedAction'.
+'umlTrace::uml::TracedStructuredActivityNode' is a specialization of 'uml::TracedNamespace'.
+'umlTrace::uml::TracedConnector' is a specialization of 'TracedFeature'.
+'umlTrace::uml::TracedDeploymentTarget' is a specialization of 'TracedNamedElement'.
+'umlTrace::uml::TracedTemplateSignature' is a specialization of 'TracedElement'.
+'umlTrace::uml::TracedType' is a specialization of 'TracedPackageableElement'.
+'umlTrace::uml::TracedLiteralNull' is a specialization of 'TracedLiteralSpecification'.
+'umlTrace::uml::TracedClearAssociationAction' is a specialization of 'TracedAction'.
+'umlTrace::uml::TracedWriteStructuralFeatureAction' is a specialization of 'TracedStructuralFeatureAction'.
+'umlTrace::uml::TracedControlNode' is a specialization of 'TracedActivityNode'.
+'umlTrace::uml::TracedDestroyObjectAction' is a specialization of 'TracedAction'.
+'umlTrace::uml::TracedParameter' is a specialization of 'uml::TracedMultiplicityElement'.
+'umlTrace::uml::TracedDestructionOccurrenceSpecification' is a specialization of 'TracedMessageOccurrenceSpecification'.
+'umlTrace::uml::TracedStateMachine' is a specialization of 'TracedBehavior'.
+'umlTrace::uml::TracedReadLinkAction' is a specialization of 'TracedLinkAction'.
+'umlTrace::uml::TracedCallBehaviorAction' is a specialization of 'TracedCallAction'.
+'umlTrace::uml::TracedDeployment' is a specialization of 'TracedDependency'.
+'umlTrace::uml::TracedInteraction' is a specialization of 'uml::TracedBehavior'.
+'umlTrace::uml::TracedStructuredActivityNode' is a specialization of 'uml::TracedAction'.
+'umlTrace::uml::TracedForkNode' is a specialization of 'TracedControlNode'.
+'umlTrace::uml::TracedAssociationClass' is a specialization of 'uml::TracedAssociation'.
+'umlTrace::uml::TracedAbstraction' is a specialization of 'TracedDependency'.
+'umlTrace::uml::TracedEncapsulatedClassifier' is a specialization of 'TracedStructuredClassifier'.
+'umlTrace::uml::TracedSignal' is a specialization of 'TracedClassifier'.
+'umlTrace::uml::TracedStereotype' is a specialization of 'TracedClass'.
+'umlTrace::uml::TracedClassifier' is a specialization of 'uml::TracedTemplateableElement'.
+'umlTrace::uml::TracedDependency' is a specialization of 'uml::TracedDirectedRelationship'.
+'umlTrace::uml::TracedRelationship' is a specialization of 'TracedElement'.
+'umlTrace::uml::TracedElement' is a specialization of 'TracedEModelElement'.
+'umlTrace::uml::TracedReadLinkObjectEndQualifierAction' is a specialization of 'TracedAction'.
+'umlTrace::Kernel::TracedPrimitiveValue' is a specialization of 'TracedValue'.
+'umlTrace::uml::TracedPseudostate' is a specialization of 'TracedVertex'.
+'umlTrace::uml::TracedLinkAction' is a specialization of 'TracedAction'.
+'umlTrace::uml::TracedPort' is a specialization of 'TracedProperty'.
+'umlTrace::uml::TracedClearVariableAction' is a specialization of 'TracedVariableAction'.
+'umlTrace::uml::TracedClass' is a specialization of 'uml::TracedEncapsulatedClassifier'.
+'umlTrace::uml::TracedInstanceSpecification' is a specialization of 'uml::TracedDeployedArtifact'.
+'umlTrace::uml::TracedActivityGroup' is a specialization of 'uml::TracedNamedElement'.
+'umlTrace::uml::TracedObjectNode' is a specialization of 'uml::TracedActivityNode'.
+'umlTrace::uml::TracedStructuralFeature' is a specialization of 'uml::TracedTypedElement'.
+'umlTrace::uml::TracedActor' is a specialization of 'TracedBehavioredClassifier'.
+'umlTrace::uml::TracedReadSelfAction' is a specialization of 'TracedAction'.
+'umlTrace::uml::TracedCallAction' is a specialization of 'TracedInvocationAction'.
+'umlTrace::uml::TracedProtocolStateMachine' is a specialization of 'TracedStateMachine'.
+'umlTrace::uml::TracedTransition' is a specialization of 'uml::TracedRedefinableElement'.
+'umlTrace::uml::TracedNode' is a specialization of 'uml::TracedClass'.
+'umlTrace::uml::TracedEvent' is a specialization of 'TracedPackageableElement'.
+'umlTrace::uml::TracedDeploymentSpecification' is a specialization of 'TracedArtifact'.
+'umlTrace::uml::TracedGeneralizationSet' is a specialization of 'TracedPackageableElement'.
+'umlTrace::uml::TracedReduceAction' is a specialization of 'TracedAction'.
+'umlTrace::uml::TracedMultiplicityElement' is a specialization of 'TracedElement'.
+'umlTrace::uml::TracedVariableAction' is a specialization of 'TracedAction'.
+'umlTrace::uml::TracedEnumerationLiteral' is a specialization of 'TracedInstanceSpecification'.
+'umlTrace::uml::TracedStructuralFeatureAction' is a specialization of 'TracedAction'.
+'umlTrace::uml::TracedExecutionEnvironment' is a specialization of 'TracedNode'.
+'umlTrace::uml::TracedTemplateableElement' is a specialization of 'TracedElement'.
+'umlTrace::uml::TracedCreateLinkAction' is a specialization of 'TracedWriteLinkAction'.
+'umlTrace::Kernel::TracedReference' is a specialization of 'TracedStructuredValue'.
+'umlTrace::uml::TracedCreateObjectAction' is a specialization of 'TracedAction'.
+'umlTrace::uml::TracedAssociation' is a specialization of 'uml::TracedRelationship'.
+'umlTrace::uml::TracedInteraction' is a specialization of 'uml::TracedInteractionFragment'.
+'umlTrace::uml::TracedOccurrenceSpecification' is a specialization of 'TracedInteractionFragment'.
+'umlTrace::uml::TracedClassifier' is a specialization of 'uml::TracedType'.
+'umlTrace::uml::TracedRealization' is a specialization of 'TracedAbstraction'.
+'umlTrace::Kernel::TracedEvaluation' is a specialization of 'TracedSemanticVisitor'.
+'umlTrace::uml::TracedExtend' is a specialization of 'uml::TracedDirectedRelationship'.
+'umlTrace::uml::TracedTrigger' is a specialization of 'TracedNamedElement'.
+'umlTrace::uml::TracedDependency' is a specialization of 'uml::TracedPackageableElement'.
+'umlTrace::uml::TracedStructuredClassifier' is a specialization of 'TracedClassifier'.
+'umlTrace::uml::TracedOpaqueExpression' is a specialization of 'TracedValueSpecification'.
+'umlTrace::uml::TracedTemplateBinding' is a specialization of 'TracedDirectedRelationship'.
+'umlTrace::uml::TracedExecutableNode' is a specialization of 'TracedActivityNode'.
+'umlTrace::uml::TracedAcceptCallAction' is a specialization of 'TracedAcceptEventAction'.
+'umlTrace::uml::TracedDurationConstraint' is a specialization of 'TracedIntervalConstraint'.
+'umlTrace::uml::TracedBehavior' is a specialization of 'TracedClass'.
+'umlTrace::Kernel::TracedCompoundValue' is a specialization of 'TracedStructuredValue'.
+'umlTrace::uml::TracedClearStructuralFeatureAction' is a specialization of 'TracedStructuralFeatureAction'.
+'umlTrace::uml::TracedActivityGroup' is a specialization of 'ActivityContent'.
+'umlTrace::uml::TracedInstanceSpecification' is a specialization of 'uml::TracedPackageableElement'.
+'umlTrace::Kernel::TracedObject' is a specialization of 'TracedExtensionalValue'.
+'umlTrace::uml::TracedBehavioredClassifier' is a specialization of 'TracedClassifier'.
+'umlTrace::uml::TracedExecutionSpecification' is a specialization of 'TracedInteractionFragment'.
+'umlTrace::uml::TracedStructuralFeature' is a specialization of 'uml::TracedMultiplicityElement'.
+'umlTrace::uml::TracedMessageOccurrenceSpecification' is a specialization of 'uml::TracedMessageEnd'.
+'umlTrace::uml::TracedStructuredActivityNode' is a specialization of 'uml::TracedActivityGroup'.
+'umlTrace::uml::TracedCollaborationUse' is a specialization of 'TracedNamedElement'.
+'umlTrace::uml::TracedDeployedArtifact' is a specialization of 'TracedNamedElement'.
+'umlTrace::uml::TracedExtend' is a specialization of 'uml::TracedNamedElement'.
+'umlTrace::uml::TracedObservation' is a specialization of 'TracedPackageableElement'.
+'umlTrace::uml::TracedArtifact' is a specialization of 'uml::TracedClassifier'.
+'umlTrace::uml::TracedPackageImport' is a specialization of 'TracedDirectedRelationship'.
+'umlTrace::uml::TracedActivityFinalNode' is a specialization of 'TracedFinalNode'.
+'umlTrace::uml::TracedRedefinableElement' is a specialization of 'TracedNamedElement'.
+'umlTrace::uml::TracedPackageableElement' is a specialization of 'uml::TracedParameterableElement'.
+'umlTrace::uml::TracedTypedElement' is a specialization of 'TracedNamedElement'.
+'umlTrace::uml::TracedCombinedFragment' is a specialization of 'TracedInteractionFragment'.
+'umlTrace::uml::TracedLoopNode' is a specialization of 'TracedStructuredActivityNode'.
+'umlTrace::uml::TracedPin' is a specialization of 'uml::TracedObjectNode'.
+'umlTrace::uml::TracedActivityPartition' is a specialization of 'TracedActivityGroup'.
+'umlTrace::uml::TracedSlot' is a specialization of 'TracedElement'.
+'umlTrace::uml::TracedMessage' is a specialization of 'TracedNamedElement'.
+'umlTrace::uml::TracedInteractionFragment' is a specialization of 'TracedNamedElement'.
+'umlTrace::Kernel::TracedExtensionalValue' is a specialization of 'TracedCompoundValue'.
+'umlTrace::uml::TracedExtension' is a specialization of 'TracedAssociation'.
+'umlTrace::uml::TracedIntervalConstraint' is a specialization of 'TracedConstraint'.
+'umlTrace::uml::TracedValueSpecification' is a specialization of 'uml::TracedPackageableElement'.
+'umlTrace::uml::TracedExpansionRegion' is a specialization of 'TracedStructuredActivityNode'.
+'umlTrace::uml::TracedNode' is a specialization of 'uml::TracedDeploymentTarget'.
+'umlTrace::uml::TracedCreateLinkObjectAction' is a specialization of 'TracedCreateLinkAction'.
+'umlTrace::uml::TracedInstanceSpecification' is a specialization of 'uml::TracedDeploymentTarget'.
+'umlTrace::uml::TracedSequenceNode' is a specialization of 'TracedStructuredActivityNode'.
+'umlTrace::uml::TracedParameter' is a specialization of 'uml::TracedConnectableElement'.
+'umlTrace::uml::TracedMessageEnd' is a specialization of 'TracedNamedElement'.
+'umlTrace::uml::TracedExceptionHandler' is a specialization of 'TracedElement'.
+'umlTrace::uml::TracedProtocolConformance' is a specialization of 'TracedDirectedRelationship'.
+'umlTrace::Kernel::TracedLiteralIntegerEvaluation' is a specialization of 'TracedLiteralEvaluation'.
+'umlTrace::uml::TracedAssociationClass' is a specialization of 'uml::TracedClass'.
+'umlTrace::uml::TracedRemoveStructuralFeatureValueAction' is a specialization of 'TracedWriteStructuralFeatureAction'.
+'umlTrace::uml::TracedLiteralString' is a specialization of 'TracedLiteralSpecification'.
+'umlTrace::BasicBehaviors::TracedOpaqueBehaviorExecution' is a specialization of 'TracedExecution'.
+'umlTrace::Kernel::TracedValue' is a specialization of 'TracedSemanticVisitor'.
+'umlTrace::uml::TracedClassifier' is a specialization of 'uml::TracedRedefinableElement'.
+'umlTrace::uml::TracedVertex' is a specialization of 'TracedNamedElement'.
+'umlTrace::uml::TracedPackage' is a specialization of 'uml::TracedTemplateableElement'.
+'umlTrace::uml::TracedSubstitution' is a specialization of 'TracedRealization'.
+'umlTrace::uml::TracedLifeline' is a specialization of 'TracedNamedElement'.
+'umlTrace::uml::TracedObjectNode' is a specialization of 'uml::TracedTypedElement'.
+'umlTrace::uml::TracedInputPin' is a specialization of 'TracedPin'.
+'umlTrace::uml::TracedRaiseExceptionAction' is a specialization of 'TracedAction'.
+'umlTrace::uml::TracedTimeConstraint' is a specialization of 'TracedIntervalConstraint'.
+'umlTrace::uml::TracedActivity' is a specialization of 'TracedBehavior'.
+'umlTrace::uml::TracedNamespace' is a specialization of 'TracedNamedElement'.
+'umlTrace::uml::TracedPackage' is a specialization of 'uml::TracedNamespace'.
+'umlTrace::uml::TracedWriteLinkAction' is a specialization of 'TracedLinkAction'.
+'umlTrace::uml::TracedPin' is a specialization of 'uml::TracedMultiplicityElement'.
+'umlTrace::uml::TracedAction' is a specialization of 'TracedExecutableNode'.
+'umlTrace::uml::TracedReplyAction' is a specialization of 'TracedAction'.
+'umlTrace::uml::TracedCallOperationAction' is a specialization of 'TracedCallAction'.
+'umlTrace::uml::TracedSendObjectAction' is a specialization of 'TracedInvocationAction'.
+'umlTrace::uml::TracedObjectFlow' is a specialization of 'TracedActivityEdge'.
+'umlTrace::uml::TracedClass' is a specialization of 'uml::TracedBehavioredClassifier'.
+'umlTrace::uml::TracedConditionalNode' is a specialization of 'TracedStructuredActivityNode'.
+'umlTrace::uml::TracedActivityNode' is a specialization of 'uml::TracedRedefinableElement'.
+'umlTrace::uml::TracedParameterableElement' is a specialization of 'TracedElement'.
+'umlTrace::uml::TracedInteractionUse' is a specialization of 'TracedInteractionFragment'.
+'umlTrace::uml::TracedProperty' is a specialization of 'uml::TracedDeploymentTarget'.
+'umlTrace::uml::TracedConsiderIgnoreFragment' is a specialization of 'TracedCombinedFragment'.
+'umlTrace::uml::TracedDirectedRelationship' is a specialization of 'TracedRelationship'.
+'umlTrace::uml::TracedReception' is a specialization of 'TracedBehavioralFeature'.
+'umlTrace::uml::TracedInvocationAction' is a specialization of 'TracedAction'.
+'umlTrace::uml::TracedUsage' is a specialization of 'TracedDependency'.
+'umlTrace::uml::TracedContinuation' is a specialization of 'TracedInteractionFragment'.
+'umlTrace::uml::TracedLinkEndData' is a specialization of 'TracedElement'.
+'umlTrace::uml::TracedUseCase' is a specialization of 'TracedBehavioredClassifier'.
+'umlTrace::uml::TracedConstraint' is a specialization of 'TracedPackageableElement'.
+'umlTrace::Kernel::TracedBooleanValue' is a specialization of 'TracedPrimitiveValue'.
+'umlTrace::uml::TracedProperty' is a specialization of 'uml::TracedStructuralFeature'.
+'umlTrace::uml::TracedAssociation' is a specialization of 'uml::TracedClassifier'.
+'umlTrace::uml::TracedPackageableElement' is a specialization of 'uml::TracedNamedElement'.
+'umlTrace::uml::TracedInformationFlow' is a specialization of 'uml::TracedPackageableElement'.
+'umlTrace::Kernel::TracedIntegerValue' is a specialization of 'TracedPrimitiveValue'.
+'umlTrace::uml::TracedStructuralFeature' is a specialization of 'uml::TracedFeature'.
+'umlTrace::uml::TracedNamedElement' is a specialization of 'TracedElement'.
+'umlTrace::uml::TracedFlowFinalNode' is a specialization of 'TracedFinalNode'.
+'umlTrace::uml::TracedLiteralSpecification' is a specialization of 'TracedValueSpecification'.
+'umlTrace::Kernel::TracedStructuredValue' is a specialization of 'TracedValue'.
+'umlTrace::uml::TracedPackage' is a specialization of 'uml::TracedPackageableElement'.
+'umlTrace::uml::TracedInformationFlow' is a specialization of 'uml::TracedDirectedRelationship'.
+'umlTrace::uml::TracedConnectableElement' is a specialization of 'uml::TracedTypedElement'.
+'umlTrace::uml::TracedLinkEndDestructionData' is a specialization of 'TracedLinkEndData'.
+'umlTrace::uml::TracedConnectableElement' is a specialization of 'uml::TracedParameterableElement'.
+'umlTrace::uml::TracedChangeEvent' is a specialization of 'TracedEvent'.
+'umlTrace::uml::TracedArtifact' is a specialization of 'uml::TracedDeployedArtifact'.
+'umlTrace::uml::TracedClassifier' is a specialization of 'uml::TracedNamespace'.
+'umlTrace::uml::TracedAcceptEventAction' is a specialization of 'TracedAction'.
+'umlTrace::uml::TracedBroadcastSignalAction' is a specialization of 'TracedInvocationAction'.
+'umlTrace::Kernel::TracedLiteralEvaluation' is a specialization of 'TracedEvaluation'.
+'umlTrace::uml::TracedValueSpecification' is a specialization of 'uml::TracedTypedElement'.
+'umlTrace::uml::TracedFeature' is a specialization of 'TracedRedefinableElement'.
+'umlTrace::uml::TracedInitialNode' is a specialization of 'TracedControlNode'.
+'umlTrace::uml::TracedTransition' is a specialization of 'uml::TracedNamespace'.
+'umlTrace::uml::TracedInterval' is a specialization of 'TracedValueSpecification'.
+'umlTrace::uml::TracedValuePin' is a specialization of 'TracedInputPin'.
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects310', cardinality 0..*) is associated with 'uml::TracedQualifierValue' (role 'uml_TracedQualifierValue', cardinality 0..*).
+'uml::TracedAcceptCallAction' (role 'uml_TracedAcceptCallAction', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects104', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects386', cardinality 0..*) is associated with 'uml::TracedSlot' (role 'uml_TracedSlot', cardinality 0..*).
+'Values::SemanticVisitor::runtimeModelElement::Value' (role 'SemanticVisitor_runtimeModelElement_Value446', cardinality 0..*) is associated with 'umlTrace::Loci::TracedSemanticVisitor' (role 'parent', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects196', cardinality 0..*) is associated with 'uml::TracedSignalEvent' (role 'uml_TracedSignalEvent', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects8', cardinality 0..*) is associated with 'uml::TracedCreateLinkObjectAction' (role 'uml_TracedCreateLinkObjectAction', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects334', cardinality 0..*) is associated with 'uml::TracedReadLinkObjectEndAction' (role 'uml_TracedReadLinkObjectEndAction', cardinality 0..*).
+'uml::TracedMessage' (role 'uml_TracedMessage', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects126', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects244', cardinality 0..*) is associated with 'uml::TracedLoopNode' (role 'uml_TracedLoopNode', cardinality 0..*).
+'uml::TracedRegion' (role 'uml_TracedRegion', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects370', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects264', cardinality 0..*) is associated with 'IntermediateActions::TracedReadStructuralFeatureActionActivation' (role 'IntermediateActions_TracedReadStructuralFeatureActionActivation', cardinality 0..*).
+'Kernel::TracedBooleanValue' (role 'Kernel_TracedBooleanValue', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects198', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects204', cardinality 0..*) is associated with 'uml::TracedRealization' (role 'uml_TracedRealization', cardinality 0..*).
+'uml::TracedExtensionEnd' (role 'uml_TracedExtensionEnd', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects306', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects362', cardinality 0..*) is associated with 'uml::TracedStartObjectBehaviorAction' (role 'uml_TracedStartObjectBehaviorAction', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects58', cardinality 0..*) is associated with 'uml::TracedStartClassifierBehaviorAction' (role 'uml_TracedStartClassifierBehaviorAction', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects36', cardinality 0..*) is associated with 'uml::TracedGeneralizationSet' (role 'uml_TracedGeneralizationSet', cardinality 0..*).
+'uml::TracedParameterSet' (role 'uml_TracedParameterSet', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects256', cardinality 0..*).
+'IntegerFunctions::TracedIntegerLessFunctionBehaviorExecution' (role 'IntegerFunctions_TracedIntegerLessFunctionBehaviorExecution', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects100', cardinality 0..*).
+'uml::TracedReadSelfAction' (role 'uml_TracedReadSelfAction', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects262', cardinality 0..*).
+'uml::TracedTemplateBinding' (role 'uml_TracedTemplateBinding', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects180', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects222', cardinality 0..*) is associated with 'uml::TracedExtensionPoint' (role 'uml_TracedExtensionPoint', cardinality 0..*).
+'uml::TracedInterface' (role 'uml_TracedInterface', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects234', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects350', cardinality 0..*) is associated with 'uml::TracedPrimitiveType' (role 'uml_TracedPrimitiveType', cardinality 0..*).
+'IntermediateActivities::TracedJoinNodeActivation' (role 'IntermediateActivities_TracedJoinNodeActivation', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects144', cardinality 0..*).
+'uml::TracedAddVariableValueAction' (role 'uml_TracedAddVariableValueAction', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects376', cardinality 0..*).
+'uml::TracedActivityParameterNode' (role 'uml_TracedActivityParameterNode', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects316', cardinality 0..*).
+'uml::TracedReclassifyObjectAction' (role 'uml_TracedReclassifyObjectAction', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects140', cardinality 0..*).
+'uml::TracedValueSpecificationAction' (role 'uml_TracedValueSpecificationAction', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects408', cardinality 0..*).
+'uml::TracedPort' (role 'uml_TracedPort', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects42', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects238', cardinality 0..*) is associated with 'uml::TracedProtocolConformance' (role 'uml_TracedProtocolConformance', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects382', cardinality 0..*) is associated with 'uml::TracedExpression' (role 'uml_TracedExpression', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects392', cardinality 0..*) is associated with 'uml::TracedTestIdentityAction' (role 'uml_TracedTestIdentityAction', cardinality 0..*).
+'uml::TracedOperationTemplateParameter' (role 'uml_TracedOperationTemplateParameter', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects284', cardinality 0..*).
+'IntermediateActions::TracedValueSpecificationActionActivation' (role 'IntermediateActions_TracedValueSpecificationActionActivation', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects364', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects434', cardinality 0..*) is associated with 'uml::TracedClassifierTemplateParameter' (role 'uml_TracedClassifierTemplateParameter', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects12', cardinality 0..*) is associated with 'uml::TracedFlowFinalNode' (role 'uml_TracedFlowFinalNode', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects94', cardinality 0..*) is associated with 'uml::TracedLiteralString' (role 'uml_TracedLiteralString', cardinality 0..*).
+'uml::TracedRedefinableTemplateSignature' (role 'uml_TracedRedefinableTemplateSignature', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects212', cardinality 0..*).
+'uml::TracedValuePin' (role 'uml_TracedValuePin', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects50', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects444', cardinality 0..*) is associated with 'uml::TracedGeneralOrdering' (role 'uml_TracedGeneralOrdering', cardinality 0..*).
+'uml::TracedTimeEvent' (role 'uml_TracedTimeEvent', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects150', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects220', cardinality 0..*) is associated with 'uml::TracedCreateLinkAction' (role 'uml_TracedCreateLinkAction', cardinality 0..*).
+'uml::TracedTransition' (role 'uml_TracedTransition', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects276', cardinality 0..*).
+'BasicActions::TracedOutputPinActivation' (role 'BasicActions_TracedOutputPinActivation', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects342', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects418', cardinality 0..*) is associated with 'IntermediateActivities::TracedMergeNodeActivation' (role 'IntermediateActivities_TracedMergeNodeActivation', cardinality 0..*).
+'uml::TracedUseCase' (role 'uml_TracedUseCase', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects142', cardinality 0..*).
+'uml::TracedOpaqueBehavior' (role 'uml_TracedOpaqueBehavior', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects236', cardinality 0..*).
+'uml::TracedNode' (role 'uml_TracedNode', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects52', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects246', cardinality 0..*) is associated with 'uml::TracedComment' (role 'uml_TracedComment', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects402', cardinality 0..*) is associated with 'uml::TracedInterfaceRealization' (role 'uml_TracedInterfaceRealization', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects28', cardinality 0..*) is associated with 'uml::TracedSendObjectAction' (role 'uml_TracedSendObjectAction', cardinality 0..*).
+'uml::TracedSequenceNode' (role 'uml_TracedSequenceNode', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects56', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects354', cardinality 0..*) is associated with 'uml::TracedCommunicationPath' (role 'uml_TracedCommunicationPath', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects308', cardinality 0..*) is associated with 'uml::TracedImage' (role 'uml_TracedImage', cardinality 0..*).
+'uml::TracedClearVariableAction' (role 'uml_TracedClearVariableAction', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects80', cardinality 0..*).
+'uml::TracedProtocolTransition' (role 'uml_TracedProtocolTransition', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects156', cardinality 0..*).
+'Values::ActionActivation::firing::Value' (role 'ActionActivation_firing_Value449', cardinality 0..*) is associated with 'umlTrace::BasicActions::TracedActionActivation' (role 'parent448', cardinality 0..*).
+'uml::TracedInteractionConstraint' (role 'uml_TracedInteractionConstraint', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects230', cardinality 0..*).
+'uml::TracedOpaqueExpression' (role 'uml_TracedOpaqueExpression', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects92', cardinality 0..*).
+'uml::TracedRemoveStructuralFeatureValueAction' (role 'uml_TracedRemoveStructuralFeatureValueAction', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects162', cardinality 0..*).
+'uml::TracedSubstitution' (role 'uml_TracedSubstitution', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects110', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects404', cardinality 0..*) is associated with 'uml::TracedSendSignalAction' (role 'uml_TracedSendSignalAction', cardinality 0..*).
+'uml::TracedParameter' (role 'uml_TracedParameter', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects90', cardinality 0..*).
+'Kernel::TracedLiteralIntegerEvaluation' (role 'Kernel_TracedLiteralIntegerEvaluation', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects218', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects216', cardinality 0..*) is associated with 'uml::TracedCentralBufferNode' (role 'uml_TracedCentralBufferNode', cardinality 0..*).
+'Loci::TracedSemanticVisitor' (role 'Loci_TracedSemanticVisitor', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects148', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects438', cardinality 0..*) is associated with 'uml::TracedGate' (role 'uml_TracedGate', cardinality 0..*).
+'uml::TracedBroadcastSignalAction' (role 'uml_TracedBroadcastSignalAction', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects84', cardinality 0..*).
+'uml::TracedDurationObservation' (role 'uml_TracedDurationObservation', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects320', cardinality 0..*).
+'uml::TracedStateMachine' (role 'uml_TracedStateMachine', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects124', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects172', cardinality 0..*) is associated with 'uml::TracedDataStoreNode' (role 'uml_TracedDataStoreNode', cardinality 0..*).
+'Traced::TracedObjects' (role 'Traced_TracedObjects', cardinality 0..*) is associated with 'umlTrace::Trace' (role 'umlTrace_Trace5', cardinality 0..*).
+'uml::TracedUsage' (role 'uml_TracedUsage', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects184', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects134', cardinality 0..*) is associated with 'Kernel::TracedReference' (role 'Kernel_TracedReference', cardinality 0..*).
+'uml::TracedLiteralInteger' (role 'uml_TracedLiteralInteger', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects194', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects298', cardinality 0..*) is associated with 'uml::TracedFinalState' (role 'uml_TracedFinalState', cardinality 0..*).
+'uml::TracedContinuation' (role 'uml_TracedContinuation', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects74', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects432', cardinality 0..*) is associated with 'uml::TracedComponent' (role 'uml_TracedComponent', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects260', cardinality 0..*) is associated with 'uml::TracedOperation' (role 'uml_TracedOperation', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects186', cardinality 0..*) is associated with 'uml::TracedActionInputPin' (role 'uml_TracedActionInputPin', cardinality 0..*).
+'uml::TracedExecutionOccurrenceSpecification' (role 'uml_TracedExecutionOccurrenceSpecification', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects226', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects168', cardinality 0..*) is associated with 'uml::TracedAnyReceiveEvent' (role 'uml_TracedAnyReceiveEvent', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects436', cardinality 0..*) is associated with 'uml::TracedActivityFinalNode' (role 'uml_TracedActivityFinalNode', cardinality 0..*).
+'uml::TracedInformationItem' (role 'uml_TracedInformationItem', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects286', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects120', cardinality 0..*) is associated with 'IntermediateActivities::TracedActivityParameterNodeActivation' (role 'IntermediateActivities_TracedActivityParameterNodeActivation', cardinality 0..*).
+'uml::TracedVariable' (role 'uml_TracedVariable', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects330', cardinality 0..*).
+'IntermediateActivities::TracedActivityFinalNodeActivation' (role 'IntermediateActivities_TracedActivityFinalNodeActivation', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects190', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects388', cardinality 0..*) is associated with 'IntermediateActions::TracedCreateObjectActionActivation' (role 'IntermediateActions_TracedCreateObjectActionActivation', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects294', cardinality 0..*) is associated with 'uml::TracedDuration' (role 'uml_TracedDuration', cardinality 0..*).
+'uml::TracedMessageOccurrenceSpecification' (role 'uml_TracedMessageOccurrenceSpecification', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects178', cardinality 0..*).
+'uml::TracedControlFlow' (role 'uml_TracedControlFlow', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects442', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects372', cardinality 0..*) is associated with 'uml::TracedInclude' (role 'uml_TracedInclude', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects400', cardinality 0..*) is associated with 'uml::TracedManifestation' (role 'uml_TracedManifestation', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects114', cardinality 0..*) is associated with 'uml::TracedAssociationClass' (role 'uml_TracedAssociationClass', cardinality 0..*).
+'Kernel::TracedObject' (role 'Kernel_TracedObject', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects146', cardinality 0..*).
+'uml::TracedReadLinkAction' (role 'uml_TracedReadLinkAction', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects358', cardinality 0..*).
+'uml::TracedReadIsClassifiedObjectAction' (role 'uml_TracedReadIsClassifiedObjectAction', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects414', cardinality 0..*).
+'umlTrace::Values::SemanticVisitor::runtimeModelElement::Value' (role 'runtimeModelElementTrace', cardinality 0..*) is associated with 'Loci::TracedSemanticVisitor' (role 'TracedSemanticVisitor', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects270', cardinality 0..*) is associated with 'uml::TracedClause' (role 'uml_TracedClause', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects82', cardinality 0..*) is associated with 'uml::TracedConstraint' (role 'uml_TracedConstraint', cardinality 0..*).
+'uml::TracedExpansionRegion' (role 'uml_TracedExpansionRegion', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects14', cardinality 0..*).
+'IntermediateActivities::TracedActivityNodeActivation' (role 'IntermediateActivities_TracedActivityNodeActivation', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects88', cardinality 0..*).
+'uml::TracedLiteralBoolean' (role 'uml_TracedLiteralBoolean', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects360', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects378', cardinality 0..*) is associated with 'uml::TracedClearStructuralFeatureAction' (role 'uml_TracedClearStructuralFeatureAction', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects278', cardinality 0..*) is associated with 'uml::TracedDurationInterval' (role 'uml_TracedDurationInterval', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects394', cardinality 0..*) is associated with 'uml::TracedProfile' (role 'uml_TracedProfile', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects332', cardinality 0..*) is associated with 'uml::TracedCallBehaviorAction' (role 'uml_TracedCallBehaviorAction', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects102', cardinality 0..*) is associated with 'uml::TracedInstanceSpecification' (role 'uml_TracedInstanceSpecification', cardinality 0..*).
+'uml::TracedStructuredActivityNode' (role 'uml_TracedStructuredActivityNode', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects66', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects210', cardinality 0..*) is associated with 'uml::TracedJoinNode' (role 'uml_TracedJoinNode', cardinality 0..*).
+'uml::TracedTemplateParameter' (role 'uml_TracedTemplateParameter', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects416', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects38', cardinality 0..*) is associated with 'uml::TracedChangeEvent' (role 'uml_TracedChangeEvent', cardinality 0..*).
+'uml::TracedReadExtentAction' (role 'uml_TracedReadExtentAction', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects344', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects288', cardinality 0..*) is associated with 'uml::TracedActionExecutionSpecification' (role 'uml_TracedActionExecutionSpecification', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects130', cardinality 0..*) is associated with 'uml::TracedActivity' (role 'uml_TracedActivity', cardinality 0..*).
+'uml::TracedDeployment' (role 'uml_TracedDeployment', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects128', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects68', cardinality 0..*) is associated with 'uml::TracedExecutionEnvironment' (role 'uml_TracedExecutionEnvironment', cardinality 0..*).
+'BasicActions::TracedActionActivation' (role 'TracedActionActivation', cardinality 0..*) is associated with 'umlTrace::Values::ActionActivation::firing::Value' (role 'firingTrace', cardinality 0..*).
+'uml::TracedInformationFlow' (role 'uml_TracedInformationFlow', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects112', cardinality 0..*).
+'uml::TracedDestructionOccurrenceSpecification' (role 'uml_TracedDestructionOccurrenceSpecification', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects24', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects274', cardinality 0..*) is associated with 'uml::TracedTrigger' (role 'uml_TracedTrigger', cardinality 0..*).
+'uml::TracedReduceAction' (role 'uml_TracedReduceAction', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects296', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects348', cardinality 0..*) is associated with 'uml::TracedStringExpression' (role 'uml_TracedStringExpression', cardinality 0..*).
+'uml::TracedInstanceValue' (role 'uml_TracedInstanceValue', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects138', cardinality 0..*).
+'uml::TracedInterruptibleActivityRegion' (role 'uml_TracedInterruptibleActivityRegion', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects154', cardinality 0..*).
+'umlTrace::Values::ActionActivation::firing::Value' (role 'actionActivation_firing_Values', cardinality 0..*) is associated with 'State' (role 'State455', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects340', cardinality 0..*) is associated with 'uml::TracedTemplateSignature' (role 'uml_TracedTemplateSignature', cardinality 0..*).
+'IntermediateActivities::TracedInitialNodeActivation' (role 'IntermediateActivities_TracedInitialNodeActivation', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects44', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects214', cardinality 0..*) is associated with 'uml::TracedModel' (role 'uml_TracedModel', cardinality 0..*).
+'IntermediateActivities::TracedDecisionNodeActivation' (role 'IntermediateActivities_TracedDecisionNodeActivation', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects232', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects240', cardinality 0..*) is associated with 'uml::TracedPackage' (role 'uml_TracedPackage', cardinality 0..*).
+'uml::TracedEnumerationLiteral' (role 'uml_TracedEnumerationLiteral', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects108', cardinality 0..*).
+'uml::TracedConditionalNode' (role 'uml_TracedConditionalNode', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects200', cardinality 0..*).
+'uml::TracedActor' (role 'uml_TracedActor', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects398', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects72', cardinality 0..*) is associated with 'uml::TracedConsiderIgnoreFragment' (role 'uml_TracedConsiderIgnoreFragment', cardinality 0..*).
+'uml::TracedProperty' (role 'uml_TracedProperty', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects304', cardinality 0..*).
+'BasicActions::TracedCallBehaviorActionActivation' (role 'BasicActions_TracedCallBehaviorActionActivation', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects118', cardinality 0..*).
+'uml::TracedProfileApplication' (role 'uml_TracedProfileApplication', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects322', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects312', cardinality 0..*) is associated with 'uml::TracedAddStructuralFeatureValueAction' (role 'uml_TracedAddStructuralFeatureValueAction', cardinality 0..*).
+'uml::TracedObjectFlow' (role 'uml_TracedObjectFlow', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects258', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects32', cardinality 0..*) is associated with 'uml::TracedClass' (role 'uml_TracedClass', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects396', cardinality 0..*) is associated with 'uml::TracedRemoveVariableValueAction' (role 'uml_TracedRemoveVariableValueAction', cardinality 0..*).
+'uml::TracedConnector' (role 'uml_TracedConnector', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects26', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects106', cardinality 0..*) is associated with 'uml::TracedStereotype' (role 'uml_TracedStereotype', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects132', cardinality 0..*) is associated with 'uml::TracedForkNode' (role 'uml_TracedForkNode', cardinality 0..*).
+'uml::TracedLiteralUnlimitedNatural' (role 'uml_TracedLiteralUnlimitedNatural', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects338', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects40', cardinality 0..*) is associated with 'uml::TracedDependency' (role 'uml_TracedDependency', cardinality 0..*).
+'uml::TracedDataType' (role 'uml_TracedDataType', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects248', cardinality 0..*).
+'uml::TracedTimeExpression' (role 'uml_TracedTimeExpression', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects410', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects174', cardinality 0..*) is associated with 'uml::TracedProtocolStateMachine' (role 'uml_TracedProtocolStateMachine', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects182', cardinality 0..*) is associated with 'uml::TracedDeploymentSpecification' (role 'uml_TracedDeploymentSpecification', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects430', cardinality 0..*) is associated with 'uml::TracedElementImport' (role 'uml_TracedElementImport', cardinality 0..*).
+'umlTrace::Values::SemanticVisitor::runtimeModelElement::Value' (role 'semanticVisitor_runtimeModelElement_Values', cardinality 0..*) is associated with 'State' (role 'State453', cardinality 0..*).
+'IntegerFunctions::TracedIntegerGreaterFunctionBehaviorExecution' (role 'IntegerFunctions_TracedIntegerGreaterFunctionBehaviorExecution', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects420', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects64', cardinality 0..*) is associated with 'uml::TracedExtension' (role 'uml_TracedExtension', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects164', cardinality 0..*) is associated with 'uml::TracedInterval' (role 'uml_TracedInterval', cardinality 0..*).
+'uml::TracedStateInvariant' (role 'uml_TracedStateInvariant', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects98', cardinality 0..*).
+'uml::TracedExceptionHandler' (role 'uml_TracedExceptionHandler', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects54', cardinality 0..*).
+'uml::TracedDevice' (role 'uml_TracedDevice', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects302', cardinality 0..*).
+'IntermediateActions::TracedAddStructuralFeatureValueActionActivation' (role 'IntermediateActions_TracedAddStructuralFeatureValueActionActivation', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects136', cardinality 0..*).
+'uml::TracedInteraction' (role 'uml_TracedInteraction', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects86', cardinality 0..*).
+'uml::TracedDestroyLinkAction' (role 'uml_TracedDestroyLinkAction', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects192', cardinality 0..*).
+'uml::TracedRaiseExceptionAction' (role 'uml_TracedRaiseExceptionAction', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects356', cardinality 0..*).
+'Kernel::TracedLiteralBooleanEvaluation' (role 'Kernel_TracedLiteralBooleanEvaluation', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects352', cardinality 0..*).
+'umlTrace::State' (role 'states2', cardinality 0..*) is associated with 'Values::SemanticVisitor::runtimeModelElement::Value' (role 'SemanticVisitor_runtimeModelElement_Value', cardinality 0..*).
+'uml::TracedOutputPin' (role 'uml_TracedOutputPin', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects290', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects440', cardinality 0..*) is associated with 'uml::TracedTimeObservation' (role 'uml_TracedTimeObservation', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects22', cardinality 0..*) is associated with 'uml::TracedDurationConstraint' (role 'uml_TracedDurationConstraint', cardinality 0..*).
+'uml::TracedComponentRealization' (role 'uml_TracedComponentRealization', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects250', cardinality 0..*).
+'uml::TracedConnectableElementTemplateParameter' (role 'uml_TracedConnectableElementTemplateParameter', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects282', cardinality 0..*).
+'uml::TracedReadStructuralFeatureAction' (role 'uml_TracedReadStructuralFeatureAction', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects170', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects228', cardinality 0..*) is associated with 'uml::TracedTimeInterval' (role 'uml_TracedTimeInterval', cardinality 0..*).
+'IntegerFunctions::TracedIntegerPlusFunctionBehaviorExecution' (role 'IntegerFunctions_TracedIntegerPlusFunctionBehaviorExecution', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects62', cardinality 0..*).
+'IntermediateActivities::TracedForkNodeActivation' (role 'IntermediateActivities_TracedForkNodeActivation', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects20', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects208', cardinality 0..*) is associated with 'BasicActions::TracedOpaqueActionActivation' (role 'BasicActions_TracedOpaqueActionActivation', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects268', cardinality 0..*) is associated with 'uml::TracedPackageMerge' (role 'uml_TracedPackageMerge', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects166', cardinality 0..*) is associated with 'Kernel::TracedIntegerValue' (role 'Kernel_TracedIntegerValue', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects', cardinality 0..*) is associated with 'uml::TracedCombinedFragment' (role 'uml_TracedCombinedFragment', cardinality 0..*).
+'uml::TracedDecisionNode' (role 'uml_TracedDecisionNode', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects266', cardinality 0..*).
+'uml::TracedLinkEndDestructionData' (role 'uml_TracedLinkEndDestructionData', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects346', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects34', cardinality 0..*) is associated with 'uml::TracedInteractionUse' (role 'uml_TracedInteractionUse', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects406', cardinality 0..*) is associated with 'uml::TracedFunctionBehavior' (role 'uml_TracedFunctionBehavior', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects60', cardinality 0..*) is associated with 'uml::TracedExtend' (role 'uml_TracedExtend', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects366', cardinality 0..*) is associated with 'uml::TracedLiteralNull' (role 'uml_TracedLiteralNull', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects252', cardinality 0..*) is associated with 'uml::TracedAcceptEventAction' (role 'uml_TracedAcceptEventAction', cardinality 0..*).
+'uml::TracedUnmarshallAction' (role 'uml_TracedUnmarshallAction', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects384', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects412', cardinality 0..*) is associated with 'uml::TracedAbstraction' (role 'uml_TracedAbstraction', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects424', cardinality 0..*) is associated with 'uml::TracedLinkEndCreationData' (role 'uml_TracedLinkEndCreationData', cardinality 0..*).
+'uml::TracedInteractionOperand' (role 'uml_TracedInteractionOperand', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects158', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects224', cardinality 0..*) is associated with 'uml::TracedSignal' (role 'uml_TracedSignal', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects16', cardinality 0..*) is associated with 'uml::TracedCreateObjectAction' (role 'uml_TracedCreateObjectAction', cardinality 0..*).
+'uml::TracedElement' (role 'uml_TracedElement', cardinality 0..*) is associated with 'umlTrace::Values::SemanticVisitor::runtimeModelElement::Value' (role 'umlTrace_Values_SemanticVisitor_runtimeModelElement_Value', cardinality 0..*).
+'uml::TracedLinkEndData' (role 'uml_TracedLinkEndData', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects280', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects336', cardinality 0..*) is associated with 'uml::TracedEnumeration' (role 'uml_TracedEnumeration', cardinality 0..*).
+'uml::TracedMergeNode' (role 'uml_TracedMergeNode', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects428', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects18', cardinality 0..*) is associated with 'uml::TracedLifeline' (role 'uml_TracedLifeline', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects10', cardinality 0..*) is associated with 'uml::TracedInitialNode' (role 'uml_TracedInitialNode', cardinality 0..*).
+'uml::TracedActivityPartition' (role 'uml_TracedActivityPartition', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects122', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects78', cardinality 0..*) is associated with 'uml::TracedInputPin' (role 'uml_TracedInputPin', cardinality 0..*).
+'uml::TracedDestroyObjectAction' (role 'uml_TracedDestroyObjectAction', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects116', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects188', cardinality 0..*) is associated with 'uml::TracedReadVariableAction' (role 'uml_TracedReadVariableAction', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects300', cardinality 0..*) is associated with 'uml::TracedOpaqueAction' (role 'uml_TracedOpaqueAction', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects70', cardinality 0..*) is associated with 'uml::TracedIntervalConstraint' (role 'uml_TracedIntervalConstraint', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects46', cardinality 0..*) is associated with 'uml::TracedCollaborationUse' (role 'uml_TracedCollaborationUse', cardinality 0..*).
+'IntermediateActivities::TracedActivityExecution' (role 'IntermediateActivities_TracedActivityExecution', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects48', cardinality 0..*).
+'State' (role 'State', cardinality 0..*) is associated with 'umlTrace::Trace' (role 'umlTrace_Trace', cardinality 0..*).
+'Values::ActionActivation::firing::Value' (role 'ActionActivation_firing_Value', cardinality 0..*) is associated with 'umlTrace::State' (role 'states', cardinality 0..*).
+'BasicActions::TracedInputPinActivation' (role 'BasicActions_TracedInputPinActivation', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects96', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects272', cardinality 0..*) is associated with 'uml::TracedReplyAction' (role 'uml_TracedReplyAction', cardinality 0..*).
+'uml::TracedConnectorEnd' (role 'uml_TracedConnectorEnd', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects328', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects422', cardinality 0..*) is associated with 'uml::TracedPseudostate' (role 'uml_TracedPseudostate', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects292', cardinality 0..*) is associated with 'uml::TracedTemplateParameterSubstitution' (role 'uml_TracedTemplateParameterSubstitution', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects390', cardinality 0..*) is associated with 'uml::TracedCollaboration' (role 'uml_TracedCollaboration', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects30', cardinality 0..*) is associated with 'uml::TracedPackageImport' (role 'uml_TracedPackageImport', cardinality 0..*).
+'uml::TracedReadLinkObjectEndQualifierAction' (role 'uml_TracedReadLinkObjectEndQualifierAction', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects206', cardinality 0..*).
+'uml::TracedPartDecomposition' (role 'uml_TracedPartDecomposition', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects152', cardinality 0..*).
+'uml::TracedArtifact' (role 'uml_TracedArtifact', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects326', cardinality 0..*).
+'uml::TracedAssociation' (role 'uml_TracedAssociation', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects380', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects160', cardinality 0..*) is associated with 'uml::TracedGeneralization' (role 'uml_TracedGeneralization', cardinality 0..*).
+'uml::TracedBehaviorExecutionSpecification' (role 'uml_TracedBehaviorExecutionSpecification', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects318', cardinality 0..*).
+'uml::TracedClearAssociationAction' (role 'uml_TracedClearAssociationAction', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects426', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects242', cardinality 0..*) is associated with 'uml::TracedCallEvent' (role 'uml_TracedCallEvent', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects254', cardinality 0..*) is associated with 'uml::TracedOccurrenceSpecification' (role 'uml_TracedOccurrenceSpecification', cardinality 0..*).
+'uml::TracedCallOperationAction' (role 'uml_TracedCallOperationAction', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects324', cardinality 0..*).
+'uml::TracedReception' (role 'uml_TracedReception', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects176', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects202', cardinality 0..*) is associated with 'uml::TracedConnectionPointReference' (role 'uml_TracedConnectionPointReference', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects374', cardinality 0..*) is associated with 'uml::TracedLiteralReal' (role 'uml_TracedLiteralReal', cardinality 0..*).
+'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects314', cardinality 0..*) is associated with 'uml::TracedExpansionNode' (role 'uml_TracedExpansionNode', cardinality 0..*).
+'uml::TracedTimeConstraint' (role 'uml_TracedTimeConstraint', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects76', cardinality 0..*).
+'uml::TracedState' (role 'uml_TracedState', cardinality 0..*) is associated with 'umlTrace::Traced::TracedObjects' (role 'umlTrace_Traced_TracedObjects368', cardinality 0..*).

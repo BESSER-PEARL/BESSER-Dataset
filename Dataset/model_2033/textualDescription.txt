@@ -1,0 +1,22 @@
+The model has 7 class(es).
+The class 'network::AbstractElement' has the following attributes: 'name' of type str.
+The class 'network::Statemachine' has no attributes.
+The class 'network::Network' has no attributes.
+The class 'network::State' has no attributes.
+The class 'network::Transition' has the following attributes: 'Event' of type str.
+The class 'AbstractElement' has no attributes.
+The class 'network::Channel' has the following attributes: 'Type' of type str.
+The enumeration 'TypeOfChannel' has the following literals: 'Synchronous', 'Asynchronous'.
+The enumeration 'Event' has the following literals: 'SEND', 'RECEIVE'.
+'network::State' is a specialization of 'AbstractElement'.
+'network::Network' is a specialization of 'AbstractElement'.
+'network::Channel' is a specialization of 'AbstractElement'.
+'network::Statemachine' is a specialization of 'AbstractElement'.
+'network::Transition' (role 'network_Transition17', cardinality 0..*) is associated with 'network::Channel' (role 'network_Channel18', cardinality 0..*).
+'network::State' (role 'network_State7', cardinality 0..*) is associated with 'network::Statemachine' (role 'network_Statemachine6', cardinality 0..*).
+'network::State' (role 'network_State', cardinality 0..*) is associated with 'network::Statemachine' (role 'network_Statemachine4', cardinality 0..*).
+'network::Statemachine' (role 'network_Statemachine9', cardinality 0..*) is associated with 'network::Transition' (role 'network_Transition', cardinality 0..*).
+'network::Network' (role 'network_Network2', cardinality 0..*) is associated with 'network::Channel' (role 'network_Channel', cardinality 0..*).
+'network::Transition' (role 'network_Transition11', cardinality 0..*) is associated with 'network::State' (role 'network_State12', cardinality 0..*).
+'network::Network' (role 'network_Network', cardinality 0..*) is associated with 'network::Statemachine' (role 'network_Statemachine', cardinality 0..*).
+'network::State' (role 'network_State15', cardinality 0..*) is associated with 'network::Transition' (role 'network_Transition14', cardinality 0..*).

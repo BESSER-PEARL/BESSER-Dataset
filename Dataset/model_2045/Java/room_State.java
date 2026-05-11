@@ -1,0 +1,84 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class room_State extends StateGraphNode {
+
+
+
+
+
+
+    private room_StateGraph room_stategraph;
+
+
+
+
+    private room_StateGraph room_stategraph;
+
+
+
+
+    private room_DetailCode room_detailcode;
+
+
+
+
+    private room_DetailCode room_detailcode;
+
+
+
+
+    private room_DetailCode room_detailcode;
+
+
+    public room_State(
+    ) {
+        super(
+        );
+    }
+
+
+
+    public room_StateGraph getRoom_stategraph() {
+        return room_stategraph;
+    }
+
+    public void setRoom_stategraph(room_StateGraph room_stategraph) {
+        this.room_stategraph = room_stategraph;
+    }
+    public room_StateGraph getRoom_stategraph() {
+        return room_stategraph;
+    }
+
+    public void setRoom_stategraph(room_StateGraph room_stategraph) {
+        this.room_stategraph = room_stategraph;
+    }
+    public room_DetailCode getRoom_detailcode() {
+        return room_detailcode;
+    }
+
+    public void setRoom_detailcode(room_DetailCode room_detailcode) {
+        this.room_detailcode = room_detailcode;
+    }
+    public room_DetailCode getRoom_detailcode() {
+        return room_detailcode;
+    }
+
+    public void setRoom_detailcode(room_DetailCode room_detailcode) {
+        this.room_detailcode = room_detailcode;
+    }
+    public room_DetailCode getRoom_detailcode() {
+        return room_detailcode;
+    }
+
+    public void setRoom_detailcode(room_DetailCode room_detailcode) {
+        this.room_detailcode = room_detailcode;
+    }
+
+}

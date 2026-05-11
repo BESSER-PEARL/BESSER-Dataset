@@ -1,0 +1,9 @@
+The model has 3 class(es).
+The class 'TestMM::Test' has the following attributes: 'id' of type str.
+The class 'TestMM::Metadata' has the following attributes: 'webpage' of type str; 'user' of type str; 'taglist' of type str; 'date' of type str.
+The class 'TestMM::Action' has the following attributes: 'description' of type str; 'id' of type str; 'value' of type str; 'type' of type str; 'xpath' of type str.
+The enumeration 'ActionType' has the following literals: 'click', 'insert', 'comment', 'copy'.
+'TestMM::Test' (role 'Test', cardinality 0..*) is associated with 'TestMM::Metadata' (role 'md', cardinality 0..*).
+'TestMM::Test' (role 'te', cardinality 0..*) is associated with 'TestMM::Metadata' (role 'Metadata', cardinality 0..*).
+'TestMM::Action' (role 'act', cardinality 0..*) is associated with 'TestMM::Test' (role 'Test5', cardinality 0..*).
+'TestMM::Action' (role 'Action', cardinality 0..*) is associated with 'TestMM::Test' (role 'te2', cardinality 0..*).

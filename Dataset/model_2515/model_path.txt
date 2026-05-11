@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/krisboutthat5/cdo-light/cdo/org.eclipse.emf.cdo.tests.model6/model/model6.ecore

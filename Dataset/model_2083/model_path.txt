@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/utwente-fmt/attop/Model/data/models/UATMM_structure.ecore

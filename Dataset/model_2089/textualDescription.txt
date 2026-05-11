@@ -1,0 +1,14 @@
+The model has 3 class(es).
+The class 'FaultTree::EObject' has no attributes.
+The class 'FaultTree::FaultTree' has the following attributes: 'name' of type str; 'message' of type str; 'faultTreeType' of type str.
+The class 'FaultTree::Event' has the following attributes: 'type' of type str; 'computedProbability' of type str; 'assignedProbability' of type str; 'k' of type int; 'name' of type str; 'scale' of type str; 'message' of type str; 'subEventLogic' of type str; 'referenceCount' of type int.
+The enumeration 'FaultTreeType' has the following literals: 'CompositeParts', 'FaultTrace', 'MinimalCutSet', 'FaultTree'.
+The enumeration 'EventType' has the following literals: 'Basic', 'Undeveloped', 'Intermediate', 'External'.
+The enumeration 'LogicOperation' has the following literals: 'kOf', 'kOrless', 'Xor', 'kOrmore', 'PriorityAnd', 'Or', 'And'.
+'FaultTree::FaultTree' (role 'FaultTree_FaultTree2', cardinality 0..*) is associated with 'FaultTree::EObject' (role 'FaultTree_EObject', cardinality 0..*).
+'FaultTree::FaultTree' (role 'FaultTree_FaultTree4', cardinality 0..*) is associated with 'FaultTree::Event' (role 'FaultTree_Event5', cardinality 0..*).
+'FaultTree::EObject' (role 'FaultTree_EObject14', cardinality 0..*) is associated with 'FaultTree::Event' (role 'FaultTree_Event13', cardinality 0..*).
+'FaultTree::Event' (role 'FaultTree_Event10', cardinality 0..*) is associated with 'FaultTree::EObject' (role 'FaultTree_EObject11', cardinality 0..*).
+'FaultTree::Event' (role 'FaultTree_Event', cardinality 0..*) is associated with 'FaultTree::FaultTree' (role 'FaultTree_FaultTree', cardinality 0..*).
+'FaultTree::Event' (role 'FaultTree_Event16', cardinality 0..*) is associated with 'FaultTree::EObject' (role 'FaultTree_EObject17', cardinality 0..*).
+'FaultTree::Event' (role 'FaultTree_Event8', cardinality 0..*) is associated with 'FaultTree::Event' (role 'FaultTree_Event6', cardinality 0..*).

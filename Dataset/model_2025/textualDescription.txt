@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'traces::Variable' has the following attributes: 'name' of type str.
+The class 'traces::SimulatorRun' has the following attributes: 'id' of type int; 'timestamp' of type date; 'behaviorName' of type str.
+The class 'traces::Value' has the following attributes: 'valueMax' of type float; 'valueMin' of type float; 'clockMin' of type float; 'clockMax' of type float.
+'traces::SimulatorRun' (role 'run', cardinality 0..*) is associated with 'traces::Variable' (role 'Variable', cardinality 0..*).
+'traces::Variable' (role 'Variable4', cardinality 0..*) is associated with 'traces::Value' (role 'values', cardinality 0..*).
+'traces::Value' (role 'Value', cardinality 0..*) is associated with 'traces::Variable' (role 'variable', cardinality 0..*).
+'traces::Variable' (role 'variables', cardinality 0..*) is associated with 'traces::SimulatorRun' (role 'SimulatorRun', cardinality 0..*).

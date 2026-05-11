@@ -1,0 +1,17 @@
+The model has 8 class(es).
+The class 'hbmxml::DataType' has no attributes.
+The class 'hbmxml::Feature' has the following attributes: 'kind' of type str.
+The class 'hbmxml::EntityModel' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'hbmxml::Entity' has the following attributes: 'abstract' of type bool.
+The class 'hbmxml::Type' has no attributes.
+The class 'Type' has no attributes.
+The class 'hbmxml::NamedElement' has the following attributes: 'name' of type str.
+The enumeration 'FeatureKind' has the following literals: 'reference', 'attribute', 'containment'.
+'hbmxml::Type' is a specialization of 'NamedElement'.
+'hbmxml::Feature' is a specialization of 'NamedElement'.
+'hbmxml::DataType' is a specialization of 'Type'.
+'hbmxml::Entity' is a specialization of 'Type'.
+'hbmxml::Entity' (role 'hbmxml_Entity', cardinality 0..*) is associated with 'hbmxml::Feature' (role 'hbmxml_Feature', cardinality 0..*).
+'hbmxml::EntityModel' (role 'hbmxml_EntityModel', cardinality 0..*) is associated with 'hbmxml::Type' (role 'hbmxml_Type', cardinality 0..*).
+'hbmxml::Feature' (role 'hbmxml_Feature3', cardinality 0..*) is associated with 'hbmxml::Type' (role 'hbmxml_Type4', cardinality 0..*).

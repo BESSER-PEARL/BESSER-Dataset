@@ -1,0 +1,21 @@
+The model has 6 class(es).
+The class 'SkillGraph::Requirement' has the following attributes: 'term' of type str; 'type' of type str; 'comment' of type str.
+The class 'SkillGraph::Edge' has no attributes.
+The class 'SkillGraph::Equation' has the following attributes: 'equation' of type str.
+The class 'SkillGraph::Graph' has no attributes.
+The class 'SkillGraph::Node' has the following attributes: 'name' of type str; 'programPath' of type str; 'category' of type str.
+The class 'SkillGraph::Parameter' has the following attributes: 'abbreviation' of type str; 'variable' of type bool; 'unit' of type str; 'name' of type str; 'defaultValue' of type str.
+The enumeration 'Type' has the following literals: 'Functional_Safety_Requirement', 'Technical_Requirement', 'Technical_Safety_Requirement'.
+The enumeration 'Category' has the following literals: 'sensor', 'action', 'planning', 'perception', 'main', 'actuator', 'observable_external_behavior'.
+'SkillGraph::Node' (role 'SkillGraph_Node8', cardinality 0..*) is associated with 'SkillGraph::Edge' (role 'SkillGraph_Edge', cardinality 0..*).
+'SkillGraph::Equation' (role 'Equation', cardinality 0..*) is associated with 'SkillGraph::Node' (role 'node', cardinality 0..*).
+'SkillGraph::Node' (role 'SkillGraph_Node11', cardinality 0..*) is associated with 'SkillGraph::Node' (role 'SkillGraph_Node9', cardinality 0..*).
+'SkillGraph::Graph' (role 'SkillGraph_Graph', cardinality 0..*) is associated with 'SkillGraph::Node' (role 'SkillGraph_Node', cardinality 0..*).
+'SkillGraph::Graph' (role 'SkillGraph_Graph3', cardinality 0..*) is associated with 'SkillGraph::Node' (role 'SkillGraph_Node4', cardinality 0..*).
+'SkillGraph::Parameter' (role 'Parameter', cardinality 0..*) is associated with 'SkillGraph::Graph' (role 'graph', cardinality 0..*).
+'SkillGraph::Node' (role 'node13', cardinality 0..*) is associated with 'SkillGraph::Requirement' (role 'Requirement', cardinality 0..*).
+'SkillGraph::Node' (role 'Node16', cardinality 0..*) is associated with 'SkillGraph::Equation' (role 'equations', cardinality 0..*).
+'SkillGraph::Parameter' (role 'parameterList', cardinality 0..*) is associated with 'SkillGraph::Graph' (role 'Graph', cardinality 0..*).
+'SkillGraph::Node' (role 'SkillGraph_Node22', cardinality 0..*) is associated with 'SkillGraph::Edge' (role 'SkillGraph_Edge21', cardinality 0..*).
+'SkillGraph::Node' (role 'Node', cardinality 0..*) is associated with 'SkillGraph::Requirement' (role 'requirements', cardinality 0..*).
+'SkillGraph::Edge' (role 'SkillGraph_Edge18', cardinality 0..*) is associated with 'SkillGraph::Node' (role 'SkillGraph_Node19', cardinality 0..*).

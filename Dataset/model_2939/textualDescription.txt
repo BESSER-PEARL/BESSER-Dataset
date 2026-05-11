@@ -1,0 +1,22 @@
+The model has 11 class(es).
+The class 'Element' has no attributes.
+The class 'Feature' has no attributes.
+The class 'ER::Element' has the following attributes: 'name' of type str.
+The class 'ER::Feature' has no attributes.
+The class 'ER::EntityType' has no attributes.
+The class 'ER::ERModel' has no attributes.
+The class 'ER::Reference' has no attributes.
+The class 'Reference' has no attributes.
+The class 'ER::StrongReference' has no attributes.
+The class 'ER::WeakReference' has no attributes.
+The class 'ER::Attribute' has the following attributes: 'type' of type str.
+'ER::ERModel' is a specialization of 'Element'.
+'ER::Attribute' is a specialization of 'Feature'.
+'ER::EntityType' is a specialization of 'Element'.
+'ER::Feature' is a specialization of 'Element'.
+'ER::Reference' is a specialization of 'Feature'.
+'ER::WeakReference' is a specialization of 'Reference'.
+'ER::StrongReference' is a specialization of 'Reference'.
+'ER::EntityType' (role 'ER_EntityType4', cardinality 0..*) is associated with 'ER::Reference' (role 'ER_Reference', cardinality 0..*).
+'ER::EntityType' (role 'ER_EntityType2', cardinality 0..*) is associated with 'ER::Feature' (role 'ER_Feature', cardinality 0..*).
+'ER::EntityType' (role 'ER_EntityType', cardinality 0..*) is associated with 'ER::ERModel' (role 'ER_ERModel', cardinality 0..*).

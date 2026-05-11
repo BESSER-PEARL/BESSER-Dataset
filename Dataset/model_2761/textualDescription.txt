@@ -1,0 +1,16 @@
+The model has 8 class(es).
+The class 'case5::E' has no attributes.
+The class 'case5::D' has no attributes.
+The class 'case5::N' has no attributes.
+The class 'T' has no attributes.
+The class 'D' has no attributes.
+The class 'case5::B' has no attributes.
+The class 'case5::A' has no attributes.
+The class 'case5::T' has no attributes.
+'case5::D' is a specialization of 'T'.
+'case5::E' is a specialization of 'D'.
+'case5::A' (role 'case5_A6', cardinality 0..*) is associated with 'case5::D' (role 'case5_D', cardinality 0..*).
+'case5::N' (role 'case5_N', cardinality 0..*) is associated with 'case5::T' (role 'case5_T', cardinality 0..*).
+'case5::B' (role 'case5_B', cardinality 0..*) is associated with 'case5::N' (role 'case5_N4', cardinality 0..*).
+'case5::D' (role 'case5_D9', cardinality 0..*) is associated with 'case5::B' (role 'case5_B8', cardinality 0..*).
+'case5::A' (role 'case5_A', cardinality 0..*) is associated with 'case5::N' (role 'case5_N2', cardinality 0..*).

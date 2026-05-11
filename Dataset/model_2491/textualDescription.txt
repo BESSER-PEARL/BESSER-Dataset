@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'z8fsm::AbstractState' has the following attributes: 'id' of type str.
+The class 'z8fsm::Region' has the following attributes: 'name' of type str.
+The class 'AbstractState' has no attributes.
+The class 'z8fsm::State' has no attributes.
+'z8fsm::Region' is a specialization of 'AbstractState'.
+'z8fsm::State' is a specialization of 'AbstractState'.
+'z8fsm::AbstractState' (role 'z8fsm_AbstractState3', cardinality 0..*) is associated with 'z8fsm::AbstractState' (role 'z8fsm_AbstractState1', cardinality 0..*).
+'z8fsm::AbstractState' (role 'z8fsm_AbstractState', cardinality 0..*) is associated with 'z8fsm::Region' (role 'z8fsm_Region', cardinality 0..*).

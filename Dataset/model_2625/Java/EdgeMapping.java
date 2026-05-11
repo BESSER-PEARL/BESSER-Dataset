@@ -1,0 +1,82 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class EdgeMapping  {
+
+
+
+
+
+
+    private diagram_description_Layer diagram_description_layer;
+
+
+
+
+    private diagram_description_Layer diagram_description_layer;
+
+
+
+
+    private diagram_tool_EdgeCreationDescription diagram_tool_edgecreationdescription;
+
+
+
+
+    private diagram_description_DiagramDescription diagram_description_diagramdescription;
+
+
+
+
+    private diagram_description_DiagramDescription diagram_description_diagramdescription;
+
+
+    public EdgeMapping(
+    ) {
+    }
+
+
+
+    public diagram_description_Layer getDiagram_description_layer() {
+        return diagram_description_layer;
+    }
+
+    public void setDiagram_description_layer(diagram_description_Layer diagram_description_layer) {
+        this.diagram_description_layer = diagram_description_layer;
+    }
+    public diagram_description_Layer getDiagram_description_layer() {
+        return diagram_description_layer;
+    }
+
+    public void setDiagram_description_layer(diagram_description_Layer diagram_description_layer) {
+        this.diagram_description_layer = diagram_description_layer;
+    }
+    public diagram_tool_EdgeCreationDescription getDiagram_tool_edgecreationdescription() {
+        return diagram_tool_edgecreationdescription;
+    }
+
+    public void setDiagram_tool_edgecreationdescription(diagram_tool_EdgeCreationDescription diagram_tool_edgecreationdescription) {
+        this.diagram_tool_edgecreationdescription = diagram_tool_edgecreationdescription;
+    }
+    public diagram_description_DiagramDescription getDiagram_description_diagramdescription() {
+        return diagram_description_diagramdescription;
+    }
+
+    public void setDiagram_description_diagramdescription(diagram_description_DiagramDescription diagram_description_diagramdescription) {
+        this.diagram_description_diagramdescription = diagram_description_diagramdescription;
+    }
+    public diagram_description_DiagramDescription getDiagram_description_diagramdescription() {
+        return diagram_description_diagramdescription;
+    }
+
+    public void setDiagram_description_diagramdescription(diagram_description_DiagramDescription diagram_description_diagramdescription) {
+        this.diagram_description_diagramdescription = diagram_description_diagramdescription;
+    }
+
+}

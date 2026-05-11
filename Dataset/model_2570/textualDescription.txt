@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'testpackage::User' has the following attributes: 'password' of type str; 'name' of type str.
+The class 'testpackage::Group' has the following attributes: 'name' of type str.
+'testpackage::Group' (role 'testpackage_Group', cardinality 0..*) is associated with 'testpackage::User' (role 'testpackage_User', cardinality 0..*).

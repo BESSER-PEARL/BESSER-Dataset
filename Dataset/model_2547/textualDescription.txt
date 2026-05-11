@@ -1,0 +1,10 @@
+The model has 4 class(es).
+The class 'out::D' has no attributes.
+The class 'out::E' has no attributes.
+The class 'out::RootOut' has no attributes.
+The class 'RootOut' has no attributes.
+'out::D' is a specialization of 'RootOut'.
+'out::E' is a specialization of 'RootOut'.
+'out::D' (role 'out_D', cardinality 0..*) is associated with 'out::E' (role 'out_E', cardinality 0..*).
+'out::D' (role 'out_D1', cardinality 0..*) is associated with 'out::D' (role 'out_D3', cardinality 0..*).
+'out::D' (role 'out_D6', cardinality 0..*) is associated with 'out::E' (role 'out_E5', cardinality 0..*).

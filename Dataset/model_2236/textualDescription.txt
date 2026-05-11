@@ -1,0 +1,16 @@
+The model has 6 class(es).
+The class 'tDT4250::asssignment1::2::Specialization' has the following attributes: 'Name' of type str.
+The class 'tDT4250::asssignment1::2::Program' has the following attributes: 'Credits' of type str; 'Name' of type str.
+The class 'tDT4250::asssignment1::2::Course' has the following attributes: 'Credits' of type float; 'Name' of type str; 'Code' of type str; 'StartDate' of type str; 'ExamDate' of type str.
+The class 'tDT4250::asssignment1::2::Program::course' has the following attributes: 'Fall_or_spring' of type str; 'Mandatory' of type bool.
+The class 'tDT4250::asssignment1::2::Semester' has the following attributes: 'Credits' of type str; 'Number' of type int.
+The class 'tDT4250::asssignment1::2::Semester::Course' has the following attributes: 'Fall_or_spring' of type str; 'Mandatory' of type bool.
+The enumeration 'Fall_or_spring' has the following literals: 'Spring', 'Fall'.
+'tDT4250::asssignment1::2::Specialization' (role 'tDT4250_asssignment1_2_Specialization', cardinality 0..*) is associated with 'tDT4250::asssignment1::2::Program' (role 'tDT4250_asssignment1_2_Program', cardinality 0..*).
+'tDT4250::asssignment1::2::Specialization' (role 'tDT4250_asssignment1_2_Specialization10', cardinality 0..*) is associated with 'tDT4250::asssignment1::2::Specialization' (role 'tDT4250_asssignment1_2_Specialization8', cardinality 0..*).
+'tDT4250::asssignment1::2::Program' (role 'tDT4250_asssignment1_2_Program2', cardinality 0..*) is associated with 'tDT4250::asssignment1::2::Program::course' (role 'tDT4250_asssignment1_2_Program_course', cardinality 0..*).
+'tDT4250::asssignment1::2::Semester' (role 'tDT4250_asssignment1_2_Semester7', cardinality 0..*) is associated with 'tDT4250::asssignment1::2::Specialization' (role 'tDT4250_asssignment1_2_Specialization6', cardinality 0..*).
+'tDT4250::asssignment1::2::Course' (role 'tDT4250_asssignment1_2_Course', cardinality 0..*) is associated with 'tDT4250::asssignment1::2::Semester::Course' (role 'tDT4250_asssignment1_2_Semester_Course14', cardinality 0..*).
+'tDT4250::asssignment1::2::Course' (role 'tDT4250_asssignment1_2_Course17', cardinality 0..*) is associated with 'tDT4250::asssignment1::2::Program::course' (role 'tDT4250_asssignment1_2_Program_course16', cardinality 0..*).
+'tDT4250::asssignment1::2::Semester' (role 'tDT4250_asssignment1_2_Semester12', cardinality 0..*) is associated with 'tDT4250::asssignment1::2::Semester::Course' (role 'tDT4250_asssignment1_2_Semester_Course', cardinality 0..*).
+'tDT4250::asssignment1::2::Semester' (role 'tDT4250_asssignment1_2_Semester', cardinality 0..*) is associated with 'tDT4250::asssignment1::2::Program' (role 'tDT4250_asssignment1_2_Program4', cardinality 0..*).

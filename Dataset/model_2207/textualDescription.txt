@@ -1,0 +1,21 @@
+The model has 10 class(es).
+The class 'filetree::User' has the following attributes: 'rootDir' of type str; 'password' of type str; 'pin' of type str; 'userId' of type str.
+The class 'FileTreeElement' has no attributes.
+The class 'Container' has no attributes.
+The class 'filetree::Directory' has no attributes.
+The class 'filetree::AccessRight' has the following attributes: 'readPermission' of type bool; 'userId' of type str; 'writePermission' of type bool.
+The class 'filetree::Container' has no attributes.
+The class 'filetree::PathToTreeElementMap' has the following attributes: 'key' of type str.
+The class 'filetree::FileTree' has no attributes.
+The class 'filetree::H2HFile' has no attributes.
+The class 'filetree::FileTreeElement' has the following attributes: 'path' of type str; 'file' of type str; 'name' of type str.
+'filetree::FileTree' is a specialization of 'Container'.
+'filetree::H2HFile' is a specialization of 'FileTreeElement'.
+'filetree::Directory' is a specialization of 'Container'.
+'filetree::Container' is a specialization of 'FileTreeElement'.
+'filetree::FileTreeElement' (role 'filetree_FileTreeElement', cardinality 0..*) is associated with 'filetree::AccessRight' (role 'filetree_AccessRight', cardinality 0..*).
+'filetree::FileTreeElement' (role 'FileTreeElement', cardinality 0..*) is associated with 'filetree::Container' (role 'parent', cardinality 0..*).
+'filetree::PathToTreeElementMap' (role 'filetree_PathToTreeElementMap7', cardinality 0..*) is associated with 'filetree::FileTreeElement' (role 'filetree_FileTreeElement8', cardinality 0..*).
+'filetree::FileTree' (role 'filetree_FileTree', cardinality 0..*) is associated with 'filetree::PathToTreeElementMap' (role 'filetree_PathToTreeElementMap', cardinality 0..*).
+'filetree::FileTree' (role 'filetree_FileTree5', cardinality 0..*) is associated with 'filetree::User' (role 'filetree_User', cardinality 0..*).
+'filetree::Container' (role 'Container', cardinality 0..*) is associated with 'filetree::FileTreeElement' (role 'children', cardinality 0..*).

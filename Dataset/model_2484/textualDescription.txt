@@ -1,0 +1,4 @@
+The model has 3 class(es).
+The class 'fsm::Transition' has no attributes.
+The class 'fsm::State' has no attributes.
+The class 'fsm::FSM' has no attributes.

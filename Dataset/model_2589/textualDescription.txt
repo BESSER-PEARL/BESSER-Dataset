@@ -1,0 +1,17 @@
+The model has 13 class(es).
+The class 'generictest::GenRef' has no attributes.
+The class 'generictest::SuperReffedClass' has no attributes.
+The class 'generictest::GenericSuperClassBound' has no attributes.
+The class 'generictest::TypeArgForRef' has no attributes.
+The class 'generictest::TypeArgReferencedOnlyExternally' has no attributes.
+The class 'SuperReffedClass' has no attributes.
+The class 'generictest::ReffedClass' has no attributes.
+The class 'generictest::TypeArgForGenericSuperClass' has no attributes.
+The class 'generictest::GenericSuperClass' has no attributes.
+The class 'GenericSuperClassBound' has no attributes.
+The class 'generictest::NextGenSuperClass' has no attributes.
+The class 'generictest::Door' has no attributes.
+The class 'generictest::NonGenericSuperclass' has no attributes.
+'generictest::TypeArgForGenericSuperClass' is a specialization of 'GenericSuperClassBound'.
+'generictest::ReffedClass' is a specialization of 'SuperReffedClass'.
+'generictest::Door' (role 'generictest_Door', cardinality 0..*) is associated with 'generictest::ReffedClass' (role 'generictest_ReffedClass', cardinality 0..*).

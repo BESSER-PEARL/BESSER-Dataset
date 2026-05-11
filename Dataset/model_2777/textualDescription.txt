@@ -1,0 +1,20 @@
+The model has 7 class(es).
+The class 'testbidirectionalrelation::ConceptD' has no attributes.
+The class 'testbidirectionalrelation::ConceptC' has no attributes.
+The class 'testbidirectionalrelation::ConceptA' has no attributes.
+The class 'testbidirectionalrelation::ConceptB' has no attributes.
+The class 'testbidirectionalrelation::ConceptG' has no attributes.
+The class 'testbidirectionalrelation::ConceptE' has no attributes.
+The class 'testbidirectionalrelation::ConceptF' has no attributes.
+'testbidirectionalrelation::ConceptG' (role 'testbidirectionalrelation_ConceptG', cardinality 0..*) is associated with 'testbidirectionalrelation::ConceptA' (role 'testbidirectionalrelation_ConceptA10', cardinality 0..*).
+'testbidirectionalrelation::ConceptA' (role 'testbidirectionalrelation_ConceptA8', cardinality 0..*) is associated with 'testbidirectionalrelation::ConceptF' (role 'testbidirectionalrelation_ConceptF', cardinality 0..*).
+'testbidirectionalrelation::ConceptF' (role 'conceptf', cardinality 0..*) is associated with 'testbidirectionalrelation::ConceptG' (role 'ConceptG', cardinality 0..*).
+'testbidirectionalrelation::ConceptD' (role 'ConceptD', cardinality 0..*) is associated with 'testbidirectionalrelation::ConceptE' (role 'concepte', cardinality 0..*).
+'testbidirectionalrelation::ConceptB' (role 'conceptb', cardinality 0..*) is associated with 'testbidirectionalrelation::ConceptC' (role 'ConceptC', cardinality 0..*).
+'testbidirectionalrelation::ConceptE' (role 'testbidirectionalrelation_ConceptE', cardinality 0..*) is associated with 'testbidirectionalrelation::ConceptA' (role 'testbidirectionalrelation_ConceptA6', cardinality 0..*).
+'testbidirectionalrelation::ConceptF' (role 'ConceptF', cardinality 0..*) is associated with 'testbidirectionalrelation::ConceptG' (role 'conceptg', cardinality 0..*).
+'testbidirectionalrelation::ConceptD' (role 'conceptd', cardinality 0..*) is associated with 'testbidirectionalrelation::ConceptE' (role 'ConceptE', cardinality 0..*).
+'testbidirectionalrelation::ConceptB' (role 'ConceptB', cardinality 0..*) is associated with 'testbidirectionalrelation::ConceptC' (role 'conceptc', cardinality 0..*).
+'testbidirectionalrelation::ConceptC' (role 'testbidirectionalrelation_ConceptC', cardinality 0..*) is associated with 'testbidirectionalrelation::ConceptA' (role 'testbidirectionalrelation_ConceptA2', cardinality 0..*).
+'testbidirectionalrelation::ConceptA' (role 'testbidirectionalrelation_ConceptA4', cardinality 0..*) is associated with 'testbidirectionalrelation::ConceptD' (role 'testbidirectionalrelation_ConceptD', cardinality 0..*).
+'testbidirectionalrelation::ConceptA' (role 'testbidirectionalrelation_ConceptA', cardinality 0..*) is associated with 'testbidirectionalrelation::ConceptB' (role 'testbidirectionalrelation_ConceptB', cardinality 0..*).

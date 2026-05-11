@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'Type' has no attributes.
+The class 'entity::Entity' has no attributes.
+The class 'entity::Domain' has the following attributes: 'name' of type str.
+The class 'entity::Datatype' has no attributes.
+The class 'entity::Type' has the following attributes: 'name' of type str.
+The class 'entity::Feature' has the following attributes: 'name' of type str.
+'entity::Entity' is a specialization of 'Type'.
+'entity::Datatype' is a specialization of 'Type'.
+'entity::Feature' (role 'entity_Feature', cardinality 0..*) is associated with 'entity::Entity' (role 'entity_Entity', cardinality 0..*).
+'entity::Feature' (role 'entity_Feature3', cardinality 0..*) is associated with 'entity::Type' (role 'entity_Type4', cardinality 0..*).
+'entity::Type' (role 'entity_Type', cardinality 0..*) is associated with 'entity::Domain' (role 'entity_Domain', cardinality 0..*).

@@ -1,0 +1,122 @@
+The model has 47 class(es).
+The class 'NodeStyle' has no attributes.
+The class 'AbstractRepresentation' has no attributes.
+The class 'migrationmodeler::EdgeRepresentation' has no attributes.
+The class 'AbstractNodeRepresentation' has no attributes.
+The class 'migrationmodeler::LabelStyle' has the following attributes: 'labelAlignment' of type str.
+The class 'LabelStyle' has no attributes.
+The class 'GraphicalElement' has no attributes.
+The class 'migrationmodeler::BorderedStyle' has the following attributes: 'borderSize' of type int.
+The class 'migrationmodeler::Dot' has no attributes.
+The class 'migrationmodeler::BundledImage' has the following attributes: 'shape' of type str.
+The class 'migrationmodeler::Square' has the following attributes: 'width' of type str; 'height' of type str.
+The class 'BorderedStyle' has no attributes.
+The class 'migrationmodeler::ContainerStyle' has no attributes.
+The class 'migrationmodeler::Layer' has the following attributes: 'id' of type str; 'activated' of type bool.
+The class 'migrationmodeler::Bordered' has no attributes.
+The class 'migrationmodeler::Container' has no attributes.
+The class 'migrationmodeler::GraphicalElement' has the following attributes: 'id' of type str.
+The class 'migrationmodeler::Lozenge' has the following attributes: 'width' of type str; 'height' of type str.
+The class 'migrationmodeler::FlatContainerStyle' has the following attributes: 'backgroundStyle' of type str.
+The class 'migrationmodeler::AbstractNode' has no attributes.
+The class 'migrationmodeler::Layout' has the following attributes: 'height' of type int; 'y' of type int; 'width' of type int; 'x' of type int.
+The class 'migrationmodeler::Note' has no attributes.
+The class 'migrationmodeler::Point' has the following attributes: 'y' of type int; 'x' of type int.
+The class 'migrationmodeler::GaugeSection' has the following attributes: 'label' of type str; 'min' of type str; 'max' of type str; 'value' of type str.
+The class 'migrationmodeler::TestCase' has no attributes.
+The class 'migrationmodeler::Ellipse' has the following attributes: 'horizontalDiameter' of type str; 'verticalDiameter' of type str.
+The class 'Representation' has no attributes.
+The class 'migrationmodeler::Filter' has the following attributes: 'id' of type str; 'activated' of type bool.
+The class 'migrationmodeler::Representation' has the following attributes: 'name' of type str.
+The class 'ContainerStyle' has no attributes.
+The class 'migrationmodeler::ContainerRepresentation' has the following attributes: 'autoSized' of type bool.
+The class 'migrationmodeler::NodeRepresentation' has no attributes.
+The class 'migrationmodeler::ShapeContainerStyle' has the following attributes: 'shape' of type str.
+The class 'migrationmodeler::Color' has the following attributes: 'blue' of type int; 'green' of type int; 'red' of type int.
+The class 'migrationmodeler::Diagram' has no attributes.
+The class 'migrationmodeler::Node' has no attributes.
+The class 'migrationmodeler::GaugeCompositeStyle' has the following attributes: 'alignment' of type str.
+The class 'migrationmodeler::BorderedRepresentation' has no attributes.
+The class 'migrationmodeler::WorkspaceImage' has the following attributes: 'workspacePath' of type str.
+The class 'migrationmodeler::Edge' has no attributes.
+The class 'migrationmodeler::AbstractRepresentation' has the following attributes: 'hidden' of type bool; 'mappingId' of type str; 'pinned' of type bool; 'displayed' of type bool.
+The class 'BasicLabelStyle' has no attributes.
+The class 'migrationmodeler::NodeStyle' has the following attributes: 'hideLabelByDefault' of type bool; 'labelPosition' of type str.
+The class 'AbstractNode' has no attributes.
+The class 'migrationmodeler::BasicLabelStyle' has the following attributes: 'iconPath' of type str; 'labelSize' of type int; 'labelFormat' of type str; 'showIcon' of type bool.
+The class 'migrationmodeler::AbstractNodeRepresentation' has no attributes.
+The class 'migrationmodeler::EdgeStyle' has the following attributes: 'routingStyle' of type str.
+The enumeration 'LabelAlignment' has the following literals: 'RIGHT', 'CENTER', 'LEFT'.
+The enumeration 'BackgroundStyle' has the following literals: 'GradientLeftToRight', 'GradientTopToBottom', 'Liquid'.
+The enumeration 'AlignmentKind' has the following literals: 'VERTICAL', 'HORIZONTAL', 'SQUARE'.
+The enumeration 'BundledImageShape' has the following literals: 'ring', 'stroke', 'square', 'triangle', 'dot'.
+The enumeration 'RoutingStyle' has the following literals: 'Manhattan', 'Tree', 'Straight'.
+The enumeration 'FontFormat' has the following literals: 'italic', 'normal', 'bold_italic', 'bold'.
+The enumeration 'LabelPosition' has the following literals: 'node', 'border'.
+The enumeration 'ContainerShape' has the following literals: 'parallelogram'.
+'migrationmodeler::Diagram' is a specialization of 'Representation'.
+'migrationmodeler::AbstractNodeRepresentation' is a specialization of 'AbstractRepresentation'.
+'migrationmodeler::BundledImage' is a specialization of 'NodeStyle'.
+'migrationmodeler::Square' is a specialization of 'NodeStyle'.
+'migrationmodeler::GaugeCompositeStyle' is a specialization of 'NodeStyle'.
+'migrationmodeler::Container' is a specialization of 'GraphicalElement'.
+'migrationmodeler::NodeStyle' is a specialization of 'LabelStyle'.
+'migrationmodeler::ShapeContainerStyle' is a specialization of 'ContainerStyle'.
+'migrationmodeler::ContainerRepresentation' is a specialization of 'AbstractRepresentation'.
+'migrationmodeler::EdgeRepresentation' is a specialization of 'AbstractRepresentation'.
+'migrationmodeler::ContainerStyle' is a specialization of 'LabelStyle'.
+'migrationmodeler::Dot' is a specialization of 'NodeStyle'.
+'migrationmodeler::Lozenge' is a specialization of 'NodeStyle'.
+'migrationmodeler::Edge' is a specialization of 'GraphicalElement'.
+'migrationmodeler::Bordered' is a specialization of 'AbstractNode'.
+'migrationmodeler::BorderedRepresentation' is a specialization of 'AbstractNodeRepresentation'.
+'migrationmodeler::ContainerStyle' is a specialization of 'BorderedStyle'.
+'migrationmodeler::NodeStyle' is a specialization of 'BorderedStyle'.
+'migrationmodeler::WorkspaceImage' is a specialization of 'ContainerStyle'.
+'migrationmodeler::Ellipse' is a specialization of 'NodeStyle'.
+'migrationmodeler::Note' is a specialization of 'NodeStyle'.
+'migrationmodeler::AbstractNode' is a specialization of 'GraphicalElement'.
+'migrationmodeler::Node' is a specialization of 'AbstractNode'.
+'migrationmodeler::LabelStyle' is a specialization of 'BasicLabelStyle'.
+'migrationmodeler::FlatContainerStyle' is a specialization of 'ContainerStyle'.
+'migrationmodeler::WorkspaceImage' is a specialization of 'NodeStyle'.
+'migrationmodeler::NodeRepresentation' is a specialization of 'AbstractNodeRepresentation'.
+'migrationmodeler::AbstractNodeRepresentation' (role 'migrationmodeler_AbstractNodeRepresentation', cardinality 0..*) is associated with 'migrationmodeler::Bordered' (role 'migrationmodeler_Bordered36', cardinality 0..*).
+'migrationmodeler::BorderedStyle' (role 'migrationmodeler_BorderedStyle', cardinality 0..*) is associated with 'migrationmodeler::Color' (role 'migrationmodeler_Color53', cardinality 0..*).
+'migrationmodeler::BundledImage' (role 'migrationmodeler_BundledImage', cardinality 0..*) is associated with 'migrationmodeler::Color' (role 'migrationmodeler_Color78', cardinality 0..*).
+'migrationmodeler::Diagram' (role 'migrationmodeler_Diagram6', cardinality 0..*) is associated with 'migrationmodeler::Filter' (role 'migrationmodeler_Filter', cardinality 0..*).
+'migrationmodeler::EdgeStyle' (role 'migrationmodeler_EdgeStyle', cardinality 0..*) is associated with 'migrationmodeler::EdgeRepresentation' (role 'migrationmodeler_EdgeRepresentation34', cardinality 0..*).
+'migrationmodeler::Color' (role 'migrationmodeler_Color65', cardinality 0..*) is associated with 'migrationmodeler::FlatContainerStyle' (role 'migrationmodeler_FlatContainerStyle', cardinality 0..*).
+'migrationmodeler::EdgeStyle' (role 'migrationmodeler_EdgeStyle46', cardinality 0..*) is associated with 'migrationmodeler::BasicLabelStyle' (role 'migrationmodeler_BasicLabelStyle47', cardinality 0..*).
+'migrationmodeler::EdgeStyle' (role 'migrationmodeler_EdgeStyle49', cardinality 0..*) is associated with 'migrationmodeler::BasicLabelStyle' (role 'migrationmodeler_BasicLabelStyle50', cardinality 0..*).
+'migrationmodeler::Color' (role 'migrationmodeler_Color63', cardinality 0..*) is associated with 'migrationmodeler::GaugeSection' (role 'migrationmodeler_GaugeSection62', cardinality 0..*).
+'migrationmodeler::EdgeStyle' (role 'migrationmodeler_EdgeStyle42', cardinality 0..*) is associated with 'migrationmodeler::Color' (role 'migrationmodeler_Color', cardinality 0..*).
+'migrationmodeler::Color' (role 'migrationmodeler_Color82', cardinality 0..*) is associated with 'migrationmodeler::Note' (role 'migrationmodeler_Note', cardinality 0..*).
+'migrationmodeler::Container' (role 'migrationmodeler_Container13', cardinality 0..*) is associated with 'migrationmodeler::ContainerRepresentation' (role 'migrationmodeler_ContainerRepresentation', cardinality 0..*).
+'migrationmodeler::ShapeContainerStyle' (role 'migrationmodeler_ShapeContainerStyle', cardinality 0..*) is associated with 'migrationmodeler::Color' (role 'migrationmodeler_Color70', cardinality 0..*).
+'migrationmodeler::ContainerRepresentation' (role 'migrationmodeler_ContainerRepresentation40', cardinality 0..*) is associated with 'migrationmodeler::ContainerStyle' (role 'migrationmodeler_ContainerStyle', cardinality 0..*).
+'migrationmodeler::BasicLabelStyle' (role 'migrationmodeler_BasicLabelStyle55', cardinality 0..*) is associated with 'migrationmodeler::Color' (role 'migrationmodeler_Color56', cardinality 0..*).
+'migrationmodeler::FlatContainerStyle' (role 'migrationmodeler_FlatContainerStyle67', cardinality 0..*) is associated with 'migrationmodeler::Color' (role 'migrationmodeler_Color68', cardinality 0..*).
+'migrationmodeler::GaugeSection' (role 'migrationmodeler_GaugeSection', cardinality 0..*) is associated with 'migrationmodeler::Color' (role 'migrationmodeler_Color60', cardinality 0..*).
+'migrationmodeler::Color' (role 'migrationmodeler_Color72', cardinality 0..*) is associated with 'migrationmodeler::Square' (role 'migrationmodeler_Square', cardinality 0..*).
+'migrationmodeler::EdgeStyle' (role 'migrationmodeler_EdgeStyle44', cardinality 0..*) is associated with 'migrationmodeler::BasicLabelStyle' (role 'migrationmodeler_BasicLabelStyle', cardinality 0..*).
+'migrationmodeler::GraphicalElement' (role 'migrationmodeler_GraphicalElement27', cardinality 0..*) is associated with 'migrationmodeler::EdgeRepresentation' (role 'migrationmodeler_EdgeRepresentation26', cardinality 0..*).
+'migrationmodeler::TestCase' (role 'migrationmodeler_TestCase', cardinality 0..*) is associated with 'migrationmodeler::Representation' (role 'migrationmodeler_Representation', cardinality 0..*).
+'migrationmodeler::AbstractNodeRepresentation' (role 'migrationmodeler_AbstractNodeRepresentation38', cardinality 0..*) is associated with 'migrationmodeler::NodeStyle' (role 'migrationmodeler_NodeStyle', cardinality 0..*).
+'migrationmodeler::GaugeCompositeStyle' (role 'migrationmodeler_GaugeCompositeStyle', cardinality 0..*) is associated with 'migrationmodeler::GaugeSection' (role 'migrationmodeler_GaugeSection80', cardinality 0..*).
+'migrationmodeler::Dot' (role 'migrationmodeler_Dot', cardinality 0..*) is associated with 'migrationmodeler::Color' (role 'migrationmodeler_Color58', cardinality 0..*).
+'migrationmodeler::GraphicalElement' (role 'migrationmodeler_GraphicalElement20', cardinality 0..*) is associated with 'migrationmodeler::Edge' (role 'migrationmodeler_Edge19', cardinality 0..*).
+'migrationmodeler::GraphicalElement' (role 'migrationmodeler_GraphicalElement23', cardinality 0..*) is associated with 'migrationmodeler::Edge' (role 'migrationmodeler_Edge22', cardinality 0..*).
+'migrationmodeler::EdgeRepresentation' (role 'migrationmodeler_EdgeRepresentation29', cardinality 0..*) is associated with 'migrationmodeler::GraphicalElement' (role 'migrationmodeler_GraphicalElement30', cardinality 0..*).
+'migrationmodeler::Point' (role 'migrationmodeler_Point', cardinality 0..*) is associated with 'migrationmodeler::EdgeRepresentation' (role 'migrationmodeler_EdgeRepresentation32', cardinality 0..*).
+'migrationmodeler::Node' (role 'migrationmodeler_Node', cardinality 0..*) is associated with 'migrationmodeler::Diagram' (role 'migrationmodeler_Diagram2', cardinality 0..*).
+'migrationmodeler::AbstractRepresentation' (role 'migrationmodeler_AbstractRepresentation', cardinality 0..*) is associated with 'migrationmodeler::Layout' (role 'migrationmodeler_Layout', cardinality 0..*).
+'migrationmodeler::EdgeRepresentation' (role 'migrationmodeler_EdgeRepresentation', cardinality 0..*) is associated with 'migrationmodeler::Edge' (role 'migrationmodeler_Edge17', cardinality 0..*).
+'migrationmodeler::BorderedRepresentation' (role 'migrationmodeler_BorderedRepresentation', cardinality 0..*) is associated with 'migrationmodeler::Bordered' (role 'migrationmodeler_Bordered', cardinality 0..*).
+'migrationmodeler::Node' (role 'migrationmodeler_Node10', cardinality 0..*) is associated with 'migrationmodeler::NodeRepresentation' (role 'migrationmodeler_NodeRepresentation', cardinality 0..*).
+'migrationmodeler::Diagram' (role 'migrationmodeler_Diagram', cardinality 0..*) is associated with 'migrationmodeler::Container' (role 'migrationmodeler_Container', cardinality 0..*).
+'migrationmodeler::Edge' (role 'migrationmodeler_Edge', cardinality 0..*) is associated with 'migrationmodeler::Diagram' (role 'migrationmodeler_Diagram4', cardinality 0..*).
+'migrationmodeler::Layer' (role 'migrationmodeler_Layer', cardinality 0..*) is associated with 'migrationmodeler::Diagram' (role 'migrationmodeler_Diagram8', cardinality 0..*).
+'migrationmodeler::Ellipse' (role 'migrationmodeler_Ellipse', cardinality 0..*) is associated with 'migrationmodeler::Color' (role 'migrationmodeler_Color74', cardinality 0..*).
+'migrationmodeler::Lozenge' (role 'migrationmodeler_Lozenge', cardinality 0..*) is associated with 'migrationmodeler::Color' (role 'migrationmodeler_Color76', cardinality 0..*).
+'migrationmodeler::GraphicalElement' (role 'migrationmodeler_GraphicalElement', cardinality 0..*) is associated with 'migrationmodeler::Container' (role 'migrationmodeler_Container15', cardinality 0..*).

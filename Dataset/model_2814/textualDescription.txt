@@ -1,0 +1,121 @@
+The model has 56 class(es).
+The class 'geoff::layer::VectorLayer' has no attributes.
+The class 'geoff::style::Text' has the following attributes: 'font' of type str; 'offsetX' of type float; 'offsetY' of type float; 'text' of type str; 'rotation' of type str; 'textAlign' of type str; 'scale' of type str; 'textBaseLine' of type str.
+The class 'geoff::source::VectorSource' has the following attributes: 'format' of type str; 'projection' of type str; 'url' of type str.
+The class 'geoff::source::OSM' has no attributes.
+The class 'geoff::geom::Point' has no attributes.
+The class 'geoff::interaction::Interaction' has no attributes.
+The class 'Text' has no attributes.
+The class 'Style' has no attributes.
+The class 'XYZ' has no attributes.
+The class 'geoff::style::Circle' has the following attributes: 'radius' of type float.
+The class 'geoff::geom::Polygon' has no attributes.
+The class 'geoff::StringToStringMapEntry' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'geoff::style::Icon' has the following attributes: 'src' of type str.
+The class 'geoff::XYZLocation' has the following attributes: 'z' of type float; 'y' of type float; 'x' of type float.
+The class 'geoff::GeoMap' has the following attributes: 'rendererHint' of type str.
+The class 'geoff::Color' has the following attributes: 'alpha' of type float; 'green' of type int; 'red' of type int; 'blue' of type int.
+The class 'style::geoff::Color' has no attributes.
+The class 'geoff::source::MapQuest' has the following attributes: 'layer' of type str.
+The class 'geoff::geom::Geometry' has no attributes.
+The class 'geoff::source::Source' has no attributes.
+The class 'geoff::View' has the following attributes: 'zoom' of type int.
+The class 'Geometry' has no attributes.
+The class 'Image' has no attributes.
+The class 'geoff::source::XYZ' has no attributes.
+The class 'TileImage' has no attributes.
+The class 'Location' has no attributes.
+The class 'geoff::Script' has the following attributes: 'src' of type str; 'type' of type str; 'context' of type str.
+The class 'TileSource' has no attributes.
+The class 'geoff::style::Stroke' has the following attributes: 'lineDash' of type float; 'lineJoin' of type str; 'miterLimit' of type str; 'lineCap' of type str; 'width' of type str.
+The class 'geom::geoff::Location' has no attributes.
+The class 'Layer' has no attributes.
+The class 'geoff::Descriptive' has the following attributes: 'shortDescription' of type str; 'longDescription' of type str.
+The class 'layer::geoff::StyleEntry' has no attributes.
+The class 'geoff::layer::Layer' has no attributes.
+The class 'geoff::style::Image' has no attributes.
+The class 'geoff::layer::TileLayer' has no attributes.
+The class 'geoff::source::TileImage' has no attributes.
+The class 'geoff::style::Style' has the following attributes: 'zindex' of type str.
+The class 'Interaction' has no attributes.
+The class 'source::geoff::Feature' has no attributes.
+The class 'geoff::geom::LineString' has no attributes.
+The class 'Fill' has no attributes.
+The class 'geoff::Location' has the following attributes: 'projectionCode' of type str.
+The class 'geoff::StyleEntry' has the following attributes: 'key' of type str.
+The class 'SimpleGeometry' has no attributes.
+The class 'geoff::geom::SimpleGeometry' has no attributes.
+The class 'geoff::Feature' has the following attributes: 'onclick' of type str.
+The class 'Stroke' has no attributes.
+The class 'geoff::Identifiable' has the following attributes: 'id' of type str.
+The class 'Descriptive' has no attributes.
+The class 'geoff::source::BingMaps' has the following attributes: 'key' of type str; 'imagerySet' of type str.
+The class 'geoff::source::TileSource' has no attributes.
+The class 'geoff::style::Fill' has no attributes.
+The class 'geoff::interaction::Select' has the following attributes: 'condition' of type str; 'multi' of type bool.
+The class 'Source' has no attributes.
+The class 'Identifiable' has no attributes.
+The enumeration 'RendererHint' has the following literals: 'WEBGL', 'CANVAS', 'DOM'.
+The enumeration 'EventCondition' has the following literals: 'HOVER', 'CLICK', 'SINGLE_CLICK'.
+The enumeration 'ScriptContext' has the following literals: 'GLOBAL', 'LAYER', 'MAP'.
+The enumeration 'SourceFormat' has the following literals: 'GPX', 'GeoJSON', 'KML', 'INTERNAL'.
+'geoff::source::MapQuest' is a specialization of 'XYZ'.
+'geoff::Feature' is a specialization of 'Identifiable'.
+'geoff::geom::Point' is a specialization of 'SimpleGeometry'.
+'geoff::style::Image' is a specialization of 'Identifiable'.
+'geoff::interaction::Select' is a specialization of 'Interaction'.
+'geoff::GeoMap' is a specialization of 'Identifiable'.
+'geoff::geom::Geometry' is a specialization of 'Identifiable'.
+'geoff::Script' is a specialization of 'Identifiable'.
+'geoff::style::Fill' is a specialization of 'Identifiable'.
+'geoff::geom::LineString' is a specialization of 'SimpleGeometry'.
+'geoff::style::Circle' is a specialization of 'Image'.
+'geoff::geom::SimpleGeometry' is a specialization of 'Geometry'.
+'geoff::interaction::Interaction' is a specialization of 'Identifiable'.
+'geoff::style::Stroke' is a specialization of 'Identifiable'.
+'geoff::Location' is a specialization of 'Identifiable'.
+'geoff::layer::VectorLayer' is a specialization of 'Layer'.
+'geoff::source::OSM' is a specialization of 'XYZ'.
+'geoff::layer::Layer' is a specialization of 'Descriptive'.
+'geoff::source::TileSource' is a specialization of 'Source'.
+'geoff::source::VectorSource' is a specialization of 'Source'.
+'geoff::XYZLocation' is a specialization of 'Location'.
+'geoff::layer::TileLayer' is a specialization of 'Layer'.
+'geoff::source::Source' is a specialization of 'Identifiable'.
+'geoff::source::Source' is a specialization of 'Descriptive'.
+'geoff::source::TileImage' is a specialization of 'TileSource'.
+'geoff::style::Style' is a specialization of 'Identifiable'.
+'geoff::source::XYZ' is a specialization of 'TileImage'.
+'geoff::geom::Polygon' is a specialization of 'SimpleGeometry'.
+'geoff::style::Text' is a specialization of 'Identifiable'.
+'geoff::Color' is a specialization of 'Identifiable'.
+'geoff::style::Icon' is a specialization of 'Image'.
+'geoff::View' is a specialization of 'Identifiable'.
+'geoff::layer::Layer' is a specialization of 'Identifiable'.
+'geoff::GeoMap' is a specialization of 'Descriptive'.
+'geoff::source::BingMaps' is a specialization of 'XYZ'.
+'geoff::style::Text' (role 'geoff_style_Text42', cardinality 0..*) is associated with 'Stroke' (role 'Stroke43', cardinality 0..*).
+'geoff::StyleEntry' (role 'geoff_StyleEntry', cardinality 0..*) is associated with 'Style' (role 'Style15', cardinality 0..*).
+'geoff::style::Style' (role 'geoff_style_Style26', cardinality 0..*) is associated with 'Fill' (role 'Fill', cardinality 0..*).
+'geoff::GeoMap' (role 'geoff_GeoMap2', cardinality 0..*) is associated with 'geoff::View' (role 'geoff_View', cardinality 0..*).
+'geoff::Feature' (role 'geoff_Feature13', cardinality 0..*) is associated with 'geoff::StringToStringMapEntry' (role 'geoff_StringToStringMapEntry', cardinality 0..*).
+'geoff::style::Circle' (role 'geoff_style_Circle37', cardinality 0..*) is associated with 'Stroke' (role 'Stroke38', cardinality 0..*).
+'Layer' (role 'Layer', cardinality 0..*) is associated with 'geoff::GeoMap' (role 'geoff_GeoMap', cardinality 0..*).
+'geoff::Feature' (role 'geoff_Feature', cardinality 0..*) is associated with 'Geometry' (role 'Geometry', cardinality 0..*).
+'source::geoff::Feature' (role 'source_geoff_Feature', cardinality 0..*) is associated with 'geoff::source::VectorSource' (role 'geoff_source_VectorSource', cardinality 0..*).
+'Fill' (role 'Fill35', cardinality 0..*) is associated with 'geoff::style::Circle' (role 'geoff_style_Circle', cardinality 0..*).
+'geoff::geom::Point' (role 'geoff_geom_Point', cardinality 0..*) is associated with 'geom::geoff::Location' (role 'geom_geoff_Location', cardinality 0..*).
+'geom::geoff::Location' (role 'geom_geoff_Location21', cardinality 0..*) is associated with 'geoff::geom::LineString' (role 'geoff_geom_LineString', cardinality 0..*).
+'geoff::Script' (role 'geoff_Script', cardinality 0..*) is associated with 'geoff::GeoMap' (role 'geoff_GeoMap4', cardinality 0..*).
+'geoff::layer::VectorLayer' (role 'geoff_layer_VectorLayer', cardinality 0..*) is associated with 'layer::geoff::StyleEntry' (role 'layer_geoff_StyleEntry', cardinality 0..*).
+'style::geoff::Color' (role 'style_geoff_Color', cardinality 0..*) is associated with 'geoff::style::Fill' (role 'geoff_style_Fill', cardinality 0..*).
+'geoff::GeoMap' (role 'geoff_GeoMap6', cardinality 0..*) is associated with 'Interaction' (role 'Interaction', cardinality 0..*).
+'Text' (role 'Text', cardinality 0..*) is associated with 'geoff::style::Style' (role 'geoff_style_Style30', cardinality 0..*).
+'geoff::style::Text' (role 'geoff_style_Text', cardinality 0..*) is associated with 'Fill' (role 'Fill40', cardinality 0..*).
+'geoff::View' (role 'geoff_View8', cardinality 0..*) is associated with 'geoff::Location' (role 'geoff_Location', cardinality 0..*).
+'Style' (role 'Style', cardinality 0..*) is associated with 'geoff::Feature' (role 'geoff_Feature11', cardinality 0..*).
+'geom::geoff::Location' (role 'geom_geoff_Location23', cardinality 0..*) is associated with 'geoff::geom::Polygon' (role 'geoff_geom_Polygon', cardinality 0..*).
+'Source' (role 'Source', cardinality 0..*) is associated with 'geoff::layer::Layer' (role 'geoff_layer_Layer', cardinality 0..*).
+'Image' (role 'Image', cardinality 0..*) is associated with 'geoff::style::Style' (role 'geoff_style_Style', cardinality 0..*).
+'Stroke' (role 'Stroke', cardinality 0..*) is associated with 'geoff::style::Style' (role 'geoff_style_Style28', cardinality 0..*).
+'geoff::style::Stroke' (role 'geoff_style_Stroke', cardinality 0..*) is associated with 'style::geoff::Color' (role 'style_geoff_Color33', cardinality 0..*).

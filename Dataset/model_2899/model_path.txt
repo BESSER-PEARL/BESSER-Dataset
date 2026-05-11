@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/nteg/MDSD/sandbox/cpe/de.nagarro.nteg.domain.model/de.nagarro.nteg.domain.model/model/generated/Domainmodel.ecore

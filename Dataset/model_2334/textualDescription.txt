@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'personDsl::PersonContainer' has no attributes.
+The class 'personDsl::Person' has the following attributes: 'ID' of type int; 'name' of type str.
+'personDsl::PersonContainer' (role 'personDsl_PersonContainer', cardinality 0..*) is associated with 'personDsl::Person' (role 'personDsl_Person', cardinality 0..*).

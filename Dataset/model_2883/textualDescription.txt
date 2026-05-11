@@ -1,0 +1,15 @@
+The model has 8 class(es).
+The class 'entitiesDsl::DataType' has no attributes.
+The class 'entitiesDsl::Type' has the following attributes: 'name' of type str.
+The class 'entitiesDsl::Feature' has no attributes.
+The class 'entitiesDsl::Attribute' has the following attributes: 'attrrName' of type str.
+The class 'Feature' has no attributes.
+The class 'entitiesDsl::Entity' has no attributes.
+The class 'Type' has no attributes.
+The class 'entitiesDsl::Model' has no attributes.
+'entitiesDsl::DataType' is a specialization of 'Type'.
+'entitiesDsl::Attribute' is a specialization of 'Feature'.
+'entitiesDsl::Entity' is a specialization of 'Type'.
+'entitiesDsl::Entity' (role 'entitiesDsl_Entity', cardinality 0..*) is associated with 'entitiesDsl::Feature' (role 'entitiesDsl_Feature', cardinality 0..*).
+'entitiesDsl::Model' (role 'entitiesDsl_Model', cardinality 0..*) is associated with 'entitiesDsl::Type' (role 'entitiesDsl_Type', cardinality 0..*).
+'entitiesDsl::Type' (role 'entitiesDsl_Type3', cardinality 0..*) is associated with 'entitiesDsl::Attribute' (role 'entitiesDsl_Attribute', cardinality 0..*).

@@ -1,0 +1,16 @@
+The model has 7 class(es).
+The class 'sql::PrimaryKey' has no attributes.
+The class 'sql::Column' has the following attributes: 'isNotNull' of type bool; 'name' of type str; 'type' of type str.
+The class 'sql::EObject' has no attributes.
+The class 'sql::Model' has no attributes.
+The class 'sql::ForeignKey' has no attributes.
+The class 'sql::Database' has no attributes.
+The class 'sql::Table' has the following attributes: 'name' of type str.
+The enumeration 'DataType' has the following literals: 'VARCHAR255', 'INT'.
+'sql::Model' (role 'sql_Model', cardinality 0..*) is associated with 'sql::Database' (role 'sql_Database', cardinality 0..*).
+'sql::PrimaryKey' (role 'sql_PrimaryKey', cardinality 0..*) is associated with 'sql::Column' (role 'sql_Column', cardinality 0..*).
+'sql::Table' (role 'sql_Table10', cardinality 0..*) is associated with 'sql::ForeignKey' (role 'sql_ForeignKey9', cardinality 0..*).
+'sql::ForeignKey' (role 'sql_ForeignKey', cardinality 0..*) is associated with 'sql::Column' (role 'sql_Column7', cardinality 0..*).
+'sql::EObject' (role 'sql_EObject', cardinality 0..*) is associated with 'sql::Table' (role 'sql_Table4', cardinality 0..*).
+'sql::Database' (role 'sql_Database2', cardinality 0..*) is associated with 'sql::Table' (role 'sql_Table', cardinality 0..*).
+'sql::ForeignKey' (role 'sql_ForeignKey12', cardinality 0..*) is associated with 'sql::Column' (role 'sql_Column13', cardinality 0..*).

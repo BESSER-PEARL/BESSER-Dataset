@@ -1,0 +1,53 @@
+The model has 23 class(es).
+The class 'uncertainty::aUniversity' has no attributes.
+The class 'UniverityU::uncertainty::aCourses' has no attributes.
+The class 'uUniversity' has no attributes.
+The class 'UniverityU::uncertainty::aPerson' has no attributes.
+The class 'UniverityU::uncertainty::aUniversity' has no attributes.
+The class 'UniverityU::Person' has the following attributes: 'Email' of type str; 'Name' of type str.
+The class 'UniverityU::uncertainty::uUniversity' has no attributes.
+The class 'UniverityU::uncertainty::uPerson' has no attributes.
+The class 'uPerson' has no attributes.
+The class 'UniverityU::uncertainty::ModelElement' has no attributes.
+The class 'UniverityU::Courses' has the following attributes: 'Name' of type str; 'CFU' of type int; 'Semester' of type str.
+The class 'uncertainty::ModelElement' has no attributes.
+The class 'UniverityU::uncertainty::uCourses' has no attributes.
+The class 'uncertainty::aPerson' has no attributes.
+The class 'uncertainty::UData' has no attributes.
+The class 'aCourses' has no attributes.
+The class 'uCourses' has no attributes.
+The class 'UniverityU::University' has no attributes.
+The class 'uncertainty::aCourses' has no attributes.
+The class 'aUniversity' has no attributes.
+The class 'UniverityU::uncertainty::UData' has the following attributes: 'utype' of type str; 'name' of type str.
+The class 'ModelElement' has no attributes.
+The class 'aPerson' has no attributes.
+The enumeration 'OperatorType' has the following literals: 'AND', 'XOR', 'OR'.
+'UniverityU::University' is a specialization of 'uncertainty::aUniversity'.
+'UniverityU::uncertainty::uPerson' is a specialization of 'uncertainty::UData'.
+'UniverityU::Person' is a specialization of 'uncertainty::aPerson'.
+'UniverityU::Courses' is a specialization of 'uncertainty::ModelElement'.
+'UniverityU::University' is a specialization of 'uncertainty::ModelElement'.
+'UniverityU::uncertainty::uUniversity' is a specialization of 'uncertainty::aUniversity'.
+'UniverityU::uncertainty::uCourses' is a specialization of 'uncertainty::UData'.
+'UniverityU::uncertainty::uPerson' is a specialization of 'uncertainty::aPerson'.
+'UniverityU::Courses' is a specialization of 'uncertainty::aCourses'.
+'UniverityU::uncertainty::uUniversity' is a specialization of 'uncertainty::UData'.
+'UniverityU::Person' is a specialization of 'uncertainty::ModelElement'.
+'UniverityU::uncertainty::uCourses' is a specialization of 'uncertainty::aCourses'.
+'ModelElement' (role 'ModelElement', cardinality 0..*) is associated with 'UniverityU::uncertainty::ModelElement' (role 'UniverityU_uncertainty_ModelElement', cardinality 0..*).
+'aUniversity' (role 'aUniversity31', cardinality 0..*) is associated with 'UniverityU::uncertainty::uUniversity' (role 'UniverityU_uncertainty_uUniversity30', cardinality 0..*).
+'UniverityU::uncertainty::uCourses' (role 'UniverityU_uncertainty_uCourses', cardinality 0..*) is associated with 'aCourses' (role 'aCourses15', cardinality 0..*).
+'aPerson' (role 'aPerson22', cardinality 0..*) is associated with 'UniverityU::uncertainty::uPerson' (role 'UniverityU_uncertainty_uPerson', cardinality 0..*).
+'UniverityU::uncertainty::uPerson' (role 'UniverityU_uncertainty_uPerson24', cardinality 0..*) is associated with 'aPerson' (role 'aPerson25', cardinality 0..*).
+'aCourses' (role 'aCourses18', cardinality 0..*) is associated with 'UniverityU::uncertainty::uCourses' (role 'UniverityU_uncertainty_uCourses17', cardinality 0..*).
+'aCourses' (role 'aCourses9', cardinality 0..*) is associated with 'UniverityU::University' (role 'UniverityU_University', cardinality 0..*).
+'uCourses' (role 'uCourses', cardinality 0..*) is associated with 'UniverityU::uncertainty::uCourses' (role 'UniverityU_uncertainty_uCourses20', cardinality 0..*).
+'aCourses' (role 'aCourses', cardinality 0..*) is associated with 'UniverityU::Courses' (role 'UniverityU_Courses', cardinality 0..*).
+'UniverityU::uncertainty::ModelElement' (role 'UniverityU_uncertainty_ModelElement12', cardinality 0..*) is associated with 'ModelElement' (role 'ModelElement13', cardinality 0..*).
+'aPerson' (role 'aPerson5', cardinality 0..*) is associated with 'UniverityU::Courses' (role 'UniverityU_Courses4', cardinality 0..*).
+'aUniversity' (role 'aUniversity', cardinality 0..*) is associated with 'UniverityU::uncertainty::uUniversity' (role 'UniverityU_uncertainty_uUniversity', cardinality 0..*).
+'UniverityU::Courses' (role 'UniverityU_Courses2', cardinality 0..*) is associated with 'aPerson' (role 'aPerson', cardinality 0..*).
+'UniverityU::uncertainty::uUniversity' (role 'UniverityU_uncertainty_uUniversity33', cardinality 0..*) is associated with 'uUniversity' (role 'uUniversity', cardinality 0..*).
+'aPerson' (role 'aPerson7', cardinality 0..*) is associated with 'UniverityU::Person' (role 'UniverityU_Person', cardinality 0..*).
+'UniverityU::uncertainty::uPerson' (role 'UniverityU_uncertainty_uPerson27', cardinality 0..*) is associated with 'uPerson' (role 'uPerson', cardinality 0..*).

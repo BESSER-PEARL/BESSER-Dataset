@@ -1,0 +1,5 @@
+The model has 1 class(es).
+The class 'bintree::BinTreeNode' has the following attributes: 'data' of type str.
+'bintree::BinTreeNode' (role 'bintree_BinTreeNode7', cardinality 0..*) is associated with 'bintree::BinTreeNode' (role 'bintree_BinTreeNode5', cardinality 0..*).
+'bintree::BinTreeNode' (role 'bintree_BinTreeNode', cardinality 0..*) is associated with 'bintree::BinTreeNode' (role 'bintree_BinTreeNode0', cardinality 0..*).
+'bintree::BinTreeNode' (role 'bintree_BinTreeNode2', cardinality 0..*) is associated with 'bintree::BinTreeNode' (role 'bintree_BinTreeNode4', cardinality 0..*).

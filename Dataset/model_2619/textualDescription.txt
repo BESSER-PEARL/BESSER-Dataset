@@ -1,0 +1,39 @@
+The model has 12 class(es).
+The class 'Freemind::NodeType' has the following attributes: 'Color' of type str; 'Modified' of type str; 'Created' of type str; 'Folded' of type str; 'Vshift' of type str; 'group' of type str; 'Link' of type str; 'BackgroundColor' of type str; 'EncryptedContent' of type str; 'Vgap' of type str; 'Position' of type str; 'Hgap' of type str; 'Text' of type str; 'Style' of type str; 'Id' of type str.
+The class 'Freemind::FontType' has the following attributes: 'Italic' of type str; 'Size' of type str; 'Bold' of type str; 'Name' of type str.
+The class 'Freemind::EStringToStringMapEntry' has no attributes.
+The class 'Freemind::ArrowlinkType' has the following attributes: 'Id' of type str; 'StartInclination' of type str; 'Color' of type str; 'EndArrow' of type str; 'StartArrow' of type str; 'EndInclination' of type str; 'Destination' of type str.
+The class 'Freemind::EdgeType' has the following attributes: 'Style' of type str; 'Color' of type str; 'Width' of type str.
+The class 'Freemind::CloudType' has the following attributes: 'Color' of type str.
+The class 'Freemind::DocumentRoot' has the following attributes: 'mixed' of type str.
+The class 'Freemind::HookType' has the following attributes: 'Name' of type str.
+The class 'Freemind::MapType' has the following attributes: 'version' of type str.
+The class 'Freemind::TextType' has no attributes.
+The class 'Freemind::IconType' has the following attributes: 'Builtin' of type str.
+The class 'Freemind::ParametersType' has the following attributes: 'RemindUserAt' of type str.
+The enumeration 'FOLDEDType' has the following literals: 'false', 'true'.
+The enumeration 'ITALICType' has the following literals: 'true', 'false'.
+The enumeration 'BOLDType' has the following literals: 'true'.
+The enumeration 'POSITIONType' has the following literals: 'right', 'left'.
+'Freemind::DocumentRoot' (role 'Freemind_DocumentRoot13', cardinality 0..*) is associated with 'Freemind::HookType' (role 'Freemind_HookType', cardinality 0..*).
+'Freemind::IconType' (role 'Freemind_IconType', cardinality 0..*) is associated with 'Freemind::DocumentRoot' (role 'Freemind_DocumentRoot15', cardinality 0..*).
+'Freemind::DocumentRoot' (role 'Freemind_DocumentRoot', cardinality 0..*) is associated with 'Freemind::EStringToStringMapEntry' (role 'Freemind_EStringToStringMapEntry', cardinality 0..*).
+'Freemind::DocumentRoot' (role 'Freemind_DocumentRoot7', cardinality 0..*) is associated with 'Freemind::CloudType' (role 'Freemind_CloudType', cardinality 0..*).
+'Freemind::NodeType' (role 'Freemind_NodeType40', cardinality 0..*) is associated with 'Freemind::EdgeType' (role 'Freemind_EdgeType41', cardinality 0..*).
+'Freemind::FontType' (role 'Freemind_FontType44', cardinality 0..*) is associated with 'Freemind::NodeType' (role 'Freemind_NodeType43', cardinality 0..*).
+'Freemind::MapType' (role 'Freemind_MapType', cardinality 0..*) is associated with 'Freemind::DocumentRoot' (role 'Freemind_DocumentRoot17', cardinality 0..*).
+'Freemind::ParametersType' (role 'Freemind_ParametersType26', cardinality 0..*) is associated with 'Freemind::HookType' (role 'Freemind_HookType25', cardinality 0..*).
+'Freemind::NodeType' (role 'Freemind_NodeType49', cardinality 0..*) is associated with 'Freemind::IconType' (role 'Freemind_IconType50', cardinality 0..*).
+'Freemind::DocumentRoot' (role 'Freemind_DocumentRoot9', cardinality 0..*) is associated with 'Freemind::EdgeType' (role 'Freemind_EdgeType', cardinality 0..*).
+'Freemind::ArrowlinkType' (role 'Freemind_ArrowlinkType', cardinality 0..*) is associated with 'Freemind::DocumentRoot' (role 'Freemind_DocumentRoot5', cardinality 0..*).
+'Freemind::HookType' (role 'Freemind_HookType28', cardinality 0..*) is associated with 'Freemind::TextType' (role 'Freemind_TextType29', cardinality 0..*).
+'Freemind::DocumentRoot' (role 'Freemind_DocumentRoot23', cardinality 0..*) is associated with 'Freemind::TextType' (role 'Freemind_TextType', cardinality 0..*).
+'Freemind::NodeType' (role 'Freemind_NodeType34', cardinality 0..*) is associated with 'Freemind::ArrowlinkType' (role 'Freemind_ArrowlinkType35', cardinality 0..*).
+'Freemind::FontType' (role 'Freemind_FontType', cardinality 0..*) is associated with 'Freemind::DocumentRoot' (role 'Freemind_DocumentRoot11', cardinality 0..*).
+'Freemind::CloudType' (role 'Freemind_CloudType38', cardinality 0..*) is associated with 'Freemind::NodeType' (role 'Freemind_NodeType37', cardinality 0..*).
+'Freemind::NodeType' (role 'Freemind_NodeType32', cardinality 0..*) is associated with 'Freemind::MapType' (role 'Freemind_MapType31', cardinality 0..*).
+'Freemind::NodeType' (role 'Freemind_NodeType46', cardinality 0..*) is associated with 'Freemind::HookType' (role 'Freemind_HookType47', cardinality 0..*).
+'Freemind::DocumentRoot' (role 'Freemind_DocumentRoot19', cardinality 0..*) is associated with 'Freemind::NodeType' (role 'Freemind_NodeType', cardinality 0..*).
+'Freemind::DocumentRoot' (role 'Freemind_DocumentRoot2', cardinality 0..*) is associated with 'Freemind::EStringToStringMapEntry' (role 'Freemind_EStringToStringMapEntry3', cardinality 0..*).
+'Freemind::DocumentRoot' (role 'Freemind_DocumentRoot21', cardinality 0..*) is associated with 'Freemind::ParametersType' (role 'Freemind_ParametersType', cardinality 0..*).
+'Freemind::NodeType' (role 'Freemind_NodeType51', cardinality 0..*) is associated with 'Freemind::NodeType' (role 'Freemind_NodeType53', cardinality 0..*).

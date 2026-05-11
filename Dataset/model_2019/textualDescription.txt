@@ -1,0 +1,53 @@
+The model has 38 class(es).
+The class 'executionTrace::StoryPatternConstraintHolds' has no attributes.
+The class 'Execution' has no attributes.
+The class 'executionTrace::AttributeValueSet' has the following attributes: 'newValue' of type str; 'instanceObject' of type str.
+The class 'executionTrace::Execution' has the following attributes: 'executionFinishedTimeStamp' of type str; 'executionStartedTimeStamp' of type str; 'executionTimeMsec' of type str; 'executionTime' of type str.
+The class 'executionTrace::TraversingLink' has no attributes.
+The class 'executionTrace::StoryPatternInitialization' has no attributes.
+The class 'executionTrace::StoryPatternObjectNotBound' has no attributes.
+The class 'executionTrace::ExpressionEvaluation' has the following attributes: 'result' of type str.
+The class 'executionTrace::InstanceObjectDeletion' has no attributes.
+The class 'executionTrace::StoryPatternConstraintEvaluation' has no attributes.
+The class 'executionTrace::StoryPatternExecution' has no attributes.
+The class 'executionTrace::InstanceObjectModification' has the following attributes: 'instanceObject' of type str.
+The class 'executionTrace::VariableChanged' has the following attributes: 'oldValue' of type str.
+The class 'executionTrace::LinkCheckSuccessful' has no attributes.
+The class 'executionTrace::StoryPatternLinkExecution' has the following attributes: 'sourceObject' of type str.
+The class 'executionTrace::LinkCheckFailed' has no attributes.
+The class 'executionTrace::ActivityEdgeTraversal' has no attributes.
+The class 'executionTrace::LinkCheck' has the following attributes: 'targetObject' of type str.
+The class 'executionTrace::ActivityNodeExecution' has no attributes.
+The class 'executionTrace::StoryPatternObjectConstraintEvaluation' has no attributes.
+The class 'executionTrace::ExecutionTrace' has the following attributes: 'totalExecutionTimeMsec' of type str; 'description' of type str; 'totalExecutionTime' of type str.
+The class 'executionTrace::StoryPatternObjectConstraintHolds' has no attributes.
+The class 'executionTrace::StoryPatternObjectBindingRevoked' has the following attributes: 'previousValue' of type str.
+The class 'executionTrace::InstanceLinkCreation' has no attributes.
+The class 'executionTrace::StoryPatternObjectConstraintViolated' has no attributes.
+The class 'executionTrace::VariableCreated' has no attributes.
+The class 'executionTrace::StoryPatternApplication' has no attributes.
+The class 'executionTrace::StoryPatternObjectExecution' has no attributes.
+The class 'executionTrace::InstanceLinkDeletion' has no attributes.
+The class 'executionTrace::ActivityExecution' has no attributes.
+The class 'executionTrace::StoryPatternMatching' has the following attributes: 'successful' of type bool.
+The class 'executionTrace::VariableModification' has the following attributes: 'value' of type str; 'variableName' of type str.
+The class 'executionTrace::MapEntry' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'executionTrace::InstanceObjectCreation' has no attributes.
+The class 'executionTrace::VariableDeleted' has no attributes.
+The class 'executionTrace::StoryPatternObjectBound' has the following attributes: 'value' of type str.
+The class 'executionTrace::StoryPatternConstraintViolated' has no attributes.
+The class 'executionTrace::InstanceLinkModification' has the following attributes: 'targetInstanceObject' of type str; 'sourceInstanceObject' of type str.
+'executionTrace::StoryPatternExecution' is a specialization of 'Execution'.
+'executionTrace::ActivityNodeExecution' is a specialization of 'Execution'.
+'executionTrace::ActivityExecution' is a specialization of 'Execution'.
+'executionTrace::StoryPatternLinkExecution' is a specialization of 'Execution'.
+'executionTrace::StoryPatternObjectExecution' is a specialization of 'Execution'.
+'executionTrace::InstanceObjectModification' is a specialization of 'Execution'.
+'executionTrace::VariableModification' is a specialization of 'Execution'.
+'executionTrace::ExpressionEvaluation' is a specialization of 'Execution'.
+'executionTrace::ActivityEdgeTraversal' is a specialization of 'Execution'.
+'executionTrace::AttributeValueSet' is a specialization of 'Execution'.
+'executionTrace::InstanceLinkModification' is a specialization of 'Execution'.
+'executionTrace::ExecutionTrace' (role 'executionTrace_ExecutionTrace', cardinality 0..*) is associated with 'executionTrace::Execution' (role 'executionTrace_Execution', cardinality 0..*).
+'executionTrace::Execution' (role 'container', cardinality 0..*) is associated with 'executionTrace::Execution' (role 'Execution', cardinality 0..*).
+'executionTrace::Execution' (role 'elements', cardinality 0..*) is associated with 'executionTrace::Execution' (role 'Execution5', cardinality 0..*).

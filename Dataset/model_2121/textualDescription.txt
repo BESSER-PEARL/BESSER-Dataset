@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'bug287941TestModel::Test2' has no attributes.
+The class 'bug287941TestModel::Test' has the following attributes: 'testAttr' of type str.
+'bug287941TestModel::Test2' (role 'bug287941TestModel_Test2', cardinality 0..*) is associated with 'bug287941TestModel::Test' (role 'bug287941TestModel_Test', cardinality 0..*).

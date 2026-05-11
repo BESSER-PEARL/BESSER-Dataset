@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'Kasu2::ClassA' has the following attributes: 'Name' of type str.
+The class 'Kasu2::Root' has no attributes.
+The class 'Kasu2::ClassB' has the following attributes: 'Name' of type str.
+'Kasu2::ClassA' (role 'ClassA5', cardinality 0..*) is associated with 'Kasu2::Root' (role 'C_R', cardinality 0..*).
+'Kasu2::ClassA' (role 'C_A', cardinality 0..*) is associated with 'Kasu2::ClassB' (role 'ClassB', cardinality 0..*).
+'Kasu2::ClassB' (role 'C_B', cardinality 0..*) is associated with 'Kasu2::ClassA' (role 'ClassA', cardinality 0..*).
+'Kasu2::ClassA' (role 'C_A2', cardinality 0..*) is associated with 'Kasu2::Root' (role 'Root', cardinality 0..*).

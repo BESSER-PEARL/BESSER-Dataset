@@ -1,0 +1,34 @@
+The model has 13 class(es).
+The class 'Step' has no attributes.
+The class 'trace::TracedObject' has no attributes.
+The class 'Value' has no attributes.
+The class 'trace::Value' has no attributes.
+The class 'trace::Step' has no attributes.
+The class 'trace::LiteralValue' has no attributes.
+The class 'trace::ParameterValue' has the following attributes: 'DirectionKind' of type str.
+The class 'trace::ObjectState' has no attributes.
+The class 'trace::SmallStep' has no attributes.
+The class 'trace::RefValue' has no attributes.
+The class 'trace::Trace' has no attributes.
+The class 'trace::ModelState' has no attributes.
+The class 'trace::BigStep' has no attributes.
+The enumeration 'ParamterKindEnum' has the following literals: 'RETURN', 'IN', 'INOUT', 'OUT'.
+'trace::LiteralValue' is a specialization of 'Value'.
+'trace::BigStep' is a specialization of 'Step'.
+'trace::RefValue' is a specialization of 'Value'.
+'trace::SmallStep' is a specialization of 'Step'.
+'trace::Value' (role 'trace_Value17', cardinality 0..*) is associated with 'trace::ObjectState' (role 'trace_ObjectState16', cardinality 0..*).
+'trace::Step' (role 'Step', cardinality 0..*) is associated with 'trace::BigStep' (role 'parent', cardinality 0..*).
+'trace::TracedObject' (role 'tracedobject', cardinality 0..*) is associated with 'trace::ObjectState' (role 'ObjectState', cardinality 0..*).
+'trace::ModelState' (role 'trace_ModelState11', cardinality 0..*) is associated with 'trace::Step' (role 'trace_Step10', cardinality 0..*).
+'trace::ModelState' (role 'trace_ModelState22', cardinality 0..*) is associated with 'trace::ObjectState' (role 'trace_ObjectState23', cardinality 0..*).
+'trace::TracedObject' (role 'trace_TracedObject', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace6', cardinality 0..*).
+'trace::RefValue' (role 'trace_RefValue', cardinality 0..*) is associated with 'trace::TracedObject' (role 'trace_TracedObject20', cardinality 0..*).
+'trace::Trace' (role 'trace_Trace', cardinality 0..*) is associated with 'trace::Step' (role 'trace_Step', cardinality 0..*).
+'trace::BigStep' (role 'BigStep', cardinality 0..*) is associated with 'trace::Step' (role 'children', cardinality 0..*).
+'trace::TracedObject' (role 'TracedObject', cardinality 0..*) is associated with 'trace::ObjectState' (role 'objectstates', cardinality 0..*).
+'trace::ObjectState' (role 'trace_ObjectState', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace4', cardinality 0..*).
+'trace::ModelState' (role 'trace_ModelState', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace2', cardinality 0..*).
+'trace::Step' (role 'trace_Step13', cardinality 0..*) is associated with 'trace::ParameterValue' (role 'trace_ParameterValue', cardinality 0..*).
+'trace::Value' (role 'trace_Value28', cardinality 0..*) is associated with 'trace::ParameterValue' (role 'trace_ParameterValue27', cardinality 0..*).
+'trace::Value' (role 'trace_Value', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace8', cardinality 0..*).

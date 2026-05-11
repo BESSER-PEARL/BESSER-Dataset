@@ -1,0 +1,44 @@
+The model has 24 class(es).
+The class 'Behavior' has no attributes.
+The class 'BehavioredClassifier' has no attributes.
+The class 'UML2::Stereotype' has no attributes.
+The class 'UML2::Activity' has no attributes.
+The class 'UML2::UseCase' has no attributes.
+The class 'UML2::BehavioralFeature' has no attributes.
+The class 'UML2::Class' has no attributes.
+The class 'UML2::Behavior' has no attributes.
+The class 'UML2::Node' has no attributes.
+The class 'UML2::Component' has no attributes.
+The class 'UML2::Collaboration' has no attributes.
+The class 'BehavioralFeature' has no attributes.
+The class 'UML2::AssociationClass' has no attributes.
+The class 'UML2::Device' has no attributes.
+The class 'UML2::ProtocolStateMachine' has no attributes.
+The class 'Class' has no attributes.
+The class 'UML2::StateMachine' has no attributes.
+The class 'StateMachine' has no attributes.
+The class 'UML2::Interaction' has no attributes.
+The class 'UML2::Operation' has no attributes.
+The class 'Node' has no attributes.
+The class 'UML2::ExecutionEnvironment' has no attributes.
+The class 'UML2::BehavioredClassifier' has no attributes.
+The class 'UML2::Reception' has no attributes.
+'UML2::Collaboration' is a specialization of 'BehavioredClassifier'.
+'UML2::Operation' is a specialization of 'BehavioralFeature'.
+'UML2::Device' is a specialization of 'Node'.
+'UML2::Reception' is a specialization of 'BehavioralFeature'.
+'UML2::AssociationClass' is a specialization of 'Class'.
+'UML2::Stereotype' is a specialization of 'Class'.
+'UML2::ProtocolStateMachine' is a specialization of 'StateMachine'.
+'UML2::Behavior' is a specialization of 'Class'.
+'UML2::Class' is a specialization of 'BehavioredClassifier'.
+'UML2::UseCase' is a specialization of 'BehavioredClassifier'.
+'UML2::Node' is a specialization of 'Class'.
+'UML2::StateMachine' is a specialization of 'Behavior'.
+'UML2::Activity' is a specialization of 'Behavior'.
+'UML2::ExecutionEnvironment' is a specialization of 'Node'.
+'UML2::Interaction' is a specialization of 'Behavior'.
+'UML2::Component' is a specialization of 'Class'.
+'UML2::BehavioredClassifier' (role 'UML2_BehavioredClassifier4', cardinality 0..*) is associated with 'UML2::Behavior' (role 'UML2_Behavior5', cardinality 0..*).
+'UML2::Behavior' (role 'UML2_Behavior2', cardinality 0..*) is associated with 'UML2::BehavioredClassifier' (role 'UML2_BehavioredClassifier', cardinality 0..*).
+'UML2::BehavioralFeature' (role 'UML2_BehavioralFeature', cardinality 0..*) is associated with 'UML2::Behavior' (role 'UML2_Behavior', cardinality 0..*).

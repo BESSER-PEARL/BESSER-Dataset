@@ -1,0 +1,58 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Events_traceSystem_Value  {
+
+
+
+
+
+
+    private traceSystem_Events_StringVariable_setCurrentValue_stringVariableEntryEventOccurrence tracesystem_events_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence;
+
+
+
+
+    private traceSystem_Events_IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence tracesystem_events_integervariable_setcurrentvalue_integervariableentryeventoccurrence;
+
+
+
+
+    private traceSystem_Events_BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence tracesystem_events_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence;
+
+
+    public Events_traceSystem_Value(
+    ) {
+    }
+
+
+
+    public traceSystem_Events_StringVariable_setCurrentValue_stringVariableEntryEventOccurrence getTracesystem_events_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence() {
+        return tracesystem_events_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence;
+    }
+
+    public void setTracesystem_events_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence(traceSystem_Events_StringVariable_setCurrentValue_stringVariableEntryEventOccurrence tracesystem_events_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence) {
+        this.tracesystem_events_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence = tracesystem_events_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence;
+    }
+    public traceSystem_Events_IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence getTracesystem_events_integervariable_setcurrentvalue_integervariableentryeventoccurrence() {
+        return tracesystem_events_integervariable_setcurrentvalue_integervariableentryeventoccurrence;
+    }
+
+    public void setTracesystem_events_integervariable_setcurrentvalue_integervariableentryeventoccurrence(traceSystem_Events_IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence tracesystem_events_integervariable_setcurrentvalue_integervariableentryeventoccurrence) {
+        this.tracesystem_events_integervariable_setcurrentvalue_integervariableentryeventoccurrence = tracesystem_events_integervariable_setcurrentvalue_integervariableentryeventoccurrence;
+    }
+    public traceSystem_Events_BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence getTracesystem_events_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence() {
+        return tracesystem_events_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence;
+    }
+
+    public void setTracesystem_events_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence(traceSystem_Events_BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence tracesystem_events_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence) {
+        this.tracesystem_events_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence = tracesystem_events_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence;
+    }
+
+}

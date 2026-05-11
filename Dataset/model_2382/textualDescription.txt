@@ -1,0 +1,65 @@
+The model has 28 class(es).
+The class 'simpleumltordbms::Association' has no attributes.
+The class 'simpleumltordbms::FromAttribute' has the following attributes: 'kind' of type str.
+The class 'simpleumltordbms::StringToVarchar' has no attributes.
+The class 'simpleumltordbms::PackageToSchema' has no attributes.
+The class 'simpleumltordbms::NonLeafAttribute' has no attributes.
+The class 'simpleumltordbms::ToColumn' has no attributes.
+The class 'simpleumltordbms::BooleanToBoolean' has no attributes.
+The class 'simpleumltordbms::AssociationToForeignKey' has no attributes.
+The class 'simpleumltordbms::PrimitiveToName' has the following attributes: 'typeName' of type str.
+The class 'simpleumltordbms::UmlToRdbmsModelElement' has the following attributes: 'name' of type str.
+The class 'ToColumn' has no attributes.
+The class 'simpleumltordbms::Key' has no attributes.
+The class 'simpleumltordbms::Class' has no attributes.
+The class 'PrimitiveToName' has no attributes.
+The class 'simpleumltordbms::PrimitiveDataType' has no attributes.
+The class 'simpleumltordbms::ForeignKey' has no attributes.
+The class 'simpleumltordbms::Column' has no attributes.
+The class 'simpleumltordbms::AttributeToColumn' has no attributes.
+The class 'simpleumltordbms::Attribute' has no attributes.
+The class 'simpleumltordbms::IntegerToNumber' has no attributes.
+The class 'simpleumltordbms::Table' has no attributes.
+The class 'simpleumltordbms::FromAttributeOwner' has no attributes.
+The class 'simpleumltordbms::Schema' has no attributes.
+The class 'FromAttribute' has no attributes.
+The class 'simpleumltordbms::Package' has no attributes.
+The class 'FromAttributeOwner' has no attributes.
+The class 'simpleumltordbms::ClassToTable' has no attributes.
+The class 'UmlToRdbmsModelElement' has no attributes.
+'simpleumltordbms::ClassToTable' is a specialization of 'FromAttributeOwner'.
+'simpleumltordbms::NonLeafAttribute' is a specialization of 'FromAttributeOwner'.
+'simpleumltordbms::ClassToTable' is a specialization of 'ToColumn'.
+'simpleumltordbms::ClassToTable' is a specialization of 'UmlToRdbmsModelElement'.
+'simpleumltordbms::PrimitiveToName' is a specialization of 'UmlToRdbmsModelElement'.
+'simpleumltordbms::FromAttribute' is a specialization of 'UmlToRdbmsModelElement'.
+'simpleumltordbms::IntegerToNumber' is a specialization of 'PrimitiveToName'.
+'simpleumltordbms::BooleanToBoolean' is a specialization of 'PrimitiveToName'.
+'simpleumltordbms::AssociationToForeignKey' is a specialization of 'ToColumn'.
+'simpleumltordbms::AttributeToColumn' is a specialization of 'FromAttribute'.
+'simpleumltordbms::PackageToSchema' is a specialization of 'UmlToRdbmsModelElement'.
+'simpleumltordbms::StringToVarchar' is a specialization of 'PrimitiveToName'.
+'simpleumltordbms::AttributeToColumn' is a specialization of 'ToColumn'.
+'simpleumltordbms::AssociationToForeignKey' is a specialization of 'UmlToRdbmsModelElement'.
+'simpleumltordbms::NonLeafAttribute' is a specialization of 'FromAttribute'.
+'simpleumltordbms::AttributeToColumn' (role 'simpleumltordbms_AttributeToColumn', cardinality 0..*) is associated with 'simpleumltordbms::PrimitiveToName' (role 'simpleumltordbms_PrimitiveToName', cardinality 0..*).
+'simpleumltordbms::AssociationToForeignKey' (role 'AssociationToForeignKey', cardinality 0..*) is associated with 'simpleumltordbms::ClassToTable' (role 'owner', cardinality 0..*).
+'simpleumltordbms::Column' (role 'simpleumltordbms_Column', cardinality 0..*) is associated with 'simpleumltordbms::ToColumn' (role 'simpleumltordbms_ToColumn', cardinality 0..*).
+'simpleumltordbms::PackageToSchema' (role 'simpleumltordbms_PackageToSchema29', cardinality 0..*) is associated with 'simpleumltordbms::Package' (role 'simpleumltordbms_Package', cardinality 0..*).
+'simpleumltordbms::Key' (role 'simpleumltordbms_Key', cardinality 0..*) is associated with 'simpleumltordbms::ClassToTable' (role 'simpleumltordbms_ClassToTable10', cardinality 0..*).
+'simpleumltordbms::Table' (role 'simpleumltordbms_Table', cardinality 0..*) is associated with 'simpleumltordbms::ClassToTable' (role 'simpleumltordbms_ClassToTable12', cardinality 0..*).
+'simpleumltordbms::Attribute' (role 'simpleumltordbms_Attribute', cardinality 0..*) is associated with 'simpleumltordbms::FromAttribute' (role 'simpleumltordbms_FromAttribute', cardinality 0..*).
+'simpleumltordbms::PrimitiveToName' (role 'PrimitiveToName', cardinality 0..*) is associated with 'simpleumltordbms::PackageToSchema' (role 'owner26', cardinality 0..*).
+'simpleumltordbms::PackageToSchema' (role 'owner23', cardinality 0..*) is associated with 'simpleumltordbms::ClassToTable' (role 'ClassToTable24', cardinality 0..*).
+'simpleumltordbms::ClassToTable' (role 'ClassToTable', cardinality 0..*) is associated with 'simpleumltordbms::AssociationToForeignKey' (role 'associationsToForeignKeys', cardinality 0..*).
+'simpleumltordbms::ForeignKey' (role 'simpleumltordbms_ForeignKey', cardinality 0..*) is associated with 'simpleumltordbms::AssociationToForeignKey' (role 'simpleumltordbms_AssociationToForeignKey3', cardinality 0..*).
+'simpleumltordbms::FromAttributeOwner' (role 'owner21', cardinality 0..*) is associated with 'simpleumltordbms::FromAttribute' (role 'FromAttribute', cardinality 0..*).
+'simpleumltordbms::FromAttributeOwner' (role 'FromAttributeOwner', cardinality 0..*) is associated with 'simpleumltordbms::FromAttribute' (role 'fromAttributes', cardinality 0..*).
+'simpleumltordbms::Association' (role 'simpleumltordbms_Association', cardinality 0..*) is associated with 'simpleumltordbms::AssociationToForeignKey' (role 'simpleumltordbms_AssociationToForeignKey', cardinality 0..*).
+'simpleumltordbms::Schema' (role 'simpleumltordbms_Schema', cardinality 0..*) is associated with 'simpleumltordbms::PackageToSchema' (role 'simpleumltordbms_PackageToSchema', cardinality 0..*).
+'simpleumltordbms::PackageToSchema' (role 'PackageToSchema', cardinality 0..*) is associated with 'simpleumltordbms::ClassToTable' (role 'classesToTables', cardinality 0..*).
+'simpleumltordbms::PrimitiveToName' (role 'primitivesToNames', cardinality 0..*) is associated with 'simpleumltordbms::PackageToSchema' (role 'PackageToSchema31', cardinality 0..*).
+'simpleumltordbms::ClassToTable' (role 'simpleumltordbms_ClassToTable14', cardinality 0..*) is associated with 'simpleumltordbms::Class' (role 'simpleumltordbms_Class', cardinality 0..*).
+'simpleumltordbms::PrimitiveToName' (role 'simpleumltordbms_PrimitiveToName33', cardinality 0..*) is associated with 'simpleumltordbms::PrimitiveDataType' (role 'simpleumltordbms_PrimitiveDataType', cardinality 0..*).
+'simpleumltordbms::AssociationToForeignKey' (role 'simpleumltordbms_AssociationToForeignKey6', cardinality 0..*) is associated with 'simpleumltordbms::ClassToTable' (role 'simpleumltordbms_ClassToTable', cardinality 0..*).
+'simpleumltordbms::FromAttribute' (role 'simpleumltordbms_FromAttribute17', cardinality 0..*) is associated with 'simpleumltordbms::AttributeToColumn' (role 'simpleumltordbms_AttributeToColumn18', cardinality 0..*).

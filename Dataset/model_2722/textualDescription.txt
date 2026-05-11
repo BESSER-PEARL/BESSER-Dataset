@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'Kasu1::ClassB' has the following attributes: 'Name' of type str.
+The class 'Kasu1::ClassA' has the following attributes: 'Name' of type str.
+'Kasu1::ClassB' (role 'Kasu1_ClassB', cardinality 0..*) is associated with 'Kasu1::ClassA' (role 'Kasu1_ClassA', cardinality 0..*).
+'Kasu1::ClassA' (role 'Kasu1_ClassA3', cardinality 0..*) is associated with 'Kasu1::ClassB' (role 'Kasu1_ClassB2', cardinality 0..*).

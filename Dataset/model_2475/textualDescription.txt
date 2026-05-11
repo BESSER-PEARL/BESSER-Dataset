@@ -1,0 +1,19 @@
+The model has 10 class(es).
+The class 'textlink::TraceLink' has no attributes.
+The class 'textlink::TextLocation' has the following attributes: 'resource' of type str.
+The class 'textlink::EmfModelLocation' has no attributes.
+The class 'textlink::TraceLinkEnd' has no attributes.
+The class 'textlink::Trace' has no attributes.
+The class 'textlink::EObject' has no attributes.
+The class 'TraceLinkEnd' has no attributes.
+The class 'textlink::ModelLocation' has the following attributes: 'propertyName' of type str.
+The class 'ModelLocation' has no attributes.
+The class 'textlink::Region' has the following attributes: 'length' of type str; 'offset' of type str.
+'textlink::TextLocation' is a specialization of 'TraceLinkEnd'.
+'textlink::EmfModelLocation' is a specialization of 'ModelLocation'.
+'textlink::ModelLocation' is a specialization of 'TraceLinkEnd'.
+'textlink::EmfModelLocation' (role 'textlink_EmfModelLocation', cardinality 0..*) is associated with 'textlink::EObject' (role 'textlink_EObject', cardinality 0..*).
+'textlink::TraceLink' (role 'textlink_TraceLink2', cardinality 0..*) is associated with 'textlink::ModelLocation' (role 'textlink_ModelLocation', cardinality 0..*).
+'textlink::Region' (role 'textlink_Region', cardinality 0..*) is associated with 'textlink::TextLocation' (role 'textlink_TextLocation7', cardinality 0..*).
+'textlink::TextLocation' (role 'textlink_TextLocation', cardinality 0..*) is associated with 'textlink::TraceLink' (role 'textlink_TraceLink4', cardinality 0..*).
+'textlink::TraceLink' (role 'textlink_TraceLink', cardinality 0..*) is associated with 'textlink::Trace' (role 'textlink_Trace', cardinality 0..*).

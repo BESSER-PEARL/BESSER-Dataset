@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/jgralab/ecore2tg/testit/testdata/ecore2tg_MultipleInheritanceEdgeClasses/MultipleInheritanceEdgeClasses.ecore

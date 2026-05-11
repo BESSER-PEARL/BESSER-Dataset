@@ -1,0 +1,19 @@
+The model has 10 class(es).
+The class 'SqoopImport' has no attributes.
+The class 'ingest::SqoopHiveImport' has the following attributes: 'targetHiveTable' of type str; 'targetHiveDatabase' of type str.
+The class 'ingest::SqoopImport' has no attributes.
+The class 'SqoopHiveImport' has no attributes.
+The class 'ingest::DbSchema' has the following attributes: 'name' of type str.
+The class 'ingest::DbColumn' has the following attributes: 'jdbcScale' of type int; 'name' of type str; 'jdbcType' of type int; 'jdbcPrecision' of type int.
+The class 'ingest::SqoopHiveIncrementalImport' has no attributes.
+The class 'ingest::DbTable' has the following attributes: 'name' of type str.
+The class 'ingest::Database' has the following attributes: 'label' of type str; 'jdbcPassword' of type str; 'jdbcUser' of type str; 'jdbcDriver' of type str; 'jdbcUrl' of type str.
+The class 'ingest::Catalogue' has no attributes.
+'ingest::SqoopHiveIncrementalImport' is a specialization of 'SqoopHiveImport'.
+'ingest::SqoopHiveImport' is a specialization of 'SqoopImport'.
+'ingest::DbTable' (role 'ingest_DbTable', cardinality 0..*) is associated with 'ingest::DbColumn' (role 'ingest_DbColumn', cardinality 0..*).
+'ingest::DbTable' (role 'ingest_DbTable6', cardinality 0..*) is associated with 'ingest::DbSchema' (role 'ingest_DbSchema5', cardinality 0..*).
+'ingest::DbColumn' (role 'ingest_DbColumn8', cardinality 0..*) is associated with 'ingest::SqoopHiveIncrementalImport' (role 'ingest_SqoopHiveIncrementalImport', cardinality 0..*).
+'ingest::DbSchema' (role 'ingest_DbSchema', cardinality 0..*) is associated with 'ingest::Database' (role 'ingest_Database', cardinality 0..*).
+'ingest::SqoopImport' (role 'ingest_SqoopImport', cardinality 0..*) is associated with 'ingest::DbTable' (role 'ingest_DbTable3', cardinality 0..*).
+'ingest::Catalogue' (role 'ingest_Catalogue', cardinality 0..*) is associated with 'ingest::Database' (role 'ingest_Database10', cardinality 0..*).

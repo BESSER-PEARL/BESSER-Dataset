@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/emf-syncer/emf-syncer.tpcds/emf_syncer.tpcds/src/main/resources/ecore/emf.ecore

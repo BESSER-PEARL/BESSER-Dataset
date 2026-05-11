@@ -1,0 +1,87 @@
+The model has 40 class(es).
+The class 'NodeStyle' has no attributes.
+The class 'aredsl::SensorBasedAction' has no attributes.
+The class 'aredsl::ShowSystemMenu' has no attributes.
+The class 'aredsl::MarkerBasedTrackerAction' has the following attributes: 'markerId' of type int.
+The class 'aredsl::ChangeContextOperation' has the following attributes: 'expression' of type str.
+The class 'aredsl::RemoveOperation' has the following attributes: 'constraint' of type str.
+The class 'aredsl::EdgeStyle' has the following attributes: 'semanticCondition' of type str; 'color' of type str; 'kind' of type str; 'width' of type int.
+The class 'TrackerAction' has no attributes.
+The class 'aredsl::SupportOperation' has no attributes.
+The class 'aredsl::Image2DNodeStyle' has the following attributes: 'file' of type str.
+The class 'aredsl::UnsetOperation' has the following attributes: 'constraint' of type str; 'feature' of type str.
+The class 'aredsl::SetOperation' has the following attributes: 'feature' of type str; 'constraint' of type str; 'value' of type str.
+The class 'aredsl::Tool' has the following attributes: 'description' of type str; 'precondition' of type str; 'targetPrecondition' of type str; 'id' of type str.
+The class 'aredsl::VoiceAction' has no attributes.
+The class 'aredsl::LabelStyle' has the following attributes: 'height' of type int; 'color' of type str; 'semanticCondition' of type str.
+The class 'aredsl::ToolSet' has the following attributes: 'id' of type str; 'description' of type str.
+The class 'aredsl::Node' has the following attributes: 'semantics' of type str; 'description' of type str; 'id' of type str; 'contaimentKind' of type str.
+The class 'Behaviour' has no attributes.
+The class 'aredsl::DomainOperation' has no attributes.
+The class 'aredsl::GeometricShapeNodeStyle' has the following attributes: 'outline' of type str; 'color' of type str; 'kind' of type str.
+The class 'aredsl::GestureAction' has no attributes.
+The class 'SupportOperation' has no attributes.
+The class 'aredsl::Editor' has the following attributes: 'name' of type str; 'description' of type str; 'fileExtension' of type str; 'queryLanguageKind' of type str.
+The class 'aredsl::Action' has the following attributes: 'description' of type str.
+The class 'Action' has no attributes.
+The class 'aredsl::Exit' has no attributes.
+The class 'aredsl::MentalAction' has no attributes.
+The class 'aredsl::Edge' has the following attributes: 'description' of type str; 'originSemantics' of type str; 'id' of type str; 'destinationSemantics' of type str.
+The class 'aredsl::Layer' has the following attributes: 'id' of type str; 'semantics' of type str; 'description' of type str.
+The class 'aredsl::Model3DNodeStyle' has the following attributes: 'file' of type str.
+The class 'DomainOperation' has no attributes.
+The class 'aredsl::CreateInstanceOperation' has the following attributes: 'type' of type str; 'feature' of type str; 'name' of type str.
+The class 'aredsl::MarkerLessTrackerAction' has the following attributes: 'file' of type str.
+The class 'aredsl::TactileAction' has no attributes.
+The class 'aredsl::TrackerAction' has no attributes.
+The class 'aredsl::MoveElement' has no attributes.
+The class 'aredsl::Behaviour' has the following attributes: 'description' of type str.
+The class 'aredsl::NodeStyle' has the following attributes: 'height' of type int; 'semanticCondition' of type str; 'width' of type int.
+The class 'aredsl::Label' has the following attributes: 'semantics' of type str; 'id' of type str; 'description' of type str.
+The class 'aredsl::ArrangeElements' has no attributes.
+The enumeration 'LineKind' has the following literals: 'DASHED', 'SOLID', 'DOTTED'.
+The enumeration 'IntegrityRestrictionKind' has the following literals: 'NO_ACTION', 'CASCADE', 'SET_NULL'.
+The enumeration 'QueryLanguageKind' has the following literals: 'SQL', 'OCL', 'AQL', 'JPQL', 'LINQ', 'XPATH_XQUERY'.
+The enumeration 'ShapeKind' has the following literals: 'RECTANGLE', 'ELLIPSE', 'CIRCLE', 'TRIANGLE', 'SQUARE', 'DIAMOND'.
+The enumeration 'OutlineKind' has the following literals: 'NONE', 'DOUBLE', 'SIMPLE'.
+The enumeration 'ContainmentKind' has the following literals: 'HORIZONTAL_ARRANGEMENT', 'EXTERNAL_LINK', 'VERTICAL_ARRANGEMENT', 'FREE'.
+'aredsl::GeometricShapeNodeStyle' is a specialization of 'NodeStyle'.
+'aredsl::Model3DNodeStyle' is a specialization of 'NodeStyle'.
+'aredsl::UnsetOperation' is a specialization of 'DomainOperation'.
+'aredsl::SensorBasedAction' is a specialization of 'Action'.
+'aredsl::SetOperation' is a specialization of 'DomainOperation'.
+'aredsl::ShowSystemMenu' is a specialization of 'SupportOperation'.
+'aredsl::MoveElement' is a specialization of 'SupportOperation'.
+'aredsl::SupportOperation' is a specialization of 'Behaviour'.
+'aredsl::TactileAction' is a specialization of 'Action'.
+'aredsl::CreateInstanceOperation' is a specialization of 'DomainOperation'.
+'aredsl::GestureAction' is a specialization of 'Action'.
+'aredsl::Image2DNodeStyle' is a specialization of 'NodeStyle'.
+'aredsl::DomainOperation' is a specialization of 'Behaviour'.
+'aredsl::ArrangeElements' is a specialization of 'SupportOperation'.
+'aredsl::RemoveOperation' is a specialization of 'DomainOperation'.
+'aredsl::MarkerBasedTrackerAction' is a specialization of 'TrackerAction'.
+'aredsl::VoiceAction' is a specialization of 'Action'.
+'aredsl::TrackerAction' is a specialization of 'Action'.
+'aredsl::ChangeContextOperation' is a specialization of 'DomainOperation'.
+'aredsl::MentalAction' is a specialization of 'Action'.
+'aredsl::MarkerLessTrackerAction' is a specialization of 'TrackerAction'.
+'aredsl::Exit' is a specialization of 'SupportOperation'.
+'aredsl::Label' (role 'aredsl_Label31', cardinality 0..*) is associated with 'aredsl::Edge' (role 'aredsl_Edge30', cardinality 0..*).
+'aredsl::Layer' (role 'aredsl_Layer', cardinality 0..*) is associated with 'aredsl::Editor' (role 'aredsl_Editor', cardinality 0..*).
+'aredsl::TrackerAction' (role 'aredsl_TrackerAction', cardinality 0..*) is associated with 'aredsl::Layer' (role 'aredsl_Layer8', cardinality 0..*).
+'aredsl::Node' (role 'aredsl_Node25', cardinality 0..*) is associated with 'aredsl::Edge' (role 'aredsl_Edge24', cardinality 0..*).
+'aredsl::Node' (role 'aredsl_Node28', cardinality 0..*) is associated with 'aredsl::Edge' (role 'aredsl_Edge27', cardinality 0..*).
+'aredsl::Label' (role 'aredsl_Label34', cardinality 0..*) is associated with 'aredsl::Edge' (role 'aredsl_Edge33', cardinality 0..*).
+'aredsl::Behaviour' (role 'aredsl_Behaviour', cardinality 0..*) is associated with 'aredsl::Tool' (role 'aredsl_Tool', cardinality 0..*).
+'aredsl::ToolSet' (role 'aredsl_ToolSet39', cardinality 0..*) is associated with 'aredsl::Tool' (role 'aredsl_Tool40', cardinality 0..*).
+'aredsl::Layer' (role 'aredsl_Layer4', cardinality 0..*) is associated with 'aredsl::Node' (role 'aredsl_Node', cardinality 0..*).
+'aredsl::Edge' (role 'aredsl_Edge21', cardinality 0..*) is associated with 'aredsl::Label' (role 'aredsl_Label22', cardinality 0..*).
+'aredsl::Edge' (role 'aredsl_Edge19', cardinality 0..*) is associated with 'aredsl::EdgeStyle' (role 'aredsl_EdgeStyle', cardinality 0..*).
+'aredsl::Node' (role 'aredsl_Node10', cardinality 0..*) is associated with 'aredsl::NodeStyle' (role 'aredsl_NodeStyle', cardinality 0..*).
+'aredsl::Label' (role 'aredsl_Label17', cardinality 0..*) is associated with 'aredsl::LabelStyle' (role 'aredsl_LabelStyle', cardinality 0..*).
+'aredsl::Editor' (role 'aredsl_Editor2', cardinality 0..*) is associated with 'aredsl::ToolSet' (role 'aredsl_ToolSet', cardinality 0..*).
+'aredsl::Node' (role 'aredsl_Node12', cardinality 0..*) is associated with 'aredsl::Label' (role 'aredsl_Label', cardinality 0..*).
+'aredsl::Layer' (role 'aredsl_Layer6', cardinality 0..*) is associated with 'aredsl::Edge' (role 'aredsl_Edge', cardinality 0..*).
+'aredsl::Action' (role 'aredsl_Action', cardinality 0..*) is associated with 'aredsl::Tool' (role 'aredsl_Tool37', cardinality 0..*).
+'aredsl::Node' (role 'aredsl_Node13', cardinality 0..*) is associated with 'aredsl::Node' (role 'aredsl_Node15', cardinality 0..*).

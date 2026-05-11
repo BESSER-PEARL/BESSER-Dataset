@@ -1,0 +1,4 @@
+The model has 1 class(es).
+The class 'HLSTree::HLSNode' has the following attributes: 'name' of type str; 'hls' of type str.
+'HLSTree::HLSNode' (role 'parent', cardinality 0..*) is associated with 'HLSTree::HLSNode' (role 'HLSNode4', cardinality 0..*).
+'HLSTree::HLSNode' (role 'HLSNode', cardinality 0..*) is associated with 'HLSTree::HLSNode' (role 'children', cardinality 0..*).

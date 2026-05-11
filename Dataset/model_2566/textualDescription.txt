@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'tree2talltree::Node' has no attributes.
+The class 'tree2talltree::TallNode' has no attributes.
+The class 'tree2talltree::Node2TallNode' has the following attributes: 'name' of type str.
+'tree2talltree::Node' (role 'tree2talltree_Node', cardinality 0..*) is associated with 'tree2talltree::Node2TallNode' (role 'tree2talltree_Node2TallNode', cardinality 0..*).
+'tree2talltree::TallNode' (role 'tree2talltree_TallNode', cardinality 0..*) is associated with 'tree2talltree::Node2TallNode' (role 'tree2talltree_Node2TallNode7', cardinality 0..*).
+'tree2talltree::Node2TallNode' (role 'parent', cardinality 0..*) is associated with 'tree2talltree::Node2TallNode' (role 'Node2TallNode', cardinality 0..*).
+'tree2talltree::Node2TallNode' (role 'Node2TallNode4', cardinality 0..*) is associated with 'tree2talltree::Node2TallNode' (role 'children', cardinality 0..*).

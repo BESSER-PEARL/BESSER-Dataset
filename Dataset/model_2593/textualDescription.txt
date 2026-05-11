@@ -1,0 +1,6 @@
+The model has 4 class(es).
+The class 'package::subpackage::B' has no attributes.
+The class 'package::subpackage::A' has no attributes.
+The class 'A' has no attributes.
+The class 'package::subpackage::C' has no attributes.
+'package::subpackage::C' is a specialization of 'A'.

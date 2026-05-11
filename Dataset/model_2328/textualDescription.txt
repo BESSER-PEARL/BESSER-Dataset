@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'pdb2::Database' has the following attributes: 'name' of type str.
+The class 'pdb2::Person' has the following attributes: 'placeOfBirth' of type str; 'id' of type str; 'incrementalID' of type str; 'name' of type str; 'birthday' of type str.
+'pdb2::Person' (role 'persons', cardinality 0..*) is associated with 'pdb2::Database' (role 'Database', cardinality 0..*).
+'pdb2::Database' (role 'database', cardinality 0..*) is associated with 'pdb2::Person' (role 'Person', cardinality 0..*).

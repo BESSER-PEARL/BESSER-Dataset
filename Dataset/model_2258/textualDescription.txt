@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'Courses::Assignment' has the following attributes: 'mandatory' of type bool; 'name' of type str; 'description' of type str.
+The class 'Courses::Person' has the following attributes: 'role' of type str; 'id' of type int; 'name' of type str.
+The class 'Courses::Course' has the following attributes: 'name' of type str; 'credit' of type float; 'id' of type str.
+The class 'Courses::Answer' has the following attributes: 'id' of type int; 'text' of type str; 'pass_' of type bool.
+'Courses::Course' (role 'Courses_Course', cardinality 0..*) is associated with 'Courses::Person' (role 'Courses_Person', cardinality 0..*).
+'Courses::Answer' (role 'Courses_Answer7', cardinality 0..*) is associated with 'Courses::Assignment' (role 'Courses_Assignment6', cardinality 0..*).
+'Courses::Assignment' (role 'Courses_Assignment', cardinality 0..*) is associated with 'Courses::Course' (role 'Courses_Course2', cardinality 0..*).
+'Courses::Answer' (role 'Courses_Answer', cardinality 0..*) is associated with 'Courses::Person' (role 'Courses_Person4', cardinality 0..*).

@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'testmerge::F' has no attributes.
+The class 'testmerge::C' has the following attributes: 'dataType' of type str.
+The class 'testmerge::D' has the following attributes: 'emfDataType' of type str.
+The class 'testmerge::E' has no attributes.
+'testmerge::E' (role 'testmerge_E', cardinality 0..*) is associated with 'testmerge::C' (role 'testmerge_C', cardinality 0..*).
+'testmerge::F' (role 'testmerge_F', cardinality 0..*) is associated with 'testmerge::C' (role 'testmerge_C4', cardinality 0..*).
+'testmerge::D' (role 'toD', cardinality 0..*) is associated with 'testmerge::C' (role 'C', cardinality 0..*).
+'testmerge::D' (role 'D', cardinality 0..*) is associated with 'testmerge::C' (role 'toC', cardinality 0..*).

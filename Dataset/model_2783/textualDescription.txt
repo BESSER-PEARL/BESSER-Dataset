@@ -1,0 +1,29 @@
+The model has 9 class(es).
+The class 'B' has no attributes.
+The class 'BoemTest::BNode' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'BoemTest::B' has the following attributes: 'enumAttr' of type str.
+The class 'BoemTest::A' has no attributes.
+The class 'BoemTest::C' has no attributes.
+The class 'BoemTest::Node' has no attributes.
+The class 'BoemTest::NamedElement' has the following attributes: 'name' of type str.
+The class 'A' has no attributes.
+The enumeration 'AnEnumeration' has the following literals: 'LITERAL2', 'LITERAL1', 'LITERAL0'.
+'BoemTest::Node' is a specialization of 'NamedElement'.
+'BoemTest::A' is a specialization of 'NamedElement'.
+'BoemTest::B' is a specialization of 'A'.
+'BoemTest::C' is a specialization of 'B'.
+'BoemTest::A' (role 'BoemTest_A5', cardinality 0..*) is associated with 'BoemTest::Node' (role 'BoemTest_Node6', cardinality 0..*).
+'BoemTest::C' (role 'BoemTest_C29', cardinality 0..*) is associated with 'BoemTest::Node' (role 'BoemTest_Node30', cardinality 0..*).
+'BoemTest::Node' (role 'BoemTest_Node9', cardinality 0..*) is associated with 'BoemTest::A' (role 'BoemTest_A8', cardinality 0..*).
+'BoemTest::A' (role 'BoemTest_A11', cardinality 0..*) is associated with 'BoemTest::Node' (role 'BoemTest_Node12', cardinality 0..*).
+'BoemTest::Node' (role 'BoemTest_Node17', cardinality 0..*) is associated with 'BoemTest::B' (role 'BoemTest_B', cardinality 0..*).
+'BoemTest::Node' (role 'BoemTest_Node27', cardinality 0..*) is associated with 'BoemTest::C' (role 'BoemTest_C26', cardinality 0..*).
+'BoemTest::Node' (role 'BoemTest_Node33', cardinality 0..*) is associated with 'BoemTest::C' (role 'BoemTest_C32', cardinality 0..*).
+'BoemTest::Node' (role 'BoemTest_Node20', cardinality 0..*) is associated with 'BoemTest::B' (role 'BoemTest_B19', cardinality 0..*).
+'BoemTest::BNode' (role 'BoemTest_BNode', cardinality 0..*) is associated with 'BoemTest::B' (role 'BoemTest_B22', cardinality 0..*).
+'BoemTest::A' (role 'BoemTest_A', cardinality 0..*) is associated with 'BoemTest::Node' (role 'BoemTest_Node', cardinality 0..*).
+'BoemTest::Node' (role 'BoemTest_Node24', cardinality 0..*) is associated with 'BoemTest::C' (role 'BoemTest_C', cardinality 0..*).
+'BoemTest::A' (role 'BoemTest_A2', cardinality 0..*) is associated with 'BoemTest::Node' (role 'BoemTest_Node3', cardinality 0..*).
+'BoemTest::A' (role 'BoemTest_A13', cardinality 0..*) is associated with 'BoemTest::A' (role 'BoemTest_A15', cardinality 0..*).
+'BoemTest::Node' (role 'BoemTest_Node36', cardinality 0..*) is associated with 'BoemTest::Node' (role 'BoemTest_Node34', cardinality 0..*).

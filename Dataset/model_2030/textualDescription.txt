@@ -1,0 +1,10 @@
+The model has 3 class(es).
+The class 'idm::StateMachine' has the following attributes: 'name' of type str.
+The class 'idm::State' has the following attributes: 'name' of type str.
+The class 'idm::Transition' has the following attributes: 'name' of type str.
+'idm::StateMachine' (role 'idm_StateMachine', cardinality 0..*) is associated with 'idm::State' (role 'idm_State', cardinality 0..*).
+'idm::Transition' (role 'from_', cardinality 0..*) is associated with 'idm::State' (role 'State', cardinality 0..*).
+'idm::Transition' (role 'Transition5', cardinality 0..*) is associated with 'idm::State' (role 'incoming', cardinality 0..*).
+'idm::Transition' (role 'to', cardinality 0..*) is associated with 'idm::State' (role 'State8', cardinality 0..*).
+'idm::Transition' (role 'Transition', cardinality 0..*) is associated with 'idm::State' (role 'outgoing', cardinality 0..*).
+'idm::StateMachine' (role 'idm_StateMachine2', cardinality 0..*) is associated with 'idm::Transition' (role 'idm_Transition', cardinality 0..*).

@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'Persons::Female' has no attributes.
+The class 'Persons::PersonRegister' has no attributes.
+The class 'Persons::Person' has the following attributes: 'birthday' of type date; 'name' of type str.
+The class 'Persons::Male' has no attributes.
+The class 'Person' has no attributes.
+'Persons::Male' is a specialization of 'Person'.
+'Persons::Female' is a specialization of 'Person'.
+'Persons::PersonRegister' (role 'personsInverse', cardinality 0..*) is associated with 'Persons::Person' (role 'Person', cardinality 0..*).
+'Persons::PersonRegister' (role 'PersonRegister', cardinality 0..*) is associated with 'Persons::Person' (role 'persons', cardinality 0..*).

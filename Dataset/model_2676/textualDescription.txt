@@ -1,0 +1,36 @@
+The model has 17 class(es).
+The class 'compmultinher::I' has no attributes.
+The class 'compmultinher::G' has no attributes.
+The class 'compmultinher::L' has no attributes.
+The class 'compmultinher::E' has no attributes.
+The class 'compmultinher::F' has no attributes.
+The class 'D' has no attributes.
+The class 'compmultinher::Named' has the following attributes: 'name' of type str.
+The class 'compmultinher::D' has no attributes.
+The class 'compmultinher::C' has no attributes.
+The class 'compmultinher::B' has no attributes.
+The class 'K' has no attributes.
+The class 'compmultinher::K' has no attributes.
+The class 'compmultinher::H' has no attributes.
+The class 'F' has no attributes.
+The class 'compmultinher::A' has no attributes.
+The class 'Named' has no attributes.
+The class 'B' has no attributes.
+'compmultinher::K' is a specialization of 'Named'.
+'compmultinher::C' is a specialization of 'Named'.
+'compmultinher::L' is a specialization of 'Named'.
+'compmultinher::F' is a specialization of 'D'.
+'compmultinher::I' is a specialization of 'F'.
+'compmultinher::E' is a specialization of 'Named'.
+'compmultinher::H' is a specialization of 'Named'.
+'compmultinher::D' is a specialization of 'B'.
+'compmultinher::B' is a specialization of 'Named'.
+'compmultinher::G' is a specialization of 'Named'.
+'compmultinher::I' is a specialization of 'K'.
+'compmultinher::K' (role 'compmultinher_K10', cardinality 0..*) is associated with 'compmultinher::L' (role 'compmultinher_L', cardinality 0..*).
+'compmultinher::A' (role 'compmultinher_A2', cardinality 0..*) is associated with 'compmultinher::K' (role 'compmultinher_K', cardinality 0..*).
+'compmultinher::A' (role 'compmultinher_A', cardinality 0..*) is associated with 'compmultinher::B' (role 'compmultinher_B', cardinality 0..*).
+'compmultinher::G' (role 'compmultinher_G', cardinality 0..*) is associated with 'compmultinher::F' (role 'compmultinher_F', cardinality 0..*).
+'compmultinher::D' (role 'compmultinher_D', cardinality 0..*) is associated with 'compmultinher::E' (role 'compmultinher_E', cardinality 0..*).
+'compmultinher::C' (role 'compmultinher_C', cardinality 0..*) is associated with 'compmultinher::B' (role 'compmultinher_B4', cardinality 0..*).
+'compmultinher::H' (role 'compmultinher_H', cardinality 0..*) is associated with 'compmultinher::F' (role 'compmultinher_F8', cardinality 0..*).

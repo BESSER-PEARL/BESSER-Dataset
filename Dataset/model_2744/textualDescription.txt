@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'MetamodelInheritance::BaseContainer' has no attributes.
+The class 'MetamodelInheritance::BaseContaineeA' has no attributes.
+The class 'MetamodelInheritance::BaseContaineeC' has no attributes.
+The class 'MetamodelInheritance::BaseContaineeB' has no attributes.
+'MetamodelInheritance::BaseContaineeA' (role 'MetamodelInheritance_BaseContaineeA', cardinality 0..*) is associated with 'MetamodelInheritance::BaseContainer' (role 'MetamodelInheritance_BaseContainer', cardinality 0..*).
+'MetamodelInheritance::BaseContainer' (role 'MetamodelInheritance_BaseContainer4', cardinality 0..*) is associated with 'MetamodelInheritance::BaseContaineeC' (role 'MetamodelInheritance_BaseContaineeC', cardinality 0..*).
+'MetamodelInheritance::BaseContainer' (role 'MetamodelInheritance_BaseContainer2', cardinality 0..*) is associated with 'MetamodelInheritance::BaseContaineeB' (role 'MetamodelInheritance_BaseContaineeB', cardinality 0..*).

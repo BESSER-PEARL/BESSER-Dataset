@@ -1,0 +1,47 @@
+The model has 12 class(es).
+The class 'ASD::Operation' has the following attributes: 'messagePattern' of type str.
+The class 'NamedElement' has no attributes.
+The class 'ASD::InfoType' has the following attributes: 'subset' of type str; 'valueType' of type str; 'valueRange' of type str.
+The class 'ASD::Assertion' has the following attributes: 'lType' of type str; 'role' of type str; 'dimensionType' of type str; 'maxVal' of type float; 'minVal' of type float; 'dimension' of type str; 'subset' of type str.
+The class 'ASD::Profile' has no attributes.
+The class 'InfoType' has no attributes.
+The class 'ASD::AssertionSet' has the following attributes: 'lType' of type str.
+The class 'ASD::InfoTypeImported' has the following attributes: 'url' of type str.
+The class 'ASD::ServiceDescription' has no attributes.
+The class 'ASD::Message' has the following attributes: 'role' of type str; 'subset' of type str.
+The class 'ASD::Annotation' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'ASD::NamedElement' has the following attributes: 'name' of type str.
+The enumeration 'EEnumMes' has the following literals: 'fault', 'input', 'output'.
+The enumeration 'EEnumDimensionType' has the following literals: 'monotonic', 'antitonic'.
+The enumeration 'EEnumlogicalType' has the following literals: 'OR', 'AND'.
+The enumeration 'EEnumOp' has the following literals: 'solicitresponse', 'requestresponse', 'oneway', 'notification'.
+The enumeration 'EEnumSubset' has the following literals: 'off', 'pro', 'req', 'exp'.
+The enumeration 'EEnumValueType' has the following literals: 'document', 'int', 'string', 'float', 'double', 'date'.
+The enumeration 'EEnumIntention' has the following literals: 'offering', 'expectation'.
+'ASD::InfoType' is a specialization of 'NamedElement'.
+'ASD::InfoTypeImported' is a specialization of 'InfoType'.
+'ASD::Operation' is a specialization of 'NamedElement'.
+'ASD::Profile' is a specialization of 'NamedElement'.
+'ASD::AssertionSet' is a specialization of 'NamedElement'.
+'ASD::Message' is a specialization of 'NamedElement'.
+'ASD::ServiceDescription' is a specialization of 'NamedElement'.
+'ASD::Assertion' is a specialization of 'NamedElement'.
+'ASD::Assertion' (role 'Assertion', cardinality 0..*) is associated with 'ASD::AssertionSet' (role 'set', cardinality 0..*).
+'ASD::InfoType' (role 'ASD_InfoType15', cardinality 0..*) is associated with 'ASD::InfoType' (role 'ASD_InfoType13', cardinality 0..*).
+'ASD::Profile' (role 'Profile25', cardinality 0..*) is associated with 'ASD::AssertionSet' (role 'sets', cardinality 0..*).
+'ASD::InfoType' (role 'ASD_InfoType', cardinality 0..*) is associated with 'ASD::InfoType' (role 'ASD_InfoType11', cardinality 0..*).
+'ASD::Operation' (role 'operations', cardinality 0..*) is associated with 'ASD::ServiceDescription' (role 'ServiceDescription', cardinality 0..*).
+'ASD::Profile' (role 'profile', cardinality 0..*) is associated with 'ASD::AssertionSet' (role 'AssertionSet', cardinality 0..*).
+'ASD::Operation' (role 'Operation', cardinality 0..*) is associated with 'ASD::ServiceDescription' (role 'service', cardinality 0..*).
+'ASD::Annotation' (role 'Annotation', cardinality 0..*) is associated with 'ASD::NamedElement' (role 'owner', cardinality 0..*).
+'ASD::ServiceDescription' (role 'ServiceDescription19', cardinality 0..*) is associated with 'ASD::InfoType' (role 'infotypes', cardinality 0..*).
+'ASD::Message' (role 'Message17', cardinality 0..*) is associated with 'ASD::InfoType' (role 'infoType', cardinality 0..*).
+'ASD::Operation' (role 'ASD_Operation', cardinality 0..*) is associated with 'ASD::Profile' (role 'ASD_Profile', cardinality 0..*).
+'ASD::Profile' (role 'Profile', cardinality 0..*) is associated with 'ASD::ServiceDescription' (role 'service4', cardinality 0..*).
+'ASD::Annotation' (role 'annotations', cardinality 0..*) is associated with 'ASD::NamedElement' (role 'NamedElement', cardinality 0..*).
+'ASD::ServiceDescription' (role 'ServiceDescription23', cardinality 0..*) is associated with 'ASD::Profile' (role 'profiles', cardinality 0..*).
+'ASD::Operation' (role 'operation', cardinality 0..*) is associated with 'ASD::Message' (role 'Message', cardinality 0..*).
+'ASD::Operation' (role 'Operation10', cardinality 0..*) is associated with 'ASD::Message' (role 'contents', cardinality 0..*).
+'ASD::AssertionSet' (role 'AssertionSet28', cardinality 0..*) is associated with 'ASD::Assertion' (role 'assertions', cardinality 0..*).
+'ASD::InfoType' (role 'InfoType8', cardinality 0..*) is associated with 'ASD::Message' (role 'message', cardinality 0..*).
+'ASD::ServiceDescription' (role 'service2', cardinality 0..*) is associated with 'ASD::InfoType' (role 'InfoType', cardinality 0..*).

@@ -1,0 +1,20 @@
+The model has 7 class(es).
+The class 'links::ChildNodeB' has no attributes.
+The class 'links::ChildNodeA' has no attributes.
+The class 'links::RootNodeB' has no attributes.
+The class 'links::RootNodeA' has no attributes.
+The class 'links::Child::AB::Element::Link' has no attributes.
+The class 'links::Root' has no attributes.
+The class 'links::Root::BA::Element::Link' has the following attributes: 'name' of type str.
+'links::Root' (role 'links_Root', cardinality 0..*) is associated with 'links::Child::AB::Element::Link' (role 'links_Child_AB_Element_Link', cardinality 0..*).
+'links::Root::BA::Element::Link' (role 'links_Root_BA_Element_Link24', cardinality 0..*) is associated with 'links::RootNodeB' (role 'links_RootNodeB25', cardinality 0..*).
+'links::ChildNodeB' (role 'links_ChildNodeB16', cardinality 0..*) is associated with 'links::ChildNodeA' (role 'links_ChildNodeA15', cardinality 0..*).
+'links::RootNodeA' (role 'links_RootNodeA13', cardinality 0..*) is associated with 'links::RootNodeB' (role 'links_RootNodeB12', cardinality 0..*).
+'links::ChildNodeB' (role 'links_ChildNodeB22', cardinality 0..*) is associated with 'links::Child::AB::Element::Link' (role 'links_Child_AB_Element_Link21', cardinality 0..*).
+'links::RootNodeA' (role 'links_RootNodeA28', cardinality 0..*) is associated with 'links::Root::BA::Element::Link' (role 'links_Root_BA_Element_Link27', cardinality 0..*).
+'links::Root' (role 'links_Root2', cardinality 0..*) is associated with 'links::RootNodeA' (role 'links_RootNodeA', cardinality 0..*).
+'links::ChildNodeA' (role 'links_ChildNodeA19', cardinality 0..*) is associated with 'links::Child::AB::Element::Link' (role 'links_Child_AB_Element_Link18', cardinality 0..*).
+'links::Root::BA::Element::Link' (role 'links_Root_BA_Element_Link', cardinality 0..*) is associated with 'links::Root' (role 'links_Root6', cardinality 0..*).
+'links::ChildNodeA' (role 'links_ChildNodeA', cardinality 0..*) is associated with 'links::RootNodeA' (role 'links_RootNodeA8', cardinality 0..*).
+'links::RootNodeB' (role 'links_RootNodeB10', cardinality 0..*) is associated with 'links::ChildNodeB' (role 'links_ChildNodeB', cardinality 0..*).
+'links::RootNodeB' (role 'links_RootNodeB', cardinality 0..*) is associated with 'links::Root' (role 'links_Root4', cardinality 0..*).

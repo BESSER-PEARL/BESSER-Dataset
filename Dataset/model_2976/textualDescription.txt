@@ -1,0 +1,99 @@
+The model has 40 class(es).
+The class 'CompleteDSLPckg::NamedElement' has the following attributes: 'name' of type str.
+The class 'CompleteDSLPckg::AndTrigger' has no attributes.
+The class 'CompleteDSLPckg::Block' has no attributes.
+The class 'CompleteDSLPckg::OrTrigger' has no attributes.
+The class 'CompleteDSLPckg::RelationalExpression' has the following attributes: 'operator' of type str.
+The class 'Statement' has no attributes.
+The class 'CompleteDSLPckg::Print' has no attributes.
+The class 'CompleteDSLPckg::BoolLit' has the following attributes: 'value' of type bool.
+The class 'CompleteDSLPckg::Transition' has no attributes.
+The class 'CompleteDSLPckg::Statement' has no attributes.
+The class 'Pseudostate' has no attributes.
+The class 'CompleteDSLPckg::Loop' has no attributes.
+The class 'CompleteDSLPckg::VarDecl' has the following attributes: 'name' of type str.
+The class 'CompleteDSLPckg::Expression' has no attributes.
+The class 'AbstractState' has no attributes.
+The class 'Literal' has no attributes.
+The class 'CompleteDSLPckg::State' has no attributes.
+The class 'CompleteDSLPckg::StringLit' has the following attributes: 'value' of type str.
+The class 'Expression' has no attributes.
+The class 'CompleteDSLPckg::Trigger' has the following attributes: 'expression' of type str.
+The class 'CompleteDSLPckg::ConsoleOutput' has the following attributes: 'input' of type str.
+The class 'NamedElement' has no attributes.
+The class 'CompleteDSLPckg::AbstractState' has no attributes.
+The class 'CompleteDSLPckg::NotTrigger' has no attributes.
+The class 'CompleteDSLPckg::Wait' has the following attributes: 'miliseconds' of type str.
+The class 'CompleteDSLPckg::Assignation' has no attributes.
+The class 'CompleteDSLPckg::Literal' has no attributes.
+The class 'CompleteDSLPckg::StateMachine' has no attributes.
+The class 'CompleteDSLPckg::VarRef' has the following attributes: 'ref' of type str.
+The class 'CompleteDSLPckg::InitialState' has no attributes.
+The class 'CompleteDSLPckg::Pseudostate' has no attributes.
+The class 'CompleteDSLPckg::Println' has no attributes.
+The class 'State' has no attributes.
+The class 'CompleteDSLPckg::FinalState' has no attributes.
+The class 'CompleteDSLPckg::Region' has no attributes.
+The class 'Trigger' has no attributes.
+The class 'ConsoleOutput' has no attributes.
+The class 'CompleteDSLPckg::ArithmeticExpression' has the following attributes: 'operator' of type str.
+The class 'CompleteDSLPckg::Conditional' has no attributes.
+The class 'CompleteDSLPckg::IntegerLit' has the following attributes: 'value' of type int.
+The enumeration 'ArithmeticOperator' has the following literals: 'mult', 'plus', 'minus', 'div'.
+The enumeration 'RelationalOperator' has the following literals: 'greaterThan', 'greaterThanOrEqualTo', 'notEqual', 'lessThanOrEqualTo', 'lessThan', 'equals'.
+'CompleteDSLPckg::Wait' is a specialization of 'Statement'.
+'CompleteDSLPckg::Pseudostate' is a specialization of 'AbstractState'.
+'CompleteDSLPckg::ConsoleOutput' is a specialization of 'Statement'.
+'CompleteDSLPckg::Literal' is a specialization of 'Expression'.
+'CompleteDSLPckg::VarDecl' is a specialization of 'Statement'.
+'CompleteDSLPckg::StringLit' is a specialization of 'Literal'.
+'CompleteDSLPckg::Transition' is a specialization of 'NamedElement'.
+'CompleteDSLPckg::State' is a specialization of 'AbstractState'.
+'CompleteDSLPckg::StateMachine' is a specialization of 'NamedElement'.
+'CompleteDSLPckg::VarRef' is a specialization of 'Expression'.
+'CompleteDSLPckg::NotTrigger' is a specialization of 'Trigger'.
+'CompleteDSLPckg::BoolLit' is a specialization of 'Literal'.
+'CompleteDSLPckg::Print' is a specialization of 'ConsoleOutput'.
+'CompleteDSLPckg::Conditional' is a specialization of 'Statement'.
+'CompleteDSLPckg::FinalState' is a specialization of 'State'.
+'CompleteDSLPckg::Loop' is a specialization of 'Statement'.
+'CompleteDSLPckg::Region' is a specialization of 'NamedElement'.
+'CompleteDSLPckg::Println' is a specialization of 'ConsoleOutput'.
+'CompleteDSLPckg::AbstractState' is a specialization of 'NamedElement'.
+'CompleteDSLPckg::InitialState' is a specialization of 'Pseudostate'.
+'CompleteDSLPckg::AndTrigger' is a specialization of 'Trigger'.
+'CompleteDSLPckg::Assignation' is a specialization of 'Statement'.
+'CompleteDSLPckg::OrTrigger' is a specialization of 'Trigger'.
+'CompleteDSLPckg::ArithmeticExpression' is a specialization of 'Expression'.
+'CompleteDSLPckg::IntegerLit' is a specialization of 'Literal'.
+'CompleteDSLPckg::RelationalExpression' is a specialization of 'Expression'.
+'CompleteDSLPckg::State' (role 'CompleteDSLPckg_State47', cardinality 0..*) is associated with 'CompleteDSLPckg::Block' (role 'CompleteDSLPckg_Block48', cardinality 0..*).
+'CompleteDSLPckg::Trigger' (role 'CompleteDSLPckg_Trigger63', cardinality 0..*) is associated with 'CompleteDSLPckg::AndTrigger' (role 'CompleteDSLPckg_AndTrigger', cardinality 0..*).
+'CompleteDSLPckg::AbstractState' (role 'CompleteDSLPckg_AbstractState', cardinality 0..*) is associated with 'CompleteDSLPckg::Region' (role 'CompleteDSLPckg_Region29', cardinality 0..*).
+'CompleteDSLPckg::Assignation' (role 'CompleteDSLPckg_Assignation25', cardinality 0..*) is associated with 'CompleteDSLPckg::Expression' (role 'CompleteDSLPckg_Expression26', cardinality 0..*).
+'CompleteDSLPckg::AndTrigger' (role 'CompleteDSLPckg_AndTrigger65', cardinality 0..*) is associated with 'CompleteDSLPckg::Trigger' (role 'CompleteDSLPckg_Trigger66', cardinality 0..*).
+'CompleteDSLPckg::Transition' (role 'CompleteDSLPckg_Transition', cardinality 0..*) is associated with 'CompleteDSLPckg::Region' (role 'CompleteDSLPckg_Region31', cardinality 0..*).
+'CompleteDSLPckg::StateMachine' (role 'CompleteDSLPckg_StateMachine', cardinality 0..*) is associated with 'CompleteDSLPckg::Region' (role 'CompleteDSLPckg_Region', cardinality 0..*).
+'CompleteDSLPckg::Block' (role 'CompleteDSLPckg_Block', cardinality 0..*) is associated with 'CompleteDSLPckg::Statement' (role 'CompleteDSLPckg_Statement', cardinality 0..*).
+'CompleteDSLPckg::Statement' (role 'CompleteDSLPckg_Statement14', cardinality 0..*) is associated with 'CompleteDSLPckg::Conditional' (role 'CompleteDSLPckg_Conditional13', cardinality 0..*).
+'CompleteDSLPckg::Trigger' (role 'CompleteDSLPckg_Trigger61', cardinality 0..*) is associated with 'CompleteDSLPckg::NotTrigger' (role 'CompleteDSLPckg_NotTrigger', cardinality 0..*).
+'CompleteDSLPckg::State' (role 'CompleteDSLPckg_State50', cardinality 0..*) is associated with 'CompleteDSLPckg::Block' (role 'CompleteDSLPckg_Block51', cardinality 0..*).
+'CompleteDSLPckg::Region' (role 'CompleteDSLPckg_Region43', cardinality 0..*) is associated with 'CompleteDSLPckg::AbstractState' (role 'CompleteDSLPckg_AbstractState42', cardinality 0..*).
+'CompleteDSLPckg::AbstractState' (role 'CompleteDSLPckg_AbstractState59', cardinality 0..*) is associated with 'CompleteDSLPckg::Transition' (role 'CompleteDSLPckg_Transition58', cardinality 0..*).
+'CompleteDSLPckg::Transition' (role 'CompleteDSLPckg_Transition55', cardinality 0..*) is associated with 'CompleteDSLPckg::AbstractState' (role 'CompleteDSLPckg_AbstractState56', cardinality 0..*).
+'CompleteDSLPckg::Loop' (role 'CompleteDSLPckg_Loop18', cardinality 0..*) is associated with 'CompleteDSLPckg::Statement' (role 'CompleteDSLPckg_Statement19', cardinality 0..*).
+'CompleteDSLPckg::Expression' (role 'CompleteDSLPckg_Expression', cardinality 0..*) is associated with 'CompleteDSLPckg::ArithmeticExpression' (role 'CompleteDSLPckg_ArithmeticExpression', cardinality 0..*).
+'CompleteDSLPckg::Expression' (role 'CompleteDSLPckg_Expression11', cardinality 0..*) is associated with 'CompleteDSLPckg::Conditional' (role 'CompleteDSLPckg_Conditional', cardinality 0..*).
+'CompleteDSLPckg::RelationalExpression' (role 'CompleteDSLPckg_RelationalExpression', cardinality 0..*) is associated with 'CompleteDSLPckg::Expression' (role 'CompleteDSLPckg_Expression5', cardinality 0..*).
+'CompleteDSLPckg::Region' (role 'CompleteDSLPckg_Region33', cardinality 0..*) is associated with 'CompleteDSLPckg::StateMachine' (role 'CompleteDSLPckg_StateMachine34', cardinality 0..*).
+'CompleteDSLPckg::AbstractState' (role 'CompleteDSLPckg_AbstractState36', cardinality 0..*) is associated with 'CompleteDSLPckg::Transition' (role 'CompleteDSLPckg_Transition37', cardinality 0..*).
+'CompleteDSLPckg::AbstractState' (role 'CompleteDSLPckg_AbstractState39', cardinality 0..*) is associated with 'CompleteDSLPckg::Transition' (role 'CompleteDSLPckg_Transition40', cardinality 0..*).
+'CompleteDSLPckg::OrTrigger' (role 'CompleteDSLPckg_OrTrigger70', cardinality 0..*) is associated with 'CompleteDSLPckg::Trigger' (role 'CompleteDSLPckg_Trigger71', cardinality 0..*).
+'CompleteDSLPckg::Expression' (role 'CompleteDSLPckg_Expression3', cardinality 0..*) is associated with 'CompleteDSLPckg::ArithmeticExpression' (role 'CompleteDSLPckg_ArithmeticExpression2', cardinality 0..*).
+'CompleteDSLPckg::Expression' (role 'CompleteDSLPckg_Expression8', cardinality 0..*) is associated with 'CompleteDSLPckg::RelationalExpression' (role 'CompleteDSLPckg_RelationalExpression7', cardinality 0..*).
+'CompleteDSLPckg::Loop' (role 'CompleteDSLPckg_Loop', cardinality 0..*) is associated with 'CompleteDSLPckg::Expression' (role 'CompleteDSLPckg_Expression16', cardinality 0..*).
+'CompleteDSLPckg::OrTrigger' (role 'CompleteDSLPckg_OrTrigger', cardinality 0..*) is associated with 'CompleteDSLPckg::Trigger' (role 'CompleteDSLPckg_Trigger68', cardinality 0..*).
+'CompleteDSLPckg::Expression' (role 'CompleteDSLPckg_Expression21', cardinality 0..*) is associated with 'CompleteDSLPckg::VarDecl' (role 'CompleteDSLPckg_VarDecl', cardinality 0..*).
+'CompleteDSLPckg::Trigger' (role 'CompleteDSLPckg_Trigger', cardinality 0..*) is associated with 'CompleteDSLPckg::Transition' (role 'CompleteDSLPckg_Transition53', cardinality 0..*).
+'CompleteDSLPckg::Block' (role 'CompleteDSLPckg_Block45', cardinality 0..*) is associated with 'CompleteDSLPckg::State' (role 'CompleteDSLPckg_State', cardinality 0..*).
+'CompleteDSLPckg::VarDecl' (role 'CompleteDSLPckg_VarDecl23', cardinality 0..*) is associated with 'CompleteDSLPckg::Assignation' (role 'CompleteDSLPckg_Assignation', cardinality 0..*).

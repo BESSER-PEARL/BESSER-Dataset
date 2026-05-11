@@ -1,0 +1,26 @@
+The model has 10 class(es).
+The class 'automata::NumberGuard' has the following attributes: 'operator' of type str; 'value' of type str.
+The class 'Guard' has no attributes.
+The class 'automata::Transition' has no attributes.
+The class 'automata::BooleanGuard' has the following attributes: 'operator' of type str; 'value' of type bool.
+The class 'automata::State' has the following attributes: 'initial' of type bool; 'name' of type str.
+The class 'automata::Action' has no attributes.
+The class 'automata::StringGuard' has the following attributes: 'value' of type str; 'operator' of type str.
+The class 'automata::Automaton' has no attributes.
+The class 'automata::Guard' has no attributes.
+The class 'automata::Variable' has the following attributes: 'type' of type str; 'name' of type str.
+The enumeration 'DataType' has the following literals: 'Number', 'String', 'Boolean'.
+The enumeration 'StringOperator' has the following literals: 'Unequal', 'Equal'.
+The enumeration 'BooleanOperator' has the following literals: 'Unequal', 'Equal'.
+The enumeration 'NumberOperator' has the following literals: 'Equal', 'Unequal'.
+'automata::BooleanGuard' is a specialization of 'Guard'.
+'automata::StringGuard' is a specialization of 'Guard'.
+'automata::NumberGuard' is a specialization of 'Guard'.
+'automata::Automaton' (role 'automata_Automaton', cardinality 0..*) is associated with 'automata::State' (role 'automata_State', cardinality 0..*).
+'automata::Transition' (role 'automata_Transition6', cardinality 0..*) is associated with 'automata::State' (role 'automata_State7', cardinality 0..*).
+'automata::Transition' (role 'automata_Transition', cardinality 0..*) is associated with 'automata::Automaton' (role 'automata_Automaton2', cardinality 0..*).
+'automata::Transition' (role 'automata_Transition9', cardinality 0..*) is associated with 'automata::State' (role 'automata_State10', cardinality 0..*).
+'automata::Variable' (role 'automata_Variable17', cardinality 0..*) is associated with 'automata::Action' (role 'automata_Action', cardinality 0..*).
+'automata::Transition' (role 'automata_Transition12', cardinality 0..*) is associated with 'automata::Guard' (role 'automata_Guard', cardinality 0..*).
+'automata::Variable' (role 'automata_Variable15', cardinality 0..*) is associated with 'automata::Guard' (role 'automata_Guard14', cardinality 0..*).
+'automata::Automaton' (role 'automata_Automaton4', cardinality 0..*) is associated with 'automata::Variable' (role 'automata_Variable', cardinality 0..*).

@@ -1,0 +1,12 @@
+The model has 8 class(es).
+The class 'test2::test2sub1::D2' has no attributes.
+The class 'D' has no attributes.
+The class 'test2::test2sub2::E' has no attributes.
+The class 'test2::C' has no attributes.
+The class 'test2::test2sub1::D' has no attributes.
+The class 'test2::B' has no attributes.
+The class 'B' has no attributes.
+The class 'test2::A' has no attributes.
+'test2::test2sub1::D2' is a specialization of 'D'.
+'test2::C' is a specialization of 'B'.
+'test2::A' (role 'test2_A', cardinality 0..*) is associated with 'test2::B' (role 'test2_B', cardinality 0..*).

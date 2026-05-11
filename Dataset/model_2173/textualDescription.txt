@@ -1,0 +1,55 @@
+The model has 15 class(es).
+The class 'TypeGraphBasic::TFieldSignature' has no attributes.
+The class 'TypeGraphBasic::TMethod' has the following attributes: 'tName' of type str.
+The class 'TypeGraphBasic::TClass' has the following attributes: 'tName' of type str.
+The class 'TypeGraphBasic::TPackage' has the following attributes: 'tName' of type str.
+The class 'TypeGraphBasic::TParameter' has no attributes.
+The class 'TypeGraphBasic::TParameterList' has no attributes.
+The class 'TypeGraphBasic::TMethodSignature' has no attributes.
+The class 'TypeGraphBasic::TMember' has no attributes.
+The class 'TSignature' has no attributes.
+The class 'TypeGraphBasic::TFieldDefinition' has no attributes.
+The class 'TypeGraphBasic::TypeGraph' has the following attributes: 'tName' of type str.
+The class 'TypeGraphBasic::TSignature' has no attributes.
+The class 'TMember' has no attributes.
+The class 'TypeGraphBasic::TMethodDefinition' has no attributes.
+The class 'TypeGraphBasic::TField' has the following attributes: 'tName' of type str.
+'TypeGraphBasic::TFieldDefinition' is a specialization of 'TMember'.
+'TypeGraphBasic::TMethodDefinition' is a specialization of 'TMember'.
+'TypeGraphBasic::TMethodSignature' is a specialization of 'TSignature'.
+'TypeGraphBasic::TFieldSignature' is a specialization of 'TSignature'.
+'TypeGraphBasic::TParameterList' (role 'TypeGraphBasic_TParameterList', cardinality 0..*) is associated with 'TypeGraphBasic::TMethodSignature' (role 'TypeGraphBasic_TMethodSignature', cardinality 0..*).
+'TypeGraphBasic::TFieldSignature' (role 'TypeGraphBasic_TFieldSignature', cardinality 0..*) is associated with 'TypeGraphBasic::TClass' (role 'TypeGraphBasic_TClass21', cardinality 0..*).
+'TypeGraphBasic::TParameter' (role 'TypeGraphBasic_TParameter', cardinality 0..*) is associated with 'TypeGraphBasic::TClass' (role 'TypeGraphBasic_TClass62', cardinality 0..*).
+'TypeGraphBasic::TParameter' (role 'next', cardinality 0..*) is associated with 'TypeGraphBasic::TParameter' (role 'TParameter60', cardinality 0..*).
+'TypeGraphBasic::TypeGraph' (role 'TypeGraphBasic_TypeGraph73', cardinality 0..*) is associated with 'TypeGraphBasic::TField' (role 'TypeGraphBasic_TField', cardinality 0..*).
+'TypeGraphBasic::TClass' (role 'childClasses', cardinality 0..*) is associated with 'TypeGraphBasic::TClass' (role 'TClass', cardinality 0..*).
+'TypeGraphBasic::TFieldDefinition' (role 'TFieldDefinition18', cardinality 0..*) is associated with 'TypeGraphBasic::TFieldSignature' (role 'signature', cardinality 0..*).
+'TypeGraphBasic::TMethodDefinition' (role 'TMethodDefinition33', cardinality 0..*) is associated with 'TypeGraphBasic::TMethodDefinition' (role 'overriding', cardinality 0..*).
+'TypeGraphBasic::TClass' (role 'TypeGraphBasic_TClass', cardinality 0..*) is associated with 'TypeGraphBasic::TSignature' (role 'TypeGraphBasic_TSignature', cardinality 0..*).
+'TypeGraphBasic::TMethod' (role 'method', cardinality 0..*) is associated with 'TypeGraphBasic::TMethodSignature' (role 'TMethodSignature', cardinality 0..*).
+'TypeGraphBasic::TFieldDefinition' (role 'TFieldDefinition16', cardinality 0..*) is associated with 'TypeGraphBasic::TFieldDefinition' (role 'hiding', cardinality 0..*).
+'TypeGraphBasic::TMember' (role 'TypeGraphBasic_TMember22', cardinality 0..*) is associated with 'TypeGraphBasic::TMember' (role 'TypeGraphBasic_TMember24', cardinality 0..*).
+'TypeGraphBasic::TClass' (role 'TClass8', cardinality 0..*) is associated with 'TypeGraphBasic::TClass' (role 'parentClass', cardinality 0..*).
+'TypeGraphBasic::TMethodSignature' (role 'signature46', cardinality 0..*) is associated with 'TypeGraphBasic::TMethodDefinition' (role 'TMethodDefinition47', cardinality 0..*).
+'TypeGraphBasic::TPackage' (role 'subpackage', cardinality 0..*) is associated with 'TypeGraphBasic::TPackage' (role 'TPackage55', cardinality 0..*).
+'TypeGraphBasic::TypeGraph' (role 'TypeGraphBasic_TypeGraph', cardinality 0..*) is associated with 'TypeGraphBasic::TPackage' (role 'TypeGraphBasic_TPackage', cardinality 0..*).
+'TypeGraphBasic::TParameter' (role 'TypeGraphBasic_TParameter65', cardinality 0..*) is associated with 'TypeGraphBasic::TParameterList' (role 'TypeGraphBasic_TParameterList64', cardinality 0..*).
+'TypeGraphBasic::TField' (role 'TField', cardinality 0..*) is associated with 'TypeGraphBasic::TFieldSignature' (role 'signatures', cardinality 0..*).
+'TypeGraphBasic::TClass' (role 'containedClasses', cardinality 0..*) is associated with 'TypeGraphBasic::TPackage' (role 'TPackage', cardinality 0..*).
+'TypeGraphBasic::TMethodDefinition' (role 'TMethodDefinition36', cardinality 0..*) is associated with 'TypeGraphBasic::TMethodDefinition' (role 'overloadedBy', cardinality 0..*).
+'TypeGraphBasic::TMethodDefinition' (role 'overriddenBy', cardinality 0..*) is associated with 'TypeGraphBasic::TMethodDefinition' (role 'TMethodDefinition', cardinality 0..*).
+'TypeGraphBasic::TPackage' (role 'package', cardinality 0..*) is associated with 'TypeGraphBasic::TClass' (role 'TClass49', cardinality 0..*).
+'TypeGraphBasic::TField' (role 'field', cardinality 0..*) is associated with 'TypeGraphBasic::TFieldSignature' (role 'TFieldSignature', cardinality 0..*).
+'TypeGraphBasic::TFieldDefinition' (role 'TFieldDefinition', cardinality 0..*) is associated with 'TypeGraphBasic::TFieldDefinition' (role 'hiddenBy', cardinality 0..*).
+'TypeGraphBasic::TMethodSignature' (role 'signatures43', cardinality 0..*) is associated with 'TypeGraphBasic::TMethod' (role 'TMethod', cardinality 0..*).
+'TypeGraphBasic::TMember' (role 'TypeGraphBasic_TMember', cardinality 0..*) is associated with 'TypeGraphBasic::TClass' (role 'TypeGraphBasic_TClass3', cardinality 0..*).
+'TypeGraphBasic::TFieldSignature' (role 'TFieldSignature11', cardinality 0..*) is associated with 'TypeGraphBasic::TFieldDefinition' (role 'definitions', cardinality 0..*).
+'TypeGraphBasic::TPackage' (role 'parent', cardinality 0..*) is associated with 'TypeGraphBasic::TPackage' (role 'TPackage52', cardinality 0..*).
+'TypeGraphBasic::TClass' (role 'TypeGraphBasic_TClass41', cardinality 0..*) is associated with 'TypeGraphBasic::TMethodDefinition' (role 'TypeGraphBasic_TMethodDefinition', cardinality 0..*).
+'TypeGraphBasic::TParameterList' (role 'TypeGraphBasic_TParameterList67', cardinality 0..*) is associated with 'TypeGraphBasic::TParameter' (role 'TypeGraphBasic_TParameter68', cardinality 0..*).
+'TypeGraphBasic::TypeGraph' (role 'TypeGraphBasic_TypeGraph71', cardinality 0..*) is associated with 'TypeGraphBasic::TMethod' (role 'TypeGraphBasic_TMethod', cardinality 0..*).
+'TypeGraphBasic::TMethodDefinition' (role 'definitions27', cardinality 0..*) is associated with 'TypeGraphBasic::TMethodSignature' (role 'TMethodSignature28', cardinality 0..*).
+'TypeGraphBasic::TParameter' (role 'TParameter', cardinality 0..*) is associated with 'TypeGraphBasic::TParameter' (role 'previous', cardinality 0..*).
+'TypeGraphBasic::TMethodDefinition' (role 'TMethodDefinition39', cardinality 0..*) is associated with 'TypeGraphBasic::TMethodDefinition' (role 'overloading', cardinality 0..*).
+'TypeGraphBasic::TypeGraph' (role 'TypeGraphBasic_TypeGraph75', cardinality 0..*) is associated with 'TypeGraphBasic::TClass' (role 'TypeGraphBasic_TClass76', cardinality 0..*).

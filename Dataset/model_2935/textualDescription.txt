@@ -1,0 +1,24 @@
+The model has 12 class(es).
+The class 'Type' has no attributes.
+The class 'domainDsl::Entity' has no attributes.
+The class 'domainDsl::Type' has the following attributes: 'name' of type str.
+The class 'domainDsl::PackageDeclaration' has the following attributes: 'name' of type str.
+The class 'domainDsl::DataType' has no attributes.
+The class 'domainDsl::Validator' has the following attributes: 'value' of type int; 'name' of type str; 'svalue' of type str.
+The class 'domainDsl::Domainmodel' has no attributes.
+The class 'domainDsl::EType' has the following attributes: 'name' of type str.
+The class 'domainDsl::AbstractElement' has no attributes.
+The class 'domainDsl::Feature' has the following attributes: 'defaultVal' of type str; 'name' of type str; 'many' of type bool.
+The class 'domainDsl::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'AbstractElement' has no attributes.
+'domainDsl::DataType' is a specialization of 'Type'.
+'domainDsl::Entity' is a specialization of 'Type'.
+'domainDsl::PackageDeclaration' is a specialization of 'AbstractElement'.
+'domainDsl::Import' is a specialization of 'AbstractElement'.
+'domainDsl::Type' is a specialization of 'AbstractElement'.
+'domainDsl::Validator' (role 'domainDsl_Validator', cardinality 0..*) is associated with 'domainDsl::Feature' (role 'domainDsl_Feature10', cardinality 0..*).
+'domainDsl::Feature' (role 'domainDsl_Feature8', cardinality 0..*) is associated with 'domainDsl::Type' (role 'domainDsl_Type', cardinality 0..*).
+'domainDsl::Feature' (role 'domainDsl_Feature', cardinality 0..*) is associated with 'domainDsl::Entity' (role 'domainDsl_Entity6', cardinality 0..*).
+'domainDsl::Domainmodel' (role 'domainDsl_Domainmodel', cardinality 0..*) is associated with 'domainDsl::AbstractElement' (role 'domainDsl_AbstractElement', cardinality 0..*).
+'domainDsl::AbstractElement' (role 'domainDsl_AbstractElement2', cardinality 0..*) is associated with 'domainDsl::PackageDeclaration' (role 'domainDsl_PackageDeclaration', cardinality 0..*).
+'domainDsl::Entity' (role 'domainDsl_Entity', cardinality 0..*) is associated with 'domainDsl::Entity' (role 'domainDsl_Entity3', cardinality 0..*).

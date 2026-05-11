@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'B::B' has the following attributes: 'b' of type int.
+The class 'B::RootB' has no attributes.
+'B::B' (role 'bs', cardinality 0..*) is associated with 'B::RootB' (role 'RootB', cardinality 0..*).
+'B::B' (role 'B', cardinality 0..*) is associated with 'B::RootB' (role 'root', cardinality 0..*).

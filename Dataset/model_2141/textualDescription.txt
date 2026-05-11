@@ -1,0 +1,38 @@
+The model has 17 class(es).
+The class 'WT::Subsystem' has the following attributes: 'name' of type str.
+The class 'WT::Architecture' has the following attributes: 'name' of type str.
+The class 'WT::OutPort' has no attributes.
+The class 'WT::Edge' has no attributes.
+The class 'Port' has no attributes.
+The class 'WT::WTComponents' has the following attributes: 'name' of type str.
+The class 'Vertex' has no attributes.
+The class 'DocumentElt' has no attributes.
+The class 'WT::StateMachine' has the following attributes: 'name' of type str.
+The class 'WT::ControlSubsystem' has the following attributes: 'name' of type str.
+The class 'WT::InitialState' has no attributes.
+The class 'WT::SimpleState' has no attributes.
+The class 'WT::InPort' has no attributes.
+The class 'WT::Vertex' has no attributes.
+The class 'WT::DocumentElt' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'WT::Port' has the following attributes: 'label' of type str.
+The class 'WT::Component' has the following attributes: 'label' of type str.
+'WT::OutPort' is a specialization of 'Port'.
+'WT::Vertex' is a specialization of 'DocumentElt'.
+'WT::Edge' is a specialization of 'DocumentElt'.
+'WT::InitialState' is a specialization of 'Vertex'.
+'WT::SimpleState' is a specialization of 'Vertex'.
+'WT::InPort' is a specialization of 'Port'.
+'WT::StateMachine' (role 'WT_StateMachine26', cardinality 0..*) is associated with 'WT::Component' (role 'WT_Component25', cardinality 0..*).
+'WT::Subsystem' (role 'WT_Subsystem1', cardinality 0..*) is associated with 'WT::Subsystem' (role 'WT_Subsystem3', cardinality 0..*).
+'WT::Vertex' (role 'Vertex', cardinality 0..*) is associated with 'WT::Edge' (role 'outgoing', cardinality 0..*).
+'WT::Subsystem' (role 'WT_Subsystem', cardinality 0..*) is associated with 'WT::WTComponents' (role 'WT_WTComponents', cardinality 0..*).
+'WT::ControlSubsystem' (role 'WT_ControlSubsystem11', cardinality 0..*) is associated with 'WT::StateMachine' (role 'WT_StateMachine', cardinality 0..*).
+'WT::StateMachine' (role 'WT_StateMachine15', cardinality 0..*) is associated with 'WT::Edge' (role 'WT_Edge', cardinality 0..*).
+'WT::Port' (role 'WT_Port', cardinality 0..*) is associated with 'WT::Component' (role 'WT_Component23', cardinality 0..*).
+'WT::Subsystem' (role 'WT_Subsystem5', cardinality 0..*) is associated with 'WT::Architecture' (role 'WT_Architecture', cardinality 0..*).
+'WT::Vertex' (role 'source', cardinality 0..*) is associated with 'WT::Edge' (role 'Edge', cardinality 0..*).
+'WT::Vertex' (role 'WT_Vertex', cardinality 0..*) is associated with 'WT::StateMachine' (role 'WT_StateMachine13', cardinality 0..*).
+'WT::Architecture' (role 'WT_Architecture9', cardinality 0..*) is associated with 'WT::Component' (role 'WT_Component', cardinality 0..*).
+'WT::Edge' (role 'Edge18', cardinality 0..*) is associated with 'WT::Vertex' (role 'target', cardinality 0..*).
+'WT::ControlSubsystem' (role 'WT_ControlSubsystem', cardinality 0..*) is associated with 'WT::Subsystem' (role 'WT_Subsystem7', cardinality 0..*).
+'WT::Edge' (role 'incoming', cardinality 0..*) is associated with 'WT::Vertex' (role 'Vertex21', cardinality 0..*).

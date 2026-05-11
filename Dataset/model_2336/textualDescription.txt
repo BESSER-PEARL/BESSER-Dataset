@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'PersonsRegister::PersonsRegister' has no attributes.
+The class 'PersonsRegister::Person' has the following attributes: 'identity' of type str; 'lastName' of type str; 'firstName' of type str.
+'PersonsRegister::PersonsRegister' (role 'PersonsRegister_PersonsRegister', cardinality 0..*) is associated with 'PersonsRegister::Person' (role 'PersonsRegister_Person', cardinality 0..*).

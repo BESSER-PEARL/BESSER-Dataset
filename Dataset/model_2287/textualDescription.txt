@@ -1,0 +1,24 @@
+The model has 9 class(es).
+The class 'Task' has no attributes.
+The class 'gsml::Grading' has the following attributes: 'Semester' of type str.
+The class 'gsml::Task' has the following attributes: 'MinRequirement' of type float; 'MinRequirementType' of type str; 'Name' of type str.
+The class 'gsml::Grade' has the following attributes: 'Name' of type str; 'RequiredPoints' of type float.
+The class 'gsml::GradingScheme' has no attributes.
+The class 'gsml::ConcreteTask' has the following attributes: 'MaxPoints' of type float.
+The class 'gsml::Course' has the following attributes: 'Name' of type str.
+The class 'gsml::GradingSystem' has no attributes.
+The class 'gsml::TaskGroup' has no attributes.
+The enumeration 'MinRequirementType' has the following literals: 'Relative', 'Absolute'.
+'gsml::TaskGroup' is a specialization of 'Task'.
+'gsml::ConcreteTask' is a specialization of 'Task'.
+'gsml::Course' (role 'gsml_Course2', cardinality 0..*) is associated with 'gsml::GradingScheme' (role 'gsml_GradingScheme', cardinality 0..*).
+'gsml::GradingScheme' (role 'gsml_GradingScheme19', cardinality 0..*) is associated with 'gsml::Grading' (role 'gsml_Grading18', cardinality 0..*).
+'gsml::TaskGroup' (role 'gsml_TaskGroup', cardinality 0..*) is associated with 'gsml::Task' (role 'gsml_Task', cardinality 0..*).
+'gsml::Grade' (role 'gsml_Grade14', cardinality 0..*) is associated with 'gsml::GradingScheme' (role 'gsml_GradingScheme13', cardinality 0..*).
+'gsml::Course' (role 'gsml_Course', cardinality 0..*) is associated with 'gsml::Grading' (role 'gsml_Grading', cardinality 0..*).
+'gsml::Task' (role 'gsml_Task25', cardinality 0..*) is associated with 'gsml::Grading' (role 'gsml_Grading24', cardinality 0..*).
+'gsml::Grade' (role 'gsml_Grade', cardinality 0..*) is associated with 'gsml::GradingScheme' (role 'gsml_GradingScheme11', cardinality 0..*).
+'gsml::Grading' (role 'gsml_Grading21', cardinality 0..*) is associated with 'gsml::Task' (role 'gsml_Task22', cardinality 0..*).
+'gsml::Course' (role 'gsml_Course7', cardinality 0..*) is associated with 'gsml::GradingScheme' (role 'gsml_GradingScheme8', cardinality 0..*).
+'gsml::GradingSystem' (role 'gsml_GradingSystem', cardinality 0..*) is associated with 'gsml::Course' (role 'gsml_Course16', cardinality 0..*).
+'gsml::GradingScheme' (role 'gsml_GradingScheme5', cardinality 0..*) is associated with 'gsml::Course' (role 'gsml_Course4', cardinality 0..*).

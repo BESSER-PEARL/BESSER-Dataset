@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'Feature' has no attributes.
+The class 'featuretree::FeatureTree' has no attributes.
+The class 'core::ITopLevelElement' has no attributes.
+The class 'featuretree::TreeFeature' has the following attributes: 'mandatory' of type bool.
+The class 'core::AbstractModelElement' has no attributes.
+The class 'features::IFeatureDomain' has no attributes.
+'featuretree::TreeFeature' is a specialization of 'Feature'.
+'featuretree::FeatureTree' is a specialization of 'features::IFeatureDomain'.
+'featuretree::FeatureTree' is a specialization of 'core::AbstractModelElement'.
+'featuretree::FeatureTree' is a specialization of 'core::ITopLevelElement'.
+'featuretree::TreeFeature' (role 'featuretree_TreeFeature3', cardinality 0..*) is associated with 'featuretree::TreeFeature' (role 'featuretree_TreeFeature1', cardinality 0..*).
+'featuretree::TreeFeature' (role 'featuretree_TreeFeature', cardinality 0..*) is associated with 'featuretree::FeatureTree' (role 'featuretree_FeatureTree', cardinality 0..*).

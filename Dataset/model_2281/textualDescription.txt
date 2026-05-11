@@ -1,0 +1,16 @@
+The model has 6 class(es).
+The class 'model::Student' has the following attributes: 'ID' of type int; 'name' of type str.
+The class 'model::Exercise' has the following attributes: 'deadline_date' of type date; 'ID' of type int.
+The class 'model::Response' has the following attributes: 'comment' of type str; 'ok' of type bool; 'ID' of type int.
+The class 'model::Course' has the following attributes: 'ID' of type int; 'name' of type str.
+The class 'model::Delivery' has the following attributes: 'submission_date' of type date; 'ID' of type int; 'answer' of type str; 'group_number' of type int.
+The class 'model::root' has no attributes.
+'model::Delivery' (role 'model_Delivery', cardinality 0..*) is associated with 'model::root' (role 'model_root4', cardinality 0..*).
+'model::Course' (role 'model_Course17', cardinality 0..*) is associated with 'model::Exercise' (role 'model_Exercise18', cardinality 0..*).
+'model::Student' (role 'model_Student6', cardinality 0..*) is associated with 'model::Course' (role 'model_Course7', cardinality 0..*).
+'model::Delivery' (role 'model_Delivery10', cardinality 0..*) is associated with 'model::Student' (role 'model_Student9', cardinality 0..*).
+'model::Student' (role 'model_Student15', cardinality 0..*) is associated with 'model::Exercise' (role 'model_Exercise14', cardinality 0..*).
+'model::Delivery' (role 'model_Delivery20', cardinality 0..*) is associated with 'model::Response' (role 'model_Response', cardinality 0..*).
+'model::Delivery' (role 'model_Delivery12', cardinality 0..*) is associated with 'model::Exercise' (role 'model_Exercise', cardinality 0..*).
+'model::Course' (role 'model_Course', cardinality 0..*) is associated with 'model::root' (role 'model_root2', cardinality 0..*).
+'model::Student' (role 'model_Student', cardinality 0..*) is associated with 'model::root' (role 'model_root', cardinality 0..*).

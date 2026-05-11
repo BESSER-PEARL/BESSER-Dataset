@@ -1,0 +1,24 @@
+The model has 8 class(es).
+The class 'e2::LectureContent' has the following attributes: 'Type' of type str; 'Material' of type str.
+The class 'e2::Course' has the following attributes: 'ID' of type str; 'Credit' of type float; 'Name' of type str.
+The class 'e2::Lecture' has the following attributes: 'Date' of type date; 'Length' of type int.
+The class 'e2::AssignmentSubmission' has the following attributes: 'Comments' of type str; 'Assessment' of type int.
+The class 'e2::Assingnment' has the following attributes: 'Title' of type str; 'isMandatory' of type bool; 'StartDate' of type date; 'Content' of type str; 'Deadline' of type date; 'Type' of type str.
+The class 'e2::Group' has the following attributes: 'Name' of type str.
+The class 'e2::Person' has the following attributes: 'Name' of type str.
+The class 'e2::University' has the following attributes: 'Name' of type str.
+'e2::University' (role 'e2_University', cardinality 0..*) is associated with 'e2::Person' (role 'e2_Person30', cardinality 0..*).
+'e2::Assingnment' (role 'e2_Assingnment', cardinality 0..*) is associated with 'e2::Course' (role 'e2_Course8', cardinality 0..*).
+'e2::Course' (role 'e2_Course5', cardinality 0..*) is associated with 'e2::Person' (role 'e2_Person6', cardinality 0..*).
+'e2::Lecture' (role 'e2_Lecture', cardinality 0..*) is associated with 'e2::LectureContent' (role 'e2_LectureContent', cardinality 0..*).
+'e2::AssignmentSubmission' (role 'e2_AssignmentSubmission24', cardinality 0..*) is associated with 'e2::Assingnment' (role 'e2_Assingnment25', cardinality 0..*).
+'e2::Course' (role 'e2_Course', cardinality 0..*) is associated with 'e2::Person' (role 'e2_Person3', cardinality 0..*).
+'e2::Course' (role 'e2_Course13', cardinality 0..*) is associated with 'e2::Group' (role 'e2_Group', cardinality 0..*).
+'e2::Person' (role 'e2_Person28', cardinality 0..*) is associated with 'e2::AssignmentSubmission' (role 'e2_AssignmentSubmission27', cardinality 0..*).
+'e2::Person' (role 'e2_Person16', cardinality 0..*) is associated with 'e2::Course' (role 'e2_Course15', cardinality 0..*).
+'e2::Person' (role 'e2_Person', cardinality 0..*) is associated with 'e2::AssignmentSubmission' (role 'e2_AssignmentSubmission', cardinality 0..*).
+'e2::Lecture' (role 'e2_Lecture11', cardinality 0..*) is associated with 'e2::Course' (role 'e2_Course10', cardinality 0..*).
+'e2::University' (role 'e2_University32', cardinality 0..*) is associated with 'e2::Course' (role 'e2_Course33', cardinality 0..*).
+'e2::Group' (role 'e2_Group18', cardinality 0..*) is associated with 'e2::Person' (role 'e2_Person19', cardinality 0..*).
+'e2::AssignmentSubmission' (role 'e2_AssignmentSubmission22', cardinality 0..*) is associated with 'e2::Group' (role 'e2_Group21', cardinality 0..*).
+'e2::LectureContent' (role 'e2_LectureContent35', cardinality 0..*) is associated with 'e2::Assingnment' (role 'e2_Assingnment36', cardinality 0..*).

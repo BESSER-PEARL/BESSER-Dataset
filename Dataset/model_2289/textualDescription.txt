@@ -1,0 +1,22 @@
+The model has 10 class(es).
+The class 'gradingsystem::GradingSystem' has no attributes.
+The class 'gradingsystem::Course' has the following attributes: 'name' of type str.
+The class 'gradingsystem::ConcreteTask' has the following attributes: 'maxPoints' of type int.
+The class 'gradingsystem::Grade' has the following attributes: 'name' of type str; 'requiredPoints' of type int.
+The class 'gradingsystem::Grading' has the following attributes: 'semester' of type str.
+The class 'gradingsystem::TaskGroup' has no attributes.
+The class 'gradingsystem::GradingScheme' has no attributes.
+The class 'gradingsystem::MinRequirement' has the following attributes: 'value' of type int; 'type' of type str.
+The class 'gradingsystem::Task' has the following attributes: 'name' of type str.
+The class 'Task' has no attributes.
+The enumeration 'MinRequirementsType' has the following literals: 'Percentage', 'Absolute'.
+'gradingsystem::ConcreteTask' is a specialization of 'Task'.
+'gradingsystem::TaskGroup' is a specialization of 'Task'.
+'gradingsystem::Grading' (role 'gradingsystem_Grading11', cardinality 0..*) is associated with 'gradingsystem::Task' (role 'gradingsystem_Task12', cardinality 0..*).
+'gradingsystem::Course' (role 'gradingsystem_Course2', cardinality 0..*) is associated with 'gradingsystem::Grading' (role 'gradingsystem_Grading', cardinality 0..*).
+'gradingsystem::TaskGroup' (role 'gradingsystem_TaskGroup', cardinality 0..*) is associated with 'gradingsystem::Task' (role 'gradingsystem_Task5', cardinality 0..*).
+'gradingsystem::GradingScheme' (role 'gradingsystem_GradingScheme8', cardinality 0..*) is associated with 'gradingsystem::Grade' (role 'gradingsystem_Grade9', cardinality 0..*).
+'gradingsystem::Course' (role 'gradingsystem_Course', cardinality 0..*) is associated with 'gradingsystem::GradingSystem' (role 'gradingsystem_GradingSystem', cardinality 0..*).
+'gradingsystem::GradingScheme' (role 'gradingsystem_GradingScheme', cardinality 0..*) is associated with 'gradingsystem::Grade' (role 'gradingsystem_Grade', cardinality 0..*).
+'gradingsystem::Grading' (role 'gradingsystem_Grading14', cardinality 0..*) is associated with 'gradingsystem::GradingScheme' (role 'gradingsystem_GradingScheme15', cardinality 0..*).
+'gradingsystem::MinRequirement' (role 'gradingsystem_MinRequirement', cardinality 0..*) is associated with 'gradingsystem::Task' (role 'gradingsystem_Task', cardinality 0..*).

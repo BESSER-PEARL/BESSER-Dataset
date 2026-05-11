@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/tue-mdse/ocl-dataset/dataset/repos/Gabitchov/org.eclipse.papyrus/tests/junit/plugins/customization/org.eclipse.papyrus.customization.properties.tests/resources/Sample.ecore

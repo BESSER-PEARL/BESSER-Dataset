@@ -1,0 +1,19 @@
+The model has 6 class(es).
+The class 'studyplan::SemesterCourse' has the following attributes: 'status' of type str.
+The class 'studyplan::Program' has the following attributes: 'name' of type str; 'code' of type str.
+The class 'studyplan::Department' has the following attributes: 'name' of type str.
+The class 'studyplan::Semester' has the following attributes: 'name' of type str; 'year' of type int; 'season' of type str.
+The class 'studyplan::Course' has the following attributes: 'code' of type str; 'credits' of type float; 'name' of type str.
+The class 'studyplan::Specialization' has the following attributes: 'name' of type str.
+The enumeration 'Season' has the following literals: 'FALL', 'SPRING'.
+The enumeration 'CourseStatus' has the following literals: 'MANDATORY', 'ELECTIVE'.
+'studyplan::Specialization' (role 'studyplan_Specialization9', cardinality 0..*) is associated with 'studyplan::Specialization' (role 'studyplan_Specialization11', cardinality 0..*).
+'studyplan::Program' (role 'studyplan_Program2', cardinality 0..*) is associated with 'studyplan::Specialization' (role 'studyplan_Specialization', cardinality 0..*).
+'studyplan::Specialization' (role 'studyplan_Specialization7', cardinality 0..*) is associated with 'studyplan::Semester' (role 'studyplan_Semester8', cardinality 0..*).
+'studyplan::SemesterCourse' (role 'studyplan_SemesterCourse', cardinality 0..*) is associated with 'studyplan::Semester' (role 'studyplan_Semester5', cardinality 0..*).
+'studyplan::Course' (role 'courses', cardinality 0..*) is associated with 'studyplan::Department' (role 'Department13', cardinality 0..*).
+'studyplan::Department' (role 'department18', cardinality 0..*) is associated with 'studyplan::Program' (role 'Program', cardinality 0..*).
+'studyplan::Program' (role 'programs', cardinality 0..*) is associated with 'studyplan::Department' (role 'Department', cardinality 0..*).
+'studyplan::Program' (role 'studyplan_Program', cardinality 0..*) is associated with 'studyplan::Semester' (role 'studyplan_Semester', cardinality 0..*).
+'studyplan::Course' (role 'studyplan_Course', cardinality 0..*) is associated with 'studyplan::SemesterCourse' (role 'studyplan_SemesterCourse15', cardinality 0..*).
+'studyplan::Course' (role 'Course', cardinality 0..*) is associated with 'studyplan::Department' (role 'department', cardinality 0..*).

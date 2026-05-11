@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'direction::C' has no attributes.
+The class 'A' has no attributes.
+The class 'direction::B' has no attributes.
+The class 'direction::A' has the following attributes: 'name' of type str.
+'direction::B' is a specialization of 'A'.
+'direction::C' (role 'direction_C', cardinality 0..*) is associated with 'direction::A' (role 'direction_A', cardinality 0..*).
+'direction::C' (role 'direction_C2', cardinality 0..*) is associated with 'direction::B' (role 'direction_B', cardinality 0..*).

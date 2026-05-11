@@ -1,0 +1,16 @@
+The model has 5 class(es).
+The class 'university::Student' has the following attributes: 'semester' of type int; 'MNR' of type str.
+The class 'university::Course' has the following attributes: 'gradeAverage' of type float; 'name' of type str; 'numberOfAttendants' of type int.
+The class 'university::Certificate' has the following attributes: 'note' of type int.
+The class 'university::Professor' has the following attributes: 'name' of type str.
+The class 'university::University' has the following attributes: 'numberOfStudents' of type int; 'name' of type str; 'averageLength' of type float.
+'university::Student' (role 'university_Student', cardinality 0..*) is associated with 'university::University' (role 'university_University7', cardinality 0..*).
+'university::Professor' (role 'Professor', cardinality 0..*) is associated with 'university::Course' (role 'courses', cardinality 0..*).
+'university::Course' (role 'Course', cardinality 0..*) is associated with 'university::Professor' (role 'professor', cardinality 0..*).
+'university::Certificate' (role 'studentCertificates', cardinality 0..*) is associated with 'university::Student' (role 'Student', cardinality 0..*).
+'university::University' (role 'university_University5', cardinality 0..*) is associated with 'university::Course' (role 'university_Course', cardinality 0..*).
+'university::Student' (role 'student', cardinality 0..*) is associated with 'university::Certificate' (role 'Certificate11', cardinality 0..*).
+'university::University' (role 'university_University9', cardinality 0..*) is associated with 'university::Certificate' (role 'university_Certificate', cardinality 0..*).
+'university::Certificate' (role 'courseCertificates', cardinality 0..*) is associated with 'university::Course' (role 'Course14', cardinality 0..*).
+'university::Professor' (role 'university_Professor', cardinality 0..*) is associated with 'university::University' (role 'university_University', cardinality 0..*).
+'university::Course' (role 'course', cardinality 0..*) is associated with 'university::Certificate' (role 'Certificate', cardinality 0..*).

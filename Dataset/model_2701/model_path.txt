@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/viatra/org.eclipse.viatra/query/tests/org.eclipse.viatra.query.runtime.cps.tests/models/dynamic/model.ecore

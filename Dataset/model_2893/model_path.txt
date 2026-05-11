@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/dslmeinte/xtext-workshop-code1/org.xtext.workshop.webgui/src-gen/org/xtext/workshop/WebGui.ecore

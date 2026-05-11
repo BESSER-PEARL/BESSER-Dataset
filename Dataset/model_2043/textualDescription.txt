@@ -1,0 +1,59 @@
+The model has 20 class(es).
+The class 'Behaviour::Token' has no attributes.
+The class 'Connection' has no attributes.
+The class 'Behaviour::Colour' has the following attributes: 'attribute' of type str.
+The class 'Place' has no attributes.
+The class 'Behaviour::PreTransitionConnection' has the following attributes: 'requiredTokenAmount' of type int.
+The class 'Transition' has no attributes.
+The class 'Behaviour::WaitingLine' has the following attributes: 'schedulingPolicy' of type str.
+The class 'Behaviour::Transition' has no attributes.
+The class 'Behaviour::Server' has the following attributes: 'capacity' of type int.
+The class 'Behaviour::StochasticTransition' has no attributes.
+The class 'Behaviour::Place' has no attributes.
+The class 'Behaviour::Connection' has no attributes.
+The class 'Behaviour::PostTransitionConnection' has no attributes.
+The class 'Behaviour::DefaultPlace' has no attributes.
+The class 'Behaviour::QueuePlace' has no attributes.
+The class 'Behaviour::TransitionFunction' has the following attributes: 'transitionFunction' of type str.
+The class 'Behaviour::Description' has no attributes.
+The class 'Behaviour::ConditionalTransition' has no attributes.
+The class 'Behaviour::StartPlace' has the following attributes: 'spawnPolicy' of type str.
+The class 'Identifier' has no attributes.
+'Behaviour::PreTransitionConnection' is a specialization of 'Connection'.
+'Behaviour::StochasticTransition' is a specialization of 'Transition'.
+'Behaviour::Server' is a specialization of 'Place'.
+'Behaviour::Colour' is a specialization of 'Identifier'.
+'Behaviour::Description' is a specialization of 'Identifier'.
+'Behaviour::StartPlace' is a specialization of 'Place'.
+'Behaviour::Connection' is a specialization of 'Identifier'.
+'Behaviour::Transition' is a specialization of 'Identifier'.
+'Behaviour::QueuePlace' is a specialization of 'Place'.
+'Behaviour::ConditionalTransition' is a specialization of 'Transition'.
+'Behaviour::DefaultPlace' is a specialization of 'Place'.
+'Behaviour::Token' is a specialization of 'Identifier'.
+'Behaviour::Place' is a specialization of 'Identifier'.
+'Behaviour::PostTransitionConnection' is a specialization of 'Connection'.
+'Behaviour::WaitingLine' is a specialization of 'Place'.
+'Behaviour::Place' (role 'Behaviour_Place', cardinality 0..*) is associated with 'Behaviour::Token' (role 'Behaviour_Token', cardinality 0..*).
+'Behaviour::Transition' (role 'Behaviour_Transition8', cardinality 0..*) is associated with 'Behaviour::Connection' (role 'Behaviour_Connection7', cardinality 0..*).
+'Behaviour::Token' (role 'Behaviour_Token31', cardinality 0..*) is associated with 'Behaviour::Colour' (role 'Behaviour_Colour', cardinality 0..*).
+'Behaviour::Description' (role 'Behaviour_Description38', cardinality 0..*) is associated with 'Behaviour::Transition' (role 'Behaviour_Transition39', cardinality 0..*).
+'Behaviour::WaitingLine' (role 'Behaviour_WaitingLine', cardinality 0..*) is associated with 'Behaviour::QueuePlace' (role 'Behaviour_QueuePlace16', cardinality 0..*).
+'Behaviour::DefaultPlace' (role 'Behaviour_DefaultPlace12', cardinality 0..*) is associated with 'Behaviour::PostTransitionConnection' (role 'Behaviour_PostTransitionConnection13', cardinality 0..*).
+'Behaviour::PostTransitionConnection' (role 'Behaviour_PostTransitionConnection45', cardinality 0..*) is associated with 'Behaviour::TransitionFunction' (role 'Behaviour_TransitionFunction44', cardinality 0..*).
+'Behaviour::QueuePlace' (role 'Behaviour_QueuePlace', cardinality 0..*) is associated with 'Behaviour::Server' (role 'Behaviour_Server', cardinality 0..*).
+'Behaviour::StartPlace' (role 'Behaviour_StartPlace', cardinality 0..*) is associated with 'Behaviour::PreTransitionConnection' (role 'Behaviour_PreTransitionConnection18', cardinality 0..*).
+'Behaviour::PostTransitionConnection' (role 'Behaviour_PostTransitionConnection', cardinality 0..*) is associated with 'Behaviour::Transition' (role 'Behaviour_Transition', cardinality 0..*).
+'Behaviour::Description' (role 'Behaviour_Description35', cardinality 0..*) is associated with 'Behaviour::Place' (role 'Behaviour_Place36', cardinality 0..*).
+'Behaviour::Transition' (role 'Behaviour_Transition3', cardinality 0..*) is associated with 'Behaviour::PreTransitionConnection' (role 'Behaviour_PreTransitionConnection', cardinality 0..*).
+'Behaviour::Token' (role 'Behaviour_Token48', cardinality 0..*) is associated with 'Behaviour::TransitionFunction' (role 'Behaviour_TransitionFunction47', cardinality 0..*).
+'Behaviour::Description' (role 'Behaviour_Description41', cardinality 0..*) is associated with 'Behaviour::Token' (role 'Behaviour_Token42', cardinality 0..*).
+'Behaviour::Connection' (role 'Behaviour_Connection33', cardinality 0..*) is associated with 'Behaviour::Description' (role 'Behaviour_Description', cardinality 0..*).
+'Behaviour::StochasticTransition' (role 'Behaviour_StochasticTransition', cardinality 0..*) is associated with 'Behaviour::TransitionFunction' (role 'Behaviour_TransitionFunction21', cardinality 0..*).
+'Behaviour::Server' (role 'Server', cardinality 0..*) is associated with 'Behaviour::WaitingLine' (role 'waitingLine', cardinality 0..*).
+'Behaviour::PostTransitionConnection' (role 'Behaviour_PostTransitionConnection29', cardinality 0..*) is associated with 'Behaviour::WaitingLine' (role 'Behaviour_WaitingLine28', cardinality 0..*).
+'Behaviour::WaitingLine' (role 'WaitingLine', cardinality 0..*) is associated with 'Behaviour::Server' (role 'server', cardinality 0..*).
+'Behaviour::TransitionFunction' (role 'Behaviour_TransitionFunction', cardinality 0..*) is associated with 'Behaviour::ConditionalTransition' (role 'Behaviour_ConditionalTransition', cardinality 0..*).
+'Behaviour::DefaultPlace' (role 'Behaviour_DefaultPlace', cardinality 0..*) is associated with 'Behaviour::PreTransitionConnection' (role 'Behaviour_PreTransitionConnection10', cardinality 0..*).
+'Behaviour::Server' (role 'Behaviour_Server24', cardinality 0..*) is associated with 'Behaviour::PreTransitionConnection' (role 'Behaviour_PreTransitionConnection25', cardinality 0..*).
+'Behaviour::Place' (role 'Behaviour_Place5', cardinality 0..*) is associated with 'Behaviour::Connection' (role 'Behaviour_Connection', cardinality 0..*).

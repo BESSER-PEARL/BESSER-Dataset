@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/gssi/validation/Families2Persons/Persons.ecore

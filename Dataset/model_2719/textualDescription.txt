@@ -1,0 +1,59 @@
+The model has 28 class(es).
+The class 'B' has no attributes.
+The class 'anol3l4::M' has no attributes.
+The class 'anol3l4::W' has the following attributes: 'w' of type str.
+The class 'P' has no attributes.
+The class 'anol3l4::A' has no attributes.
+The class 'anol3l4::K' has the following attributes: 'title' of type str.
+The class 'anol3l4::X' has no attributes.
+The class 'anol3l4::Y' has the following attributes: 'y' of type int.
+The class 'anol3l4::I' has no attributes.
+The class 'anol3l4::B' has no attributes.
+The class 'L1' has no attributes.
+The class 'anol3l4::Q' has no attributes.
+The class 'anol3l4::J' has no attributes.
+The class 'M' has no attributes.
+The class 'N' has no attributes.
+The class 'anol3l4::C' has no attributes.
+The class 'anol3l4::L2' has the following attributes: 'l2' of type int; 'l1' of type int.
+The class 'anol3l4::L1' has the following attributes: 'id2' of type int; 'id1' of type str.
+The class 'A' has no attributes.
+The class 'G' has no attributes.
+The class 'anol3l4::L4' has no attributes.
+The class 'anol3l4::Z' has the following attributes: 'z3' of type str; 'z1' of type str; 'z2' of type str.
+The class 'anol3l4::N' has no attributes.
+The class 'J' has no attributes.
+The class 'anol3l4::P' has no attributes.
+The class 'anol3l4::L3' has no attributes.
+The class 'C' has no attributes.
+The class 'anol3l4::G' has the following attributes: 'name' of type str.
+'anol3l4::A' is a specialization of 'B'.
+'anol3l4::B' is a specialization of 'C'.
+'anol3l4::Q' is a specialization of 'P'.
+'anol3l4::K' is a specialization of 'J'.
+'anol3l4::L4' is a specialization of 'L1'.
+'anol3l4::N' is a specialization of 'M'.
+'anol3l4::L3' is a specialization of 'L1'.
+'anol3l4::M' is a specialization of 'G'.
+'anol3l4::P' is a specialization of 'N'.
+'anol3l4::J' is a specialization of 'A'.
+'anol3l4::I' is a specialization of 'G'.
+'anol3l4::C' is a specialization of 'G'.
+'anol3l4::X' (role 'anol3l4_X', cardinality 0..*) is associated with 'anol3l4::C' (role 'anol3l4_C', cardinality 0..*).
+'anol3l4::L1' (role 'anol3l4_L1', cardinality 0..*) is associated with 'anol3l4::M' (role 'anol3l4_M13', cardinality 0..*).
+'anol3l4::Z' (role 'anol3l4_Z36', cardinality 0..*) is associated with 'anol3l4::L4' (role 'anol3l4_L4', cardinality 0..*).
+'anol3l4::Q' (role 'anol3l4_Q', cardinality 0..*) is associated with 'anol3l4::L2' (role 'anol3l4_L2', cardinality 0..*).
+'anol3l4::K' (role 'anol3l4_K', cardinality 0..*) is associated with 'anol3l4::P' (role 'anol3l4_P17', cardinality 0..*).
+'anol3l4::L3' (role 'anol3l4_L3', cardinality 0..*) is associated with 'anol3l4::I' (role 'anol3l4_I34', cardinality 0..*).
+'anol3l4::J' (role 'anol3l4_J', cardinality 0..*) is associated with 'anol3l4::P' (role 'anol3l4_P19', cardinality 0..*).
+'anol3l4::X' (role 'anol3l4_X4', cardinality 0..*) is associated with 'anol3l4::Z' (role 'anol3l4_Z', cardinality 0..*).
+'anol3l4::Y' (role 'anol3l4_Y', cardinality 0..*) is associated with 'anol3l4::X' (role 'anol3l4_X6', cardinality 0..*).
+'anol3l4::X' (role 'anol3l4_X8', cardinality 0..*) is associated with 'anol3l4::W' (role 'anol3l4_W', cardinality 0..*).
+'anol3l4::L1' (role 'anol3l4_L122', cardinality 0..*) is associated with 'anol3l4::C' (role 'anol3l4_C23', cardinality 0..*).
+'anol3l4::M' (role 'anol3l4_M26', cardinality 0..*) is associated with 'anol3l4::L1' (role 'anol3l4_L125', cardinality 0..*).
+'anol3l4::P' (role 'anol3l4_P', cardinality 0..*) is associated with 'anol3l4::X' (role 'anol3l4_X2', cardinality 0..*).
+'anol3l4::C' (role 'anol3l4_C11', cardinality 0..*) is associated with 'anol3l4::M' (role 'anol3l4_M', cardinality 0..*).
+'anol3l4::Q' (role 'anol3l4_Q29', cardinality 0..*) is associated with 'anol3l4::L2' (role 'anol3l4_L228', cardinality 0..*).
+'anol3l4::B' (role 'anol3l4_B', cardinality 0..*) is associated with 'anol3l4::I' (role 'anol3l4_I', cardinality 0..*).
+'anol3l4::A' (role 'anol3l4_A', cardinality 0..*) is associated with 'anol3l4::P' (role 'anol3l4_P15', cardinality 0..*).
+'anol3l4::L2' (role 'anol3l4_L231', cardinality 0..*) is associated with 'anol3l4::K' (role 'anol3l4_K32', cardinality 0..*).

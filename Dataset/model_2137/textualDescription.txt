@@ -1,0 +1,10 @@
+The model has 3 class(es).
+The class 'transitiongraph::TransitionGraph' has no attributes.
+The class 'transitiongraph::Transition' has the following attributes: 'probability' of type float; 'label' of type str.
+The class 'transitiongraph::State' has the following attributes: 'isInitial' of type bool; 'isFinal' of type bool; 'id' of type int.
+'transitiongraph::State' (role 'State', cardinality 0..*) is associated with 'transitiongraph::Transition' (role 'outgoing', cardinality 0..*).
+'transitiongraph::Transition' (role 'Transition', cardinality 0..*) is associated with 'transitiongraph::State' (role 'source', cardinality 0..*).
+'transitiongraph::Transition' (role 'incoming', cardinality 0..*) is associated with 'transitiongraph::State' (role 'State8', cardinality 0..*).
+'transitiongraph::State' (role 'transitiongraph_State', cardinality 0..*) is associated with 'transitiongraph::TransitionGraph' (role 'transitiongraph_TransitionGraph', cardinality 0..*).
+'transitiongraph::Transition' (role 'Transition5', cardinality 0..*) is associated with 'transitiongraph::State' (role 'target', cardinality 0..*).
+'transitiongraph::Transition' (role 'transitiongraph_Transition', cardinality 0..*) is associated with 'transitiongraph::TransitionGraph' (role 'transitiongraph_TransitionGraph2', cardinality 0..*).

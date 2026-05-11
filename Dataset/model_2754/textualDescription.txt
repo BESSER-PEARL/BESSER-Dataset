@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'PK461726::A461726' has the following attributes: 'name' of type str.
+The class 'PK461726::B461726' has the following attributes: 'name' of type str.
+'PK461726::A461726' (role 'as_', cardinality 0..*) is associated with 'PK461726::B461726' (role 'B461726', cardinality 0..*).
+'PK461726::B461726' (role 'bs', cardinality 0..*) is associated with 'PK461726::A461726' (role 'A461726', cardinality 0..*).

@@ -1,0 +1,17 @@
+The model has 5 class(es).
+The class 'TokenTrace::EObject' has no attributes.
+The class 'TokenTrace::TokenTrace' has the following attributes: 'tokenTraceType' of type str; 'name' of type str; 'message' of type str.
+The class 'TokenTrace::Token' has the following attributes: 'name' of type str; 'tokenType' of type str; 'scale' of type str; 'message' of type str; 'referenceCount' of type int; 'assignedProbability' of type str; 'computedProbability' of type str.
+The class 'TokenTrace::Literal' has no attributes.
+The class 'MultiLiteralConstraint' has no attributes.
+The enumeration 'TokenType' has the following literals: 'System', 'Intermediate', 'Basic', 'Unhandled', 'Sink', 'Undeveloped', 'Component', 'External'.
+The enumeration 'TokenTraceType' has the following literals: 'TokenGraph', 'TokenTrace', 'MinimalCutSet', 'CompositeParts'.
+'TokenTrace::Token' is a specialization of 'MultiLiteralConstraint'.
+'TokenTrace::Literal' (role 'TokenTrace_Literal19', cardinality 0..*) is associated with 'TokenTrace::Token' (role 'TokenTrace_Token18', cardinality 0..*).
+'TokenTrace::Token' (role 'TokenTrace_Token12', cardinality 0..*) is associated with 'TokenTrace::EObject' (role 'TokenTrace_EObject13', cardinality 0..*).
+'TokenTrace::TokenTrace' (role 'TokenTrace_TokenTrace4', cardinality 0..*) is associated with 'TokenTrace::Token' (role 'TokenTrace_Token5', cardinality 0..*).
+'TokenTrace::TokenTrace' (role 'TokenTrace_TokenTrace2', cardinality 0..*) is associated with 'TokenTrace::EObject' (role 'TokenTrace_EObject', cardinality 0..*).
+'TokenTrace::Token' (role 'TokenTrace_Token', cardinality 0..*) is associated with 'TokenTrace::TokenTrace' (role 'TokenTrace_TokenTrace', cardinality 0..*).
+'TokenTrace::Token' (role 'TokenTrace_Token10', cardinality 0..*) is associated with 'TokenTrace::Token' (role 'TokenTrace_Token8', cardinality 0..*).
+'TokenTrace::Token' (role 'TokenTrace_Token15', cardinality 0..*) is associated with 'TokenTrace::Literal' (role 'TokenTrace_Literal16', cardinality 0..*).
+'TokenTrace::Literal' (role 'TokenTrace_Literal', cardinality 0..*) is associated with 'TokenTrace::TokenTrace' (role 'TokenTrace_TokenTrace7', cardinality 0..*).

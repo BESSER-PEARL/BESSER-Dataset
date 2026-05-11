@@ -1,0 +1,22 @@
+The model has 7 class(es).
+The class 'programmes::Course' has the following attributes: 'level' of type str; 'code' of type str; 'name' of type str; 'credits' of type float.
+The class 'programmes::CourseGroup' has the following attributes: 'name' of type str; 'coursesType' of type str.
+The class 'programmes::Semester' has the following attributes: 'semesterType' of type str; 'year' of type int.
+The class 'Programme' has no attributes.
+The class 'programmes::University' has the following attributes: 'name' of type str.
+The class 'programmes::Programme' has the following attributes: 'name' of type str; 'code' of type str.
+The class 'programmes::Specialization' has no attributes.
+The enumeration 'SemesterType' has the following literals: 'Spring', 'Autumn'.
+The enumeration 'StudyLevel' has the following literals: 'THIRD_YEAR', 'SECOND_YEAR', 'POST_GRAD', 'SECOND_DEGREE', 'FIRST_YEAR'.
+The enumeration 'CourseType' has the following literals: 'MANDATORY', 'ELECTIVE'.
+'programmes::Specialization' is a specialization of 'Programme'.
+'programmes::Semester' (role 'Semester', cardinality 0..*) is associated with 'programmes::Programme' (role 'programme', cardinality 0..*).
+'programmes::Semester' (role 'programmeSemester', cardinality 0..*) is associated with 'programmes::Programme' (role 'Programme6', cardinality 0..*).
+'programmes::Course' (role 'programmes_Course', cardinality 0..*) is associated with 'programmes::Semester' (role 'programmes_Semester8', cardinality 0..*).
+'programmes::Specialization' (role 'programmes_Specialization', cardinality 0..*) is associated with 'programmes::Semester' (role 'programmes_Semester', cardinality 0..*).
+'programmes::CourseGroup' (role 'programmes_CourseGroup10', cardinality 0..*) is associated with 'programmes::Course' (role 'programmes_Course11', cardinality 0..*).
+'programmes::Specialization' (role 'Specialization', cardinality 0..*) is associated with 'programmes::Programme' (role 'specializesIn', cardinality 0..*).
+'programmes::Programme' (role 'programmes_Programme', cardinality 0..*) is associated with 'programmes::CourseGroup' (role 'programmes_CourseGroup', cardinality 0..*).
+'programmes::University' (role 'programmes_University15', cardinality 0..*) is associated with 'programmes::Course' (role 'programmes_Course16', cardinality 0..*).
+'programmes::Programme' (role 'Programme', cardinality 0..*) is associated with 'programmes::Specialization' (role 'specializations', cardinality 0..*).
+'programmes::University' (role 'programmes_University', cardinality 0..*) is associated with 'programmes::Programme' (role 'programmes_Programme13', cardinality 0..*).

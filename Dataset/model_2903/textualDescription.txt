@@ -1,0 +1,17 @@
+The model has 8 class(es).
+The class 'coral::Type' has no attributes.
+The class 'coral::Feature' has the following attributes: 'kind' of type str.
+The class 'coral::EntityModel' has no attributes.
+The class 'coral::NamedElement' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+The class 'Type' has no attributes.
+The class 'coral::DataType' has no attributes.
+The class 'coral::Entity' has the following attributes: 'abstract' of type bool.
+The enumeration 'FeatureKind' has the following literals: 'reference', 'containment', 'attribute'.
+'coral::Type' is a specialization of 'NamedElement'.
+'coral::Entity' is a specialization of 'Type'.
+'coral::DataType' is a specialization of 'Type'.
+'coral::Feature' is a specialization of 'NamedElement'.
+'coral::Feature' (role 'coral_Feature', cardinality 0..*) is associated with 'coral::Entity' (role 'coral_Entity', cardinality 0..*).
+'coral::Feature' (role 'coral_Feature3', cardinality 0..*) is associated with 'coral::Type' (role 'coral_Type4', cardinality 0..*).
+'coral::Type' (role 'coral_Type', cardinality 0..*) is associated with 'coral::EntityModel' (role 'coral_EntityModel', cardinality 0..*).

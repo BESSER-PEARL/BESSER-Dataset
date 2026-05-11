@@ -1,0 +1,26 @@
+The model has 12 class(es).
+The class 'visualinher::A' has no attributes.
+The class 'visualinher::C' has no attributes.
+The class 'I' has no attributes.
+The class 'visualinher::I' has no attributes.
+The class 'visualinher::R' has no attributes.
+The class 'visualinher::N' has the following attributes: 'name' of type str.
+The class 'visualinher::B' has no attributes.
+The class 'visualinher::S' has no attributes.
+The class 'visualinher::D' has no attributes.
+The class 'N' has no attributes.
+The class 'visualinher::E' has no attributes.
+The class 'A' has no attributes.
+'visualinher::R' is a specialization of 'N'.
+'visualinher::E' is a specialization of 'A'.
+'visualinher::D' is a specialization of 'A'.
+'visualinher::B' is a specialization of 'I'.
+'visualinher::I' is a specialization of 'A'.
+'visualinher::A' is a specialization of 'N'.
+'visualinher::C' (role 'visualinher_C', cardinality 0..*) is associated with 'visualinher::I' (role 'visualinher_I', cardinality 0..*).
+'visualinher::D' (role 'visualinher_D', cardinality 0..*) is associated with 'visualinher::A' (role 'visualinher_A9', cardinality 0..*).
+'visualinher::S' (role 'visualinher_S2', cardinality 0..*) is associated with 'visualinher::R' (role 'visualinher_R', cardinality 0..*).
+'visualinher::A' (role 'visualinher_A6', cardinality 0..*) is associated with 'visualinher::R' (role 'visualinher_R7', cardinality 0..*).
+'visualinher::B' (role 'visualinher_B', cardinality 0..*) is associated with 'visualinher::E' (role 'visualinher_E', cardinality 0..*).
+'visualinher::D' (role 'visualinher_D11', cardinality 0..*) is associated with 'visualinher::E' (role 'visualinher_E12', cardinality 0..*).
+'visualinher::A' (role 'visualinher_A', cardinality 0..*) is associated with 'visualinher::S' (role 'visualinher_S', cardinality 0..*).

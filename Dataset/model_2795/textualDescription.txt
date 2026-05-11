@@ -1,0 +1,344 @@
+The model has 120 class(es).
+The class 'HaxeTypedElement' has no attributes.
+The class 'haxe::HaxeASTNode' has no attributes.
+The class 'haxe::HaxeArrayAccess' has no attributes.
+The class 'haxe::HaxeCastingExpression' has no attributes.
+The class 'haxe::HaxeTagElement' has the following attributes: 'tagName' of type str.
+The class 'HaxeFieldContainer' has no attributes.
+The class 'haxe::HaxeUnaryExpression' has no attributes.
+The class 'haxe::HaxeAbstractOperation' has the following attributes: 'overrides' of type bool; 'isInline' of type bool.
+The class 'HaxeASTNode' has no attributes.
+The class 'haxe::HaxeThisExpression' has no attributes.
+The class 'haxe::HaxeType' has the following attributes: 'private' of type bool; 'extern' of type bool.
+The class 'haxe::HaxeClassifier' has no attributes.
+The class 'haxe::HaxeMetadata' has the following attributes: 'compilerMetadata' of type bool.
+The class 'haxe::HaxePackageAccess' has no attributes.
+The class 'haxe::HaxeComment' has the following attributes: 'prefixOfParent' of type bool; 'enclosedByParent' of type bool; 'lineComment' of type bool; 'content' of type str.
+The class 'haxe::HaxeParenthizedExpression' has no attributes.
+The class 'haxe::HaxeCatchClause' has no attributes.
+The class 'HaxeVariableDeclaration' has no attributes.
+The class 'HaxeExpressionStatement' has no attributes.
+The class 'haxe::HaxeTextElement' has the following attributes: 'text' of type str.
+The class 'haxe::HaxeField' has the following attributes: 'isPrivate' of type bool; 'isStatic' of type bool.
+The class 'haxe::HaxeThrowExpression' has no attributes.
+The class 'haxe::HaxeDoWhileStatement' has no attributes.
+The class 'haxe::HaxeBlock' has no attributes.
+The class 'haxe::HaxeMetadataContainer' has no attributes.
+The class 'haxe::HaxeLoopStatement' has no attributes.
+The class 'haxe::HaxeNumberLiteral' has the following attributes: 'value' of type str.
+The class 'haxe::HaxeArrayCreation' has no attributes.
+The class 'HaxeMetadataContainer' has no attributes.
+The class 'haxe::HaxeDependencyDeclaration' has no attributes.
+The class 'haxe::HaxeVariableDeclaration' has no attributes.
+The class 'haxe::HaxeAbstract' has no attributes.
+The class 'haxe::HaxeInExpression' has no attributes.
+The class 'haxe::HaxeTypedef' has no attributes.
+The class 'HaxeExpression' has no attributes.
+The class 'HaxeUnaryExpression' has no attributes.
+The class 'haxe::HaxeUnsafeCastExpression' has no attributes.
+The class 'haxe::HaxePostfixExpression' has the following attributes: 'isIncrement' of type bool.
+The class 'haxe::HaxeContinue' has no attributes.
+The class 'HaxeType' has no attributes.
+The class 'haxe::HaxeCase' has no attributes.
+The class 'haxe::HaxeStringLiteral' has the following attributes: 'escapedValue' of type str.
+The class 'HaxePathReference' has no attributes.
+The class 'haxe::HaxeAbstractMethodInvocation' has no attributes.
+The class 'haxe::HaxeFieldAccess' has no attributes.
+The class 'haxe::HaxeVariableDeclarationFragment' has no attributes.
+The class 'haxe::HaxeRegexLiteral' has the following attributes: 'pattern' of type str; 'options' of type str.
+The class 'haxe::HaxeEnum' has no attributes.
+The class 'haxe::HaxeConstant' has no attributes.
+The class 'haxe::HaxeReturn' has no attributes.
+The class 'HaxeDependencyDeclaration' has no attributes.
+The class 'HaxeLoopStatement' has no attributes.
+The class 'HaxeAbstractOperation' has no attributes.
+The class 'haxe::HaxeClassifierAccess' has no attributes.
+The class 'haxe::HaxeWhileStatement' has no attributes.
+The class 'haxe::HaxeBinaryExpression' has no attributes.
+The class 'haxe::HaxeSwitch' has no attributes.
+The class 'haxe::HaxeInfixExpression' has the following attributes: 'operator' of type str.
+The class 'haxe::HaxeConditionalExpression' has no attributes.
+The class 'HaxeComment' has no attributes.
+The class 'haxe::HaxeSuperMethodInvocation' has no attributes.
+The class 'haxe::HaxePathReference' has no attributes.
+The class 'HaxeModelElement' has no attributes.
+The class 'haxe::HaxeSuperConstructorInvocation' has no attributes.
+The class 'haxe::HaxeClass' has the following attributes: 'isInterface' of type bool.
+The class 'haxe::HaxeOperation' has the following attributes: 'macro' of type bool.
+The class 'haxe::HaxeEmptyStatement' has no attributes.
+The class 'HaxeTypeAccess' has no attributes.
+The class 'haxe::HaxeTryExpression' has no attributes.
+The class 'haxe::HaxeModelElement' has no attributes.
+The class 'haxe::HaxeCallExpression' has no attributes.
+The class 'HaxeNamedElement' has no attributes.
+The class 'HaxeField' has no attributes.
+The class 'HaxeConditionalExpression' has no attributes.
+The class 'haxe::HaxePrefixExpression' has the following attributes: 'operator' of type str.
+The class 'haxe::HaxeTypeCheckExpression' has no attributes.
+The class 'haxe::HaxeConstructor' has no attributes.
+The class 'haxe::HaxePathReferentiable' has no attributes.
+The class 'haxe::HaxeAbstractFunction' has no attributes.
+The class 'haxe::HaxeNullLiteral' has no attributes.
+The class 'HaxeBinaryExpression' has no attributes.
+The class 'haxe::HaxeFunctionExpression' has no attributes.
+The class 'haxe::HaxeMethodInvocation' has no attributes.
+The class 'haxe::HaxeTypeParameter' has no attributes.
+The class 'HaxeConstant' has no attributes.
+The class 'haxe::HaxeSingleVariableDeclaration' has the following attributes: 'isOptional' of type bool.
+The class 'haxe::HaxeEnumConstructor' has no attributes.
+The class 'haxe::HaxeImportDeclaration' has no attributes.
+The class 'haxe::HaxeTypeAccess' has no attributes.
+The class 'haxe::HaxeFieldDeclaration' has no attributes.
+The class 'haxe::HaxeHaxedocComment' has no attributes.
+The class 'haxe::HaxeFunctionTypeAccess' has no attributes.
+The class 'haxe::HaxeAssignment' has the following attributes: 'operator' of type str.
+The class 'haxe::HaxeAttribute' has the following attributes: 'getterProperty' of type str; 'setterProperty' of type str.
+The class 'haxe::HaxeTernaryExpression' has no attributes.
+The class 'haxe::HaxeNamedElement' has the following attributes: 'name' of type str.
+The class 'HaxeAbstractFunction' has no attributes.
+The class 'HaxeSingleVariableDeclaration' has no attributes.
+The class 'haxe::HaxeExpression' has no attributes.
+The class 'HaxePathReferentiable' has no attributes.
+The class 'HaxeMethodInvocation' has no attributes.
+The class 'haxe::HaxeVariableDeclarationGroup' has no attributes.
+The class 'HaxeClassifier' has no attributes.
+The class 'haxe::HaxeIfStatement' has no attributes.
+The class 'HaxeAbstractMethodInvocation' has no attributes.
+The class 'haxe::HaxeBreak' has no attributes.
+The class 'haxe::HaxeFieldContainer' has no attributes.
+The class 'haxe::HaxeBooleanLiteral' has the following attributes: 'value' of type bool.
+The class 'haxe::HaxeModule' has no attributes.
+The class 'haxe::HaxeVariableDeclarationExpression' has no attributes.
+The class 'haxe::HaxeIdentifierLiteral' has the following attributes: 'value' of type str.
+The class 'haxe::HaxeForStatement' has no attributes.
+The class 'haxe::HaxeExpressionStatement' has no attributes.
+The class 'haxe::HaxePackage' has no attributes.
+The class 'haxe::HaxeUsingDeclaration' has no attributes.
+The class 'haxe::HaxeModel' has the following attributes: 'sourceFolder' of type str; 'targetFolder' of type str; 'target' of type str; 'name' of type str.
+The class 'haxe::HaxeArrayInitializer' has no attributes.
+The class 'haxe::HaxeTypedElement' has no attributes.
+The class 'haxe::HaxeSingleVariableAccess' has no attributes.
+The class 'haxe::HaxeObjectDeclaration' has no attributes.
+The enumeration 'HaxeAssignmentOperator' has the following literals: 'DIVISION_ASSIGN', 'SHIFT_RIGTH_ASSIGN', 'MINUS_ASSIGN', 'BITWISE_OR_ASSIGN', 'SHIFT_ARITH_ASSIGN', 'BITWISE_AND_ASSIGN', 'ASSIGN', 'REMAINDER_ASSIGN', 'PLUS_ASSIGN', 'XOR_ASSIGN', 'TIMES_ASSIGN', 'SHIFT_LEFT_ASSIGN'.
+The enumeration 'HaxeAttributeProperty' has the following literals: 'method', 'dynamic', 'default', 'null'.
+The enumeration 'HaxeInfixOperators' has the following literals: 'NEQ', 'RANGE', 'BITWISE_OR', 'LESS_THAN', 'SHIFT_LEFT', 'SHIFT_ARITH', 'PLUS', 'EQ', 'OR', 'TIMES', 'GREATER_THAN', 'SHIFT_RIGTH', 'AND', 'XOR', 'REMAINDER', 'GREATER_EQUALS', 'MINUS', 'BITWISE_AND', 'DIVISION', 'LESS_EQUALS'.
+The enumeration 'HaxeTarget' has the following literals: 'cpp', 'flash', 'java', 'js', 'cs', 'neko'.
+The enumeration 'HaxePrefixOperators' has the following literals: 'NOT', 'INCREMENT', 'PLUS', 'ONECOMPLEMENT', 'DECREMENT', 'MINUS'.
+'haxe::HaxeASTNode' is a specialization of 'HaxeModelElement'.
+'haxe::HaxeParenthizedExpression' is a specialization of 'HaxeExpression'.
+'haxe::HaxeWhileStatement' is a specialization of 'HaxeLoopStatement'.
+'haxe::HaxeUnaryExpression' is a specialization of 'HaxeExpression'.
+'haxe::HaxeUnsafeCastExpression' is a specialization of 'HaxeExpression'.
+'haxe::HaxeNamedElement' is a specialization of 'HaxeASTNode'.
+'haxe::HaxeSuperMethodInvocation' is a specialization of 'HaxeExpression'.
+'haxe::HaxeUsingDeclaration' is a specialization of 'HaxeDependencyDeclaration'.
+'haxe::HaxeBooleanLiteral' is a specialization of 'HaxeConstant'.
+'haxe::HaxeFieldAccess' is a specialization of 'HaxeExpression'.
+'haxe::HaxeForStatement' is a specialization of 'HaxeLoopStatement'.
+'haxe::HaxeEnumConstructor' is a specialization of 'HaxeVariableDeclaration'.
+'haxe::HaxeAbstract' is a specialization of 'HaxeClassifier'.
+'haxe::HaxeConstructor' is a specialization of 'HaxeField'.
+'haxe::HaxeTryExpression' is a specialization of 'HaxeExpression'.
+'haxe::HaxeIdentifierLiteral' is a specialization of 'HaxeConstant'.
+'haxe::HaxeOperation' is a specialization of 'HaxeTypedElement'.
+'haxe::HaxeTypedElement' is a specialization of 'HaxeModelElement'.
+'haxe::HaxeDependencyDeclaration' is a specialization of 'HaxePathReference'.
+'haxe::HaxeOperation' is a specialization of 'HaxeAbstractOperation'.
+'haxe::HaxeDependencyDeclaration' is a specialization of 'HaxeASTNode'.
+'haxe::HaxeSuperConstructorInvocation' is a specialization of 'HaxeMethodInvocation'.
+'haxe::HaxeAbstractMethodInvocation' is a specialization of 'HaxeASTNode'.
+'haxe::HaxeType' is a specialization of 'HaxePathReferentiable'.
+'haxe::HaxeFunctionTypeAccess' is a specialization of 'HaxeTypeAccess'.
+'haxe::HaxeFieldDeclaration' is a specialization of 'HaxeTypedElement'.
+'haxe::HaxeClassifier' is a specialization of 'HaxeFieldContainer'.
+'haxe::HaxeExpression' is a specialization of 'HaxeASTNode'.
+'haxe::HaxeLoopStatement' is a specialization of 'HaxeExpression'.
+'haxe::HaxeImportDeclaration' is a specialization of 'HaxeDependencyDeclaration'.
+'haxe::HaxeHaxedocComment' is a specialization of 'HaxeComment'.
+'haxe::HaxeNullLiteral' is a specialization of 'HaxeConstant'.
+'haxe::HaxeVariableDeclarationGroup' is a specialization of 'HaxeTypedElement'.
+'haxe::HaxeFunctionExpression' is a specialization of 'HaxeAbstractFunction'.
+'haxe::HaxeSwitch' is a specialization of 'HaxeExpression'.
+'haxe::HaxeEnumConstructor' is a specialization of 'HaxeField'.
+'haxe::HaxeType' is a specialization of 'HaxeASTNode'.
+'haxe::HaxeVariableDeclarationFragment' is a specialization of 'HaxeVariableDeclaration'.
+'haxe::HaxeBreak' is a specialization of 'HaxeExpression'.
+'haxe::HaxeCase' is a specialization of 'HaxeExpression'.
+'haxe::HaxeArrayCreation' is a specialization of 'HaxeExpression'.
+'haxe::HaxeMetadata' is a specialization of 'HaxeNamedElement'.
+'haxe::HaxeAttribute' is a specialization of 'HaxeSingleVariableDeclaration'.
+'haxe::HaxeVariableDeclarationExpression' is a specialization of 'HaxeExpression'.
+'haxe::HaxeConstant' is a specialization of 'HaxeExpression'.
+'haxe::HaxeTypeAccess' is a specialization of 'HaxeExpression'.
+'haxe::HaxeExpressionStatement' is a specialization of 'HaxeExpression'.
+'haxe::HaxeCastingExpression' is a specialization of 'HaxeExpression'.
+'haxe::HaxeBlock' is a specialization of 'HaxeExpression'.
+'haxe::HaxeBinaryExpression' is a specialization of 'HaxeExpression'.
+'haxe::HaxeThrowExpression' is a specialization of 'HaxeExpressionStatement'.
+'haxe::HaxeReturn' is a specialization of 'HaxeExpressionStatement'.
+'haxe::HaxeClassifierAccess' is a specialization of 'HaxePathReference'.
+'haxe::HaxeSingleVariableAccess' is a specialization of 'HaxeExpression'.
+'haxe::HaxeArrayInitializer' is a specialization of 'HaxeExpression'.
+'haxe::HaxeMetadata' is a specialization of 'HaxeExpression'.
+'haxe::HaxeSingleVariableDeclaration' is a specialization of 'HaxeVariableDeclaration'.
+'haxe::HaxeComment' is a specialization of 'HaxeASTNode'.
+'haxe::HaxeThisExpression' is a specialization of 'HaxeExpression'.
+'haxe::HaxeMethodInvocation' is a specialization of 'HaxeAbstractMethodInvocation'.
+'haxe::HaxeAbstractFunction' is a specialization of 'HaxeASTNode'.
+'haxe::HaxeTextElement' is a specialization of 'HaxeASTNode'.
+'haxe::HaxeInExpression' is a specialization of 'HaxeExpression'.
+'haxe::HaxeInfixExpression' is a specialization of 'HaxeBinaryExpression'.
+'haxe::HaxeMetadataContainer' is a specialization of 'HaxeModelElement'.
+'haxe::HaxeEmptyStatement' is a specialization of 'HaxeExpression'.
+'haxe::HaxePackageAccess' is a specialization of 'HaxeExpression'.
+'haxe::HaxeVariableDeclaration' is a specialization of 'HaxeNamedElement'.
+'haxe::HaxeAbstractOperation' is a specialization of 'HaxeAbstractFunction'.
+'haxe::HaxeField' is a specialization of 'HaxeMetadataContainer'.
+'haxe::HaxeContinue' is a specialization of 'HaxeExpression'.
+'haxe::HaxeAssignment' is a specialization of 'HaxeBinaryExpression'.
+'haxe::HaxePathReferentiable' is a specialization of 'HaxeNamedElement'.
+'haxe::HaxeObjectDeclaration' is a specialization of 'HaxeExpression'.
+'haxe::HaxeModule' is a specialization of 'HaxeNamedElement'.
+'haxe::HaxeMethodInvocation' is a specialization of 'HaxeExpression'.
+'haxe::HaxeTernaryExpression' is a specialization of 'HaxeConditionalExpression'.
+'haxe::HaxeTypedef' is a specialization of 'HaxeType'.
+'haxe::HaxePackageAccess' is a specialization of 'HaxePathReference'.
+'haxe::HaxePostfixExpression' is a specialization of 'HaxeUnaryExpression'.
+'haxe::HaxeArrayAccess' is a specialization of 'HaxeExpression'.
+'haxe::HaxeClassifierAccess' is a specialization of 'HaxeTypeAccess'.
+'haxe::HaxeStringLiteral' is a specialization of 'HaxeConstant'.
+'haxe::HaxeTypeCheckExpression' is a specialization of 'HaxeExpression'.
+'haxe::HaxeConditionalExpression' is a specialization of 'HaxeExpression'.
+'haxe::HaxeRegexLiteral' is a specialization of 'HaxeConstant'.
+'haxe::HaxeCallExpression' is a specialization of 'HaxeExpression'.
+'haxe::HaxeTypeParameter' is a specialization of 'HaxeType'.
+'haxe::HaxeField' is a specialization of 'HaxeNamedElement'.
+'haxe::HaxeFunctionExpression' is a specialization of 'HaxeExpression'.
+'haxe::HaxeIfStatement' is a specialization of 'HaxeConditionalExpression'.
+'haxe::HaxePackage' is a specialization of 'HaxePathReferentiable'.
+'haxe::HaxeAttribute' is a specialization of 'HaxeField'.
+'haxe::HaxeOperation' is a specialization of 'HaxeField'.
+'haxe::HaxeClassifier' is a specialization of 'HaxeType'.
+'haxe::HaxeClass' is a specialization of 'HaxeClassifier'.
+'haxe::HaxePathReference' is a specialization of 'HaxeModelElement'.
+'haxe::HaxeTagElement' is a specialization of 'HaxeASTNode'.
+'haxe::HaxeNumberLiteral' is a specialization of 'HaxeConstant'.
+'haxe::HaxeFieldDeclaration' is a specialization of 'HaxeNamedElement'.
+'haxe::HaxePrefixExpression' is a specialization of 'HaxeUnaryExpression'.
+'haxe::HaxeSuperMethodInvocation' is a specialization of 'HaxeAbstractMethodInvocation'.
+'haxe::HaxeCatchClause' is a specialization of 'HaxeExpression'.
+'haxe::HaxeConstructor' is a specialization of 'HaxeAbstractOperation'.
+'haxe::HaxeSingleVariableDeclaration' is a specialization of 'HaxeTypedElement'.
+'haxe::HaxeFieldContainer' is a specialization of 'HaxeModelElement'.
+'haxe::HaxeClassifier' is a specialization of 'HaxeMetadataContainer'.
+'haxe::HaxeEnum' is a specialization of 'HaxeClassifier'.
+'haxe::HaxeDoWhileStatement' is a specialization of 'HaxeLoopStatement'.
+'haxe::HaxeExpression' (role 'haxe_HaxeExpression44', cardinality 0..*) is associated with 'haxe::HaxeInExpression' (role 'haxe_HaxeInExpression43', cardinality 0..*).
+'haxe::HaxeOperation' (role 'haxe_HaxeOperation', cardinality 0..*) is associated with 'haxe::HaxeClassifier' (role 'haxe_HaxeClassifier167', cardinality 0..*).
+'haxe::HaxeUsingDeclaration' (role 'haxe_HaxeUsingDeclaration', cardinality 0..*) is associated with 'haxe::HaxeField' (role 'haxe_HaxeField224', cardinality 0..*).
+'haxe::HaxeInfixExpression' (role 'haxe_HaxeInfixExpression', cardinality 0..*) is associated with 'haxe::HaxeExpression' (role 'haxe_HaxeExpression46', cardinality 0..*).
+'haxe::HaxeArrayCreation' (role 'haxe_HaxeArrayCreation61', cardinality 0..*) is associated with 'haxe::HaxeTypeAccess' (role 'haxe_HaxeTypeAccess', cardinality 0..*).
+'haxe::HaxePackage' (role 'haxe_HaxePackage165', cardinality 0..*) is associated with 'haxe::HaxeClassifier' (role 'haxe_HaxeClassifier', cardinality 0..*).
+'haxe::HaxeTypeAccess' (role 'haxe_HaxeTypeAccess181', cardinality 0..*) is associated with 'haxe::HaxeClassifierAccess' (role 'haxe_HaxeClassifierAccess', cardinality 0..*).
+'haxe::HaxeExpression' (role 'haxe_HaxeExpression134', cardinality 0..*) is associated with 'haxe::HaxeVariableDeclarationGroup' (role 'haxe_HaxeVariableDeclarationGroup', cardinality 0..*).
+'haxe::HaxeLoopStatement' (role 'haxe_HaxeLoopStatement19', cardinality 0..*) is associated with 'haxe::HaxeExpression' (role 'haxe_HaxeExpression20', cardinality 0..*).
+'haxe::HaxeEnumConstructor' (role 'haxe_HaxeEnumConstructor220', cardinality 0..*) is associated with 'haxe::HaxeSingleVariableDeclaration' (role 'haxe_HaxeSingleVariableDeclaration221', cardinality 0..*).
+'haxe::HaxeType' (role 'haxe_HaxeType', cardinality 0..*) is associated with 'haxe::HaxePackage' (role 'haxe_HaxePackage145', cardinality 0..*).
+'haxe::HaxeSingleVariableAccess' (role 'haxe_HaxeSingleVariableAccess117', cardinality 0..*) is associated with 'haxe::HaxeExpression' (role 'haxe_HaxeExpression118', cardinality 0..*).
+'haxe::HaxeExpression' (role 'haxe_HaxeExpression66', cardinality 0..*) is associated with 'haxe::HaxeArrayAccess' (role 'haxe_HaxeArrayAccess65', cardinality 0..*).
+'haxe::HaxeClass' (role 'haxe_HaxeClass185', cardinality 0..*) is associated with 'haxe::HaxeClassifierAccess' (role 'haxe_HaxeClassifierAccess186', cardinality 0..*).
+'haxe::HaxePackageAccess' (role 'haxe_HaxePackageAccess120', cardinality 0..*) is associated with 'haxe::HaxePackageAccess' (role 'haxe_HaxePackageAccess', cardinality 0..*).
+'haxe::HaxeArrayInitializer' (role 'haxe_HaxeArrayInitializer59', cardinality 0..*) is associated with 'haxe::HaxeArrayCreation' (role 'haxe_HaxeArrayCreation58', cardinality 0..*).
+'haxe::HaxeExpression' (role 'haxe_HaxeExpression79', cardinality 0..*) is associated with 'haxe::HaxeCase' (role 'haxe_HaxeCase78', cardinality 0..*).
+'haxe::HaxeField' (role 'HaxeField', cardinality 0..*) is associated with 'haxe::HaxeFieldContainer' (role 'fieldContainer', cardinality 0..*).
+'haxe::HaxeVariableDeclarationExpression' (role 'HaxeVariableDeclarationExpression', cardinality 0..*) is associated with 'haxe::HaxeVariableDeclarationGroup' (role 'groups', cardinality 0..*).
+'haxe::HaxePackage' (role 'haxe_HaxePackage153', cardinality 0..*) is associated with 'haxe::HaxeModule' (role 'haxe_HaxeModule152', cardinality 0..*).
+'haxe::HaxePackage' (role 'haxe_HaxePackage', cardinality 0..*) is associated with 'haxe::HaxePackage' (role 'haxe_HaxePackage142', cardinality 0..*).
+'haxe::HaxeExpression' (role 'haxe_HaxeExpression54', cardinality 0..*) is associated with 'haxe::HaxeArrayInitializer' (role 'haxe_HaxeArrayInitializer', cardinality 0..*).
+'haxe::HaxeExpression' (role 'haxe_HaxeExpression108', cardinality 0..*) is associated with 'haxe::HaxeUnsafeCastExpression' (role 'haxe_HaxeUnsafeCastExpression', cardinality 0..*).
+'haxe::HaxeFieldAccess' (role 'haxe_HaxeFieldAccess', cardinality 0..*) is associated with 'haxe::HaxeSingleVariableAccess' (role 'haxe_HaxeSingleVariableAccess', cardinality 0..*).
+'haxe::HaxeClass' (role 'haxe_HaxeClass218', cardinality 0..*) is associated with 'haxe::HaxeConstructor' (role 'haxe_HaxeConstructor217', cardinality 0..*).
+'haxe::HaxeFieldDeclaration' (role 'haxe_HaxeFieldDeclaration90', cardinality 0..*) is associated with 'haxe::HaxeExpression' (role 'haxe_HaxeExpression91', cardinality 0..*).
+'haxe::HaxeObjectDeclaration' (role 'haxe_HaxeObjectDeclaration', cardinality 0..*) is associated with 'haxe::HaxeTypeAccess' (role 'haxe_HaxeTypeAccess86', cardinality 0..*).
+'haxe::HaxeCase' (role 'haxe_HaxeCase', cardinality 0..*) is associated with 'haxe::HaxeSwitch' (role 'haxe_HaxeSwitch70', cardinality 0..*).
+'haxe::HaxeExpression' (role 'haxe_HaxeExpression36', cardinality 0..*) is associated with 'haxe::HaxeIfStatement' (role 'haxe_HaxeIfStatement', cardinality 0..*).
+'haxe::HaxeExpression' (role 'haxe_HaxeExpression99', cardinality 0..*) is associated with 'haxe::HaxeCatchClause' (role 'haxe_HaxeCatchClause98', cardinality 0..*).
+'haxe::HaxePackage' (role 'parentReference', cardinality 0..*) is associated with 'haxe::HaxePathReferentiable' (role 'HaxePathReferentiable141', cardinality 0..*).
+'haxe::HaxeExpression' (role 'haxe_HaxeExpression', cardinality 0..*) is associated with 'haxe::HaxeLoopStatement' (role 'haxe_HaxeLoopStatement', cardinality 0..*).
+'haxe::HaxeAbstractOperation' (role 'haxe_HaxeAbstractOperation', cardinality 0..*) is associated with 'haxe::HaxeAbstractMethodInvocation' (role 'haxe_HaxeAbstractMethodInvocation', cardinality 0..*).
+'haxe::HaxeMethodInvocation' (role 'haxe_HaxeMethodInvocation', cardinality 0..*) is associated with 'haxe::HaxeExpression' (role 'haxe_HaxeExpression115', cardinality 0..*).
+'haxe::HaxeVariableDeclarationGroup' (role 'HaxeVariableDeclarationGroup138', cardinality 0..*) is associated with 'haxe::HaxeVariableDeclarationExpression' (role 'container', cardinality 0..*).
+'haxe::HaxeSingleVariableAccess' (role 'usageInVariableAccess', cardinality 0..*) is associated with 'haxe::HaxeVariableDeclaration' (role 'HaxeVariableDeclaration', cardinality 0..*).
+'haxe::HaxeField' (role 'haxe_HaxeField', cardinality 0..*) is associated with 'haxe::HaxeImportDeclaration' (role 'haxe_HaxeImportDeclaration', cardinality 0..*).
+'haxe::HaxePathReferentiable' (role 'childrenReferences', cardinality 0..*) is associated with 'haxe::HaxePackage' (role 'HaxePackage', cardinality 0..*).
+'haxe::HaxeVariableDeclarationFragment' (role 'fragments', cardinality 0..*) is associated with 'haxe::HaxeVariableDeclarationGroup' (role 'HaxeVariableDeclarationGroup', cardinality 0..*).
+'haxe::HaxeTypeCheckExpression' (role 'haxe_HaxeTypeCheckExpression', cardinality 0..*) is associated with 'haxe::HaxeExpression' (role 'haxe_HaxeExpression110', cardinality 0..*).
+'haxe::HaxeObjectDeclaration' (role 'haxe_HaxeObjectDeclaration88', cardinality 0..*) is associated with 'haxe::HaxeFieldDeclaration' (role 'haxe_HaxeFieldDeclaration', cardinality 0..*).
+'haxe::HaxePathReferentiable' (role 'haxe_HaxePathReferentiable5', cardinality 0..*) is associated with 'haxe::HaxeModel' (role 'haxe_HaxeModel4', cardinality 0..*).
+'haxe::HaxeBinaryExpression' (role 'haxe_HaxeBinaryExpression26', cardinality 0..*) is associated with 'haxe::HaxeExpression' (role 'haxe_HaxeExpression27', cardinality 0..*).
+'haxe::HaxeExpression' (role 'haxe_HaxeExpression31', cardinality 0..*) is associated with 'haxe::HaxeConditionalExpression' (role 'haxe_HaxeConditionalExpression', cardinality 0..*).
+'haxe::HaxePathReferentiable' (role 'HaxePathReferentiable', cardinality 0..*) is associated with 'haxe::HaxePathReference' (role 'referencedIn', cardinality 0..*).
+'haxe::HaxeAttribute' (role 'haxe_HaxeAttribute203', cardinality 0..*) is associated with 'haxe::HaxeOperation' (role 'haxe_HaxeOperation204', cardinality 0..*).
+'haxe::HaxeComment' (role 'haxe_HaxeComment161', cardinality 0..*) is associated with 'haxe::HaxeType' (role 'haxe_HaxeType160', cardinality 0..*).
+'haxe::HaxeExpression' (role 'haxe_HaxeExpression227', cardinality 0..*) is associated with 'haxe::HaxeMetadata' (role 'haxe_HaxeMetadata', cardinality 0..*).
+'haxe::HaxeTypeAccess' (role 'haxe_HaxeTypeAccess174', cardinality 0..*) is associated with 'haxe::HaxeTypeParameter' (role 'haxe_HaxeTypeParameter173', cardinality 0..*).
+'haxe::HaxeASTNode' (role 'haxe_HaxeASTNode', cardinality 0..*) is associated with 'haxe::HaxeComment' (role 'haxe_HaxeComment', cardinality 0..*).
+'haxe::HaxeAbstractFunction' (role 'haxe_HaxeAbstractFunction', cardinality 0..*) is associated with 'haxe::HaxeSingleVariableDeclaration' (role 'haxe_HaxeSingleVariableDeclaration209', cardinality 0..*).
+'haxe::HaxeTypeAccess' (role 'haxe_HaxeTypeAccess176', cardinality 0..*) is associated with 'haxe::HaxeFunctionTypeAccess' (role 'haxe_HaxeFunctionTypeAccess', cardinality 0..*).
+'haxe::HaxeCastingExpression' (role 'haxe_HaxeCastingExpression105', cardinality 0..*) is associated with 'haxe::HaxeTypeAccess' (role 'haxe_HaxeTypeAccess106', cardinality 0..*).
+'haxe::HaxeExpression' (role 'haxe_HaxeExpression56', cardinality 0..*) is associated with 'haxe::HaxeArrayCreation' (role 'haxe_HaxeArrayCreation', cardinality 0..*).
+'haxe::HaxeAbstractMethodInvocation' (role 'haxe_HaxeAbstractMethodInvocation127', cardinality 0..*) is associated with 'haxe::HaxeTypeAccess' (role 'haxe_HaxeTypeAccess128', cardinality 0..*).
+'haxe::HaxeTypeAccess' (role 'haxe_HaxeTypeAccess200', cardinality 0..*) is associated with 'haxe::HaxeTypedef' (role 'haxe_HaxeTypedef', cardinality 0..*).
+'haxe::HaxeExpression' (role 'haxe_HaxeExpression93', cardinality 0..*) is associated with 'haxe::HaxeTryExpression' (role 'haxe_HaxeTryExpression', cardinality 0..*).
+'haxe::HaxeTypeCheckExpression' (role 'haxe_HaxeTypeCheckExpression112', cardinality 0..*) is associated with 'haxe::HaxeTypeAccess' (role 'haxe_HaxeTypeAccess113', cardinality 0..*).
+'haxe::HaxeConstructor' (role 'haxe_HaxeConstructor', cardinality 0..*) is associated with 'haxe::HaxeClassifier' (role 'haxe_HaxeClassifier171', cardinality 0..*).
+'haxe::HaxePathReferentiable' (role 'haxe_HaxePathReferentiable', cardinality 0..*) is associated with 'haxe::HaxeModel' (role 'haxe_HaxeModel2', cardinality 0..*).
+'haxe::HaxeBinaryExpression' (role 'haxe_HaxeBinaryExpression', cardinality 0..*) is associated with 'haxe::HaxeExpression' (role 'haxe_HaxeExpression24', cardinality 0..*).
+'haxe::HaxeSingleVariableDeclaration' (role 'exception', cardinality 0..*) is associated with 'haxe::HaxeCatchClause' (role 'HaxeCatchClause', cardinality 0..*).
+'haxe::HaxeConditionalExpression' (role 'haxe_HaxeConditionalExpression33', cardinality 0..*) is associated with 'haxe::HaxeExpression' (role 'haxe_HaxeExpression34', cardinality 0..*).
+'haxe::HaxeTryExpression' (role 'haxe_HaxeTryExpression95', cardinality 0..*) is associated with 'haxe::HaxeCatchClause' (role 'haxe_HaxeCatchClause', cardinality 0..*).
+'haxe::HaxeField' (role 'haxeFields', cardinality 0..*) is associated with 'haxe::HaxeFieldContainer' (role 'HaxeFieldContainer', cardinality 0..*).
+'haxe::HaxeTypeAccess' (role 'haxe_HaxeTypeAccess183', cardinality 0..*) is associated with 'haxe::HaxeTypedElement' (role 'haxe_HaxeTypedElement', cardinality 0..*).
+'haxe::HaxeSwitch' (role 'haxe_HaxeSwitch', cardinality 0..*) is associated with 'haxe::HaxeExpression' (role 'haxe_HaxeExpression68', cardinality 0..*).
+'haxe::HaxeTypeAccess' (role 'haxe_HaxeTypeAccess191', cardinality 0..*) is associated with 'haxe::HaxeAbstract' (role 'haxe_HaxeAbstract', cardinality 0..*).
+'haxe::HaxeTypeAccess' (role 'haxe_HaxeTypeAccess197', cardinality 0..*) is associated with 'haxe::HaxeAbstract' (role 'haxe_HaxeAbstract196', cardinality 0..*).
+'haxe::HaxeType' (role 'theElements', cardinality 0..*) is associated with 'haxe::HaxeModule' (role 'HaxeModule', cardinality 0..*).
+'haxe::HaxeExpression' (role 'haxe_HaxeExpression63', cardinality 0..*) is associated with 'haxe::HaxeArrayAccess' (role 'haxe_HaxeArrayAccess', cardinality 0..*).
+'haxe::HaxeHaxedocComment' (role 'haxe_HaxeHaxedocComment', cardinality 0..*) is associated with 'haxe::HaxeTagElement' (role 'haxe_HaxeTagElement', cardinality 0..*).
+'haxe::HaxeTypeAccess' (role 'haxe_HaxeTypeAccess179', cardinality 0..*) is associated with 'haxe::HaxeFunctionTypeAccess' (role 'haxe_HaxeFunctionTypeAccess178', cardinality 0..*).
+'haxe::HaxeAttribute' (role 'haxe_HaxeAttribute206', cardinality 0..*) is associated with 'haxe::HaxeOperation' (role 'haxe_HaxeOperation207', cardinality 0..*).
+'haxe::HaxeVariableDeclaration' (role 'variable', cardinality 0..*) is associated with 'haxe::HaxeSingleVariableAccess' (role 'HaxeSingleVariableAccess', cardinality 0..*).
+'haxe::HaxeExpression' (role 'haxe_HaxeExpression103', cardinality 0..*) is associated with 'haxe::HaxeCastingExpression' (role 'haxe_HaxeCastingExpression', cardinality 0..*).
+'haxe::HaxeExpression' (role 'haxe_HaxeExpression84', cardinality 0..*) is associated with 'haxe::HaxeCallExpression' (role 'haxe_HaxeCallExpression83', cardinality 0..*).
+'haxe::HaxeASTNode' (role 'haxe_HaxeASTNode12', cardinality 0..*) is associated with 'haxe::HaxeTagElement' (role 'haxe_HaxeTagElement11', cardinality 0..*).
+'haxe::HaxeBlock' (role 'haxe_HaxeBlock', cardinality 0..*) is associated with 'haxe::HaxeExpression' (role 'haxe_HaxeExpression29', cardinality 0..*).
+'haxe::HaxeExpression' (role 'haxe_HaxeExpression22', cardinality 0..*) is associated with 'haxe::HaxeUnaryExpression' (role 'haxe_HaxeUnaryExpression', cardinality 0..*).
+'haxe::HaxeClassifier' (role 'haxe_HaxeClassifier169', cardinality 0..*) is associated with 'haxe::HaxeAttribute' (role 'haxe_HaxeAttribute', cardinality 0..*).
+'haxe::HaxeExpression' (role 'haxe_HaxeExpression131', cardinality 0..*) is associated with 'haxe::HaxeVariableDeclaration' (role 'haxe_HaxeVariableDeclaration', cardinality 0..*).
+'haxe::HaxeEnum' (role 'haxe_HaxeEnum', cardinality 0..*) is associated with 'haxe::HaxeEnumConstructor' (role 'haxe_HaxeEnumConstructor', cardinality 0..*).
+'haxe::HaxeModule' (role 'haxe_HaxeModule', cardinality 0..*) is associated with 'haxe::HaxeModel' (role 'haxe_HaxeModel7', cardinality 0..*).
+'haxe::HaxeModule' (role 'containerModule', cardinality 0..*) is associated with 'haxe::HaxeType' (role 'HaxeType', cardinality 0..*).
+'haxe::HaxeComment' (role 'haxe_HaxeComment148', cardinality 0..*) is associated with 'haxe::HaxeModule' (role 'haxe_HaxeModule147', cardinality 0..*).
+'haxe::HaxeFieldAccess' (role 'haxe_HaxeFieldAccess49', cardinality 0..*) is associated with 'haxe::HaxeExpression' (role 'haxe_HaxeExpression50', cardinality 0..*).
+'haxe::HaxeClass' (role 'haxe_HaxeClass188', cardinality 0..*) is associated with 'haxe::HaxeClassifierAccess' (role 'haxe_HaxeClassifierAccess189', cardinality 0..*).
+'haxe::HaxeCase' (role 'haxe_HaxeCase75', cardinality 0..*) is associated with 'haxe::HaxeExpression' (role 'haxe_HaxeExpression76', cardinality 0..*).
+'haxe::HaxeExpression' (role 'haxe_HaxeExpression52', cardinality 0..*) is associated with 'haxe::HaxeParenthizedExpression' (role 'haxe_HaxeParenthizedExpression', cardinality 0..*).
+'haxe::HaxeMetadata' (role 'metadata', cardinality 0..*) is associated with 'haxe::HaxeMetadataContainer' (role 'HaxeMetadataContainer', cardinality 0..*).
+'haxe::HaxeExpression' (role 'haxe_HaxeExpression81', cardinality 0..*) is associated with 'haxe::HaxeCallExpression' (role 'haxe_HaxeCallExpression', cardinality 0..*).
+'haxe::HaxeMetadataContainer' (role 'usedIn', cardinality 0..*) is associated with 'haxe::HaxeMetadata' (role 'HaxeMetadata', cardinality 0..*).
+'haxe::HaxeTypeAccess' (role 'haxe_HaxeTypeAccess194', cardinality 0..*) is associated with 'haxe::HaxeAbstract' (role 'haxe_HaxeAbstract193', cardinality 0..*).
+'haxe::HaxePathReferentiable' (role 'referencedTerminal', cardinality 0..*) is associated with 'haxe::HaxePathReference' (role 'HaxePathReference', cardinality 0..*).
+'haxe::HaxeModule' (role 'haxe_HaxeModule150', cardinality 0..*) is associated with 'haxe::HaxeDependencyDeclaration' (role 'haxe_HaxeDependencyDeclaration', cardinality 0..*).
+'haxe::HaxeTypeParameter' (role 'haxe_HaxeTypeParameter', cardinality 0..*) is associated with 'haxe::HaxeType' (role 'haxe_HaxeType163', cardinality 0..*).
+'haxe::HaxeSingleVariableDeclaration' (role 'haxe_HaxeSingleVariableDeclaration41', cardinality 0..*) is associated with 'haxe::HaxeInExpression' (role 'haxe_HaxeInExpression', cardinality 0..*).
+'haxe::HaxeExpression' (role 'haxe_HaxeExpression215', cardinality 0..*) is associated with 'haxe::HaxeAbstractFunction' (role 'haxe_HaxeAbstractFunction214', cardinality 0..*).
+'haxe::HaxeExpression' (role 'haxe_HaxeExpression38', cardinality 0..*) is associated with 'haxe::HaxeTernaryExpression' (role 'haxe_HaxeTernaryExpression', cardinality 0..*).
+'haxe::HaxeTypeParameter' (role 'haxe_HaxeTypeParameter212', cardinality 0..*) is associated with 'haxe::HaxeAbstractFunction' (role 'haxe_HaxeAbstractFunction211', cardinality 0..*).
+'haxe::HaxeClass' (role 'haxe_HaxeClass', cardinality 0..*) is associated with 'haxe::HaxeModel' (role 'haxe_HaxeModel', cardinality 0..*).
+'haxe::HaxeSingleVariableDeclaration' (role 'haxe_HaxeSingleVariableDeclaration', cardinality 0..*) is associated with 'haxe::HaxeForStatement' (role 'haxe_HaxeForStatement', cardinality 0..*).
+'haxe::HaxeType' (role 'haxe_HaxeType157', cardinality 0..*) is associated with 'haxe::HaxeComment' (role 'haxe_HaxeComment158', cardinality 0..*).
+'haxe::HaxeVariableDeclarationGroup' (role 'variablesContainer', cardinality 0..*) is associated with 'haxe::HaxeVariableDeclarationFragment' (role 'HaxeVariableDeclarationFragment', cardinality 0..*).
+'haxe::HaxeExpression' (role 'haxe_HaxeExpression101', cardinality 0..*) is associated with 'haxe::HaxeExpressionStatement' (role 'haxe_HaxeExpressionStatement', cardinality 0..*).
+'haxe::HaxeSingleVariableDeclaration' (role 'HaxeSingleVariableDeclaration', cardinality 0..*) is associated with 'haxe::HaxeCatchClause' (role 'catchClause', cardinality 0..*).
+'haxe::HaxeAbstractMethodInvocation' (role 'haxe_HaxeAbstractMethodInvocation124', cardinality 0..*) is associated with 'haxe::HaxeExpression' (role 'haxe_HaxeExpression125', cardinality 0..*).
+'haxe::HaxeSwitch' (role 'haxe_HaxeSwitch72', cardinality 0..*) is associated with 'haxe::HaxeExpression' (role 'haxe_HaxeExpression73', cardinality 0..*).

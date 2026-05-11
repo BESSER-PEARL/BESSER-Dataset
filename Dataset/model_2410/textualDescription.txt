@@ -1,0 +1,10 @@
+The model has 3 class(es).
+The class 'relationalMetaModel::RelationalForeignKey' has the following attributes: 'Name' of type str.
+The class 'relationalMetaModel::RelationalTable' has the following attributes: 'Name' of type str.
+The class 'relationalMetaModel::RelationalSchema' has the following attributes: 'Name' of type str.
+'relationalMetaModel::RelationalSchema' (role 'Schema', cardinality 0..*) is associated with 'relationalMetaModel::RelationalTable' (role 'RelationalTable', cardinality 0..*).
+'relationalMetaModel::RelationalForeignKey' (role 'RelationalForeignKey4', cardinality 0..*) is associated with 'relationalMetaModel::RelationalTable' (role 'ReferencedTable', cardinality 0..*).
+'relationalMetaModel::RelationalTable' (role 'RelationalTable8', cardinality 0..*) is associated with 'relationalMetaModel::RelationalForeignKey' (role 'ReferencedBy', cardinality 0..*).
+'relationalMetaModel::RelationalForeignKey' (role 'ForeignKeys', cardinality 0..*) is associated with 'relationalMetaModel::RelationalTable' (role 'RelationalTable6', cardinality 0..*).
+'relationalMetaModel::RelationalTable' (role 'Tables', cardinality 0..*) is associated with 'relationalMetaModel::RelationalSchema' (role 'RelationalSchema', cardinality 0..*).
+'relationalMetaModel::RelationalForeignKey' (role 'RelationalForeignKey', cardinality 0..*) is associated with 'relationalMetaModel::RelationalTable' (role 'OwnedByTable', cardinality 0..*).

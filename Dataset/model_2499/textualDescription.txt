@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'y3fsm::AbstractState' has the following attributes: 'id' of type str.
+The class 'y3fsm::Foo' has the following attributes: 'zoo' of type str.
+The class 'AbstractState' has no attributes.
+The class 'y3fsm::Region' has the following attributes: 'name' of type str.
+'y3fsm::Region' is a specialization of 'AbstractState'.
+'y3fsm::AbstractState' (role 'y3fsm_AbstractState2', cardinality 0..*) is associated with 'y3fsm::Foo' (role 'y3fsm_Foo', cardinality 0..*).
+'y3fsm::Foo' (role 'y3fsm_Foo5', cardinality 0..*) is associated with 'y3fsm::AbstractState' (role 'y3fsm_AbstractState4', cardinality 0..*).
+'y3fsm::Region' (role 'y3fsm_Region', cardinality 0..*) is associated with 'y3fsm::AbstractState' (role 'y3fsm_AbstractState', cardinality 0..*).

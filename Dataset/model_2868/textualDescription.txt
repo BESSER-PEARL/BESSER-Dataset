@@ -1,0 +1,32 @@
+The model has 10 class(es).
+The class 'fiacre::Transition' has no attributes.
+The class 'fiacre::Component' has the following attributes: 'ID' of type str.
+The class 'fiacre::State' has the following attributes: 'ID' of type str.
+The class 'EModelElement' has no attributes.
+The class 'fiacre::Variable' has the following attributes: 'ID' of type str.
+The class 'fiacre::Program' has no attributes.
+The class 'fiacre::Init' has no attributes.
+The class 'fiacre::DataType' has no attributes.
+The class 'fiacre::Process' has the following attributes: 'ID' of type str.
+The class 'State' has no attributes.
+'fiacre::State' is a specialization of 'EModelElement'.
+'fiacre::Variable' is a specialization of 'EModelElement'.
+'fiacre::DataType' is a specialization of 'EModelElement'.
+'fiacre::Program' is a specialization of 'EModelElement'.
+'fiacre::Process' is a specialization of 'EModelElement'.
+'fiacre::Component' is a specialization of 'EModelElement'.
+'fiacre::Transition' is a specialization of 'EModelElement'.
+'fiacre::Init' is a specialization of 'State'.
+'fiacre::Component' (role 'Component', cardinality 0..*) is associated with 'fiacre::Variable' (role 'variable9', cardinality 0..*).
+'fiacre::State' (role 'fiacre_State', cardinality 0..*) is associated with 'fiacre::Process' (role 'fiacre_Process', cardinality 0..*).
+'fiacre::Program' (role 'fiacre_Program17', cardinality 0..*) is associated with 'fiacre::Variable' (role 'fiacre_Variable18', cardinality 0..*).
+'fiacre::Process' (role 'fiacre_Process21', cardinality 0..*) is associated with 'fiacre::Program' (role 'fiacre_Program20', cardinality 0..*).
+'fiacre::Transition' (role 'fiacre_Transition', cardinality 0..*) is associated with 'fiacre::Process' (role 'fiacre_Process3', cardinality 0..*).
+'fiacre::Transition' (role 'Transition', cardinality 0..*) is associated with 'fiacre::State' (role 'state', cardinality 0..*).
+'fiacre::Process' (role 'fiacre_Process11', cardinality 0..*) is associated with 'fiacre::Component' (role 'fiacre_Component', cardinality 0..*).
+'fiacre::Variable' (role 'Variable13', cardinality 0..*) is associated with 'fiacre::Component' (role 'component', cardinality 0..*).
+'fiacre::Process' (role 'process', cardinality 0..*) is associated with 'fiacre::Variable' (role 'Variable', cardinality 0..*).
+'fiacre::DataType' (role 'fiacre_DataType', cardinality 0..*) is associated with 'fiacre::Variable' (role 'fiacre_Variable', cardinality 0..*).
+'fiacre::State' (role 'State', cardinality 0..*) is associated with 'fiacre::Transition' (role 'transition', cardinality 0..*).
+'fiacre::Program' (role 'fiacre_Program', cardinality 0..*) is associated with 'fiacre::Component' (role 'fiacre_Component15', cardinality 0..*).
+'fiacre::Process' (role 'Process', cardinality 0..*) is associated with 'fiacre::Variable' (role 'variable', cardinality 0..*).

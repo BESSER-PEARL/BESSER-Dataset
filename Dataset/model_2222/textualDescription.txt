@@ -1,0 +1,33 @@
+The model has 8 class(es).
+The class 'study::Semester' has the following attributes: 'year' of type int; 'season' of type str.
+The class 'study::courseAllocation' has the following attributes: 'grade' of type str.
+The class 'study::Student' has the following attributes: 'name' of type str.
+The class 'study::Department' has the following attributes: 'code' of type str; 'name' of type str.
+The class 'study::Specialisation' has the following attributes: 'name' of type str; 'requirement' of type str.
+The class 'study::StudyPlan' has no attributes.
+The class 'study::Program' has the following attributes: 'code' of type str; 'name' of type str; 'numYears' of type int.
+The class 'study::Course' has the following attributes: 'season' of type str; 'code' of type str; 'name' of type str; 'credits' of type float; 'year' of type int.
+The enumeration 'grades' has the following literals: 'B', 'C', 'A', 'D', 'F', 'E'.
+'study::courseAllocation' (role 'study_courseAllocation44', cardinality 0..*) is associated with 'study::Course' (role 'study_Course45', cardinality 0..*).
+'study::Program' (role 'Program', cardinality 0..*) is associated with 'study::Department' (role 'department2', cardinality 0..*).
+'study::Specialisation' (role 'specialisations26', cardinality 0..*) is associated with 'study::Department' (role 'Department27', cardinality 0..*).
+'study::Specialisation' (role 'study_Specialisation', cardinality 0..*) is associated with 'study::Student' (role 'study_Student', cardinality 0..*).
+'study::Course' (role 'Course', cardinality 0..*) is associated with 'study::Department' (role 'department', cardinality 0..*).
+'study::Student' (role 'Student39', cardinality 0..*) is associated with 'study::StudyPlan' (role 'studyPlan', cardinality 0..*).
+'study::Department' (role 'department6', cardinality 0..*) is associated with 'study::Specialisation' (role 'Specialisation', cardinality 0..*).
+'study::Program' (role 'Program19', cardinality 0..*) is associated with 'study::Specialisation' (role 'specialisations', cardinality 0..*).
+'study::StudyPlan' (role 'study_StudyPlan37', cardinality 0..*) is associated with 'study::courseAllocation' (role 'study_courseAllocation', cardinality 0..*).
+'study::Department' (role 'Department17', cardinality 0..*) is associated with 'study::Course' (role 'courses', cardinality 0..*).
+'study::Student' (role 'study_Student22', cardinality 0..*) is associated with 'study::Specialisation' (role 'study_Specialisation21', cardinality 0..*).
+'study::Semester' (role 'study_Semester35', cardinality 0..*) is associated with 'study::StudyPlan' (role 'study_StudyPlan', cardinality 0..*).
+'study::Department' (role 'department4', cardinality 0..*) is associated with 'study::Student' (role 'Student', cardinality 0..*).
+'study::Semester' (role 'Semester', cardinality 0..*) is associated with 'study::Department' (role 'department8', cardinality 0..*).
+'study::Program' (role 'programs', cardinality 0..*) is associated with 'study::Department' (role 'Department', cardinality 0..*).
+'study::Course' (role 'study_Course', cardinality 0..*) is associated with 'study::Semester' (role 'study_Semester', cardinality 0..*).
+'study::Student' (role 'students', cardinality 0..*) is associated with 'study::Department' (role 'Department13', cardinality 0..*).
+'study::Student' (role 'student', cardinality 0..*) is associated with 'study::StudyPlan' (role 'StudyPlan', cardinality 0..*).
+'study::Department' (role 'Department33', cardinality 0..*) is associated with 'study::Semester' (role 'semesters32', cardinality 0..*).
+'study::Semester' (role 'semesters', cardinality 0..*) is associated with 'study::Specialisation' (role 'Specialisation29', cardinality 0..*).
+'study::Specialisation' (role 'specialisation', cardinality 0..*) is associated with 'study::Semester' (role 'Semester24', cardinality 0..*).
+'study::Program' (role 'program', cardinality 0..*) is associated with 'study::Specialisation' (role 'Specialisation11', cardinality 0..*).
+'study::courseAllocation' (role 'study_courseAllocation41', cardinality 0..*) is associated with 'study::StudyPlan' (role 'study_StudyPlan42', cardinality 0..*).

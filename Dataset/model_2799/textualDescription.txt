@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'Tree::Storage' has no attributes.
+The class 'Tree::Node' has the following attributes: 'value' of type int.
+'Tree::Node' (role 'Tree_Node1', cardinality 0..*) is associated with 'Tree::Node' (role 'Tree_Node3', cardinality 0..*).
+'Tree::Storage' (role 'Tree_Storage', cardinality 0..*) is associated with 'Tree::Node' (role 'Tree_Node', cardinality 0..*).

@@ -1,0 +1,19 @@
+The model has 9 class(es).
+The class 'test::ClassA' has no attributes.
+The class 'test::H' has no attributes.
+The class 'test::ClassB' has no attributes.
+The class 'test::C' has no attributes.
+The class 'test::F' has no attributes.
+The class 'test::G' has no attributes.
+The class 'test::I' has no attributes.
+The class 'test::D' has no attributes.
+The class 'test::E' has no attributes.
+'test::D' (role 'd', cardinality 0..*) is associated with 'test::E' (role 'E', cardinality 0..*).
+'test::D' (role 'D', cardinality 0..*) is associated with 'test::E' (role 'e', cardinality 0..*).
+'test::E' (role 'test_E', cardinality 0..*) is associated with 'test::ClassB' (role 'test_ClassB4', cardinality 0..*).
+'test::ClassA' (role 'test_ClassA2', cardinality 0..*) is associated with 'test::C' (role 'test_C', cardinality 0..*).
+'test::F' (role 'test_F', cardinality 0..*) is associated with 'test::D' (role 'test_D', cardinality 0..*).
+'test::I' (role 'test_I13', cardinality 0..*) is associated with 'test::G' (role 'test_G', cardinality 0..*).
+'test::I' (role 'test_I', cardinality 0..*) is associated with 'test::C' (role 'test_C6', cardinality 0..*).
+'test::D' (role 'test_D9', cardinality 0..*) is associated with 'test::H' (role 'test_H', cardinality 0..*).
+'test::ClassB' (role 'test_ClassB', cardinality 0..*) is associated with 'test::ClassA' (role 'test_ClassA', cardinality 0..*).

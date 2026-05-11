@@ -1,0 +1,144 @@
+The model has 55 class(es).
+The class 'dg::Point' has no attributes.
+The class 'dg::Rectangle' has the following attributes: 'cornerRadius' of type str.
+The class 'PaintServer' has no attributes.
+The class 'Definition' has no attributes.
+The class 'dg::Circle' has the following attributes: 'radius' of type str.
+The class 'dg::Style' has the following attributes: 'fontBold' of type str; 'fontDecoration' of type str; 'strokeDashLength' of type str; 'fontItalic' of type str; 'strokeWidth' of type str; 'fontName' of type str; 'strokeOpacity' of type str; 'fillOpacity' of type str; 'fontSize' of type str.
+The class 'dg::Matrix' has the following attributes: 'd' of type str; 'f' of type str; 'a' of type str; 'b' of type str; 'c' of type str; 'e' of type str.
+The class 'dg::RadialGradient' has the following attributes: 'radius' of type str.
+The class 'MarkedElement' has no attributes.
+The class 'Canvas' has no attributes.
+The class 'dg::StyleSheet' has no attributes.
+The class 'dg::Skew' has the following attributes: 'angleX' of type str; 'angleY' of type str.
+The class 'dg::LinearGradient' has no attributes.
+The class 'dg::Scale' has the following attributes: 'factorX' of type str; 'factorY' of type str.
+The class 'dg::RootCanvas' has the following attributes: 'backgroundColor' of type str.
+The class 'dg::Transform' has no attributes.
+The class 'dg::CubicCurveTo' has no attributes.
+The class 'dg::StyleSelector' has the following attributes: 'class_' of type str; 'kind' of type str.
+The class 'Gradient' has no attributes.
+The class 'GraphicalElement' has no attributes.
+The class 'dg::Canvas' has no attributes.
+The class 'dg::GradientStop' has the following attributes: 'opacity' of type str; 'color' of type str; 'offset' of type str.
+The class 'dg::Line' has no attributes.
+The class 'dg::ClosePath' has no attributes.
+The class 'dg::Definition' has the following attributes: 'id' of type str.
+The class 'dg::Polyline' has no attributes.
+The class 'dg::MarkedElement' has no attributes.
+The class 'dg::Gradient' has no attributes.
+The class 'dg::ClipPath' has no attributes.
+The class 'dg::QuadraticCurveTo' has no attributes.
+The class 'dg::Text' has the following attributes: 'data' of type str; 'anchor' of type str.
+The class 'dg::Path' has no attributes.
+The class 'dg::LineTo' has no attributes.
+The class 'Group' has no attributes.
+The class 'PathCommand' has no attributes.
+The class 'dg::Dimension' has no attributes.
+The class 'dg::StyleRule' has no attributes.
+The class 'dg::Polygon' has no attributes.
+The class 'Transform' has no attributes.
+The class 'dg::Ellipse' has no attributes.
+The class 'dg::Rotate' has the following attributes: 'angle' of type str.
+The class 'dg::Pattern' has no attributes.
+The class 'dg::Use' has no attributes.
+The class 'dg::MoveTo' has no attributes.
+The class 'dg::Translate' has the following attributes: 'deltaX' of type str; 'deltaY' of type str.
+The class 'dg::Image' has the following attributes: 'source' of type str; 'isAspectRatioPreserved' of type str.
+The class 'dg::PathCommand' has the following attributes: 'isRelative' of type str.
+The class 'dg::Definitions' has no attributes.
+The class 'dg::EllipticalArcTo' has the following attributes: 'isLargeArc' of type str; 'rotation' of type str; 'isSweep' of type str.
+The class 'dg::Marker' has no attributes.
+The class 'dg::Bounds' has no attributes.
+The class 'dg::Paint' has the following attributes: 'color' of type str.
+The class 'dg::PaintServer' has no attributes.
+The class 'dg::Group' has the following attributes: 'layout' of type str.
+The class 'dg::GraphicalElement' has the following attributes: 'layoutData' of type str; 'class_' of type str.
+The enumeration 'TextAnchor' has the following literals: 'start', 'middle', 'end'.
+The enumeration 'FontDecoration' has the following literals: 'underline', 'lineThrough', 'overline'.
+The enumeration 'ElementKind' has the following literals: 'ellipse', 'marker', 'use', 'rectangle', 'polyline', 'image', 'path', 'line', 'polygon', 'circle', 'text', 'group', 'canvas', 'clipPath'.
+'dg::PaintServer' is a specialization of 'Definition'.
+'dg::Translate' is a specialization of 'Transform'.
+'dg::Circle' is a specialization of 'GraphicalElement'.
+'dg::Rectangle' is a specialization of 'GraphicalElement'.
+'dg::Path' is a specialization of 'MarkedElement'.
+'dg::Ellipse' is a specialization of 'GraphicalElement'.
+'dg::LinearGradient' is a specialization of 'Gradient'.
+'dg::Skew' is a specialization of 'Transform'.
+'dg::Line' is a specialization of 'MarkedElement'.
+'dg::ClosePath' is a specialization of 'PathCommand'.
+'dg::QuadraticCurveTo' is a specialization of 'PathCommand'.
+'dg::Marker' is a specialization of 'Group'.
+'dg::MoveTo' is a specialization of 'PathCommand'.
+'dg::CubicCurveTo' is a specialization of 'PathCommand'.
+'dg::Use' is a specialization of 'GraphicalElement'.
+'dg::GraphicalElement' is a specialization of 'Definition'.
+'dg::EllipticalArcTo' is a specialization of 'PathCommand'.
+'dg::Group' is a specialization of 'GraphicalElement'.
+'dg::LineTo' is a specialization of 'PathCommand'.
+'dg::Matrix' is a specialization of 'Transform'.
+'dg::Gradient' is a specialization of 'PaintServer'.
+'dg::MarkedElement' is a specialization of 'GraphicalElement'.
+'dg::RadialGradient' is a specialization of 'Gradient'.
+'dg::Polyline' is a specialization of 'MarkedElement'.
+'dg::ClipPath' is a specialization of 'Group'.
+'dg::Image' is a specialization of 'GraphicalElement'.
+'dg::Pattern' is a specialization of 'PaintServer'.
+'dg::Polygon' is a specialization of 'MarkedElement'.
+'dg::Rotate' is a specialization of 'Transform'.
+'dg::Text' is a specialization of 'GraphicalElement'.
+'dg::Canvas' is a specialization of 'Group'.
+'dg::RootCanvas' is a specialization of 'Canvas'.
+'dg::Scale' is a specialization of 'Transform'.
+'dg::Point' (role 'dg_Point78', cardinality 0..*) is associated with 'dg::LinearGradient' (role 'dg_LinearGradient77', cardinality 0..*).
+'dg::StyleSheet' (role 'dg_StyleSheet102', cardinality 0..*) is associated with 'dg::RootCanvas' (role 'dg_RootCanvas101', cardinality 0..*).
+'dg::StyleSheet' (role 'dg_StyleSheet', cardinality 0..*) is associated with 'dg::Definitions' (role 'dg_Definitions31', cardinality 0..*).
+'dg::GraphicalElement' (role 'dg_GraphicalElement5', cardinality 0..*) is associated with 'dg::Style' (role 'dg_Style', cardinality 0..*).
+'dg::Definitions' (role 'dg_Definitions99', cardinality 0..*) is associated with 'dg::RootCanvas' (role 'dg_RootCanvas', cardinality 0..*).
+'dg::Bounds' (role 'dg_Bounds97', cardinality 0..*) is associated with 'dg::Rectangle' (role 'dg_Rectangle', cardinality 0..*).
+'dg::Point' (role 'dg_Point92', cardinality 0..*) is associated with 'dg::RadialGradient' (role 'dg_RadialGradient', cardinality 0..*).
+'dg::Point' (role 'dg_Point25', cardinality 0..*) is associated with 'dg::CubicCurveTo' (role 'dg_CubicCurveTo24', cardinality 0..*).
+'dg::Transform' (role 'dg_Transform', cardinality 0..*) is associated with 'dg::GraphicalElement' (role 'dg_GraphicalElement7', cardinality 0..*).
+'dg::Use' (role 'dg_Use110', cardinality 0..*) is associated with 'dg::GraphicalElement' (role 'dg_GraphicalElement111', cardinality 0..*).
+'dg::Ellipse' (role 'dg_Ellipse', cardinality 0..*) is associated with 'dg::Point' (role 'dg_Point40', cardinality 0..*).
+'dg::QuadraticCurveTo' (role 'dg_QuadraticCurveTo51', cardinality 0..*) is associated with 'dg::Point' (role 'dg_Point52', cardinality 0..*).
+'dg::ClipPath' (role 'dg_ClipPath', cardinality 0..*) is associated with 'dg::GraphicalElement' (role 'dg_GraphicalElement', cardinality 0..*).
+'dg::EllipticalArcTo' (role 'dg_EllipticalArcTo', cardinality 0..*) is associated with 'dg::Dimension' (role 'dg_Dimension44', cardinality 0..*).
+'dg::StyleRule' (role 'dg_StyleRule37', cardinality 0..*) is associated with 'dg::Style' (role 'dg_Style38', cardinality 0..*).
+'dg::Group' (role 'group', cardinality 0..*) is associated with 'dg::GraphicalElement' (role 'GraphicalElement', cardinality 0..*).
+'dg::Point' (role 'dg_Point', cardinality 0..*) is associated with 'dg::MoveTo' (role 'dg_MoveTo', cardinality 0..*).
+'dg::QuadraticCurveTo' (role 'dg_QuadraticCurveTo', cardinality 0..*) is associated with 'dg::Point' (role 'dg_Point49', cardinality 0..*).
+'dg::Paint' (role 'dg_Paint15', cardinality 0..*) is associated with 'dg::PaintServer' (role 'dg_PaintServer', cardinality 0..*).
+'dg::LineTo' (role 'dg_LineTo', cardinality 0..*) is associated with 'dg::Point' (role 'dg_Point80', cardinality 0..*).
+'dg::Bounds' (role 'dg_Bounds', cardinality 0..*) is associated with 'dg::Canvas' (role 'dg_Canvas', cardinality 0..*).
+'dg::Dimension' (role 'dg_Dimension70', cardinality 0..*) is associated with 'dg::Marker' (role 'dg_Marker69', cardinality 0..*).
+'dg::PaintServer' (role 'dg_PaintServer17', cardinality 0..*) is associated with 'dg::Transform' (role 'dg_Transform18', cardinality 0..*).
+'dg::Bounds' (role 'dg_Bounds83', cardinality 0..*) is associated with 'dg::Pattern' (role 'dg_Pattern', cardinality 0..*).
+'dg::Marker' (role 'dg_Marker64', cardinality 0..*) is associated with 'dg::MarkedElement' (role 'dg_MarkedElement63', cardinality 0..*).
+'dg::Polygon' (role 'dg_Polygon', cardinality 0..*) is associated with 'dg::Point' (role 'dg_Point88', cardinality 0..*).
+'dg::Point' (role 'dg_Point95', cardinality 0..*) is associated with 'dg::RadialGradient' (role 'dg_RadialGradient94', cardinality 0..*).
+'dg::Point' (role 'dg_Point22', cardinality 0..*) is associated with 'dg::CubicCurveTo' (role 'dg_CubicCurveTo', cardinality 0..*).
+'dg::EllipticalArcTo' (role 'dg_EllipticalArcTo46', cardinality 0..*) is associated with 'dg::Point' (role 'dg_Point47', cardinality 0..*).
+'dg::Point' (role 'dg_Point104', cardinality 0..*) is associated with 'dg::Rotate' (role 'dg_Rotate', cardinality 0..*).
+'dg::Point' (role 'dg_Point20', cardinality 0..*) is associated with 'dg::Circle' (role 'dg_Circle', cardinality 0..*).
+'dg::Use' (role 'dg_Use', cardinality 0..*) is associated with 'dg::Bounds' (role 'dg_Bounds108', cardinality 0..*).
+'dg::Paint' (role 'dg_Paint', cardinality 0..*) is associated with 'dg::Style' (role 'dg_Style10', cardinality 0..*).
+'dg::StyleSelector' (role 'dg_StyleSelector', cardinality 0..*) is associated with 'dg::StyleRule' (role 'dg_StyleRule35', cardinality 0..*).
+'dg::MarkedElement' (role 'dg_MarkedElement', cardinality 0..*) is associated with 'dg::Marker' (role 'dg_Marker', cardinality 0..*).
+'dg::CubicCurveTo' (role 'dg_CubicCurveTo27', cardinality 0..*) is associated with 'dg::Point' (role 'dg_Point28', cardinality 0..*).
+'dg::GradientStop' (role 'dg_GradientStop', cardinality 0..*) is associated with 'dg::Gradient' (role 'dg_Gradient', cardinality 0..*).
+'dg::StyleRule' (role 'dg_StyleRule', cardinality 0..*) is associated with 'dg::StyleSheet' (role 'dg_StyleSheet33', cardinality 0..*).
+'dg::Marker' (role 'dg_Marker67', cardinality 0..*) is associated with 'dg::MarkedElement' (role 'dg_MarkedElement66', cardinality 0..*).
+'dg::Point' (role 'dg_Point75', cardinality 0..*) is associated with 'dg::LinearGradient' (role 'dg_LinearGradient', cardinality 0..*).
+'dg::Point' (role 'dg_Point73', cardinality 0..*) is associated with 'dg::Marker' (role 'dg_Marker72', cardinality 0..*).
+'dg::GraphicalElement' (role 'dg_GraphicalElement86', cardinality 0..*) is associated with 'dg::Pattern' (role 'dg_Pattern85', cardinality 0..*).
+'dg::Path' (role 'dg_Path', cardinality 0..*) is associated with 'dg::PathCommand' (role 'dg_PathCommand', cardinality 0..*).
+'dg::Bounds' (role 'dg_Bounds55', cardinality 0..*) is associated with 'dg::Image' (role 'dg_Image', cardinality 0..*).
+'dg::Text' (role 'dg_Text', cardinality 0..*) is associated with 'dg::Bounds' (role 'dg_Bounds106', cardinality 0..*).
+'dg::Polyline' (role 'dg_Polyline', cardinality 0..*) is associated with 'dg::Point' (role 'dg_Point90', cardinality 0..*).
+'dg::Style' (role 'dg_Style12', cardinality 0..*) is associated with 'dg::Paint' (role 'dg_Paint13', cardinality 0..*).
+'dg::GraphicalElement' (role 'member', cardinality 0..*) is associated with 'dg::Group' (role 'Group', cardinality 0..*).
+'dg::Point' (role 'dg_Point60', cardinality 0..*) is associated with 'dg::Line' (role 'dg_Line59', cardinality 0..*).
+'dg::Ellipse' (role 'dg_Ellipse42', cardinality 0..*) is associated with 'dg::Dimension' (role 'dg_Dimension', cardinality 0..*).
+'dg::Definition' (role 'dg_Definition', cardinality 0..*) is associated with 'dg::Definitions' (role 'dg_Definitions', cardinality 0..*).
+'dg::Point' (role 'dg_Point57', cardinality 0..*) is associated with 'dg::Line' (role 'dg_Line', cardinality 0..*).

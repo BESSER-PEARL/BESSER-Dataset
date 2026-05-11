@@ -1,0 +1,6 @@
+The model has 2 class(es).
+The class 'Persons::Person' has the following attributes: 'firstname' of type str; 'gender' of type str; 'lastname' of type str.
+The class 'Persons::Persons' has no attributes.
+The enumeration 'GenderType' has the following literals: 'female', 'male'.
+'Persons::Persons' (role 'list', cardinality 0..*) is associated with 'Persons::Person' (role 'Person', cardinality 0..*).
+'Persons::Person' (role 'persons', cardinality 0..*) is associated with 'Persons::Persons' (role 'Persons', cardinality 0..*).

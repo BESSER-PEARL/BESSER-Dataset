@@ -1,0 +1,9 @@
+The model has 5 class(es).
+The class 'target::F' has no attributes.
+The class 'target::G' has no attributes.
+The class 'F' has no attributes.
+The class 'target::H' has no attributes.
+The class 'target::E' has no attributes.
+'target::H' is a specialization of 'F'.
+'target::G' is a specialization of 'F'.
+'target::E' (role 'target_E', cardinality 0..*) is associated with 'target::F' (role 'target_F', cardinality 0..*).

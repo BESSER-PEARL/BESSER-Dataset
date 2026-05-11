@@ -1,0 +1,38 @@
+The model has 17 class(es).
+The class 'railway2stochasticpetrinet::PetriNetModuleTraceLink' has no attributes.
+The class 'railway2stochasticpetrinet::RailwayContainer' has no attributes.
+The class 'railway2stochasticpetrinet::RailwayElement' has no attributes.
+The class 'railway2stochasticpetrinet::ImmediateTransition' has no attributes.
+The class 'railway2stochasticpetrinet::Route2FailureModel' has no attributes.
+The class 'railway2stochasticpetrinet::PetriNet' has no attributes.
+The class 'railway2stochasticpetrinet::Railway2StochasticPetriNetTrace' has no attributes.
+The class 'railway2stochasticpetrinet::RequiredElement2Connection' has no attributes.
+The class 'railway2stochasticpetrinet::TraceLink' has no attributes.
+The class 'railway2stochasticpetrinet::Arc' has no attributes.
+The class 'railway2stochasticpetrinet::Node' has no attributes.
+The class 'TraceLink' has no attributes.
+The class 'railway2stochasticpetrinet::Route' has no attributes.
+The class 'railway2stochasticpetrinet::RequiredElement2FailureModel' has no attributes.
+The class 'railway2stochasticpetrinet::Place' has no attributes.
+The class 'PetriNetModuleTraceLink' has no attributes.
+The class 'railway2stochasticpetrinet::RailwayContainer2PetriNet' has no attributes.
+'railway2stochasticpetrinet::PetriNetModuleTraceLink' is a specialization of 'TraceLink'.
+'railway2stochasticpetrinet::RequiredElement2Connection' is a specialization of 'PetriNetModuleTraceLink'.
+'railway2stochasticpetrinet::RequiredElement2FailureModel' is a specialization of 'PetriNetModuleTraceLink'.
+'railway2stochasticpetrinet::RailwayContainer2PetriNet' is a specialization of 'TraceLink'.
+'railway2stochasticpetrinet::Route2FailureModel' is a specialization of 'PetriNetModuleTraceLink'.
+'railway2stochasticpetrinet::TraceLink' (role 'railway2stochasticpetrinet_TraceLink', cardinality 0..*) is associated with 'railway2stochasticpetrinet::Railway2StochasticPetriNetTrace' (role 'railway2stochasticpetrinet_Railway2StochasticPetriNetTrace', cardinality 0..*).
+'railway2stochasticpetrinet::RequiredElement2FailureModel' (role 'railway2stochasticpetrinet_RequiredElement2FailureModel19', cardinality 0..*) is associated with 'railway2stochasticpetrinet::Place' (role 'railway2stochasticpetrinet_Place20', cardinality 0..*).
+'railway2stochasticpetrinet::ImmediateTransition' (role 'railway2stochasticpetrinet_ImmediateTransition', cardinality 0..*) is associated with 'railway2stochasticpetrinet::Route2FailureModel' (role 'railway2stochasticpetrinet_Route2FailureModel13', cardinality 0..*).
+'railway2stochasticpetrinet::RailwayElement' (role 'railway2stochasticpetrinet_RailwayElement25', cardinality 0..*) is associated with 'railway2stochasticpetrinet::RequiredElement2Connection' (role 'railway2stochasticpetrinet_RequiredElement2Connection24', cardinality 0..*).
+'railway2stochasticpetrinet::Route2FailureModel' (role 'railway2stochasticpetrinet_Route2FailureModel', cardinality 0..*) is associated with 'railway2stochasticpetrinet::Route' (role 'railway2stochasticpetrinet_Route', cardinality 0..*).
+'railway2stochasticpetrinet::Place' (role 'railway2stochasticpetrinet_Place', cardinality 0..*) is associated with 'railway2stochasticpetrinet::Route2FailureModel' (role 'railway2stochasticpetrinet_Route2FailureModel8', cardinality 0..*).
+'railway2stochasticpetrinet::RequiredElement2FailureModel' (role 'railway2stochasticpetrinet_RequiredElement2FailureModel', cardinality 0..*) is associated with 'railway2stochasticpetrinet::RailwayElement' (role 'railway2stochasticpetrinet_RailwayElement', cardinality 0..*).
+'railway2stochasticpetrinet::Place' (role 'railway2stochasticpetrinet_Place17', cardinality 0..*) is associated with 'railway2stochasticpetrinet::RequiredElement2FailureModel' (role 'railway2stochasticpetrinet_RequiredElement2FailureModel16', cardinality 0..*).
+'railway2stochasticpetrinet::PetriNetModuleTraceLink' (role 'railway2stochasticpetrinet_PetriNetModuleTraceLink5', cardinality 0..*) is associated with 'railway2stochasticpetrinet::Arc' (role 'railway2stochasticpetrinet_Arc', cardinality 0..*).
+'railway2stochasticpetrinet::RailwayContainer' (role 'railway2stochasticpetrinet_RailwayContainer27', cardinality 0..*) is associated with 'railway2stochasticpetrinet::RailwayContainer2PetriNet' (role 'railway2stochasticpetrinet_RailwayContainer2PetriNet', cardinality 0..*).
+'railway2stochasticpetrinet::Route2FailureModel' (role 'railway2stochasticpetrinet_Route2FailureModel10', cardinality 0..*) is associated with 'railway2stochasticpetrinet::Place' (role 'railway2stochasticpetrinet_Place11', cardinality 0..*).
+'railway2stochasticpetrinet::PetriNet' (role 'railway2stochasticpetrinet_PetriNet', cardinality 0..*) is associated with 'railway2stochasticpetrinet::RailwayContainer2PetriNet' (role 'railway2stochasticpetrinet_RailwayContainer2PetriNet29', cardinality 0..*).
+'railway2stochasticpetrinet::Route' (role 'railway2stochasticpetrinet_Route22', cardinality 0..*) is associated with 'railway2stochasticpetrinet::RequiredElement2Connection' (role 'railway2stochasticpetrinet_RequiredElement2Connection', cardinality 0..*).
+'railway2stochasticpetrinet::Railway2StochasticPetriNetTrace' (role 'railway2stochasticpetrinet_Railway2StochasticPetriNetTrace2', cardinality 0..*) is associated with 'railway2stochasticpetrinet::RailwayContainer' (role 'railway2stochasticpetrinet_RailwayContainer', cardinality 0..*).
+'railway2stochasticpetrinet::Node' (role 'railway2stochasticpetrinet_Node', cardinality 0..*) is associated with 'railway2stochasticpetrinet::PetriNetModuleTraceLink' (role 'railway2stochasticpetrinet_PetriNetModuleTraceLink', cardinality 0..*).

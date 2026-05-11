@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eclipse/gemoc-studio-modeldebugging/trace/tests_and_benchmarks/org.eclipse.gemoc.trace.metamodel.generator.test/model_inputs/model1.ecore

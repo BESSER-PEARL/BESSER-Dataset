@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/matseda/Assignment3/TDT4250.Assignment3.model/model/study.ecore

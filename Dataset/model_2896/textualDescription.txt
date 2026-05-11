@@ -1,0 +1,33 @@
+The model has 17 class(es).
+The class 'ulmDsl2::LookupInt' has the following attributes: 'description' of type str.
+The class 'ulmDsl2::AttributeStringType' has the following attributes: 'length' of type int; 'name' of type str; 'array' of type bool.
+The class 'ulmDsl2::AttributeType' has the following attributes: 'name' of type str.
+The class 'ulmDsl2::Model' has the following attributes: 'name' of type str.
+The class 'ulmDsl2::AttributeFeatureType' has no attributes.
+The class 'ulmDsl2::Entity' has the following attributes: 'type' of type str; 'name' of type str; 'desc' of type str.
+The class 'ulmDsl2::AttributeDecimalType' has the following attributes: 'array' of type bool; 'name' of type str; 'scale' of type int; 'precision' of type int.
+The class 'ulmDsl2::Attribute' has the following attributes: 'desc' of type str; 'name' of type str.
+The class 'ulmDsl2::FeatureType' has no attributes.
+The class 'ulmDsl2::Feature' has the following attributes: 'identifier' of type bool; 'mandatory' of type bool; 'name' of type str.
+The class 'ulmDsl2::Context' has the following attributes: 'version' of type str; 'name' of type str.
+The class 'ulmDsl2::Lookup' has the following attributes: 'name' of type str.
+The class 'ulmDsl2::LookupIntValue' has the following attributes: 'description' of type str; 'value' of type int.
+The class 'ulmDsl2::EObject' has no attributes.
+The class 'ulmDsl2::LookupStringValue' has the following attributes: 'description' of type str; 'value' of type str.
+The class 'ulmDsl2::EntityFeatureType' has the following attributes: 'array' of type bool; 'length' of type int.
+The class 'ulmDsl2::LookupString' has the following attributes: 'description' of type str.
+'ulmDsl2::Context' (role 'ulmDsl2_Context2', cardinality 0..*) is associated with 'ulmDsl2::Attribute' (role 'ulmDsl2_Attribute', cardinality 0..*).
+'ulmDsl2::Feature' (role 'ulmDsl2_Feature', cardinality 0..*) is associated with 'ulmDsl2::Entity' (role 'ulmDsl2_Entity13', cardinality 0..*).
+'ulmDsl2::Attribute' (role 'ulmDsl2_Attribute20', cardinality 0..*) is associated with 'ulmDsl2::AttributeFeatureType' (role 'ulmDsl2_AttributeFeatureType', cardinality 0..*).
+'ulmDsl2::LookupInt' (role 'ulmDsl2_LookupInt', cardinality 0..*) is associated with 'ulmDsl2::LookupIntValue' (role 'ulmDsl2_LookupIntValue', cardinality 0..*).
+'ulmDsl2::Lookup' (role 'ulmDsl2_Lookup', cardinality 0..*) is associated with 'ulmDsl2::Context' (role 'ulmDsl2_Context4', cardinality 0..*).
+'ulmDsl2::AttributeFeatureType' (role 'ulmDsl2_AttributeFeatureType22', cardinality 0..*) is associated with 'ulmDsl2::Lookup' (role 'ulmDsl2_Lookup23', cardinality 0..*).
+'ulmDsl2::EObject' (role 'ulmDsl2_EObject18', cardinality 0..*) is associated with 'ulmDsl2::FeatureType' (role 'ulmDsl2_FeatureType17', cardinality 0..*).
+'ulmDsl2::Feature' (role 'ulmDsl2_Feature15', cardinality 0..*) is associated with 'ulmDsl2::FeatureType' (role 'ulmDsl2_FeatureType', cardinality 0..*).
+'ulmDsl2::Lookup' (role 'ulmDsl2_Lookup27', cardinality 0..*) is associated with 'ulmDsl2::EObject' (role 'ulmDsl2_EObject28', cardinality 0..*).
+'ulmDsl2::Context' (role 'ulmDsl2_Context6', cardinality 0..*) is associated with 'ulmDsl2::Entity' (role 'ulmDsl2_Entity', cardinality 0..*).
+'ulmDsl2::EntityFeatureType' (role 'ulmDsl2_EntityFeatureType', cardinality 0..*) is associated with 'ulmDsl2::Entity' (role 'ulmDsl2_Entity25', cardinality 0..*).
+'ulmDsl2::Model' (role 'ulmDsl2_Model', cardinality 0..*) is associated with 'ulmDsl2::Context' (role 'ulmDsl2_Context', cardinality 0..*).
+'ulmDsl2::LookupString' (role 'ulmDsl2_LookupString', cardinality 0..*) is associated with 'ulmDsl2::LookupStringValue' (role 'ulmDsl2_LookupStringValue', cardinality 0..*).
+'ulmDsl2::Attribute' (role 'ulmDsl2_Attribute8', cardinality 0..*) is associated with 'ulmDsl2::EObject' (role 'ulmDsl2_EObject', cardinality 0..*).
+'ulmDsl2::Entity' (role 'ulmDsl2_Entity9', cardinality 0..*) is associated with 'ulmDsl2::Entity' (role 'ulmDsl2_Entity11', cardinality 0..*).

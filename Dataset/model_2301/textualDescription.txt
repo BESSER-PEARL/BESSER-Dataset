@@ -1,0 +1,9 @@
+The model has 5 class(es).
+The class 'Person' has no attributes.
+The class 'SimplePersons::PersonRegister' has no attributes.
+The class 'SimplePersons::Female' has no attributes.
+The class 'SimplePersons::Male' has no attributes.
+The class 'SimplePersons::Person' has the following attributes: 'name' of type str.
+'SimplePersons::Female' is a specialization of 'Person'.
+'SimplePersons::Male' is a specialization of 'Person'.
+'SimplePersons::PersonRegister' (role 'SimplePersons_PersonRegister', cardinality 0..*) is associated with 'SimplePersons::Person' (role 'SimplePersons_Person', cardinality 0..*).

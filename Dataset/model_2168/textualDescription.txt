@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'graph::ResourcePlot' has the following attributes: 'min' of type float; 'max' of type float; 'name' of type str; 'rgb' of type str; 'fit' of type str.
+The class 'graph::ResourceGraphs' has no attributes.
+The class 'graph::ResourceGraph' has the following attributes: 'name' of type str.
+The enumeration 'FitPolicy' has the following literals: 'AUTO', 'CUSTOM'.
+'graph::ResourceGraph' (role 'graph_ResourceGraph2', cardinality 0..*) is associated with 'graph::ResourcePlot' (role 'graph_ResourcePlot', cardinality 0..*).
+'graph::ResourceGraph' (role 'graph_ResourceGraph', cardinality 0..*) is associated with 'graph::ResourceGraphs' (role 'graph_ResourceGraphs', cardinality 0..*).

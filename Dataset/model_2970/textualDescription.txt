@@ -1,0 +1,6 @@
+The model has 2 class(es).
+The class 'namespace::XMLNamespaceDocumentRoot' has the following attributes: 'base' of type str; 'lang' of type str; 'id' of type str; 'space' of type str; 'mixed' of type str.
+The class 'namespace::EStringToStringMapEntry' has no attributes.
+The enumeration 'SpaceType' has the following literals: 'default', 'preserve'.
+'namespace::XMLNamespaceDocumentRoot' (role 'namespace_XMLNamespaceDocumentRoot', cardinality 0..*) is associated with 'namespace::EStringToStringMapEntry' (role 'namespace_EStringToStringMapEntry', cardinality 0..*).
+'namespace::EStringToStringMapEntry' (role 'namespace_EStringToStringMapEntry3', cardinality 0..*) is associated with 'namespace::XMLNamespaceDocumentRoot' (role 'namespace_XMLNamespaceDocumentRoot2', cardinality 0..*).

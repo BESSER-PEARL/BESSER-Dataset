@@ -1,0 +1,11 @@
+The model has 3 class(es).
+The class 'OverlappingTree::Tree' has no attributes.
+The class 'OverlappingTree::NodeKind' has no attributes.
+The class 'OverlappingTree::Child' has no attributes.
+'OverlappingTree::NodeKind' (role 'NodeKind9', cardinality 0..*) is associated with 'OverlappingTree::Child' (role 'children', cardinality 0..*).
+'OverlappingTree::Child' (role 'OverlappingTree_Child', cardinality 0..*) is associated with 'OverlappingTree::Tree' (role 'OverlappingTree_Tree', cardinality 0..*).
+'OverlappingTree::Child' (role 'Child', cardinality 0..*) is associated with 'OverlappingTree::NodeKind' (role 'parent', cardinality 0..*).
+'OverlappingTree::NodeKind' (role 'root', cardinality 0..*) is associated with 'OverlappingTree::Tree' (role 'Tree', cardinality 0..*).
+'OverlappingTree::NodeKind' (role 'node', cardinality 0..*) is associated with 'OverlappingTree::Child' (role 'Child5', cardinality 0..*).
+'OverlappingTree::NodeKind' (role 'NodeKind', cardinality 0..*) is associated with 'OverlappingTree::Tree' (role 'tree', cardinality 0..*).
+'OverlappingTree::Child' (role 'nodeChildren', cardinality 0..*) is associated with 'OverlappingTree::NodeKind' (role 'NodeKind7', cardinality 0..*).

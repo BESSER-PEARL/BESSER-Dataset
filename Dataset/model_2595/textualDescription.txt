@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'testSubpackages2::root::class2' has no attributes.
+The class 'testSubpackages1::subpackage3::class4' has no attributes.
+'testSubpackages1::subpackage3::class4' (role 'testSubpackages1_subpackage3_class4', cardinality 0..*) is associated with 'testSubpackages2::root::class2' (role 'testSubpackages2_root_class2', cardinality 0..*).

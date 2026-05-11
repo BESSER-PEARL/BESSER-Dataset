@@ -1,0 +1,39 @@
+The model has 19 class(es).
+The class 'M' has no attributes.
+The class 'errorkref::D' has no attributes.
+The class 'errorkref::F' has no attributes.
+The class 'E' has no attributes.
+The class 'errorkref::E' has no attributes.
+The class 'errorkref::B' has the following attributes: 'id' of type str.
+The class 'errorkref::G' has no attributes.
+The class 'errorkref::C' has no attributes.
+The class 'errorkref::Q' has the following attributes: 'id' of type str.
+The class 'errorkref::M' has the following attributes: 'id' of type str.
+The class 'B' has no attributes.
+The class 'errorkref::I' has the following attributes: 'name' of type str.
+The class 'G' has no attributes.
+The class 'D' has no attributes.
+The class 'errorkref::J' has the following attributes: 'id' of type str.
+The class 'errorkref::K' has the following attributes: 'ids' of type str.
+The class 'errorkref::A' has the following attributes: 'name' of type str.
+The class 'errorkref::N' has the following attributes: 'id' of type str.
+The class 'errorkref::L1' has the following attributes: 'since' of type str.
+'errorkref::E' is a specialization of 'D'.
+'errorkref::F' is a specialization of 'E'.
+'errorkref::D' is a specialization of 'G'.
+'errorkref::G' is a specialization of 'M'.
+'errorkref::A' is a specialization of 'B'.
+'errorkref::F' (role 'errorkref_F', cardinality 0..*) is associated with 'errorkref::D' (role 'errorkref_D10', cardinality 0..*).
+'errorkref::L1' (role 'errorkref_L1', cardinality 0..*) is associated with 'errorkref::C' (role 'errorkref_C4', cardinality 0..*).
+'errorkref::L1' (role 'errorkref_L122', cardinality 0..*) is associated with 'errorkref::B' (role 'errorkref_B23', cardinality 0..*).
+'errorkref::J' (role 'errorkref_J', cardinality 0..*) is associated with 'errorkref::E' (role 'errorkref_E', cardinality 0..*).
+'errorkref::I' (role 'errorkref_I', cardinality 0..*) is associated with 'errorkref::M' (role 'errorkref_M', cardinality 0..*).
+'errorkref::G' (role 'errorkref_G26', cardinality 0..*) is associated with 'errorkref::L1' (role 'errorkref_L125', cardinality 0..*).
+'errorkref::K' (role 'errorkref_K', cardinality 0..*) is associated with 'errorkref::G' (role 'errorkref_G20', cardinality 0..*).
+'errorkref::D' (role 'errorkref_D', cardinality 0..*) is associated with 'errorkref::C' (role 'errorkref_C2', cardinality 0..*).
+'errorkref::A' (role 'errorkref_A6', cardinality 0..*) is associated with 'errorkref::B' (role 'errorkref_B', cardinality 0..*).
+'errorkref::G' (role 'errorkref_G13', cardinality 0..*) is associated with 'errorkref::D' (role 'errorkref_D12', cardinality 0..*).
+'errorkref::D' (role 'errorkref_D15', cardinality 0..*) is associated with 'errorkref::N' (role 'errorkref_N', cardinality 0..*).
+'errorkref::C' (role 'errorkref_C', cardinality 0..*) is associated with 'errorkref::A' (role 'errorkref_A', cardinality 0..*).
+'errorkref::G' (role 'errorkref_G', cardinality 0..*) is associated with 'errorkref::B' (role 'errorkref_B8', cardinality 0..*).
+'errorkref::Q' (role 'errorkref_Q', cardinality 0..*) is associated with 'errorkref::F' (role 'errorkref_F18', cardinality 0..*).

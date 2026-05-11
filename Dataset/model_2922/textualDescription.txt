@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'domainmodel::Entity' has no attributes.
+The class 'domainmodel::Feature' has the following attributes: 'name' of type str; 'not_' of type str; 'key' of type str.
+The class 'Type' has no attributes.
+The class 'domainmodel::DataType' has no attributes.
+The class 'domainmodel::Type' has the following attributes: 'name' of type str.
+The class 'domainmodel::Domainmodel' has no attributes.
+'domainmodel::Entity' is a specialization of 'Type'.
+'domainmodel::DataType' is a specialization of 'Type'.
+'domainmodel::Feature' (role 'domainmodel_Feature', cardinality 0..*) is associated with 'domainmodel::Entity' (role 'domainmodel_Entity4', cardinality 0..*).
+'domainmodel::Entity' (role 'domainmodel_Entity', cardinality 0..*) is associated with 'domainmodel::Entity' (role 'domainmodel_Entity1', cardinality 0..*).
+'domainmodel::Domainmodel' (role 'domainmodel_Domainmodel', cardinality 0..*) is associated with 'domainmodel::Type' (role 'domainmodel_Type', cardinality 0..*).
+'domainmodel::Feature' (role 'domainmodel_Feature6', cardinality 0..*) is associated with 'domainmodel::Type' (role 'domainmodel_Type7', cardinality 0..*).

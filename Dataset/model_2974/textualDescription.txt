@@ -1,0 +1,112 @@
+The model has 52 class(es).
+The class 'restbehavior::BinOpType' has no attributes.
+The class 'restbehavior::Trigger' has no attributes.
+The class 'WritableReference' has no attributes.
+The class 'restbehavior::Metadata' has no attributes.
+The class 'restbehavior::Condition' has no attributes.
+The class 'restbehavior::BinaryOperation' has no attributes.
+The class 'restbehavior::InternalMessage' has the following attributes: 'name' of type str.
+The class 'restbehavior::Creator' has no attributes.
+The class 'restbehavior::MediaTypeElement' has no attributes.
+The class 'restbehavior::BehaviorSpecification' has no attributes.
+The class 'Reference' has no attributes.
+The class 'restbehavior::MessageAction' has no attributes.
+The class 'restbehavior::ConditionalAction' has no attributes.
+The class 'restbehavior::ActionSequence' has no attributes.
+The class 'restbehavior::AttributeReference' has no attributes.
+The class 'restbehavior::DeletedState' has no attributes.
+The class 'restbehavior::MediaTypeLink' has no attributes.
+The class 'restbehavior::Constant' has the following attributes: 'stringRepresentation' of type str.
+The class 'restbehavior::Representation' has no attributes.
+The class 'restbehavior::Parameter' has no attributes.
+The class 'restbehavior::Action' has no attributes.
+The class 'MTReference' has no attributes.
+The class 'restbehavior::ReturnAction' has no attributes.
+The class 'restbehavior::MTReference' has no attributes.
+The class 'restbehavior::Attribute' has no attributes.
+The class 'Value' has no attributes.
+The class 'restbehavior::Method' has no attributes.
+The class 'restbehavior::InternalLinkReference' has no attributes.
+The class 'restbehavior::State' has the following attributes: 'name' of type str.
+The class 'restbehavior::Operation' has no attributes.
+The class 'restbehavior::Value' has no attributes.
+The class 'OpType' has no attributes.
+The class 'restbehavior::DataType' has no attributes.
+The class 'restbehavior::MTLinkReference' has no attributes.
+The class 'restbehavior::ListAddAction' has no attributes.
+The class 'restbehavior::MtElementReference' has no attributes.
+The class 'State' has no attributes.
+The class 'restbehavior::InternalLink' has no attributes.
+The class 'restbehavior::UpdateAction' has no attributes.
+The class 'restbehavior::OpType' has the following attributes: 'name' of type str.
+The class 'restbehavior::ExternalLinkReference' has no attributes.
+The class 'Action' has no attributes.
+The class 'Operation' has no attributes.
+The class 'restbehavior::ListRemoveAction' has no attributes.
+The class 'restbehavior::Transition' has no attributes.
+The class 'Trigger' has no attributes.
+The class 'restbehavior::MediaType' has no attributes.
+The class 'restbehavior::WritableReference' has no attributes.
+The class 'restbehavior::CreateAction' has no attributes.
+The class 'restbehavior::ExternalLink' has no attributes.
+The class 'restbehavior::StatusCode' has the following attributes: 'number' of type int.
+The class 'restbehavior::Reference' has no attributes.
+'restbehavior::Constant' is a specialization of 'Value'.
+'restbehavior::MTReference' is a specialization of 'Reference'.
+'restbehavior::ConditionalAction' is a specialization of 'Action'.
+'restbehavior::UpdateAction' is a specialization of 'Action'.
+'restbehavior::AttributeReference' is a specialization of 'WritableReference'.
+'restbehavior::MessageAction' is a specialization of 'Action'.
+'restbehavior::MTLinkReference' is a specialization of 'MTReference'.
+'restbehavior::WritableReference' is a specialization of 'Reference'.
+'restbehavior::BinOpType' is a specialization of 'OpType'.
+'restbehavior::MtElementReference' is a specialization of 'MTReference'.
+'restbehavior::ReturnAction' is a specialization of 'Action'.
+'restbehavior::DeletedState' is a specialization of 'State'.
+'restbehavior::BinaryOperation' is a specialization of 'Operation'.
+'restbehavior::ExternalLinkReference' is a specialization of 'WritableReference'.
+'restbehavior::Reference' is a specialization of 'Value'.
+'restbehavior::InternalMessage' is a specialization of 'Trigger'.
+'restbehavior::ListAddAction' is a specialization of 'Action'.
+'restbehavior::CreateAction' is a specialization of 'Action'.
+'restbehavior::ListRemoveAction' is a specialization of 'Action'.
+'restbehavior::InternalLinkReference' is a specialization of 'WritableReference'.
+'restbehavior::Operation' is a specialization of 'Value'.
+'restbehavior::ActionSequence' is a specialization of 'Action'.
+'restbehavior::ActionSequence' (role 'restbehavior_ActionSequence', cardinality 0..*) is associated with 'restbehavior::Action' (role 'restbehavior_Action40', cardinality 0..*).
+'restbehavior::WritableReference' (role 'restbehavior_WritableReference70', cardinality 0..*) is associated with 'restbehavior::InternalLinkReference' (role 'restbehavior_InternalLinkReference69', cardinality 0..*).
+'restbehavior::BinaryOperation' (role 'restbehavior_BinaryOperation', cardinality 0..*) is associated with 'restbehavior::Value' (role 'restbehavior_Value52', cardinality 0..*).
+'restbehavior::MTLinkReference' (role 'restbehavior_MTLinkReference', cardinality 0..*) is associated with 'restbehavior::MediaTypeLink' (role 'restbehavior_MediaTypeLink', cardinality 0..*).
+'restbehavior::BehaviorSpecification' (role 'restbehavior_BehaviorSpecification25', cardinality 0..*) is associated with 'restbehavior::Transition' (role 'restbehavior_Transition24', cardinality 0..*).
+'restbehavior::BehaviorSpecification' (role 'restbehavior_BehaviorSpecification11', cardinality 0..*) is associated with 'restbehavior::State' (role 'restbehavior_State10', cardinality 0..*).
+'restbehavior::Trigger' (role 'restbehavior_Trigger', cardinality 0..*) is associated with 'restbehavior::Transition' (role 'restbehavior_Transition17', cardinality 0..*).
+'restbehavior::BinOpType' (role 'restbehavior_BinOpType64', cardinality 0..*) is associated with 'restbehavior::DataType' (role 'restbehavior_DataType65', cardinality 0..*).
+'restbehavior::Attribute' (role 'restbehavior_Attribute', cardinality 0..*) is associated with 'restbehavior::AttributeReference' (role 'restbehavior_AttributeReference', cardinality 0..*).
+'restbehavior::MediaTypeElement' (role 'restbehavior_MediaTypeElement', cardinality 0..*) is associated with 'restbehavior::MtElementReference' (role 'restbehavior_MtElementReference', cardinality 0..*).
+'restbehavior::BinOpType' (role 'restbehavior_BinOpType', cardinality 0..*) is associated with 'restbehavior::BinaryOperation' (role 'restbehavior_BinaryOperation57', cardinality 0..*).
+'restbehavior::Value' (role 'restbehavior_Value55', cardinality 0..*) is associated with 'restbehavior::BinaryOperation' (role 'restbehavior_BinaryOperation54', cardinality 0..*).
+'restbehavior::OpType' (role 'restbehavior_OpType', cardinality 0..*) is associated with 'restbehavior::DataType' (role 'restbehavior_DataType59', cardinality 0..*).
+'restbehavior::ExternalLink' (role 'restbehavior_ExternalLink', cardinality 0..*) is associated with 'restbehavior::ExternalLinkReference' (role 'restbehavior_ExternalLinkReference', cardinality 0..*).
+'restbehavior::Condition' (role 'restbehavior_Condition30', cardinality 0..*) is associated with 'restbehavior::ConditionalAction' (role 'restbehavior_ConditionalAction', cardinality 0..*).
+'restbehavior::UpdateAction' (role 'restbehavior_UpdateAction', cardinality 0..*) is associated with 'restbehavior::WritableReference' (role 'restbehavior_WritableReference', cardinality 0..*).
+'restbehavior::Transition' (role 'restbehavior_Transition19', cardinality 0..*) is associated with 'restbehavior::State' (role 'restbehavior_State20', cardinality 0..*).
+'restbehavior::InternalLink' (role 'restbehavior_InternalLink', cardinality 0..*) is associated with 'restbehavior::InternalLinkReference' (role 'restbehavior_InternalLinkReference', cardinality 0..*).
+'restbehavior::BehaviorSpecification' (role 'restbehavior_BehaviorSpecification6', cardinality 0..*) is associated with 'restbehavior::Action' (role 'restbehavior_Action', cardinality 0..*).
+'restbehavior::State' (role 'restbehavior_State', cardinality 0..*) is associated with 'restbehavior::BehaviorSpecification' (role 'restbehavior_BehaviorSpecification8', cardinality 0..*).
+'restbehavior::ConditionalAction' (role 'restbehavior_ConditionalAction32', cardinality 0..*) is associated with 'restbehavior::Action' (role 'restbehavior_Action33', cardinality 0..*).
+'restbehavior::ConditionalAction' (role 'restbehavior_ConditionalAction35', cardinality 0..*) is associated with 'restbehavior::Action' (role 'restbehavior_Action36', cardinality 0..*).
+'restbehavior::Condition' (role 'restbehavior_Condition27', cardinality 0..*) is associated with 'restbehavior::Value' (role 'restbehavior_Value', cardinality 0..*).
+'restbehavior::ReturnAction' (role 'restbehavior_ReturnAction49', cardinality 0..*) is associated with 'restbehavior::Representation' (role 'restbehavior_Representation', cardinality 0..*).
+'restbehavior::CreateAction' (role 'restbehavior_CreateAction', cardinality 0..*) is associated with 'restbehavior::Creator' (role 'restbehavior_Creator38', cardinality 0..*).
+'restbehavior::BinOpType' (role 'restbehavior_BinOpType61', cardinality 0..*) is associated with 'restbehavior::DataType' (role 'restbehavior_DataType62', cardinality 0..*).
+'restbehavior::InternalMessage' (role 'restbehavior_InternalMessage', cardinality 0..*) is associated with 'restbehavior::MessageAction' (role 'restbehavior_MessageAction', cardinality 0..*).
+'restbehavior::Condition' (role 'restbehavior_Condition', cardinality 0..*) is associated with 'restbehavior::Transition' (role 'restbehavior_Transition22', cardinality 0..*).
+'restbehavior::Creator' (role 'restbehavior_Creator', cardinality 0..*) is associated with 'restbehavior::MediaType' (role 'restbehavior_MediaType', cardinality 0..*).
+'restbehavior::StatusCode' (role 'restbehavior_StatusCode', cardinality 0..*) is associated with 'restbehavior::ReturnAction' (role 'restbehavior_ReturnAction', cardinality 0..*).
+'restbehavior::ReturnAction' (role 'restbehavior_ReturnAction47', cardinality 0..*) is associated with 'restbehavior::Metadata' (role 'restbehavior_Metadata', cardinality 0..*).
+'restbehavior::State' (role 'restbehavior_State13', cardinality 0..*) is associated with 'restbehavior::Transition' (role 'restbehavior_Transition', cardinality 0..*).
+'restbehavior::State' (role 'restbehavior_State15', cardinality 0..*) is associated with 'restbehavior::Method' (role 'restbehavior_Method', cardinality 0..*).
+'restbehavior::Creator' (role 'restbehavior_Creator4', cardinality 0..*) is associated with 'restbehavior::BehaviorSpecification' (role 'restbehavior_BehaviorSpecification', cardinality 0..*).
+'restbehavior::Creator' (role 'restbehavior_Creator2', cardinality 0..*) is associated with 'restbehavior::Parameter' (role 'restbehavior_Parameter', cardinality 0..*).
+'restbehavior::UpdateAction' (role 'restbehavior_UpdateAction43', cardinality 0..*) is associated with 'restbehavior::Value' (role 'restbehavior_Value44', cardinality 0..*).
+'restbehavior::Constant' (role 'restbehavior_Constant', cardinality 0..*) is associated with 'restbehavior::DataType' (role 'restbehavior_DataType', cardinality 0..*).

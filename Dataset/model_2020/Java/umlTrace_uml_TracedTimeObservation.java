@@ -1,0 +1,24 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class umlTrace_uml_TracedTimeObservation extends TracedObservation {
+
+
+
+
+    public umlTrace_uml_TracedTimeObservation(
+    ) {
+        super(
+        );
+    }
+
+
+
+
+}

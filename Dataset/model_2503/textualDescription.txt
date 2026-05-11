@@ -1,0 +1,49 @@
+The model has 25 class(es).
+The class 'tfsm::LowerClockConstraint' has no attributes.
+The class 'tfsm::BinaryClockConstraint' has no attributes.
+The class 'FinalState' has no attributes.
+The class 'tfsm::OrClockConstraint' has no attributes.
+The class 'State' has no attributes.
+The class 'BinaryClockConstraint' has no attributes.
+The class 'tfsm::ClockConstraintOperation' has no attributes.
+The class 'Transition' has no attributes.
+The class 'tfsm::TimedTransition' has no attributes.
+The class 'tfsm::ClockReset' has no attributes.
+The class 'ClockConstraint' has no attributes.
+The class 'tfsm::TimedFinalState' has no attributes.
+The class 'tfsm::ClockConstraint' has the following attributes: 'threshold' of type int.
+The class 'tfsm::AndClockConstraint' has no attributes.
+The class 'ClockConstraintOperation' has no attributes.
+The class 'tfsm::UpperClockConstraint' has no attributes.
+The class 'TimedState' has no attributes.
+The class 'tfsm::Clock' has the following attributes: 'tick' of type int; 'name' of type str.
+The class 'tfsm::TimedState' has no attributes.
+The class 'tfsm::LowerEqualClockConstraint' has no attributes.
+The class 'tfsm::TimedInitialState' has no attributes.
+The class 'tfsm::TimedFSM' has no attributes.
+The class 'InitialState' has no attributes.
+The class 'tfsm::UpperEqualClockConstraint' has no attributes.
+The class 'FSM' has no attributes.
+'tfsm::UpperClockConstraint' is a specialization of 'ClockConstraint'.
+'tfsm::UpperEqualClockConstraint' is a specialization of 'ClockConstraint'.
+'tfsm::TimedFinalState' is a specialization of 'FinalState'.
+'tfsm::OrClockConstraint' is a specialization of 'BinaryClockConstraint'.
+'tfsm::LowerClockConstraint' is a specialization of 'ClockConstraint'.
+'tfsm::TimedInitialState' is a specialization of 'InitialState'.
+'tfsm::LowerEqualClockConstraint' is a specialization of 'ClockConstraint'.
+'tfsm::TimedTransition' is a specialization of 'Transition'.
+'tfsm::TimedState' is a specialization of 'State'.
+'tfsm::TimedInitialState' is a specialization of 'TimedState'.
+'tfsm::TimedFSM' is a specialization of 'FSM'.
+'tfsm::ClockConstraint' is a specialization of 'ClockConstraintOperation'.
+'tfsm::BinaryClockConstraint' is a specialization of 'ClockConstraintOperation'.
+'tfsm::AndClockConstraint' is a specialization of 'BinaryClockConstraint'.
+'tfsm::TimedFinalState' is a specialization of 'TimedState'.
+'tfsm::ClockConstraintOperation' (role 'tfsm_ClockConstraintOperation15', cardinality 0..*) is associated with 'tfsm::BinaryClockConstraint' (role 'tfsm_BinaryClockConstraint14', cardinality 0..*).
+'tfsm::BinaryClockConstraint' (role 'tfsm_BinaryClockConstraint', cardinality 0..*) is associated with 'tfsm::ClockConstraintOperation' (role 'tfsm_ClockConstraintOperation12', cardinality 0..*).
+'tfsm::TimedState' (role 'tfsm_TimedState', cardinality 0..*) is associated with 'tfsm::ClockConstraintOperation' (role 'tfsm_ClockConstraintOperation', cardinality 0..*).
+'tfsm::ClockConstraint' (role 'tfsm_ClockConstraint', cardinality 0..*) is associated with 'tfsm::Clock' (role 'tfsm_Clock7', cardinality 0..*).
+'tfsm::TimedFSM' (role 'tfsm_TimedFSM', cardinality 0..*) is associated with 'tfsm::Clock' (role 'tfsm_Clock', cardinality 0..*).
+'tfsm::ClockReset' (role 'tfsm_ClockReset9', cardinality 0..*) is associated with 'tfsm::Clock' (role 'tfsm_Clock10', cardinality 0..*).
+'tfsm::TimedTransition' (role 'tfsm_TimedTransition', cardinality 0..*) is associated with 'tfsm::ClockReset' (role 'tfsm_ClockReset', cardinality 0..*).
+'tfsm::TimedTransition' (role 'tfsm_TimedTransition4', cardinality 0..*) is associated with 'tfsm::ClockConstraintOperation' (role 'tfsm_ClockConstraintOperation5', cardinality 0..*).

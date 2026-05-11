@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/ftsrg/viewmodel/benchmarks/plugins/hu.bme.mit.inf.viewmodel.benchmarks.models/model/railway2stochasticpetrinet.ecore

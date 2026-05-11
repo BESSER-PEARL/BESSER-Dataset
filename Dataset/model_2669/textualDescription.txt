@@ -1,0 +1,16 @@
+The model has 8 class(es).
+The class 'minher::A' has no attributes.
+The class 'minher::G' has no attributes.
+The class 'minher::E' has no attributes.
+The class 'Named' has no attributes.
+The class 'minher::C' has no attributes.
+The class 'minher::Named' has the following attributes: 'name' of type str.
+The class 'minher::B' has the following attributes: 'value' of type str.
+The class 'B' has no attributes.
+'minher::G' is a specialization of 'Named'.
+'minher::E' is a specialization of 'B'.
+'minher::C' is a specialization of 'Named'.
+'minher::B' is a specialization of 'Named'.
+'minher::B' (role 'minher_B4', cardinality 0..*) is associated with 'minher::C' (role 'minher_C', cardinality 0..*).
+'minher::B' (role 'minher_B2', cardinality 0..*) is associated with 'minher::G' (role 'minher_G', cardinality 0..*).
+'minher::A' (role 'minher_A', cardinality 0..*) is associated with 'minher::B' (role 'minher_B', cardinality 0..*).

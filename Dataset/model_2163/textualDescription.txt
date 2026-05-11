@@ -1,0 +1,50 @@
+The model has 22 class(es).
+The class 'dependencies::Required' has no attributes.
+The class 'dependencies::Block' has no attributes.
+The class 'dependencies::EClass' has no attributes.
+The class 'dependencies::RCPackage' has no attributes.
+The class 'dependencies::Graph' has the following attributes: 'priority' of type str.
+The class 'Vertex' has no attributes.
+The class 'dependencies::Equivalence' has no attributes.
+The class 'dependencies::SimpleTerm' has no attributes.
+The class 'dependencies::Term' has no attributes.
+The class 'dependencies::Edge' has the following attributes: 'equal' of type bool; 'referredTo' of type bool.
+The class 'Block' has no attributes.
+The class 'Term' has no attributes.
+The class 'dependencies::Operation' has the following attributes: 'operationType' of type str.
+The class 'NamedElement' has no attributes.
+The class 'dependencies::EPackage' has no attributes.
+The class 'dependencies::SemiRequired' has no attributes.
+The class 'dependencies::CoreClass' has no attributes.
+The class 'dependencies::Vertex' has no attributes.
+The class 'dependencies::Create' has no attributes.
+The class 'dependencies::RightTerm' has the following attributes: 'value' of type str.
+The class 'dependencies::NamedElement' has the following attributes: 'name' of type str.
+The class 'dependencies::Domain' has no attributes.
+'dependencies::CoreClass' is a specialization of 'NamedElement'.
+'dependencies::Graph' is a specialization of 'NamedElement'.
+'dependencies::SimpleTerm' is a specialization of 'Term'.
+'dependencies::CoreClass' is a specialization of 'Vertex'.
+'dependencies::Equivalence' is a specialization of 'Vertex'.
+'dependencies::SemiRequired' is a specialization of 'Block'.
+'dependencies::Create' is a specialization of 'Block'.
+'dependencies::Domain' is a specialization of 'NamedElement'.
+'dependencies::Required' is a specialization of 'Block'.
+'dependencies::RightTerm' is a specialization of 'Term'.
+'dependencies::Edge' (role 'dependencies_Edge18', cardinality 0..*) is associated with 'dependencies::SimpleTerm' (role 'dependencies_SimpleTerm', cardinality 0..*).
+'dependencies::EClass' (role 'dependencies_EClass', cardinality 0..*) is associated with 'dependencies::CoreClass' (role 'dependencies_CoreClass15', cardinality 0..*).
+'dependencies::CoreClass' (role 'dependencies_CoreClass', cardinality 0..*) is associated with 'dependencies::Block' (role 'dependencies_Block', cardinality 0..*).
+'dependencies::Domain' (role 'dependencies_Domain6', cardinality 0..*) is associated with 'dependencies::Required' (role 'dependencies_Required', cardinality 0..*).
+'dependencies::EClass' (role 'dependencies_EClass26', cardinality 0..*) is associated with 'dependencies::SimpleTerm' (role 'dependencies_SimpleTerm25', cardinality 0..*).
+'dependencies::Edge' (role 'dependencies_Edge', cardinality 0..*) is associated with 'dependencies::Vertex' (role 'dependencies_Vertex', cardinality 0..*).
+'dependencies::Domain' (role 'dependencies_Domain', cardinality 0..*) is associated with 'dependencies::Graph' (role 'dependencies_Graph', cardinality 0..*).
+'dependencies::RightTerm' (role 'dependencies_RightTerm30', cardinality 0..*) is associated with 'dependencies::SimpleTerm' (role 'dependencies_SimpleTerm31', cardinality 0..*).
+'dependencies::Domain' (role 'dependencies_Domain12', cardinality 0..*) is associated with 'dependencies::RCPackage' (role 'dependencies_RCPackage', cardinality 0..*).
+'dependencies::RightTerm' (role 'dependencies_RightTerm34', cardinality 0..*) is associated with 'dependencies::Operation' (role 'dependencies_Operation33', cardinality 0..*).
+'dependencies::Domain' (role 'dependencies_Domain10', cardinality 0..*) is associated with 'dependencies::Create' (role 'dependencies_Create', cardinality 0..*).
+'dependencies::Edge' (role 'dependencies_Edge20', cardinality 0..*) is associated with 'dependencies::RightTerm' (role 'dependencies_RightTerm', cardinality 0..*).
+'dependencies::RightTerm' (role 'dependencies_RightTerm28', cardinality 0..*) is associated with 'dependencies::Operation' (role 'dependencies_Operation', cardinality 0..*).
+'dependencies::Domain' (role 'dependencies_Domain8', cardinality 0..*) is associated with 'dependencies::SemiRequired' (role 'dependencies_SemiRequired', cardinality 0..*).
+'dependencies::Equivalence' (role 'dependencies_Equivalence', cardinality 0..*) is associated with 'dependencies::Graph' (role 'dependencies_Graph2', cardinality 0..*).
+'dependencies::SimpleTerm' (role 'dependencies_SimpleTerm22', cardinality 0..*) is associated with 'dependencies::CoreClass' (role 'dependencies_CoreClass23', cardinality 0..*).
+'dependencies::EPackage' (role 'dependencies_EPackage', cardinality 0..*) is associated with 'dependencies::Domain' (role 'dependencies_Domain4', cardinality 0..*).

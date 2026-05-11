@@ -1,0 +1,177 @@
+The model has 73 class(es).
+The class 'backtrackingContentAssistTest::Der' has no attributes.
+The class 'backtrackingContentAssistTest::PathNameExp' has the following attributes: 'namespace' of type str.
+The class 'backtrackingContentAssistTest::PropertyRef' has no attributes.
+The class 'backtrackingContentAssistTest::StringLiteralExp' has the following attributes: 'values' of type str.
+The class 'OperationRef' has no attributes.
+The class 'backtrackingContentAssistTest::Pre' has the following attributes: 'constraintName' of type str.
+The class 'ContextDecl' has no attributes.
+The class 'backtrackingContentAssistTest::iteratorAccumulator' has the following attributes: 'name' of type str.
+The class 'backtrackingContentAssistTest::Parameter' has the following attributes: 'name' of type str.
+The class 'backtrackingContentAssistTest::RoundBracketExp' has the following attributes: 'pre' of type bool.
+The class 'backtrackingContentAssistTest::Body' has the following attributes: 'constraintName' of type str.
+The class 'backtrackingContentAssistTest::SquareBracketExp' has the following attributes: 'pre' of type bool.
+The class 'backtrackingContentAssistTest::OclMessageArg' has no attributes.
+The class 'backtrackingContentAssistTest::SimpleOperationRef' has the following attributes: 'operation' of type str.
+The class 'backtrackingContentAssistTest::Document' has no attributes.
+The class 'backtrackingContentAssistTest::NestedExp' has no attributes.
+The class 'NameExp' has no attributes.
+The class 'PropertyRef' has no attributes.
+The class 'NavigatingExp' has no attributes.
+The class 'backtrackingContentAssistTest::CollectionType' has the following attributes: 'typeIdentifier' of type str.
+The class 'backtrackingContentAssistTest::InfixExp' has the following attributes: 'op' of type str.
+The class 'backtrackingContentAssistTest::CollectionLiteralExp' has no attributes.
+The class 'backtrackingContentAssistTest::Expression' has no attributes.
+The class 'backtrackingContentAssistTest::PreExp' has no attributes.
+The class 'backtrackingContentAssistTest::PrimitiveType' has the following attributes: 'name' of type str.
+The class 'backtrackingContentAssistTest::PrefixExp' has the following attributes: 'op' of type str.
+The class 'PackageRef' has no attributes.
+The class 'backtrackingContentAssistTest::SelfExp' has no attributes.
+The class 'backtrackingContentAssistTest::InvalidLiteralExp' has no attributes.
+The class 'backtrackingContentAssistTest::QualifiedClassifierRef' has the following attributes: 'namespace' of type str.
+The class 'Expression' has no attributes.
+The class 'CollectionLiteralExp' has no attributes.
+The class 'backtrackingContentAssistTest::BooleanLiteralExp' has the following attributes: 'isTrue' of type bool.
+The class 'backtrackingContentAssistTest::SimplePropertyRef' has the following attributes: 'feature' of type str.
+The class 'ClassifierRef' has no attributes.
+The class 'backtrackingContentAssistTest::LetExp' has no attributes.
+The class 'backtrackingContentAssistTest::OperationContextDecl' has no attributes.
+The class 'backtrackingContentAssistTest::NameExp' has no attributes.
+The class 'backtrackingContentAssistTest::QualifiedOperationRef' has the following attributes: 'namespace' of type str.
+The class 'backtrackingContentAssistTest::LetVariable' has the following attributes: 'name' of type str.
+The class 'backtrackingContentAssistTest::SimplePackageRef' has the following attributes: 'package' of type str.
+The class 'backtrackingContentAssistTest::CollectionLiteralPart' has no attributes.
+The class 'backtrackingContentAssistTest::EObject' has no attributes.
+The class 'backtrackingContentAssistTest::OclMessage' has the following attributes: 'messageName' of type str; 'op' of type str.
+The class 'backtrackingContentAssistTest::Init' has no attributes.
+The class 'backtrackingContentAssistTest::OperationRef' has no attributes.
+The class 'backtrackingContentAssistTest::Post' has the following attributes: 'constraintName' of type str.
+The class 'backtrackingContentAssistTest::ContextDecl' has no attributes.
+The class 'OclMessageArg' has no attributes.
+The class 'backtrackingContentAssistTest::tuplePart' has the following attributes: 'name' of type str.
+The class 'TypeExp' has no attributes.
+The class 'PrimitiveLiteralExp' has no attributes.
+The class 'backtrackingContentAssistTest::QualifiedPropertyRef' has the following attributes: 'namespace' of type str.
+The class 'backtrackingContentAssistTest::Invariant' has the following attributes: 'constraintName' of type str.
+The class 'backtrackingContentAssistTest::SimpleNameExp' has the following attributes: 'element' of type str.
+The class 'backtrackingContentAssistTest::PrimitiveLiteralExp' has no attributes.
+The class 'backtrackingContentAssistTest::PackageDeclaration' has no attributes.
+The class 'backtrackingContentAssistTest::NumberLiteralExp' has the following attributes: 'name' of type str.
+The class 'backtrackingContentAssistTest::SimpleClassifierRef' has the following attributes: 'classifier' of type str.
+The class 'backtrackingContentAssistTest::TupleType' has the following attributes: 'name' of type str.
+The class 'backtrackingContentAssistTest::iteratorVariable' has the following attributes: 'name' of type str.
+The class 'backtrackingContentAssistTest::NullLiteralExp' has no attributes.
+The class 'backtrackingContentAssistTest::TupleLiteralPart' has the following attributes: 'name' of type str.
+The class 'backtrackingContentAssistTest::ClassifierContextDecl' has the following attributes: 'selfName' of type str.
+The class 'backtrackingContentAssistTest::QualifiedPackageRef' has the following attributes: 'namespace' of type str.
+The class 'backtrackingContentAssistTest::NavigatingExp' has no attributes.
+The class 'backtrackingContentAssistTest::PackageRef' has no attributes.
+The class 'backtrackingContentAssistTest::TupleLiteralExp' has no attributes.
+The class 'backtrackingContentAssistTest::IfExp' has no attributes.
+The class 'backtrackingContentAssistTest::TypeExp' has no attributes.
+The class 'backtrackingContentAssistTest::PropertyContextDecl' has no attributes.
+The class 'backtrackingContentAssistTest::Definition' has the following attributes: 'static' of type bool; 'constraintName' of type str; 'constrainedName' of type str.
+The class 'backtrackingContentAssistTest::ClassifierRef' has no attributes.
+'backtrackingContentAssistTest::SimplePropertyRef' is a specialization of 'PropertyRef'.
+'backtrackingContentAssistTest::QualifiedPackageRef' is a specialization of 'PackageRef'.
+'backtrackingContentAssistTest::Expression' is a specialization of 'NavigatingExp'.
+'backtrackingContentAssistTest::NestedExp' is a specialization of 'Expression'.
+'backtrackingContentAssistTest::NumberLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+'backtrackingContentAssistTest::TupleType' is a specialization of 'TypeExp'.
+'backtrackingContentAssistTest::OclMessage' is a specialization of 'Expression'.
+'backtrackingContentAssistTest::SelfExp' is a specialization of 'Expression'.
+'backtrackingContentAssistTest::QualifiedOperationRef' is a specialization of 'OperationRef'.
+'backtrackingContentAssistTest::CollectionType' is a specialization of 'CollectionLiteralExp'.
+'backtrackingContentAssistTest::SimpleOperationRef' is a specialization of 'OperationRef'.
+'backtrackingContentAssistTest::PreExp' is a specialization of 'Expression'.
+'backtrackingContentAssistTest::SquareBracketExp' is a specialization of 'Expression'.
+'backtrackingContentAssistTest::IfExp' is a specialization of 'Expression'.
+'backtrackingContentAssistTest::NullLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+'backtrackingContentAssistTest::StringLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+'backtrackingContentAssistTest::SimpleNameExp' is a specialization of 'NameExp'.
+'backtrackingContentAssistTest::PathNameExp' is a specialization of 'NameExp'.
+'backtrackingContentAssistTest::QualifiedPropertyRef' is a specialization of 'PropertyRef'.
+'backtrackingContentAssistTest::PropertyContextDecl' is a specialization of 'ContextDecl'.
+'backtrackingContentAssistTest::TypeExp' is a specialization of 'Expression'.
+'backtrackingContentAssistTest::PrefixExp' is a specialization of 'Expression'.
+'backtrackingContentAssistTest::InfixExp' is a specialization of 'Expression'.
+'backtrackingContentAssistTest::RoundBracketExp' is a specialization of 'Expression'.
+'backtrackingContentAssistTest::QualifiedClassifierRef' is a specialization of 'ClassifierRef'.
+'backtrackingContentAssistTest::CollectionLiteralExp' is a specialization of 'Expression'.
+'backtrackingContentAssistTest::ClassifierContextDecl' is a specialization of 'ContextDecl'.
+'backtrackingContentAssistTest::LetExp' is a specialization of 'Expression'.
+'backtrackingContentAssistTest::SimplePackageRef' is a specialization of 'PackageRef'.
+'backtrackingContentAssistTest::PrimitiveType' is a specialization of 'TypeExp'.
+'backtrackingContentAssistTest::NameExp' is a specialization of 'TypeExp'.
+'backtrackingContentAssistTest::PrimitiveLiteralExp' is a specialization of 'Expression'.
+'backtrackingContentAssistTest::TupleLiteralExp' is a specialization of 'Expression'.
+'backtrackingContentAssistTest::OperationContextDecl' is a specialization of 'ContextDecl'.
+'backtrackingContentAssistTest::BooleanLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+'backtrackingContentAssistTest::Expression' is a specialization of 'OclMessageArg'.
+'backtrackingContentAssistTest::SimpleClassifierRef' is a specialization of 'ClassifierRef'.
+'backtrackingContentAssistTest::CollectionType' is a specialization of 'TypeExp'.
+'backtrackingContentAssistTest::InvalidLiteralExp' is a specialization of 'PrimitiveLiteralExp'.
+'backtrackingContentAssistTest::Init' (role 'backtrackingContentAssistTest_Init57', cardinality 0..*) is associated with 'backtrackingContentAssistTest::PropertyContextDecl' (role 'backtrackingContentAssistTest_PropertyContextDecl56', cardinality 0..*).
+'backtrackingContentAssistTest::TypeExp' (role 'backtrackingContentAssistTest_TypeExp92', cardinality 0..*) is associated with 'backtrackingContentAssistTest::iteratorAccumulator' (role 'backtrackingContentAssistTest_iteratorAccumulator', cardinality 0..*).
+'backtrackingContentAssistTest::Document' (role 'backtrackingContentAssistTest_Document2', cardinality 0..*) is associated with 'backtrackingContentAssistTest::ContextDecl' (role 'backtrackingContentAssistTest_ContextDecl', cardinality 0..*).
+'backtrackingContentAssistTest::Expression' (role 'backtrackingContentAssistTest_Expression19', cardinality 0..*) is associated with 'backtrackingContentAssistTest::Init' (role 'backtrackingContentAssistTest_Init', cardinality 0..*).
+'backtrackingContentAssistTest::TupleLiteralExp' (role 'backtrackingContentAssistTest_TupleLiteralExp', cardinality 0..*) is associated with 'backtrackingContentAssistTest::TupleLiteralPart' (role 'backtrackingContentAssistTest_TupleLiteralPart', cardinality 0..*).
+'backtrackingContentAssistTest::CollectionLiteralPart' (role 'backtrackingContentAssistTest_CollectionLiteralPart80', cardinality 0..*) is associated with 'backtrackingContentAssistTest::Expression' (role 'backtrackingContentAssistTest_Expression81', cardinality 0..*).
+'backtrackingContentAssistTest::Expression' (role 'backtrackingContentAssistTest_Expression137', cardinality 0..*) is associated with 'backtrackingContentAssistTest::OclMessage' (role 'backtrackingContentAssistTest_OclMessage', cardinality 0..*).
+'backtrackingContentAssistTest::Der' (role 'backtrackingContentAssistTest_Der60', cardinality 0..*) is associated with 'backtrackingContentAssistTest::PropertyContextDecl' (role 'backtrackingContentAssistTest_PropertyContextDecl59', cardinality 0..*).
+'backtrackingContentAssistTest::RoundBracketExp' (role 'backtrackingContentAssistTest_RoundBracketExp101', cardinality 0..*) is associated with 'backtrackingContentAssistTest::EObject' (role 'backtrackingContentAssistTest_EObject', cardinality 0..*).
+'backtrackingContentAssistTest::CollectionLiteralPart' (role 'backtrackingContentAssistTest_CollectionLiteralPart77', cardinality 0..*) is associated with 'backtrackingContentAssistTest::Expression' (role 'backtrackingContentAssistTest_Expression78', cardinality 0..*).
+'backtrackingContentAssistTest::Definition' (role 'backtrackingContentAssistTest_Definition12', cardinality 0..*) is associated with 'backtrackingContentAssistTest::TypeExp' (role 'backtrackingContentAssistTest_TypeExp', cardinality 0..*).
+'backtrackingContentAssistTest::LetExp' (role 'backtrackingContentAssistTest_LetExp124', cardinality 0..*) is associated with 'backtrackingContentAssistTest::Expression' (role 'backtrackingContentAssistTest_Expression125', cardinality 0..*).
+'backtrackingContentAssistTest::ContextDecl' (role 'backtrackingContentAssistTest_ContextDecl41', cardinality 0..*) is associated with 'backtrackingContentAssistTest::PackageDeclaration' (role 'backtrackingContentAssistTest_PackageDeclaration40', cardinality 0..*).
+'backtrackingContentAssistTest::LetVariable' (role 'backtrackingContentAssistTest_LetVariable', cardinality 0..*) is associated with 'backtrackingContentAssistTest::LetExp' (role 'backtrackingContentAssistTest_LetExp', cardinality 0..*).
+'backtrackingContentAssistTest::ClassifierContextDecl' (role 'backtrackingContentAssistTest_ClassifierContextDecl6', cardinality 0..*) is associated with 'backtrackingContentAssistTest::Invariant' (role 'backtrackingContentAssistTest_Invariant', cardinality 0..*).
+'backtrackingContentAssistTest::QualifiedOperationRef' (role 'backtrackingContentAssistTest_QualifiedOperationRef', cardinality 0..*) is associated with 'backtrackingContentAssistTest::OperationRef' (role 'backtrackingContentAssistTest_OperationRef64', cardinality 0..*).
+'backtrackingContentAssistTest::OperationContextDecl' (role 'backtrackingContentAssistTest_OperationContextDecl25', cardinality 0..*) is associated with 'backtrackingContentAssistTest::Parameter' (role 'backtrackingContentAssistTest_Parameter26', cardinality 0..*).
+'backtrackingContentAssistTest::Expression' (role 'backtrackingContentAssistTest_Expression115', cardinality 0..*) is associated with 'backtrackingContentAssistTest::IfExp' (role 'backtrackingContentAssistTest_IfExp', cardinality 0..*).
+'backtrackingContentAssistTest::PathNameExp' (role 'backtrackingContentAssistTest_PathNameExp', cardinality 0..*) is associated with 'backtrackingContentAssistTest::NameExp' (role 'backtrackingContentAssistTest_NameExp113', cardinality 0..*).
+'backtrackingContentAssistTest::CollectionLiteralPart' (role 'backtrackingContentAssistTest_CollectionLiteralPart', cardinality 0..*) is associated with 'backtrackingContentAssistTest::CollectionLiteralExp' (role 'backtrackingContentAssistTest_CollectionLiteralExp', cardinality 0..*).
+'backtrackingContentAssistTest::LetVariable' (role 'backtrackingContentAssistTest_LetVariable130', cardinality 0..*) is associated with 'backtrackingContentAssistTest::Expression' (role 'backtrackingContentAssistTest_Expression131', cardinality 0..*).
+'backtrackingContentAssistTest::QualifiedPropertyRef' (role 'backtrackingContentAssistTest_QualifiedPropertyRef', cardinality 0..*) is associated with 'backtrackingContentAssistTest::PropertyRef' (role 'backtrackingContentAssistTest_PropertyRef66', cardinality 0..*).
+'backtrackingContentAssistTest::ClassifierRef' (role 'backtrackingContentAssistTest_ClassifierRef62', cardinality 0..*) is associated with 'backtrackingContentAssistTest::QualifiedClassifierRef' (role 'backtrackingContentAssistTest_QualifiedClassifierRef', cardinality 0..*).
+'backtrackingContentAssistTest::RoundBracketExp' (role 'backtrackingContentAssistTest_RoundBracketExp98', cardinality 0..*) is associated with 'backtrackingContentAssistTest::iteratorVariable' (role 'backtrackingContentAssistTest_iteratorVariable99', cardinality 0..*).
+'backtrackingContentAssistTest::IfExp' (role 'backtrackingContentAssistTest_IfExp117', cardinality 0..*) is associated with 'backtrackingContentAssistTest::Expression' (role 'backtrackingContentAssistTest_Expression118', cardinality 0..*).
+'backtrackingContentAssistTest::TypeExp' (role 'backtrackingContentAssistTest_TypeExp85', cardinality 0..*) is associated with 'backtrackingContentAssistTest::TupleLiteralPart' (role 'backtrackingContentAssistTest_TupleLiteralPart84', cardinality 0..*).
+'backtrackingContentAssistTest::TupleLiteralPart' (role 'backtrackingContentAssistTest_TupleLiteralPart87', cardinality 0..*) is associated with 'backtrackingContentAssistTest::Expression' (role 'backtrackingContentAssistTest_Expression88', cardinality 0..*).
+'backtrackingContentAssistTest::iteratorAccumulator' (role 'backtrackingContentAssistTest_iteratorAccumulator94', cardinality 0..*) is associated with 'backtrackingContentAssistTest::Expression' (role 'backtrackingContentAssistTest_Expression95', cardinality 0..*).
+'backtrackingContentAssistTest::PrefixExp' (role 'backtrackingContentAssistTest_PrefixExp', cardinality 0..*) is associated with 'backtrackingContentAssistTest::Expression' (role 'backtrackingContentAssistTest_Expression142', cardinality 0..*).
+'backtrackingContentAssistTest::Expression' (role 'backtrackingContentAssistTest_Expression144', cardinality 0..*) is associated with 'backtrackingContentAssistTest::NestedExp' (role 'backtrackingContentAssistTest_NestedExp', cardinality 0..*).
+'backtrackingContentAssistTest::OclMessageArg' (role 'backtrackingContentAssistTest_OclMessageArg', cardinality 0..*) is associated with 'backtrackingContentAssistTest::TypeExp' (role 'backtrackingContentAssistTest_TypeExp70', cardinality 0..*).
+'backtrackingContentAssistTest::TypeExp' (role 'backtrackingContentAssistTest_TypeExp29', cardinality 0..*) is associated with 'backtrackingContentAssistTest::OperationContextDecl' (role 'backtrackingContentAssistTest_OperationContextDecl28', cardinality 0..*).
+'backtrackingContentAssistTest::iteratorVariable' (role 'backtrackingContentAssistTest_iteratorVariable', cardinality 0..*) is associated with 'backtrackingContentAssistTest::TypeExp' (role 'backtrackingContentAssistTest_TypeExp90', cardinality 0..*).
+'backtrackingContentAssistTest::Body' (role 'backtrackingContentAssistTest_Body', cardinality 0..*) is associated with 'backtrackingContentAssistTest::Expression' (role 'backtrackingContentAssistTest_Expression', cardinality 0..*).
+'backtrackingContentAssistTest::ClassifierRef' (role 'backtrackingContentAssistTest_ClassifierRef', cardinality 0..*) is associated with 'backtrackingContentAssistTest::ClassifierContextDecl' (role 'backtrackingContentAssistTest_ClassifierContextDecl', cardinality 0..*).
+'backtrackingContentAssistTest::ClassifierContextDecl' (role 'backtrackingContentAssistTest_ClassifierContextDecl8', cardinality 0..*) is associated with 'backtrackingContentAssistTest::Definition' (role 'backtrackingContentAssistTest_Definition', cardinality 0..*).
+'backtrackingContentAssistTest::Parameter' (role 'backtrackingContentAssistTest_Parameter43', cardinality 0..*) is associated with 'backtrackingContentAssistTest::TypeExp' (role 'backtrackingContentAssistTest_TypeExp44', cardinality 0..*).
+'backtrackingContentAssistTest::OperationContextDecl' (role 'backtrackingContentAssistTest_OperationContextDecl33', cardinality 0..*) is associated with 'backtrackingContentAssistTest::Post' (role 'backtrackingContentAssistTest_Post', cardinality 0..*).
+'backtrackingContentAssistTest::Expression' (role 'backtrackingContentAssistTest_Expression50', cardinality 0..*) is associated with 'backtrackingContentAssistTest::Pre' (role 'backtrackingContentAssistTest_Pre49', cardinality 0..*).
+'backtrackingContentAssistTest::NameExp' (role 'backtrackingContentAssistTest_NameExp106', cardinality 0..*) is associated with 'backtrackingContentAssistTest::SquareBracketExp' (role 'backtrackingContentAssistTest_SquareBracketExp', cardinality 0..*).
+'backtrackingContentAssistTest::OperationRef' (role 'backtrackingContentAssistTest_OperationRef', cardinality 0..*) is associated with 'backtrackingContentAssistTest::OperationContextDecl' (role 'backtrackingContentAssistTest_OperationContextDecl', cardinality 0..*).
+'backtrackingContentAssistTest::Expression' (role 'backtrackingContentAssistTest_Expression121', cardinality 0..*) is associated with 'backtrackingContentAssistTest::IfExp' (role 'backtrackingContentAssistTest_IfExp120', cardinality 0..*).
+'backtrackingContentAssistTest::Der' (role 'backtrackingContentAssistTest_Der', cardinality 0..*) is associated with 'backtrackingContentAssistTest::Expression' (role 'backtrackingContentAssistTest_Expression17', cardinality 0..*).
+'backtrackingContentAssistTest::Expression' (role 'backtrackingContentAssistTest_Expression22', cardinality 0..*) is associated with 'backtrackingContentAssistTest::Invariant' (role 'backtrackingContentAssistTest_Invariant21', cardinality 0..*).
+'backtrackingContentAssistTest::InfixExp' (role 'backtrackingContentAssistTest_InfixExp', cardinality 0..*) is associated with 'backtrackingContentAssistTest::Expression' (role 'backtrackingContentAssistTest_Expression133', cardinality 0..*).
+'backtrackingContentAssistTest::TypeExp' (role 'backtrackingContentAssistTest_TypeExp54', cardinality 0..*) is associated with 'backtrackingContentAssistTest::PropertyContextDecl' (role 'backtrackingContentAssistTest_PropertyContextDecl53', cardinality 0..*).
+'backtrackingContentAssistTest::Expression' (role 'backtrackingContentAssistTest_Expression109', cardinality 0..*) is associated with 'backtrackingContentAssistTest::SquareBracketExp' (role 'backtrackingContentAssistTest_SquareBracketExp108', cardinality 0..*).
+'backtrackingContentAssistTest::NameExp' (role 'backtrackingContentAssistTest_NameExp111', cardinality 0..*) is associated with 'backtrackingContentAssistTest::PreExp' (role 'backtrackingContentAssistTest_PreExp', cardinality 0..*).
+'backtrackingContentAssistTest::Post' (role 'backtrackingContentAssistTest_Post46', cardinality 0..*) is associated with 'backtrackingContentAssistTest::Expression' (role 'backtrackingContentAssistTest_Expression47', cardinality 0..*).
+'backtrackingContentAssistTest::tuplePart' (role 'backtrackingContentAssistTest_tuplePart73', cardinality 0..*) is associated with 'backtrackingContentAssistTest::TypeExp' (role 'backtrackingContentAssistTest_TypeExp74', cardinality 0..*).
+'backtrackingContentAssistTest::OperationContextDecl' (role 'backtrackingContentAssistTest_OperationContextDecl35', cardinality 0..*) is associated with 'backtrackingContentAssistTest::Body' (role 'backtrackingContentAssistTest_Body36', cardinality 0..*).
+'backtrackingContentAssistTest::TupleType' (role 'backtrackingContentAssistTest_TupleType', cardinality 0..*) is associated with 'backtrackingContentAssistTest::tuplePart' (role 'backtrackingContentAssistTest_tuplePart', cardinality 0..*).
+'backtrackingContentAssistTest::NameExp' (role 'backtrackingContentAssistTest_NameExp', cardinality 0..*) is associated with 'backtrackingContentAssistTest::RoundBracketExp' (role 'backtrackingContentAssistTest_RoundBracketExp', cardinality 0..*).
+'backtrackingContentAssistTest::NavigatingExp' (role 'backtrackingContentAssistTest_NavigatingExp', cardinality 0..*) is associated with 'backtrackingContentAssistTest::InfixExp' (role 'backtrackingContentAssistTest_InfixExp135', cardinality 0..*).
+'backtrackingContentAssistTest::PropertyContextDecl' (role 'backtrackingContentAssistTest_PropertyContextDecl', cardinality 0..*) is associated with 'backtrackingContentAssistTest::PropertyRef' (role 'backtrackingContentAssistTest_PropertyRef', cardinality 0..*).
+'backtrackingContentAssistTest::OclMessage' (role 'backtrackingContentAssistTest_OclMessage139', cardinality 0..*) is associated with 'backtrackingContentAssistTest::OclMessageArg' (role 'backtrackingContentAssistTest_OclMessageArg140', cardinality 0..*).
+'backtrackingContentAssistTest::PackageDeclaration' (role 'backtrackingContentAssistTest_PackageDeclaration38', cardinality 0..*) is associated with 'backtrackingContentAssistTest::PackageRef' (role 'backtrackingContentAssistTest_PackageRef', cardinality 0..*).
+'backtrackingContentAssistTest::RoundBracketExp' (role 'backtrackingContentAssistTest_RoundBracketExp103', cardinality 0..*) is associated with 'backtrackingContentAssistTest::Expression' (role 'backtrackingContentAssistTest_Expression104', cardinality 0..*).
+'backtrackingContentAssistTest::Parameter' (role 'backtrackingContentAssistTest_Parameter', cardinality 0..*) is associated with 'backtrackingContentAssistTest::Definition' (role 'backtrackingContentAssistTest_Definition10', cardinality 0..*).
+'backtrackingContentAssistTest::PackageDeclaration' (role 'backtrackingContentAssistTest_PackageDeclaration', cardinality 0..*) is associated with 'backtrackingContentAssistTest::Document' (role 'backtrackingContentAssistTest_Document', cardinality 0..*).
+'backtrackingContentAssistTest::LetVariable' (role 'backtrackingContentAssistTest_LetVariable127', cardinality 0..*) is associated with 'backtrackingContentAssistTest::TypeExp' (role 'backtrackingContentAssistTest_TypeExp128', cardinality 0..*).
+'backtrackingContentAssistTest::QualifiedPackageRef' (role 'backtrackingContentAssistTest_QualifiedPackageRef', cardinality 0..*) is associated with 'backtrackingContentAssistTest::PackageRef' (role 'backtrackingContentAssistTest_PackageRef68', cardinality 0..*).
+'backtrackingContentAssistTest::Expression' (role 'backtrackingContentAssistTest_Expression15', cardinality 0..*) is associated with 'backtrackingContentAssistTest::Definition' (role 'backtrackingContentAssistTest_Definition14', cardinality 0..*).
+'backtrackingContentAssistTest::Pre' (role 'backtrackingContentAssistTest_Pre', cardinality 0..*) is associated with 'backtrackingContentAssistTest::OperationContextDecl' (role 'backtrackingContentAssistTest_OperationContextDecl31', cardinality 0..*).

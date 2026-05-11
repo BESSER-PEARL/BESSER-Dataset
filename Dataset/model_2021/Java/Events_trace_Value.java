@@ -1,0 +1,58 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Events_trace_Value  {
+
+
+
+
+
+
+    private trace_Events_StringVariable_setCurrentValue_stringVariableEntryEventOccurrence trace_events_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence;
+
+
+
+
+    private trace_Events_BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence trace_events_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence;
+
+
+
+
+    private trace_Events_IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence trace_events_integervariable_setcurrentvalue_integervariableentryeventoccurrence;
+
+
+    public Events_trace_Value(
+    ) {
+    }
+
+
+
+    public trace_Events_StringVariable_setCurrentValue_stringVariableEntryEventOccurrence getTrace_events_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence() {
+        return trace_events_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence;
+    }
+
+    public void setTrace_events_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence(trace_Events_StringVariable_setCurrentValue_stringVariableEntryEventOccurrence trace_events_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence) {
+        this.trace_events_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence = trace_events_stringvariable_setcurrentvalue_stringvariableentryeventoccurrence;
+    }
+    public trace_Events_BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence getTrace_events_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence() {
+        return trace_events_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence;
+    }
+
+    public void setTrace_events_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence(trace_Events_BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence trace_events_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence) {
+        this.trace_events_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence = trace_events_booleanvariable_setcurrentvalue_boolenvariableentryeventoccurrence;
+    }
+    public trace_Events_IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence getTrace_events_integervariable_setcurrentvalue_integervariableentryeventoccurrence() {
+        return trace_events_integervariable_setcurrentvalue_integervariableentryeventoccurrence;
+    }
+
+    public void setTrace_events_integervariable_setcurrentvalue_integervariableentryeventoccurrence(trace_Events_IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence trace_events_integervariable_setcurrentvalue_integervariableentryeventoccurrence) {
+        this.trace_events_integervariable_setcurrentvalue_integervariableentryeventoccurrence = trace_events_integervariable_setcurrentvalue_integervariableentryeventoccurrence;
+    }
+
+}

@@ -1,0 +1,11 @@
+The model has 4 class(es).
+The class 'btsviewmodel::DBCollectionStatusInformation' has the following attributes: 'dbDiskSize' of type str; 'indexDocCount' of type str; 'indexStatus' of type str; 'dbUpdateSeq' of type str; 'dbDocCount' of type str; 'dbCollectionName' of type str; 'dbPurgeSeq' of type str; 'dbDocDelCount' of type str; 'syncStatusToRemote' of type str; 'indexUpdateSeq' of type str; 'syncStatusFromRemote' of type str.
+The class 'btsviewmodel::TreeNodeWrapper' has the following attributes: 'label' of type str; 'propertyChangeSupport' of type str; 'object' of type str; 'parentObject' of type str; 'childrenLoaded' of type bool.
+The class 'btsviewmodel::BTSObjectTypeTreeNode' has the following attributes: 'selected' of type bool; 'value' of type str.
+The class 'btsviewmodel::StatusMessage' has the following attributes: 'creationTime' of type date; 'message' of type str; 'messageType' of type str; 'userId' of type str.
+The enumeration 'MessageType' has the following literals: 'ERROR', 'FILTERED', 'UPDATE', 'LOCKED', 'INFORMATION', 'WARNING', 'NO_EDITING_RIGHTS'.
+'btsviewmodel::TreeNodeWrapper' (role 'btsviewmodel_TreeNodeWrapper0', cardinality 0..*) is associated with 'btsviewmodel::TreeNodeWrapper' (role 'btsviewmodel_TreeNodeWrapper', cardinality 0..*).
+'btsviewmodel::StatusMessage' (role 'btsviewmodel_StatusMessage', cardinality 0..*) is associated with 'btsviewmodel::StatusMessage' (role 'btsviewmodel_StatusMessage5', cardinality 0..*).
+'btsviewmodel::BTSObjectTypeTreeNode' (role 'btsviewmodel_BTSObjectTypeTreeNode9', cardinality 0..*) is associated with 'btsviewmodel::BTSObjectTypeTreeNode' (role 'btsviewmodel_BTSObjectTypeTreeNode11', cardinality 0..*).
+'btsviewmodel::BTSObjectTypeTreeNode' (role 'btsviewmodel_BTSObjectTypeTreeNode7', cardinality 0..*) is associated with 'btsviewmodel::BTSObjectTypeTreeNode' (role 'btsviewmodel_BTSObjectTypeTreeNode', cardinality 0..*).
+'btsviewmodel::TreeNodeWrapper' (role 'btsviewmodel_TreeNodeWrapper4', cardinality 0..*) is associated with 'btsviewmodel::TreeNodeWrapper' (role 'btsviewmodel_TreeNodeWrapper2', cardinality 0..*).

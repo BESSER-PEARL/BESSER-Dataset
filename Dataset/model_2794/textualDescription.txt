@@ -1,0 +1,23 @@
+The model has 7 class(es).
+The class 'kreq210::Bbbb' has no attributes.
+The class 'kreq210::Mmmm' has the following attributes: 'id' of type str.
+The class 'kreq210::Hhhh' has the following attributes: 'id' of type int.
+The class 'kreq210::Ffff' has the following attributes: 'id' of type str.
+The class 'kreq210::Cccc' has the following attributes: 'id' of type str.
+The class 'kreq210::Llll' has the following attributes: 'id' of type str.
+The class 'kreq210::Gggg' has the following attributes: 'id' of type str.
+The enumeration 'RequirementOrigin' has the following literals: 'DesignChoise_induced', 'Originating', 'Derived'.
+The enumeration 'CategoryType' has the following literals: 'Constraints', 'Operational', 'VandV', 'Non_Functional', 'Functional', 'Interface'.
+The enumeration 'ComponentPosition' has the following literals: 'Local', 'Environmental_context', 'Not_yet_defined'.
+The enumeration 'BasicFlowTransformationType' has the following literals: 'Control', 'Check_Verify_Validate', 'Store', 'Measure', 'Transiform', 'EEnumLiteral0', 'Decide', 'Wait'.
+The enumeration 'ComponentType' has the following literals: 'Actor', 'Logical_component', 'Physical_component', 'Operational_system', 'Role', 'Tool', 'Activity', 'Other', 'Organization_Unit', 'Not_yet_desighed', 'System', 'Serrvice', 'Site', 'Process', 'Information_system'.
+'kreq210::Ffff' (role 'kreq210_Ffff9', cardinality 0..*) is associated with 'kreq210::Ffff' (role 'kreq210_Ffff11', cardinality 0..*).
+'kreq210::Gggg' (role 'kreq210_Gggg13', cardinality 0..*) is associated with 'kreq210::Llll' (role 'kreq210_Llll', cardinality 0..*).
+'kreq210::Llll' (role 'kreq210_Llll21', cardinality 0..*) is associated with 'kreq210::Mmmm' (role 'kreq210_Mmmm22', cardinality 0..*).
+'kreq210::Bbbb' (role 'kreq210_Bbbb6', cardinality 0..*) is associated with 'kreq210::Mmmm' (role 'kreq210_Mmmm', cardinality 0..*).
+'kreq210::Bbbb' (role 'kreq210_Bbbb2', cardinality 0..*) is associated with 'kreq210::Gggg' (role 'kreq210_Gggg', cardinality 0..*).
+'kreq210::Cccc' (role 'kreq210_Cccc16', cardinality 0..*) is associated with 'kreq210::Llll' (role 'kreq210_Llll15', cardinality 0..*).
+'kreq210::Cccc' (role 'kreq210_Cccc', cardinality 0..*) is associated with 'kreq210::Bbbb' (role 'kreq210_Bbbb', cardinality 0..*).
+'kreq210::Cccc' (role 'kreq210_Cccc8', cardinality 0..*) is associated with 'kreq210::Ffff' (role 'kreq210_Ffff', cardinality 0..*).
+'kreq210::Hhhh' (role 'kreq210_Hhhh19', cardinality 0..*) is associated with 'kreq210::Llll' (role 'kreq210_Llll18', cardinality 0..*).
+'kreq210::Hhhh' (role 'kreq210_Hhhh', cardinality 0..*) is associated with 'kreq210::Bbbb' (role 'kreq210_Bbbb4', cardinality 0..*).

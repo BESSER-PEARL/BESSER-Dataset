@@ -1,0 +1,138 @@
+The model has 52 class(es).
+The class 'persistence::ViewAssociation' has the following attributes: 'cardinality' of type str.
+The class 'ViewFeature' has no attributes.
+The class 'persistence::AssociationKey' has the following attributes: 'targetColumnName' of type str.
+The class 'persistence::DateAttribute' has the following attributes: 'format' of type str; 'details' of type str.
+The class 'persistence::Label' has no attributes.
+The class 'PathElement' has no attributes.
+The class 'persistence::SerializationGroup' has no attributes.
+The class 'persistence::AssociationWithContainment' has the following attributes: 'sourceVisible' of type bool.
+The class 'persistence::ModelLabelAssociation' has the following attributes: 'isSourceAssociation' of type bool.
+The class 'NamedElement' has no attributes.
+The class 'persistence::UrlAttribute' has the following attributes: 'displayValue' of type str.
+The class 'persistence::AssociationWithoutContainment' has the following attributes: 'targetUnique' of type bool; 'targetCardinality' of type str.
+The class 'persistence::EncapsulatedAssociation' has the following attributes: 'cardinality' of type str; 'isSourceAssociation' of type bool; 'name' of type str.
+The class 'EntityFeature' has no attributes.
+The class 'persistence::Attribute' has the following attributes: 'placeholder' of type str; 'validationPattern' of type str; 'inputClass' of type str.
+The class 'persistence::DataTypeAttribute' has the following attributes: 'encrypt' of type bool; 'caseInsensitive' of type bool; 'obfuscateFormFields' of type bool.
+The class 'persistence::Persistence' has the following attributes: 'timestampUpdates' of type bool; 'databaseTechnology' of type str; 'databasePrefix' of type str; 'timestampCreation' of type bool; 'ormTechnology' of type str; 'databaseName' of type str; 'databasePassword' of type str; 'databaseHost' of type str; 'databasePort' of type str; 'databaseUsername' of type str.
+The class 'persistence::Association' has the following attributes: 'inputClass' of type str; 'pseudo' of type bool; 'serializationMaxDepth' of type int.
+The class 'Feature' has no attributes.
+The class 'persistence::EntityAssociation' has the following attributes: 'targetHeaderClass' of type str; 'targetDisplayLabel' of type str; 'bidirectional' of type bool; 'pivotTableName' of type str; 'targetInputClass' of type str; 'targetDisplayClass' of type str; 'targetFooterClass' of type str; 'targetPrimaryKey' of type bool; 'targetFeatureName' of type str.
+The class 'Association' has no attributes.
+The class 'persistence::PathElement' has no attributes.
+The class 'Classifier' has no attributes.
+The class 'persistence::View' has no attributes.
+The class 'persistence::EntityAttribute' has the following attributes: 'interfaceType' of type str; 'primaryKey' of type bool; 'containerUnique' of type bool; 'persistentType' of type str; 'ormType' of type str.
+The class 'persistence::ResourceAttribute' has the following attributes: 'uploadsWithinWebsite' of type bool; 'validUploadExtensions' of type str; 'maximumUploadSize' of type int; 'validUploadMimeTypes' of type str.
+The class 'persistence::DatePathElement' has the following attributes: 'format' of type str.
+The class 'persistence::DataType' has no attributes.
+The class 'persistence::LocationAttribute' has no attributes.
+The class 'persistence::Expression' has no attributes.
+The class 'persistence::StaticPathElement' has the following attributes: 'element' of type str.
+The class 'Attribute' has no attributes.
+The class 'persistence::EncapsulatedAttribute' has the following attributes: 'cardinality' of type str; 'name' of type str.
+The class 'persistence::Entity' has no attributes.
+The class 'persistence::EntityOrView' has the following attributes: 'autoKeyPersistentType' of type str; 'tableName' of type str; 'implementsUserInterface' of type bool; 'singletonName' of type str; 'autoKeyName' of type str; 'pluralisedName' of type str; 'autoKeyGenerationStrategy' of type str.
+The class 'persistence::ModelLabelFeature' has no attributes.
+The class 'persistence::ModelLabel' has the following attributes: 'format' of type str.
+The class 'EntityOrView' has no attributes.
+The class 'ResourceAttribute' has no attributes.
+The class 'EntityAttribute' has no attributes.
+The class 'persistence::FileAttribute' has no attributes.
+The class 'persistence::ModelLabelAttribute' has the following attributes: 'dateFormat' of type str.
+The class 'NamedDisplayElement' has no attributes.
+The class 'persistence::ViewFeature' has no attributes.
+The class 'persistence::EncapsulatedFeature' has the following attributes: 'alias' of type str; 'displayLabel' of type str; 'columnName' of type str.
+The class 'EntityAssociation' has no attributes.
+The class 'EncapsulatedFeature' has no attributes.
+The class 'persistence::ImageAttribute' has no attributes.
+The class 'Label' has no attributes.
+The class 'ModelLabelFeature' has no attributes.
+The class 'persistence::Feature' has the following attributes: 'collectionAllowAdd' of type bool; 'headerClass' of type str; 'displayClass' of type str; 'encodeUriKey' of type bool; 'collectionAllowRemove' of type bool; 'nullDisplayValue' of type str; 'footerClass' of type str; 'title' of type str.
+The class 'persistence::EntityFeature' has the following attributes: 'cardinality' of type str; 'unique' of type bool; 'columnName' of type str; 'booleanIsHasChoice' of type str; 'singletonName' of type str; 'ordered' of type bool; 'pluralisedName' of type str.
+The enumeration 'DateDetails' has the following literals: 'TimeOnly', 'DateOnly', 'DateAndTime'.
+The enumeration 'isHasChoices' has the following literals: 'isA', 'hasA'.
+The enumeration 'OrmTechnologies' has the following literals: 'Idiorm', 'DoctrineODM', 'JPA', 'DoctrineORM', 'DataMapper', 'Kohana'.
+The enumeration 'DatabaseTechnologies' has the following literals: 'Oracle', 'MySql'.
+The enumeration 'Cardinality' has the following literals: 'Required', 'Optional', 'Many'.
+'persistence::StaticPathElement' is a specialization of 'PathElement'.
+'persistence::EntityOrView' is a specialization of 'Classifier'.
+'persistence::EncapsulatedAssociation' is a specialization of 'Association'.
+'persistence::EntityAssociation' is a specialization of 'Association'.
+'persistence::ViewAssociation' is a specialization of 'NamedDisplayElement'.
+'persistence::ModelLabelAttribute' is a specialization of 'ModelLabelFeature'.
+'persistence::ViewAssociation' is a specialization of 'Association'.
+'persistence::EncapsulatedAssociation' is a specialization of 'EncapsulatedFeature'.
+'persistence::ModelLabel' is a specialization of 'Label'.
+'persistence::AssociationWithContainment' is a specialization of 'EntityAssociation'.
+'persistence::ModelLabel' is a specialization of 'NamedElement'.
+'persistence::Attribute' is a specialization of 'Feature'.
+'persistence::ViewAssociation' is a specialization of 'ViewFeature'.
+'persistence::EntityAttribute' is a specialization of 'Attribute'.
+'persistence::DataTypeAttribute' is a specialization of 'EntityAttribute'.
+'persistence::FileAttribute' is a specialization of 'ResourceAttribute'.
+'persistence::EncapsulatedFeature' is a specialization of 'ViewFeature'.
+'persistence::EntityFeature' is a specialization of 'Feature'.
+'persistence::DateAttribute' is a specialization of 'EntityAttribute'.
+'persistence::Entity' is a specialization of 'EntityOrView'.
+'persistence::EncapsulatedAttribute' is a specialization of 'EncapsulatedFeature'.
+'persistence::LocationAttribute' is a specialization of 'EntityAttribute'.
+'persistence::EntityFeature' is a specialization of 'NamedDisplayElement'.
+'persistence::Association' is a specialization of 'Feature'.
+'persistence::SerializationGroup' is a specialization of 'NamedElement'.
+'persistence::ViewFeature' is a specialization of 'Feature'.
+'persistence::ImageAttribute' is a specialization of 'ResourceAttribute'.
+'persistence::EncapsulatedAttribute' is a specialization of 'Attribute'.
+'persistence::ModelLabelAssociation' is a specialization of 'ModelLabelFeature'.
+'persistence::EntityAttribute' is a specialization of 'EntityFeature'.
+'persistence::EntityAssociation' is a specialization of 'EntityFeature'.
+'persistence::ResourceAttribute' is a specialization of 'EntityAttribute'.
+'persistence::View' is a specialization of 'EntityOrView'.
+'persistence::DatePathElement' is a specialization of 'PathElement'.
+'persistence::AssociationWithoutContainment' is a specialization of 'EntityAssociation'.
+'persistence::UrlAttribute' is a specialization of 'EntityAttribute'.
+'persistence::Attribute' is a specialization of 'Label'.
+'persistence::Feature' (role 'persistence_Feature28', cardinality 0..*) is associated with 'persistence::SerializationGroup' (role 'persistence_SerializationGroup29', cardinality 0..*).
+'persistence::DataType' (role 'persistence_DataType56', cardinality 0..*) is associated with 'persistence::DataTypeAttribute' (role 'persistence_DataTypeAttribute', cardinality 0..*).
+'persistence::AssociationKey' (role 'persistence_AssociationKey65', cardinality 0..*) is associated with 'persistence::EntityFeature' (role 'persistence_EntityFeature66', cardinality 0..*).
+'persistence::EntityOrView' (role 'EntityOrView', cardinality 0..*) is associated with 'persistence::ModelLabel' (role 'labels', cardinality 0..*).
+'persistence::ResourceAttribute' (role 'persistence_ResourceAttribute', cardinality 0..*) is associated with 'persistence::PathElement' (role 'persistence_PathElement', cardinality 0..*).
+'persistence::EntityFeature' (role 'entityFeatures', cardinality 0..*) is associated with 'persistence::Entity' (role 'Entity', cardinality 0..*).
+'persistence::EncapsulatedAssociation' (role 'EncapsulatedAssociation', cardinality 0..*) is associated with 'persistence::Association' (role 'association', cardinality 0..*).
+'persistence::View' (role 'persistence_View', cardinality 0..*) is associated with 'persistence::EntityOrView' (role 'persistence_EntityOrView68', cardinality 0..*).
+'persistence::ViewFeature' (role 'ViewFeature', cardinality 0..*) is associated with 'persistence::View' (role 'partOf70', cardinality 0..*).
+'persistence::Feature' (role 'persistence_Feature19', cardinality 0..*) is associated with 'persistence::EntityOrView' (role 'persistence_EntityOrView18', cardinality 0..*).
+'persistence::SerializationGroup' (role 'persistence_SerializationGroup', cardinality 0..*) is associated with 'persistence::Persistence' (role 'persistence_Persistence', cardinality 0..*).
+'persistence::AssociationKey' (role 'keys', cardinality 0..*) is associated with 'persistence::EntityAssociation' (role 'EntityAssociation62', cardinality 0..*).
+'persistence::Attribute' (role 'persistence_Attribute31', cardinality 0..*) is associated with 'persistence::Expression' (role 'persistence_Expression', cardinality 0..*).
+'persistence::EntityAssociation' (role 'keyFor', cardinality 0..*) is associated with 'persistence::AssociationKey' (role 'AssociationKey', cardinality 0..*).
+'persistence::ViewFeature' (role 'viewFeatures', cardinality 0..*) is associated with 'persistence::View' (role 'View', cardinality 0..*).
+'persistence::EncapsulatedAssociation' (role 'persistence_EncapsulatedAssociation78', cardinality 0..*) is associated with 'persistence::Entity' (role 'persistence_Entity', cardinality 0..*).
+'persistence::EntityOrView' (role 'persistence_EntityOrView23', cardinality 0..*) is associated with 'persistence::Association' (role 'persistence_Association', cardinality 0..*).
+'persistence::EncapsulatedAssociation' (role 'encapsulatedBy', cardinality 0..*) is associated with 'persistence::Association' (role 'Association', cardinality 0..*).
+'persistence::EncapsulatedAssociation' (role 'persistence_EncapsulatedAssociation83', cardinality 0..*) is associated with 'persistence::ViewAssociation' (role 'persistence_ViewAssociation', cardinality 0..*).
+'persistence::EntityOrView' (role 'labelFor', cardinality 0..*) is associated with 'persistence::ModelLabel' (role 'ModelLabel', cardinality 0..*).
+'persistence::EntityOrView' (role 'persistence_EntityOrView25', cardinality 0..*) is associated with 'persistence::Association' (role 'persistence_Association26', cardinality 0..*).
+'persistence::EncapsulatedAssociation' (role 'persistence_EncapsulatedAssociation75', cardinality 0..*) is associated with 'persistence::EncapsulatedAssociation' (role 'persistence_EncapsulatedAssociation', cardinality 0..*).
+'persistence::ModelLabelAttribute' (role 'persistence_ModelLabelAttribute', cardinality 0..*) is associated with 'persistence::Attribute' (role 'persistence_Attribute46', cardinality 0..*).
+'persistence::Entity' (role 'partOf52', cardinality 0..*) is associated with 'persistence::EntityFeature' (role 'EntityFeature', cardinality 0..*).
+'persistence::EntityOrView' (role 'persistence_EntityOrView21', cardinality 0..*) is associated with 'persistence::Attribute' (role 'persistence_Attribute', cardinality 0..*).
+'persistence::EntityOrView' (role 'persistence_EntityOrView35', cardinality 0..*) is associated with 'persistence::Association' (role 'persistence_Association34', cardinality 0..*).
+'persistence::EntityFeature' (role 'persistence_EntityFeature', cardinality 0..*) is associated with 'persistence::AssociationKey' (role 'persistence_AssociationKey', cardinality 0..*).
+'persistence::Feature' (role 'persistence_Feature12', cardinality 0..*) is associated with 'persistence::EntityOrView' (role 'persistence_EntityOrView11', cardinality 0..*).
+'persistence::ModelLabelFeature' (role 'features', cardinality 0..*) is associated with 'persistence::ModelLabel' (role 'ModelLabel44', cardinality 0..*).
+'persistence::ModelLabel' (role 'persistence_ModelLabel50', cardinality 0..*) is associated with 'persistence::ModelLabelAssociation' (role 'persistence_ModelLabelAssociation49', cardinality 0..*).
+'persistence::EntityOrView' (role 'persistence_EntityOrView8', cardinality 0..*) is associated with 'persistence::Feature' (role 'persistence_Feature9', cardinality 0..*).
+'persistence::EntityAssociation' (role 'EntityAssociation', cardinality 0..*) is associated with 'persistence::Entity' (role 'targetEntity', cardinality 0..*).
+'persistence::Persistence' (role 'persistence_Persistence4', cardinality 0..*) is associated with 'persistence::EntityOrView' (role 'persistence_EntityOrView', cardinality 0..*).
+'persistence::Entity' (role 'persistence_Entity81', cardinality 0..*) is associated with 'persistence::EncapsulatedAssociation' (role 'persistence_EncapsulatedAssociation80', cardinality 0..*).
+'persistence::ModelLabel' (role 'persistence_ModelLabel', cardinality 0..*) is associated with 'persistence::SerializationGroup' (role 'persistence_SerializationGroup42', cardinality 0..*).
+'persistence::EntityAssociation' (role 'persistence_EntityAssociation', cardinality 0..*) is associated with 'persistence::ModelLabelAssociation' (role 'persistence_ModelLabelAssociation', cardinality 0..*).
+'persistence::EncapsulatedAttribute' (role 'persistence_EncapsulatedAttribute', cardinality 0..*) is associated with 'persistence::Attribute' (role 'persistence_Attribute73', cardinality 0..*).
+'persistence::EntityAssociation' (role 'associationEnds', cardinality 0..*) is associated with 'persistence::Entity' (role 'Entity60', cardinality 0..*).
+'persistence::ModelLabelFeature' (role 'ModelLabelFeature', cardinality 0..*) is associated with 'persistence::ModelLabel' (role 'partOf', cardinality 0..*).
+'persistence::EntityOrView' (role 'persistence_EntityOrView15', cardinality 0..*) is associated with 'persistence::Feature' (role 'persistence_Feature16', cardinality 0..*).
+'persistence::Persistence' (role 'persistence_Persistence2', cardinality 0..*) is associated with 'persistence::DataType' (role 'persistence_DataType', cardinality 0..*).
+'persistence::Association' (role 'persistence_Association37', cardinality 0..*) is associated with 'persistence::EntityOrView' (role 'persistence_EntityOrView38', cardinality 0..*).
+'persistence::Feature' (role 'persistence_Feature', cardinality 0..*) is associated with 'persistence::EntityOrView' (role 'persistence_EntityOrView6', cardinality 0..*).

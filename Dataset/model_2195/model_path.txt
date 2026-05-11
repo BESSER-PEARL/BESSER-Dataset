@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/soluvas/soluvas-framework/commons/src/main/resources/org/soluvas/commons/commons.ecore

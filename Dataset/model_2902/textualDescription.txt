@@ -1,0 +1,17 @@
+The model has 8 class(es).
+The class 'NamedElement' has no attributes.
+The class 'myDSL::NamedElement' has the following attributes: 'name' of type str.
+The class 'Type' has no attributes.
+The class 'myDSL::Type' has no attributes.
+The class 'myDSL::Feature' has the following attributes: 'kind' of type str.
+The class 'myDSL::Entity' has the following attributes: 'abstract' of type bool.
+The class 'myDSL::EntityModel' has no attributes.
+The class 'myDSL::DataType' has no attributes.
+The enumeration 'FeatureKind' has the following literals: 'attribute', 'containment', 'reference'.
+'myDSL::DataType' is a specialization of 'Type'.
+'myDSL::Feature' is a specialization of 'NamedElement'.
+'myDSL::Type' is a specialization of 'NamedElement'.
+'myDSL::Entity' is a specialization of 'Type'.
+'myDSL::Entity' (role 'myDSL_Entity', cardinality 0..*) is associated with 'myDSL::Feature' (role 'myDSL_Feature', cardinality 0..*).
+'myDSL::Type' (role 'myDSL_Type4', cardinality 0..*) is associated with 'myDSL::Feature' (role 'myDSL_Feature3', cardinality 0..*).
+'myDSL::EntityModel' (role 'myDSL_EntityModel', cardinality 0..*) is associated with 'myDSL::Type' (role 'myDSL_Type', cardinality 0..*).

@@ -1,0 +1,10 @@
+The model has 4 class(es).
+The class 'TreeMapViewer::TreeMapViewer' has the following attributes: 'childLayoutStrategy' of type str.
+The class 'TreeMapViewer::TreeMapItem' has the following attributes: 'label' of type str; 'value' of type float.
+The class 'TreeMapViewer::TreeMapContainer' has no attributes.
+The class 'TreeMapItem' has no attributes.
+The enumeration 'TreeMapType' has the following literals: 'Linear', 'Ordred', 'Quantum'.
+'TreeMapViewer::TreeMapContainer' is a specialization of 'TreeMapItem'.
+'TreeMapViewer::TreeMapItem' (role 'TreeMapViewer_TreeMapItem5', cardinality 0..*) is associated with 'TreeMapViewer::TreeMapContainer' (role 'TreeMapViewer_TreeMapContainer', cardinality 0..*).
+'TreeMapViewer::TreeMapViewer' (role 'TreeMapViewer_TreeMapViewer3', cardinality 0..*) is associated with 'TreeMapViewer::TreeMapItem' (role 'TreeMapViewer_TreeMapItem2', cardinality 0..*).
+'TreeMapViewer::TreeMapViewer' (role 'TreeMapViewer_TreeMapViewer', cardinality 0..*) is associated with 'TreeMapViewer::TreeMapItem' (role 'TreeMapViewer_TreeMapItem', cardinality 0..*).

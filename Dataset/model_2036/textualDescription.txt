@@ -1,0 +1,14 @@
+The model has 5 class(es).
+The class 'eMFProject::Transition' has no attributes.
+The class 'eMFProject::Command' has the following attributes: 'code' of type str; 'name' of type str.
+The class 'eMFProject::Event' has the following attributes: 'code' of type str; 'name' of type str.
+The class 'eMFProject::State' has the following attributes: 'name' of type str.
+The class 'eMFProject::Statemachine' has no attributes.
+'eMFProject::Transition' (role 'eMFProject_Transition14', cardinality 0..*) is associated with 'eMFProject::Event' (role 'eMFProject_Event15', cardinality 0..*).
+'eMFProject::Statemachine' (role 'eMFProject_Statemachine7', cardinality 0..*) is associated with 'eMFProject::State' (role 'eMFProject_State', cardinality 0..*).
+'eMFProject::Event' (role 'eMFProject_Event3', cardinality 0..*) is associated with 'eMFProject::Statemachine' (role 'eMFProject_Statemachine2', cardinality 0..*).
+'eMFProject::Command' (role 'eMFProject_Command10', cardinality 0..*) is associated with 'eMFProject::State' (role 'eMFProject_State9', cardinality 0..*).
+'eMFProject::Transition' (role 'eMFProject_Transition17', cardinality 0..*) is associated with 'eMFProject::State' (role 'eMFProject_State18', cardinality 0..*).
+'eMFProject::Statemachine' (role 'eMFProject_Statemachine', cardinality 0..*) is associated with 'eMFProject::Event' (role 'eMFProject_Event', cardinality 0..*).
+'eMFProject::Transition' (role 'eMFProject_Transition', cardinality 0..*) is associated with 'eMFProject::State' (role 'eMFProject_State12', cardinality 0..*).
+'eMFProject::Command' (role 'eMFProject_Command', cardinality 0..*) is associated with 'eMFProject::Statemachine' (role 'eMFProject_Statemachine5', cardinality 0..*).

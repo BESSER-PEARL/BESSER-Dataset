@@ -1,0 +1,34 @@
+The model has 16 class(es).
+The class 'graphDsl::Facet' has the following attributes: 'name' of type str.
+The class 'graphDsl::Component' has the following attributes: 'name' of type str.
+The class 'graphDsl::ComponentOrFacet' has no attributes.
+The class 'graphDsl::ExtendsProperty' has the following attributes: 'extendsNames' of type str.
+The class 'graphDsl::FacetProperties' has no attributes.
+The class 'graphDsl::ImportsProperty' has no attributes.
+The class 'graphDsl::ChildrenProperty' has the following attributes: 'name' of type str.
+The class 'graphDsl::ComponentProperties' has no attributes.
+The class 'graphDsl::Graph' has the following attributes: 'comments' of type str.
+The class 'graphDsl::FacetsProperty' has the following attributes: 'facetsNames' of type str.
+The class 'graphDsl::ImportsVariable' has the following attributes: 'componentProperty' of type str; 'componentName' of type str; 'isExternal' of type bool; 'isOptional' of type bool.
+The class 'graphDsl::FacetProperty' has no attributes.
+The class 'graphDsl::ExportsVariable' has the following attributes: 'strValue' of type str; 'intValue' of type int; 'name' of type str.
+The class 'graphDsl::OptionalProperty' has no attributes.
+The class 'graphDsl::InstallerProperty' has the following attributes: 'name' of type str.
+The class 'graphDsl::ExportsProperty' has no attributes.
+'graphDsl::FacetProperties' (role 'graphDsl_FacetProperties', cardinality 0..*) is associated with 'graphDsl::Facet' (role 'graphDsl_Facet8', cardinality 0..*).
+'graphDsl::Facet' (role 'graphDsl_Facet', cardinality 0..*) is associated with 'graphDsl::ComponentOrFacet' (role 'graphDsl_ComponentOrFacet4', cardinality 0..*).
+'graphDsl::ExtendsProperty' (role 'graphDsl_ExtendsProperty', cardinality 0..*) is associated with 'graphDsl::OptionalProperty' (role 'graphDsl_OptionalProperty30', cardinality 0..*).
+'graphDsl::ChildrenProperty' (role 'graphDsl_ChildrenProperty21', cardinality 0..*) is associated with 'graphDsl::OptionalProperty' (role 'graphDsl_OptionalProperty20', cardinality 0..*).
+'graphDsl::ImportsVariable' (role 'graphDsl_ImportsVariable', cardinality 0..*) is associated with 'graphDsl::ImportsProperty' (role 'graphDsl_ImportsProperty34', cardinality 0..*).
+'graphDsl::Component' (role 'graphDsl_Component6', cardinality 0..*) is associated with 'graphDsl::ComponentProperties' (role 'graphDsl_ComponentProperties', cardinality 0..*).
+'graphDsl::ImportsProperty' (role 'graphDsl_ImportsProperty', cardinality 0..*) is associated with 'graphDsl::OptionalProperty' (role 'graphDsl_OptionalProperty26', cardinality 0..*).
+'graphDsl::Graph' (role 'graphDsl_Graph', cardinality 0..*) is associated with 'graphDsl::ComponentOrFacet' (role 'graphDsl_ComponentOrFacet', cardinality 0..*).
+'graphDsl::FacetsProperty' (role 'graphDsl_FacetsProperty', cardinality 0..*) is associated with 'graphDsl::OptionalProperty' (role 'graphDsl_OptionalProperty28', cardinality 0..*).
+'graphDsl::Component' (role 'graphDsl_Component', cardinality 0..*) is associated with 'graphDsl::ComponentOrFacet' (role 'graphDsl_ComponentOrFacet2', cardinality 0..*).
+'graphDsl::ComponentProperties' (role 'graphDsl_ComponentProperties12', cardinality 0..*) is associated with 'graphDsl::InstallerProperty' (role 'graphDsl_InstallerProperty', cardinality 0..*).
+'graphDsl::ExportsProperty' (role 'graphDsl_ExportsProperty', cardinality 0..*) is associated with 'graphDsl::FacetProperty' (role 'graphDsl_FacetProperty18', cardinality 0..*).
+'graphDsl::FacetProperty' (role 'graphDsl_FacetProperty16', cardinality 0..*) is associated with 'graphDsl::ChildrenProperty' (role 'graphDsl_ChildrenProperty', cardinality 0..*).
+'graphDsl::ComponentProperties' (role 'graphDsl_ComponentProperties10', cardinality 0..*) is associated with 'graphDsl::OptionalProperty' (role 'graphDsl_OptionalProperty', cardinality 0..*).
+'graphDsl::ExportsVariable' (role 'graphDsl_ExportsVariable', cardinality 0..*) is associated with 'graphDsl::ExportsProperty' (role 'graphDsl_ExportsProperty32', cardinality 0..*).
+'graphDsl::FacetProperties' (role 'graphDsl_FacetProperties14', cardinality 0..*) is associated with 'graphDsl::FacetProperty' (role 'graphDsl_FacetProperty', cardinality 0..*).
+'graphDsl::OptionalProperty' (role 'graphDsl_OptionalProperty23', cardinality 0..*) is associated with 'graphDsl::ExportsProperty' (role 'graphDsl_ExportsProperty24', cardinality 0..*).

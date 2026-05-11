@@ -1,0 +1,24 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class siddhi_Keyword extends WEEKS, OBJECT, PARTITION, INTS, SNAPSHOT, LEFT, YEARS, FIRST, CURRENT, TABLE, JOIN, BOOL, RETURN, FROM, WINDOW, BY, Name, FALSE, WITHIN, DOUBLE, LONG, LAST, MONTHS, INNER, END, DAYS, BEGIN, FOR, ALL, TRUE, HAVING, UPDATE, WITH, MILLISECONDS, EXPIRED, FLOAT, OUTER, MINUTES, GROUP, INSERT, EVENTS, RAW, HOURS, DELETE, RIGHT, FULL, INTO, STRINGS, NULL, IS, DEFINE, STREAM, SELECT, OUTPUT, SECONDS {
+
+
+
+
+    public siddhi_Keyword(
+    ) {
+        super(
+        );
+    }
+
+
+
+
+}

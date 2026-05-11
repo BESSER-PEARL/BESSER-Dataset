@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'simpleTG::A' has no attributes.
+The class 'simpleTG::B' has no attributes.
+The class 'simpleTG::C' has no attributes.
+The class 'simpleTG::Container' has no attributes.
+'simpleTG::Container' (role 'simpleTG_Container4', cardinality 0..*) is associated with 'simpleTG::C' (role 'simpleTG_C', cardinality 0..*).
+'simpleTG::A' (role 'simpleTG_A', cardinality 0..*) is associated with 'simpleTG::Container' (role 'simpleTG_Container', cardinality 0..*).
+'simpleTG::B' (role 'simpleTG_B', cardinality 0..*) is associated with 'simpleTG::Container' (role 'simpleTG_Container2', cardinality 0..*).
+'simpleTG::A' (role 'simpleTG_A6', cardinality 0..*) is associated with 'simpleTG::B' (role 'simpleTG_B7', cardinality 0..*).

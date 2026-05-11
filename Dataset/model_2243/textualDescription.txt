@@ -1,0 +1,55 @@
+The model has 18 class(es).
+The class 'course::desc::Course' has the following attributes: 'Content' of type str; 'Code' of type str; 'Credits' of type str; 'name' of type str.
+The class 'course::desc::EvaluationWithDeadline' has the following attributes: 'deadlineEvaluation' of type str.
+The class 'course::desc::Evaluation' has the following attributes: 'Percentage' of type float.
+The class 'course::desc::CourseWork' has the following attributes: 'isRestricted' of type bool; 'Duration' of type int; 'Type' of type str; 'isMandatory' of type bool; 'Room' of type str.
+The class 'course::desc::CourseInstance' has the following attributes: 'LabHours' of type float; 'LectureHours' of type float; 'Year' of type int.
+The class 'course::desc::Department' has the following attributes: 'name' of type str.
+The class 'course::desc::Person' has the following attributes: 'personNr' of type str; 'name' of type str; 'fullName' of type str; 'lastName' of type str.
+The class 'course::desc::StudyProgram' has the following attributes: 'studyCode' of type str.
+The class 'course::desc::CoursePreconditions' has the following attributes: 'isRecommended' of type bool; 'isRequired' of type bool; 'reductionPoints' of type float.
+The class 'Evaluation' has no attributes.
+The class 'PersonRole' has no attributes.
+The class 'course::desc::CourseCoordinator' has no attributes.
+The class 'course::desc::Timetable' has no attributes.
+The class 'course::desc::Univ' has no attributes.
+The class 'course::desc::Student' has the following attributes: 'totalStudyPoints' of type float.
+The class 'course::desc::Exam' has the following attributes: 'duration' of type float; 'date' of type date; 'place' of type str.
+The class 'course::desc::Lecturer' has no attributes.
+The class 'course::desc::PersonRole' has no attributes.
+The enumeration 'DeadlineEvaluation' has the following literals: 'PROJECT', 'ASSIGNMENT'.
+The enumeration 'CourseWorkType' has the following literals: 'LABHOUR', 'LECTURE'.
+The enumeration 'StudyProgramCode' has the following literals: 'MIT', 'MTDT', 'BIT', 'MTIØT'.
+'course::desc::EvaluationWithDeadline' is a specialization of 'Evaluation'.
+'course::desc::Lecturer' is a specialization of 'PersonRole'.
+'course::desc::Student' is a specialization of 'PersonRole'.
+'course::desc::CourseCoordinator' is a specialization of 'PersonRole'.
+'course::desc::Exam' is a specialization of 'Evaluation'.
+'course::desc::CourseInstance' (role 'CourseInstance', cardinality 0..*) is associated with 'course::desc::Course' (role 'instanceOfCourse', cardinality 0..*).
+'course::desc::Exam' (role 'Exam', cardinality 0..*) is associated with 'course::desc::Student' (role 'hasRegisteredStudents', cardinality 0..*).
+'course::desc::Course' (role 'course_desc_Course22', cardinality 0..*) is associated with 'course::desc::CoursePreconditions' (role 'course_desc_CoursePreconditions21', cardinality 0..*).
+'course::desc::Student' (role 'course_desc_Student49', cardinality 0..*) is associated with 'course::desc::Univ' (role 'course_desc_Univ48', cardinality 0..*).
+'course::desc::StudyProgram' (role 'manages', cardinality 0..*) is associated with 'course::desc::Department' (role 'Department27', cardinality 0..*).
+'course::desc::Lecturer' (role 'course_desc_Lecturer33', cardinality 0..*) is associated with 'course::desc::CourseInstance' (role 'course_desc_CourseInstance34', cardinality 0..*).
+'course::desc::CourseInstance' (role 'course_desc_CourseInstance37', cardinality 0..*) is associated with 'course::desc::CourseCoordinator' (role 'course_desc_CourseCoordinator36', cardinality 0..*).
+'course::desc::Course' (role 'course_desc_Course', cardinality 0..*) is associated with 'course::desc::CoursePreconditions' (role 'course_desc_CoursePreconditions', cardinality 0..*).
+'course::desc::CourseInstance' (role 'course_desc_CourseInstance9', cardinality 0..*) is associated with 'course::desc::CourseCoordinator' (role 'course_desc_CourseCoordinator', cardinality 0..*).
+'course::desc::PersonRole' (role 'hasRole', cardinality 0..*) is associated with 'course::desc::Person' (role 'Person', cardinality 0..*).
+'course::desc::Course' (role 'course_desc_Course25', cardinality 0..*) is associated with 'course::desc::StudyProgram' (role 'course_desc_StudyProgram24', cardinality 0..*).
+'course::desc::Evaluation' (role 'hasEvaluations', cardinality 0..*) is associated with 'course::desc::CourseInstance' (role 'CourseInstance14', cardinality 0..*).
+'course::desc::Timetable' (role 'course_desc_Timetable17', cardinality 0..*) is associated with 'course::desc::CourseWork' (role 'course_desc_CourseWork', cardinality 0..*).
+'course::desc::Timetable' (role 'course_desc_Timetable19', cardinality 0..*) is associated with 'course::desc::StudyProgram' (role 'course_desc_StudyProgram', cardinality 0..*).
+'course::desc::CourseInstance' (role 'hasInstance', cardinality 0..*) is associated with 'course::desc::Course' (role 'Course', cardinality 0..*).
+'course::desc::Student' (role 'Student', cardinality 0..*) is associated with 'course::desc::Exam' (role 'hasExams', cardinality 0..*).
+'course::desc::Univ' (role 'course_desc_Univ45', cardinality 0..*) is associated with 'course::desc::CoursePreconditions' (role 'course_desc_CoursePreconditions46', cardinality 0..*).
+'course::desc::CourseInstance' (role 'course_desc_CourseInstance7', cardinality 0..*) is associated with 'course::desc::Lecturer' (role 'course_desc_Lecturer', cardinality 0..*).
+'course::desc::Univ' (role 'course_desc_Univ43', cardinality 0..*) is associated with 'course::desc::Person' (role 'course_desc_Person', cardinality 0..*).
+'course::desc::Department' (role 'course_desc_Department', cardinality 0..*) is associated with 'course::desc::Univ' (role 'course_desc_Univ', cardinality 0..*).
+'course::desc::StudyProgram' (role 'StudyProgram', cardinality 0..*) is associated with 'course::desc::Department' (role 'belongs', cardinality 0..*).
+'course::desc::Department' (role 'Department', cardinality 0..*) is associated with 'course::desc::CourseInstance' (role 'responsible', cardinality 0..*).
+'course::desc::CourseInstance' (role 'CourseInstance11', cardinality 0..*) is associated with 'course::desc::Department' (role 'isInstanceOf', cardinality 0..*).
+'course::desc::Univ' (role 'course_desc_Univ40', cardinality 0..*) is associated with 'course::desc::Course' (role 'course_desc_Course41', cardinality 0..*).
+'course::desc::CourseInstance' (role 'course_desc_CourseInstance', cardinality 0..*) is associated with 'course::desc::Timetable' (role 'course_desc_Timetable', cardinality 0..*).
+'course::desc::Person' (role 'linkedTo', cardinality 0..*) is associated with 'course::desc::PersonRole' (role 'PersonRole', cardinality 0..*).
+'course::desc::CourseInstance' (role 'belongsTo', cardinality 0..*) is associated with 'course::desc::Evaluation' (role 'Evaluation', cardinality 0..*).
+'course::desc::Student' (role 'course_desc_Student', cardinality 0..*) is associated with 'course::desc::Exam' (role 'course_desc_Exam', cardinality 0..*).

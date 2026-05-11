@@ -1,0 +1,34 @@
+The model has 12 class(es).
+The class 'studyprogramme::SemesterContainer' has no attributes.
+The class 'studyprogramme::Course' has the following attributes: 'level' of type int; 'courseCode' of type str; 'name' of type str; 'displayedName' of type str; 'credits' of type float.
+The class 'studyprogramme::ElectiveCourseSlot' has no attributes.
+The class 'studyprogramme::ElectiveCourseList' has the following attributes: 'name' of type str.
+The class 'studyprogramme::CompulsoryCourseSlot' has no attributes.
+The class 'studyprogramme::CourseSlot' has no attributes.
+The class 'SemesterContainer' has no attributes.
+The class 'studyprogramme::Semester' has the following attributes: 'semesterNumber' of type int.
+The class 'CourseSlot' has no attributes.
+The class 'studyprogramme::University' has the following attributes: 'name' of type str.
+The class 'studyprogramme::Specialization' has the following attributes: 'name' of type str; 'selectionSemester' of type int.
+The class 'studyprogramme::Programme' has the following attributes: 'name' of type str; 'programmeType' of type str; 'numberOfYears' of type int; 'programmeCode' of type str.
+The enumeration 'ProgrammeType' has the following literals: 'IntegratedMaster', 'Masters', 'Bachelors'.
+The enumeration 'ProgrammeCode' has the following literals: 'MIT', 'MTIOT', 'MTDT', 'MIDT', 'BIT', 'MTPROD'.
+'studyprogramme::CompulsoryCourseSlot' is a specialization of 'CourseSlot'.
+'studyprogramme::Programme' is a specialization of 'SemesterContainer'.
+'studyprogramme::ElectiveCourseSlot' is a specialization of 'CourseSlot'.
+'studyprogramme::Specialization' is a specialization of 'SemesterContainer'.
+'studyprogramme::CourseSlot' (role 'studyprogramme_CourseSlot10', cardinality 0..*) is associated with 'studyprogramme::Course' (role 'studyprogramme_Course', cardinality 0..*).
+'studyprogramme::Specialization' (role 'Specialization', cardinality 0..*) is associated with 'studyprogramme::Programme' (role 'programme', cardinality 0..*).
+'studyprogramme::ElectiveCourseSlot' (role 'ElectiveCourseSlot', cardinality 0..*) is associated with 'studyprogramme::ElectiveCourseList' (role 'electiveCourseList', cardinality 0..*).
+'studyprogramme::Semester' (role 'studyprogramme_Semester', cardinality 0..*) is associated with 'studyprogramme::CourseSlot' (role 'studyprogramme_CourseSlot', cardinality 0..*).
+'studyprogramme::Programme' (role 'studyprogramme_Programme', cardinality 0..*) is associated with 'studyprogramme::University' (role 'studyprogramme_University', cardinality 0..*).
+'studyprogramme::Course' (role 'studyprogramme_Course19', cardinality 0..*) is associated with 'studyprogramme::University' (role 'studyprogramme_University18', cardinality 0..*).
+'studyprogramme::Course' (role 'studyprogramme_Course27', cardinality 0..*) is associated with 'studyprogramme::ElectiveCourseSlot' (role 'studyprogramme_ElectiveCourseSlot', cardinality 0..*).
+'studyprogramme::SemesterContainer' (role 'studyprogramme_SemesterContainer', cardinality 0..*) is associated with 'studyprogramme::Semester' (role 'studyprogramme_Semester12', cardinality 0..*).
+'studyprogramme::Programme' (role 'Programme', cardinality 0..*) is associated with 'studyprogramme::Specialization' (role 'specializations', cardinality 0..*).
+'studyprogramme::Specialization' (role 'Specialization4', cardinality 0..*) is associated with 'studyprogramme::Specialization' (role 'parrentSpecialisation', cardinality 0..*).
+'studyprogramme::ElectiveCourseList' (role 'studyprogramme_ElectiveCourseList', cardinality 0..*) is associated with 'studyprogramme::Course' (role 'studyprogramme_Course14', cardinality 0..*).
+'studyprogramme::University' (role 'studyprogramme_University24', cardinality 0..*) is associated with 'studyprogramme::Specialization' (role 'studyprogramme_Specialization', cardinality 0..*).
+'studyprogramme::ElectiveCourseSlot' (role 'electiveCourseSlot', cardinality 0..*) is associated with 'studyprogramme::ElectiveCourseList' (role 'ElectiveCourseList', cardinality 0..*).
+'studyprogramme::Semester' (role 'studyprogramme_Semester22', cardinality 0..*) is associated with 'studyprogramme::University' (role 'studyprogramme_University21', cardinality 0..*).
+'studyprogramme::Specialization' (role 'Specialization7', cardinality 0..*) is associated with 'studyprogramme::Specialization' (role 'subSpecialisations', cardinality 0..*).

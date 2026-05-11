@@ -1,0 +1,14 @@
+The model has 3 class(es).
+The class 'turingmodel::State' has the following attributes: 'isEndState' of type bool; 'name' of type str.
+The class 'turingmodel::Transition' has the following attributes: 'condition' of type str; 'write' of type str; 'dir' of type str.
+The class 'turingmodel::TuringMachine' has no attributes.
+The enumeration 'Direction' has the following literals: 'LEFT', 'RIGHT', 'HOLD'.
+'turingmodel::State' (role 'turingmodel_State19', cardinality 0..*) is associated with 'turingmodel::Transition' (role 'turingmodel_Transition18', cardinality 0..*).
+'turingmodel::State' (role 'turingmodel_State9', cardinality 0..*) is associated with 'turingmodel::State' (role 'turingmodel_State7', cardinality 0..*).
+'turingmodel::TuringMachine' (role 'turingmodel_TuringMachine4', cardinality 0..*) is associated with 'turingmodel::State' (role 'turingmodel_State5', cardinality 0..*).
+'turingmodel::TuringMachine' (role 'turingmodel_TuringMachine2', cardinality 0..*) is associated with 'turingmodel::Transition' (role 'turingmodel_Transition', cardinality 0..*).
+'turingmodel::State' (role 'turingmodel_State14', cardinality 0..*) is associated with 'turingmodel::Transition' (role 'turingmodel_Transition15', cardinality 0..*).
+'turingmodel::State' (role 'turingmodel_State10', cardinality 0..*) is associated with 'turingmodel::State' (role 'turingmodel_State12', cardinality 0..*).
+'turingmodel::State' (role 'turingmodel_State', cardinality 0..*) is associated with 'turingmodel::TuringMachine' (role 'turingmodel_TuringMachine', cardinality 0..*).
+'turingmodel::State' (role 'source', cardinality 0..*) is associated with 'turingmodel::Transition' (role 'Transition', cardinality 0..*).
+'turingmodel::State' (role 'State', cardinality 0..*) is associated with 'turingmodel::Transition' (role 'next', cardinality 0..*).

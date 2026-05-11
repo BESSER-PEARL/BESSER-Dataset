@@ -1,0 +1,760 @@
+The model has 345 class(es).
+The class 'afpText::ResourceObjectType' has the following attributes: 'ConData' of type str; 'ObjType' of type str.
+The class 'afpText::MSU' has no attributes.
+The class 'afpText::DescriptorPosition' has the following attributes: 'DesPosID' of type str.
+The class 'afpText::UniversalDateAndTimeStamp' has the following attributes: 'Hour' of type str; 'Second' of type str; 'Day' of type str; 'UTCDiffM' of type str; 'Month' of type str; 'YearAD' of type str; 'TimeZone' of type str; 'Reserved' of type str; 'UTCDiffH' of type str; 'Minute' of type str.
+The class 'afpText::AttributeValue' has the following attributes: 'Reserved0' of type str; 'AttVal' of type str.
+The class 'afpText::MCARG' has the following attributes: 'RGLength' of type str.
+The class 'afpText::MeasurementUnits' has the following attributes: 'XoaUnits' of type str; 'YoaUnits' of type str; 'YoaBase' of type str; 'XoaBase' of type str.
+The class 'afpText::TRN' has the following attributes: 'TRNDATA' of type str.
+The class 'afpText::triplet' has no attributes.
+The class 'afpText::MCF1RG' has the following attributes: 'CFLid' of type str; 'CPName' of type str; 'FCSName' of type str; 'CharRot' of type str; 'CFName' of type str; 'Sectid' of type str.
+The class 'afpText::GSCH' has the following attributes: 'HX' of type str; 'HY' of type str.
+The class 'afpText::SCFL' has the following attributes: 'LID' of type str.
+The class 'afpText::PGPRG' has the following attributes: 'RGLength' of type str; 'PMCid' of type str; 'PgFlgs' of type str; 'SHside' of type str; 'YmOset' of type str; 'PGorient' of type str; 'XmOset' of type str.
+The class 'afpText::BeginImage' has the following attributes: 'OBJTYPE' of type str.
+The class 'afpText::ResourceSectionNumber' has the following attributes: 'ResSNum' of type str.
+The class 'afpText::MIO' has no attributes.
+The class 'afpText::BeginSegment' has the following attributes: 'SEGNAME' of type str.
+The class 'afpText::MSURG' has the following attributes: 'Reserved' of type str; 'SUPname' of type str; 'SUPid' of type str.
+The class 'afpText::TonerSaver' has the following attributes: 'TSvCtrl' of type str.
+The class 'afpText::EAG' has the following attributes: 'AEGName' of type str.
+The class 'afpText::RMI' has the following attributes: 'INCRMENT' of type str.
+The class 'afpText::CPC' has the following attributes: 'VSChar' of type str; 'CPIRGLen' of type str; 'VSCharSN' of type str; 'DefCharID' of type str; 'VSFlags' of type str; 'PrtFlags' of type str.
+The class 'afpText::BOG' has the following attributes: 'OEGName' of type str.
+The class 'afpText::EPM' has the following attributes: 'PMName' of type str.
+The class 'afpText::MCA' has no attributes.
+The class 'afpText::GSCOL' has the following attributes: 'COL' of type str.
+The class 'afpText::GSCD' has the following attributes: 'DIRECTION' of type str.
+The class 'afpText::PPORG' has the following attributes: 'ObjType' of type str; 'RGLength' of type str; 'XocaOset' of type str; 'YocaOset' of type str; 'ProcFlgs' of type str.
+The class 'afpText::MCF1' has the following attributes: 'RGLength' of type str.
+The class 'afpText::GSLW' has the following attributes: 'MH' of type str.
+The class 'afpText::TextOrientation' has the following attributes: 'IAxis' of type str; 'BAxis' of type str.
+The class 'afpText::CPD' has the following attributes: 'GCGIDLen' of type str; 'CPGID' of type str; 'EncScheme' of type str; 'CPDesc' of type str; 'GCSGID' of type str; 'NumCdPts' of type str.
+The class 'afpText::ICP' has the following attributes: 'XCOset' of type str; 'XCSize' of type str; 'YCOset' of type str; 'XFilSize' of type str; 'YFilSize' of type str; 'YCSize' of type str.
+The class 'afpText::IDEStructure' has the following attributes: 'SIZE2' of type str; 'FLAGS' of type str; 'SIZE1' of type str; 'SIZE4' of type str; 'FORMAT' of type str; 'SIZE3' of type str.
+The class 'afpText::STO' has the following attributes: 'BORNTION' of type str; 'IORNTION' of type str.
+The class 'afpText::ImageSize' has the following attributes: 'UNITBASE' of type str; 'VSIZE' of type str; 'VRESOL' of type str; 'HSIZE' of type str; 'HRESOL' of type str.
+The class 'afpText::NOP' has the following attributes: 'UndfData' of type str.
+The class 'afpText::ResourceUsageAttribute' has the following attributes: 'Frequency' of type str.
+The class 'afpText::PGP' has the following attributes: 'Constant' of type str.
+The class 'afpText::UP3iFinishingOperation' has the following attributes: 'Seqnum' of type str; 'UP3iDat' of type str.
+The class 'afpText::PresentationSpaceResetMixing' has the following attributes: 'BgMxFlag' of type str.
+The class 'afpText::STC' has the following attributes: 'FRGCOLOR' of type str; 'PRECSION' of type str.
+The class 'afpText::LocaleSelector' has the following attributes: 'LangCode' of type str; 'Reserved' of type str; 'RegCde' of type str; 'ScrptCde' of type str; 'LocFlgs' of type str; 'VarCde' of type str.
+The class 'afpText::IMM' has the following attributes: 'MMPName' of type str.
+The class 'afpText::GCPARC' has the following attributes: 'SWEEP' of type str; 'YCENT' of type str; 'MH' of type str; 'MFR' of type str; 'XCENT' of type str; 'START' of type str.
+The class 'afpText::GCBOX' has the following attributes: 'XPOS1' of type str; 'YPOS1' of type str; 'VAXIS' of type str; 'RES' of type str; 'HAXIS' of type str.
+The class 'afpText::GRLINE' has the following attributes: 'YPOS' of type str; 'XPOS' of type str.
+The class 'afpText::TileTOCRG' has the following attributes: 'YOFFSET' of type str; 'RELRES' of type str; 'THSIZE' of type str; 'COMPR' of type str; 'DATAPOS' of type str; 'XOFFSET' of type str; 'TVSIZE' of type str.
+The class 'afpText::GEIMG' has the following attributes: 'DATA' of type str.
+The class 'afpText::BDI' has the following attributes: 'IndxName' of type str.
+The class 'afpText::PFC' has the following attributes: 'PFCFlgs' of type str.
+The class 'afpText::ImageLUTID' has the following attributes: 'LUTID' of type str.
+The class 'afpText::RMB' has the following attributes: 'INCRMENT' of type str.
+The class 'afpText::FNPRG' has the following attributes: 'MaxDesDp' of type str; 'Reserved2' of type str; 'UscoreWdf' of type str; 'MaxAscHt' of type str; 'LcHeight' of type str; 'CapMHt' of type str; 'UscorePos' of type str; 'UscoreWd' of type str; 'Retired' of type str; 'Reserved3' of type str; 'Reserved' of type str.
+The class 'afpText::EDT' has the following attributes: 'DocName' of type str.
+The class 'afpText::GCBEZRG' has the following attributes: 'XPOS' of type str; 'YPOS' of type str.
+The class 'afpText::GSLJ' has the following attributes: 'LINEJOIN' of type str.
+The class 'afpText::ImageData' has the following attributes: 'DATA' of type str.
+The class 'afpText::FNC' has the following attributes: 'MaxBoxHt' of type str; 'ResYUBase' of type str; 'PatTech' of type str; 'XUnitBase' of type str; 'YfrUnits' of type str; 'RPatDCnt' of type str; 'FNMRGLen' of type str; 'OPatDCnt' of type str; 'MaxBoxWd' of type str; 'FNNDCnt' of type str; 'YftUnits' of type str; 'Reserved1' of type str; 'Reserved2' of type str; 'PatAlign' of type str; 'YUnitBase' of type str; 'XftUnits' of type str; 'FNORGLen' of type str; 'FNIRGLen' of type str; 'XfrUnits' of type str; 'ResXUBase' of type str; 'FNNRGLen' of type str; 'FNPRGLen' of type str; 'FntFlags' of type str; 'Retired' of type str; 'FNNMapCnt' of type str.
+The class 'afpText::FullyQualifiedName' has the following attributes: 'FQNFormat' of type str; 'FQNType' of type str; 'FQName' of type str.
+The class 'afpText::ObjectOffset' has the following attributes: 'ObjOset' of type str; 'ObjTpe' of type str; 'ObjOstHi' of type str.
+The class 'afpText::MCDRG' has the following attributes: 'RGLength' of type str.
+The class 'afpText::GSCC' has the following attributes: 'CELLHFR' of type str; 'CELLWI' of type str; 'CELLWFR' of type str; 'CELLHI' of type str.
+The class 'afpText::LND' has the following attributes: 'FntLID' of type str; 'TxtOrent' of type str; 'SubpgID' of type str; 'DataLgth' of type str; 'NLNDskp' of type str; 'BPos' of type str; 'IPos' of type str; 'SupName' of type str; 'NLNDreu' of type str; 'LNDFlgs' of type str; 'ChnlCde' of type str; 'CCPID' of type str; 'NLNDccp' of type str; 'TxtColor' of type str; 'NLNDsp' of type str; 'SOLid' of type str; 'DataStrt' of type str.
+The class 'afpText::GSCR' has the following attributes: 'PREC' of type str.
+The class 'afpText::OBP' has the following attributes: 'YocaOrent' of type str; 'XocaOrent' of type str; 'YocaOset' of type str; 'RGLength' of type str; 'YoaOrent' of type str; 'XocaOset' of type str; 'RefCSys' of type str; 'XoaOrent' of type str; 'YoaOset' of type str; 'XoaOset' of type str; 'OAPosID' of type str.
+The class 'afpText::SamplingRatios' has no attributes.
+The class 'afpText::MediumMapPageNumber' has the following attributes: 'PageNum' of type str.
+The class 'afpText::BDA' has the following attributes: 'Xoffset' of type str; 'Yoffset' of type str; 'Data' of type str; 'Flags' of type str.
+The class 'afpText::GMRK' has no attributes.
+The class 'afpText::BDD' has the following attributes: 'YEXTENT' of type str; 'UBASE' of type str; 'COLOR' of type str; 'Reserved2' of type str; 'XUPUB' of type str; 'MOD' of type str; 'WENE' of type str; 'MULT' of type str; 'ELEMENTHEIGHT' of type str; 'YUPUB' of type str; 'MODULEWIDTH' of type str; 'TYPE' of type str; 'XEXTENT' of type str; 'LID' of type str; 'Reserved' of type str.
+The class 'afpText::MediumOrientation' has the following attributes: 'MedOrient' of type str.
+The class 'afpText::ExtensionFont' has the following attributes: 'GCSGID' of type str.
+The class 'afpText::GCMRK' has no attributes.
+The class 'afpText::structuredField' has no attributes.
+The class 'afpText::BMO' has the following attributes: 'OvlyName' of type str.
+The class 'afpText::IOB' has the following attributes: 'ObjName' of type str; 'YoaOset' of type str; 'XoaOset' of type str; 'XocaOset' of type str; 'ObjType' of type str; 'YocaOset' of type str; 'RefCSys' of type str; 'XoaOrent' of type str; 'YoaOrent' of type str.
+The class 'afpText::IEL' has no attributes.
+The class 'afpText::GSMT' has the following attributes: 'MCPT' of type str.
+The class 'afpText::BRS' has the following attributes: 'RSName' of type str.
+The class 'afpText::IRD' has the following attributes: 'IMdata' of type str.
+The class 'afpText::CDD' has the following attributes: 'XocSize' of type str; 'XocUnits' of type str; 'XocBase' of type str; 'YocSize' of type str; 'YocUnits' of type str; 'YocBase' of type str.
+The class 'afpText::GAD' has the following attributes: 'GOCAdat' of type str.
+The class 'afpText::GPARC' has the following attributes: 'SWEEP' of type str; 'START' of type str; 'XCENT' of type str; 'MFR' of type str; 'YCENT' of type str; 'YPOS' of type str; 'XPOS' of type str; 'MH' of type str.
+The class 'afpText::GCCBEZRG' has the following attributes: 'YPOS' of type str; 'XPOS' of type str.
+The class 'afpText::CRCResourceManagement' has the following attributes: 'ResClassFlg' of type str; 'FmtQual' of type str; 'RMValue' of type str.
+The class 'afpText::TextFidelity' has the following attributes: 'StpTxtEx' of type str; 'RepTxtEx' of type str.
+The class 'afpText::IPS' has the following attributes: 'YpsOset' of type str; 'XpsOset' of type str; 'PsegName' of type str.
+The class 'afpText::IncludeTile' has the following attributes: 'TIRID' of type str.
+The class 'afpText::PageOverlayConditionalProcessing' has the following attributes: 'PgOvType' of type str; 'Level' of type str.
+The class 'afpText::BIM' has the following attributes: 'IdoName' of type str.
+The class 'afpText::BAG' has the following attributes: 'AEGName' of type str.
+The class 'afpText::BeginSegmentCommand' has the following attributes: 'PSNAME' of type str; 'SEGL' of type str; 'LENGTH' of type str; 'FLAG2' of type str; 'FLAG1' of type str; 'NAME' of type str.
+The class 'afpText::GSPT' has the following attributes: 'PATT' of type str.
+The class 'afpText::CFIRG' has the following attributes: 'SVSize' of type str; 'FCSName' of type str; 'Reserved' of type str; 'SHScale' of type str; 'CPName' of type str; 'Section' of type str.
+The class 'afpText::GCLINE' has no attributes.
+The class 'afpText::SIA' has the following attributes: 'ADJSTMNT' of type str; 'DIRCTION' of type str.
+The class 'afpText::TilePosition' has the following attributes: 'XOFFSET' of type str; 'YOFFSET' of type str.
+The class 'afpText::ECA' has the following attributes: 'CATName' of type str.
+The class 'afpText::WindowSpecification' has the following attributes: 'YTWIND' of type str; 'FLAGS' of type str; 'RES3' of type str; 'XRESOL' of type str; 'IMGXYRES' of type str; 'XLWIND' of type str; 'UBASE' of type str; 'YBWIND' of type str; 'XRWIND' of type str; 'CFORMAT' of type str; 'YRESOL' of type str.
+The class 'afpText::DrawingOrderSubset' has no attributes.
+The class 'afpText::EMM' has the following attributes: 'MMName' of type str.
+The class 'afpText::TileSize' has the following attributes: 'TVSIZE' of type str; 'THSIZE' of type str; 'RELRES' of type str.
+The class 'afpText::MMCRG' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'afpText::BSU' has the following attributes: 'LID' of type str.
+The class 'afpText::BMM' has the following attributes: 'MMName' of type str.
+The class 'afpText::MPS' has the following attributes: 'Reserved' of type str; 'RGLength' of type str.
+The class 'afpText::FontFidelity' has the following attributes: 'StpFntEx' of type str.
+The class 'afpText::MPG' has no attributes.
+The class 'afpText::USC' has the following attributes: 'BYPSIDEN' of type str.
+The class 'afpText::GSLT' has the following attributes: 'LINETYPE' of type str.
+The class 'afpText::GSFLW' has the following attributes: 'MH' of type str; 'MFR' of type str.
+The class 'afpText::BSG' has the following attributes: 'REGName' of type str.
+The class 'afpText::BLN' has no attributes.
+The class 'afpText::EOC' has the following attributes: 'ObjCName' of type str.
+The class 'afpText::EIM' has the following attributes: 'IdoName' of type str.
+The class 'afpText::GBAR' has the following attributes: 'FLAGS' of type str.
+The class 'afpText::DBR' has the following attributes: 'RLENGTH' of type str; 'RWIDTHFRACTION' of type str; 'RWIDTH' of type str.
+The class 'afpText::ColorManagementResourceDescriptor' has the following attributes: 'ProcMode' of type str; 'CMRScpe' of type str.
+The class 'afpText::MGO' has no attributes.
+The class 'afpText::ResourceLocalIdentifier' has the following attributes: 'ResLID' of type str; 'ResType' of type str.
+The class 'afpText::AMB' has the following attributes: 'DSPLCMNT' of type str.
+The class 'afpText::GCBEZ' has no attributes.
+The class 'afpText::GIMD' has the following attributes: 'DATA' of type str.
+The class 'afpText::ColorSpecification' has the following attributes: 'ColSize2' of type str; 'Color' of type str; 'ColSpce' of type str; 'ColSize1' of type str; 'ColSize4' of type str; 'ColSize3' of type str.
+The class 'afpText::ObjectFunctionSetSpecification' has the following attributes: 'OCAFnSet' of type str; 'ObjType' of type str; 'DCAFnSet' of type str; 'ArchVrsn' of type str.
+The class 'structuredField' has no attributes.
+The class 'afpText::GRLINERG' has the following attributes: 'YOFFS' of type str; 'XOSSF' of type str.
+The class 'afpText::GSMS' has the following attributes: 'LCID' of type str.
+The class 'afpText::BeginTransparencyMask' has no attributes.
+The class 'afpText::GSCS' has the following attributes: 'LCID' of type str.
+The class 'afpText::CAT' has the following attributes: 'CATData' of type str.
+The class 'afpText::ENG' has the following attributes: 'PGrpName' of type str.
+The class 'afpText::GMRKRG' has the following attributes: 'YPOS' of type str; 'XPOS' of type str.
+The class 'afpText::SEC' has the following attributes: 'COLSIZE4' of type str; 'COLSIZE3' of type str; 'COLSIZE2' of type str; 'COLSIZE1' of type str; 'RESERVED' of type str; 'COLVALUE' of type str; 'COLSPCE' of type str.
+The class 'afpText::IDESize' has the following attributes: 'IDESZ' of type str.
+The class 'afpText::ColorFidelity' has the following attributes: 'StpCoEx' of type str; 'ColSub' of type str; 'RepCoEx' of type str.
+The class 'afpText::IOC' has the following attributes: 'YoaOrent' of type str; 'XoaOset' of type str; 'ConData1' of type str; 'YoaOset' of type str; 'XMap' of type str; 'YMap' of type str; 'XoaOrent' of type str; 'ConData2' of type str.
+The class 'afpText::GSGCH' has no attributes.
+The class 'afpText::DXD' has no attributes.
+The class 'afpText::EndTile' has no attributes.
+The class 'afpText::EMO' has the following attributes: 'OvlyName' of type str.
+The class 'afpText::PTD1' has the following attributes: 'YPEXTENT' of type str; 'XPEXTENT' of type str; 'XPBASE' of type str; 'XPUNITVL' of type str; 'YPUNITVL' of type str; 'YPBASE' of type str; 'RESERVED' of type str.
+The class 'afpText::MMO' has the following attributes: 'RGLength' of type str.
+The class 'afpText::EFN' has the following attributes: 'RSName' of type str.
+The class 'afpText::EndImage' has no attributes.
+The class 'afpText::EFG' has the following attributes: 'FEGName' of type str.
+The class 'afpText::MPGRG' has the following attributes: 'RGLength' of type str.
+The class 'afpText::BFN' has the following attributes: 'RSName' of type str.
+The class 'triplet' has no attributes.
+The class 'afpText::GSMX' has the following attributes: 'MODE' of type str.
+The class 'afpText::MCCRG' has the following attributes: 'Startnum' of type str; 'Stopnum' of type str; 'MMCid' of type str.
+The class 'afpText::BDX' has the following attributes: 'DMXName' of type str.
+The class 'afpText::ObjectStructuredFieldOffset' has the following attributes: 'SFOffHi' of type str; 'SFOff' of type str.
+The class 'afpText::MFC' has the following attributes: 'MFCScpe' of type str; 'MedColl' of type str; 'MFCFlgs' of type str.
+The class 'afpText::FNM' has no attributes.
+The class 'afpText::AttributeQualifier' has the following attributes: 'SeqNum' of type str; 'LevNum' of type str.
+The class 'afpText::MCC' has no attributes.
+The class 'afpText::EDI' has the following attributes: 'IndxName' of type str.
+The class 'afpText::GSMC' has the following attributes: 'CELLWI' of type str; 'CELLHI' of type str.
+The class 'afpText::ObjectByteOffset' has the following attributes: 'DirByHi' of type str; 'DirByOff' of type str.
+The class 'afpText::BandImage' has the following attributes: 'BCOUNT' of type str.
+The class 'afpText::GBIMG' has the following attributes: 'YPOS' of type str; 'FORMAT' of type str; 'XPOS' of type str; 'WIDTH' of type str; 'RES' of type str; 'HEIGHT' of type str.
+The class 'afpText::FNMRG' has the following attributes: 'CharBoxWd' of type str; 'PatDOset' of type str; 'CharBoxHt' of type str.
+The class 'afpText::BCF' has the following attributes: 'RSName' of type str.
+The class 'afpText::CPIRG' has the following attributes: 'Count' of type str; 'CodePoint' of type str; 'PrtFlags' of type str; 'GCGID' of type str.
+The class 'afpText::SetBiLevelImageColor' has the following attributes: 'NAMECOLR' of type str; 'Reserved' of type str; 'AREA' of type str.
+The class 'afpText::NOPCS' has the following attributes: 'IGNDATA' of type str.
+The class 'afpText::DeviceAppearance' has the following attributes: 'Reserved' of type str; 'DevApp' of type str.
+The class 'afpText::MMDRG' has the following attributes: 'RGLength' of type str.
+The class 'afpText::SBI' has the following attributes: 'INCRMENT' of type str.
+The class 'afpText::EGR' has the following attributes: 'GdoName' of type str.
+The class 'afpText::IID' has the following attributes: 'YCSizeD' of type str; 'ConData2' of type str; 'XSize' of type str; 'XCSizeD' of type str; 'YBase' of type str; 'YSize' of type str; 'ConData1' of type str; 'YUnits' of type str; 'XBase' of type str; 'XUnits' of type str; 'ConData3' of type str; 'Color' of type str.
+The class 'afpText::BPF' has the following attributes: 'PFName' of type str.
+The class 'afpText::CharacterRotation' has the following attributes: 'CharRot' of type str.
+The class 'afpText::MMTRG' has the following attributes: 'RGLength' of type str.
+The class 'afpText::BPS' has the following attributes: 'PsegName' of type str.
+The class 'afpText::EDG' has the following attributes: 'DEGName' of type str.
+The class 'afpText::FNNRG' has the following attributes: 'TSOffset' of type str; 'GCGID' of type str.
+The class 'afpText::PTX' has no attributes.
+The class 'afpText::ImageEncoding' has the following attributes: 'RECID' of type str; 'BITORDR' of type str; 'COMPRID' of type str.
+The class 'afpText::FinishingOperation' has the following attributes: 'AxOffst' of type str; 'FOpCnt' of type str; 'FOpType' of type str; 'RefEdge' of type str; 'OpPos' of type str.
+The class 'afpText::ERG' has the following attributes: 'RGrpName' of type str.
+The class 'afpText::BNG' has the following attributes: 'PGrpName' of type str.
+The class 'afpText::AMI' has the following attributes: 'DSPLCMNT' of type str.
+The class 'afpText::EPT' has the following attributes: 'PTdoName' of type str.
+The class 'afpText::ExternalAlgorithm' has the following attributes: 'ALGTYPE' of type str.
+The class 'afpText::GSPS' has the following attributes: 'LCID' of type str.
+The class 'afpText::CFC' has the following attributes: 'CFIRGLen' of type str; 'Retired1' of type str.
+The class 'afpText::MDR' has no attributes.
+The class 'afpText::Comment' has the following attributes: 'Comment' of type str.
+The class 'afpText::LLERG' has the following attributes: 'RGLength' of type str; 'RGFunct' of type str.
+The class 'afpText::TileTOC' has the following attributes: 'Reserved' of type str.
+The class 'afpText::GCFLTRG' has the following attributes: 'XPOS' of type str; 'YPOS' of type str.
+The class 'afpText::GCBIMG' has the following attributes: 'RES' of type str; 'HEIGHT' of type str; 'WIDTH' of type str; 'FORMAT' of type str.
+The class 'afpText::GCMRKRG' has the following attributes: 'YPOS' of type str; 'XPOS' of type str.
+The class 'afpText::BDT' has the following attributes: 'DocName' of type str; 'Reserved' of type str.
+The class 'afpText::FNN' has the following attributes: 'FNNData' of type str.
+The class 'afpText::Model' has no attributes.
+The class 'afpText::DataObjectFontDescriptor' has the following attributes: 'FontTech' of type str; 'DOFtFlgs' of type str; 'HFS' of type str; 'EncID' of type str; 'EncEnv' of type str; 'Reserved' of type str; 'VFS' of type str; 'CharRot' of type str.
+The class 'afpText::GBOX' has the following attributes: 'XPOS0' of type str; 'VAXIS' of type str; 'YPOS1' of type str; 'HAXIS' of type str; 'XPOS1' of type str; 'YPOS0' of type str; 'RES' of type str.
+The class 'afpText::ObjectAreaSize' has the following attributes: 'XoaSize' of type str; 'YoaSize' of type str; 'SizeType' of type str.
+The class 'afpText::BCA' has the following attributes: 'CATName' of type str.
+The class 'afpText::CTC' has the following attributes: 'ConData' of type str.
+The class 'afpText::GLINE' has no attributes.
+The class 'afpText::EPS' has the following attributes: 'PsegName' of type str.
+The class 'afpText::MMT' has no attributes.
+The class 'afpText::IPO' has the following attributes: 'XolOset' of type str; 'OvlyName' of type str; 'OvlyOrent' of type str; 'YolOset' of type str.
+The class 'afpText::ResourceObjectInclude' has the following attributes: 'ObjType' of type str; 'YobjOset' of type str; 'ObOrent' of type str; 'ObjName' of type str; 'XobjOset' of type str.
+The class 'afpText::PresentationSpaceMixingRules' has no attributes.
+The class 'afpText::GCFARC' has the following attributes: 'MFR' of type str; 'MH' of type str.
+The class 'afpText::BDG' has the following attributes: 'DEGName' of type str.
+The class 'afpText::MBCRG' has the following attributes: 'RGLength' of type str.
+The class 'afpText::OBD' has no attributes.
+The class 'afpText::GEAR' has the following attributes: 'DATA' of type str.
+The class 'afpText::LNC' has the following attributes: 'NumDSC' of type str.
+The class 'afpText::RenderingIntent' has the following attributes: 'PTOCRI' of type str; 'Reserved' of type str; 'GOCARI' of type str; 'IOCARI' of type str; 'OCRI' of type str; 'Reserved2' of type str.
+The class 'afpText::BDM' has the following attributes: 'DMName' of type str; 'DatFmt' of type str.
+The class 'afpText::GLINERG' has the following attributes: 'XPOS' of type str; 'YPOS' of type str.
+The class 'afpText::GNOP1' has no attributes.
+The class 'afpText::BeginTile' has no attributes.
+The class 'afpText::ObjectStructuredFieldExtent' has the following attributes: 'SFExtHi' of type str; 'SFExt' of type str.
+The class 'afpText::EndSegmentCommand' has no attributes.
+The class 'afpText::MODCAInterchangeSet' has the following attributes: 'ISid' of type str; 'IStype' of type str.
+The class 'afpText::MediaFidelity' has the following attributes: 'Reserved' of type str; 'StpMedEx' of type str.
+The class 'afpText::EOG' has the following attributes: 'OEGName' of type str.
+The class 'afpText::GFARC' has the following attributes: 'MH' of type str; 'YPOS' of type str; 'XPOS' of type str; 'MFR' of type str.
+The class 'afpText::FNG' has the following attributes: 'PatData' of type str.
+The class 'afpText::GSLE' has the following attributes: 'LINEEND' of type str.
+The class 'afpText::MCFRG' has the following attributes: 'RGLength' of type str.
+The class 'afpText::GFLT' has no attributes.
+The class 'afpText::PEC' has no attributes.
+The class 'afpText::ObjectOriginIdentifier' has the following attributes: 'MedID' of type str; 'System' of type str; 'DSID' of type str; 'SysID' of type str.
+The class 'afpText::GCLINERG' has the following attributes: 'YPOS' of type str; 'XPOS' of type str.
+The class 'afpText::MMD' has no attributes.
+The class 'afpText::GSCA' has the following attributes: 'XPOS' of type str; 'YPOS' of type str.
+The class 'afpText::FNORG' has the following attributes: 'OrntFlgs' of type str; 'Reserved2' of type str; 'NomCharInc' of type str; 'MaxCharInc' of type str; 'MaxBOset' of type str; 'MaxBExt' of type str; 'Reserved' of type str; 'MinASp' of type str; 'EmSpInc' of type str; 'FigSpInc' of type str; 'SpCharInc' of type str; 'Reserved3' of type str; 'CharRot' of type str; 'DefBInc' of type str.
+The class 'afpText::LocalDateAndTimeStamp' has the following attributes: 'Hour' of type str; 'Minute' of type str; 'HundSec' of type str; 'Day' of type str; 'THunYear' of type str; 'StampType' of type str; 'TenYear' of type str; 'Second' of type str.
+The class 'afpText::MappingOption' has the following attributes: 'MapValue' of type str.
+The class 'afpText::BBC' has the following attributes: 'BCdoName' of type str.
+The class 'afpText::EDX' has the following attributes: 'DMXName' of type str.
+The class 'afpText::ESG' has the following attributes: 'REGName' of type str.
+The class 'afpText::FNO' has no attributes.
+The class 'afpText::GCFLT' has no attributes.
+The class 'afpText::BPG' has the following attributes: 'PageName' of type str.
+The class 'afpText::PPO' has no attributes.
+The class 'afpText::IPG' has the following attributes: 'IPgFlgs' of type str; 'PgName' of type str.
+The class 'afpText::EndSegment' has no attributes.
+The class 'afpText::ImageResolution' has the following attributes: 'XBase' of type str; 'YBase' of type str; 'XResol' of type str; 'YResol' of type str.
+The class 'afpText::MDRRG' has the following attributes: 'RGLength' of type str.
+The class 'afpText::PTD' has the following attributes: 'YPUNITVL' of type str; 'XPUNITVL' of type str; 'YPEXTENT' of type str; 'RESERVED' of type str; 'YPBASE' of type str; 'XPEXTENT' of type str; 'XPBASE' of type str.
+The class 'afpText::EndTransparencyMask' has no attributes.
+The class 'afpText::MIORG' has the following attributes: 'RGLength' of type str.
+The class 'afpText::CMRFidelity' has the following attributes: 'RepCMREx' of type str; 'StpCMREx' of type str.
+The class 'afpText::GCRLINE' has no attributes.
+The class 'afpText::FontHorizontalScaleFactor' has the following attributes: 'Hscale' of type str.
+The class 'afpText::TileSetColor' has the following attributes: 'RESERVED' of type str; 'SIZE3' of type str; 'CVAL2' of type str; 'SIZE4' of type str; 'CVAL3' of type str; 'SIZE1' of type str; 'CVAL4' of type str; 'CSPACE' of type str; 'CVAL1' of type str; 'SIZE2' of type str.
+The class 'afpText::GCRLINERG' has the following attributes: 'YOFFS' of type str; 'XOSSF' of type str.
+The class 'afpText::ImageSubsampling' has no attributes.
+The class 'afpText::IDD' has the following attributes: 'YRESOL' of type str; 'XSIZE' of type str; 'UNITBASE' of type str; 'XRESOL' of type str; 'YSIZE' of type str.
+The class 'afpText::BCP' has the following attributes: 'RSName' of type str.
+The class 'afpText::FontDescriptorSpecification' has the following attributes: 'FtUsFlags' of type str; 'FtWdClass' of type str; 'FtWtClass' of type str; 'FtWidth' of type str; 'FtHeight' of type str; 'FtDsFlags' of type str.
+The class 'afpText::PGD' has the following attributes: 'YpgUnits' of type str; 'YpgBase' of type str; 'XpgUnits' of type str; 'XpgBase' of type str; 'YpgSize' of type str; 'Reserved' of type str; 'XpgSize' of type str.
+The class 'afpText::BPT' has the following attributes: 'PTdoName' of type str.
+The class 'afpText::SamplingRatiosRG' has the following attributes: 'VSAMPLE' of type str; 'HSAMPLE' of type str.
+The class 'afpText::EBC' has the following attributes: 'BCdoName' of type str.
+The class 'afpText::BandImageData' has the following attributes: 'RESERVED' of type str; 'BANDNUM' of type str; 'DATA' of type str.
+The class 'afpText::IOCAFunctionSetIdentification' has the following attributes: 'CATEGORY' of type str; 'FCNSET' of type str.
+The class 'afpText::ObjectClassification' has the following attributes: 'StrucFlgs' of type str; 'ObjTpName' of type str; 'ObjClass' of type str; 'CompName' of type str; 'ObjLev' of type str; 'RegObjId' of type str.
+The class 'afpText::FNI' has no attributes.
+The class 'afpText::CPI' has no attributes.
+The class 'afpText::FinishingFidelity' has the following attributes: 'RepFinEx' of type str; 'StpFinEx' of type str.
+The class 'afpText::MMC' has the following attributes: 'MMCid' of type str; 'PARAMETER1' of type str.
+The class 'afpText::CFI' has no attributes.
+The class 'afpText::MPORG' has the following attributes: 'RGLength' of type str.
+The class 'afpText::OVS' has the following attributes: 'BYPSIDEN' of type str; 'OVERCHAR' of type str.
+The class 'afpText::GSBMX' has the following attributes: 'MODE' of type str.
+The class 'afpText::BFM' has the following attributes: 'FMName' of type str.
+The class 'afpText::EFM' has the following attributes: 'FMName' of type str.
+The class 'afpText::MDD' has the following attributes: 'MDDFlgs' of type str; 'YmUnits' of type str; 'YmSize' of type str; 'XmUnits' of type str; 'XmBase' of type str; 'XmSize' of type str; 'YmBase' of type str.
+The class 'afpText::ObjectByteExtent' has the following attributes: 'ByteExt' of type str; 'ByteExtHi' of type str.
+The class 'afpText::BandImageRG' has the following attributes: 'BITCNT' of type str.
+The class 'afpText::ECP' has the following attributes: 'RSName' of type str.
+The class 'afpText::FGD' has the following attributes: 'ConData' of type str.
+The class 'afpText::FNNRG2' has the following attributes: 'TSID' of type str; 'TSIDLen' of type str.
+The class 'afpText::MPSRG' has the following attributes: 'Reserved' of type str; 'PsegName' of type str.
+The class 'afpText::GDD' has the following attributes: 'GOCAdes' of type str.
+The class 'afpText::GCOMT' has the following attributes: 'DATA' of type str.
+The class 'afpText::ERS' has the following attributes: 'RSName' of type str.
+The class 'afpText::GSCP' has the following attributes: 'XPOS' of type str; 'YPOS' of type str.
+The class 'afpText::LineDataObjectPositionMigration' has the following attributes: 'TempOrient' of type str.
+The class 'afpText::EPG' has the following attributes: 'PageName' of type str.
+The class 'afpText::GCCHST' has the following attributes: 'CP' of type str.
+The class 'afpText::MCD' has no attributes.
+The class 'afpText::LLE' has the following attributes: 'LnkType' of type str.
+The class 'afpText::ExtendedResourceLocalIdentifier' has the following attributes: 'ResLID' of type str; 'ResType' of type str.
+The class 'afpText::BII' has the following attributes: 'ImoName' of type str.
+The class 'afpText::PresentationControl' has the following attributes: 'PRSFlg' of type str.
+The class 'afpText::MMORG' has the following attributes: 'OVLname' of type str; 'OVLid' of type str; 'Flags' of type str.
+The class 'afpText::ObjectContainerPresentationSpaceSize' has the following attributes: 'PDFSize' of type str.
+The class 'afpText::BFG' has the following attributes: 'FEGName' of type str.
+The class 'afpText::MetricAdjustment' has the following attributes: 'VUniformIncrement' of type str; 'HUniformIncrement' of type str; 'HBaselineIncrement' of type str; 'XUPUB' of type str; 'UnitBase' of type str; 'VBaselineIncrement' of type str; 'YUPUB' of type str.
+The class 'afpText::PMC' has the following attributes: 'PMCid' of type str.
+The class 'afpText::GSMP' has the following attributes: 'PREC' of type str.
+The class 'afpText::MBC' has no attributes.
+The class 'afpText::TBM' has the following attributes: 'INCRMENT' of type str; 'PRECSION' of type str; 'DIRCTION' of type str.
+The class 'afpText::PagePositionInformation' has the following attributes: 'PGPRG' of type str.
+The class 'afpText::GCHST' has the following attributes: 'YPOS' of type str; 'XPOS' of type str; 'CP' of type str.
+The class 'afpText::FontCodedGraphicCharacterSetGlobalIdentifier' has the following attributes: 'GCSGID' of type str; 'CPGID' of type str.
+The class 'afpText::EDM' has the following attributes: 'DMName' of type str.
+The class 'afpText::GEPROL' has the following attributes: 'RES' of type str.
+The class 'afpText::EII' has the following attributes: 'ImoName' of type str.
+The class 'afpText::BRG' has the following attributes: 'RGrpName' of type str.
+The class 'afpText::TLE' has no attributes.
+The class 'afpText::ECF' has the following attributes: 'RSName' of type str.
+The class 'afpText::MediaEjectControl' has the following attributes: 'EjCtrl' of type str; 'Reserved' of type str.
+The class 'afpText::ExternalAlgorithmRG' has the following attributes: 'PADALMT' of type str; 'DIRCTN' of type str; 'PADBDRY' of type str.
+The class 'afpText::GSECOL' has the following attributes: 'COLOR' of type str.
+The class 'afpText::GCCBEZ' has no attributes.
+The class 'afpText::LineData' has the following attributes: 'linedata' of type str.
+The class 'afpText::BPM' has the following attributes: 'PMName' of type str.
+The class 'afpText::GSAP' has the following attributes: 'Q' of type str; 'S' of type str; 'R' of type str; 'P' of type str.
+The class 'afpText::IPD' has the following attributes: 'imageData' of type str; 'IOCAdat' of type str.
+The class 'afpText::EncodingSchemeID' has the following attributes: 'ESidCP' of type str; 'ESidUD' of type str.
+The class 'afpText::BOC' has the following attributes: 'ObjCName' of type str.
+The class 'afpText::ESU' has the following attributes: 'LID' of type str.
+The class 'afpText::DIR' has the following attributes: 'RWIDTHFRACTION' of type str; 'RWIDTH' of type str; 'RLENGTH' of type str.
+The class 'afpText::MGORG' has the following attributes: 'RGLength' of type str.
+The class 'afpText::GFLTRG' has the following attributes: 'YPOS' of type str; 'XPOS' of type str.
+The class 'afpText::SIM' has the following attributes: 'DSPLCMNT' of type str.
+The class 'afpText::MPO' has no attributes.
+The class 'afpText::FNIRG' has the following attributes: 'BSpace' of type str; 'DescendDp' of type str; 'GCGID' of type str; 'ASpace' of type str; 'FNMCnt' of type str; 'CharInc' of type str; 'BaseOset' of type str; 'CSpace' of type str; 'Reserved' of type str; 'Reserved2' of type str; 'AscendHt' of type str.
+The class 'afpText::FontResolution' has the following attributes: 'RPuBase' of type str; 'MetTech' of type str; 'RPUnits' of type str.
+The class 'afpText::FND' has the following attributes: 'Reserved2' of type str; 'FtWtClass' of type str; 'FtDsFlags' of type str; 'FGID' of type str; 'MinHSize' of type str; 'NomHSize' of type str; 'DsnSpcGrp' of type str; 'MinPtSize' of type str; 'NomPtSize' of type str; 'Reserved1' of type str; 'MaxHSize' of type str; 'TypeFcDesc' of type str; 'DsnSubCls' of type str; 'MaxPtSize' of type str; 'GCSID' of type str; 'FtWdClass' of type str; 'DsnGenCls' of type str.
+The class 'afpText::BGR' has the following attributes: 'GdoName' of type str.
+The class 'afpText::FNP' has no attributes.
+The class 'afpText::PGP1' has the following attributes: 'YOset' of type str; 'XOset' of type str.
+The class 'afpText::OCD' has the following attributes: 'ObjCdat' of type str.
+The class 'afpText::ObjectCount' has the following attributes: 'SubObj' of type str; 'SObjNum' of type str; 'SobjNmHi' of type str.
+The class 'afpText::SVI' has the following attributes: 'INCRMENT' of type str.
+The class 'afpText::MCF' has no attributes.
+The class 'afpText::RPS' has the following attributes: 'RLENGTH' of type str; 'RPTDATA' of type str.
+The class 'afpText::GSPCOL' has the following attributes: 'RES2' of type str; 'RES1' of type str; 'COLSPCE' of type str; 'COLSIZE3' of type str; 'COLSIZE4' of type str; 'COLSIZE2' of type str; 'COLVALUE' of type str; 'COLSIZE1' of type str.
+The class 'afpText::EPF' has the following attributes: 'PFName' of type str.
+The class 'afpText::CGCSGID' has the following attributes: 'GCSGID' of type str; 'CPGID' of type str.
+'afpText::EPT' is a specialization of 'structuredField'.
+'afpText::ImageResolution' is a specialization of 'triplet'.
+'afpText::AttributeValue' is a specialization of 'triplet'.
+'afpText::MODCAInterchangeSet' is a specialization of 'triplet'.
+'afpText::PGP1' is a specialization of 'structuredField'.
+'afpText::BDM' is a specialization of 'structuredField'.
+'afpText::MMT' is a specialization of 'structuredField'.
+'afpText::BBC' is a specialization of 'structuredField'.
+'afpText::BPG' is a specialization of 'structuredField'.
+'afpText::FND' is a specialization of 'structuredField'.
+'afpText::STC' is a specialization of 'triplet'.
+'afpText::EGR' is a specialization of 'structuredField'.
+'afpText::ImageSize' is a specialization of 'triplet'.
+'afpText::BRS' is a specialization of 'structuredField'.
+'afpText::OVS' is a specialization of 'triplet'.
+'afpText::IDESize' is a specialization of 'triplet'.
+'afpText::TileSetColor' is a specialization of 'triplet'.
+'afpText::ObjectByteOffset' is a specialization of 'triplet'.
+'afpText::MSU' is a specialization of 'structuredField'.
+'afpText::GCFARC' is a specialization of 'triplet'.
+'afpText::BandImage' is a specialization of 'triplet'.
+'afpText::IOB' is a specialization of 'structuredField'.
+'afpText::GSCP' is a specialization of 'triplet'.
+'afpText::TilePosition' is a specialization of 'triplet'.
+'afpText::CFC' is a specialization of 'structuredField'.
+'afpText::IOC' is a specialization of 'structuredField'.
+'afpText::IncludeTile' is a specialization of 'triplet'.
+'afpText::FullyQualifiedName' is a specialization of 'triplet'.
+'afpText::EMO' is a specialization of 'structuredField'.
+'afpText::FNI' is a specialization of 'structuredField'.
+'afpText::MCF1' is a specialization of 'structuredField'.
+'afpText::MetricAdjustment' is a specialization of 'triplet'.
+'afpText::NOP' is a specialization of 'structuredField'.
+'afpText::EndSegmentCommand' is a specialization of 'triplet'.
+'afpText::GLINE' is a specialization of 'triplet'.
+'afpText::DeviceAppearance' is a specialization of 'triplet'.
+'afpText::EDG' is a specialization of 'structuredField'.
+'afpText::MPO' is a specialization of 'structuredField'.
+'afpText::ObjectByteExtent' is a specialization of 'triplet'.
+'afpText::EPM' is a specialization of 'structuredField'.
+'afpText::SamplingRatios' is a specialization of 'triplet'.
+'afpText::EndTile' is a specialization of 'triplet'.
+'afpText::PPO' is a specialization of 'structuredField'.
+'afpText::GSLJ' is a specialization of 'triplet'.
+'afpText::TileSize' is a specialization of 'triplet'.
+'afpText::GBOX' is a specialization of 'triplet'.
+'afpText::ObjectClassification' is a specialization of 'triplet'.
+'afpText::IPO' is a specialization of 'structuredField'.
+'afpText::PMC' is a specialization of 'structuredField'.
+'afpText::EPS' is a specialization of 'structuredField'.
+'afpText::GCLINE' is a specialization of 'triplet'.
+'afpText::FontHorizontalScaleFactor' is a specialization of 'triplet'.
+'afpText::EDM' is a specialization of 'structuredField'.
+'afpText::TBM' is a specialization of 'triplet'.
+'afpText::BDX' is a specialization of 'structuredField'.
+'afpText::FNC' is a specialization of 'structuredField'.
+'afpText::GSFLW' is a specialization of 'triplet'.
+'afpText::GSMC' is a specialization of 'triplet'.
+'afpText::PEC' is a specialization of 'structuredField'.
+'afpText::BDG' is a specialization of 'structuredField'.
+'afpText::GSCC' is a specialization of 'triplet'.
+'afpText::EndImage' is a specialization of 'triplet'.
+'afpText::SIM' is a specialization of 'triplet'.
+'afpText::MMC' is a specialization of 'structuredField'.
+'afpText::EAG' is a specialization of 'structuredField'.
+'afpText::IEL' is a specialization of 'structuredField'.
+'afpText::EBC' is a specialization of 'structuredField'.
+'afpText::AMB' is a specialization of 'triplet'.
+'afpText::FontFidelity' is a specialization of 'triplet'.
+'afpText::FontDescriptorSpecification' is a specialization of 'triplet'.
+'afpText::ObjectContainerPresentationSpaceSize' is a specialization of 'triplet'.
+'afpText::MCA' is a specialization of 'structuredField'.
+'afpText::MappingOption' is a specialization of 'triplet'.
+'afpText::CFI' is a specialization of 'structuredField'.
+'afpText::GDD' is a specialization of 'structuredField'.
+'afpText::ColorManagementResourceDescriptor' is a specialization of 'triplet'.
+'afpText::SCFL' is a specialization of 'triplet'.
+'afpText::EncodingSchemeID' is a specialization of 'triplet'.
+'afpText::PageOverlayConditionalProcessing' is a specialization of 'triplet'.
+'afpText::ESG' is a specialization of 'structuredField'.
+'afpText::BRG' is a specialization of 'structuredField'.
+'afpText::CMRFidelity' is a specialization of 'triplet'.
+'afpText::GSCS' is a specialization of 'triplet'.
+'afpText::RenderingIntent' is a specialization of 'triplet'.
+'afpText::EIM' is a specialization of 'structuredField'.
+'afpText::ENG' is a specialization of 'structuredField'.
+'afpText::GSAP' is a specialization of 'triplet'.
+'afpText::PresentationSpaceResetMixing' is a specialization of 'triplet'.
+'afpText::ObjectFunctionSetSpecification' is a specialization of 'triplet'.
+'afpText::LocaleSelector' is a specialization of 'triplet'.
+'afpText::MGO' is a specialization of 'structuredField'.
+'afpText::GFARC' is a specialization of 'triplet'.
+'afpText::LNC' is a specialization of 'structuredField'.
+'afpText::GEAR' is a specialization of 'triplet'.
+'afpText::SIA' is a specialization of 'triplet'.
+'afpText::PGP' is a specialization of 'structuredField'.
+'afpText::FNNRG2' is a specialization of 'triplet'.
+'afpText::FGD' is a specialization of 'structuredField'.
+'afpText::BMO' is a specialization of 'structuredField'.
+'afpText::IPS' is a specialization of 'structuredField'.
+'afpText::GRLINE' is a specialization of 'triplet'.
+'afpText::ExtensionFont' is a specialization of 'triplet'.
+'afpText::MDR' is a specialization of 'structuredField'.
+'afpText::BeginImage' is a specialization of 'triplet'.
+'afpText::CharacterRotation' is a specialization of 'triplet'.
+'afpText::GCCBEZ' is a specialization of 'triplet'.
+'afpText::GCBOX' is a specialization of 'triplet'.
+'afpText::BeginSegmentCommand' is a specialization of 'triplet'.
+'afpText::BDI' is a specialization of 'structuredField'.
+'afpText::BDD' is a specialization of 'structuredField'.
+'afpText::GBAR' is a specialization of 'triplet'.
+'afpText::FontCodedGraphicCharacterSetGlobalIdentifier' is a specialization of 'triplet'.
+'afpText::IID' is a specialization of 'structuredField'.
+'afpText::PTD1' is a specialization of 'structuredField'.
+'afpText::FinishingOperation' is a specialization of 'triplet'.
+'afpText::CRCResourceManagement' is a specialization of 'triplet'.
+'afpText::BPT' is a specialization of 'structuredField'.
+'afpText::MIO' is a specialization of 'structuredField'.
+'afpText::CPC' is a specialization of 'structuredField'.
+'afpText::ObjectAreaSize' is a specialization of 'triplet'.
+'afpText::BPF' is a specialization of 'structuredField'.
+'afpText::ResourceObjectInclude' is a specialization of 'triplet'.
+'afpText::GSLT' is a specialization of 'triplet'.
+'afpText::Comment' is a specialization of 'triplet'.
+'afpText::GPARC' is a specialization of 'triplet'.
+'afpText::IPD' is a specialization of 'structuredField'.
+'afpText::BCP' is a specialization of 'structuredField'.
+'afpText::BGR' is a specialization of 'structuredField'.
+'afpText::CTC' is a specialization of 'structuredField'.
+'afpText::ObjectStructuredFieldExtent' is a specialization of 'triplet'.
+'afpText::LND' is a specialization of 'structuredField'.
+'afpText::GEIMG' is a specialization of 'triplet'.
+'afpText::TileTOC' is a specialization of 'triplet'.
+'afpText::RPS' is a specialization of 'triplet'.
+'afpText::GMRK' is a specialization of 'triplet'.
+'afpText::GIMD' is a specialization of 'triplet'.
+'afpText::AMI' is a specialization of 'triplet'.
+'afpText::ObjectOffset' is a specialization of 'triplet'.
+'afpText::EndTransparencyMask' is a specialization of 'triplet'.
+'afpText::FontResolution' is a specialization of 'triplet'.
+'afpText::GSPT' is a specialization of 'triplet'.
+'afpText::MCD' is a specialization of 'structuredField'.
+'afpText::MCF' is a specialization of 'structuredField'.
+'afpText::ResourceObjectType' is a specialization of 'triplet'.
+'afpText::BFN' is a specialization of 'structuredField'.
+'afpText::LLE' is a specialization of 'structuredField'.
+'afpText::SEC' is a specialization of 'triplet'.
+'afpText::ImageLUTID' is a specialization of 'triplet'.
+'afpText::PresentationSpaceMixingRules' is a specialization of 'triplet'.
+'afpText::BSG' is a specialization of 'structuredField'.
+'afpText::EPG' is a specialization of 'structuredField'.
+'afpText::EFN' is a specialization of 'structuredField'.
+'afpText::GSECOL' is a specialization of 'triplet'.
+'afpText::SVI' is a specialization of 'triplet'.
+'afpText::IMM' is a specialization of 'structuredField'.
+'afpText::GFLT' is a specialization of 'triplet'.
+'afpText::LocalDateAndTimeStamp' is a specialization of 'triplet'.
+'afpText::CDD' is a specialization of 'structuredField'.
+'afpText::GCRLINE' is a specialization of 'triplet'.
+'afpText::CGCSGID' is a specialization of 'triplet'.
+'afpText::BAG' is a specialization of 'structuredField'.
+'afpText::MediaFidelity' is a specialization of 'triplet'.
+'afpText::ObjectStructuredFieldOffset' is a specialization of 'triplet'.
+'afpText::BPS' is a specialization of 'structuredField'.
+'afpText::BSU' is a specialization of 'triplet'.
+'afpText::FNP' is a specialization of 'structuredField'.
+'afpText::ERG' is a specialization of 'structuredField'.
+'afpText::GSMS' is a specialization of 'triplet'.
+'afpText::BLN' is a specialization of 'triplet'.
+'afpText::USC' is a specialization of 'triplet'.
+'afpText::EMM' is a specialization of 'structuredField'.
+'afpText::GSBMX' is a specialization of 'triplet'.
+'afpText::PGD' is a specialization of 'structuredField'.
+'afpText::GSGCH' is a specialization of 'triplet'.
+'afpText::BCA' is a specialization of 'structuredField'.
+'afpText::EPF' is a specialization of 'structuredField'.
+'afpText::BeginTransparencyMask' is a specialization of 'triplet'.
+'afpText::RMB' is a specialization of 'triplet'.
+'afpText::EFM' is a specialization of 'structuredField'.
+'afpText::WindowSpecification' is a specialization of 'triplet'.
+'afpText::MPS' is a specialization of 'structuredField'.
+'afpText::ObjectCount' is a specialization of 'triplet'.
+'afpText::ResourceLocalIdentifier' is a specialization of 'triplet'.
+'afpText::DataObjectFontDescriptor' is a specialization of 'triplet'.
+'afpText::DescriptorPosition' is a specialization of 'triplet'.
+'afpText::GCBEZ' is a specialization of 'triplet'.
+'afpText::ResourceSectionNumber' is a specialization of 'triplet'.
+'afpText::EOG' is a specialization of 'structuredField'.
+'afpText::GCHST' is a specialization of 'triplet'.
+'afpText::DBR' is a specialization of 'triplet'.
+'afpText::ObjectOriginIdentifier' is a specialization of 'triplet'.
+'afpText::OBD' is a specialization of 'structuredField'.
+'afpText::CPD' is a specialization of 'structuredField'.
+'afpText::BeginSegment' is a specialization of 'triplet'.
+'afpText::BIM' is a specialization of 'structuredField'.
+'afpText::FNM' is a specialization of 'structuredField'.
+'afpText::SetBiLevelImageColor' is a specialization of 'triplet'.
+'afpText::MediaEjectControl' is a specialization of 'triplet'.
+'afpText::ColorSpecification' is a specialization of 'triplet'.
+'afpText::TextOrientation' is a specialization of 'triplet'.
+'afpText::MBC' is a specialization of 'structuredField'.
+'afpText::BandImageData' is a specialization of 'triplet'.
+'afpText::CAT' is a specialization of 'structuredField'.
+'afpText::AttributeQualifier' is a specialization of 'triplet'.
+'afpText::GEPROL' is a specialization of 'triplet'.
+'afpText::MPG' is a specialization of 'structuredField'.
+'afpText::GCBIMG' is a specialization of 'triplet'.
+'afpText::BOG' is a specialization of 'structuredField'.
+'afpText::ImageSubsampling' is a specialization of 'triplet'.
+'afpText::EOC' is a specialization of 'structuredField'.
+'afpText::ImageEncoding' is a specialization of 'triplet'.
+'afpText::BNG' is a specialization of 'structuredField'.
+'afpText::ECF' is a specialization of 'structuredField'.
+'afpText::PFC' is a specialization of 'structuredField'.
+'afpText::GCCHST' is a specialization of 'triplet'.
+'afpText::MMO' is a specialization of 'structuredField'.
+'afpText::ERS' is a specialization of 'structuredField'.
+'afpText::GCOMT' is a specialization of 'triplet'.
+'afpText::BII' is a specialization of 'structuredField'.
+'afpText::ImageData' is a specialization of 'triplet'.
+'afpText::PresentationControl' is a specialization of 'triplet'.
+'afpText::PTX' is a specialization of 'structuredField'.
+'afpText::EDI' is a specialization of 'structuredField'.
+'afpText::TonerSaver' is a specialization of 'triplet'.
+'afpText::PTD' is a specialization of 'structuredField'.
+'afpText::MDD' is a specialization of 'structuredField'.
+'afpText::GSLW' is a specialization of 'triplet'.
+'afpText::BPM' is a specialization of 'structuredField'.
+'afpText::FNO' is a specialization of 'structuredField'.
+'afpText::TLE' is a specialization of 'structuredField'.
+'afpText::TextFidelity' is a specialization of 'triplet'.
+'afpText::RMI' is a specialization of 'triplet'.
+'afpText::EDT' is a specialization of 'structuredField'.
+'afpText::FNN' is a specialization of 'structuredField'.
+'afpText::UniversalDateAndTimeStamp' is a specialization of 'triplet'.
+'afpText::MFC' is a specialization of 'structuredField'.
+'afpText::CPI' is a specialization of 'structuredField'.
+'afpText::GSCOL' is a specialization of 'triplet'.
+'afpText::BDA' is a specialization of 'structuredField'.
+'afpText::EII' is a specialization of 'structuredField'.
+'afpText::FNG' is a specialization of 'structuredField'.
+'afpText::BDT' is a specialization of 'structuredField'.
+'afpText::MCC' is a specialization of 'structuredField'.
+'afpText::EFG' is a specialization of 'structuredField'.
+'afpText::DrawingOrderSubset' is a specialization of 'triplet'.
+'afpText::LineData' is a specialization of 'structuredField'.
+'afpText::GAD' is a specialization of 'structuredField'.
+'afpText::ColorFidelity' is a specialization of 'triplet'.
+'afpText::IDEStructure' is a specialization of 'triplet'.
+'afpText::LineDataObjectPositionMigration' is a specialization of 'triplet'.
+'afpText::SBI' is a specialization of 'triplet'.
+'afpText::GSMT' is a specialization of 'triplet'.
+'afpText::DIR' is a specialization of 'triplet'.
+'afpText::BFM' is a specialization of 'structuredField'.
+'afpText::ICP' is a specialization of 'structuredField'.
+'afpText::GSMP' is a specialization of 'triplet'.
+'afpText::GSPS' is a specialization of 'triplet'.
+'afpText::IRD' is a specialization of 'structuredField'.
+'afpText::DXD' is a specialization of 'structuredField'.
+'afpText::BeginTile' is a specialization of 'triplet'.
+'afpText::BOC' is a specialization of 'structuredField'.
+'afpText::GSMX' is a specialization of 'triplet'.
+'afpText::OBP' is a specialization of 'structuredField'.
+'afpText::BFG' is a specialization of 'structuredField'.
+'afpText::ECA' is a specialization of 'structuredField'.
+'afpText::GSCD' is a specialization of 'triplet'.
+'afpText::GCFLT' is a specialization of 'triplet'.
+'afpText::GSCR' is a specialization of 'triplet'.
+'afpText::MeasurementUnits' is a specialization of 'triplet'.
+'afpText::ResourceUsageAttribute' is a specialization of 'triplet'.
+'afpText::OCD' is a specialization of 'structuredField'.
+'afpText::STO' is a specialization of 'triplet'.
+'afpText::MediumMapPageNumber' is a specialization of 'triplet'.
+'afpText::MediumOrientation' is a specialization of 'triplet'.
+'afpText::IOCAFunctionSetIdentification' is a specialization of 'triplet'.
+'afpText::GSCA' is a specialization of 'triplet'.
+'afpText::GSPCOL' is a specialization of 'triplet'.
+'afpText::IDD' is a specialization of 'structuredField'.
+'afpText::PagePositionInformation' is a specialization of 'triplet'.
+'afpText::UP3iFinishingOperation' is a specialization of 'triplet'.
+'afpText::BCF' is a specialization of 'structuredField'.
+'afpText::EDX' is a specialization of 'structuredField'.
+'afpText::GCMRK' is a specialization of 'triplet'.
+'afpText::EndSegment' is a specialization of 'triplet'.
+'afpText::BMM' is a specialization of 'structuredField'.
+'afpText::TRN' is a specialization of 'triplet'.
+'afpText::MMD' is a specialization of 'structuredField'.
+'afpText::ExternalAlgorithm' is a specialization of 'triplet'.
+'afpText::GNOP1' is a specialization of 'triplet'.
+'afpText::FinishingFidelity' is a specialization of 'triplet'.
+'afpText::GSCH' is a specialization of 'triplet'.
+'afpText::IPG' is a specialization of 'structuredField'.
+'afpText::NOPCS' is a specialization of 'triplet'.
+'afpText::GBIMG' is a specialization of 'triplet'.
+'afpText::GSLE' is a specialization of 'triplet'.
+'afpText::ExtendedResourceLocalIdentifier' is a specialization of 'triplet'.
+'afpText::ESU' is a specialization of 'triplet'.
+'afpText::ECP' is a specialization of 'structuredField'.
+'afpText::GCPARC' is a specialization of 'triplet'.
+'afpText::FNPRG' (role 'afpText_FNPRG', cardinality 0..*) is associated with 'afpText::FNP' (role 'afpText_FNP', cardinality 0..*).
+'afpText::BPT' (role 'afpText_BPT', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet43', cardinality 0..*).
+'afpText::TileTOC' (role 'afpText_TileTOC', cardinality 0..*) is associated with 'afpText::TileTOCRG' (role 'afpText_TileTOCRG', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet19', cardinality 0..*) is associated with 'afpText::BFM' (role 'afpText_BFM', cardinality 0..*).
+'afpText::IDD' (role 'afpText_IDD', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet93', cardinality 0..*).
+'afpText::PTD' (role 'afpText_PTD', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet143', cardinality 0..*).
+'afpText::GCCBEZRG' (role 'afpText_GCCBEZRG', cardinality 0..*) is associated with 'afpText::GCCBEZ' (role 'afpText_GCCBEZ', cardinality 0..*).
+'afpText::GCMRKRG' (role 'afpText_GCMRKRG', cardinality 0..*) is associated with 'afpText::GCMRK' (role 'afpText_GCMRK', cardinality 0..*).
+'afpText::MCARG' (role 'afpText_MCARG158', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet159', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet57', cardinality 0..*) is associated with 'afpText::EBC' (role 'afpText_EBC', cardinality 0..*).
+'afpText::PPORG' (role 'afpText_PPORG185', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet186', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet33', cardinality 0..*) is associated with 'afpText::BOC' (role 'afpText_BOC', cardinality 0..*).
+'afpText::SamplingRatios' (role 'afpText_SamplingRatios', cardinality 0..*) is associated with 'afpText::SamplingRatiosRG' (role 'afpText_SamplingRatiosRG', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet101', cardinality 0..*) is associated with 'afpText::IPG' (role 'afpText_IPG', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet174', cardinality 0..*) is associated with 'afpText::MMDRG' (role 'afpText_MMDRG173', cardinality 0..*).
+'afpText::PGPRG' (role 'afpText_PGPRG', cardinality 0..*) is associated with 'afpText::PGP' (role 'afpText_PGP', cardinality 0..*).
+'afpText::EIM' (role 'afpText_EIM', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet67', cardinality 0..*).
+'afpText::CDD' (role 'afpText_CDD', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet51', cardinality 0..*).
+'afpText::ERG' (role 'afpText_ERG', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet81', cardinality 0..*).
+'afpText::MMDRG' (role 'afpText_MMDRG', cardinality 0..*) is associated with 'afpText::MMD' (role 'afpText_MMD', cardinality 0..*).
+'afpText::BRS' (role 'afpText_BRS', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet47', cardinality 0..*).
+'afpText::BCA' (role 'afpText_BCA', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet5', cardinality 0..*).
+'afpText::GCLINERG' (role 'afpText_GCLINERG', cardinality 0..*) is associated with 'afpText::GCLINE' (role 'afpText_GCLINE', cardinality 0..*).
+'afpText::LLERG' (role 'afpText_LLERG', cardinality 0..*) is associated with 'afpText::LLE' (role 'afpText_LLE', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet9', cardinality 0..*) is associated with 'afpText::BDD' (role 'afpText_BDD', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet17', cardinality 0..*) is associated with 'afpText::BDT' (role 'afpText_BDT', cardinality 0..*).
+'afpText::GCRLINERG' (role 'afpText_GCRLINERG', cardinality 0..*) is associated with 'afpText::GCRLINE' (role 'afpText_GCRLINE', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet156', cardinality 0..*) is associated with 'afpText::MBCRG' (role 'afpText_MBCRG155', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet116', cardinality 0..*) is associated with 'afpText::MDD' (role 'afpText_MDD', cardinality 0..*).
+'afpText::GMRK' (role 'afpText_GMRK', cardinality 0..*) is associated with 'afpText::GMRKRG' (role 'afpText_GMRKRG', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet29', cardinality 0..*) is associated with 'afpText::BMO' (role 'afpText_BMO', cardinality 0..*).
+'afpText::LLERG' (role 'afpText_LLERG149', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet150', cardinality 0..*).
+'afpText::CFI' (role 'afpText_CFI', cardinality 0..*) is associated with 'afpText::CFIRG' (role 'afpText_CFIRG', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet91', cardinality 0..*) is associated with 'afpText::GDD' (role 'afpText_GDD', cardinality 0..*).
+'afpText::MGO' (role 'afpText_MGO', cardinality 0..*) is associated with 'afpText::MGORG' (role 'afpText_MGORG', cardinality 0..*).
+'afpText::MIO' (role 'afpText_MIO', cardinality 0..*) is associated with 'afpText::MIORG' (role 'afpText_MIORG', cardinality 0..*).
+'afpText::TLE' (role 'afpText_TLE', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet147', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet135', cardinality 0..*) is associated with 'afpText::PFC' (role 'afpText_PFC', cardinality 0..*).
+'afpText::ExternalAlgorithmRG' (role 'afpText_ExternalAlgorithmRG', cardinality 0..*) is associated with 'afpText::ExternalAlgorithm' (role 'afpText_ExternalAlgorithm', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet13', cardinality 0..*) is associated with 'afpText::BDI' (role 'afpText_BDI', cardinality 0..*).
+'afpText::MDR' (role 'afpText_MDR', cardinality 0..*) is associated with 'afpText::MDRRG' (role 'afpText_MDRRG', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet7', cardinality 0..*) is associated with 'afpText::BCP' (role 'afpText_BCP', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet171', cardinality 0..*) is associated with 'afpText::MIORG' (role 'afpText_MIORG170', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet25', cardinality 0..*) is associated with 'afpText::BIM' (role 'afpText_BIM', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet71', cardinality 0..*) is associated with 'afpText::ENG' (role 'afpText_ENG', cardinality 0..*).
+'afpText::GCBEZRG' (role 'afpText_GCBEZRG', cardinality 0..*) is associated with 'afpText::GCBEZ' (role 'afpText_GCBEZ', cardinality 0..*).
+'afpText::MFC' (role 'afpText_MFC', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet119', cardinality 0..*).
+'afpText::MMTRG' (role 'afpText_MMTRG176', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet177', cardinality 0..*).
+'afpText::MCF1' (role 'afpText_MCF1', cardinality 0..*) is associated with 'afpText::MCF1RG' (role 'afpText_MCF1RG', cardinality 0..*).
+'afpText::MCC' (role 'afpText_MCC', cardinality 0..*) is associated with 'afpText::MCCRG' (role 'afpText_MCCRG', cardinality 0..*).
+'afpText::MMCRG' (role 'afpText_MMCRG', cardinality 0..*) is associated with 'afpText::MMC' (role 'afpText_MMC', cardinality 0..*).
+'afpText::PPORG' (role 'afpText_PPORG', cardinality 0..*) is associated with 'afpText::PPO' (role 'afpText_PPO', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet73', cardinality 0..*) is associated with 'afpText::EOC' (role 'afpText_EOC', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet35', cardinality 0..*) is associated with 'afpText::BOG' (role 'afpText_BOG', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet31', cardinality 0..*) is associated with 'afpText::BNG' (role 'afpText_BNG', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet165', cardinality 0..*) is associated with 'afpText::MDRRG' (role 'afpText_MDRRG164', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet95', cardinality 0..*) is associated with 'afpText::IEL' (role 'afpText_IEL', cardinality 0..*).
+'afpText::EPG' (role 'afpText_EPG', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet77', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet75', cardinality 0..*) is associated with 'afpText::EPF' (role 'afpText_EPF', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet45', cardinality 0..*) is associated with 'afpText::BRG' (role 'afpText_BRG', cardinality 0..*).
+'afpText::MCA' (role 'afpText_MCA', cardinality 0..*) is associated with 'afpText::MCARG' (role 'afpText_MCARG', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet15', cardinality 0..*) is associated with 'afpText::BDM' (role 'afpText_BDM', cardinality 0..*).
+'afpText::Model' (role 'afpText_Model', cardinality 0..*) is associated with 'afpText::structuredField' (role 'afpText_structuredField', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet137', cardinality 0..*) is associated with 'afpText::PGD' (role 'afpText_PGD', cardinality 0..*).
+'afpText::MCDRG' (role 'afpText_MCDRG161', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet162', cardinality 0..*).
+'afpText::BGR' (role 'afpText_BGR', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet23', cardinality 0..*).
+'afpText::EDT' (role 'afpText_EDT', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet63', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet183', cardinality 0..*) is associated with 'afpText::MPORG' (role 'afpText_MPORG182', cardinality 0..*).
+'afpText::MPORG' (role 'afpText_MPORG', cardinality 0..*) is associated with 'afpText::MPO' (role 'afpText_MPO', cardinality 0..*).
+'afpText::BDG' (role 'afpText_BDG', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet11', cardinality 0..*).
+'afpText::PMC' (role 'afpText_PMC', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet140', cardinality 0..*).
+'afpText::BMM' (role 'afpText_BMM', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet27', cardinality 0..*).
+'afpText::GFLT' (role 'afpText_GFLT', cardinality 0..*) is associated with 'afpText::GFLTRG' (role 'afpText_GFLTRG', cardinality 0..*).
+'afpText::OBD' (role 'afpText_OBD', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet131', cardinality 0..*).
+'afpText::EDI' (role 'afpText_EDI', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet61', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet108', cardinality 0..*) is associated with 'afpText::LND' (role 'afpText_LND', cardinality 0..*).
+'afpText::BPF' (role 'afpText_BPF', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet37', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet65', cardinality 0..*) is associated with 'afpText::EGR' (role 'afpText_EGR', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet180', cardinality 0..*) is associated with 'afpText::MPGRG' (role 'afpText_MPGRG179', cardinality 0..*).
+'afpText::MBCRG' (role 'afpText_MBCRG', cardinality 0..*) is associated with 'afpText::MBC' (role 'afpText_MBC', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet41', cardinality 0..*) is associated with 'afpText::BPS' (role 'afpText_BPS', cardinality 0..*).
+'afpText::MPS' (role 'afpText_MPS', cardinality 0..*) is associated with 'afpText::MPSRG' (role 'afpText_MPSRG', cardinality 0..*).
+'afpText::GLINE' (role 'afpText_GLINE', cardinality 0..*) is associated with 'afpText::GLINERG' (role 'afpText_GLINERG', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet97', cardinality 0..*) is associated with 'afpText::IMM' (role 'afpText_IMM', cardinality 0..*).
+'afpText::GCFLT' (role 'afpText_GCFLT', cardinality 0..*) is associated with 'afpText::GCFLTRG' (role 'afpText_GCFLTRG', cardinality 0..*).
+'afpText::MSU' (role 'afpText_MSU', cardinality 0..*) is associated with 'afpText::MSURG' (role 'afpText_MSURG', cardinality 0..*).
+'afpText::MCFRG' (role 'afpText_MCFRG152', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet153', cardinality 0..*).
+'afpText::FNIRG' (role 'afpText_FNIRG', cardinality 0..*) is associated with 'afpText::FNI' (role 'afpText_FNI', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet69', cardinality 0..*) is associated with 'afpText::EMO' (role 'afpText_EMO', cardinality 0..*).
+'afpText::BBC' (role 'afpText_BBC', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet3', cardinality 0..*).
+'afpText::MCDRG' (role 'afpText_MCDRG', cardinality 0..*) is associated with 'afpText::MCD' (role 'afpText_MCD', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet83', cardinality 0..*) is associated with 'afpText::FNC' (role 'afpText_FNC', cardinality 0..*).
+'afpText::MCF' (role 'afpText_MCF', cardinality 0..*) is associated with 'afpText::MCFRG' (role 'afpText_MCFRG', cardinality 0..*).
+'afpText::IPS' (role 'afpText_IPS', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet105', cardinality 0..*).
+'afpText::BAG' (role 'afpText_BAG', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet', cardinality 0..*).
+'afpText::MMO' (role 'afpText_MMO', cardinality 0..*) is associated with 'afpText::MMORG' (role 'afpText_MMORG', cardinality 0..*).
+'afpText::PTX' (role 'afpText_PTX', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet145', cardinality 0..*).
+'afpText::FNMRG' (role 'afpText_FNMRG', cardinality 0..*) is associated with 'afpText::FNM' (role 'afpText_FNM', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet21', cardinality 0..*) is associated with 'afpText::BFN' (role 'afpText_BFN', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet133', cardinality 0..*) is associated with 'afpText::PEC' (role 'afpText_PEC', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet39', cardinality 0..*) is associated with 'afpText::BPG' (role 'afpText_BPG', cardinality 0..*).
+'afpText::IPO' (role 'afpText_IPO', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet103', cardinality 0..*).
+'afpText::FNORG' (role 'afpText_FNORG', cardinality 0..*) is associated with 'afpText::FNO' (role 'afpText_FNO', cardinality 0..*).
+'afpText::CPIRG' (role 'afpText_CPIRG', cardinality 0..*) is associated with 'afpText::CPI' (role 'afpText_CPI', cardinality 0..*).
+'afpText::EPT' (role 'afpText_EPT', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet79', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet85', cardinality 0..*) is associated with 'afpText::FND' (role 'afpText_FND', cardinality 0..*).
+'afpText::MMTRG' (role 'afpText_MMTRG', cardinality 0..*) is associated with 'afpText::MMT' (role 'afpText_MMT', cardinality 0..*).
+'afpText::GRLINERG' (role 'afpText_GRLINERG', cardinality 0..*) is associated with 'afpText::GRLINE' (role 'afpText_GRLINE', cardinality 0..*).
+'afpText::MPG' (role 'afpText_MPG', cardinality 0..*) is associated with 'afpText::MPGRG' (role 'afpText_MPGRG', cardinality 0..*).
+'afpText::CFC' (role 'afpText_CFC', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet53', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet59', cardinality 0..*) is associated with 'afpText::ECA' (role 'afpText_ECA', cardinality 0..*).
+'afpText::BandImageRG' (role 'afpText_BandImageRG', cardinality 0..*) is associated with 'afpText::BandImage' (role 'afpText_BandImage', cardinality 0..*).
+'afpText::BSG' (role 'afpText_BSG', cardinality 0..*) is associated with 'afpText::triplet' (role 'afpText_triplet49', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet99', cardinality 0..*) is associated with 'afpText::IOB' (role 'afpText_IOB', cardinality 0..*).
+'afpText::triplet' (role 'afpText_triplet168', cardinality 0..*) is associated with 'afpText::MGORG' (role 'afpText_MGORG167', cardinality 0..*).

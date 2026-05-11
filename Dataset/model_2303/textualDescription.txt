@@ -1,0 +1,11 @@
+The model has 6 class(es).
+The class 'MemberToPerson' has no attributes.
+The class 'Families2Persons::Member2Male' has no attributes.
+The class 'Families2Persons::Member' has no attributes.
+The class 'Families2Persons::Member2Female' has no attributes.
+The class 'Families2Persons::MemberToPerson' has the following attributes: 'firstName' of type str; 'familyName' of type str.
+The class 'Families2Persons::Person' has no attributes.
+'Families2Persons::Member2Female' is a specialization of 'MemberToPerson'.
+'Families2Persons::Member2Male' is a specialization of 'MemberToPerson'.
+'Families2Persons::Person' (role 'Families2Persons_Person', cardinality 0..*) is associated with 'Families2Persons::MemberToPerson' (role 'Families2Persons_MemberToPerson2', cardinality 0..*).
+'Families2Persons::MemberToPerson' (role 'Families2Persons_MemberToPerson', cardinality 0..*) is associated with 'Families2Persons::Member' (role 'Families2Persons_Member', cardinality 0..*).

@@ -1,0 +1,38 @@
+The model has 15 class(es).
+The class 'metamodel::OneToOne' has no attributes.
+The class 'Feature' has no attributes.
+The class 'metamodel::ManyToMany' has no attributes.
+The class 'Type' has no attributes.
+The class 'metamodel::OneToMany' has no attributes.
+The class 'metamodel::Datatype' has no attributes.
+The class 'metamodel::AssociationEntity' has no attributes.
+The class 'metamodel::Feature' has the following attributes: 'nullable' of type bool; 'xmltransient' of type bool; 'name' of type str.
+The class 'metamodel::DatabaseConnection' has the following attributes: 'jdbcPassword' of type str; 'jdbcUser' of type str; 'persistenceUnit' of type str; 'jdbcDriver' of type str; 'jdbcUrl' of type str; 'jdbcPrefix' of type str.
+The class 'metamodel::Entity' has no attributes.
+The class 'Relation' has no attributes.
+The class 'metamodel::Type' has the following attributes: 'name' of type str.
+The class 'metamodel::Relation' has the following attributes: 'optional' of type bool; 'unidirectional' of type bool.
+The class 'metamodel::idFeature' has the following attributes: 'generationType' of type str.
+The class 'metamodel::Model' has the following attributes: 'name' of type str.
+'metamodel::OneToMany' is a specialization of 'Relation'.
+'metamodel::OneToOne' is a specialization of 'Relation'.
+'metamodel::idFeature' is a specialization of 'Feature'.
+'metamodel::ManyToMany' is a specialization of 'Relation'.
+'metamodel::Relation' is a specialization of 'Type'.
+'metamodel::Datatype' is a specialization of 'Type'.
+'metamodel::Entity' is a specialization of 'Type'.
+'metamodel::AssociationEntity' is a specialization of 'Type'.
+'metamodel::Relation' (role 'Relation6', cardinality 0..*) is associated with 'metamodel::Entity' (role 'slave', cardinality 0..*).
+'metamodel::Model' (role 'metamodel_Model2', cardinality 0..*) is associated with 'metamodel::DatabaseConnection' (role 'metamodel_DatabaseConnection', cardinality 0..*).
+'metamodel::Model' (role 'metamodel_Model', cardinality 0..*) is associated with 'metamodel::Type' (role 'metamodel_Type', cardinality 0..*).
+'metamodel::Entity' (role 'Entity13', cardinality 0..*) is associated with 'metamodel::Entity' (role 'inherits', cardinality 0..*).
+'metamodel::AssociationEntity' (role 'associates', cardinality 0..*) is associated with 'metamodel::Relation' (role 'Relation25', cardinality 0..*).
+'metamodel::Entity' (role 'Entity18', cardinality 0..*) is associated with 'metamodel::Relation' (role 'owns', cardinality 0..*).
+'metamodel::Relation' (role 'Relation', cardinality 0..*) is associated with 'metamodel::Entity' (role 'owner', cardinality 0..*).
+'metamodel::AssociationEntity' (role 'metamodel_AssociationEntity', cardinality 0..*) is associated with 'metamodel::Feature' (role 'metamodel_Feature23', cardinality 0..*).
+'metamodel::Type' (role 'metamodel_Type16', cardinality 0..*) is associated with 'metamodel::Feature' (role 'metamodel_Feature15', cardinality 0..*).
+'metamodel::Entity' (role 'bequeathesTo', cardinality 0..*) is associated with 'metamodel::Entity' (role 'Entity', cardinality 0..*).
+'metamodel::Relation' (role 'ownedBy', cardinality 0..*) is associated with 'metamodel::Entity' (role 'Entity20', cardinality 0..*).
+'metamodel::Entity' (role 'metamodel_Entity', cardinality 0..*) is associated with 'metamodel::Feature' (role 'metamodel_Feature', cardinality 0..*).
+'metamodel::Relation' (role 'relation', cardinality 0..*) is associated with 'metamodel::AssociationEntity' (role 'AssociationEntity', cardinality 0..*).
+'metamodel::idFeature' (role 'metamodel_idFeature', cardinality 0..*) is associated with 'metamodel::Entity' (role 'metamodel_Entity8', cardinality 0..*).

@@ -1,0 +1,26 @@
+The model has 7 class(es).
+The class 'SimpleRDBMS::Column' has the following attributes: 'type' of type str.
+The class 'RModelElement' has no attributes.
+The class 'SimpleRDBMS::Table' has no attributes.
+The class 'SimpleRDBMS::RModelElement' has the following attributes: 'kind' of type str; 'name' of type str.
+The class 'SimpleRDBMS::Key' has no attributes.
+The class 'SimpleRDBMS::Schema' has no attributes.
+The class 'SimpleRDBMS::ForeignKey' has no attributes.
+'SimpleRDBMS::Schema' is a specialization of 'RModelElement'.
+'SimpleRDBMS::Column' is a specialization of 'RModelElement'.
+'SimpleRDBMS::Table' is a specialization of 'RModelElement'.
+'SimpleRDBMS::ForeignKey' is a specialization of 'RModelElement'.
+'SimpleRDBMS::Key' is a specialization of 'RModelElement'.
+'SimpleRDBMS::Column' (role 'column11', cardinality 0..*) is associated with 'SimpleRDBMS::ForeignKey' (role 'ForeignKey12', cardinality 0..*).
+'SimpleRDBMS::Schema' (role 'Schema', cardinality 0..*) is associated with 'SimpleRDBMS::Table' (role 'tables', cardinality 0..*).
+'SimpleRDBMS::Key' (role '_key', cardinality 0..*) is associated with 'SimpleRDBMS::Column' (role 'Column14', cardinality 0..*).
+'SimpleRDBMS::Column' (role 'Column19', cardinality 0..*) is associated with 'SimpleRDBMS::ForeignKey' (role 'foreignKey', cardinality 0..*).
+'SimpleRDBMS::Key' (role 'Key9', cardinality 0..*) is associated with 'SimpleRDBMS::Column' (role 'column8', cardinality 0..*).
+'SimpleRDBMS::ForeignKey' (role 'foreignKey22', cardinality 0..*) is associated with 'SimpleRDBMS::Table' (role 'Table23', cardinality 0..*).
+'SimpleRDBMS::Key' (role 'Key', cardinality 0..*) is associated with 'SimpleRDBMS::Table' (role 'owner4', cardinality 0..*).
+'SimpleRDBMS::ForeignKey' (role 'SimpleRDBMS_ForeignKey', cardinality 0..*) is associated with 'SimpleRDBMS::Key' (role 'SimpleRDBMS_Key', cardinality 0..*).
+'SimpleRDBMS::Table' (role 'Table25', cardinality 0..*) is associated with 'SimpleRDBMS::Schema' (role 'schema', cardinality 0..*).
+'SimpleRDBMS::Column' (role 'Column', cardinality 0..*) is associated with 'SimpleRDBMS::Table' (role 'owner', cardinality 0..*).
+'SimpleRDBMS::Table' (role 'owner2', cardinality 0..*) is associated with 'SimpleRDBMS::ForeignKey' (role 'ForeignKey', cardinality 0..*).
+'SimpleRDBMS::Table' (role 'Table', cardinality 0..*) is associated with 'SimpleRDBMS::Column' (role 'column', cardinality 0..*).
+'SimpleRDBMS::Key' (role '_key16', cardinality 0..*) is associated with 'SimpleRDBMS::Table' (role 'Table17', cardinality 0..*).

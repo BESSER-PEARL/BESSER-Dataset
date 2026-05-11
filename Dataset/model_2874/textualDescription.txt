@@ -1,0 +1,285 @@
+The model has 112 class(es).
+The class 'dom::OrderedSetType' has no attributes.
+The class 'LiteralExpression' has no attributes.
+The class 'DomElement' has no attributes.
+The class 'dom::KeyValue' has no attributes.
+The class 'dom::SimpleAnnotation' has no attributes.
+The class 'dom::CollectionInitValue' has no attributes.
+The class 'dom::Import' has no attributes.
+The class 'dom::ExpRange' has no attributes.
+The class 'dom::SetType' has no attributes.
+The class 'dom::SequenceExpression' has no attributes.
+The class 'dom::IntegerExpression' has the following attributes: 'val' of type int.
+The class 'dom::LessThanOrEqualToOperatorExpression' has no attributes.
+The class 'dom::RealExpression' has the following attributes: 'val' of type float.
+The class 'OperatorExpression' has no attributes.
+The class 'dom::VariableDeclarationExpression' has no attributes.
+The class 'dom::SwitchCaseDefaultStatement' has no attributes.
+The class 'SwitchCaseStatement' has no attributes.
+The class 'dom::ShortModelDeclarationExpression' has no attributes.
+The class 'dom::Annotation' has no attributes.
+The class 'dom::ImpliesOperatorExpression' has no attributes.
+The class 'dom::SpecialNameExpression' has no attributes.
+The class 'AssignmentStatement' has no attributes.
+The class 'dom::StringExpression' has the following attributes: 'val' of type str.
+The class 'dom::NegativeOperatorExpression' has no attributes.
+The class 'dom::MapType' has no attributes.
+The class 'dom::OperationDefinition' has no attributes.
+The class 'dom::LiteralExpression' has no attributes.
+The class 'dom::Program' has no attributes.
+The class 'dom::ThrowStatement' has no attributes.
+The class 'dom::ReturnStatement' has no attributes.
+The class 'dom::GreaterThanOperatorExpression' has no attributes.
+The class 'dom::OrderedSetExpression' has no attributes.
+The class 'dom::BooleanType' has no attributes.
+The class 'dom::AbortStatement' has no attributes.
+The class 'dom::CollectionExpression' has no attributes.
+The class 'NameExpression' has no attributes.
+The class 'Statement' has no attributes.
+The class 'dom::UnaryOperatorExpression' has no attributes.
+The class 'dom::DivideOperatorExpression' has no attributes.
+The class 'dom::PrimitiveType' has no attributes.
+The class 'dom::GreaterThanOrEqualToOperatorExpression' has no attributes.
+The class 'dom::ModelDeclarationStatement' has no attributes.
+The class 'dom::DeleteStatement' has no attributes.
+The class 'dom::Block' has no attributes.
+The class 'dom::NewExpression' has no attributes.
+The class 'dom::TransactionStatement' has no attributes.
+The class 'dom::SetExpression' has no attributes.
+The class 'PrimitiveType' has no attributes.
+The class 'dom::AnnotationBlock' has no attributes.
+The class 'dom::NotEqualsOperatorExpression' has no attributes.
+The class 'dom::NameExpression' has the following attributes: 'name' of type str.
+The class 'BinaryOperatorExpression' has no attributes.
+The class 'dom::IfStatement' has no attributes.
+The class 'CollectionExpression' has no attributes.
+The class 'dom::Statement' has no attributes.
+The class 'dom::MapExpression' has no attributes.
+The class 'dom::ExpressionStatement' has no attributes.
+The class 'dom::Type' has no attributes.
+The class 'dom::OperatorExpression' has no attributes.
+The class 'dom::IntegerType' has no attributes.
+The class 'dom::NativeType' has no attributes.
+The class 'dom::PrimitiveExpression' has no attributes.
+The class 'dom::BagType' has no attributes.
+The class 'FeatureCallExpression' has no attributes.
+The class 'dom::FormalParameterExpression' has no attributes.
+The class 'dom::AnyType' has no attributes.
+The class 'UnaryOperatorExpression' has no attributes.
+The class 'dom::NotOperatorExpression' has no attributes.
+The class 'dom::DomElement' has the following attributes: 'column' of type int; 'line' of type int.
+The class 'dom::MinusOperatorExpression' has no attributes.
+The class 'dom::SwitchCaseExpressionStatement' has no attributes.
+The class 'dom::ExprList' has no attributes.
+The class 'PrimitiveExpression' has no attributes.
+The class 'dom::AssignmentStatement' has no attributes.
+The class 'dom::EnumerationLiteralExpression' has no attributes.
+The class 'dom::SwitchStatement' has no attributes.
+The class 'dom::BooleanExpression' has the following attributes: 'val' of type bool.
+The class 'dom::WhileStatement' has no attributes.
+The class 'CollectionInitValue' has no attributes.
+The class 'dom::ExecutableAnnotation' has no attributes.
+The class 'Type' has no attributes.
+The class 'Expression' has no attributes.
+The class 'dom::ModelElementTypeExpression' has no attributes.
+The class 'dom::BreakAllStatement' has no attributes.
+The class 'dom::AndOperatorExpression' has no attributes.
+The class 'CollectionType' has no attributes.
+The class 'dom::BagExpression' has no attributes.
+The class 'dom::MultiplyOperatorExpression' has no attributes.
+The class 'dom::MethodCallExpression' has no attributes.
+The class 'dom::ModelDeclarationParameter' has no attributes.
+The class 'dom::StringType' has no attributes.
+The class 'dom::BinaryOperatorExpression' has no attributes.
+The class 'dom::FOLMethodCallExpression' has no attributes.
+The class 'dom::Expression' has no attributes.
+The class 'dom::OrOperatorExpression' has no attributes.
+The class 'dom::SpecialAssignmentStatement' has no attributes.
+The class 'dom::XorOperatorExpression' has no attributes.
+The class 'dom::ContinueStatement' has no attributes.
+The class 'dom::ForStatement' has no attributes.
+The class 'dom::CollectionType' has no attributes.
+The class 'dom::PropertyCallExpression' has no attributes.
+The class 'dom::ModelElementType' has no attributes.
+The class 'dom::FeatureCallExpression' has no attributes.
+The class 'dom::LessThanOperatorExpression' has no attributes.
+The class 'dom::ModelExpression' has no attributes.
+The class 'Annotation' has no attributes.
+The class 'dom::BreakStatement' has no attributes.
+The class 'dom::PlusOperatorExpression' has no attributes.
+The class 'dom::EqualsOperatorExpression' has no attributes.
+The class 'dom::SwitchCaseStatement' has no attributes.
+The class 'dom::RealType' has no attributes.
+The class 'dom::SequenceType' has no attributes.
+'dom::AbortStatement' is a specialization of 'Statement'.
+'dom::EnumerationLiteralExpression' is a specialization of 'Expression'.
+'dom::RealExpression' is a specialization of 'PrimitiveExpression'.
+'dom::MapType' is a specialization of 'Type'.
+'dom::CollectionInitValue' is a specialization of 'DomElement'.
+'dom::ExprList' is a specialization of 'CollectionInitValue'.
+'dom::DivideOperatorExpression' is a specialization of 'BinaryOperatorExpression'.
+'dom::ModelElementTypeExpression' is a specialization of 'Expression'.
+'dom::Program' is a specialization of 'DomElement'.
+'dom::LessThanOrEqualToOperatorExpression' is a specialization of 'BinaryOperatorExpression'.
+'dom::OrOperatorExpression' is a specialization of 'BinaryOperatorExpression'.
+'dom::ImpliesOperatorExpression' is a specialization of 'BinaryOperatorExpression'.
+'dom::SwitchCaseDefaultStatement' is a specialization of 'SwitchCaseStatement'.
+'dom::FOLMethodCallExpression' is a specialization of 'FeatureCallExpression'.
+'dom::Import' is a specialization of 'DomElement'.
+'dom::GreaterThanOperatorExpression' is a specialization of 'BinaryOperatorExpression'.
+'dom::AnyType' is a specialization of 'Type'.
+'dom::SequenceType' is a specialization of 'CollectionType'.
+'dom::BreakAllStatement' is a specialization of 'Statement'.
+'dom::ModelDeclarationParameter' is a specialization of 'DomElement'.
+'dom::RealType' is a specialization of 'PrimitiveType'.
+'dom::SetType' is a specialization of 'CollectionType'.
+'dom::OperationDefinition' is a specialization of 'DomElement'.
+'dom::TransactionStatement' is a specialization of 'Statement'.
+'dom::OperatorExpression' is a specialization of 'Expression'.
+'dom::WhileStatement' is a specialization of 'Statement'.
+'dom::OrderedSetExpression' is a specialization of 'CollectionExpression'.
+'dom::SetExpression' is a specialization of 'CollectionExpression'.
+'dom::SwitchStatement' is a specialization of 'Statement'.
+'dom::PrimitiveExpression' is a specialization of 'LiteralExpression'.
+'dom::ExpRange' is a specialization of 'CollectionInitValue'.
+'dom::CollectionType' is a specialization of 'Type'.
+'dom::OrderedSetType' is a specialization of 'CollectionType'.
+'dom::VariableDeclarationExpression' is a specialization of 'Expression'.
+'dom::AnnotationBlock' is a specialization of 'DomElement'.
+'dom::BreakStatement' is a specialization of 'Statement'.
+'dom::ForStatement' is a specialization of 'Statement'.
+'dom::PropertyCallExpression' is a specialization of 'FeatureCallExpression'.
+'dom::MinusOperatorExpression' is a specialization of 'BinaryOperatorExpression'.
+'dom::ExpressionStatement' is a specialization of 'Statement'.
+'dom::ExecutableAnnotation' is a specialization of 'Annotation'.
+'dom::PrimitiveType' is a specialization of 'Type'.
+'dom::ThrowStatement' is a specialization of 'Statement'.
+'dom::MultiplyOperatorExpression' is a specialization of 'BinaryOperatorExpression'.
+'dom::SpecialAssignmentStatement' is a specialization of 'AssignmentStatement'.
+'dom::XorOperatorExpression' is a specialization of 'BinaryOperatorExpression'.
+'dom::CollectionExpression' is a specialization of 'LiteralExpression'.
+'dom::Type' is a specialization of 'DomElement'.
+'dom::LiteralExpression' is a specialization of 'Expression'.
+'dom::FormalParameterExpression' is a specialization of 'Expression'.
+'dom::SimpleAnnotation' is a specialization of 'Annotation'.
+'dom::KeyValue' is a specialization of 'DomElement'.
+'dom::SequenceExpression' is a specialization of 'CollectionExpression'.
+'dom::BooleanExpression' is a specialization of 'PrimitiveExpression'.
+'dom::StringType' is a specialization of 'PrimitiveType'.
+'dom::Block' is a specialization of 'DomElement'.
+'dom::SwitchCaseStatement' is a specialization of 'Statement'.
+'dom::ModelExpression' is a specialization of 'NameExpression'.
+'dom::IfStatement' is a specialization of 'Statement'.
+'dom::IntegerType' is a specialization of 'PrimitiveType'.
+'dom::StringExpression' is a specialization of 'PrimitiveExpression'.
+'dom::FeatureCallExpression' is a specialization of 'Expression'.
+'dom::ReturnStatement' is a specialization of 'Statement'.
+'dom::PlusOperatorExpression' is a specialization of 'BinaryOperatorExpression'.
+'dom::IntegerExpression' is a specialization of 'PrimitiveExpression'.
+'dom::DeleteStatement' is a specialization of 'Statement'.
+'dom::Expression' is a specialization of 'DomElement'.
+'dom::SwitchCaseExpressionStatement' is a specialization of 'SwitchCaseStatement'.
+'dom::BooleanType' is a specialization of 'PrimitiveType'.
+'dom::NegativeOperatorExpression' is a specialization of 'UnaryOperatorExpression'.
+'dom::MethodCallExpression' is a specialization of 'FeatureCallExpression'.
+'dom::GreaterThanOrEqualToOperatorExpression' is a specialization of 'BinaryOperatorExpression'.
+'dom::NativeType' is a specialization of 'Type'.
+'dom::ModelDeclarationStatement' is a specialization of 'Statement'.
+'dom::LessThanOperatorExpression' is a specialization of 'BinaryOperatorExpression'.
+'dom::ContinueStatement' is a specialization of 'Statement'.
+'dom::NotOperatorExpression' is a specialization of 'UnaryOperatorExpression'.
+'dom::Annotation' is a specialization of 'DomElement'.
+'dom::AndOperatorExpression' is a specialization of 'BinaryOperatorExpression'.
+'dom::AssignmentStatement' is a specialization of 'Statement'.
+'dom::NameExpression' is a specialization of 'Expression'.
+'dom::UnaryOperatorExpression' is a specialization of 'OperatorExpression'.
+'dom::Statement' is a specialization of 'DomElement'.
+'dom::BagExpression' is a specialization of 'CollectionExpression'.
+'dom::EqualsOperatorExpression' is a specialization of 'BinaryOperatorExpression'.
+'dom::BagType' is a specialization of 'CollectionType'.
+'dom::SpecialNameExpression' is a specialization of 'NameExpression'.
+'dom::NewExpression' is a specialization of 'Expression'.
+'dom::NotEqualsOperatorExpression' is a specialization of 'BinaryOperatorExpression'.
+'dom::ModelElementType' is a specialization of 'Type'.
+'dom::BinaryOperatorExpression' is a specialization of 'OperatorExpression'.
+'dom::MapExpression' is a specialization of 'LiteralExpression'.
+'dom::Expression' (role 'dom_Expression73', cardinality 0..*) is associated with 'dom::AssignmentStatement' (role 'dom_AssignmentStatement72', cardinality 0..*).
+'dom::ReturnStatement' (role 'dom_ReturnStatement', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression93', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression130', cardinality 0..*) is associated with 'dom::SwitchCaseExpressionStatement' (role 'dom_SwitchCaseExpressionStatement129', cardinality 0..*).
+'dom::EnumerationLiteralExpression' (role 'dom_EnumerationLiteralExpression27', cardinality 0..*) is associated with 'dom::NameExpression' (role 'dom_NameExpression28', cardinality 0..*).
+'dom::Block' (role 'dom_Block91', cardinality 0..*) is associated with 'dom::IfStatement' (role 'dom_IfStatement90', cardinality 0..*).
+'dom::ExpressionStatement' (role 'dom_ExpressionStatement', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression127', cardinality 0..*).
+'dom::Block' (role 'dom_Block101', cardinality 0..*) is associated with 'dom::SwitchCaseStatement' (role 'dom_SwitchCaseStatement', cardinality 0..*).
+'dom::NameExpression' (role 'dom_NameExpression184', cardinality 0..*) is associated with 'dom::ModelElementTypeExpression' (role 'dom_ModelElementTypeExpression183', cardinality 0..*).
+'dom::OperationDefinition' (role 'dom_OperationDefinition', cardinality 0..*) is associated with 'dom::Program' (role 'dom_Program4', cardinality 0..*).
+'dom::NameExpression' (role 'dom_NameExpression66', cardinality 0..*) is associated with 'dom::OperationDefinition' (role 'dom_OperationDefinition65', cardinality 0..*).
+'dom::PropertyCallExpression' (role 'dom_PropertyCallExpression43', cardinality 0..*) is associated with 'dom::BooleanExpression' (role 'dom_BooleanExpression44', cardinality 0..*).
+'dom::Import' (role 'dom_Import', cardinality 0..*) is associated with 'dom::Program' (role 'dom_Program', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression17', cardinality 0..*) is associated with 'dom::BinaryOperatorExpression' (role 'dom_BinaryOperatorExpression', cardinality 0..*).
+'dom::Block' (role 'dom_Block166', cardinality 0..*) is associated with 'dom::TransactionStatement' (role 'dom_TransactionStatement', cardinality 0..*).
+'dom::Program' (role 'dom_Program8', cardinality 0..*) is associated with 'dom::NameExpression' (role 'dom_NameExpression', cardinality 0..*).
+'dom::ExecutableAnnotation' (role 'dom_ExecutableAnnotation', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression139', cardinality 0..*).
+'dom::StringExpression' (role 'dom_StringExpression150', cardinality 0..*) is associated with 'dom::NativeType' (role 'dom_NativeType', cardinality 0..*).
+'dom::Block' (role 'dom_Block15', cardinality 0..*) is associated with 'dom::Statement' (role 'dom_Statement', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression39', cardinality 0..*) is associated with 'dom::UnaryOperatorExpression' (role 'dom_UnaryOperatorExpression', cardinality 0..*).
+'dom::ModelElementTypeExpression' (role 'dom_ModelElementTypeExpression189', cardinality 0..*) is associated with 'dom::ModelDeclarationStatement' (role 'dom_ModelDeclarationStatement190', cardinality 0..*).
+'dom::SimpleAnnotation' (role 'dom_SimpleAnnotation', cardinality 0..*) is associated with 'dom::StringExpression' (role 'dom_StringExpression141', cardinality 0..*).
+'dom::Annotation' (role 'dom_Annotation', cardinality 0..*) is associated with 'dom::NameExpression' (role 'dom_NameExpression137', cardinality 0..*).
+'dom::AssignmentStatement' (role 'dom_AssignmentStatement', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression70', cardinality 0..*).
+'dom::NameExpression' (role 'dom_NameExpression159', cardinality 0..*) is associated with 'dom::ModelDeclarationParameter' (role 'dom_ModelDeclarationParameter158', cardinality 0..*).
+'dom::SwitchStatement' (role 'dom_SwitchStatement99', cardinality 0..*) is associated with 'dom::SwitchCaseDefaultStatement' (role 'dom_SwitchCaseDefaultStatement', cardinality 0..*).
+'dom::KeyValue' (role 'dom_KeyValue', cardinality 0..*) is associated with 'dom::MapExpression' (role 'dom_MapExpression', cardinality 0..*).
+'dom::Block' (role 'dom_Block83', cardinality 0..*) is associated with 'dom::ForStatement' (role 'dom_ForStatement82', cardinality 0..*).
+'dom::ModelElementType' (role 'dom_ModelElementType', cardinality 0..*) is associated with 'dom::ModelElementTypeExpression' (role 'dom_ModelElementTypeExpression', cardinality 0..*).
+'dom::NameExpression' (role 'dom_NameExpression25', cardinality 0..*) is associated with 'dom::EnumerationLiteralExpression' (role 'dom_EnumerationLiteralExpression24', cardinality 0..*).
+'dom::ModelDeclarationParameter' (role 'dom_ModelDeclarationParameter161', cardinality 0..*) is associated with 'dom::StringExpression' (role 'dom_StringExpression162', cardinality 0..*).
+'dom::VariableDeclarationExpression' (role 'dom_VariableDeclarationExpression', cardinality 0..*) is associated with 'dom::NameExpression' (role 'dom_NameExpression46', cardinality 0..*).
+'dom::NameExpression' (role 'dom_NameExpression41', cardinality 0..*) is associated with 'dom::PropertyCallExpression' (role 'dom_PropertyCallExpression', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression122', cardinality 0..*) is associated with 'dom::FOLMethodCallExpression' (role 'dom_FOLMethodCallExpression121', cardinality 0..*).
+'dom::KeyValue' (role 'dom_KeyValue143', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression144', cardinality 0..*).
+'dom::Type' (role 'dom_Type55', cardinality 0..*) is associated with 'dom::OperationDefinition' (role 'dom_OperationDefinition54', cardinality 0..*).
+'dom::ThrowStatement' (role 'dom_ThrowStatement', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression164', cardinality 0..*).
+'dom::WhileStatement' (role 'dom_WhileStatement', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression103', cardinality 0..*).
+'dom::NameExpression' (role 'dom_NameExpression187', cardinality 0..*) is associated with 'dom::ModelElementTypeExpression' (role 'dom_ModelElementTypeExpression186', cardinality 0..*).
+'dom::BooleanExpression' (role 'dom_BooleanExpression', cardinality 0..*) is associated with 'dom::FeatureCallExpression' (role 'dom_FeatureCallExpression32', cardinality 0..*).
+'dom::AnnotationBlock' (role 'dom_AnnotationBlock152', cardinality 0..*) is associated with 'dom::SimpleAnnotation' (role 'dom_SimpleAnnotation153', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression181', cardinality 0..*) is associated with 'dom::NewExpression' (role 'dom_NewExpression', cardinality 0..*).
+'dom::AnnotationBlock' (role 'dom_AnnotationBlock', cardinality 0..*) is associated with 'dom::OperationDefinition' (role 'dom_OperationDefinition60', cardinality 0..*).
+'dom::FormalParameterExpression' (role 'dom_FormalParameterExpression77', cardinality 0..*) is associated with 'dom::ForStatement' (role 'dom_ForStatement', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression34', cardinality 0..*) is associated with 'dom::MethodCallExpression' (role 'dom_MethodCallExpression', cardinality 0..*).
+'dom::VariableDeclarationExpression' (role 'dom_VariableDeclarationExpression51', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression52', cardinality 0..*).
+'dom::IfStatement' (role 'dom_IfStatement87', cardinality 0..*) is associated with 'dom::Block' (role 'dom_Block88', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression179', cardinality 0..*) is associated with 'dom::ExpRange' (role 'dom_ExpRange178', cardinality 0..*).
+'dom::OperationDefinition' (role 'dom_OperationDefinition68', cardinality 0..*) is associated with 'dom::FormalParameterExpression' (role 'dom_FormalParameterExpression', cardinality 0..*).
+'dom::ModelDeclarationStatement' (role 'dom_ModelDeclarationStatement108', cardinality 0..*) is associated with 'dom::NameExpression' (role 'dom_NameExpression109', cardinality 0..*).
+'dom::NameExpression' (role 'dom_NameExpression22', cardinality 0..*) is associated with 'dom::EnumerationLiteralExpression' (role 'dom_EnumerationLiteralExpression', cardinality 0..*).
+'dom::Block' (role 'dom_Block63', cardinality 0..*) is associated with 'dom::OperationDefinition' (role 'dom_OperationDefinition62', cardinality 0..*).
+'dom::OperationDefinition' (role 'dom_OperationDefinition57', cardinality 0..*) is associated with 'dom::Type' (role 'dom_Type58', cardinality 0..*).
+'dom::CollectionInitValue' (role 'dom_CollectionInitValue', cardinality 0..*) is associated with 'dom::CollectionExpression' (role 'dom_CollectionExpression', cardinality 0..*).
+'dom::Block' (role 'dom_Block', cardinality 0..*) is associated with 'dom::Program' (role 'dom_Program6', cardinality 0..*).
+'dom::AnnotationBlock' (role 'dom_AnnotationBlock155', cardinality 0..*) is associated with 'dom::ExecutableAnnotation' (role 'dom_ExecutableAnnotation156', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression95', cardinality 0..*) is associated with 'dom::SwitchStatement' (role 'dom_SwitchStatement', cardinality 0..*).
+'dom::BooleanExpression' (role 'dom_BooleanExpression49', cardinality 0..*) is associated with 'dom::VariableDeclarationExpression' (role 'dom_VariableDeclarationExpression48', cardinality 0..*).
+'dom::NameExpression' (role 'dom_NameExpression115', cardinality 0..*) is associated with 'dom::ModelDeclarationStatement' (role 'dom_ModelDeclarationStatement114', cardinality 0..*).
+'dom::FormalParameterExpression' (role 'dom_FormalParameterExpression171', cardinality 0..*) is associated with 'dom::NameExpression' (role 'dom_NameExpression172', cardinality 0..*).
+'dom::NameExpression' (role 'dom_NameExpression112', cardinality 0..*) is associated with 'dom::ModelDeclarationStatement' (role 'dom_ModelDeclarationStatement111', cardinality 0..*).
+'dom::CollectionExpression' (role 'dom_CollectionExpression133', cardinality 0..*) is associated with 'dom::Type' (role 'dom_Type134', cardinality 0..*).
+'dom::SwitchCaseExpressionStatement' (role 'dom_SwitchCaseExpressionStatement', cardinality 0..*) is associated with 'dom::SwitchStatement' (role 'dom_SwitchStatement97', cardinality 0..*).
+'dom::ModelDeclarationStatement' (role 'dom_ModelDeclarationStatement', cardinality 0..*) is associated with 'dom::Program' (role 'dom_Program10', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression174', cardinality 0..*) is associated with 'dom::ExprList' (role 'dom_ExprList', cardinality 0..*).
+'dom::ForStatement' (role 'dom_ForStatement79', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression80', cardinality 0..*).
+'dom::FeatureCallExpression' (role 'dom_FeatureCallExpression', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression30', cardinality 0..*).
+'dom::NameExpression' (role 'dom_NameExpression169', cardinality 0..*) is associated with 'dom::TransactionStatement' (role 'dom_TransactionStatement168', cardinality 0..*).
+'dom::NameExpression' (role 'dom_NameExpression37', cardinality 0..*) is associated with 'dom::MethodCallExpression' (role 'dom_MethodCallExpression36', cardinality 0..*).
+'dom::ExpRange' (role 'dom_ExpRange', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression176', cardinality 0..*).
+'dom::Block' (role 'dom_Block106', cardinality 0..*) is associated with 'dom::WhileStatement' (role 'dom_WhileStatement105', cardinality 0..*).
+'dom::StringExpression' (role 'dom_StringExpression', cardinality 0..*) is associated with 'dom::Import' (role 'dom_Import12', cardinality 0..*).
+'dom::FOLMethodCallExpression' (role 'dom_FOLMethodCallExpression124', cardinality 0..*) is associated with 'dom::NameExpression' (role 'dom_NameExpression125', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression', cardinality 0..*) is associated with 'dom::Type' (role 'dom_Type', cardinality 0..*).
+'dom::DeleteStatement' (role 'dom_DeleteStatement', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression75', cardinality 0..*).
+'dom::FOLMethodCallExpression' (role 'dom_FOLMethodCallExpression', cardinality 0..*) is associated with 'dom::FormalParameterExpression' (role 'dom_FormalParameterExpression119', cardinality 0..*).
+'dom::KeyValue' (role 'dom_KeyValue146', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression147', cardinality 0..*).
+'dom::IfStatement' (role 'dom_IfStatement', cardinality 0..*) is associated with 'dom::Expression' (role 'dom_Expression85', cardinality 0..*).
+'dom::Expression' (role 'dom_Expression20', cardinality 0..*) is associated with 'dom::BinaryOperatorExpression' (role 'dom_BinaryOperatorExpression19', cardinality 0..*).
+'dom::DomElement' (role 'dom_DomElement', cardinality 0..*) is associated with 'dom::DomElement' (role 'dom_DomElement0', cardinality 0..*).
+'dom::ModelDeclarationStatement' (role 'dom_ModelDeclarationStatement117', cardinality 0..*) is associated with 'dom::ModelDeclarationParameter' (role 'dom_ModelDeclarationParameter', cardinality 0..*).

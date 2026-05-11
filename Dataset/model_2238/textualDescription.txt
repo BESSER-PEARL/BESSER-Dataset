@@ -1,0 +1,22 @@
+The model has 8 class(es).
+The class 'studies::Semester' has the following attributes: 'studyYearSemester' of type str.
+The class 'studies::Study' has the following attributes: 'name' of type str; 'code' of type str.
+The class 'studies::Course' has the following attributes: 'studyPoints' of type float; 'name' of type str; 'code' of type str.
+The class 'studies::StudyCourse' has the following attributes: 'mandatory' of type bool.
+The class 'studies::StudyYear' has the following attributes: 'programName' of type str.
+The class 'studies::CourseInstance' has the following attributes: 'semester' of type str; 'year' of type int; 'instanceName' of type str.
+The class 'studies::University' has the following attributes: 'name' of type str.
+The class 'studies::StudyInstance' has the following attributes: 'year' of type int.
+The enumeration 'SemesterCode' has the following literals: 'Autumn', 'Spring'.
+'studies::StudyYear' (role 'studies_StudyYear14', cardinality 0..*) is associated with 'studies::Semester' (role 'studies_Semester15', cardinality 0..*).
+'studies::Semester' (role 'studies_Semester18', cardinality 0..*) is associated with 'studies::CourseInstance' (role 'studies_CourseInstance19', cardinality 0..*).
+'studies::StudyYear' (role 'studies_StudyYear8', cardinality 0..*) is associated with 'studies::StudyYear' (role 'studies_StudyYear10', cardinality 0..*).
+'studies::University' (role 'studies_University2', cardinality 0..*) is associated with 'studies::Study' (role 'studies_Study', cardinality 0..*).
+'studies::Course' (role 'Course', cardinality 0..*) is associated with 'studies::CourseInstance' (role 'courseInstances', cardinality 0..*).
+'studies::StudyInstance' (role 'studyInstances', cardinality 0..*) is associated with 'studies::Study' (role 'Study', cardinality 0..*).
+'studies::Semester' (role 'studies_Semester', cardinality 0..*) is associated with 'studies::StudyYear' (role 'studies_StudyYear12', cardinality 0..*).
+'studies::CourseInstance' (role 'studies_CourseInstance', cardinality 0..*) is associated with 'studies::StudyCourse' (role 'studies_StudyCourse', cardinality 0..*).
+'studies::StudyInstance' (role 'StudyInstance', cardinality 0..*) is associated with 'studies::Study' (role 'study', cardinality 0..*).
+'studies::StudyYear' (role 'studies_StudyYear', cardinality 0..*) is associated with 'studies::StudyInstance' (role 'studies_StudyInstance', cardinality 0..*).
+'studies::University' (role 'studies_University', cardinality 0..*) is associated with 'studies::Course' (role 'studies_Course', cardinality 0..*).
+'studies::CourseInstance' (role 'CourseInstance', cardinality 0..*) is associated with 'studies::Course' (role 'course', cardinality 0..*).

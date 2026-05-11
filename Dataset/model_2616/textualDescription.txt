@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'GraphElement' has no attributes.
+The class 'grapho::Edge' has the following attributes: 'color' of type str; 'style' of type str; 'constraintRank' of type bool.
+The class 'grapho::GraphO' has no attributes.
+The class 'grapho::GraphElement' has the following attributes: 'name' of type str.
+The class 'grapho::Node' has the following attributes: 'color' of type str; 'shape' of type str; 'style' of type str; 'label' of type str.
+'grapho::GraphO' is a specialization of 'GraphElement'.
+'grapho::Node' is a specialization of 'GraphElement'.
+'grapho::Edge' is a specialization of 'GraphElement'.
+'grapho::Edge' (role 'grapho_Edge', cardinality 0..*) is associated with 'grapho::Node' (role 'grapho_Node', cardinality 0..*).
+'grapho::GraphO' (role 'grapho_GraphO', cardinality 0..*) is associated with 'grapho::GraphElement' (role 'grapho_GraphElement', cardinality 0..*).
+'grapho::Edge' (role 'grapho_Edge3', cardinality 0..*) is associated with 'grapho::Node' (role 'grapho_Node4', cardinality 0..*).

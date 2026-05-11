@@ -1,0 +1,94 @@
+The model has 47 class(es).
+The class 'rdbmdl::view::ViewAlias' has no attributes.
+The class 'ForeignKey' has no attributes.
+The class 'ViewAlias' has no attributes.
+The class 'rdbmdl::constraints::ColumnRefConstraint' has no attributes.
+The class 'rdbmdl::constraints::PrimaryKey' has no attributes.
+The class 'rdbmdl::view::View' has the following attributes: 'ddl' of type str.
+The class 'ColumnRefConstraint' has no attributes.
+The class 'DataType' has no attributes.
+The class 'constraints::rdbmdl::TableColumn' has no attributes.
+The class 'CheckConstraint' has no attributes.
+The class 'rdbmdl::constraints::IndexedColumn' has the following attributes: 'ascending' of type bool.
+The class 'rdbmdl::TableColumn' has the following attributes: 'isForeignKey' of type str; 'isPrimaryKey' of type str.
+The class 'NamedColumnSet' has no attributes.
+The class 'rdbmdl::datatypes::PrimitiveDataType' has the following attributes: 'type' of type str.
+The class 'rdbmdl::datatypes::DataType' has the following attributes: 'check' of type str; 'decimalDigits' of type int; 'size' of type int; 'nullable' of type bool; 'var' of type str; 'default' of type str.
+The class 'SchemaElement' has no attributes.
+The class 'datatypes::PrimitiveDataType' has no attributes.
+The class 'rdbmdl::view::ReferencedViewColumn' has no attributes.
+The class 'rdbmdl::NamedColumnSet' has no attributes.
+The class 'view::rdbmdl::Column' has no attributes.
+The class 'rdbmdl::datatypes::Domain' has no attributes.
+The class 'rdbmdl::constraints::Index' has no attributes.
+The class 'Index' has no attributes.
+The class 'rdbmdl::constraints::CheckConstraint' has the following attributes: 'expression' of type str.
+The class 'rdbmdl::NamedElement' has the following attributes: 'name' of type str; 'uid' of type str.
+The class 'rdbmdl::view::ViewExpressionColumn' has the following attributes: 'expression' of type str.
+The class 'rdbmdl::Column' has no attributes.
+The class 'rdbmdl::Model' has the following attributes: 'server_id' of type str.
+The class 'ViewColumn' has no attributes.
+The class 'rdbmdl::constraints::UniqueConstraint' has no attributes.
+The class 'view::rdbmdl::NamedColumnSet' has no attributes.
+The class 'rdbmdl::constraints::Constraint' has no attributes.
+The class 'Domain' has no attributes.
+The class 'rdbmdl::Table' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'Column' has no attributes.
+The class 'IndexedColumn' has no attributes.
+The class 'rdbmdl::constraints::ForeignKey' has no attributes.
+The class 'UniqueConstraint' has no attributes.
+The class 'PrimitiveDataType' has no attributes.
+The class 'rdbmdl::SchemaElement' has the following attributes: 'owner' of type str.
+The class 'PrimaryKey' has no attributes.
+The class 'rdbmdl::Schema' has no attributes.
+The class 'rdbmdl::Element' has no attributes.
+The class 'Element' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'rdbmdl::view::ViewColumn' has no attributes.
+The enumeration 'PrimitiveTypeCodes' has the following literals: 'TIMESTAMP', 'BINARY', 'VARBINARY', 'LONGVARCHAR', 'NVARCHAR', 'INTEGER', 'VARCHAR', 'BOOLEAN', 'DATE', 'BIT', 'FLOAT', 'LONGVARBINARY', 'OTHER', 'BIGINT', 'DISTINCT', 'DOUBLE', 'DATALINK', 'NCHAR', 'NCLOB', 'STRUCT', 'SMALLINT', 'JAVA_OBJECT', 'TIME', 'LONGNVARCHAR', 'SQLXML', 'BLOB', 'TINYINT', 'ROWID', 'CHAR', 'REAL', 'CLOB', 'ARRAY', 'NULL', 'REF', 'DECIMAL', 'NUMERIC'.
+'rdbmdl::constraints::UniqueConstraint' is a specialization of 'ColumnRefConstraint'.
+'rdbmdl::Model' is a specialization of 'NamedElement'.
+'rdbmdl::datatypes::DataType' is a specialization of 'NamedElement'.
+'rdbmdl::constraints::Index' is a specialization of 'Constraint'.
+'rdbmdl::datatypes::Domain' is a specialization of 'SchemaElement'.
+'rdbmdl::constraints::ForeignKey' is a specialization of 'ColumnRefConstraint'.
+'rdbmdl::Column' is a specialization of 'NamedElement'.
+'rdbmdl::constraints::PrimaryKey' is a specialization of 'UniqueConstraint'.
+'rdbmdl::view::ViewExpressionColumn' is a specialization of 'ViewColumn'.
+'rdbmdl::NamedColumnSet' is a specialization of 'SchemaElement'.
+'rdbmdl::SchemaElement' is a specialization of 'NamedElement'.
+'rdbmdl::TableColumn' is a specialization of 'Column'.
+'rdbmdl::view::View' is a specialization of 'NamedColumnSet'.
+'rdbmdl::view::ReferencedViewColumn' is a specialization of 'ViewColumn'.
+'rdbmdl::datatypes::PrimitiveDataType' is a specialization of 'DataType'.
+'rdbmdl::Schema' is a specialization of 'NamedElement'.
+'rdbmdl::constraints::CheckConstraint' is a specialization of 'Constraint'.
+'rdbmdl::Table' is a specialization of 'NamedColumnSet'.
+'rdbmdl::NamedElement' is a specialization of 'Element'.
+'rdbmdl::constraints::ColumnRefConstraint' is a specialization of 'Constraint'.
+'rdbmdl::view::ViewAlias' is a specialization of 'NamedElement'.
+'rdbmdl::view::ViewColumn' is a specialization of 'Column'.
+'rdbmdl::constraints::IndexedColumn' is a specialization of 'NamedElement'.
+'rdbmdl::constraints::Constraint' is a specialization of 'NamedElement'.
+'rdbmdl::datatypes::Domain' is a specialization of 'datatypes::PrimitiveDataType'.
+'UniqueConstraint' (role 'UniqueConstraint', cardinality 0..*) is associated with 'rdbmdl::Table' (role 'rdbmdl_Table9', cardinality 0..*).
+'rdbmdl::constraints::ColumnRefConstraint' (role 'rdbmdl_constraints_ColumnRefConstraint', cardinality 0..*) is associated with 'constraints::rdbmdl::TableColumn' (role 'constraints_rdbmdl_TableColumn', cardinality 0..*).
+'rdbmdl::Table' (role 'rdbmdl_Table15', cardinality 0..*) is associated with 'CheckConstraint' (role 'CheckConstraint', cardinality 0..*).
+'rdbmdl::view::ReferencedViewColumn' (role 'rdbmdl_view_ReferencedViewColumn', cardinality 0..*) is associated with 'view::rdbmdl::Column' (role 'view_rdbmdl_Column', cardinality 0..*).
+'rdbmdl::Schema' (role 'rdbmdl_Schema', cardinality 0..*) is associated with 'rdbmdl::Model' (role 'rdbmdl_Model', cardinality 0..*).
+'rdbmdl::TableColumn' (role 'rdbmdl_TableColumn17', cardinality 0..*) is associated with 'Domain' (role 'Domain', cardinality 0..*).
+'rdbmdl::view::ViewAlias' (role 'rdbmdl_view_ViewAlias', cardinality 0..*) is associated with 'view::rdbmdl::NamedColumnSet' (role 'view_rdbmdl_NamedColumnSet', cardinality 0..*).
+'rdbmdl::constraints::Index' (role 'rdbmdl_constraints_Index', cardinality 0..*) is associated with 'IndexedColumn' (role 'IndexedColumn', cardinality 0..*).
+'rdbmdl::Element' (role 'rdbmdl_Element', cardinality 0..*) is associated with 'rdbmdl::Element' (role 'rdbmdl_Element0', cardinality 0..*).
+'UniqueConstraint' (role 'UniqueConstraint22', cardinality 0..*) is associated with 'rdbmdl::constraints::ForeignKey' (role 'rdbmdl_constraints_ForeignKey', cardinality 0..*).
+'rdbmdl::Table' (role 'rdbmdl_Table11', cardinality 0..*) is associated with 'ForeignKey' (role 'ForeignKey', cardinality 0..*).
+'rdbmdl::constraints::IndexedColumn' (role 'rdbmdl_constraints_IndexedColumn', cardinality 0..*) is associated with 'constraints::rdbmdl::TableColumn' (role 'constraints_rdbmdl_TableColumn25', cardinality 0..*).
+'ViewColumn' (role 'ViewColumn', cardinality 0..*) is associated with 'rdbmdl::view::View' (role 'rdbmdl_view_View', cardinality 0..*).
+'ViewAlias' (role 'ViewAlias', cardinality 0..*) is associated with 'rdbmdl::view::View' (role 'rdbmdl_view_View30', cardinality 0..*).
+'rdbmdl::Table' (role 'rdbmdl_Table13', cardinality 0..*) is associated with 'Index' (role 'Index', cardinality 0..*).
+'rdbmdl::Table' (role 'rdbmdl_Table', cardinality 0..*) is associated with 'rdbmdl::TableColumn' (role 'rdbmdl_TableColumn', cardinality 0..*).
+'rdbmdl::datatypes::Domain' (role 'rdbmdl_datatypes_Domain', cardinality 0..*) is associated with 'Domain' (role 'Domain27', cardinality 0..*).
+'PrimitiveDataType' (role 'PrimitiveDataType', cardinality 0..*) is associated with 'rdbmdl::TableColumn' (role 'rdbmdl_TableColumn19', cardinality 0..*).
+'rdbmdl::SchemaElement' (role 'rdbmdl_SchemaElement', cardinality 0..*) is associated with 'rdbmdl::Schema' (role 'rdbmdl_Schema4', cardinality 0..*).
+'PrimaryKey' (role 'PrimaryKey', cardinality 0..*) is associated with 'rdbmdl::Table' (role 'rdbmdl_Table7', cardinality 0..*).

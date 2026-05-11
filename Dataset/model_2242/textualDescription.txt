@@ -1,0 +1,58 @@
+The model has 16 class(es).
+The class 'oving4::Root' has no attributes.
+The class 'oving4::TimeTable' has the following attributes: 'isRestrictedToProgramsInParallell' of type bool.
+The class 'oving4::StudyProgram' has the following attributes: 'type' of type str.
+The class 'oving4::Precondition' has the following attributes: 'isMandatory' of type bool; 'creditReduction' of type float.
+The class 'oving4::Assignment' has the following attributes: 'deadline' of type str.
+The class 'oving4::TimeTableElement' has the following attributes: 'durationInMinutes' of type int; 'room' of type str; 'date' of type str.
+The class 'oving4::Department' has the following attributes: 'name' of type str.
+The class 'oving4::Course' has the following attributes: 'name' of type str; 'content' of type str; 'credits' of type float; 'examStartDate' of type str; 'examEndDate' of type str; 'code' of type str.
+The class 'oving4::PersonRole' has the following attributes: 'type' of type str.
+The class 'oving4::Project' has the following attributes: 'deadline' of type str.
+The class 'oving4::CourseInstance' has the following attributes: 'sumLectureHours' of type int; 'sumExerciseHours' of type int; 'sumInDepthHours' of type int.
+The class 'oving4::CourseWork' has the following attributes: 'type' of type str; 'name' of type str; 'isMandatory' of type bool.
+The class 'oving4::EvaluationElement' has the following attributes: 'type' of type str; 'weight' of type float; 'attended' of type bool; 'percentageResult' of type float.
+The class 'oving4::Evaluation' has the following attributes: 'creditsReceived' of type float; 'description' of type str; 'totalPercentageResult' of type float; 'completed' of type bool.
+The class 'oving4::Exam' has the following attributes: 'previousEndDate' of type str; 'startDate' of type str; 'previousStartDate' of type str; 'endDate' of type str.
+The class 'oving4::Person' has the following attributes: 'studyCredits' of type float; 'name' of type str; 'first_name' of type str; 'last_name' of type str.
+The enumeration 'EvaluationType' has the following literals: 'Project', 'Exam', 'Assignment'.
+The enumeration 'StudyProgramType' has the following literals: 'MTMART', 'MTDT'.
+The enumeration 'CourseWorkType' has the following literals: 'Exercise', 'InDepth', 'Lecture'.
+The enumeration 'RoleType' has the following literals: 'Lecturer', 'Student', 'Supervisor'.
+'oving4::Person' (role 'person', cardinality 0..*) is associated with 'oving4::PersonRole' (role 'PersonRole14', cardinality 0..*).
+'oving4::Course' (role 'oving4_Course19', cardinality 0..*) is associated with 'oving4::Precondition' (role 'oving4_Precondition', cardinality 0..*).
+'oving4::Department' (role 'employedByDepartment', cardinality 0..*) is associated with 'oving4::PersonRole' (role 'PersonRole', cardinality 0..*).
+'oving4::Person' (role 'Person', cardinality 0..*) is associated with 'oving4::PersonRole' (role 'hasRole', cardinality 0..*).
+'oving4::PersonRole' (role 'hasEmployee35', cardinality 0..*) is associated with 'oving4::Department' (role 'Department', cardinality 0..*).
+'oving4::StudyProgram' (role 'studyprogram', cardinality 0..*) is associated with 'oving4::Course' (role 'Course', cardinality 0..*).
+'oving4::CourseInstance' (role 'ownedByCourseInstance', cardinality 0..*) is associated with 'oving4::TimeTable' (role 'TimeTable', cardinality 0..*).
+'oving4::PersonRole' (role 'PersonRole25', cardinality 0..*) is associated with 'oving4::CourseInstance' (role 'memberOfCourse', cardinality 0..*).
+'oving4::PersonRole' (role 'PersonRole12', cardinality 0..*) is associated with 'oving4::StudyProgram' (role 'employedOfStudyProgram', cardinality 0..*).
+'oving4::EvaluationElement' (role 'EvaluationElement', cardinality 0..*) is associated with 'oving4::Exam' (role 'containsExam', cardinality 0..*).
+'oving4::Project' (role 'Project', cardinality 0..*) is associated with 'oving4::EvaluationElement' (role 'belongsToEvaluationel', cardinality 0..*).
+'oving4::Assignment' (role 'Assignment', cardinality 0..*) is associated with 'oving4::EvaluationElement' (role 'belongToEvEl', cardinality 0..*).
+'oving4::TimeTableElement' (role 'oving4_TimeTableElement51', cardinality 0..*) is associated with 'oving4::CourseWork' (role 'oving4_CourseWork52', cardinality 0..*).
+'oving4::Course' (role 'ownedBy', cardinality 0..*) is associated with 'oving4::CourseInstance' (role 'CourseInstance', cardinality 0..*).
+'oving4::EvaluationElement' (role 'belongsToEvaluationElement', cardinality 0..*) is associated with 'oving4::Exam' (role 'Exam', cardinality 0..*).
+'oving4::Root' (role 'oving4_Root2', cardinality 0..*) is associated with 'oving4::Person' (role 'oving4_Person', cardinality 0..*).
+'oving4::Root' (role 'oving4_Root', cardinality 0..*) is associated with 'oving4::Department' (role 'oving4_Department', cardinality 0..*).
+'oving4::Project' (role 'containsProject', cardinality 0..*) is associated with 'oving4::EvaluationElement' (role 'EvaluationElement58', cardinality 0..*).
+'oving4::StudyProgram' (role 'StudyProgram', cardinality 0..*) is associated with 'oving4::Course' (role 'containsCourse', cardinality 0..*).
+'oving4::Course' (role 'oving4_Course', cardinality 0..*) is associated with 'oving4::Department' (role 'oving4_Department8', cardinality 0..*).
+'oving4::TimeTableElement' (role 'oving4_TimeTableElement', cardinality 0..*) is associated with 'oving4::TimeTable' (role 'oving4_TimeTable', cardinality 0..*).
+'oving4::CourseInstance' (role 'courseInstance27', cardinality 0..*) is associated with 'oving4::Evaluation' (role 'Evaluation28', cardinality 0..*).
+'oving4::Person' (role 'personEvaluated', cardinality 0..*) is associated with 'oving4::Evaluation' (role 'Evaluation', cardinality 0..*).
+'oving4::StudyProgram' (role 'oving4_StudyProgram39', cardinality 0..*) is associated with 'oving4::TimeTable' (role 'oving4_TimeTable38', cardinality 0..*).
+'oving4::CourseInstance' (role 'courseInstance', cardinality 0..*) is associated with 'oving4::Course' (role 'Course22', cardinality 0..*).
+'oving4::CourseWork' (role 'oving4_CourseWork', cardinality 0..*) is associated with 'oving4::CourseInstance' (role 'oving4_CourseInstance', cardinality 0..*).
+'oving4::EvaluationElement' (role 'EvaluationElement62', cardinality 0..*) is associated with 'oving4::Assignment' (role 'containsAssignment', cardinality 0..*).
+'oving4::Root' (role 'oving4_Root4', cardinality 0..*) is associated with 'oving4::StudyProgram' (role 'oving4_StudyProgram', cardinality 0..*).
+'oving4::TimeTable' (role 'hasTimeTable', cardinality 0..*) is associated with 'oving4::CourseInstance' (role 'CourseInstance41', cardinality 0..*).
+'oving4::Evaluation' (role 'oving4_Evaluation', cardinality 0..*) is associated with 'oving4::EvaluationElement' (role 'oving4_EvaluationElement', cardinality 0..*).
+'oving4::Course' (role 'oving4_Course49', cardinality 0..*) is associated with 'oving4::Precondition' (role 'oving4_Precondition48', cardinality 0..*).
+'oving4::Project' (role 'oving4_Project', cardinality 0..*) is associated with 'oving4::Root' (role 'oving4_Root6', cardinality 0..*).
+'oving4::Project' (role 'oving4_Project60', cardinality 0..*) is associated with 'oving4::PersonRole' (role 'oving4_PersonRole', cardinality 0..*).
+'oving4::PersonRole' (role 'hasEmployee', cardinality 0..*) is associated with 'oving4::StudyProgram' (role 'StudyProgram31', cardinality 0..*).
+'oving4::PersonRole' (role 'hasMember', cardinality 0..*) is associated with 'oving4::CourseInstance' (role 'CourseInstance33', cardinality 0..*).
+'oving4::CourseInstance' (role 'CourseInstance46', cardinality 0..*) is associated with 'oving4::Evaluation' (role 'containsEvaluation', cardinality 0..*).
+'oving4::Evaluation' (role 'hasEvaluation', cardinality 0..*) is associated with 'oving4::Person' (role 'Person43', cardinality 0..*).

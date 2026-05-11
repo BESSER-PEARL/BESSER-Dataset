@@ -1,0 +1,16 @@
+The model has 9 class(es).
+The class 'classescstraces::PackageCS2Package' has no attributes.
+The class 'classescstraces::ClassCS' has no attributes.
+The class 'classescstraces::RootCS' has no attributes.
+The class 'classescstraces::Class' has no attributes.
+The class 'classescstraces::Package' has no attributes.
+The class 'classescstraces::RootCS2Root' has no attributes.
+The class 'classescstraces::Root' has no attributes.
+The class 'classescstraces::ClassCS2Class' has no attributes.
+The class 'classescstraces::PackageCS' has no attributes.
+'classescstraces::Package' (role 'classescstraces_Package', cardinality 0..*) is associated with 'classescstraces::PackageCS2Package' (role 'classescstraces_PackageCS2Package2', cardinality 0..*).
+'classescstraces::PackageCS' (role 'classescstraces_PackageCS', cardinality 0..*) is associated with 'classescstraces::PackageCS2Package' (role 'classescstraces_PackageCS2Package', cardinality 0..*).
+'classescstraces::Class' (role 'classescstraces_Class', cardinality 0..*) is associated with 'classescstraces::ClassCS2Class' (role 'classescstraces_ClassCS2Class5', cardinality 0..*).
+'classescstraces::RootCS2Root' (role 'classescstraces_RootCS2Root8', cardinality 0..*) is associated with 'classescstraces::Root' (role 'classescstraces_Root', cardinality 0..*).
+'classescstraces::RootCS2Root' (role 'classescstraces_RootCS2Root', cardinality 0..*) is associated with 'classescstraces::RootCS' (role 'classescstraces_RootCS', cardinality 0..*).
+'classescstraces::ClassCS2Class' (role 'classescstraces_ClassCS2Class', cardinality 0..*) is associated with 'classescstraces::ClassCS' (role 'classescstraces_ClassCS', cardinality 0..*).

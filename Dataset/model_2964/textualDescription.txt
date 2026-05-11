@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'sample::Person' has the following attributes: 'firstName' of type str; 'lastName' of type str.
+The class 'sample::Car' has the following attributes: 'horsePower' of type int.
+'sample::Car' (role 'sample_Car', cardinality 0..*) is associated with 'sample::Person' (role 'sample_Person', cardinality 0..*).

@@ -1,0 +1,10 @@
+The model has 3 class(es).
+The class 'fsa::State' has the following attributes: 'temporalProperties' of type str; 'final' of type bool; 'name' of type str.
+The class 'fsa::Transition' has the following attributes: 'description' of type str.
+The class 'fsa::FSA' has the following attributes: 'temporalFormula' of type str.
+'fsa::FSA' (role 'fsa_FSA13', cardinality 0..*) is associated with 'fsa::State' (role 'fsa_State14', cardinality 0..*).
+'fsa::State' (role 'fsa_State11', cardinality 0..*) is associated with 'fsa::FSA' (role 'fsa_FSA10', cardinality 0..*).
+'fsa::State' (role 'fsa_State5', cardinality 0..*) is associated with 'fsa::Transition' (role 'fsa_Transition4', cardinality 0..*).
+'fsa::State' (role 'fsa_State2', cardinality 0..*) is associated with 'fsa::Transition' (role 'fsa_Transition', cardinality 0..*).
+'fsa::FSA' (role 'fsa_FSA', cardinality 0..*) is associated with 'fsa::State' (role 'fsa_State', cardinality 0..*).
+'fsa::Transition' (role 'fsa_Transition8', cardinality 0..*) is associated with 'fsa::FSA' (role 'fsa_FSA7', cardinality 0..*).

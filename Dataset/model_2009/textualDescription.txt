@@ -1,0 +1,9 @@
+The model has 5 class(es).
+The class 'scribbleTraceDsl::Parameter' has the following attributes: 'value' of type str; 'type' of type str.
+The class 'scribbleTraceDsl::Stepdefn' has no attributes.
+The class 'scribbleTraceDsl::Trace' has the following attributes: 'roles' of type str.
+The class 'Stepdefn' has no attributes.
+The class 'scribbleTraceDsl::Messagetransfer' has no attributes.
+'scribbleTraceDsl::Messagetransfer' is a specialization of 'Stepdefn'.
+'scribbleTraceDsl::Stepdefn' (role 'scribbleTraceDsl_Stepdefn', cardinality 0..*) is associated with 'scribbleTraceDsl::Trace' (role 'scribbleTraceDsl_Trace', cardinality 0..*).
+'scribbleTraceDsl::Messagetransfer' (role 'scribbleTraceDsl_Messagetransfer', cardinality 0..*) is associated with 'scribbleTraceDsl::Parameter' (role 'scribbleTraceDsl_Parameter', cardinality 0..*).

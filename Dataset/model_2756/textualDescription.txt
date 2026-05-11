@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'BAttributes::Y' has no attributes.
+The class 'BAttributes::B' has no attributes.
+The class 'BAttributes::RootB' has no attributes.
+'BAttributes::B' (role 'BAttributes_B', cardinality 0..*) is associated with 'BAttributes::Y' (role 'BAttributes_Y', cardinality 0..*).
+'BAttributes::B' (role 'B', cardinality 0..*) is associated with 'BAttributes::RootB' (role 'root', cardinality 0..*).
+'BAttributes::RootB' (role 'BAttributes_RootB', cardinality 0..*) is associated with 'BAttributes::Y' (role 'BAttributes_Y4', cardinality 0..*).
+'BAttributes::RootB' (role 'RootB', cardinality 0..*) is associated with 'BAttributes::B' (role 'bs', cardinality 0..*).

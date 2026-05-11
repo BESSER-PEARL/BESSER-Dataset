@@ -1,0 +1,21 @@
+The model has 6 class(es).
+The class 'studyplan::StudyPlan' has the following attributes: 'planName' of type str.
+The class 'studyplan::Course' has the following attributes: 'courseCode' of type int; 'credit' of type float; 'status' of type str; 'courseName' of type str.
+The class 'studyplan::CourseGroup' has the following attributes: 'group' of type str; 'courseStatus' of type str.
+The class 'studyplan::Semester' has the following attributes: 'semesterType' of type str; 'year' of type int.
+The class 'studyplan::FieldOfStudy' has the following attributes: 'fieldName' of type str.
+The class 'studyplan::Specialization' has the following attributes: 'specName' of type str.
+The enumeration 'SemesterType' has the following literals: 'SPRING', 'FALL'.
+The enumeration 'CourseStatus' has the following literals: 'MANDATORY', 'ELECTIVE'.
+'studyplan::CourseGroup' (role 'CourseGroup', cardinality 0..*) is associated with 'studyplan::Course' (role 'course', cardinality 0..*).
+'studyplan::Course' (role 'studyplan_Course7', cardinality 0..*) is associated with 'studyplan::Semester' (role 'studyplan_Semester6', cardinality 0..*).
+'studyplan::CourseGroup' (role 'studyplan_CourseGroup23', cardinality 0..*) is associated with 'studyplan::Semester' (role 'studyplan_Semester24', cardinality 0..*).
+'studyplan::CourseGroup' (role 'courseGroup', cardinality 0..*) is associated with 'studyplan::Course' (role 'Course', cardinality 0..*).
+'studyplan::StudyPlan' (role 'studyplan_StudyPlan', cardinality 0..*) is associated with 'studyplan::FieldOfStudy' (role 'studyplan_FieldOfStudy', cardinality 0..*).
+'studyplan::Specialization' (role 'studyplan_Specialization11', cardinality 0..*) is associated with 'studyplan::Specialization' (role 'studyplan_Specialization13', cardinality 0..*).
+'studyplan::Semester' (role 'studyplan_Semester', cardinality 0..*) is associated with 'studyplan::StudyPlan' (role 'studyplan_StudyPlan4', cardinality 0..*).
+'studyplan::StudyPlan' (role 'studyplan_StudyPlan2', cardinality 0..*) is associated with 'studyplan::Course' (role 'studyplan_Course', cardinality 0..*).
+'studyplan::Specialization' (role 'studyplan_Specialization15', cardinality 0..*) is associated with 'studyplan::CourseGroup' (role 'studyplan_CourseGroup', cardinality 0..*).
+'studyplan::Semester' (role 'studyplan_Semester10', cardinality 0..*) is associated with 'studyplan::Specialization' (role 'studyplan_Specialization', cardinality 0..*).
+'studyplan::Specialization' (role 'studyplan_Specialization18', cardinality 0..*) is associated with 'studyplan::FieldOfStudy' (role 'studyplan_FieldOfStudy17', cardinality 0..*).
+'studyplan::FieldOfStudy' (role 'studyplan_FieldOfStudy20', cardinality 0..*) is associated with 'studyplan::Semester' (role 'studyplan_Semester21', cardinality 0..*).

@@ -1,0 +1,9 @@
+The model has 4 class(es).
+The class 'TreeNode' has no attributes.
+The class 'tree::NonTerminal' has no attributes.
+The class 'tree::Leaf' has no attributes.
+The class 'tree::TreeNode' has the following attributes: 'data' of type str.
+'tree::NonTerminal' is a specialization of 'TreeNode'.
+'tree::Leaf' is a specialization of 'TreeNode'.
+'tree::TreeNode' (role 'tree_TreeNode', cardinality 0..*) is associated with 'tree::TreeNode' (role 'tree_TreeNode0', cardinality 0..*).
+'tree::TreeNode' (role 'tree_TreeNode3', cardinality 0..*) is associated with 'tree::NonTerminal' (role 'tree_NonTerminal', cardinality 0..*).

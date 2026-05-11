@@ -1,0 +1,3 @@
+The model has 1 class(es).
+The class 'My2::TestClass2' has the following attributes: 'testAtt2' of type str; 'testAtt' of type str.
+The enumeration 'TestEnum2' has the following literals: 'testLiteral', 'testLiteral2'.

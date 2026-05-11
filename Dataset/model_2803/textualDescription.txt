@@ -1,0 +1,14 @@
+The model has 4 class(es).
+The class 'rules::NodeRelation' has the following attributes: 'relation' of type str; 'upperBound' of type int; 'relationTgt' of type str; 'lowerBound' of type int.
+The class 'rules::Rule' has the following attributes: 'name' of type str.
+The class 'rules::RulesLattice' has the following attributes: 'source' of type str; 'target' of type str.
+The class 'rules::Node' has the following attributes: 'type' of type str.
+'rules::Node' (role 'source', cardinality 0..*) is associated with 'rules::NodeRelation' (role 'NodeRelation', cardinality 0..*).
+'rules::Node' (role 'rules_Node13', cardinality 0..*) is associated with 'rules::Rule' (role 'rules_Rule12', cardinality 0..*).
+'rules::Node' (role 'rules_Node', cardinality 0..*) is associated with 'rules::Rule' (role 'rules_Rule7', cardinality 0..*).
+'rules::RulesLattice' (role 'rules_RulesLattice', cardinality 0..*) is associated with 'rules::Rule' (role 'rules_Rule', cardinality 0..*).
+'rules::Rule' (role 'parents', cardinality 0..*) is associated with 'rules::Rule' (role 'Rule', cardinality 0..*).
+'rules::Rule' (role 'Rule5', cardinality 0..*) is associated with 'rules::Rule' (role 'children', cardinality 0..*).
+'rules::Node' (role 'Node', cardinality 0..*) is associated with 'rules::NodeRelation' (role 'relatedNodes', cardinality 0..*).
+'rules::NodeRelation' (role 'rules_NodeRelation', cardinality 0..*) is associated with 'rules::Node' (role 'rules_Node17', cardinality 0..*).
+'rules::Rule' (role 'rules_Rule9', cardinality 0..*) is associated with 'rules::Node' (role 'rules_Node10', cardinality 0..*).

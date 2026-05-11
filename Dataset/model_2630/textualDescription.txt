@@ -1,0 +1,15 @@
+The model has 9 class(es).
+The class 'nodesAndEdges::Node::toString' has no attributes.
+The class 'Node' has no attributes.
+The class 'nodesAndEdges::Node' has the following attributes: 'name' of type str.
+The class 'nodesAndEdges::ColoredNode::toString' has no attributes.
+The class 'nodesAndEdges::ColoredNode' has the following attributes: 'color' of type str.
+The class 'nodesAndEdges::ShapedNode::toString' has no attributes.
+The class 'nodesAndEdges::Edge::toString' has no attributes.
+The class 'nodesAndEdges::Edge' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'nodesAndEdges::ShapedNode' has the following attributes: 'shape' of type str; 'size' of type float.
+The enumeration 'Color' has the following literals: 'blue', 'red'.
+The enumeration 'Shape' has the following literals: 'round', 'square'.
+The enumeration 'EdgeViewType' has the following literals: 'dashline', 'solidline'.
+'nodesAndEdges::ColoredNode' is a specialization of 'Node'.
+'nodesAndEdges::ShapedNode' is a specialization of 'Node'.

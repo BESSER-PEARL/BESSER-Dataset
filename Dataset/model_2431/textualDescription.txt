@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'NamedElement' has no attributes.
+The class 'necsis14::databaseschema::DatabaseSchema' has no attributes.
+The class 'necsis14::databaseschema::Table' has no attributes.
+The class 'necsis14::databaseschema::Column' has no attributes.
+The class 'necsis14::databaseschema::NamedElement' has the following attributes: 'name' of type str.
+'necsis14::databaseschema::Table' is a specialization of 'NamedElement'.
+'necsis14::databaseschema::Column' is a specialization of 'NamedElement'.
+'necsis14::databaseschema::Column' (role 'necsis14_databaseschema_Column', cardinality 0..*) is associated with 'necsis14::databaseschema::Table' (role 'necsis14_databaseschema_Table2', cardinality 0..*).
+'necsis14::databaseschema::Table' (role 'necsis14_databaseschema_Table', cardinality 0..*) is associated with 'necsis14::databaseschema::DatabaseSchema' (role 'necsis14_databaseschema_DatabaseSchema', cardinality 0..*).
+'necsis14::databaseschema::Column' (role 'necsis14_databaseschema_Column5', cardinality 0..*) is associated with 'necsis14::databaseschema::Table' (role 'necsis14_databaseschema_Table4', cardinality 0..*).

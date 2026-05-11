@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'my::Entity' has the following attributes: 'name' of type str.
+The class 'my::Model' has no attributes.
+The class 'my::BType' has no attributes.
+The class 'my::AType' has no attributes.
+The class 'Entity' has no attributes.
+'my::BType' is a specialization of 'Entity'.
+'my::AType' is a specialization of 'Entity'.
+'my::AType' (role 'my_AType', cardinality 0..*) is associated with 'my::BType' (role 'my_BType2', cardinality 0..*).
+'my::BType' (role 'my_BType4', cardinality 0..*) is associated with 'my::AType' (role 'my_AType5', cardinality 0..*).
+'my::Model' (role 'my_Model', cardinality 0..*) is associated with 'my::BType' (role 'my_BType', cardinality 0..*).

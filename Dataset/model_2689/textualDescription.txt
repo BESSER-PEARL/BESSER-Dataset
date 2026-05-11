@@ -1,0 +1,8 @@
+The model has 3 class(es).
+The class 'cycle::C' has no attributes.
+The class 'cycle::A' has the following attributes: 'i' of type int.
+The class 'cycle::B' has the following attributes: 'x' of type float.
+'cycle::C' (role 'cycle_C', cardinality 0..*) is associated with 'cycle::B' (role 'cycle_B5', cardinality 0..*).
+'cycle::B' (role 'cycle_B', cardinality 0..*) is associated with 'cycle::A' (role 'cycle_A', cardinality 0..*).
+'cycle::A' (role 'cycle_A3', cardinality 0..*) is associated with 'cycle::B' (role 'cycle_B2', cardinality 0..*).
+'cycle::C' (role 'cycle_C7', cardinality 0..*) is associated with 'cycle::A' (role 'cycle_A8', cardinality 0..*).

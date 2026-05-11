@@ -1,0 +1,20 @@
+The model has 7 class(es).
+The class 'rdpl::RecordElement' has the following attributes: 'value' of type str.
+The class 'rdpl::Column' has the following attributes: 'stype' of type str; 'name' of type str; 'ctype' of type str.
+The class 'rdpl::Record' has no attributes.
+The class 'rdpl::Table' has the following attributes: 'name' of type str.
+The class 'rdpl::Schema' has the following attributes: 'name' of type str.
+The class 'rdpl::ForeignKey' has no attributes.
+The class 'rdpl::Type' has the following attributes: 'name' of type str.
+The enumeration 'BasicType' has the following literals: 'INT', 'CHAR', 'REAL', 'BOOL'.
+'rdpl::Table' (role 'rdpl_Table9', cardinality 0..*) is associated with 'rdpl::Record' (role 'rdpl_Record', cardinality 0..*).
+'rdpl::RecordElement' (role 'rdpl_RecordElement21', cardinality 0..*) is associated with 'rdpl::Column' (role 'rdpl_Column22', cardinality 0..*).
+'rdpl::Table' (role 'rdpl_Table4', cardinality 0..*) is associated with 'rdpl::Column' (role 'rdpl_Column', cardinality 0..*).
+'rdpl::Table' (role 'rdpl_Table6', cardinality 0..*) is associated with 'rdpl::Column' (role 'rdpl_Column7', cardinality 0..*).
+'rdpl::ForeignKey' (role 'rdpl_ForeignKey', cardinality 0..*) is associated with 'rdpl::Table' (role 'rdpl_Table11', cardinality 0..*).
+'rdpl::Column' (role 'rdpl_Column17', cardinality 0..*) is associated with 'rdpl::ForeignKey' (role 'rdpl_ForeignKey16', cardinality 0..*).
+'rdpl::Type' (role 'rdpl_Type', cardinality 0..*) is associated with 'rdpl::Schema' (role 'rdpl_Schema2', cardinality 0..*).
+'rdpl::Column' (role 'rdpl_Column24', cardinality 0..*) is associated with 'rdpl::Type' (role 'rdpl_Type25', cardinality 0..*).
+'rdpl::Table' (role 'rdpl_Table', cardinality 0..*) is associated with 'rdpl::Schema' (role 'rdpl_Schema', cardinality 0..*).
+'rdpl::Table' (role 'rdpl_Table14', cardinality 0..*) is associated with 'rdpl::ForeignKey' (role 'rdpl_ForeignKey13', cardinality 0..*).
+'rdpl::Record' (role 'rdpl_Record19', cardinality 0..*) is associated with 'rdpl::RecordElement' (role 'rdpl_RecordElement', cardinality 0..*).

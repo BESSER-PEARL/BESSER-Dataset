@@ -1,0 +1,23 @@
+The model has 11 class(es).
+The class 'compartments::Canvas' has no attributes.
+The class 'compartments::ChildOfAffixed' has the following attributes: 'description' of type str.
+The class 'compartments::ChildOfB::E' has the following attributes: 'name' of type str.
+The class 'compartments::TopNodeA' has the following attributes: 'name' of type str.
+The class 'compartments::ChildOfA::D' has the following attributes: 'name' of type str.
+The class 'compartments::ChildOfB::F' has the following attributes: 'name' of type str.
+The class 'compartments::TopNodeB' has the following attributes: 'name' of type str.
+The class 'compartments::ChildOfA::C' has the following attributes: 'name' of type str.
+The class 'compartments::TopNode' has no attributes.
+The class 'TopNode' has no attributes.
+The class 'compartments::ChildOfB::G' has the following attributes: 'number' of type int.
+'compartments::TopNodeB' is a specialization of 'TopNode'.
+'compartments::TopNodeA' is a specialization of 'TopNode'.
+'compartments::ChildOfA::D' (role 'compartments_ChildOfA_D', cardinality 0..*) is associated with 'compartments::TopNodeA' (role 'compartments_TopNodeA3', cardinality 0..*).
+'compartments::ChildOfA::D' (role 'compartments_ChildOfA_D16', cardinality 0..*) is associated with 'compartments::ChildOfB::F' (role 'compartments_ChildOfB_F15', cardinality 0..*).
+'compartments::ChildOfB::E' (role 'compartments_ChildOfB_E10', cardinality 0..*) is associated with 'compartments::ChildOfA::C' (role 'compartments_ChildOfA_C11', cardinality 0..*).
+'compartments::ChildOfAffixed' (role 'compartments_ChildOfAffixed', cardinality 0..*) is associated with 'compartments::ChildOfB::G' (role 'compartments_ChildOfB_G13', cardinality 0..*).
+'compartments::ChildOfA::C' (role 'compartments_ChildOfA_C', cardinality 0..*) is associated with 'compartments::TopNodeA' (role 'compartments_TopNodeA', cardinality 0..*).
+'compartments::Canvas' (role 'compartments_Canvas', cardinality 0..*) is associated with 'compartments::TopNode' (role 'compartments_TopNode', cardinality 0..*).
+'compartments::ChildOfB::G' (role 'compartments_ChildOfB_G', cardinality 0..*) is associated with 'compartments::TopNodeB' (role 'compartments_TopNodeB6', cardinality 0..*).
+'compartments::ChildOfB::F' (role 'compartments_ChildOfB_F', cardinality 0..*) is associated with 'compartments::TopNodeB' (role 'compartments_TopNodeB8', cardinality 0..*).
+'compartments::ChildOfB::E' (role 'compartments_ChildOfB_E', cardinality 0..*) is associated with 'compartments::TopNodeB' (role 'compartments_TopNodeB', cardinality 0..*).

@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'simplek::B' has the following attributes: 'name' of type str.
+The class 'simplek::Base' has no attributes.
+The class 'simplek::A' has the following attributes: 'name' of type str.
+The class 'simplek::Content' has the following attributes: 'name' of type str.
+'simplek::B' (role 'simplek_B', cardinality 0..*) is associated with 'simplek::Content' (role 'simplek_Content4', cardinality 0..*).
+'simplek::Content' (role 'simplek_Content2', cardinality 0..*) is associated with 'simplek::A' (role 'simplek_A', cardinality 0..*).
+'simplek::Base' (role 'simplek_Base', cardinality 0..*) is associated with 'simplek::Content' (role 'simplek_Content', cardinality 0..*).

@@ -1,0 +1,10 @@
+The model has 3 class(es).
+The class 'Kasu11::ClassB' has the following attributes: 'Name' of type str.
+The class 'Kasu11::ClassC' has the following attributes: 'Name' of type str.
+The class 'Kasu11::ClassA' has the following attributes: 'Name' of type str.
+'Kasu11::ClassA' (role 'C_A2', cardinality 0..*) is associated with 'Kasu11::ClassC' (role 'ClassC', cardinality 0..*).
+'Kasu11::ClassB' (role 'ClassB', cardinality 0..*) is associated with 'Kasu11::ClassA' (role 'C_A', cardinality 0..*).
+'Kasu11::ClassA' (role 'ClassA8', cardinality 0..*) is associated with 'Kasu11::ClassC' (role 'C_C', cardinality 0..*).
+'Kasu11::ClassB' (role 'C_B', cardinality 0..*) is associated with 'Kasu11::ClassA' (role 'ClassA', cardinality 0..*).
+'Kasu11::ClassC' (role 'C_C10', cardinality 0..*) is associated with 'Kasu11::ClassB' (role 'ClassB11', cardinality 0..*).
+'Kasu11::ClassB' (role 'C_B5', cardinality 0..*) is associated with 'Kasu11::ClassC' (role 'ClassC6', cardinality 0..*).

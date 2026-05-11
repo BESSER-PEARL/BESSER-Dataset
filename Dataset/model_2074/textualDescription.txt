@@ -1,0 +1,11 @@
+The model has 5 class(es).
+The class 'CST::Node' has the following attributes: 'kind' of type str.
+The class 'Node' has no attributes.
+The class 'CST::TNode' has the following attributes: 'value' of type str.
+The class 'CST::RNode' has no attributes.
+The class 'CST::Tree' has no attributes.
+'CST::RNode' is a specialization of 'Node'.
+'CST::TNode' is a specialization of 'Node'.
+'CST::Node' (role 'children', cardinality 0..*) is associated with 'CST::Node' (role 'Node5', cardinality 0..*).
+'CST::Node' (role 'CST_Node', cardinality 0..*) is associated with 'CST::Tree' (role 'CST_Tree', cardinality 0..*).
+'CST::Node' (role 'parent', cardinality 0..*) is associated with 'CST::Node' (role 'Node', cardinality 0..*).

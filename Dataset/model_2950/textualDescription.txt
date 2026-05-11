@@ -1,0 +1,17 @@
+The model has 8 class(es).
+The class 'jsonldConverter::DataType' has no attributes.
+The class 'jsonldConverter::Property' has the following attributes: 'many' of type bool; 'one' of type bool; 'name' of type str.
+The class 'Type' has no attributes.
+The class 'jsonldConverter::Type' has the following attributes: 'name' of type str.
+The class 'jsonldConverter::Entity' has no attributes.
+The class 'jsonldConverter::EnumItem' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'jsonldConverter::Enum' has no attributes.
+The class 'jsonldConverter::Model' has no attributes.
+'jsonldConverter::Enum' is a specialization of 'Type'.
+'jsonldConverter::Entity' is a specialization of 'Type'.
+'jsonldConverter::DataType' is a specialization of 'Type'.
+'jsonldConverter::Property' (role 'jsonldConverter_Property6', cardinality 0..*) is associated with 'jsonldConverter::Type' (role 'jsonldConverter_Type7', cardinality 0..*).
+'jsonldConverter::Entity' (role 'jsonldConverter_Entity', cardinality 0..*) is associated with 'jsonldConverter::Entity' (role 'jsonldConverter_Entity1', cardinality 0..*).
+'jsonldConverter::Property' (role 'jsonldConverter_Property', cardinality 0..*) is associated with 'jsonldConverter::Entity' (role 'jsonldConverter_Entity4', cardinality 0..*).
+'jsonldConverter::Type' (role 'jsonldConverter_Type', cardinality 0..*) is associated with 'jsonldConverter::Model' (role 'jsonldConverter_Model', cardinality 0..*).
+'jsonldConverter::Enum' (role 'jsonldConverter_Enum', cardinality 0..*) is associated with 'jsonldConverter::EnumItem' (role 'jsonldConverter_EnumItem', cardinality 0..*).

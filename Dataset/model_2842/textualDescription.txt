@@ -1,0 +1,328 @@
+The model has 126 class(es).
+The class 'alf::Expression' has no attributes.
+The class 'alf::SequentialClauses' has no attributes.
+The class 'alf::ClassificationFromClause' has no attributes.
+The class 'alf::InlineStatement' has the following attributes: 'body' of type str; 'langageName' of type str.
+The class 'Expression' has no attributes.
+The class 'alf::ConditionalAndExpression' has no attributes.
+The class 'alf::InvocationOrAssignementOrDeclarationStatement' has no attributes.
+The class 'alf::IfStatement' has no attributes.
+The class 'alf::ClassExtentExpression' has no attributes.
+The class 'alf::OperationCallExpression' has the following attributes: 'operationName' of type str.
+The class 'alf::LocalNameDeclarationStatement' has the following attributes: 'varName' of type str; 'multiplicityIndicator' of type bool.
+The class 'alf::TemplateBinding' has no attributes.
+The class 'alf::ConditionalTestExpression' has no attributes.
+The class 'Statement' has no attributes.
+The class 'alf::DoStatement' has no attributes.
+The class 'alf::ForAllOrExistsOrOneOperation' has the following attributes: 'expr2' of type str; 'expr4' of type str; 'expr3' of type str; 'op' of type str; 'expr1' of type str.
+The class 'alf::SwitchClause' has no attributes.
+The class 'alf::SequenceConstructionCompletion' has the following attributes: 'multiplicityIndicator' of type bool.
+The class 'SequenceElement' has no attributes.
+The class 'alf::FormalParameterList' has no attributes.
+The class 'alf::BreakStatement' has no attributes.
+The class 'alf::OperationDefinitionOrStub' has no attributes.
+The class 'NUMBER::LITERAL::WITHOUT::SUFFIX' has no attributes.
+The class 'alf::SequenceExpansionExpression' has no attributes.
+The class 'alf::SequenceConstructionOrAccessCompletion' has the following attributes: 'multiplicityIndicator' of type bool.
+The class 'alf::QualifiedNameWithBinding' has the following attributes: 'id' of type str.
+The class 'LITERAL' has no attributes.
+The class 'alf::WhileStatement' has no attributes.
+The class 'alf::ShiftExpression' has the following attributes: 'op' of type str.
+The class 'NonLiteralValueSpecification' has no attributes.
+The class 'alf::CompoundAcceptStatementCompletion' has no attributes.
+The class 'alf::AnnotatedStatement' has no attributes.
+The class 'alf::OperationCallExpressionWithoutDot' has the following attributes: 'operationName' of type str.
+The class 'alf::BlockStatement' has no attributes.
+The class 'alf::EqualityExpression' has the following attributes: 'op' of type str.
+The class 'alf::ConditionalOrExpression' has no attributes.
+The class 'alf::ForControl' has no attributes.
+The class 'alf::SuperInvocationStatement' has no attributes.
+The class 'alf::AcceptBlock' has no attributes.
+The class 'alf::CollectOrIterateOperation' has the following attributes: 'op' of type str; 'expr3' of type str; 'expr1' of type str; 'expr2' of type str; 'expr4' of type str.
+The class 'alf::Tuple' has no attributes.
+The class 'alf::ClassifyStatement' has no attributes.
+The class 'alf::InclusiveOrExpression' has no attributes.
+The class 'alf::LinkOperationExpression' has the following attributes: 'kind' of type str.
+The class 'alf::EmptyStatement' has no attributes.
+The class 'alf::ForStatement' has no attributes.
+The class 'alf::FinalClause' has no attributes.
+The class 'alf::InstanceCreationExpression' has no attributes.
+The class 'alf::OperationDeclaration' has the following attributes: 'name' of type str.
+The class 'alf::SequenceElement' has no attributes.
+The class 'alf::STRING::LITERAL' has the following attributes: 'value' of type str.
+The class 'alf::NamedTemplateBinding' has the following attributes: 'formal' of type str.
+The class 'alf::NUMBER::LITERAL::WITHOUT::SUFFIX' has the following attributes: 'value' of type str.
+The class 'alf::ThisExpression' has no attributes.
+The class 'alf::UnqualifiedName' has the following attributes: 'name' of type str.
+The class 'alf::QualifiedNamePath' has no attributes.
+The class 'alf::AndExpression' has no attributes.
+The class 'alf::ValueSpecification' has no attributes.
+The class 'alf::SwitchStatement' has no attributes.
+The class 'alf::SequenceOperationExpression' has the following attributes: 'operationName' of type str.
+The class 'alf::SwitchDefaultClause' has no attributes.
+The class 'alf::AdditiveExpression' has the following attributes: 'op' of type str.
+The class 'SequenceExpansionExpression' has no attributes.
+The class 'alf::Annotation' has the following attributes: 'args' of type str; 'kind' of type str.
+The class 'alf::InstanceCreationInvocationStatement' has no attributes.
+The class 'SuffixExpression' has no attributes.
+The class 'alf::SelectOrRejectOperation' has the following attributes: 'expr1' of type str; 'expr3' of type str; 'expr2' of type str; 'op' of type str; 'expr4' of type str.
+The class 'alf::Multiplicity' has the following attributes: 'nonUnique' of type bool; 'ordered' of type bool; 'sequence' of type bool.
+The class 'alf::LinkOperationTuple' has no attributes.
+The class 'alf::SwitchCase' has no attributes.
+The class 'alf::ReturnStatement' has no attributes.
+The class 'alf::Operations' has the following attributes: 'imports' of type str.
+The class 'alf::Block' has no attributes.
+The class 'alf::PartialSequenceConstructionCompletion' has no attributes.
+The class 'alf::SequenceReductionExpression' has the following attributes: 'isOrdered' of type bool.
+The class 'alf::UNLIMITED::LITERAL::WITHOUT::SUFFIX' has no attributes.
+The class 'alf::ThisInvocationStatement' has no attributes.
+The class 'alf::NameExpression' has the following attributes: 'id' of type str; 'prefixOp' of type str; 'postfixOp' of type str.
+The class 'alf::MultiplicativeExpression' has the following attributes: 'op' of type str.
+The class 'alf::NonLiteralValueSpecification' has no attributes.
+The class 'alf::ExclusiveOrExpression' has no attributes.
+The class 'alf::SequenceConstructionExpression' has no attributes.
+The class 'alf::NullExpression' has no attributes.
+The class 'alf::ClassificationClause' has no attributes.
+The class 'alf::AssignmentCompletion' has the following attributes: 'op' of type str.
+The class 'alf::IsUniqueOperation' has the following attributes: 'name' of type str.
+The class 'alf::ReclassifyAllClause' has no attributes.
+The class 'alf::PropertyCallExpression' has the following attributes: 'propertyName' of type str.
+The class 'alf::AccessCompletion' has no attributes.
+The class 'alf::MultiplicityRange' has no attributes.
+The class 'alf::INTEGER::LITERAL::WITHOUT::SUFFIX' has no attributes.
+The class 'alf::LITERAL' has no attributes.
+The class 'ValueSpecification' has no attributes.
+The class 'alf::RedefinitionClause' has no attributes.
+The class 'alf::PrimaryExpression' has no attributes.
+The class 'alf::NonEmptyStatementSequence' has no attributes.
+The class 'alf::FormalParameter' has the following attributes: 'direction' of type str; 'name' of type str.
+The class 'alf::SuperInvocationExpression' has the following attributes: 'className' of type str.
+The class 'alf::SuffixExpression' has no attributes.
+The class 'alf::ClassificationToClause' has no attributes.
+The class 'alf::NUMBER::LITERAL' has the following attributes: 'value' of type str.
+The class 'alf::Test' has no attributes.
+The class 'NUMBER::LITERAL' has no attributes.
+The class 'alf::AcceptClause' has the following attributes: 'name' of type str.
+The class 'alf::VariableDeclarationCompletion' has the following attributes: 'multiplicityIndicator' of type bool; 'variableName' of type str.
+The class 'alf::INTEGER::LITERAL' has no attributes.
+The class 'alf::DocumentedStatement' has the following attributes: 'comment' of type str.
+The class 'alf::SimpleAcceptStatementCompletion' has no attributes.
+The class 'alf::LoopVariableDefinition' has the following attributes: 'name' of type str.
+The class 'alf::LinkOperationTupleElement' has the following attributes: 'objectOrRole' of type str.
+The class 'alf::StatementSequence' has no attributes.
+The class 'alf::TypePart' has no attributes.
+The class 'alf::FormalParameters' has no attributes.
+The class 'alf::RelationalExpression' has the following attributes: 'op' of type str.
+The class 'alf::ParenthesizedExpression' has no attributes.
+The class 'alf::UnaryExpression' has the following attributes: 'op' of type str.
+The class 'alf::TypeName' has no attributes.
+The class 'alf::ClassificationExpression' has the following attributes: 'op' of type str.
+The class 'alf::TupleElement' has no attributes.
+The class 'alf::UNLIMITED::LITERAL' has no attributes.
+The class 'alf::QualifiedNameList' has no attributes.
+The class 'alf::AcceptStatement' has no attributes.
+The class 'alf::Statement' has no attributes.
+The class 'alf::ConcurrentClauses' has no attributes.
+The class 'alf::BOOLEAN::LITERAL' has the following attributes: 'value' of type str.
+The class 'alf::NonFinalClause' has no attributes.
+The enumeration 'ParameterDirection' has the following literals: 'OUT', 'IN', 'INOUT'.
+The enumeration 'AnnotationKind' has the following literals: 'ASSURED', 'ISOLATED', 'PARALLEL', 'DETERMINED'.
+The enumeration 'CollectOrIterateOperator' has the following literals: 'ITERATE', 'COLLECT'.
+The enumeration 'LinkOperationKind' has the following literals: 'CREATE', 'CLEAR', 'DESTROY', 'DESTROY_OBJECT'.
+The enumeration 'BooleanValue' has the following literals: 'TRUE', 'FALSE'.
+The enumeration 'AssignmentOperator' has the following literals: 'MODASSIGN', 'MULTASSIGN', 'URSHIFTASSIGN', 'XORASSIGN', 'ORASSIGN', 'ASSIGN', 'DIVASSIGN', 'RSHIFTASSIGN', 'ANDASSIGN', 'PLUSASSIGN', 'MINUSASSIGN', 'LSHIFTASSIGN'.
+The enumeration 'SelectOrRejectOperator' has the following literals: 'REJECT', 'SELECT'.
+The enumeration 'ForAllOrExistsOrOneOperator' has the following literals: 'EXISTS', 'ONE', 'FORALL'.
+'alf::BlockStatement' is a specialization of 'Statement'.
+'alf::LinkOperationExpression' is a specialization of 'SuffixExpression'.
+'alf::WhileStatement' is a specialization of 'Statement'.
+'alf::ConditionalTestExpression' is a specialization of 'Expression'.
+'alf::ReturnStatement' is a specialization of 'Statement'.
+'alf::SequenceOperationExpression' is a specialization of 'SuffixExpression'.
+'alf::ParenthesizedExpression' is a specialization of 'NonLiteralValueSpecification'.
+'alf::UNLIMITED::LITERAL::WITHOUT::SUFFIX' is a specialization of 'NUMBER::LITERAL::WITHOUT::SUFFIX'.
+'alf::NUMBER::LITERAL' is a specialization of 'LITERAL'.
+'alf::SequenceExpansionExpression' is a specialization of 'SuffixExpression'.
+'alf::SequenceReductionExpression' is a specialization of 'SuffixExpression'.
+'alf::SuperInvocationStatement' is a specialization of 'Statement'.
+'alf::ThisExpression' is a specialization of 'NonLiteralValueSpecification'.
+'alf::NullExpression' is a specialization of 'ValueSpecification'.
+'alf::CollectOrIterateOperation' is a specialization of 'SequenceExpansionExpression'.
+'alf::Expression' is a specialization of 'SequenceElement'.
+'alf::BOOLEAN::LITERAL' is a specialization of 'LITERAL'.
+'alf::SelectOrRejectOperation' is a specialization of 'SequenceExpansionExpression'.
+'alf::InvocationOrAssignementOrDeclarationStatement' is a specialization of 'Statement'.
+'alf::InstanceCreationExpression' is a specialization of 'ValueSpecification'.
+'alf::SuperInvocationExpression' is a specialization of 'NonLiteralValueSpecification'.
+'alf::AnnotatedStatement' is a specialization of 'Statement'.
+'alf::LITERAL' is a specialization of 'ValueSpecification'.
+'alf::SequenceConstructionExpression' is a specialization of 'SequenceElement'.
+'alf::InstanceCreationExpression' is a specialization of 'NonLiteralValueSpecification'.
+'alf::NameExpression' is a specialization of 'ValueSpecification'.
+'alf::EmptyStatement' is a specialization of 'Statement'.
+'alf::INTEGER::LITERAL::WITHOUT::SUFFIX' is a specialization of 'NUMBER::LITERAL::WITHOUT::SUFFIX'.
+'alf::BreakStatement' is a specialization of 'Statement'.
+'alf::NameExpression' is a specialization of 'NonLiteralValueSpecification'.
+'alf::ForStatement' is a specialization of 'Statement'.
+'alf::IfStatement' is a specialization of 'Statement'.
+'alf::SwitchStatement' is a specialization of 'Statement'.
+'alf::UNLIMITED::LITERAL' is a specialization of 'NUMBER::LITERAL'.
+'alf::STRING::LITERAL' is a specialization of 'LITERAL'.
+'alf::ThisInvocationStatement' is a specialization of 'Statement'.
+'alf::ThisExpression' is a specialization of 'ValueSpecification'.
+'alf::OperationCallExpression' is a specialization of 'SuffixExpression'.
+'alf::ForAllOrExistsOrOneOperation' is a specialization of 'SequenceExpansionExpression'.
+'alf::IsUniqueOperation' is a specialization of 'SequenceExpansionExpression'.
+'alf::SuperInvocationExpression' is a specialization of 'ValueSpecification'.
+'alf::DoStatement' is a specialization of 'Statement'.
+'alf::InlineStatement' is a specialization of 'Statement'.
+'alf::PropertyCallExpression' is a specialization of 'SuffixExpression'.
+'alf::InstanceCreationInvocationStatement' is a specialization of 'Statement'.
+'alf::ParenthesizedExpression' is a specialization of 'ValueSpecification'.
+'alf::LocalNameDeclarationStatement' is a specialization of 'Statement'.
+'alf::INTEGER::LITERAL' is a specialization of 'NUMBER::LITERAL'.
+'alf::ClassifyStatement' is a specialization of 'Statement'.
+'alf::AcceptStatement' is a specialization of 'Statement'.
+'alf::QualifiedNameList' (role 'alf_QualifiedNameList299', cardinality 0..*) is associated with 'alf::ClassificationFromClause' (role 'alf_ClassificationFromClause298', cardinality 0..*).
+'alf::ClassificationClause' (role 'alf_ClassificationClause294', cardinality 0..*) is associated with 'alf::ClassificationToClause' (role 'alf_ClassificationToClause', cardinality 0..*).
+'alf::SuperInvocationStatement' (role 'alf_SuperInvocationStatement', cardinality 0..*) is associated with 'alf::SuperInvocationExpression' (role 'alf_SuperInvocationExpression314', cardinality 0..*).
+'alf::Expression' (role 'alf_Expression237', cardinality 0..*) is associated with 'alf::SwitchCase' (role 'alf_SwitchCase236', cardinality 0..*).
+'alf::OperationCallExpressionWithoutDot' (role 'alf_OperationCallExpressionWithoutDot', cardinality 0..*) is associated with 'alf::Tuple' (role 'alf_Tuple115', cardinality 0..*).
+'alf::ConditionalTestExpression' (role 'alf_ConditionalTestExpression73', cardinality 0..*) is associated with 'alf::ConditionalTestExpression' (role 'alf_ConditionalTestExpression71', cardinality 0..*).
+'alf::FormalParameter' (role 'alf_FormalParameter', cardinality 0..*) is associated with 'alf::FormalParameterList' (role 'alf_FormalParameterList14', cardinality 0..*).
+'alf::QualifiedNameWithBinding' (role 'alf_QualifiedNameWithBinding64', cardinality 0..*) is associated with 'alf::QualifiedNameWithBinding' (role 'alf_QualifiedNameWithBinding62', cardinality 0..*).
+'alf::Expression' (role 'alf_Expression265', cardinality 0..*) is associated with 'alf::LoopVariableDefinition' (role 'alf_LoopVariableDefinition264', cardinality 0..*).
+'alf::StatementSequence' (role 'alf_StatementSequence194', cardinality 0..*) is associated with 'alf::DocumentedStatement' (role 'alf_DocumentedStatement', cardinality 0..*).
+'alf::SuperInvocationExpression' (role 'alf_SuperInvocationExpression', cardinality 0..*) is associated with 'alf::OperationCallExpressionWithoutDot' (role 'alf_OperationCallExpressionWithoutDot157', cardinality 0..*).
+'alf::RedefinitionClause' (role 'alf_RedefinitionClause32', cardinality 0..*) is associated with 'alf::QualifiedNameList' (role 'alf_QualifiedNameList', cardinality 0..*).
+'alf::Expression' (role 'alf_Expression129', cardinality 0..*) is associated with 'alf::LinkOperationTupleElement' (role 'alf_LinkOperationTupleElement128', cardinality 0..*).
+'alf::InclusiveOrExpression' (role 'alf_InclusiveOrExpression', cardinality 0..*) is associated with 'alf::ConditionalAndExpression' (role 'alf_ConditionalAndExpression80', cardinality 0..*).
+'alf::QualifiedNameList' (role 'alf_QualifiedNameList302', cardinality 0..*) is associated with 'alf::ClassificationToClause' (role 'alf_ClassificationToClause301', cardinality 0..*).
+'alf::AccessCompletion' (role 'alf_AccessCompletion', cardinality 0..*) is associated with 'alf::SequenceConstructionOrAccessCompletion' (role 'alf_SequenceConstructionOrAccessCompletion172', cardinality 0..*).
+'alf::InstanceCreationExpression' (role 'alf_InstanceCreationExpression', cardinality 0..*) is associated with 'alf::QualifiedNameWithBinding' (role 'alf_QualifiedNameWithBinding162', cardinality 0..*).
+'alf::SwitchStatement' (role 'alf_SwitchStatement230', cardinality 0..*) is associated with 'alf::SwitchDefaultClause' (role 'alf_SwitchDefaultClause', cardinality 0..*).
+'alf::ShiftExpression' (role 'alf_ShiftExpression98', cardinality 0..*) is associated with 'alf::RelationalExpression' (role 'alf_RelationalExpression97', cardinality 0..*).
+'alf::ParenthesizedExpression' (role 'alf_ParenthesizedExpression150', cardinality 0..*) is associated with 'alf::NonLiteralValueSpecification' (role 'alf_NonLiteralValueSpecification', cardinality 0..*).
+'alf::SequenceConstructionCompletion' (role 'alf_SequenceConstructionCompletion184', cardinality 0..*) is associated with 'alf::SequenceConstructionExpression' (role 'alf_SequenceConstructionExpression185', cardinality 0..*).
+'alf::Expression' (role 'alf_Expression190', cardinality 0..*) is associated with 'alf::SequenceConstructionExpression' (role 'alf_SequenceConstructionExpression189', cardinality 0..*).
+'alf::ClassificationClause' (role 'alf_ClassificationClause292', cardinality 0..*) is associated with 'alf::ClassificationFromClause' (role 'alf_ClassificationFromClause', cardinality 0..*).
+'alf::ForStatement' (role 'alf_ForStatement', cardinality 0..*) is associated with 'alf::ForControl' (role 'alf_ForControl', cardinality 0..*).
+'alf::LITERAL' (role 'alf_LITERAL', cardinality 0..*) is associated with 'alf::SuffixExpression' (role 'alf_SuffixExpression', cardinality 0..*).
+'alf::Block' (role 'alf_Block203', cardinality 0..*) is associated with 'alf::BlockStatement' (role 'alf_BlockStatement', cardinality 0..*).
+'alf::ExclusiveOrExpression' (role 'alf_ExclusiveOrExpression', cardinality 0..*) is associated with 'alf::InclusiveOrExpression' (role 'alf_InclusiveOrExpression82', cardinality 0..*).
+'alf::NameExpression' (role 'alf_NameExpression46', cardinality 0..*) is associated with 'alf::SequenceConstructionOrAccessCompletion' (role 'alf_SequenceConstructionOrAccessCompletion', cardinality 0..*).
+'alf::TypeName' (role 'alf_TypeName', cardinality 0..*) is associated with 'alf::TypePart' (role 'alf_TypePart19', cardinality 0..*).
+'alf::SuffixExpression' (role 'alf_SuffixExpression123', cardinality 0..*) is associated with 'alf::PropertyCallExpression' (role 'alf_PropertyCallExpression122', cardinality 0..*).
+'alf::OperationDeclaration' (role 'alf_OperationDeclaration8', cardinality 0..*) is associated with 'alf::TypePart' (role 'alf_TypePart', cardinality 0..*).
+'alf::TemplateBinding' (role 'alf_TemplateBinding55', cardinality 0..*) is associated with 'alf::NamedTemplateBinding' (role 'alf_NamedTemplateBinding', cardinality 0..*).
+'alf::CompoundAcceptStatementCompletion' (role 'alf_CompoundAcceptStatementCompletion277', cardinality 0..*) is associated with 'alf::AcceptBlock' (role 'alf_AcceptBlock', cardinality 0..*).
+'alf::QualifiedNameWithBinding' (role 'alf_QualifiedNameWithBinding60', cardinality 0..*) is associated with 'alf::TemplateBinding' (role 'alf_TemplateBinding61', cardinality 0..*).
+'alf::ClassifyStatement' (role 'alf_ClassifyStatement290', cardinality 0..*) is associated with 'alf::ClassificationClause' (role 'alf_ClassificationClause', cardinality 0..*).
+'alf::QualifiedNamePath' (role 'alf_QualifiedNamePath51', cardinality 0..*) is associated with 'alf::UnqualifiedName' (role 'alf_UnqualifiedName', cardinality 0..*).
+'alf::ClassificationClause' (role 'alf_ClassificationClause296', cardinality 0..*) is associated with 'alf::ReclassifyAllClause' (role 'alf_ReclassifyAllClause', cardinality 0..*).
+'alf::InvocationOrAssignementOrDeclarationStatement' (role 'alf_InvocationOrAssignementOrDeclarationStatement', cardinality 0..*) is associated with 'alf::NameExpression' (role 'alf_NameExpression307', cardinality 0..*).
+'alf::ExclusiveOrExpression' (role 'alf_ExclusiveOrExpression84', cardinality 0..*) is associated with 'alf::AndExpression' (role 'alf_AndExpression', cardinality 0..*).
+'alf::SequenceElement' (role 'alf_SequenceElement', cardinality 0..*) is associated with 'alf::SequenceConstructionExpression' (role 'alf_SequenceConstructionExpression187', cardinality 0..*).
+'alf::Expression' (role 'alf_Expression253', cardinality 0..*) is associated with 'alf::DoStatement' (role 'alf_DoStatement252', cardinality 0..*).
+'alf::ConcurrentClauses' (role 'alf_ConcurrentClauses', cardinality 0..*) is associated with 'alf::SequentialClauses' (role 'alf_SequentialClauses213', cardinality 0..*).
+'alf::FinalClause' (role 'alf_FinalClause', cardinality 0..*) is associated with 'alf::IfStatement' (role 'alf_IfStatement211', cardinality 0..*).
+'alf::FormalParameterList' (role 'alf_FormalParameterList', cardinality 0..*) is associated with 'alf::FormalParameters' (role 'alf_FormalParameters12', cardinality 0..*).
+'alf::Block' (role 'alf_Block224', cardinality 0..*) is associated with 'alf::FinalClause' (role 'alf_FinalClause223', cardinality 0..*).
+'alf::RelationalExpression' (role 'alf_RelationalExpression', cardinality 0..*) is associated with 'alf::ClassificationExpression' (role 'alf_ClassificationExpression90', cardinality 0..*).
+'alf::Block' (role 'alf_Block192', cardinality 0..*) is associated with 'alf::StatementSequence' (role 'alf_StatementSequence', cardinality 0..*).
+'alf::LinkOperationTupleElement' (role 'alf_LinkOperationTupleElement', cardinality 0..*) is associated with 'alf::LinkOperationTuple' (role 'alf_LinkOperationTuple126', cardinality 0..*).
+'alf::Block' (role 'alf_Block248', cardinality 0..*) is associated with 'alf::WhileStatement' (role 'alf_WhileStatement247', cardinality 0..*).
+'alf::MultiplicityRange' (role 'alf_MultiplicityRange27', cardinality 0..*) is associated with 'alf::NUMBER::LITERAL::WITHOUT::SUFFIX' (role 'alf_NUMBER_LITERAL_WITHOUT_SUFFIX28', cardinality 0..*).
+'alf::VariableDeclarationCompletion' (role 'alf_VariableDeclarationCompletion', cardinality 0..*) is associated with 'alf::InvocationOrAssignementOrDeclarationStatement' (role 'alf_InvocationOrAssignementOrDeclarationStatement309', cardinality 0..*).
+'alf::QualifiedNameWithBinding' (role 'alf_QualifiedNameWithBinding58', cardinality 0..*) is associated with 'alf::NamedTemplateBinding' (role 'alf_NamedTemplateBinding57', cardinality 0..*).
+'alf::SuffixExpression' (role 'alf_SuffixExpression144', cardinality 0..*) is associated with 'alf::SequenceExpansionExpression' (role 'alf_SequenceExpansionExpression', cardinality 0..*).
+'alf::ValueSpecification' (role 'alf_ValueSpecification132', cardinality 0..*) is associated with 'alf::LinkOperationTupleElement' (role 'alf_LinkOperationTupleElement131', cardinality 0..*).
+'alf::ForStatement' (role 'alf_ForStatement256', cardinality 0..*) is associated with 'alf::Block' (role 'alf_Block257', cardinality 0..*).
+'alf::SequenceOperationExpression' (role 'alf_SequenceOperationExpression', cardinality 0..*) is associated with 'alf::Tuple' (role 'alf_Tuple134', cardinality 0..*).
+'alf::ThisExpression' (role 'alf_ThisExpression', cardinality 0..*) is associated with 'alf::SuffixExpression' (role 'alf_SuffixExpression155', cardinality 0..*).
+'alf::LoopVariableDefinition' (role 'alf_LoopVariableDefinition', cardinality 0..*) is associated with 'alf::ForControl' (role 'alf_ForControl259', cardinality 0..*).
+'alf::LinkOperationTuple' (role 'alf_LinkOperationTuple', cardinality 0..*) is associated with 'alf::LinkOperationExpression' (role 'alf_LinkOperationExpression', cardinality 0..*).
+'alf::IfStatement' (role 'alf_IfStatement', cardinality 0..*) is associated with 'alf::SequentialClauses' (role 'alf_SequentialClauses', cardinality 0..*).
+'alf::NonEmptyStatementSequence' (role 'alf_NonEmptyStatementSequence', cardinality 0..*) is associated with 'alf::SwitchClause' (role 'alf_SwitchClause234', cardinality 0..*).
+'alf::CompoundAcceptStatementCompletion' (role 'alf_CompoundAcceptStatementCompletion', cardinality 0..*) is associated with 'alf::AcceptStatement' (role 'alf_AcceptStatement272', cardinality 0..*).
+'alf::InstanceCreationInvocationStatement' (role 'alf_InstanceCreationInvocationStatement', cardinality 0..*) is associated with 'alf::InstanceCreationExpression' (role 'alf_InstanceCreationExpression321', cardinality 0..*).
+'alf::InstanceCreationExpression' (role 'alf_InstanceCreationExpression167', cardinality 0..*) is associated with 'alf::SequenceConstructionCompletion' (role 'alf_SequenceConstructionCompletion', cardinality 0..*).
+'alf::Expression' (role 'alf_Expression218', cardinality 0..*) is associated with 'alf::NonFinalClause' (role 'alf_NonFinalClause217', cardinality 0..*).
+'alf::NUMBER::LITERAL::WITHOUT::SUFFIX' (role 'alf_NUMBER_LITERAL_WITHOUT_SUFFIX', cardinality 0..*) is associated with 'alf::MultiplicityRange' (role 'alf_MultiplicityRange25', cardinality 0..*).
+'alf::UnaryExpression' (role 'alf_UnaryExpression', cardinality 0..*) is associated with 'alf::MultiplicativeExpression' (role 'alf_MultiplicativeExpression104', cardinality 0..*).
+'alf::FormalParameters' (role 'alf_FormalParameters', cardinality 0..*) is associated with 'alf::OperationDeclaration' (role 'alf_OperationDeclaration6', cardinality 0..*).
+'alf::TupleElement' (role 'alf_TupleElement', cardinality 0..*) is associated with 'alf::Tuple' (role 'alf_Tuple66', cardinality 0..*).
+'alf::AdditiveExpression' (role 'alf_AdditiveExpression', cardinality 0..*) is associated with 'alf::ShiftExpression' (role 'alf_ShiftExpression100', cardinality 0..*).
+'alf::NameExpression' (role 'alf_NameExpression48', cardinality 0..*) is associated with 'alf::SuffixExpression' (role 'alf_SuffixExpression49', cardinality 0..*).
+'alf::InstanceCreationExpression' (role 'alf_InstanceCreationExpression169', cardinality 0..*) is associated with 'alf::SuffixExpression' (role 'alf_SuffixExpression170', cardinality 0..*).
+'alf::AssignmentCompletion' (role 'alf_AssignmentCompletion312', cardinality 0..*) is associated with 'alf::InvocationOrAssignementOrDeclarationStatement' (role 'alf_InvocationOrAssignementOrDeclarationStatement311', cardinality 0..*).
+'alf::NonEmptyStatementSequence' (role 'alf_NonEmptyStatementSequence242', cardinality 0..*) is associated with 'alf::DocumentedStatement' (role 'alf_DocumentedStatement243', cardinality 0..*).
+'alf::Statement' (role 'alf_Statement201', cardinality 0..*) is associated with 'alf::DocumentedStatement' (role 'alf_DocumentedStatement200', cardinality 0..*).
+'alf::NameExpression' (role 'alf_NameExpression', cardinality 0..*) is associated with 'alf::QualifiedNamePath' (role 'alf_QualifiedNamePath', cardinality 0..*).
+'alf::AcceptBlock' (role 'alf_AcceptBlock282', cardinality 0..*) is associated with 'alf::Block' (role 'alf_Block283', cardinality 0..*).
+'alf::OperationDeclaration' (role 'alf_OperationDeclaration10', cardinality 0..*) is associated with 'alf::RedefinitionClause' (role 'alf_RedefinitionClause', cardinality 0..*).
+'alf::Tuple' (role 'alf_Tuple110', cardinality 0..*) is associated with 'alf::OperationCallExpression' (role 'alf_OperationCallExpression', cardinality 0..*).
+'alf::OperationCallExpression' (role 'alf_OperationCallExpression160', cardinality 0..*) is associated with 'alf::SuperInvocationExpression' (role 'alf_SuperInvocationExpression159', cardinality 0..*).
+'alf::Expression' (role 'alf_Expression179', cardinality 0..*) is associated with 'alf::AccessCompletion' (role 'alf_AccessCompletion178', cardinality 0..*).
+'alf::Test' (role 'alf_Test37', cardinality 0..*) is associated with 'alf::Statement' (role 'alf_Statement', cardinality 0..*).
+'alf::Test' (role 'alf_Test35', cardinality 0..*) is associated with 'alf::AssignmentCompletion' (role 'alf_AssignmentCompletion', cardinality 0..*).
+'alf::Test' (role 'alf_Test39', cardinality 0..*) is associated with 'alf::Block' (role 'alf_Block40', cardinality 0..*).
+'alf::TypePart' (role 'alf_TypePart21', cardinality 0..*) is associated with 'alf::Multiplicity' (role 'alf_Multiplicity', cardinality 0..*).
+'alf::AcceptStatement' (role 'alf_AcceptStatement', cardinality 0..*) is associated with 'alf::AcceptClause' (role 'alf_AcceptClause', cardinality 0..*).
+'alf::SuffixExpression' (role 'alf_SuffixExpression137', cardinality 0..*) is associated with 'alf::SequenceOperationExpression' (role 'alf_SequenceOperationExpression136', cardinality 0..*).
+'alf::LocalNameDeclarationStatement' (role 'alf_LocalNameDeclarationStatement', cardinality 0..*) is associated with 'alf::QualifiedNameWithBinding' (role 'alf_QualifiedNameWithBinding205', cardinality 0..*).
+'alf::SuffixExpression' (role 'alf_SuffixExpression118', cardinality 0..*) is associated with 'alf::OperationCallExpressionWithoutDot' (role 'alf_OperationCallExpressionWithoutDot117', cardinality 0..*).
+'alf::ReturnStatement' (role 'alf_ReturnStatement', cardinality 0..*) is associated with 'alf::Expression' (role 'alf_Expression267', cardinality 0..*).
+'alf::Tuple' (role 'alf_Tuple165', cardinality 0..*) is associated with 'alf::InstanceCreationExpression' (role 'alf_InstanceCreationExpression164', cardinality 0..*).
+'alf::ThisInvocationStatement' (role 'alf_ThisInvocationStatement', cardinality 0..*) is associated with 'alf::ThisExpression' (role 'alf_ThisExpression316', cardinality 0..*).
+'alf::ConditionalOrExpression' (role 'alf_ConditionalOrExpression78', cardinality 0..*) is associated with 'alf::ConditionalAndExpression' (role 'alf_ConditionalAndExpression', cardinality 0..*).
+'alf::AcceptBlock' (role 'alf_AcceptBlock279', cardinality 0..*) is associated with 'alf::AcceptClause' (role 'alf_AcceptClause280', cardinality 0..*).
+'alf::ClassificationExpression' (role 'alf_ClassificationExpression92', cardinality 0..*) is associated with 'alf::NameExpression' (role 'alf_NameExpression93', cardinality 0..*).
+'alf::PartialSequenceConstructionCompletion' (role 'alf_PartialSequenceConstructionCompletion', cardinality 0..*) is associated with 'alf::SequenceConstructionOrAccessCompletion' (role 'alf_SequenceConstructionOrAccessCompletion174', cardinality 0..*).
+'alf::ClassifyStatement' (role 'alf_ClassifyStatement', cardinality 0..*) is associated with 'alf::Expression' (role 'alf_Expression288', cardinality 0..*).
+'alf::OperationDeclaration' (role 'alf_OperationDeclaration', cardinality 0..*) is associated with 'alf::OperationDefinitionOrStub' (role 'alf_OperationDefinitionOrStub2', cardinality 0..*).
+'alf::MultiplicityRange' (role 'alf_MultiplicityRange', cardinality 0..*) is associated with 'alf::Multiplicity' (role 'alf_Multiplicity23', cardinality 0..*).
+'alf::ParenthesizedExpression' (role 'alf_ParenthesizedExpression152', cardinality 0..*) is associated with 'alf::SuffixExpression' (role 'alf_SuffixExpression153', cardinality 0..*).
+'alf::Expression' (role 'alf_Expression148', cardinality 0..*) is associated with 'alf::ParenthesizedExpression' (role 'alf_ParenthesizedExpression', cardinality 0..*).
+'alf::Expression' (role 'alf_Expression327', cardinality 0..*) is associated with 'alf::AssignmentCompletion' (role 'alf_AssignmentCompletion326', cardinality 0..*).
+'alf::SwitchClause' (role 'alf_SwitchClause', cardinality 0..*) is associated with 'alf::SwitchStatement' (role 'alf_SwitchStatement228', cardinality 0..*).
+'alf::SequenceConstructionExpression' (role 'alf_SequenceConstructionExpression182', cardinality 0..*) is associated with 'alf::PartialSequenceConstructionCompletion' (role 'alf_PartialSequenceConstructionCompletion181', cardinality 0..*).
+'alf::AndExpression' (role 'alf_AndExpression86', cardinality 0..*) is associated with 'alf::EqualityExpression' (role 'alf_EqualityExpression', cardinality 0..*).
+'alf::Block' (role 'alf_Block221', cardinality 0..*) is associated with 'alf::NonFinalClause' (role 'alf_NonFinalClause220', cardinality 0..*).
+'alf::TypePart' (role 'alf_TypePart17', cardinality 0..*) is associated with 'alf::FormalParameter' (role 'alf_FormalParameter16', cardinality 0..*).
+'alf::AcceptClause' (role 'alf_AcceptClause285', cardinality 0..*) is associated with 'alf::QualifiedNameList' (role 'alf_QualifiedNameList286', cardinality 0..*).
+'alf::Block' (role 'alf_Block198', cardinality 0..*) is associated with 'alf::AnnotatedStatement' (role 'alf_AnnotatedStatement197', cardinality 0..*).
+'alf::PrimaryExpression' (role 'alf_PrimaryExpression', cardinality 0..*) is associated with 'alf::UnaryExpression' (role 'alf_UnaryExpression106', cardinality 0..*).
+'alf::SwitchDefaultClause' (role 'alf_SwitchDefaultClause239', cardinality 0..*) is associated with 'alf::NonEmptyStatementSequence' (role 'alf_NonEmptyStatementSequence240', cardinality 0..*).
+'alf::SuffixExpression' (role 'alf_SuffixExpression142', cardinality 0..*) is associated with 'alf::SequenceReductionExpression' (role 'alf_SequenceReductionExpression141', cardinality 0..*).
+'alf::Block' (role 'alf_Block', cardinality 0..*) is associated with 'alf::OperationDefinitionOrStub' (role 'alf_OperationDefinitionOrStub4', cardinality 0..*).
+'alf::AdditiveExpression' (role 'alf_AdditiveExpression102', cardinality 0..*) is associated with 'alf::MultiplicativeExpression' (role 'alf_MultiplicativeExpression', cardinality 0..*).
+'alf::Expression' (role 'alf_Expression', cardinality 0..*) is associated with 'alf::Test' (role 'alf_Test', cardinality 0..*).
+'alf::SequenceConstructionOrAccessCompletion' (role 'alf_SequenceConstructionOrAccessCompletion176', cardinality 0..*) is associated with 'alf::SequenceConstructionExpression' (role 'alf_SequenceConstructionExpression', cardinality 0..*).
+'alf::SuffixExpression' (role 'alf_SuffixExpression113', cardinality 0..*) is associated with 'alf::OperationCallExpression' (role 'alf_OperationCallExpression112', cardinality 0..*).
+'alf::PrimaryExpression' (role 'alf_PrimaryExpression108', cardinality 0..*) is associated with 'alf::ValueSpecification' (role 'alf_ValueSpecification', cardinality 0..*).
+'alf::CompoundAcceptStatementCompletion' (role 'alf_CompoundAcceptStatementCompletion274', cardinality 0..*) is associated with 'alf::Block' (role 'alf_Block275', cardinality 0..*).
+'alf::Expression' (role 'alf_Expression208', cardinality 0..*) is associated with 'alf::LocalNameDeclarationStatement' (role 'alf_LocalNameDeclarationStatement207', cardinality 0..*).
+'alf::Expression' (role 'alf_Expression245', cardinality 0..*) is associated with 'alf::WhileStatement' (role 'alf_WhileStatement', cardinality 0..*).
+'alf::ShiftExpression' (role 'alf_ShiftExpression', cardinality 0..*) is associated with 'alf::RelationalExpression' (role 'alf_RelationalExpression95', cardinality 0..*).
+'alf::AssignmentCompletion' (role 'alf_AssignmentCompletion324', cardinality 0..*) is associated with 'alf::VariableDeclarationCompletion' (role 'alf_VariableDeclarationCompletion323', cardinality 0..*).
+'alf::SimpleAcceptStatementCompletion' (role 'alf_SimpleAcceptStatementCompletion', cardinality 0..*) is associated with 'alf::AcceptStatement' (role 'alf_AcceptStatement270', cardinality 0..*).
+'alf::QualifiedNameList' (role 'alf_QualifiedNameList304', cardinality 0..*) is associated with 'alf::QualifiedNameWithBinding' (role 'alf_QualifiedNameWithBinding305', cardinality 0..*).
+'alf::TemplateBinding' (role 'alf_TemplateBinding', cardinality 0..*) is associated with 'alf::UnqualifiedName' (role 'alf_UnqualifiedName53', cardinality 0..*).
+'alf::SwitchClause' (role 'alf_SwitchClause232', cardinality 0..*) is associated with 'alf::SwitchCase' (role 'alf_SwitchCase', cardinality 0..*).
+'alf::NameExpression' (role 'alf_NameExpression44', cardinality 0..*) is associated with 'alf::Tuple' (role 'alf_Tuple', cardinality 0..*).
+'alf::Expression' (role 'alf_Expression120', cardinality 0..*) is associated with 'alf::PropertyCallExpression' (role 'alf_PropertyCallExpression', cardinality 0..*).
+'alf::ConditionalOrExpression' (role 'alf_ConditionalOrExpression', cardinality 0..*) is associated with 'alf::ConditionalTestExpression' (role 'alf_ConditionalTestExpression', cardinality 0..*).
+'alf::TypeName' (role 'alf_TypeName30', cardinality 0..*) is associated with 'alf::QualifiedNameWithBinding' (role 'alf_QualifiedNameWithBinding', cardinality 0..*).
+'alf::Expression' (role 'alf_Expression226', cardinality 0..*) is associated with 'alf::SwitchStatement' (role 'alf_SwitchStatement', cardinality 0..*).
+'alf::Operations' (role 'alf_Operations', cardinality 0..*) is associated with 'alf::OperationDefinitionOrStub' (role 'alf_OperationDefinitionOrStub', cardinality 0..*).
+'alf::Expression' (role 'alf_Expression69', cardinality 0..*) is associated with 'alf::TupleElement' (role 'alf_TupleElement68', cardinality 0..*).
+'alf::ThisInvocationStatement' (role 'alf_ThisInvocationStatement318', cardinality 0..*) is associated with 'alf::AssignmentCompletion' (role 'alf_AssignmentCompletion319', cardinality 0..*).
+'alf::AnnotatedStatement' (role 'alf_AnnotatedStatement', cardinality 0..*) is associated with 'alf::Annotation' (role 'alf_Annotation', cardinality 0..*).
+'alf::Block' (role 'alf_Block250', cardinality 0..*) is associated with 'alf::DoStatement' (role 'alf_DoStatement', cardinality 0..*).
+'alf::ConcurrentClauses' (role 'alf_ConcurrentClauses215', cardinality 0..*) is associated with 'alf::NonFinalClause' (role 'alf_NonFinalClause', cardinality 0..*).
+'alf::Expression' (role 'alf_Expression262', cardinality 0..*) is associated with 'alf::LoopVariableDefinition' (role 'alf_LoopVariableDefinition261', cardinality 0..*).
+'alf::ClassificationExpression' (role 'alf_ClassificationExpression', cardinality 0..*) is associated with 'alf::EqualityExpression' (role 'alf_EqualityExpression88', cardinality 0..*).
+'alf::ConditionalTestExpression' (role 'alf_ConditionalTestExpression74', cardinality 0..*) is associated with 'alf::ConditionalTestExpression' (role 'alf_ConditionalTestExpression76', cardinality 0..*).
+'alf::QualifiedNameWithBinding' (role 'alf_QualifiedNameWithBinding139', cardinality 0..*) is associated with 'alf::SequenceReductionExpression' (role 'alf_SequenceReductionExpression', cardinality 0..*).
+'alf::Expression' (role 'alf_Expression146', cardinality 0..*) is associated with 'alf::IsUniqueOperation' (role 'alf_IsUniqueOperation', cardinality 0..*).

@@ -1,0 +1,34 @@
+The model has 16 class(es).
+The class 'brmodel::ReachableVariable' has no attributes.
+The class 'brmodel::Statement' has the following attributes: 'textContent' of type str.
+The class 'brmodel::RelatedMethod' has no attributes.
+The class 'brmodel::Variable' has the following attributes: 'name' of type str.
+The class 'brmodel::Trace' has no attributes.
+The class 'Variable' has no attributes.
+The class 'brmodel::Model' has no attributes.
+The class 'brmodel::Method' has the following attributes: 'name' of type str; 'class_' of type str.
+The class 'brmodel::SlicedVariable' has no attributes.
+The class 'brmodel::RelatedVariable' has no attributes.
+The class 'brmodel::RulePart' has the following attributes: 'granularity' of type str.
+The class 'Trace' has no attributes.
+The class 'brmodel::Rule' has the following attributes: 'id' of type str.
+The class 'brmodel::ReachableMethod' has the following attributes: 'distance' of type str.
+The class 'brmodel::EObject' has no attributes.
+The class 'Method' has no attributes.
+'brmodel::ReachableMethod' is a specialization of 'Method'.
+'brmodel::Statement' is a specialization of 'Trace'.
+'brmodel::RelatedVariable' is a specialization of 'Variable'.
+'brmodel::ReachableVariable' is a specialization of 'Variable'.
+'brmodel::RelatedMethod' is a specialization of 'Method'.
+'brmodel::SlicedVariable' is a specialization of 'Variable'.
+'brmodel::Method' is a specialization of 'Trace'.
+'brmodel::Variable' is a specialization of 'Trace'.
+'brmodel::RulePart' (role 'brmodel_RulePart10', cardinality 0..*) is associated with 'brmodel::Statement' (role 'brmodel_Statement11', cardinality 0..*).
+'brmodel::RulePart' (role 'brmodel_RulePart', cardinality 0..*) is associated with 'brmodel::Rule' (role 'brmodel_Rule4', cardinality 0..*).
+'brmodel::RulePart' (role 'brmodel_RulePart6', cardinality 0..*) is associated with 'brmodel::RelatedMethod' (role 'brmodel_RelatedMethod', cardinality 0..*).
+'brmodel::SlicedVariable' (role 'brmodel_SlicedVariable', cardinality 0..*) is associated with 'brmodel::Rule' (role 'brmodel_Rule2', cardinality 0..*).
+'brmodel::EObject' (role 'brmodel_EObject', cardinality 0..*) is associated with 'brmodel::Trace' (role 'brmodel_Trace', cardinality 0..*).
+'brmodel::RulePart' (role 'brmodel_RulePart8', cardinality 0..*) is associated with 'brmodel::Statement' (role 'brmodel_Statement', cardinality 0..*).
+'brmodel::RulePart' (role 'brmodel_RulePart15', cardinality 0..*) is associated with 'brmodel::ReachableVariable' (role 'brmodel_ReachableVariable', cardinality 0..*).
+'brmodel::RulePart' (role 'brmodel_RulePart13', cardinality 0..*) is associated with 'brmodel::ReachableMethod' (role 'brmodel_ReachableMethod', cardinality 0..*).
+'brmodel::Rule' (role 'brmodel_Rule', cardinality 0..*) is associated with 'brmodel::Model' (role 'brmodel_Model', cardinality 0..*).

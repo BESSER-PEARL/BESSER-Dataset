@@ -1,0 +1,12 @@
+The model has 7 class(es).
+The class 'Person' has no attributes.
+The class 'Persons::Person' has the following attributes: 'fullName' of type str.
+The class 'Persons::LocatedElement' has no attributes.
+The class 'PersonsModel' has no attributes.
+The class 'Persons::Female' has no attributes.
+The class 'Persons::PersonsModel' has no attributes.
+The class 'Persons::Male' has no attributes.
+'Persons::Male' is a specialization of 'Person'.
+'Persons::Female' is a specialization of 'Person'.
+'Person' (role 'Person', cardinality 0..*) is associated with 'Persons::PersonsModel' (role 'model', cardinality 0..*).
+'PersonsModel' (role 'PersonsModel', cardinality 0..*) is associated with 'Persons::Person' (role 'persons', cardinality 0..*).

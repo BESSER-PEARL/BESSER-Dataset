@@ -1,0 +1,26 @@
+The model has 7 class(es).
+The class 'list::ProductSpaceElement' has no attributes.
+The class 'UUIDElement' has no attributes.
+The class 'list::VersionedList' has no attributes.
+The class 'list::VersionedListStartReference' has no attributes.
+The class 'list::VersionedListEdge' has no attributes.
+The class 'ProductSpaceElement' has no attributes.
+The class 'list::VersionedListVertex' has no attributes.
+'list::VersionedListEdge' is a specialization of 'ProductSpaceElement'.
+'list::VersionedListVertex' is a specialization of 'UUIDElement'.
+'list::VersionedListVertex' is a specialization of 'ProductSpaceElement'.
+'list::VersionedListStartReference' is a specialization of 'ProductSpaceElement'.
+'list::VersionedList' is a specialization of 'ProductSpaceElement'.
+'list::VersionedListEdge' (role 'VersionedListEdge', cardinality 0..*) is associated with 'list::VersionedList' (role 'list2', cardinality 0..*).
+'list::VersionedListVertex' (role 'list_VersionedListVertex', cardinality 0..*) is associated with 'list::ProductSpaceElement' (role 'list_ProductSpaceElement', cardinality 0..*).
+'list::VersionedListEdge' (role 'VersionedListEdge7', cardinality 0..*) is associated with 'list::VersionedListVertex' (role 'sink', cardinality 0..*).
+'list::VersionedListEdge' (role 'incomingEdges', cardinality 0..*) is associated with 'list::VersionedListVertex' (role 'VersionedListVertex16', cardinality 0..*).
+'list::VersionedListVertex' (role 'vertices', cardinality 0..*) is associated with 'list::VersionedList' (role 'VersionedList', cardinality 0..*).
+'list::VersionedList' (role 'VersionedList22', cardinality 0..*) is associated with 'list::VersionedListStartReference' (role 'startVertices', cardinality 0..*).
+'list::VersionedListEdge' (role 'VersionedListEdge9', cardinality 0..*) is associated with 'list::VersionedListVertex' (role 'source', cardinality 0..*).
+'list::VersionedListStartReference' (role 'VersionedListStartReference12', cardinality 0..*) is associated with 'list::VersionedListVertex' (role 'vertex', cardinality 0..*).
+'list::VersionedListVertex' (role 'VersionedListVertex14', cardinality 0..*) is associated with 'list::VersionedListEdge' (role 'outgoingEdges', cardinality 0..*).
+'list::VersionedListVertex' (role 'VersionedListVertex20', cardinality 0..*) is associated with 'list::VersionedListStartReference' (role 'startRef', cardinality 0..*).
+'list::VersionedList' (role 'list', cardinality 0..*) is associated with 'list::VersionedListVertex' (role 'VersionedListVertex', cardinality 0..*).
+'list::VersionedList' (role 'list4', cardinality 0..*) is associated with 'list::VersionedListStartReference' (role 'VersionedListStartReference', cardinality 0..*).
+'list::VersionedList' (role 'VersionedList18', cardinality 0..*) is associated with 'list::VersionedListEdge' (role 'edges', cardinality 0..*).

@@ -1,0 +1,58 @@
+The model has 24 class(es).
+The class 'webGui::Entity' has no attributes.
+The class 'webGui::Page' has the following attributes: 'name' of type str; 'title' of type str.
+The class 'webGui::Multiply' has no attributes.
+The class 'webGui::Expression' has no attributes.
+The class 'PageElement' has no attributes.
+The class 'webGui::Type' has the following attributes: 'name' of type str.
+The class 'webGui::Add' has no attributes.
+The class 'webGui::Divide' has no attributes.
+The class 'webGui::PageElement' has no attributes.
+The class 'webGui::DisplayElement' has no attributes.
+The class 'webGui::Value' has no attributes.
+The class 'webGui::Feature' has the following attributes: 'name' of type str; 'multivalued' of type bool.
+The class 'webGui::NumberLiteral' has the following attributes: 'value' of type int.
+The class 'webGui::DomainModel' has no attributes.
+The class 'webGui::Subtract' has no attributes.
+The class 'Value' has no attributes.
+The class 'webGui::DomainPathTail' has no attributes.
+The class 'webGui::ActionElement' has the following attributes: 'name' of type str.
+The class 'webGui::Model' has the following attributes: 'name' of type str.
+The class 'webGui::WebModel' has no attributes.
+The class 'Type' has no attributes.
+The class 'Expression' has no attributes.
+The class 'webGui::DataType' has no attributes.
+The class 'webGui::DomainPath' has no attributes.
+'webGui::Value' is a specialization of 'Expression'.
+'webGui::DisplayElement' is a specialization of 'PageElement'.
+'webGui::Multiply' is a specialization of 'Expression'.
+'webGui::NumberLiteral' is a specialization of 'Value'.
+'webGui::Add' is a specialization of 'Expression'.
+'webGui::Entity' is a specialization of 'Type'.
+'webGui::ActionElement' is a specialization of 'PageElement'.
+'webGui::DomainPath' is a specialization of 'Value'.
+'webGui::Divide' is a specialization of 'Expression'.
+'webGui::Subtract' is a specialization of 'Expression'.
+'webGui::DataType' is a specialization of 'Type'.
+'webGui::Entity' (role 'webGui_Entity15', cardinality 0..*) is associated with 'webGui::Page' (role 'webGui_Page14', cardinality 0..*).
+'webGui::DomainPath' (role 'webGui_DomainPath23', cardinality 0..*) is associated with 'webGui::DomainPathTail' (role 'webGui_DomainPathTail', cardinality 0..*).
+'webGui::Value' (role 'webGui_Value43', cardinality 0..*) is associated with 'webGui::Multiply' (role 'webGui_Multiply42', cardinality 0..*).
+'webGui::Page' (role 'webGui_Page17', cardinality 0..*) is associated with 'webGui::PageElement' (role 'webGui_PageElement', cardinality 0..*).
+'webGui::DomainPathTail' (role 'webGui_DomainPathTail29', cardinality 0..*) is associated with 'webGui::DomainPathTail' (role 'webGui_DomainPathTail27', cardinality 0..*).
+'webGui::Feature' (role 'webGui_Feature21', cardinality 0..*) is associated with 'webGui::DomainPath' (role 'webGui_DomainPath20', cardinality 0..*).
+'webGui::Expression' (role 'webGui_Expression39', cardinality 0..*) is associated with 'webGui::Subtract' (role 'webGui_Subtract38', cardinality 0..*).
+'webGui::DomainModel' (role 'webGui_DomainModel4', cardinality 0..*) is associated with 'webGui::Type' (role 'webGui_Type', cardinality 0..*).
+'webGui::DomainPathTail' (role 'webGui_DomainPathTail25', cardinality 0..*) is associated with 'webGui::Feature' (role 'webGui_Feature26', cardinality 0..*).
+'webGui::Page' (role 'webGui_Page', cardinality 0..*) is associated with 'webGui::WebModel' (role 'webGui_WebModel12', cardinality 0..*).
+'webGui::DomainModel' (role 'webGui_DomainModel', cardinality 0..*) is associated with 'webGui::Model' (role 'webGui_Model', cardinality 0..*).
+'webGui::Multiply' (role 'webGui_Multiply', cardinality 0..*) is associated with 'webGui::Value' (role 'webGui_Value', cardinality 0..*).
+'webGui::Expression' (role 'webGui_Expression31', cardinality 0..*) is associated with 'webGui::Add' (role 'webGui_Add', cardinality 0..*).
+'webGui::Model' (role 'webGui_Model2', cardinality 0..*) is associated with 'webGui::WebModel' (role 'webGui_WebModel', cardinality 0..*).
+'webGui::Add' (role 'webGui_Add33', cardinality 0..*) is associated with 'webGui::Expression' (role 'webGui_Expression34', cardinality 0..*).
+'webGui::Value' (role 'webGui_Value45', cardinality 0..*) is associated with 'webGui::Divide' (role 'webGui_Divide', cardinality 0..*).
+'webGui::Subtract' (role 'webGui_Subtract', cardinality 0..*) is associated with 'webGui::Expression' (role 'webGui_Expression36', cardinality 0..*).
+'webGui::Expression' (role 'webGui_Expression', cardinality 0..*) is associated with 'webGui::Feature' (role 'webGui_Feature10', cardinality 0..*).
+'webGui::Feature' (role 'webGui_Feature7', cardinality 0..*) is associated with 'webGui::Type' (role 'webGui_Type8', cardinality 0..*).
+'webGui::Feature' (role 'webGui_Feature', cardinality 0..*) is associated with 'webGui::Entity' (role 'webGui_Entity', cardinality 0..*).
+'webGui::DisplayElement' (role 'webGui_DisplayElement', cardinality 0..*) is associated with 'webGui::DomainPath' (role 'webGui_DomainPath', cardinality 0..*).
+'webGui::Value' (role 'webGui_Value48', cardinality 0..*) is associated with 'webGui::Divide' (role 'webGui_Divide47', cardinality 0..*).

@@ -1,0 +1,46 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class tool_NameVariable  {
+
+
+
+
+
+
+    private viewpoint_tool_RepresentationCreationDescription viewpoint_tool_representationcreationdescription;
+
+
+
+
+    private viewpoint_tool_RepresentationNavigationDescription viewpoint_tool_representationnavigationdescription;
+
+
+    public tool_NameVariable(
+    ) {
+    }
+
+
+
+    public viewpoint_tool_RepresentationCreationDescription getViewpoint_tool_representationcreationdescription() {
+        return viewpoint_tool_representationcreationdescription;
+    }
+
+    public void setViewpoint_tool_representationcreationdescription(viewpoint_tool_RepresentationCreationDescription viewpoint_tool_representationcreationdescription) {
+        this.viewpoint_tool_representationcreationdescription = viewpoint_tool_representationcreationdescription;
+    }
+    public viewpoint_tool_RepresentationNavigationDescription getViewpoint_tool_representationnavigationdescription() {
+        return viewpoint_tool_representationnavigationdescription;
+    }
+
+    public void setViewpoint_tool_representationnavigationdescription(viewpoint_tool_RepresentationNavigationDescription viewpoint_tool_representationnavigationdescription) {
+        this.viewpoint_tool_representationnavigationdescription = viewpoint_tool_representationnavigationdescription;
+    }
+
+}

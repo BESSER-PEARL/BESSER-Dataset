@@ -1,0 +1,14 @@
+The model has 5 class(es).
+The class 'attackimpact::Model' has the following attributes: 'name' of type str; 'description' of type str.
+The class 'attackimpact::Node' has the following attributes: 'domains' of type str; 'name' of type str; 'tags' of type str; 'description' of type str.
+The class 'attackimpact::EObject' has no attributes.
+The class 'attackimpact::Propagation' has the following attributes: 'severity' of type int; 'tags' of type str; 'type' of type str.
+The class 'attackimpact::Vulnerability' has the following attributes: 'name' of type str; 'severity' of type int; 'type' of type str; 'tags' of type str; 'description' of type str.
+The enumeration 'propagationType' has the following literals: 'memory', 'dataFlow', 'processor', 'bus', 'data', 'local'.
+The enumeration 'vulnerabilityType' has the following literals: 'Concurrency', 'Isolation', 'Timing', 'ResourceAllocation', 'Authentication', 'Exposure'.
+'attackimpact::Node' (role 'attackimpact_Node', cardinality 0..*) is associated with 'attackimpact::Vulnerability' (role 'attackimpact_Vulnerability', cardinality 0..*).
+'attackimpact::Propagation' (role 'attackimpact_Propagation9', cardinality 0..*) is associated with 'attackimpact::Node' (role 'attackimpact_Node10', cardinality 0..*).
+'attackimpact::Node' (role 'attackimpact_Node4', cardinality 0..*) is associated with 'attackimpact::EObject' (role 'attackimpact_EObject', cardinality 0..*).
+'attackimpact::Vulnerability' (role 'attackimpact_Vulnerability6', cardinality 0..*) is associated with 'attackimpact::Propagation' (role 'attackimpact_Propagation7', cardinality 0..*).
+'attackimpact::Propagation' (role 'attackimpact_Propagation', cardinality 0..*) is associated with 'attackimpact::Node' (role 'attackimpact_Node2', cardinality 0..*).
+'attackimpact::Node' (role 'attackimpact_Node12', cardinality 0..*) is associated with 'attackimpact::Model' (role 'attackimpact_Model', cardinality 0..*).

@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'strictSample::B' has the following attributes: 'b' of type str.
+The class 'strictSample::A' has the following attributes: 'a' of type str.
+The class 'strictSample::D' has no attributes.
+The class 'strictSample::C' has no attributes.
+'strictSample::A' (role 'strictSample_A', cardinality 0..*) is associated with 'strictSample::B' (role 'strictSample_B', cardinality 0..*).
+'strictSample::C' (role 'strictSample_C', cardinality 0..*) is associated with 'strictSample::B' (role 'strictSample_B2', cardinality 0..*).
+'strictSample::B' (role 'strictSample_B4', cardinality 0..*) is associated with 'strictSample::D' (role 'strictSample_D', cardinality 0..*).

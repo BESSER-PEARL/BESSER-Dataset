@@ -1,0 +1,30 @@
+The model has 14 class(es).
+The class 'relationaldb::Database' has the following attributes: 'rawDatabase' of type str.
+The class 'Type' has no attributes.
+The class 'relationaldb::UmlToNoSQLID' has no attributes.
+The class 'relationaldb::PrimitiveType' has no attributes.
+The class 'PrimitiveType' has no attributes.
+The class 'relationaldb::Named' has the following attributes: 'name' of type str.
+The class 'relationaldb::Table' has no attributes.
+The class 'Column' has no attributes.
+The class 'Named' has no attributes.
+The class 'relationaldb::Type' has no attributes.
+The class 'relationaldb::ForeignKey' has no attributes.
+The class 'relationaldb::Varchar' has the following attributes: 'length' of type int.
+The class 'relationaldb::Column' has no attributes.
+The class 'relationaldb::Integer' has no attributes.
+The enumeration 'DatabaseKind' has the following literals: 'POSTGRES'.
+'relationaldb::Integer' is a specialization of 'PrimitiveType'.
+'relationaldb::UmlToNoSQLID' is a specialization of 'PrimitiveType'.
+'relationaldb::Varchar' is a specialization of 'PrimitiveType'.
+'relationaldb::Column' is a specialization of 'Named'.
+'relationaldb::Table' is a specialization of 'Named'.
+'relationaldb::Database' is a specialization of 'Named'.
+'relationaldb::ForeignKey' is a specialization of 'Column'.
+'relationaldb::PrimitiveType' is a specialization of 'Type'.
+'relationaldb::Type' (role 'relationaldb_Type', cardinality 0..*) is associated with 'relationaldb::Column' (role 'relationaldb_Column6', cardinality 0..*).
+'relationaldb::Table' (role 'owner', cardinality 0..*) is associated with 'relationaldb::Column' (role 'Column', cardinality 0..*).
+'relationaldb::ForeignKey' (role 'relationaldb_ForeignKey', cardinality 0..*) is associated with 'relationaldb::Column' (role 'relationaldb_Column8', cardinality 0..*).
+'relationaldb::Table' (role 'Table', cardinality 0..*) is associated with 'relationaldb::Column' (role 'col', cardinality 0..*).
+'relationaldb::Database' (role 'relationaldb_Database', cardinality 0..*) is associated with 'relationaldb::Table' (role 'relationaldb_Table', cardinality 0..*).
+'relationaldb::Column' (role 'relationaldb_Column', cardinality 0..*) is associated with 'relationaldb::Table' (role 'relationaldb_Table3', cardinality 0..*).

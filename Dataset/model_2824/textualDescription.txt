@@ -1,0 +1,60 @@
+The model has 21 class(es).
+The class 'editormodel::Diagram' has the following attributes: 'snapToGeometryEnabled' of type str; 'gridEnabled' of type str.
+The class 'editormodel::NodeVisualModel' has the following attributes: 'rotation' of type str.
+The class 'editormodel::CoreModel' has no attributes.
+The class 'editormodel::VisualModel' has the following attributes: 'lineStyle' of type int; 'detailLevel' of type int; 'lineWidth' of type int.
+The class 'editormodel::ConnectionVisualModel' has the following attributes: 'sourceTerminal' of type str; 'targetTerminal' of type str.
+The class 'editormodel::EStringToEObjectMapEntry' has the following attributes: 'key' of type str.
+The class 'editormodel::ConnectionBendpoint' has the following attributes: 'weight' of type float.
+The class 'NodeVisualModel' has no attributes.
+The class 'editormodel::EObject' has no attributes.
+The class 'editormodel::Note' has no attributes.
+The class 'editormodel::FlabotFileModel' has the following attributes: 'id' of type str; 'name' of type str; 'provider' of type str; 'version' of type str.
+The class 'editormodel::Folder' has the following attributes: 'name' of type str.
+The class 'NamedElementModel' has no attributes.
+The class 'editormodel::Color' has the following attributes: 'green' of type int; 'blue' of type int; 'red' of type int.
+The class 'Adapter' has no attributes.
+The class 'editormodel::Adapter' has no attributes.
+The class 'VisualModel' has no attributes.
+The class 'editormodel::Point' has the following attributes: 'x' of type int; 'y' of type int.
+The class 'editormodel::VisualDiagramJump' has the following attributes: 'to' of type str.
+The class 'ExtensibleElement' has no attributes.
+The class 'editormodel::Dimension' has the following attributes: 'height' of type int; 'width' of type int.
+'editormodel::Diagram' is a specialization of 'NamedElementModel'.
+'editormodel::ConnectionVisualModel' is a specialization of 'NodeVisualModel'.
+'editormodel::VisualDiagramJump' is a specialization of 'NodeVisualModel'.
+'editormodel::FlabotFileModel' is a specialization of 'ExtensibleElement'.
+'editormodel::NodeVisualModel' is a specialization of 'VisualModel'.
+'editormodel::VisualModel' is a specialization of 'Adapter'.
+'editormodel::FlabotFileModel' (role 'file', cardinality 0..*) is associated with 'editormodel::CoreModel' (role 'coremodel.ecoreCoreModel', cardinality 0..*).
+'editormodel::ConnectionVisualModel' (role 'ConnectionVisualModel', cardinality 0..*) is associated with 'editormodel::NodeVisualModel' (role 'source', cardinality 0..*).
+'editormodel::Diagram' (role 'diagram', cardinality 0..*) is associated with 'editormodel::VisualModel' (role 'VisualModel', cardinality 0..*).
+'editormodel::Diagram' (role 'diagrams', cardinality 0..*) is associated with 'editormodel::Folder' (role 'Folder', cardinality 0..*).
+'editormodel::CoreModel' (role 'editormodel_CoreModel', cardinality 0..*) is associated with 'editormodel::Diagram' (role 'editormodel_Diagram', cardinality 0..*).
+'editormodel::VisualModel' (role 'editormodel_VisualModel', cardinality 0..*) is associated with 'editormodel::EObject' (role 'editormodel_EObject', cardinality 0..*).
+'editormodel::NodeVisualModel' (role 'target', cardinality 0..*) is associated with 'editormodel::ConnectionVisualModel' (role 'ConnectionVisualModel46', cardinality 0..*).
+'editormodel::FlabotFileModel' (role 'editormodel_FlabotFileModel14', cardinality 0..*) is associated with 'editormodel::Diagram' (role 'editormodel_Diagram15', cardinality 0..*).
+'editormodel::VisualModel' (role 'parent', cardinality 0..*) is associated with 'editormodel::VisualModel' (role 'VisualModel18', cardinality 0..*).
+'editormodel::Diagram' (role 'editormodel_Diagram2', cardinality 0..*) is associated with 'editormodel::Note' (role 'editormodel_Note', cardinality 0..*).
+'editormodel::NodeVisualModel' (role 'NodeVisualModel', cardinality 0..*) is associated with 'editormodel::ConnectionVisualModel' (role 'sourceConnections', cardinality 0..*).
+'editormodel::Folder' (role 'Folder50', cardinality 0..*) is associated with 'editormodel::Folder' (role 'parent49', cardinality 0..*).
+'editormodel::FlabotFileModel' (role 'editormodel_FlabotFileModel58', cardinality 0..*) is associated with 'editormodel::Folder' (role 'editormodel_Folder57', cardinality 0..*).
+'editormodel::FlabotFileModel' (role 'editormodel_FlabotFileModel10', cardinality 0..*) is associated with 'editormodel::FlabotFileModel' (role 'editormodel_FlabotFileModel8', cardinality 0..*).
+'editormodel::NodeVisualModel' (role 'NodeVisualModel43', cardinality 0..*) is associated with 'editormodel::ConnectionVisualModel' (role 'targetConnections', cardinality 0..*).
+'editormodel::Folder' (role 'folders', cardinality 0..*) is associated with 'editormodel::Folder' (role 'Folder55', cardinality 0..*).
+'editormodel::VisualModel' (role 'children28', cardinality 0..*) is associated with 'editormodel::Diagram' (role 'Diagram', cardinality 0..*).
+'editormodel::VisualModel' (role 'editormodel_VisualModel32', cardinality 0..*) is associated with 'editormodel::Color' (role 'editormodel_Color33', cardinality 0..*).
+'editormodel::ConnectionVisualModel' (role 'editormodel_ConnectionVisualModel', cardinality 0..*) is associated with 'editormodel::ConnectionBendpoint' (role 'editormodel_ConnectionBendpoint40', cardinality 0..*).
+'editormodel::Folder' (role 'editormodel_Folder', cardinality 0..*) is associated with 'editormodel::FlabotFileModel' (role 'editormodel_FlabotFileModel12', cardinality 0..*).
+'editormodel::VisualModel' (role 'VisualModel21', cardinality 0..*) is associated with 'editormodel::VisualModel' (role 'children', cardinality 0..*).
+'editormodel::Diagram' (role 'editormodel_Diagram62', cardinality 0..*) is associated with 'editormodel::VisualDiagramJump' (role 'editormodel_VisualDiagramJump', cardinality 0..*).
+'editormodel::VisualModel' (role 'editormodel_VisualModel26', cardinality 0..*) is associated with 'editormodel::Dimension' (role 'editormodel_Dimension', cardinality 0..*).
+'editormodel::Color' (role 'editormodel_Color', cardinality 0..*) is associated with 'editormodel::VisualModel' (role 'editormodel_VisualModel30', cardinality 0..*).
+'editormodel::FlabotFileModel' (role 'editormodel_FlabotFileModel', cardinality 0..*) is associated with 'editormodel::Diagram' (role 'editormodel_Diagram7', cardinality 0..*).
+'editormodel::VisualModel' (role 'editormodel_VisualModel24', cardinality 0..*) is associated with 'editormodel::Point' (role 'editormodel_Point', cardinality 0..*).
+'editormodel::Diagram' (role 'editormodel_Diagram65', cardinality 0..*) is associated with 'editormodel::VisualDiagramJump' (role 'editormodel_VisualDiagramJump64', cardinality 0..*).
+'editormodel::Dimension' (role 'editormodel_Dimension38', cardinality 0..*) is associated with 'editormodel::ConnectionBendpoint' (role 'editormodel_ConnectionBendpoint37', cardinality 0..*).
+'editormodel::VisualDiagramJump' (role 'editormodel_VisualDiagramJump67', cardinality 0..*) is associated with 'editormodel::NodeVisualModel' (role 'editormodel_NodeVisualModel', cardinality 0..*).
+'editormodel::Diagram' (role 'Diagram52', cardinality 0..*) is associated with 'editormodel::Folder' (role 'folder', cardinality 0..*).
+'editormodel::EObject' (role 'editormodel_EObject60', cardinality 0..*) is associated with 'editormodel::EStringToEObjectMapEntry' (role 'editormodel_EStringToEObjectMapEntry', cardinality 0..*).
+'editormodel::Dimension' (role 'editormodel_Dimension35', cardinality 0..*) is associated with 'editormodel::ConnectionBendpoint' (role 'editormodel_ConnectionBendpoint', cardinality 0..*).

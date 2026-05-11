@@ -1,0 +1,11 @@
+The model has 3 class(es).
+The class 'databaseMetamodel::Database' has no attributes.
+The class 'databaseMetamodel::Relation' has the following attributes: 'isSelfJoinTable' of type bool; 'isJoinTable' of type bool; 'name' of type str.
+The class 'databaseMetamodel::Column' has the following attributes: 'hasFKOrder' of type int; 'type' of type str; 'name' of type str; 'hasPKOrder' of type int.
+'databaseMetamodel::Column' (role 'databaseMetamodel_Column12', cardinality 0..*) is associated with 'databaseMetamodel::Column' (role 'databaseMetamodel_Column14', cardinality 0..*).
+'databaseMetamodel::Relation' (role 'databaseMetamodel_Relation2', cardinality 0..*) is associated with 'databaseMetamodel::Column' (role 'databaseMetamodel_Column', cardinality 0..*).
+'databaseMetamodel::Relation' (role 'databaseMetamodel_Relation7', cardinality 0..*) is associated with 'databaseMetamodel::Column' (role 'databaseMetamodel_Column8', cardinality 0..*).
+'databaseMetamodel::Relation' (role 'databaseMetamodel_Relation9', cardinality 0..*) is associated with 'databaseMetamodel::Relation' (role 'databaseMetamodel_Relation11', cardinality 0..*).
+'databaseMetamodel::Database' (role 'databaseMetamodel_Database', cardinality 0..*) is associated with 'databaseMetamodel::Relation' (role 'databaseMetamodel_Relation', cardinality 0..*).
+'databaseMetamodel::Relation' (role 'databaseMetamodel_Relation4', cardinality 0..*) is associated with 'databaseMetamodel::Column' (role 'databaseMetamodel_Column5', cardinality 0..*).
+'databaseMetamodel::Column' (role 'databaseMetamodel_Column16', cardinality 0..*) is associated with 'databaseMetamodel::Relation' (role 'databaseMetamodel_Relation17', cardinality 0..*).

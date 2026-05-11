@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'javascriptSupportTest::C1' has the following attributes: 'name' of type str; 'string1' of type str; 'int1' of type int.
+The class 'javascriptSupportTest::C2' has the following attributes: 'string1' of type str; 'int1' of type int; 'name' of type str.
+The class 'javascriptSupportTest::C3' has the following attributes: 'title' of type str.
+The class 'C2' has no attributes.
+'javascriptSupportTest::C3' is a specialization of 'C2'.
+'javascriptSupportTest::C1' (role 'c1', cardinality 0..*) is associated with 'javascriptSupportTest::C2' (role 'C2', cardinality 0..*).
+'javascriptSupportTest::C1' (role 'C1', cardinality 0..*) is associated with 'javascriptSupportTest::C2' (role 'c2s', cardinality 0..*).

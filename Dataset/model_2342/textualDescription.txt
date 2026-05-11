@@ -1,0 +1,34 @@
+The model has 15 class(es).
+The class 'persons::Man' has no attributes.
+The class 'persons::District' has no attributes.
+The class 'persons::Association' has no attributes.
+The class 'persons::TownHall' has no attributes.
+The class 'persons::Person' has the following attributes: 'fullName' of type str.
+The class 'Person' has no attributes.
+The class 'persons::SpecialFacility' has no attributes.
+The class 'persons::Committee' has no attributes.
+The class 'persons::OrdinaryFacility' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'Facility' has no attributes.
+The class 'persons::Community' has no attributes.
+The class 'persons::Facility' has no attributes.
+The class 'persons::Woman' has no attributes.
+The class 'persons::NamedElement' has the following attributes: 'name' of type str.
+'persons::District' is a specialization of 'NamedElement'.
+'persons::Committee' is a specialization of 'NamedElement'.
+'persons::Woman' is a specialization of 'Person'.
+'persons::SpecialFacility' is a specialization of 'Facility'.
+'persons::TownHall' is a specialization of 'NamedElement'.
+'persons::Association' is a specialization of 'NamedElement'.
+'persons::Facility' is a specialization of 'NamedElement'.
+'persons::OrdinaryFacility' is a specialization of 'Facility'.
+'persons::Man' is a specialization of 'Person'.
+'persons::Committee' (role 'persons_Committee', cardinality 0..*) is associated with 'persons::TownHall' (role 'persons_TownHall9', cardinality 0..*).
+'persons::TownHall' (role 'persons_TownHall11', cardinality 0..*) is associated with 'persons::District' (role 'persons_District', cardinality 0..*).
+'persons::Community' (role 'persons_Community4', cardinality 0..*) is associated with 'persons::Association' (role 'persons_Association', cardinality 0..*).
+'persons::Person' (role 'persons_Person', cardinality 0..*) is associated with 'persons::Community' (role 'persons_Community', cardinality 0..*).
+'persons::Person' (role 'persons_Person19', cardinality 0..*) is associated with 'persons::Facility' (role 'persons_Facility18', cardinality 0..*).
+'persons::Person' (role 'persons_Person7', cardinality 0..*) is associated with 'persons::TownHall' (role 'persons_TownHall6', cardinality 0..*).
+'persons::TownHall' (role 'persons_TownHall', cardinality 0..*) is associated with 'persons::Community' (role 'persons_Community2', cardinality 0..*).
+'persons::District' (role 'persons_District16', cardinality 0..*) is associated with 'persons::Facility' (role 'persons_Facility', cardinality 0..*).
+'persons::Committee' (role 'persons_Committee14', cardinality 0..*) is associated with 'persons::Association' (role 'persons_Association13', cardinality 0..*).

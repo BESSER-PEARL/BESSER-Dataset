@@ -1,0 +1,43 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class sql_ColumnOperand  {
+
+    private String ora;
+
+
+
+
+
+    private sql_ColumnFull sql_columnfull;
+
+
+    public sql_ColumnOperand(
+        String ora    ) {
+        this.ora = ora;
+    }
+
+
+    public String getOra() {
+        return ora;
+    }
+
+    public void setOra(String ora) {
+        this.ora = ora;
+    }
+
+    public sql_ColumnFull getSql_columnfull() {
+        return sql_columnfull;
+    }
+
+    public void setSql_columnfull(sql_ColumnFull sql_columnfull) {
+        this.sql_columnfull = sql_columnfull;
+    }
+
+}

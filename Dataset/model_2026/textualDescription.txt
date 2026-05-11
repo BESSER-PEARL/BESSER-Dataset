@@ -1,0 +1,11 @@
+The model has 3 class(es).
+The class 'tP1::IDM::Transition' has the following attributes: 'name' of type str.
+The class 'tP1::IDM::StateMachine' has the following attributes: 'name' of type str.
+The class 'tP1::IDM::State' has the following attributes: 'name' of type str.
+'tP1::IDM::State' (role 'to', cardinality 0..*) is associated with 'tP1::IDM::Transition' (role 'Transition', cardinality 0..*).
+'tP1::IDM::StateMachine' (role 'tP1_IDM_StateMachine', cardinality 0..*) is associated with 'tP1::IDM::State' (role 'tP1_IDM_State', cardinality 0..*).
+'tP1::IDM::StateMachine' (role 'tP1_IDM_StateMachine2', cardinality 0..*) is associated with 'tP1::IDM::Transition' (role 'tP1_IDM_Transition', cardinality 0..*).
+'tP1::IDM::State' (role 'tP1_IDM_State5', cardinality 0..*) is associated with 'tP1::IDM::StateMachine' (role 'tP1_IDM_StateMachine4', cardinality 0..*).
+'tP1::IDM::State' (role 'State11', cardinality 0..*) is associated with 'tP1::IDM::Transition' (role 'outgoing', cardinality 0..*).
+'tP1::IDM::State' (role 'State', cardinality 0..*) is associated with 'tP1::IDM::Transition' (role 'incomming', cardinality 0..*).
+'tP1::IDM::State' (role 'from_', cardinality 0..*) is associated with 'tP1::IDM::Transition' (role 'Transition8', cardinality 0..*).

@@ -1,0 +1,292 @@
+The model has 145 class(es).
+The class 'PhotosMetaModel::Column::p' has the following attributes: 'name' of type str.
+The class 'PhotosMetaModel::Policy' has no attributes.
+The class 'PhotosMetaModel::AmazonWebServices' has no attributes.
+The class 'PhotosMetaModel::Layer' has no attributes.
+The class 'PhotosMetaModel::ReactClasses' has no attributes.
+The class 'PhotosMetaModel::AlbumManagement' has no attributes.
+The class 'PhotosMetaModel::ViewComponents' has no attributes.
+The class 'Access' has no attributes.
+The class 'PhotosMetaModel::PostMapping' has no attributes.
+The class 'PhotosMetaModel::RestController' has the following attributes: 'name' of type str.
+The class 'PhotosMetaModel::ReactConfiguration' has no attributes.
+The class 'PhotosMetaModel::BucketObjectsNotPublic' has no attributes.
+The class 'PhotosMetaModel::Specification' has no attributes.
+The class 'PhotosMetaModel::Bean' has no attributes.
+The class 'PhotosMetaModel::File::a' has the following attributes: 'Onwer' of type str; 'ObjectURL' of type str; 'size' of type str.
+The class 'PhotosMetaModel::BatchOperation' has no attributes.
+The class 'PhotosMetaModel::Request' has no attributes.
+The class 'PhotosMetaModel::Access' has no attributes.
+The class 'PhotosMetaModel::Actions' has no attributes.
+The class 'PhotosMetaModel::SpringBootApplication' has no attributes.
+The class 'PhotosMetaModel::ExceptionHandler' has no attributes.
+The class 'PhotosMetaModel::NamedNativeQuery' has no attributes.
+The class 'Components' has no attributes.
+The class 'PhotosMetaModel::SegmentStructure' has the following attributes: 'name' of type str.
+The class 'PhotosMetaModel::PresentationSegment' has no attributes.
+The class 'PhotosMetaModel::Component' has no attributes.
+The class 'PhotosMetaModel::View::a' has no attributes.
+The class 'PhotosMetaModel::Component::a' has no attributes.
+The class 'PhotosMetaModel::Trigger' has no attributes.
+The class 'PhotosMetaModel::Libraries' has the following attributes: 'type' of type str.
+The class 'PhotosMetaModel::ReactFunctions' has the following attributes: 'name' of type str.
+The class 'PhotosMetaModel::BusinessLogicSegment' has no attributes.
+The class 'Modules' has no attributes.
+The class 'PhotosMetaModel::User::p' has the following attributes: 'password' of type str; 'username' of type str.
+The class 'PhotosMetaModel::Exception' has no attributes.
+The class 'PhotosMetaModel::PostgreSQL' has no attributes.
+The class 'PhotosMetaModel::Model::a' has no attributes.
+The class 'PhotosMetaModel::ForeignKey' has no attributes.
+The class 'PhotosMetaModel::OnlyAuthorized' has no attributes.
+The class 'RequestMapping' has no attributes.
+The class 'PhotosMetaModel::Information' has the following attributes: 'fileType' of type str.
+The class 'PhotosMetaModel::EnableResourceServer' has no attributes.
+The class 'PhotosMetaModel::Props' has the following attributes: 'type' of type str; 'dataType' of type str.
+The class 'PhotosMetaModel::Render' has no attributes.
+The class 'PhotosMetaModel::DataSegment' has no attributes.
+The class 'PhotosMetaModel::Bucket' has the following attributes: 'name' of type str.
+The class 'PhotosMetaModel::Domain' has no attributes.
+The class 'PhotosMetaModel::AmazonS3Storage' has no attributes.
+The class 'PhotosMetaModel::PostgreSQLConnection' has the following attributes: 'url' of type str; 'username' of type str; 'port' of type int; 'password' of type str.
+The class 'PhotosMetaModel::AmazonSimpleStorageService' has no attributes.
+The class 'PhotosMetaModel::Data' has no attributes.
+The class 'PhotosMetaModel::Structure' has no attributes.
+The class 'ReactFunctions' has no attributes.
+The class 'PhotosMetaModel::SoftGallery' has no attributes.
+The class 'PhotosMetaModel::Configuration' has no attributes.
+The class 'PhotosMetaModel::Photo' has the following attributes: 'name' of type str.
+The class 'Logic' has no attributes.
+The class 'Connection' has no attributes.
+The class 'PhotosMetaModel::Dependencies' has no attributes.
+The class 'PhotosMetaModel::Index' has no attributes.
+The class 'PhotosMetaModel::RequestMapping' has no attributes.
+The class 'PhotosMetaModel::Query' has no attributes.
+The class 'PhotosMetaModel::Controller::a' has no attributes.
+The class 'PhotosMetaModel::Index::p' has no attributes.
+The class 'PhotosMetaModel::Spring' has no attributes.
+The class 'PhotosMetaModel::RequestPart' has no attributes.
+The class 'PhotosMetaModel::Cluster' has no attributes.
+The class 'PhotosMetaModel::User::d' has the following attributes: 'profile_description' of type str; 'password' of type str; 'username' of type str; 'last_name' of type str; 'email' of type str; 'first_name' of type str.
+The class 'PhotosMetaModel::AmazonS3API' has the following attributes: 'endpointUrl' of type str; 'bucketName' of type str; 'secretKey' of type str; 'accessKey' of type str.
+The class 'PhotosMetaModel::Album' has the following attributes: 'url' of type str; 'name' of type str.
+The class 'PhotosMetaModel::DataType' has the following attributes: 'name' of type str.
+The class 'PhotosMetaModel::Directories' has no attributes.
+The class 'PhotosMetaModel::Entity' has no attributes.
+The class 'PhotosMetaModel::Table::s' has the following attributes: 'name' of type str.
+The class 'PhotosMetaModel::CoreFunctions' has no attributes.
+The class 'PhotosMetaModel::PutMapping' has no attributes.
+The class 'PhotosMetaModel::GeneratedValue' has no attributes.
+The class 'PhotosMetaModel::AppAccess' has no attributes.
+The class 'PhotosMetaModel::Constraint' has no attributes.
+The class 'PhotosMetaModel::Folder::a' has the following attributes: 'name' of type str.
+The class 'PhotosMetaModel::AllowedToUse' has no attributes.
+The class 'PhotosMetaModel::LifeCycle' has no attributes.
+The class 'PhotosMetaModel::PostgreSQL::a' has no attributes.
+The class 'PhotosMetaModel::Table::p' has the following attributes: 'name' of type str.
+The class 'DataSegment' has no attributes.
+The class 'PhotosMetaModel::Autowired' has no attributes.
+The class 'UI' has no attributes.
+The class 'PhotosMetaModel::Public' has no attributes.
+The class 'Layer' has no attributes.
+The class 'PhotosMetaModel::Logic' has no attributes.
+The class 'PhotosMetaModel::Row' has the following attributes: 'name' of type str.
+The class 'PhotosMetaModel::Components' has no attributes.
+The class 'PhotosMetaModel::State' has the following attributes: 'active' of type str.
+The class 'PhotosMetaModel::Repository::a' has no attributes.
+The class 'PhotosMetaModel::Order::s' has no attributes.
+The class 'PhotosMetaModel::Entities' has the following attributes: 'id' of type str.
+The class 'PhotosMetaModel::Subcomponents' has no attributes.
+The class 'PhotosMetaModel::Id' has no attributes.
+The class 'PhotosMetaModel::Constructor' has no attributes.
+The class 'PhotosMetaModel::UI' has no attributes.
+The class 'PhotosMetaModel::EnableGlobalMethodSecurity' has no attributes.
+The class 'PhotosMetaModel::Technology' has no attributes.
+The class 'PhotosMetaModel::SearchCriteria' has no attributes.
+The class 'Functionalities' has no attributes.
+The class 'PhotosMetaModel::EnableAuthorizationServer' has no attributes.
+The class 'PhotosMetaModel::Services' has no attributes.
+The class 'PhotosMetaModel::React' has no attributes.
+The class 'PhotosMetaModel::Files' has the following attributes: 'type' of type str; 'extension' of type str.
+The class 'PhotosMetaModel::Column' has no attributes.
+The class 'PhotosMetaModel::EnableWebSecurity' has no attributes.
+The class 'PhotosMetaModel::ReactDOM' has the following attributes: 'isStruct' of type str; 'isRoute' of type str; 'isConstant' of type str.
+The class 'PhotosMetaModel::Privilege' has no attributes.
+The class 'PhotosMetaModel::Connection' has no attributes.
+The class 'PhotosMetaModel::BusinessLogic' has no attributes.
+The class 'PresentationSegment' has no attributes.
+The class 'PhotosMetaModel::NTier' has no attributes.
+The class 'PhotosMetaModel::Database' has the following attributes: 'name' of type str.
+The class 'PhotosMetaModel::Presentation' has no attributes.
+The class 'PhotosMetaModel::Column::s' has the following attributes: 'name' of type str.
+The class 'PhotosMetaModel::Functionalities' has no attributes.
+The class 'Actions' has no attributes.
+The class 'PhotosMetaModel::Architecture' has no attributes.
+The class 'PhotosMetaModel::ProfileManagement' has no attributes.
+The class 'Relation' has no attributes.
+The class 'PhotosMetaModel::GetMapping' has no attributes.
+The class 'PhotosMetaModel::Predicate' has no attributes.
+The class 'PhotosMetaModel::REST' has no attributes.
+The class 'PhotosMetaModel::Security::a' has no attributes.
+The class 'BusinessLogicSegment' has no attributes.
+The class 'PhotosMetaModel::Action::a' has no attributes.
+The class 'PhotosMetaModel::Repository' has no attributes.
+The class 'PhotosMetaModel::Function::p' has no attributes.
+The class 'PhotosMetaModel::View' has no attributes.
+The class 'PhotosMetaModel::PhotoActions' has no attributes.
+The class 'PhotosMetaModel::Relation' has no attributes.
+The class 'PhotosMetaModel::MetaData' has no attributes.
+The class 'PhotosMetaModel::DeleteMapping' has no attributes.
+The class 'Entities' has no attributes.
+The class 'PhotosMetaModel::Modules' has the following attributes: 'name' of type str.
+The class 'PhotosMetaModel::Clause' has no attributes.
+The class 'PhotosMetaModel::Scheme' has the following attributes: 'name' of type str.
+The class 'ReactConfiguration' has no attributes.
+The class 'PhotosMetaModel::ObjectsPublic' has no attributes.
+The class 'PhotosMetaModel::AmazonElasticComputeCloud' has no attributes.
+The class 'PhotosMetaModel::Router' has no attributes.
+'PhotosMetaModel::PostgreSQL::a' is a specialization of 'DataSegment'.
+'PhotosMetaModel::BucketObjectsNotPublic' is a specialization of 'Access'.
+'PhotosMetaModel::Information' is a specialization of 'Modules'.
+'PhotosMetaModel::AppAccess' is a specialization of 'Functionalities'.
+'PhotosMetaModel::AmazonS3API' is a specialization of 'Connection'.
+'PhotosMetaModel::PostMapping' is a specialization of 'RequestMapping'.
+'PhotosMetaModel::Public' is a specialization of 'Access'.
+'PhotosMetaModel::LifeCycle' is a specialization of 'ReactFunctions'.
+'PhotosMetaModel::GetMapping' is a specialization of 'RequestMapping'.
+'PhotosMetaModel::Component::a' is a specialization of 'PresentationSegment'.
+'PhotosMetaModel::ViewComponents' is a specialization of 'UI'.
+'PhotosMetaModel::Services' is a specialization of 'Actions'.
+'PhotosMetaModel::PostgreSQLConnection' is a specialization of 'Connection'.
+'PhotosMetaModel::Model::a' is a specialization of 'BusinessLogicSegment'.
+'PhotosMetaModel::Subcomponents' is a specialization of 'UI'.
+'PhotosMetaModel::Action::a' is a specialization of 'PresentationSegment'.
+'PhotosMetaModel::Libraries' is a specialization of 'Modules'.
+'PhotosMetaModel::PhotoActions' is a specialization of 'Functionalities'.
+'PhotosMetaModel::REST' is a specialization of 'Connection'.
+'PhotosMetaModel::ReactDOM' is a specialization of 'ReactConfiguration'.
+'PhotosMetaModel::Repository::a' is a specialization of 'BusinessLogicSegment'.
+'PhotosMetaModel::AmazonS3Storage' is a specialization of 'DataSegment'.
+'PhotosMetaModel::UI' is a specialization of 'Components'.
+'PhotosMetaModel::Request' is a specialization of 'Actions'.
+'PhotosMetaModel::Router' is a specialization of 'Logic'.
+'PhotosMetaModel::PutMapping' is a specialization of 'RequestMapping'.
+'PhotosMetaModel::Structure' is a specialization of 'Logic'.
+'PhotosMetaModel::Logic' is a specialization of 'Components'.
+'PhotosMetaModel::Render' is a specialization of 'ReactFunctions'.
+'PhotosMetaModel::View::a' is a specialization of 'PresentationSegment'.
+'PhotosMetaModel::Controller::a' is a specialization of 'BusinessLogicSegment'.
+'PhotosMetaModel::User::d' is a specialization of 'Entities'.
+'PhotosMetaModel::Presentation' is a specialization of 'Layer'.
+'PhotosMetaModel::ReactConfiguration' is a specialization of 'Modules'.
+'PhotosMetaModel::BusinessLogic' is a specialization of 'Layer'.
+'PhotosMetaModel::Security::a' is a specialization of 'BusinessLogicSegment'.
+'PhotosMetaModel::CoreFunctions' is a specialization of 'ReactFunctions'.
+'PhotosMetaModel::DeleteMapping' is a specialization of 'RequestMapping'.
+'PhotosMetaModel::Photo' is a specialization of 'Entities'.
+'PhotosMetaModel::Constructor' is a specialization of 'ReactFunctions'.
+'PhotosMetaModel::OnlyAuthorized' is a specialization of 'Access'.
+'PhotosMetaModel::ProfileManagement' is a specialization of 'Functionalities'.
+'PhotosMetaModel::AlbumManagement' is a specialization of 'Functionalities'.
+'PhotosMetaModel::Actions' is a specialization of 'Modules'.
+'PhotosMetaModel::Album' is a specialization of 'Entities'.
+'PhotosMetaModel::AllowedToUse' is a specialization of 'Relation'.
+'PhotosMetaModel::Components' is a specialization of 'Modules'.
+'PhotosMetaModel::Data' is a specialization of 'Layer'.
+'PhotosMetaModel::Dependencies' is a specialization of 'ReactConfiguration'.
+'PhotosMetaModel::ObjectsPublic' is a specialization of 'Access'.
+'PhotosMetaModel::Technology' (role 'PhotosMetaModel_Technology18', cardinality 0..*) is associated with 'PhotosMetaModel::AmazonWebServices' (role 'PhotosMetaModel_AmazonWebServices', cardinality 0..*).
+'PhotosMetaModel::RestController' (role 'PhotosMetaModel_RestController', cardinality 0..*) is associated with 'PhotosMetaModel::RequestMapping' (role 'PhotosMetaModel_RequestMapping', cardinality 0..*).
+'PhotosMetaModel::Table::s' (role 'PhotosMetaModel_Table_s50', cardinality 0..*) is associated with 'PhotosMetaModel::Column::s' (role 'PhotosMetaModel_Column_s', cardinality 0..*).
+'PhotosMetaModel::Table::p' (role 'PhotosMetaModel_Table_p', cardinality 0..*) is associated with 'PhotosMetaModel::ForeignKey' (role 'PhotosMetaModel_ForeignKey80', cardinality 0..*).
+'PhotosMetaModel::Services' (role 'PhotosMetaModel_Services', cardinality 0..*) is associated with 'PhotosMetaModel::Request' (role 'PhotosMetaModel_Request', cardinality 0..*).
+'PhotosMetaModel::Table::p' (role 'PhotosMetaModel_Table_p87', cardinality 0..*) is associated with 'PhotosMetaModel::ForeignKey' (role 'PhotosMetaModel_ForeignKey88', cardinality 0..*).
+'PhotosMetaModel::SpringBootApplication' (role 'PhotosMetaModel_SpringBootApplication33', cardinality 0..*) is associated with 'PhotosMetaModel::RestController' (role 'PhotosMetaModel_RestController34', cardinality 0..*).
+'PhotosMetaModel::Folder::a' (role 'PhotosMetaModel_Folder_a181', cardinality 0..*) is associated with 'PhotosMetaModel::File::a' (role 'PhotosMetaModel_File_a182', cardinality 0..*).
+'PhotosMetaModel::SegmentStructure' (role 'PhotosMetaModel_SegmentStructure160', cardinality 0..*) is associated with 'PhotosMetaModel::BusinessLogicSegment' (role 'PhotosMetaModel_BusinessLogicSegment159', cardinality 0..*).
+'PhotosMetaModel::Bucket' (role 'PhotosMetaModel_Bucket', cardinality 0..*) is associated with 'PhotosMetaModel::AmazonSimpleStorageService' (role 'PhotosMetaModel_AmazonSimpleStorageService169', cardinality 0..*).
+'PhotosMetaModel::Column::p' (role 'PhotosMetaModel_Column_p78', cardinality 0..*) is associated with 'PhotosMetaModel::ForeignKey' (role 'PhotosMetaModel_ForeignKey', cardinality 0..*).
+'PhotosMetaModel::SearchCriteria' (role 'PhotosMetaModel_SearchCriteria', cardinality 0..*) is associated with 'PhotosMetaModel::Specification' (role 'PhotosMetaModel_Specification59', cardinality 0..*).
+'PhotosMetaModel::NTier' (role 'PhotosMetaModel_NTier136', cardinality 0..*) is associated with 'PhotosMetaModel::Connection' (role 'PhotosMetaModel_Connection', cardinality 0..*).
+'PhotosMetaModel::PostgreSQL' (role 'PhotosMetaModel_PostgreSQL', cardinality 0..*) is associated with 'PhotosMetaModel::Technology' (role 'PhotosMetaModel_Technology14', cardinality 0..*).
+'PhotosMetaModel::ReactClasses' (role 'PhotosMetaModel_ReactClasses184', cardinality 0..*) is associated with 'PhotosMetaModel::ReactFunctions' (role 'PhotosMetaModel_ReactFunctions', cardinality 0..*).
+'PhotosMetaModel::Entities' (role 'PhotosMetaModel_Entities', cardinality 0..*) is associated with 'PhotosMetaModel::Domain' (role 'PhotosMetaModel_Domain8', cardinality 0..*).
+'PhotosMetaModel::RequestPart' (role 'PhotosMetaModel_RequestPart', cardinality 0..*) is associated with 'PhotosMetaModel::RequestMapping' (role 'PhotosMetaModel_RequestMapping42', cardinality 0..*).
+'PhotosMetaModel::EnableResourceServer' (role 'PhotosMetaModel_EnableResourceServer', cardinality 0..*) is associated with 'PhotosMetaModel::Configuration' (role 'PhotosMetaModel_Configuration67', cardinality 0..*).
+'PhotosMetaModel::Row' (role 'PhotosMetaModel_Row118', cardinality 0..*) is associated with 'PhotosMetaModel::Policy' (role 'PhotosMetaModel_Policy', cardinality 0..*).
+'PhotosMetaModel::Spring' (role 'PhotosMetaModel_Spring20', cardinality 0..*) is associated with 'PhotosMetaModel::SpringBootApplication' (role 'PhotosMetaModel_SpringBootApplication', cardinality 0..*).
+'PhotosMetaModel::Table::p' (role 'PhotosMetaModel_Table_p90', cardinality 0..*) is associated with 'PhotosMetaModel::Column::p' (role 'PhotosMetaModel_Column_p91', cardinality 0..*).
+'PhotosMetaModel::Bean' (role 'PhotosMetaModel_Bean', cardinality 0..*) is associated with 'PhotosMetaModel::Configuration' (role 'PhotosMetaModel_Configuration63', cardinality 0..*).
+'PhotosMetaModel::PhotoActions' (role 'PhotosMetaModel_PhotoActions', cardinality 0..*) is associated with 'PhotosMetaModel::AlbumManagement' (role 'PhotosMetaModel_AlbumManagement', cardinality 0..*).
+'PhotosMetaModel::AlbumManagement' (role 'PhotosMetaModel_AlbumManagement130', cardinality 0..*) is associated with 'PhotosMetaModel::Album' (role 'PhotosMetaModel_Album', cardinality 0..*).
+'PhotosMetaModel::Clause' (role 'PhotosMetaModel_Clause', cardinality 0..*) is associated with 'PhotosMetaModel::Query' (role 'PhotosMetaModel_Query', cardinality 0..*).
+'PhotosMetaModel::CoreFunctions' (role 'PhotosMetaModel_CoreFunctions', cardinality 0..*) is associated with 'PhotosMetaModel::CoreFunctions' (role 'PhotosMetaModel_CoreFunctions189', cardinality 0..*).
+'PhotosMetaModel::SegmentStructure' (role 'PhotosMetaModel_SegmentStructure163', cardinality 0..*) is associated with 'PhotosMetaModel::DataSegment' (role 'PhotosMetaModel_DataSegment162', cardinality 0..*).
+'PhotosMetaModel::RestController' (role 'PhotosMetaModel_RestController27', cardinality 0..*) is associated with 'PhotosMetaModel::Autowired' (role 'PhotosMetaModel_Autowired', cardinality 0..*).
+'PhotosMetaModel::SegmentStructure' (role 'PhotosMetaModel_SegmentStructure193', cardinality 0..*) is associated with 'PhotosMetaModel::Directories' (role 'PhotosMetaModel_Directories', cardinality 0..*).
+'PhotosMetaModel::Data' (role 'PhotosMetaModel_Data', cardinality 0..*) is associated with 'PhotosMetaModel::DataSegment' (role 'PhotosMetaModel_DataSegment', cardinality 0..*).
+'PhotosMetaModel::Configuration' (role 'PhotosMetaModel_Configuration65', cardinality 0..*) is associated with 'PhotosMetaModel::EnableWebSecurity' (role 'PhotosMetaModel_EnableWebSecurity', cardinality 0..*).
+'PhotosMetaModel::Table::p' (role 'PhotosMetaModel_Table_p94', cardinality 0..*) is associated with 'PhotosMetaModel::Table::p' (role 'PhotosMetaModel_Table_p92', cardinality 0..*).
+'PhotosMetaModel::Specification' (role 'PhotosMetaModel_Specification61', cardinality 0..*) is associated with 'PhotosMetaModel::Predicate' (role 'PhotosMetaModel_Predicate', cardinality 0..*).
+'PhotosMetaModel::EnableAuthorizationServer' (role 'PhotosMetaModel_EnableAuthorizationServer', cardinality 0..*) is associated with 'PhotosMetaModel::Configuration' (role 'PhotosMetaModel_Configuration69', cardinality 0..*).
+'PhotosMetaModel::View' (role 'PhotosMetaModel_View', cardinality 0..*) is associated with 'PhotosMetaModel::Scheme' (role 'PhotosMetaModel_Scheme100', cardinality 0..*).
+'PhotosMetaModel::SoftGallery' (role 'PhotosMetaModel_SoftGallery', cardinality 0..*) is associated with 'PhotosMetaModel::Domain' (role 'PhotosMetaModel_Domain', cardinality 0..*).
+'PhotosMetaModel::Entity' (role 'PhotosMetaModel_Entity46', cardinality 0..*) is associated with 'PhotosMetaModel::Table::s' (role 'PhotosMetaModel_Table_s', cardinality 0..*).
+'PhotosMetaModel::Order::s' (role 'PhotosMetaModel_Order_s', cardinality 0..*) is associated with 'PhotosMetaModel::Component' (role 'PhotosMetaModel_Component73', cardinality 0..*).
+'PhotosMetaModel::Row' (role 'PhotosMetaModel_Row', cardinality 0..*) is associated with 'PhotosMetaModel::Table::p' (role 'PhotosMetaModel_Table_p85', cardinality 0..*).
+'PhotosMetaModel::Bucket' (role 'PhotosMetaModel_Bucket177', cardinality 0..*) is associated with 'PhotosMetaModel::Folder::a' (role 'PhotosMetaModel_Folder_a', cardinality 0..*).
+'PhotosMetaModel::Trigger' (role 'PhotosMetaModel_Trigger', cardinality 0..*) is associated with 'PhotosMetaModel::Scheme' (role 'PhotosMetaModel_Scheme104', cardinality 0..*).
+'PhotosMetaModel::Constraint' (role 'PhotosMetaModel_Constraint', cardinality 0..*) is associated with 'PhotosMetaModel::Column::p' (role 'PhotosMetaModel_Column_p', cardinality 0..*).
+'PhotosMetaModel::Components' (role 'PhotosMetaModel_Components166', cardinality 0..*) is associated with 'PhotosMetaModel::Modules' (role 'PhotosMetaModel_Modules167', cardinality 0..*).
+'PhotosMetaModel::Layer' (role 'PhotosMetaModel_Layer', cardinality 0..*) is associated with 'PhotosMetaModel::NTier' (role 'PhotosMetaModel_NTier138', cardinality 0..*).
+'PhotosMetaModel::Configuration' (role 'PhotosMetaModel_Configuration', cardinality 0..*) is associated with 'PhotosMetaModel::SpringBootApplication' (role 'PhotosMetaModel_SpringBootApplication40', cardinality 0..*).
+'PhotosMetaModel::User::p' (role 'PhotosMetaModel_User_p', cardinality 0..*) is associated with 'PhotosMetaModel::Query' (role 'PhotosMetaModel_Query108', cardinality 0..*).
+'PhotosMetaModel::Privilege' (role 'PhotosMetaModel_Privilege', cardinality 0..*) is associated with 'PhotosMetaModel::User::p' (role 'PhotosMetaModel_User_p110', cardinality 0..*).
+'PhotosMetaModel::Component' (role 'PhotosMetaModel_Component', cardinality 0..*) is associated with 'PhotosMetaModel::SpringBootApplication' (role 'PhotosMetaModel_SpringBootApplication38', cardinality 0..*).
+'PhotosMetaModel::Photo' (role 'PhotosMetaModel_Photo', cardinality 0..*) is associated with 'PhotosMetaModel::PhotoActions' (role 'PhotosMetaModel_PhotoActions128', cardinality 0..*).
+'PhotosMetaModel::Components' (role 'PhotosMetaModel_Components', cardinality 0..*) is associated with 'PhotosMetaModel::ReactClasses' (role 'PhotosMetaModel_ReactClasses', cardinality 0..*).
+'PhotosMetaModel::Architecture' (role 'PhotosMetaModel_Architecture', cardinality 0..*) is associated with 'PhotosMetaModel::SoftGallery' (role 'PhotosMetaModel_SoftGallery2', cardinality 0..*).
+'PhotosMetaModel::Index::p' (role 'PhotosMetaModel_Index_p', cardinality 0..*) is associated with 'PhotosMetaModel::Scheme' (role 'PhotosMetaModel_Scheme102', cardinality 0..*).
+'PhotosMetaModel::Cluster' (role 'PhotosMetaModel_Cluster', cardinality 0..*) is associated with 'PhotosMetaModel::PostgreSQL' (role 'PhotosMetaModel_PostgreSQL75', cardinality 0..*).
+'PhotosMetaModel::ReactClasses' (role 'PhotosMetaModel_ReactClasses186', cardinality 0..*) is associated with 'PhotosMetaModel::Props' (role 'PhotosMetaModel_Props', cardinality 0..*).
+'PhotosMetaModel::Technology' (role 'PhotosMetaModel_Technology12', cardinality 0..*) is associated with 'PhotosMetaModel::Spring' (role 'PhotosMetaModel_Spring', cardinality 0..*).
+'PhotosMetaModel::React' (role 'PhotosMetaModel_React', cardinality 0..*) is associated with 'PhotosMetaModel::Technology' (role 'PhotosMetaModel_Technology16', cardinality 0..*).
+'PhotosMetaModel::Column' (role 'PhotosMetaModel_Column122', cardinality 0..*) is associated with 'PhotosMetaModel::Constraint' (role 'PhotosMetaModel_Constraint123', cardinality 0..*).
+'PhotosMetaModel::Database' (role 'PhotosMetaModel_Database', cardinality 0..*) is associated with 'PhotosMetaModel::Scheme' (role 'PhotosMetaModel_Scheme', cardinality 0..*).
+'PhotosMetaModel::PresentationSegment' (role 'PhotosMetaModel_PresentationSegment157', cardinality 0..*) is associated with 'PhotosMetaModel::SegmentStructure' (role 'PhotosMetaModel_SegmentStructure', cardinality 0..*).
+'PhotosMetaModel::Table::p' (role 'PhotosMetaModel_Table_p82', cardinality 0..*) is associated with 'PhotosMetaModel::Column::p' (role 'PhotosMetaModel_Column_p83', cardinality 0..*).
+'PhotosMetaModel::Repository' (role 'PhotosMetaModel_Repository', cardinality 0..*) is associated with 'PhotosMetaModel::SpringBootApplication' (role 'PhotosMetaModel_SpringBootApplication31', cardinality 0..*).
+'PhotosMetaModel::DataType' (role 'PhotosMetaModel_DataType120', cardinality 0..*) is associated with 'PhotosMetaModel::Column' (role 'PhotosMetaModel_Column', cardinality 0..*).
+'PhotosMetaModel::Cluster' (role 'PhotosMetaModel_Cluster112', cardinality 0..*) is associated with 'PhotosMetaModel::Database' (role 'PhotosMetaModel_Database113', cardinality 0..*).
+'PhotosMetaModel::Exception' (role 'PhotosMetaModel_Exception', cardinality 0..*) is associated with 'PhotosMetaModel::ExceptionHandler' (role 'PhotosMetaModel_ExceptionHandler44', cardinality 0..*).
+'PhotosMetaModel::BatchOperation' (role 'PhotosMetaModel_BatchOperation', cardinality 0..*) is associated with 'PhotosMetaModel::AmazonSimpleStorageService' (role 'PhotosMetaModel_AmazonSimpleStorageService171', cardinality 0..*).
+'PhotosMetaModel::DataType' (role 'PhotosMetaModel_DataType', cardinality 0..*) is associated with 'PhotosMetaModel::Column::p' (role 'PhotosMetaModel_Column_p57', cardinality 0..*).
+'PhotosMetaModel::Presentation' (role 'PhotosMetaModel_Presentation', cardinality 0..*) is associated with 'PhotosMetaModel::PresentationSegment' (role 'PhotosMetaModel_PresentationSegment', cardinality 0..*).
+'PhotosMetaModel::Layer' (role 'PhotosMetaModel_Layer143', cardinality 0..*) is associated with 'PhotosMetaModel::Connection' (role 'PhotosMetaModel_Connection142', cardinality 0..*).
+'PhotosMetaModel::Directories' (role 'PhotosMetaModel_Directories197', cardinality 0..*) is associated with 'PhotosMetaModel::Files' (role 'PhotosMetaModel_Files198', cardinality 0..*).
+'PhotosMetaModel::AmazonSimpleStorageService' (role 'PhotosMetaModel_AmazonSimpleStorageService', cardinality 0..*) is associated with 'PhotosMetaModel::AmazonWebServices' (role 'PhotosMetaModel_AmazonWebServices132', cardinality 0..*).
+'PhotosMetaModel::Table::s' (role 'PhotosMetaModel_Table_s52', cardinality 0..*) is associated with 'PhotosMetaModel::Id' (role 'PhotosMetaModel_Id', cardinality 0..*).
+'PhotosMetaModel::Technology' (role 'PhotosMetaModel_Technology', cardinality 0..*) is associated with 'PhotosMetaModel::SoftGallery' (role 'PhotosMetaModel_SoftGallery4', cardinality 0..*).
+'PhotosMetaModel::File::a' (role 'PhotosMetaModel_File_a', cardinality 0..*) is associated with 'PhotosMetaModel::Bucket' (role 'PhotosMetaModel_Bucket175', cardinality 0..*).
+'PhotosMetaModel::NamedNativeQuery' (role 'PhotosMetaModel_NamedNativeQuery', cardinality 0..*) is associated with 'PhotosMetaModel::Entity' (role 'PhotosMetaModel_Entity48', cardinality 0..*).
+'PhotosMetaModel::File::a' (role 'PhotosMetaModel_File_a179', cardinality 0..*) is associated with 'PhotosMetaModel::MetaData' (role 'PhotosMetaModel_MetaData', cardinality 0..*).
+'PhotosMetaModel::Functionalities' (role 'PhotosMetaModel_Functionalities', cardinality 0..*) is associated with 'PhotosMetaModel::Domain' (role 'PhotosMetaModel_Domain6', cardinality 0..*).
+'PhotosMetaModel::Specification' (role 'PhotosMetaModel_Specification', cardinality 0..*) is associated with 'PhotosMetaModel::RestController' (role 'PhotosMetaModel_RestController29', cardinality 0..*).
+'PhotosMetaModel::Relation' (role 'PhotosMetaModel_Relation151', cardinality 0..*) is associated with 'PhotosMetaModel::Layer' (role 'PhotosMetaModel_Layer152', cardinality 0..*).
+'PhotosMetaModel::SegmentStructure' (role 'PhotosMetaModel_SegmentStructure195', cardinality 0..*) is associated with 'PhotosMetaModel::Files' (role 'PhotosMetaModel_Files', cardinality 0..*).
+'PhotosMetaModel::Scheme' (role 'PhotosMetaModel_Scheme97', cardinality 0..*) is associated with 'PhotosMetaModel::Table::p' (role 'PhotosMetaModel_Table_p98', cardinality 0..*).
+'PhotosMetaModel::RestController' (role 'PhotosMetaModel_RestController25', cardinality 0..*) is associated with 'PhotosMetaModel::ExceptionHandler' (role 'PhotosMetaModel_ExceptionHandler', cardinality 0..*).
+'PhotosMetaModel::BusinessLogic' (role 'PhotosMetaModel_BusinessLogic', cardinality 0..*) is associated with 'PhotosMetaModel::BusinessLogicSegment' (role 'PhotosMetaModel_BusinessLogicSegment', cardinality 0..*).
+'PhotosMetaModel::AmazonWebServices' (role 'PhotosMetaModel_AmazonWebServices134', cardinality 0..*) is associated with 'PhotosMetaModel::AmazonElasticComputeCloud' (role 'PhotosMetaModel_AmazonElasticComputeCloud', cardinality 0..*).
+'PhotosMetaModel::Modules' (role 'PhotosMetaModel_Modules', cardinality 0..*) is associated with 'PhotosMetaModel::React' (role 'PhotosMetaModel_React22', cardinality 0..*).
+'PhotosMetaModel::Scheme' (role 'PhotosMetaModel_Scheme106', cardinality 0..*) is associated with 'PhotosMetaModel::Function::p' (role 'PhotosMetaModel_Function_p', cardinality 0..*).
+'PhotosMetaModel::Relation' (role 'PhotosMetaModel_Relation148', cardinality 0..*) is associated with 'PhotosMetaModel::Layer' (role 'PhotosMetaModel_Layer149', cardinality 0..*).
+'PhotosMetaModel::User::p' (role 'PhotosMetaModel_User_p116', cardinality 0..*) is associated with 'PhotosMetaModel::Cluster' (role 'PhotosMetaModel_Cluster115', cardinality 0..*).
+'PhotosMetaModel::NTier' (role 'PhotosMetaModel_NTier140', cardinality 0..*) is associated with 'PhotosMetaModel::Relation' (role 'PhotosMetaModel_Relation', cardinality 0..*).
+'PhotosMetaModel::Bucket' (role 'PhotosMetaModel_Bucket173', cardinality 0..*) is associated with 'PhotosMetaModel::Access' (role 'PhotosMetaModel_Access', cardinality 0..*).
+'PhotosMetaModel::User::d' (role 'PhotosMetaModel_User_d', cardinality 0..*) is associated with 'PhotosMetaModel::Functionalities' (role 'PhotosMetaModel_Functionalities125', cardinality 0..*).
+'PhotosMetaModel::Connection' (role 'PhotosMetaModel_Connection145', cardinality 0..*) is associated with 'PhotosMetaModel::Layer' (role 'PhotosMetaModel_Layer146', cardinality 0..*).
+'PhotosMetaModel::Architecture' (role 'PhotosMetaModel_Architecture10', cardinality 0..*) is associated with 'PhotosMetaModel::NTier' (role 'PhotosMetaModel_NTier', cardinality 0..*).
+'PhotosMetaModel::Entity' (role 'PhotosMetaModel_Entity', cardinality 0..*) is associated with 'PhotosMetaModel::SpringBootApplication' (role 'PhotosMetaModel_SpringBootApplication36', cardinality 0..*).
+'PhotosMetaModel::GeneratedValue' (role 'PhotosMetaModel_GeneratedValue', cardinality 0..*) is associated with 'PhotosMetaModel::Id' (role 'PhotosMetaModel_Id54', cardinality 0..*).
+'PhotosMetaModel::EnableGlobalMethodSecurity' (role 'PhotosMetaModel_EnableGlobalMethodSecurity', cardinality 0..*) is associated with 'PhotosMetaModel::Configuration' (role 'PhotosMetaModel_Configuration71', cardinality 0..*).
+'PhotosMetaModel::ReactClasses' (role 'PhotosMetaModel_ReactClasses188', cardinality 0..*) is associated with 'PhotosMetaModel::State' (role 'PhotosMetaModel_State', cardinality 0..*).

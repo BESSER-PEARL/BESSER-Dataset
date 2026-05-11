@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/IngServioPantoja/JsonToSql/CadenaJson2Sql/metamodels/SqlModel.ecore

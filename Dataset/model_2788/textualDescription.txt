@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'test1::StringToIntegerMapEntry' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'test1::ConceptA' has no attributes.
+'test1::StringToIntegerMapEntry' (role 'test1_StringToIntegerMapEntry', cardinality 0..*) is associated with 'test1::ConceptA' (role 'test1_ConceptA', cardinality 0..*).

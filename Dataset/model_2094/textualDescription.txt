@@ -1,0 +1,145 @@
+The model has 57 class(es).
+The class 'ftp::PortValue' has no attributes.
+The class 'ftp::DigitalLamp' has no attributes.
+The class 'ftp::ComposedComponent' has no attributes.
+The class 'ftp::DigitalBattery' has no attributes.
+The class 'FTNode' has no attributes.
+The class 'ftp::DFlipFlop' has no attributes.
+The class 'CompositionElement' has no attributes.
+The class 'ftp::FaultTree' has no attributes.
+The class 'ftp::FTNode' has no attributes.
+The class 'ftp::AnalogSwitch' has no attributes.
+The class 'ftp::DigitalSwitch' has no attributes.
+The class 'ftp::MechanicalConnection' has no attributes.
+The class 'ftp::FaultTreeContext' has no attributes.
+The class 'ftp::MechanicalPort' has no attributes.
+The class 'TypedPortValue' has no attributes.
+The class 'ftp::OrGate' has no attributes.
+The class 'ftp::CompositionElement' has no attributes.
+The class 'ftp::Resistor' has the following attributes: 'resistance' of type float.
+The class 'ftp::ElectricalConnection' has no attributes.
+The class 'ftp::VisualPort' has no attributes.
+The class 'Connection' has no attributes.
+The class 'ftp::SignalConstant' has the following attributes: 'value' of type str.
+The class 'DigintalConnection' has no attributes.
+The class 'ftp::Fault' has the following attributes: 'description' of type str.
+The class 'ftp::PrimitiveComponent' has no attributes.
+The class 'ftp::Connection' has no attributes.
+The class 'ftp::Xor' has no attributes.
+The class 'ftp::HydraulicValue' has the following attributes: 'anyPressure' of type bool; 'pressure' of type float; 'flow' of type float; 'anyFlow' of type bool.
+The class 'ftp::Observation' has the following attributes: 'name' of type str; 'faultLimit' of type int.
+The class 'ftp::HydraulicPort' has no attributes.
+The class 'ftp::AnalogLamp' has no attributes.
+The class 'ftp::AndGate' has no attributes.
+The class 'ftp::NTransistor' has no attributes.
+The class 'ftp::Not' has no attributes.
+The class 'ftp::ElectricalValue' has the following attributes: 'current' of type float; 'voltage' of type float; 'anyCurrent' of type bool; 'anyVoltage' of type bool.
+The class 'ftp::DigintalConnection' has no attributes.
+The class 'Port' has no attributes.
+The class 'ftp::RootEvent' has the following attributes: 'observation' of type str.
+The class 'AnalogConnection' has no attributes.
+The class 'ftp::HydraulicConnection' has no attributes.
+The class 'ftp::Component' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'ftp::ElectricalPort' has no attributes.
+The class 'ftp::AnalogBattery' has the following attributes: 'voltage' of type float.
+The class 'ftp::FloatValue' has the following attributes: 'value' of type float.
+The class 'PrimitiveComponent' has no attributes.
+The class 'Component' has no attributes.
+The class 'ftp::AnalogConnection' has no attributes.
+The class 'ftp::VisualValue' has the following attributes: 'bulb' of type str.
+The class 'ftp::Capacitor' has no attributes.
+The class 'ftp::TypedPortValue' has no attributes.
+The class 'ftp::SignalValue' has the following attributes: 'signal' of type str.
+The class 'ftp::SignalPort' has no attributes.
+The class 'ftp::VisualConnection' has no attributes.
+The class 'ftp::Port' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'ftp::SignalConnection' has no attributes.
+The class 'ftp::PTransistor' has no attributes.
+The class 'ftp::And' has no attributes.
+The enumeration 'SignalValues' has the following literals: 'on', 'off', 'any'.
+The enumeration 'VisualValues' has the following literals: 'any', 'dark', 'light'.
+'ftp::ElectricalPort' is a specialization of 'Port'.
+'ftp::AnalogLamp' is a specialization of 'PrimitiveComponent'.
+'ftp::Xor' is a specialization of 'PrimitiveComponent'.
+'ftp::Fault' is a specialization of 'FTNode'.
+'ftp::AnalogBattery' is a specialization of 'PrimitiveComponent'.
+'ftp::ElectricalConnection' is a specialization of 'AnalogConnection'.
+'ftp::PrimitiveComponent' is a specialization of 'Component'.
+'ftp::DigitalLamp' is a specialization of 'PrimitiveComponent'.
+'ftp::SignalValue' is a specialization of 'TypedPortValue'.
+'ftp::Capacitor' is a specialization of 'PrimitiveComponent'.
+'ftp::RootEvent' is a specialization of 'FTNode'.
+'ftp::DFlipFlop' is a specialization of 'PrimitiveComponent'.
+'ftp::DigintalConnection' is a specialization of 'Connection'.
+'ftp::Component' is a specialization of 'CompositionElement'.
+'ftp::AnalogConnection' is a specialization of 'Connection'.
+'ftp::NTransistor' is a specialization of 'PrimitiveComponent'.
+'ftp::MechanicalPort' is a specialization of 'Port'.
+'ftp::Resistor' is a specialization of 'PrimitiveComponent'.
+'ftp::OrGate' is a specialization of 'FTNode'.
+'ftp::SignalConstant' is a specialization of 'PrimitiveComponent'.
+'ftp::SignalPort' is a specialization of 'Port'.
+'ftp::SignalConnection' is a specialization of 'DigintalConnection'.
+'ftp::ComposedComponent' is a specialization of 'Component'.
+'ftp::MechanicalConnection' is a specialization of 'AnalogConnection'.
+'ftp::PTransistor' is a specialization of 'PrimitiveComponent'.
+'ftp::Not' is a specialization of 'PrimitiveComponent'.
+'ftp::DigitalBattery' is a specialization of 'PrimitiveComponent'.
+'ftp::VisualPort' is a specialization of 'Port'.
+'ftp::VisualConnection' is a specialization of 'Connection'.
+'ftp::FloatValue' is a specialization of 'TypedPortValue'.
+'ftp::VisualValue' is a specialization of 'TypedPortValue'.
+'ftp::DigitalSwitch' is a specialization of 'PrimitiveComponent'.
+'ftp::AndGate' is a specialization of 'FTNode'.
+'ftp::HydraulicValue' is a specialization of 'TypedPortValue'.
+'ftp::HydraulicPort' is a specialization of 'Port'.
+'ftp::AnalogSwitch' is a specialization of 'PrimitiveComponent'.
+'ftp::And' is a specialization of 'PrimitiveComponent'.
+'ftp::Connection' is a specialization of 'CompositionElement'.
+'ftp::HydraulicConnection' is a specialization of 'AnalogConnection'.
+'ftp::ElectricalValue' is a specialization of 'TypedPortValue'.
+'ftp::ElectricalPort' (role 'ftp_ElectricalPort44', cardinality 0..*) is associated with 'ftp::AnalogLamp' (role 'ftp_AnalogLamp', cardinality 0..*).
+'ftp::Port' (role 'ftp_Port21', cardinality 0..*) is associated with 'ftp::ComposedComponent' (role 'ftp_ComposedComponent20', cardinality 0..*).
+'ftp::Observation' (role 'ftp_Observation', cardinality 0..*) is associated with 'ftp::Component' (role 'ftp_Component', cardinality 0..*).
+'ftp::SignalPort' (role 'ftp_SignalPort88', cardinality 0..*) is associated with 'ftp::DFlipFlop' (role 'ftp_DFlipFlop', cardinality 0..*).
+'ftp::Resistor' (role 'ftp_Resistor', cardinality 0..*) is associated with 'ftp::ElectricalPort' (role 'ftp_ElectricalPort', cardinality 0..*).
+'ftp::ElectricalPort' (role 'ftp_ElectricalPort42', cardinality 0..*) is associated with 'ftp::AnalogSwitch' (role 'ftp_AnalogSwitch41', cardinality 0..*).
+'ftp::AnalogLamp' (role 'ftp_AnalogLamp46', cardinality 0..*) is associated with 'ftp::ElectricalPort' (role 'ftp_ElectricalPort47', cardinality 0..*).
+'ftp::AndGate' (role 'ftp_AndGate', cardinality 0..*) is associated with 'ftp::FTNode' (role 'ftp_FTNode7', cardinality 0..*).
+'ftp::ElectricalPort' (role 'ftp_ElectricalPort30', cardinality 0..*) is associated with 'ftp::Resistor' (role 'ftp_Resistor29', cardinality 0..*).
+'ftp::ElectricalPort' (role 'ftp_ElectricalPort32', cardinality 0..*) is associated with 'ftp::AnalogBattery' (role 'ftp_AnalogBattery', cardinality 0..*).
+'ftp::ElectricalPort' (role 'ftp_ElectricalPort35', cardinality 0..*) is associated with 'ftp::AnalogBattery' (role 'ftp_AnalogBattery34', cardinality 0..*).
+'ftp::DigitalBattery' (role 'ftp_DigitalBattery53', cardinality 0..*) is associated with 'ftp::SignalPort' (role 'ftp_SignalPort54', cardinality 0..*).
+'ftp::DFlipFlop' (role 'ftp_DFlipFlop96', cardinality 0..*) is associated with 'ftp::SignalPort' (role 'ftp_SignalPort97', cardinality 0..*).
+'ftp::Observation' (role 'ftp_Observation102', cardinality 0..*) is associated with 'ftp::FaultTreeContext' (role 'ftp_FaultTreeContext101', cardinality 0..*).
+'ftp::Port' (role 'ftp_Port17', cardinality 0..*) is associated with 'ftp::Connection' (role 'ftp_Connection16', cardinality 0..*).
+'ftp::SignalPort' (role 'ftp_SignalPort91', cardinality 0..*) is associated with 'ftp::DFlipFlop' (role 'ftp_DFlipFlop90', cardinality 0..*).
+'ftp::SignalPort' (role 'ftp_SignalPort78', cardinality 0..*) is associated with 'ftp::NTransistor' (role 'ftp_NTransistor77', cardinality 0..*).
+'ftp::SignalPort' (role 'ftp_SignalPort62', cardinality 0..*) is associated with 'ftp::DigitalSwitch' (role 'ftp_DigitalSwitch61', cardinality 0..*).
+'ftp::PTransistor' (role 'ftp_PTransistor', cardinality 0..*) is associated with 'ftp::SignalPort' (role 'ftp_SignalPort80', cardinality 0..*).
+'ftp::OrGate' (role 'ftp_OrGate', cardinality 0..*) is associated with 'ftp::FTNode' (role 'ftp_FTNode5', cardinality 0..*).
+'ftp::CompositionElement' (role 'ftp_CompositionElement', cardinality 0..*) is associated with 'ftp::ComposedComponent' (role 'ftp_ComposedComponent', cardinality 0..*).
+'ftp::FaultTree' (role 'ftp_FaultTree', cardinality 0..*) is associated with 'ftp::FTNode' (role 'ftp_FTNode', cardinality 0..*).
+'ftp::SignalPort' (role 'ftp_SignalPort75', cardinality 0..*) is associated with 'ftp::NTransistor' (role 'ftp_NTransistor74', cardinality 0..*).
+'ftp::FTNode' (role 'ftp_FTNode3', cardinality 0..*) is associated with 'ftp::FaultTree' (role 'ftp_FaultTree2', cardinality 0..*).
+'ftp::DigitalBattery' (role 'ftp_DigitalBattery', cardinality 0..*) is associated with 'ftp::SignalPort' (role 'ftp_SignalPort51', cardinality 0..*).
+'ftp::FTNode' (role 'ftp_FTNode104', cardinality 0..*) is associated with 'ftp::RootEvent' (role 'ftp_RootEvent', cardinality 0..*).
+'ftp::PortValue' (role 'ftp_PortValue23', cardinality 0..*) is associated with 'ftp::Port' (role 'ftp_Port24', cardinality 0..*).
+'ftp::FaultTree' (role 'ftp_FaultTree13', cardinality 0..*) is associated with 'ftp::Observation' (role 'ftp_Observation12', cardinality 0..*).
+'ftp::AnalogSwitch' (role 'ftp_AnalogSwitch', cardinality 0..*) is associated with 'ftp::ElectricalPort' (role 'ftp_ElectricalPort37', cardinality 0..*).
+'ftp::TypedPortValue' (role 'ftp_TypedPortValue', cardinality 0..*) is associated with 'ftp::PortValue' (role 'ftp_PortValue26', cardinality 0..*).
+'ftp::SignalPort' (role 'ftp_SignalPort94', cardinality 0..*) is associated with 'ftp::DFlipFlop' (role 'ftp_DFlipFlop93', cardinality 0..*).
+'ftp::Port' (role 'ftp_Port', cardinality 0..*) is associated with 'ftp::Connection' (role 'ftp_Connection', cardinality 0..*).
+'ftp::SignalPort' (role 'ftp_SignalPort106', cardinality 0..*) is associated with 'ftp::SignalConstant' (role 'ftp_SignalConstant', cardinality 0..*).
+'ftp::Observation' (role 'ftp_Observation10', cardinality 0..*) is associated with 'ftp::PortValue' (role 'ftp_PortValue', cardinality 0..*).
+'ftp::SignalPort' (role 'ftp_SignalPort86', cardinality 0..*) is associated with 'ftp::PTransistor' (role 'ftp_PTransistor85', cardinality 0..*).
+'ftp::SignalPort' (role 'ftp_SignalPort83', cardinality 0..*) is associated with 'ftp::PTransistor' (role 'ftp_PTransistor82', cardinality 0..*).
+'ftp::DigitalLamp' (role 'ftp_DigitalLamp', cardinality 0..*) is associated with 'ftp::SignalPort' (role 'ftp_SignalPort64', cardinality 0..*).
+'ftp::ComposedComponent' (role 'ftp_ComposedComponent99', cardinality 0..*) is associated with 'ftp::FaultTreeContext' (role 'ftp_FaultTreeContext', cardinality 0..*).
+'ftp::SignalPort' (role 'ftp_SignalPort56', cardinality 0..*) is associated with 'ftp::DigitalSwitch' (role 'ftp_DigitalSwitch', cardinality 0..*).
+'ftp::SignalPort' (role 'ftp_SignalPort59', cardinality 0..*) is associated with 'ftp::DigitalSwitch' (role 'ftp_DigitalSwitch58', cardinality 0..*).
+'ftp::DigitalLamp' (role 'ftp_DigitalLamp66', cardinality 0..*) is associated with 'ftp::SignalPort' (role 'ftp_SignalPort67', cardinality 0..*).
+'ftp::VisualPort' (role 'ftp_VisualPort', cardinality 0..*) is associated with 'ftp::AnalogLamp' (role 'ftp_AnalogLamp49', cardinality 0..*).
+'ftp::DigitalLamp' (role 'ftp_DigitalLamp69', cardinality 0..*) is associated with 'ftp::VisualPort' (role 'ftp_VisualPort70', cardinality 0..*).
+'ftp::SignalPort' (role 'ftp_SignalPort72', cardinality 0..*) is associated with 'ftp::NTransistor' (role 'ftp_NTransistor', cardinality 0..*).
+'ftp::SignalPort' (role 'ftp_SignalPort', cardinality 0..*) is associated with 'ftp::AnalogSwitch' (role 'ftp_AnalogSwitch39', cardinality 0..*).

@@ -1,0 +1,210 @@
+The model has 81 class(es).
+The class 'room::ActorRef' has no attributes.
+The class 'room::CPBranchTransition' has no attributes.
+The class 'room::PortClass' has no attributes.
+The class 'room::BindingEndPoint' has no attributes.
+The class 'StateGraphNode' has no attributes.
+The class 'room::TriggeredTransition' has no attributes.
+The class 'room::TrPointTerminal' has no attributes.
+The class 'room::Type' has the following attributes: 'prim' of type str.
+The class 'room::SPPoint' has no attributes.
+The class 'room::ChoicepointTerminal' has no attributes.
+The class 'room::TransitionTerminal' has no attributes.
+The class 'room::State' has no attributes.
+The class 'room::RefSAPoint' has no attributes.
+The class 'room::Attribute' has the following attributes: 'name' of type str; 'size' of type int.
+The class 'State' has no attributes.
+The class 'InterfaceItem' has no attributes.
+The class 'room::SubStateTrPointTerminal' has no attributes.
+The class 'room::SubSystemRef' has no attributes.
+The class 'room::LayerConnection' has no attributes.
+The class 'room::Port' has the following attributes: 'multiplicity' of type int; 'conjugated' of type bool.
+The class 'room::ActorClass' has the following attributes: 'abstract' of type bool.
+The class 'room::Message' has the following attributes: 'name' of type str.
+The class 'room::StateGraphItem' has no attributes.
+The class 'TrPoint' has no attributes.
+The class 'room::Operation' has the following attributes: 'name' of type str.
+The class 'room::LogicalSystem' has no attributes.
+The class 'room::StateGraph' has no attributes.
+The class 'room::StructureClass' has no attributes.
+The class 'ActorContainerRef' has no attributes.
+The class 'room::SAPoint' has no attributes.
+The class 'room::TypedID' has the following attributes: 'name' of type str.
+The class 'SAPoint' has no attributes.
+The class 'room::StateGraphNode' has no attributes.
+The class 'room::SemanticsRule' has no attributes.
+The class 'room::Binding' has no attributes.
+The class 'room::FreeType' has the following attributes: 'type' of type str; 'prim' of type str.
+The class 'room::ExternalPort' has no attributes.
+The class 'room::ExitPoint' has no attributes.
+The class 'room::ProtocolClass' has no attributes.
+The class 'room::FreeTypedID' has the following attributes: 'name' of type str.
+The class 'room::StateTerminal' has no attributes.
+The class 'room::SemanticsOutRule' has no attributes.
+The class 'room::BaseState' has the following attributes: 'name' of type str.
+The class 'TransitionTerminal' has no attributes.
+The class 'SemanticsRule' has no attributes.
+The class 'room::ActorContainerClass' has no attributes.
+The class 'room::EntryPoint' has no attributes.
+The class 'room::MessageFromIf' has no attributes.
+The class 'room::RoomModel' has the following attributes: 'name' of type str.
+The class 'room::ContinuationTransition' has no attributes.
+The class 'room::RefinedState' has no attributes.
+The class 'room::ProtocolSemantics' has no attributes.
+The class 'room::TrPoint' has the following attributes: 'name' of type str.
+The class 'room::ActorInstancePath' has the following attributes: 'segments' of type str.
+The class 'room::DetailCode' has the following attributes: 'commands' of type str.
+The class 'room::ChoicePoint' has the following attributes: 'name' of type str.
+The class 'room::LogicalThread' has the following attributes: 'name' of type str.
+The class 'room::SPPRef' has no attributes.
+The class 'room::NonInitialTransition' has no attributes.
+The class 'ActorContainerClass' has no attributes.
+The class 'StateGraphItem' has no attributes.
+The class 'room::InitialTransition' has no attributes.
+The class 'NonInitialTransition' has no attributes.
+The class 'room::ActorContainerRef' has the following attributes: 'name' of type str.
+The class 'room::RelaySAPoint' has no attributes.
+The class 'Transition' has no attributes.
+The class 'StructureClass' has no attributes.
+The class 'room::Transition' has the following attributes: 'name' of type str.
+The class 'room::DataClass' has no attributes.
+The class 'room::RoomClass' has the following attributes: 'name' of type str.
+The class 'RoomClass' has no attributes.
+The class 'room::Trigger' has no attributes.
+The class 'room::InterfaceItem' has the following attributes: 'name' of type str.
+The class 'room::SemanticsInRule' has no attributes.
+The class 'room::SubSystemClass' has no attributes.
+The class 'room::Guard' has no attributes.
+The class 'room::SAPRef' has no attributes.
+The class 'room::ServiceImplementation' has no attributes.
+The class 'room::TransitionPoint' has the following attributes: 'handler' of type bool.
+The class 'room::MessageHandler' has no attributes.
+The class 'room::Import' has the following attributes: 'importedNamespace' of type str.
+The enumeration 'PrimitiveType' has the following literals: 'int8', 'int16', 'void', 'uint8', 'boolean', 'float32', 'int32', 'char', 'uint16', 'float64', 'string', 'uint32'.
+'room::SPPRef' is a specialization of 'InterfaceItem'.
+'room::BaseState' is a specialization of 'State'.
+'room::SemanticsOutRule' is a specialization of 'SemanticsRule'.
+'room::SAPRef' is a specialization of 'InterfaceItem'.
+'room::NonInitialTransition' is a specialization of 'Transition'.
+'room::ActorClass' is a specialization of 'ActorContainerClass'.
+'room::SubSystemClass' is a specialization of 'ActorContainerClass'.
+'room::SubSystemRef' is a specialization of 'ActorContainerRef'.
+'room::InitialTransition' is a specialization of 'Transition'.
+'room::StateGraphNode' is a specialization of 'StateGraphItem'.
+'room::ContinuationTransition' is a specialization of 'NonInitialTransition'.
+'room::RelaySAPoint' is a specialization of 'SAPoint'.
+'room::State' is a specialization of 'StateGraphNode'.
+'room::ActorContainerClass' is a specialization of 'StructureClass'.
+'room::ExitPoint' is a specialization of 'TrPoint'.
+'room::Port' is a specialization of 'InterfaceItem'.
+'room::TriggeredTransition' is a specialization of 'NonInitialTransition'.
+'room::TrPoint' is a specialization of 'StateGraphNode'.
+'room::CPBranchTransition' is a specialization of 'NonInitialTransition'.
+'room::LogicalSystem' is a specialization of 'StructureClass'.
+'room::StateTerminal' is a specialization of 'TransitionTerminal'.
+'room::ActorRef' is a specialization of 'ActorContainerRef'.
+'room::TrPointTerminal' is a specialization of 'TransitionTerminal'.
+'room::ProtocolClass' is a specialization of 'RoomClass'.
+'room::SubStateTrPointTerminal' is a specialization of 'TransitionTerminal'.
+'room::DataClass' is a specialization of 'RoomClass'.
+'room::EntryPoint' is a specialization of 'TrPoint'.
+'room::SemanticsInRule' is a specialization of 'SemanticsRule'.
+'room::RefSAPoint' is a specialization of 'SAPoint'.
+'room::ChoicepointTerminal' is a specialization of 'TransitionTerminal'.
+'room::ChoicePoint' is a specialization of 'StateGraphNode'.
+'room::RefinedState' is a specialization of 'State'.
+'room::Transition' is a specialization of 'StateGraphItem'.
+'room::StructureClass' is a specialization of 'RoomClass'.
+'room::TransitionPoint' is a specialization of 'TrPoint'.
+'room::Trigger' (role 'room_Trigger209', cardinality 0..*) is associated with 'room::Guard' (role 'room_Guard', cardinality 0..*).
+'room::DetailCode' (role 'room_DetailCode83', cardinality 0..*) is associated with 'room::MessageHandler' (role 'room_MessageHandler82', cardinality 0..*).
+'room::RefSAPoint' (role 'room_RefSAPoint', cardinality 0..*) is associated with 'room::ActorContainerRef' (role 'room_ActorContainerRef155', cardinality 0..*).
+'room::ProtocolClass' (role 'room_ProtocolClass', cardinality 0..*) is associated with 'room::RoomModel' (role 'room_RoomModel4', cardinality 0..*).
+'room::MessageHandler' (role 'room_MessageHandler79', cardinality 0..*) is associated with 'room::Message' (role 'room_Message80', cardinality 0..*).
+'room::ExternalPort' (role 'room_ExternalPort', cardinality 0..*) is associated with 'room::ActorClass' (role 'room_ActorClass107', cardinality 0..*).
+'room::StateGraph' (role 'room_StateGraph183', cardinality 0..*) is associated with 'room::Transition' (role 'room_Transition', cardinality 0..*).
+'room::ServiceImplementation' (role 'room_ServiceImplementation126', cardinality 0..*) is associated with 'room::SPPRef' (role 'room_SPPRef127', cardinality 0..*).
+'room::BindingEndPoint' (role 'room_BindingEndPoint', cardinality 0..*) is associated with 'room::Binding' (role 'room_Binding141', cardinality 0..*).
+'room::Message' (role 'room_Message212', cardinality 0..*) is associated with 'room::MessageFromIf' (role 'room_MessageFromIf211', cardinality 0..*).
+'room::Attribute' (role 'room_Attribute114', cardinality 0..*) is associated with 'room::ActorClass' (role 'room_ActorClass113', cardinality 0..*).
+'room::Message' (role 'room_Message', cardinality 0..*) is associated with 'room::ProtocolClass' (role 'room_ProtocolClass53', cardinality 0..*).
+'room::Operation' (role 'room_Operation117', cardinality 0..*) is associated with 'room::ActorClass' (role 'room_ActorClass116', cardinality 0..*).
+'room::ChoicepointTerminal' (role 'room_ChoicepointTerminal', cardinality 0..*) is associated with 'room::ChoicePoint' (role 'room_ChoicePoint205', cardinality 0..*).
+'room::ProtocolSemantics' (role 'room_ProtocolSemantics', cardinality 0..*) is associated with 'room::ProtocolClass' (role 'room_ProtocolClass63', cardinality 0..*).
+'room::Port' (role 'room_Port135', cardinality 0..*) is associated with 'room::SubSystemClass' (role 'room_SubSystemClass134', cardinality 0..*).
+'room::SemanticsRule' (role 'room_SemanticsRule87', cardinality 0..*) is associated with 'room::Message' (role 'room_Message88', cardinality 0..*).
+'room::ActorClass' (role 'room_ActorClass101', cardinality 0..*) is associated with 'room::DetailCode' (role 'room_DetailCode102', cardinality 0..*).
+'room::FreeType' (role 'room_FreeType40', cardinality 0..*) is associated with 'room::Operation' (role 'room_Operation39', cardinality 0..*).
+'room::SPPRef' (role 'room_SPPRef', cardinality 0..*) is associated with 'room::ActorContainerClass' (role 'room_ActorContainerClass', cardinality 0..*).
+'room::Operation' (role 'room_Operation', cardinality 0..*) is associated with 'room::DataClass' (role 'room_DataClass31', cardinality 0..*).
+'room::ActorClass' (role 'room_ActorClass109', cardinality 0..*) is associated with 'room::ServiceImplementation' (role 'room_ServiceImplementation', cardinality 0..*).
+'room::SAPoint' (role 'room_SAPoint', cardinality 0..*) is associated with 'room::LayerConnection' (role 'room_LayerConnection151', cardinality 0..*).
+'room::State' (role 'room_State173', cardinality 0..*) is associated with 'room::StateGraph' (role 'room_StateGraph174', cardinality 0..*).
+'room::ProtocolClass' (role 'room_ProtocolClass50', cardinality 0..*) is associated with 'room::DetailCode' (role 'room_DetailCode51', cardinality 0..*).
+'room::LogicalThread' (role 'room_LogicalThread', cardinality 0..*) is associated with 'room::SubSystemClass' (role 'room_SubSystemClass137', cardinality 0..*).
+'room::Message' (role 'room_Message56', cardinality 0..*) is associated with 'room::ProtocolClass' (role 'room_ProtocolClass55', cardinality 0..*).
+'room::MessageHandler' (role 'room_MessageHandler', cardinality 0..*) is associated with 'room::PortClass' (role 'room_PortClass77', cardinality 0..*).
+'room::ExternalPort' (role 'room_ExternalPort123', cardinality 0..*) is associated with 'room::Port' (role 'room_Port124', cardinality 0..*).
+'room::SPPRef' (role 'room_SPPRef157', cardinality 0..*) is associated with 'room::RelaySAPoint' (role 'room_RelaySAPoint', cardinality 0..*).
+'room::ProtocolSemantics' (role 'room_ProtocolSemantics85', cardinality 0..*) is associated with 'room::SemanticsRule' (role 'room_SemanticsRule', cardinality 0..*).
+'room::LayerConnection' (role 'room_LayerConnection153', cardinality 0..*) is associated with 'room::SPPoint' (role 'room_SPPoint', cardinality 0..*).
+'room::RoomModel' (role 'room_RoomModel8', cardinality 0..*) is associated with 'room::SubSystemClass' (role 'room_SubSystemClass', cardinality 0..*).
+'room::ProtocolClass' (role 'room_ProtocolClass43', cardinality 0..*) is associated with 'room::ProtocolClass' (role 'room_ProtocolClass45', cardinality 0..*).
+'room::TrPointTerminal' (role 'room_TrPointTerminal', cardinality 0..*) is associated with 'room::TrPoint' (role 'room_TrPoint198', cardinality 0..*).
+'room::DataClass' (role 'room_DataClass21', cardinality 0..*) is associated with 'room::Type' (role 'room_Type20', cardinality 0..*).
+'room::ActorClass' (role 'room_ActorClass104', cardinality 0..*) is associated with 'room::Port' (role 'room_Port105', cardinality 0..*).
+'room::FreeTypedID' (role 'room_FreeTypedID', cardinality 0..*) is associated with 'room::FreeType' (role 'room_FreeType', cardinality 0..*).
+'room::ActorClass' (role 'room_ActorClass111', cardinality 0..*) is associated with 'room::SAPRef' (role 'room_SAPRef', cardinality 0..*).
+'room::NonInitialTransition' (role 'room_NonInitialTransition', cardinality 0..*) is associated with 'room::TransitionTerminal' (role 'room_TransitionTerminal191', cardinality 0..*).
+'room::DataClass' (role 'room_DataClass24', cardinality 0..*) is associated with 'room::DataClass' (role 'room_DataClass22', cardinality 0..*).
+'room::State' (role 'room_State170', cardinality 0..*) is associated with 'room::DetailCode' (role 'room_DetailCode171', cardinality 0..*).
+'room::DataClass' (role 'room_DataClass', cardinality 0..*) is associated with 'room::RoomModel' (role 'room_RoomModel2', cardinality 0..*).
+'room::Trigger' (role 'room_Trigger207', cardinality 0..*) is associated with 'room::MessageFromIf' (role 'room_MessageFromIf', cardinality 0..*).
+'room::PortClass' (role 'room_PortClass71', cardinality 0..*) is associated with 'room::Attribute' (role 'room_Attribute72', cardinality 0..*).
+'room::SubSystemRef' (role 'room_SubSystemRef', cardinality 0..*) is associated with 'room::LogicalSystem' (role 'room_LogicalSystem129', cardinality 0..*).
+'room::StructureClass' (role 'room_StructureClass13', cardinality 0..*) is associated with 'room::LayerConnection' (role 'room_LayerConnection', cardinality 0..*).
+'room::PortClass' (role 'room_PortClass61', cardinality 0..*) is associated with 'room::ProtocolClass' (role 'room_ProtocolClass60', cardinality 0..*).
+'room::StateGraph' (role 'room_StateGraph179', cardinality 0..*) is associated with 'room::TrPoint' (role 'room_TrPoint', cardinality 0..*).
+'room::TriggeredTransition' (role 'room_TriggeredTransition', cardinality 0..*) is associated with 'room::Trigger' (role 'room_Trigger', cardinality 0..*).
+'room::DetailCode' (role 'room_DetailCode99', cardinality 0..*) is associated with 'room::ActorClass' (role 'room_ActorClass98', cardinality 0..*).
+'room::ActorInstancePath' (role 'room_ActorInstancePath', cardinality 0..*) is associated with 'room::LogicalThread' (role 'room_LogicalThread139', cardinality 0..*).
+'room::ActorContainerRef' (role 'room_ActorContainerRef', cardinality 0..*) is associated with 'room::BindingEndPoint' (role 'room_BindingEndPoint146', cardinality 0..*).
+'room::ActorClass' (role 'room_ActorClass92', cardinality 0..*) is associated with 'room::ActorClass' (role 'room_ActorClass94', cardinality 0..*).
+'room::Message' (role 'room_Message65', cardinality 0..*) is associated with 'room::TypedID' (role 'room_TypedID66', cardinality 0..*).
+'room::BaseState' (role 'room_BaseState196', cardinality 0..*) is associated with 'room::StateTerminal' (role 'room_StateTerminal', cardinality 0..*).
+'room::Type' (role 'room_Type34', cardinality 0..*) is associated with 'room::Attribute' (role 'room_Attribute33', cardinality 0..*).
+'room::DetailCode' (role 'room_DetailCode194', cardinality 0..*) is associated with 'room::CPBranchTransition' (role 'room_CPBranchTransition', cardinality 0..*).
+'room::ActorClass' (role 'room_ActorClass96', cardinality 0..*) is associated with 'room::Port' (role 'room_Port', cardinality 0..*).
+'room::StateGraph' (role 'room_StateGraph', cardinality 0..*) is associated with 'room::ActorClass' (role 'room_ActorClass119', cardinality 0..*).
+'room::Import' (role 'room_Import', cardinality 0..*) is associated with 'room::RoomModel' (role 'room_RoomModel', cardinality 0..*).
+'room::PortClass' (role 'room_PortClass', cardinality 0..*) is associated with 'room::ProtocolClass' (role 'room_ProtocolClass58', cardinality 0..*).
+'room::DetailCode' (role 'room_DetailCode', cardinality 0..*) is associated with 'room::Operation' (role 'room_Operation42', cardinality 0..*).
+'room::BaseState' (role 'room_BaseState', cardinality 0..*) is associated with 'room::RefinedState' (role 'room_RefinedState', cardinality 0..*).
+'room::SubSystemClass' (role 'room_SubSystemClass132', cardinality 0..*) is associated with 'room::SubSystemRef' (role 'room_SubSystemRef131', cardinality 0..*).
+'room::State' (role 'room_State177', cardinality 0..*) is associated with 'room::StateGraph' (role 'room_StateGraph176', cardinality 0..*).
+'room::Operation' (role 'room_Operation75', cardinality 0..*) is associated with 'room::PortClass' (role 'room_PortClass74', cardinality 0..*).
+'room::Binding' (role 'room_Binding143', cardinality 0..*) is associated with 'room::BindingEndPoint' (role 'room_BindingEndPoint144', cardinality 0..*).
+'room::ActorClass' (role 'room_ActorClass166', cardinality 0..*) is associated with 'room::ActorRef' (role 'room_ActorRef165', cardinality 0..*).
+'room::SPPoint' (role 'room_SPPoint159', cardinality 0..*) is associated with 'room::ActorContainerRef' (role 'room_ActorContainerRef160', cardinality 0..*).
+'room::ProtocolClass' (role 'room_ProtocolClass47', cardinality 0..*) is associated with 'room::DetailCode' (role 'room_DetailCode48', cardinality 0..*).
+'room::SPPRef' (role 'room_SPPRef163', cardinality 0..*) is associated with 'room::SPPoint' (role 'room_SPPoint162', cardinality 0..*).
+'room::Attribute' (role 'room_Attribute', cardinality 0..*) is associated with 'room::DataClass' (role 'room_DataClass29', cardinality 0..*).
+'room::DataClass' (role 'room_DataClass26', cardinality 0..*) is associated with 'room::Import' (role 'room_Import27', cardinality 0..*).
+'room::DetailCode' (role 'room_DetailCode189', cardinality 0..*) is associated with 'room::Transition' (role 'room_Transition188', cardinality 0..*).
+'room::ActorRef' (role 'room_ActorRef', cardinality 0..*) is associated with 'room::ActorContainerClass' (role 'room_ActorContainerClass16', cardinality 0..*).
+'room::PortClass' (role 'room_PortClass68', cardinality 0..*) is associated with 'room::DetailCode' (role 'room_DetailCode69', cardinality 0..*).
+'room::InterfaceItem' (role 'room_InterfaceItem215', cardinality 0..*) is associated with 'room::MessageFromIf' (role 'room_MessageFromIf214', cardinality 0..*).
+'room::ChoicePoint' (role 'room_ChoicePoint', cardinality 0..*) is associated with 'room::StateGraph' (role 'room_StateGraph181', cardinality 0..*).
+'room::DetailCode' (role 'room_DetailCode168', cardinality 0..*) is associated with 'room::State' (role 'room_State', cardinality 0..*).
+'room::StructureClass' (role 'room_StructureClass', cardinality 0..*) is associated with 'room::Binding' (role 'room_Binding', cardinality 0..*).
+'room::Guard' (role 'room_Guard217', cardinality 0..*) is associated with 'room::DetailCode' (role 'room_DetailCode218', cardinality 0..*).
+'room::Operation' (role 'room_Operation36', cardinality 0..*) is associated with 'room::FreeTypedID' (role 'room_FreeTypedID37', cardinality 0..*).
+'room::BindingEndPoint' (role 'room_BindingEndPoint148', cardinality 0..*) is associated with 'room::Port' (role 'room_Port149', cardinality 0..*).
+'room::RoomModel' (role 'room_RoomModel6', cardinality 0..*) is associated with 'room::ActorClass' (role 'room_ActorClass', cardinality 0..*).
+'room::SemanticsRule' (role 'room_SemanticsRule89', cardinality 0..*) is associated with 'room::SemanticsRule' (role 'room_SemanticsRule91', cardinality 0..*).
+'room::BaseState' (role 'room_BaseState203', cardinality 0..*) is associated with 'room::SubStateTrPointTerminal' (role 'room_SubStateTrPointTerminal202', cardinality 0..*).
+'room::RoomModel' (role 'room_RoomModel10', cardinality 0..*) is associated with 'room::LogicalSystem' (role 'room_LogicalSystem', cardinality 0..*).
+'room::TypedID' (role 'room_TypedID', cardinality 0..*) is associated with 'room::Type' (role 'room_Type', cardinality 0..*).
+'room::InterfaceItem' (role 'room_InterfaceItem', cardinality 0..*) is associated with 'room::ProtocolClass' (role 'room_ProtocolClass121', cardinality 0..*).
+'room::SubStateTrPointTerminal' (role 'room_SubStateTrPointTerminal', cardinality 0..*) is associated with 'room::TrPoint' (role 'room_TrPoint200', cardinality 0..*).
+'room::TransitionTerminal' (role 'room_TransitionTerminal', cardinality 0..*) is associated with 'room::Transition' (role 'room_Transition186', cardinality 0..*).

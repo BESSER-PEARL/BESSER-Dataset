@@ -1,0 +1,26 @@
+The model has 9 class(es).
+The class 'atomic::AToken' has the following attributes: 'text' of type str.
+The class 'XAnnotable' has no attributes.
+The class 'ANode' has no attributes.
+The class 'atomic::AStructured' has no attributes.
+The class 'atomic::AEdge' has no attributes.
+The class 'atomic::XAnnotable' has no attributes.
+The class 'atomic::ATargetEdge' has no attributes.
+The class 'atomic::ANode' has no attributes.
+The class 'atomic::AGraph' has the following attributes: 'corpus' of type str.
+'atomic::AStructured' is a specialization of 'ANode'.
+'atomic::AToken' is a specialization of 'ANode'.
+'atomic::ANode' is a specialization of 'XAnnotable'.
+'atomic::AGraph' (role 'AGraph14', cardinality 0..*) is associated with 'atomic::AStructured' (role 'structures', cardinality 0..*).
+'atomic::AGraph' (role 'graph', cardinality 0..*) is associated with 'atomic::AToken' (role 'AToken', cardinality 0..*).
+'atomic::AToken' (role 'tokens', cardinality 0..*) is associated with 'atomic::AGraph' (role 'AGraph', cardinality 0..*).
+'atomic::AToken' (role 'previous', cardinality 0..*) is associated with 'atomic::AToken' (role 'AToken7', cardinality 0..*).
+'atomic::AEdge' (role 'atomic_AEdge', cardinality 0..*) is associated with 'atomic::ANode' (role 'atomic_ANode18', cardinality 0..*).
+'atomic::AToken' (role 'next', cardinality 0..*) is associated with 'atomic::AToken' (role 'AToken10', cardinality 0..*).
+'atomic::ANode' (role 'atomic_ANode21', cardinality 0..*) is associated with 'atomic::AEdge' (role 'atomic_AEdge20', cardinality 0..*).
+'atomic::ATargetEdge' (role 'atomic_ATargetEdge', cardinality 0..*) is associated with 'atomic::ANode' (role 'atomic_ANode', cardinality 0..*).
+'atomic::AGraph' (role 'atomic_AGraph', cardinality 0..*) is associated with 'atomic::ATargetEdge' (role 'atomic_ATargetEdge26', cardinality 0..*).
+'atomic::AStructured' (role 'AStructured', cardinality 0..*) is associated with 'atomic::AGraph' (role 'graph2', cardinality 0..*).
+'atomic::AGraph' (role 'graph4', cardinality 0..*) is associated with 'atomic::AEdge' (role 'AEdge', cardinality 0..*).
+'atomic::AEdge' (role 'edges', cardinality 0..*) is associated with 'atomic::AGraph' (role 'AGraph16', cardinality 0..*).
+'atomic::ATargetEdge' (role 'atomic_ATargetEdge23', cardinality 0..*) is associated with 'atomic::ANode' (role 'atomic_ANode24', cardinality 0..*).

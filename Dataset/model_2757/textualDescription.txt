@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'test::B' has the following attributes: 'name' of type str.
+The class 'test::A' has the following attributes: 'listen' of type int.
+The class 'test::Compo' has no attributes.
+'test::B' (role 'test_B', cardinality 0..*) is associated with 'test::Compo' (role 'test_Compo', cardinality 0..*).
+'test::A' (role 'test_A4', cardinality 0..*) is associated with 'test::B' (role 'test_B5', cardinality 0..*).
+'test::A' (role 'test_A', cardinality 0..*) is associated with 'test::Compo' (role 'test_Compo2', cardinality 0..*).

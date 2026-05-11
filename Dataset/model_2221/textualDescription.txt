@@ -1,0 +1,24 @@
+The model has 6 class(es).
+The class 'oving1APD::Specialization' has the following attributes: 'name' of type str.
+The class 'oving1APD::StudyProgram' has the following attributes: 'shortName' of type str; 'name' of type str.
+The class 'oving1APD::Semester' has the following attributes: 'number' of type int.
+The class 'oving1APD::Department' has the following attributes: 'name' of type str; 'shortName' of type str.
+The class 'oving1APD::Slot' has the following attributes: 'name' of type str.
+The class 'oving1APD::Course' has the following attributes: 'level' of type int; 'code' of type str; 'name' of type str; 'credit' of type float.
+'oving1APD::Specialization' (role 'specialization', cardinality 0..*) is associated with 'oving1APD::Semester' (role 'Semester23', cardinality 0..*).
+'oving1APD::StudyProgram' (role 'StudyProgram18', cardinality 0..*) is associated with 'oving1APD::Semester' (role 'semester17', cardinality 0..*).
+'oving1APD::Department' (role 'department', cardinality 0..*) is associated with 'oving1APD::StudyProgram' (role 'StudyProgram', cardinality 0..*).
+'oving1APD::Semester' (role 'semester', cardinality 0..*) is associated with 'oving1APD::Slot' (role 'Slot15', cardinality 0..*).
+'oving1APD::Course' (role 'course12', cardinality 0..*) is associated with 'oving1APD::Slot' (role 'Slot', cardinality 0..*).
+'oving1APD::Slot' (role 'slot33', cardinality 0..*) is associated with 'oving1APD::Semester' (role 'Semester34', cardinality 0..*).
+'oving1APD::Specialization' (role 'Specialization21', cardinality 0..*) is associated with 'oving1APD::Semester' (role 'semester20', cardinality 0..*).
+'oving1APD::Specialization' (role 'specialization28', cardinality 0..*) is associated with 'oving1APD::StudyProgram' (role 'StudyProgram29', cardinality 0..*).
+'oving1APD::Slot' (role 'slot', cardinality 0..*) is associated with 'oving1APD::Course' (role 'Course31', cardinality 0..*).
+'oving1APD::Course' (role 'oving1APD_Course', cardinality 0..*) is associated with 'oving1APD::Department' (role 'oving1APD_Department', cardinality 0..*).
+'oving1APD::Semester' (role 'Semester', cardinality 0..*) is associated with 'oving1APD::StudyProgram' (role 'studyProgram4', cardinality 0..*).
+'oving1APD::Specialization' (role 'specialization25', cardinality 0..*) is associated with 'oving1APD::Course' (role 'Course26', cardinality 0..*).
+'oving1APD::StudyProgram' (role 'studyProgram6', cardinality 0..*) is associated with 'oving1APD::Department' (role 'Department', cardinality 0..*).
+'oving1APD::Semester' (role 'Semester8', cardinality 0..*) is associated with 'oving1APD::Course' (role 'hasCourse', cardinality 0..*).
+'oving1APD::Course' (role 'course', cardinality 0..*) is associated with 'oving1APD::Specialization' (role 'Specialization10', cardinality 0..*).
+'oving1APD::Course' (role 'Course', cardinality 0..*) is associated with 'oving1APD::Semester' (role 'courseInSemester', cardinality 0..*).
+'oving1APD::Specialization' (role 'Specialization', cardinality 0..*) is associated with 'oving1APD::StudyProgram' (role 'studyProgram', cardinality 0..*).

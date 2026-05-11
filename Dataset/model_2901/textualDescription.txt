@@ -1,0 +1,17 @@
+The model has 8 class(es).
+The class 'ube::NamedElement' has the following attributes: 'name' of type str.
+The class 'ube::Type' has no attributes.
+The class 'Type' has no attributes.
+The class 'ube::Feature' has the following attributes: 'kind' of type str.
+The class 'NamedElement' has no attributes.
+The class 'ube::DataType' has no attributes.
+The class 'ube::Entity' has the following attributes: 'abstract' of type bool.
+The class 'ube::EntityModel' has no attributes.
+The enumeration 'FeatureKind' has the following literals: 'reference', 'attribute', 'containment'.
+'ube::DataType' is a specialization of 'Type'.
+'ube::Type' is a specialization of 'NamedElement'.
+'ube::Entity' is a specialization of 'Type'.
+'ube::Feature' is a specialization of 'NamedElement'.
+'ube::EntityModel' (role 'ube_EntityModel', cardinality 0..*) is associated with 'ube::Type' (role 'ube_Type', cardinality 0..*).
+'ube::Feature' (role 'ube_Feature3', cardinality 0..*) is associated with 'ube::Type' (role 'ube_Type4', cardinality 0..*).
+'ube::Feature' (role 'ube_Feature', cardinality 0..*) is associated with 'ube::Entity' (role 'ube_Entity', cardinality 0..*).

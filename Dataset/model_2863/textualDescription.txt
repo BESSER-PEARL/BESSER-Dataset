@@ -1,0 +1,97 @@
+The model has 37 class(es).
+The class 'gDSL::Model' has no attributes.
+The class 'gDSL::Val' has the following attributes: 'name' of type str; 'attr' of type str; 'mid' of type str; 'decPat' of type str.
+The class 'gDSL::Decl' has no attributes.
+The class 'Decl' has no attributes.
+The class 'gDSL::ApplyExp' has no attributes.
+The class 'gDSL::ValueDecl' has the following attributes: 'ids' of type str; 'name' of type str.
+The class 'gDSL::OrElseExp' has no attributes.
+The class 'MExp' has no attributes.
+The class 'SelectExp' has no attributes.
+The class 'gDSL::AtomicExp' has the following attributes: 'id' of type str.
+The class 'gDSL::TyBind' has the following attributes: 'name' of type str.
+The class 'gDSL::Ty' has the following attributes: 'value' of type str; 'type' of type str.
+The class 'gDSL::SelectExp' has the following attributes: 'symbol' of type str.
+The class 'gDSL::RExp' has no attributes.
+The class 'gDSL::ConDecl' has no attributes.
+The class 'gDSL::Exp' has the following attributes: 'mid' of type str.
+The class 'ClosedExp' has no attributes.
+The class 'gDSL::ClosedExp' has no attributes.
+The class 'gDSL::AndAlsoExp' has no attributes.
+The class 'gDSL::MExp' has the following attributes: 'sign' of type str.
+The class 'ApplyExp' has no attributes.
+The class 'CaseExp' has no attributes.
+The class 'gDSL::CONS' has the following attributes: 'conName' of type str.
+The class 'gDSL::TyVars' has no attributes.
+The class 'gDSL::MonadicExp' has the following attributes: 'name' of type str.
+The class 'gDSL::Args' has no attributes.
+The class 'gDSL::DeclExport' has no attributes.
+The class 'gDSL::AExp' has the following attributes: 'sym' of type str.
+The class 'gDSL::TyElement' has the following attributes: 'name' of type str.
+The class 'AExp' has no attributes.
+The class 'AndAlsoExp' has no attributes.
+The class 'gDSL::Type' has the following attributes: 'name' of type str.
+The class 'gDSL::CaseExp' has the following attributes: 'name' of type str.
+The class 'OrElseExp' has no attributes.
+The class 'RExp' has no attributes.
+The class 'gDSL::Field' has the following attributes: 'name' of type str.
+The class 'gDSL::PAT' has the following attributes: 'uscore' of type str; 'int' of type str; 'id' of type str; 'bitpat' of type str.
+'gDSL::Type' is a specialization of 'Decl'.
+'gDSL::DeclExport' is a specialization of 'Decl'.
+'gDSL::MExp' is a specialization of 'AExp'.
+'gDSL::RExp' is a specialization of 'AndAlsoExp'.
+'gDSL::Val' is a specialization of 'Decl'.
+'gDSL::AtomicExp' is a specialization of 'ApplyExp'.
+'gDSL::ClosedExp' is a specialization of 'CaseExp'.
+'gDSL::SelectExp' is a specialization of 'MExp'.
+'gDSL::ApplyExp' is a specialization of 'SelectExp'.
+'gDSL::AExp' is a specialization of 'RExp'.
+'gDSL::AndAlsoExp' is a specialization of 'OrElseExp'.
+'gDSL::OrElseExp' is a specialization of 'ClosedExp'.
+'gDSL::CaseExp' (role 'gDSL_CaseExp64', cardinality 0..*) is associated with 'gDSL::Exp' (role 'gDSL_Exp65', cardinality 0..*).
+'gDSL::Type' (role 'gDSL_Type9', cardinality 0..*) is associated with 'gDSL::ConDecl' (role 'gDSL_ConDecl', cardinality 0..*).
+'gDSL::MExp' (role 'gDSL_MExp', cardinality 0..*) is associated with 'gDSL::MExp' (role 'gDSL_MExp86', cardinality 0..*).
+'gDSL::Ty' (role 'gDSL_Ty30', cardinality 0..*) is associated with 'gDSL::TyBind' (role 'gDSL_TyBind', cardinality 0..*).
+'gDSL::TyBind' (role 'gDSL_TyBind49', cardinality 0..*) is associated with 'gDSL::Ty' (role 'gDSL_Ty50', cardinality 0..*).
+'gDSL::AtomicExp' (role 'gDSL_AtomicExp', cardinality 0..*) is associated with 'gDSL::ApplyExp' (role 'gDSL_ApplyExp90', cardinality 0..*).
+'gDSL::Exp' (role 'gDSL_Exp17', cardinality 0..*) is associated with 'gDSL::Val' (role 'gDSL_Val16', cardinality 0..*).
+'gDSL::Exp' (role 'gDSL_Exp100', cardinality 0..*) is associated with 'gDSL::AtomicExp' (role 'gDSL_AtomicExp99', cardinality 0..*).
+'gDSL::DeclExport' (role 'gDSL_DeclExport', cardinality 0..*) is associated with 'gDSL::Val' (role 'gDSL_Val', cardinality 0..*).
+'gDSL::Exp' (role 'gDSL_Exp', cardinality 0..*) is associated with 'gDSL::Val' (role 'gDSL_Val14', cardinality 0..*).
+'gDSL::AtomicExp' (role 'gDSL_AtomicExp97', cardinality 0..*) is associated with 'gDSL::Field' (role 'gDSL_Field', cardinality 0..*).
+'gDSL::ClosedExp' (role 'gDSL_ClosedExp67', cardinality 0..*) is associated with 'gDSL::CaseExp' (role 'gDSL_CaseExp68', cardinality 0..*).
+'gDSL::TyVars' (role 'gDSL_TyVars19', cardinality 0..*) is associated with 'gDSL::Type' (role 'gDSL_Type20', cardinality 0..*).
+'gDSL::Ty' (role 'gDSL_Ty39', cardinality 0..*) is associated with 'gDSL::Ty' (role 'gDSL_Ty41', cardinality 0..*).
+'gDSL::CaseExp' (role 'gDSL_CaseExp', cardinality 0..*) is associated with 'gDSL::Exp' (role 'gDSL_Exp55', cardinality 0..*).
+'gDSL::ClosedExp' (role 'gDSL_ClosedExp76', cardinality 0..*) is associated with 'gDSL::MonadicExp' (role 'gDSL_MonadicExp', cardinality 0..*).
+'gDSL::TyElement' (role 'gDSL_TyElement52', cardinality 0..*) is associated with 'gDSL::Ty' (role 'gDSL_Ty53', cardinality 0..*).
+'gDSL::ClosedExp' (role 'gDSL_ClosedExp73', cardinality 0..*) is associated with 'gDSL::CaseExp' (role 'gDSL_CaseExp74', cardinality 0..*).
+'gDSL::Ty' (role 'gDSL_Ty', cardinality 0..*) is associated with 'gDSL::DeclExport' (role 'gDSL_DeclExport5', cardinality 0..*).
+'gDSL::ValueDecl' (role 'gDSL_ValueDecl110', cardinality 0..*) is associated with 'gDSL::Exp' (role 'gDSL_Exp111', cardinality 0..*).
+'gDSL::TyVars' (role 'gDSL_TyVars7', cardinality 0..*) is associated with 'gDSL::Type' (role 'gDSL_Type', cardinality 0..*).
+'gDSL::AtomicExp' (role 'gDSL_AtomicExp102', cardinality 0..*) is associated with 'gDSL::Exp' (role 'gDSL_Exp103', cardinality 0..*).
+'gDSL::ConDecl' (role 'gDSL_ConDecl22', cardinality 0..*) is associated with 'gDSL::CONS' (role 'gDSL_CONS', cardinality 0..*).
+'gDSL::CaseExp' (role 'gDSL_CaseExp71', cardinality 0..*) is associated with 'gDSL::ClosedExp' (role 'gDSL_ClosedExp70', cardinality 0..*).
+'gDSL::AndAlsoExp' (role 'gDSL_AndAlsoExp', cardinality 0..*) is associated with 'gDSL::OrElseExp' (role 'gDSL_OrElseExp', cardinality 0..*).
+'gDSL::CaseExp' (role 'gDSL_CaseExp62', cardinality 0..*) is associated with 'gDSL::PAT' (role 'gDSL_PAT', cardinality 0..*).
+'gDSL::Args' (role 'gDSL_Args', cardinality 0..*) is associated with 'gDSL::ApplyExp' (role 'gDSL_ApplyExp92', cardinality 0..*).
+'gDSL::Ty' (role 'gDSL_Ty35', cardinality 0..*) is associated with 'gDSL::Ty' (role 'gDSL_Ty33', cardinality 0..*).
+'gDSL::Ty' (role 'gDSL_Ty38', cardinality 0..*) is associated with 'gDSL::Ty' (role 'gDSL_Ty36', cardinality 0..*).
+'gDSL::Ty' (role 'gDSL_Ty32', cardinality 0..*) is associated with 'gDSL::TyElement' (role 'gDSL_TyElement', cardinality 0..*).
+'gDSL::Field' (role 'gDSL_Field107', cardinality 0..*) is associated with 'gDSL::Exp' (role 'gDSL_Exp108', cardinality 0..*).
+'gDSL::Type' (role 'gDSL_Type28', cardinality 0..*) is associated with 'gDSL::Ty' (role 'gDSL_Ty27', cardinality 0..*).
+'gDSL::ApplyExp' (role 'gDSL_ApplyExp', cardinality 0..*) is associated with 'gDSL::SelectExp' (role 'gDSL_SelectExp', cardinality 0..*).
+'gDSL::AndAlsoExp' (role 'gDSL_AndAlsoExp83', cardinality 0..*) is associated with 'gDSL::OrElseExp' (role 'gDSL_OrElseExp82', cardinality 0..*).
+'gDSL::ConDecl' (role 'gDSL_ConDecl24', cardinality 0..*) is associated with 'gDSL::Ty' (role 'gDSL_Ty25', cardinality 0..*).
+'gDSL::PAT' (role 'gDSL_PAT112', cardinality 0..*) is associated with 'gDSL::PAT' (role 'gDSL_PAT114', cardinality 0..*).
+'gDSL::Ty' (role 'gDSL_Ty47', cardinality 0..*) is associated with 'gDSL::Ty' (role 'gDSL_Ty45', cardinality 0..*).
+'gDSL::Decl' (role 'gDSL_Decl', cardinality 0..*) is associated with 'gDSL::Model' (role 'gDSL_Model', cardinality 0..*).
+'gDSL::Args' (role 'gDSL_Args94', cardinality 0..*) is associated with 'gDSL::AtomicExp' (role 'gDSL_AtomicExp95', cardinality 0..*).
+'gDSL::Type' (role 'gDSL_Type11', cardinality 0..*) is associated with 'gDSL::Ty' (role 'gDSL_Ty12', cardinality 0..*).
+'gDSL::MonadicExp' (role 'gDSL_MonadicExp78', cardinality 0..*) is associated with 'gDSL::Exp' (role 'gDSL_Exp79', cardinality 0..*).
+'gDSL::AtomicExp' (role 'gDSL_AtomicExp105', cardinality 0..*) is associated with 'gDSL::ValueDecl' (role 'gDSL_ValueDecl', cardinality 0..*).
+'gDSL::DeclExport' (role 'gDSL_DeclExport3', cardinality 0..*) is associated with 'gDSL::TyVars' (role 'gDSL_TyVars', cardinality 0..*).
+'gDSL::CaseExp' (role 'gDSL_CaseExp58', cardinality 0..*) is associated with 'gDSL::Exp' (role 'gDSL_Exp57', cardinality 0..*).
+'gDSL::Ty' (role 'gDSL_Ty42', cardinality 0..*) is associated with 'gDSL::Ty' (role 'gDSL_Ty44', cardinality 0..*).
+'gDSL::AExp' (role 'gDSL_AExp84', cardinality 0..*) is associated with 'gDSL::AExp' (role 'gDSL_AExp', cardinality 0..*).
+'gDSL::ClosedExp' (role 'gDSL_ClosedExp', cardinality 0..*) is associated with 'gDSL::CaseExp' (role 'gDSL_CaseExp60', cardinality 0..*).

@@ -1,0 +1,12 @@
+The model has 7 class(es).
+The class 'pghttptest::D' has no attributes.
+The class 'C' has no attributes.
+The class 'pghttptest::Root' has no attributes.
+The class 'pghttptest::C' has the following attributes: 'name' of type str.
+The class 'pghttptest::B' has the following attributes: 'priv1' of type int.
+The class 'pghttptest::Priv' has the following attributes: 'name' of type str.
+The class 'pghttptest::A' has the following attributes: 'name' of type str; 'value' of type int.
+'pghttptest::D' is a specialization of 'C'.
+'pghttptest::A' (role 'pghttptest_A', cardinality 0..*) is associated with 'pghttptest::Root' (role 'pghttptest_Root', cardinality 0..*).
+'pghttptest::Root' (role 'pghttptest_Root2', cardinality 0..*) is associated with 'pghttptest::B' (role 'pghttptest_B', cardinality 0..*).
+'pghttptest::B' (role 'pghttptest_B4', cardinality 0..*) is associated with 'pghttptest::C' (role 'pghttptest_C', cardinality 0..*).

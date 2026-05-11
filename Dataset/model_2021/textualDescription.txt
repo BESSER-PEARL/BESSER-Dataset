@@ -1,0 +1,921 @@
+The model has 368 class(es).
+The class 'activitydiagram::TracedActivityNode' has no attributes.
+The class 'IntegerVariable::setCurrentValue::integerVariableEntryEventOccurrence' has no attributes.
+The class 'trace::Events::Activity::mainEntryEventOccurrence' has no attributes.
+The class 'trace::BooleanUnaryExpression' has no attributes.
+The class 'trace::Events::Activity::getEnabledNodesEntryEventOccurrence' has no attributes.
+The class 'trace::activitydiagramConfiguration::TracedInputValue' has no attributes.
+The class 'ActivityNode::terminate::activityNodeEntryEventOccurrence' has no attributes.
+The class 'trace::activitydiagram::TracedMergeNode' has no attributes.
+The class 'ForkedToken::baseTokenIsWithdrawn::State' has no attributes.
+The class 'Activity::initializeExitEventOccurrence' has no attributes.
+The class 'Events::trace::EObject' has no attributes.
+The class 'trace::activitydiagram::TracedJoinNode' has no attributes.
+The class 'InitialNode::fire::initialNodeExitEventOccurrence' has no attributes.
+The class 'ControlNode::fire::controlNodeEntryEventOccurrence' has no attributes.
+The class 'trace::Events::IntegerComparisonExpression::evaluateSMALLEREntryEventOccurrence' has no attributes.
+The class 'ForkNode::fire::forkNodeExitEventOccurrence' has no attributes.
+The class 'IntegerComparisonExpression::evaluateEQUALSEntryEventOccurrence' has no attributes.
+The class 'ActivityEdge::hasOfferEntryEventOccurrence' has no attributes.
+The class 'BooleanBinaryExpression::evaluateOREntryEventOccurrence' has no attributes.
+The class 'activitydiagram::trace::InitialNode' has no attributes.
+The class 'trace::Events::StringVariable::setCurrentValue::stringVariableExitEventOccurrence' has no attributes.
+The class 'trace::States::ForkedToken::baseTokenIsWithdrawn::State' has the following attributes: 'baseTokenIsWithdrawn' of type bool.
+The class 'InitialNode::isReady::InitialNodeExitEventOccurrence' has no attributes.
+The class 'trace::activitydiagram::TracedAction' has no attributes.
+The class 'activitydiagramConfiguration::TracedControlToken' has no attributes.
+The class 'Action::fire::actionEntryEventOccurrence' has no attributes.
+The class 'trace::activitydiagram::TracedFinalNode' has no attributes.
+The class 'DecisionNode::fire::decisionNodeEntryEventOccurrence' has no attributes.
+The class 'InputValue::variable::State' has no attributes.
+The class 'activitydiagram::TracedDecisionNode' has no attributes.
+The class 'ActivityNode::takeOfferedTokensEntryEventOccurrence' has no attributes.
+The class 'trace::Events::DecisionNode::fire::decisionNodeEntryEventOccurrence' has no attributes.
+The class 'BooleanBinaryExpression::evaluateANDExitEventOccurrence' has no attributes.
+The class 'trace::activitydiagram::TracedActivityEdge' has no attributes.
+The class 'trace::Events::OpaqueAction::doAction::opaqueActionEntryEventOccurrence' has no attributes.
+The class 'trace::Events::BooleanBinaryExpression::evaluateORExitEventOccurrence' has no attributes.
+The class 'trace::States::Trace::executedNodes::State' has no attributes.
+The class 'Activity::selectNextNodeEntryEventOccurrence' has no attributes.
+The class 'trace::activitydiagram::TracedIntegerVariable' has no attributes.
+The class 'ActivityEdge::hasOfferExitEventOccurrence' has no attributes.
+The class 'trace::Events::Activity::runEntryEventOccurrence' has no attributes.
+The class 'trace::activitydiagramConfiguration::TracedTrace' has no attributes.
+The class 'InitialNode::isReady::InitialNodeEntryEventOccurrence' has no attributes.
+The class 'BooleanBinaryExpression::execute::booleanBinaryExpressionExitEventOccurrence' has no attributes.
+The class 'trace::Events::BooleanVariable::setCurrentValue::boolenVariableExitEventOccurrence' has no attributes.
+The class 'ActivityNode::removeTokenEntryEventOccurrence' has no attributes.
+The class 'trace::activitydiagram::TracedActivityFinalNode' has no attributes.
+The class 'trace::Events::Token::transferEntryEventOccurrence' has no attributes.
+The class 'ActivityFinalNode::fire::activityFinalNodeEntryEventOccurrence' has no attributes.
+The class 'trace::Events::IntegerCalculationExpression::evaluateADDExitEventOccurrence' has no attributes.
+The class 'Action::isReady::actionExitEventOccurrence' has no attributes.
+The class 'IntegerComparisonExpression::evaluateSMALLERExitEventOccurrence' has no attributes.
+The class 'trace::activitydiagramConfiguration::TracedForkedToken' has no attributes.
+The class 'trace::Events::ActivityEdge::hasOfferEntryEventOccurrence' has no attributes.
+The class 'BooleanUnaryExpression::evaluateNOTExitEventOccurrence' has no attributes.
+The class 'OpaqueAction::doAction::opaqueActionExitEventOccurrence' has no attributes.
+The class 'activitydiagram::trace::ForkNode' has no attributes.
+The class 'Activity::getInitialNodeExitEventOccurrence' has no attributes.
+The class 'trace::Events::ForkNode::fire::forkNodeExitEventOccurrence' has no attributes.
+The class 'trace::Events::Activity::selectNextNodeEntryEventOccurrence' has no attributes.
+The class 'trace::Events::Activity::initializeEntryEventOccurrence' has no attributes.
+The class 'trace::Events::Activity::initializeExitEventOccurrence' has no attributes.
+The class 'trace::Events::IntegerComparisonExpression::evaluateGREATER::EQUALSEntryEventOccurrence' has no attributes.
+The class 'Action::fire::actionExitEventOccurrence' has no attributes.
+The class 'trace::Events::IntegerComparisonExpression::execute::IntegerComparisionExpressionExitEventOccurrence' has no attributes.
+The class 'ActivityEdge::sendOfferExitEventOccurrence' has no attributes.
+The class 'activitydiagram::TracedIntegerVariable' has no attributes.
+The class 'trace::Events::BooleanBinaryExpression::evaluateOREntryEventOccurrence' has no attributes.
+The class 'trace::Events::Offer::hasTokensExitEventOccurrence' has no attributes.
+The class 'trace::Events::ActivityNode::run::activityNodeExitEventOccurrence' has no attributes.
+The class 'ControlNode::isReady::ControlNodeEntryEventOccurrence' has no attributes.
+The class 'BooleanBinaryExpression::evaluateANDEntryEventOccurrence' has no attributes.
+The class 'Events' has no attributes.
+The class 'IntegerComparisonExpression::execute::IntegerComparisionExpressionExitEventOccurrence' has no attributes.
+The class 'TracedExecutableNode' has no attributes.
+The class 'BooleanVariable::setCurrentValue::boolenVariableExitEventOccurrence' has no attributes.
+The class 'IntegerCalculationExpression::execute::integerCalculationExpressionEntryEventOccurrence' has no attributes.
+The class 'trace::Events::ForkedToken::withdraw::forkedTokenExitEventOccurrence' has no attributes.
+The class 'trace::Events::ActivityNode::isReadyEntryEventOccurrence' has no attributes.
+The class 'trace::Events::Token::withdrawEntryEventOccurrence' has no attributes.
+The class 'DecisionNode::fire::decisionNodeExitEventOccurrence' has no attributes.
+The class 'IntegerComparisonExpression::evaluateEQUALSExitEventOccurrence' has no attributes.
+The class 'ActivityEdge::offers::State' has no attributes.
+The class 'trace::Events::ControlNode::fire::controlNodeExitEventOccurrence' has no attributes.
+The class 'trace::Events::IntegerComparisonExpression::evaluateGREATEREntryEventOccurrence' has no attributes.
+The class 'ActivityEdge::sendOfferEntryEventOccurrence' has no attributes.
+The class 'IntegerComparisonExpression::evaluateSMALLER::EQUALSExitEventOccurrence' has no attributes.
+The class 'Activity::fireNodeEntryEventOccurrence' has no attributes.
+The class 'ActivityNode::hasOffersExitEventOccurrence' has no attributes.
+The class 'trace::Events::InitialNode::fire::initialNodeExitEventOccurrence' has no attributes.
+The class 'trace::Events::IntegerComparisonExpression::evaluateEQUALSExitEventOccurrence' has no attributes.
+The class 'trace::Events::ActivityEdge::sendOfferExitEventOccurrence' has no attributes.
+The class 'Activity::trace::State' has no attributes.
+The class 'TracedAction' has no attributes.
+The class 'trace::Events::OpaqueAction::doAction::opaqueActionExitEventOccurrence' has no attributes.
+The class 'activitydiagramConfiguration::TracedTrace' has no attributes.
+The class 'trace::Events::BooleanBinaryExpression::evaluateANDExitEventOccurrence' has no attributes.
+The class 'trace::activitydiagram::TracedVariable' has no attributes.
+The class 'States::trace::Value' has no attributes.
+The class 'Events::trace::BooleanUnaryExpression' has no attributes.
+The class 'ActivityNode::run::activityNodeExitEventOccurrence' has no attributes.
+The class 'trace::Events::Token::isWithdrawnEntryEventOccurrence' has no attributes.
+The class 'BooleanBinaryExpression::evaluateORExitEventOccurrence' has no attributes.
+The class 'trace::Events::ActivityNode::sendOffersEntryEventOccurrence' has no attributes.
+The class 'Events::trace::BooleanBinaryExpression' has no attributes.
+The class 'Activity::terminateExitEventOccurrence' has no attributes.
+The class 'activitydiagram::TracedOpaqueAction' has no attributes.
+The class 'trace::Events::ActivityNode::isRunningEntryEventOccurrence' has no attributes.
+The class 'trace::States::Activity::trace::State' has no attributes.
+The class 'trace::Events::ActivityNode::run::activityNodeEntryEventOccurrence' has no attributes.
+The class 'trace::activitydiagram::TracedBooleanVariable' has no attributes.
+The class 'Token::withdrawExitEventOccurrence' has no attributes.
+The class 'trace::States::Variable::currentValue::State' has no attributes.
+The class 'trace::Events::Action::fire::actionEntryEventOccurrence' has no attributes.
+The class 'trace::Events::ForkNode::fire::forkNodeEntryEventOccurrence' has no attributes.
+The class 'Activity::terminateEntryEventOccurrence' has no attributes.
+The class 'IntegerVariable::getCurrentValueValue::integerVariableExitEventOccurrence' has no attributes.
+The class 'IntegerComparisonExpression::evaluateGREATER::EQUALSEntryEventOccurrence' has no attributes.
+The class 'IntegerComparisonExpression::execute::IntegerComparisionExpressionEntryEventOccurrence' has no attributes.
+The class 'trace::Events::IntegerComparisonExpression::evaluateSMALLERExitEventOccurrence' has no attributes.
+The class 'IntegerVariable::getCurrentValueValue::integerVariableEntryEventOccurrence' has no attributes.
+The class 'activitydiagramConfiguration::TracedOffer' has no attributes.
+The class 'trace::Events::ActivityNode::removeTokenEntryEventOccurrence' has no attributes.
+The class 'ActivityNode::removeTokenExitEventOccurrence' has no attributes.
+The class 'IntegerComparisonExpression::evaluateGREATER::EQUALSExitEventOccurrence' has no attributes.
+The class 'BooleanVariable::setCurrentValue::boolenVariableEntryEventOccurrence' has no attributes.
+The class 'activitydiagram::TracedAction' has no attributes.
+The class 'IntegerCalculationExpression::execute::integerCalculationExpressionExitEventOccurrence' has no attributes.
+The class 'ActivityNode::isReadyEntryEventOccurrence' has no attributes.
+The class 'trace::activitydiagram::TracedDecisionNode' has no attributes.
+The class 'Events::trace::IntegerCalculationExpression' has no attributes.
+The class 'TracedNamedElement' has no attributes.
+The class 'trace::Events::ActivityNode::addTokensEntryEventOccurrence' has no attributes.
+The class 'TracedToken' has no attributes.
+The class 'trace::Events::Activity::getEnabledNodesExitEventOccurrence' has no attributes.
+The class 'IntegerCalculationExpression::evaluateADDEntryEventOccurrence' has no attributes.
+The class 'ControlNode::isReady::ControlNodeExitEventOccurrence' has no attributes.
+The class 'activitydiagram::TracedInitialNode' has no attributes.
+The class 'ActivityNode::isRunningEntryEventOccurrence' has no attributes.
+The class 'ActivityNode::terminate::activityNodeExitEventOccurrence' has no attributes.
+The class 'ActivityFinalNode::fire::activityFinalNodeExitEventOccurrence' has no attributes.
+The class 'trace::Events::Activity::runNodesEntryEventOccurrence' has no attributes.
+The class 'TracedFinalNode' has no attributes.
+The class 'Offer::hasTokensEntryEventOccurrence' has no attributes.
+The class 'Token::withdrawEntryEventOccurrence' has no attributes.
+The class 'trace::Events::BooleanUnaryExpression::execute::booleanUnaryExpressionExitEventOccurrence' has no attributes.
+The class 'activitydiagramConfiguration::TracedToken' has no attributes.
+The class 'trace::Events::ActivityEdge::sendOfferEntryEventOccurrence' has no attributes.
+The class 'trace::Events::BooleanUnaryExpression::evaluateNOTEntryEventOccurrence' has no attributes.
+The class 'trace::Events::Token::withdrawExitEventOccurrence' has no attributes.
+The class 'TracedObjects' has no attributes.
+The class 'ForkedToken::baseToken::State' has no attributes.
+The class 'ActivityNode::addTokensEntryEventOccurrence' has no attributes.
+The class 'trace::Events::DecisionNode::fire::decisionNodeExitEventOccurrence' has no attributes.
+The class 'activitydiagram::trace::OpaqueAction' has no attributes.
+The class 'activitydiagram::TracedMergeNode' has no attributes.
+The class 'trace::Events::IntegerVariable::getCurrentValueValue::integerVariableEntryEventOccurrence' has no attributes.
+The class 'trace::Events::Activity::getInitialNodeEntryEventOccurrence' has no attributes.
+The class 'trace::Events::IntegerCalculationExpression::execute::integerCalculationExpressionEntryEventOccurrence' has no attributes.
+The class 'TracedActivityNode' has no attributes.
+The class 'Activity::runExitEventOccurrence' has no attributes.
+The class 'trace::Events::StringVariable::setCurrentValue::stringVariableEntryEventOccurrence' has no attributes.
+The class 'ActivityNode::isRunningExitEventOccurrence' has no attributes.
+The class 'trace::Events::BooleanBinaryExpression::execute::booleanBinaryExpressionExitEventOccurrence' has no attributes.
+The class 'trace::Events::InitialNode::fire::initialNodeEntryEventOccurrence' has no attributes.
+The class 'Activity::runNodesExitEventOccurrence' has no attributes.
+The class 'trace::IntegerCalculationExpression' has no attributes.
+The class 'trace::Events::Activity::fireNodeExitEventOccurrence' has no attributes.
+The class 'Token::isWithdrawnExitEventOccurrence' has no attributes.
+The class 'ActivityEdge::takeOfferedTokens::activityEdgeEntryEventOccurrence' has no attributes.
+The class 'trace::Events::ActivityNode::terminate::activityNodeExitEventOccurrence' has no attributes.
+The class 'trace::activitydiagram::TracedForkNode' has no attributes.
+The class 'trace::activitydiagram::TracedOpaqueAction' has no attributes.
+The class 'trace::States::Input::inputValues::State' has no attributes.
+The class 'Offer::hasTokensExitEventOccurrence' has no attributes.
+The class 'Action::isReady::actionEntryEventOccurrence' has no attributes.
+The class 'trace::Events::ActivityNode::takeOfferedTokensExitEventOccurrence' has no attributes.
+The class 'trace::Events::Action::fire::actionExitEventOccurrence' has no attributes.
+The class 'trace::Events::Action::isReady::actionExitEventOccurrence' has no attributes.
+The class 'trace::activitydiagram::TracedExecutableNode' has no attributes.
+The class 'Activity::getEnabledNodesEntryEventOccurrence' has no attributes.
+The class 'trace::Events::IntegerComparisonExpression::execute::IntegerComparisionExpressionEntryEventOccurrence' has no attributes.
+The class 'trace::Events::BooleanUnaryExpression::execute::booleanUnaryExpressionEntryEventOccurrence' has no attributes.
+The class 'activitydiagram::TracedActivityFinalNode' has no attributes.
+The class 'trace::Events::IntegerExpression::getOperandCurrentValuesExitEventOccurrence' has no attributes.
+The class 'Token::holder::State' has no attributes.
+The class 'ActivityNode::running::State' has no attributes.
+The class 'Token::transferExitEventOccurrence' has no attributes.
+The class 'ForkNode::fire::forkNodeEntryEventOccurrence' has no attributes.
+The class 'IntegerCalculationExpression::evaluateSUBTRACTEntryEventOccurrence' has no attributes.
+The class 'trace::States::InputValue::value::State' has no attributes.
+The class 'trace::Events::ControlNode::isReady::ControlNodeExitEventOccurrence' has no attributes.
+The class 'trace::Events::IntegerCalculationExpression::evaluateSUBTRACTEntryEventOccurrence' has no attributes.
+The class 'trace::Events::IntegerVariable::setCurrentValue::integerVariableEntryEventOccurrence' has no attributes.
+The class 'trace::Events::IntegerExpression::getOperandCurrentValuesEntryEventOccurrence' has no attributes.
+The class 'trace::activitydiagram::TracedActivity' has no attributes.
+The class 'trace::Events::Activity::selectNextNodeExitEventOccurrence' has no attributes.
+The class 'IntegerComparisonExpression::evaluateGREATERExitEventOccurrence' has no attributes.
+The class 'trace::Traced::TracedObjects' has no attributes.
+The class 'trace::Events::ActivityNode::isReadyExitEventOccurrence' has no attributes.
+The class 'trace::States::ActivityNode::running::State' has the following attributes: 'running' of type bool.
+The class 'Offer::offeredTokens::State' has no attributes.
+The class 'trace::activitydiagram::TracedControlFlow' has no attributes.
+The class 'activitydiagram::trace::Expression' has no attributes.
+The class 'trace::Events::EventOccurrence' has no attributes.
+The class 'ActivityNode::run::activityNodeEntryEventOccurrence' has no attributes.
+The class 'Activity::getEnabledNodesExitEventOccurrence' has no attributes.
+The class 'trace::States::ActivityNode::heldTokens::State' has no attributes.
+The class 'trace::Events::InitialNode::isReady::InitialNodeExitEventOccurrence' has no attributes.
+The class 'trace::Events::InitialNode::isReady::InitialNodeEntryEventOccurrence' has no attributes.
+The class 'ActivityNode::heldTokens::State' has no attributes.
+The class 'EventOccurrence' has no attributes.
+The class 'trace::Events::BooleanVariable::getCurrentValueValue::booleanVariableExitEventOccurrence' has no attributes.
+The class 'trace::Events::Token::transferExitEventOccurrence' has no attributes.
+The class 'trace::Events::ControlNode::fire::controlNodeEntryEventOccurrence' has no attributes.
+The class 'activitydiagramConfiguration::TracedInput' has no attributes.
+The class 'Input::inputValues::State' has no attributes.
+The class 'activitydiagramConfiguration::TracedInputValue' has no attributes.
+The class 'trace::activitydiagramConfiguration::TracedOffer' has no attributes.
+The class 'trace::activitydiagram::TracedInitialNode' has no attributes.
+The class 'Events::trace::GlobalState' has no attributes.
+The class 'trace::activitydiagram::TracedControlNode' has no attributes.
+The class 'trace::BooleanValue' has no attributes.
+The class 'trace::activitydiagramConfiguration::TracedInput' has no attributes.
+The class 'Activity::mainEntryEventOccurrence' has no attributes.
+The class 'Events::trace::Value' has no attributes.
+The class 'Activity::mainExitEventOccurrence' has no attributes.
+The class 'trace::Events::Activity::terminateEntryEventOccurrence' has no attributes.
+The class 'trace::activitydiagramConfiguration::TracedControlToken' has no attributes.
+The class 'BooleanUnaryExpression::evaluateNOTEntryEventOccurrence' has no attributes.
+The class 'ForkedToken::withdraw::forkedTokenEntryEventOccurrence' has no attributes.
+The class 'trace::Events::Token::isWithdrawnExitEventOccurrence' has no attributes.
+The class 'ControlNode::fire::controlNodeExitEventOccurrence' has no attributes.
+The class 'trace::Events::ActivityNode::isRunningExitEventOccurrence' has no attributes.
+The class 'BooleanUnaryExpression::execute::booleanUnaryExpressionExitEventOccurrence' has no attributes.
+The class 'MergeNode::hasOffers::mergeNodeEntryEventOccurrence' has no attributes.
+The class 'activitydiagram::TracedStringVariable' has no attributes.
+The class 'activitydiagram::trace::BooleanVariable' has no attributes.
+The class 'trace::Events::IntegerCalculationExpression::execute::integerCalculationExpressionExitEventOccurrence' has no attributes.
+The class 'trace::Events::BooleanVariable::setCurrentValue::boolenVariableEntryEventOccurrence' has no attributes.
+The class 'TracedControlNode' has no attributes.
+The class 'trace::IntegerValue' has no attributes.
+The class 'Events::trace::IntegerComparisonExpression' has no attributes.
+The class 'Activity::initializeEntryEventOccurrence' has no attributes.
+The class 'trace::Events::IntegerVariable::getCurrentValueValue::integerVariableExitEventOccurrence' has no attributes.
+The class 'Events::trace::IntegerExpression' has no attributes.
+The class 'activitydiagram::TracedForkNode' has no attributes.
+The class 'trace::Events::BooleanVariable::getCurrentValueValue::booleanVariableEntryEventOccurrence' has no attributes.
+The class 'BooleanVariable::getCurrentValueValue::booleanVariableExitEventOccurrence' has no attributes.
+The class 'trace::Events::IntegerComparisonExpression::evaluateGREATERExitEventOccurrence' has no attributes.
+The class 'Token::isWithdrawnEntryEventOccurrence' has no attributes.
+The class 'trace::Events::ForkedToken::withdraw::forkedTokenEntryEventOccurrence' has no attributes.
+The class 'trace::Events::BooleanBinaryExpression::evaluateANDEntryEventOccurrence' has no attributes.
+The class 'trace::Events::ActivityNode::sendOffersExitEventOccurrence' has no attributes.
+The class 'InputValue::value::State' has no attributes.
+The class 'trace::Events::ActivityNode::hasOffersEntryEventOccurrence' has no attributes.
+The class 'Token::transferEntryEventOccurrence' has no attributes.
+The class 'trace::States::InputValue::variable::State' has no attributes.
+The class 'trace::Events::Activity::runExitEventOccurrence' has no attributes.
+The class 'trace::States::ForkedToken::baseToken::State' has no attributes.
+The class 'trace::Events::ActivityEdge::hasOfferExitEventOccurrence' has no attributes.
+The class 'trace::States::ActivityEdge::offers::State' has no attributes.
+The class 'ActivityEdge::takeOfferedTokens::activityEdgeExitEventOccurrence' has no attributes.
+The class 'trace::Events::StringVariable::getCurrentValueValue::stringVariableEntryEventOccurrence' has no attributes.
+The class 'OpaqueAction::doAction::opaqueActionEntryEventOccurrence' has no attributes.
+The class 'BooleanUnaryExpression::execute::booleanUnaryExpressionEntryEventOccurrence' has no attributes.
+The class 'trace::States::ForkedToken::remainingOffersCount::State' has the following attributes: 'remainingOffersCount' of type int.
+The class 'trace::GlobalState' has no attributes.
+The class 'trace::Events::Action::sendOffers::actionExitEventOccurrence' has no attributes.
+The class 'trace::States::Offer::offeredTokens::State' has no attributes.
+The class 'IntegerCalculationExpression::evaluateSUBTRACTExitEventOccurrence' has no attributes.
+The class 'trace::Events::BooleanBinaryExpression::execute::booleanBinaryExpressionEntryEventOccurrence' has no attributes.
+The class 'trace::Events::MergeNode::hasOffers::mergeNodeEntryEventOccurrence' has no attributes.
+The class 'trace::Events::ActivityNode::hasOffersExitEventOccurrence' has no attributes.
+The class 'activitydiagram::trace::ActivityFinalNode' has no attributes.
+The class 'TracedActivityEdge' has no attributes.
+The class 'IntegerComparisonExpression::evaluateGREATEREntryEventOccurrence' has no attributes.
+The class 'States::trace::GlobalState' has no attributes.
+The class 'StringVariable::setCurrentValue::stringVariableEntryEventOccurrence' has no attributes.
+The class 'ActivityNode::takeOfferedTokensExitEventOccurrence' has no attributes.
+The class 'trace::Events::ActivityNode::addTokensExitEventOccurrence' has no attributes.
+The class 'Action::sendOffers::actionExitEventOccurrence' has no attributes.
+The class 'activitydiagram::trace::JoinNode' has no attributes.
+The class 'trace::Events::ActivityFinalNode::fire::activityFinalNodeEntryEventOccurrence' has no attributes.
+The class 'trace::BooleanBinaryExpression' has no attributes.
+The class 'activitydiagram::TracedJoinNode' has no attributes.
+The class 'MergeNode::hasOffers::mergeNodeExitEventOccurrence' has no attributes.
+The class 'activitydiagram::trace::MergeNode' has no attributes.
+The class 'ForkedToken::remainingOffersCount::State' has no attributes.
+The class 'ForkedToken::withdraw::forkedTokenExitEventOccurrence' has no attributes.
+The class 'ActivityNode::isReadyExitEventOccurrence' has no attributes.
+The class 'ActivityNode::sendOffersExitEventOccurrence' has no attributes.
+The class 'activitydiagram::TracedBooleanVariable' has no attributes.
+The class 'ActivityNode::sendOffersEntryEventOccurrence' has no attributes.
+The class 'trace::IntegerComparisonExpression' has no attributes.
+The class 'trace::activitydiagramConfiguration::TracedToken' has no attributes.
+The class 'trace::StringValue' has no attributes.
+The class 'activitydiagram::TracedActivityEdge' has no attributes.
+The class 'activitydiagram::TracedVariable' has no attributes.
+The class 'Activity::getInitialNodeEntryEventOccurrence' has no attributes.
+The class 'trace::Events::ActivityFinalNode::fire::activityFinalNodeExitEventOccurrence' has no attributes.
+The class 'activitydiagram::TracedControlNode' has no attributes.
+The class 'trace::activitydiagram::TracedStringVariable' has no attributes.
+The class 'Activity::runNodesEntryEventOccurrence' has no attributes.
+The class 'Action::sendOffers::actionEntryEventOccurrence' has no attributes.
+The class 'trace::Events::ControlNode::isReady::ControlNodeEntryEventOccurrence' has no attributes.
+The class 'activitydiagram::TracedControlFlow' has no attributes.
+The class 'trace::Events::StringVariable::getCurrentValueValue::stringVariableExitEventOccurrence' has no attributes.
+The class 'IntegerComparisonExpression::evaluateSMALLER::EQUALSEntryEventOccurrence' has no attributes.
+The class 'trace::Events::IntegerVariable::setCurrentValue::integerVariableExitEventOccurrence' has no attributes.
+The class 'trace::Events::IntegerComparisonExpression::evaluateEQUALSEntryEventOccurrence' has no attributes.
+The class 'trace::Events::ActivityNode::takeOfferedTokensEntryEventOccurrence' has no attributes.
+The class 'TracedVariable' has no attributes.
+The class 'Activity::fireInitialNodeExitEventOccurrence' has no attributes.
+The class 'BooleanBinaryExpression::execute::booleanBinaryExpressionEntryEventOccurrence' has no attributes.
+The class 'IntegerExpression::getOperandCurrentValuesExitEventOccurrence' has no attributes.
+The class 'trace::Events::Action::isReady::actionEntryEventOccurrence' has no attributes.
+The class 'trace::Events::Events' has no attributes.
+The class 'trace::Events::Activity::getInitialNodeExitEventOccurrence' has no attributes.
+The class 'IntegerVariable::setCurrentValue::integerVariableExitEventOccurrence' has no attributes.
+The class 'trace::Events::ActivityEdge::takeOfferedTokens::activityEdgeEntryEventOccurrence' has no attributes.
+The class 'activitydiagram::trace::IntegerVariable' has no attributes.
+The class 'Activity::selectNextNodeExitEventOccurrence' has no attributes.
+The class 'trace::Events::IntegerComparisonExpression::evaluateSMALLER::EQUALSEntryEventOccurrence' has no attributes.
+The class 'IntegerComparisonExpression::evaluateSMALLEREntryEventOccurrence' has no attributes.
+The class 'IntegerExpression::getOperandCurrentValuesEntryEventOccurrence' has no attributes.
+The class 'activitydiagram::trace::Activity' has no attributes.
+The class 'trace::Events::IntegerCalculationExpression::evaluateSUBTRACTExitEventOccurrence' has no attributes.
+The class 'Variable::currentValue::State' has no attributes.
+The class 'trace::Events::ActivityEdge::takeOfferedTokens::activityEdgeExitEventOccurrence' has no attributes.
+The class 'trace::Events::IntegerCalculationExpression::evaluateADDEntryEventOccurrence' has no attributes.
+The class 'trace::Events::IntegerComparisonExpression::evaluateGREATER::EQUALSExitEventOccurrence' has no attributes.
+The class 'trace::Events::Activity::mainExitEventOccurrence' has no attributes.
+The class 'StringVariable::getCurrentValueValue::stringVariableEntryEventOccurrence' has no attributes.
+The class 'trace::Events::ActivityNode::removeTokenExitEventOccurrence' has no attributes.
+The class 'StringVariable::setCurrentValue::stringVariableExitEventOccurrence' has no attributes.
+The class 'trace::Events::Activity::fireInitialNodeExitEventOccurrence' has no attributes.
+The class 'StringVariable::getCurrentValueValue::stringVariableExitEventOccurrence' has no attributes.
+The class 'trace::Events::Activity::fireNodeEntryEventOccurrence' has no attributes.
+The class 'activitydiagram::trace::DecisionNode' has no attributes.
+The class 'BooleanVariable::getCurrentValueValue::booleanVariableEntryEventOccurrence' has no attributes.
+The class 'ActivityNode::hasOffersEntryEventOccurrence' has no attributes.
+The class 'trace::Events::BooleanUnaryExpression::evaluateNOTExitEventOccurrence' has no attributes.
+The class 'trace::Events::ActivityNode::terminate::activityNodeEntryEventOccurrence' has no attributes.
+The class 'trace::Events::Activity::runNodesExitEventOccurrence' has no attributes.
+The class 'Activity::fireInitialNodeEntryEventOccurrence' has no attributes.
+The class 'Activity::fireNodeExitEventOccurrence' has no attributes.
+The class 'trace::Events::IntegerComparisonExpression::evaluateSMALLER::EQUALSExitEventOccurrence' has no attributes.
+The class 'ActivityNode::addTokensExitEventOccurrence' has no attributes.
+The class 'trace::Events::MergeNode::hasOffers::mergeNodeExitEventOccurrence' has no attributes.
+The class 'Trace::executedNodes::State' has no attributes.
+The class 'Activity::runEntryEventOccurrence' has no attributes.
+The class 'activitydiagram::trace::ControlFlow' has no attributes.
+The class 'InitialNode::fire::initialNodeEntryEventOccurrence' has no attributes.
+The class 'trace::activitydiagram::TracedActivityNode' has no attributes.
+The class 'trace::Events::Action::sendOffers::actionEntryEventOccurrence' has no attributes.
+The class 'activitydiagram::trace::StringVariable' has no attributes.
+The class 'trace::StaticObjectsPools' has no attributes.
+The class 'IntegerCalculationExpression::evaluateADDExitEventOccurrence' has no attributes.
+The class 'trace::Events::Offer::hasTokensEntryEventOccurrence' has no attributes.
+The class 'trace::Events::Activity::terminateExitEventOccurrence' has no attributes.
+The class 'trace::Trace' has no attributes.
+The class 'trace::States::Token::holder::State' has no attributes.
+The class 'trace::activitydiagram::TracedNamedElement' has the following attributes: 'name' of type str.
+The class 'trace::Events::Activity::fireInitialNodeEntryEventOccurrence' has no attributes.
+The class 'activitydiagram::trace::Value' has no attributes.
+The class 'activitydiagram::TracedActivity' has no attributes.
+The class 'activitydiagramConfiguration::TracedForkedToken' has no attributes.
+'trace::Events::InitialNode::isReady::InitialNodeEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::InitialNode::fire::initialNodeEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::IntegerVariable::getCurrentValueValue::integerVariableExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::BooleanVariable::getCurrentValueValue::booleanVariableExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Action::fire::actionExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Activity::fireNodeExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Activity::runNodesEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::activitydiagramConfiguration::TracedControlToken' is a specialization of 'TracedToken'.
+'trace::Events::BooleanVariable::setCurrentValue::boolenVariableEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::InitialNode::fire::initialNodeExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::BooleanUnaryExpression::evaluateNOTEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::IntegerComparisonExpression::evaluateSMALLERExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::IntegerComparisonExpression::evaluateEQUALSEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::BooleanBinaryExpression::evaluateANDExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::activitydiagram::TracedExecutableNode' is a specialization of 'TracedActivityNode'.
+'trace::Events::IntegerVariable::setCurrentValue::integerVariableEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::activitydiagram::TracedActivity' is a specialization of 'TracedNamedElement'.
+'trace::activitydiagram::TracedAction' is a specialization of 'TracedExecutableNode'.
+'trace::Events::IntegerComparisonExpression::evaluateGREATERExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::StringVariable::setCurrentValue::stringVariableEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::activitydiagram::TracedFinalNode' is a specialization of 'TracedControlNode'.
+'trace::Events::MergeNode::hasOffers::mergeNodeExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::ForkedToken::withdraw::forkedTokenExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::ActivityEdge::takeOfferedTokens::activityEdgeEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Activity::terminateExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::ActivityNode::hasOffersExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::IntegerCalculationExpression::execute::integerCalculationExpressionExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::ActivityNode::isReadyExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::DecisionNode::fire::decisionNodeEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::activitydiagram::TracedActivityEdge' is a specialization of 'TracedNamedElement'.
+'trace::Events::ActivityNode::run::activityNodeEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::activitydiagram::TracedControlFlow' is a specialization of 'TracedActivityEdge'.
+'trace::Events::Activity::initializeExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::OpaqueAction::doAction::opaqueActionExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::BooleanBinaryExpression::evaluateORExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::IntegerComparisonExpression::evaluateGREATER::EQUALSExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::ControlNode::fire::controlNodeEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Token::transferEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Token::withdrawExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::IntegerComparisonExpression::evaluateSMALLER::EQUALSEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::OpaqueAction::doAction::opaqueActionEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::ActivityNode::sendOffersExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::activitydiagram::TracedIntegerVariable' is a specialization of 'TracedVariable'.
+'trace::Events::ForkedToken::withdraw::forkedTokenEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::InitialNode::isReady::InitialNodeExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Activity::getInitialNodeExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::ActivityNode::isRunningEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::ActivityNode::takeOfferedTokensEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::ForkNode::fire::forkNodeExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::activitydiagram::TracedControlNode' is a specialization of 'TracedActivityNode'.
+'trace::Events::Activity::initializeEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::activitydiagram::TracedForkNode' is a specialization of 'TracedControlNode'.
+'trace::Events::IntegerComparisonExpression::execute::IntegerComparisionExpressionEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::StringVariable::getCurrentValueValue::stringVariableExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::ForkNode::fire::forkNodeEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::IntegerVariable::setCurrentValue::integerVariableExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::StringVariable::getCurrentValueValue::stringVariableEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::activitydiagram::TracedDecisionNode' is a specialization of 'TracedControlNode'.
+'trace::Events::ActivityNode::removeTokenExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Action::sendOffers::actionEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::ActivityNode::addTokensExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Activity::selectNextNodeEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Activity::mainExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::BooleanBinaryExpression::evaluateANDEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::activitydiagram::TracedActivityNode' is a specialization of 'TracedNamedElement'.
+'trace::Events::IntegerVariable::getCurrentValueValue::integerVariableEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::BooleanBinaryExpression::execute::booleanBinaryExpressionEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Activity::runExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::ActivityEdge::takeOfferedTokens::activityEdgeExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::ActivityNode::terminate::activityNodeExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::IntegerComparisonExpression::execute::IntegerComparisionExpressionExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::ControlNode::isReady::ControlNodeEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Action::isReady::actionEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Activity::getInitialNodeEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::BooleanBinaryExpression::evaluateOREntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Activity::terminateEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::IntegerCalculationExpression::evaluateSUBTRACTExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::IntegerExpression::getOperandCurrentValuesExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Activity::fireNodeEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::activitydiagram::TracedVariable' is a specialization of 'TracedNamedElement'.
+'trace::Events::IntegerCalculationExpression::evaluateADDEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::activitydiagram::TracedActivityFinalNode' is a specialization of 'TracedFinalNode'.
+'trace::activitydiagram::TracedBooleanVariable' is a specialization of 'TracedVariable'.
+'trace::Events::ControlNode::isReady::ControlNodeExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::ActivityNode::hasOffersEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::IntegerCalculationExpression::execute::integerCalculationExpressionEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::BooleanUnaryExpression::execute::booleanUnaryExpressionEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::activitydiagram::TracedMergeNode' is a specialization of 'TracedControlNode'.
+'trace::Events::Action::fire::actionEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::activitydiagram::TracedOpaqueAction' is a specialization of 'TracedAction'.
+'trace::Events::Token::transferExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::ActivityEdge::sendOfferExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::DecisionNode::fire::decisionNodeExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::ActivityNode::sendOffersEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::BooleanUnaryExpression::evaluateNOTExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::activitydiagram::TracedInitialNode' is a specialization of 'TracedControlNode'.
+'trace::Events::ActivityFinalNode::fire::activityFinalNodeEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::IntegerComparisonExpression::evaluateSMALLER::EQUALSExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::activitydiagram::TracedJoinNode' is a specialization of 'TracedControlNode'.
+'trace::Events::ActivityNode::addTokensEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Activity::mainEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::IntegerExpression::getOperandCurrentValuesEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::ActivityNode::isReadyEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Activity::getEnabledNodesExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::BooleanBinaryExpression::execute::booleanBinaryExpressionExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Offer::hasTokensExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::BooleanVariable::setCurrentValue::boolenVariableExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::IntegerCalculationExpression::evaluateADDExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Offer::hasTokensEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::IntegerComparisonExpression::evaluateGREATER::EQUALSEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::ControlNode::fire::controlNodeExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Token::withdrawEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::ActivityEdge::hasOfferExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Activity::runEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::ActivityEdge::hasOfferEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::ActivityFinalNode::fire::activityFinalNodeExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Action::isReady::actionExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Activity::selectNextNodeExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::BooleanVariable::getCurrentValueValue::booleanVariableEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Token::isWithdrawnExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::activitydiagram::TracedStringVariable' is a specialization of 'TracedVariable'.
+'trace::Events::ActivityNode::takeOfferedTokensExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::ActivityNode::isRunningExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::IntegerComparisonExpression::evaluateSMALLEREntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Activity::getEnabledNodesEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::ActivityNode::removeTokenEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::ActivityNode::terminate::activityNodeEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::activitydiagramConfiguration::TracedForkedToken' is a specialization of 'TracedToken'.
+'trace::Events::IntegerCalculationExpression::evaluateSUBTRACTEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::ActivityEdge::sendOfferEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::IntegerComparisonExpression::evaluateGREATEREntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::BooleanUnaryExpression::execute::booleanUnaryExpressionExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Action::sendOffers::actionExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Token::isWithdrawnEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::ActivityNode::run::activityNodeExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::MergeNode::hasOffers::mergeNodeEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Activity::fireInitialNodeExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Activity::fireInitialNodeEntryEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::Activity::runNodesExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::IntegerComparisonExpression::evaluateEQUALSExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::Events::StringVariable::setCurrentValue::stringVariableExitEventOccurrence' is a specialization of 'EventOccurrence'.
+'trace::activitydiagramConfiguration::TracedForkedToken' (role 'parent835', cardinality 0..*) is associated with 'ForkedToken::remainingOffersCount::State' (role 'ForkedToken_remainingOffersCount_State836', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events164', cardinality 0..*) is associated with 'InitialNode::isReady::InitialNodeExitEventOccurrence' (role 'InitialNode_isReady_InitialNodeExitEventOccurrence', cardinality 0..*).
+'trace::activitydiagram::TracedVariable' (role 'trace_activitydiagram_TracedVariable', cardinality 0..*) is associated with 'activitydiagram::trace::Value' (role 'activitydiagram_trace_Value', cardinality 0..*).
+'activitydiagramConfiguration::TracedInputValue' (role 'TracedInputValue', cardinality 0..*) is associated with 'trace::States::InputValue::value::State' (role 'valueTrace', cardinality 0..*).
+'Activity::fireNodeEntryEventOccurrence' (role 'Activity_fireNodeEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events86', cardinality 0..*).
+'activitydiagramConfiguration::TracedInputValue' (role 'activitydiagramConfiguration_TracedInputValue', cardinality 0..*) is associated with 'trace::States::Input::inputValues::State' (role 'trace_States_Input_inputValues_State', cardinality 0..*).
+'ForkedToken::remainingOffersCount::State' (role 'ForkedToken_remainingOffersCount_State', cardinality 0..*) is associated with 'trace::GlobalState' (role 'globalStates16', cardinality 0..*).
+'States::trace::GlobalState' (role 'GlobalState678', cardinality 0..*) is associated with 'trace::States::ForkedToken::baseToken::State' (role 'forkedToken_baseToken_States', cardinality 0..*).
+'trace::GlobalState' (role 'globalStates22', cardinality 0..*) is associated with 'ActivityEdge::offers::State' (role 'ActivityEdge_offers_State', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events60', cardinality 0..*) is associated with 'Activity::runExitEventOccurrence' (role 'Activity_runExitEventOccurrence', cardinality 0..*).
+'trace::States::Activity::trace::State' (role 'trace_States_Activity_trace_State', cardinality 0..*) is associated with 'activitydiagramConfiguration::TracedTrace' (role 'activitydiagramConfiguration_TracedTrace', cardinality 0..*).
+'trace::GlobalState' (role 'globalStates12', cardinality 0..*) is associated with 'Token::holder::State' (role 'Token_holder_State', cardinality 0..*).
+'Activity::runEntryEventOccurrence' (role 'Activity_runEntryEventOccurrence304', cardinality 0..*) is associated with 'trace::Events::Activity::runExitEventOccurrence' (role 'trace_Events_Activity_runExitEventOccurrence', cardinality 0..*).
+'trace::activitydiagramConfiguration::TracedForkedToken' (role 'parent841', cardinality 0..*) is associated with 'ForkedToken::baseTokenIsWithdrawn::State' (role 'ForkedToken_baseTokenIsWithdrawn_State842', cardinality 0..*).
+'IntegerExpression::getOperandCurrentValuesEntryEventOccurrence' (role 'IntegerExpression_getOperandCurrentValuesEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events210', cardinality 0..*).
+'trace::States::Trace::executedNodes::State' (role 'trace_States_Trace_executedNodes_State', cardinality 0..*) is associated with 'activitydiagram::TracedActivityNode' (role 'activitydiagram_TracedActivityNode712', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events80', cardinality 0..*) is associated with 'Activity::terminateExitEventOccurrence' (role 'Activity_terminateExitEventOccurrence', cardinality 0..*).
+'Events::trace::EObject' (role 'Events_trace_EObject329', cardinality 0..*) is associated with 'trace::Events::Activity::selectNextNodeExitEventOccurrence' (role 'trace_Events_Activity_selectNextNodeExitEventOccurrence328', cardinality 0..*).
+'Input::inputValues::State' (role 'Input_inputValues_State833', cardinality 0..*) is associated with 'trace::activitydiagramConfiguration::TracedInput' (role 'parent832', cardinality 0..*).
+'trace::StaticObjectsPools' (role 'trace_StaticObjectsPools', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace6', cardinality 0..*).
+'trace::States::Variable::currentValue::State' (role 'trace_States_Variable_currentValue_State', cardinality 0..*) is associated with 'States::trace::Value' (role 'States_trace_Value689', cardinality 0..*).
+'activitydiagram::TracedActivity' (role 'activitydiagram_TracedActivity295', cardinality 0..*) is associated with 'trace::Events::Activity::initializeEntryEventOccurrence' (role 'trace_Events_Activity_initializeEntryEventOccurrence', cardinality 0..*).
+'trace::Events::Activity::initializeExitEventOccurrence' (role 'trace_Events_Activity_initializeExitEventOccurrence', cardinality 0..*) is associated with 'Activity::initializeEntryEventOccurrence' (role 'Activity_initializeEntryEventOccurrence300', cardinality 0..*).
+'trace::activitydiagram::TracedForkNode' (role 'trace_activitydiagram_TracedForkNode', cardinality 0..*) is associated with 'activitydiagram::trace::ForkNode' (role 'activitydiagram_trace_ForkNode', cardinality 0..*).
+'BooleanVariable::setCurrentValue::boolenVariableExitEventOccurrence' (role 'BooleanVariable_setCurrentValue_boolenVariableExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events204', cardinality 0..*).
+'Events::trace::EObject' (role 'Events_trace_EObject', cardinality 0..*) is associated with 'trace::Events::Activity::mainEntryEventOccurrence' (role 'trace_Events_Activity_mainEntryEventOccurrence291', cardinality 0..*).
+'trace::Events::Activity::getInitialNodeEntryEventOccurrence' (role 'trace_Events_Activity_getInitialNodeEntryEventOccurrence', cardinality 0..*) is associated with 'activitydiagram::TracedActivity' (role 'activitydiagram_TracedActivity335', cardinality 0..*).
+'ForkNode::fire::forkNodeExitEventOccurrence' (role 'ForkNode_fire_forkNodeExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events176', cardinality 0..*).
+'Activity::trace::State' (role 'Activity_trace_State', cardinality 0..*) is associated with 'trace::GlobalState' (role 'globalStates32', cardinality 0..*).
+'trace::Traced::TracedObjects' (role 'trace_Traced_TracedObjects760', cardinality 0..*) is associated with 'activitydiagram::TracedDecisionNode' (role 'activitydiagram_TracedDecisionNode761', cardinality 0..*).
+'Activity::runNodesEntryEventOccurrence' (role 'Activity_runNodesEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events62', cardinality 0..*).
+'activitydiagram::TracedActivityNode' (role 'activitydiagram_TracedActivityNode662', cardinality 0..*) is associated with 'trace::States::Token::holder::State' (role 'trace_States_Token_holder_State', cardinality 0..*).
+'trace::States::ActivityEdge::offers::State' (role 'trace_States_ActivityEdge_offers_State', cardinality 0..*) is associated with 'activitydiagramConfiguration::TracedOffer' (role 'activitydiagramConfiguration_TracedOffer684', cardinality 0..*).
+'activitydiagram::TracedActivity' (role 'activitydiagram_TracedActivity306', cardinality 0..*) is associated with 'trace::Events::Activity::runNodesEntryEventOccurrence' (role 'trace_Events_Activity_runNodesEntryEventOccurrence', cardinality 0..*).
+'trace::States::ForkedToken::baseTokenIsWithdrawn::State' (role 'baseTokenIsWithdrawnTrace', cardinality 0..*) is associated with 'activitydiagramConfiguration::TracedForkedToken' (role 'TracedForkedToken680', cardinality 0..*).
+'trace::activitydiagram::TracedActivityNode' (role 'parent798', cardinality 0..*) is associated with 'ActivityNode::heldTokens::State' (role 'ActivityNode_heldTokens_State799', cardinality 0..*).
+'ActivityFinalNode::fire::activityFinalNodeExitEventOccurrence' (role 'ActivityFinalNode_fire_activityFinalNodeExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events172', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events186', cardinality 0..*) is associated with 'IntegerVariable::setCurrentValue::integerVariableEntryEventOccurrence' (role 'IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence', cardinality 0..*).
+'trace::StaticObjectsPools' (role 'trace_StaticObjectsPools44', cardinality 0..*) is associated with 'trace::IntegerComparisonExpression' (role 'trace_IntegerComparisonExpression', cardinality 0..*).
+'Activity::initializeExitEventOccurrence' (role 'Activity_initializeExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events56', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events178', cardinality 0..*) is associated with 'MergeNode::hasOffers::mergeNodeEntryEventOccurrence' (role 'MergeNode_hasOffers_mergeNodeEntryEventOccurrence', cardinality 0..*).
+'trace::Events::Activity::runNodesExitEventOccurrence' (role 'trace_Events_Activity_runNodesExitEventOccurrence', cardinality 0..*) is associated with 'Activity::runNodesEntryEventOccurrence' (role 'Activity_runNodesEntryEventOccurrence308', cardinality 0..*).
+'trace::Traced::TracedObjects' (role 'trace_Traced_TracedObjects727', cardinality 0..*) is associated with 'activitydiagramConfiguration::TracedControlToken' (role 'activitydiagramConfiguration_TracedControlToken', cardinality 0..*).
+'StringVariable::setCurrentValue::stringVariableExitEventOccurrence' (role 'StringVariable_setCurrentValue_stringVariableExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events196', cardinality 0..*).
+'trace::StaticObjectsPools' (role 'trace_StaticObjectsPools46', cardinality 0..*) is associated with 'trace::BooleanUnaryExpression' (role 'trace_BooleanUnaryExpression', cardinality 0..*).
+'activitydiagram::TracedActivityNode' (role 'activitydiagram_TracedActivityNode776', cardinality 0..*) is associated with 'trace::activitydiagram::TracedActivityEdge' (role 'trace_activitydiagram_TracedActivityEdge775', cardinality 0..*).
+'trace::States::ActivityEdge::offers::State' (role 'activityEdge_offers_States', cardinality 0..*) is associated with 'States::trace::GlobalState' (role 'GlobalState687', cardinality 0..*).
+'activitydiagram::TracedActivity' (role 'TracedActivity', cardinality 0..*) is associated with 'trace::States::Activity::trace::State' (role 'traceTrace', cardinality 0..*).
+'trace::States::ForkedToken::baseTokenIsWithdrawn::State' (role 'forkedToken_baseTokenIsWithdrawn_States', cardinality 0..*) is associated with 'States::trace::GlobalState' (role 'GlobalState682', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events180', cardinality 0..*) is associated with 'MergeNode::hasOffers::mergeNodeExitEventOccurrence' (role 'MergeNode_hasOffers_mergeNodeExitEventOccurrence', cardinality 0..*).
+'trace::States::Trace::executedNodes::State' (role 'executedNodesTrace', cardinality 0..*) is associated with 'activitydiagramConfiguration::TracedTrace' (role 'TracedTrace', cardinality 0..*).
+'activitydiagram::TracedInitialNode' (role 'activitydiagram_TracedInitialNode747', cardinality 0..*) is associated with 'trace::Traced::TracedObjects' (role 'trace_Traced_TracedObjects746', cardinality 0..*).
+'trace::Traced::TracedObjects' (role 'trace_Traced_TracedObjects758', cardinality 0..*) is associated with 'activitydiagram::TracedJoinNode' (role 'activitydiagram_TracedJoinNode', cardinality 0..*).
+'Input::inputValues::State' (role 'Input_inputValues_State', cardinality 0..*) is associated with 'trace::GlobalState' (role 'globalStates14', cardinality 0..*).
+'activitydiagram::TracedActivityEdge' (role 'activitydiagram_TracedActivityEdge790', cardinality 0..*) is associated with 'trace::activitydiagram::TracedActivityNode' (role 'trace_activitydiagram_TracedActivityNode789', cardinality 0..*).
+'trace::Events::Activity::getInitialNodeExitEventOccurrence' (role 'trace_Events_Activity_getInitialNodeExitEventOccurrence339', cardinality 0..*) is associated with 'Events::trace::EObject' (role 'Events_trace_EObject340', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events68', cardinality 0..*) is associated with 'Activity::fireInitialNodeExitEventOccurrence' (role 'Activity_fireInitialNodeExitEventOccurrence', cardinality 0..*).
+'trace::GlobalState' (role 'globalStates26', cardinality 0..*) is associated with 'Offer::offeredTokens::State' (role 'Offer_offeredTokens_State', cardinality 0..*).
+'activitydiagram::TracedActivityFinalNode' (role 'activitydiagram_TracedActivityFinalNode738', cardinality 0..*) is associated with 'trace::Traced::TracedObjects' (role 'trace_Traced_TracedObjects737', cardinality 0..*).
+'trace::GlobalState' (role 'globalStates34', cardinality 0..*) is associated with 'Trace::executedNodes::State' (role 'Trace_executedNodes_State', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events138', cardinality 0..*) is associated with 'ControlNode::isReady::ControlNodeEntryEventOccurrence' (role 'ControlNode_isReady_ControlNodeEntryEventOccurrence', cardinality 0..*).
+'trace::Events::Activity::runEntryEventOccurrence' (role 'trace_Events_Activity_runEntryEventOccurrence', cardinality 0..*) is associated with 'activitydiagram::TracedActivity' (role 'activitydiagram_TracedActivity302', cardinality 0..*).
+'ControlNode::isReady::ControlNodeExitEventOccurrence' (role 'ControlNode_isReady_ControlNodeExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events140', cardinality 0..*).
+'activitydiagram::TracedVariable' (role 'activitydiagram_TracedVariable807', cardinality 0..*) is associated with 'trace::activitydiagram::TracedActivity' (role 'trace_activitydiagram_TracedActivity806', cardinality 0..*).
+'ActivityNode::terminate::activityNodeEntryEventOccurrence' (role 'ActivityNode_terminate_activityNodeEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events98', cardinality 0..*).
+'trace::activitydiagramConfiguration::TracedTrace' (role 'parent847', cardinality 0..*) is associated with 'Trace::executedNodes::State' (role 'Trace_executedNodes_State848', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events194', cardinality 0..*) is associated with 'StringVariable::setCurrentValue::stringVariableEntryEventOccurrence' (role 'StringVariable_setCurrentValue_stringVariableEntryEventOccurrence', cardinality 0..*).
+'trace::Events::Activity::initializeEntryEventOccurrence' (role 'trace_Events_Activity_initializeEntryEventOccurrence297', cardinality 0..*) is associated with 'Events::trace::EObject' (role 'Events_trace_EObject298', cardinality 0..*).
+'IntegerCalculationExpression::evaluateADDExitEventOccurrence' (role 'IntegerCalculationExpression_evaluateADDExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events220', cardinality 0..*).
+'trace::States::ActivityNode::heldTokens::State' (role 'activityNode_heldTokens_States', cardinality 0..*) is associated with 'States::trace::GlobalState' (role 'GlobalState706', cardinality 0..*).
+'Activity::selectNextNodeEntryEventOccurrence' (role 'Activity_selectNextNodeEntryEventOccurrence326', cardinality 0..*) is associated with 'trace::Events::Activity::selectNextNodeExitEventOccurrence' (role 'trace_Events_Activity_selectNextNodeExitEventOccurrence', cardinality 0..*).
+'trace::Trace' (role 'trace_Trace', cardinality 0..*) is associated with 'trace::GlobalState' (role 'trace_GlobalState', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events', cardinality 0..*) is associated with 'Activity::mainEntryEventOccurrence' (role 'Activity_mainEntryEventOccurrence', cardinality 0..*).
+'activitydiagramConfiguration::TracedInput' (role 'TracedInput', cardinality 0..*) is associated with 'trace::States::Input::inputValues::State' (role 'inputValuesTrace', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events166', cardinality 0..*) is associated with 'InitialNode::fire::initialNodeEntryEventOccurrence' (role 'InitialNode_fire_initialNodeEntryEventOccurrence', cardinality 0..*).
+'activitydiagram::trace::MergeNode' (role 'activitydiagram_trace_MergeNode', cardinality 0..*) is associated with 'trace::activitydiagram::TracedMergeNode' (role 'trace_activitydiagram_TracedMergeNode', cardinality 0..*).
+'InitialNode::fire::initialNodeExitEventOccurrence' (role 'InitialNode_fire_initialNodeExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events168', cardinality 0..*).
+'activitydiagram::TracedActivity' (role 'activitydiagram_TracedActivity331', cardinality 0..*) is associated with 'trace::Events::Activity::terminateEntryEventOccurrence' (role 'trace_Events_Activity_terminateEntryEventOccurrence', cardinality 0..*).
+'ActivityEdge::offers::State' (role 'ActivityEdge_offers_State778', cardinality 0..*) is associated with 'trace::activitydiagram::TracedActivityEdge' (role 'parent', cardinality 0..*).
+'trace::Traced::TracedObjects' (role 'trace_Traced_TracedObjects734', cardinality 0..*) is associated with 'activitydiagramConfiguration::TracedForkedToken' (role 'activitydiagramConfiguration_TracedForkedToken735', cardinality 0..*).
+'trace::activitydiagramConfiguration::TracedInputValue' (role 'parent826', cardinality 0..*) is associated with 'InputValue::variable::State' (role 'InputValue_variable_State827', cardinality 0..*).
+'States::trace::GlobalState' (role 'GlobalState660', cardinality 0..*) is associated with 'trace::States::InputValue::variable::State' (role 'inputValue_variable_States', cardinality 0..*).
+'States::trace::GlobalState' (role 'GlobalState672', cardinality 0..*) is associated with 'trace::States::ForkedToken::remainingOffersCount::State' (role 'forkedToken_remainingOffersCount_States', cardinality 0..*).
+'States::trace::GlobalState' (role 'GlobalState715', cardinality 0..*) is associated with 'trace::States::Trace::executedNodes::State' (role 'trace_executedNodes_States', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events190', cardinality 0..*) is associated with 'IntegerVariable::getCurrentValueValue::integerVariableEntryEventOccurrence' (role 'IntegerVariable_getCurrentValueValue_integerVariableEntryEventOccurrence', cardinality 0..*).
+'trace::Events::Activity::mainExitEventOccurrence' (role 'trace_Events_Activity_mainExitEventOccurrence', cardinality 0..*) is associated with 'Activity::mainEntryEventOccurrence' (role 'Activity_mainEntryEventOccurrence293', cardinality 0..*).
+'trace::StaticObjectsPools' (role 'trace_StaticObjectsPools42', cardinality 0..*) is associated with 'trace::BooleanValue' (role 'trace_BooleanValue', cardinality 0..*).
+'ActivityNode::sendOffersEntryEventOccurrence' (role 'ActivityNode_sendOffersEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events102', cardinality 0..*).
+'StringVariable::getCurrentValueValue::stringVariableExitEventOccurrence' (role 'StringVariable_getCurrentValueValue_stringVariableExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events200', cardinality 0..*).
+'trace::activitydiagram::TracedControlFlow' (role 'trace_activitydiagram_TracedControlFlow768', cardinality 0..*) is associated with 'activitydiagram::trace::ControlFlow' (role 'activitydiagram_trace_ControlFlow', cardinality 0..*).
+'ControlNode::fire::controlNodeEntryEventOccurrence' (role 'ControlNode_fire_controlNodeEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events142', cardinality 0..*).
+'activitydiagram::TracedForkNode' (role 'activitydiagram_TracedForkNode744', cardinality 0..*) is associated with 'trace::Traced::TracedObjects' (role 'trace_Traced_TracedObjects743', cardinality 0..*).
+'trace::StaticObjectsPools' (role 'trace_StaticObjectsPools38', cardinality 0..*) is associated with 'trace::StringValue' (role 'trace_StringValue', cardinality 0..*).
+'activitydiagram::TracedMergeNode' (role 'activitydiagram_TracedMergeNode722', cardinality 0..*) is associated with 'trace::Traced::TracedObjects' (role 'trace_Traced_TracedObjects721', cardinality 0..*).
+'ActivityNode::running::State' (role 'ActivityNode_running_State796', cardinality 0..*) is associated with 'trace::activitydiagram::TracedActivityNode' (role 'parent795', cardinality 0..*).
+'activitydiagram::TracedActivityNode' (role 'activitydiagram_TracedActivityNode801', cardinality 0..*) is associated with 'trace::activitydiagram::TracedActivity' (role 'trace_activitydiagram_TracedActivity', cardinality 0..*).
+'States::trace::GlobalState' (role 'GlobalState692', cardinality 0..*) is associated with 'trace::States::Variable::currentValue::State' (role 'variable_currentValue_States', cardinality 0..*).
+'trace::Events::EventOccurrence' (role 'eventsTriggeredDuringState', cardinality 0..*) is associated with 'Events::trace::GlobalState' (role 'GlobalState', cardinality 0..*).
+'States::trace::GlobalState' (role 'GlobalState669', cardinality 0..*) is associated with 'trace::States::Input::inputValues::State' (role 'input_inputValues_States', cardinality 0..*).
+'trace::activitydiagram::TracedActivityNode' (role 'trace_activitydiagram_TracedActivityNode792', cardinality 0..*) is associated with 'activitydiagram::TracedActivity' (role 'activitydiagram_TracedActivity793', cardinality 0..*).
+'trace::States::Activity::trace::State' (role 'activity_trace_States', cardinality 0..*) is associated with 'States::trace::GlobalState' (role 'GlobalState710', cardinality 0..*).
+'trace::Events::Activity::terminateExitEventOccurrence' (role 'trace_Events_Activity_terminateExitEventOccurrence', cardinality 0..*) is associated with 'Activity::terminateEntryEventOccurrence' (role 'Activity_terminateEntryEventOccurrence333', cardinality 0..*).
+'trace::activitydiagram::TracedActivityFinalNode' (role 'trace_activitydiagram_TracedActivityFinalNode', cardinality 0..*) is associated with 'activitydiagram::trace::ActivityFinalNode' (role 'activitydiagram_trace_ActivityFinalNode', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events100', cardinality 0..*) is associated with 'ActivityNode::terminate::activityNodeExitEventOccurrence' (role 'ActivityNode_terminate_activityNodeExitEventOccurrence', cardinality 0..*).
+'activitydiagramConfiguration::TracedForkedToken' (role 'TracedForkedToken', cardinality 0..*) is associated with 'trace::States::ForkedToken::remainingOffersCount::State' (role 'remainingOffersCountTrace', cardinality 0..*).
+'activitydiagram::trace::JoinNode' (role 'activitydiagram_trace_JoinNode', cardinality 0..*) is associated with 'trace::activitydiagram::TracedJoinNode' (role 'trace_activitydiagram_TracedJoinNode', cardinality 0..*).
+'BooleanVariable::getCurrentValueValue::booleanVariableEntryEventOccurrence' (role 'BooleanVariable_getCurrentValueValue_booleanVariableEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events206', cardinality 0..*).
+'activitydiagramConfiguration::TracedToken' (role 'activitydiagramConfiguration_TracedToken674', cardinality 0..*) is associated with 'trace::States::ForkedToken::baseToken::State' (role 'trace_States_ForkedToken_baseToken_State', cardinality 0..*).
+'trace::activitydiagram::TracedInitialNode' (role 'trace_activitydiagram_TracedInitialNode', cardinality 0..*) is associated with 'activitydiagram::trace::InitialNode' (role 'activitydiagram_trace_InitialNode', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events146', cardinality 0..*) is associated with 'Action::sendOffers::actionEntryEventOccurrence' (role 'Action_sendOffers_actionEntryEventOccurrence', cardinality 0..*).
+'activitydiagram::trace::Activity' (role 'activitydiagram_trace_Activity', cardinality 0..*) is associated with 'trace::activitydiagram::TracedActivity' (role 'trace_activitydiagram_TracedActivity812', cardinality 0..*).
+'IntegerCalculationExpression::evaluateSUBTRACTEntryEventOccurrence' (role 'IntegerCalculationExpression_evaluateSUBTRACTEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events222', cardinality 0..*).
+'trace::Events::IntegerVariable::getCurrentValueValue::integerVariableExitEventOccurrence' (role 'trace_Events_IntegerVariable_getCurrentValueValue_integerVariableExitEventOccurrence', cardinality 0..*) is associated with 'IntegerVariable::getCurrentValueValue::integerVariableEntryEventOccurrence' (role 'IntegerVariable_getCurrentValueValue_integerVariableEntryEventOccurrence501', cardinality 0..*).
+'activitydiagram::trace::Expression' (role 'activitydiagram_trace_Expression', cardinality 0..*) is associated with 'trace::activitydiagram::TracedOpaqueAction' (role 'trace_activitydiagram_TracedOpaqueAction', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events160', cardinality 0..*) is associated with 'OpaqueAction::doAction::opaqueActionExitEventOccurrence' (role 'OpaqueAction_doAction_opaqueActionExitEventOccurrence', cardinality 0..*).
+'trace::IntegerCalculationExpression' (role 'trace_IntegerCalculationExpression', cardinality 0..*) is associated with 'trace::StaticObjectsPools' (role 'trace_StaticObjectsPools48', cardinality 0..*).
+'activitydiagramConfiguration::TracedOffer' (role 'TracedOffer', cardinality 0..*) is associated with 'trace::States::Offer::offeredTokens::State' (role 'offeredTokensTrace', cardinality 0..*).
+'trace::Traced::TracedObjects' (role 'trace_Traced_TracedObjects718', cardinality 0..*) is associated with 'activitydiagramConfiguration::TracedInputValue' (role 'activitydiagramConfiguration_TracedInputValue719', cardinality 0..*).
+'activitydiagram::trace::OpaqueAction' (role 'activitydiagram_trace_OpaqueAction', cardinality 0..*) is associated with 'trace::activitydiagram::TracedOpaqueAction' (role 'trace_activitydiagram_TracedOpaqueAction819', cardinality 0..*).
+'trace::activitydiagram::TracedActivity' (role 'trace_activitydiagram_TracedActivity803', cardinality 0..*) is associated with 'activitydiagram::TracedActivityEdge' (role 'activitydiagram_TracedActivityEdge804', cardinality 0..*).
+'trace::GlobalState' (role 'globalStates10', cardinality 0..*) is associated with 'InputValue::variable::State' (role 'InputValue_variable_State', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events54', cardinality 0..*) is associated with 'Activity::initializeEntryEventOccurrence' (role 'Activity_initializeEntryEventOccurrence', cardinality 0..*).
+'Action::isReady::actionEntryEventOccurrence' (role 'Action_isReady_actionEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events150', cardinality 0..*).
+'trace::States::Token::holder::State' (role 'token_holder_States', cardinality 0..*) is associated with 'States::trace::GlobalState' (role 'GlobalState665', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events76', cardinality 0..*) is associated with 'Activity::selectNextNodeExitEventOccurrence' (role 'Activity_selectNextNodeExitEventOccurrence', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events182', cardinality 0..*) is associated with 'DecisionNode::fire::decisionNodeEntryEventOccurrence' (role 'DecisionNode_fire_decisionNodeEntryEventOccurrence', cardinality 0..*).
+'trace::States::ActivityNode::heldTokens::State' (role 'trace_States_ActivityNode_heldTokens_State', cardinality 0..*) is associated with 'activitydiagramConfiguration::TracedToken' (role 'activitydiagramConfiguration_TracedToken702', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events162', cardinality 0..*) is associated with 'InitialNode::isReady::InitialNodeEntryEventOccurrence' (role 'InitialNode_isReady_InitialNodeEntryEventOccurrence', cardinality 0..*).
+'Action::sendOffers::actionExitEventOccurrence' (role 'Action_sendOffers_actionExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events148', cardinality 0..*).
+'activitydiagram::TracedOpaqueAction' (role 'activitydiagram_TracedOpaqueAction756', cardinality 0..*) is associated with 'trace::Traced::TracedObjects' (role 'trace_Traced_TracedObjects755', cardinality 0..*).
+'activitydiagram::TracedBooleanVariable' (role 'activitydiagram_TracedBooleanVariable766', cardinality 0..*) is associated with 'trace::activitydiagram::TracedControlFlow' (role 'trace_activitydiagram_TracedControlFlow', cardinality 0..*).
+'trace::Traced::TracedObjects' (role 'trace_Traced_TracedObjects749', cardinality 0..*) is associated with 'activitydiagram::TracedActivity' (role 'activitydiagram_TracedActivity750', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events188', cardinality 0..*) is associated with 'IntegerVariable::setCurrentValue::integerVariableExitEventOccurrence' (role 'IntegerVariable_setCurrentValue_integerVariableExitEventOccurrence', cardinality 0..*).
+'Events::trace::EObject' (role 'Events_trace_EObject319', cardinality 0..*) is associated with 'trace::Events::Activity::getEnabledNodesExitEventOccurrence' (role 'trace_Events_Activity_getEnabledNodesExitEventOccurrence318', cardinality 0..*).
+'activitydiagramConfiguration::TracedForkedToken' (role 'TracedForkedToken676', cardinality 0..*) is associated with 'trace::States::ForkedToken::baseToken::State' (role 'baseTokenTrace', cardinality 0..*).
+'activitydiagram::trace::BooleanVariable' (role 'activitydiagram_trace_BooleanVariable', cardinality 0..*) is associated with 'trace::activitydiagram::TracedBooleanVariable' (role 'trace_activitydiagram_TracedBooleanVariable', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events174', cardinality 0..*) is associated with 'ForkNode::fire::forkNodeEntryEventOccurrence' (role 'ForkNode_fire_forkNodeEntryEventOccurrence', cardinality 0..*).
+'trace::Trace' (role 'trace_Trace2', cardinality 0..*) is associated with 'Events' (role 'Events', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events158', cardinality 0..*) is associated with 'OpaqueAction::doAction::opaqueActionEntryEventOccurrence' (role 'OpaqueAction_doAction_opaqueActionEntryEventOccurrence', cardinality 0..*).
+'Variable::currentValue::State' (role 'Variable_currentValue_State782', cardinality 0..*) is associated with 'trace::activitydiagram::TracedVariable' (role 'parent781', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events134', cardinality 0..*) is associated with 'ActivityEdge::hasOfferEntryEventOccurrence' (role 'ActivityEdge_hasOfferEntryEventOccurrence', cardinality 0..*).
+'Activity::selectNextNodeEntryEventOccurrence' (role 'Activity_selectNextNodeEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events74', cardinality 0..*).
+'ActivityEdge::hasOfferExitEventOccurrence' (role 'ActivityEdge_hasOfferExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events136', cardinality 0..*).
+'Activity::getEnabledNodesEntryEventOccurrence' (role 'Activity_getEnabledNodesEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events70', cardinality 0..*).
+'IntegerCalculationExpression::evaluateADDEntryEventOccurrence' (role 'IntegerCalculationExpression_evaluateADDEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events218', cardinality 0..*).
+'ActivityNode::heldTokens::State' (role 'ActivityNode_heldTokens_State', cardinality 0..*) is associated with 'trace::GlobalState' (role 'globalStates30', cardinality 0..*).
+'activitydiagram::TracedActivity' (role 'activitydiagram_TracedActivity', cardinality 0..*) is associated with 'trace::Events::Activity::mainEntryEventOccurrence' (role 'trace_Events_Activity_mainEntryEventOccurrence', cardinality 0..*).
+'Activity::getInitialNodeExitEventOccurrence' (role 'Activity_getInitialNodeExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events84', cardinality 0..*).
+'Offer::hasTokensExitEventOccurrence' (role 'Offer_hasTokensExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events288', cardinality 0..*).
+'EventOccurrence' (role 'EventOccurrence', cardinality 0..*) is associated with 'trace::GlobalState' (role 'stateDuringWhichTriggered', cardinality 0..*).
+'activitydiagram::TracedStringVariable' (role 'activitydiagram_TracedStringVariable753', cardinality 0..*) is associated with 'trace::Traced::TracedObjects' (role 'trace_Traced_TracedObjects752', cardinality 0..*).
+'trace::Events::Activity::selectNextNodeEntryEventOccurrence' (role 'trace_Events_Activity_selectNextNodeEntryEventOccurrence', cardinality 0..*) is associated with 'activitydiagram::TracedActivity' (role 'activitydiagram_TracedActivity321', cardinality 0..*).
+'activitydiagramConfiguration::TracedInput' (role 'activitydiagramConfiguration_TracedInput', cardinality 0..*) is associated with 'trace::Traced::TracedObjects' (role 'trace_Traced_TracedObjects729', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events202', cardinality 0..*) is associated with 'BooleanVariable::setCurrentValue::boolenVariableEntryEventOccurrence' (role 'BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events208', cardinality 0..*) is associated with 'BooleanVariable::getCurrentValueValue::booleanVariableExitEventOccurrence' (role 'BooleanVariable_getCurrentValueValue_booleanVariableExitEventOccurrence', cardinality 0..*).
+'activitydiagram::TracedIntegerVariable' (role 'activitydiagram_TracedIntegerVariable732', cardinality 0..*) is associated with 'trace::Traced::TracedObjects' (role 'trace_Traced_TracedObjects731', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events72', cardinality 0..*) is associated with 'Activity::getEnabledNodesExitEventOccurrence' (role 'Activity_getEnabledNodesExitEventOccurrence', cardinality 0..*).
+'trace::States::ActivityEdge::offers::State' (role 'offersTrace', cardinality 0..*) is associated with 'activitydiagram::TracedActivityEdge' (role 'TracedActivityEdge', cardinality 0..*).
+'activitydiagram::TracedVariable' (role 'TracedVariable', cardinality 0..*) is associated with 'trace::States::Variable::currentValue::State' (role 'currentValueTrace', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events122', cardinality 0..*) is associated with 'ActivityNode::isReadyEntryEventOccurrence' (role 'ActivityNode_isReadyEntryEventOccurrence', cardinality 0..*).
+'trace::activitydiagram::TracedActivityEdge' (role 'trace_activitydiagram_TracedActivityEdge', cardinality 0..*) is associated with 'activitydiagram::TracedActivityNode' (role 'activitydiagram_TracedActivityNode773', cardinality 0..*).
+'Action::fire::actionEntryEventOccurrence' (role 'Action_fire_actionEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events154', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events268', cardinality 0..*) is associated with 'BooleanBinaryExpression::evaluateORExitEventOccurrence' (role 'BooleanBinaryExpression_evaluateORExitEventOccurrence', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events78', cardinality 0..*) is associated with 'Activity::terminateEntryEventOccurrence' (role 'Activity_terminateEntryEventOccurrence', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events156', cardinality 0..*) is associated with 'Action::fire::actionExitEventOccurrence' (role 'Action_fire_actionExitEventOccurrence', cardinality 0..*).
+'Activity::fireInitialNodeEntryEventOccurrence' (role 'Activity_fireInitialNodeEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events66', cardinality 0..*).
+'trace::Events::Activity::getInitialNodeExitEventOccurrence' (role 'trace_Events_Activity_getInitialNodeExitEventOccurrence', cardinality 0..*) is associated with 'Activity::getInitialNodeEntryEventOccurrence' (role 'Activity_getInitialNodeEntryEventOccurrence337', cardinality 0..*).
+'ActivityNode::takeOfferedTokensEntryEventOccurrence' (role 'ActivityNode_takeOfferedTokensEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events106', cardinality 0..*).
+'DecisionNode::fire::decisionNodeExitEventOccurrence' (role 'DecisionNode_fire_decisionNodeExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events184', cardinality 0..*).
+'InputValue::value::State' (role 'InputValue_value_State', cardinality 0..*) is associated with 'trace::GlobalState' (role 'globalStates', cardinality 0..*).
+'Activity::mainExitEventOccurrence' (role 'Activity_mainExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events52', cardinality 0..*).
+'trace::activitydiagram::TracedDecisionNode' (role 'trace_activitydiagram_TracedDecisionNode', cardinality 0..*) is associated with 'activitydiagram::trace::DecisionNode' (role 'activitydiagram_trace_DecisionNode', cardinality 0..*).
+'trace::Trace' (role 'trace_Trace4', cardinality 0..*) is associated with 'TracedObjects' (role 'TracedObjects', cardinality 0..*).
+'ActivityFinalNode::fire::activityFinalNodeEntryEventOccurrence' (role 'ActivityFinalNode_fire_activityFinalNodeEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events170', cardinality 0..*).
+'trace::States::Offer::offeredTokens::State' (role 'offer_offeredTokens_States', cardinality 0..*) is associated with 'States::trace::GlobalState' (role 'GlobalState697', cardinality 0..*).
+'trace::activitydiagram::TracedActivity' (role 'parent814', cardinality 0..*) is associated with 'Activity::trace::State' (role 'Activity_trace_State815', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events272', cardinality 0..*) is associated with 'Token::isWithdrawnExitEventOccurrence' (role 'Token_isWithdrawnExitEventOccurrence', cardinality 0..*).
+'activitydiagramConfiguration::TracedInputValue' (role 'TracedInputValue658', cardinality 0..*) is associated with 'trace::States::InputValue::variable::State' (role 'variableTrace', cardinality 0..*).
+'Activity::getEnabledNodesEntryEventOccurrence' (role 'Activity_getEnabledNodesEntryEventOccurrence316', cardinality 0..*) is associated with 'trace::Events::Activity::getEnabledNodesExitEventOccurrence' (role 'trace_Events_Activity_getEnabledNodesExitEventOccurrence', cardinality 0..*).
+'trace::GlobalState' (role 'globalStates24', cardinality 0..*) is associated with 'Variable::currentValue::State' (role 'Variable_currentValue_State', cardinality 0..*).
+'activitydiagram::TracedControlFlow' (role 'activitydiagram_TracedControlFlow', cardinality 0..*) is associated with 'trace::Traced::TracedObjects' (role 'trace_Traced_TracedObjects', cardinality 0..*).
+'Activity::getInitialNodeEntryEventOccurrence' (role 'Activity_getInitialNodeEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events82', cardinality 0..*).
+'trace::Events::Activity::selectNextNodeEntryEventOccurrence' (role 'trace_Events_Activity_selectNextNodeEntryEventOccurrence323', cardinality 0..*) is associated with 'Events::trace::EObject' (role 'Events_trace_EObject324', cardinality 0..*).
+'activitydiagram::TracedActivityNode' (role 'TracedActivityNode', cardinality 0..*) is associated with 'trace::States::ActivityNode::running::State' (role 'runningTrace', cardinality 0..*).
+'activitydiagramConfiguration::TracedOffer' (role 'activitydiagramConfiguration_TracedOffer741', cardinality 0..*) is associated with 'trace::Traced::TracedObjects' (role 'trace_Traced_TracedObjects740', cardinality 0..*).
+'trace::BooleanBinaryExpression' (role 'trace_BooleanBinaryExpression', cardinality 0..*) is associated with 'trace::StaticObjectsPools' (role 'trace_StaticObjectsPools36', cardinality 0..*).
+'Activity::runNodesExitEventOccurrence' (role 'Activity_runNodesExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events64', cardinality 0..*).
+'trace::activitydiagramConfiguration::TracedInputValue' (role 'parent823', cardinality 0..*) is associated with 'InputValue::value::State' (role 'InputValue_value_State824', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events198', cardinality 0..*) is associated with 'StringVariable::getCurrentValueValue::stringVariableEntryEventOccurrence' (role 'StringVariable_getCurrentValueValue_stringVariableEntryEventOccurrence', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events58', cardinality 0..*) is associated with 'Activity::runEntryEventOccurrence' (role 'Activity_runEntryEventOccurrence', cardinality 0..*).
+'trace::activitydiagram::TracedActivity' (role 'trace_activitydiagram_TracedActivity809', cardinality 0..*) is associated with 'activitydiagram::TracedVariable' (role 'activitydiagram_TracedVariable810', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events286', cardinality 0..*) is associated with 'Offer::hasTokensEntryEventOccurrence' (role 'Offer_hasTokensEntryEventOccurrence', cardinality 0..*).
+'States::trace::GlobalState' (role 'GlobalState700', cardinality 0..*) is associated with 'trace::States::ActivityNode::running::State' (role 'activityNode_running_States', cardinality 0..*).
+'trace::activitydiagramConfiguration::TracedOffer' (role 'parent844', cardinality 0..*) is associated with 'Offer::offeredTokens::State' (role 'Offer_offeredTokens_State845', cardinality 0..*).
+'trace::Traced::TracedObjects' (role 'trace_Traced_TracedObjects724', cardinality 0..*) is associated with 'activitydiagram::TracedBooleanVariable' (role 'activitydiagram_TracedBooleanVariable725', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events192', cardinality 0..*) is associated with 'IntegerVariable::getCurrentValueValue::integerVariableExitEventOccurrence' (role 'IntegerVariable_getCurrentValueValue_integerVariableExitEventOccurrence', cardinality 0..*).
+'Token::holder::State' (role 'Token_holder_State830', cardinality 0..*) is associated with 'trace::activitydiagramConfiguration::TracedToken' (role 'parent829', cardinality 0..*).
+'activitydiagram::TracedActivityEdge' (role 'activitydiagram_TracedActivityEdge787', cardinality 0..*) is associated with 'trace::activitydiagram::TracedActivityNode' (role 'trace_activitydiagram_TracedActivityNode', cardinality 0..*).
+'trace::GlobalState' (role 'globalStates20', cardinality 0..*) is associated with 'ForkedToken::baseTokenIsWithdrawn::State' (role 'ForkedToken_baseTokenIsWithdrawn_State', cardinality 0..*).
+'trace::activitydiagram::TracedIntegerVariable' (role 'trace_activitydiagram_TracedIntegerVariable', cardinality 0..*) is associated with 'activitydiagram::trace::IntegerVariable' (role 'activitydiagram_trace_IntegerVariable', cardinality 0..*).
+'trace::activitydiagram::TracedStringVariable' (role 'trace_activitydiagram_TracedStringVariable', cardinality 0..*) is associated with 'activitydiagram::trace::StringVariable' (role 'activitydiagram_trace_StringVariable', cardinality 0..*).
+'ControlNode::fire::controlNodeExitEventOccurrence' (role 'ControlNode_fire_controlNodeExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events144', cardinality 0..*).
+'activitydiagramConfiguration::TracedToken' (role 'activitydiagramConfiguration_TracedToken694', cardinality 0..*) is associated with 'trace::States::Offer::offeredTokens::State' (role 'trace_States_Offer_offeredTokens_State', cardinality 0..*).
+'ActivityNode::takeOfferedTokensExitEventOccurrence' (role 'ActivityNode_takeOfferedTokensExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events108', cardinality 0..*).
+'ForkedToken::baseToken::State' (role 'ForkedToken_baseToken_State839', cardinality 0..*) is associated with 'trace::activitydiagramConfiguration::TracedForkedToken' (role 'parent838', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events124', cardinality 0..*) is associated with 'ActivityNode::isReadyExitEventOccurrence' (role 'ActivityNode_isReadyExitEventOccurrence', cardinality 0..*).
+'trace::Traced::TracedObjects' (role 'trace_Traced_TracedObjects763', cardinality 0..*) is associated with 'activitydiagramConfiguration::TracedTrace' (role 'activitydiagramConfiguration_TracedTrace764', cardinality 0..*).
+'ForkedToken::baseToken::State' (role 'ForkedToken_baseToken_State', cardinality 0..*) is associated with 'trace::GlobalState' (role 'globalStates18', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events104', cardinality 0..*) is associated with 'ActivityNode::sendOffersExitEventOccurrence' (role 'ActivityNode_sendOffersExitEventOccurrence', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events152', cardinality 0..*) is associated with 'Action::isReady::actionExitEventOccurrence' (role 'Action_isReady_actionExitEventOccurrence', cardinality 0..*).
+'trace::States::Token::holder::State' (role 'holderTrace', cardinality 0..*) is associated with 'activitydiagramConfiguration::TracedToken' (role 'TracedToken', cardinality 0..*).
+'trace::IntegerValue' (role 'trace_IntegerValue', cardinality 0..*) is associated with 'trace::StaticObjectsPools' (role 'trace_StaticObjectsPools40', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events270', cardinality 0..*) is associated with 'Token::isWithdrawnEntryEventOccurrence' (role 'Token_isWithdrawnEntryEventOccurrence', cardinality 0..*).
+'trace::GlobalState' (role 'globalStates28', cardinality 0..*) is associated with 'ActivityNode::running::State' (role 'ActivityNode_running_State', cardinality 0..*).
+'trace::States::ActivityNode::heldTokens::State' (role 'heldTokensTrace', cardinality 0..*) is associated with 'activitydiagram::TracedActivityNode' (role 'TracedActivityNode704', cardinality 0..*).
+'BooleanUnaryExpression::evaluateNOTExitEventOccurrence' (role 'BooleanUnaryExpression_evaluateNOTExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events256', cardinality 0..*).
+'Events::trace::EObject' (role 'Events_trace_EObject594', cardinality 0..*) is associated with 'trace::Events::IntegerComparisonExpression::evaluateGREATERExitEventOccurrence' (role 'trace_Events_IntegerComparisonExpression_evaluateGREATERExitEventOccurrence593', cardinality 0..*).
+'trace::Events::ActivityNode::removeTokenEntryEventOccurrence' (role 'trace_Events_ActivityNode_removeTokenEntryEventOccurrence386', cardinality 0..*) is associated with 'Events::trace::EObject' (role 'Events_trace_EObject387', cardinality 0..*).
+'activitydiagram::TracedActivity' (role 'activitydiagram_TracedActivity310', cardinality 0..*) is associated with 'trace::Events::Activity::fireInitialNodeEntryEventOccurrence' (role 'trace_Events_Activity_fireInitialNodeEntryEventOccurrence', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events118', cardinality 0..*) is associated with 'ActivityNode::hasOffersEntryEventOccurrence' (role 'ActivityNode_hasOffersEntryEventOccurrence', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events240', cardinality 0..*) is associated with 'IntegerComparisonExpression::evaluateEQUALSExitEventOccurrence' (role 'IntegerComparisonExpression_evaluateEQUALSExitEventOccurrence', cardinality 0..*).
+'ActivityNode::isRunningExitEventOccurrence' (role 'ActivityNode_isRunningExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events96', cardinality 0..*).
+'trace::Events::ForkNode::fire::forkNodeEntryEventOccurrence' (role 'trace_Events_ForkNode_fire_forkNodeEntryEventOccurrence', cardinality 0..*) is associated with 'activitydiagram::TracedForkNode' (role 'activitydiagram_TracedForkNode', cardinality 0..*).
+'Events::trace::EObject' (role 'Events_trace_EObject638', cardinality 0..*) is associated with 'trace::Events::Token::transferExitEventOccurrence' (role 'trace_Events_Token_transferExitEventOccurrence637', cardinality 0..*).
+'BooleanUnaryExpression::execute::booleanUnaryExpressionEntryEventOccurrence' (role 'BooleanUnaryExpression_execute_booleanUnaryExpressionEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events250', cardinality 0..*).
+'BooleanUnaryExpression::evaluateNOTEntryEventOccurrence' (role 'BooleanUnaryExpression_evaluateNOTEntryEventOccurrence601', cardinality 0..*) is associated with 'trace::Events::BooleanUnaryExpression::evaluateNOTExitEventOccurrence' (role 'trace_Events_BooleanUnaryExpression_evaluateNOTExitEventOccurrence', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events226', cardinality 0..*) is associated with 'IntegerComparisonExpression::execute::IntegerComparisionExpressionEntryEventOccurrence' (role 'IntegerComparisonExpression_execute_IntegerComparisionExpressionEntryEventOccurrence', cardinality 0..*).
+'ActivityNode::addTokensExitEventOccurrence' (role 'ActivityNode_addTokensExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events112', cardinality 0..*).
+'BooleanBinaryExpression::execute::booleanBinaryExpressionEntryEventOccurrence' (role 'BooleanBinaryExpression_execute_booleanBinaryExpressionEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events258', cardinality 0..*).
+'trace::Events::ActivityNode::isReadyEntryEventOccurrence' (role 'trace_Events_ActivityNode_isReadyEntryEventOccurrence', cardinality 0..*) is associated with 'activitydiagram::TracedActivityNode' (role 'activitydiagram_TracedActivityNode398', cardinality 0..*).
+'trace::Events::BooleanUnaryExpression::execute::booleanUnaryExpressionEntryEventOccurrence' (role 'trace_Events_BooleanUnaryExpression_execute_booleanUnaryExpressionEntryEventOccurrence', cardinality 0..*) is associated with 'Events::trace::BooleanUnaryExpression' (role 'Events_trace_BooleanUnaryExpression', cardinality 0..*).
+'IntegerComparisonExpression::evaluateEQUALSEntryEventOccurrence' (role 'IntegerComparisonExpression_evaluateEQUALSEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events238', cardinality 0..*).
+'Events::trace::EObject' (role 'Events_trace_EObject556', cardinality 0..*) is associated with 'trace::Events::IntegerCalculationExpression::evaluateSUBTRACTExitEventOccurrence' (role 'trace_Events_IntegerCalculationExpression_evaluateSUBTRACTExitEventOccurrence555', cardinality 0..*).
+'activitydiagram::TracedMergeNode' (role 'activitydiagram_TracedMergeNode', cardinality 0..*) is associated with 'trace::Events::MergeNode::hasOffers::mergeNodeEntryEventOccurrence' (role 'trace_Events_MergeNode_hasOffers_mergeNodeEntryEventOccurrence', cardinality 0..*).
+'trace::Events::BooleanBinaryExpression::execute::booleanBinaryExpressionExitEventOccurrence' (role 'trace_Events_BooleanBinaryExpression_execute_booleanBinaryExpressionExitEventOccurrence', cardinality 0..*) is associated with 'BooleanBinaryExpression::execute::booleanBinaryExpressionEntryEventOccurrence' (role 'BooleanBinaryExpression_execute_booleanBinaryExpressionEntryEventOccurrence607', cardinality 0..*).
+'trace::Events::Offer::hasTokensExitEventOccurrence' (role 'trace_Events_Offer_hasTokensExitEventOccurrence', cardinality 0..*) is associated with 'Offer::hasTokensEntryEventOccurrence' (role 'Offer_hasTokensEntryEventOccurrence648', cardinality 0..*).
+'IntegerComparisonExpression::execute::IntegerComparisionExpressionEntryEventOccurrence' (role 'IntegerComparisonExpression_execute_IntegerComparisionExpressionEntryEventOccurrence559', cardinality 0..*) is associated with 'trace::Events::IntegerComparisonExpression::execute::IntegerComparisionExpressionExitEventOccurrence' (role 'trace_Events_IntegerComparisonExpression_execute_IntegerComparisionExpressionExitEventOccurrence', cardinality 0..*).
+'trace::Events::IntegerCalculationExpression::execute::integerCalculationExpressionExitEventOccurrence' (role 'trace_Events_IntegerCalculationExpression_execute_integerCalculationExpressionExitEventOccurrence', cardinality 0..*) is associated with 'IntegerCalculationExpression::execute::integerCalculationExpressionEntryEventOccurrence' (role 'IntegerCalculationExpression_execute_integerCalculationExpressionEntryEventOccurrence542', cardinality 0..*).
+'Events::trace::EObject' (role 'Events_trace_EObject604', cardinality 0..*) is associated with 'trace::Events::BooleanUnaryExpression::evaluateNOTExitEventOccurrence' (role 'trace_Events_BooleanUnaryExpression_evaluateNOTExitEventOccurrence603', cardinality 0..*).
+'trace::Events::ActivityNode::removeTokenExitEventOccurrence' (role 'trace_Events_ActivityNode_removeTokenExitEventOccurrence', cardinality 0..*) is associated with 'ActivityNode::removeTokenEntryEventOccurrence' (role 'ActivityNode_removeTokenEntryEventOccurrence389', cardinality 0..*).
+'Events::trace::IntegerComparisonExpression' (role 'Events_trace_IntegerComparisonExpression', cardinality 0..*) is associated with 'trace::Events::IntegerComparisonExpression::execute::IntegerComparisionExpressionEntryEventOccurrence' (role 'trace_Events_IntegerComparisonExpression_execute_IntegerComparisionExpressionEntryEventOccurrence', cardinality 0..*).
+'ActivityNode::run::activityNodeExitEventOccurrence' (role 'ActivityNode_run_activityNodeExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events92', cardinality 0..*).
+'activitydiagram::TracedActivityNode' (role 'activitydiagram_TracedActivityNode377', cardinality 0..*) is associated with 'trace::Events::ActivityNode::addTokensEntryEventOccurrence' (role 'trace_Events_ActivityNode_addTokensEntryEventOccurrence', cardinality 0..*).
+'BooleanBinaryExpression::evaluateOREntryEventOccurrence' (role 'BooleanBinaryExpression_evaluateOREntryEventOccurrence618', cardinality 0..*) is associated with 'trace::Events::BooleanBinaryExpression::evaluateORExitEventOccurrence' (role 'trace_Events_BooleanBinaryExpression_evaluateORExitEventOccurrence', cardinality 0..*).
+'activitydiagram::TracedBooleanVariable' (role 'activitydiagram_TracedBooleanVariable525', cardinality 0..*) is associated with 'trace::Events::BooleanVariable::getCurrentValueValue::booleanVariableEntryEventOccurrence' (role 'trace_Events_BooleanVariable_getCurrentValueValue_booleanVariableEntryEventOccurrence', cardinality 0..*).
+'trace::Events::Activity::getEnabledNodesEntryEventOccurrence' (role 'trace_Events_Activity_getEnabledNodesEntryEventOccurrence', cardinality 0..*) is associated with 'activitydiagram::TracedActivity' (role 'activitydiagram_TracedActivity314', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events132', cardinality 0..*) is associated with 'ActivityEdge::takeOfferedTokens::activityEdgeExitEventOccurrence' (role 'ActivityEdge_takeOfferedTokens_activityEdgeExitEventOccurrence', cardinality 0..*).
+'trace::Events::IntegerVariable::getCurrentValueValue::integerVariableExitEventOccurrence' (role 'trace_Events_IntegerVariable_getCurrentValueValue_integerVariableExitEventOccurrence503', cardinality 0..*) is associated with 'Events::trace::EObject' (role 'Events_trace_EObject504', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events246', cardinality 0..*) is associated with 'IntegerComparisonExpression::evaluateGREATEREntryEventOccurrence' (role 'IntegerComparisonExpression_evaluateGREATEREntryEventOccurrence', cardinality 0..*).
+'IntegerComparisonExpression::evaluateGREATER::EQUALSExitEventOccurrence' (role 'IntegerComparisonExpression_evaluateGREATER_EQUALSExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events244', cardinality 0..*).
+'trace::Events::BooleanVariable::getCurrentValueValue::booleanVariableExitEventOccurrence' (role 'trace_Events_BooleanVariable_getCurrentValueValue_booleanVariableExitEventOccurrence529', cardinality 0..*) is associated with 'Events::trace::EObject' (role 'Events_trace_EObject530', cardinality 0..*).
+'trace::Events::Activity::fireNodeEntryEventOccurrence' (role 'trace_Events_Activity_fireNodeEntryEventOccurrence344', cardinality 0..*) is associated with 'Events::trace::EObject' (role 'Events_trace_EObject345', cardinality 0..*).
+'activitydiagram::TracedControlNode' (role 'activitydiagram_TracedControlNode', cardinality 0..*) is associated with 'trace::Events::ControlNode::isReady::ControlNodeEntryEventOccurrence' (role 'trace_Events_ControlNode_isReady_ControlNodeEntryEventOccurrence', cardinality 0..*).
+'ActivityFinalNode::fire::activityFinalNodeEntryEventOccurrence' (role 'ActivityFinalNode_fire_activityFinalNodeEntryEventOccurrence474', cardinality 0..*) is associated with 'trace::Events::ActivityFinalNode::fire::activityFinalNodeExitEventOccurrence' (role 'trace_Events_ActivityFinalNode_fire_activityFinalNodeExitEventOccurrence', cardinality 0..*).
+'Events::trace::EObject' (role 'Events_trace_EObject549', cardinality 0..*) is associated with 'trace::Events::IntegerCalculationExpression::evaluateADDExitEventOccurrence' (role 'trace_Events_IntegerCalculationExpression_evaluateADDExitEventOccurrence548', cardinality 0..*).
+'trace::Events::ForkedToken::withdraw::forkedTokenExitEventOccurrence' (role 'trace_Events_ForkedToken_withdraw_forkedTokenExitEventOccurrence', cardinality 0..*) is associated with 'ForkedToken::withdraw::forkedTokenEntryEventOccurrence' (role 'ForkedToken_withdraw_forkedTokenEntryEventOccurrence645', cardinality 0..*).
+'Events::trace::EObject' (role 'Events_trace_EObject633', cardinality 0..*) is associated with 'trace::Events::Token::transferEntryEventOccurrence' (role 'trace_Events_Token_transferEntryEventOccurrence632', cardinality 0..*).
+'activitydiagram::TracedBooleanVariable' (role 'activitydiagram_TracedBooleanVariable', cardinality 0..*) is associated with 'trace::Events::BooleanVariable::setCurrentValue::boolenVariableEntryEventOccurrence' (role 'trace_Events_BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence', cardinality 0..*).
+'ActivityNode::removeTokenExitEventOccurrence' (role 'ActivityNode_removeTokenExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events116', cardinality 0..*).
+'ActivityNode::removeTokenEntryEventOccurrence' (role 'ActivityNode_removeTokenEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events114', cardinality 0..*).
+'InitialNode::fire::initialNodeEntryEventOccurrence' (role 'InitialNode_fire_initialNodeEntryEventOccurrence468', cardinality 0..*) is associated with 'trace::Events::InitialNode::fire::initialNodeExitEventOccurrence' (role 'trace_Events_InitialNode_fire_initialNodeExitEventOccurrence', cardinality 0..*).
+'trace::Events::ActivityEdge::hasOfferExitEventOccurrence' (role 'trace_Events_ActivityEdge_hasOfferExitEventOccurrence', cardinality 0..*) is associated with 'ActivityEdge::hasOfferEntryEventOccurrence' (role 'ActivityEdge_hasOfferEntryEventOccurrence420', cardinality 0..*).
+'trace::Events::ActivityNode::addTokensEntryEventOccurrence' (role 'trace_Events_ActivityNode_addTokensEntryEventOccurrence379', cardinality 0..*) is associated with 'Events::trace::EObject' (role 'Events_trace_EObject380', cardinality 0..*).
+'trace::Events::DecisionNode::fire::decisionNodeEntryEventOccurrence' (role 'trace_Events_DecisionNode_fire_decisionNodeEntryEventOccurrence', cardinality 0..*) is associated with 'activitydiagram::TracedDecisionNode' (role 'activitydiagram_TracedDecisionNode', cardinality 0..*).
+'trace::Events::ForkedToken::withdraw::forkedTokenEntryEventOccurrence' (role 'trace_Events_ForkedToken_withdraw_forkedTokenEntryEventOccurrence', cardinality 0..*) is associated with 'activitydiagramConfiguration::TracedForkedToken' (role 'activitydiagramConfiguration_TracedForkedToken', cardinality 0..*).
+'IntegerComparisonExpression::evaluateSMALLERExitEventOccurrence' (role 'IntegerComparisonExpression_evaluateSMALLERExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events232', cardinality 0..*).
+'activitydiagramConfiguration::TracedToken' (role 'activitydiagramConfiguration_TracedToken640', cardinality 0..*) is associated with 'trace::Events::Token::withdrawEntryEventOccurrence' (role 'trace_Events_Token_withdrawEntryEventOccurrence', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events88', cardinality 0..*) is associated with 'Activity::fireNodeExitEventOccurrence' (role 'Activity_fireNodeExitEventOccurrence', cardinality 0..*).
+'activitydiagramConfiguration::TracedToken' (role 'activitydiagramConfiguration_TracedToken490', cardinality 0..*) is associated with 'trace::Events::DecisionNode::fire::decisionNodeEntryEventOccurrence' (role 'trace_Events_DecisionNode_fire_decisionNodeEntryEventOccurrence489', cardinality 0..*).
+'trace::Events::IntegerComparisonExpression::evaluateSMALLER::EQUALSExitEventOccurrence' (role 'trace_Events_IntegerComparisonExpression_evaluateSMALLER_EQUALSExitEventOccurrence572', cardinality 0..*) is associated with 'Events::trace::EObject' (role 'Events_trace_EObject573', cardinality 0..*).
+'activitydiagramConfiguration::TracedToken' (role 'activitydiagramConfiguration_TracedToken', cardinality 0..*) is associated with 'trace::Events::ControlNode::fire::controlNodeEntryEventOccurrence' (role 'trace_Events_ControlNode_fire_controlNodeEntryEventOccurrence433', cardinality 0..*).
+'Events::trace::IntegerExpression' (role 'Events_trace_IntegerExpression', cardinality 0..*) is associated with 'trace::Events::IntegerExpression::getOperandCurrentValuesEntryEventOccurrence' (role 'trace_Events_IntegerExpression_getOperandCurrentValuesEntryEventOccurrence', cardinality 0..*).
+'activitydiagramConfiguration::TracedToken' (role 'activitydiagramConfiguration_TracedToken630', cardinality 0..*) is associated with 'trace::Events::Token::transferEntryEventOccurrence' (role 'trace_Events_Token_transferEntryEventOccurrence', cardinality 0..*).
+'Token::isWithdrawnEntryEventOccurrence' (role 'Token_isWithdrawnEntryEventOccurrence625', cardinality 0..*) is associated with 'trace::Events::Token::isWithdrawnExitEventOccurrence' (role 'trace_Events_Token_isWithdrawnExitEventOccurrence', cardinality 0..*).
+'activitydiagram::TracedActivityNode' (role 'activitydiagram_TracedActivityNode', cardinality 0..*) is associated with 'trace::Events::ActivityNode::run::activityNodeEntryEventOccurrence' (role 'trace_Events_ActivityNode_run_activityNodeEntryEventOccurrence', cardinality 0..*).
+'Events::trace::IntegerComparisonExpression' (role 'Events_trace_IntegerComparisonExpression575', cardinality 0..*) is associated with 'trace::Events::IntegerComparisonExpression::evaluateEQUALSEntryEventOccurrence' (role 'trace_Events_IntegerComparisonExpression_evaluateEQUALSEntryEventOccurrence', cardinality 0..*).
+'trace::Events::ActivityNode::terminate::activityNodeExitEventOccurrence' (role 'trace_Events_ActivityNode_terminate_activityNodeExitEventOccurrence', cardinality 0..*) is associated with 'ActivityNode::terminate::activityNodeEntryEventOccurrence' (role 'ActivityNode_terminate_activityNodeEntryEventOccurrence361', cardinality 0..*).
+'activitydiagram::TracedInitialNode' (role 'activitydiagram_TracedInitialNode463', cardinality 0..*) is associated with 'trace::Events::InitialNode::fire::initialNodeEntryEventOccurrence' (role 'trace_Events_InitialNode_fire_initialNodeEntryEventOccurrence', cardinality 0..*).
+'trace::Events::ControlNode::fire::controlNodeExitEventOccurrence' (role 'trace_Events_ControlNode_fire_controlNodeExitEventOccurrence', cardinality 0..*) is associated with 'ControlNode::fire::controlNodeEntryEventOccurrence' (role 'ControlNode_fire_controlNodeEntryEventOccurrence435', cardinality 0..*).
+'activitydiagram::TracedActivityNode' (role 'activitydiagram_TracedActivityNode363', cardinality 0..*) is associated with 'trace::Events::ActivityNode::sendOffersEntryEventOccurrence' (role 'trace_Events_ActivityNode_sendOffersEntryEventOccurrence', cardinality 0..*).
+'MergeNode::hasOffers::mergeNodeEntryEventOccurrence' (role 'MergeNode_hasOffers_mergeNodeEntryEventOccurrence483', cardinality 0..*) is associated with 'trace::Events::MergeNode::hasOffers::mergeNodeExitEventOccurrence' (role 'trace_Events_MergeNode_hasOffers_mergeNodeExitEventOccurrence', cardinality 0..*).
+'trace::Events::StringVariable::setCurrentValue::stringVariableEntryEventOccurrence' (role 'trace_Events_StringVariable_setCurrentValue_stringVariableEntryEventOccurrence', cardinality 0..*) is associated with 'activitydiagram::TracedStringVariable' (role 'activitydiagram_TracedStringVariable', cardinality 0..*).
+'trace::Events::Offer::hasTokensExitEventOccurrence' (role 'trace_Events_Offer_hasTokensExitEventOccurrence650', cardinality 0..*) is associated with 'Events::trace::EObject' (role 'Events_trace_EObject651', cardinality 0..*).
+'trace::Events::StringVariable::setCurrentValue::stringVariableExitEventOccurrence' (role 'trace_Events_StringVariable_setCurrentValue_stringVariableExitEventOccurrence', cardinality 0..*) is associated with 'StringVariable::setCurrentValue::stringVariableEntryEventOccurrence' (role 'StringVariable_setCurrentValue_stringVariableEntryEventOccurrence510', cardinality 0..*).
+'Events::trace::IntegerComparisonExpression' (role 'Events_trace_IntegerComparisonExpression589', cardinality 0..*) is associated with 'trace::Events::IntegerComparisonExpression::evaluateGREATEREntryEventOccurrence' (role 'trace_Events_IntegerComparisonExpression_evaluateGREATEREntryEventOccurrence', cardinality 0..*).
+'trace::Events::ActivityNode::sendOffersEntryEventOccurrence' (role 'trace_Events_ActivityNode_sendOffersEntryEventOccurrence365', cardinality 0..*) is associated with 'Events::trace::EObject' (role 'Events_trace_EObject366', cardinality 0..*).
+'Events::trace::EObject' (role 'Events_trace_EObject407', cardinality 0..*) is associated with 'trace::Events::ActivityEdge::sendOfferEntryEventOccurrence' (role 'trace_Events_ActivityEdge_sendOfferEntryEventOccurrence406', cardinality 0..*).
+'activitydiagram::TracedAction' (role 'activitydiagram_TracedAction', cardinality 0..*) is associated with 'trace::Events::Action::sendOffers::actionEntryEventOccurrence' (role 'trace_Events_Action_sendOffers_actionEntryEventOccurrence', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events284', cardinality 0..*) is associated with 'ForkedToken::withdraw::forkedTokenExitEventOccurrence' (role 'ForkedToken_withdraw_forkedTokenExitEventOccurrence', cardinality 0..*).
+'Events::trace::EObject' (role 'Events_trace_EObject357', cardinality 0..*) is associated with 'trace::Events::ActivityNode::isRunningExitEventOccurrence' (role 'trace_Events_ActivityNode_isRunningExitEventOccurrence356', cardinality 0..*).
+'activitydiagram::TracedActivityNode' (role 'activitydiagram_TracedActivityNode359', cardinality 0..*) is associated with 'trace::Events::ActivityNode::terminate::activityNodeEntryEventOccurrence' (role 'trace_Events_ActivityNode_terminate_activityNodeEntryEventOccurrence', cardinality 0..*).
+'Events::trace::EObject' (role 'Events_trace_EObject614', cardinality 0..*) is associated with 'trace::Events::BooleanBinaryExpression::evaluateANDExitEventOccurrence' (role 'trace_Events_BooleanBinaryExpression_evaluateANDExitEventOccurrence613', cardinality 0..*).
+'trace::Events::IntegerComparisonExpression::evaluateGREATERExitEventOccurrence' (role 'trace_Events_IntegerComparisonExpression_evaluateGREATERExitEventOccurrence', cardinality 0..*) is associated with 'IntegerComparisonExpression::evaluateGREATEREntryEventOccurrence' (role 'IntegerComparisonExpression_evaluateGREATEREntryEventOccurrence591', cardinality 0..*).
+'trace::Events::OpaqueAction::doAction::opaqueActionExitEventOccurrence' (role 'trace_Events_OpaqueAction_doAction_opaqueActionExitEventOccurrence', cardinality 0..*) is associated with 'OpaqueAction::doAction::opaqueActionEntryEventOccurrence' (role 'OpaqueAction_doAction_opaqueActionEntryEventOccurrence455', cardinality 0..*).
+'trace::Events::BooleanBinaryExpression::evaluateOREntryEventOccurrence' (role 'trace_Events_BooleanBinaryExpression_evaluateOREntryEventOccurrence', cardinality 0..*) is associated with 'Events::trace::BooleanBinaryExpression' (role 'Events_trace_BooleanBinaryExpression616', cardinality 0..*).
+'BooleanBinaryExpression::evaluateANDExitEventOccurrence' (role 'BooleanBinaryExpression_evaluateANDExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events264', cardinality 0..*).
+'trace::States::InputValue::value::State' (role 'trace_States_InputValue_value_State', cardinality 0..*) is associated with 'States::trace::Value' (role 'States_trace_Value', cardinality 0..*).
+'IntegerCalculationExpression::execute::integerCalculationExpressionExitEventOccurrence' (role 'IntegerCalculationExpression_execute_integerCalculationExpressionExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events216', cardinality 0..*).
+'trace::Events::IntegerComparisonExpression::evaluateGREATER::EQUALSExitEventOccurrence' (role 'trace_Events_IntegerComparisonExpression_evaluateGREATER_EQUALSExitEventOccurrence586', cardinality 0..*) is associated with 'Events::trace::EObject' (role 'Events_trace_EObject587', cardinality 0..*).
+'trace::Events::ActivityNode::run::activityNodeExitEventOccurrence' (role 'trace_Events_ActivityNode_run_activityNodeExitEventOccurrence', cardinality 0..*) is associated with 'ActivityNode::run::activityNodeEntryEventOccurrence' (role 'ActivityNode_run_activityNodeEntryEventOccurrence350', cardinality 0..*).
+'activitydiagram::TracedInitialNode' (role 'activitydiagram_TracedInitialNode', cardinality 0..*) is associated with 'trace::Events::InitialNode::isReady::InitialNodeEntryEventOccurrence' (role 'trace_Events_InitialNode_isReady_InitialNodeEntryEventOccurrence', cardinality 0..*).
+'activitydiagramConfiguration::TracedOffer' (role 'activitydiagramConfiguration_TracedOffer', cardinality 0..*) is associated with 'trace::Events::Offer::hasTokensEntryEventOccurrence' (role 'trace_Events_Offer_hasTokensEntryEventOccurrence', cardinality 0..*).
+'Events::trace::Value' (role 'Events_trace_Value', cardinality 0..*) is associated with 'trace::Events::IntegerVariable::setCurrentValue::integerVariableEntryEventOccurrence' (role 'trace_Events_IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence495', cardinality 0..*).
+'Token::transferEntryEventOccurrence' (role 'Token_transferEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events274', cardinality 0..*).
+'ActivityNode::addTokensEntryEventOccurrence' (role 'ActivityNode_addTokensEntryEventOccurrence382', cardinality 0..*) is associated with 'trace::Events::ActivityNode::addTokensExitEventOccurrence' (role 'trace_Events_ActivityNode_addTokensExitEventOccurrence', cardinality 0..*).
+'trace::Events::ControlNode::isReady::ControlNodeExitEventOccurrence' (role 'trace_Events_ControlNode_isReady_ControlNodeExitEventOccurrence', cardinality 0..*) is associated with 'ControlNode::isReady::ControlNodeEntryEventOccurrence' (role 'ControlNode_isReady_ControlNodeEntryEventOccurrence426', cardinality 0..*).
+'Events::trace::EObject' (role 'Events_trace_EObject621', cardinality 0..*) is associated with 'trace::Events::BooleanBinaryExpression::evaluateORExitEventOccurrence' (role 'trace_Events_BooleanBinaryExpression_evaluateORExitEventOccurrence620', cardinality 0..*).
+'ActivityNode::isRunningEntryEventOccurrence' (role 'ActivityNode_isRunningEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events94', cardinality 0..*).
+'Events::trace::IntegerCalculationExpression' (role 'Events_trace_IntegerCalculationExpression', cardinality 0..*) is associated with 'trace::Events::IntegerCalculationExpression::execute::integerCalculationExpressionEntryEventOccurrence' (role 'trace_Events_IntegerCalculationExpression_execute_integerCalculationExpressionEntryEventOccurrence', cardinality 0..*).
+'trace::Events::ControlNode::fire::controlNodeEntryEventOccurrence' (role 'trace_Events_ControlNode_fire_controlNodeEntryEventOccurrence', cardinality 0..*) is associated with 'activitydiagram::TracedControlNode' (role 'activitydiagram_TracedControlNode431', cardinality 0..*).
+'IntegerCalculationExpression::evaluateSUBTRACTExitEventOccurrence' (role 'IntegerCalculationExpression_evaluateSUBTRACTExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events224', cardinality 0..*).
+'IntegerComparisonExpression::evaluateGREATER::EQUALSEntryEventOccurrence' (role 'IntegerComparisonExpression_evaluateGREATER_EQUALSEntryEventOccurrence584', cardinality 0..*) is associated with 'trace::Events::IntegerComparisonExpression::evaluateGREATER::EQUALSExitEventOccurrence' (role 'trace_Events_IntegerComparisonExpression_evaluateGREATER_EQUALSExitEventOccurrence', cardinality 0..*).
+'trace::Events::Token::transferExitEventOccurrence' (role 'trace_Events_Token_transferExitEventOccurrence', cardinality 0..*) is associated with 'Token::transferEntryEventOccurrence' (role 'Token_transferEntryEventOccurrence635', cardinality 0..*).
+'trace::Events::ActivityEdge::takeOfferedTokens::activityEdgeExitEventOccurrence' (role 'trace_Events_ActivityEdge_takeOfferedTokens_activityEdgeExitEventOccurrence', cardinality 0..*) is associated with 'ActivityEdge::takeOfferedTokens::activityEdgeEntryEventOccurrence' (role 'ActivityEdge_takeOfferedTokens_activityEdgeEntryEventOccurrence413', cardinality 0..*).
+'trace::Events::BooleanBinaryExpression::evaluateANDExitEventOccurrence' (role 'trace_Events_BooleanBinaryExpression_evaluateANDExitEventOccurrence', cardinality 0..*) is associated with 'BooleanBinaryExpression::evaluateANDEntryEventOccurrence' (role 'BooleanBinaryExpression_evaluateANDEntryEventOccurrence611', cardinality 0..*).
+'activitydiagram::TracedAction' (role 'activitydiagram_TracedAction440', cardinality 0..*) is associated with 'trace::Events::Action::isReady::actionEntryEventOccurrence' (role 'trace_Events_Action_isReady_actionEntryEventOccurrence', cardinality 0..*).
+'ActivityNode::isRunningEntryEventOccurrence' (role 'ActivityNode_isRunningEntryEventOccurrence354', cardinality 0..*) is associated with 'trace::Events::ActivityNode::isRunningExitEventOccurrence' (role 'trace_Events_ActivityNode_isRunningExitEventOccurrence', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events120', cardinality 0..*) is associated with 'ActivityNode::hasOffersExitEventOccurrence' (role 'ActivityNode_hasOffersExitEventOccurrence', cardinality 0..*).
+'IntegerComparisonExpression::execute::IntegerComparisionExpressionExitEventOccurrence' (role 'IntegerComparisonExpression_execute_IntegerComparisionExpressionExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events228', cardinality 0..*).
+'activitydiagram::TracedStringVariable' (role 'activitydiagram_TracedStringVariable512', cardinality 0..*) is associated with 'trace::Events::StringVariable::getCurrentValueValue::stringVariableEntryEventOccurrence' (role 'trace_Events_StringVariable_getCurrentValueValue_stringVariableEntryEventOccurrence', cardinality 0..*).
+'Activity::fireNodeEntryEventOccurrence' (role 'Activity_fireNodeEntryEventOccurrence347', cardinality 0..*) is associated with 'trace::Events::Activity::fireNodeExitEventOccurrence' (role 'trace_Events_Activity_fireNodeExitEventOccurrence', cardinality 0..*).
+'Events::trace::Value' (role 'Events_trace_Value508', cardinality 0..*) is associated with 'trace::Events::StringVariable::setCurrentValue::stringVariableEntryEventOccurrence' (role 'trace_Events_StringVariable_setCurrentValue_stringVariableEntryEventOccurrence507', cardinality 0..*).
+'IntegerComparisonExpression::evaluateSMALLER::EQUALSExitEventOccurrence' (role 'IntegerComparisonExpression_evaluateSMALLER_EQUALSExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events236', cardinality 0..*).
+'trace::Events::IntegerCalculationExpression::evaluateSUBTRACTEntryEventOccurrence' (role 'trace_Events_IntegerCalculationExpression_evaluateSUBTRACTEntryEventOccurrence', cardinality 0..*) is associated with 'Events::trace::IntegerCalculationExpression' (role 'Events_trace_IntegerCalculationExpression551', cardinality 0..*).
+'trace::Events::BooleanVariable::getCurrentValueValue::booleanVariableExitEventOccurrence' (role 'trace_Events_BooleanVariable_getCurrentValueValue_booleanVariableExitEventOccurrence', cardinality 0..*) is associated with 'BooleanVariable::getCurrentValueValue::booleanVariableEntryEventOccurrence' (role 'BooleanVariable_getCurrentValueValue_booleanVariableEntryEventOccurrence527', cardinality 0..*).
+'ForkNode::fire::forkNodeEntryEventOccurrence' (role 'ForkNode_fire_forkNodeEntryEventOccurrence480', cardinality 0..*) is associated with 'trace::Events::ForkNode::fire::forkNodeExitEventOccurrence' (role 'trace_Events_ForkNode_fire_forkNodeExitEventOccurrence', cardinality 0..*).
+'Activity::fireInitialNodeEntryEventOccurrence' (role 'Activity_fireInitialNodeEntryEventOccurrence312', cardinality 0..*) is associated with 'trace::Events::Activity::fireInitialNodeExitEventOccurrence' (role 'trace_Events_Activity_fireInitialNodeExitEventOccurrence', cardinality 0..*).
+'activitydiagram::TracedAction' (role 'activitydiagram_TracedAction447', cardinality 0..*) is associated with 'trace::Events::Action::fire::actionEntryEventOccurrence' (role 'trace_Events_Action_fire_actionEntryEventOccurrence', cardinality 0..*).
+'Events::trace::EObject' (role 'Events_trace_EObject486', cardinality 0..*) is associated with 'trace::Events::MergeNode::hasOffers::mergeNodeExitEventOccurrence' (role 'trace_Events_MergeNode_hasOffers_mergeNodeExitEventOccurrence485', cardinality 0..*).
+'Events::trace::EObject' (role 'Events_trace_EObject429', cardinality 0..*) is associated with 'trace::Events::ControlNode::isReady::ControlNodeExitEventOccurrence' (role 'trace_Events_ControlNode_isReady_ControlNodeExitEventOccurrence428', cardinality 0..*).
+'ActivityNode::run::activityNodeEntryEventOccurrence' (role 'ActivityNode_run_activityNodeEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events90', cardinality 0..*).
+'trace::Events::ActivityNode::isReadyExitEventOccurrence' (role 'trace_Events_ActivityNode_isReadyExitEventOccurrence', cardinality 0..*) is associated with 'ActivityNode::isReadyEntryEventOccurrence' (role 'ActivityNode_isReadyEntryEventOccurrence400', cardinality 0..*).
+'IntegerComparisonExpression::evaluateGREATERExitEventOccurrence' (role 'IntegerComparisonExpression_evaluateGREATERExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events248', cardinality 0..*).
+'ActivityEdge::sendOfferEntryEventOccurrence' (role 'ActivityEdge_sendOfferEntryEventOccurrence409', cardinality 0..*) is associated with 'trace::Events::ActivityEdge::sendOfferExitEventOccurrence' (role 'trace_Events_ActivityEdge_sendOfferExitEventOccurrence', cardinality 0..*).
+'trace::Events::ActivityNode::isRunningEntryEventOccurrence' (role 'trace_Events_ActivityNode_isRunningEntryEventOccurrence', cardinality 0..*) is associated with 'activitydiagram::TracedActivityNode' (role 'activitydiagram_TracedActivityNode352', cardinality 0..*).
+'trace::Events::IntegerExpression::getOperandCurrentValuesExitEventOccurrence' (role 'trace_Events_IntegerExpression_getOperandCurrentValuesExitEventOccurrence538', cardinality 0..*) is associated with 'Events::trace::EObject' (role 'Events_trace_EObject539', cardinality 0..*).
+'activitydiagramConfiguration::TracedToken' (role 'activitydiagramConfiguration_TracedToken472', cardinality 0..*) is associated with 'trace::Events::ActivityFinalNode::fire::activityFinalNodeEntryEventOccurrence' (role 'trace_Events_ActivityFinalNode_fire_activityFinalNodeEntryEventOccurrence471', cardinality 0..*).
+'trace::Events::IntegerComparisonExpression::evaluateEQUALSExitEventOccurrence' (role 'trace_Events_IntegerComparisonExpression_evaluateEQUALSExitEventOccurrence', cardinality 0..*) is associated with 'IntegerComparisonExpression::evaluateEQUALSEntryEventOccurrence' (role 'IntegerComparisonExpression_evaluateEQUALSEntryEventOccurrence577', cardinality 0..*).
+'trace::Events::Token::isWithdrawnExitEventOccurrence' (role 'trace_Events_Token_isWithdrawnExitEventOccurrence627', cardinality 0..*) is associated with 'Events::trace::EObject' (role 'Events_trace_EObject628', cardinality 0..*).
+'trace::Events::IntegerComparisonExpression::evaluateSMALLER::EQUALSExitEventOccurrence' (role 'trace_Events_IntegerComparisonExpression_evaluateSMALLER_EQUALSExitEventOccurrence', cardinality 0..*) is associated with 'IntegerComparisonExpression::evaluateSMALLER::EQUALSEntryEventOccurrence' (role 'IntegerComparisonExpression_evaluateSMALLER_EQUALSEntryEventOccurrence570', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events214', cardinality 0..*) is associated with 'IntegerCalculationExpression::execute::integerCalculationExpressionEntryEventOccurrence' (role 'IntegerCalculationExpression_execute_integerCalculationExpressionEntryEventOccurrence', cardinality 0..*).
+'trace::Events::Action::fire::actionEntryEventOccurrence' (role 'trace_Events_Action_fire_actionEntryEventOccurrence449', cardinality 0..*) is associated with 'activitydiagramConfiguration::TracedToken' (role 'activitydiagramConfiguration_TracedToken450', cardinality 0..*).
+'Events::trace::BooleanBinaryExpression' (role 'Events_trace_BooleanBinaryExpression', cardinality 0..*) is associated with 'trace::Events::BooleanBinaryExpression::execute::booleanBinaryExpressionEntryEventOccurrence' (role 'trace_Events_BooleanBinaryExpression_execute_booleanBinaryExpressionEntryEventOccurrence', cardinality 0..*).
+'IntegerComparisonExpression::evaluateSMALLER::EQUALSEntryEventOccurrence' (role 'IntegerComparisonExpression_evaluateSMALLER_EQUALSEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events234', cardinality 0..*).
+'trace::Events::ActivityNode::sendOffersExitEventOccurrence' (role 'trace_Events_ActivityNode_sendOffersExitEventOccurrence', cardinality 0..*) is associated with 'ActivityNode::sendOffersEntryEventOccurrence' (role 'ActivityNode_sendOffersEntryEventOccurrence368', cardinality 0..*).
+'activitydiagram::TracedActivityEdge' (role 'activitydiagram_TracedActivityEdge411', cardinality 0..*) is associated with 'trace::Events::ActivityEdge::takeOfferedTokens::activityEdgeEntryEventOccurrence' (role 'trace_Events_ActivityEdge_takeOfferedTokens_activityEdgeEntryEventOccurrence', cardinality 0..*).
+'IntegerComparisonExpression::evaluateSMALLEREntryEventOccurrence' (role 'IntegerComparisonExpression_evaluateSMALLEREntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events230', cardinality 0..*).
+'trace::Events::ActivityNode::isReadyExitEventOccurrence' (role 'trace_Events_ActivityNode_isReadyExitEventOccurrence402', cardinality 0..*) is associated with 'Events::trace::EObject' (role 'Events_trace_EObject403', cardinality 0..*).
+'trace::Events::ActivityEdge::hasOfferExitEventOccurrence' (role 'trace_Events_ActivityEdge_hasOfferExitEventOccurrence422', cardinality 0..*) is associated with 'Events::trace::EObject' (role 'Events_trace_EObject423', cardinality 0..*).
+'trace::Events::BooleanUnaryExpression::execute::booleanUnaryExpressionExitEventOccurrence' (role 'trace_Events_BooleanUnaryExpression_execute_booleanUnaryExpressionExitEventOccurrence', cardinality 0..*) is associated with 'BooleanUnaryExpression::execute::booleanUnaryExpressionEntryEventOccurrence' (role 'BooleanUnaryExpression_execute_booleanUnaryExpressionEntryEventOccurrence597', cardinality 0..*).
+'trace::Events::IntegerExpression::getOperandCurrentValuesExitEventOccurrence' (role 'trace_Events_IntegerExpression_getOperandCurrentValuesExitEventOccurrence', cardinality 0..*) is associated with 'IntegerExpression::getOperandCurrentValuesEntryEventOccurrence' (role 'IntegerExpression_getOperandCurrentValuesEntryEventOccurrence533', cardinality 0..*).
+'States::trace::GlobalState' (role 'GlobalState655', cardinality 0..*) is associated with 'trace::States::InputValue::value::State' (role 'inputValue_value_States', cardinality 0..*).
+'ActivityNode::hasOffersEntryEventOccurrence' (role 'ActivityNode_hasOffersEntryEventOccurrence393', cardinality 0..*) is associated with 'trace::Events::ActivityNode::hasOffersExitEventOccurrence' (role 'trace_Events_ActivityNode_hasOffersExitEventOccurrence', cardinality 0..*).
+'Events::trace::EObject' (role 'Events_trace_EObject566', cardinality 0..*) is associated with 'trace::Events::IntegerComparisonExpression::evaluateSMALLERExitEventOccurrence' (role 'trace_Events_IntegerComparisonExpression_evaluateSMALLERExitEventOccurrence565', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events126', cardinality 0..*) is associated with 'ActivityEdge::sendOfferEntryEventOccurrence' (role 'ActivityEdge_sendOfferEntryEventOccurrence', cardinality 0..*).
+'trace::Events::ActivityEdge::hasOfferEntryEventOccurrence' (role 'trace_Events_ActivityEdge_hasOfferEntryEventOccurrence', cardinality 0..*) is associated with 'activitydiagram::TracedActivityEdge' (role 'activitydiagram_TracedActivityEdge418', cardinality 0..*).
+'trace::Events::BooleanVariable::setCurrentValue::boolenVariableEntryEventOccurrence' (role 'trace_Events_BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence520', cardinality 0..*) is associated with 'Events::trace::Value' (role 'Events_trace_Value521', cardinality 0..*).
+'IntegerCalculationExpression::evaluateADDEntryEventOccurrence' (role 'IntegerCalculationExpression_evaluateADDEntryEventOccurrence546', cardinality 0..*) is associated with 'trace::Events::IntegerCalculationExpression::evaluateADDExitEventOccurrence' (role 'trace_Events_IntegerCalculationExpression_evaluateADDExitEventOccurrence', cardinality 0..*).
+'trace::Events::Action::isReady::actionExitEventOccurrence' (role 'trace_Events_Action_isReady_actionExitEventOccurrence444', cardinality 0..*) is associated with 'Events::trace::EObject' (role 'Events_trace_EObject445', cardinality 0..*).
+'activitydiagram::TracedActivityEdge' (role 'activitydiagram_TracedActivityEdge', cardinality 0..*) is associated with 'trace::Events::ActivityEdge::sendOfferEntryEventOccurrence' (role 'trace_Events_ActivityEdge_sendOfferEntryEventOccurrence', cardinality 0..*).
+'trace::Events::ActivityEdge::takeOfferedTokens::activityEdgeExitEventOccurrence' (role 'trace_Events_ActivityEdge_takeOfferedTokens_activityEdgeExitEventOccurrence415', cardinality 0..*) is associated with 'Events::trace::EObject' (role 'Events_trace_EObject416', cardinality 0..*).
+'trace::Events::StringVariable::getCurrentValueValue::stringVariableExitEventOccurrence' (role 'trace_Events_StringVariable_getCurrentValueValue_stringVariableExitEventOccurrence', cardinality 0..*) is associated with 'StringVariable::getCurrentValueValue::stringVariableEntryEventOccurrence' (role 'StringVariable_getCurrentValueValue_stringVariableEntryEventOccurrence514', cardinality 0..*).
+'activitydiagramConfiguration::TracedToken' (role 'activitydiagramConfiguration_TracedToken466', cardinality 0..*) is associated with 'trace::Events::InitialNode::fire::initialNodeEntryEventOccurrence' (role 'trace_Events_InitialNode_fire_initialNodeEntryEventOccurrence465', cardinality 0..*).
+'trace::Events::IntegerVariable::getCurrentValueValue::integerVariableEntryEventOccurrence' (role 'trace_Events_IntegerVariable_getCurrentValueValue_integerVariableEntryEventOccurrence', cardinality 0..*) is associated with 'activitydiagram::TracedIntegerVariable' (role 'activitydiagram_TracedIntegerVariable499', cardinality 0..*).
+'trace::Events::IntegerComparisonExpression::evaluateEQUALSExitEventOccurrence' (role 'trace_Events_IntegerComparisonExpression_evaluateEQUALSExitEventOccurrence579', cardinality 0..*) is associated with 'Events::trace::EObject' (role 'Events_trace_EObject580', cardinality 0..*).
+'trace::Events::BooleanVariable::setCurrentValue::boolenVariableExitEventOccurrence' (role 'trace_Events_BooleanVariable_setCurrentValue_boolenVariableExitEventOccurrence', cardinality 0..*) is associated with 'BooleanVariable::setCurrentValue::boolenVariableEntryEventOccurrence' (role 'BooleanVariable_setCurrentValue_boolenVariableEntryEventOccurrence523', cardinality 0..*).
+'BooleanBinaryExpression::evaluateANDEntryEventOccurrence' (role 'BooleanBinaryExpression_evaluateANDEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events262', cardinality 0..*).
+'Action::fire::actionEntryEventOccurrence' (role 'Action_fire_actionEntryEventOccurrence452', cardinality 0..*) is associated with 'trace::Events::Action::fire::actionExitEventOccurrence' (role 'trace_Events_Action_fire_actionExitEventOccurrence', cardinality 0..*).
+'Events::trace::EObject' (role 'Events_trace_EObject517', cardinality 0..*) is associated with 'trace::Events::StringVariable::getCurrentValueValue::stringVariableExitEventOccurrence' (role 'trace_Events_StringVariable_getCurrentValueValue_stringVariableExitEventOccurrence516', cardinality 0..*).
+'trace::Events::ForkNode::fire::forkNodeEntryEventOccurrence' (role 'trace_Events_ForkNode_fire_forkNodeEntryEventOccurrence477', cardinality 0..*) is associated with 'activitydiagramConfiguration::TracedToken' (role 'activitydiagramConfiguration_TracedToken478', cardinality 0..*).
+'BooleanUnaryExpression::execute::booleanUnaryExpressionExitEventOccurrence' (role 'BooleanUnaryExpression_execute_booleanUnaryExpressionExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events252', cardinality 0..*).
+'trace::Events::ActivityNode::hasOffersEntryEventOccurrence' (role 'trace_Events_ActivityNode_hasOffersEntryEventOccurrence', cardinality 0..*) is associated with 'activitydiagram::TracedActivityNode' (role 'activitydiagram_TracedActivityNode391', cardinality 0..*).
+'Events::trace::EObject' (role 'Events_trace_EObject536', cardinality 0..*) is associated with 'trace::Events::IntegerExpression::getOperandCurrentValuesExitEventOccurrence' (role 'trace_Events_IntegerExpression_getOperandCurrentValuesExitEventOccurrence535', cardinality 0..*).
+'trace::Events::ActivityNode::removeTokenEntryEventOccurrence' (role 'trace_Events_ActivityNode_removeTokenEntryEventOccurrence', cardinality 0..*) is associated with 'activitydiagram::TracedActivityNode' (role 'activitydiagram_TracedActivityNode384', cardinality 0..*).
+'trace::Events::IntegerCalculationExpression::evaluateADDEntryEventOccurrence' (role 'trace_Events_IntegerCalculationExpression_evaluateADDEntryEventOccurrence', cardinality 0..*) is associated with 'Events::trace::IntegerCalculationExpression' (role 'Events_trace_IntegerCalculationExpression544', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events280', cardinality 0..*) is associated with 'Token::withdrawExitEventOccurrence' (role 'Token_withdrawExitEventOccurrence', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events260', cardinality 0..*) is associated with 'BooleanBinaryExpression::execute::booleanBinaryExpressionExitEventOccurrence' (role 'BooleanBinaryExpression_execute_booleanBinaryExpressionExitEventOccurrence', cardinality 0..*).
+'ActivityNode::takeOfferedTokensEntryEventOccurrence' (role 'ActivityNode_takeOfferedTokensEntryEventOccurrence372', cardinality 0..*) is associated with 'trace::Events::ActivityNode::takeOfferedTokensExitEventOccurrence' (role 'trace_Events_ActivityNode_takeOfferedTokensExitEventOccurrence', cardinality 0..*).
+'trace::Events::Action::isReady::actionExitEventOccurrence' (role 'trace_Events_Action_isReady_actionExitEventOccurrence', cardinality 0..*) is associated with 'Action::isReady::actionEntryEventOccurrence' (role 'Action_isReady_actionEntryEventOccurrence442', cardinality 0..*).
+'trace::Events::IntegerCalculationExpression::evaluateSUBTRACTExitEventOccurrence' (role 'trace_Events_IntegerCalculationExpression_evaluateSUBTRACTExitEventOccurrence', cardinality 0..*) is associated with 'IntegerCalculationExpression::evaluateSUBTRACTEntryEventOccurrence' (role 'IntegerCalculationExpression_evaluateSUBTRACTEntryEventOccurrence553', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events212', cardinality 0..*) is associated with 'IntegerExpression::getOperandCurrentValuesExitEventOccurrence' (role 'IntegerExpression_getOperandCurrentValuesExitEventOccurrence', cardinality 0..*).
+'activitydiagram::TracedActivity' (role 'activitydiagram_TracedActivity342', cardinality 0..*) is associated with 'trace::Events::Activity::fireNodeEntryEventOccurrence' (role 'trace_Events_Activity_fireNodeEntryEventOccurrence', cardinality 0..*).
+'activitydiagramConfiguration::TracedToken' (role 'activitydiagramConfiguration_TracedToken623', cardinality 0..*) is associated with 'trace::Events::Token::isWithdrawnEntryEventOccurrence' (role 'trace_Events_Token_isWithdrawnEntryEventOccurrence', cardinality 0..*).
+'IntegerComparisonExpression::evaluateGREATER::EQUALSEntryEventOccurrence' (role 'IntegerComparisonExpression_evaluateGREATER_EQUALSEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events242', cardinality 0..*).
+'trace::Events::ActivityNode::takeOfferedTokensEntryEventOccurrence' (role 'trace_Events_ActivityNode_takeOfferedTokensEntryEventOccurrence', cardinality 0..*) is associated with 'activitydiagram::TracedActivityNode' (role 'activitydiagram_TracedActivityNode370', cardinality 0..*).
+'trace::Events::Action::sendOffers::actionExitEventOccurrence' (role 'trace_Events_Action_sendOffers_actionExitEventOccurrence', cardinality 0..*) is associated with 'Action::sendOffers::actionEntryEventOccurrence' (role 'Action_sendOffers_actionEntryEventOccurrence438', cardinality 0..*).
+'Events::trace::BooleanBinaryExpression' (role 'Events_trace_BooleanBinaryExpression609', cardinality 0..*) is associated with 'trace::Events::BooleanBinaryExpression::evaluateANDEntryEventOccurrence' (role 'trace_Events_BooleanBinaryExpression_evaluateANDEntryEventOccurrence', cardinality 0..*).
+'Events::trace::IntegerComparisonExpression' (role 'Events_trace_IntegerComparisonExpression582', cardinality 0..*) is associated with 'trace::Events::IntegerComparisonExpression::evaluateGREATER::EQUALSEntryEventOccurrence' (role 'trace_Events_IntegerComparisonExpression_evaluateGREATER_EQUALSEntryEventOccurrence', cardinality 0..*).
+'Events::trace::BooleanUnaryExpression' (role 'Events_trace_BooleanUnaryExpression599', cardinality 0..*) is associated with 'trace::Events::BooleanUnaryExpression::evaluateNOTEntryEventOccurrence' (role 'trace_Events_BooleanUnaryExpression_evaluateNOTEntryEventOccurrence', cardinality 0..*).
+'Events::trace::EObject' (role 'Events_trace_EObject396', cardinality 0..*) is associated with 'trace::Events::ActivityNode::hasOffersExitEventOccurrence' (role 'trace_Events_ActivityNode_hasOffersExitEventOccurrence395', cardinality 0..*).
+'trace::Events::InitialNode::isReady::InitialNodeExitEventOccurrence' (role 'trace_Events_InitialNode_isReady_InitialNodeExitEventOccurrence', cardinality 0..*) is associated with 'InitialNode::isReady::InitialNodeEntryEventOccurrence' (role 'InitialNode_isReady_InitialNodeEntryEventOccurrence458', cardinality 0..*).
+'BooleanBinaryExpression::evaluateOREntryEventOccurrence' (role 'BooleanBinaryExpression_evaluateOREntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events266', cardinality 0..*).
+'Token::withdrawEntryEventOccurrence' (role 'Token_withdrawEntryEventOccurrence642', cardinality 0..*) is associated with 'trace::Events::Token::withdrawExitEventOccurrence' (role 'trace_Events_Token_withdrawExitEventOccurrence', cardinality 0..*).
+'Token::withdrawEntryEventOccurrence' (role 'Token_withdrawEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events278', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events110', cardinality 0..*) is associated with 'ActivityNode::addTokensEntryEventOccurrence' (role 'ActivityNode_addTokensEntryEventOccurrence', cardinality 0..*).
+'trace::Events::IntegerVariable::setCurrentValue::integerVariableExitEventOccurrence' (role 'trace_Events_IntegerVariable_setCurrentValue_integerVariableExitEventOccurrence', cardinality 0..*) is associated with 'IntegerVariable::setCurrentValue::integerVariableEntryEventOccurrence' (role 'IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence497', cardinality 0..*).
+'trace::Events::IntegerComparisonExpression::evaluateSMALLEREntryEventOccurrence' (role 'trace_Events_IntegerComparisonExpression_evaluateSMALLEREntryEventOccurrence', cardinality 0..*) is associated with 'Events::trace::IntegerComparisonExpression' (role 'Events_trace_IntegerComparisonExpression561', cardinality 0..*).
+'Token::transferExitEventOccurrence' (role 'Token_transferExitEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events276', cardinality 0..*).
+'trace::Events::InitialNode::isReady::InitialNodeExitEventOccurrence' (role 'trace_Events_InitialNode_isReady_InitialNodeExitEventOccurrence460', cardinality 0..*) is associated with 'Events::trace::EObject' (role 'Events_trace_EObject461', cardinality 0..*).
+'trace::Events::DecisionNode::fire::decisionNodeExitEventOccurrence' (role 'trace_Events_DecisionNode_fire_decisionNodeExitEventOccurrence', cardinality 0..*) is associated with 'DecisionNode::fire::decisionNodeEntryEventOccurrence' (role 'DecisionNode_fire_decisionNodeEntryEventOccurrence492', cardinality 0..*).
+'trace::Events::OpaqueAction::doAction::opaqueActionEntryEventOccurrence' (role 'trace_Events_OpaqueAction_doAction_opaqueActionEntryEventOccurrence', cardinality 0..*) is associated with 'activitydiagram::TracedOpaqueAction' (role 'activitydiagram_TracedOpaqueAction', cardinality 0..*).
+'trace::Events::IntegerComparisonExpression::evaluateSMALLER::EQUALSEntryEventOccurrence' (role 'trace_Events_IntegerComparisonExpression_evaluateSMALLER_EQUALSEntryEventOccurrence', cardinality 0..*) is associated with 'Events::trace::IntegerComparisonExpression' (role 'Events_trace_IntegerComparisonExpression568', cardinality 0..*).
+'activitydiagram::TracedActivityFinalNode' (role 'activitydiagram_TracedActivityFinalNode', cardinality 0..*) is associated with 'trace::Events::ActivityFinalNode::fire::activityFinalNodeEntryEventOccurrence' (role 'trace_Events_ActivityFinalNode_fire_activityFinalNodeEntryEventOccurrence', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events128', cardinality 0..*) is associated with 'ActivityEdge::sendOfferExitEventOccurrence' (role 'ActivityEdge_sendOfferExitEventOccurrence', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events130', cardinality 0..*) is associated with 'ActivityEdge::takeOfferedTokens::activityEdgeEntryEventOccurrence' (role 'ActivityEdge_takeOfferedTokens_activityEdgeEntryEventOccurrence', cardinality 0..*).
+'trace::States::InputValue::variable::State' (role 'trace_States_InputValue_variable_State', cardinality 0..*) is associated with 'activitydiagram::TracedVariable' (role 'activitydiagram_TracedVariable', cardinality 0..*).
+'BooleanUnaryExpression::evaluateNOTEntryEventOccurrence' (role 'BooleanUnaryExpression_evaluateNOTEntryEventOccurrence', cardinality 0..*) is associated with 'trace::Events::Events' (role 'trace_Events_Events254', cardinality 0..*).
+'trace::Events::Events' (role 'trace_Events_Events282', cardinality 0..*) is associated with 'ForkedToken::withdraw::forkedTokenEntryEventOccurrence' (role 'ForkedToken_withdraw_forkedTokenEntryEventOccurrence', cardinality 0..*).
+'trace::Events::IntegerVariable::setCurrentValue::integerVariableEntryEventOccurrence' (role 'trace_Events_IntegerVariable_setCurrentValue_integerVariableEntryEventOccurrence', cardinality 0..*) is associated with 'activitydiagram::TracedIntegerVariable' (role 'activitydiagram_TracedIntegerVariable', cardinality 0..*).
+'trace::Events::ActivityNode::takeOfferedTokensExitEventOccurrence' (role 'trace_Events_ActivityNode_takeOfferedTokensExitEventOccurrence374', cardinality 0..*) is associated with 'Events::trace::EObject' (role 'Events_trace_EObject375', cardinality 0..*).
+'trace::Events::IntegerComparisonExpression::evaluateSMALLERExitEventOccurrence' (role 'trace_Events_IntegerComparisonExpression_evaluateSMALLERExitEventOccurrence', cardinality 0..*) is associated with 'IntegerComparisonExpression::evaluateSMALLEREntryEventOccurrence' (role 'IntegerComparisonExpression_evaluateSMALLEREntryEventOccurrence563', cardinality 0..*).

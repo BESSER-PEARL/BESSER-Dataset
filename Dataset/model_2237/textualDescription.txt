@@ -1,0 +1,18 @@
+The model has 6 class(es).
+The class 'prosjekt::Semester' has the following attributes: 'amountF' of type int; 'averageGrade' of type float; 'amountC' of type int; 'amountE' of type int; 'amountD' of type int; 'amountB' of type int; 'amountA' of type int; 'name' of type str.
+The class 'prosjekt::Course' has the following attributes: 'name' of type str; 'studyPoints' of type float; 'code' of type str.
+The class 'prosjekt::University' has the following attributes: 'shortName' of type str; 'name' of type str.
+The class 'prosjekt::CourseCoordinator' has no attributes.
+The class 'prosjekt::Department' has the following attributes: 'name' of type str; 'shortName' of type str.
+The class 'prosjekt::Person' has the following attributes: 'name' of type str.
+'prosjekt::University' (role 'University', cardinality 0..*) is associated with 'prosjekt::Department' (role 'departments', cardinality 0..*).
+'prosjekt::CourseCoordinator' (role 'roles', cardinality 0..*) is associated with 'prosjekt::Person' (role 'Person15', cardinality 0..*).
+'prosjekt::Semester' (role 'Semester', cardinality 0..*) is associated with 'prosjekt::Course' (role 'course7', cardinality 0..*).
+'prosjekt::Course' (role 'Course9', cardinality 0..*) is associated with 'prosjekt::Semester' (role 'semester', cardinality 0..*).
+'prosjekt::Person' (role 'staff', cardinality 0..*) is associated with 'prosjekt::Department' (role 'Department11', cardinality 0..*).
+'prosjekt::University' (role 'university', cardinality 0..*) is associated with 'prosjekt::Department' (role 'Department', cardinality 0..*).
+'prosjekt::Department' (role 'Department5', cardinality 0..*) is associated with 'prosjekt::Course' (role 'course', cardinality 0..*).
+'prosjekt::CourseCoordinator' (role 'prosjekt_CourseCoordinator', cardinality 0..*) is associated with 'prosjekt::Course' (role 'prosjekt_Course', cardinality 0..*).
+'prosjekt::Person' (role 'Person', cardinality 0..*) is associated with 'prosjekt::Department' (role 'worksForDepartment', cardinality 0..*).
+'prosjekt::Person' (role 'person', cardinality 0..*) is associated with 'prosjekt::CourseCoordinator' (role 'CourseCoordinator', cardinality 0..*).
+'prosjekt::Department' (role 'department', cardinality 0..*) is associated with 'prosjekt::Course' (role 'Course', cardinality 0..*).

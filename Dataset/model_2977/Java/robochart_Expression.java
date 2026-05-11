@@ -1,0 +1,358 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class robochart_Expression  {
+
+
+
+
+
+
+    private robochart_Transition robochart_transition;
+
+
+
+
+    private robochart_Variable robochart_variable;
+
+
+
+
+    private robochart_OperationSig robochart_operationsig;
+
+
+
+
+    private robochart_Declaration robochart_declaration;
+
+
+
+
+    private robochart_Selection robochart_selection;
+
+
+
+
+    private robochart_SetComp robochart_setcomp;
+
+
+
+
+    private robochart_RangeExp robochart_rangeexp;
+
+
+
+
+    private robochart_Function robochart_function;
+
+
+
+
+    private robochart_Neg robochart_neg;
+
+
+
+
+    private robochart_CallExp robochart_callexp;
+
+
+
+
+    private robochart_SetRange robochart_setrange;
+
+
+
+
+    private robochart_IsExp robochart_isexp;
+
+
+
+
+    private robochart_CallExp robochart_callexp;
+
+
+
+
+    private robochart_ArrayAssignable robochart_arrayassignable;
+
+
+
+
+    private robochart_AsExp robochart_asexp;
+
+
+
+
+    private robochart_TupleExp robochart_tupleexp;
+
+
+
+
+    private robochart_SetRange robochart_setrange;
+
+
+
+
+    private robochart_Transition robochart_transition;
+
+
+
+
+    private robochart_Function robochart_function;
+
+
+
+
+    private robochart_Transition robochart_transition;
+
+
+
+
+    private robochart_SetComp robochart_setcomp;
+
+
+
+
+    private robochart_OperationSig robochart_operationsig;
+
+
+
+
+    private robochart_ParExp robochart_parexp;
+
+
+
+
+    private robochart_RangeExp robochart_rangeexp;
+
+
+
+
+    private robochart_SeqExp robochart_seqexp;
+
+
+
+
+    private robochart_SetExp robochart_setexp;
+
+
+
+
+    private robochart_WaitingCondition robochart_waitingcondition;
+
+
+
+
+    private robochart_Transition robochart_transition;
+
+
+    public robochart_Expression(
+    ) {
+    }
+
+
+
+    public robochart_Transition getRobochart_transition() {
+        return robochart_transition;
+    }
+
+    public void setRobochart_transition(robochart_Transition robochart_transition) {
+        this.robochart_transition = robochart_transition;
+    }
+    public robochart_Variable getRobochart_variable() {
+        return robochart_variable;
+    }
+
+    public void setRobochart_variable(robochart_Variable robochart_variable) {
+        this.robochart_variable = robochart_variable;
+    }
+    public robochart_OperationSig getRobochart_operationsig() {
+        return robochart_operationsig;
+    }
+
+    public void setRobochart_operationsig(robochart_OperationSig robochart_operationsig) {
+        this.robochart_operationsig = robochart_operationsig;
+    }
+    public robochart_Declaration getRobochart_declaration() {
+        return robochart_declaration;
+    }
+
+    public void setRobochart_declaration(robochart_Declaration robochart_declaration) {
+        this.robochart_declaration = robochart_declaration;
+    }
+    public robochart_Selection getRobochart_selection() {
+        return robochart_selection;
+    }
+
+    public void setRobochart_selection(robochart_Selection robochart_selection) {
+        this.robochart_selection = robochart_selection;
+    }
+    public robochart_SetComp getRobochart_setcomp() {
+        return robochart_setcomp;
+    }
+
+    public void setRobochart_setcomp(robochart_SetComp robochart_setcomp) {
+        this.robochart_setcomp = robochart_setcomp;
+    }
+    public robochart_RangeExp getRobochart_rangeexp() {
+        return robochart_rangeexp;
+    }
+
+    public void setRobochart_rangeexp(robochart_RangeExp robochart_rangeexp) {
+        this.robochart_rangeexp = robochart_rangeexp;
+    }
+    public robochart_Function getRobochart_function() {
+        return robochart_function;
+    }
+
+    public void setRobochart_function(robochart_Function robochart_function) {
+        this.robochart_function = robochart_function;
+    }
+    public robochart_Neg getRobochart_neg() {
+        return robochart_neg;
+    }
+
+    public void setRobochart_neg(robochart_Neg robochart_neg) {
+        this.robochart_neg = robochart_neg;
+    }
+    public robochart_CallExp getRobochart_callexp() {
+        return robochart_callexp;
+    }
+
+    public void setRobochart_callexp(robochart_CallExp robochart_callexp) {
+        this.robochart_callexp = robochart_callexp;
+    }
+    public robochart_SetRange getRobochart_setrange() {
+        return robochart_setrange;
+    }
+
+    public void setRobochart_setrange(robochart_SetRange robochart_setrange) {
+        this.robochart_setrange = robochart_setrange;
+    }
+    public robochart_IsExp getRobochart_isexp() {
+        return robochart_isexp;
+    }
+
+    public void setRobochart_isexp(robochart_IsExp robochart_isexp) {
+        this.robochart_isexp = robochart_isexp;
+    }
+    public robochart_CallExp getRobochart_callexp() {
+        return robochart_callexp;
+    }
+
+    public void setRobochart_callexp(robochart_CallExp robochart_callexp) {
+        this.robochart_callexp = robochart_callexp;
+    }
+    public robochart_ArrayAssignable getRobochart_arrayassignable() {
+        return robochart_arrayassignable;
+    }
+
+    public void setRobochart_arrayassignable(robochart_ArrayAssignable robochart_arrayassignable) {
+        this.robochart_arrayassignable = robochart_arrayassignable;
+    }
+    public robochart_AsExp getRobochart_asexp() {
+        return robochart_asexp;
+    }
+
+    public void setRobochart_asexp(robochart_AsExp robochart_asexp) {
+        this.robochart_asexp = robochart_asexp;
+    }
+    public robochart_TupleExp getRobochart_tupleexp() {
+        return robochart_tupleexp;
+    }
+
+    public void setRobochart_tupleexp(robochart_TupleExp robochart_tupleexp) {
+        this.robochart_tupleexp = robochart_tupleexp;
+    }
+    public robochart_SetRange getRobochart_setrange() {
+        return robochart_setrange;
+    }
+
+    public void setRobochart_setrange(robochart_SetRange robochart_setrange) {
+        this.robochart_setrange = robochart_setrange;
+    }
+    public robochart_Transition getRobochart_transition() {
+        return robochart_transition;
+    }
+
+    public void setRobochart_transition(robochart_Transition robochart_transition) {
+        this.robochart_transition = robochart_transition;
+    }
+    public robochart_Function getRobochart_function() {
+        return robochart_function;
+    }
+
+    public void setRobochart_function(robochart_Function robochart_function) {
+        this.robochart_function = robochart_function;
+    }
+    public robochart_Transition getRobochart_transition() {
+        return robochart_transition;
+    }
+
+    public void setRobochart_transition(robochart_Transition robochart_transition) {
+        this.robochart_transition = robochart_transition;
+    }
+    public robochart_SetComp getRobochart_setcomp() {
+        return robochart_setcomp;
+    }
+
+    public void setRobochart_setcomp(robochart_SetComp robochart_setcomp) {
+        this.robochart_setcomp = robochart_setcomp;
+    }
+    public robochart_OperationSig getRobochart_operationsig() {
+        return robochart_operationsig;
+    }
+
+    public void setRobochart_operationsig(robochart_OperationSig robochart_operationsig) {
+        this.robochart_operationsig = robochart_operationsig;
+    }
+    public robochart_ParExp getRobochart_parexp() {
+        return robochart_parexp;
+    }
+
+    public void setRobochart_parexp(robochart_ParExp robochart_parexp) {
+        this.robochart_parexp = robochart_parexp;
+    }
+    public robochart_RangeExp getRobochart_rangeexp() {
+        return robochart_rangeexp;
+    }
+
+    public void setRobochart_rangeexp(robochart_RangeExp robochart_rangeexp) {
+        this.robochart_rangeexp = robochart_rangeexp;
+    }
+    public robochart_SeqExp getRobochart_seqexp() {
+        return robochart_seqexp;
+    }
+
+    public void setRobochart_seqexp(robochart_SeqExp robochart_seqexp) {
+        this.robochart_seqexp = robochart_seqexp;
+    }
+    public robochart_SetExp getRobochart_setexp() {
+        return robochart_setexp;
+    }
+
+    public void setRobochart_setexp(robochart_SetExp robochart_setexp) {
+        this.robochart_setexp = robochart_setexp;
+    }
+    public robochart_WaitingCondition getRobochart_waitingcondition() {
+        return robochart_waitingcondition;
+    }
+
+    public void setRobochart_waitingcondition(robochart_WaitingCondition robochart_waitingcondition) {
+        this.robochart_waitingcondition = robochart_waitingcondition;
+    }
+    public robochart_Transition getRobochart_transition() {
+        return robochart_transition;
+    }
+
+    public void setRobochart_transition(robochart_Transition robochart_transition) {
+        this.robochart_transition = robochart_transition;
+    }
+
+}

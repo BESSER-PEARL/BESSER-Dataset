@@ -1,0 +1,3 @@
+The model has 1 class(es).
+The class 'HardCodedTree::NodeKind' has no attributes.
+'HardCodedTree::NodeKind' (role 'HardCodedTree_NodeKind0', cardinality 0..*) is associated with 'HardCodedTree::NodeKind' (role 'HardCodedTree_NodeKind', cardinality 0..*).

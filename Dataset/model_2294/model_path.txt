@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/MDDLingo/xis-bigdata/fr.inria.atlanmod.json.discoverer.zoo/fenix-test/fenix/source2/source2.ecore

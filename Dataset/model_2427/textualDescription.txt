@@ -1,0 +1,51 @@
+The model has 17 class(es).
+The class 'rdbms::Database' has no attributes.
+The class 'rdbms::CheckCon' has the following attributes: 'checkCondition' of type str.
+The class 'Constraints' has no attributes.
+The class 'DataType' has no attributes.
+The class 'rdbms::ForeignKey' has the following attributes: 'inverseReferentialIntegrityCon' of type bool; 'match' of type str; 'deleteActionRHS' of type str; 'updateActionRHS' of type str.
+The class 'rdbms::DataType' has no attributes.
+The class 'rdbms::PrimaryKeyCon' has no attributes.
+The class 'rdbms::Table' has no attributes.
+The class 'rdbms::ModelElement' has the following attributes: 'name' of type str.
+The class 'rdbms::UserDefinedDataType' has the following attributes: 'length' of type int; 'defaultValue' of type str; 'precision' of type int.
+The class 'rdbms::UniqueCon' has no attributes.
+The class 'rdbms::Constraints' has the following attributes: 'deferrable' of type str; 'deferred' of type str.
+The class 'ModelElement' has no attributes.
+The class 'rdbms::PKeyAndUnique' has no attributes.
+The class 'rdbms::Column' has the following attributes: 'length' of type int; 'precision' of type int; 'nullable' of type bool; 'default' of type str.
+The class 'PKeyAndUnique' has no attributes.
+The class 'rdbms::SystemDataType' has the following attributes: 'predefinedDecPlaces' of type int; 'predefinedLength' of type int.
+The enumeration 'ReferencingType' has the following literals: 'FULL', 'DEFAULT', 'PARTIAL'.
+The enumeration 'DeferrableAct' has the following literals: 'NOT_DEFFERABLE', 'DEFFERABLE'.
+The enumeration 'DeferredAct' has the following literals: 'INITIALLY_DEFERRED', 'INITIALLY_IMMEDIATE'.
+The enumeration 'Action' has the following literals: 'NO_ACTION', 'CASCADE', 'SET_NULL', 'SET_DEFAULT', 'RESTRICT'.
+'rdbms::PKeyAndUnique' is a specialization of 'Constraints'.
+'rdbms::DataType' is a specialization of 'ModelElement'.
+'rdbms::CheckCon' is a specialization of 'Constraints'.
+'rdbms::ForeignKey' is a specialization of 'Constraints'.
+'rdbms::UserDefinedDataType' is a specialization of 'DataType'.
+'rdbms::Database' is a specialization of 'ModelElement'.
+'rdbms::SystemDataType' is a specialization of 'DataType'.
+'rdbms::PrimaryKeyCon' is a specialization of 'PKeyAndUnique'.
+'rdbms::Column' is a specialization of 'ModelElement'.
+'rdbms::Table' is a specialization of 'ModelElement'.
+'rdbms::Constraints' is a specialization of 'ModelElement'.
+'rdbms::UniqueCon' is a specialization of 'PKeyAndUnique'.
+'rdbms::CheckCon' (role 'rdbms_CheckCon', cardinality 0..*) is associated with 'rdbms::Table' (role 'rdbms_Table13', cardinality 0..*).
+'rdbms::PKeyAndUnique' (role 'rdbms_PKeyAndUnique22', cardinality 0..*) is associated with 'rdbms::ForeignKey' (role 'rdbms_ForeignKey21', cardinality 0..*).
+'rdbms::Column' (role 'rdbms_Column32', cardinality 0..*) is associated with 'rdbms::PKeyAndUnique' (role 'rdbms_PKeyAndUnique31', cardinality 0..*).
+'rdbms::ForeignKey' (role 'ForeignKey', cardinality 0..*) is associated with 'rdbms::Table' (role 'FKTable', cardinality 0..*).
+'rdbms::Column' (role 'rdbms_Column', cardinality 0..*) is associated with 'rdbms::Table' (role 'rdbms_Table11', cardinality 0..*).
+'rdbms::Table' (role 'Table', cardinality 0..*) is associated with 'rdbms::ForeignKey' (role 'tableFKs', cardinality 0..*).
+'rdbms::SystemDataType' (role 'rdbms_SystemDataType35', cardinality 0..*) is associated with 'rdbms::UserDefinedDataType' (role 'rdbms_UserDefinedDataType34', cardinality 0..*).
+'rdbms::Column' (role 'rdbms_Column17', cardinality 0..*) is associated with 'rdbms::ForeignKey' (role 'rdbms_ForeignKey', cardinality 0..*).
+'rdbms::DataType' (role 'rdbms_DataType', cardinality 0..*) is associated with 'rdbms::Column' (role 'rdbms_Column19', cardinality 0..*).
+'rdbms::Table' (role 'rdbms_Table', cardinality 0..*) is associated with 'rdbms::Database' (role 'rdbms_Database2', cardinality 0..*).
+'rdbms::Column' (role 'rdbms_Column25', cardinality 0..*) is associated with 'rdbms::ForeignKey' (role 'rdbms_ForeignKey24', cardinality 0..*).
+'rdbms::PKeyAndUnique' (role 'rdbms_PKeyAndUnique', cardinality 0..*) is associated with 'rdbms::Column' (role 'rdbms_Column15', cardinality 0..*).
+'rdbms::Database' (role 'rdbms_Database4', cardinality 0..*) is associated with 'rdbms::SystemDataType' (role 'rdbms_SystemDataType', cardinality 0..*).
+'rdbms::Table' (role 'rdbms_Table28', cardinality 0..*) is associated with 'rdbms::ForeignKey' (role 'rdbms_ForeignKey27', cardinality 0..*).
+'rdbms::Database' (role 'rdbms_Database', cardinality 0..*) is associated with 'rdbms::UserDefinedDataType' (role 'rdbms_UserDefinedDataType', cardinality 0..*).
+'rdbms::Table' (role 'rdbms_Table9', cardinality 0..*) is associated with 'rdbms::UniqueCon' (role 'rdbms_UniqueCon', cardinality 0..*).
+'rdbms::PrimaryKeyCon' (role 'rdbms_PrimaryKeyCon', cardinality 0..*) is associated with 'rdbms::Table' (role 'rdbms_Table7', cardinality 0..*).

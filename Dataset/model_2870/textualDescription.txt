@@ -1,0 +1,40 @@
+The model has 17 class(es).
+The class 'VHDLModel::InputPort' has no attributes.
+The class 'VHDLModel::Block' has the following attributes: 'name' of type str.
+The class 'Block' has no attributes.
+The class 'VHDLModel::OrGate' has no attributes.
+The class 'VHDLModel::AndGate' has no attributes.
+The class 'VHDLModel::Signal' has no attributes.
+The class 'VHDLModel::VHDLSpecification' has the following attributes: 'name' of type str.
+The class 'VHDLModel::BinaryGate' has no attributes.
+The class 'VHDLModel::BlockRef' has no attributes.
+The class 'Port' has no attributes.
+The class 'VHDLModel::ComplexBlock' has no attributes.
+The class 'BinaryGate' has no attributes.
+The class 'ComplexBlock' has no attributes.
+The class 'VHDLModel::CompositeBlock' has no attributes.
+The class 'VHDLModel::NotGate' has no attributes.
+The class 'VHDLModel::Port' has the following attributes: 'high' of type bool; 'name' of type str.
+The class 'VHDLModel::OutputPort' has no attributes.
+'VHDLModel::NotGate' is a specialization of 'Block'.
+'VHDLModel::CompositeBlock' is a specialization of 'ComplexBlock'.
+'VHDLModel::BlockRef' is a specialization of 'ComplexBlock'.
+'VHDLModel::BinaryGate' is a specialization of 'Block'.
+'VHDLModel::Signal' is a specialization of 'Port'.
+'VHDLModel::OrGate' is a specialization of 'BinaryGate'.
+'VHDLModel::AndGate' is a specialization of 'BinaryGate'.
+'VHDLModel::InputPort' is a specialization of 'Port'.
+'VHDLModel::OutputPort' is a specialization of 'Port'.
+'VHDLModel::ComplexBlock' is a specialization of 'Block'.
+'VHDLModel::Port' (role 'VHDLModel_Port22', cardinality 0..*) is associated with 'VHDLModel::Block' (role 'VHDLModel_Block23', cardinality 0..*).
+'VHDLModel::OutputPort' (role 'VHDLModel_OutputPort14', cardinality 0..*) is associated with 'VHDLModel::NotGate' (role 'VHDLModel_NotGate', cardinality 0..*).
+'VHDLModel::Port' (role 'VHDLModel_Port', cardinality 0..*) is associated with 'VHDLModel::ComplexBlock' (role 'VHDLModel_ComplexBlock', cardinality 0..*).
+'VHDLModel::NotGate' (role 'VHDLModel_NotGate16', cardinality 0..*) is associated with 'VHDLModel::InputPort' (role 'VHDLModel_InputPort17', cardinality 0..*).
+'VHDLModel::InputPort' (role 'VHDLModel_InputPort3', cardinality 0..*) is associated with 'VHDLModel::BinaryGate' (role 'VHDLModel_BinaryGate2', cardinality 0..*).
+'VHDLModel::Block' (role 'VHDLModel_Block12', cardinality 0..*) is associated with 'VHDLModel::CompositeBlock' (role 'VHDLModel_CompositeBlock11', cardinality 0..*).
+'VHDLModel::CompositeBlock' (role 'VHDLModel_CompositeBlock', cardinality 0..*) is associated with 'VHDLModel::BlockRef' (role 'VHDLModel_BlockRef', cardinality 0..*).
+'VHDLModel::InputPort' (role 'VHDLModel_InputPort7', cardinality 0..*) is associated with 'VHDLModel::Block' (role 'VHDLModel_Block', cardinality 0..*).
+'VHDLModel::Port' (role 'VHDLModel_Port18', cardinality 0..*) is associated with 'VHDLModel::Port' (role 'VHDLModel_Port20', cardinality 0..*).
+'VHDLModel::VHDLSpecification' (role 'VHDLModel_VHDLSpecification', cardinality 0..*) is associated with 'VHDLModel::CompositeBlock' (role 'VHDLModel_CompositeBlock25', cardinality 0..*).
+'VHDLModel::OutputPort' (role 'VHDLModel_OutputPort', cardinality 0..*) is associated with 'VHDLModel::BinaryGate' (role 'VHDLModel_BinaryGate5', cardinality 0..*).
+'VHDLModel::InputPort' (role 'VHDLModel_InputPort', cardinality 0..*) is associated with 'VHDLModel::BinaryGate' (role 'VHDLModel_BinaryGate', cardinality 0..*).

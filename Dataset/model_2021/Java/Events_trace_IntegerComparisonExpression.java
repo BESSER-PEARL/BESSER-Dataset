@@ -1,0 +1,94 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class Events_trace_IntegerComparisonExpression  {
+
+
+
+
+
+
+    private trace_Events_IntegerComparisonExpression_evaluateEQUALSEntryEventOccurrence trace_events_integercomparisonexpression_evaluateequalsentryeventoccurrence;
+
+
+
+
+    private trace_Events_IntegerComparisonExpression_evaluateSMALLER_EQUALSEntryEventOccurrence trace_events_integercomparisonexpression_evaluatesmaller_equalsentryeventoccurrence;
+
+
+
+
+    private trace_Events_IntegerComparisonExpression_evaluateGREATEREntryEventOccurrence trace_events_integercomparisonexpression_evaluategreaterentryeventoccurrence;
+
+
+
+
+    private trace_Events_IntegerComparisonExpression_execute_IntegerComparisionExpressionEntryEventOccurrence trace_events_integercomparisonexpression_execute_integercomparisionexpressionentryeventoccurrence;
+
+
+
+
+    private trace_Events_IntegerComparisonExpression_evaluateGREATER_EQUALSEntryEventOccurrence trace_events_integercomparisonexpression_evaluategreater_equalsentryeventoccurrence;
+
+
+
+
+    private trace_Events_IntegerComparisonExpression_evaluateSMALLEREntryEventOccurrence trace_events_integercomparisonexpression_evaluatesmallerentryeventoccurrence;
+
+
+    public Events_trace_IntegerComparisonExpression(
+    ) {
+    }
+
+
+
+    public trace_Events_IntegerComparisonExpression_evaluateEQUALSEntryEventOccurrence getTrace_events_integercomparisonexpression_evaluateequalsentryeventoccurrence() {
+        return trace_events_integercomparisonexpression_evaluateequalsentryeventoccurrence;
+    }
+
+    public void setTrace_events_integercomparisonexpression_evaluateequalsentryeventoccurrence(trace_Events_IntegerComparisonExpression_evaluateEQUALSEntryEventOccurrence trace_events_integercomparisonexpression_evaluateequalsentryeventoccurrence) {
+        this.trace_events_integercomparisonexpression_evaluateequalsentryeventoccurrence = trace_events_integercomparisonexpression_evaluateequalsentryeventoccurrence;
+    }
+    public trace_Events_IntegerComparisonExpression_evaluateSMALLER_EQUALSEntryEventOccurrence getTrace_events_integercomparisonexpression_evaluatesmaller_equalsentryeventoccurrence() {
+        return trace_events_integercomparisonexpression_evaluatesmaller_equalsentryeventoccurrence;
+    }
+
+    public void setTrace_events_integercomparisonexpression_evaluatesmaller_equalsentryeventoccurrence(trace_Events_IntegerComparisonExpression_evaluateSMALLER_EQUALSEntryEventOccurrence trace_events_integercomparisonexpression_evaluatesmaller_equalsentryeventoccurrence) {
+        this.trace_events_integercomparisonexpression_evaluatesmaller_equalsentryeventoccurrence = trace_events_integercomparisonexpression_evaluatesmaller_equalsentryeventoccurrence;
+    }
+    public trace_Events_IntegerComparisonExpression_evaluateGREATEREntryEventOccurrence getTrace_events_integercomparisonexpression_evaluategreaterentryeventoccurrence() {
+        return trace_events_integercomparisonexpression_evaluategreaterentryeventoccurrence;
+    }
+
+    public void setTrace_events_integercomparisonexpression_evaluategreaterentryeventoccurrence(trace_Events_IntegerComparisonExpression_evaluateGREATEREntryEventOccurrence trace_events_integercomparisonexpression_evaluategreaterentryeventoccurrence) {
+        this.trace_events_integercomparisonexpression_evaluategreaterentryeventoccurrence = trace_events_integercomparisonexpression_evaluategreaterentryeventoccurrence;
+    }
+    public trace_Events_IntegerComparisonExpression_execute_IntegerComparisionExpressionEntryEventOccurrence getTrace_events_integercomparisonexpression_execute_integercomparisionexpressionentryeventoccurrence() {
+        return trace_events_integercomparisonexpression_execute_integercomparisionexpressionentryeventoccurrence;
+    }
+
+    public void setTrace_events_integercomparisonexpression_execute_integercomparisionexpressionentryeventoccurrence(trace_Events_IntegerComparisonExpression_execute_IntegerComparisionExpressionEntryEventOccurrence trace_events_integercomparisonexpression_execute_integercomparisionexpressionentryeventoccurrence) {
+        this.trace_events_integercomparisonexpression_execute_integercomparisionexpressionentryeventoccurrence = trace_events_integercomparisonexpression_execute_integercomparisionexpressionentryeventoccurrence;
+    }
+    public trace_Events_IntegerComparisonExpression_evaluateGREATER_EQUALSEntryEventOccurrence getTrace_events_integercomparisonexpression_evaluategreater_equalsentryeventoccurrence() {
+        return trace_events_integercomparisonexpression_evaluategreater_equalsentryeventoccurrence;
+    }
+
+    public void setTrace_events_integercomparisonexpression_evaluategreater_equalsentryeventoccurrence(trace_Events_IntegerComparisonExpression_evaluateGREATER_EQUALSEntryEventOccurrence trace_events_integercomparisonexpression_evaluategreater_equalsentryeventoccurrence) {
+        this.trace_events_integercomparisonexpression_evaluategreater_equalsentryeventoccurrence = trace_events_integercomparisonexpression_evaluategreater_equalsentryeventoccurrence;
+    }
+    public trace_Events_IntegerComparisonExpression_evaluateSMALLEREntryEventOccurrence getTrace_events_integercomparisonexpression_evaluatesmallerentryeventoccurrence() {
+        return trace_events_integercomparisonexpression_evaluatesmallerentryeventoccurrence;
+    }
+
+    public void setTrace_events_integercomparisonexpression_evaluatesmallerentryeventoccurrence(trace_Events_IntegerComparisonExpression_evaluateSMALLEREntryEventOccurrence trace_events_integercomparisonexpression_evaluatesmallerentryeventoccurrence) {
+        this.trace_events_integercomparisonexpression_evaluatesmallerentryeventoccurrence = trace_events_integercomparisonexpression_evaluatesmallerentryeventoccurrence;
+    }
+
+}

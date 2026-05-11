@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'test::EClass1' has no attributes.
+The class 'test::EClass0' has the following attributes: 'EAttribute0' of type bool.
+'test::EClass1' (role 'test_EClass1', cardinality 0..*) is associated with 'test::EClass0' (role 'test_EClass0', cardinality 0..*).

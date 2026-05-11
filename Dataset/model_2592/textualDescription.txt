@@ -1,0 +1,4 @@
+The model has 3 class(es).
+The class 'LazyRuleInheritanceTest::subpackage::ClassB' has no attributes.
+The class 'LazyRuleInheritanceTest::ClassA' has no attributes.
+The class 'subpackage::ClassB' has no attributes.

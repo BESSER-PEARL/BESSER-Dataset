@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/duchavo/TDT4250/org.eclipse.assignment1.studyplanmodel/model/studyplan.ecore

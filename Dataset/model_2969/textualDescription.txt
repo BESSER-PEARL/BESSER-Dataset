@@ -1,0 +1,98 @@
+The model has 34 class(es).
+The class 'Property' has no attributes.
+The class 'owl::ObjectSlot' has no attributes.
+The class 'owl::OWLObjectProperty' has the following attributes: 'transitive' of type str; 'inverseFunctional' of type str; 'symmetric' of type str.
+The class 'RDFSResource' has no attributes.
+The class 'owl::MinCardinalityRestriction' has no attributes.
+The class 'OWLClass' has no attributes.
+The class 'owl::OWLDataRange' has no attributes.
+The class 'owl::MaxCardinalityRestriction' has no attributes.
+The class 'owl::OWLOntologyProperty' has no attributes.
+The class 'owl::EnumeratedClass' has no attributes.
+The class 'owl::OWLDatatypeProperty' has no attributes.
+The class 'RDFProperty' has no attributes.
+The class 'owl::RDFSClass' has no attributes.
+The class 'owl::Individual' has no attributes.
+The class 'owl::UnionClass' has no attributes.
+The class 'RDFSClass' has no attributes.
+The class 'OWLRestriction' has no attributes.
+The class 'owl::CardinalityRestriction' has no attributes.
+The class 'owl::IntersectionClass' has no attributes.
+The class 'owl::RDFProperty' has no attributes.
+The class 'owl::OWLOntology' has no attributes.
+The class 'owl::SomeValuesFromRestriction' has no attributes.
+The class 'owl::AllValuesFromRestriction' has no attributes.
+The class 'owl::ComplementClass' has no attributes.
+The class 'owl::OWLRestriction' has no attributes.
+The class 'owl::OWLAnnotationProperty' has no attributes.
+The class 'owl::RDFSResource' has no attributes.
+The class 'owl::Property' has the following attributes: 'deprecated' of type str; 'functional' of type str.
+The class 'Ontology' has no attributes.
+The class 'owl::HasValueRestriction' has no attributes.
+The class 'owl::RDFSLiteral' has no attributes.
+The class 'owl::DatatypeSlot' has no attributes.
+The class 'owl::OWLClass' has the following attributes: 'deprecated' of type str.
+The class 'owl::OWLAllDifferent' has no attributes.
+'owl::Individual' is a specialization of 'RDFSResource'.
+'owl::OWLAnnotationProperty' is a specialization of 'RDFProperty'.
+'owl::UnionClass' is a specialization of 'OWLClass'.
+'owl::OWLObjectProperty' is a specialization of 'Property'.
+'owl::MinCardinalityRestriction' is a specialization of 'OWLRestriction'.
+'owl::CardinalityRestriction' is a specialization of 'OWLRestriction'.
+'owl::OWLClass' is a specialization of 'RDFSClass'.
+'owl::OWLOntologyProperty' is a specialization of 'RDFProperty'.
+'owl::MaxCardinalityRestriction' is a specialization of 'OWLRestriction'.
+'owl::AllValuesFromRestriction' is a specialization of 'OWLRestriction'.
+'owl::OWLAllDifferent' is a specialization of 'RDFSResource'.
+'owl::IntersectionClass' is a specialization of 'OWLClass'.
+'owl::EnumeratedClass' is a specialization of 'OWLClass'.
+'owl::ComplementClass' is a specialization of 'OWLClass'.
+'owl::OWLDatatypeProperty' is a specialization of 'Property'.
+'owl::OWLOntology' is a specialization of 'Ontology'.
+'owl::OWLDataRange' is a specialization of 'RDFSClass'.
+'owl::SomeValuesFromRestriction' is a specialization of 'OWLRestriction'.
+'owl::HasValueRestriction' is a specialization of 'OWLRestriction'.
+'owl::Property' is a specialization of 'RDFProperty'.
+'owl::OWLRestriction' is a specialization of 'OWLClass'.
+'owl::OWLOntology' (role 'owl_OWLOntology12', cardinality 0..*) is associated with 'owl::RDFSLiteral' (role 'owl_RDFSLiteral', cardinality 0..*).
+'owl::Individual' (role 'owl_Individual', cardinality 0..*) is associated with 'owl::ObjectSlot' (role 'owl_ObjectSlot', cardinality 0..*).
+'owl::Property' (role 'Property37', cardinality 0..*) is associated with 'owl::Property' (role 'OWLEquivalentProperty', cardinality 0..*).
+'owl::DatatypeSlot' (role 'datatypeSlot', cardinality 0..*) is associated with 'owl::Individual' (role 'Individual59', cardinality 0..*).
+'owl::OWLObjectProperty' (role 'OWLObjectProperty', cardinality 0..*) is associated with 'owl::OWLObjectProperty' (role 'invOWLInverseOf', cardinality 0..*).
+'owl::OWLOntology' (role 'owl_OWLOntology7', cardinality 0..*) is associated with 'owl::OWLOntology' (role 'owl_OWLOntology5', cardinality 0..*).
+'owl::OWLRestriction' (role 'refByRestriction', cardinality 0..*) is associated with 'owl::RDFProperty' (role 'rdfs.ecoreRDFProperty', cardinality 0..*).
+'owl::OWLClass' (role 'OWLEquivalentClass', cardinality 0..*) is associated with 'owl::OWLClass' (role 'OWLClass', cardinality 0..*).
+'owl::Individual' (role 'OWLDistinctMembers', cardinality 0..*) is associated with 'owl::OWLAllDifferent' (role 'OWLAllDifferent', cardinality 0..*).
+'owl::EnumeratedClass' (role 'owl_EnumeratedClass', cardinality 0..*) is associated with 'owl::Individual' (role 'owl_Individual69', cardinality 0..*).
+'owl::CardinalityRestriction' (role 'owl_CardinalityRestriction', cardinality 0..*) is associated with 'owl::RDFSLiteral' (role 'owl_RDFSLiteral79', cardinality 0..*).
+'owl::UnionClass' (role 'UnionClass', cardinality 0..*) is associated with 'owl::OWLClass' (role 'OWLUnionOf', cardinality 0..*).
+'owl::OWLOntology' (role 'owl_OWLOntology8', cardinality 0..*) is associated with 'owl::OWLOntology' (role 'owl_OWLOntology10', cardinality 0..*).
+'owl::Individual' (role 'Individual51', cardinality 0..*) is associated with 'owl::DatatypeSlot' (role 'DatatypeSlot', cardinality 0..*).
+'owl::ObjectSlot' (role 'owl_ObjectSlot67', cardinality 0..*) is associated with 'owl::OWLObjectProperty' (role 'owl_OWLObjectProperty', cardinality 0..*).
+'owl::UnionClass' (role 'refByUnionClass', cardinality 0..*) is associated with 'owl::OWLClass' (role 'OWLClass73', cardinality 0..*).
+'owl::OWLClass' (role 'OWLClass17', cardinality 0..*) is associated with 'owl::OWLClass' (role 'invOWLEquivalentClass', cardinality 0..*).
+'owl::Property' (role 'Property', cardinality 0..*) is associated with 'owl::Property' (role 'invOWLEquivalentProperty', cardinality 0..*).
+'owl::RDFSClass' (role 'rdfs.ecoreRDFSClass77', cardinality 0..*) is associated with 'owl::SomeValuesFromRestriction' (role 'refBySVFRestriction', cardinality 0..*).
+'owl::Individual' (role 'Individual64', cardinality 0..*) is associated with 'owl::ObjectSlot' (role 'objectSlot', cardinality 0..*).
+'owl::ComplementClass' (role 'ComplementClass', cardinality 0..*) is associated with 'owl::OWLClass' (role 'OWLComplementOf', cardinality 0..*).
+'owl::OWLClass' (role 'OWLClass20', cardinality 0..*) is associated with 'owl::OWLClass' (role 'invOWLDisjointWith', cardinality 0..*).
+'owl::Individual' (role 'Individual49', cardinality 0..*) is associated with 'owl::Individual' (role 'OWLSameAs', cardinality 0..*).
+'owl::Individual' (role 'Individual53', cardinality 0..*) is associated with 'owl::ObjectSlot' (role 'ObjectSlot', cardinality 0..*).
+'owl::OWLDataRange' (role 'owl_OWLDataRange', cardinality 0..*) is associated with 'owl::RDFSLiteral' (role 'owl_RDFSLiteral57', cardinality 0..*).
+'owl::OWLAllDifferent' (role 'refByOWLDistinctMembers', cardinality 0..*) is associated with 'owl::Individual' (role 'Individual55', cardinality 0..*).
+'owl::ComplementClass' (role 'invOWLComplementOf', cardinality 0..*) is associated with 'owl::OWLClass' (role 'OWLClass85', cardinality 0..*).
+'owl::RDFSResource' (role 'owl_RDFSResource', cardinality 0..*) is associated with 'owl::HasValueRestriction' (role 'owl_HasValueRestriction', cardinality 0..*).
+'owl::Individual' (role 'Individual', cardinality 0..*) is associated with 'owl::Individual' (role 'invOWLDifferentFrom', cardinality 0..*).
+'owl::MinCardinalityRestriction' (role 'owl_MinCardinalityRestriction', cardinality 0..*) is associated with 'owl::RDFSLiteral' (role 'owl_RDFSLiteral83', cardinality 0..*).
+'owl::OWLClass' (role 'OWLDisjointWith', cardinality 0..*) is associated with 'owl::OWLClass' (role 'OWLClass23', cardinality 0..*).
+'owl::DatatypeSlot' (role 'owl_DatatypeSlot', cardinality 0..*) is associated with 'owl::OWLDatatypeProperty' (role 'owl_OWLDatatypeProperty', cardinality 0..*).
+'owl::OWLOntology' (role 'owl_OWLOntology2', cardinality 0..*) is associated with 'owl::OWLOntology' (role 'owl_OWLOntology4', cardinality 0..*).
+'owl::DatatypeSlot' (role 'DatatypeSlot61', cardinality 0..*) is associated with 'owl::RDFSLiteral' (role 'rdfs.ecoreRDFSLiteral', cardinality 0..*).
+'owl::OWLObjectProperty' (role 'OWLObjectProperty32', cardinality 0..*) is associated with 'owl::OWLObjectProperty' (role 'OWLInverseOf', cardinality 0..*).
+'owl::Individual' (role 'OWLDifferentFrom', cardinality 0..*) is associated with 'owl::Individual' (role 'Individual42', cardinality 0..*).
+'owl::OWLClass' (role 'OWLIntersectionOf', cardinality 0..*) is associated with 'owl::IntersectionClass' (role 'IntersectionClass', cardinality 0..*).
+'owl::Individual' (role 'Individual46', cardinality 0..*) is associated with 'owl::Individual' (role 'invOWLSameAs', cardinality 0..*).
+'owl::OWLOntology' (role 'owl_OWLOntology0', cardinality 0..*) is associated with 'owl::OWLOntology' (role 'owl_OWLOntology', cardinality 0..*).
+'owl::RDFSClass' (role 'rdfs.ecoreRDFSClass', cardinality 0..*) is associated with 'owl::AllValuesFromRestriction' (role 'refByAVFRestriction', cardinality 0..*).
+'owl::OWLClass' (role 'OWLClass71', cardinality 0..*) is associated with 'owl::IntersectionClass' (role 'refByIntersectionClass', cardinality 0..*).
+'owl::MaxCardinalityRestriction' (role 'owl_MaxCardinalityRestriction', cardinality 0..*) is associated with 'owl::RDFSLiteral' (role 'owl_RDFSLiteral81', cardinality 0..*).

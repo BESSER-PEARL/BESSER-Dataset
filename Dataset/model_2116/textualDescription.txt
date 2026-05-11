@@ -1,0 +1,81 @@
+The model has 42 class(es).
+The class 'PerformanceAssertion' has no attributes.
+The class 'test::ComplianceAssertion' has the following attributes: 'path' of type str.
+The class 'test::Parameter' has the following attributes: 'name' of type str; 'value' of type str; 'location' of type str.
+The class 'test::SLAAssertion' has the following attributes: 'maxTime' of type str.
+The class 'NamedElement' has no attributes.
+The class 'test::OutputProperty' has no attributes.
+The class 'Authorization' has no attributes.
+The class 'TestStep' has no attributes.
+The class 'test::InputProperty' has no attributes.
+The class 'test::ResponseMessageEqualsAssertion' has no attributes.
+The class 'InputProperty' has no attributes.
+The class 'test::ParameterProperty' has no attributes.
+The class 'HTTPStatusAssertion' has no attributes.
+The class 'test::HeaderAssertion' has the following attributes: 'key' of type str.
+The class 'test::Property' has the following attributes: 'pathLanguage' of type str; 'expression' of type str.
+The class 'test::HTTPStatusAssertion' has the following attributes: 'code' of type str.
+The class 'test::HeaderExistsAssertion' has no attributes.
+The class 'ResponseMessageAssertion' has no attributes.
+The class 'test::TestSuite' has the following attributes: 'description' of type str; 'api' of type str.
+The class 'test::SchemaComplianceAssertion' has no attributes.
+The class 'test::PerformanceAssertion' has no attributes.
+The class 'test::Basic' has the following attributes: 'username' of type str; 'password' of type str.
+The class 'test::ResponseMessageContainsAssertion' has no attributes.
+The class 'test::Assertion' has the following attributes: 'errorMessage' of type str.
+The class 'test::HeaderEqualsAssertion' has the following attributes: 'value' of type str.
+The class 'OutputProperty' has no attributes.
+The class 'test::NamedElement' has the following attributes: 'name' of type str.
+The class 'test::OAuth2' has the following attributes: 'token' of type str.
+The class 'test::HeaderProperty' has no attributes.
+The class 'Assertion' has no attributes.
+The class 'test::PropertyTransfer' has no attributes.
+The class 'test::TestStep' has no attributes.
+The class 'test::Authorization' has no attributes.
+The class 'test::ResponseProperty' has no attributes.
+The class 'Property' has no attributes.
+The class 'test::ResponseMessageAssertion' has the following attributes: 'value' of type str.
+The class 'test::ValidStatusCodesAssertion' has no attributes.
+The class 'HeaderAssertion' has no attributes.
+The class 'test::TestCase' has the following attributes: 'description' of type str.
+The class 'test::APIRequest' has the following attributes: 'contentType' of type str; 'accept' of type str; 'operationId' of type str; 'scheme' of type str.
+The class 'ComplianceAssertion' has no attributes.
+The class 'test::InvalidStatusCodesAssertion' has no attributes.
+The enumeration 'PathLanguage' has the following literals: 'undefined', 'JSONPath', 'XPath'.
+The enumeration 'HTTPMethod' has the following literals: 'PUT', 'DELETE', 'GET', 'undefined', 'OPTIONS', 'POST'.
+The enumeration 'SchemeType' has the following literals: 'https', 'http', 'undefined'.
+The enumeration 'ParameterLocation' has the following literals: 'header', 'query', 'undefined', 'path', 'body', 'formData'.
+'test::PropertyTransfer' is a specialization of 'TestStep'.
+'test::ResponseMessageAssertion' is a specialization of 'Assertion'.
+'test::ValidStatusCodesAssertion' is a specialization of 'HTTPStatusAssertion'.
+'test::ComplianceAssertion' is a specialization of 'Assertion'.
+'test::TestCase' is a specialization of 'NamedElement'.
+'test::TestStep' is a specialization of 'NamedElement'.
+'test::InvalidStatusCodesAssertion' is a specialization of 'HTTPStatusAssertion'.
+'test::InputProperty' is a specialization of 'Property'.
+'test::Basic' is a specialization of 'Authorization'.
+'test::HeaderEqualsAssertion' is a specialization of 'HeaderAssertion'.
+'test::SchemaComplianceAssertion' is a specialization of 'ComplianceAssertion'.
+'test::TestSuite' is a specialization of 'NamedElement'.
+'test::PerformanceAssertion' is a specialization of 'Assertion'.
+'test::ResponseMessageEqualsAssertion' is a specialization of 'ResponseMessageAssertion'.
+'test::OAuth2' is a specialization of 'Authorization'.
+'test::HeaderAssertion' is a specialization of 'Assertion'.
+'test::HeaderExistsAssertion' is a specialization of 'HeaderAssertion'.
+'test::ParameterProperty' is a specialization of 'InputProperty'.
+'test::SLAAssertion' is a specialization of 'PerformanceAssertion'.
+'test::HTTPStatusAssertion' is a specialization of 'Assertion'.
+'test::ResponseMessageContainsAssertion' is a specialization of 'ResponseMessageAssertion'.
+'test::ResponseProperty' is a specialization of 'OutputProperty'.
+'test::OutputProperty' is a specialization of 'Property'.
+'test::APIRequest' is a specialization of 'TestStep'.
+'test::HeaderProperty' is a specialization of 'OutputProperty'.
+'test::TestStep' (role 'test_TestStep', cardinality 0..*) is associated with 'test::TestCase' (role 'test_TestCase2', cardinality 0..*).
+'test::PropertyTransfer' (role 'test_PropertyTransfer', cardinality 0..*) is associated with 'test::Property' (role 'test_Property', cardinality 0..*).
+'test::APIRequest' (role 'test_APIRequest7', cardinality 0..*) is associated with 'test::Authorization' (role 'test_Authorization', cardinality 0..*).
+'test::APIRequest' (role 'test_APIRequest15', cardinality 0..*) is associated with 'test::OutputProperty' (role 'test_OutputProperty', cardinality 0..*).
+'test::Parameter' (role 'test_Parameter13', cardinality 0..*) is associated with 'test::ParameterProperty' (role 'test_ParameterProperty', cardinality 0..*).
+'test::PropertyTransfer' (role 'test_PropertyTransfer10', cardinality 0..*) is associated with 'test::Property' (role 'test_Property11', cardinality 0..*).
+'test::TestCase' (role 'test_TestCase', cardinality 0..*) is associated with 'test::TestSuite' (role 'test_TestSuite', cardinality 0..*).
+'test::APIRequest' (role 'test_APIRequest5', cardinality 0..*) is associated with 'test::Assertion' (role 'test_Assertion', cardinality 0..*).
+'test::APIRequest' (role 'test_APIRequest', cardinality 0..*) is associated with 'test::Parameter' (role 'test_Parameter', cardinality 0..*).

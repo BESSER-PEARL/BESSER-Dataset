@@ -1,0 +1,18 @@
+The model has 7 class(es).
+The class 'securityTest::Note' has the following attributes: 'noteText' of type str.
+The class 'securityTest::Attack' has the following attributes: 'name' of type str; 'severity' of type str.
+The class 'securityTest::WebComponent' has the following attributes: 'path' of type str.
+The class 'securityTest::Input' has the following attributes: 'name' of type str.
+The class 'securityTest::AuthSetting' has the following attributes: 'loginTargetURL' of type str; 'passwordParam' of type str; 'loginMessagePattern' of type str; 'usernameParam' of type str; 'roles' of type str; 'logoutMessagePattern' of type str.
+The class 'securityTest::TargetOfEvaluation' has the following attributes: 'port' of type str; 'protocol' of type str; 'domain' of type str; 'ip' of type str.
+The class 'securityTest::Test' has the following attributes: 'date' of type date; 'name' of type str; 'severity' of type str; 'id' of type str.
+The enumeration 'ESeverity' has the following literals: 'High', 'Low', 'Medium'.
+The enumeration 'EAttackMethod' has the following literals: 'Authentication', 'PrivilegeScalation', 'XSS', 'SQLInjection', 'Authorization'.
+'securityTest::TargetOfEvaluation' (role 'securityTest_TargetOfEvaluation', cardinality 0..*) is associated with 'securityTest::Test' (role 'securityTest_Test', cardinality 0..*).
+'securityTest::Note' (role 'securityTest_Note', cardinality 0..*) is associated with 'securityTest::Test' (role 'securityTest_Test4', cardinality 0..*).
+'securityTest::WebComponent' (role 'securityTest_WebComponent9', cardinality 0..*) is associated with 'securityTest::WebComponent' (role 'securityTest_WebComponent11', cardinality 0..*).
+'securityTest::Attack' (role 'securityTest_Attack', cardinality 0..*) is associated with 'securityTest::Test' (role 'securityTest_Test2', cardinality 0..*).
+'securityTest::WebComponent' (role 'securityTest_WebComponent13', cardinality 0..*) is associated with 'securityTest::Input' (role 'securityTest_Input', cardinality 0..*).
+'securityTest::Attack' (role 'securityTest_Attack16', cardinality 0..*) is associated with 'securityTest::Input' (role 'securityTest_Input15', cardinality 0..*).
+'securityTest::Test' (role 'securityTest_Test6', cardinality 0..*) is associated with 'securityTest::AuthSetting' (role 'securityTest_AuthSetting', cardinality 0..*).
+'securityTest::TargetOfEvaluation' (role 'securityTest_TargetOfEvaluation8', cardinality 0..*) is associated with 'securityTest::WebComponent' (role 'securityTest_WebComponent', cardinality 0..*).

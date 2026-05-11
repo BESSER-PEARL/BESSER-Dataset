@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/kthoms/org.eclipse.xpand/tests/org.eclipse.xtend.tests/src/org/eclipse/xtend/typesystem/emf/check/model/test.ecore

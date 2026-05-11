@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/eMoflon/emoflon-neo/examples/TestSuiteGT/resources/in/metamodel/AbcToNothing.ecore

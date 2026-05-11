@@ -1,0 +1,17 @@
+The model has 8 class(es).
+The class 'NamedElement' has no attributes.
+The class 'forms::Type' has no attributes.
+The class 'Type' has no attributes.
+The class 'forms::EntityModel' has no attributes.
+The class 'forms::NamedElement' has the following attributes: 'name' of type str.
+The class 'forms::Feature' has the following attributes: 'kind' of type str.
+The class 'forms::Entity' has the following attributes: 'abstract' of type bool.
+The class 'forms::DataType' has no attributes.
+The enumeration 'FeatureKind' has the following literals: 'attribute', 'containment', 'reference'.
+'forms::Feature' is a specialization of 'NamedElement'.
+'forms::Entity' is a specialization of 'Type'.
+'forms::DataType' is a specialization of 'Type'.
+'forms::Type' is a specialization of 'NamedElement'.
+'forms::Type' (role 'forms_Type', cardinality 0..*) is associated with 'forms::EntityModel' (role 'forms_EntityModel', cardinality 0..*).
+'forms::Feature' (role 'forms_Feature3', cardinality 0..*) is associated with 'forms::Type' (role 'forms_Type4', cardinality 0..*).
+'forms::Feature' (role 'forms_Feature', cardinality 0..*) is associated with 'forms::Entity' (role 'forms_Entity', cardinality 0..*).

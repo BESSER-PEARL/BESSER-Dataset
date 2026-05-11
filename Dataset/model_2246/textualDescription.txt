@@ -1,0 +1,44 @@
+The model has 12 class(es).
+The class 'courceList::Cource' has the following attributes: 'name' of type str; 'location' of type str; 'code' of type str.
+The class 'courceList::CourceSpecification' has the following attributes: 'credits' of type float; 'language' of type str; 'name' of type str; 'semester' of type str; 'specificationYear' of type int; 'version' of type str.
+The class 'courceList::Specialisation' has the following attributes: 'startSemester' of type int; 'name' of type str.
+The class 'courceList::Department' has the following attributes: 'abbreviation' of type str; 'name' of type str.
+The class 'courceList::Exam' has the following attributes: 'weight' of type int; 'lenght' of type int; 'date' of type date; 'form' of type str.
+The class 'courceList::StudyCourceRelation' has the following attributes: 'status' of type str; 'year' of type int.
+The class 'courceList::Student' has the following attributes: 'nr' of type int.
+The class 'courceList::Work' has the following attributes: 'weight' of type int.
+The class 'courceList::StudyProgram' has the following attributes: 'year' of type int.
+The class 'courceList::StudyGeneralization' has the following attributes: 'nrOfYears' of type int; 'educationLevel' of type str; 'abbreviation' of type str; 'name' of type str; 'campus' of type str.
+The class 'courceList::EvaluationForm' has the following attributes: 'evaluationType' of type str.
+The class 'courceList::Professor' has the following attributes: 'name' of type str; 'title' of type str.
+The enumeration 'Semester' has the following literals: 'spring', 'autumn'.
+The enumeration 'Campus' has the following literals: 'Gjøvik', 'Ålesund', 'Web', 'Trondheim'.
+The enumeration 'EducationLevel' has the following literals: 'oneYear', 'master', 'phd', 'bachelor'.
+The enumeration 'EvaluationType' has the following literals: 'approved', 'grade'.
+The enumeration 'WorkForm' has the following literals: 'home', 'oral', 'written'.
+'courceList::Specialisation' (role 'specialisation', cardinality 0..*) is associated with 'courceList::StudyCourceRelation' (role 'StudyCourceRelation', cardinality 0..*).
+'courceList::Specialisation' (role 'Specialisation26', cardinality 0..*) is associated with 'courceList::StudyCourceRelation' (role 'cource25', cardinality 0..*).
+'courceList::StudyGeneralization' (role 'generalization', cardinality 0..*) is associated with 'courceList::StudyProgram' (role 'StudyProgram47', cardinality 0..*).
+'courceList::Specialisation' (role 'furtherSpecialisation', cardinality 0..*) is associated with 'courceList::Specialisation' (role 'Specialisation38', cardinality 0..*).
+'courceList::CourceSpecification' (role 'CourceSpecification', cardinality 0..*) is associated with 'courceList::Cource' (role 'cource', cardinality 0..*).
+'courceList::Department' (role 'department4', cardinality 0..*) is associated with 'courceList::Professor' (role 'Professor', cardinality 0..*).
+'courceList::StudyProgram' (role 'studyProgram10', cardinality 0..*) is associated with 'courceList::StudyGeneralization' (role 'StudyGeneralization11', cardinality 0..*).
+'courceList::Department' (role 'department2', cardinality 0..*) is associated with 'courceList::Cource' (role 'Cource', cardinality 0..*).
+'courceList::Student' (role 'Student', cardinality 0..*) is associated with 'courceList::StudyProgram' (role 'studyProgram13', cardinality 0..*).
+'courceList::Specialisation' (role 'Specialisation35', cardinality 0..*) is associated with 'courceList::Specialisation' (role 'hostSpecialisation', cardinality 0..*).
+'courceList::CourceSpecification' (role 'courceList_CourceSpecification', cardinality 0..*) is associated with 'courceList::StudyCourceRelation' (role 'courceList_StudyCourceRelation', cardinality 0..*).
+'courceList::EvaluationForm' (role 'EvaluationForm', cardinality 0..*) is associated with 'courceList::Exam' (role 'exam', cardinality 0..*).
+'courceList::EvaluationForm' (role 'evaluationForm17', cardinality 0..*) is associated with 'courceList::Work' (role 'Work', cardinality 0..*).
+'courceList::EvaluationForm' (role 'EvaluationForm45', cardinality 0..*) is associated with 'courceList::CourceSpecification' (role 'cource44', cardinality 0..*).
+'courceList::Department' (role 'department', cardinality 0..*) is associated with 'courceList::StudyGeneralization' (role 'StudyGeneralization', cardinality 0..*).
+'courceList::StudyGeneralization' (role 'studyProgram49', cardinality 0..*) is associated with 'courceList::Department' (role 'Department50', cardinality 0..*).
+'courceList::EvaluationForm' (role 'EvaluationForm22', cardinality 0..*) is associated with 'courceList::Work' (role 'work', cardinality 0..*).
+'courceList::Student' (role 'student', cardinality 0..*) is associated with 'courceList::StudyProgram' (role 'StudyProgram', cardinality 0..*).
+'courceList::CourceSpecification' (role 'courceList_CourceSpecification42', cardinality 0..*) is associated with 'courceList::Professor' (role 'courceList_Professor', cardinality 0..*).
+'courceList::Department' (role 'Department28', cardinality 0..*) is associated with 'courceList::Professor' (role 'professor', cardinality 0..*).
+'courceList::Department' (role 'Department', cardinality 0..*) is associated with 'courceList::Cource' (role 'course', cardinality 0..*).
+'courceList::Exam' (role 'Exam', cardinality 0..*) is associated with 'courceList::EvaluationForm' (role 'evaluationForm', cardinality 0..*).
+'courceList::StudyProgram' (role 'StudyProgram32', cardinality 0..*) is associated with 'courceList::Specialisation' (role 'cource31', cardinality 0..*).
+'courceList::Cource' (role 'Cource40', cardinality 0..*) is associated with 'courceList::CourceSpecification' (role 'corseSpecifications', cardinality 0..*).
+'courceList::CourceSpecification' (role 'CourceSpecification20', cardinality 0..*) is associated with 'courceList::EvaluationForm' (role 'evaluationForm19', cardinality 0..*).
+'courceList::StudyProgram' (role 'studyProgram', cardinality 0..*) is associated with 'courceList::Specialisation' (role 'Specialisation', cardinality 0..*).

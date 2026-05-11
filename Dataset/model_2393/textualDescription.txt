@@ -1,0 +1,15 @@
+The model has 5 class(es).
+The class 'sQL::DataBase' has no attributes.
+The class 'sQL::Table' has the following attributes: 'name' of type str.
+The class 'sQL::ForeignKey' has no attributes.
+The class 'sQL::Column' has the following attributes: 'type' of type str; 'isNull' of type bool; 'name' of type str.
+The class 'sQL::PrimaryKey' has no attributes.
+The enumeration 'DataType' has the following literals: 'number', 'int', 'boolean', 'varchar', 'date'.
+'sQL::ForeignKey' (role 'sQL_ForeignKey17', cardinality 0..*) is associated with 'sQL::Column' (role 'sQL_Column18', cardinality 0..*).
+'sQL::Table' (role 'sQL_Table', cardinality 0..*) is associated with 'sQL::DataBase' (role 'sQL_DataBase', cardinality 0..*).
+'sQL::Column' (role 'sQL_Column9', cardinality 0..*) is associated with 'sQL::PrimaryKey' (role 'sQL_PrimaryKey8', cardinality 0..*).
+'sQL::Table' (role 'sQL_Table15', cardinality 0..*) is associated with 'sQL::ForeignKey' (role 'sQL_ForeignKey14', cardinality 0..*).
+'sQL::Column' (role 'sQL_Column', cardinality 0..*) is associated with 'sQL::Table' (role 'sQL_Table2', cardinality 0..*).
+'sQL::Table' (role 'sQL_Table6', cardinality 0..*) is associated with 'sQL::ForeignKey' (role 'sQL_ForeignKey', cardinality 0..*).
+'sQL::Column' (role 'sQL_Column12', cardinality 0..*) is associated with 'sQL::ForeignKey' (role 'sQL_ForeignKey11', cardinality 0..*).
+'sQL::PrimaryKey' (role 'sQL_PrimaryKey', cardinality 0..*) is associated with 'sQL::Table' (role 'sQL_Table4', cardinality 0..*).

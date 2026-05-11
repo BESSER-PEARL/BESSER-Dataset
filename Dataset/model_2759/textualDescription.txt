@@ -1,0 +1,9 @@
+The model has 3 class(es).
+The class 'BKeys::RootB' has no attributes.
+The class 'BKeys::Y' has no attributes.
+The class 'BKeys::B' has no attributes.
+'BKeys::RootB' (role 'BKeys_RootB', cardinality 0..*) is associated with 'BKeys::Y' (role 'BKeys_Y', cardinality 0..*).
+'BKeys::B' (role 'B5', cardinality 0..*) is associated with 'BKeys::Y' (role 'y', cardinality 0..*).
+'BKeys::RootB' (role 'RootB', cardinality 0..*) is associated with 'BKeys::B' (role 'bs', cardinality 0..*).
+'BKeys::Y' (role 'Y', cardinality 0..*) is associated with 'BKeys::B' (role 'b', cardinality 0..*).
+'BKeys::RootB' (role 'root', cardinality 0..*) is associated with 'BKeys::B' (role 'B', cardinality 0..*).

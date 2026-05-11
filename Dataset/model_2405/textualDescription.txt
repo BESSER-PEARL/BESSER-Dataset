@@ -1,0 +1,17 @@
+The model has 6 class(es).
+The class 'sqlCrudGenerator::Column' has the following attributes: 'name' of type str.
+The class 'sqlCrudGenerator::Table' has the following attributes: 'name' of type str.
+The class 'sqlCrudGenerator::ForeignKey' has no attributes.
+The class 'sqlCrudGenerator::Schema' has the following attributes: 'name' of type str.
+The class 'sqlCrudGenerator::DataType' has the following attributes: 'precision' of type int; 'dataType' of type str.
+The class 'sqlCrudGenerator::PrimaryKey' has no attributes.
+The enumeration 'ENUM_DATA_TYPE' has the following literals: 'BOOLEAN', 'TIMESTAMP_M', 'VARYING', 'NUMERIC_M', 'DECIMAL', 'INT', 'ARRAY', 'BIGINT_M', 'SMALLINT_M', 'ARRAY_M', 'VARYING_M', 'INTEGER', 'DATE', 'XML_M', 'INTEGER_M', 'CHARACTER_M', 'DATE_M', 'TIMESTAMP', 'VARBINARY_M', 'REAL_M', 'INTERVAL', 'MULTISET', 'BINARY', 'VARCHAR_M', 'TIME', 'TIME_M', 'INTERVAL_M', 'NUMERIC', 'CHARACTER', 'XML', 'FLOAT', 'MULTISET_M', 'VARBINARY', 'INT_M', 'VARCHAR', 'SMALLINT', 'BINARY_M', 'FLOAT_M', 'REAL', 'BIGINT', 'BOOLEAN_M', 'DECIMAL_M'.
+'sqlCrudGenerator::Table' (role 'sqlCrudGenerator_Table', cardinality 0..*) is associated with 'sqlCrudGenerator::Schema' (role 'sqlCrudGenerator_Schema', cardinality 0..*).
+'sqlCrudGenerator::ForeignKey' (role 'sqlCrudGenerator_ForeignKey16', cardinality 0..*) is associated with 'sqlCrudGenerator::Table' (role 'sqlCrudGenerator_Table17', cardinality 0..*).
+'sqlCrudGenerator::ForeignKey' (role 'sqlCrudGenerator_ForeignKey19', cardinality 0..*) is associated with 'sqlCrudGenerator::Column' (role 'sqlCrudGenerator_Column20', cardinality 0..*).
+'sqlCrudGenerator::Column' (role 'sqlCrudGenerator_Column14', cardinality 0..*) is associated with 'sqlCrudGenerator::ForeignKey' (role 'sqlCrudGenerator_ForeignKey13', cardinality 0..*).
+'sqlCrudGenerator::DataType' (role 'sqlCrudGenerator_DataType', cardinality 0..*) is associated with 'sqlCrudGenerator::Column' (role 'sqlCrudGenerator_Column8', cardinality 0..*).
+'sqlCrudGenerator::Table' (role 'sqlCrudGenerator_Table4', cardinality 0..*) is associated with 'sqlCrudGenerator::PrimaryKey' (role 'sqlCrudGenerator_PrimaryKey', cardinality 0..*).
+'sqlCrudGenerator::Table' (role 'sqlCrudGenerator_Table2', cardinality 0..*) is associated with 'sqlCrudGenerator::Column' (role 'sqlCrudGenerator_Column', cardinality 0..*).
+'sqlCrudGenerator::Table' (role 'sqlCrudGenerator_Table6', cardinality 0..*) is associated with 'sqlCrudGenerator::ForeignKey' (role 'sqlCrudGenerator_ForeignKey', cardinality 0..*).
+'sqlCrudGenerator::PrimaryKey' (role 'sqlCrudGenerator_PrimaryKey10', cardinality 0..*) is associated with 'sqlCrudGenerator::Column' (role 'sqlCrudGenerator_Column11', cardinality 0..*).

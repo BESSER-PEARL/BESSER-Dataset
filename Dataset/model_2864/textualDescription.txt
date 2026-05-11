@@ -1,0 +1,363 @@
+The model has 120 class(es).
+The class 'Class::modifier::fragment' has no attributes.
+The class 'abs::MexpPlusOrMinus::expr' has the following attributes: 'op' of type str.
+The class 'abs::Trait::expr' has no attributes.
+The class 'abs::Decl' has the following attributes: 'name' of type str.
+The class 'abs::Has::condition' has no attributes.
+The class 'abs::Module::import' has the following attributes: 'name' of type str; 'importedNamespace' of type str.
+The class 'Decl' has no attributes.
+The class 'abs::Delta::id' has the following attributes: 'name' of type str.
+The class 'abs::Function::name::param::decl' has the following attributes: 'value' of type str.
+The class 'abs::Eff::expr' has the following attributes: 'l' of type str.
+The class 'abs::Module::decl' has the following attributes: 'name' of type str.
+The class 'Data::constructor::arg' has no attributes.
+The class 'abs::Function::decl' has the following attributes: 'p' of type str.
+The class 'abs::Case::branch' has no attributes.
+The class 'abs::MexpEquality::expr' has the following attributes: 'op' of type str.
+The class 'abs::Annotation' has no attributes.
+The class 'Mexp' has no attributes.
+The class 'abs::Param::list' has no attributes.
+The class 'abs::Type::use' has the following attributes: 'name' of type str.
+The class 'Module::modifier' has no attributes.
+The class 'Exp' has no attributes.
+The class 'abs::DomainModel_' has no attributes.
+The class 'abs::Product::expr' has no attributes.
+The class 'abs::Namespace::modifier' has the following attributes: 'star' of type str.
+The class 'abs::Class::decl' has no attributes.
+The class 'abs::Interface::modifier::fragment' has no attributes.
+The class 'abs::OO::modifier' has no attributes.
+The class 'Update::preamble::declaration' has no attributes.
+The class 'abs::Object::update' has no attributes.
+The class 'abs::Deltaspec' has the following attributes: 'name' of type str; 'deltaspec_param' of type str.
+The class 'abs::Type::exp' has the following attributes: 'name' of type str.
+The class 'abs::Par::function::decl' has the following attributes: 'p' of type str.
+The class 'abs::MexpMulDivOrMod::expr' has the following attributes: 'op' of type str.
+The class 'abs::Delta::param' has no attributes.
+The class 'abs::Object::update::assign::stmt' has no attributes.
+The class 'Delta::param' has no attributes.
+The class 'abs::Product::decl' has the following attributes: 'name' of type str.
+The class 'abs::Update::preamble::declaration' has no attributes.
+The class 'abs::MexpComparison::expr' has the following attributes: 'op' of type str.
+The class 'abs::Feature' has the following attributes: 'p' of type str; 'attr_assignment' of type str.
+The class 'abs::Function::param' has no attributes.
+The class 'abs::Module::modifier' has no attributes.
+The class 'abs::After::condition' has no attributes.
+The class 'abs::Pure::exp::list' has no attributes.
+The class 'abs::Delta::access' has no attributes.
+The class 'abs::Class::modifier::fragment' has no attributes.
+The class 'abs::Param::decl' has the following attributes: 'name' of type str.
+The class 'abs::Delta::clause' has no attributes.
+The class 'abs::Field::decl' has the following attributes: 'name' of type str.
+The class 'abs::From::condition' has no attributes.
+The class 'abs::Anon::function::decl' has no attributes.
+The class 'Function::param' has no attributes.
+The class 'abs::Application::condition' has no attributes.
+The class 'abs::AppOr::exp' has no attributes.
+The class 'abs::When::condition' has no attributes.
+The class 'abs::Trait::decl' has no attributes.
+The class 'abs::Product::reconfiguration' has the following attributes: 'update' of type str; 'name' of type str.
+The class 'abs::Function::list' has no attributes.
+The class 'abs::Function::name::decl' has the following attributes: 'name' of type str.
+The class 'abs::MulDivOrMod::expr' has no attributes.
+The class 'abs::Data::constructor' has the following attributes: 'name' of type str.
+The class 'abs::Delta::decl' has the following attributes: 'name' of type str.
+The class 'abs::Trait::oper' has no attributes.
+The class 'Application::condition' has no attributes.
+The class 'abs::Typesyn::decl' has no attributes.
+The class 'abs::DataType::decl' has the following attributes: 'p' of type str.
+The class 'abs::Mexp' has the following attributes: 'value' of type int.
+The class 'abs::AppAnd::exp' has no attributes.
+The class 'abs::Feature::decl::constraint' has no attributes.
+The class 'Functional::modifier' has no attributes.
+The class 'abs::Fnode' has no attributes.
+The class 'abs::Pattern' has no attributes.
+The class 'Guard' has no attributes.
+The class 'Pure::exp' has no attributes.
+The class 'DomainModel_' has no attributes.
+The class 'abs::Var::or::field::ref' has the following attributes: 'name' of type str.
+The class 'abs::Or::expr' has no attributes.
+The class 'abs::Feature::decl::attribute' has the following attributes: 'lBoundary_int' of type str; 'uBoundary_int' of type str; 'boundary_val' of type str.
+The class 'abs::Exception::decl' has no attributes.
+The class 'abs::Update::decl' has the following attributes: 'name' of type str.
+The class 'abs::Feature::decl::group' has no attributes.
+The class 'abs::Function::name::list' has no attributes.
+The class 'abs::Module::export' has the following attributes: 'importedNamespace' of type str; 'anyPackage' of type str.
+The class 'Fnode' has no attributes.
+The class 'Case::branch' has no attributes.
+The class 'abs::ProductOr::expr' has no attributes.
+The class 'abs::Trait::usage' has no attributes.
+The class 'abs::Data::constructor::arg' has no attributes.
+The class 'abs::Productline::decl' has the following attributes: 'name' of type str.
+The class 'abs::AndGuard' has the following attributes: 'op' of type str.
+The class 'abs::Casestmtbranch' has no attributes.
+The class 'abs::Pure::exp' has the following attributes: 'await_' of type str; 'op' of type str; 'value' of type str; 'val' of type str.
+The class 'abs::MexpAnd::expr' has no attributes.
+The class 'abs::Stmt' has the following attributes: 'name' of type str.
+The class 'abs::Comparison::expr' has no attributes.
+The class 'abs::Equality::expr' has no attributes.
+The class 'abs::Compilation::Unit' has no attributes.
+The class 'abs::MexpImplies::expr' has the following attributes: 'op' of type str.
+The class 'abs::Annotations' has no attributes.
+The class 'abs::Exp' has no attributes.
+The class 'abs::MexpPrimary::expr' has no attributes.
+The class 'abs::And::expr' has no attributes.
+The class 'abs::Interface::name' has the following attributes: 'name' of type str.
+The class 'abs::Method' has the following attributes: 'name' of type str.
+The class 'abs::Functional::modifier' has no attributes.
+The class 'abs::MexpOr::exp' has no attributes.
+The class 'abs::Fextension' has the following attributes: 'name' of type str.
+The class 'abs::PlusOrMinus::expr' has no attributes.
+The class 'abs::Methodsig' has the following attributes: 'name' of type str.
+The class 'Namespace::modifier' has no attributes.
+The class 'abs::Main::block' has no attributes.
+The class 'abs::ProductMinus::exp' has no attributes.
+The class 'abs::Guard' has no attributes.
+The class 'abs::Feature::decl' has the following attributes: 'name' of type str.
+The class 'abs::Interface::decl' has no attributes.
+The class 'Annotation' has no attributes.
+The class 'Product::expr' has no attributes.
+The class 'Eff::expr' has no attributes.
+The class 'abs::ProductAnd::exp' has no attributes.
+The class 'Interface::modifier::fragment' has no attributes.
+'abs::Eff::expr' is a specialization of 'Exp'.
+'abs::DataType::decl' is a specialization of 'Functional::modifier'.
+'abs::Delta::id' is a specialization of 'Eff::expr'.
+'abs::Type::use' is a specialization of 'Data::constructor::arg'.
+'abs::ProductMinus::exp' is a specialization of 'Product::expr'.
+'abs::Trait::expr' is a specialization of 'Class::modifier::fragment'.
+'abs::Type::use' is a specialization of 'Annotation'.
+'abs::MexpOr::exp' is a specialization of 'Mexp'.
+'abs::Has::condition' is a specialization of 'Delta::param'.
+'abs::Pure::exp' is a specialization of 'Exp'.
+'abs::MexpAnd::expr' is a specialization of 'Mexp'.
+'abs::Functional::modifier' is a specialization of 'Module::modifier'.
+'abs::Pure::exp' is a specialization of 'Eff::expr'.
+'abs::MexpImplies::expr' is a specialization of 'Mexp'.
+'abs::OO::modifier' is a specialization of 'Module::modifier'.
+'abs::Function::name::param::decl' is a specialization of 'Function::param'.
+'abs::MexpPlusOrMinus::expr' is a specialization of 'Mexp'.
+'abs::Anon::function::decl' is a specialization of 'Function::param'.
+'abs::Trait::decl' is a specialization of 'Decl'.
+'abs::MexpMulDivOrMod::expr' is a specialization of 'Mexp'.
+'abs::Param::decl' is a specialization of 'Delta::param'.
+'abs::Namespace::modifier' is a specialization of 'Module::modifier'.
+'abs::MexpPrimary::expr' is a specialization of 'Mexp'.
+'abs::Type::exp' is a specialization of 'Update::preamble::declaration'.
+'abs::Or::expr' is a specialization of 'Pure::exp'.
+'abs::Function::decl' is a specialization of 'Decl'.
+'abs::Module::export' is a specialization of 'Namespace::modifier'.
+'abs::Feature::decl' is a specialization of 'Fnode'.
+'abs::Function::decl' is a specialization of 'Functional::modifier'.
+'abs::PlusOrMinus::expr' is a specialization of 'Pure::exp'.
+'abs::Typesyn::decl' is a specialization of 'Decl'.
+'abs::MulDivOrMod::expr' is a specialization of 'Pure::exp'.
+'abs::Typesyn::decl' is a specialization of 'Functional::modifier'.
+'abs::Module::import' is a specialization of 'Namespace::modifier'.
+'abs::AndGuard' is a specialization of 'Guard'.
+'abs::Var::or::field::ref' is a specialization of 'Pure::exp'.
+'abs::And::expr' is a specialization of 'Pure::exp'.
+'abs::Pattern' is a specialization of 'Case::branch'.
+'abs::Equality::expr' is a specialization of 'Pure::exp'.
+'abs::Class::decl' is a specialization of 'Decl'.
+'abs::Comparison::expr' is a specialization of 'Pure::exp'.
+'abs::Field::decl' is a specialization of 'Class::modifier::fragment'.
+'abs::MexpEquality::expr' is a specialization of 'Mexp'.
+'abs::Compilation::Unit' is a specialization of 'DomainModel_'.
+'abs::ProductAnd::exp' is a specialization of 'Product::expr'.
+'abs::Exception::decl' is a specialization of 'Decl'.
+'abs::MexpComparison::expr' is a specialization of 'Mexp'.
+'abs::Interface::decl' is a specialization of 'Decl'.
+'abs::AppOr::exp' is a specialization of 'Application::condition'.
+'abs::Methodsig' is a specialization of 'Class::modifier::fragment'.
+'abs::AppAnd::exp' is a specialization of 'Application::condition'.
+'abs::Par::function::decl' is a specialization of 'Decl'.
+'abs::Methodsig' is a specialization of 'Interface::modifier::fragment'.
+'abs::ProductOr::expr' is a specialization of 'Product::expr'.
+'abs::DataType::decl' is a specialization of 'Decl'.
+'abs::Function::name::list' (role 'abs_Function_name_list29', cardinality 0..*) is associated with 'abs::Function::name::decl' (role 'abs_Function_name_decl', cardinality 0..*).
+'abs::Interface::decl' (role 'abs_Interface_decl301', cardinality 0..*) is associated with 'abs::OO::modifier' (role 'abs_OO_modifier300', cardinality 0..*).
+'abs::Mexp' (role 'abs_Mexp442', cardinality 0..*) is associated with 'abs::MexpAnd::expr' (role 'abs_MexpAnd_expr', cardinality 0..*).
+'abs::OO::modifier' (role 'abs_OO_modifier295', cardinality 0..*) is associated with 'abs::Interface::decl' (role 'abs_Interface_decl296', cardinality 0..*).
+'abs::Product::expr' (role 'abs_Product_expr376', cardinality 0..*) is associated with 'abs::Product::expr' (role 'abs_Product_expr374', cardinality 0..*).
+'abs::Function::decl' (role 'abs_Function_decl102', cardinality 0..*) is associated with 'abs::Pure::exp' (role 'abs_Pure_exp103', cardinality 0..*).
+'abs::Stmt' (role 'abs_Stmt156', cardinality 0..*) is associated with 'abs::Stmt' (role 'abs_Stmt154', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp45', cardinality 0..*) is associated with 'abs::Pure::exp::list' (role 'abs_Pure_exp_list46', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp430', cardinality 0..*) is associated with 'abs::MulDivOrMod::expr' (role 'abs_MulDivOrMod_expr429', cardinality 0..*).
+'abs::Pure::exp::list' (role 'abs_Pure_exp_list', cardinality 0..*) is associated with 'abs::Pure::exp' (role 'abs_Pure_exp43', cardinality 0..*).
+'abs::Function::list' (role 'abs_Function_list83', cardinality 0..*) is associated with 'abs::Function::param' (role 'abs_Function_param', cardinality 0..*).
+'abs::Data::constructor::arg' (role 'abs_Data_constructor_arg107', cardinality 0..*) is associated with 'abs::Exception::decl' (role 'abs_Exception_decl', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp214', cardinality 0..*) is associated with 'abs::Guard' (role 'abs_Guard213', cardinality 0..*).
+'abs::Var::or::field::ref' (role 'abs_Var_or_field_ref', cardinality 0..*) is associated with 'abs::Field::decl' (role 'abs_Field_decl', cardinality 0..*).
+'abs::OO::modifier' (role 'abs_OO_modifier303', cardinality 0..*) is associated with 'abs::Interface::modifier::fragment' (role 'abs_Interface_modifier_fragment', cardinality 0..*).
+'abs::Function::list' (role 'abs_Function_list', cardinality 0..*) is associated with 'abs::Pure::exp' (role 'abs_Pure_exp41', cardinality 0..*).
+'abs::MexpAnd::expr' (role 'abs_MexpAnd_expr444', cardinality 0..*) is associated with 'abs::Mexp' (role 'abs_Mexp445', cardinality 0..*).
+'abs::Class::modifier::fragment' (role 'abs_Class_modifier_fragment', cardinality 0..*) is associated with 'abs::OO::modifier' (role 'abs_OO_modifier298', cardinality 0..*).
+'abs::Pure::exp::list' (role 'abs_Pure_exp_list80', cardinality 0..*) is associated with 'abs::Pure::exp' (role 'abs_Pure_exp81', cardinality 0..*).
+'abs::Product::expr' (role 'abs_Product_expr377', cardinality 0..*) is associated with 'abs::Product::expr' (role 'abs_Product_expr379', cardinality 0..*).
+'abs::Stmt' (role 'abs_Stmt159', cardinality 0..*) is associated with 'abs::Stmt' (role 'abs_Stmt157', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp407', cardinality 0..*) is associated with 'abs::And::expr' (role 'abs_And_expr', cardinality 0..*).
+'abs::Interface::decl' (role 'abs_Interface_decl', cardinality 0..*) is associated with 'abs::Interface::decl' (role 'abs_Interface_decl108', cardinality 0..*).
+'abs::Pattern' (role 'abs_Pattern217', cardinality 0..*) is associated with 'abs::Casestmtbranch' (role 'abs_Casestmtbranch216', cardinality 0..*).
+'abs::Methodsig' (role 'abs_Methodsig306', cardinality 0..*) is associated with 'abs::Class::modifier::fragment' (role 'abs_Class_modifier_fragment305', cardinality 0..*).
+'abs::DataType::decl' (role 'abs_DataType_decl', cardinality 0..*) is associated with 'abs::Data::constructor' (role 'abs_Data_constructor', cardinality 0..*).
+'abs::MexpComparison::expr' (role 'abs_MexpComparison_expr459', cardinality 0..*) is associated with 'abs::Mexp' (role 'abs_Mexp460', cardinality 0..*).
+'abs::Delta::decl' (role 'abs_Delta_decl334', cardinality 0..*) is associated with 'abs::Delta::clause' (role 'abs_Delta_clause333', cardinality 0..*).
+'abs::Feature::decl::constraint' (role 'abs_Feature_decl_constraint391', cardinality 0..*) is associated with 'abs::Mexp' (role 'abs_Mexp', cardinality 0..*).
+'abs::Type::use' (role 'abs_Type_use97', cardinality 0..*) is associated with 'abs::Function::decl' (role 'abs_Function_decl', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp162', cardinality 0..*) is associated with 'abs::Stmt' (role 'abs_Stmt161', cardinality 0..*).
+'abs::Function::name::list' (role 'abs_Function_name_list', cardinality 0..*) is associated with 'abs::Par::function::decl' (role 'abs_Par_function_decl23', cardinality 0..*).
+'abs::Type::use' (role 'abs_Type_use39', cardinality 0..*) is associated with 'abs::Type::use' (role 'abs_Type_use37', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp410', cardinality 0..*) is associated with 'abs::And::expr' (role 'abs_And_expr409', cardinality 0..*).
+'abs::Interface::decl' (role 'abs_Interface_decl111', cardinality 0..*) is associated with 'abs::Methodsig' (role 'abs_Methodsig', cardinality 0..*).
+'abs::Stmt' (role 'abs_Stmt220', cardinality 0..*) is associated with 'abs::Casestmtbranch' (role 'abs_Casestmtbranch219', cardinality 0..*).
+'abs::Object::update' (role 'abs_Object_update', cardinality 0..*) is associated with 'abs::Update::decl' (role 'abs_Update_decl308', cardinality 0..*).
+'abs::Mexp' (role 'abs_Mexp462', cardinality 0..*) is associated with 'abs::MexpPlusOrMinus::expr' (role 'abs_MexpPlusOrMinus_expr', cardinality 0..*).
+'abs::Delta::clause' (role 'abs_Delta_clause336', cardinality 0..*) is associated with 'abs::After::condition' (role 'abs_After_condition', cardinality 0..*).
+'abs::Class::decl' (role 'abs_Class_decl', cardinality 0..*) is associated with 'abs::Param::list' (role 'abs_Param_list119', cardinality 0..*).
+'abs::Feature::decl::group' (role 'abs_Feature_decl_group394', cardinality 0..*) is associated with 'abs::Fextension' (role 'abs_Fextension393', cardinality 0..*).
+'abs::Pattern' (role 'abs_Pattern78', cardinality 0..*) is associated with 'abs::Pattern' (role 'abs_Pattern76', cardinality 0..*).
+'abs::Stmt' (role 'abs_Stmt165', cardinality 0..*) is associated with 'abs::Stmt' (role 'abs_Stmt163', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp412', cardinality 0..*) is associated with 'abs::Equality::expr' (role 'abs_Equality_expr', cardinality 0..*).
+'abs::Stmt' (role 'abs_Stmt174', cardinality 0..*) is associated with 'abs::Stmt' (role 'abs_Stmt172', cardinality 0..*).
+'abs::Param::decl' (role 'abs_Param_decl92', cardinality 0..*) is associated with 'abs::Type::exp' (role 'abs_Type_exp', cardinality 0..*).
+'abs::Trait::usage' (role 'abs_Trait_usage222', cardinality 0..*) is associated with 'abs::Trait::decl' (role 'abs_Trait_decl', cardinality 0..*).
+'abs::Guard' (role 'abs_Guard311', cardinality 0..*) is associated with 'abs::Object::update' (role 'abs_Object_update310', cardinality 0..*).
+'abs::MexpPlusOrMinus::expr' (role 'abs_MexpPlusOrMinus_expr464', cardinality 0..*) is associated with 'abs::Mexp' (role 'abs_Mexp465', cardinality 0..*).
+'abs::From::condition' (role 'abs_From_condition', cardinality 0..*) is associated with 'abs::Delta::clause' (role 'abs_Delta_clause338', cardinality 0..*).
+'abs::Feature::decl::attribute' (role 'abs_Feature_decl_attribute397', cardinality 0..*) is associated with 'abs::Fextension' (role 'abs_Fextension396', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp168', cardinality 0..*) is associated with 'abs::Stmt' (role 'abs_Stmt167', cardinality 0..*).
+'abs::Annotation' (role 'abs_Annotation', cardinality 0..*) is associated with 'abs::Annotations' (role 'abs_Annotations', cardinality 0..*).
+'abs::Equality::expr' (role 'abs_Equality_expr414', cardinality 0..*) is associated with 'abs::Pure::exp' (role 'abs_Pure_exp415', cardinality 0..*).
+'abs::Casestmtbranch' (role 'abs_Casestmtbranch177', cardinality 0..*) is associated with 'abs::Stmt' (role 'abs_Stmt176', cardinality 0..*).
+'abs::Delta::param' (role 'abs_Delta_param', cardinality 0..*) is associated with 'abs::Delta::decl' (role 'abs_Delta_decl264', cardinality 0..*).
+'abs::Object::update' (role 'abs_Object_update313', cardinality 0..*) is associated with 'abs::Update::preamble::declaration' (role 'abs_Update_preamble_declaration', cardinality 0..*).
+'abs::Mexp' (role 'abs_Mexp467', cardinality 0..*) is associated with 'abs::MexpMulDivOrMod::expr' (role 'abs_MexpMulDivOrMod_expr', cardinality 0..*).
+'abs::Delta::clause' (role 'abs_Delta_clause340', cardinality 0..*) is associated with 'abs::When::condition' (role 'abs_When_condition', cardinality 0..*).
+'abs::Feature::decl::constraint' (role 'abs_Feature_decl_constraint400', cardinality 0..*) is associated with 'abs::Fextension' (role 'abs_Fextension399', cardinality 0..*).
+'abs::Compilation::Unit' (role 'abs_Compilation_Unit8', cardinality 0..*) is associated with 'abs::Product::decl' (role 'abs_Product_decl', cardinality 0..*).
+'abs::Compilation::Unit' (role 'abs_Compilation_Unit10', cardinality 0..*) is associated with 'abs::Feature::decl' (role 'abs_Feature_decl', cardinality 0..*).
+'abs::Stmt' (role 'abs_Stmt171', cardinality 0..*) is associated with 'abs::Stmt' (role 'abs_Stmt169', cardinality 0..*).
+'abs::Method' (role 'abs_Method', cardinality 0..*) is associated with 'abs::Class::decl' (role 'abs_Class_decl133', cardinality 0..*).
+'abs::Guard' (role 'abs_Guard', cardinality 0..*) is associated with 'abs::Stmt' (role 'abs_Stmt179', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp417', cardinality 0..*) is associated with 'abs::Comparison::expr' (role 'abs_Comparison_expr', cardinality 0..*).
+'abs::Trait::usage' (role 'abs_Trait_usage', cardinality 0..*) is associated with 'abs::Class::decl' (role 'abs_Class_decl131', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp211', cardinality 0..*) is associated with 'abs::Guard' (role 'abs_Guard210', cardinality 0..*).
+'abs::Delta::access' (role 'abs_Delta_access', cardinality 0..*) is associated with 'abs::Delta::decl' (role 'abs_Delta_decl266', cardinality 0..*).
+'abs::Object::update::assign::stmt' (role 'abs_Object_update_assign_stmt', cardinality 0..*) is associated with 'abs::Object::update' (role 'abs_Object_update315', cardinality 0..*).
+'abs::Interface::decl' (role 'abs_Interface_decl122', cardinality 0..*) is associated with 'abs::Class::decl' (role 'abs_Class_decl121', cardinality 0..*).
+'abs::Mexp' (role 'abs_Mexp470', cardinality 0..*) is associated with 'abs::MexpMulDivOrMod::expr' (role 'abs_MexpMulDivOrMod_expr469', cardinality 0..*).
+'abs::Delta::decl' (role 'abs_Delta_decl343', cardinality 0..*) is associated with 'abs::After::condition' (role 'abs_After_condition342', cardinality 0..*).
+'abs::Fextension' (role 'abs_Fextension', cardinality 0..*) is associated with 'abs::Compilation::Unit' (role 'abs_Compilation_Unit12', cardinality 0..*).
+'abs::Field::decl' (role 'abs_Field_decl125', cardinality 0..*) is associated with 'abs::Class::decl' (role 'abs_Class_decl124', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp402', cardinality 0..*) is associated with 'abs::Or::expr' (role 'abs_Or_expr', cardinality 0..*).
+'abs::Method' (role 'abs_Method224', cardinality 0..*) is associated with 'abs::Trait::expr' (role 'abs_Trait_expr', cardinality 0..*).
+'abs::Stmt' (role 'abs_Stmt181', cardinality 0..*) is associated with 'abs::Pure::exp' (role 'abs_Pure_exp182', cardinality 0..*).
+'abs::Module::export' (role 'abs_Module_export', cardinality 0..*) is associated with 'abs::Module::decl' (role 'abs_Module_decl14', cardinality 0..*).
+'abs::Comparison::expr' (role 'abs_Comparison_expr419', cardinality 0..*) is associated with 'abs::Pure::exp' (role 'abs_Pure_exp420', cardinality 0..*).
+'abs::Param::list' (role 'abs_Param_list85', cardinality 0..*) is associated with 'abs::Anon::function::decl' (role 'abs_Anon_function_decl', cardinality 0..*).
+'abs::Module::modifier' (role 'abs_Module_modifier', cardinality 0..*) is associated with 'abs::Delta::decl' (role 'abs_Delta_decl268', cardinality 0..*).
+'abs::Object::update::assign::stmt' (role 'abs_Object_update_assign_stmt318', cardinality 0..*) is associated with 'abs::Object::update' (role 'abs_Object_update317', cardinality 0..*).
+'abs::Mexp' (role 'abs_Mexp472', cardinality 0..*) is associated with 'abs::MexpPrimary::expr' (role 'abs_MexpPrimary_expr', cardinality 0..*).
+'abs::Application::condition' (role 'abs_Application_condition', cardinality 0..*) is associated with 'abs::From::condition' (role 'abs_From_condition345', cardinality 0..*).
+'abs::Or::expr' (role 'abs_Or_expr404', cardinality 0..*) is associated with 'abs::Pure::exp' (role 'abs_Pure_exp405', cardinality 0..*).
+'abs::Module::import' (role 'abs_Module_import', cardinality 0..*) is associated with 'abs::Module::decl' (role 'abs_Module_decl16', cardinality 0..*).
+'abs::Module::decl' (role 'abs_Module_decl20', cardinality 0..*) is associated with 'abs::Main::block' (role 'abs_Main_block', cardinality 0..*).
+'abs::Trait::expr' (role 'abs_Trait_expr226', cardinality 0..*) is associated with 'abs::Method' (role 'abs_Method227', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp185', cardinality 0..*) is associated with 'abs::Stmt' (role 'abs_Stmt184', cardinality 0..*).
+'abs::Mexp' (role 'abs_Mexp447', cardinality 0..*) is associated with 'abs::MexpImplies::expr' (role 'abs_MexpImplies_expr', cardinality 0..*).
+'abs::Has::condition' (role 'abs_Has_condition', cardinality 0..*) is associated with 'abs::Field::decl' (role 'abs_Field_decl270', cardinality 0..*).
+'abs::Var::or::field::ref' (role 'abs_Var_or_field_ref321', cardinality 0..*) is associated with 'abs::Object::update::assign::stmt' (role 'abs_Object_update_assign_stmt320', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp88', cardinality 0..*) is associated with 'abs::Anon::function::decl' (role 'abs_Anon_function_decl87', cardinality 0..*).
+'abs::Application::condition' (role 'abs_Application_condition348', cardinality 0..*) is associated with 'abs::When::condition' (role 'abs_When_condition347', cardinality 0..*).
+'abs::Class::decl' (role 'abs_Class_decl127', cardinality 0..*) is associated with 'abs::Stmt' (role 'abs_Stmt', cardinality 0..*).
+'abs::Application::condition' (role 'abs_Application_condition360', cardinality 0..*) is associated with 'abs::Application::condition' (role 'abs_Application_condition358', cardinality 0..*).
+'abs::Trait::decl' (role 'abs_Trait_decl230', cardinality 0..*) is associated with 'abs::Trait::expr' (role 'abs_Trait_expr229', cardinality 0..*).
+'abs::Module::decl' (role 'abs_Module_decl', cardinality 0..*) is associated with 'abs::Compilation::Unit' (role 'abs_Compilation_Unit', cardinality 0..*).
+'abs::Casestmtbranch' (role 'abs_Casestmtbranch', cardinality 0..*) is associated with 'abs::Class::decl' (role 'abs_Class_decl129', cardinality 0..*).
+'abs::Param::decl' (role 'abs_Param_decl', cardinality 0..*) is associated with 'abs::Param::list' (role 'abs_Param_list90', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp188', cardinality 0..*) is associated with 'abs::Stmt' (role 'abs_Stmt187', cardinality 0..*).
+'abs::Mexp' (role 'abs_Mexp450', cardinality 0..*) is associated with 'abs::MexpImplies::expr' (role 'abs_MexpImplies_expr449', cardinality 0..*).
+'abs::Methodsig' (role 'abs_Methodsig273', cardinality 0..*) is associated with 'abs::Has::condition' (role 'abs_Has_condition272', cardinality 0..*).
+'abs::Exp' (role 'abs_Exp324', cardinality 0..*) is associated with 'abs::Object::update::assign::stmt' (role 'abs_Object_update_assign_stmt323', cardinality 0..*).
+'abs::Update::decl' (role 'abs_Update_decl', cardinality 0..*) is associated with 'abs::Compilation::Unit' (role 'abs_Compilation_Unit4', cardinality 0..*).
+'abs::Application::condition' (role 'abs_Application_condition349', cardinality 0..*) is associated with 'abs::Application::condition' (role 'abs_Application_condition351', cardinality 0..*).
+'abs::Decl' (role 'abs_Decl', cardinality 0..*) is associated with 'abs::Module::decl' (role 'abs_Module_decl18', cardinality 0..*).
+'abs::Delta::id' (role 'abs_Delta_id', cardinality 0..*) is associated with 'abs::Product::reconfiguration' (role 'abs_Product_reconfiguration381', cardinality 0..*).
+'abs::Type::use' (role 'abs_Type_use136', cardinality 0..*) is associated with 'abs::Field::decl' (role 'abs_Field_decl135', cardinality 0..*).
+'abs::Trait::oper' (role 'abs_Trait_oper', cardinality 0..*) is associated with 'abs::Trait::expr' (role 'abs_Trait_expr232', cardinality 0..*).
+'abs::Mexp' (role 'abs_Mexp452', cardinality 0..*) is associated with 'abs::MexpEquality::expr' (role 'abs_MexpEquality_expr', cardinality 0..*).
+'abs::Methodsig' (role 'abs_Methodsig116', cardinality 0..*) is associated with 'abs::Param::list' (role 'abs_Param_list117', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp69', cardinality 0..*) is associated with 'abs::Pure::exp' (role 'abs_Pure_exp67', cardinality 0..*).
+'abs::Interface::decl' (role 'abs_Interface_decl276', cardinality 0..*) is associated with 'abs::Has::condition' (role 'abs_Has_condition275', cardinality 0..*).
+'abs::Stmt' (role 'abs_Stmt190', cardinality 0..*) is associated with 'abs::Pure::exp' (role 'abs_Pure_exp191', cardinality 0..*).
+'abs::Productline::decl' (role 'abs_Productline_decl326', cardinality 0..*) is associated with 'abs::Feature' (role 'abs_Feature', cardinality 0..*).
+'abs::Feature' (role 'abs_Feature354', cardinality 0..*) is associated with 'abs::Application::condition' (role 'abs_Application_condition353', cardinality 0..*).
+'abs::Feature::decl::group' (role 'abs_Feature_decl_group', cardinality 0..*) is associated with 'abs::Feature::decl' (role 'abs_Feature_decl383', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp139', cardinality 0..*) is associated with 'abs::Field::decl' (role 'abs_Field_decl138', cardinality 0..*).
+'abs::Trait::expr' (role 'abs_Trait_expr235', cardinality 0..*) is associated with 'abs::Trait::expr' (role 'abs_Trait_expr233', cardinality 0..*).
+'abs::MexpEquality::expr' (role 'abs_MexpEquality_expr454', cardinality 0..*) is associated with 'abs::Mexp' (role 'abs_Mexp455', cardinality 0..*).
+'abs::Delta::decl' (role 'abs_Delta_decl', cardinality 0..*) is associated with 'abs::Compilation::Unit' (role 'abs_Compilation_Unit2', cardinality 0..*).
+'abs::Type::use' (role 'abs_Type_use95', cardinality 0..*) is associated with 'abs::Type::exp' (role 'abs_Type_exp94', cardinality 0..*).
+'abs::Module::decl' (role 'abs_Module_decl279', cardinality 0..*) is associated with 'abs::Delta::access' (role 'abs_Delta_access278', cardinality 0..*).
+'abs::Delta::clause' (role 'abs_Delta_clause', cardinality 0..*) is associated with 'abs::Productline::decl' (role 'abs_Productline_decl328', cardinality 0..*).
+'abs::Stmt' (role 'abs_Stmt193', cardinality 0..*) is associated with 'abs::Pure::exp' (role 'abs_Pure_exp194', cardinality 0..*).
+'abs::Application::condition' (role 'abs_Application_condition357', cardinality 0..*) is associated with 'abs::Application::condition' (role 'abs_Application_condition355', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp58', cardinality 0..*) is associated with 'abs::Pure::exp' (role 'abs_Pure_exp56', cardinality 0..*).
+'abs::Feature::decl::attribute' (role 'abs_Feature_decl_attribute', cardinality 0..*) is associated with 'abs::Feature::decl' (role 'abs_Feature_decl385', cardinality 0..*).
+'abs::Productline::decl' (role 'abs_Productline_decl', cardinality 0..*) is associated with 'abs::Compilation::Unit' (role 'abs_Compilation_Unit6', cardinality 0..*).
+'abs::Type::use' (role 'abs_Type_use114', cardinality 0..*) is associated with 'abs::Methodsig' (role 'abs_Methodsig113', cardinality 0..*).
+'abs::Type::exp' (role 'abs_Type_exp142', cardinality 0..*) is associated with 'abs::Stmt' (role 'abs_Stmt141', cardinality 0..*).
+'abs::Methodsig' (role 'abs_Methodsig238', cardinality 0..*) is associated with 'abs::Trait::oper' (role 'abs_Trait_oper237', cardinality 0..*).
+'abs::Mexp' (role 'abs_Mexp457', cardinality 0..*) is associated with 'abs::MexpComparison::expr' (role 'abs_MexpComparison_expr', cardinality 0..*).
+'abs::OO::modifier' (role 'abs_OO_modifier', cardinality 0..*) is associated with 'abs::Class::decl' (role 'abs_Class_decl281', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp60', cardinality 0..*) is associated with 'abs::Case::branch' (role 'abs_Case_branch', cardinality 0..*).
+'abs::Feature::decl' (role 'abs_Feature_decl331', cardinality 0..*) is associated with 'abs::Feature' (role 'abs_Feature330', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp197', cardinality 0..*) is associated with 'abs::Stmt' (role 'abs_Stmt196', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp66', cardinality 0..*) is associated with 'abs::Pure::exp' (role 'abs_Pure_exp64', cardinality 0..*).
+'abs::Feature' (role 'abs_Feature363', cardinality 0..*) is associated with 'abs::Product::decl' (role 'abs_Product_decl362', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp36', cardinality 0..*) is associated with 'abs::Annotation' (role 'abs_Annotation35', cardinality 0..*).
+'abs::Feature::decl' (role 'abs_Feature_decl387', cardinality 0..*) is associated with 'abs::Feature::decl::constraint' (role 'abs_Feature_decl_constraint', cardinality 0..*).
+'abs::Exp' (role 'abs_Exp', cardinality 0..*) is associated with 'abs::Stmt' (role 'abs_Stmt144', cardinality 0..*).
+'abs::Methodsig' (role 'abs_Methodsig241', cardinality 0..*) is associated with 'abs::Trait::oper' (role 'abs_Trait_oper240', cardinality 0..*).
+'abs::Guard' (role 'abs_Guard432', cardinality 0..*) is associated with 'abs::AndGuard' (role 'abs_AndGuard', cardinality 0..*).
+'abs::Param::list' (role 'abs_Param_list253', cardinality 0..*) is associated with 'abs::Method' (role 'abs_Method252', cardinality 0..*).
+'abs::Interface::decl' (role 'abs_Interface_decl284', cardinality 0..*) is associated with 'abs::OO::modifier' (role 'abs_OO_modifier283', cardinality 0..*).
+'abs::Pure::exp::list' (role 'abs_Pure_exp_list199', cardinality 0..*) is associated with 'abs::Eff::expr' (role 'abs_Eff_expr', cardinality 0..*).
+'abs::Product::decl' (role 'abs_Product_decl365', cardinality 0..*) is associated with 'abs::Product::reconfiguration' (role 'abs_Product_reconfiguration', cardinality 0..*).
+'abs::Pattern' (role 'abs_Pattern', cardinality 0..*) is associated with 'abs::Pure::exp' (role 'abs_Pure_exp75', cardinality 0..*).
+'abs::Fnode' (role 'abs_Fnode', cardinality 0..*) is associated with 'abs::Feature::decl::group' (role 'abs_Feature_decl_group389', cardinality 0..*).
+'abs::Stmt' (role 'abs_Stmt146', cardinality 0..*) is associated with 'abs::Var::or::field::ref' (role 'abs_Var_or_field_ref147', cardinality 0..*).
+'abs::Type::use' (role 'abs_Type_use', cardinality 0..*) is associated with 'abs::Par::function::decl' (role 'abs_Par_function_decl', cardinality 0..*).
+'abs::Trait::expr' (role 'abs_Trait_expr244', cardinality 0..*) is associated with 'abs::Trait::oper' (role 'abs_Trait_oper243', cardinality 0..*).
+'abs::Stmt' (role 'abs_Stmt256', cardinality 0..*) is associated with 'abs::Method' (role 'abs_Method255', cardinality 0..*).
+'abs::Guard' (role 'abs_Guard435', cardinality 0..*) is associated with 'abs::AndGuard' (role 'abs_AndGuard434', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp47', cardinality 0..*) is associated with 'abs::Pure::exp' (role 'abs_Pure_exp49', cardinality 0..*).
+'abs::OO::modifier' (role 'abs_OO_modifier286', cardinality 0..*) is associated with 'abs::Class::decl' (role 'abs_Class_decl287', cardinality 0..*).
+'abs::Pure::exp::list' (role 'abs_Pure_exp_list202', cardinality 0..*) is associated with 'abs::Eff::expr' (role 'abs_Eff_expr201', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp62', cardinality 0..*) is associated with 'abs::Type::use' (role 'abs_Type_use63', cardinality 0..*).
+'abs::Product::expr' (role 'abs_Product_expr', cardinality 0..*) is associated with 'abs::Product::decl' (role 'abs_Product_decl367', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp422', cardinality 0..*) is associated with 'abs::PlusOrMinus::expr' (role 'abs_PlusOrMinus_expr', cardinality 0..*).
+'abs::Param::list' (role 'abs_Param_list', cardinality 0..*) is associated with 'abs::Par::function::decl' (role 'abs_Par_function_decl25', cardinality 0..*).
+'abs::Stmt' (role 'abs_Stmt150', cardinality 0..*) is associated with 'abs::Stmt' (role 'abs_Stmt148', cardinality 0..*).
+'abs::Trait::oper' (role 'abs_Trait_oper246', cardinality 0..*) is associated with 'abs::Trait::expr' (role 'abs_Trait_expr247', cardinality 0..*).
+'abs::Param::list' (role 'abs_Param_list100', cardinality 0..*) is associated with 'abs::Function::decl' (role 'abs_Function_decl99', cardinality 0..*).
+'abs::Mexp' (role 'abs_Mexp437', cardinality 0..*) is associated with 'abs::MexpOr::exp' (role 'abs_MexpOr_exp', cardinality 0..*).
+'abs::Trait::expr' (role 'abs_Trait_expr259', cardinality 0..*) is associated with 'abs::Trait::decl' (role 'abs_Trait_decl258', cardinality 0..*).
+'abs::Interface::decl' (role 'abs_Interface_decl290', cardinality 0..*) is associated with 'abs::OO::modifier' (role 'abs_OO_modifier289', cardinality 0..*).
+'abs::Guard' (role 'abs_Guard204', cardinality 0..*) is associated with 'abs::Var::or::field::ref' (role 'abs_Var_or_field_ref205', cardinality 0..*).
+'abs::Feature::decl' (role 'abs_Feature_decl370', cardinality 0..*) is associated with 'abs::Product::expr' (role 'abs_Product_expr369', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp425', cardinality 0..*) is associated with 'abs::PlusOrMinus::expr' (role 'abs_PlusOrMinus_expr424', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp72', cardinality 0..*) is associated with 'abs::Pure::exp' (role 'abs_Pure_exp70', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp153', cardinality 0..*) is associated with 'abs::Stmt' (role 'abs_Stmt152', cardinality 0..*).
+'abs::Type::use' (role 'abs_Type_use250', cardinality 0..*) is associated with 'abs::Method' (role 'abs_Method249', cardinality 0..*).
+'abs::MexpOr::exp' (role 'abs_MexpOr_exp439', cardinality 0..*) is associated with 'abs::Mexp' (role 'abs_Mexp440', cardinality 0..*).
+'abs::Stmt' (role 'abs_Stmt262', cardinality 0..*) is associated with 'abs::Main::block' (role 'abs_Main_block261', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp52', cardinality 0..*) is associated with 'abs::Pure::exp' (role 'abs_Pure_exp50', cardinality 0..*).
+'abs::Interface::decl' (role 'abs_Interface_decl293', cardinality 0..*) is associated with 'abs::OO::modifier' (role 'abs_OO_modifier292', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp208', cardinality 0..*) is associated with 'abs::Guard' (role 'abs_Guard207', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp', cardinality 0..*) is associated with 'abs::Par::function::decl' (role 'abs_Par_function_decl27', cardinality 0..*).
+'abs::Product::decl' (role 'abs_Product_decl373', cardinality 0..*) is associated with 'abs::Product::expr' (role 'abs_Product_expr372', cardinality 0..*).
+'abs::MulDivOrMod::expr' (role 'abs_MulDivOrMod_expr', cardinality 0..*) is associated with 'abs::Pure::exp' (role 'abs_Pure_exp427', cardinality 0..*).
+'abs::Data::constructor' (role 'abs_Data_constructor32', cardinality 0..*) is associated with 'abs::Data::constructor::arg' (role 'abs_Data_constructor_arg', cardinality 0..*).
+'abs::Type::use' (role 'abs_Type_use105', cardinality 0..*) is associated with 'abs::Typesyn::decl' (role 'abs_Typesyn_decl', cardinality 0..*).
+'abs::Pure::exp' (role 'abs_Pure_exp55', cardinality 0..*) is associated with 'abs::Pure::exp' (role 'abs_Pure_exp53', cardinality 0..*).

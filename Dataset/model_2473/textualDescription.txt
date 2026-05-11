@@ -1,0 +1,10 @@
+The model has 5 class(es).
+The class 'railway2virtualswitchview::VirtualSwitch' has no attributes.
+The class 'railway2virtualswitchview::RailwayContainer' has no attributes.
+The class 'railway2virtualswitchview::Switch' has no attributes.
+The class 'railway2virtualswitchview::Switch2VirtualSwitch' has no attributes.
+The class 'railway2virtualswitchview::Railway2VirtualSwitchViewTrace' has no attributes.
+'railway2virtualswitchview::Switch2VirtualSwitch' (role 'railway2virtualswitchview_Switch2VirtualSwitch2', cardinality 0..*) is associated with 'railway2virtualswitchview::VirtualSwitch' (role 'railway2virtualswitchview_VirtualSwitch', cardinality 0..*).
+'railway2virtualswitchview::RailwayContainer' (role 'railway2virtualswitchview_RailwayContainer', cardinality 0..*) is associated with 'railway2virtualswitchview::Railway2VirtualSwitchViewTrace' (role 'railway2virtualswitchview_Railway2VirtualSwitchViewTrace6', cardinality 0..*).
+'railway2virtualswitchview::Switch2VirtualSwitch' (role 'railway2virtualswitchview_Switch2VirtualSwitch4', cardinality 0..*) is associated with 'railway2virtualswitchview::Railway2VirtualSwitchViewTrace' (role 'railway2virtualswitchview_Railway2VirtualSwitchViewTrace', cardinality 0..*).
+'railway2virtualswitchview::Switch' (role 'railway2virtualswitchview_Switch', cardinality 0..*) is associated with 'railway2virtualswitchview::Switch2VirtualSwitch' (role 'railway2virtualswitchview_Switch2VirtualSwitch', cardinality 0..*).

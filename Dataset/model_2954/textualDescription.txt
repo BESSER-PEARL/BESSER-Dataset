@@ -1,0 +1,16 @@
+The model has 7 class(es).
+The class 'myDsl::JAVAID' has the following attributes: 'name' of type str.
+The class 'myDsl::Model' has no attributes.
+The class 'myDsl::Type' has the following attributes: 'name' of type str.
+The class 'myDsl::Interface' has no attributes.
+The class 'myDsl::Attribute' has the following attributes: 'many' of type bool.
+The class 'myDsl::TypeDef' has no attributes.
+The class 'Type' has no attributes.
+'myDsl::Interface' is a specialization of 'Type'.
+'myDsl::TypeDef' is a specialization of 'Type'.
+'myDsl::Attribute' is a specialization of 'Type'.
+'myDsl::Interface' (role 'myDsl_Interface5', cardinality 0..*) is associated with 'myDsl::Attribute' (role 'myDsl_Attribute', cardinality 0..*).
+'myDsl::Attribute' (role 'myDsl_Attribute7', cardinality 0..*) is associated with 'myDsl::Type' (role 'myDsl_Type8', cardinality 0..*).
+'myDsl::TypeDef' (role 'myDsl_TypeDef', cardinality 0..*) is associated with 'myDsl::JAVAID' (role 'myDsl_JAVAID', cardinality 0..*).
+'myDsl::Interface' (role 'myDsl_Interface', cardinality 0..*) is associated with 'myDsl::Interface' (role 'myDsl_Interface2', cardinality 0..*).
+'myDsl::Model' (role 'myDsl_Model', cardinality 0..*) is associated with 'myDsl::Type' (role 'myDsl_Type', cardinality 0..*).

@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/alxbrd/org.eclipse.epsilon/tests/org.eclipse.epsilon.emc.emf.test/src/org/eclipse/epsilon/emc/emf/Tree.ecore

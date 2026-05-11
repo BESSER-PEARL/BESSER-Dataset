@@ -1,0 +1,89 @@
+The model has 42 class(es).
+The class 'modelDsl::DefCollectionTypeAttribute' has the following attributes: 'name' of type str.
+The class 'modelDsl::MethodSimpleReturn' has the following attributes: 'returnType' of type str.
+The class 'modelDsl::AllModelType' has no attributes.
+The class 'modelDsl::CollectionReturnType' has the following attributes: 'collection' of type str.
+The class 'modelDsl::DefModelSimpleTypeCollectionVariable' has no attributes.
+The class 'modelDsl::Enumerable' has the following attributes: 'enums' of type str.
+The class 'modelDsl::AllModelTypeCollection' has no attributes.
+The class 'modelDsl::AssociativeEntity' has no attributes.
+The class 'modelDsl::Entity' has no attributes.
+The class 'DefAttribute' has no attributes.
+The class 'modelDsl::DefAttribute' has no attributes.
+The class 'Method' has no attributes.
+The class 'ModelType' has no attributes.
+The class 'modelDsl::DefSimpleVariable' has the following attributes: 'nullable' of type str; 'type' of type str.
+The class 'modelDsl::DefModelTypeVariable' has the following attributes: 'nullable' of type str; 'name' of type str.
+The class 'modelDsl::Model' has no attributes.
+The class 'modelDsl::DefCollectionTypeVariable' has no attributes.
+The class 'CollectionReturnType' has no attributes.
+The class 'Entity' has no attributes.
+The class 'modelDsl::SimpleEntity' has the following attributes: 'implementation' of type str.
+The class 'modelDsl::MethodAllModelReturn' has no attributes.
+The class 'Element' has no attributes.
+The class 'modelDsl::Method' has the following attributes: 'name' of type str.
+The class 'DefIdAttribute' has no attributes.
+The class 'modelDsl::Link' has no attributes.
+The class 'modelDsl::ModelType' has no attributes.
+The class 'modelDsl::ValueType' has no attributes.
+The class 'modelDsl::SimpleLink' has no attributes.
+The class 'DefVariable' has no attributes.
+The class 'modelDsl::DefAllModelTypeVariable' has no attributes.
+The class 'DefCollectionTypeAttribute' has no attributes.
+The class 'modelDsl::DefLinkVariable' has the following attributes: 'name' of type str.
+The class 'Link' has no attributes.
+The class 'modelDsl::DefVariable' has the following attributes: 'name' of type str.
+The class 'modelDsl::DefIdAttribute' has no attributes.
+The class 'AllModelType' has no attributes.
+The class 'modelDsl::ModelTypeCollection' has the following attributes: 'collection' of type str.
+The class 'modelDsl::DefModelModelTypeCollectionVariable' has no attributes.
+The class 'modelDsl::SimpleTypeCollection' has the following attributes: 'type' of type str.
+The class 'modelDsl::Element' has the following attributes: 'name' of type str.
+The class 'modelDsl::MethodCollectionReturn' has no attributes.
+The class 'modelDsl::Relation' has the following attributes: 'navigable' of type str; 'multiplicity' of type str; 'name' of type str.
+'modelDsl::DefModelTypeVariable' is a specialization of 'DefIdAttribute'.
+'modelDsl::SimpleLink' is a specialization of 'Element'.
+'modelDsl::Entity' is a specialization of 'AllModelType'.
+'modelDsl::DefModelSimpleTypeCollectionVariable' is a specialization of 'DefCollectionTypeAttribute'.
+'modelDsl::MethodSimpleReturn' is a specialization of 'Method'.
+'modelDsl::MethodCollectionReturn' is a specialization of 'Method'.
+'modelDsl::DefSimpleVariable' is a specialization of 'DefAttribute'.
+'modelDsl::DefModelTypeVariable' is a specialization of 'DefAttribute'.
+'modelDsl::MethodAllModelReturn' is a specialization of 'Method'.
+'modelDsl::DefSimpleVariable' is a specialization of 'DefIdAttribute'.
+'modelDsl::SimpleEntity' is a specialization of 'Entity'.
+'modelDsl::DefLinkVariable' is a specialization of 'DefIdAttribute'.
+'modelDsl::Enumerable' is a specialization of 'ModelType'.
+'modelDsl::DefSimpleVariable' is a specialization of 'DefVariable'.
+'modelDsl::SimpleLink' is a specialization of 'Link'.
+'modelDsl::DefAllModelTypeVariable' is a specialization of 'DefVariable'.
+'modelDsl::ValueType' is a specialization of 'ModelType'.
+'modelDsl::DefCollectionTypeAttribute' is a specialization of 'DefAttribute'.
+'modelDsl::DefModelModelTypeCollectionVariable' is a specialization of 'DefCollectionTypeAttribute'.
+'modelDsl::SimpleTypeCollection' is a specialization of 'CollectionReturnType'.
+'modelDsl::DefCollectionTypeVariable' is a specialization of 'DefVariable'.
+'modelDsl::AssociativeEntity' is a specialization of 'Entity'.
+'modelDsl::AllModelType' is a specialization of 'Element'.
+'modelDsl::AllModelTypeCollection' is a specialization of 'CollectionReturnType'.
+'modelDsl::ModelType' is a specialization of 'AllModelType'.
+'modelDsl::AssociativeEntity' is a specialization of 'Link'.
+'modelDsl::MethodAllModelReturn' (role 'modelDsl_MethodAllModelReturn', cardinality 0..*) is associated with 'modelDsl::AllModelType' (role 'modelDsl_AllModelType27', cardinality 0..*).
+'modelDsl::Method' (role 'modelDsl_Method23', cardinality 0..*) is associated with 'modelDsl::DefVariable' (role 'modelDsl_DefVariable', cardinality 0..*).
+'modelDsl::DefModelModelTypeCollectionVariable' (role 'modelDsl_DefModelModelTypeCollectionVariable', cardinality 0..*) is associated with 'modelDsl::ModelTypeCollection' (role 'modelDsl_ModelTypeCollection', cardinality 0..*).
+'modelDsl::DefAttribute' (role 'modelDsl_DefAttribute10', cardinality 0..*) is associated with 'modelDsl::ValueType' (role 'modelDsl_ValueType', cardinality 0..*).
+'modelDsl::CollectionReturnType' (role 'modelDsl_CollectionReturnType25', cardinality 0..*) is associated with 'modelDsl::MethodCollectionReturn' (role 'modelDsl_MethodCollectionReturn', cardinality 0..*).
+'modelDsl::AllModelTypeCollection' (role 'modelDsl_AllModelTypeCollection', cardinality 0..*) is associated with 'modelDsl::AllModelType' (role 'modelDsl_AllModelType29', cardinality 0..*).
+'modelDsl::Entity' (role 'modelDsl_Entity15', cardinality 0..*) is associated with 'modelDsl::Relation' (role 'modelDsl_Relation14', cardinality 0..*).
+'modelDsl::SimpleEntity' (role 'modelDsl_SimpleEntity7', cardinality 0..*) is associated with 'modelDsl::DefIdAttribute' (role 'modelDsl_DefIdAttribute', cardinality 0..*).
+'modelDsl::ModelType' (role 'modelDsl_ModelType', cardinality 0..*) is associated with 'modelDsl::DefModelTypeVariable' (role 'modelDsl_DefModelTypeVariable', cardinality 0..*).
+'modelDsl::Relation' (role 'modelDsl_Relation12', cardinality 0..*) is associated with 'modelDsl::SimpleLink' (role 'modelDsl_SimpleLink', cardinality 0..*).
+'modelDsl::DefLinkVariable' (role 'modelDsl_DefLinkVariable', cardinality 0..*) is associated with 'modelDsl::Link' (role 'modelDsl_Link', cardinality 0..*).
+'modelDsl::CollectionReturnType' (role 'modelDsl_CollectionReturnType', cardinality 0..*) is associated with 'modelDsl::DefCollectionTypeVariable' (role 'modelDsl_DefCollectionTypeVariable', cardinality 0..*).
+'modelDsl::Element' (role 'modelDsl_Element', cardinality 0..*) is associated with 'modelDsl::Model' (role 'modelDsl_Model', cardinality 0..*).
+'modelDsl::SimpleEntity' (role 'modelDsl_SimpleEntity4', cardinality 0..*) is associated with 'modelDsl::SimpleEntity' (role 'modelDsl_SimpleEntity', cardinality 0..*).
+'modelDsl::AssociativeEntity' (role 'modelDsl_AssociativeEntity', cardinality 0..*) is associated with 'modelDsl::Relation' (role 'modelDsl_Relation', cardinality 0..*).
+'modelDsl::Method' (role 'modelDsl_Method', cardinality 0..*) is associated with 'modelDsl::Entity' (role 'modelDsl_Entity3', cardinality 0..*).
+'modelDsl::DefAttribute' (role 'modelDsl_DefAttribute', cardinality 0..*) is associated with 'modelDsl::Entity' (role 'modelDsl_Entity', cardinality 0..*).
+'modelDsl::ModelType' (role 'modelDsl_ModelType32', cardinality 0..*) is associated with 'modelDsl::ModelTypeCollection' (role 'modelDsl_ModelTypeCollection31', cardinality 0..*).
+'modelDsl::SimpleTypeCollection' (role 'modelDsl_SimpleTypeCollection', cardinality 0..*) is associated with 'modelDsl::DefModelSimpleTypeCollectionVariable' (role 'modelDsl_DefModelSimpleTypeCollectionVariable', cardinality 0..*).
+'modelDsl::DefAllModelTypeVariable' (role 'modelDsl_DefAllModelTypeVariable', cardinality 0..*) is associated with 'modelDsl::AllModelType' (role 'modelDsl_AllModelType', cardinality 0..*).

@@ -1,0 +1,175 @@
+The model has 62 class(es).
+The class 'fxg::RichText' has the following attributes: 'scaleY' of type str; 'alpha' of type str; 'width' of type str; 'x' of type str; 'visible' of type str; 'maskType' of type str; 'scaleX' of type str; '_tempcontent' of type str; 'blendMode' of type str; 'id' of type str; 'y' of type str; 'height' of type str; 'rotation' of type str.
+The class 'fxg::Group' has the following attributes: 'scaleGridTop' of type str; 'scaleGridBottom' of type str; 'scaleGridLeft' of type str; 'scaleX' of type str; 'scaleGridRight' of type str; 'transformX' of type str; 'maskType' of type str; 'rotation' of type str; 'id' of type str; 'scaleY' of type str; 'y' of type str; 'transformY' of type str; 'blendMode' of type str; 'alpha' of type str; 'x' of type str; 'visible' of type str.
+The class 'fxg::Matrix' has the following attributes: 'a' of type str; 'c' of type str; 'tx' of type str; 'ty' of type str; 'b' of type str; 'd' of type str.
+The class 'fxg::tcy' has no attributes.
+The class 'FXGElement' has no attributes.
+The class 'fxg::Rect' has the following attributes: 'radiusY' of type str; 'bottomLeftRadiusX' of type str; 'rotation' of type str; 'scaleX' of type str; 'topRightRadiusX' of type str; 'alpha' of type str; 'bottomRightRadiusX' of type str; 'bottomLeftRadiusY' of type str; 'width' of type str; 'bottomRightRadiusY' of type str; 'x' of type str; 'scaleY' of type str; 'radiusX' of type str; 'height' of type str; 'topLeftRadiusY' of type str; 'topLeftRadiusX' of type str; 'topRightRadiusY' of type str; 'blendMode' of type str; 'y' of type str; 'visible' of type str.
+The class 'fxg::RichTextContentContainer' has no attributes.
+The class 'fxg::Line' has the following attributes: 'yFrom' of type str; 'rotation' of type str; 'xTo' of type str; 'xFrom' of type str; 'yTo' of type str; 'x' of type str; 'scaleY' of type str; 'y' of type str; 'scaleX' of type str; 'id' of type str; 'visible' of type str; 'alpha' of type str; 'blendMode' of type str; 'maskType' of type str.
+The class 'fxg::a' has no attributes.
+The class 'fxg::span' has no attributes.
+The class 'fxg::BitmapFill' has the following attributes: 'fillMode' of type str; 'x' of type str; 'source' of type str; 'rotation' of type str; 'scaleY' of type str; 'y' of type str; 'scaleX' of type str.
+The class 'fxg::SolidColor' has the following attributes: 'alpha' of type str; 'color' of type str.
+The class 'Stroke' has no attributes.
+The class 'CharacterAttributes' has no attributes.
+The class 'fxg::ContainerElement' has no attributes.
+The class 'fxg::CharacterAttributes' has the following attributes: 'locale' of type str; 'fontWeight' of type str; 'textRotation' of type str; 'typographicCase' of type str; 'baselineShift' of type str; 'trackingLeft' of type str; 'dominantBaseline' of type str; 'lineThrough' of type str; 'whiteSpaceCollapse' of type str; 'fontStyle' of type str; 'textAlpha' of type str; 'backgroundAlpha' of type str; 'digitWidth' of type str; 'ligatureLevel' of type str; 'textDecoration' of type str; 'color' of type str; 'lineHeight' of type str; 'trackingRight' of type str; 'breakOpportunity' of type str; 'digitCase' of type str; 'fontSize' of type str; 'backgroundColor' of type str; 'kerning' of type str; 'alignmentBaseline' of type str; 'fontFamily' of type str.
+The class 'fxg::Shape' has no attributes.
+The class 'fxg::Definition' has the following attributes: 'name' of type str.
+The class 'RichTextContentContainer' has no attributes.
+The class 'fxg::ColorTransform' has the following attributes: 'alphaMultiplier' of type str; 'redOffset' of type str; 'greenOffset' of type str; 'greenMultiplier' of type str; 'blueOffset' of type str; 'alphaOffset' of type str; 'redMultiplier' of type str; 'blueMultiplier' of type str.
+The class 'fxg::LinearGradient' has the following attributes: 'interpolationMethod' of type str; 'x' of type str; 'rotation' of type str; 'spreadMethod' of type str; 'y' of type str; 'scaleX' of type str.
+The class 'fxg::ParagraphAttributes' has the following attributes: 'paragraphSpaceAfter' of type str; 'textAlignLast' of type str; 'textIndent' of type str; 'paragraphStartIndent' of type str; 'leadingModel' of type str; 'tabStops' of type str; 'textJustify' of type str; 'justificationRule' of type str; 'justificationStyle' of type str; 'textAlign' of type str; 'paragraphSpaceBefore' of type str; 'paragraphEndIndent' of type str.
+The class 'fxg::linkHoverFormat' has no attributes.
+The class 'fxg::Library' has no attributes.
+The class 'fxg::Ellipse' has the following attributes: 'scaleX' of type str; 'visible' of type str; 'alpha' of type str; 'width' of type str; 'x' of type str; 'blendMode' of type str; 'scaleY' of type str; 'height' of type str; 'y' of type str; 'rotation' of type str.
+The class 'ContainerAttributes' has no attributes.
+The class 'fxg::ContainerAttributes' has the following attributes: 'paddingLeft' of type str; 'columnGap' of type str; 'columnWidth' of type str; 'firstBaselineOffset' of type str; 'verticalAlign' of type str; 'lineBreak' of type str; 'paddingBottom' of type str; 'paddingRight' of type str; 'blockProgression' of type str; 'paddingTop' of type str; 'columnCount' of type str.
+The class 'fxg::SolidColorStroke' has the following attributes: 'miterLimit' of type str; 'alpha' of type str; 'caps' of type str; 'scaleMode' of type str; 'weight' of type str; 'color' of type str; 'pixelHinting' of type str; 'joints' of type str.
+The class 'fxg::LinearGradientStroke' has the following attributes: 'weight' of type str; 'joints' of type str; 'scaleMode' of type str; 'scaleX' of type str; 'miterLimit' of type str; 'x' of type str; 'spreadMethod' of type str; 'rotation' of type str; 'caps' of type str; 'interpolationMethod' of type str; 'pixelHinting' of type str; 'y' of type str.
+The class 'fxg::rawtext' has the following attributes: '_text' of type str.
+The class 'fxg::Graphic' has the following attributes: 'scaleGridLeft' of type str; 'scaleGridTop' of type str; 'scaleGridRight' of type str; 'viewHeight' of type int; 'scaleGridBottom' of type str; 'version' of type str; 'viewWidth' of type int.
+The class 'fxg::tab' has no attributes.
+The class 'fxg::Transform' has no attributes.
+The class 'fxg::RadialGradientStroke' has the following attributes: 'caps' of type str; 'spreadMethod' of type str; 'pixelHinting' of type str; 'y' of type str; 'focalPointRatio' of type str; 'rotation' of type str; 'scaleX' of type str; 'scaleY' of type str; 'weight' of type str; 'interpolationMethod' of type str; 'x' of type str; 'scaleMode' of type str; 'joints' of type str; 'miterLimit' of type str.
+The class 'fxg::Private' has no attributes.
+The class 'fxg::Fill' has no attributes.
+The class 'fxg::BevelFilter' has the following attributes: 'highlightAlpha' of type str; 'blurX' of type str; 'blurY' of type str; 'strength' of type str; 'knockout' of type str; 'distance' of type str; 'angle' of type str; 'highlightColor' of type str; 'quality' of type str; 'type' of type str; 'shadowAlpha' of type str; 'shadowColor' of type str.
+The class 'fxg::PlaceObject' has the following attributes: 'id' of type str.
+The class 'fxg::div' has no attributes.
+The class 'ParagraphAttributes' has no attributes.
+The class 'fxg::img' has no attributes.
+The class 'fxg::BlurFilter' has the following attributes: 'quality' of type str; 'blurY' of type str; 'blurX' of type str.
+The class 'fxg::RadialGradient' has the following attributes: 'focalPointRatio' of type str; 'interpolationMethod' of type str; 'y' of type str; 'scaleY' of type str; 'x' of type str; 'rotation' of type str; 'spreadMethod' of type str; 'scaleX' of type str.
+The class 'fxg::GradientBevelFilter' has the following attributes: 'angle' of type str; 'blurX' of type str; 'distance' of type str; 'type' of type str; 'blurY' of type str; 'strength' of type str; 'quality' of type str; 'knockout' of type str.
+The class 'fxg::BitmapImage' has the following attributes: 'fillMode' of type str; 'scaleX' of type str; 'visible' of type str; 'alpha' of type str; 'blendMode' of type str; 'y' of type str; 'rotation' of type str; 'height' of type str; 'source' of type str; 'x' of type str; 'width' of type str; 'scaleY' of type str.
+The class 'RichTextContent' has no attributes.
+The class 'fxg::FXGElement' has no attributes.
+The class 'fxg::linkActiveFormat' has no attributes.
+The class 'fxg::Path' has the following attributes: 'y' of type str; 'winding' of type str; 'blendMode' of type str; 'rotation' of type str; 'data' of type str; 'scaleX' of type str; 'visible' of type str; 'scaleY' of type str; 'alpha' of type str; 'x' of type str.
+The class 'fxg::Filter' has no attributes.
+The class 'Fill' has no attributes.
+The class 'fxg::p' has no attributes.
+The class 'fxg::br' has no attributes.
+The class 'fxg::GradientEntry' has the following attributes: 'alpha' of type str; 'ratio' of type str; 'color' of type str.
+The class 'fxg::linkNormalFormat' has no attributes.
+The class 'fxg::ColorMatrixFilter' has the following attributes: 'matrix' of type str.
+The class 'fxg::DropShadowFilter' has the following attributes: 'inner' of type str; 'distance' of type str; 'hideObject' of type str; 'alpha' of type str; 'quality' of type str; 'strength' of type str; 'knockout' of type str; 'blurX' of type str; 'blurY' of type str; 'color' of type str; 'angle' of type str.
+The class 'fxg::GradientGlowFilter' has the following attributes: 'strength' of type str; 'distance' of type str; 'knockout' of type str; 'blurY' of type str; 'inner' of type str; 'quality' of type str; 'blurX' of type str; 'angle' of type str.
+The class 'fxg::RichTextContent' has no attributes.
+The class 'fxg::Stroke' has no attributes.
+The class 'Filter' has no attributes.
+The class 'Shape' has no attributes.
+The enumeration 'LeadingModel' has the following literals: 'ascentDescentUp', 'auto', 'romanUp', 'ideographicTopDown', 'ideographicTopUp', 'ideographicCenterDown', 'ideographicCenterUp'.
+The enumeration 'WhitespaceCollapse' has the following literals: 'PRESERVE', 'COLLAPSE'.
+The enumeration 'Joint' has the following literals: 'MITER', 'ROUND', 'BEVEL'.
+The enumeration 'BevelFilterType' has the following literals: 'FULL', 'OUTER', 'INNER'.
+The enumeration 'ScaleMode' has the following literals: 'HORIZONTAL', 'NONE', 'NORMAL', 'VERTICAL'.
+The enumeration 'SpreadMethod' has the following literals: 'pad', 'reflect', 'repeat', 'NOT_SET'.
+The enumeration 'AlignmentBaseline' has the following literals: 'descent', 'roman', 'useDominantBaseline', 'ideographicCenter', 'ideographicBottom', 'auto', 'ascent', 'ideographicTop'.
+The enumeration 'InterpolationMethod' has the following literals: 'rgb', 'linearRGB', 'NOT_SET'.
+The enumeration 'BreakOpportunity' has the following literals: 'all', 'auto', 'none', 'any'.
+The enumeration 'FillMode' has the following literals: 'CLIP', 'REPEAT', 'SCALE'.
+The enumeration 'Winding' has the following literals: 'nonZero', 'evenOdd', 'NOT_SET'.
+The enumeration 'FontStyle' has the following literals: 'ITALIC', 'NORMAL'.
+The enumeration 'LineBreak' has the following literals: 'toFit', 'explicit'.
+The enumeration 'MaskType' has the following literals: 'ALPHA', 'CLIP'.
+The enumeration 'TextDecoration' has the following literals: 'NONE', 'UNDERLINE'.
+The enumeration 'JustificationStyle' has the following literals: 'pushOutOnly', 'auto', 'pushInKinsoku', 'prioritizeLeastAdjustment'.
+The enumeration 'JustificationRule' has the following literals: 'auto', 'space', 'eastAsian'.
+The enumeration 'DominantBaseline' has the following literals: 'ascent', 'auto', 'ideographicTop', 'roman', 'descent', 'ideographicCenter', 'ideographicBottom'.
+The enumeration 'TextRotation' has the following literals: 'rotate90', 'auto', 'rotate180', 'rotate270', 'rotate0'.
+The enumeration 'DigitWidth' has the following literals: 'tabular', 'proportional', 'default'.
+The enumeration 'VerticalAlign' has the following literals: 'inherit', 'justify', 'top', 'middle', 'bottom'.
+The enumeration 'Kerning' has the following literals: 'OFF', 'ON', 'AUTO'.
+The enumeration 'FontWeight' has the following literals: 'BOLD', 'NORMAL'.
+The enumeration 'TypographicCase' has the following literals: 'lowercase', 'capsToSmallCaps', 'default', 'uppercase', 'lowercaseToSmallCaps'.
+The enumeration 'BlockProgression' has the following literals: 'tb', 'rl'.
+The enumeration 'TextJustify' has the following literals: 'distribute', 'interWord'.
+The enumeration 'Cap' has the following literals: 'SQUARE', 'NONE', 'ROUND'.
+The enumeration 'BlendMode' has the following literals: 'lighten', 'overlay', 'difference', 'darken', 'invert', 'layer', 'multiply', 'normal', 'subtract', 'add', 'alpha', 'erase', 'hardlight', 'shader', 'screen', 'NOT_SET'.
+The enumeration 'LigatureLevel' has the following literals: 'minimum', 'exotic', 'uncommon', 'common'.
+The enumeration 'TextAlign' has the following literals: 'start', 'justify', 'left', 'right', 'end', 'center'.
+The enumeration 'DigitCase' has the following literals: 'default', 'oldStyle', 'lining'.
+'fxg::BitmapFill' is a specialization of 'Fill'.
+'fxg::RichTextContentContainer' is a specialization of 'RichTextContent'.
+'fxg::SolidColor' is a specialization of 'Fill'.
+'fxg::Matrix' is a specialization of 'FXGElement'.
+'fxg::span' is a specialization of 'RichTextContent'.
+'fxg::Transform' is a specialization of 'FXGElement'.
+'fxg::Path' is a specialization of 'FXGElement'.
+'fxg::SolidColorStroke' is a specialization of 'Stroke'.
+'fxg::ColorMatrixFilter' is a specialization of 'Filter'.
+'fxg::div' is a specialization of 'RichTextContent'.
+'fxg::img' is a specialization of 'RichTextContent'.
+'fxg::linkHoverFormat' is a specialization of 'RichTextContent'.
+'fxg::RichText' is a specialization of 'ContainerAttributes'.
+'fxg::GradientEntry' is a specialization of 'FXGElement'.
+'fxg::Shape' is a specialization of 'FXGElement'.
+'fxg::a' is a specialization of 'RichTextContent'.
+'fxg::ColorTransform' is a specialization of 'FXGElement'.
+'fxg::Private' is a specialization of 'FXGElement'.
+'fxg::Filter' is a specialization of 'FXGElement'.
+'fxg::tcy' is a specialization of 'RichTextContent'.
+'fxg::Rect' is a specialization of 'Shape'.
+'fxg::BitmapImage' is a specialization of 'FXGElement'.
+'fxg::RichText' is a specialization of 'ParagraphAttributes'.
+'fxg::p' is a specialization of 'RichTextContent'.
+'fxg::span' is a specialization of 'RichTextContentContainer'.
+'fxg::linkNormalFormat' is a specialization of 'RichTextContent'.
+'fxg::div' is a specialization of 'RichTextContentContainer'.
+'fxg::p' is a specialization of 'RichTextContentContainer'.
+'fxg::rawtext' is a specialization of 'RichTextContent'.
+'fxg::Stroke' is a specialization of 'FXGElement'.
+'fxg::RichText' is a specialization of 'FXGElement'.
+'fxg::tab' is a specialization of 'RichTextContent'.
+'fxg::br' is a specialization of 'RichTextContent'.
+'fxg::p' is a specialization of 'ParagraphAttributes'.
+'fxg::BlurFilter' is a specialization of 'Filter'.
+'fxg::tcy' is a specialization of 'RichTextContentContainer'.
+'fxg::BevelFilter' is a specialization of 'Filter'.
+'fxg::ContainerElement' is a specialization of 'FXGElement'.
+'fxg::Ellipse' is a specialization of 'Shape'.
+'fxg::PlaceObject' is a specialization of 'FXGElement'.
+'fxg::a' is a specialization of 'RichTextContentContainer'.
+'fxg::Line' is a specialization of 'Shape'.
+'fxg::DropShadowFilter' is a specialization of 'Filter'.
+'fxg::RichText' is a specialization of 'CharacterAttributes'.
+'fxg::Fill' is a specialization of 'FXGElement'.
+'fxg::Filter' (role 'fxg_Filter64', cardinality 0..*) is associated with 'fxg::Line' (role 'fxg_Line63', cardinality 0..*).
+'fxg::Transform' (role 'fxg_Transform47', cardinality 0..*) is associated with 'fxg::Ellipse' (role 'fxg_Ellipse', cardinality 0..*).
+'fxg::Filter' (role 'fxg_Filter25', cardinality 0..*) is associated with 'fxg::Path' (role 'fxg_Path24', cardinality 0..*).
+'fxg::Group' (role 'fxg_Group73', cardinality 0..*) is associated with 'fxg::Line' (role 'fxg_Line72', cardinality 0..*).
+'fxg::Ellipse' (role 'fxg_Ellipse58', cardinality 0..*) is associated with 'fxg::Group' (role 'fxg_Group59', cardinality 0..*).
+'fxg::Ellipse' (role 'fxg_Ellipse49', cardinality 0..*) is associated with 'fxg::Filter' (role 'fxg_Filter50', cardinality 0..*).
+'fxg::Filter' (role 'fxg_Filter16', cardinality 0..*) is associated with 'fxg::PlaceObject' (role 'fxg_PlaceObject15', cardinality 0..*).
+'fxg::Stroke' (role 'fxg_Stroke56', cardinality 0..*) is associated with 'fxg::Ellipse' (role 'fxg_Ellipse55', cardinality 0..*).
+'fxg::Matrix' (role 'fxg_Matrix86', cardinality 0..*) is associated with 'fxg::RadialGradientStroke' (role 'fxg_RadialGradientStroke', cardinality 0..*).
+'fxg::Group' (role 'fxg_Group', cardinality 0..*) is associated with 'fxg::Graphic' (role 'fxg_Graphic', cardinality 0..*).
+'fxg::Group' (role 'fxg_Group31', cardinality 0..*) is associated with 'fxg::Path' (role 'fxg_Path30', cardinality 0..*).
+'fxg::Rect' (role 'fxg_Rect', cardinality 0..*) is associated with 'fxg::Transform' (role 'fxg_Transform33', cardinality 0..*).
+'fxg::Fill' (role 'fxg_Fill39', cardinality 0..*) is associated with 'fxg::Rect' (role 'fxg_Rect38', cardinality 0..*).
+'fxg::Group' (role 'fxg_Group4', cardinality 0..*) is associated with 'fxg::Filter' (role 'fxg_Filter', cardinality 0..*).
+'fxg::Filter' (role 'fxg_Filter36', cardinality 0..*) is associated with 'fxg::Rect' (role 'fxg_Rect35', cardinality 0..*).
+'fxg::Group' (role 'fxg_Group5', cardinality 0..*) is associated with 'fxg::Group' (role 'fxg_Group7', cardinality 0..*).
+'fxg::RichText' (role 'fxg_RichText', cardinality 0..*) is associated with 'fxg::RichTextContent' (role 'fxg_RichTextContent', cardinality 0..*).
+'fxg::Group' (role 'fxg_Group2', cardinality 0..*) is associated with 'fxg::Transform' (role 'fxg_Transform', cardinality 0..*).
+'fxg::Group' (role 'fxg_Group19', cardinality 0..*) is associated with 'fxg::PlaceObject' (role 'fxg_PlaceObject18', cardinality 0..*).
+'fxg::Stroke' (role 'fxg_Stroke42', cardinality 0..*) is associated with 'fxg::Rect' (role 'fxg_Rect41', cardinality 0..*).
+'fxg::ColorTransform' (role 'fxg_ColorTransform', cardinality 0..*) is associated with 'fxg::Transform' (role 'fxg_Transform11', cardinality 0..*).
+'fxg::Path' (role 'fxg_Path22', cardinality 0..*) is associated with 'fxg::Stroke' (role 'fxg_Stroke', cardinality 0..*).
+'fxg::LinearGradientStroke' (role 'fxg_LinearGradientStroke', cardinality 0..*) is associated with 'fxg::Matrix' (role 'fxg_Matrix84', cardinality 0..*).
+'fxg::Transform' (role 'fxg_Transform9', cardinality 0..*) is associated with 'fxg::Matrix' (role 'fxg_Matrix', cardinality 0..*).
+'fxg::Fill' (role 'fxg_Fill', cardinality 0..*) is associated with 'fxg::Path' (role 'fxg_Path', cardinality 0..*).
+'fxg::Transform' (role 'fxg_Transform13', cardinality 0..*) is associated with 'fxg::PlaceObject' (role 'fxg_PlaceObject', cardinality 0..*).
+'fxg::Fill' (role 'fxg_Fill67', cardinality 0..*) is associated with 'fxg::Line' (role 'fxg_Line66', cardinality 0..*).
+'fxg::BitmapFill' (role 'fxg_BitmapFill', cardinality 0..*) is associated with 'fxg::Matrix' (role 'fxg_Matrix82', cardinality 0..*).
+'fxg::Matrix' (role 'fxg_Matrix80', cardinality 0..*) is associated with 'fxg::RadialGradient' (role 'fxg_RadialGradient', cardinality 0..*).
+'fxg::Stroke' (role 'fxg_Stroke70', cardinality 0..*) is associated with 'fxg::Line' (role 'fxg_Line69', cardinality 0..*).
+'fxg::Rect' (role 'fxg_Rect44', cardinality 0..*) is associated with 'fxg::Group' (role 'fxg_Group45', cardinality 0..*).
+'fxg::Line' (role 'fxg_Line', cardinality 0..*) is associated with 'fxg::Transform' (role 'fxg_Transform61', cardinality 0..*).
+'fxg::Path' (role 'fxg_Path27', cardinality 0..*) is associated with 'fxg::Transform' (role 'fxg_Transform28', cardinality 0..*).
+'fxg::Ellipse' (role 'fxg_Ellipse52', cardinality 0..*) is associated with 'fxg::Fill' (role 'fxg_Fill53', cardinality 0..*).
+'fxg::LinearGradient' (role 'fxg_LinearGradient', cardinality 0..*) is associated with 'fxg::Matrix' (role 'fxg_Matrix78', cardinality 0..*).
+'fxg::RichTextContentContainer' (role 'fxg_RichTextContentContainer', cardinality 0..*) is associated with 'fxg::RichTextContent' (role 'fxg_RichTextContent76', cardinality 0..*).

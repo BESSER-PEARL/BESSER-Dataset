@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/enstulen/TDT4250-NTNUStudies/no.tdt4250.ntnustudies/model/ntnustudies.ecore

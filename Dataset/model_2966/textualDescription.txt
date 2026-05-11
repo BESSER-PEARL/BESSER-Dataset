@@ -1,0 +1,5 @@
+The model has 4 class(es).
+The class 'Attribute::NodeInOut' has the following attributes: 'Number' of type int.
+The class 'Attribute::NodeVar' has the following attributes: 'Number' of type int.
+The class 'Attribute::NodeOut' has the following attributes: 'Number' of type int.
+The class 'Attribute::NodeIn' has the following attributes: 'Number' of type int.

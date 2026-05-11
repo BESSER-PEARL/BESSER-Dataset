@@ -1,0 +1,3 @@
+The model has 2 class(es).
+The class 'test::AbstractTest' has the following attributes: 'text' of type str.
+The class 'test::Tests' has the following attributes: 'name' of type str.

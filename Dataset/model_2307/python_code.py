@@ -1,0 +1,65 @@
+from datetime import datetime, date, time
+from abc import ABC, abstractmethod
+
+
+############################################
+# Definition of Classes
+############################################
+
+class Person:
+
+    pass
+class Persons_Male(Person):
+
+    pass
+class PersonsModel:
+
+    pass
+class Persons_Person(ABC):
+
+    def __init__(self, fullName: str, persons: "PersonsModel" = None):
+        self.fullName = fullName
+        self.persons = persons
+        
+        pass
+    @property
+    def fullName(self):
+        return self.__fullName
+
+    @fullName.setter
+    def fullName(self, fullName: str):
+        self.__fullName = fullName
+
+
+    @property
+    def persons(self):
+        return self.__persons
+
+    @persons.setter
+    def persons(self, value):
+        # Bidirectional consistency
+        old_value = getattr(self, f"_Persons_Person__persons", None)
+        self.__persons = value
+        
+        # Remove self from old opposite end
+        if old_value is not None:
+            if hasattr(old_value, "PersonsModel"):
+                opp_val = getattr(old_value, "PersonsModel", None)
+                if opp_val == self:
+                    setattr(old_value, "PersonsModel", None)
+                
+        # Add self to new opposite end
+        if value is not None:
+            if hasattr(value, "PersonsModel"):
+                opp_val = getattr(value, "PersonsModel", None)
+                setattr(value, "PersonsModel", self)
+
+class Persons_Employee(Person):
+
+    pass
+class Persons_PersonsModel:
+
+    pass
+class Persons_Female(Person):
+
+    pass

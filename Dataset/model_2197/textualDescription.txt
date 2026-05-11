@@ -1,0 +1,19 @@
+The model has 9 class(es).
+The class 'model::DoorsModule' has no attributes.
+The class 'model::DoorsFolder' has the following attributes: 'project' of type bool.
+The class 'model::DoorsLink' has the following attributes: 'targetObject' of type str; 'targetModule' of type str.
+The class 'DoorsTreeNode' has no attributes.
+The class 'model::DoorsObject' has the following attributes: 'absoluteNumber' of type int; 'text' of type str; 'objectNumber' of type str; 'objectIdentifier' of type str; 'objectShortText' of type str; 'objectHeading' of type str; 'objectText' of type str.
+The class 'model::DoorsTreeNode' has the following attributes: 'fullNameSegments' of type str; 'name' of type str; 'fullName' of type str.
+The class 'model::DoorsTableRow' has no attributes.
+The class 'DoorsObject' has no attributes.
+The class 'model::AttributeMap' has the following attributes: 'key' of type str; 'value' of type str.
+'model::DoorsObject' is a specialization of 'DoorsTreeNode'.
+'model::DoorsModule' is a specialization of 'DoorsTreeNode'.
+'model::DoorsTableRow' is a specialization of 'DoorsObject'.
+'model::DoorsFolder' is a specialization of 'DoorsTreeNode'.
+'model::DoorsLink' (role 'DoorsLink', cardinality 0..*) is associated with 'model::DoorsObject' (role 'source', cardinality 0..*).
+'model::DoorsTreeNode' (role 'model_DoorsTreeNode', cardinality 0..*) is associated with 'model::AttributeMap' (role 'model_AttributeMap', cardinality 0..*).
+'model::DoorsTreeNode' (role 'DoorsTreeNode', cardinality 0..*) is associated with 'model::DoorsTreeNode' (role 'parent', cardinality 0..*).
+'model::DoorsLink' (role 'outgoingLinks', cardinality 0..*) is associated with 'model::DoorsObject' (role 'DoorsObject', cardinality 0..*).
+'model::DoorsTreeNode' (role 'children', cardinality 0..*) is associated with 'model::DoorsTreeNode' (role 'DoorsTreeNode6', cardinality 0..*).

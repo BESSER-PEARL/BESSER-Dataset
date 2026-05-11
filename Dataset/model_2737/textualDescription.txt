@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'AbcToNothing::C' has no attributes.
+The class 'AbcToNothing::classB' has no attributes.
+The class 'AbcToNothing::A' has no attributes.
+'AbcToNothing::C' (role 'AbcToNothing_C', cardinality 0..*) is associated with 'AbcToNothing::A' (role 'AbcToNothing_A2', cardinality 0..*).
+'AbcToNothing::classB' (role 'AbcToNothing_classB5', cardinality 0..*) is associated with 'AbcToNothing::C' (role 'AbcToNothing_C4', cardinality 0..*).
+'AbcToNothing::classB' (role 'AbcToNothing_classB', cardinality 0..*) is associated with 'AbcToNothing::A' (role 'AbcToNothing_A', cardinality 0..*).

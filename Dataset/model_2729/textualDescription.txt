@@ -1,0 +1,12 @@
+The model has 5 class(es).
+The class 'test100::DsmlRelation' has the following attributes: 'name' of type str; 'mandatory' of type bool; 'details' of type str.
+The class 'test100::C' has no attributes.
+The class 'B' has no attributes.
+The class 'test100::A' has the following attributes: 'name' of type str.
+The class 'test100::B' has the following attributes: 'id' of type str.
+'test100::A' is a specialization of 'B'.
+'test100::B' (role 'test100_B', cardinality 0..*) is associated with 'test100::A' (role 'test100_A2', cardinality 0..*).
+'test100::DsmlRelation' (role 'test100_DsmlRelation', cardinality 0..*) is associated with 'test100::A' (role 'test100_A4', cardinality 0..*).
+'test100::A' (role 'test100_A10', cardinality 0..*) is associated with 'test100::DsmlRelation' (role 'test100_DsmlRelation9', cardinality 0..*).
+'test100::A' (role 'test100_A', cardinality 0..*) is associated with 'test100::C' (role 'test100_C', cardinality 0..*).
+'test100::A' (role 'test100_A7', cardinality 0..*) is associated with 'test100::DsmlRelation' (role 'test100_DsmlRelation6', cardinality 0..*).

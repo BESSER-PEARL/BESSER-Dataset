@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'fsm::FSM' has no attributes.
+The class 'fsm::State' has no attributes.
+'fsm::FSM' (role 'fsm_FSM3', cardinality 0..*) is associated with 'fsm::FSM' (role 'fsm_FSM1', cardinality 0..*).
+'fsm::FSM' (role 'fsm_FSM', cardinality 0..*) is associated with 'fsm::State' (role 'fsm_State', cardinality 0..*).

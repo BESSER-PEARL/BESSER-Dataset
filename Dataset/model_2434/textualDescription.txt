@@ -1,0 +1,17 @@
+The model has 8 class(es).
+The class 'Relational::Table' has no attributes.
+The class 'Column' has no attributes.
+The class 'Relational::Column' has no attributes.
+The class 'Relational::Type' has no attributes.
+The class 'Type' has no attributes.
+The class 'Relational::Named' has the following attributes: 'name' of type str.
+The class 'Table' has no attributes.
+The class 'Named' has no attributes.
+'Relational::Column' is a specialization of 'Named'.
+'Relational::Table' is a specialization of 'Named'.
+'Relational::Type' is a specialization of 'Named'.
+'Table' (role 'Table5', cardinality 0..*) is associated with 'Relational::Column' (role 'key', cardinality 0..*).
+'Type' (role 'Type', cardinality 0..*) is associated with 'Relational::Column' (role 'Relational_Column', cardinality 0..*).
+'Table' (role 'Table', cardinality 0..*) is associated with 'Relational::Column' (role 'col', cardinality 0..*).
+'Relational::Table' (role 'keyOf', cardinality 0..*) is associated with 'Column' (role 'Column2', cardinality 0..*).
+'Column' (role 'Column', cardinality 0..*) is associated with 'Relational::Table' (role 'owner', cardinality 0..*).

@@ -1,0 +1,27 @@
+The model has 14 class(es).
+The class 'tdt4250::Student' has no attributes.
+The class 'tdt4250::::bDIm8SdxEeKsSJflfBDxuw' has no attributes.
+The class 'tdt4250::Course' has the following attributes: 'ID' of type int; 'credit' of type int; 'name' of type str.
+The class 'tdt4250::Answer' has the following attributes: 'content' of type str.
+The class 'tdt4250::::bDSX8CdxEeKsSJflfBDxuw' has no attributes.
+The class 'tdt4250::::bDTmECdxEeKsSJflfBDxuw' has no attributes.
+The class 'tdt4250::::bDNfcCdxEeKsSJflfBDxuw' has no attributes.
+The class 'tdt4250::::bDYekCdxEeKsSJflfBDxuw' has no attributes.
+The class '::bDXQcCdxEeKsSJflfBDxuw' has no attributes.
+The class 'tdt4250::Teacher' has the following attributes: 'role' of type str.
+The class 'tdt4250::Root' has no attributes.
+The class 'tdt4250::::bDXQcCdxEeKsSJflfBDxuw' has no attributes.
+The class 'tdt4250::Assignment' has the following attributes: 'name' of type str; 'mandatory' of type bool; 'content' of type str; 'ID' of type int.
+The class 'tdt4250::Person' has the following attributes: 'ID' of type int; 'name' of type str.
+The enumeration 'ResponsibilityRole' has the following literals: 'ASSISTANT', 'LECTURER', 'COORDINATOR'.
+'tdt4250::Student' is a specialization of '::bDXQcCdxEeKsSJflfBDxuw'.
+'tdt4250::Teacher' is a specialization of '::bDXQcCdxEeKsSJflfBDxuw'.
+'tdt4250::::bDYekCdxEeKsSJflfBDxuw' (role 'tdt4250__bDYekCdxEeKsSJflfBDxuw', cardinality 0..*) is associated with 'tdt4250::Course' (role 'tdt4250_Course4', cardinality 0..*).
+'tdt4250::Root' (role 'tdt4250_Root15', cardinality 0..*) is associated with 'tdt4250::::bDXQcCdxEeKsSJflfBDxuw' (role 'tdt4250__bDXQcCdxEeKsSJflfBDxuw', cardinality 0..*).
+'tdt4250::Assignment' (role 'tdt4250_Assignment', cardinality 0..*) is associated with 'tdt4250::::bDSX8CdxEeKsSJflfBDxuw' (role 'tdt4250__bDSX8CdxEeKsSJflfBDxuw', cardinality 0..*).
+'tdt4250::Course' (role 'tdt4250_Course', cardinality 0..*) is associated with 'tdt4250::::bDNfcCdxEeKsSJflfBDxuw' (role 'tdt4250__bDNfcCdxEeKsSJflfBDxuw', cardinality 0..*).
+'tdt4250::::bDIm8SdxEeKsSJflfBDxuw' (role 'tdt4250__bDIm8SdxEeKsSJflfBDxuw13', cardinality 0..*) is associated with 'tdt4250::Root' (role 'tdt4250_Root', cardinality 0..*).
+'tdt4250::Student' (role 'tdt4250_Student8', cardinality 0..*) is associated with 'tdt4250::::bDSX8CdxEeKsSJflfBDxuw' (role 'tdt4250__bDSX8CdxEeKsSJflfBDxuw9', cardinality 0..*).
+'tdt4250::Course' (role 'tdt4250_Course2', cardinality 0..*) is associated with 'tdt4250::::bDTmECdxEeKsSJflfBDxuw' (role 'tdt4250__bDTmECdxEeKsSJflfBDxuw', cardinality 0..*).
+'tdt4250::Teacher' (role 'tdt4250_Teacher', cardinality 0..*) is associated with 'tdt4250::::bDIm8SdxEeKsSJflfBDxuw' (role 'tdt4250__bDIm8SdxEeKsSJflfBDxuw11', cardinality 0..*).
+'tdt4250::::bDIm8SdxEeKsSJflfBDxuw' (role 'tdt4250__bDIm8SdxEeKsSJflfBDxuw', cardinality 0..*) is associated with 'tdt4250::Student' (role 'tdt4250_Student', cardinality 0..*).

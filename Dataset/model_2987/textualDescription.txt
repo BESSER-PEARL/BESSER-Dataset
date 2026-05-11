@@ -1,0 +1,29 @@
+The model has 10 class(es).
+The class 'Graph' has no attributes.
+The class 'wiki::Wiki' has the following attributes: 'title' of type str.
+The class 'wiki::Graph' has the following attributes: 'name' of type str.
+The class 'wiki::ClassificationGraph' has no attributes.
+The class 'wiki::Revision' has the following attributes: 'date' of type str; 'text_id' of type int; 'user' of type str.
+The class 'wiki::CategoryGraph' has no attributes.
+The class 'wiki::Node' has the following attributes: 'title' of type str; 'editions' of type int; 'visits' of type int; 'node_id' of type int; 'node_namespace' of type int; 'type' of type str.
+The class 'wiki::IndexGraph' has no attributes.
+The class 'wiki::ArticleGraph' has no attributes.
+The class 'wiki::Edge' has the following attributes: 'type' of type str.
+'wiki::IndexGraph' is a specialization of 'Graph'.
+'wiki::ClassificationGraph' is a specialization of 'Graph'.
+'wiki::CategoryGraph' is a specialization of 'Graph'.
+'wiki::ArticleGraph' is a specialization of 'Graph'.
+'wiki::Node' (role 'wiki_Node14', cardinality 0..*) is associated with 'wiki::Graph' (role 'wiki_Graph', cardinality 0..*).
+'wiki::IndexGraph' (role 'wiki_IndexGraph', cardinality 0..*) is associated with 'wiki::Wiki' (role 'wiki_Wiki', cardinality 0..*).
+'wiki::Revision' (role 'wiki_Revision', cardinality 0..*) is associated with 'wiki::Wiki' (role 'wiki_Wiki12', cardinality 0..*).
+'wiki::Node' (role 'wiki_Node19', cardinality 0..*) is associated with 'wiki::Revision' (role 'wiki_Revision20', cardinality 0..*).
+'wiki::Revision' (role 'revisions', cardinality 0..*) is associated with 'wiki::Node' (role 'Node', cardinality 0..*).
+'wiki::ArticleGraph' (role 'wiki_ArticleGraph', cardinality 0..*) is associated with 'wiki::Wiki' (role 'wiki_Wiki4', cardinality 0..*).
+'wiki::Wiki' (role 'wiki_Wiki6', cardinality 0..*) is associated with 'wiki::ClassificationGraph' (role 'wiki_ClassificationGraph', cardinality 0..*).
+'wiki::Graph' (role 'wiki_Graph16', cardinality 0..*) is associated with 'wiki::Edge' (role 'wiki_Edge17', cardinality 0..*).
+'wiki::Wiki' (role 'wiki_Wiki2', cardinality 0..*) is associated with 'wiki::CategoryGraph' (role 'wiki_CategoryGraph', cardinality 0..*).
+'wiki::Edge' (role 'wiki_Edge27', cardinality 0..*) is associated with 'wiki::Node' (role 'wiki_Node28', cardinality 0..*).
+'wiki::Edge' (role 'wiki_Edge24', cardinality 0..*) is associated with 'wiki::Node' (role 'wiki_Node25', cardinality 0..*).
+'wiki::Node' (role 'node', cardinality 0..*) is associated with 'wiki::Revision' (role 'Revision', cardinality 0..*).
+'wiki::Wiki' (role 'wiki_Wiki8', cardinality 0..*) is associated with 'wiki::Node' (role 'wiki_Node', cardinality 0..*).
+'wiki::Edge' (role 'wiki_Edge', cardinality 0..*) is associated with 'wiki::Wiki' (role 'wiki_Wiki10', cardinality 0..*).

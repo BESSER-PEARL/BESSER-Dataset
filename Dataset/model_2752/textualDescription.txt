@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'cardinality6::Root' has no attributes.
+The class 'cardinality6::B' has no attributes.
+The class 'cardinality6::A' has no attributes.
+'cardinality6::Root' (role 'cardinality6_Root', cardinality 0..*) is associated with 'cardinality6::A' (role 'cardinality6_A', cardinality 0..*).
+'cardinality6::B' (role 'cardinality6_B', cardinality 0..*) is associated with 'cardinality6::Root' (role 'cardinality6_Root2', cardinality 0..*).

@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'BBase::B' has no attributes.
+The class 'BBase::RootB' has no attributes.
+'BBase::B' (role 'bs', cardinality 0..*) is associated with 'BBase::RootB' (role 'RootB', cardinality 0..*).
+'BBase::RootB' (role 'root', cardinality 0..*) is associated with 'BBase::B' (role 'B', cardinality 0..*).

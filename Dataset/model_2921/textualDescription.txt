@@ -1,0 +1,13 @@
+The model has 6 class(es).
+The class 'myDsl::Entity' has no attributes.
+The class 'myDsl::Type' has the following attributes: 'name' of type str.
+The class 'myDsl::Feature' has the following attributes: 'many' of type bool; 'name' of type str.
+The class 'Type' has no attributes.
+The class 'myDsl::DataType' has no attributes.
+The class 'myDsl::Domainmodel' has no attributes.
+'myDsl::DataType' is a specialization of 'Type'.
+'myDsl::Entity' is a specialization of 'Type'.
+'myDsl::Type' (role 'myDsl_Type7', cardinality 0..*) is associated with 'myDsl::Feature' (role 'myDsl_Feature6', cardinality 0..*).
+'myDsl::Entity' (role 'myDsl_Entity4', cardinality 0..*) is associated with 'myDsl::Feature' (role 'myDsl_Feature', cardinality 0..*).
+'myDsl::Entity' (role 'myDsl_Entity', cardinality 0..*) is associated with 'myDsl::Entity' (role 'myDsl_Entity1', cardinality 0..*).
+'myDsl::Type' (role 'myDsl_Type', cardinality 0..*) is associated with 'myDsl::Domainmodel' (role 'myDsl_Domainmodel', cardinality 0..*).

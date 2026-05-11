@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/grammarware/sle16/bousse/examples/examples/java+moccml/language-workbench/org.modelexecution.operationalsemantics.ad/ad/activitydiagram.ecore

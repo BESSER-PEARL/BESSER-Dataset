@@ -1,0 +1,136 @@
+The model has 63 class(es).
+The class 'krendering::KFontItalic' has the following attributes: 'italic' of type bool.
+The class 'krendering::KFontName' has the following attributes: 'name' of type str.
+The class 'krendering::KStyle' has the following attributes: 'selection' of type bool; 'propagateToChildren' of type bool; 'modifierId' of type str.
+The class 'EMapPropertyHolder' has no attributes.
+The class 'krendering::KRoundedRectangle' has the following attributes: 'cornerWidth' of type float; 'cornerHeight' of type float.
+The class 'krendering::KFontSize' has the following attributes: 'scaleWithZoom' of type bool; 'size' of type int.
+The class 'krendering::KShadow' has the following attributes: 'blur' of type float; 'yOffset' of type float; 'xOffset' of type float.
+The class 'krendering::KGridPlacement' has the following attributes: 'numColumns' of type int.
+The class 'krendering::KAreaPlacementData' has no attributes.
+The class 'krendering::KGridPlacementData' has the following attributes: 'minCellWidth' of type float; 'flexibleWidth' of type str; 'minCellHeight' of type float; 'flexibleHeight' of type str.
+The class 'krendering::KPointPlacementData' has the following attributes: 'verticalAlignment' of type str; 'verticalMargin' of type float; 'minWidth' of type float; 'horizontalMargin' of type float; 'minHeight' of type float; 'horizontalAlignment' of type str.
+The class 'krendering::KHorizontalAlignment' has the following attributes: 'horizontalAlignment' of type str.
+The class 'krendering::KLineCap' has the following attributes: 'lineCap' of type str.
+The class 'krendering::KBottomPosition' has no attributes.
+The class 'krendering::KArc' has the following attributes: 'arcAngle' of type float; 'startAngle' of type float; 'arcType' of type str.
+The class 'krendering::KText' has the following attributes: 'editable' of type bool; 'text' of type str; 'cursorSelectable' of type bool.
+The class 'KPlacementData' has no attributes.
+The class 'krendering::KCustomRendering' has the following attributes: 'figureObject' of type str; 'bundleName' of type str; 'className' of type str.
+The class 'krendering::KLineWidth' has the following attributes: 'lineWidth' of type float.
+The class 'krendering::KRenderingRef' has no attributes.
+The class 'krendering::KPlacementData' has no attributes.
+The class 'krendering::KStyleHolder' has the following attributes: 'id' of type str.
+The class 'krendering::KTextUnderline' has the following attributes: 'underline' of type str.
+The class 'krendering::KRoundedBendsPolyline' has the following attributes: 'bendRadius' of type float.
+The class 'KGraphData' has no attributes.
+The class 'KAreaPlacementData' has no attributes.
+The class 'krendering::KColor' has the following attributes: 'green' of type int; 'blue' of type int; 'red' of type int.
+The class 'krendering::KTextStrikeout' has the following attributes: 'struckOut' of type str.
+The class 'KStyle' has no attributes.
+The class 'krendering::KBackground' has no attributes.
+The class 'KPolyline' has no attributes.
+The class 'krendering::KRectangle' has no attributes.
+The class 'krendering::KForeground' has no attributes.
+The class 'krendering::KLeftPosition' has no attributes.
+The class 'krendering::KLineJoin' has the following attributes: 'lineJoin' of type str; 'miterLimit' of type float.
+The class 'krendering::KContainerRendering' has no attributes.
+The class 'krendering::KStyleRef' has the following attributes: 'referencedTypes' of type str.
+The class 'KPlacement' has no attributes.
+The class 'krendering::KLineStyle' has the following attributes: 'dashOffset' of type float; 'lineStyle' of type str; 'dashPattern' of type float.
+The class 'krendering::KChildArea' has no attributes.
+The class 'krendering::KYPosition' has the following attributes: 'relative' of type float; 'absolute' of type float.
+The class 'krendering::KRendering' has no attributes.
+The class 'krendering::KPolyline' has no attributes.
+The class 'krendering::KRotation' has the following attributes: 'rotation' of type float.
+The class 'krendering::KImage' has the following attributes: 'imageObject' of type str; 'imagePath' of type str; 'bundleName' of type str.
+The class 'krendering::KXPosition' has the following attributes: 'relative' of type float; 'absolute' of type float.
+The class 'krendering::KVerticalAlignment' has the following attributes: 'verticalAlignment' of type str.
+The class 'krendering::KFontBold' has the following attributes: 'bold' of type bool.
+The class 'krendering::KEllipse' has no attributes.
+The class 'krendering::KTopPosition' has no attributes.
+The class 'KContainerRendering' has no attributes.
+The class 'KRendering' has no attributes.
+The class 'krendering::KColoring' has the following attributes: 'gradientAngle' of type float; 'targetAlpha' of type int; 'alpha' of type int.
+The class 'krendering::KPolygon' has no attributes.
+The class 'krendering::KAction' has the following attributes: 'shiftPressed' of type str; 'actionId' of type str; 'trigger' of type str; 'ctrlCmdPressed' of type str; 'altPressed' of type str.
+The class 'krendering::KRightPosition' has no attributes.
+The class 'KStyleHolder' has no attributes.
+The class 'krendering::KSpline' has no attributes.
+The class 'krendering::KPlacement' has no attributes.
+The class 'krendering::KDecoratorPlacementData' has the following attributes: 'height' of type float; 'yOffset' of type float; 'absolute' of type float; 'rotateWithLine' of type bool; 'relative' of type float; 'xOffset' of type float; 'width' of type float.
+The class 'krendering::KPosition' has no attributes.
+The class 'krendering::KRenderingLibrary' has no attributes.
+The class 'krendering::KInvisibility' has the following attributes: 'invisible' of type bool.
+The enumeration 'Underline' has the following literals: 'LINK', 'NONE', 'SQUIGGLE', 'ERROR', 'DOUBLE', 'SINGLE'.
+The enumeration 'Trigger' has the following literals: 'SINGLE_OR_MULTICLICK', 'MIDDLE_SINGLE_OR_MULTICLICK', 'MIDDLE_SINGLECLICK', 'SINGLECLICK', 'MIDDLE_DOUBLECLICK', 'DOUBLECLICK'.
+The enumeration 'Arc' has the following literals: 'PIE', 'OPEN', 'CHORD'.
+The enumeration 'LineStyle' has the following literals: 'DASHDOTDOT', 'SOLID', 'DASHDOT', 'DOT', 'CUSTOM', 'DASH'.
+The enumeration 'VerticalAlignment' has the following literals: 'BOTTOM', 'TOP', 'CENTER'.
+The enumeration 'ModifierState' has the following literals: 'NOT_PRESSED', 'PRESSED', 'DONT_CARE'.
+The enumeration 'HorizontalAlignment' has the following literals: 'RIGHT', 'CENTER', 'LEFT'.
+The enumeration 'LineCap' has the following literals: 'CAP_SQUARE', 'CAP_FLAT', 'CAP_ROUND'.
+The enumeration 'LineJoin' has the following literals: 'JOIN_ROUND', 'JOIN_MITER', 'JOIN_BEVEL'.
+'krendering::KVerticalAlignment' is a specialization of 'KStyle'.
+'krendering::KLineJoin' is a specialization of 'KStyle'.
+'krendering::KStyle' is a specialization of 'EMapPropertyHolder'.
+'krendering::KAreaPlacementData' is a specialization of 'KPlacementData'.
+'krendering::KArc' is a specialization of 'KContainerRendering'.
+'krendering::KImage' is a specialization of 'KContainerRendering'.
+'krendering::KSpline' is a specialization of 'KPolyline'.
+'krendering::KRotation' is a specialization of 'KStyle'.
+'krendering::KFontBold' is a specialization of 'KStyle'.
+'krendering::KGridPlacement' is a specialization of 'KPlacement'.
+'krendering::KLineCap' is a specialization of 'KStyle'.
+'krendering::KText' is a specialization of 'KRendering'.
+'krendering::KRendering' is a specialization of 'KGraphData'.
+'krendering::KRenderingRef' is a specialization of 'KRendering'.
+'krendering::KFontName' is a specialization of 'KStyle'.
+'krendering::KRoundedRectangle' is a specialization of 'KContainerRendering'.
+'krendering::KLineWidth' is a specialization of 'KStyle'.
+'krendering::KColoring' is a specialization of 'KStyle'.
+'krendering::KEllipse' is a specialization of 'KContainerRendering'.
+'krendering::KRoundedBendsPolyline' is a specialization of 'KPolyline'.
+'krendering::KRendering' is a specialization of 'KStyleHolder'.
+'krendering::KPolyline' is a specialization of 'KContainerRendering'.
+'krendering::KChildArea' is a specialization of 'KRendering'.
+'krendering::KPolygon' is a specialization of 'KPolyline'.
+'krendering::KHorizontalAlignment' is a specialization of 'KStyle'.
+'krendering::KPointPlacementData' is a specialization of 'KPlacementData'.
+'krendering::KFontItalic' is a specialization of 'KStyle'.
+'krendering::KDecoratorPlacementData' is a specialization of 'KPlacementData'.
+'krendering::KTextStrikeout' is a specialization of 'KStyle'.
+'krendering::KFontSize' is a specialization of 'KStyle'.
+'krendering::KShadow' is a specialization of 'KStyle'.
+'krendering::KCustomRendering' is a specialization of 'KContainerRendering'.
+'krendering::KStyleRef' is a specialization of 'KStyle'.
+'krendering::KRectangle' is a specialization of 'KContainerRendering'.
+'krendering::KInvisibility' is a specialization of 'KStyle'.
+'krendering::KGridPlacementData' is a specialization of 'KAreaPlacementData'.
+'krendering::KRenderingLibrary' is a specialization of 'KGraphData'.
+'krendering::KLineStyle' is a specialization of 'KStyle'.
+'krendering::KTextUnderline' is a specialization of 'KStyle'.
+'krendering::KContainerRendering' is a specialization of 'KRendering'.
+'krendering::KImage' (role 'krendering_KImage', cardinality 0..*) is associated with 'krendering::KRendering' (role 'krendering_KRendering9', cardinality 0..*).
+'krendering::KPolyline' (role 'krendering_KPolyline', cardinality 0..*) is associated with 'krendering::KPosition' (role 'krendering_KPosition', cardinality 0..*).
+'krendering::KPointPlacementData' (role 'krendering_KPointPlacementData', cardinality 0..*) is associated with 'krendering::KPosition' (role 'krendering_KPosition32', cardinality 0..*).
+'krendering::KColor' (role 'krendering_KColor38', cardinality 0..*) is associated with 'krendering::KTextUnderline' (role 'krendering_KTextUnderline', cardinality 0..*).
+'krendering::KGridPlacement' (role 'krendering_KGridPlacement', cardinality 0..*) is associated with 'krendering::KPosition' (role 'krendering_KPosition16', cardinality 0..*).
+'krendering::KContainerRendering' (role 'KContainerRendering', cardinality 0..*) is associated with 'krendering::KRendering' (role 'children', cardinality 0..*).
+'krendering::KAreaPlacementData' (role 'krendering_KAreaPlacementData', cardinality 0..*) is associated with 'krendering::KPosition' (role 'krendering_KPosition21', cardinality 0..*).
+'krendering::KColor' (role 'krendering_KColor36', cardinality 0..*) is associated with 'krendering::KShadow' (role 'krendering_KShadow', cardinality 0..*).
+'krendering::KPosition' (role 'krendering_KPosition30', cardinality 0..*) is associated with 'krendering::KRotation' (role 'krendering_KRotation', cardinality 0..*).
+'krendering::KRendering' (role 'krendering_KRendering14', cardinality 0..*) is associated with 'krendering::KRenderingRef' (role 'krendering_KRenderingRef', cardinality 0..*).
+'krendering::KTextStrikeout' (role 'krendering_KTextStrikeout', cardinality 0..*) is associated with 'krendering::KColor' (role 'krendering_KColor42', cardinality 0..*).
+'krendering::KColor' (role 'krendering_KColor', cardinality 0..*) is associated with 'krendering::KColoring' (role 'krendering_KColoring', cardinality 0..*).
+'krendering::KStyle' (role 'krendering_KStyle', cardinality 0..*) is associated with 'krendering::KStyleHolder' (role 'krendering_KStyleHolder34', cardinality 0..*).
+'krendering::KContainerRendering' (role 'krendering_KContainerRendering', cardinality 0..*) is associated with 'krendering::KPlacement' (role 'krendering_KPlacement', cardinality 0..*).
+'krendering::KPosition' (role 'krendering_KPosition19', cardinality 0..*) is associated with 'krendering::KGridPlacement' (role 'krendering_KGridPlacement18', cardinality 0..*).
+'krendering::KRendering' (role 'krendering_KRendering7', cardinality 0..*) is associated with 'krendering::KPolyline' (role 'krendering_KPolyline6', cardinality 0..*).
+'krendering::KStyleHolder' (role 'krendering_KStyleHolder', cardinality 0..*) is associated with 'krendering::KRenderingLibrary' (role 'krendering_KRenderingLibrary', cardinality 0..*).
+'krendering::KColoring' (role 'krendering_KColoring27', cardinality 0..*) is associated with 'krendering::KColor' (role 'krendering_KColor28', cardinality 0..*).
+'krendering::KPlacementData' (role 'krendering_KPlacementData', cardinality 0..*) is associated with 'krendering::KRendering' (role 'krendering_KRendering', cardinality 0..*).
+'krendering::KRendering' (role 'KRendering', cardinality 0..*) is associated with 'krendering::KContainerRendering' (role 'parent', cardinality 0..*).
+'krendering::KRendering' (role 'krendering_KRendering3', cardinality 0..*) is associated with 'krendering::KAction' (role 'krendering_KAction', cardinality 0..*).
+'krendering::KPosition' (role 'krendering_KPosition24', cardinality 0..*) is associated with 'krendering::KAreaPlacementData' (role 'krendering_KAreaPlacementData23', cardinality 0..*).
+'krendering::KStyleHolder' (role 'krendering_KStyleHolder40', cardinality 0..*) is associated with 'krendering::KStyleRef' (role 'krendering_KStyleRef', cardinality 0..*).

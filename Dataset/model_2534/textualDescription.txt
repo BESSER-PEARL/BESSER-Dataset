@@ -1,0 +1,13 @@
+The model has 7 class(es).
+The class 'test::B' has the following attributes: 'newAttribute' of type str.
+The class 'test::E' has the following attributes: 'newAttribute2' of type str.
+The class 'test::D' has the following attributes: 'newAttribute' of type str.
+The class 'test::Adown' has the following attributes: 'newAttribute' of type str.
+The class 'test::C' has the following attributes: 'newAttribute' of type str.
+The class 'E' has no attributes.
+The class 'test::F' has no attributes.
+'test::Adown' is a specialization of 'E'.
+'test::C' (role 'C', cardinality 0..*) is associated with 'test::Adown' (role 'a', cardinality 0..*).
+'test::Adown' (role 'test_Adown', cardinality 0..*) is associated with 'test::B' (role 'test_B', cardinality 0..*).
+'test::C' (role 'c', cardinality 0..*) is associated with 'test::Adown' (role 'Adown', cardinality 0..*).
+'test::Adown' (role 'test_Adown3', cardinality 0..*) is associated with 'test::D' (role 'test_D', cardinality 0..*).

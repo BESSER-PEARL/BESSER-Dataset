@@ -1,0 +1,27 @@
+The model has 10 class(es).
+The class 'machine::Final' has the following attributes: 'name' of type str.
+The class 'machine::Symbol' has the following attributes: 'name' of type str; 'position' of type str; 'value' of type str.
+The class 'machine::Transition' has the following attributes: 'moveTo' of type str; 'read' of type str; 'write' of type str; 'name' of type str.
+The class 'machine::State' has the following attributes: 'name' of type str.
+The class 'machine::Tape' has no attributes.
+The class 'machine::Current' has the following attributes: 'name' of type str.
+The class 'machine::Machine' has no attributes.
+The class 'machine::TuringMachine' has no attributes.
+The class 'machine::Initial' has the following attributes: 'name' of type str.
+The class 'machine::Head' has the following attributes: 'name' of type str.
+'machine::Machine' (role 'machine_Machine16', cardinality 0..*) is associated with 'machine::Head' (role 'machine_Head', cardinality 0..*).
+'machine::Current' (role 'machine_Current18', cardinality 0..*) is associated with 'machine::State' (role 'machine_State19', cardinality 0..*).
+'machine::Current' (role 'machine_Current', cardinality 0..*) is associated with 'machine::Machine' (role 'machine_Machine8', cardinality 0..*).
+'machine::Symbol' (role 'machine_Symbol', cardinality 0..*) is associated with 'machine::Tape' (role 'machine_Tape', cardinality 0..*).
+'machine::Machine' (role 'machine_Machine10', cardinality 0..*) is associated with 'machine::State' (role 'machine_State11', cardinality 0..*).
+'machine::Head' (role 'machine_Head36', cardinality 0..*) is associated with 'machine::Symbol' (role 'machine_Symbol37', cardinality 0..*).
+'machine::TuringMachine' (role 'machine_TuringMachine27', cardinality 0..*) is associated with 'machine::Tape' (role 'machine_Tape28', cardinality 0..*).
+'machine::Machine' (role 'machine_Machine', cardinality 0..*) is associated with 'machine::Initial' (role 'machine_Initial', cardinality 0..*).
+'machine::Final' (role 'machine_Final30', cardinality 0..*) is associated with 'machine::State' (role 'machine_State31', cardinality 0..*).
+'machine::Transition' (role 'machine_Transition', cardinality 0..*) is associated with 'machine::State' (role 'machine_State', cardinality 0..*).
+'machine::Final' (role 'machine_Final', cardinality 0..*) is associated with 'machine::Machine' (role 'machine_Machine6', cardinality 0..*).
+'machine::Transition' (role 'machine_Transition14', cardinality 0..*) is associated with 'machine::Machine' (role 'machine_Machine13', cardinality 0..*).
+'machine::State' (role 'machine_State22', cardinality 0..*) is associated with 'machine::Initial' (role 'machine_Initial21', cardinality 0..*).
+'machine::Symbol' (role 'machine_Symbol32', cardinality 0..*) is associated with 'machine::Symbol' (role 'machine_Symbol34', cardinality 0..*).
+'machine::TuringMachine' (role 'machine_TuringMachine', cardinality 0..*) is associated with 'machine::Machine' (role 'machine_Machine25', cardinality 0..*).
+'machine::State' (role 'machine_State3', cardinality 0..*) is associated with 'machine::Transition' (role 'machine_Transition2', cardinality 0..*).

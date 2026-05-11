@@ -1,0 +1,45 @@
+The model has 21 class(es).
+The class 'D' has no attributes.
+The class 'abcd::D2' has the following attributes: 'commonOfD' of type str.
+The class 'abcd::Model' has the following attributes: 'style' of type str.
+The class 'abcd::D' has the following attributes: 'propOfD' of type str.
+The class 'D3::B' has no attributes.
+The class 'NamedElt' has no attributes.
+The class 'abcd::Other' has no attributes.
+The class 'abcd::A' has the following attributes: 'aBooleanAttr' of type str; 'anIntegerAttr' of type int.
+The class 'abcd::D1' has the following attributes: 'commonOfD' of type str.
+The class 'abcd::D3::B::C' has no attributes.
+The class 'A' has no attributes.
+The class 'C' has no attributes.
+The class 'abcd::C1' has the following attributes: 'propOfC1' of type str.
+The class 'abcd::C2' has the following attributes: 'propOfC2' of type str.
+The class 'abcd::D3::B' has no attributes.
+The class 'abcd::D3' has the following attributes: 'commonOfD' of type str.
+The class 'abcd::C' has the following attributes: 'propOfC' of type str.
+The class 'B' has no attributes.
+The class 'D3' has no attributes.
+The class 'abcd::NamedElt' has the following attributes: 'name' of type str.
+The class 'abcd::B' has the following attributes: 'propOfB' of type str.
+The enumeration 'StyleKind' has the following literals: 'Style2', 'Style1'.
+'abcd::D3::B' is a specialization of 'D3'.
+'abcd::A' is a specialization of 'NamedElt'.
+'abcd::Model' is a specialization of 'NamedElt'.
+'abcd::C2' is a specialization of 'C'.
+'abcd::C1' is a specialization of 'C'.
+'abcd::D' is a specialization of 'A'.
+'abcd::D2' is a specialization of 'D'.
+'abcd::D1' is a specialization of 'D'.
+'abcd::D3' is a specialization of 'D'.
+'abcd::D3::B::C' is a specialization of 'C'.
+'abcd::D3::B' is a specialization of 'B'.
+'abcd::Other' is a specialization of 'NamedElt'.
+'abcd::D3::B::C' is a specialization of 'D3::B'.
+'abcd::B' is a specialization of 'A'.
+'abcd::C' is a specialization of 'A'.
+'abcd::Model' (role 'abcd_Model9', cardinality 0..*) is associated with 'abcd::C' (role 'abcd_C', cardinality 0..*).
+'abcd::A' (role 'abcd_A', cardinality 0..*) is associated with 'abcd::Model' (role 'abcd_Model', cardinality 0..*).
+'abcd::A' (role 'abcd_A12', cardinality 0..*) is associated with 'abcd::A' (role 'abcd_A14', cardinality 0..*).
+'abcd::A' (role 'abcd_A5', cardinality 0..*) is associated with 'abcd::Model' (role 'abcd_Model4', cardinality 0..*).
+'abcd::Model' (role 'abcd_Model7', cardinality 0..*) is associated with 'abcd::B' (role 'abcd_B', cardinality 0..*).
+'abcd::D' (role 'abcd_D', cardinality 0..*) is associated with 'abcd::Model' (role 'abcd_Model11', cardinality 0..*).
+'abcd::Model' (role 'abcd_Model2', cardinality 0..*) is associated with 'abcd::Other' (role 'abcd_Other', cardinality 0..*).

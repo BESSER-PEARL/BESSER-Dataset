@@ -1,0 +1,36 @@
+The model has 9 class(es).
+The class 'kreq205::Rrrr' has the following attributes: 'd3' of type str.
+The class 'kreq205::Bbbb' has no attributes.
+The class 'SObject' has no attributes.
+The class 'kreq205::SObject' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'kreq205::Llll' has the following attributes: 'd6' of type str.
+The class 'kreq205::Cccc' has the following attributes: 'de1' of type str.
+The class 'kreq205::Tttt' has no attributes.
+The class 'kreq205::Rqs' has the following attributes: 'a' of type bool; 'd2' of type str.
+The class 'kreq205::Ffff' has the following attributes: 'd4' of type str.
+'kreq205::Rqs' is a specialization of 'SObject'.
+'kreq205::Tttt' is a specialization of 'SObject'.
+'kreq205::Rqs' (role 'Rqs35', cardinality 0..*) is associated with 'kreq205::Cccc' (role 'spc', cardinality 0..*).
+'kreq205::Rrrr' (role 'kreq205_Rrrr8', cardinality 0..*) is associated with 'kreq205::Rqs' (role 'kreq205_Rqs', cardinality 0..*).
+'kreq205::Bbbb' (role 'kreq205_Bbbb6', cardinality 0..*) is associated with 'kreq205::Ffff' (role 'kreq205_Ffff', cardinality 0..*).
+'kreq205::Cccc' (role 'dmof', cardinality 0..*) is associated with 'kreq205::Ffff' (role 'Ffff37', cardinality 0..*).
+'kreq205::Rqs' (role 'kreq205_Rqs33', cardinality 0..*) is associated with 'kreq205::Cccc' (role 'kreq205_Cccc32', cardinality 0..*).
+'kreq205::Rqs' (role 'kreq205_Rqs14', cardinality 0..*) is associated with 'kreq205::Rqs' (role 'kreq205_Rqs16', cardinality 0..*).
+'kreq205::Llll' (role 'kreq205_Llll46', cardinality 0..*) is associated with 'kreq205::Cccc' (role 'kreq205_Cccc47', cardinality 0..*).
+'kreq205::Cccc' (role 'Cccc30', cardinality 0..*) is associated with 'kreq205::Ffff' (role 'impf', cardinality 0..*).
+'kreq205::Rqs' (role 'Rqs23', cardinality 0..*) is associated with 'kreq205::Ffff' (role 'specs', cardinality 0..*).
+'kreq205::Cccc' (role 'kreq205_Cccc38', cardinality 0..*) is associated with 'kreq205::Cccc' (role 'kreq205_Cccc40', cardinality 0..*).
+'kreq205::Cccc' (role 'Cccc25', cardinality 0..*) is associated with 'kreq205::Ffff' (role 'pfrmis', cardinality 0..*).
+'kreq205::Llll' (role 'kreq205_Llll', cardinality 0..*) is associated with 'kreq205::Cccc' (role 'kreq205_Cccc44', cardinality 0..*).
+'kreq205::Cccc' (role 'Cccc', cardinality 0..*) is associated with 'kreq205::Rqs' (role 'specifiedBy', cardinality 0..*).
+'kreq205::Rqs' (role 'kreq205_Rqs20', cardinality 0..*) is associated with 'kreq205::Rqs' (role 'kreq205_Rqs18', cardinality 0..*).
+'kreq205::Cccc' (role 'alto', cardinality 0..*) is associated with 'kreq205::Ffff' (role 'Ffff42', cardinality 0..*).
+'kreq205::Llll' (role 'kreq205_Llll49', cardinality 0..*) is associated with 'kreq205::Rqs' (role 'kreq205_Rqs50', cardinality 0..*).
+'kreq205::Bbbb' (role 'kreq205_Bbbb4', cardinality 0..*) is associated with 'kreq205::Cccc' (role 'kreq205_Cccc', cardinality 0..*).
+'kreq205::Rqs' (role 'kreq205_Rqs11', cardinality 0..*) is associated with 'kreq205::Rqs' (role 'kreq205_Rqs13', cardinality 0..*).
+'kreq205::Tttt' (role 'rts', cardinality 0..*) is associated with 'kreq205::Rqs' (role 'Rqs', cardinality 0..*).
+'kreq205::Tttt' (role 'Tttt', cardinality 0..*) is associated with 'kreq205::Rqs' (role 'rqs', cardinality 0..*).
+'kreq205::Ffff' (role 'kreq205_Ffff26', cardinality 0..*) is associated with 'kreq205::Ffff' (role 'kreq205_Ffff28', cardinality 0..*).
+'kreq205::Bbbb' (role 'kreq205_Bbbb2', cardinality 0..*) is associated with 'kreq205::Tttt' (role 'kreq205_Tttt', cardinality 0..*).
+'kreq205::Rqs' (role 'isBy', cardinality 0..*) is associated with 'kreq205::Ffff' (role 'Ffff', cardinality 0..*).
+'kreq205::Rrrr' (role 'kreq205_Rrrr', cardinality 0..*) is associated with 'kreq205::Bbbb' (role 'kreq205_Bbbb', cardinality 0..*).

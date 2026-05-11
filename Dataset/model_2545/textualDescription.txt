@@ -1,0 +1,21 @@
+The model has 12 class(es).
+The class 'foo::F' has no attributes.
+The class 'foo::J' has no attributes.
+The class 'I' has no attributes.
+The class 'foo::C' has the following attributes: 'EAttribute1' of type float.
+The class 'foo::D' has no attributes.
+The class 'foo::A' has the following attributes: 'fooo' of type str; 'fooA' of type bool.
+The class 'foo::I' has no attributes.
+The class 'foo::H' has the following attributes: 'EAttribute0' of type str.
+The class 'B' has no attributes.
+The class 'foo::B' has the following attributes: 'EAttribute0' of type bool.
+The class 'foo::E' has no attributes.
+The class 'J' has no attributes.
+'foo::D' is a specialization of 'B'.
+'foo::B' is a specialization of 'J'.
+'foo::F' is a specialization of 'I'.
+'foo::C' is a specialization of 'B'.
+'foo::C' (role 'foo_C', cardinality 0..*) is associated with 'foo::A' (role 'foo_A2', cardinality 0..*).
+'foo::E' (role 'foo_E', cardinality 0..*) is associated with 'foo::D' (role 'foo_D', cardinality 0..*).
+'foo::A' (role 'foo_A', cardinality 0..*) is associated with 'foo::B' (role 'foo_B', cardinality 0..*).
+'foo::B' (role 'foo_B4', cardinality 0..*) is associated with 'foo::F' (role 'foo_F', cardinality 0..*).

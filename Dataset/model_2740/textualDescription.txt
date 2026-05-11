@@ -1,0 +1,14 @@
+The model has 7 class(es).
+The class 'TypeB::A' has the following attributes: 'name' of type str.
+The class 'TypeB::BDescription1' has the following attributes: 'description' of type str.
+The class 'TypeB::BDescription3' has the following attributes: 'description' of type str.
+The class 'TypeB::C' has the following attributes: 'name' of type str.
+The class 'TypeB::B' has the following attributes: 'name' of type str.
+The class 'TypeB::CDescription' has the following attributes: 'description' of type str.
+The class 'TypeB::BDescription2' has the following attributes: 'description' of type str.
+'TypeB::B' (role 'TypeB_B8', cardinality 0..*) is associated with 'TypeB::BDescription3' (role 'TypeB_BDescription3', cardinality 0..*).
+'TypeB::B' (role 'TypeB_B4', cardinality 0..*) is associated with 'TypeB::BDescription1' (role 'TypeB_BDescription1', cardinality 0..*).
+'TypeB::B' (role 'TypeB_B', cardinality 0..*) is associated with 'TypeB::A' (role 'TypeB_A', cardinality 0..*).
+'TypeB::C' (role 'TypeB_C', cardinality 0..*) is associated with 'TypeB::A' (role 'TypeB_A2', cardinality 0..*).
+'TypeB::C' (role 'TypeB_C10', cardinality 0..*) is associated with 'TypeB::CDescription' (role 'TypeB_CDescription', cardinality 0..*).
+'TypeB::BDescription2' (role 'TypeB_BDescription2', cardinality 0..*) is associated with 'TypeB::B' (role 'TypeB_B6', cardinality 0..*).

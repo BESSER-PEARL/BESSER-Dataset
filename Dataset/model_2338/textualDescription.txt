@@ -1,0 +1,7 @@
+The model has 4 class(es).
+The class 'Person' has no attributes.
+The class 'PersonsOne::Group' has the following attributes: 'name' of type str.
+The class 'PersonsOne::Person' has the following attributes: 'age' of type int; 'name' of type str.
+The class 'PersonsOne::Student' has the following attributes: 'grade' of type str.
+'PersonsOne::Student' is a specialization of 'Person'.
+'PersonsOne::Group' (role 'PersonsOne_Group', cardinality 0..*) is associated with 'PersonsOne::Person' (role 'PersonsOne_Person', cardinality 0..*).

@@ -1,0 +1,10 @@
+The model has 4 class(es).
+The class 'grudi::Team' has the following attributes: 'versionNumber' of type str; 'id' of type str; 'name' of type str.
+The class 'grudi::PersonInfo' has the following attributes: 'name' of type str; 'userName' of type str; 'phoneNumber' of type str; 'gender' of type str; 'id' of type str.
+The class 'grudi::TeamLine' has the following attributes: 'versionNumber' of type str; 'kind' of type str; 'id' of type str.
+The class 'grudi::Person' has the following attributes: 'versionNumber' of type str; 'name' of type str; 'password' of type str; 'phoneNumber' of type str; 'email' of type str; 'gender' of type str; 'username' of type str; 'address' of type str; 'id' of type str.
+The enumeration 'TeamPersonKind' has the following literals: 'member', 'captain'.
+The enumeration 'Gender' has the following literals: 'male', 'female', 'unknown'.
+'grudi::Team' (role 'team', cardinality 0..*) is associated with 'grudi::TeamLine' (role 'TeamLine', cardinality 0..*).
+'grudi::Team' (role 'Team', cardinality 0..*) is associated with 'grudi::TeamLine' (role 'lines', cardinality 0..*).
+'grudi::PersonInfo' (role 'grudi_PersonInfo', cardinality 0..*) is associated with 'grudi::TeamLine' (role 'grudi_TeamLine', cardinality 0..*).

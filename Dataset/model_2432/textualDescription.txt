@@ -1,0 +1,12 @@
+The model has 3 class(es).
+The class 'TableM::Table' has the following attributes: 'name' of type str.
+The class 'TableM::FKey' has no attributes.
+The class 'TableM::Column' has the following attributes: 'type' of type str; 'name' of type str.
+'TableM::Column' (role 'TableM_Column14', cardinality 0..*) is associated with 'TableM::FKey' (role 'TableM_FKey13', cardinality 0..*).
+'TableM::Column' (role 'TableM_Column', cardinality 0..*) is associated with 'TableM::Table' (role 'TableM_Table', cardinality 0..*).
+'TableM::FKey' (role 'TableM_FKey8', cardinality 0..*) is associated with 'TableM::Table' (role 'TableM_Table9', cardinality 0..*).
+'TableM::FKey' (role 'FKey', cardinality 0..*) is associated with 'TableM::Table' (role 'owner3', cardinality 0..*).
+'TableM::FKey' (role 'TableM_FKey', cardinality 0..*) is associated with 'TableM::Table' (role 'TableM_Table5', cardinality 0..*).
+'TableM::Table' (role 'owner', cardinality 0..*) is associated with 'TableM::Column' (role 'Column', cardinality 0..*).
+'TableM::Table' (role 'Table11', cardinality 0..*) is associated with 'TableM::FKey' (role 'fkeys', cardinality 0..*).
+'TableM::Table' (role 'Table', cardinality 0..*) is associated with 'TableM::Column' (role 'cols', cardinality 0..*).

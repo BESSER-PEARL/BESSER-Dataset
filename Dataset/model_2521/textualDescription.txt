@@ -1,0 +1,35 @@
+The model has 15 class(es).
+The class 'codemodel::CodeModel' has no attributes.
+The class 'codemodel::expressions::VarExp' has no attributes.
+The class 'codemodel::expressions::BinExp' has the following attributes: 'operator' of type str.
+The class 'codemodel::expressions::Expression' has no attributes.
+The class 'expressions::codemodel::Variable' has no attributes.
+The class 'codemodel::statements::Statement' has no attributes.
+The class 'Statement' has no attributes.
+The class 'CMElement' has no attributes.
+The class 'codemodel::D' has no attributes.
+The class 'codemodel::CMElement' has the following attributes: 'name' of type str.
+The class 'codemodel::E' has no attributes.
+The class 'codemodel::statements::CompStmt' has no attributes.
+The class 'codemodel::statements::AsgnStmt' has no attributes.
+The class 'Expression' has no attributes.
+The class 'codemodel::Variable' has no attributes.
+'codemodel::statements::Statement' is a specialization of 'CMElement'.
+'codemodel::CodeModel' is a specialization of 'CMElement'.
+'codemodel::expressions::VarExp' is a specialization of 'Expression'.
+'codemodel::E' is a specialization of 'CMElement'.
+'codemodel::statements::AsgnStmt' is a specialization of 'Statement'.
+'codemodel::expressions::Expression' is a specialization of 'CMElement'.
+'codemodel::D' is a specialization of 'CMElement'.
+'codemodel::statements::CompStmt' is a specialization of 'Statement'.
+'codemodel::expressions::BinExp' is a specialization of 'Expression'.
+'codemodel::Variable' is a specialization of 'CMElement'.
+'Statement' (role 'Statement15', cardinality 0..*) is associated with 'codemodel::statements::CompStmt' (role 'codemodel_statements_CompStmt', cardinality 0..*).
+'codemodel::statements::AsgnStmt' (role 'codemodel_statements_AsgnStmt', cardinality 0..*) is associated with 'Expression' (role 'Expression10', cardinality 0..*).
+'Statement' (role 'Statement', cardinality 0..*) is associated with 'codemodel::CodeModel' (role 'codemodel_CodeModel2', cardinality 0..*).
+'Expression' (role 'Expression13', cardinality 0..*) is associated with 'codemodel::statements::AsgnStmt' (role 'codemodel_statements_AsgnStmt12', cardinality 0..*).
+'codemodel::Variable' (role 'codemodel_Variable', cardinality 0..*) is associated with 'codemodel::CodeModel' (role 'codemodel_CodeModel', cardinality 0..*).
+'codemodel::expressions::BinExp' (role 'codemodel_expressions_BinExp7', cardinality 0..*) is associated with 'Expression' (role 'Expression8', cardinality 0..*).
+'expressions::codemodel::Variable' (role 'expressions_codemodel_Variable', cardinality 0..*) is associated with 'codemodel::expressions::VarExp' (role 'codemodel_expressions_VarExp', cardinality 0..*).
+'codemodel::E' (role 'codemodel_E', cardinality 0..*) is associated with 'codemodel::D' (role 'codemodel_D', cardinality 0..*).
+'codemodel::expressions::BinExp' (role 'codemodel_expressions_BinExp', cardinality 0..*) is associated with 'Expression' (role 'Expression', cardinality 0..*).

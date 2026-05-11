@@ -1,0 +1,23 @@
+The model has 9 class(es).
+The class 'containment::G' has no attributes.
+The class 'containment::Named' has the following attributes: 'name' of type str.
+The class 'containment::E' has no attributes.
+The class 'containment::A' has no attributes.
+The class 'Named' has no attributes.
+The class 'containment::F' has no attributes.
+The class 'containment::C' has no attributes.
+The class 'containment::H' has no attributes.
+The class 'containment::B' has no attributes.
+'containment::E' is a specialization of 'Named'.
+'containment::B' is a specialization of 'Named'.
+'containment::C' is a specialization of 'Named'.
+'containment::A' is a specialization of 'Named'.
+'containment::H' is a specialization of 'Named'.
+'containment::F' is a specialization of 'Named'.
+'containment::G' is a specialization of 'Named'.
+'containment::B' (role 'containment_B', cardinality 0..*) is associated with 'containment::A' (role 'containment_A', cardinality 0..*).
+'containment::C' (role 'containment_C', cardinality 0..*) is associated with 'containment::B' (role 'containment_B4', cardinality 0..*).
+'containment::G' (role 'containment_G10', cardinality 0..*) is associated with 'containment::H' (role 'containment_H', cardinality 0..*).
+'containment::E' (role 'containment_E8', cardinality 0..*) is associated with 'containment::F' (role 'containment_F', cardinality 0..*).
+'containment::A' (role 'containment_A2', cardinality 0..*) is associated with 'containment::E' (role 'containment_E', cardinality 0..*).
+'containment::G' (role 'containment_G', cardinality 0..*) is associated with 'containment::B' (role 'containment_B6', cardinality 0..*).

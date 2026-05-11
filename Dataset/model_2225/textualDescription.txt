@@ -1,0 +1,19 @@
+The model has 7 class(es).
+The class 'study::Specialization' has the following attributes: 'name' of type str.
+The class 'study::Course' has the following attributes: 'name' of type str; 'code' of type str; 'points' of type float.
+The class 'study::CourseSlot' has the following attributes: 'elective' of type bool.
+The class 'study::StudyPlan' has no attributes.
+The class 'study::Semester' has the following attributes: 'fallOrSpring' of type str; 'semesterNumber' of type int.
+The class 'study::Department' has no attributes.
+The class 'study::Programme' has the following attributes: 'name' of type str; 'programmeCode' of type str.
+The enumeration 'FallOrSpring' has the following literals: 'Fall', 'Spring'.
+The enumeration 'programmeCode' has the following literals: 'Datateknologi5', 'Informatikk', 'Datateknologi2'.
+'study::Semester' (role 'study_Semester13', cardinality 0..*) is associated with 'study::CourseSlot' (role 'study_CourseSlot', cardinality 0..*).
+'study::CourseSlot' (role 'study_CourseSlot18', cardinality 0..*) is associated with 'study::Course' (role 'study_Course19', cardinality 0..*).
+'study::Specialization' (role 'study_Specialization', cardinality 0..*) is associated with 'study::StudyPlan' (role 'study_StudyPlan6', cardinality 0..*).
+'study::Course' (role 'study_Course16', cardinality 0..*) is associated with 'study::CourseSlot' (role 'study_CourseSlot15', cardinality 0..*).
+'study::Semester' (role 'study_Semester11', cardinality 0..*) is associated with 'study::Specialization' (role 'study_Specialization10', cardinality 0..*).
+'study::StudyPlan' (role 'study_StudyPlan', cardinality 0..*) is associated with 'study::Programme' (role 'study_Programme4', cardinality 0..*).
+'study::Department' (role 'study_Department2', cardinality 0..*) is associated with 'study::Course' (role 'study_Course', cardinality 0..*).
+'study::Programme' (role 'study_Programme', cardinality 0..*) is associated with 'study::Department' (role 'study_Department', cardinality 0..*).
+'study::StudyPlan' (role 'study_StudyPlan8', cardinality 0..*) is associated with 'study::Semester' (role 'study_Semester', cardinality 0..*).

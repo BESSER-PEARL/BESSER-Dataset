@@ -1,0 +1,131 @@
+The model has 60 class(es).
+The class 'safetyDSL::FaultContainment' has no attributes.
+The class 'safetyDSL::Starts' has no attributes.
+The class 'FaultTreeNode' has no attributes.
+The class 'ArchitecturalElement' has no attributes.
+The class 'safetyDSL::Commands' has no attributes.
+The class 'SafetyTactic' has no attributes.
+The class 'safetyDSL::SafetyCriticalRelation' has no attributes.
+The class 'safetyDSL::SafetyTacticViewpoint' has no attributes.
+The class 'ArchElementToArchElement' has no attributes.
+The class 'safetyDSL::LevelB' has no attributes.
+The class 'safetyDSL::HazardViewpoint' has no attributes.
+The class 'safetyDSL::SafeState' has no attributes.
+The class 'safetyDSL::FaultTreeNode' has no attributes.
+The class 'safetyDSL::NonSafetyCritical' has no attributes.
+The class 'safetyDSL::State' has the following attributes: 'name' of type str.
+The class 'safetyDSL::LevelA' has no attributes.
+The class 'safetyDSL::FaultAvoidance' has no attributes.
+The class 'safetyDSL::ClassDef' has the following attributes: 'name' of type str.
+The class 'State' has no attributes.
+The class 'safetyDSL::ImplementationDetail' has no attributes.
+The class 'safetyDSL::ArchitecturalElement' has the following attributes: 'name' of type str.
+The class 'safetyDSL::ArchElementToArchElement' has no attributes.
+The class 'CriticalityLevel' has no attributes.
+The class 'safetyDSL::CausedBy' has no attributes.
+The class 'safetyDSL::FaultTree' has no attributes.
+The class 'safetyDSL::SafetyFramework' has no attributes.
+The class 'safetyDSL::DerivedFrom' has no attributes.
+The class 'safetyDSL::Inits' has no attributes.
+The class 'safetyDSL::LevelC' has no attributes.
+The class 'safetyDSL::Fault' has no attributes.
+The class 'safetyDSL::HazardElement' has the following attributes: 'name' of type str.
+The class 'safetyDSL::ANDNodeExpression' has no attributes.
+The class 'SafetyCriticalRelation' has no attributes.
+The class 'safetyDSL::Monitors' has no attributes.
+The class 'safetyDSL::Monitor' has no attributes.
+The class 'safetyDSL::ReportsFault' has no attributes.
+The class 'safetyDSL::SafetyCritical' has no attributes.
+The class 'HazardRelation' has no attributes.
+The class 'safetyDSL::ModuleClassRelation' has no attributes.
+The class 'safetyDSL::SafetyCriticalViewpoint' has no attributes.
+The class 'safetyDSL::MonitorToArchitecturalElement' has no attributes.
+The class 'safetyDSL::ORNodeExpression' has no attributes.
+The class 'safetyDSL::SafetyRequirement' has no attributes.
+The class 'SafetyViewpoint' has no attributes.
+The class 'HazardElement' has no attributes.
+The class 'safetyDSL::Reads' has no attributes.
+The class 'safetyDSL::Hazard' has no attributes.
+The class 'safetyDSL::Consequence' has no attributes.
+The class 'MonitorToArchitecturalElement' has no attributes.
+The class 'safetyDSL::ClassTestCaseRelation' has the following attributes: 'testCases' of type str.
+The class 'safetyDSL::Restarts' has no attributes.
+The class 'safetyDSL::Causes' has no attributes.
+The class 'safetyDSL::FaultDetection' has no attributes.
+The class 'safetyDSL::LevelD' has no attributes.
+The class 'safetyDSL::CriticalityLevel' has no attributes.
+The class 'safetyDSL::Writes' has no attributes.
+The class 'safetyDSL::SafetyViewpoint' has the following attributes: 'name' of type str.
+The class 'safetyDSL::Stops' has no attributes.
+The class 'safetyDSL::SafetyTactic' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'safetyDSL::HazardRelation' has no attributes.
+'safetyDSL::SafetyTacticViewpoint' is a specialization of 'SafetyViewpoint'.
+'safetyDSL::Restarts' is a specialization of 'MonitorToArchitecturalElement'.
+'safetyDSL::Starts' is a specialization of 'MonitorToArchitecturalElement'.
+'safetyDSL::FaultAvoidance' is a specialization of 'SafetyTactic'.
+'safetyDSL::ArchElementToArchElement' is a specialization of 'SafetyCriticalRelation'.
+'safetyDSL::Monitors' is a specialization of 'MonitorToArchitecturalElement'.
+'safetyDSL::FaultTree' is a specialization of 'HazardElement'.
+'safetyDSL::Commands' is a specialization of 'ArchElementToArchElement'.
+'safetyDSL::Consequence' is a specialization of 'HazardElement'.
+'safetyDSL::LevelC' is a specialization of 'CriticalityLevel'.
+'safetyDSL::SafetyCritical' is a specialization of 'ArchitecturalElement'.
+'safetyDSL::HazardViewpoint' is a specialization of 'SafetyViewpoint'.
+'safetyDSL::ANDNodeExpression' is a specialization of 'FaultTreeNode'.
+'safetyDSL::NonSafetyCritical' is a specialization of 'ArchitecturalElement'.
+'safetyDSL::Monitor' is a specialization of 'ArchitecturalElement'.
+'safetyDSL::LevelB' is a specialization of 'CriticalityLevel'.
+'safetyDSL::MonitorToArchitecturalElement' is a specialization of 'SafetyCriticalRelation'.
+'safetyDSL::FaultContainment' is a specialization of 'SafetyTactic'.
+'safetyDSL::SafeState' is a specialization of 'State'.
+'safetyDSL::LevelD' is a specialization of 'CriticalityLevel'.
+'safetyDSL::SafetyRequirement' is a specialization of 'HazardElement'.
+'safetyDSL::Reads' is a specialization of 'ArchElementToArchElement'.
+'safetyDSL::Writes' is a specialization of 'ArchElementToArchElement'.
+'safetyDSL::Inits' is a specialization of 'MonitorToArchitecturalElement'.
+'safetyDSL::Hazard' is a specialization of 'HazardElement'.
+'safetyDSL::DerivedFrom' is a specialization of 'HazardRelation'.
+'safetyDSL::Causes' is a specialization of 'HazardRelation'.
+'safetyDSL::CausedBy' is a specialization of 'HazardRelation'.
+'safetyDSL::SafetyCriticalViewpoint' is a specialization of 'SafetyViewpoint'.
+'safetyDSL::ORNodeExpression' is a specialization of 'FaultTreeNode'.
+'safetyDSL::Fault' is a specialization of 'HazardElement'.
+'safetyDSL::FaultDetection' is a specialization of 'SafetyTactic'.
+'safetyDSL::Stops' is a specialization of 'MonitorToArchitecturalElement'.
+'safetyDSL::ReportsFault' is a specialization of 'SafetyCriticalRelation'.
+'safetyDSL::LevelA' is a specialization of 'CriticalityLevel'.
+'safetyDSL::CausedBy' (role 'safetyDSL_CausedBy', cardinality 0..*) is associated with 'safetyDSL::FaultTree' (role 'safetyDSL_FaultTree23', cardinality 0..*).
+'safetyDSL::Fault' (role 'safetyDSL_Fault', cardinality 0..*) is associated with 'safetyDSL::FaultTreeNode' (role 'safetyDSL_FaultTreeNode10', cardinality 0..*).
+'safetyDSL::SafetyFramework' (role 'safetyDSL_SafetyFramework', cardinality 0..*) is associated with 'safetyDSL::SafetyViewpoint' (role 'safetyDSL_SafetyViewpoint', cardinality 0..*).
+'safetyDSL::ArchElementToArchElement' (role 'safetyDSL_ArchElementToArchElement50', cardinality 0..*) is associated with 'safetyDSL::ArchitecturalElement' (role 'safetyDSL_ArchitecturalElement51', cardinality 0..*).
+'safetyDSL::HazardViewpoint' (role 'safetyDSL_HazardViewpoint', cardinality 0..*) is associated with 'safetyDSL::HazardElement' (role 'safetyDSL_HazardElement', cardinality 0..*).
+'safetyDSL::ClassTestCaseRelation' (role 'safetyDSL_ClassTestCaseRelation', cardinality 0..*) is associated with 'safetyDSL::ImplementationDetail' (role 'safetyDSL_ImplementationDetail65', cardinality 0..*).
+'safetyDSL::SafetyCritical' (role 'safetyDSL_SafetyCritical33', cardinality 0..*) is associated with 'safetyDSL::SafetyRequirement' (role 'safetyDSL_SafetyRequirement34', cardinality 0..*).
+'safetyDSL::MonitorToArchitecturalElement' (role 'safetyDSL_MonitorToArchitecturalElement55', cardinality 0..*) is associated with 'safetyDSL::SafetyCritical' (role 'safetyDSL_SafetyCritical56', cardinality 0..*).
+'safetyDSL::NonSafetyCritical' (role 'safetyDSL_NonSafetyCritical43', cardinality 0..*) is associated with 'safetyDSL::NonSafetyCritical' (role 'safetyDSL_NonSafetyCritical', cardinality 0..*).
+'safetyDSL::ReportsFault' (role 'safetyDSL_ReportsFault', cardinality 0..*) is associated with 'safetyDSL::SafetyCritical' (role 'safetyDSL_SafetyCritical58', cardinality 0..*).
+'safetyDSL::Causes' (role 'safetyDSL_Causes', cardinality 0..*) is associated with 'safetyDSL::Consequence' (role 'safetyDSL_Consequence', cardinality 0..*).
+'safetyDSL::SafetyRequirement' (role 'safetyDSL_SafetyRequirement20', cardinality 0..*) is associated with 'safetyDSL::DerivedFrom' (role 'safetyDSL_DerivedFrom', cardinality 0..*).
+'safetyDSL::MonitorToArchitecturalElement' (role 'safetyDSL_MonitorToArchitecturalElement', cardinality 0..*) is associated with 'safetyDSL::Monitor' (role 'safetyDSL_Monitor53', cardinality 0..*).
+'safetyDSL::SafetyCritical' (role 'safetyDSL_SafetyCritical38', cardinality 0..*) is associated with 'safetyDSL::SafetyCritical' (role 'safetyDSL_SafetyCritical40', cardinality 0..*).
+'safetyDSL::Hazard' (role 'safetyDSL_Hazard', cardinality 0..*) is associated with 'safetyDSL::HazardRelation' (role 'safetyDSL_HazardRelation18', cardinality 0..*).
+'safetyDSL::SafetyCritical' (role 'safetyDSL_SafetyCritical42', cardinality 0..*) is associated with 'safetyDSL::State' (role 'safetyDSL_State', cardinality 0..*).
+'safetyDSL::ReportsFault' (role 'safetyDSL_ReportsFault60', cardinality 0..*) is associated with 'safetyDSL::SafetyCritical' (role 'safetyDSL_SafetyCritical61', cardinality 0..*).
+'safetyDSL::SafetyRequirement' (role 'safetyDSL_SafetyRequirement', cardinality 0..*) is associated with 'safetyDSL::SafetyRequirement' (role 'safetyDSL_SafetyRequirement6', cardinality 0..*).
+'safetyDSL::ModuleClassRelation' (role 'safetyDSL_ModuleClassRelation67', cardinality 0..*) is associated with 'safetyDSL::ArchitecturalElement' (role 'safetyDSL_ArchitecturalElement68', cardinality 0..*).
+'safetyDSL::CriticalityLevel' (role 'safetyDSL_CriticalityLevel', cardinality 0..*) is associated with 'safetyDSL::SafetyCritical' (role 'safetyDSL_SafetyCritical', cardinality 0..*).
+'safetyDSL::FaultTreeNode' (role 'safetyDSL_FaultTreeNode', cardinality 0..*) is associated with 'safetyDSL::FaultTree' (role 'safetyDSL_FaultTree', cardinality 0..*).
+'safetyDSL::ClassDef' (role 'safetyDSL_ClassDef', cardinality 0..*) is associated with 'safetyDSL::ModuleClassRelation' (role 'safetyDSL_ModuleClassRelation70', cardinality 0..*).
+'safetyDSL::FaultTreeNode' (role 'safetyDSL_FaultTreeNode16', cardinality 0..*) is associated with 'safetyDSL::FaultTreeNode' (role 'safetyDSL_FaultTreeNode14', cardinality 0..*).
+'safetyDSL::SafetyCriticalRelation' (role 'safetyDSL_SafetyCriticalRelation', cardinality 0..*) is associated with 'safetyDSL::SafetyCriticalViewpoint' (role 'safetyDSL_SafetyCriticalViewpoint30', cardinality 0..*).
+'safetyDSL::ImplementationDetail' (role 'safetyDSL_ImplementationDetail', cardinality 0..*) is associated with 'safetyDSL::SafetyFramework' (role 'safetyDSL_SafetyFramework2', cardinality 0..*).
+'safetyDSL::FaultTreeNode' (role 'safetyDSL_FaultTreeNode11', cardinality 0..*) is associated with 'safetyDSL::FaultTreeNode' (role 'safetyDSL_FaultTreeNode13', cardinality 0..*).
+'safetyDSL::ArchitecturalElement' (role 'safetyDSL_ArchitecturalElement', cardinality 0..*) is associated with 'safetyDSL::SafetyCriticalViewpoint' (role 'safetyDSL_SafetyCriticalViewpoint', cardinality 0..*).
+'safetyDSL::Fault' (role 'safetyDSL_Fault27', cardinality 0..*) is associated with 'safetyDSL::SafetyTactic' (role 'safetyDSL_SafetyTactic26', cardinality 0..*).
+'safetyDSL::Monitor' (role 'safetyDSL_Monitor', cardinality 0..*) is associated with 'safetyDSL::SafetyTactic' (role 'safetyDSL_SafetyTactic46', cardinality 0..*).
+'safetyDSL::HazardViewpoint' (role 'safetyDSL_HazardViewpoint5', cardinality 0..*) is associated with 'safetyDSL::HazardRelation' (role 'safetyDSL_HazardRelation', cardinality 0..*).
+'safetyDSL::ImplementationDetail' (role 'safetyDSL_ImplementationDetail63', cardinality 0..*) is associated with 'safetyDSL::ModuleClassRelation' (role 'safetyDSL_ModuleClassRelation', cardinality 0..*).
+'safetyDSL::ArchElementToArchElement' (role 'safetyDSL_ArchElementToArchElement', cardinality 0..*) is associated with 'safetyDSL::ArchitecturalElement' (role 'safetyDSL_ArchitecturalElement48', cardinality 0..*).
+'safetyDSL::SafetyTactic' (role 'safetyDSL_SafetyTactic', cardinality 0..*) is associated with 'safetyDSL::SafetyTacticViewpoint' (role 'safetyDSL_SafetyTacticViewpoint', cardinality 0..*).
+'safetyDSL::SafetyTactic' (role 'safetyDSL_SafetyTactic37', cardinality 0..*) is associated with 'safetyDSL::SafetyCritical' (role 'safetyDSL_SafetyCritical36', cardinality 0..*).
+'safetyDSL::ClassTestCaseRelation' (role 'safetyDSL_ClassTestCaseRelation72', cardinality 0..*) is associated with 'safetyDSL::ClassDef' (role 'safetyDSL_ClassDef73', cardinality 0..*).

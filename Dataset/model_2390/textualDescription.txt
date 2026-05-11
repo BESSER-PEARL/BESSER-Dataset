@@ -1,0 +1,22 @@
+The model has 8 class(es).
+The class 'simpleRDBMS::RDBMSModel' has no attributes.
+The class 'simpleRDBMS::ForeignKey' has no attributes.
+The class 'simpleRDBMS::Schema' has no attributes.
+The class 'simpleRDBMS::Table' has no attributes.
+The class 'simpleRDBMS::Column' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'simpleRDBMS::NamedElement' has the following attributes: 'name' of type str.
+The class 'simpleRDBMS::Key' has no attributes.
+'simpleRDBMS::Schema' is a specialization of 'NamedElement'.
+'simpleRDBMS::ForeignKey' is a specialization of 'NamedElement'.
+'simpleRDBMS::Column' is a specialization of 'NamedElement'.
+'simpleRDBMS::Table' is a specialization of 'NamedElement'.
+'simpleRDBMS::Key' is a specialization of 'NamedElement'.
+'simpleRDBMS::Key' (role 'simpleRDBMS_Key', cardinality 0..*) is associated with 'simpleRDBMS::Table' (role 'simpleRDBMS_Table6', cardinality 0..*).
+'simpleRDBMS::Table' (role 'simpleRDBMS_Table', cardinality 0..*) is associated with 'simpleRDBMS::Schema' (role 'simpleRDBMS_Schema', cardinality 0..*).
+'simpleRDBMS::Key' (role 'simpleRDBMS_Key16', cardinality 0..*) is associated with 'simpleRDBMS::Column' (role 'simpleRDBMS_Column17', cardinality 0..*).
+'simpleRDBMS::ForeignKey' (role 'simpleRDBMS_ForeignKey', cardinality 0..*) is associated with 'simpleRDBMS::Table' (role 'simpleRDBMS_Table4', cardinality 0..*).
+'simpleRDBMS::ForeignKey' (role 'simpleRDBMS_ForeignKey11', cardinality 0..*) is associated with 'simpleRDBMS::Key' (role 'simpleRDBMS_Key12', cardinality 0..*).
+'simpleRDBMS::Schema' (role 'simpleRDBMS_Schema14', cardinality 0..*) is associated with 'simpleRDBMS::RDBMSModel' (role 'simpleRDBMS_RDBMSModel', cardinality 0..*).
+'simpleRDBMS::Column' (role 'simpleRDBMS_Column9', cardinality 0..*) is associated with 'simpleRDBMS::ForeignKey' (role 'simpleRDBMS_ForeignKey8', cardinality 0..*).
+'simpleRDBMS::Table' (role 'simpleRDBMS_Table2', cardinality 0..*) is associated with 'simpleRDBMS::Column' (role 'simpleRDBMS_Column', cardinality 0..*).

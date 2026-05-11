@@ -1,0 +1,18 @@
+The model has 7 class(es).
+The class 'mydsl::A' has no attributes.
+The class 'mydsl::L' has no attributes.
+The class 'W' has no attributes.
+The class 'mydsl::C' has no attributes.
+The class 'mydsl::D' has no attributes.
+The class 'mydsl::B' has no attributes.
+The class 'mydsl::W' has the following attributes: 'name' of type str.
+'mydsl::C' is a specialization of 'W'.
+'mydsl::B' is a specialization of 'W'.
+'mydsl::A' is a specialization of 'W'.
+'mydsl::D' is a specialization of 'W'.
+'mydsl::L' is a specialization of 'W'.
+'mydsl::L' (role 'mydsl_L', cardinality 0..*) is associated with 'mydsl::B' (role 'mydsl_B4', cardinality 0..*).
+'mydsl::C' (role 'mydsl_C9', cardinality 0..*) is associated with 'mydsl::L' (role 'mydsl_L8', cardinality 0..*).
+'mydsl::D' (role 'mydsl_D', cardinality 0..*) is associated with 'mydsl::B' (role 'mydsl_B6', cardinality 0..*).
+'mydsl::A' (role 'mydsl_A', cardinality 0..*) is associated with 'mydsl::B' (role 'mydsl_B', cardinality 0..*).
+'mydsl::A' (role 'mydsl_A2', cardinality 0..*) is associated with 'mydsl::C' (role 'mydsl_C', cardinality 0..*).

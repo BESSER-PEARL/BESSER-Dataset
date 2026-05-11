@@ -1,0 +1,176 @@
+The model has 32 class(es).
+The class 'jpdl32::EndStateType' has the following attributes: 'description' of type str; 'group' of type str; 'endCompleteProcess' of type str; 'name' of type str.
+The class 'jpdl32::EStringToStringMapEntry' has no attributes.
+The class 'jpdl32::ProcessStateType' has the following attributes: 'async_' of type str; 'description' of type str; 'name' of type str; 'group' of type str; 'binding' of type str.
+The class 'jpdl32::TransitionType' has the following attributes: 'to' of type str; 'description' of type str; 'group' of type str; 'name' of type str.
+The class 'jpdl32::ExceptionHandlerType' has the following attributes: 'exceptionClass' of type str; 'group' of type str.
+The class 'jpdl32::TimerType' has the following attributes: 'repeat' of type str; 'transition' of type str; 'name' of type str; 'duedate' of type str.
+The class 'jpdl32::DocumentRoot' has the following attributes: 'mixed' of type str; 'template' of type str; 'recipients' of type str; 'subject' of type str; 'text' of type str; 'to' of type str; 'description' of type str.
+The class 'jpdl32::MailNodeType' has the following attributes: 'actors' of type str; 'async_' of type str; 'name' of type str; 'template' of type str; 'text' of type str; 'to' of type str; 'subject' of type str; 'group' of type str; 'subject1' of type str; 'text1' of type str; 'description' of type str.
+The class 'jpdl32::AssignmentType' has the following attributes: 'actorId' of type str; 'expression' of type str; 'pooledActors' of type str.
+The class 'jpdl32::SuperStateType' has the following attributes: 'description' of type str; 'async_' of type str; 'group' of type str; 'name' of type str.
+The class 'jpdl32::DecisionType' has the following attributes: 'name' of type str; 'description' of type str; 'async_' of type str; 'expression' of type str; 'group' of type str.
+The class 'jpdl32::ActionType' has the following attributes: 'class_' of type str; 'name' of type str; 'expression' of type str; 'async_' of type str; 'any' of type str; 'configType' of type str; 'refName' of type str; 'mixed' of type str; 'acceptPropagatedEvents' of type str.
+The class 'jpdl32::CancelTimerType' has the following attributes: 'name' of type str.
+The class 'jpdl32::SubProcessType' has the following attributes: 'name' of type str; 'binding' of type str; 'version' of type str.
+The class 'jpdl32::StartStateType' has the following attributes: 'name' of type str; 'group' of type str; 'description' of type str.
+The class 'jpdl32::TaskType' has the following attributes: 'duedate' of type str; 'name' of type str; 'priority' of type str; 'swimlane' of type str; 'blocking' of type str; 'signalling' of type str; 'notify' of type str; 'description1' of type str; 'description' of type str; 'group' of type str.
+The class 'jpdl32::TaskNodeType' has the following attributes: 'signal' of type str; 'group' of type str; 'name' of type str; 'async_' of type str; 'createTasks' of type str; 'description' of type str; 'endTasks' of type str.
+The class 'jpdl32::NodeType' has the following attributes: 'nodeContentElements' of type str; 'name' of type str; 'description' of type str; 'async_' of type str.
+The class 'jpdl32::CreateTimerType' has the following attributes: 'name' of type str; 'duedate' of type str; 'repeat' of type str; 'transition' of type str.
+The class 'jpdl32::ReminderType' has the following attributes: 'duedate' of type str; 'repeat' of type str.
+The class 'jpdl32::EventType' has the following attributes: 'actionElements' of type str; 'type' of type str.
+The class 'jpdl32::MailType' has the following attributes: 'to' of type str; 'subject1' of type str; 'actors' of type str; 'text' of type str; 'template' of type str; 'subject' of type str; 'text1' of type str; 'group' of type str; 'async_' of type str; 'name' of type str.
+The class 'jpdl32::ConditionType' has the following attributes: 'any' of type str; 'mixed' of type str; 'expression' of type str; 'group' of type str.
+The class 'jpdl32::ScriptType' has the following attributes: 'mixed' of type str; 'name' of type str; 'acceptPropagatedEvents' of type str; 'any' of type str.
+The class 'jpdl32::Delegation' has the following attributes: 'any' of type str; 'mixed' of type str; 'configType' of type str; 'class_' of type str.
+The class 'jpdl32::ProcessDefinitionType' has the following attributes: 'description' of type str; 'group' of type str; 'name' of type str.
+The class 'jpdl32::JoinType' has the following attributes: 'nodeContentElements' of type str; 'name' of type str; 'description' of type str; 'async_' of type str.
+The class 'jpdl32::SwimlaneType' has the following attributes: 'name' of type str.
+The class 'jpdl32::StateType' has the following attributes: 'nodeContentElements' of type str; 'name' of type str; 'async_' of type str; 'description' of type str.
+The class 'Delegation' has no attributes.
+The class 'jpdl32::VariableType' has the following attributes: 'name' of type str; 'access' of type str; 'mappedName' of type str; 'any' of type str.
+The class 'jpdl32::ForkType' has the following attributes: 'async_' of type str; 'description' of type str; 'name' of type str; 'group' of type str.
+The enumeration 'BindingType' has the following literals: 'early', 'late'.
+The enumeration 'SignalType' has the following literals: 'first', 'unsynchronized', 'firstWait', 'last', 'never', 'lastWait'.
+The enumeration 'TypeTypeMember1' has the following literals: 'processStart', 'taskEnd', 'superstateLeave', 'subprocessCreated', 'subprocessEnd', 'beforeSignal', 'nodeLeave', 'superstateEnter', 'taskCreate', 'processEnd', 'afterSignal', 'taskAssign', 'timerCreate', 'nodeEnter', 'taskStart'.
+The enumeration 'BooleanType' has the following literals: 'yes', 'off', 'no', 'false', 'true', 'on'.
+The enumeration 'ConfigType' has the following literals: 'field', 'bean', 'configurationProperty', 'constructor'.
+The enumeration 'PriorityTypeMember0' has the following literals: 'low', 'highest', 'normal', 'high', 'lowest'.
+'jpdl32::AssignmentType' is a specialization of 'Delegation'.
+'jpdl32::ScriptType' (role 'jpdl32_ScriptType100', cardinality 0..*) is associated with 'jpdl32::ExceptionHandlerType' (role 'jpdl32_ExceptionHandlerType99', cardinality 0..*).
+'jpdl32::ForkType' (role 'jpdl32_ForkType190', cardinality 0..*) is associated with 'jpdl32::ProcessDefinitionType' (role 'jpdl32_ProcessDefinitionType189', cardinality 0..*).
+'jpdl32::StartStateType' (role 'jpdl32_StartStateType248', cardinality 0..*) is associated with 'jpdl32::TransitionType' (role 'jpdl32_TransitionType249', cardinality 0..*).
+'jpdl32::DecisionType' (role 'jpdl32_DecisionType', cardinality 0..*) is associated with 'jpdl32::Delegation' (role 'jpdl32_Delegation', cardinality 0..*).
+'jpdl32::ExceptionHandlerType' (role 'jpdl32_ExceptionHandlerType223', cardinality 0..*) is associated with 'jpdl32::ProcessDefinitionType' (role 'jpdl32_ProcessDefinitionType222', cardinality 0..*).
+'jpdl32::TaskNodeType' (role 'jpdl32_TaskNodeType181', cardinality 0..*) is associated with 'jpdl32::ProcessDefinitionType' (role 'jpdl32_ProcessDefinitionType180', cardinality 0..*).
+'jpdl32::ExceptionHandlerType' (role 'jpdl32_ExceptionHandlerType37', cardinality 0..*) is associated with 'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot36', cardinality 0..*).
+'jpdl32::TaskNodeType' (role 'jpdl32_TaskNodeType326', cardinality 0..*) is associated with 'jpdl32::TransitionType' (role 'jpdl32_TransitionType327', cardinality 0..*).
+'jpdl32::ProcessDefinitionType' (role 'jpdl32_ProcessDefinitionType204', cardinality 0..*) is associated with 'jpdl32::ActionType' (role 'jpdl32_ActionType205', cardinality 0..*).
+'jpdl32::MailNodeType' (role 'jpdl32_MailNodeType297', cardinality 0..*) is associated with 'jpdl32::SuperStateType' (role 'jpdl32_SuperStateType296', cardinality 0..*).
+'jpdl32::TaskNodeType' (role 'jpdl32_TaskNodeType317', cardinality 0..*) is associated with 'jpdl32::EventType' (role 'jpdl32_EventType318', cardinality 0..*).
+'jpdl32::ForkType' (role 'jpdl32_ForkType285', cardinality 0..*) is associated with 'jpdl32::SuperStateType' (role 'jpdl32_SuperStateType284', cardinality 0..*).
+'jpdl32::TimerType' (role 'jpdl32_TimerType346', cardinality 0..*) is associated with 'jpdl32::ScriptType' (role 'jpdl32_ScriptType347', cardinality 0..*).
+'jpdl32::NodeType' (role 'jpdl32_NodeType147', cardinality 0..*) is associated with 'jpdl32::CreateTimerType' (role 'jpdl32_CreateTimerType148', cardinality 0..*).
+'jpdl32::ActionType' (role 'jpdl32_ActionType16', cardinality 0..*) is associated with 'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot15', cardinality 0..*).
+'jpdl32::ForkType' (role 'jpdl32_ForkType102', cardinality 0..*) is associated with 'jpdl32::ScriptType' (role 'jpdl32_ScriptType103', cardinality 0..*).
+'jpdl32::ProcessStateType' (role 'jpdl32_ProcessStateType230', cardinality 0..*) is associated with 'jpdl32::VariableType' (role 'jpdl32_VariableType231', cardinality 0..*).
+'jpdl32::TransitionType' (role 'jpdl32_TransitionType71', cardinality 0..*) is associated with 'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot70', cardinality 0..*).
+'jpdl32::SuperStateType' (role 'jpdl32_SuperStateType287', cardinality 0..*) is associated with 'jpdl32::JoinType' (role 'jpdl32_JoinType288', cardinality 0..*).
+'jpdl32::NodeType' (role 'jpdl32_NodeType150', cardinality 0..*) is associated with 'jpdl32::CancelTimerType' (role 'jpdl32_CancelTimerType151', cardinality 0..*).
+'jpdl32::ProcessStateType' (role 'jpdl32_ProcessStateType242', cardinality 0..*) is associated with 'jpdl32::TransitionType' (role 'jpdl32_TransitionType243', cardinality 0..*).
+'jpdl32::ExceptionHandlerType' (role 'jpdl32_ExceptionHandlerType121', cardinality 0..*) is associated with 'jpdl32::JoinType' (role 'jpdl32_JoinType120', cardinality 0..*).
+'jpdl32::ScriptType' (role 'jpdl32_ScriptType', cardinality 0..*) is associated with 'jpdl32::CreateTimerType' (role 'jpdl32_CreateTimerType2', cardinality 0..*).
+'jpdl32::TaskNodeType' (role 'jpdl32_TaskNodeType314', cardinality 0..*) is associated with 'jpdl32::TaskType' (role 'jpdl32_TaskType315', cardinality 0..*).
+'jpdl32::ForkType' (role 'jpdl32_ForkType114', cardinality 0..*) is associated with 'jpdl32::TransitionType' (role 'jpdl32_TransitionType115', cardinality 0..*).
+'jpdl32::DecisionType' (role 'jpdl32_DecisionType291', cardinality 0..*) is associated with 'jpdl32::SuperStateType' (role 'jpdl32_SuperStateType290', cardinality 0..*).
+'jpdl32::EventType' (role 'jpdl32_EventType300', cardinality 0..*) is associated with 'jpdl32::SuperStateType' (role 'jpdl32_SuperStateType299', cardinality 0..*).
+'jpdl32::ProcessDefinitionType' (role 'jpdl32_ProcessDefinitionType213', cardinality 0..*) is associated with 'jpdl32::CancelTimerType' (role 'jpdl32_CancelTimerType214', cardinality 0..*).
+'jpdl32::TimerType' (role 'jpdl32_TimerType306', cardinality 0..*) is associated with 'jpdl32::SuperStateType' (role 'jpdl32_SuperStateType305', cardinality 0..*).
+'jpdl32::NodeType' (role 'jpdl32_NodeType165', cardinality 0..*) is associated with 'jpdl32::TransitionType' (role 'jpdl32_TransitionType166', cardinality 0..*).
+'jpdl32::ExceptionHandlerType' (role 'jpdl32_ExceptionHandlerType303', cardinality 0..*) is associated with 'jpdl32::SuperStateType' (role 'jpdl32_SuperStateType302', cardinality 0..*).
+'jpdl32::EventType' (role 'jpdl32_EventType81', cardinality 0..*) is associated with 'jpdl32::ActionType' (role 'jpdl32_ActionType82', cardinality 0..*).
+'jpdl32::ProcessDefinitionType' (role 'jpdl32_ProcessDefinitionType171', cardinality 0..*) is associated with 'jpdl32::StartStateType' (role 'jpdl32_StartStateType172', cardinality 0..*).
+'jpdl32::MailNodeType' (role 'jpdl32_MailNodeType202', cardinality 0..*) is associated with 'jpdl32::ProcessDefinitionType' (role 'jpdl32_ProcessDefinitionType201', cardinality 0..*).
+'jpdl32::TaskType' (role 'jpdl32_TaskType338', cardinality 0..*) is associated with 'jpdl32::TimerType' (role 'jpdl32_TimerType339', cardinality 0..*).
+'jpdl32::VariableType' (role 'jpdl32_VariableType', cardinality 0..*) is associated with 'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot73', cardinality 0..*).
+'jpdl32::SuperStateType' (role 'jpdl32_SuperStateType293', cardinality 0..*) is associated with 'jpdl32::EndStateType' (role 'jpdl32_EndStateType294', cardinality 0..*).
+'jpdl32::ScriptType' (role 'jpdl32_ScriptType85', cardinality 0..*) is associated with 'jpdl32::EventType' (role 'jpdl32_EventType84', cardinality 0..*).
+'jpdl32::TaskNodeType' (role 'jpdl32_TaskNodeType276', cardinality 0..*) is associated with 'jpdl32::SuperStateType' (role 'jpdl32_SuperStateType275', cardinality 0..*).
+'jpdl32::TaskType' (role 'jpdl32_TaskType', cardinality 0..*) is associated with 'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot64', cardinality 0..*).
+'jpdl32::ScriptType' (role 'jpdl32_ScriptType208', cardinality 0..*) is associated with 'jpdl32::ProcessDefinitionType' (role 'jpdl32_ProcessDefinitionType207', cardinality 0..*).
+'jpdl32::ExceptionHandlerType' (role 'jpdl32_ExceptionHandlerType133', cardinality 0..*) is associated with 'jpdl32::MailNodeType' (role 'jpdl32_MailNodeType132', cardinality 0..*).
+'jpdl32::JoinType' (role 'jpdl32_JoinType126', cardinality 0..*) is associated with 'jpdl32::TransitionType' (role 'jpdl32_TransitionType127', cardinality 0..*).
+'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot56', cardinality 0..*) is associated with 'jpdl32::StartStateType' (role 'jpdl32_StartStateType', cardinality 0..*).
+'jpdl32::ReminderType' (role 'jpdl32_ReminderType', cardinality 0..*) is associated with 'jpdl32::TaskType' (role 'jpdl32_TaskType341', cardinality 0..*).
+'jpdl32::TransitionType' (role 'jpdl32_TransitionType139', cardinality 0..*) is associated with 'jpdl32::MailNodeType' (role 'jpdl32_MailNodeType138', cardinality 0..*).
+'jpdl32::DecisionType' (role 'jpdl32_DecisionType9', cardinality 0..*) is associated with 'jpdl32::TransitionType' (role 'jpdl32_TransitionType', cardinality 0..*).
+'jpdl32::EventType' (role 'jpdl32_EventType220', cardinality 0..*) is associated with 'jpdl32::ProcessDefinitionType' (role 'jpdl32_ProcessDefinitionType219', cardinality 0..*).
+'jpdl32::ActionType' (role 'jpdl32_ActionType142', cardinality 0..*) is associated with 'jpdl32::NodeType' (role 'jpdl32_NodeType141', cardinality 0..*).
+'jpdl32::ExceptionHandlerType' (role 'jpdl32_ExceptionHandlerType376', cardinality 0..*) is associated with 'jpdl32::TransitionType' (role 'jpdl32_TransitionType375', cardinality 0..*).
+'jpdl32::NodeType' (role 'jpdl32_NodeType', cardinality 0..*) is associated with 'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot47', cardinality 0..*).
+'jpdl32::NodeType' (role 'jpdl32_NodeType159', cardinality 0..*) is associated with 'jpdl32::ExceptionHandlerType' (role 'jpdl32_ExceptionHandlerType160', cardinality 0..*).
+'jpdl32::EndStateType' (role 'jpdl32_EndStateType199', cardinality 0..*) is associated with 'jpdl32::ProcessDefinitionType' (role 'jpdl32_ProcessDefinitionType198', cardinality 0..*).
+'jpdl32::StartStateType' (role 'jpdl32_StartStateType254', cardinality 0..*) is associated with 'jpdl32::ExceptionHandlerType' (role 'jpdl32_ExceptionHandlerType255', cardinality 0..*).
+'jpdl32::ProcessDefinitionType' (role 'jpdl32_ProcessDefinitionType177', cardinality 0..*) is associated with 'jpdl32::StateType' (role 'jpdl32_StateType178', cardinality 0..*).
+'jpdl32::SuperStateType' (role 'jpdl32_SuperStateType272', cardinality 0..*) is associated with 'jpdl32::StateType' (role 'jpdl32_StateType273', cardinality 0..*).
+'jpdl32::EventType' (role 'jpdl32_EventType118', cardinality 0..*) is associated with 'jpdl32::JoinType' (role 'jpdl32_JoinType117', cardinality 0..*).
+'jpdl32::CancelTimerType' (role 'jpdl32_CancelTimerType370', cardinality 0..*) is associated with 'jpdl32::TransitionType' (role 'jpdl32_TransitionType369', cardinality 0..*).
+'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot45', cardinality 0..*) is associated with 'jpdl32::MailNodeType' (role 'jpdl32_MailNodeType', cardinality 0..*).
+'jpdl32::ProcessDefinitionType' (role 'jpdl32_ProcessDefinitionType192', cardinality 0..*) is associated with 'jpdl32::JoinType' (role 'jpdl32_JoinType193', cardinality 0..*).
+'jpdl32::DecisionType' (role 'jpdl32_DecisionType5', cardinality 0..*) is associated with 'jpdl32::EventType' (role 'jpdl32_EventType', cardinality 0..*).
+'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot25', cardinality 0..*) is associated with 'jpdl32::CreateTimerType' (role 'jpdl32_CreateTimerType26', cardinality 0..*).
+'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot31', cardinality 0..*) is associated with 'jpdl32::EndStateType' (role 'jpdl32_EndStateType', cardinality 0..*).
+'jpdl32::NodeType' (role 'jpdl32_NodeType162', cardinality 0..*) is associated with 'jpdl32::TimerType' (role 'jpdl32_TimerType163', cardinality 0..*).
+'jpdl32::EventType' (role 'jpdl32_EventType234', cardinality 0..*) is associated with 'jpdl32::ProcessStateType' (role 'jpdl32_ProcessStateType233', cardinality 0..*).
+'jpdl32::TaskType' (role 'jpdl32_TaskType335', cardinality 0..*) is associated with 'jpdl32::EventType' (role 'jpdl32_EventType336', cardinality 0..*).
+'jpdl32::SwimlaneType' (role 'jpdl32_SwimlaneType', cardinality 0..*) is associated with 'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot62', cardinality 0..*).
+'jpdl32::TaskNodeType' (role 'jpdl32_TaskNodeType320', cardinality 0..*) is associated with 'jpdl32::ExceptionHandlerType' (role 'jpdl32_ExceptionHandlerType321', cardinality 0..*).
+'jpdl32::SuperStateType' (role 'jpdl32_SuperStateType184', cardinality 0..*) is associated with 'jpdl32::ProcessDefinitionType' (role 'jpdl32_ProcessDefinitionType183', cardinality 0..*).
+'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot49', cardinality 0..*) is associated with 'jpdl32::ProcessDefinitionType' (role 'jpdl32_ProcessDefinitionType', cardinality 0..*).
+'jpdl32::ScriptType' (role 'jpdl32_ScriptType145', cardinality 0..*) is associated with 'jpdl32::NodeType' (role 'jpdl32_NodeType144', cardinality 0..*).
+'jpdl32::TaskType' (role 'jpdl32_TaskType226', cardinality 0..*) is associated with 'jpdl32::ProcessDefinitionType' (role 'jpdl32_ProcessDefinitionType225', cardinality 0..*).
+'jpdl32::ExceptionHandlerType' (role 'jpdl32_ExceptionHandlerType', cardinality 0..*) is associated with 'jpdl32::DecisionType' (role 'jpdl32_DecisionType7', cardinality 0..*).
+'jpdl32::CancelTimerType' (role 'jpdl32_CancelTimerType91', cardinality 0..*) is associated with 'jpdl32::EventType' (role 'jpdl32_EventType90', cardinality 0..*).
+'jpdl32::TimerType' (role 'jpdl32_TimerType349', cardinality 0..*) is associated with 'jpdl32::CreateTimerType' (role 'jpdl32_CreateTimerType350', cardinality 0..*).
+'jpdl32::ForkType' (role 'jpdl32_ForkType108', cardinality 0..*) is associated with 'jpdl32::ExceptionHandlerType' (role 'jpdl32_ExceptionHandlerType109', cardinality 0..*).
+'jpdl32::NodeType' (role 'jpdl32_NodeType270', cardinality 0..*) is associated with 'jpdl32::SuperStateType' (role 'jpdl32_SuperStateType269', cardinality 0..*).
+'jpdl32::TimerType' (role 'jpdl32_TimerType343', cardinality 0..*) is associated with 'jpdl32::ActionType' (role 'jpdl32_ActionType344', cardinality 0..*).
+'jpdl32::EventType' (role 'jpdl32_EventType34', cardinality 0..*) is associated with 'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot33', cardinality 0..*).
+'jpdl32::ProcessDefinitionType' (role 'jpdl32_ProcessDefinitionType174', cardinality 0..*) is associated with 'jpdl32::NodeType' (role 'jpdl32_NodeType175', cardinality 0..*).
+'jpdl32::TaskType' (role 'jpdl32_TaskType246', cardinality 0..*) is associated with 'jpdl32::StartStateType' (role 'jpdl32_StartStateType245', cardinality 0..*).
+'jpdl32::ActionType' (role 'jpdl32_ActionType', cardinality 0..*) is associated with 'jpdl32::CreateTimerType' (role 'jpdl32_CreateTimerType', cardinality 0..*).
+'jpdl32::ScriptType' (role 'jpdl32_ScriptType364', cardinality 0..*) is associated with 'jpdl32::TransitionType' (role 'jpdl32_TransitionType363', cardinality 0..*).
+'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot22', cardinality 0..*) is associated with 'jpdl32::Delegation' (role 'jpdl32_Delegation23', cardinality 0..*).
+'jpdl32::StateType' (role 'jpdl32_StateType', cardinality 0..*) is associated with 'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot58', cardinality 0..*).
+'jpdl32::EStringToStringMapEntry' (role 'jpdl32_EStringToStringMapEntry13', cardinality 0..*) is associated with 'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot12', cardinality 0..*).
+'jpdl32::SubProcessType' (role 'jpdl32_SubProcessType', cardinality 0..*) is associated with 'jpdl32::ProcessStateType' (role 'jpdl32_ProcessStateType228', cardinality 0..*).
+'jpdl32::TransitionType' (role 'jpdl32_TransitionType372', cardinality 0..*) is associated with 'jpdl32::MailType' (role 'jpdl32_MailType373', cardinality 0..*).
+'jpdl32::DecisionType' (role 'jpdl32_DecisionType196', cardinality 0..*) is associated with 'jpdl32::ProcessDefinitionType' (role 'jpdl32_ProcessDefinitionType195', cardinality 0..*).
+'jpdl32::SuperStateType' (role 'jpdl32_SuperStateType281', cardinality 0..*) is associated with 'jpdl32::ProcessStateType' (role 'jpdl32_ProcessStateType282', cardinality 0..*).
+'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot', cardinality 0..*) is associated with 'jpdl32::EStringToStringMapEntry' (role 'jpdl32_EStringToStringMapEntry', cardinality 0..*).
+'jpdl32::TaskNodeType' (role 'jpdl32_TaskNodeType323', cardinality 0..*) is associated with 'jpdl32::TimerType' (role 'jpdl32_TimerType324', cardinality 0..*).
+'jpdl32::StateType' (role 'jpdl32_StateType260', cardinality 0..*) is associated with 'jpdl32::ExceptionHandlerType' (role 'jpdl32_ExceptionHandlerType261', cardinality 0..*).
+'jpdl32::EventType' (role 'jpdl32_EventType106', cardinality 0..*) is associated with 'jpdl32::ForkType' (role 'jpdl32_ForkType105', cardinality 0..*).
+'jpdl32::TimerType' (role 'jpdl32_TimerType112', cardinality 0..*) is associated with 'jpdl32::ForkType' (role 'jpdl32_ForkType111', cardinality 0..*).
+'jpdl32::EndStateType' (role 'jpdl32_EndStateType75', cardinality 0..*) is associated with 'jpdl32::EventType' (role 'jpdl32_EventType76', cardinality 0..*).
+'jpdl32::ConditionType' (role 'jpdl32_ConditionType', cardinality 0..*) is associated with 'jpdl32::TransitionType' (role 'jpdl32_TransitionType358', cardinality 0..*).
+'jpdl32::TaskNodeType' (role 'jpdl32_TaskNodeType', cardinality 0..*) is associated with 'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot66', cardinality 0..*).
+'jpdl32::ProcessStateType' (role 'jpdl32_ProcessStateType', cardinality 0..*) is associated with 'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot51', cardinality 0..*).
+'jpdl32::NodeType' (role 'jpdl32_NodeType156', cardinality 0..*) is associated with 'jpdl32::EventType' (role 'jpdl32_EventType157', cardinality 0..*).
+'jpdl32::EventType' (role 'jpdl32_EventType258', cardinality 0..*) is associated with 'jpdl32::StateType' (role 'jpdl32_StateType257', cardinality 0..*).
+'jpdl32::MailType' (role 'jpdl32_MailType94', cardinality 0..*) is associated with 'jpdl32::EventType' (role 'jpdl32_EventType93', cardinality 0..*).
+'jpdl32::DecisionType' (role 'jpdl32_DecisionType29', cardinality 0..*) is associated with 'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot28', cardinality 0..*).
+'jpdl32::ScriptType' (role 'jpdl32_ScriptType54', cardinality 0..*) is associated with 'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot53', cardinality 0..*).
+'jpdl32::TimerType' (role 'jpdl32_TimerType136', cardinality 0..*) is associated with 'jpdl32::MailNodeType' (role 'jpdl32_MailNodeType135', cardinality 0..*).
+'jpdl32::MailType' (role 'jpdl32_MailType217', cardinality 0..*) is associated with 'jpdl32::ProcessDefinitionType' (role 'jpdl32_ProcessDefinitionType216', cardinality 0..*).
+'jpdl32::AssignmentType' (role 'jpdl32_AssignmentType312', cardinality 0..*) is associated with 'jpdl32::SwimlaneType' (role 'jpdl32_SwimlaneType311', cardinality 0..*).
+'jpdl32::TimerType' (role 'jpdl32_TimerType', cardinality 0..*) is associated with 'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot68', cardinality 0..*).
+'jpdl32::NodeType' (role 'jpdl32_NodeType153', cardinality 0..*) is associated with 'jpdl32::MailType' (role 'jpdl32_MailType154', cardinality 0..*).
+'jpdl32::ActionType' (role 'jpdl32_ActionType97', cardinality 0..*) is associated with 'jpdl32::ExceptionHandlerType' (role 'jpdl32_ExceptionHandlerType96', cardinality 0..*).
+'jpdl32::TransitionType' (role 'jpdl32_TransitionType309', cardinality 0..*) is associated with 'jpdl32::SuperStateType' (role 'jpdl32_SuperStateType308', cardinality 0..*).
+'jpdl32::StateType' (role 'jpdl32_StateType266', cardinality 0..*) is associated with 'jpdl32::TransitionType' (role 'jpdl32_TransitionType267', cardinality 0..*).
+'jpdl32::CreateTimerType' (role 'jpdl32_CreateTimerType367', cardinality 0..*) is associated with 'jpdl32::TransitionType' (role 'jpdl32_TransitionType366', cardinality 0..*).
+'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot43', cardinality 0..*) is associated with 'jpdl32::MailType' (role 'jpdl32_MailType', cardinality 0..*).
+'jpdl32::TransitionType' (role 'jpdl32_TransitionType360', cardinality 0..*) is associated with 'jpdl32::ActionType' (role 'jpdl32_ActionType361', cardinality 0..*).
+'jpdl32::SuperStateType' (role 'jpdl32_SuperStateType277', cardinality 0..*) is associated with 'jpdl32::SuperStateType' (role 'jpdl32_SuperStateType279', cardinality 0..*).
+'jpdl32::ProcessDefinitionType' (role 'jpdl32_ProcessDefinitionType168', cardinality 0..*) is associated with 'jpdl32::SwimlaneType' (role 'jpdl32_SwimlaneType169', cardinality 0..*).
+'jpdl32::TimerType' (role 'jpdl32_TimerType352', cardinality 0..*) is associated with 'jpdl32::CancelTimerType' (role 'jpdl32_CancelTimerType353', cardinality 0..*).
+'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot20', cardinality 0..*) is associated with 'jpdl32::CancelTimerType' (role 'jpdl32_CancelTimerType', cardinality 0..*).
+'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot18', cardinality 0..*) is associated with 'jpdl32::AssignmentType' (role 'jpdl32_AssignmentType', cardinality 0..*).
+'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot41', cardinality 0..*) is associated with 'jpdl32::JoinType' (role 'jpdl32_JoinType', cardinality 0..*).
+'jpdl32::StartStateType' (role 'jpdl32_StartStateType251', cardinality 0..*) is associated with 'jpdl32::EventType' (role 'jpdl32_EventType252', cardinality 0..*).
+'jpdl32::JoinType' (role 'jpdl32_JoinType123', cardinality 0..*) is associated with 'jpdl32::TimerType' (role 'jpdl32_TimerType124', cardinality 0..*).
+'jpdl32::TaskType' (role 'jpdl32_TaskType329', cardinality 0..*) is associated with 'jpdl32::AssignmentType' (role 'jpdl32_AssignmentType330', cardinality 0..*).
+'jpdl32::ProcessStateType' (role 'jpdl32_ProcessStateType187', cardinality 0..*) is associated with 'jpdl32::ProcessDefinitionType' (role 'jpdl32_ProcessDefinitionType186', cardinality 0..*).
+'jpdl32::EventType' (role 'jpdl32_EventType87', cardinality 0..*) is associated with 'jpdl32::CreateTimerType' (role 'jpdl32_CreateTimerType88', cardinality 0..*).
+'jpdl32::TimerType' (role 'jpdl32_TimerType240', cardinality 0..*) is associated with 'jpdl32::ProcessStateType' (role 'jpdl32_ProcessStateType239', cardinality 0..*).
+'jpdl32::EndStateType' (role 'jpdl32_EndStateType78', cardinality 0..*) is associated with 'jpdl32::ExceptionHandlerType' (role 'jpdl32_ExceptionHandlerType79', cardinality 0..*).
+'jpdl32::SuperStateType' (role 'jpdl32_SuperStateType', cardinality 0..*) is associated with 'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot60', cardinality 0..*).
+'jpdl32::TimerType' (role 'jpdl32_TimerType355', cardinality 0..*) is associated with 'jpdl32::MailType' (role 'jpdl32_MailType356', cardinality 0..*).
+'jpdl32::DocumentRoot' (role 'jpdl32_DocumentRoot39', cardinality 0..*) is associated with 'jpdl32::ForkType' (role 'jpdl32_ForkType', cardinality 0..*).
+'jpdl32::ProcessStateType' (role 'jpdl32_ProcessStateType236', cardinality 0..*) is associated with 'jpdl32::ExceptionHandlerType' (role 'jpdl32_ExceptionHandlerType237', cardinality 0..*).
+'jpdl32::ProcessDefinitionType' (role 'jpdl32_ProcessDefinitionType210', cardinality 0..*) is associated with 'jpdl32::CreateTimerType' (role 'jpdl32_CreateTimerType211', cardinality 0..*).
+'jpdl32::TaskType' (role 'jpdl32_TaskType332', cardinality 0..*) is associated with 'jpdl32::Delegation' (role 'jpdl32_Delegation333', cardinality 0..*).
+'jpdl32::EventType' (role 'jpdl32_EventType130', cardinality 0..*) is associated with 'jpdl32::MailNodeType' (role 'jpdl32_MailNodeType129', cardinality 0..*).
+'jpdl32::TimerType' (role 'jpdl32_TimerType264', cardinality 0..*) is associated with 'jpdl32::StateType' (role 'jpdl32_StateType263', cardinality 0..*).

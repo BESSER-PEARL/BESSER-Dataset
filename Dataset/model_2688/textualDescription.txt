@@ -1,0 +1,17 @@
+The model has 7 class(es).
+The class 'multiview2::C' has no attributes.
+The class 'multiview2::F' has no attributes.
+The class 'multiview2::E' has no attributes.
+The class 'multiview2::B' has no attributes.
+The class 'multiview2::A' has no attributes.
+The class 'multiview2::Named' has the following attributes: 'name' of type str.
+The class 'Named' has no attributes.
+'multiview2::F' is a specialization of 'Named'.
+'multiview2::C' is a specialization of 'Named'.
+'multiview2::A' is a specialization of 'Named'.
+'multiview2::E' is a specialization of 'Named'.
+'multiview2::B' is a specialization of 'Named'.
+'multiview2::F' (role 'multiview2_F', cardinality 0..*) is associated with 'multiview2::E' (role 'multiview2_E6', cardinality 0..*).
+'multiview2::A' (role 'multiview2_A', cardinality 0..*) is associated with 'multiview2::B' (role 'multiview2_B', cardinality 0..*).
+'multiview2::C' (role 'multiview2_C', cardinality 0..*) is associated with 'multiview2::B' (role 'multiview2_B4', cardinality 0..*).
+'multiview2::E' (role 'multiview2_E', cardinality 0..*) is associated with 'multiview2::A' (role 'multiview2_A2', cardinality 0..*).

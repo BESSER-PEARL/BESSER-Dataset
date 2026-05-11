@@ -1,0 +1,7 @@
+The model has 4 class(es).
+The class 'StateMachineTraverser::FSM' has no attributes.
+The class 'StateMachineTraverser::State' has no attributes.
+The class 'FSM' has no attributes.
+The class 'State' has no attributes.
+'StateMachineTraverser::FSM' is a specialization of 'FSM'.
+'StateMachineTraverser::State' is a specialization of 'State'.

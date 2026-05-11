@@ -1,0 +1,25 @@
+The model has 11 class(es).
+The class 'dscDiagramModel::ShallowHistory' has no attributes.
+The class 'Relationship' has no attributes.
+The class 'dscDiagramModel::DSCState' has the following attributes: 'Variables' of type str; 'isSimple' of type bool.
+The class 'dscDiagramModel::DSCDiagram' has the following attributes: 'functionFile' of type str; 'actionFile' of type str; 'guardFile' of type str; 'diagramVariables' of type str; 'eventFile' of type str.
+The class 'GenericDiagram' has no attributes.
+The class 'dscDiagramModel::DeepHistory' has no attributes.
+The class 'dscDiagramModel::Transition' has the following attributes: 'transitionID' of type str; 'showTransitionID' of type bool; 'guardID' of type str; 'eventID' of type str; 'actionID' of type str; 'showProperties' of type bool; 'triggeredByEvent' of type bool.
+The class 'Classifier' has no attributes.
+The class 'Container' has no attributes.
+The class 'dscDiagramModel::AnchorNoteToItem' has no attributes.
+The class 'dscDiagramModel::StartPoint' has no attributes.
+'dscDiagramModel::DSCDiagram' is a specialization of 'GenericDiagram'.
+'dscDiagramModel::DSCState' is a specialization of 'Container'.
+'dscDiagramModel::ShallowHistory' is a specialization of 'Classifier'.
+'dscDiagramModel::DeepHistory' is a specialization of 'Classifier'.
+'dscDiagramModel::StartPoint' is a specialization of 'Classifier'.
+'dscDiagramModel::AnchorNoteToItem' is a specialization of 'Relationship'.
+'dscDiagramModel::Transition' is a specialization of 'Relationship'.
+'dscDiagramModel::DSCState' (role 'DSCState', cardinality 0..*) is associated with 'dscDiagramModel::StartPoint' (role 'startPoint', cardinality 0..*).
+'dscDiagramModel::DSCState' (role 'compositeState7', cardinality 0..*) is associated with 'dscDiagramModel::ShallowHistory' (role 'ShallowHistory', cardinality 0..*).
+'dscDiagramModel::DSCState' (role 'compositeState', cardinality 0..*) is associated with 'dscDiagramModel::StartPoint' (role 'StartPoint', cardinality 0..*).
+'dscDiagramModel::ShallowHistory' (role 'shallowHistory', cardinality 0..*) is associated with 'dscDiagramModel::DSCState' (role 'DSCState2', cardinality 0..*).
+'dscDiagramModel::DeepHistory' (role 'deepHistory', cardinality 0..*) is associated with 'dscDiagramModel::DSCState' (role 'DSCState4', cardinality 0..*).
+'dscDiagramModel::DSCState' (role 'compositeState9', cardinality 0..*) is associated with 'dscDiagramModel::DeepHistory' (role 'DeepHistory', cardinality 0..*).

@@ -1,0 +1,24 @@
+
+
+
+
+
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class frontend_core_TraceUse extends TypeExpression {
+
+
+
+
+    public frontend_core_TraceUse(
+    ) {
+        super(
+        );
+    }
+
+
+
+
+}

@@ -1,0 +1,265 @@
+The model has 92 class(es).
+The class 'MethodInvocation' has no attributes.
+The class 'mitra::UnaryCastExpression' has no attributes.
+The class 'mitra::WhileStatement' has no attributes.
+The class 'mitra::NullLiteral' has no attributes.
+The class 'mitra::UnaryBooleanExpression' has no attributes.
+The class 'mitra::Feature' has the following attributes: 'name' of type str.
+The class 'mitra::Catch' has no attributes.
+The class 'mitra::RuleInvocationSuper' has no attributes.
+The class 'VarDeclaration' has no attributes.
+The class 'mitra::Statement' has no attributes.
+The class 'mitra::Type' has no attributes.
+The class 'mitra::ReturnParameter' has no attributes.
+The class 'mitra::AnnotationDecl' has the following attributes: 'targets' of type str; 'many' of type bool; 'required' of type bool; 'name' of type str.
+The class 'mitra::Module' has the following attributes: 'packageName' of type str; 'name' of type str.
+The class 'mitra::Expression' has no attributes.
+The class 'mitra::QualifiedRuleReference' has no attributes.
+The class 'mitra::LocalVariableDeclaration' has no attributes.
+The class 'mitra::MetamodelFeature' has no attributes.
+The class 'Feature' has no attributes.
+The class 'mitra::InstanceOfExpression' has no attributes.
+The class 'mitra::MetamodelDeclaration' has the following attributes: 'replaces' of type str; 'name' of type str; 'type' of type str.
+The class 'mitra::Parameter' has the following attributes: 'modifier' of type str.
+The class 'mitra::SimpleParameterReference' has the following attributes: 'name' of type str.
+The class 'mitra::TypedVarDeclaration' has no attributes.
+The class 'mitra::StaticAccess' has no attributes.
+The class 'mitra::Block' has no attributes.
+The class 'mitra::BlockStatement' has no attributes.
+The class 'BlockStatement' has no attributes.
+The class 'mitra::RelationalExpression' has the following attributes: 'op' of type str.
+The class 'mitra::Trigger' has no attributes.
+The class 'mitra::IntLiteral' has the following attributes: 'intValue' of type int.
+The class 'Literal' has no attributes.
+The class 'mitra::ReferenceType' has no attributes.
+The class 'RuleReference' has no attributes.
+The class 'mitra::IteratorExpression' has no attributes.
+The class 'mitra::StringLiteral' has the following attributes: 'stringValue' of type str.
+The class 'MetamodelFeature' has no attributes.
+The class 'mitra::BooleanLiteral' has the following attributes: 'booleanValue' of type bool.
+The class 'mitra::ClassInstanceCreationExpression' has no attributes.
+The class 'mitra::ForUpdate' has no attributes.
+The class 'mitra::EmptyStatement' has no attributes.
+The class 'Expression' has no attributes.
+The class 'mitra::UnaryMathExpression' has the following attributes: 'op' of type str.
+The class 'mitra::ForStatement' has no attributes.
+The class 'Statement' has no attributes.
+The class 'mitra::FeatureField' has no attributes.
+The class 'mitra::ThrowStatement' has no attributes.
+The class 'mitra::ReturnStatement' has no attributes.
+The class 'mitra::ExpressionStatement' has no attributes.
+The class 'Type' has no attributes.
+The class 'ParameterReference' has no attributes.
+The class 'mitra::Annotation' has no attributes.
+The class 'mitra::RuleDeclaration' has the following attributes: 'name' of type str; 'traced' of type bool; 'visibility' of type str; 'multi' of type bool; 'stealth' of type bool; 'virtual' of type bool; 'exec' of type str.
+The class 'mitra::NativeOperationInvocation' has no attributes.
+The class 'mitra::LocalVariableDeclarationStatement' has no attributes.
+The class 'mitra::JavaSpec' has no attributes.
+The class 'mitra::AnnotationProperty' has no attributes.
+The class 'mitra::LoopVariable' has no attributes.
+The class 'mitra::BreakStatement' has no attributes.
+The class 'mitra::FeatureMethodInvocation' has no attributes.
+The class 'mitra::PrimitiveType' has the following attributes: 'primitiveType' of type str.
+The class 'mitra::AnnotationsDefinition' has no attributes.
+The class 'mitra::QualifiedParameterReference' has no attributes.
+The class 'mitra::MathExpression' has the following attributes: 'op' of type str.
+The class 'mitra::ModuleReference' has no attributes.
+The class 'mitra::InferredVarDeclaration' has no attributes.
+The class 'mitra::BooleanExpression' has the following attributes: 'op' of type str.
+The class 'mitra::CollectionType' has the following attributes: 'collectionType' of type str.
+The class 'mitra::EClassifier' has no attributes.
+The class 'mitra::TerminalExpression' has no attributes.
+The class 'mitra::TryStatement' has no attributes.
+The class 'mitra::AnnotationPropertyDecl' has the following attributes: 'name' of type str; 'required' of type bool.
+The class 'mitra::StatementExpression' has no attributes.
+The class 'mitra::EqualityExpression' has the following attributes: 'op' of type str.
+The class 'mitra::IfStatement' has no attributes.
+The class 'mitra::RuleReference' has no attributes.
+The class 'mitra::ParameterReference' has no attributes.
+The class 'mitra::VarDeclaration' has the following attributes: 'name' of type str.
+The class 'mitra::Assignment' has the following attributes: 'operator' of type str.
+The class 'Parameter' has no attributes.
+The class 'TerminalExpression' has no attributes.
+The class 'mitra::FormalParameter' has no attributes.
+The class 'mitra::RealLiteral' has the following attributes: 'floatValue' of type str.
+The class 'mitra::SimpleRuleReference' has no attributes.
+The class 'mitra::ForInit' has no attributes.
+The class 'mitra::DoStatement' has no attributes.
+The class 'mitra::RuleInvocation' has no attributes.
+The class 'mitra::Literal' has no attributes.
+The class 'StatementExpression' has no attributes.
+The class 'mitra::VariableAccess' has the following attributes: 'postfixOperator' of type str; 'prefixOperator' of type str.
+The class 'mitra::MethodInvocation' has no attributes.
+The class 'mitra::Property' has the following attributes: 'value' of type str; 'name' of type str.
+The enumeration 'ParameterModifier' has the following literals: 'from_', 'return_', 'use', 'into', 'create'.
+The enumeration 'VisibilityModifier' has the following literals: 'public', 'private'.
+The enumeration 'RelationalOperator' has the following literals: 'leq', 'lt', 'gt', 'geq'.
+The enumeration 'CollectionTypeSpec' has the following literals: 'Collection', 'Bag', 'Set', 'Sequence', 'OrderedSet'.
+The enumeration 'UnaryMathOperator' has the following literals: 'plus', 'minus'.
+The enumeration 'BooleanOperator' has the following literals: 'and_', 'or_', 'orsc', 'andsc'.
+The enumeration 'MathOperator' has the following literals: 'add', 'sub', 'div', 'mul'.
+The enumeration 'PrimitiveTypeSpec' has the following literals: 'int', 'real', 'type', 'string', 'boolean', 'void', 'any'.
+The enumeration 'ExecutionModifier' has the following literals: 'called', 'auto', 'confirm', 'abstract', 'manual'.
+The enumeration 'PPOperator' has the following literals: 'dec', 'NULL', 'inc'.
+The enumeration 'AssignmentOperator' has the following literals: 'set', 'add', 'sub'.
+The enumeration 'AnnotationTargetSpec' has the following literals: 'rule', 'module', 'parameter'.
+The enumeration 'EqualityOperator' has the following literals: 'eq', 'neq'.
+'mitra::MethodInvocation' is a specialization of 'Feature'.
+'mitra::EqualityExpression' is a specialization of 'Expression'.
+'mitra::IteratorExpression' is a specialization of 'Expression'.
+'mitra::WhileStatement' is a specialization of 'Statement'.
+'mitra::Assignment' is a specialization of 'StatementExpression'.
+'mitra::BreakStatement' is a specialization of 'Statement'.
+'mitra::LocalVariableDeclarationStatement' is a specialization of 'BlockStatement'.
+'mitra::RuleInvocation' is a specialization of 'StatementExpression'.
+'mitra::QualifiedRuleReference' is a specialization of 'RuleReference'.
+'mitra::Statement' is a specialization of 'BlockStatement'.
+'mitra::DoStatement' is a specialization of 'Statement'.
+'mitra::IntLiteral' is a specialization of 'Literal'.
+'mitra::RuleInvocation' is a specialization of 'TerminalExpression'.
+'mitra::RuleInvocationSuper' is a specialization of 'StatementExpression'.
+'mitra::UnaryCastExpression' is a specialization of 'Expression'.
+'mitra::FeatureField' is a specialization of 'Feature'.
+'mitra::ThrowStatement' is a specialization of 'Statement'.
+'mitra::QualifiedParameterReference' is a specialization of 'ParameterReference'.
+'mitra::InstanceOfExpression' is a specialization of 'Expression'.
+'mitra::CollectionType' is a specialization of 'Type'.
+'mitra::UnaryBooleanExpression' is a specialization of 'Expression'.
+'mitra::TryStatement' is a specialization of 'Statement'.
+'mitra::ForStatement' is a specialization of 'Statement'.
+'mitra::PrimitiveType' is a specialization of 'Type'.
+'mitra::StaticAccess' is a specialization of 'TerminalExpression'.
+'mitra::FeatureMethodInvocation' is a specialization of 'MetamodelFeature'.
+'mitra::MathExpression' is a specialization of 'Expression'.
+'mitra::BooleanExpression' is a specialization of 'Expression'.
+'mitra::RealLiteral' is a specialization of 'Literal'.
+'mitra::FeatureMethodInvocation' is a specialization of 'MethodInvocation'.
+'mitra::Block' is a specialization of 'Statement'.
+'mitra::RuleInvocationSuper' is a specialization of 'TerminalExpression'.
+'mitra::TypedVarDeclaration' is a specialization of 'VarDeclaration'.
+'mitra::TerminalExpression' is a specialization of 'Expression'.
+'mitra::VariableAccess' is a specialization of 'StatementExpression'.
+'mitra::ReferenceType' is a specialization of 'Type'.
+'mitra::SimpleRuleReference' is a specialization of 'RuleReference'.
+'mitra::RelationalExpression' is a specialization of 'Expression'.
+'mitra::NativeOperationInvocation' is a specialization of 'MethodInvocation'.
+'mitra::SimpleParameterReference' is a specialization of 'ParameterReference'.
+'mitra::Literal' is a specialization of 'TerminalExpression'.
+'mitra::FeatureField' is a specialization of 'MetamodelFeature'.
+'mitra::ClassInstanceCreationExpression' is a specialization of 'StatementExpression'.
+'mitra::FormalParameter' is a specialization of 'Parameter'.
+'mitra::ClassInstanceCreationExpression' is a specialization of 'TerminalExpression'.
+'mitra::StaticAccess' is a specialization of 'StatementExpression'.
+'mitra::InferredVarDeclaration' is a specialization of 'VarDeclaration'.
+'mitra::EmptyStatement' is a specialization of 'Statement'.
+'mitra::IfStatement' is a specialization of 'Statement'.
+'mitra::StringLiteral' is a specialization of 'Literal'.
+'mitra::VariableAccess' is a specialization of 'TerminalExpression'.
+'mitra::ReturnStatement' is a specialization of 'Statement'.
+'mitra::NullLiteral' is a specialization of 'Literal'.
+'mitra::BooleanLiteral' is a specialization of 'Literal'.
+'mitra::UnaryMathExpression' is a specialization of 'Expression'.
+'mitra::ReturnParameter' is a specialization of 'Parameter'.
+'mitra::ExpressionStatement' is a specialization of 'Statement'.
+'mitra::Annotation' (role 'mitra_Annotation184', cardinality 0..*) is associated with 'mitra::AnnotationDecl' (role 'mitra_AnnotationDecl185', cardinality 0..*).
+'mitra::Expression' (role 'mitra_Expression213', cardinality 0..*) is associated with 'mitra::EqualityExpression' (role 'mitra_EqualityExpression', cardinality 0..*).
+'mitra::AnnotationProperty' (role 'mitra_AnnotationProperty192', cardinality 0..*) is associated with 'mitra::AnnotationPropertyDecl' (role 'mitra_AnnotationPropertyDecl193', cardinality 0..*).
+'mitra::Expression' (role 'mitra_Expression124', cardinality 0..*) is associated with 'mitra::ThrowStatement' (role 'mitra_ThrowStatement', cardinality 0..*).
+'mitra::Assignment' (role 'mitra_Assignment', cardinality 0..*) is associated with 'mitra::VariableAccess' (role 'mitra_VariableAccess198', cardinality 0..*).
+'mitra::WhileStatement' (role 'mitra_WhileStatement93', cardinality 0..*) is associated with 'mitra::Statement' (role 'mitra_Statement94', cardinality 0..*).
+'mitra::Block' (role 'mitra_Block52', cardinality 0..*) is associated with 'mitra::Trigger' (role 'mitra_Trigger51', cardinality 0..*).
+'mitra::Block' (role 'mitra_Block70', cardinality 0..*) is associated with 'mitra::BlockStatement' (role 'mitra_BlockStatement', cardinality 0..*).
+'mitra::SimpleRuleReference' (role 'mitra_SimpleRuleReference', cardinality 0..*) is associated with 'mitra::RuleDeclaration' (role 'mitra_RuleDeclaration19', cardinality 0..*).
+'mitra::LocalVariableDeclarationStatement' (role 'mitra_LocalVariableDeclarationStatement', cardinality 0..*) is associated with 'mitra::LocalVariableDeclaration' (role 'mitra_LocalVariableDeclaration', cardinality 0..*).
+'mitra::Type' (role 'mitra_Type139', cardinality 0..*) is associated with 'mitra::ClassInstanceCreationExpression' (role 'mitra_ClassInstanceCreationExpression', cardinality 0..*).
+'mitra::MethodInvocation' (role 'mitra_MethodInvocation', cardinality 0..*) is associated with 'mitra::Expression' (role 'mitra_Expression149', cardinality 0..*).
+'mitra::PrimitiveType' (role 'mitra_PrimitiveType179', cardinality 0..*) is associated with 'mitra::AnnotationPropertyDecl' (role 'mitra_AnnotationPropertyDecl178', cardinality 0..*).
+'mitra::RuleDeclaration' (role 'mitra_RuleDeclaration13', cardinality 0..*) is associated with 'mitra::Annotation' (role 'mitra_Annotation', cardinality 0..*).
+'mitra::Module' (role 'mitra_Module2', cardinality 0..*) is associated with 'mitra::MetamodelDeclaration' (role 'mitra_MetamodelDeclaration', cardinality 0..*).
+'mitra::Trigger' (role 'mitra_Trigger48', cardinality 0..*) is associated with 'mitra::QualifiedRuleReference' (role 'mitra_QualifiedRuleReference49', cardinality 0..*).
+'mitra::LocalVariableDeclaration' (role 'mitra_LocalVariableDeclaration104', cardinality 0..*) is associated with 'mitra::ForInit' (role 'mitra_ForInit103', cardinality 0..*).
+'mitra::SimpleParameterReference' (role 'mitra_SimpleParameterReference', cardinality 0..*) is associated with 'mitra::SimpleRuleReference' (role 'mitra_SimpleRuleReference35', cardinality 0..*).
+'mitra::VarDeclaration' (role 'mitra_VarDeclaration', cardinality 0..*) is associated with 'mitra::Type' (role 'mitra_Type79', cardinality 0..*).
+'mitra::RelationalExpression' (role 'mitra_RelationalExpression', cardinality 0..*) is associated with 'mitra::Expression' (role 'mitra_Expression218', cardinality 0..*).
+'mitra::LoopVariable' (role 'mitra_LoopVariable121', cardinality 0..*) is associated with 'mitra::VarDeclaration' (role 'mitra_VarDeclaration122', cardinality 0..*).
+'mitra::TypedVarDeclaration' (role 'mitra_TypedVarDeclaration74', cardinality 0..*) is associated with 'mitra::LocalVariableDeclaration' (role 'mitra_LocalVariableDeclaration73', cardinality 0..*).
+'mitra::AnnotationDecl' (role 'mitra_AnnotationDecl176', cardinality 0..*) is associated with 'mitra::AnnotationPropertyDecl' (role 'mitra_AnnotationPropertyDecl', cardinality 0..*).
+'mitra::Type' (role 'mitra_Type165', cardinality 0..*) is associated with 'mitra::StaticAccess' (role 'mitra_StaticAccess164', cardinality 0..*).
+'mitra::VariableAccess' (role 'mitra_VariableAccess159', cardinality 0..*) is associated with 'mitra::Expression' (role 'mitra_Expression160', cardinality 0..*).
+'mitra::VariableAccess' (role 'mitra_VariableAccess', cardinality 0..*) is associated with 'mitra::VarDeclaration' (role 'mitra_VarDeclaration155', cardinality 0..*).
+'mitra::IteratorExpression' (role 'mitra_IteratorExpression', cardinality 0..*) is associated with 'mitra::LoopVariable' (role 'mitra_LoopVariable203', cardinality 0..*).
+'mitra::Type' (role 'mitra_Type', cardinality 0..*) is associated with 'mitra::SimpleParameterReference' (role 'mitra_SimpleParameterReference44', cardinality 0..*).
+'mitra::JavaSpec' (role 'mitra_JavaSpec56', cardinality 0..*) is associated with 'mitra::Property' (role 'mitra_Property57', cardinality 0..*).
+'mitra::Feature' (role 'mitra_Feature', cardinality 0..*) is associated with 'mitra::VariableAccess' (role 'mitra_VariableAccess157', cardinality 0..*).
+'mitra::IfStatement' (role 'mitra_IfStatement', cardinality 0..*) is associated with 'mitra::Expression' (role 'mitra_Expression84', cardinality 0..*).
+'mitra::Expression' (role 'mitra_Expression77', cardinality 0..*) is associated with 'mitra::LocalVariableDeclaration' (role 'mitra_LocalVariableDeclaration76', cardinality 0..*).
+'mitra::EClassifier' (role 'mitra_EClassifier', cardinality 0..*) is associated with 'mitra::ReferenceType' (role 'mitra_ReferenceType66', cardinality 0..*).
+'mitra::ClassInstanceCreationExpression' (role 'mitra_ClassInstanceCreationExpression141', cardinality 0..*) is associated with 'mitra::Expression' (role 'mitra_Expression142', cardinality 0..*).
+'mitra::SimpleRuleReference' (role 'mitra_SimpleRuleReference25', cardinality 0..*) is associated with 'mitra::RuleDeclaration' (role 'mitra_RuleDeclaration24', cardinality 0..*).
+'mitra::LoopVariable' (role 'mitra_LoopVariable', cardinality 0..*) is associated with 'mitra::ForStatement' (role 'mitra_ForStatement', cardinality 0..*).
+'mitra::IteratorExpression' (role 'mitra_IteratorExpression205', cardinality 0..*) is associated with 'mitra::Expression' (role 'mitra_Expression206', cardinality 0..*).
+'mitra::Block' (role 'mitra_Block', cardinality 0..*) is associated with 'mitra::RuleDeclaration' (role 'mitra_RuleDeclaration31', cardinality 0..*).
+'mitra::Expression' (role 'mitra_Expression221', cardinality 0..*) is associated with 'mitra::RelationalExpression' (role 'mitra_RelationalExpression220', cardinality 0..*).
+'mitra::AnnotationDecl' (role 'mitra_AnnotationDecl', cardinality 0..*) is associated with 'mitra::AnnotationsDefinition' (role 'mitra_AnnotationsDefinition170', cardinality 0..*).
+'mitra::Expression' (role 'mitra_Expression82', cardinality 0..*) is associated with 'mitra::ReturnStatement' (role 'mitra_ReturnStatement', cardinality 0..*).
+'mitra::ExpressionStatement' (role 'mitra_ExpressionStatement', cardinality 0..*) is associated with 'mitra::StatementExpression' (role 'mitra_StatementExpression', cardinality 0..*).
+'mitra::AnnotationProperty' (role 'mitra_AnnotationProperty', cardinality 0..*) is associated with 'mitra::Annotation' (role 'mitra_Annotation190', cardinality 0..*).
+'mitra::ForInit' (role 'mitra_ForInit', cardinality 0..*) is associated with 'mitra::StatementExpression' (role 'mitra_StatementExpression101', cardinality 0..*).
+'mitra::Expression' (role 'mitra_Expression233', cardinality 0..*) is associated with 'mitra::UnaryBooleanExpression' (role 'mitra_UnaryBooleanExpression', cardinality 0..*).
+'mitra::Module' (role 'mitra_Module6', cardinality 0..*) is associated with 'mitra::RuleDeclaration' (role 'mitra_RuleDeclaration', cardinality 0..*).
+'mitra::Expression' (role 'mitra_Expression147', cardinality 0..*) is associated with 'mitra::RuleInvocation' (role 'mitra_RuleInvocation146', cardinality 0..*).
+'mitra::Expression' (role 'mitra_Expression', cardinality 0..*) is associated with 'mitra::Trigger' (role 'mitra_Trigger54', cardinality 0..*).
+'mitra::QualifiedParameterReference' (role 'mitra_QualifiedParameterReference46', cardinality 0..*) is associated with 'mitra::TypedVarDeclaration' (role 'mitra_TypedVarDeclaration', cardinality 0..*).
+'mitra::QualifiedRuleReference' (role 'mitra_QualifiedRuleReference41', cardinality 0..*) is associated with 'mitra::QualifiedParameterReference' (role 'mitra_QualifiedParameterReference42', cardinality 0..*).
+'mitra::Annotation' (role 'mitra_Annotation187', cardinality 0..*) is associated with 'mitra::Literal' (role 'mitra_Literal188', cardinality 0..*).
+'mitra::RuleInvocation' (role 'mitra_RuleInvocation', cardinality 0..*) is associated with 'mitra::RuleDeclaration' (role 'mitra_RuleDeclaration144', cardinality 0..*).
+'mitra::TryStatement' (role 'mitra_TryStatement', cardinality 0..*) is associated with 'mitra::Block' (role 'mitra_Block126', cardinality 0..*).
+'mitra::QualifiedParameterReference' (role 'mitra_QualifiedParameterReference', cardinality 0..*) is associated with 'mitra::QualifiedRuleReference' (role 'mitra_QualifiedRuleReference', cardinality 0..*).
+'mitra::JavaSpec' (role 'mitra_JavaSpec', cardinality 0..*) is associated with 'mitra::RuleDeclaration' (role 'mitra_RuleDeclaration29', cardinality 0..*).
+'mitra::Expression' (role 'mitra_Expression231', cardinality 0..*) is associated with 'mitra::UnaryCastExpression' (role 'mitra_UnaryCastExpression230', cardinality 0..*).
+'mitra::RuleDeclaration' (role 'mitra_RuleDeclaration33', cardinality 0..*) is associated with 'mitra::RuleReference' (role 'mitra_RuleReference', cardinality 0..*).
+'mitra::IfStatement' (role 'mitra_IfStatement88', cardinality 0..*) is associated with 'mitra::Statement' (role 'mitra_Statement89', cardinality 0..*).
+'mitra::ForStatement' (role 'mitra_ForStatement115', cardinality 0..*) is associated with 'mitra::ForUpdate' (role 'mitra_ForUpdate116', cardinality 0..*).
+'mitra::RuleDeclaration' (role 'mitra_RuleDeclaration17', cardinality 0..*) is associated with 'mitra::ReturnParameter' (role 'mitra_ReturnParameter', cardinality 0..*).
+'mitra::PrimitiveType' (role 'mitra_PrimitiveType', cardinality 0..*) is associated with 'mitra::AnnotationDecl' (role 'mitra_AnnotationDecl172', cardinality 0..*).
+'mitra::Expression' (role 'mitra_Expression237', cardinality 0..*) is associated with 'mitra::InstanceOfExpression' (role 'mitra_InstanceOfExpression', cardinality 0..*).
+'mitra::Catch' (role 'mitra_Catch136', cardinality 0..*) is associated with 'mitra::Block' (role 'mitra_Block137', cardinality 0..*).
+'mitra::Expression' (role 'mitra_Expression91', cardinality 0..*) is associated with 'mitra::WhileStatement' (role 'mitra_WhileStatement', cardinality 0..*).
+'mitra::DoStatement' (role 'mitra_DoStatement98', cardinality 0..*) is associated with 'mitra::Expression' (role 'mitra_Expression99', cardinality 0..*).
+'mitra::ModuleReference' (role 'mitra_ModuleReference', cardinality 0..*) is associated with 'mitra::Module' (role 'mitra_Module', cardinality 0..*).
+'mitra::FormalParameter' (role 'mitra_FormalParameter134', cardinality 0..*) is associated with 'mitra::Catch' (role 'mitra_Catch133', cardinality 0..*).
+'mitra::Literal' (role 'mitra_Literal196', cardinality 0..*) is associated with 'mitra::AnnotationProperty' (role 'mitra_AnnotationProperty195', cardinality 0..*).
+'mitra::MathExpression' (role 'mitra_MathExpression225', cardinality 0..*) is associated with 'mitra::Expression' (role 'mitra_Expression226', cardinality 0..*).
+'mitra::BooleanExpression' (role 'mitra_BooleanExpression', cardinality 0..*) is associated with 'mitra::Expression' (role 'mitra_Expression208', cardinality 0..*).
+'mitra::MetamodelDeclaration' (role 'mitra_MetamodelDeclaration64', cardinality 0..*) is associated with 'mitra::ReferenceType' (role 'mitra_ReferenceType', cardinality 0..*).
+'mitra::CollectionType' (role 'mitra_CollectionType', cardinality 0..*) is associated with 'mitra::Type' (role 'mitra_Type68', cardinality 0..*).
+'mitra::Expression' (role 'mitra_Expression235', cardinality 0..*) is associated with 'mitra::UnaryMathExpression' (role 'mitra_UnaryMathExpression', cardinality 0..*).
+'mitra::ForInit' (role 'mitra_ForInit113', cardinality 0..*) is associated with 'mitra::ForStatement' (role 'mitra_ForStatement112', cardinality 0..*).
+'mitra::Literal' (role 'mitra_Literal182', cardinality 0..*) is associated with 'mitra::AnnotationPropertyDecl' (role 'mitra_AnnotationPropertyDecl181', cardinality 0..*).
+'mitra::RuleDeclaration' (role 'mitra_RuleDeclaration15', cardinality 0..*) is associated with 'mitra::FormalParameter' (role 'mitra_FormalParameter', cardinality 0..*).
+'mitra::SimpleRuleReference' (role 'mitra_SimpleRuleReference37', cardinality 0..*) is associated with 'mitra::SimpleParameterReference' (role 'mitra_SimpleParameterReference38', cardinality 0..*).
+'mitra::Type' (role 'mitra_Type228', cardinality 0..*) is associated with 'mitra::UnaryCastExpression' (role 'mitra_UnaryCastExpression', cardinality 0..*).
+'mitra::InstanceOfExpression' (role 'mitra_InstanceOfExpression239', cardinality 0..*) is associated with 'mitra::Type' (role 'mitra_Type240', cardinality 0..*).
+'mitra::Expression' (role 'mitra_Expression110', cardinality 0..*) is associated with 'mitra::ForStatement' (role 'mitra_ForStatement109', cardinality 0..*).
+'mitra::Module' (role 'mitra_Module4', cardinality 0..*) is associated with 'mitra::AnnotationsDefinition' (role 'mitra_AnnotationsDefinition', cardinality 0..*).
+'mitra::MetamodelDeclaration' (role 'mitra_MetamodelDeclaration11', cardinality 0..*) is associated with 'mitra::Property' (role 'mitra_Property', cardinality 0..*).
+'mitra::StatementExpression' (role 'mitra_StatementExpression106', cardinality 0..*) is associated with 'mitra::ForUpdate' (role 'mitra_ForUpdate', cardinality 0..*).
+'mitra::Module' (role 'mitra_Module9', cardinality 0..*) is associated with 'mitra::ModuleReference' (role 'mitra_ModuleReference8', cardinality 0..*).
+'mitra::BooleanExpression' (role 'mitra_BooleanExpression210', cardinality 0..*) is associated with 'mitra::Expression' (role 'mitra_Expression211', cardinality 0..*).
+'mitra::SimpleRuleReference' (role 'mitra_SimpleRuleReference22', cardinality 0..*) is associated with 'mitra::RuleDeclaration' (role 'mitra_RuleDeclaration21', cardinality 0..*).
+'mitra::Parameter' (role 'mitra_Parameter', cardinality 0..*) is associated with 'mitra::Annotation' (role 'mitra_Annotation59', cardinality 0..*).
+'mitra::Expression' (role 'mitra_Expression201', cardinality 0..*) is associated with 'mitra::Assignment' (role 'mitra_Assignment200', cardinality 0..*).
+'mitra::Literal' (role 'mitra_Literal', cardinality 0..*) is associated with 'mitra::AnnotationDecl' (role 'mitra_AnnotationDecl174', cardinality 0..*).
+'mitra::Catch' (role 'mitra_Catch', cardinality 0..*) is associated with 'mitra::TryStatement' (role 'mitra_TryStatement128', cardinality 0..*).
+'mitra::RuleDeclaration' (role 'mitra_RuleDeclaration27', cardinality 0..*) is associated with 'mitra::Trigger' (role 'mitra_Trigger', cardinality 0..*).
+'mitra::ForStatement' (role 'mitra_ForStatement118', cardinality 0..*) is associated with 'mitra::Statement' (role 'mitra_Statement119', cardinality 0..*).
+'mitra::Expression' (role 'mitra_Expression151', cardinality 0..*) is associated with 'mitra::FeatureMethodInvocation' (role 'mitra_FeatureMethodInvocation', cardinality 0..*).
+'mitra::DoStatement' (role 'mitra_DoStatement', cardinality 0..*) is associated with 'mitra::Statement' (role 'mitra_Statement96', cardinality 0..*).
+'mitra::Expression' (role 'mitra_Expression153', cardinality 0..*) is associated with 'mitra::FeatureField' (role 'mitra_FeatureField', cardinality 0..*).
+'mitra::Expression' (role 'mitra_Expression223', cardinality 0..*) is associated with 'mitra::MathExpression' (role 'mitra_MathExpression', cardinality 0..*).
+'mitra::Statement' (role 'mitra_Statement', cardinality 0..*) is associated with 'mitra::IfStatement' (role 'mitra_IfStatement86', cardinality 0..*).
+'mitra::TypedVarDeclaration' (role 'mitra_TypedVarDeclaration62', cardinality 0..*) is associated with 'mitra::Parameter' (role 'mitra_Parameter61', cardinality 0..*).
+'mitra::StaticAccess' (role 'mitra_StaticAccess', cardinality 0..*) is associated with 'mitra::Expression' (role 'mitra_Expression162', cardinality 0..*).
+'mitra::StaticAccess' (role 'mitra_StaticAccess167', cardinality 0..*) is associated with 'mitra::Feature' (role 'mitra_Feature168', cardinality 0..*).
+'mitra::TryStatement' (role 'mitra_TryStatement130', cardinality 0..*) is associated with 'mitra::Block' (role 'mitra_Block131', cardinality 0..*).
+'mitra::Expression' (role 'mitra_Expression216', cardinality 0..*) is associated with 'mitra::EqualityExpression' (role 'mitra_EqualityExpression215', cardinality 0..*).

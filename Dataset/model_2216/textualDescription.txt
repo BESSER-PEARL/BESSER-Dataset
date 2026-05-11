@@ -1,0 +1,31 @@
+The model has 9 class(es).
+The class 'university::Courses' has the following attributes: 'credits' of type float; 'name' of type str; 'code' of type str.
+The class 'university::Programmes' has the following attributes: 'code' of type str; 'name' of type str.
+The class 'university::University' has the following attributes: 'name' of type str.
+The class 'university::ProgrammeInstances' has the following attributes: 'startYear' of type int.
+The class 'university::ProgrammeSemesters' has no attributes.
+The class 'university::CourseInstances' has no attributes.
+The class 'university::Slot' has the following attributes: 'name' of type str; 'points' of type int; 'slotType' of type str.
+The class 'university::Specializations' has the following attributes: 'name' of type str.
+The class 'university::Semesters' has the following attributes: 'year' of type int; 'semesterTime' of type str.
+The enumeration 'SemesterTime' has the following literals: 'Fall', 'Spring'.
+The enumeration 'SlotType' has the following literals: 'V2', 'O', 'V'.
+'university::CourseInstances' (role 'CourseInstances', cardinality 0..*) is associated with 'university::Courses' (role 'course', cardinality 0..*).
+'university::ProgrammeInstances' (role 'ProgrammeInstances10', cardinality 0..*) is associated with 'university::ProgrammeSemesters' (role 'programmeSemesters', cardinality 0..*).
+'university::ProgrammeSemesters' (role 'ProgrammeSemesters18', cardinality 0..*) is associated with 'university::Slot' (role 'slots', cardinality 0..*).
+'university::ProgrammeSemesters' (role 'ProgrammeSemesters22', cardinality 0..*) is associated with 'university::Semesters' (role 'semester', cardinality 0..*).
+'university::Specializations' (role 'Specializations', cardinality 0..*) is associated with 'university::ProgrammeInstances' (role 'programmeInstance4', cardinality 0..*).
+'university::Courses' (role 'university_Courses', cardinality 0..*) is associated with 'university::University' (role 'university_University29', cardinality 0..*).
+'university::Slot' (role 'university_Slot', cardinality 0..*) is associated with 'university::CourseInstances' (role 'university_CourseInstances20', cardinality 0..*).
+'university::Semesters' (role 'Semesters', cardinality 0..*) is associated with 'university::ProgrammeSemesters' (role 'programmeSemesters13', cardinality 0..*).
+'university::Courses' (role 'Courses', cardinality 0..*) is associated with 'university::CourseInstances' (role 'instances7', cardinality 0..*).
+'university::ProgrammeSemesters' (role 'programmeSemester', cardinality 0..*) is associated with 'university::Slot' (role 'Slot', cardinality 0..*).
+'university::University' (role 'university_University', cardinality 0..*) is associated with 'university::Programmes' (role 'university_Programmes', cardinality 0..*).
+'university::Semesters' (role 'university_Semesters32', cardinality 0..*) is associated with 'university::University' (role 'university_University31', cardinality 0..*).
+'university::Programmes' (role 'Programmes', cardinality 0..*) is associated with 'university::ProgrammeInstances' (role 'instances', cardinality 0..*).
+'university::Specializations' (role 'specialization', cardinality 0..*) is associated with 'university::ProgrammeSemesters' (role 'ProgrammeSemesters26', cardinality 0..*).
+'university::ProgrammeInstances' (role 'programmeInstance', cardinality 0..*) is associated with 'university::ProgrammeSemesters' (role 'ProgrammeSemesters', cardinality 0..*).
+'university::Semesters' (role 'university_Semesters', cardinality 0..*) is associated with 'university::CourseInstances' (role 'university_CourseInstances', cardinality 0..*).
+'university::Programmes' (role 'programme', cardinality 0..*) is associated with 'university::ProgrammeInstances' (role 'ProgrammeInstances', cardinality 0..*).
+'university::ProgrammeSemesters' (role 'programmeSemester15', cardinality 0..*) is associated with 'university::Specializations' (role 'Specializations16', cardinality 0..*).
+'university::Specializations' (role 'specializations', cardinality 0..*) is associated with 'university::ProgrammeInstances' (role 'ProgrammeInstances24', cardinality 0..*).

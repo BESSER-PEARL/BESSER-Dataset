@@ -1,0 +1,4 @@
+The model has 1 class(es).
+The class 'HSVTree::HSVNode' has the following attributes: 'name' of type str; 'hsv' of type str.
+'HSVTree::HSVNode' (role 'children', cardinality 0..*) is associated with 'HSVTree::HSVNode' (role 'HSVNode', cardinality 0..*).
+'HSVTree::HSVNode' (role 'HSVNode4', cardinality 0..*) is associated with 'HSVTree::HSVNode' (role 'parent', cardinality 0..*).

@@ -1,0 +1,13 @@
+The model has 5 class(es).
+The class 'emf::StateMachine' has no attributes.
+The class 'emf::State' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'emf::Transition' has the following attributes: 'action' of type str.
+The class 'emf::TransitionToStateMapEntry' has no attributes.
+The class 'emf::Action' has the following attributes: 'event' of type str.
+The enumeration 'StateType' has the following literals: 'FINAL', 'NONE', 'INITIAL'.
+'emf::TransitionToStateMapEntry' (role 'emf_TransitionToStateMapEntry', cardinality 0..*) is associated with 'emf::StateMachine' (role 'emf_StateMachine5', cardinality 0..*).
+'emf::TransitionToStateMapEntry' (role 'emf_TransitionToStateMapEntry9', cardinality 0..*) is associated with 'emf::Transition' (role 'emf_Transition10', cardinality 0..*).
+'emf::State' (role 'emf_State7', cardinality 0..*) is associated with 'emf::Transition' (role 'emf_Transition', cardinality 0..*).
+'emf::StateMachine' (role 'emf_StateMachine', cardinality 0..*) is associated with 'emf::State' (role 'emf_State', cardinality 0..*).
+'emf::State' (role 'emf_State3', cardinality 0..*) is associated with 'emf::StateMachine' (role 'emf_StateMachine2', cardinality 0..*).
+'emf::State' (role 'emf_State13', cardinality 0..*) is associated with 'emf::TransitionToStateMapEntry' (role 'emf_TransitionToStateMapEntry12', cardinality 0..*).

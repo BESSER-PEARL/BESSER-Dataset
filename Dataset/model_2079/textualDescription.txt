@@ -1,0 +1,14 @@
+The model has 7 class(es).
+The class 'goatInfrastructure::TreeNode' has the following attributes: 'address' of type str.
+The class 'goatInfrastructure::Cluster' has the following attributes: 'nodes' of type str; 'registration' of type str; 'message_queue' of type str; 'mid_assigner' of type str.
+The class 'Infrastructure' has no attributes.
+The class 'goatInfrastructure::Ring' has the following attributes: 'nodes' of type str; 'mid_assigner' of type str; 'registration' of type str.
+The class 'goatInfrastructure::Infrastructure' has the following attributes: 'name' of type str.
+The class 'goatInfrastructure::Tree' has the following attributes: 'registration' of type str.
+The class 'goatInfrastructure::SingleServer' has the following attributes: 'server' of type str; 'timeout' of type int.
+'goatInfrastructure::Tree' is a specialization of 'Infrastructure'.
+'goatInfrastructure::Ring' is a specialization of 'Infrastructure'.
+'goatInfrastructure::SingleServer' is a specialization of 'Infrastructure'.
+'goatInfrastructure::Cluster' is a specialization of 'Infrastructure'.
+'goatInfrastructure::TreeNode' (role 'goatInfrastructure_TreeNode3', cardinality 0..*) is associated with 'goatInfrastructure::TreeNode' (role 'goatInfrastructure_TreeNode1', cardinality 0..*).
+'goatInfrastructure::TreeNode' (role 'goatInfrastructure_TreeNode', cardinality 0..*) is associated with 'goatInfrastructure::Tree' (role 'goatInfrastructure_Tree', cardinality 0..*).

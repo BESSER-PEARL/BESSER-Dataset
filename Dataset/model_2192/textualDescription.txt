@@ -1,0 +1,51 @@
+The model has 18 class(es).
+The class 'sample::Value' has the following attributes: 'value' of type int.
+The class 'sample::TypeMapReference' has no attributes.
+The class 'sample::VirtualNode' has no attributes.
+The class 'sample::TypeMap' has no attributes.
+The class 'PhysicalNode' has no attributes.
+The class 'sample::LocalNode' has no attributes.
+The class 'sample::Node' has the following attributes: 'label' of type str.
+The class 'sample::PrimaryObject' has the following attributes: 'kind' of type str; 'unsettableAttribute' of type str; 'featureMapReferenceCollection' of type str; 'featureMapAttributeCollection' of type str; 'featureMapAttributeType1' of type str; 'id' of type str; 'name' of type str; 'unsettableAttributeWithDefault' of type str; 'featureMapAttributeType2' of type str.
+The class 'sample::Tree' has the following attributes: 'name' of type str.
+The class 'sample::DataTypeMap' has the following attributes: 'value' of type str; 'key' of type str.
+The class 'sample::RemoteNode' has no attributes.
+The class 'Node' has no attributes.
+The class 'sample::StringMap' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'sample::PhysicalNode' has no attributes.
+The class 'sample::Comment' has the following attributes: 'content' of type str.
+The class 'sample::Type' has the following attributes: 'name' of type str.
+The class 'sample::TargetObject' has the following attributes: 'name' of type str; 'singleAttribute' of type str; 'manyAttributes' of type str.
+The class 'sample::ETypes' has the following attributes: 'uris' of type str.
+The enumeration 'SomeKind' has the following literals: 'Three', 'Two', 'one'.
+'sample::LocalNode' is a specialization of 'PhysicalNode'.
+'sample::RemoteNode' is a specialization of 'PhysicalNode'.
+'sample::PhysicalNode' is a specialization of 'Node'.
+'sample::VirtualNode' is a specialization of 'Node'.
+'sample::TypeMapReference' (role 'sample_TypeMapReference', cardinality 0..*) is associated with 'sample::ETypes' (role 'sample_ETypes2', cardinality 0..*).
+'sample::PrimaryObject' (role 'sample_PrimaryObject25', cardinality 0..*) is associated with 'sample::TargetObject' (role 'sample_TargetObject26', cardinality 0..*).
+'sample::TargetObject' (role 'sample_TargetObject32', cardinality 0..*) is associated with 'sample::PrimaryObject' (role 'sample_PrimaryObject31', cardinality 0..*).
+'sample::Node' (role 'childrenProxies', cardinality 0..*) is associated with 'sample::Node' (role 'Node62', cardinality 0..*).
+'sample::Tree' (role 'Tree', cardinality 0..*) is associated with 'sample::Tree' (role 'children', cardinality 0..*).
+'sample::DataTypeMap' (role 'sample_DataTypeMap', cardinality 0..*) is associated with 'sample::ETypes' (role 'sample_ETypes6', cardinality 0..*).
+'sample::TypeMapReference' (role 'sample_TypeMapReference14', cardinality 0..*) is associated with 'sample::TargetObject' (role 'sample_TargetObject', cardinality 0..*).
+'sample::PrimaryObject' (role 'sample_PrimaryObject22', cardinality 0..*) is associated with 'sample::TargetObject' (role 'sample_TargetObject23', cardinality 0..*).
+'sample::Node' (role 'parentProxy', cardinality 0..*) is associated with 'sample::Node' (role 'Node55', cardinality 0..*).
+'sample::PrimaryObject' (role 'sample_PrimaryObject16', cardinality 0..*) is associated with 'sample::TargetObject' (role 'sample_TargetObject17', cardinality 0..*).
+'sample::PrimaryObject' (role 'sample_PrimaryObject38', cardinality 0..*) is associated with 'sample::TargetObject' (role 'sample_TargetObject37', cardinality 0..*).
+'sample::ETypes' (role 'sample_ETypes', cardinality 0..*) is associated with 'sample::TypeMap' (role 'sample_TypeMap', cardinality 0..*).
+'sample::TargetObject' (role 'sample_TargetObject40', cardinality 0..*) is associated with 'sample::PrimaryObject' (role 'sample_PrimaryObject41', cardinality 0..*).
+'sample::PrimaryObject' (role 'sample_PrimaryObject19', cardinality 0..*) is associated with 'sample::TargetObject' (role 'sample_TargetObject20', cardinality 0..*).
+'sample::Node' (role 'children58', cardinality 0..*) is associated with 'sample::Node' (role 'Node59', cardinality 0..*).
+'sample::Comment' (role 'sample_Comment66', cardinality 0..*) is associated with 'sample::Node' (role 'sample_Node', cardinality 0..*).
+'sample::TargetObject' (role 'sample_TargetObject35', cardinality 0..*) is associated with 'sample::PrimaryObject' (role 'sample_PrimaryObject34', cardinality 0..*).
+'sample::PrimaryObject' (role 'sample_PrimaryObject', cardinality 0..*) is associated with 'sample::TypeMapReference' (role 'sample_TypeMapReference12', cardinality 0..*).
+'sample::TypeMap' (role 'sample_TypeMap8', cardinality 0..*) is associated with 'sample::Type' (role 'sample_Type', cardinality 0..*).
+'sample::Tree' (role 'sample_Tree', cardinality 0..*) is associated with 'sample::Comment' (role 'sample_Comment', cardinality 0..*).
+'sample::PrimaryObject' (role 'sample_PrimaryObject28', cardinality 0..*) is associated with 'sample::TargetObject' (role 'sample_TargetObject29', cardinality 0..*).
+'sample::TypeMap' (role 'sample_TypeMap10', cardinality 0..*) is associated with 'sample::Value' (role 'sample_Value', cardinality 0..*).
+'sample::Tree' (role 'parent', cardinality 0..*) is associated with 'sample::Tree' (role 'Tree47', cardinality 0..*).
+'sample::Node' (role 'nodes', cardinality 0..*) is associated with 'sample::Tree' (role 'Tree64', cardinality 0..*).
+'sample::Node' (role 'Node', cardinality 0..*) is associated with 'sample::Tree' (role 'tree', cardinality 0..*).
+'sample::Node' (role 'parent51', cardinality 0..*) is associated with 'sample::Node' (role 'Node52', cardinality 0..*).
+'sample::StringMap' (role 'sample_StringMap', cardinality 0..*) is associated with 'sample::ETypes' (role 'sample_ETypes4', cardinality 0..*).

@@ -1,0 +1,58 @@
+The model has 19 class(es).
+The class 'modeldraw::NodeEnumerator' has no attributes.
+The class 'modeldraw::Item' has no attributes.
+The class 'modeldraw::Enumerator' has the following attributes: 'value' of type str.
+The class 'Item' has no attributes.
+The class 'modeldraw::Relation' has the following attributes: 'tar_decoration' of type str; 'src_decoration' of type str.
+The class 'modeldraw::EEnumLiteral' has no attributes.
+The class 'modeldraw::Content' has the following attributes: 'symbol' of type str.
+The class 'Relation' has no attributes.
+The class 'modeldraw::EAttribute' has no attributes.
+The class 'modeldraw::BooleanAttribute' has the following attributes: 'negation' of type bool.
+The class 'modeldraw::Level' has no attributes.
+The class 'modeldraw::Node' has the following attributes: 'style' of type str; 'type' of type str; 'shape' of type str; 'color' of type str.
+The class 'modeldraw::Information' has no attributes.
+The class 'modeldraw::Edge' has no attributes.
+The class 'modeldraw::NamedItem' has no attributes.
+The class 'modeldraw::MutatorDraw' has the following attributes: 'metamodel' of type str; 'type' of type str.
+The class 'NamedItem' has no attributes.
+The class 'modeldraw::EReference' has no attributes.
+The class 'modeldraw::EClass' has no attributes.
+The enumeration 'NodeType' has the following literals: 'markednode', 'node'.
+The enumeration 'NodeShape' has the following literals: 'record', 'circle', 'doublecircle'.
+The enumeration 'NodeColor' has the following literals: 'gray95'.
+The enumeration 'NodeStyle' has the following literals: 'underline', 'italic', 'none'.
+The enumeration 'Decoration' has the following literals: 'none', 'open', 'empty', 'triangle', 'diamond', 'odiamond'.
+The enumeration 'DrawType' has the following literals: 'diagram'.
+'modeldraw::NamedItem' is a specialization of 'Item'.
+'modeldraw::Information' is a specialization of 'Item'.
+'modeldraw::Node' is a specialization of 'NamedItem'.
+'modeldraw::Relation' is a specialization of 'NamedItem'.
+'modeldraw::NodeEnumerator' is a specialization of 'Item'.
+'modeldraw::MutatorDraw' is a specialization of 'Item'.
+'modeldraw::Content' is a specialization of 'NamedItem'.
+'modeldraw::Edge' is a specialization of 'Relation'.
+'modeldraw::Level' is a specialization of 'Relation'.
+'modeldraw::BooleanAttribute' is a specialization of 'Item'.
+'modeldraw::EReference' (role 'modeldraw_EReference16', cardinality 0..*) is associated with 'modeldraw::Relation' (role 'modeldraw_Relation15', cardinality 0..*).
+'modeldraw::EAttribute' (role 'modeldraw_EAttribute', cardinality 0..*) is associated with 'modeldraw::NamedItem' (role 'modeldraw_NamedItem', cardinality 0..*).
+'modeldraw::Edge' (role 'modeldraw_Edge29', cardinality 0..*) is associated with 'modeldraw::EReference' (role 'modeldraw_EReference30', cardinality 0..*).
+'modeldraw::Relation' (role 'modeldraw_Relation21', cardinality 0..*) is associated with 'modeldraw::EAttribute' (role 'modeldraw_EAttribute22', cardinality 0..*).
+'modeldraw::EAttribute' (role 'modeldraw_EAttribute19', cardinality 0..*) is associated with 'modeldraw::Relation' (role 'modeldraw_Relation18', cardinality 0..*).
+'modeldraw::NodeEnumerator' (role 'modeldraw_NodeEnumerator46', cardinality 0..*) is associated with 'modeldraw::Content' (role 'modeldraw_Content45', cardinality 0..*).
+'modeldraw::Information' (role 'modeldraw_Information42', cardinality 0..*) is associated with 'modeldraw::EAttribute' (role 'modeldraw_EAttribute43', cardinality 0..*).
+'modeldraw::MutatorDraw' (role 'modeldraw_MutatorDraw5', cardinality 0..*) is associated with 'modeldraw::Content' (role 'modeldraw_Content', cardinality 0..*).
+'modeldraw::NodeEnumerator' (role 'modeldraw_NodeEnumerator36', cardinality 0..*) is associated with 'modeldraw::Enumerator' (role 'modeldraw_Enumerator', cardinality 0..*).
+'modeldraw::Node' (role 'modeldraw_Node10', cardinality 0..*) is associated with 'modeldraw::BooleanAttribute' (role 'modeldraw_BooleanAttribute11', cardinality 0..*).
+'modeldraw::BooleanAttribute' (role 'modeldraw_BooleanAttribute', cardinality 0..*) is associated with 'modeldraw::EAttribute' (role 'modeldraw_EAttribute8', cardinality 0..*).
+'modeldraw::Relation' (role 'modeldraw_Relation24', cardinality 0..*) is associated with 'modeldraw::EAttribute' (role 'modeldraw_EAttribute25', cardinality 0..*).
+'modeldraw::Edge' (role 'modeldraw_Edge', cardinality 0..*) is associated with 'modeldraw::EReference' (role 'modeldraw_EReference27', cardinality 0..*).
+'modeldraw::EClass' (role 'modeldraw_EClass', cardinality 0..*) is associated with 'modeldraw::Item' (role 'modeldraw_Item', cardinality 0..*).
+'modeldraw::Node' (role 'modeldraw_Node13', cardinality 0..*) is associated with 'modeldraw::EReference' (role 'modeldraw_EReference', cardinality 0..*).
+'modeldraw::Level' (role 'modeldraw_Level', cardinality 0..*) is associated with 'modeldraw::EReference' (role 'modeldraw_EReference32', cardinality 0..*).
+'modeldraw::EReference' (role 'modeldraw_EReference40', cardinality 0..*) is associated with 'modeldraw::Information' (role 'modeldraw_Information', cardinality 0..*).
+'modeldraw::EAttribute' (role 'modeldraw_EAttribute34', cardinality 0..*) is associated with 'modeldraw::NodeEnumerator' (role 'modeldraw_NodeEnumerator', cardinality 0..*).
+'modeldraw::Content' (role 'modeldraw_Content48', cardinality 0..*) is associated with 'modeldraw::Information' (role 'modeldraw_Information49', cardinality 0..*).
+'modeldraw::MutatorDraw' (role 'modeldraw_MutatorDraw', cardinality 0..*) is associated with 'modeldraw::Node' (role 'modeldraw_Node', cardinality 0..*).
+'modeldraw::Enumerator' (role 'modeldraw_Enumerator38', cardinality 0..*) is associated with 'modeldraw::EEnumLiteral' (role 'modeldraw_EEnumLiteral', cardinality 0..*).
+'modeldraw::Relation' (role 'modeldraw_Relation', cardinality 0..*) is associated with 'modeldraw::MutatorDraw' (role 'modeldraw_MutatorDraw3', cardinality 0..*).

@@ -1,0 +1,24 @@
+The model has 10 class(es).
+The class 'conts::C' has no attributes.
+The class 'conts::F' has no attributes.
+The class 'B' has no attributes.
+The class 'conts::A' has no attributes.
+The class 'conts::E' has no attributes.
+The class 'conts::G' has no attributes.
+The class 'Named' has no attributes.
+The class 'conts::Named' has the following attributes: 'name' of type str.
+The class 'conts::B' has no attributes.
+The class 'conts::H' has no attributes.
+'conts::F' is a specialization of 'Named'.
+'conts::C' is a specialization of 'Named'.
+'conts::E' is a specialization of 'Named'.
+'conts::E' is a specialization of 'B'.
+'conts::H' is a specialization of 'Named'.
+'conts::B' is a specialization of 'Named'.
+'conts::G' is a specialization of 'Named'.
+'conts::A' is a specialization of 'Named'.
+'conts::B' (role 'conts_B', cardinality 0..*) is associated with 'conts::A' (role 'conts_A', cardinality 0..*).
+'conts::F' (role 'conts_F', cardinality 0..*) is associated with 'conts::E' (role 'conts_E', cardinality 0..*).
+'conts::G' (role 'conts_G7', cardinality 0..*) is associated with 'conts::H' (role 'conts_H', cardinality 0..*).
+'conts::B' (role 'conts_B4', cardinality 0..*) is associated with 'conts::G' (role 'conts_G', cardinality 0..*).
+'conts::C' (role 'conts_C', cardinality 0..*) is associated with 'conts::B' (role 'conts_B2', cardinality 0..*).

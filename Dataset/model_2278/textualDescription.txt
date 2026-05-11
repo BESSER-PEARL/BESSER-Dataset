@@ -1,0 +1,6 @@
+The model has 3 class(es).
+The class 'edu::Course' has the following attributes: 'name' of type str; 'id' of type int.
+The class 'edu::Student' has the following attributes: 'date_of_birth' of type date; 'name' of type str; 'id' of type int.
+The class 'edu::Take::Course' has no attributes.
+'edu::Take::Course' (role 'edu_Take_Course2', cardinality 0..*) is associated with 'edu::Course' (role 'edu_Course', cardinality 0..*).
+'edu::Student' (role 'edu_Student', cardinality 0..*) is associated with 'edu::Take::Course' (role 'edu_Take_Course', cardinality 0..*).

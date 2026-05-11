@@ -1,0 +1,18 @@
+The model has 6 class(es).
+The class 'DbMddAndroid::Column' has the following attributes: 'type' of type str.
+The class 'DbMddAndroid::Relation' has the following attributes: 'maxSourceMultiplicity' of type int; 'minTargetMultiplicity' of type int; 'minSourceMultiplicity' of type int; 'maxTargetMultiplicity' of type int.
+The class 'DbMddAndroid::Table' has no attributes.
+The class 'DbMddAndroid::NamedElement' has the following attributes: 'name' of type str.
+The class 'NamedElement' has no attributes.
+The class 'DbMddAndroid::DBScheme' has no attributes.
+'DbMddAndroid::Column' is a specialization of 'NamedElement'.
+'DbMddAndroid::Table' is a specialization of 'NamedElement'.
+'DbMddAndroid::DBScheme' is a specialization of 'NamedElement'.
+'DbMddAndroid::Table' (role 'DbMddAndroid_Table6', cardinality 0..*) is associated with 'DbMddAndroid::Column' (role 'DbMddAndroid_Column7', cardinality 0..*).
+'DbMddAndroid::Relation' (role 'inRelation', cardinality 0..*) is associated with 'DbMddAndroid::Table' (role 'Table13', cardinality 0..*).
+'DbMddAndroid::Relation' (role 'DbMddAndroid_Relation', cardinality 0..*) is associated with 'DbMddAndroid::DBScheme' (role 'DbMddAndroid_DBScheme2', cardinality 0..*).
+'DbMddAndroid::Relation' (role 'Relation', cardinality 0..*) is associated with 'DbMddAndroid::Table' (role 'source', cardinality 0..*).
+'DbMddAndroid::Table' (role 'target', cardinality 0..*) is associated with 'DbMddAndroid::Relation' (role 'Relation10', cardinality 0..*).
+'DbMddAndroid::Relation' (role 'outRelation', cardinality 0..*) is associated with 'DbMddAndroid::Table' (role 'Table', cardinality 0..*).
+'DbMddAndroid::Table' (role 'DbMddAndroid_Table4', cardinality 0..*) is associated with 'DbMddAndroid::Column' (role 'DbMddAndroid_Column', cardinality 0..*).
+'DbMddAndroid::Table' (role 'DbMddAndroid_Table', cardinality 0..*) is associated with 'DbMddAndroid::DBScheme' (role 'DbMddAndroid_DBScheme', cardinality 0..*).

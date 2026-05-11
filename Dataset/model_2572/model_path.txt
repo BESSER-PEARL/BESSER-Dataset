@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/OpenSoftwareSolutions/PDFReporter-Studio/com.jaspersoft.studio.data.sql/src-gen/com/jaspersoft/studio/data/Sql.ecore

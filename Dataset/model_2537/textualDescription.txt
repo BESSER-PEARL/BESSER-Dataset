@@ -1,0 +1,17 @@
+The model has 7 class(es).
+The class 'test::A' has no attributes.
+The class 'test::B' has no attributes.
+The class 'test::C' has no attributes.
+The class 'test::EClassToAMap' has no attributes.
+The class 'test::D' has the following attributes: 'x' of type str; 'yList' of type int.
+The class 'test::EClassToEStringMap' has the following attributes: 'value' of type str.
+The class 'test::EClass' has no attributes.
+'test::EClassToAMap' (role 'test_EClassToAMap18', cardinality 0..*) is associated with 'test::A' (role 'test_A19', cardinality 0..*).
+'test::B' (role 'test_B4', cardinality 0..*) is associated with 'test::C' (role 'test_C5', cardinality 0..*).
+'test::C' (role 'test_C9', cardinality 0..*) is associated with 'test::EClassToEStringMap' (role 'test_EClassToEStringMap', cardinality 0..*).
+'test::B' (role 'test_B2', cardinality 0..*) is associated with 'test::C' (role 'test_C', cardinality 0..*).
+'test::EClass' (role 'test_EClass', cardinality 0..*) is associated with 'test::EClassToEStringMap' (role 'test_EClassToEStringMap13', cardinality 0..*).
+'test::EClassToAMap' (role 'test_EClassToAMap', cardinality 0..*) is associated with 'test::C' (role 'test_C11', cardinality 0..*).
+'test::A' (role 'test_A', cardinality 0..*) is associated with 'test::B' (role 'test_B', cardinality 0..*).
+'test::D' (role 'test_D', cardinality 0..*) is associated with 'test::C' (role 'test_C7', cardinality 0..*).
+'test::EClass' (role 'test_EClass16', cardinality 0..*) is associated with 'test::EClassToAMap' (role 'test_EClassToAMap15', cardinality 0..*).

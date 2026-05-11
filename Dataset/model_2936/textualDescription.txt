@@ -1,0 +1,36 @@
+The model has 17 class(es).
+The class 'extended::Feature' has the following attributes: 'required' of type str; 'min' of type int; 'name' of type str; 'max' of type int.
+The class 'FormTypes' has no attributes.
+The class 'extended::DataType' has the following attributes: 'name' of type str.
+The class 'AbstractElement' has no attributes.
+The class 'extended::AbstractElement' has no attributes.
+The class 'extended::Form' has the following attributes: 'post' of type str; 'delete' of type str; 'get' of type str; 'put' of type str.
+The class 'extended::FormTypes' has the following attributes: 'name' of type str.
+The class 'extended::Domainmodel' has the following attributes: 'nomeProj' of type str.
+The class 'extended::Entity' has the following attributes: 'name' of type str.
+The class 'extended::AbstractType' has no attributes.
+The class 'extended::Page' has the following attributes: 'footer' of type str; 'title' of type str; 'header' of type str; 'name' of type str.
+The class 'extended::PackageDeclaration' has the following attributes: 'name' of type str.
+The class 'AbstractType' has no attributes.
+The class 'extended::FormNewEntityOnly' has no attributes.
+The class 'extended::FormReport' has the following attributes: 'filter' of type str; 'order' of type str; 'pagination' of type str.
+The class 'extended::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'extended::EntityType' has no attributes.
+'extended::DataType' is a specialization of 'AbstractType'.
+'extended::EntityType' is a specialization of 'AbstractType'.
+'extended::PackageDeclaration' is a specialization of 'AbstractElement'.
+'extended::FormTypes' is a specialization of 'AbstractElement'.
+'extended::Entity' is a specialization of 'AbstractElement'.
+'extended::FormNewEntityOnly' is a specialization of 'FormTypes'.
+'extended::Form' is a specialization of 'FormTypes'.
+'extended::Page' is a specialization of 'AbstractElement'.
+'extended::FormReport' is a specialization of 'FormTypes'.
+'extended::Import' is a specialization of 'AbstractElement'.
+'extended::FormTypes' (role 'extended_FormTypes13', cardinality 0..*) is associated with 'extended::Entity' (role 'extended_Entity14', cardinality 0..*).
+'extended::Feature' (role 'extended_Feature', cardinality 0..*) is associated with 'extended::Entity' (role 'extended_Entity8', cardinality 0..*).
+'extended::AbstractType' (role 'extended_AbstractType', cardinality 0..*) is associated with 'extended::Feature' (role 'extended_Feature10', cardinality 0..*).
+'extended::AbstractElement' (role 'extended_AbstractElement', cardinality 0..*) is associated with 'extended::Domainmodel' (role 'extended_Domainmodel', cardinality 0..*).
+'extended::PackageDeclaration' (role 'extended_PackageDeclaration', cardinality 0..*) is associated with 'extended::AbstractElement' (role 'extended_AbstractElement2', cardinality 0..*).
+'extended::Entity' (role 'extended_Entity', cardinality 0..*) is associated with 'extended::EntityType' (role 'extended_EntityType', cardinality 0..*).
+'extended::Entity' (role 'extended_Entity4', cardinality 0..*) is associated with 'extended::Entity' (role 'extended_Entity6', cardinality 0..*).
+'extended::Page' (role 'extended_Page', cardinality 0..*) is associated with 'extended::FormTypes' (role 'extended_FormTypes', cardinality 0..*).

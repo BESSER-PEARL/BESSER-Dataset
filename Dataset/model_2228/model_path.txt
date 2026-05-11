@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/rsb0/TDT4250_Exercise_1/edu.runesb.tdt4250.assignment.studyprogramme/model/Studyprogramme.ecore

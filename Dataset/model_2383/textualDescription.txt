@@ -1,0 +1,65 @@
+The model has 28 class(es).
+The class 'uml2rdbms::IntegerToNumber' has no attributes.
+The class 'uml2rdbms::PrimitiveDataType' has no attributes.
+The class 'FromAttribute' has no attributes.
+The class 'uml2rdbms::AssociationToForeignKey' has no attributes.
+The class 'UmlToRdbmsModelElement' has no attributes.
+The class 'ToColumn' has no attributes.
+The class 'FromAttributeOwner' has no attributes.
+The class 'uml2rdbms::ForeignKey' has no attributes.
+The class 'uml2rdbms::FromAttribute' has the following attributes: 'kind' of type str.
+The class 'uml2rdbms::AttributeToColumn' has no attributes.
+The class 'uml2rdbms::Package' has no attributes.
+The class 'PrimitiveToName' has no attributes.
+The class 'uml2rdbms::StringToVarchar' has no attributes.
+The class 'uml2rdbms::PrimitiveToName' has the following attributes: 'typeName' of type str.
+The class 'uml2rdbms::Attribute' has no attributes.
+The class 'uml2rdbms::ClassToTable' has no attributes.
+The class 'uml2rdbms::Class' has no attributes.
+The class 'uml2rdbms::Schema' has no attributes.
+The class 'uml2rdbms::Column' has no attributes.
+The class 'uml2rdbms::Association' has no attributes.
+The class 'uml2rdbms::FromAttributeOwner' has no attributes.
+The class 'uml2rdbms::PackageToSchema' has no attributes.
+The class 'uml2rdbms::NonLeafAttribute' has no attributes.
+The class 'uml2rdbms::BooleanToBoolean' has no attributes.
+The class 'uml2rdbms::Key' has no attributes.
+The class 'uml2rdbms::UmlToRdbmsModelElement' has the following attributes: 'name' of type str.
+The class 'uml2rdbms::ToColumn' has no attributes.
+The class 'uml2rdbms::Table' has no attributes.
+'uml2rdbms::StringToVarchar' is a specialization of 'PrimitiveToName'.
+'uml2rdbms::IntegerToNumber' is a specialization of 'PrimitiveToName'.
+'uml2rdbms::AssociationToForeignKey' is a specialization of 'UmlToRdbmsModelElement'.
+'uml2rdbms::PackageToSchema' is a specialization of 'UmlToRdbmsModelElement'.
+'uml2rdbms::BooleanToBoolean' is a specialization of 'PrimitiveToName'.
+'uml2rdbms::NonLeafAttribute' is a specialization of 'FromAttribute'.
+'uml2rdbms::ClassToTable' is a specialization of 'ToColumn'.
+'uml2rdbms::ClassToTable' is a specialization of 'FromAttributeOwner'.
+'uml2rdbms::AssociationToForeignKey' is a specialization of 'ToColumn'.
+'uml2rdbms::NonLeafAttribute' is a specialization of 'FromAttributeOwner'.
+'uml2rdbms::PrimitiveToName' is a specialization of 'UmlToRdbmsModelElement'.
+'uml2rdbms::AttributeToColumn' is a specialization of 'FromAttribute'.
+'uml2rdbms::FromAttribute' is a specialization of 'UmlToRdbmsModelElement'.
+'uml2rdbms::ClassToTable' is a specialization of 'UmlToRdbmsModelElement'.
+'uml2rdbms::AttributeToColumn' is a specialization of 'ToColumn'.
+'uml2rdbms::PrimitiveDataType' (role 'uml2rdbms_PrimitiveDataType', cardinality 0..*) is associated with 'uml2rdbms::PrimitiveToName' (role 'uml2rdbms_PrimitiveToName33', cardinality 0..*).
+'uml2rdbms::PackageToSchema' (role 'PackageToSchema', cardinality 0..*) is associated with 'uml2rdbms::ClassToTable' (role 'classesToTables', cardinality 0..*).
+'uml2rdbms::PrimitiveToName' (role 'PrimitiveToName', cardinality 0..*) is associated with 'uml2rdbms::PackageToSchema' (role 'owner26', cardinality 0..*).
+'uml2rdbms::Package' (role 'uml2rdbms_Package', cardinality 0..*) is associated with 'uml2rdbms::PackageToSchema' (role 'uml2rdbms_PackageToSchema29', cardinality 0..*).
+'uml2rdbms::Schema' (role 'uml2rdbms_Schema', cardinality 0..*) is associated with 'uml2rdbms::PackageToSchema' (role 'uml2rdbms_PackageToSchema', cardinality 0..*).
+'uml2rdbms::AssociationToForeignKey' (role 'uml2rdbms_AssociationToForeignKey', cardinality 0..*) is associated with 'uml2rdbms::Association' (role 'uml2rdbms_Association', cardinality 0..*).
+'uml2rdbms::AssociationToForeignKey' (role 'uml2rdbms_AssociationToForeignKey6', cardinality 0..*) is associated with 'uml2rdbms::ClassToTable' (role 'uml2rdbms_ClassToTable', cardinality 0..*).
+'uml2rdbms::Class' (role 'uml2rdbms_Class', cardinality 0..*) is associated with 'uml2rdbms::ClassToTable' (role 'uml2rdbms_ClassToTable14', cardinality 0..*).
+'uml2rdbms::AssociationToForeignKey' (role 'uml2rdbms_AssociationToForeignKey3', cardinality 0..*) is associated with 'uml2rdbms::ForeignKey' (role 'uml2rdbms_ForeignKey', cardinality 0..*).
+'uml2rdbms::Table' (role 'uml2rdbms_Table', cardinality 0..*) is associated with 'uml2rdbms::ClassToTable' (role 'uml2rdbms_ClassToTable12', cardinality 0..*).
+'uml2rdbms::ClassToTable' (role 'ClassToTable24', cardinality 0..*) is associated with 'uml2rdbms::PackageToSchema' (role 'owner23', cardinality 0..*).
+'uml2rdbms::Key' (role 'uml2rdbms_Key', cardinality 0..*) is associated with 'uml2rdbms::ClassToTable' (role 'uml2rdbms_ClassToTable10', cardinality 0..*).
+'uml2rdbms::AttributeToColumn' (role 'uml2rdbms_AttributeToColumn18', cardinality 0..*) is associated with 'uml2rdbms::FromAttribute' (role 'uml2rdbms_FromAttribute17', cardinality 0..*).
+'uml2rdbms::FromAttribute' (role 'uml2rdbms_FromAttribute', cardinality 0..*) is associated with 'uml2rdbms::Attribute' (role 'uml2rdbms_Attribute', cardinality 0..*).
+'uml2rdbms::PrimitiveToName' (role 'primitivesToNames', cardinality 0..*) is associated with 'uml2rdbms::PackageToSchema' (role 'PackageToSchema31', cardinality 0..*).
+'uml2rdbms::AssociationToForeignKey' (role 'associationsToForeignKeys', cardinality 0..*) is associated with 'uml2rdbms::ClassToTable' (role 'ClassToTable', cardinality 0..*).
+'uml2rdbms::AttributeToColumn' (role 'uml2rdbms_AttributeToColumn', cardinality 0..*) is associated with 'uml2rdbms::PrimitiveToName' (role 'uml2rdbms_PrimitiveToName', cardinality 0..*).
+'uml2rdbms::Column' (role 'uml2rdbms_Column', cardinality 0..*) is associated with 'uml2rdbms::ToColumn' (role 'uml2rdbms_ToColumn', cardinality 0..*).
+'uml2rdbms::FromAttributeOwner' (role 'owner21', cardinality 0..*) is associated with 'uml2rdbms::FromAttribute' (role 'FromAttribute', cardinality 0..*).
+'uml2rdbms::FromAttributeOwner' (role 'FromAttributeOwner', cardinality 0..*) is associated with 'uml2rdbms::FromAttribute' (role 'fromAttributes', cardinality 0..*).
+'uml2rdbms::ClassToTable' (role 'owner', cardinality 0..*) is associated with 'uml2rdbms::AssociationToForeignKey' (role 'AssociationToForeignKey', cardinality 0..*).

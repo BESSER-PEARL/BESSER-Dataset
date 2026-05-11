@@ -1,0 +1,39 @@
+The model has 19 class(es).
+The class 'D' has no attributes.
+The class 'test101::G' has no attributes.
+The class 'test101::I' has the following attributes: 'name' of type str.
+The class 'test101::B' has the following attributes: 'id' of type str.
+The class 'test101::C' has no attributes.
+The class 'B' has no attributes.
+The class 'test101::F' has no attributes.
+The class 'test101::D' has no attributes.
+The class 'E' has no attributes.
+The class 'G' has no attributes.
+The class 'test101::N' has the following attributes: 'id' of type str.
+The class 'M' has no attributes.
+The class 'test101::M' has the following attributes: 'id' of type str.
+The class 'test101::K' has the following attributes: 'ids' of type str.
+The class 'test101::A' has the following attributes: 'name' of type str.
+The class 'test101::J' has the following attributes: 'id' of type str.
+The class 'test101::E' has no attributes.
+The class 'test101::Q' has the following attributes: 'id' of type str.
+The class 'test101::L1' has the following attributes: 'since' of type str.
+'test101::G' is a specialization of 'M'.
+'test101::F' is a specialization of 'E'.
+'test101::E' is a specialization of 'D'.
+'test101::A' is a specialization of 'B'.
+'test101::D' is a specialization of 'G'.
+'test101::E' (role 'test101_E', cardinality 0..*) is associated with 'test101::J' (role 'test101_J', cardinality 0..*).
+'test101::L1' (role 'test101_L124', cardinality 0..*) is associated with 'test101::B' (role 'test101_B25', cardinality 0..*).
+'test101::A' (role 'test101_A', cardinality 0..*) is associated with 'test101::C' (role 'test101_C', cardinality 0..*).
+'test101::G' (role 'test101_G20', cardinality 0..*) is associated with 'test101::I' (role 'test101_I', cardinality 0..*).
+'test101::L1' (role 'test101_L1', cardinality 0..*) is associated with 'test101::C' (role 'test101_C4', cardinality 0..*).
+'test101::L1' (role 'test101_L127', cardinality 0..*) is associated with 'test101::G' (role 'test101_G28', cardinality 0..*).
+'test101::F' (role 'test101_F', cardinality 0..*) is associated with 'test101::D' (role 'test101_D10', cardinality 0..*).
+'test101::C' (role 'test101_C2', cardinality 0..*) is associated with 'test101::D' (role 'test101_D', cardinality 0..*).
+'test101::D' (role 'test101_D12', cardinality 0..*) is associated with 'test101::G' (role 'test101_G13', cardinality 0..*).
+'test101::K' (role 'test101_K', cardinality 0..*) is associated with 'test101::G' (role 'test101_G22', cardinality 0..*).
+'test101::B' (role 'test101_B8', cardinality 0..*) is associated with 'test101::G' (role 'test101_G', cardinality 0..*).
+'test101::D' (role 'test101_D15', cardinality 0..*) is associated with 'test101::N' (role 'test101_N', cardinality 0..*).
+'test101::Q' (role 'test101_Q', cardinality 0..*) is associated with 'test101::F' (role 'test101_F18', cardinality 0..*).
+'test101::A' (role 'test101_A6', cardinality 0..*) is associated with 'test101::B' (role 'test101_B', cardinality 0..*).

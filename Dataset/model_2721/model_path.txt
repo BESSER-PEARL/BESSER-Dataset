@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/master-mck/ECP/tests/org.eclipse.emf.ecp.view.edapt.util.test/model/b.ecore

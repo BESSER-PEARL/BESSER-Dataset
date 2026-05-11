@@ -1,0 +1,89 @@
+The model has 41 class(es).
+The class 'activitydiagram::Exp' has no attributes.
+The class 'activitydiagram::ControlFlow' has no attributes.
+The class 'activitydiagram::Input' has no attributes.
+The class 'activitydiagram::NamedActivity' has the following attributes: 'name' of type str.
+The class 'Action' has no attributes.
+The class 'Token' has no attributes.
+The class 'activitydiagram::DecisionNode' has no attributes.
+The class 'activitydiagram::Token' has no attributes.
+The class 'activitydiagram::IntegerVariable' has no attributes.
+The class 'activitydiagram::Variable' has no attributes.
+The class 'ActivityNode' has no attributes.
+The class 'activitydiagram::Action' has no attributes.
+The class 'activitydiagram::IntegerValue' has the following attributes: 'value' of type float.
+The class 'ActivityEdge' has no attributes.
+The class 'ControlNode' has no attributes.
+The class 'activitydiagram::BooleanValue' has the following attributes: 'value' of type bool.
+The class 'activitydiagram::Offer' has no attributes.
+The class 'activitydiagram::ControlNode' has no attributes.
+The class 'activitydiagram::BooleanVariable' has no attributes.
+The class 'Variable' has no attributes.
+The class 'Value' has no attributes.
+The class 'activitydiagram::Context' has no attributes.
+The class 'activitydiagram::ForkNode' has no attributes.
+The class 'activitydiagram::Trace' has no attributes.
+The class 'activitydiagram::InitialNode' has no attributes.
+The class 'activitydiagram::MergeNode' has no attributes.
+The class 'activitydiagram::OpaqueAction' has no attributes.
+The class 'activitydiagram::ExecutableNode' has no attributes.
+The class 'NamedActivity' has no attributes.
+The class 'activitydiagram::ActivityEdge' has no attributes.
+The class 'activitydiagram::ActivityNode' has the following attributes: 'running' of type bool.
+The class 'ExecutableNode' has no attributes.
+The class 'activitydiagram::ControlToken' has no attributes.
+The class 'FinalNode' has no attributes.
+The class 'activitydiagram::ForkedToken' has the following attributes: 'remainingOffersCount' of type int.
+The class 'activitydiagram::JoinNode' has no attributes.
+The class 'activitydiagram::InputValue' has no attributes.
+The class 'activitydiagram::Value' has no attributes.
+The class 'activitydiagram::Activity' has no attributes.
+The class 'activitydiagram::ActivityFinalNode' has no attributes.
+The class 'activitydiagram::FinalNode' has no attributes.
+'activitydiagram::Activity' is a specialization of 'NamedActivity'.
+'activitydiagram::IntegerVariable' is a specialization of 'Variable'.
+'activitydiagram::ForkedToken' is a specialization of 'Token'.
+'activitydiagram::ControlNode' is a specialization of 'ActivityNode'.
+'activitydiagram::ForkNode' is a specialization of 'ControlNode'.
+'activitydiagram::BooleanValue' is a specialization of 'Value'.
+'activitydiagram::ActivityEdge' is a specialization of 'NamedActivity'.
+'activitydiagram::InitialNode' is a specialization of 'ControlNode'.
+'activitydiagram::ActivityFinalNode' is a specialization of 'FinalNode'.
+'activitydiagram::ControlFlow' is a specialization of 'ActivityEdge'.
+'activitydiagram::ExecutableNode' is a specialization of 'ActivityNode'.
+'activitydiagram::Action' is a specialization of 'ExecutableNode'.
+'activitydiagram::BooleanVariable' is a specialization of 'Variable'.
+'activitydiagram::JoinNode' is a specialization of 'ControlNode'.
+'activitydiagram::OpaqueAction' is a specialization of 'Action'.
+'activitydiagram::MergeNode' is a specialization of 'ControlNode'.
+'activitydiagram::IntegerValue' is a specialization of 'Value'.
+'activitydiagram::FinalNode' is a specialization of 'ControlNode'.
+'activitydiagram::DecisionNode' is a specialization of 'ControlNode'.
+'activitydiagram::ControlToken' is a specialization of 'Token'.
+'activitydiagram::ActivityNode' is a specialization of 'NamedActivity'.
+'activitydiagram::ActivityEdge' (role 'outgoing', cardinality 0..*) is associated with 'activitydiagram::ActivityNode' (role 'ActivityNode13', cardinality 0..*).
+'activitydiagram::ActivityNode' (role 'nodes', cardinality 0..*) is associated with 'activitydiagram::Activity' (role 'Activity', cardinality 0..*).
+'activitydiagram::Context' (role 'activitydiagram_Context', cardinality 0..*) is associated with 'activitydiagram::Trace' (role 'activitydiagram_Trace40', cardinality 0..*).
+'activitydiagram::ActivityEdge' (role 'incoming', cardinality 0..*) is associated with 'activitydiagram::ActivityNode' (role 'ActivityNode15', cardinality 0..*).
+'activitydiagram::Variable' (role 'activitydiagram_Variable21', cardinality 0..*) is associated with 'activitydiagram::Value' (role 'activitydiagram_Value', cardinality 0..*).
+'activitydiagram::Value' (role 'activitydiagram_Value24', cardinality 0..*) is associated with 'activitydiagram::Variable' (role 'activitydiagram_Variable23', cardinality 0..*).
+'activitydiagram::JoinNode' (role 'activitydiagram_JoinNode', cardinality 0..*) is associated with 'activitydiagram::Context' (role 'activitydiagram_Context48', cardinality 0..*).
+'activitydiagram::Variable' (role 'activitydiagram_Variable', cardinality 0..*) is associated with 'activitydiagram::Activity' (role 'activitydiagram_Activity3', cardinality 0..*).
+'activitydiagram::ActivityEdge' (role 'ActivityEdge9', cardinality 0..*) is associated with 'activitydiagram::ActivityNode' (role 'target', cardinality 0..*).
+'activitydiagram::Variable' (role 'activitydiagram_Variable6', cardinality 0..*) is associated with 'activitydiagram::Activity' (role 'activitydiagram_Activity5', cardinality 0..*).
+'activitydiagram::ControlFlow' (role 'activitydiagram_ControlFlow', cardinality 0..*) is associated with 'activitydiagram::BooleanVariable' (role 'activitydiagram_BooleanVariable', cardinality 0..*).
+'activitydiagram::ActivityNode' (role 'source', cardinality 0..*) is associated with 'activitydiagram::ActivityEdge' (role 'ActivityEdge', cardinality 0..*).
+'activitydiagram::OpaqueAction' (role 'activitydiagram_OpaqueAction', cardinality 0..*) is associated with 'activitydiagram::Exp' (role 'activitydiagram_Exp', cardinality 0..*).
+'activitydiagram::InputValue' (role 'activitydiagram_InputValue31', cardinality 0..*) is associated with 'activitydiagram::Input' (role 'activitydiagram_Input', cardinality 0..*).
+'activitydiagram::ActivityNode' (role 'activitydiagram_ActivityNode', cardinality 0..*) is associated with 'activitydiagram::Trace' (role 'activitydiagram_Trace', cardinality 0..*).
+'activitydiagram::Context' (role 'activitydiagram_Context42', cardinality 0..*) is associated with 'activitydiagram::Activity' (role 'activitydiagram_Activity43', cardinality 0..*).
+'activitydiagram::ActivityNode' (role 'ActivityNode', cardinality 0..*) is associated with 'activitydiagram::Activity' (role 'activity', cardinality 0..*).
+'activitydiagram::ForkedToken' (role 'activitydiagram_ForkedToken', cardinality 0..*) is associated with 'activitydiagram::Token' (role 'activitydiagram_Token37', cardinality 0..*).
+'activitydiagram::Activity' (role 'activitydiagram_Activity', cardinality 0..*) is associated with 'activitydiagram::ActivityEdge' (role 'activitydiagram_ActivityEdge', cardinality 0..*).
+'activitydiagram::InputValue' (role 'activitydiagram_InputValue', cardinality 0..*) is associated with 'activitydiagram::Value' (role 'activitydiagram_Value26', cardinality 0..*).
+'activitydiagram::Variable' (role 'activitydiagram_Variable29', cardinality 0..*) is associated with 'activitydiagram::InputValue' (role 'activitydiagram_InputValue28', cardinality 0..*).
+'activitydiagram::InputValue' (role 'activitydiagram_InputValue46', cardinality 0..*) is associated with 'activitydiagram::Context' (role 'activitydiagram_Context45', cardinality 0..*).
+'activitydiagram::ActivityNode' (role 'holder', cardinality 0..*) is associated with 'activitydiagram::Token' (role 'Token', cardinality 0..*).
+'activitydiagram::Token' (role 'heldTokens', cardinality 0..*) is associated with 'activitydiagram::ActivityNode' (role 'ActivityNode33', cardinality 0..*).
+'activitydiagram::Offer' (role 'activitydiagram_Offer35', cardinality 0..*) is associated with 'activitydiagram::Token' (role 'activitydiagram_Token', cardinality 0..*).
+'activitydiagram::Offer' (role 'activitydiagram_Offer', cardinality 0..*) is associated with 'activitydiagram::ActivityEdge' (role 'activitydiagram_ActivityEdge17', cardinality 0..*).

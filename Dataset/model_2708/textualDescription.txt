@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'tbase::TRoot' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'tbase::NamedElement' has the following attributes: 'name' of type str.
+The class 'tbase::A' has no attributes.
+The class 'tbase::B' has no attributes.
+The class 'tbase::C' has no attributes.
+'tbase::B' is a specialization of 'NamedElement'.
+'tbase::A' is a specialization of 'NamedElement'.
+'tbase::B' (role 'tbase_B2', cardinality 0..*) is associated with 'tbase::C' (role 'tbase_C', cardinality 0..*).
+'tbase::TRoot' (role 'tbase_TRoot', cardinality 0..*) is associated with 'tbase::A' (role 'tbase_A4', cardinality 0..*).
+'tbase::B' (role 'tbase_B', cardinality 0..*) is associated with 'tbase::A' (role 'tbase_A', cardinality 0..*).

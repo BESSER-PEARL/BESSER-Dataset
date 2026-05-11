@@ -1,0 +1,7 @@
+The model has 3 class(es).
+The class 'p::A' has the following attributes: 'name' of type str.
+The class 'p::B' has no attributes.
+The class 'p::C' has no attributes.
+'p::A' (role 'p_A', cardinality 0..*) is associated with 'p::B' (role 'p_B', cardinality 0..*).
+'p::C' (role 'p_C', cardinality 0..*) is associated with 'p::B' (role 'p_B2', cardinality 0..*).
+'p::C' (role 'p_C4', cardinality 0..*) is associated with 'p::A' (role 'p_A5', cardinality 0..*).

@@ -1,0 +1,11 @@
+The model has 4 class(es).
+The class 'c::B' has the following attributes: 'y' of type bool; 'c' of type float.
+The class 'A' has no attributes.
+The class 'c::A' has the following attributes: 'a' of type str; 'b' of type str; 'x' of type str.
+The class 'c::C' has the following attributes: 'c' of type int; 'z' of type str.
+'c::C' is a specialization of 'A'.
+'c::B' (role 'c_B5', cardinality 0..*) is associated with 'c::B' (role 'c_B7', cardinality 0..*).
+'c::A' (role 'c_A4', cardinality 0..*) is associated with 'c::B' (role 'c_B3', cardinality 0..*).
+'c::C' (role 'cc9', cardinality 0..*) is associated with 'c::B' (role 'B', cardinality 0..*).
+'c::B' (role 'cc', cardinality 0..*) is associated with 'c::C' (role 'C', cardinality 0..*).
+'c::A' (role 'c_A', cardinality 0..*) is associated with 'c::B' (role 'c_B', cardinality 0..*).

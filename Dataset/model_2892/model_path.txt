@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/csipiemonte/servicegen/src/metamodel/typedef_metamodel.ecore

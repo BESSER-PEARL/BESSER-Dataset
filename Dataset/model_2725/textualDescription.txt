@@ -1,0 +1,12 @@
+The model has 3 class(es).
+The class 'scrShYQYaSD::ak' has the following attributes: 'CXmvqzTe' of type str; 'zBIcb' of type str; 'MHQpVCYtERyk' of type str.
+The class 'scrShYQYaSD::xvHXdRr' has no attributes.
+The class 'scrShYQYaSD::HVOwDYkMdHvynG' has the following attributes: 'vdjNPHX' of type str.
+'scrShYQYaSD::xvHXdRr' (role 'scrShYQYaSD_xvHXdRr10', cardinality 0..*) is associated with 'scrShYQYaSD::ak' (role 'scrShYQYaSD_ak11', cardinality 0..*).
+'scrShYQYaSD::xvHXdRr' (role 'scrShYQYaSD_xvHXdRr20', cardinality 0..*) is associated with 'scrShYQYaSD::ak' (role 'scrShYQYaSD_ak19', cardinality 0..*).
+'scrShYQYaSD::xvHXdRr' (role 'scrShYQYaSD_xvHXdRr2', cardinality 0..*) is associated with 'scrShYQYaSD::ak' (role 'scrShYQYaSD_ak', cardinality 0..*).
+'scrShYQYaSD::ak' (role 'scrShYQYaSD_ak12', cardinality 0..*) is associated with 'scrShYQYaSD::ak' (role 'scrShYQYaSD_ak14', cardinality 0..*).
+'scrShYQYaSD::HVOwDYkMdHvynG' (role 'scrShYQYaSD_HVOwDYkMdHvynG', cardinality 0..*) is associated with 'scrShYQYaSD::xvHXdRr' (role 'scrShYQYaSD_xvHXdRr', cardinality 0..*).
+'scrShYQYaSD::xvHXdRr' (role 'scrShYQYaSD_xvHXdRr17', cardinality 0..*) is associated with 'scrShYQYaSD::ak' (role 'scrShYQYaSD_ak16', cardinality 0..*).
+'scrShYQYaSD::ak' (role 'scrShYQYaSD_ak5', cardinality 0..*) is associated with 'scrShYQYaSD::xvHXdRr' (role 'scrShYQYaSD_xvHXdRr4', cardinality 0..*).
+'scrShYQYaSD::xvHXdRr' (role 'scrShYQYaSD_xvHXdRr7', cardinality 0..*) is associated with 'scrShYQYaSD::ak' (role 'scrShYQYaSD_ak8', cardinality 0..*).

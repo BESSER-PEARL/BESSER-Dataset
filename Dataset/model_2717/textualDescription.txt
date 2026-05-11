@@ -1,0 +1,57 @@
+The model has 27 class(es).
+The class 'k5::Y' has the following attributes: 'y' of type int.
+The class 'k5::W' has the following attributes: 'w' of type str.
+The class 'k5::X' has no attributes.
+The class 'N' has no attributes.
+The class 'P' has no attributes.
+The class 'A' has no attributes.
+The class 'k5::K' has the following attributes: 'title' of type str.
+The class 'G' has no attributes.
+The class 'B' has no attributes.
+The class 'k5::Z' has the following attributes: 'z2' of type str; 'z3' of type str; 'z1' of type str.
+The class 'k5::C' has no attributes.
+The class 'k5::L1' has the following attributes: 'id1' of type str; 'id2' of type int.
+The class 'L1' has no attributes.
+The class 'M' has no attributes.
+The class 'k5::N' has no attributes.
+The class 'k5::Q' has no attributes.
+The class 'J' has no attributes.
+The class 'C' has no attributes.
+The class 'k5::L2' has the following attributes: 'l1' of type int; 'l2' of type int.
+The class 'k5::L3' has no attributes.
+The class 'k5::P' has no attributes.
+The class 'k5::G' has the following attributes: 'name' of type str.
+The class 'k5::B' has no attributes.
+The class 'k5::J' has no attributes.
+The class 'k5::I' has no attributes.
+The class 'k5::A' has no attributes.
+The class 'k5::M' has no attributes.
+'k5::A' is a specialization of 'B'.
+'k5::Q' is a specialization of 'P'.
+'k5::N' is a specialization of 'M'.
+'k5::I' is a specialization of 'G'.
+'k5::M' is a specialization of 'G'.
+'k5::L3' is a specialization of 'L1'.
+'k5::K' is a specialization of 'J'.
+'k5::P' is a specialization of 'N'.
+'k5::J' is a specialization of 'A'.
+'k5::C' is a specialization of 'G'.
+'k5::B' is a specialization of 'C'.
+'k5::C' (role 'k5_C', cardinality 0..*) is associated with 'k5::X' (role 'k5_X', cardinality 0..*).
+'k5::L1' (role 'k5_L125', cardinality 0..*) is associated with 'k5::C' (role 'k5_C26', cardinality 0..*).
+'k5::L1' (role 'k5_L128', cardinality 0..*) is associated with 'k5::M' (role 'k5_M29', cardinality 0..*).
+'k5::Q' (role 'k5_Q32', cardinality 0..*) is associated with 'k5::L2' (role 'k5_L231', cardinality 0..*).
+'k5::Z' (role 'k5_Z37', cardinality 0..*) is associated with 'k5::L3' (role 'k5_L3', cardinality 0..*).
+'k5::Y' (role 'k5_Y12', cardinality 0..*) is associated with 'k5::B' (role 'k5_B11', cardinality 0..*).
+'k5::M' (role 'k5_M16', cardinality 0..*) is associated with 'k5::L1' (role 'k5_L1', cardinality 0..*).
+'k5::X' (role 'k5_X4', cardinality 0..*) is associated with 'k5::Z' (role 'k5_Z', cardinality 0..*).
+'k5::Y' (role 'k5_Y', cardinality 0..*) is associated with 'k5::X' (role 'k5_X6', cardinality 0..*).
+'k5::K' (role 'k5_K', cardinality 0..*) is associated with 'k5::P' (role 'k5_P20', cardinality 0..*).
+'k5::P' (role 'k5_P', cardinality 0..*) is associated with 'k5::X' (role 'k5_X2', cardinality 0..*).
+'k5::C' (role 'k5_C14', cardinality 0..*) is associated with 'k5::M' (role 'k5_M', cardinality 0..*).
+'k5::L2' (role 'k5_L2', cardinality 0..*) is associated with 'k5::Q' (role 'k5_Q', cardinality 0..*).
+'k5::P' (role 'k5_P18', cardinality 0..*) is associated with 'k5::A' (role 'k5_A', cardinality 0..*).
+'k5::L2' (role 'k5_L234', cardinality 0..*) is associated with 'k5::K' (role 'k5_K35', cardinality 0..*).
+'k5::J' (role 'k5_J', cardinality 0..*) is associated with 'k5::P' (role 'k5_P22', cardinality 0..*).
+'k5::I' (role 'k5_I', cardinality 0..*) is associated with 'k5::B' (role 'k5_B', cardinality 0..*).
+'k5::W' (role 'k5_W', cardinality 0..*) is associated with 'k5::X' (role 'k5_X8', cardinality 0..*).

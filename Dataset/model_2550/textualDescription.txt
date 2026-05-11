@@ -1,0 +1,59 @@
+The model has 17 class(es).
+The class 'dml::S' has the following attributes: 'cwd' of type str; 'src' of type str.
+The class 'dml::F' has no attributes.
+The class 'dml::DI' has the following attributes: 'cln' of type str; 'clid' of type str.
+The class 'dml::FC' has the following attributes: 'bif' of type str.
+The class 'dml::BS' has no attributes.
+The class 'dml::PL' has no attributes.
+The class 'dml::SPKV' has the following attributes: 'v' of type str.
+The class 'dml::E' has the following attributes: 'op' of type str.
+The class 'dml::D' has no attributes.
+The class 'dml::FP' has no attributes.
+The class 'dml::PE' has no attributes.
+The class 'dml::TE' has the following attributes: 'b' of type str; 'i' of type int; 's' of type str; 'd' of type float.
+The class 'dml::ID' has the following attributes: 'name' of type str.
+The class 'dml::EObject' has no attributes.
+The class 'dml::TAN' has the following attributes: 't' of type str.
+The class 'dml::PARFORPARAMS' has the following attributes: 'params' of type str.
+The class 'dml::IS' has no attributes.
+'dml::S' (role 'dml_S12', cardinality 0..*) is associated with 'dml::F' (role 'dml_F11', cardinality 0..*).
+'dml::S' (role 'dml_S', cardinality 0..*) is associated with 'dml::D' (role 'dml_D2', cardinality 0..*).
+'dml::PARFORPARAMS' (role 'dml_PARFORPARAMS', cardinality 0..*) is associated with 'dml::S' (role 'dml_S28', cardinality 0..*).
+'dml::TE' (role 'dml_TE92', cardinality 0..*) is associated with 'dml::DI' (role 'dml_DI93', cardinality 0..*).
+'dml::TAN' (role 'dml_TAN', cardinality 0..*) is associated with 'dml::PL' (role 'dml_PL80', cardinality 0..*).
+'dml::S' (role 'dml_S23', cardinality 0..*) is associated with 'dml::BS' (role 'dml_BS24', cardinality 0..*).
+'dml::D' (role 'dml_D', cardinality 0..*) is associated with 'dml::F' (role 'dml_F', cardinality 0..*).
+'dml::ID' (role 'dml_ID', cardinality 0..*) is associated with 'dml::F' (role 'dml_F4', cardinality 0..*).
+'dml::FP' (role 'dml_FP34', cardinality 0..*) is associated with 'dml::S' (role 'dml_S33', cardinality 0..*).
+'dml::S' (role 'dml_S26', cardinality 0..*) is associated with 'dml::FP' (role 'dml_FP', cardinality 0..*).
+'dml::BS' (role 'dml_BS54', cardinality 0..*) is associated with 'dml::S' (role 'dml_S55', cardinality 0..*).
+'dml::FC' (role 'dml_FC90', cardinality 0..*) is associated with 'dml::TE' (role 'dml_TE89', cardinality 0..*).
+'dml::E' (role 'dml_E37', cardinality 0..*) is associated with 'dml::S' (role 'dml_S36', cardinality 0..*).
+'dml::IS' (role 'dml_IS74', cardinality 0..*) is associated with 'dml::E' (role 'dml_E75', cardinality 0..*).
+'dml::EObject' (role 'dml_EObject', cardinality 0..*) is associated with 'dml::E' (role 'dml_E82', cardinality 0..*).
+'dml::FC' (role 'dml_FC', cardinality 0..*) is associated with 'dml::S' (role 'dml_S41', cardinality 0..*).
+'dml::ID' (role 'dml_ID17', cardinality 0..*) is associated with 'dml::S' (role 'dml_S16', cardinality 0..*).
+'dml::IS' (role 'dml_IS77', cardinality 0..*) is associated with 'dml::E' (role 'dml_E78', cardinality 0..*).
+'dml::FP' (role 'dml_FP60', cardinality 0..*) is associated with 'dml::ID' (role 'dml_ID61', cardinality 0..*).
+'dml::IS' (role 'dml_IS72', cardinality 0..*) is associated with 'dml::DI' (role 'dml_DI71', cardinality 0..*).
+'dml::S' (role 'dml_S43', cardinality 0..*) is associated with 'dml::DI' (role 'dml_DI44', cardinality 0..*).
+'dml::E' (role 'dml_E83', cardinality 0..*) is associated with 'dml::E' (role 'dml_E85', cardinality 0..*).
+'dml::BS' (role 'dml_BS57', cardinality 0..*) is associated with 'dml::S' (role 'dml_S58', cardinality 0..*).
+'dml::DI' (role 'dml_DI68', cardinality 0..*) is associated with 'dml::IS' (role 'dml_IS69', cardinality 0..*).
+'dml::BS' (role 'dml_BS31', cardinality 0..*) is associated with 'dml::S' (role 'dml_S30', cardinality 0..*).
+'dml::E' (role 'dml_E87', cardinality 0..*) is associated with 'dml::TE' (role 'dml_TE', cardinality 0..*).
+'dml::E' (role 'dml_E', cardinality 0..*) is associated with 'dml::S' (role 'dml_S19', cardinality 0..*).
+'dml::PE' (role 'dml_PE98', cardinality 0..*) is associated with 'dml::ID' (role 'dml_ID99', cardinality 0..*).
+'dml::E' (role 'dml_E47', cardinality 0..*) is associated with 'dml::S' (role 'dml_S46', cardinality 0..*).
+'dml::S' (role 'dml_S21', cardinality 0..*) is associated with 'dml::BS' (role 'dml_BS', cardinality 0..*).
+'dml::PL' (role 'dml_PL9', cardinality 0..*) is associated with 'dml::F' (role 'dml_F8', cardinality 0..*).
+'dml::F' (role 'dml_F6', cardinality 0..*) is associated with 'dml::PL' (role 'dml_PL', cardinality 0..*).
+'dml::ID' (role 'dml_ID50', cardinality 0..*) is associated with 'dml::FC' (role 'dml_FC49', cardinality 0..*).
+'dml::S' (role 'dml_S39', cardinality 0..*) is associated with 'dml::DI' (role 'dml_DI', cardinality 0..*).
+'dml::TAN' (role 'dml_TAN104', cardinality 0..*) is associated with 'dml::ID' (role 'dml_ID105', cardinality 0..*).
+'dml::PE' (role 'dml_PE101', cardinality 0..*) is associated with 'dml::E' (role 'dml_E102', cardinality 0..*).
+'dml::ID' (role 'dml_ID96', cardinality 0..*) is associated with 'dml::SPKV' (role 'dml_SPKV95', cardinality 0..*).
+'dml::FC' (role 'dml_FC52', cardinality 0..*) is associated with 'dml::PE' (role 'dml_PE', cardinality 0..*).
+'dml::F' (role 'dml_F14', cardinality 0..*) is associated with 'dml::SPKV' (role 'dml_SPKV', cardinality 0..*).
+'dml::DI' (role 'dml_DI65', cardinality 0..*) is associated with 'dml::ID' (role 'dml_ID66', cardinality 0..*).
+'dml::IS' (role 'dml_IS', cardinality 0..*) is associated with 'dml::FP' (role 'dml_FP63', cardinality 0..*).

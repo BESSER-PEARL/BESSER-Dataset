@@ -1,0 +1,41 @@
+The model has 20 class(es).
+The class 'domainmodel::Type' has the following attributes: 'name' of type str.
+The class 'domainmodel::Import' has the following attributes: 'importedNamespace' of type str.
+The class 'Feature' has no attributes.
+The class 'domainmodel::DomainModel' has no attributes.
+The class 'StructuralFeature' has no attributes.
+The class 'domainmodel::Reference' has no attributes.
+The class 'domainmodel::StructuralFeature' has no attributes.
+The class 'domainmodel::Operation' has the following attributes: 'visibility' of type str.
+The class 'domainmodel::Parameter' has no attributes.
+The class 'domainmodel::DataType' has no attributes.
+The class 'domainmodel::AbstractElement' has no attributes.
+The class 'domainmodel::TypeRef' has the following attributes: 'multi' of type bool.
+The class 'AbstractElement' has no attributes.
+The class 'Type' has no attributes.
+The class 'domainmodel::PackageDeclaration' has the following attributes: 'name' of type str.
+The class 'domainmodel::Feature' has no attributes.
+The class 'domainmodel::TypedElement' has the following attributes: 'name' of type str.
+The class 'TypedElement' has no attributes.
+The class 'domainmodel::Entity' has no attributes.
+The class 'domainmodel::Attribute' has no attributes.
+The enumeration 'Visibility' has the following literals: 'private', 'public', 'protected'.
+'domainmodel::PackageDeclaration' is a specialization of 'AbstractElement'.
+'domainmodel::Import' is a specialization of 'AbstractElement'.
+'domainmodel::Entity' is a specialization of 'Type'.
+'domainmodel::Attribute' is a specialization of 'StructuralFeature'.
+'domainmodel::StructuralFeature' is a specialization of 'Feature'.
+'domainmodel::Type' is a specialization of 'AbstractElement'.
+'domainmodel::Parameter' is a specialization of 'TypedElement'.
+'domainmodel::Operation' is a specialization of 'Feature'.
+'domainmodel::DataType' is a specialization of 'Type'.
+'domainmodel::Feature' is a specialization of 'TypedElement'.
+'domainmodel::Reference' is a specialization of 'StructuralFeature'.
+'domainmodel::AbstractElement' (role 'domainmodel_AbstractElement', cardinality 0..*) is associated with 'domainmodel::DomainModel' (role 'domainmodel_DomainModel', cardinality 0..*).
+'domainmodel::Entity' (role 'domainmodel_Entity3', cardinality 0..*) is associated with 'domainmodel::Entity' (role 'domainmodel_Entity', cardinality 0..*).
+'domainmodel::Parameter' (role 'domainmodel_Parameter', cardinality 0..*) is associated with 'domainmodel::Operation' (role 'domainmodel_Operation', cardinality 0..*).
+'domainmodel::Feature' (role 'domainmodel_Feature', cardinality 0..*) is associated with 'domainmodel::Entity' (role 'domainmodel_Entity6', cardinality 0..*).
+'domainmodel::Reference' (role 'domainmodel_Reference', cardinality 0..*) is associated with 'domainmodel::Reference' (role 'domainmodel_Reference7', cardinality 0..*).
+'domainmodel::TypeRef' (role 'domainmodel_TypeRef12', cardinality 0..*) is associated with 'domainmodel::Type' (role 'domainmodel_Type', cardinality 0..*).
+'domainmodel::PackageDeclaration' (role 'domainmodel_PackageDeclaration', cardinality 0..*) is associated with 'domainmodel::AbstractElement' (role 'domainmodel_AbstractElement2', cardinality 0..*).
+'domainmodel::TypeRef' (role 'domainmodel_TypeRef', cardinality 0..*) is associated with 'domainmodel::TypedElement' (role 'domainmodel_TypedElement', cardinality 0..*).

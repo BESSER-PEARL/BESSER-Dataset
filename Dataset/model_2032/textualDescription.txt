@@ -1,0 +1,29 @@
+The model has 13 class(es).
+The class 'MySM::LabeledTransition' has no attributes.
+The class 'MySM::Action' has the following attributes: 'name' of type str.
+The class 'MySM::Statemachine' has no attributes.
+The class 'Vertex' has no attributes.
+The class 'MySM::State' has the following attributes: 'name' of type str.
+The class 'State' has no attributes.
+The class 'Transition' has no attributes.
+The class 'MySM::Vertex' has no attributes.
+The class 'Region' has no attributes.
+The class 'MySM::Pseudostate' has the following attributes: 'kind' of type str; 'psId' of type str.
+The class 'MySM::Region' has the following attributes: 'name' of type str.
+The class 'MySM::ComplexSate' has no attributes.
+The class 'MySM::Transition' has the following attributes: 'tId' of type str.
+The enumeration 'Pseudokind' has the following literals: 'DeepHistory', 'Exit', 'Initial', 'ShallowHistory', 'End'.
+'MySM::State' is a specialization of 'Vertex'.
+'MySM::Statemachine' is a specialization of 'Region'.
+'MySM::Pseudostate' is a specialization of 'Vertex'.
+'MySM::LabeledTransition' is a specialization of 'Transition'.
+'MySM::ComplexSate' is a specialization of 'State'.
+'MySM::Vertex' (role 'MySM_Vertex', cardinality 0..*) is associated with 'MySM::Transition' (role 'MySM_Transition7', cardinality 0..*).
+'MySM::Statemachine' (role 'MySM_Statemachine2', cardinality 0..*) is associated with 'MySM::Action' (role 'MySM_Action', cardinality 0..*).
+'MySM::Transition' (role 'MySM_Transition', cardinality 0..*) is associated with 'MySM::Statemachine' (role 'MySM_Statemachine', cardinality 0..*).
+'MySM::Region' (role 'MySM_Region', cardinality 0..*) is associated with 'MySM::State' (role 'MySM_State', cardinality 0..*).
+'MySM::Vertex' (role 'MySM_Vertex15', cardinality 0..*) is associated with 'MySM::Transition' (role 'MySM_Transition14', cardinality 0..*).
+'MySM::Region' (role 'MySM_Region9', cardinality 0..*) is associated with 'MySM::ComplexSate' (role 'MySM_ComplexSate', cardinality 0..*).
+'MySM::Transition' (role 'MySM_Transition11', cardinality 0..*) is associated with 'MySM::Vertex' (role 'MySM_Vertex12', cardinality 0..*).
+'MySM::Action' (role 'MySM_Action17', cardinality 0..*) is associated with 'MySM::LabeledTransition' (role 'MySM_LabeledTransition', cardinality 0..*).
+'MySM::Pseudostate' (role 'MySM_Pseudostate', cardinality 0..*) is associated with 'MySM::Region' (role 'MySM_Region5', cardinality 0..*).

@@ -1,0 +1,114 @@
+The model has 49 class(es).
+The class 'mm::rdb::Database' has no attributes.
+The class 'mm::rdb::DeleteTable' has no attributes.
+The class 'mm::dml::ColumnReference' has no attributes.
+The class 'mm::rdb::Column' has no attributes.
+The class 'Index' has no attributes.
+The class 'Constraint' has no attributes.
+The class 'mm::rdb::TableColumn' has the following attributes: 'type' of type str.
+The class 'mm::rdb::ColumnConstraint' has no attributes.
+The class 'Column' has no attributes.
+The class 'mm::rdb::TypeChangeToColumn' has the following attributes: 'newType' of type str.
+The class 'Relation' has no attributes.
+The class 'Database' has no attributes.
+The class 'mm::rdb::DeleteColumn' has no attributes.
+The class 'rdb::NamedElement' has no attributes.
+The class 'mm::rdb::AddColumn' has the following attributes: 'newColumnName' of type str.
+The class 'mm::rdb::CreateTable' has the following attributes: 'tableName' of type str.
+The class 'dml::ColumnReference' has no attributes.
+The class 'mm::rdb::Operation' has no attributes.
+The class 'PrimaryKey' has no attributes.
+The class 'ColumnConstraint' has no attributes.
+The class 'mm::rdb::UniqueIndex' has no attributes.
+The class 'mm::rdb::PrimaryKey' has no attributes.
+The class 'rdb::Relation' has no attributes.
+The class 'mm::rdb::Index' has no attributes.
+The class 'mm::rdb::ForeignKey' has no attributes.
+The class 'NamedElement' has no attributes.
+The class 'DbObject' has no attributes.
+The class 'mm::rdb::DbObject' has no attributes.
+The class 'mm::rdb::NamedElement' has the following attributes: 'name' of type str.
+The class 'Operation' has no attributes.
+The class 'mm::rdb::Relation' has no attributes.
+The class 'mm::rdb::TableConstraint' has no attributes.
+The class 'mm::rdb::Schema' has no attributes.
+The class 'rdb::DbObject' has no attributes.
+The class 'mm::rdb::ModelRoot' has no attributes.
+The class 'mm::rdb::Constraint' has no attributes.
+The class 'rdb::Constraint' has no attributes.
+The class 'TableColumn' has no attributes.
+The class 'Sequence' has no attributes.
+The class 'UniqueIndex' has no attributes.
+The class 'mm::rdb::RenameColumn' has the following attributes: 'newColumnName' of type str.
+The class 'mm::rdb::Sequence' has the following attributes: 'cacheSize' of type int.
+The class 'Table' has no attributes.
+The class 'Schema' has no attributes.
+The class 'ModelRoot' has no attributes.
+The class 'mm::dml::Query' has no attributes.
+The class 'TableConstraint' has no attributes.
+The class 'mm::rdb::RenameTable' has the following attributes: 'newName' of type str.
+The class 'mm::rdb::Table' has no attributes.
+'mm::rdb::DbObject' is a specialization of 'NamedElement'.
+'mm::dml::ColumnReference' is a specialization of 'Column'.
+'mm::rdb::Column' is a specialization of 'NamedElement'.
+'mm::rdb::TypeChangeToColumn' is a specialization of 'Operation'.
+'mm::rdb::DeleteColumn' is a specialization of 'Operation'.
+'mm::rdb::Table' is a specialization of 'rdb::DbObject'.
+'mm::rdb::AddColumn' is a specialization of 'Operation'.
+'mm::rdb::Index' is a specialization of 'DbObject'.
+'mm::rdb::TableColumn' is a specialization of 'Column'.
+'mm::rdb::RenameColumn' is a specialization of 'Operation'.
+'mm::rdb::Table' is a specialization of 'rdb::Relation'.
+'mm::rdb::Sequence' is a specialization of 'DbObject'.
+'mm::rdb::UniqueIndex' is a specialization of 'TableConstraint'.
+'mm::rdb::Schema' is a specialization of 'DbObject'.
+'mm::rdb::DeleteTable' is a specialization of 'Operation'.
+'mm::rdb::RenameTable' is a specialization of 'Operation'.
+'mm::rdb::TableConstraint' is a specialization of 'rdb::Constraint'.
+'mm::rdb::ForeignKey' is a specialization of 'TableConstraint'.
+'mm::rdb::TableConstraint' is a specialization of 'rdb::NamedElement'.
+'mm::rdb::Constraint' is a specialization of 'DbObject'.
+'mm::rdb::Database' is a specialization of 'NamedElement'.
+'mm::rdb::ColumnConstraint' is a specialization of 'Constraint'.
+'mm::rdb::PrimaryKey' is a specialization of 'UniqueIndex'.
+'mm::rdb::CreateTable' is a specialization of 'Operation'.
+'mm::dml::Query' is a specialization of 'Relation'.
+'mm::rdb::DeleteColumn' (role 'mm_rdb_DeleteColumn', cardinality 0..*) is associated with 'Table' (role 'Table72', cardinality 0..*).
+'Schema' (role 'Schema37', cardinality 0..*) is associated with 'mm::rdb::Index' (role 'indexes', cardinality 0..*).
+'mm::rdb::AddColumn' (role 'mm_rdb_AddColumn', cardinality 0..*) is associated with 'Table' (role 'Table57', cardinality 0..*).
+'mm::rdb::Database' (role 'mm_rdb_Database', cardinality 0..*) is associated with 'Schema' (role 'Schema', cardinality 0..*).
+'mm::rdb::Table' (role 'tables', cardinality 0..*) is associated with 'Schema' (role 'Schema12', cardinality 0..*).
+'Index' (role 'Index39', cardinality 0..*) is associated with 'mm::rdb::UniqueIndex' (role 'mm_rdb_UniqueIndex', cardinality 0..*).
+'Table' (role 'Table62', cardinality 0..*) is associated with 'mm::rdb::RenameColumn' (role 'mm_rdb_RenameColumn', cardinality 0..*).
+'TableColumn' (role 'TableColumn75', cardinality 0..*) is associated with 'mm::rdb::DeleteColumn' (role 'mm_rdb_DeleteColumn74', cardinality 0..*).
+'TableConstraint' (role 'TableConstraint', cardinality 0..*) is associated with 'mm::rdb::Table' (role 'owningTable', cardinality 0..*).
+'Table' (role 'Table19', cardinality 0..*) is associated with 'mm::rdb::TableConstraint' (role 'constraints', cardinality 0..*).
+'mm::rdb::Schema' (role 'owningSchema', cardinality 0..*) is associated with 'Table' (role 'Table', cardinality 0..*).
+'mm::rdb::Index' (role 'mm_rdb_Index34', cardinality 0..*) is associated with 'Table' (role 'Table35', cardinality 0..*).
+'mm::rdb::Table' (role 'mm_rdb_Table', cardinality 0..*) is associated with 'PrimaryKey' (role 'PrimaryKey', cardinality 0..*).
+'mm::rdb::Schema' (role 'owningSchema8', cardinality 0..*) is associated with 'Sequence' (role 'Sequence', cardinality 0..*).
+'mm::rdb::ColumnConstraint' (role 'constraints21', cardinality 0..*) is associated with 'TableColumn' (role 'TableColumn22', cardinality 0..*).
+'mm::rdb::ForeignKey' (role 'mm_rdb_ForeignKey', cardinality 0..*) is associated with 'Table' (role 'Table24', cardinality 0..*).
+'TableColumn' (role 'TableColumn42', cardinality 0..*) is associated with 'mm::rdb::CreateTable' (role 'mm_rdb_CreateTable', cardinality 0..*).
+'Operation' (role 'Operation', cardinality 0..*) is associated with 'mm::rdb::ModelRoot' (role 'modelRoot', cardinality 0..*).
+'mm::rdb::Index' (role 'mm_rdb_Index', cardinality 0..*) is associated with 'TableColumn' (role 'TableColumn32', cardinality 0..*).
+'Schema' (role 'Schema17', cardinality 0..*) is associated with 'mm::rdb::Sequence' (role 'sequences', cardinality 0..*).
+'TableConstraint' (role 'TableConstraint45', cardinality 0..*) is associated with 'mm::rdb::CreateTable' (role 'mm_rdb_CreateTable44', cardinality 0..*).
+'Table' (role 'Table55', cardinality 0..*) is associated with 'mm::rdb::DeleteTable' (role 'mm_rdb_DeleteTable', cardinality 0..*).
+'mm::rdb::ModelRoot' (role 'mm_rdb_ModelRoot2', cardinality 0..*) is associated with 'Database' (role 'Database3', cardinality 0..*).
+'mm::rdb::TypeChangeToColumn' (role 'mm_rdb_TypeChangeToColumn69', cardinality 0..*) is associated with 'TableColumn' (role 'TableColumn70', cardinality 0..*).
+'mm::rdb::TypeChangeToColumn' (role 'mm_rdb_TypeChangeToColumn', cardinality 0..*) is associated with 'Table' (role 'Table67', cardinality 0..*).
+'mm::dml::ColumnReference' (role 'mm_dml_ColumnReference', cardinality 0..*) is associated with 'Column' (role 'Column', cardinality 0..*).
+'Database' (role 'Database', cardinality 0..*) is associated with 'mm::rdb::ModelRoot' (role 'mm_rdb_ModelRoot', cardinality 0..*).
+'dml::ColumnReference' (role 'dml_ColumnReference', cardinality 0..*) is associated with 'mm::dml::Query' (role 'mm_dml_Query', cardinality 0..*).
+'mm::rdb::Operation' (role 'operations', cardinality 0..*) is associated with 'ModelRoot' (role 'ModelRoot', cardinality 0..*).
+'Table' (role 'Table53', cardinality 0..*) is associated with 'mm::rdb::RenameTable' (role 'mm_rdb_RenameTable', cardinality 0..*).
+'mm::rdb::ForeignKey' (role 'mm_rdb_ForeignKey26', cardinality 0..*) is associated with 'TableColumn' (role 'TableColumn27', cardinality 0..*).
+'mm::rdb::TableColumn' (role 'owningColumn', cardinality 0..*) is associated with 'ColumnConstraint' (role 'ColumnConstraint', cardinality 0..*).
+'PrimaryKey' (role 'PrimaryKey48', cardinality 0..*) is associated with 'mm::rdb::CreateTable' (role 'mm_rdb_CreateTable47', cardinality 0..*).
+'TableColumn' (role 'TableColumn', cardinality 0..*) is associated with 'mm::rdb::Table' (role '_owningTable', cardinality 0..*).
+'ColumnConstraint' (role 'ColumnConstraint60', cardinality 0..*) is associated with 'mm::rdb::AddColumn' (role 'mm_rdb_AddColumn59', cardinality 0..*).
+'Table' (role 'Table29', cardinality 0..*) is associated with 'mm::rdb::TableColumn' (role 'ownedColumns', cardinality 0..*).
+'mm::rdb::CreateTable' (role 'mm_rdb_CreateTable50', cardinality 0..*) is associated with 'Sequence' (role 'Sequence51', cardinality 0..*).
+'Index' (role 'Index', cardinality 0..*) is associated with 'mm::rdb::Schema' (role 'owningSchema10', cardinality 0..*).
+'mm::rdb::RenameColumn' (role 'mm_rdb_RenameColumn64', cardinality 0..*) is associated with 'TableColumn' (role 'TableColumn65', cardinality 0..*).

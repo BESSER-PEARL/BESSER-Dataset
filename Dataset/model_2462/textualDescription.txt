@@ -1,0 +1,16 @@
+The model has 6 class(es).
+The class 'operators::OclExpression' has no attributes.
+The class 'operators::OclType' has no attributes.
+The class 'operators::IfExp' has no attributes.
+The class 'OclExpression' has no attributes.
+The class 'operators::Type' has no attributes.
+The class 'operators::OperationCallExp' has the following attributes: 'name' of type str.
+'operators::OperationCallExp' is a specialization of 'OclExpression'.
+'operators::OclType' is a specialization of 'OclExpression'.
+'operators::IfExp' is a specialization of 'OclExpression'.
+'operators::OclExpression' (role 'operators_OclExpression10', cardinality 0..*) is associated with 'operators::IfExp' (role 'operators_IfExp9', cardinality 0..*).
+'operators::IfExp' (role 'operators_IfExp', cardinality 0..*) is associated with 'operators::OclExpression' (role 'operators_OclExpression7', cardinality 0..*).
+'operators::OperationCallExp' (role 'operators_OperationCallExp', cardinality 0..*) is associated with 'operators::OclExpression' (role 'operators_OclExpression2', cardinality 0..*).
+'operators::OclExpression' (role 'operators_OclExpression5', cardinality 0..*) is associated with 'operators::OperationCallExp' (role 'operators_OperationCallExp4', cardinality 0..*).
+'operators::OclExpression' (role 'operators_OclExpression13', cardinality 0..*) is associated with 'operators::IfExp' (role 'operators_IfExp12', cardinality 0..*).
+'operators::OclExpression' (role 'operators_OclExpression', cardinality 0..*) is associated with 'operators::Type' (role 'operators_Type', cardinality 0..*).

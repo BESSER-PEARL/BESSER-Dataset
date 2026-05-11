@@ -1,0 +1,14 @@
+The model has 6 class(es).
+The class 'Gggg' has no attributes.
+The class 'kreq108c::Eeee' has the following attributes: 'id' of type str.
+The class 'kreq108c::Gggg' has the following attributes: 'name' of type str.
+The class 'kreq108c::Cccc' has the following attributes: 'id' of type str.
+The class 'kreq108c::Bbbb' has no attributes.
+The class 'kreq108c::Ffff' has the following attributes: 'id' of type str.
+'kreq108c::Eeee' is a specialization of 'Gggg'.
+'kreq108c::Ffff' is a specialization of 'Gggg'.
+'kreq108c::Cccc' (role 'kreq108c_Cccc', cardinality 0..*) is associated with 'kreq108c::Bbbb' (role 'kreq108c_Bbbb', cardinality 0..*).
+'kreq108c::Eeee' (role 'kreq108c_Eeee7', cardinality 0..*) is associated with 'kreq108c::Ffff' (role 'kreq108c_Ffff6', cardinality 0..*).
+'kreq108c::Ffff' (role 'kreq108c_Ffff8', cardinality 0..*) is associated with 'kreq108c::Ffff' (role 'kreq108c_Ffff10', cardinality 0..*).
+'kreq108c::Eeee' (role 'kreq108c_Eeee', cardinality 0..*) is associated with 'kreq108c::Bbbb' (role 'kreq108c_Bbbb2', cardinality 0..*).
+'kreq108c::Cccc' (role 'kreq108c_Cccc4', cardinality 0..*) is associated with 'kreq108c::Ffff' (role 'kreq108c_Ffff', cardinality 0..*).

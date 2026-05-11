@@ -1,0 +1,174 @@
+The model has 68 class(es).
+The class 'LinkAction' has no attributes.
+The class 'ActionsProv::ValueSpecificationAction' has no attributes.
+The class 'ActionsProv::ReadSelfAction' has no attributes.
+The class 'ActionsProv::QualifierValue' has no attributes.
+The class 'ActionsProv::ClearStructuralFeatureAction' has no attributes.
+The class 'ActionsProv::ReadExtendAction' has no attributes.
+The class 'ActionsProv::CreateLinkObjectAction' has no attributes.
+The class 'VariableAction' has no attributes.
+The class 'ActionsProv::ReduceAction' has the following attributes: 'isOrdered' of type bool.
+The class 'ActionsProv::RaiseExceptionAction' has no attributes.
+The class 'WriteLinkAction' has no attributes.
+The class 'ActionsProv::LinkEndDestructionData' has the following attributes: 'isDestroyDuplicates' of type bool.
+The class 'StructuralFeatureAction' has no attributes.
+The class 'InvocationAction' has no attributes.
+The class 'ActionsProv::OpaqueAction' has the following attributes: 'language' of type str; 'body' of type str.
+The class 'ActionsProv::RemoveStructuralFeatureValueAction' has no attributes.
+The class 'ActionsProv::ReadLinkObjectEndAction' has no attributes.
+The class 'CallAction' has no attributes.
+The class 'ActionsProv::AddStructuralFeatureValueAction' has no attributes.
+The class 'ActionsProv::Action' has no attributes.
+The class 'ActionsProv::ReadLinkAction' has no attributes.
+The class 'ActionsProv::ValuePin' has no attributes.
+The class 'ActionsProv::BroadcastSignalAction' has no attributes.
+The class 'ActionsProv::InputPin' has no attributes.
+The class 'LinkEndData' has no attributes.
+The class 'ActionsProv::LinkEndData' has no attributes.
+The class 'ActionsProv::ReclassifyObjectAction' has the following attributes: 'isReplaceAll' of type bool.
+The class 'ActionsProv::SendObjectAction' has no attributes.
+The class 'ActionsProv::WriteVariableAction' has no attributes.
+The class 'AcceptEventAction' has no attributes.
+The class 'ActionsProv::ReadlsClassifiedObjectAction' has no attributes.
+The class 'ActionsProv::CallBehaviorAction' has no attributes.
+The class 'ActionsProv::ActionInputPin' has no attributes.
+The class 'ActionsProv::DestroyLinkAction' has no attributes.
+The class 'ActionsProv::DestroyObjectAction' has no attributes.
+The class 'ActionsProv::TestIdentityAction' has no attributes.
+The class 'ActionsProv::OutputPin' has no attributes.
+The class 'ActionsProv::InvocationAction' has no attributes.
+The class 'ActionsProv::ReplyAction' has no attributes.
+The class 'ActionsProv::StructuralFeatureAction' has no attributes.
+The class 'ActionsProv::CreateLinkAction' has no attributes.
+The class 'ActionsProv::ReadLinkObjectEndQualifierAction' has no attributes.
+The class 'ActionsProv::ClearVariableAction' has no attributes.
+The class 'ActionsProv::AcceptCallAction' has no attributes.
+The class 'ActionsProv::RemoveVariableValueAction' has no attributes.
+The class 'ActionsProv::WriteLinkAction' has no attributes.
+The class 'ActionsProv::LinkEndCreationData' has the following attributes: 'isReplaceAll' of type bool.
+The class 'ActionsProv::WriteStructuralFeatureAction' has no attributes.
+The class 'ActionsProv::SendSignalAction' has no attributes.
+The class 'ActionsProv::Pin' has no attributes.
+The class 'ActionsProv::StartObjectBehaviorAction' has no attributes.
+The class 'ActionsProv::CreateObjectAction' has no attributes.
+The class 'ActionsProv::VariableAction' has no attributes.
+The class 'WriteStructuralFeatureAction' has no attributes.
+The class 'ActionsProv::CallAction' has the following attributes: 'isSynchronous' of type bool.
+The class 'ActionsProv::AcceptEventAction' has the following attributes: 'isUnmarshall' of type bool.
+The class 'Action' has no attributes.
+The class 'Pin' has no attributes.
+The class 'ActionsProv::ReadVariableAction' has no attributes.
+The class 'CreateLinkAction' has no attributes.
+The class 'InputPin' has no attributes.
+The class 'WriteVariableAction' has no attributes.
+The class 'ActionsProv::AddVariableValueAction' has no attributes.
+The class 'ActionsProv::UnmarshallAction' has no attributes.
+The class 'ActionsProv::LinkAction' has no attributes.
+The class 'ActionsProv::ReadStructuralFeatureAction' has no attributes.
+The class 'ActionsProv::CallOperationAction' has no attributes.
+The class 'ActionsProv::StartClassifierBehaviorAction' has no attributes.
+'ActionsProv::ReadLinkObjectEndAction' is a specialization of 'Action'.
+'ActionsProv::CreateLinkAction' is a specialization of 'WriteLinkAction'.
+'ActionsProv::WriteStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+'ActionsProv::DestroyObjectAction' is a specialization of 'Action'.
+'ActionsProv::ReadStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+'ActionsProv::BroadcastSignalAction' is a specialization of 'InvocationAction'.
+'ActionsProv::RaiseExceptionAction' is a specialization of 'Action'.
+'ActionsProv::ClearVariableAction' is a specialization of 'VariableAction'.
+'ActionsProv::UnmarshallAction' is a specialization of 'Action'.
+'ActionsProv::CallAction' is a specialization of 'InvocationAction'.
+'ActionsProv::ClearStructuralFeatureAction' is a specialization of 'StructuralFeatureAction'.
+'ActionsProv::AddVariableValueAction' is a specialization of 'WriteVariableAction'.
+'ActionsProv::SendSignalAction' is a specialization of 'InvocationAction'.
+'ActionsProv::ReadLinkAction' is a specialization of 'LinkAction'.
+'ActionsProv::InvocationAction' is a specialization of 'Action'.
+'ActionsProv::ReadVariableAction' is a specialization of 'VariableAction'.
+'ActionsProv::ReadExtendAction' is a specialization of 'Action'.
+'ActionsProv::TestIdentityAction' is a specialization of 'Action'.
+'ActionsProv::OpaqueAction' is a specialization of 'Action'.
+'ActionsProv::ReadSelfAction' is a specialization of 'Action'.
+'ActionsProv::AcceptEventAction' is a specialization of 'Action'.
+'ActionsProv::CallBehaviorAction' is a specialization of 'CallAction'.
+'ActionsProv::LinkAction' is a specialization of 'Action'.
+'ActionsProv::CreateObjectAction' is a specialization of 'Action'.
+'ActionsProv::AcceptCallAction' is a specialization of 'AcceptEventAction'.
+'ActionsProv::StartClassifierBehaviorAction' is a specialization of 'Action'.
+'ActionsProv::InputPin' is a specialization of 'Pin'.
+'ActionsProv::StartObjectBehaviorAction' is a specialization of 'CallAction'.
+'ActionsProv::LinkEndCreationData' is a specialization of 'LinkEndData'.
+'ActionsProv::ReadLinkObjectEndQualifierAction' is a specialization of 'Action'.
+'ActionsProv::ReclassifyObjectAction' is a specialization of 'Action'.
+'ActionsProv::AddStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+'ActionsProv::ActionInputPin' is a specialization of 'InputPin'.
+'ActionsProv::ReduceAction' is a specialization of 'Action'.
+'ActionsProv::WriteLinkAction' is a specialization of 'LinkAction'.
+'ActionsProv::RemoveVariableValueAction' is a specialization of 'WriteVariableAction'.
+'ActionsProv::WriteVariableAction' is a specialization of 'VariableAction'.
+'ActionsProv::ReplyAction' is a specialization of 'Action'.
+'ActionsProv::CreateLinkObjectAction' is a specialization of 'CreateLinkAction'.
+'ActionsProv::ValuePin' is a specialization of 'InputPin'.
+'ActionsProv::DestroyLinkAction' is a specialization of 'WriteLinkAction'.
+'ActionsProv::StructuralFeatureAction' is a specialization of 'Action'.
+'ActionsProv::SendObjectAction' is a specialization of 'InvocationAction'.
+'ActionsProv::RemoveStructuralFeatureValueAction' is a specialization of 'WriteStructuralFeatureAction'.
+'ActionsProv::OutputPin' is a specialization of 'Pin'.
+'ActionsProv::LinkEndDestructionData' is a specialization of 'LinkEndData'.
+'ActionsProv::VariableAction' is a specialization of 'Action'.
+'ActionsProv::ValueSpecificationAction' is a specialization of 'Action'.
+'ActionsProv::InputPin' (role 'ActionsProv_InputPin49', cardinality 0..*) is associated with 'ActionsProv::RemoveStructuralFeatureValueAction' (role 'ActionsProv_RemoveStructuralFeatureValueAction', cardinality 0..*).
+'ActionsProv::OutputPin' (role 'ActionsProv_OutputPin51', cardinality 0..*) is associated with 'ActionsProv::ClearStructuralFeatureAction' (role 'ActionsProv_ClearStructuralFeatureAction', cardinality 0..*).
+'ActionsProv::LinkAction' (role 'ActionsProv_LinkAction', cardinality 0..*) is associated with 'ActionsProv::InputPin' (role 'ActionsProv_InputPin53', cardinality 0..*).
+'ActionsProv::OutputPin' (role 'ActionsProv_OutputPin101', cardinality 0..*) is associated with 'ActionsProv::ReadLinkObjectEndAction' (role 'ActionsProv_ReadLinkObjectEndAction100', cardinality 0..*).
+'ActionsProv::InputPin' (role 'ActionsProv_InputPin121', cardinality 0..*) is associated with 'ActionsProv::RemoveVariableValueAction' (role 'ActionsProv_RemoveVariableValueAction', cardinality 0..*).
+'ActionsProv::Action' (role 'ActionsProv_Action125', cardinality 0..*) is associated with 'ActionsProv::ActionInputPin' (role 'ActionsProv_ActionInputPin', cardinality 0..*).
+'ActionsProv::OpaqueAction' (role 'ActionsProv_OpaqueAction6', cardinality 0..*) is associated with 'ActionsProv::OutputPin' (role 'ActionsProv_OutputPin7', cardinality 0..*).
+'ActionsProv::ReadLinkObjectEndAction' (role 'ActionsProv_ReadLinkObjectEndAction', cardinality 0..*) is associated with 'ActionsProv::InputPin' (role 'ActionsProv_InputPin98', cardinality 0..*).
+'ActionsProv::ReadLinkAction' (role 'ActionsProv_ReadLinkAction', cardinality 0..*) is associated with 'ActionsProv::OutputPin' (role 'ActionsProv_OutputPin62', cardinality 0..*).
+'ActionsProv::AddVariableValueAction' (role 'ActionsProv_AddVariableValueAction', cardinality 0..*) is associated with 'ActionsProv::InputPin' (role 'ActionsProv_InputPin119', cardinality 0..*).
+'ActionsProv::InputPin' (role 'ActionsProv_InputPin93', cardinality 0..*) is associated with 'ActionsProv::StartObjectBehaviorAction' (role 'ActionsProv_StartObjectBehaviorAction', cardinality 0..*).
+'ActionsProv::LinkEndData' (role 'ActionsProv_LinkEndData60', cardinality 0..*) is associated with 'ActionsProv::QualifierValue' (role 'ActionsProv_QualifierValue', cardinality 0..*).
+'ActionsProv::InputPin' (role 'ActionsProv_InputPin13', cardinality 0..*) is associated with 'ActionsProv::CallOperationAction' (role 'ActionsProv_CallOperationAction', cardinality 0..*).
+'ActionsProv::OutputPin' (role 'ActionsProv_OutputPin78', cardinality 0..*) is associated with 'ActionsProv::AcceptEventAction' (role 'ActionsProv_AcceptEventAction', cardinality 0..*).
+'ActionsProv::UnmarshallAction' (role 'ActionsProv_UnmarshallAction75', cardinality 0..*) is associated with 'ActionsProv::OutputPin' (role 'ActionsProv_OutputPin76', cardinality 0..*).
+'ActionsProv::InputPin' (role 'ActionsProv_InputPin66', cardinality 0..*) is associated with 'ActionsProv::LinkEndDestructionData' (role 'ActionsProv_LinkEndDestructionData', cardinality 0..*).
+'ActionsProv::StructuralFeatureAction' (role 'ActionsProv_StructuralFeatureAction', cardinality 0..*) is associated with 'ActionsProv::InputPin' (role 'ActionsProv_InputPin38', cardinality 0..*).
+'ActionsProv::OutputPin' (role 'ActionsProv_OutputPin108', cardinality 0..*) is associated with 'ActionsProv::CreateLinkObjectAction' (role 'ActionsProv_CreateLinkObjectAction', cardinality 0..*).
+'ActionsProv::RaiseExceptionAction' (role 'ActionsProv_RaiseExceptionAction', cardinality 0..*) is associated with 'ActionsProv::InputPin' (role 'ActionsProv_InputPin123', cardinality 0..*).
+'ActionsProv::Action' (role 'ActionsProv_Action', cardinality 0..*) is associated with 'ActionsProv::InputPin' (role 'ActionsProv_InputPin', cardinality 0..*).
+'ActionsProv::OutputPin' (role 'ActionsProv_OutputPin34', cardinality 0..*) is associated with 'ActionsProv::ReadSelfAction' (role 'ActionsProv_ReadSelfAction', cardinality 0..*).
+'ActionsProv::InputPin' (role 'ActionsProv_InputPin15', cardinality 0..*) is associated with 'ActionsProv::SendSignalAction' (role 'ActionsProv_SendSignalAction', cardinality 0..*).
+'ActionsProv::InputPin' (role 'ActionsProv_InputPin113', cardinality 0..*) is associated with 'ActionsProv::ReduceAction' (role 'ActionsProv_ReduceAction112', cardinality 0..*).
+'ActionsProv::ReduceAction' (role 'ActionsProv_ReduceAction', cardinality 0..*) is associated with 'ActionsProv::OutputPin' (role 'ActionsProv_OutputPin110', cardinality 0..*).
+'ActionsProv::ReplyAction' (role 'ActionsProv_ReplyAction70', cardinality 0..*) is associated with 'ActionsProv::InputPin' (role 'ActionsProv_InputPin71', cardinality 0..*).
+'ActionsProv::OutputPin' (role 'ActionsProv_OutputPin86', cardinality 0..*) is associated with 'ActionsProv::ReadlsClassifiedObjectAction' (role 'ActionsProv_ReadlsClassifiedObjectAction', cardinality 0..*).
+'ActionsProv::ReadVariableAction' (role 'ActionsProv_ReadVariableAction', cardinality 0..*) is associated with 'ActionsProv::OutputPin' (role 'ActionsProv_OutputPin115', cardinality 0..*).
+'ActionsProv::InputPin' (role 'ActionsProv_InputPin91', cardinality 0..*) is associated with 'ActionsProv::StartClassifierBehaviorAction' (role 'ActionsProv_StartClassifierBehaviorAction', cardinality 0..*).
+'ActionsProv::InputPin' (role 'ActionsProv_InputPin58', cardinality 0..*) is associated with 'ActionsProv::LinkEndData' (role 'ActionsProv_LinkEndData57', cardinality 0..*).
+'ActionsProv::InputPin' (role 'ActionsProv_InputPin17', cardinality 0..*) is associated with 'ActionsProv::SendObjectAction' (role 'ActionsProv_SendObjectAction', cardinality 0..*).
+'ActionsProv::InputPin' (role 'ActionsProv_InputPin73', cardinality 0..*) is associated with 'ActionsProv::UnmarshallAction' (role 'ActionsProv_UnmarshallAction', cardinality 0..*).
+'ActionsProv::InvocationAction' (role 'ActionsProv_InvocationAction', cardinality 0..*) is associated with 'ActionsProv::InputPin' (role 'ActionsProv_InputPin9', cardinality 0..*).
+'ActionsProv::TestIdentityAction' (role 'ActionsProv_TestIdentityAction', cardinality 0..*) is associated with 'ActionsProv::OutputPin' (role 'ActionsProv_OutputPin26', cardinality 0..*).
+'ActionsProv::OpaqueAction' (role 'ActionsProv_OpaqueAction', cardinality 0..*) is associated with 'ActionsProv::InputPin' (role 'ActionsProv_InputPin4', cardinality 0..*).
+'ActionsProv::LinkAction' (role 'ActionsProv_LinkAction55', cardinality 0..*) is associated with 'ActionsProv::LinkEndData' (role 'ActionsProv_LinkEndData', cardinality 0..*).
+'ActionsProv::CallAction' (role 'ActionsProv_CallAction', cardinality 0..*) is associated with 'ActionsProv::OutputPin' (role 'ActionsProv_OutputPin11', cardinality 0..*).
+'ActionsProv::InputPin' (role 'ActionsProv_InputPin117', cardinality 0..*) is associated with 'ActionsProv::WriteVariableAction' (role 'ActionsProv_WriteVariableAction', cardinality 0..*).
+'ActionsProv::DestroyObjectAction' (role 'ActionsProv_DestroyObjectAction', cardinality 0..*) is associated with 'ActionsProv::InputPin' (role 'ActionsProv_InputPin24', cardinality 0..*).
+'ActionsProv::AddStructuralFeatureValueAction' (role 'ActionsProv_AddStructuralFeatureValueAction', cardinality 0..*) is associated with 'ActionsProv::InputPin' (role 'ActionsProv_InputPin47', cardinality 0..*).
+'ActionsProv::SendObjectAction' (role 'ActionsProv_SendObjectAction19', cardinality 0..*) is associated with 'ActionsProv::InputPin' (role 'ActionsProv_InputPin20', cardinality 0..*).
+'ActionsProv::ReplyAction' (role 'ActionsProv_ReplyAction', cardinality 0..*) is associated with 'ActionsProv::InputPin' (role 'ActionsProv_InputPin68', cardinality 0..*).
+'ActionsProv::ReadLinkObjectEndQualifierAction' (role 'ActionsProv_ReadLinkObjectEndQualifierAction', cardinality 0..*) is associated with 'ActionsProv::InputPin' (role 'ActionsProv_InputPin103', cardinality 0..*).
+'ActionsProv::OutputPin' (role 'ActionsProv_OutputPin40', cardinality 0..*) is associated with 'ActionsProv::ReadStructuralFeatureAction' (role 'ActionsProv_ReadStructuralFeatureAction', cardinality 0..*).
+'ActionsProv::OutputPin' (role 'ActionsProv_OutputPin82', cardinality 0..*) is associated with 'ActionsProv::ReadExtendAction' (role 'ActionsProv_ReadExtendAction', cardinality 0..*).
+'ActionsProv::InputPin' (role 'ActionsProv_InputPin96', cardinality 0..*) is associated with 'ActionsProv::QualifierValue' (role 'ActionsProv_QualifierValue95', cardinality 0..*).
+'ActionsProv::InputPin' (role 'ActionsProv_InputPin29', cardinality 0..*) is associated with 'ActionsProv::TestIdentityAction' (role 'ActionsProv_TestIdentityAction28', cardinality 0..*).
+'ActionsProv::AcceptCallAction' (role 'ActionsProv_AcceptCallAction', cardinality 0..*) is associated with 'ActionsProv::OutputPin' (role 'ActionsProv_OutputPin80', cardinality 0..*).
+'ActionsProv::InputPin' (role 'ActionsProv_InputPin32', cardinality 0..*) is associated with 'ActionsProv::TestIdentityAction' (role 'ActionsProv_TestIdentityAction31', cardinality 0..*).
+'ActionsProv::Action' (role 'ActionsProv_Action2', cardinality 0..*) is associated with 'ActionsProv::OutputPin' (role 'ActionsProv_OutputPin', cardinality 0..*).
+'ActionsProv::ReadlsClassifiedObjectAction' (role 'ActionsProv_ReadlsClassifiedObjectAction88', cardinality 0..*) is associated with 'ActionsProv::InputPin' (role 'ActionsProv_InputPin89', cardinality 0..*).
+'ActionsProv::ReadLinkObjectEndQualifierAction' (role 'ActionsProv_ReadLinkObjectEndQualifierAction105', cardinality 0..*) is associated with 'ActionsProv::OutputPin' (role 'ActionsProv_OutputPin106', cardinality 0..*).
+'ActionsProv::LinkEndCreationData' (role 'ActionsProv_LinkEndCreationData', cardinality 0..*) is associated with 'ActionsProv::InputPin' (role 'ActionsProv_InputPin64', cardinality 0..*).
+'ActionsProv::OutputPin' (role 'ActionsProv_OutputPin45', cardinality 0..*) is associated with 'ActionsProv::WriteStructuralFeatureAction' (role 'ActionsProv_WriteStructuralFeatureAction44', cardinality 0..*).
+'ActionsProv::ValueSpecificationAction' (role 'ActionsProv_ValueSpecificationAction', cardinality 0..*) is associated with 'ActionsProv::OutputPin' (role 'ActionsProv_OutputPin36', cardinality 0..*).
+'ActionsProv::InputPin' (role 'ActionsProv_InputPin42', cardinality 0..*) is associated with 'ActionsProv::WriteStructuralFeatureAction' (role 'ActionsProv_WriteStructuralFeatureAction', cardinality 0..*).
+'ActionsProv::OutputPin' (role 'ActionsProv_OutputPin22', cardinality 0..*) is associated with 'ActionsProv::CreateObjectAction' (role 'ActionsProv_CreateObjectAction', cardinality 0..*).
+'ActionsProv::InputPin' (role 'ActionsProv_InputPin84', cardinality 0..*) is associated with 'ActionsProv::ReclassifyObjectAction' (role 'ActionsProv_ReclassifyObjectAction', cardinality 0..*).

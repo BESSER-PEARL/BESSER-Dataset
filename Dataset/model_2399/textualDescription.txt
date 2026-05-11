@@ -1,0 +1,13 @@
+The model has 4 class(es).
+The class 'rdbms::Column' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'rdbms::RDBMSModel' has no attributes.
+The class 'rdbms::Table' has the following attributes: 'name' of type str.
+The class 'rdbms::ForeignKey' has no attributes.
+'rdbms::ForeignKey' (role 'rdbms_ForeignKey18', cardinality 0..*) is associated with 'rdbms::Column' (role 'rdbms_Column19', cardinality 0..*).
+'rdbms::RDBMSModel' (role 'rdbms_RDBMSModel4', cardinality 0..*) is associated with 'rdbms::ForeignKey' (role 'rdbms_ForeignKey', cardinality 0..*).
+'rdbms::Table' (role 'rdbms_Table9', cardinality 0..*) is associated with 'rdbms::Column' (role 'rdbms_Column10', cardinality 0..*).
+'rdbms::Column' (role 'rdbms_Column13', cardinality 0..*) is associated with 'rdbms::Table' (role 'rdbms_Table12', cardinality 0..*).
+'rdbms::ForeignKey' (role 'rdbms_ForeignKey7', cardinality 0..*) is associated with 'rdbms::Table' (role 'rdbms_Table6', cardinality 0..*).
+'rdbms::Table' (role 'rdbms_Table', cardinality 0..*) is associated with 'rdbms::RDBMSModel' (role 'rdbms_RDBMSModel', cardinality 0..*).
+'rdbms::Table' (role 'rdbms_Table16', cardinality 0..*) is associated with 'rdbms::ForeignKey' (role 'rdbms_ForeignKey15', cardinality 0..*).
+'rdbms::Column' (role 'rdbms_Column', cardinality 0..*) is associated with 'rdbms::RDBMSModel' (role 'rdbms_RDBMSModel2', cardinality 0..*).

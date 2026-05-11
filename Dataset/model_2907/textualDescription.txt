@@ -1,0 +1,12 @@
+The model has 6 class(es).
+The class 'Data::PrimitiveType' has no attributes.
+The class 'Data::Entity' has no attributes.
+The class 'Type' has no attributes.
+The class 'Data::Attribute' has the following attributes: 'name' of type str.
+The class 'Data::Type' has the following attributes: 'name' of type str.
+The class 'Data::Model' has no attributes.
+'Data::Entity' is a specialization of 'Type'.
+'Data::PrimitiveType' is a specialization of 'Type'.
+'Data::Model' (role 'Data_Model', cardinality 0..*) is associated with 'Data::Type' (role 'Data_Type', cardinality 0..*).
+'Data::Attribute' (role 'Data_Attribute', cardinality 0..*) is associated with 'Data::Type' (role 'Data_Type2', cardinality 0..*).
+'Data::Attribute' (role 'Data_Attribute4', cardinality 0..*) is associated with 'Data::Entity' (role 'Data_Entity', cardinality 0..*).

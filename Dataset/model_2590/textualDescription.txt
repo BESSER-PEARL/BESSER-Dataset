@@ -1,0 +1,7 @@
+The model has 5 class(es).
+The class 'testSubpackages1::root::testSubpackages1::subpackage3::class4' has no attributes.
+The class 'testSubpackages1::root::testSubpackages1::subpackage2::class3' has no attributes.
+The class 'testSubpackages1::root::class1' has the following attributes: 'a' of type date.
+The class 'testSubpackages1::root::testSubpackages1::subpackage1::class2' has no attributes.
+The class 'class3' has no attributes.
+'class3' (role 'class3', cardinality 0..*) is associated with 'testSubpackages1::root::class1' (role 'testSubpackages1_root_class1', cardinality 0..*).

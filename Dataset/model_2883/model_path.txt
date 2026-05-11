@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/itemis/xtext-generator-vscode/examples/org.xtext.example.entities.parent/org.xtext.example.entities/model/generated/EntitiesDsl.ecore

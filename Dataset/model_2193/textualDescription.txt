@@ -1,0 +1,127 @@
+The model has 59 class(es).
+The class 'article::Diagram' has no attributes.
+The class 'article::Text' has no attributes.
+The class 'LinkTarget' has no attributes.
+The class 'ExternalTarget' has no attributes.
+The class 'article::Article' has no attributes.
+The class 'article::ImageFactory' has the following attributes: 'file' of type str.
+The class 'StructuralElement' has no attributes.
+The class 'Identifiable' has no attributes.
+The class 'Chapter' has no attributes.
+The class 'article::Factory' has no attributes.
+The class 'article::Javadoc' has no attributes.
+The class 'BodyElement' has no attributes.
+The class 'article::Plugin' has the following attributes: 'label' of type str; 'name' of type str.
+The class 'article::JavaFormatter' has no attributes.
+The class 'article::Documentation' has the following attributes: 'project' of type str.
+The class 'article::XmlFormatter' has the following attributes: 'file' of type str.
+The class 'article::Description' has no attributes.
+The class 'article::Link' has no attributes.
+The class 'article::StructuralElement' has the following attributes: 'title' of type str; 'doc' of type str.
+The class 'EmbeddableElement' has no attributes.
+The class 'BodyElementContainer' has no attributes.
+The class 'article::JavaPackage' has the following attributes: 'name' of type str.
+The class 'article::TreeNodeProperty' has the following attributes: 'key' of type str; 'valueImage' of type str; 'value' of type str.
+The class 'article::Selection' has no attributes.
+The class 'article::Toc' has the following attributes: 'levels' of type int.
+The class 'article::Embedding' has no attributes.
+The class 'article::LinkTarget' has the following attributes: 'defaultLabel' of type str; 'tooltip' of type str.
+The class 'article::ExternalTarget' has the following attributes: 'url' of type str.
+The class 'article::Image' has the following attributes: 'file' of type str.
+The class 'article::EmbeddableElement' has the following attributes: 'doc' of type str.
+The class 'Article' has no attributes.
+The class 'article::Category' has no attributes.
+The class 'Factory' has no attributes.
+The class 'article::SourceCode' has no attributes.
+The class 'article::Snippet' has the following attributes: 'titleImage' of type str; 'title' of type str.
+The class 'article::Key' has no attributes.
+The class 'article::Section' has no attributes.
+The class 'article::ExtensionPoint' has the following attributes: 'name' of type str.
+The class 'article::PluginResource' has no attributes.
+The class 'article::BodyElement' has the following attributes: 'tag' of type str.
+The class 'article::BodyElementContainer' has no attributes.
+The class 'article::ImageFormatter' has the following attributes: 'file' of type str.
+The class 'article::Identifiable' has the following attributes: 'id' of type str.
+The class 'article::Schemadoc' has no attributes.
+The class 'article::TreeFormatter' has the following attributes: 'expanded' of type str; 'file' of type str; 'expandTo' of type int; 'selected' of type str.
+The class 'article::Body' has no attributes.
+The class 'article::HtmlFormatter' has the following attributes: 'file' of type str.
+The class 'article::TreeNode' has the following attributes: 'label' of type str; 'image' of type str; 'xmi_ID' of type str.
+The class 'article::JavaElement' has the following attributes: 'classFile' of type str.
+The class 'Body' has no attributes.
+The class 'article::ExternalArticle' has the following attributes: 'url' of type str.
+The class 'article::Context' has the following attributes: 'root' of type str; 'baseFolder' of type str; 'project' of type str.
+The class 'ExternalArticle' has no attributes.
+The class 'Formatter' has no attributes.
+The class 'article::Excel' has no attributes.
+The class 'article::Chapter' has no attributes.
+The class 'article::Formatter' has no attributes.
+The class 'article::Callout' has no attributes.
+The class 'Category' has no attributes.
+'article::Image' is a specialization of 'BodyElement'.
+'article::Link' is a specialization of 'BodyElement'.
+'article::Diagram' is a specialization of 'BodyElement'.
+'article::JavaFormatter' is a specialization of 'Formatter'.
+'article::Key' is a specialization of 'BodyElement'.
+'article::SourceCode' is a specialization of 'ExternalTarget'.
+'article::Embedding' is a specialization of 'BodyElement'.
+'article::Article' is a specialization of 'Chapter'.
+'article::Snippet' is a specialization of 'EmbeddableElement'.
+'article::Section' is a specialization of 'BodyElementContainer'.
+'article::ImageFactory' is a specialization of 'Factory'.
+'article::Body' is a specialization of 'BodyElementContainer'.
+'article::Schemadoc' is a specialization of 'Category'.
+'article::StructuralElement' is a specialization of 'LinkTarget'.
+'article::Toc' is a specialization of 'BodyElement'.
+'article::JavaElement' is a specialization of 'LinkTarget'.
+'article::Category' is a specialization of 'Body'.
+'article::Section' is a specialization of 'LinkTarget'.
+'article::Javadoc' is a specialization of 'Category'.
+'article::Callout' is a specialization of 'BodyElementContainer'.
+'article::Description' is a specialization of 'BodyElementContainer'.
+'article::HtmlFormatter' is a specialization of 'Formatter'.
+'article::Factory' is a specialization of 'EmbeddableElement'.
+'article::Documentation' is a specialization of 'StructuralElement'.
+'article::XmlFormatter' is a specialization of 'Formatter'.
+'article::Chapter' is a specialization of 'Body'.
+'article::PluginResource' is a specialization of 'ExternalArticle'.
+'article::EmbeddableElement' is a specialization of 'Identifiable'.
+'article::LinkTarget' is a specialization of 'Identifiable'.
+'article::TreeFormatter' is a specialization of 'Formatter'.
+'article::Text' is a specialization of 'BodyElement'.
+'article::Excel' is a specialization of 'BodyElement'.
+'article::ExternalArticle' is a specialization of 'Article'.
+'article::Selection' is a specialization of 'BodyElement'.
+'article::ImageFormatter' is a specialization of 'Formatter'.
+'article::Body' is a specialization of 'StructuralElement'.
+'article::ExternalTarget' is a specialization of 'LinkTarget'.
+'article::StructuralElement' (role 'StructuralElement18', cardinality 0..*) is associated with 'article::StructuralElement' (role 'children', cardinality 0..*).
+'article::Article' (role 'article_Article', cardinality 0..*) is associated with 'article::Chapter' (role 'article_Chapter', cardinality 0..*).
+'article::TreeNodeProperty' (role 'article_TreeNodeProperty', cardinality 0..*) is associated with 'article::TreeNode' (role 'article_TreeNode41', cardinality 0..*).
+'article::Chapter' (role 'chapter', cardinality 0..*) is associated with 'article::Section' (role 'Section', cardinality 0..*).
+'article::Plugin' (role 'plugin', cardinality 0..*) is associated with 'article::JavaPackage' (role 'JavaPackage', cardinality 0..*).
+'article::Callout' (role 'Callout', cardinality 0..*) is associated with 'article::Snippet' (role 'snippet', cardinality 0..*).
+'article::Documentation' (role 'article_Documentation2', cardinality 0..*) is associated with 'article::Documentation' (role 'article_Documentation', cardinality 0..*).
+'article::EmbeddableElement' (role 'article_EmbeddableElement', cardinality 0..*) is associated with 'article::Embedding' (role 'article_Embedding', cardinality 0..*).
+'article::Formatter' (role 'Formatter', cardinality 0..*) is associated with 'article::Snippet' (role 'snippet11', cardinality 0..*).
+'article::LinkTarget' (role 'article_LinkTarget', cardinality 0..*) is associated with 'article::Link' (role 'article_Link', cardinality 0..*).
+'article::Plugin' (role 'article_Plugin', cardinality 0..*) is associated with 'article::Documentation' (role 'article_Documentation5', cardinality 0..*).
+'article::JavaPackage' (role 'packages', cardinality 0..*) is associated with 'article::Plugin' (role 'Plugin', cardinality 0..*).
+'article::ExtensionPoint' (role 'extensionPoints', cardinality 0..*) is associated with 'article::Plugin' (role 'Plugin35', cardinality 0..*).
+'article::Documentation' (role 'documentation', cardinality 0..*) is associated with 'article::EmbeddableElement' (role 'EmbeddableElement', cardinality 0..*).
+'article::Formatter' (role 'formatter', cardinality 0..*) is associated with 'article::Snippet' (role 'Snippet37', cardinality 0..*).
+'article::BodyElement' (role 'BodyElement', cardinality 0..*) is associated with 'article::BodyElementContainer' (role 'container', cardinality 0..*).
+'article::Snippet' (role 'Snippet46', cardinality 0..*) is associated with 'article::Description' (role 'description', cardinality 0..*).
+'article::Snippet' (role 'snippet13', cardinality 0..*) is associated with 'article::Description' (role 'Description', cardinality 0..*).
+'article::ExtensionPoint' (role 'ExtensionPoint', cardinality 0..*) is associated with 'article::Plugin' (role 'plugin32', cardinality 0..*).
+'article::TreeNodeProperty' (role 'article_TreeNodeProperty44', cardinality 0..*) is associated with 'article::TreeNodeProperty' (role 'article_TreeNodeProperty42', cardinality 0..*).
+'article::TreeNode' (role 'article_TreeNode', cardinality 0..*) is associated with 'article::TreeNode' (role 'article_TreeNode38', cardinality 0..*).
+'article::Documentation' (role 'Documentation', cardinality 0..*) is associated with 'article::Context' (role 'context', cardinality 0..*).
+'article::Body' (role 'article_Body', cardinality 0..*) is associated with 'article::Category' (role 'article_Category', cardinality 0..*).
+'article::Documentation' (role 'Documentation23', cardinality 0..*) is associated with 'article::EmbeddableElement' (role 'embeddableElements', cardinality 0..*).
+'article::StructuralElement' (role 'parent', cardinality 0..*) is associated with 'article::StructuralElement' (role 'StructuralElement', cardinality 0..*).
+'article::StructuralElement' (role 'article_StructuralElement', cardinality 0..*) is associated with 'article::Documentation' (role 'article_Documentation20', cardinality 0..*).
+'article::Callout' (role 'callouts', cardinality 0..*) is associated with 'article::Snippet' (role 'Snippet', cardinality 0..*).
+'article::Context' (role 'Context', cardinality 0..*) is associated with 'article::Documentation' (role 'documentations', cardinality 0..*).
+'article::Chapter' (role 'Chapter', cardinality 0..*) is associated with 'article::Section' (role 'sections', cardinality 0..*).
+'article::BodyElement' (role 'elements', cardinality 0..*) is associated with 'article::BodyElementContainer' (role 'BodyElementContainer', cardinality 0..*).

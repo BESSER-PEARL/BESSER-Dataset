@@ -1,0 +1,721 @@
+The model has 312 class(es).
+The class 'camel::requirement::Requirement' has the following attributes: 'name' of type str.
+The class 'ActionRealisation' has no attributes.
+The class 'camel::scalability::SimpleEvent' has no attributes.
+The class 'camel::organisation::Permission' has the following attributes: 'name' of type str; 'startTime' of type date; 'endTime' of type date; 'action' of type str.
+The class 'camel::execution::Measurement' has the following attributes: 'value' of type float; 'name' of type str; 'rawData' of type str; 'measurementTime' of type date.
+The class 'SoftRequirement' has no attributes.
+The class 'camel::provider::Exclusive' has no attributes.
+The class 'SLOAssessment' has no attributes.
+The class 'camel::metric::Property' has the following attributes: 'name' of type str; 'description' of type str; 'type' of type str.
+The class 'camel::provider::GroupCardinality' has no attributes.
+The class 'camel::deployment::DeploymentElement' has the following attributes: 'name' of type str.
+The class 'camel::requirement::OSRequirement' has the following attributes: 'is64os' of type bool; 'os' of type str.
+The class 'camel::organisation::Organisation' has the following attributes: 'www' of type str; 'name' of type str; 'email' of type str; 'postalAddress' of type str.
+The class 'camel::deployment::ProvidedHost' has no attributes.
+The class 'Component' has no attributes.
+The class 'camel::type::Limit' has the following attributes: 'included' of type bool.
+The class 'camel::metric::MetricModel' has no attributes.
+The class 'SingleValue' has no attributes.
+The class 'camel::unit::RequestUnit' has no attributes.
+The class 'camel::organisation::ServiceResourceFilter' has the following attributes: 'everyService' of type bool; 'serviceURL' of type str.
+The class 'camel::scalability::BinaryEventPattern' has the following attributes: 'operator' of type str; 'upperOccurrenceBound' of type int; 'lowerOccurrenceBound' of type int.
+The class 'Range' has no attributes.
+The class 'User' has no attributes.
+The class 'camel::deployment::RequiredHost' has no attributes.
+The class 'camel::requirement::ScaleRequirement' has no attributes.
+The class 'VMRequirementSet' has no attributes.
+The class 'camel::metric::MetricCondition' has no attributes.
+The class 'ScalabilityRule' has no attributes.
+The class 'OrganisationModel' has no attributes.
+The class 'camel::requirement::ProviderRequirement' has no attributes.
+The class 'camel::metric::PropertyCondition' has no attributes.
+The class 'MetricModel' has no attributes.
+The class 'camel::unit::StorageUnit' has no attributes.
+The class 'TypeModel' has no attributes.
+The class 'camel::provider::Feature' has the following attributes: 'name' of type str.
+The class 'camel::security::CompositeSecurityMetric' has no attributes.
+The class 'MetricFormulaParameter' has no attributes.
+The class 'ProviderRequirement' has no attributes.
+The class 'UnitModel' has no attributes.
+The class 'camel::organisation::PaaSageCredentials' has the following attributes: 'password' of type str.
+The class 'RoleAssignment' has no attributes.
+The class 'HostingPortInstance' has no attributes.
+The class 'camel::deployment::ComponentInstance' has the following attributes: 'destroyedOn' of type date; 'instantiatedOn' of type date.
+The class 'RequiredHostInstance' has no attributes.
+The class 'camel::metric::MetricVMBinding' has no attributes.
+The class 'Configuration' has no attributes.
+The class 'RequiredCommunication' has no attributes.
+The class 'camel::metric::MetricContext' has no attributes.
+The class 'camel::execution::RuleTrigger' has the following attributes: 'trigerringTime' of type date; 'name' of type str.
+The class 'RawMetricInstance' has no attributes.
+The class 'ServiceLevelObjective' has no attributes.
+The class 'camel::deployment::VM' has no attributes.
+The class 'Timer' has no attributes.
+The class 'camel::deployment::CommunicationPort' has the following attributes: 'portNumber' of type int.
+The class 'camel::scalability::Event' has the following attributes: 'name' of type str.
+The class 'camel::metric::CompositeMetric' has no attributes.
+The class 'camel::metric::Sensor' has the following attributes: 'isPush' of type bool; 'name' of type str; 'configuration' of type str.
+The class 'Constraint' has no attributes.
+The class 'RequirementGroup' has no attributes.
+The class 'camel::execution::ExecutionContext' has the following attributes: 'totalCost' of type float; 'startTime' of type date; 'name' of type str; 'endTime' of type date.
+The class 'camel::execution::ExecutionModel' has no attributes.
+The class 'camel::organisation::User' has the following attributes: 'lastName' of type str; 'name' of type str; 'email' of type str; 'firstName' of type str; 'www' of type str.
+The class 'camel::provider::FeatCardinality' has the following attributes: 'value' of type int.
+The class 'camel::deployment::HostingPort' has no attributes.
+The class 'EventPattern' has no attributes.
+The class 'camel::type::IntegerValue' has the following attributes: 'value' of type int.
+The class 'Hosting' has no attributes.
+The class 'camel::unit::CoreUnit' has no attributes.
+The class 'camel::metric::RawMetricContext' has no attributes.
+The class 'CommunicationPort' has no attributes.
+The class 'CompositeSecurityMetric' has no attributes.
+The class 'camel::unit::Unit' has the following attributes: 'name' of type str; 'unit' of type str.
+The class 'HostingPort' has no attributes.
+The class 'camel::unit::TimeIntervalUnit' has no attributes.
+The class 'camel::Action' has the following attributes: 'name' of type str; 'type' of type str.
+The class 'CloudProvider' has no attributes.
+The class 'ExecutionContext' has no attributes.
+The class 'camel::deployment::RequiredCommunication' has the following attributes: 'isMandatory' of type bool.
+The class 'camel::type::SingleValue' has no attributes.
+The class 'camel::metric::CompositeMetricInstance' has no attributes.
+The class 'CommunicationInstance' has no attributes.
+The class 'camel::scalability::ScalingAction' has no attributes.
+The class 'camel::metric::Window' has the following attributes: 'timeSize' of type str; 'windowType' of type str; 'measurementSize' of type str; 'sizeType' of type str; 'name' of type str.
+The class 'camel::metric::PropertyContext' has no attributes.
+The class 'metric::camel::Application' has no attributes.
+The class 'RuleTrigger' has no attributes.
+The class 'camel::type::EnumerateValue' has the following attributes: 'name' of type str; 'value' of type int.
+The class 'camel::provider::Cardinality' has the following attributes: 'cardinalityMin' of type int; 'cardinalityMax' of type int.
+The class 'DataCenter' has no attributes.
+The class 'camel::provider::Requires' has no attributes.
+The class 'camel::requirement::SoftRequirement' has the following attributes: 'priority' of type float.
+The class 'camel::security::SecurityControl' has the following attributes: 'name' of type str; 'specification' of type str.
+The class 'Clone' has no attributes.
+The class 'LocationModel' has no attributes.
+The class 'camel::type::List' has the following attributes: 'primitiveType' of type str.
+The class 'camel::type::PositiveInf' has no attributes.
+The class 'camel::type::ValueType' has the following attributes: 'name' of type str.
+The class 'execution::camel::Action' has no attributes.
+The class 'VMInstance' has no attributes.
+The class 'camel::security::SecurityDomain' has the following attributes: 'id' of type str; 'name' of type str.
+The class 'camel::deployment::DeploymentModel' has no attributes.
+The class 'camel::type::TypeModel' has no attributes.
+The class 'camel::organisation::ExternalIdentifier' has the following attributes: 'identifier' of type str; 'description' of type str.
+The class 'camel::type::BoolValue' has the following attributes: 'value' of type bool.
+The class 'TimeIntervalUnit' has no attributes.
+The class 'camel::security::SecuritySLO' has no attributes.
+The class 'camel::provider::Clone' has the following attributes: 'name' of type str.
+The class 'camel::organisation::RoleAssignment' has the following attributes: 'startTime' of type date; 'endTime' of type date; 'name' of type str; 'assignmentTime' of type date.
+The class 'camel::requirement::ImageRequirement' has the following attributes: 'imageId' of type str.
+The class 'camel::metric::RawMetric' has no attributes.
+The class 'camel::metric::Schedule' has the following attributes: 'interval' of type str; 'name' of type str; 'type' of type str; 'start' of type date; 'repetitions' of type int; 'end' of type date.
+The class 'RequiredHost' has no attributes.
+The class 'camel::requirement::OptimisationRequirement' has the following attributes: 'optimisationFunction' of type str.
+The class 'camel::provider::Constraint' has the following attributes: 'name' of type str.
+The class 'CompositeSecurityMetricInstance' has no attributes.
+The class 'camel::location::Location' has the following attributes: 'id' of type str.
+The class 'camel::organisation::OrganisationModel' has the following attributes: 'securityLevel' of type str.
+The class 'camel::requirement::LocationRequirement' has no attributes.
+The class 'camel::metric::Condition' has the following attributes: 'threshold' of type float; 'name' of type str; 'comparisonOperator' of type str; 'validity' of type date.
+The class 'Scope' has no attributes.
+The class 'requirement::camel::Application' has no attributes.
+The class 'ProvidedHostInstance' has no attributes.
+The class 'ProvidedCommunicationInstance' has no attributes.
+The class 'Credentials' has no attributes.
+The class 'camel::provider::ProviderModel' has no attributes.
+The class 'camel::type::ValueToIncrease' has no attributes.
+The class 'camel::deployment::RequiredCommunicationInstance' has no attributes.
+The class 'GeographicalRegion' has no attributes.
+The class 'camel::deployment::VMRequirementSet' has the following attributes: 'name' of type str.
+The class 'camel::deployment::CommunicationInstance' has no attributes.
+The class 'Location' has no attributes.
+The class 'camel::organisation::InformationResourceFilter' has the following attributes: 'everyInformationResource' of type bool; 'informationResourcePath' of type str.
+The class 'camel::requirement::HorizontalScaleRequirement' has the following attributes: 'minInstances' of type int; 'maxInstances' of type int.
+The class 'camel::metric::MetricComponentBinding' has no attributes.
+The class 'camel::execution::ApplicationMeasurement' has no attributes.
+The class 'camel::type::StringValueType' has the following attributes: 'primitiveType' of type str.
+The class 'execution::camel::Application' has no attributes.
+The class 'camel::deployment::InternalComponent' has the following attributes: 'version' of type str.
+The class 'camel::location::Country' has no attributes.
+The class 'camel::execution::ActionRealisation' has the following attributes: 'endTime' of type date; 'startTime' of type date; 'lowLevelActions' of type str; 'name' of type str.
+The class 'QuantitativeHardwareRequirement' has no attributes.
+The class 'Role' has no attributes.
+The class 'camel::unit::MonetaryUnit' has no attributes.
+The class 'camel::metric::MetricObjectBinding' has the following attributes: 'name' of type str.
+The class 'SecurityModel' has no attributes.
+The class 'camel::CamelModel' has no attributes.
+The class 'Entity' has no attributes.
+The class 'camel::type::Range' has the following attributes: 'primitiveType' of type str.
+The class 'MetricContext' has no attributes.
+The class 'camel::scalability::UnaryEventPattern' has the following attributes: 'operator' of type str; 'occurrenceNum' of type int.
+The class 'ExternalIdentifier' has no attributes.
+The class 'Action' has no attributes.
+The class 'camel::metric::MetricInstance' has the following attributes: 'name' of type str.
+The class 'ConditionContext' has no attributes.
+The class 'camel::deployment::VMInstance' has the following attributes: 'ip' of type str.
+The class 'Communication' has no attributes.
+The class 'PaaSageCredentials' has no attributes.
+The class 'camel::Model' has the following attributes: 'importURI' of type str; 'name' of type str.
+The class 'camel::scalability::EventInstance' has the following attributes: 'name' of type str; 'status' of type str; 'layer' of type str.
+The class 'NumericValue' has no attributes.
+The class 'ComponentInstance' has no attributes.
+The class 'camel::scalability::EventPattern' has no attributes.
+The class 'Condition' has no attributes.
+The class 'camel::provider::Instance' has no attributes.
+The class 'camel::scalability::ScalabilityModel' has no attributes.
+The class 'camel::execution::CommunicationMeasurement' has no attributes.
+The class 'camel::security::RawSecurityMetricInstance' has no attributes.
+The class 'camel::provider::Product' has no attributes.
+The class 'camel::deployment::Communication' has the following attributes: 'type' of type str.
+The class 'HardRequirement' has no attributes.
+The class 'camel::deployment::Component' has no attributes.
+The class 'camel::location::GeographicalRegion' has the following attributes: 'name' of type str; 'alternativeNames' of type str.
+The class 'Unit' has no attributes.
+The class 'camel::deployment::Hosting' has no attributes.
+The class 'EventInstance' has no attributes.
+The class 'camel::requirement::RequirementGroup' has the following attributes: 'requirementOperator' of type str.
+The class 'camel::scalability::Timer' has the following attributes: 'timeValue' of type int; 'type' of type str; 'name' of type str; 'maxOccurrenceNum' of type int.
+The class 'camel::organisation::UserGroup' has the following attributes: 'name' of type str.
+The class 'OSOrImageRequirement' has no attributes.
+The class 'SecurityDomain' has no attributes.
+The class 'Cardinality' has no attributes.
+The class 'camel::metric::MetricFormulaParameter' has the following attributes: 'name' of type str.
+The class 'CompositeMetric' has no attributes.
+The class 'Permission' has no attributes.
+The class 'camel::requirement::QualitativeHardwareRequirement' has the following attributes: 'minBenchmark' of type float; 'maxBenchmark' of type float.
+The class 'Organisation' has no attributes.
+The class 'camel::organisation::CloudCredentials' has the following attributes: 'username' of type str; 'name' of type str; 'securityGroup' of type str; 'privateSSHKey' of type str; 'publicSSHKey' of type str; 'password' of type str.
+The class 'camel::deployment::RequiredHostInstance' has no attributes.
+The class 'camel::scalability::ScalabilityRule' has the following attributes: 'name' of type str.
+The class 'camel::location::LocationModel' has no attributes.
+The class 'Event' has no attributes.
+The class 'Alternative' has no attributes.
+The class 'Limit' has no attributes.
+The class 'MonetaryUnit' has no attributes.
+The class 'camel::scalability::FunctionalEvent' has the following attributes: 'functionalType' of type str.
+The class 'PropertyContext' has no attributes.
+The class 'EnumerateValue' has no attributes.
+The class 'camel::scalability::NonFunctionalEvent' has the following attributes: 'isViolation' of type bool.
+The class 'camel::requirement::VerticalScaleRequirement' has the following attributes: 'minCores' of type int; 'minCPU' of type float; 'maxCores' of type int; 'maxCPU' of type float; 'maxStorage' of type int; 'minStorage' of type int; 'maxRAM' of type int; 'minRAM' of type int.
+The class 'RequirementModel' has no attributes.
+The class 'SimpleEvent' has no attributes.
+The class 'Attribute' has no attributes.
+The class 'camel::unit::UnitModel' has no attributes.
+The class 'Sensor' has no attributes.
+The class 'camel::organisation::ResourceFilter' has the following attributes: 'name' of type str; 'resourcePattern' of type str.
+The class 'ValueType' has no attributes.
+The class 'HostingInstance' has no attributes.
+The class 'camel::provider::Functional' has the following attributes: 'type' of type str; 'order' of type int; 'value' of type int.
+The class 'Schedule' has no attributes.
+The class 'DeploymentElement' has no attributes.
+The class 'camel::scalability::HorizontalScalingAction' has the following attributes: 'count' of type int.
+The class 'QualitativeHardwareRequirement' has no attributes.
+The class 'ProvidedHost' has no attributes.
+The class 'MetricFormula' has no attributes.
+The class 'RequiredCommunicationInstance' has no attributes.
+The class 'camel::requirement::HardRequirement' has no attributes.
+The class 'camel::Application' has the following attributes: 'version' of type str; 'name' of type str; 'description' of type str.
+The class 'VM' has no attributes.
+The class 'camel::provider::Excludes' has no attributes.
+The class 'camel::provider::Scope' has no attributes.
+The class 'camel::metric::RawMetricInstance' has no attributes.
+The class 'camel::execution::SLOAssessment' has the following attributes: 'assessment' of type bool; 'name' of type str; 'assessmentTime' of type date.
+The class 'ExecutionModel' has no attributes.
+The class 'camel::organisation::Role' has the following attributes: 'name' of type str.
+The class 'camel::location::CloudLocation' has the following attributes: 'isAssignable' of type bool.
+The class 'GroupCardinality' has no attributes.
+The class 'camel::deployment::HostingInstance' has no attributes.
+The class 'camel::type::FloatsValue' has the following attributes: 'value' of type float.
+The class 'camel::provider::AttributeConstraint' has the following attributes: 'name' of type str.
+The class 'camel::scalability::VerticalScalingAction' has the following attributes: 'CPUUpdate' of type float; 'storageUpdate' of type int; 'memoryUpdate' of type int; 'coreUpdate' of type int; 'networkUpdate' of type int; 'ioUpdate' of type int.
+The class 'RawMetric' has no attributes.
+The class 'scalability::camel::Action' has no attributes.
+The class 'camel::type::NegativeInf' has no attributes.
+The class 'camel::type::NumericValue' has no attributes.
+The class 'Requires' has no attributes.
+The class 'camel::type::StringsValue' has the following attributes: 'value' of type str.
+The class 'camel::organisation::DataCenter' has the following attributes: 'codeName' of type str; 'name' of type str.
+The class 'InternalComponentInstance' has no attributes.
+The class 'Metric' has no attributes.
+The class 'camel::security::RawSecurityMetric' has no attributes.
+The class 'camel::metric::ConditionContext' has the following attributes: 'name' of type str; 'minQuantity' of type float; 'quantifier' of type str; 'isRelative' of type bool; 'maxQuantity' of type float.
+The class 'camel::organisation::Credentials' has no attributes.
+The class 'camel::deployment::CommunicationPortInstance' has no attributes.
+The class 'ScalabilityModel' has no attributes.
+The class 'UserGroup' has no attributes.
+The class 'camel::requirement::HardwareRequirement' has no attributes.
+The class 'CommunicationPortInstance' has no attributes.
+The class 'ProviderModel' has no attributes.
+The class 'camel::requirement::SecurityRequirement' has no attributes.
+The class 'LocationRequirement' has no attributes.
+The class 'Measurement' has no attributes.
+The class 'RawSecurityMetricInstance' has no attributes.
+The class 'CloudLocation' has no attributes.
+The class 'DeploymentModel' has no attributes.
+The class 'SecurityControl' has no attributes.
+The class 'RawSecurityMetric' has no attributes.
+The class 'camel::execution::InternalComponentMeasurement' has no attributes.
+The class 'ResourceFilter' has no attributes.
+The class 'camel::requirement::QuantitativeHardwareRequirement' has the following attributes: 'maxRAM' of type int; 'maxStorage' of type int; 'minStorage' of type int; 'minCores' of type int; 'minCPU' of type float; 'minRAM' of type int; 'maxCores' of type int; 'maxCPU' of type float.
+The class 'camel::metric::MetricFormula' has the following attributes: 'functionArity' of type str; 'function' of type str; 'functionPattern' of type str.
+The class 'camel::type::DoublePrecisionValue' has the following attributes: 'value' of type float.
+The class 'camel::deployment::Configuration' has the following attributes: 'stopCommand' of type str; 'startCommand' of type str; 'uploadCommand' of type str; 'configureCommand' of type str; 'downloadCommand' of type str; 'installCommand' of type str.
+The class 'CloudCredentials' has no attributes.
+The class 'SecurityCapability' has no attributes.
+The class 'camel::metric::Metric' has the following attributes: 'description' of type str; 'valueDirection' of type str; 'isVariable' of type bool; 'layer' of type str.
+The class 'camel::deployment::ProvidedHostInstance' has no attributes.
+The class 'FeatCardinality' has no attributes.
+The class 'camel::type::RangeUnion' has the following attributes: 'primitiveType' of type str.
+The class 'camel::organisation::Entity' has no attributes.
+The class 'camel::requirement::OSOrImageRequirement' has no attributes.
+The class 'SecurityProperty' has no attributes.
+The class 'AttributeConstraint' has no attributes.
+The class 'camel::deployment::ProvidedCommunication' has no attributes.
+The class 'Feature' has no attributes.
+The class 'camel::security::SecurityModel' has no attributes.
+The class 'camel::metric::CompositeMetricContext' has no attributes.
+The class 'camel::provider::Implies' has no attributes.
+The class 'camel::unit::Dimensionless' has no attributes.
+The class 'ProvidedCommunication' has no attributes.
+The class 'camel::provider::Alternative' has no attributes.
+The class 'camel::security::CompositeSecurityMetricInstance' has no attributes.
+The class 'HardwareRequirement' has no attributes.
+The class 'camel::unit::TransactionUnit' has no attributes.
+The class 'camel::organisation::CloudProvider' has the following attributes: 'public' of type bool; 'SaaS' of type bool; 'IaaS' of type bool; 'PaaS' of type bool.
+The class 'Model' has no attributes.
+The class 'camel::requirement::ServiceLevelObjective' has no attributes.
+The class 'MetricInstance' has no attributes.
+The class 'camel::type::Enumeration' has no attributes.
+The class 'Window' has no attributes.
+The class 'InternalComponent' has no attributes.
+The class 'SecurityRequirement' has no attributes.
+The class 'camel::metric::MetricApplicationBinding' has no attributes.
+The class 'camel::deployment::InternalComponentInstance' has no attributes.
+The class 'CompositeMetricInstance' has no attributes.
+The class 'camel::unit::ThroughputUnit' has no attributes.
+The class 'camel::provider::Attribute' has the following attributes: 'unitType' of type str; 'name' of type str.
+The class 'camel::deployment::HostingPortInstance' has no attributes.
+The class 'camel::security::SecurityCapability' has the following attributes: 'name' of type str.
+The class 'SecuritySLO' has no attributes.
+The class 'camel::execution::VMMeasurement' has no attributes.
+The class 'Property' has no attributes.
+The class 'camel::security::SecurityProperty' has no attributes.
+The class 'ScaleRequirement' has no attributes.
+The class 'MetricObjectBinding' has no attributes.
+The class 'camel::deployment::ProvidedCommunicationInstance' has no attributes.
+The class 'camel::requirement::RequirementModel' has no attributes.
+The class 'Country' has no attributes.
+The class 'camel::security::Certifiable' has no attributes.
+The class 'Requirement' has no attributes.
+The class 'ScalingAction' has no attributes.
+The class 'camel::type::BooleanValueType' has the following attributes: 'primitiveType' of type str.
+The class 'MetricCondition' has no attributes.
+The enumeration 'ActionType' has the following literals: 'SCALE_UP', 'SCALE_DOWN', 'READ', 'SCALE_IN', 'WRITE', 'EVENT_CREATION', 'SCALE_OUT'.
+The enumeration 'LayerType' has the following literals: 'SCC', 'SaaS', 'PaaS', 'IaaS', 'BPM'.
+The enumeration 'CommunicationType' has the following literals: 'ANY', 'LOCAL', 'REMOTE'.
+The enumeration 'ComparisonOperatorType' has the following literals: 'LESS_THAN', 'GREATER_THAN', 'NOT_EQUAL', 'GREATER_EQUAL_THAN', 'LESS_EQUAL_THAN', 'EQUAL'.
+The enumeration 'OptimisationFunctionType' has the following literals: 'MINIMISE', 'MAXIMISE'.
+The enumeration 'SecurityLevel' has the following literals: 'MEDIUM', 'HIGH', 'LOW'.
+The enumeration 'ScheduleType' has the following literals: 'FIXED_RATE', 'SINGLE_EVENT', 'FIXED_DELAY'.
+The enumeration 'TypeEnum' has the following literals: 'StringType', 'DoubleType', 'BooleanType', 'IntType', 'FloatType'.
+The enumeration 'QuantifierType' has the following literals: 'ALL', 'ANY', 'SOME'.
+The enumeration 'PropertyType' has the following literals: 'ABSTRACT', 'MEASURABLE'.
+The enumeration 'MetricFunctionType' has the following literals: 'PERCENTILE', 'PLUS', 'MEAN', 'COUNT', 'DERIVATIVE', 'STD', 'MODE', 'MINUS', 'MEDIAN', 'MODULO', 'TIMES', 'MAX', 'MIN', 'DIV'.
+The enumeration 'UnitType' has the following literals: 'MILLISECONDS', 'HOURS', 'REQUESTS', 'WEEKS', 'EUROS', 'REQUESTS_PER_SECOND', 'MEGABYTES', 'PERCENTAGE', 'POUNDS', 'SECONDS', 'DOLLARS', 'GIGABYTES', 'MONTHS', 'TRANSACTIONS', 'BYTES_PER_SECOND', 'TRANSACTIONS_PER_SECOND', 'KILOBYTES', 'CORES', 'BYTES', 'MINUTES', 'DAYS'.
+The enumeration 'MetricFunctionArityType' has the following literals: 'N_ARY', 'BINARY', 'UNARY'.
+The enumeration 'TimerType' has the following literals: 'WITHIN_MAX', 'WITHIN', 'INTERVAL'.
+The enumeration 'Operator' has the following literals: 'divide', 'remove', 'select', 'add', 'multiply'.
+The enumeration 'FunctionPatternType' has the following literals: 'REDUCE', 'MAP'.
+The enumeration 'WindowType' has the following literals: 'SLIDING', 'FIXED'.
+The enumeration 'ResourcePattern' has the following literals: 'TREE', 'EXACT'.
+The enumeration 'BinaryPatternOperatorType' has the following literals: 'REPEAT_UNTIL', 'OR', 'PRECEDES', 'AND', 'XOR'.
+The enumeration 'StatusType' has the following literals: 'WARNING', 'CRITICAL', 'FATAL', 'SUCCESS'.
+The enumeration 'UnitDimensionType' has the following literals: 'TIME_INTERVAL', 'CORE_NUM', 'REQUEST_NUM', 'STORAGE', 'TRANSACTION_NUM', 'DIMENSIONLESS', 'THROUGHPUT', 'COST'.
+The enumeration 'WindowSizeType' has the following literals: 'TIME_ONLY', 'BOTH_MATCH', 'MEASUREMENTS_ONLY', 'FIRST_MATCH'.
+The enumeration 'RequirementOperatorType' has the following literals: 'AND', 'XOR', 'OR'.
+The enumeration 'UnaryPatternOperatorType' has the following literals: 'EVERY', 'WHEN', 'NOT', 'REPEAT'.
+'camel::requirement::OSOrImageRequirement' is a specialization of 'HardRequirement'.
+'camel::metric::PropertyCondition' is a specialization of 'Condition'.
+'camel::organisation::PaaSageCredentials' is a specialization of 'Credentials'.
+'camel::provider::ProviderModel' is a specialization of 'Model'.
+'camel::deployment::HostingPort' is a specialization of 'DeploymentElement'.
+'camel::metric::CompositeMetric' is a specialization of 'Metric'.
+'camel::provider::FeatCardinality' is a specialization of 'Cardinality'.
+'camel::organisation::User' is a specialization of 'Entity'.
+'camel::metric::MetricComponentBinding' is a specialization of 'MetricObjectBinding'.
+'camel::type::BooleanValueType' is a specialization of 'ValueType'.
+'camel::execution::CommunicationMeasurement' is a specialization of 'Measurement'.
+'camel::deployment::CommunicationPort' is a specialization of 'DeploymentElement'.
+'camel::type::EnumerateValue' is a specialization of 'SingleValue'.
+'camel::metric::MetricCondition' is a specialization of 'Condition'.
+'camel::organisation::CloudCredentials' is a specialization of 'Credentials'.
+'camel::requirement::HardRequirement' is a specialization of 'Requirement'.
+'camel::metric::Metric' is a specialization of 'MetricFormulaParameter'.
+'camel::unit::RequestUnit' is a specialization of 'Unit'.
+'camel::type::DoublePrecisionValue' is a specialization of 'NumericValue'.
+'camel::unit::TimeIntervalUnit' is a specialization of 'Unit'.
+'camel::deployment::ProvidedHostInstance' is a specialization of 'HostingPortInstance'.
+'camel::provider::Functional' is a specialization of 'Requires'.
+'camel::location::CloudLocation' is a specialization of 'Location'.
+'camel::CamelModel' is a specialization of 'Model'.
+'camel::unit::UnitModel' is a specialization of 'Model'.
+'camel::type::PositiveInf' is a specialization of 'NumericValue'.
+'camel::metric::PropertyContext' is a specialization of 'ConditionContext'.
+'camel::provider::Alternative' is a specialization of 'Feature'.
+'camel::requirement::ProviderRequirement' is a specialization of 'HardRequirement'.
+'camel::security::SecurityModel' is a specialization of 'Model'.
+'camel::metric::MetricVMBinding' is a specialization of 'MetricObjectBinding'.
+'camel::scalability::HorizontalScalingAction' is a specialization of 'ScalingAction'.
+'camel::requirement::QualitativeHardwareRequirement' is a specialization of 'HardwareRequirement'.
+'camel::deployment::ProvidedCommunicationInstance' is a specialization of 'CommunicationPortInstance'.
+'camel::provider::Exclusive' is a specialization of 'Alternative'.
+'camel::type::ValueToIncrease' is a specialization of 'NumericValue'.
+'camel::metric::MetricModel' is a specialization of 'Model'.
+'camel::deployment::VMInstance' is a specialization of 'ComponentInstance'.
+'camel::organisation::Organisation' is a specialization of 'Entity'.
+'camel::deployment::Component' is a specialization of 'DeploymentElement'.
+'camel::requirement::QuantitativeHardwareRequirement' is a specialization of 'HardwareRequirement'.
+'camel::metric::MetricFormula' is a specialization of 'MetricFormulaParameter'.
+'camel::execution::VMMeasurement' is a specialization of 'Measurement'.
+'camel::provider::Excludes' is a specialization of 'Constraint'.
+'camel::location::GeographicalRegion' is a specialization of 'Location'.
+'camel::deployment::HostingInstance' is a specialization of 'DeploymentElement'.
+'camel::organisation::CloudProvider' is a specialization of 'Organisation'.
+'camel::requirement::RequirementGroup' is a specialization of 'Requirement'.
+'camel::provider::Product' is a specialization of 'Scope'.
+'camel::security::RawSecurityMetricInstance' is a specialization of 'RawMetricInstance'.
+'camel::organisation::OrganisationModel' is a specialization of 'Model'.
+'camel::scalability::VerticalScalingAction' is a specialization of 'ScalingAction'.
+'camel::scalability::ScalingAction' is a specialization of 'Action'.
+'camel::deployment::Communication' is a specialization of 'DeploymentElement'.
+'camel::security::SecurityProperty' is a specialization of 'Property'.
+'camel::unit::TransactionUnit' is a specialization of 'Unit'.
+'camel::type::StringValueType' is a specialization of 'ValueType'.
+'camel::scalability::BinaryEventPattern' is a specialization of 'EventPattern'.
+'camel::metric::RawMetric' is a specialization of 'Metric'.
+'camel::type::List' is a specialization of 'ValueType'.
+'camel::deployment::Configuration' is a specialization of 'DeploymentElement'.
+'camel::type::NegativeInf' is a specialization of 'NumericValue'.
+'camel::execution::ExecutionModel' is a specialization of 'Model'.
+'camel::type::FloatsValue' is a specialization of 'NumericValue'.
+'camel::deployment::RequiredCommunication' is a specialization of 'CommunicationPort'.
+'camel::requirement::HorizontalScaleRequirement' is a specialization of 'ScaleRequirement'.
+'camel::type::IntegerValue' is a specialization of 'NumericValue'.
+'camel::unit::ThroughputUnit' is a specialization of 'Unit'.
+'camel::requirement::OSRequirement' is a specialization of 'OSOrImageRequirement'.
+'camel::scalability::SimpleEvent' is a specialization of 'Event'.
+'camel::execution::InternalComponentMeasurement' is a specialization of 'Measurement'.
+'camel::type::NumericValue' is a specialization of 'SingleValue'.
+'camel::type::RangeUnion' is a specialization of 'ValueType'.
+'camel::deployment::RequiredCommunicationInstance' is a specialization of 'CommunicationPortInstance'.
+'camel::scalability::UnaryEventPattern' is a specialization of 'EventPattern'.
+'camel::requirement::SecurityRequirement' is a specialization of 'HardRequirement'.
+'camel::deployment::CommunicationPortInstance' is a specialization of 'DeploymentElement'.
+'camel::deployment::ComponentInstance' is a specialization of 'DeploymentElement'.
+'camel::deployment::HostingPortInstance' is a specialization of 'DeploymentElement'.
+'camel::deployment::Hosting' is a specialization of 'DeploymentElement'.
+'camel::requirement::VerticalScaleRequirement' is a specialization of 'ScaleRequirement'.
+'camel::scalability::EventPattern' is a specialization of 'Event'.
+'camel::type::TypeModel' is a specialization of 'Model'.
+'camel::deployment::DeploymentModel' is a specialization of 'Model'.
+'camel::provider::GroupCardinality' is a specialization of 'Cardinality'.
+'camel::requirement::OptimisationRequirement' is a specialization of 'SoftRequirement'.
+'camel::deployment::RequiredHost' is a specialization of 'HostingPort'.
+'camel::provider::Instance' is a specialization of 'Scope'.
+'camel::unit::MonetaryUnit' is a specialization of 'Unit'.
+'camel::deployment::ProvidedCommunication' is a specialization of 'CommunicationPort'.
+'camel::deployment::VM' is a specialization of 'Component'.
+'camel::metric::CompositeMetricContext' is a specialization of 'MetricContext'.
+'camel::unit::Dimensionless' is a specialization of 'Unit'.
+'camel::metric::MetricApplicationBinding' is a specialization of 'MetricObjectBinding'.
+'camel::security::SecuritySLO' is a specialization of 'ServiceLevelObjective'.
+'camel::metric::RawMetricInstance' is a specialization of 'MetricInstance'.
+'camel::metric::MetricContext' is a specialization of 'ConditionContext'.
+'camel::type::Range' is a specialization of 'ValueType'.
+'camel::unit::StorageUnit' is a specialization of 'Unit'.
+'camel::metric::CompositeMetricInstance' is a specialization of 'MetricInstance'.
+'camel::provider::Requires' is a specialization of 'Constraint'.
+'camel::type::StringsValue' is a specialization of 'SingleValue'.
+'camel::type::BoolValue' is a specialization of 'SingleValue'.
+'camel::scalability::FunctionalEvent' is a specialization of 'SimpleEvent'.
+'camel::requirement::ScaleRequirement' is a specialization of 'HardRequirement'.
+'camel::security::CompositeSecurityMetric' is a specialization of 'CompositeMetric'.
+'camel::security::RawSecurityMetric' is a specialization of 'RawMetric'.
+'camel::requirement::ServiceLevelObjective' is a specialization of 'HardRequirement'.
+'camel::scalability::ScalabilityModel' is a specialization of 'Model'.
+'camel::security::Certifiable' is a specialization of 'SecurityProperty'.
+'camel::location::Country' is a specialization of 'GeographicalRegion'.
+'camel::requirement::HardwareRequirement' is a specialization of 'HardRequirement'.
+'camel::organisation::InformationResourceFilter' is a specialization of 'ResourceFilter'.
+'camel::type::Enumeration' is a specialization of 'ValueType'.
+'camel::requirement::RequirementModel' is a specialization of 'Model'.
+'camel::unit::CoreUnit' is a specialization of 'Unit'.
+'camel::metric::RawMetricContext' is a specialization of 'MetricContext'.
+'camel::deployment::CommunicationInstance' is a specialization of 'DeploymentElement'.
+'camel::deployment::InternalComponentInstance' is a specialization of 'ComponentInstance'.
+'camel::deployment::RequiredHostInstance' is a specialization of 'HostingPortInstance'.
+'camel::organisation::ServiceResourceFilter' is a specialization of 'ResourceFilter'.
+'camel::requirement::SoftRequirement' is a specialization of 'Requirement'.
+'camel::requirement::ImageRequirement' is a specialization of 'OSOrImageRequirement'.
+'camel::deployment::ProvidedHost' is a specialization of 'HostingPort'.
+'camel::requirement::LocationRequirement' is a specialization of 'HardRequirement'.
+'camel::scalability::NonFunctionalEvent' is a specialization of 'SimpleEvent'.
+'camel::location::LocationModel' is a specialization of 'Model'.
+'camel::deployment::InternalComponent' is a specialization of 'Component'.
+'camel::execution::ApplicationMeasurement' is a specialization of 'Measurement'.
+'camel::provider::Implies' is a specialization of 'Constraint'.
+'camel::security::CompositeSecurityMetricInstance' is a specialization of 'CompositeMetricInstance'.
+'camel::execution::ExecutionContext' (role 'camel_execution_ExecutionContext139', cardinality 0..*) is associated with 'DeploymentModel' (role 'DeploymentModel140', cardinality 0..*).
+'Feature' (role 'Feature', cardinality 0..*) is associated with 'camel::provider::ProviderModel' (role 'camel_provider_ProviderModel345', cardinality 0..*).
+'camel::security::SecurityModel' (role 'camel_security_SecurityModel480', cardinality 0..*) is associated with 'SecurityRequirement' (role 'SecurityRequirement', cardinality 0..*).
+'VMInstance' (role 'VMInstance', cardinality 0..*) is associated with 'camel::deployment::DeploymentModel' (role 'camel_deployment_DeploymentModel36', cardinality 0..*).
+'camel::execution::ApplicationMeasurement' (role 'camel_execution_ApplicationMeasurement', cardinality 0..*) is associated with 'execution::camel::Application' (role 'execution_camel_Application153', cardinality 0..*).
+'camel::organisation::RoleAssignment' (role 'camel_organisation_RoleAssignment336', cardinality 0..*) is associated with 'Role' (role 'Role337', cardinality 0..*).
+'camel::security::SecurityCapability' (role 'camel_security_SecurityCapability', cardinality 0..*) is associated with 'SecurityControl' (role 'SecurityControl517', cardinality 0..*).
+'camel::execution::InternalComponentMeasurement' (role 'camel_execution_InternalComponentMeasurement', cardinality 0..*) is associated with 'InternalComponentInstance' (role 'InternalComponentInstance155', cardinality 0..*).
+'camel::deployment::Component' (role 'camel_deployment_Component54', cardinality 0..*) is associated with 'Configuration' (role 'Configuration', cardinality 0..*).
+'Metric' (role 'Metric249', cardinality 0..*) is associated with 'camel::metric::MetricModel' (role 'camel_metric_MetricModel248', cardinality 0..*).
+'ExternalIdentifier' (role 'ExternalIdentifier', cardinality 0..*) is associated with 'camel::organisation::OrganisationModel' (role 'camel_organisation_OrganisationModel294', cardinality 0..*).
+'OrganisationModel' (role 'OrganisationModel', cardinality 0..*) is associated with 'camel::CamelModel' (role 'camel_CamelModel12', cardinality 0..*).
+'RequiredHost' (role 'RequiredHost', cardinality 0..*) is associated with 'camel::deployment::InternalComponent' (role 'camel_deployment_InternalComponent60', cardinality 0..*).
+'camel::deployment::Communication' (role 'camel_deployment_Communication', cardinality 0..*) is associated with 'ProvidedCommunication' (role 'ProvidedCommunication73', cardinality 0..*).
+'ExecutionContext' (role 'ExecutionContext226', cardinality 0..*) is associated with 'camel::metric::MetricObjectBinding' (role 'camel_metric_MetricObjectBinding', cardinality 0..*).
+'Metric' (role 'Metric404', cardinality 0..*) is associated with 'camel::requirement::OptimisationRequirement' (role 'camel_requirement_OptimisationRequirement', cardinality 0..*).
+'CloudProvider' (role 'CloudProvider418', cardinality 0..*) is associated with 'camel::requirement::ProviderRequirement' (role 'camel_requirement_ProviderRequirement', cardinality 0..*).
+'VM' (role 'VM472', cardinality 0..*) is associated with 'camel::scalability::ScalingAction' (role 'camel_scalability_ScalingAction', cardinality 0..*).
+'camel::execution::RuleTrigger' (role 'camel_execution_RuleTrigger', cardinality 0..*) is associated with 'ScalabilityRule' (role 'ScalabilityRule', cardinality 0..*).
+'scalability::camel::Action' (role 'scalability_camel_Action', cardinality 0..*) is associated with 'camel::scalability::ScalabilityRule' (role 'camel_scalability_ScalabilityRule464', cardinality 0..*).
+'camel::scalability::BinaryEventPattern' (role 'camel_scalability_BinaryEventPattern', cardinality 0..*) is associated with 'Event' (role 'Event450', cardinality 0..*).
+'camel::security::SecurityModel' (role 'camel_security_SecurityModel', cardinality 0..*) is associated with 'SecurityControl' (role 'SecurityControl478', cardinality 0..*).
+'camel::requirement::ServiceLevelObjective' (role 'camel_requirement_ServiceLevelObjective', cardinality 0..*) is associated with 'Condition' (role 'Condition402', cardinality 0..*).
+'camel::deployment::Component' (role 'camel_deployment_Component', cardinality 0..*) is associated with 'ProvidedCommunication' (role 'ProvidedCommunication', cardinality 0..*).
+'camel::provider::Feature' (role 'camel_provider_Feature382', cardinality 0..*) is associated with 'Feature' (role 'Feature383', cardinality 0..*).
+'camel::location::LocationModel' (role 'camel_location_LocationModel185', cardinality 0..*) is associated with 'GeographicalRegion' (role 'GeographicalRegion', cardinality 0..*).
+'camel::CamelModel' (role 'camel_CamelModel10', cardinality 0..*) is associated with 'MetricModel' (role 'MetricModel', cardinality 0..*).
+'VM' (role 'VM', cardinality 0..*) is associated with 'camel::deployment::DeploymentModel' (role 'camel_deployment_DeploymentModel34', cardinality 0..*).
+'camel::deployment::VMRequirementSet' (role 'camel_deployment_VMRequirementSet71', cardinality 0..*) is associated with 'OSOrImageRequirement' (role 'OSOrImageRequirement', cardinality 0..*).
+'Hosting' (role 'Hosting115', cardinality 0..*) is associated with 'camel::deployment::HostingInstance' (role 'camel_deployment_HostingInstance', cardinality 0..*).
+'UserGroup' (role 'UserGroup340', cardinality 0..*) is associated with 'camel::organisation::RoleAssignment' (role 'camel_organisation_RoleAssignment339', cardinality 0..*).
+'camel::execution::RuleTrigger' (role 'camel_execution_RuleTrigger173', cardinality 0..*) is associated with 'EventInstance' (role 'EventInstance174', cardinality 0..*).
+'camel::deployment::DeploymentModel' (role 'camel_deployment_DeploymentModel42', cardinality 0..*) is associated with 'Hosting' (role 'Hosting', cardinality 0..*).
+'camel::metric::Property' (role 'camel_metric_Property', cardinality 0..*) is associated with 'Property' (role 'Property234', cardinality 0..*).
+'MetricObjectBinding' (role 'MetricObjectBinding260', cardinality 0..*) is associated with 'camel::metric::MetricModel' (role 'camel_metric_MetricModel259', cardinality 0..*).
+'MetricContext' (role 'MetricContext212', cardinality 0..*) is associated with 'camel::metric::MetricInstance' (role 'camel_metric_MetricInstance211', cardinality 0..*).
+'camel::provider::Attribute' (role 'camel_provider_Attribute349', cardinality 0..*) is associated with 'ValueType' (role 'ValueType350', cardinality 0..*).
+'InternalComponent' (role 'InternalComponent425', cardinality 0..*) is associated with 'camel::requirement::SecurityRequirement' (role 'camel_requirement_SecurityRequirement424', cardinality 0..*).
+'LocationModel' (role 'LocationModel', cardinality 0..*) is associated with 'camel::CamelModel' (role 'camel_CamelModel8', cardinality 0..*).
+'DataCenter' (role 'DataCenter520', cardinality 0..*) is associated with 'camel::security::SecurityCapability' (role 'camel_security_SecurityCapability519', cardinality 0..*).
+'camel::metric::MetricInstance' (role 'camel_metric_MetricInstance205', cardinality 0..*) is associated with 'Schedule' (role 'Schedule', cardinality 0..*).
+'camel::CamelModel' (role 'camel_CamelModel', cardinality 0..*) is associated with 'camel::Action' (role 'camel_Action', cardinality 0..*).
+'camel::deployment::InternalComponent' (role 'camel_deployment_InternalComponent58', cardinality 0..*) is associated with 'RequiredCommunication' (role 'RequiredCommunication', cardinality 0..*).
+'camel::provider::Requires' (role 'camel_provider_Requires375', cardinality 0..*) is associated with 'FeatCardinality' (role 'FeatCardinality', cardinality 0..*).
+'Configuration' (role 'Configuration90', cardinality 0..*) is associated with 'camel::deployment::Hosting' (role 'camel_deployment_Hosting89', cardinality 0..*).
+'NumericValue' (role 'NumericValue', cardinality 0..*) is associated with 'camel::type::Limit' (role 'camel_type_Limit', cardinality 0..*).
+'RequirementModel' (role 'RequirementModel320', cardinality 0..*) is associated with 'camel::organisation::User' (role 'camel_organisation_User319', cardinality 0..*).
+'Range' (role 'Range', cardinality 0..*) is associated with 'camel::type::RangeUnion' (role 'camel_type_RangeUnion', cardinality 0..*).
+'camel::organisation::User' (role 'camel_organisation_User324', cardinality 0..*) is associated with 'DeploymentModel' (role 'DeploymentModel325', cardinality 0..*).
+'Attribute' (role 'Attribute352', cardinality 0..*) is associated with 'camel::provider::AttributeConstraint' (role 'camel_provider_AttributeConstraint', cardinality 0..*).
+'camel::scalability::ScalabilityRule' (role 'camel_scalability_ScalabilityRule466', cardinality 0..*) is associated with 'Entity' (role 'Entity467', cardinality 0..*).
+'requirement::camel::Application' (role 'requirement_camel_Application', cardinality 0..*) is associated with 'camel::requirement::RequirementGroup' (role 'camel_requirement_RequirementGroup400', cardinality 0..*).
+'EventInstance' (role 'EventInstance', cardinality 0..*) is associated with 'camel::execution::ExecutionModel' (role 'camel_execution_ExecutionModel125', cardinality 0..*).
+'camel::execution::CommunicationMeasurement' (role 'camel_execution_CommunicationMeasurement', cardinality 0..*) is associated with 'VMInstance' (role 'VMInstance157', cardinality 0..*).
+'camel::requirement::OptimisationRequirement' (role 'camel_requirement_OptimisationRequirement415', cardinality 0..*) is associated with 'MetricContext' (role 'MetricContext416', cardinality 0..*).
+'MonetaryUnit' (role 'MonetaryUnit', cardinality 0..*) is associated with 'camel::execution::ExecutionContext' (role 'camel_execution_ExecutionContext137', cardinality 0..*).
+'SecurityDomain' (role 'SecurityDomain501', cardinality 0..*) is associated with 'camel::security::SecurityControl' (role 'camel_security_SecurityControl', cardinality 0..*).
+'RequirementModel' (role 'RequirementModel', cardinality 0..*) is associated with 'camel::CamelModel' (role 'camel_CamelModel16', cardinality 0..*).
+'ConditionContext' (role 'ConditionContext', cardinality 0..*) is associated with 'camel::metric::MetricModel' (role 'camel_metric_MetricModel', cardinality 0..*).
+'TimeIntervalUnit' (role 'TimeIntervalUnit476', cardinality 0..*) is associated with 'camel::scalability::Timer' (role 'camel_scalability_Timer', cardinality 0..*).
+'camel::requirement::OptimisationRequirement' (role 'camel_requirement_OptimisationRequirement406', cardinality 0..*) is associated with 'Property' (role 'Property407', cardinality 0..*).
+'camel::type::Enumeration' (role 'camel_type_Enumeration', cardinality 0..*) is associated with 'EnumerateValue' (role 'EnumerateValue', cardinality 0..*).
+'camel::scalability::HorizontalScalingAction' (role 'camel_scalability_HorizontalScalingAction', cardinality 0..*) is associated with 'InternalComponent' (role 'InternalComponent474', cardinality 0..*).
+'camel::scalability::ScalabilityModel' (role 'camel_scalability_ScalabilityModel444', cardinality 0..*) is associated with 'Timer' (role 'Timer', cardinality 0..*).
+'ScalabilityModel' (role 'ScalabilityModel', cardinality 0..*) is associated with 'camel::CamelModel' (role 'camel_CamelModel18', cardinality 0..*).
+'camel::deployment::CommunicationInstance' (role 'camel_deployment_CommunicationInstance111', cardinality 0..*) is associated with 'RequiredCommunicationInstance' (role 'RequiredCommunicationInstance112', cardinality 0..*).
+'User' (role 'User', cardinality 0..*) is associated with 'camel::organisation::OrganisationModel' (role 'camel_organisation_OrganisationModel296', cardinality 0..*).
+'CommunicationInstance' (role 'CommunicationInstance', cardinality 0..*) is associated with 'camel::deployment::DeploymentModel' (role 'camel_deployment_DeploymentModel40', cardinality 0..*).
+'camel::metric::PropertyCondition' (role 'camel_metric_PropertyCondition199', cardinality 0..*) is associated with 'MonetaryUnit' (role 'MonetaryUnit200', cardinality 0..*).
+'requirement::camel::Application' (role 'requirement_camel_Application410', cardinality 0..*) is associated with 'camel::requirement::OptimisationRequirement' (role 'camel_requirement_OptimisationRequirement409', cardinality 0..*).
+'Event' (role 'Event453', cardinality 0..*) is associated with 'camel::scalability::BinaryEventPattern' (role 'camel_scalability_BinaryEventPattern452', cardinality 0..*).
+'camel::deployment::VMRequirementSet' (role 'camel_deployment_VMRequirementSet69', cardinality 0..*) is associated with 'QuantitativeHardwareRequirement' (role 'QuantitativeHardwareRequirement', cardinality 0..*).
+'SecurityCapability' (role 'SecurityCapability495', cardinality 0..*) is associated with 'camel::security::SecurityModel' (role 'camel_security_SecurityModel494', cardinality 0..*).
+'camel::deployment::InternalComponentInstance' (role 'camel_deployment_InternalComponentInstance', cardinality 0..*) is associated with 'RequiredCommunicationInstance' (role 'RequiredCommunicationInstance', cardinality 0..*).
+'camel::type::Range' (role 'camel_type_Range', cardinality 0..*) is associated with 'Limit' (role 'Limit', cardinality 0..*).
+'camel::organisation::OrganisationModel' (role 'camel_organisation_OrganisationModel298', cardinality 0..*) is associated with 'UserGroup' (role 'UserGroup', cardinality 0..*).
+'metric::camel::Application' (role 'metric_camel_Application', cardinality 0..*) is associated with 'camel::metric::ConditionContext' (role 'camel_metric_ConditionContext245', cardinality 0..*).
+'SecurityDomain' (role 'SecurityDomain515', cardinality 0..*) is associated with 'camel::security::SecurityProperty' (role 'camel_security_SecurityProperty', cardinality 0..*).
+'InternalComponent' (role 'InternalComponent', cardinality 0..*) is associated with 'camel::deployment::DeploymentModel' (role 'camel_deployment_DeploymentModel', cardinality 0..*).
+'camel::metric::MetricInstance' (role 'camel_metric_MetricInstance207', cardinality 0..*) is associated with 'Window' (role 'Window', cardinality 0..*).
+'SingleValue' (role 'SingleValue531', cardinality 0..*) is associated with 'camel::type::List' (role 'camel_type_List', cardinality 0..*).
+'ValueType' (role 'ValueType', cardinality 0..*) is associated with 'camel::metric::Metric' (role 'camel_metric_Metric', cardinality 0..*).
+'camel::organisation::DataCenter' (role 'camel_organisation_DataCenter', cardinality 0..*) is associated with 'Location' (role 'Location', cardinality 0..*).
+'camel::provider::Requires' (role 'camel_provider_Requires372', cardinality 0..*) is associated with 'Scope' (role 'Scope373', cardinality 0..*).
+'EventInstance' (role 'EventInstance151', cardinality 0..*) is associated with 'camel::execution::Measurement' (role 'camel_execution_Measurement150', cardinality 0..*).
+'camel::metric::MetricModel' (role 'camel_metric_MetricModel262', cardinality 0..*) is associated with 'Window' (role 'Window263', cardinality 0..*).
+'CompositeSecurityMetric' (role 'CompositeSecurityMetric513', cardinality 0..*) is associated with 'camel::security::SecurityControl' (role 'camel_security_SecurityControl512', cardinality 0..*).
+'ProvidedCommunicationInstance' (role 'ProvidedCommunicationInstance109', cardinality 0..*) is associated with 'camel::deployment::CommunicationInstance' (role 'camel_deployment_CommunicationInstance108', cardinality 0..*).
+'VM' (role 'VM431', cardinality 0..*) is associated with 'camel::requirement::VerticalScaleRequirement' (role 'camel_requirement_VerticalScaleRequirement', cardinality 0..*).
+'Component' (role 'Component243', cardinality 0..*) is associated with 'camel::metric::ConditionContext' (role 'camel_metric_ConditionContext', cardinality 0..*).
+'DataCenter' (role 'DataCenter', cardinality 0..*) is associated with 'camel::organisation::OrganisationModel' (role 'camel_organisation_OrganisationModel300', cardinality 0..*).
+'camel::metric::CompositeMetricContext' (role 'camel_metric_CompositeMetricContext', cardinality 0..*) is associated with 'MetricContext' (role 'MetricContext285', cardinality 0..*).
+'camel::provider::Alternative' (role 'camel_provider_Alternative', cardinality 0..*) is associated with 'GroupCardinality' (role 'GroupCardinality', cardinality 0..*).
+'camel::security::SecurityModel' (role 'camel_security_SecurityModel490', cardinality 0..*) is associated with 'CompositeSecurityMetricInstance' (role 'CompositeSecurityMetricInstance', cardinality 0..*).
+'camel::scalability::ScalabilityModel' (role 'camel_scalability_ScalabilityModel437', cardinality 0..*) is associated with 'EventInstance' (role 'EventInstance438', cardinality 0..*).
+'SingleValue' (role 'SingleValue358', cardinality 0..*) is associated with 'camel::provider::AttributeConstraint' (role 'camel_provider_AttributeConstraint357', cardinality 0..*).
+'Feature' (role 'Feature395', cardinality 0..*) is associated with 'camel::provider::Instance' (role 'camel_provider_Instance', cardinality 0..*).
+'camel::deployment::CommunicationPortInstance' (role 'camel_deployment_CommunicationPortInstance', cardinality 0..*) is associated with 'CommunicationPort' (role 'CommunicationPort', cardinality 0..*).
+'camel::deployment::Communication' (role 'camel_deployment_Communication81', cardinality 0..*) is associated with 'Configuration' (role 'Configuration82', cardinality 0..*).
+'camel::execution::SLOAssessment' (role 'camel_execution_SLOAssessment169', cardinality 0..*) is associated with 'Measurement' (role 'Measurement170', cardinality 0..*).
+'camel::provider::Constraint' (role 'camel_provider_Constraint', cardinality 0..*) is associated with 'Feature' (role 'Feature364', cardinality 0..*).
+'Sensor' (role 'Sensor272', cardinality 0..*) is associated with 'camel::metric::MetricModel' (role 'camel_metric_MetricModel271', cardinality 0..*).
+'execution::camel::Application' (role 'execution_camel_Application', cardinality 0..*) is associated with 'camel::execution::ExecutionContext' (role 'camel_execution_ExecutionContext', cardinality 0..*).
+'camel::execution::RuleTrigger' (role 'camel_execution_RuleTrigger176', cardinality 0..*) is associated with 'ActionRealisation' (role 'ActionRealisation177', cardinality 0..*).
+'camel::execution::SLOAssessment' (role 'camel_execution_SLOAssessment', cardinality 0..*) is associated with 'ServiceLevelObjective' (role 'ServiceLevelObjective164', cardinality 0..*).
+'camel::metric::MetricInstance' (role 'camel_metric_MetricInstance', cardinality 0..*) is associated with 'Metric' (role 'Metric', cardinality 0..*).
+'Clone' (role 'Clone389', cardinality 0..*) is associated with 'camel::provider::Feature' (role 'camel_provider_Feature388', cardinality 0..*).
+'Organisation' (role 'Organisation', cardinality 0..*) is associated with 'camel::organisation::OrganisationModel' (role 'camel_organisation_OrganisationModel', cardinality 0..*).
+'camel::CamelModel' (role 'camel_CamelModel20', cardinality 0..*) is associated with 'SecurityModel' (role 'SecurityModel', cardinality 0..*).
+'camel::type::TypeModel' (role 'camel_type_TypeModel', cardinality 0..*) is associated with 'ValueType' (role 'ValueType522', cardinality 0..*).
+'camel::scalability::NonFunctionalEvent' (role 'camel_scalability_NonFunctionalEvent', cardinality 0..*) is associated with 'MetricCondition' (role 'MetricCondition', cardinality 0..*).
+'camel::security::SecurityModel' (role 'camel_security_SecurityModel497', cardinality 0..*) is associated with 'SecuritySLO' (role 'SecuritySLO', cardinality 0..*).
+'camel::location::CloudLocation' (role 'camel_location_CloudLocation', cardinality 0..*) is associated with 'CloudLocation' (role 'CloudLocation187', cardinality 0..*).
+'camel::provider::AttributeConstraint' (role 'camel_provider_AttributeConstraint354', cardinality 0..*) is associated with 'Attribute' (role 'Attribute355', cardinality 0..*).
+'ScalingAction' (role 'ScalingAction', cardinality 0..*) is associated with 'camel::scalability::ScalabilityModel' (role 'camel_scalability_ScalabilityModel440', cardinality 0..*).
+'User' (role 'User334', cardinality 0..*) is associated with 'camel::organisation::RoleAssignment' (role 'camel_organisation_RoleAssignment', cardinality 0..*).
+'TimeIntervalUnit' (role 'TimeIntervalUnit', cardinality 0..*) is associated with 'camel::metric::PropertyCondition' (role 'camel_metric_PropertyCondition202', cardinality 0..*).
+'CloudCredentials' (role 'CloudCredentials', cardinality 0..*) is associated with 'camel::organisation::User' (role 'camel_organisation_User322', cardinality 0..*).
+'camel::Application' (role 'camel_Application28', cardinality 0..*) is associated with 'DeploymentModel' (role 'DeploymentModel29', cardinality 0..*).
+'Condition' (role 'Condition', cardinality 0..*) is associated with 'camel::metric::MetricModel' (role 'camel_metric_MetricModel254', cardinality 0..*).
+'RequirementGroup' (role 'RequirementGroup', cardinality 0..*) is associated with 'camel::execution::ExecutionContext' (role 'camel_execution_ExecutionContext142', cardinality 0..*).
+'camel::provider::Constraint' (role 'camel_provider_Constraint366', cardinality 0..*) is associated with 'Feature' (role 'Feature367', cardinality 0..*).
+'camel::location::LocationModel' (role 'camel_location_LocationModel', cardinality 0..*) is associated with 'CloudLocation' (role 'CloudLocation', cardinality 0..*).
+'MetricContext' (role 'MetricContext', cardinality 0..*) is associated with 'camel::metric::MetricCondition' (role 'camel_metric_MetricCondition', cardinality 0..*).
+'Requirement' (role 'Requirement', cardinality 0..*) is associated with 'camel::requirement::RequirementModel' (role 'camel_requirement_RequirementModel', cardinality 0..*).
+'RawSecurityMetric' (role 'RawSecurityMetric510', cardinality 0..*) is associated with 'camel::security::SecurityControl' (role 'camel_security_SecurityControl509', cardinality 0..*).
+'Requirement' (role 'Requirement398', cardinality 0..*) is associated with 'camel::requirement::RequirementGroup' (role 'camel_requirement_RequirementGroup', cardinality 0..*).
+'MetricFormula' (role 'MetricFormula', cardinality 0..*) is associated with 'camel::metric::CompositeMetric' (role 'camel_metric_CompositeMetric', cardinality 0..*).
+'camel::scalability::ScalabilityRule' (role 'camel_scalability_ScalabilityRule', cardinality 0..*) is associated with 'Event' (role 'Event462', cardinality 0..*).
+'execution::camel::Action' (role 'execution_camel_Action', cardinality 0..*) is associated with 'camel::execution::ActionRealisation' (role 'camel_execution_ActionRealisation', cardinality 0..*).
+'Schedule' (role 'Schedule283', cardinality 0..*) is associated with 'camel::metric::MetricContext' (role 'camel_metric_MetricContext282', cardinality 0..*).
+'camel::provider::Constraint' (role 'camel_provider_Constraint369', cardinality 0..*) is associated with 'AttributeConstraint' (role 'AttributeConstraint', cardinality 0..*).
+'VMRequirementSet' (role 'VMRequirementSet62', cardinality 0..*) is associated with 'camel::deployment::VM' (role 'camel_deployment_VM', cardinality 0..*).
+'GeographicalRegion' (role 'GeographicalRegion195', cardinality 0..*) is associated with 'camel::location::GeographicalRegion' (role 'camel_location_GeographicalRegion', cardinality 0..*).
+'Property' (role 'Property257', cardinality 0..*) is associated with 'camel::metric::MetricModel' (role 'camel_metric_MetricModel256', cardinality 0..*).
+'Attribute' (role 'Attribute380', cardinality 0..*) is associated with 'camel::provider::Feature' (role 'camel_provider_Feature', cardinality 0..*).
+'camel::scalability::ScalabilityRule' (role 'camel_scalability_ScalabilityRule469', cardinality 0..*) is associated with 'ScaleRequirement' (role 'ScaleRequirement470', cardinality 0..*).
+'camel::deployment::VMRequirementSet' (role 'camel_deployment_VMRequirementSet', cardinality 0..*) is associated with 'LocationRequirement' (role 'LocationRequirement', cardinality 0..*).
+'camel::organisation::User' (role 'camel_organisation_User', cardinality 0..*) is associated with 'ExternalIdentifier' (role 'ExternalIdentifier317', cardinality 0..*).
+'camel::CamelModel' (role 'camel_CamelModel22', cardinality 0..*) is associated with 'TypeModel' (role 'TypeModel', cardinality 0..*).
+'SingleValue' (role 'SingleValue361', cardinality 0..*) is associated with 'camel::provider::AttributeConstraint' (role 'camel_provider_AttributeConstraint360', cardinality 0..*).
+'camel::metric::RawMetricContext' (role 'camel_metric_RawMetricContext', cardinality 0..*) is associated with 'Sensor' (role 'Sensor287', cardinality 0..*).
+'Limit' (role 'Limit538', cardinality 0..*) is associated with 'camel::type::Range' (role 'camel_type_Range537', cardinality 0..*).
+'camel::organisation::OrganisationModel' (role 'camel_organisation_OrganisationModel308', cardinality 0..*) is associated with 'ResourceFilter' (role 'ResourceFilter', cardinality 0..*).
+'camel::security::SecurityControl' (role 'camel_security_SecurityControl503', cardinality 0..*) is associated with 'SecurityDomain' (role 'SecurityDomain504', cardinality 0..*).
+'RequiredCommunication' (role 'RequiredCommunication76', cardinality 0..*) is associated with 'camel::deployment::Communication' (role 'camel_deployment_Communication75', cardinality 0..*).
+'ServiceLevelObjective' (role 'ServiceLevelObjective', cardinality 0..*) is associated with 'camel::execution::Measurement' (role 'camel_execution_Measurement148', cardinality 0..*).
+'MetricFormulaParameter' (role 'MetricFormulaParameter269', cardinality 0..*) is associated with 'camel::metric::MetricModel' (role 'camel_metric_MetricModel268', cardinality 0..*).
+'camel::organisation::UserGroup' (role 'camel_organisation_UserGroup', cardinality 0..*) is associated with 'User' (role 'User342', cardinality 0..*).
+'Constraint' (role 'Constraint', cardinality 0..*) is associated with 'camel::provider::ProviderModel' (role 'camel_provider_ProviderModel', cardinality 0..*).
+'Metric' (role 'Metric277', cardinality 0..*) is associated with 'camel::metric::MetricContext' (role 'camel_metric_MetricContext', cardinality 0..*).
+'camel::provider::Feature' (role 'camel_provider_Feature385', cardinality 0..*) is associated with 'FeatCardinality' (role 'FeatCardinality386', cardinality 0..*).
+'camel::location::CloudLocation' (role 'camel_location_CloudLocation192', cardinality 0..*) is associated with 'GeographicalRegion' (role 'GeographicalRegion193', cardinality 0..*).
+'camel::requirement::SecurityRequirement' (role 'camel_requirement_SecurityRequirement421', cardinality 0..*) is associated with 'requirement::camel::Application' (role 'requirement_camel_Application422', cardinality 0..*).
+'ExecutionContext' (role 'ExecutionContext', cardinality 0..*) is associated with 'camel::execution::ExecutionModel' (role 'camel_execution_ExecutionModel127', cardinality 0..*).
+'SingleValue' (role 'SingleValue525', cardinality 0..*) is associated with 'camel::type::TypeModel' (role 'camel_type_TypeModel524', cardinality 0..*).
+'camel::Application' (role 'camel_Application', cardinality 0..*) is associated with 'camel::CamelModel' (role 'camel_CamelModel2', cardinality 0..*).
+'Component' (role 'Component413', cardinality 0..*) is associated with 'camel::requirement::OptimisationRequirement' (role 'camel_requirement_OptimisationRequirement412', cardinality 0..*).
+'SecurityProperty' (role 'SecurityProperty', cardinality 0..*) is associated with 'camel::security::SecurityModel' (role 'camel_security_SecurityModel482', cardinality 0..*).
+'ProvidedHost' (role 'ProvidedHost84', cardinality 0..*) is associated with 'camel::deployment::Hosting' (role 'camel_deployment_Hosting', cardinality 0..*).
+'camel::metric::MetricVMBinding' (role 'camel_metric_MetricVMBinding', cardinality 0..*) is associated with 'VMInstance' (role 'VMInstance232', cardinality 0..*).
+'camel::scalability::ScalabilityModel' (role 'camel_scalability_ScalabilityModel435', cardinality 0..*) is associated with 'Event' (role 'Event', cardinality 0..*).
+'ExecutionModel' (role 'ExecutionModel', cardinality 0..*) is associated with 'camel::CamelModel' (role 'camel_CamelModel6', cardinality 0..*).
+'camel::CamelModel' (role 'camel_CamelModel24', cardinality 0..*) is associated with 'UnitModel' (role 'UnitModel', cardinality 0..*).
+'camel::execution::ExecutionModel' (role 'camel_execution_ExecutionModel129', cardinality 0..*) is associated with 'Measurement' (role 'Measurement', cardinality 0..*).
+'camel::metric::Window' (role 'camel_metric_Window', cardinality 0..*) is associated with 'TimeIntervalUnit' (role 'TimeIntervalUnit241', cardinality 0..*).
+'camel::provider::Requires' (role 'camel_provider_Requires377', cardinality 0..*) is associated with 'FeatCardinality' (role 'FeatCardinality378', cardinality 0..*).
+'ScalabilityRule' (role 'ScalabilityRule433', cardinality 0..*) is associated with 'camel::scalability::ScalabilityModel' (role 'camel_scalability_ScalabilityModel', cardinality 0..*).
+'ProvidedHost' (role 'ProvidedHost', cardinality 0..*) is associated with 'camel::deployment::Component' (role 'camel_deployment_Component52', cardinality 0..*).
+'ProvidedHostInstance' (role 'ProvidedHostInstance118', cardinality 0..*) is associated with 'camel::deployment::HostingInstance' (role 'camel_deployment_HostingInstance117', cardinality 0..*).
+'MetricInstance' (role 'MetricInstance214', cardinality 0..*) is associated with 'camel::metric::CompositeMetricInstance' (role 'camel_metric_CompositeMetricInstance', cardinality 0..*).
+'camel::location::CloudLocation' (role 'camel_location_CloudLocation189', cardinality 0..*) is associated with 'CloudLocation' (role 'CloudLocation190', cardinality 0..*).
+'Communication' (role 'Communication106', cardinality 0..*) is associated with 'camel::deployment::CommunicationInstance' (role 'camel_deployment_CommunicationInstance', cardinality 0..*).
+'Schedule' (role 'Schedule266', cardinality 0..*) is associated with 'camel::metric::MetricModel' (role 'camel_metric_MetricModel265', cardinality 0..*).
+'SecurityDomain' (role 'SecurityDomain499', cardinality 0..*) is associated with 'camel::security::SecurityDomain' (role 'camel_security_SecurityDomain', cardinality 0..*).
+'ExecutionContext' (role 'ExecutionContext144', cardinality 0..*) is associated with 'camel::execution::Measurement' (role 'camel_execution_Measurement', cardinality 0..*).
+'Feature' (role 'Feature393', cardinality 0..*) is associated with 'camel::provider::Alternative' (role 'camel_provider_Alternative392', cardinality 0..*).
+'NumericValue' (role 'NumericValue528', cardinality 0..*) is associated with 'camel::type::ValueToIncrease' (role 'camel_type_ValueToIncrease', cardinality 0..*).
+'camel::metric::Metric' (role 'camel_metric_Metric221', cardinality 0..*) is associated with 'Unit' (role 'Unit', cardinality 0..*).
+'camel::execution::RuleTrigger' (role 'camel_execution_RuleTrigger179', cardinality 0..*) is associated with 'ExecutionContext' (role 'ExecutionContext180', cardinality 0..*).
+'MetricFormulaParameter' (role 'MetricFormulaParameter', cardinality 0..*) is associated with 'camel::metric::MetricFormula' (role 'camel_metric_MetricFormula', cardinality 0..*).
+'camel::organisation::OrganisationModel' (role 'camel_organisation_OrganisationModel306', cardinality 0..*) is associated with 'Permission' (role 'Permission', cardinality 0..*).
+'camel::organisation::CloudCredentials' (role 'camel_organisation_CloudCredentials', cardinality 0..*) is associated with 'CloudProvider' (role 'CloudProvider310', cardinality 0..*).
+'camel::security::SecurityModel' (role 'camel_security_SecurityModel486', cardinality 0..*) is associated with 'CompositeSecurityMetric' (role 'CompositeSecurityMetric', cardinality 0..*).
+'camel::organisation::CloudProvider' (role 'camel_organisation_CloudProvider', cardinality 0..*) is associated with 'ProviderModel' (role 'ProviderModel313', cardinality 0..*).
+'Event' (role 'Event455', cardinality 0..*) is associated with 'camel::scalability::UnaryEventPattern' (role 'camel_scalability_UnaryEventPattern', cardinality 0..*).
+'camel::security::SecurityControl' (role 'camel_security_SecurityControl506', cardinality 0..*) is associated with 'SecurityProperty' (role 'SecurityProperty507', cardinality 0..*).
+'camel::deployment::ComponentInstance' (role 'camel_deployment_ComponentInstance', cardinality 0..*) is associated with 'Component' (role 'Component', cardinality 0..*).
+'Clone' (role 'Clone', cardinality 0..*) is associated with 'camel::provider::Clone' (role 'camel_provider_Clone', cardinality 0..*).
+'VMRequirementSet' (role 'VMRequirementSet', cardinality 0..*) is associated with 'camel::deployment::DeploymentModel' (role 'camel_deployment_DeploymentModel46', cardinality 0..*).
+'camel::metric::Property' (role 'camel_metric_Property236', cardinality 0..*) is associated with 'Sensor' (role 'Sensor237', cardinality 0..*).
+'RoleAssignment' (role 'RoleAssignment', cardinality 0..*) is associated with 'camel::organisation::OrganisationModel' (role 'camel_organisation_OrganisationModel304', cardinality 0..*).
+'camel::scalability::ScalabilityModel' (role 'camel_scalability_ScalabilityModel446', cardinality 0..*) is associated with 'ScaleRequirement' (role 'ScaleRequirement', cardinality 0..*).
+'RawSecurityMetricInstance' (role 'RawSecurityMetricInstance', cardinality 0..*) is associated with 'camel::security::SecurityModel' (role 'camel_security_SecurityModel488', cardinality 0..*).
+'camel::provider::Attribute' (role 'camel_provider_Attribute', cardinality 0..*) is associated with 'SingleValue' (role 'SingleValue347', cardinality 0..*).
+'camel::deployment::VMInstance' (role 'camel_deployment_VMInstance', cardinality 0..*) is associated with 'Attribute' (role 'Attribute', cardinality 0..*).
+'MetricInstance' (role 'MetricInstance252', cardinality 0..*) is associated with 'camel::metric::MetricModel' (role 'camel_metric_MetricModel251', cardinality 0..*).
+'SimpleEvent' (role 'SimpleEvent', cardinality 0..*) is associated with 'camel::scalability::EventInstance' (role 'camel_scalability_EventInstance', cardinality 0..*).
+'camel::location::LocationModel' (role 'camel_location_LocationModel183', cardinality 0..*) is associated with 'Country' (role 'Country', cardinality 0..*).
+'camel::execution::CommunicationMeasurement' (role 'camel_execution_CommunicationMeasurement159', cardinality 0..*) is associated with 'VMInstance' (role 'VMInstance160', cardinality 0..*).
+'camel::metric::MetricModel' (role 'camel_metric_MetricModel274', cardinality 0..*) is associated with 'Unit' (role 'Unit275', cardinality 0..*).
+'ProviderRequirement' (role 'ProviderRequirement', cardinality 0..*) is associated with 'camel::deployment::VMRequirementSet' (role 'camel_deployment_VMRequirementSet65', cardinality 0..*).
+'ProvidedHostInstance' (role 'ProvidedHostInstance', cardinality 0..*) is associated with 'camel::deployment::ComponentInstance' (role 'camel_deployment_ComponentInstance98', cardinality 0..*).
+'SecurityCapability' (role 'SecurityCapability', cardinality 0..*) is associated with 'camel::organisation::CloudProvider' (role 'camel_organisation_CloudProvider315', cardinality 0..*).
+'camel::requirement::SecurityRequirement' (role 'camel_requirement_SecurityRequirement', cardinality 0..*) is associated with 'SecurityControl' (role 'SecurityControl', cardinality 0..*).
+'camel::metric::MetricContext' (role 'camel_metric_MetricContext279', cardinality 0..*) is associated with 'Window' (role 'Window280', cardinality 0..*).
+'camel::organisation::OrganisationModel' (role 'camel_organisation_OrganisationModel302', cardinality 0..*) is associated with 'Role' (role 'Role', cardinality 0..*).
+'camel::organisation::Permission' (role 'camel_organisation_Permission', cardinality 0..*) is associated with 'Role' (role 'Role329', cardinality 0..*).
+'RequiredHostInstance' (role 'RequiredHostInstance', cardinality 0..*) is associated with 'camel::deployment::InternalComponentInstance' (role 'camel_deployment_InternalComponentInstance101', cardinality 0..*).
+'camel::deployment::ComponentInstance' (role 'camel_deployment_ComponentInstance96', cardinality 0..*) is associated with 'ProvidedCommunicationInstance' (role 'ProvidedCommunicationInstance', cardinality 0..*).
+'RawSecurityMetric' (role 'RawSecurityMetric', cardinality 0..*) is associated with 'camel::security::SecurityModel' (role 'camel_security_SecurityModel484', cardinality 0..*).
+'camel::deployment::DeploymentModel' (role 'camel_deployment_DeploymentModel44', cardinality 0..*) is associated with 'HostingInstance' (role 'HostingInstance', cardinality 0..*).
+'VMRequirementSet' (role 'VMRequirementSet49', cardinality 0..*) is associated with 'camel::deployment::DeploymentModel' (role 'camel_deployment_DeploymentModel48', cardinality 0..*).
+'camel::deployment::Hosting' (role 'camel_deployment_Hosting92', cardinality 0..*) is associated with 'Configuration' (role 'Configuration93', cardinality 0..*).
+'CloudProvider' (role 'CloudProvider', cardinality 0..*) is associated with 'camel::organisation::OrganisationModel' (role 'camel_organisation_OrganisationModel292', cardinality 0..*).
+'camel::unit::UnitModel' (role 'camel_unit_UnitModel', cardinality 0..*) is associated with 'Unit' (role 'Unit541', cardinality 0..*).
+'MetricInstance' (role 'MetricInstance', cardinality 0..*) is associated with 'camel::execution::Measurement' (role 'camel_execution_Measurement146', cardinality 0..*).
+'Property' (role 'Property', cardinality 0..*) is associated with 'camel::metric::Metric' (role 'camel_metric_Metric223', cardinality 0..*).
+'camel::scalability::EventInstance' (role 'camel_scalability_EventInstance459', cardinality 0..*) is associated with 'MetricInstance' (role 'MetricInstance460', cardinality 0..*).
+'Communication' (role 'Communication', cardinality 0..*) is associated with 'camel::deployment::DeploymentModel' (role 'camel_deployment_DeploymentModel38', cardinality 0..*).
+'camel::metric::MetricFormulaParameter' (role 'camel_metric_MetricFormulaParameter', cardinality 0..*) is associated with 'SingleValue' (role 'SingleValue217', cardinality 0..*).
+'SecurityDomain' (role 'SecurityDomain', cardinality 0..*) is associated with 'camel::security::SecurityModel' (role 'camel_security_SecurityModel492', cardinality 0..*).
+'ProviderModel' (role 'ProviderModel', cardinality 0..*) is associated with 'camel::CamelModel' (role 'camel_CamelModel14', cardinality 0..*).
+'camel::scalability::EventPattern' (role 'camel_scalability_EventPattern', cardinality 0..*) is associated with 'Timer' (role 'Timer448', cardinality 0..*).
+'camel::deployment::VMInstance' (role 'camel_deployment_VMInstance104', cardinality 0..*) is associated with 'SingleValue' (role 'SingleValue', cardinality 0..*).
+'camel::metric::RawMetricInstance' (role 'camel_metric_RawMetricInstance', cardinality 0..*) is associated with 'Sensor' (role 'Sensor', cardinality 0..*).
+'MetricObjectBinding' (role 'MetricObjectBinding', cardinality 0..*) is associated with 'camel::metric::MetricInstance' (role 'camel_metric_MetricInstance209', cardinality 0..*).
+'camel::execution::ExecutionModel' (role 'camel_execution_ExecutionModel133', cardinality 0..*) is associated with 'RuleTrigger' (role 'RuleTrigger', cardinality 0..*).
+'camel::execution::VMMeasurement' (role 'camel_execution_VMMeasurement', cardinality 0..*) is associated with 'VMInstance' (role 'VMInstance162', cardinality 0..*).
+'RequiredHost' (role 'RequiredHost87', cardinality 0..*) is associated with 'camel::deployment::Hosting' (role 'camel_deployment_Hosting86', cardinality 0..*).
+'InternalComponent' (role 'InternalComponent56', cardinality 0..*) is associated with 'camel::deployment::InternalComponent' (role 'camel_deployment_InternalComponent', cardinality 0..*).
+'camel::deployment::Communication' (role 'camel_deployment_Communication78', cardinality 0..*) is associated with 'Configuration' (role 'Configuration79', cardinality 0..*).
+'InternalComponentInstance' (role 'InternalComponentInstance', cardinality 0..*) is associated with 'camel::deployment::DeploymentModel' (role 'camel_deployment_DeploymentModel32', cardinality 0..*).
+'camel::deployment::HostingInstance' (role 'camel_deployment_HostingInstance120', cardinality 0..*) is associated with 'RequiredHostInstance' (role 'RequiredHostInstance121', cardinality 0..*).
+'camel::requirement::HorizontalScaleRequirement' (role 'camel_requirement_HorizontalScaleRequirement', cardinality 0..*) is associated with 'InternalComponent' (role 'InternalComponent429', cardinality 0..*).
+'camel::scalability::ScalabilityModel' (role 'camel_scalability_ScalabilityModel442', cardinality 0..*) is associated with 'EventPattern' (role 'EventPattern', cardinality 0..*).
+'camel::Application' (role 'camel_Application26', cardinality 0..*) is associated with 'Entity' (role 'Entity', cardinality 0..*).
+'ExecutionContext' (role 'ExecutionContext167', cardinality 0..*) is associated with 'camel::execution::SLOAssessment' (role 'camel_execution_SLOAssessment166', cardinality 0..*).
+'camel::metric::PropertyCondition' (role 'camel_metric_PropertyCondition', cardinality 0..*) is associated with 'PropertyContext' (role 'PropertyContext', cardinality 0..*).
+'Property' (role 'Property289', cardinality 0..*) is associated with 'camel::metric::PropertyContext' (role 'camel_metric_PropertyContext', cardinality 0..*).
+'ResourceFilter' (role 'ResourceFilter332', cardinality 0..*) is associated with 'camel::organisation::Permission' (role 'camel_organisation_Permission331', cardinality 0..*).
+'Location' (role 'Location427', cardinality 0..*) is associated with 'camel::requirement::LocationRequirement' (role 'camel_requirement_LocationRequirement', cardinality 0..*).
+'camel::type::List' (role 'camel_type_List533', cardinality 0..*) is associated with 'ValueType' (role 'ValueType534', cardinality 0..*).
+'camel::execution::ExecutionModel' (role 'camel_execution_ExecutionModel', cardinality 0..*) is associated with 'ActionRealisation' (role 'ActionRealisation', cardinality 0..*).
+'camel::organisation::User' (role 'camel_organisation_User327', cardinality 0..*) is associated with 'PaaSageCredentials' (role 'PaaSageCredentials', cardinality 0..*).
+'camel::provider::Requires' (role 'camel_provider_Requires', cardinality 0..*) is associated with 'Scope' (role 'Scope', cardinality 0..*).
+'camel::CamelModel' (role 'camel_CamelModel4', cardinality 0..*) is associated with 'DeploymentModel' (role 'DeploymentModel', cardinality 0..*).
+'camel::deployment::HostingPortInstance' (role 'camel_deployment_HostingPortInstance', cardinality 0..*) is associated with 'HostingPort' (role 'HostingPort', cardinality 0..*).
+'TimeIntervalUnit' (role 'TimeIntervalUnit239', cardinality 0..*) is associated with 'camel::metric::Schedule' (role 'camel_metric_Schedule', cardinality 0..*).
+'SLOAssessment' (role 'SLOAssessment', cardinality 0..*) is associated with 'camel::execution::ExecutionModel' (role 'camel_execution_ExecutionModel131', cardinality 0..*).
+'camel::metric::MetricComponentBinding' (role 'camel_metric_MetricComponentBinding230', cardinality 0..*) is associated with 'ComponentInstance' (role 'ComponentInstance', cardinality 0..*).
+'VMInstance' (role 'VMInstance228', cardinality 0..*) is associated with 'camel::metric::MetricComponentBinding' (role 'camel_metric_MetricComponentBinding', cardinality 0..*).
+'QualitativeHardwareRequirement' (role 'QualitativeHardwareRequirement', cardinality 0..*) is associated with 'camel::deployment::VMRequirementSet' (role 'camel_deployment_VMRequirementSet67', cardinality 0..*).

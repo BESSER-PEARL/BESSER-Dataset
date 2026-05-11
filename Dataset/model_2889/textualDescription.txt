@@ -1,0 +1,17 @@
+The model has 7 class(es).
+The class 'metamodel::HibernateAnnotation' has the following attributes: 'unique' of type str; 'annotationType' of type str; 'cascade' of type str.
+The class 'metamodel::Model' has no attributes.
+The class 'metamodel::Datatype' has no attributes.
+The class 'metamodel::Attribute' has the following attributes: 'name' of type str; 'list' of type bool.
+The class 'metamodel::Entity' has no attributes.
+The class 'Type' has no attributes.
+The class 'metamodel::Type' has the following attributes: 'name' of type str.
+The enumeration 'HibernateCascadeTypes' has the following literals: 'CascadeAll'.
+The enumeration 'HibernateAnnotationTypes' has the following literals: 'OneToOne', 'OneToMany', 'Column', 'ManyToMany', 'ManyToOne'.
+'metamodel::Datatype' is a specialization of 'Type'.
+'metamodel::Entity' is a specialization of 'Type'.
+'metamodel::Model' (role 'metamodel_Model', cardinality 0..*) is associated with 'metamodel::Type' (role 'metamodel_Type', cardinality 0..*).
+'metamodel::HibernateAnnotation' (role 'metamodel_HibernateAnnotation', cardinality 0..*) is associated with 'metamodel::Attribute' (role 'metamodel_Attribute6', cardinality 0..*).
+'metamodel::Attribute' (role 'metamodel_Attribute3', cardinality 0..*) is associated with 'metamodel::Type' (role 'metamodel_Type4', cardinality 0..*).
+'metamodel::Attribute' (role 'metamodel_Attribute9', cardinality 0..*) is associated with 'metamodel::HibernateAnnotation' (role 'metamodel_HibernateAnnotation8', cardinality 0..*).
+'metamodel::Attribute' (role 'metamodel_Attribute', cardinality 0..*) is associated with 'metamodel::Entity' (role 'metamodel_Entity', cardinality 0..*).

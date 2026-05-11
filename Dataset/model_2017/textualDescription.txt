@@ -1,0 +1,46 @@
+The model has 17 class(es).
+The class 'trace::SchedulingEvent' has the following attributes: 'kind' of type str.
+The class 'trace::DurationValueChangeEvent' has the following attributes: 'value' of type str.
+The class 'trace::Trace' has the following attributes: 'hostId' of type str; 'range' of type str; 'precision' of type str.
+The class 'trace::ObjectValueChangeEvent' has no attributes.
+The class 'trace::MessageEvent' has the following attributes: 'kind' of type str.
+The class 'EModelElement' has no attributes.
+The class 'trace::ResourceEvent' has the following attributes: 'kind' of type str.
+The class 'ValueChangeEvent' has no attributes.
+The class 'trace::EStructuralFeature' has no attributes.
+The class 'trace::Event' has the following attributes: 'timestamp' of type str.
+The class 'trace::DataSizeValueChangeEvent' has the following attributes: 'value' of type str.
+The class 'trace::EObject' has no attributes.
+The class 'trace::ValueChangeEvent' has no attributes.
+The class 'trace::NumberValueChangeEvent' has the following attributes: 'value' of type str.
+The class 'trace::Properties' has the following attributes: 'index' of type str; 'range' of type str; 'absoluteDeadline' of type str; 'executionTime' of type str; 'responseTime' of type str; 'blockingTime' of type str; 'remainingTime' of type str.
+The class 'Event' has no attributes.
+The class 'trace::Slice' has the following attributes: 'name' of type str; 'kind' of type str; 'kindLabel' of type str.
+The enumeration 'SchedulingEventKind' has the following literals: 'BLOCKED', 'RUNNING', 'SUSPENDED', 'TERMINATED', 'DEADLINE', 'ACTIVATED'.
+The enumeration 'ResourceEventKind' has the following literals: 'ACQUIRED', 'REQUESTED', 'RELEASED'.
+The enumeration 'SliceKind' has the following literals: 'OS', 'TASK', 'PACKET', 'FUNCTION_INSTANCE', 'RESOURCE', 'AUTOMATON', 'JOB', 'FRAME', 'OTHER', 'TEMPORAL_CHAIN', 'STATE', 'LINK', 'FUNCTION'.
+The enumeration 'MessageEventKind' has the following literals: 'TRANSMITTED', 'INSTANTIATED', 'ERROR', 'RECEIVED'.
+'trace::Trace' is a specialization of 'EModelElement'.
+'trace::Event' is a specialization of 'EModelElement'.
+'trace::Properties' is a specialization of 'EModelElement'.
+'trace::DataSizeValueChangeEvent' is a specialization of 'ValueChangeEvent'.
+'trace::Slice' is a specialization of 'EModelElement'.
+'trace::ResourceEvent' is a specialization of 'Event'.
+'trace::SchedulingEvent' is a specialization of 'Event'.
+'trace::ValueChangeEvent' is a specialization of 'Event'.
+'trace::ObjectValueChangeEvent' is a specialization of 'ValueChangeEvent'.
+'trace::DurationValueChangeEvent' is a specialization of 'ValueChangeEvent'.
+'trace::MessageEvent' is a specialization of 'Event'.
+'trace::NumberValueChangeEvent' is a specialization of 'ValueChangeEvent'.
+'trace::Slice' (role 'trace_Slice4', cardinality 0..*) is associated with 'trace::Event' (role 'trace_Event', cardinality 0..*).
+'trace::ValueChangeEvent' (role 'trace_ValueChangeEvent', cardinality 0..*) is associated with 'trace::EStructuralFeature' (role 'trace_EStructuralFeature', cardinality 0..*).
+'trace::Trace' (role 'trace', cardinality 0..*) is associated with 'trace::Event' (role 'Event', cardinality 0..*).
+'trace::Slice' (role 'trace_Slice6', cardinality 0..*) is associated with 'trace::Event' (role 'trace_Event7', cardinality 0..*).
+'trace::Slice' (role 'Slice', cardinality 0..*) is associated with 'trace::Slice' (role 'parent', cardinality 0..*).
+'trace::Trace' (role 'Trace', cardinality 0..*) is associated with 'trace::Event' (role 'events', cardinality 0..*).
+'trace::Properties' (role 'trace_Properties', cardinality 0..*) is associated with 'trace::Slice' (role 'trace_Slice14', cardinality 0..*).
+'trace::Slice' (role 'ownedSubSlices', cardinality 0..*) is associated with 'trace::Slice' (role 'Slice12', cardinality 0..*).
+'trace::ValueChangeEvent' (role 'trace_ValueChangeEvent20', cardinality 0..*) is associated with 'trace::EObject' (role 'trace_EObject', cardinality 0..*).
+'trace::EObject' (role 'trace_EObject22', cardinality 0..*) is associated with 'trace::ObjectValueChangeEvent' (role 'trace_ObjectValueChangeEvent', cardinality 0..*).
+'trace::Slice' (role 'trace_Slice17', cardinality 0..*) is associated with 'trace::Slice' (role 'trace_Slice15', cardinality 0..*).
+'trace::Trace' (role 'trace_Trace', cardinality 0..*) is associated with 'trace::Slice' (role 'trace_Slice', cardinality 0..*).

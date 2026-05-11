@@ -1,0 +1,1 @@
+/modelset/raw-data/repo-ecore-all/data/sdirix/org.eclipse.emf.ecp.core/tests/org.eclipse.emfforms.core.services.databinding.testmodel/model/test.ecore

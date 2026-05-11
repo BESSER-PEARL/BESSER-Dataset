@@ -1,0 +1,42 @@
+from datetime import datetime, date, time
+from abc import ABC, abstractmethod
+
+from enum import Enum
+
+############################################
+# Definition of Enumerations
+############################################
+
+class SubTestEnum(Enum):
+    pass
+class TestEnum(Enum):
+    pass
+
+############################################
+# Definition of Classes
+############################################
+
+class UberClass:
+
+    pass
+class SuperClass:
+
+    pass
+class TestPackage_TestClass(UberClass, SuperClass):
+
+    pass
+class TestPackage_SubPackage_SubTestInterface(ABC):
+
+    pass
+class TestPackage_SubPackage_SubTestClass:
+
+    pass
+class TestPackage_UberClass(ABC):
+
+    pass
+class TestPackage_SuperClass(ABC):
+
+    pass
+class TestPackage_TestInterface(SuperClass):
+
+    pass

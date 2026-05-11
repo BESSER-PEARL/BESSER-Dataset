@@ -1,0 +1,10 @@
+The model has 3 class(es).
+The class 'etatma::Transition' has the following attributes: 'name' of type str.
+The class 'etatma::State' has the following attributes: 'name' of type str.
+The class 'etatma::StateMachine' has the following attributes: 'name' of type str.
+'etatma::State' (role 'State5', cardinality 0..*) is associated with 'etatma::Transition' (role 'incoming', cardinality 0..*).
+'etatma::Transition' (role 'etatma_Transition', cardinality 0..*) is associated with 'etatma::StateMachine' (role 'etatma_StateMachine', cardinality 0..*).
+'etatma::Transition' (role 'Transition', cardinality 0..*) is associated with 'etatma::State' (role 'from_', cardinality 0..*).
+'etatma::State' (role 'etatma_State', cardinality 0..*) is associated with 'etatma::StateMachine' (role 'etatma_StateMachine2', cardinality 0..*).
+'etatma::State' (role 'to', cardinality 0..*) is associated with 'etatma::Transition' (role 'Transition8', cardinality 0..*).
+'etatma::State' (role 'State', cardinality 0..*) is associated with 'etatma::Transition' (role 'outgoing', cardinality 0..*).

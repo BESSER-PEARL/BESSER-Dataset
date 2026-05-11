@@ -1,0 +1,4 @@
+The model has 3 class(es).
+The class 'statemachine::State' has no attributes.
+The class 'statemachine::Transition' has no attributes.
+The class 'statemachine::FSM' has no attributes.

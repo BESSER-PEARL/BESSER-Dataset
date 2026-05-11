@@ -1,0 +1,19 @@
+The model has 6 class(es).
+The class 'Program::Department' has the following attributes: 'name' of type str.
+The class 'Program::SemesterCourse' has the following attributes: 'status' of type str.
+The class 'Program::Course' has the following attributes: 'credit' of type float; 'code' of type str; 'name' of type str.
+The class 'Program::Specialization' has the following attributes: 'name' of type str.
+The class 'Program::Program' has the following attributes: 'name' of type str; 'year' of type float.
+The class 'Program::Semester' has the following attributes: 'status' of type str; 'name' of type str; 'code' of type str.
+The enumeration 'CourseStatus' has the following literals: 'MANDATORY', 'ELECTIVE'.
+The enumeration 'SemesterStatus' has the following literals: 'FALL', 'SPRING'.
+'Program::Course' (role 'Program_Course', cardinality 0..*) is associated with 'Program::SemesterCourse' (role 'Program_SemesterCourse', cardinality 0..*).
+'Program::Specialization' (role 'Program_Specialization4', cardinality 0..*) is associated with 'Program::Semester' (role 'Program_Semester5', cardinality 0..*).
+'Program::Department' (role 'department', cardinality 0..*) is associated with 'Program::Course' (role 'Course', cardinality 0..*).
+'Program::Semester' (role 'semester', cardinality 0..*) is associated with 'Program::SemesterCourse' (role 'SemesterCourse', cardinality 0..*).
+'Program::Program' (role 'Program_Program', cardinality 0..*) is associated with 'Program::Semester' (role 'Program_Semester', cardinality 0..*).
+'Program::Program' (role 'Program_Program14', cardinality 0..*) is associated with 'Program::Department' (role 'Program_Department', cardinality 0..*).
+'Program::Specialization' (role 'Program_Specialization6', cardinality 0..*) is associated with 'Program::Specialization' (role 'Program_Specialization8', cardinality 0..*).
+'Program::Semester' (role 'Semester', cardinality 0..*) is associated with 'Program::SemesterCourse' (role 'semesterCourses', cardinality 0..*).
+'Program::Department' (role 'Department', cardinality 0..*) is associated with 'Program::Course' (role 'courses', cardinality 0..*).
+'Program::Program' (role 'Program_Program2', cardinality 0..*) is associated with 'Program::Specialization' (role 'Program_Specialization', cardinality 0..*).

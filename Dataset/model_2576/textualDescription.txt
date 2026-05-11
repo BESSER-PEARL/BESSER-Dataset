@@ -1,0 +1,54 @@
+The model has 20 class(es).
+The class 'esper2Maude::LastSelectEntry' has no attributes.
+The class 'esper2Maude::ComparisonOperator' has the following attributes: 'ge' of type str; 'lt' of type str; 'eq' of type str; 'gt' of type str; 'le' of type str; 'neq' of type str.
+The class 'esper2Maude::FilterPart' has the following attributes: 't' of type str; 'eventPropName' of type str; 'neg' of type str; 'num' of type int; 'str' of type str; 'dec' of type int; 'eventVariable' of type str; 'f' of type str.
+The class 'esper2Maude::NonLastSelectEntry' has no attributes.
+The class 'esper2Maude::Pattern' has the following attributes: 'num' of type int; 'name' of type str.
+The class 'esper2Maude::SelectEntry' has the following attributes: 'groupOp' of type str; 'alias' of type str.
+The class 'esper2Maude::FilterOperator' has no attributes.
+The class 'esper2Maude::WhereFilter' has the following attributes: 'timer' of type str; 'num' of type int.
+The class 'esper2Maude::Event' has the following attributes: 'name' of type str.
+The class 'esper2Maude::Window' has the following attributes: 'num' of type int; 'typeTime' of type str; 'typeBatch' of type str.
+The class 'esper2Maude::LogicalOperator' has the following attributes: 'or_' of type str; 'and_' of type str.
+The class 'esper2Maude::FollowedBy' has no attributes.
+The class 'esper2Maude::FilterEvent' has no attributes.
+The class 'esper2Maude::SubFilterFollowedBy' has the following attributes: 'eventVariable' of type str; 'eventName' of type str.
+The class 'esper2Maude::EventProperty' has the following attributes: 'type' of type str; 'name' of type str.
+The class 'esper2Maude::Model' has no attributes.
+The class 'esper2Maude::Every' has the following attributes: 'eventVariable' of type str; 'eventName' of type str.
+The class 'esper2Maude::Schema' has the following attributes: 'name' of type str.
+The class 'esper2Maude::Field' has the following attributes: 'eventVariable' of type str; 'eventPropName' of type str; 'star' of type str.
+The class 'esper2Maude::FilterFrom' has the following attributes: 'eventVariable' of type str; 'eventName' of type str.
+'esper2Maude::SubFilterFollowedBy' (role 'esper2Maude_SubFilterFollowedBy', cardinality 0..*) is associated with 'esper2Maude::FollowedBy' (role 'esper2Maude_FollowedBy41', cardinality 0..*).
+'esper2Maude::WhereFilter' (role 'esper2Maude_WhereFilter25', cardinality 0..*) is associated with 'esper2Maude::FilterEvent' (role 'esper2Maude_FilterEvent26', cardinality 0..*).
+'esper2Maude::SubFilterFollowedBy' (role 'esper2Maude_SubFilterFollowedBy44', cardinality 0..*) is associated with 'esper2Maude::FollowedBy' (role 'esper2Maude_FollowedBy43', cardinality 0..*).
+'esper2Maude::Every' (role 'esper2Maude_Every57', cardinality 0..*) is associated with 'esper2Maude::FilterFrom' (role 'esper2Maude_FilterFrom58', cardinality 0..*).
+'esper2Maude::FilterFrom' (role 'esper2Maude_FilterFrom28', cardinality 0..*) is associated with 'esper2Maude::FollowedBy' (role 'esper2Maude_FollowedBy', cardinality 0..*).
+'esper2Maude::FilterOperator' (role 'esper2Maude_FilterOperator', cardinality 0..*) is associated with 'esper2Maude::WhereFilter' (role 'esper2Maude_WhereFilter20', cardinality 0..*).
+'esper2Maude::Model' (role 'esper2Maude_Model', cardinality 0..*) is associated with 'esper2Maude::Schema' (role 'esper2Maude_Schema', cardinality 0..*).
+'esper2Maude::FollowedBy' (role 'esper2Maude_FollowedBy46', cardinality 0..*) is associated with 'esper2Maude::WhereFilter' (role 'esper2Maude_WhereFilter47', cardinality 0..*).
+'esper2Maude::FilterFrom' (role 'esper2Maude_FilterFrom29', cardinality 0..*) is associated with 'esper2Maude::FilterFrom' (role 'esper2Maude_FilterFrom31', cardinality 0..*).
+'esper2Maude::LastSelectEntry' (role 'esper2Maude_LastSelectEntry75', cardinality 0..*) is associated with 'esper2Maude::SelectEntry' (role 'esper2Maude_SelectEntry76', cardinality 0..*).
+'esper2Maude::FilterFrom' (role 'esper2Maude_FilterFrom36', cardinality 0..*) is associated with 'esper2Maude::FilterFrom' (role 'esper2Maude_FilterFrom34', cardinality 0..*).
+'esper2Maude::FilterOperator' (role 'esper2Maude_FilterOperator70', cardinality 0..*) is associated with 'esper2Maude::LogicalOperator' (role 'esper2Maude_LogicalOperator71', cardinality 0..*).
+'esper2Maude::SubFilterFollowedBy' (role 'esper2Maude_SubFilterFollowedBy52', cardinality 0..*) is associated with 'esper2Maude::Every' (role 'esper2Maude_Every', cardinality 0..*).
+'esper2Maude::FilterFrom' (role 'esper2Maude_FilterFrom', cardinality 0..*) is associated with 'esper2Maude::Pattern' (role 'esper2Maude_Pattern15', cardinality 0..*).
+'esper2Maude::FilterEvent' (role 'esper2Maude_FilterEvent60', cardinality 0..*) is associated with 'esper2Maude::FilterPart' (role 'esper2Maude_FilterPart', cardinality 0..*).
+'esper2Maude::Pattern' (role 'esper2Maude_Pattern11', cardinality 0..*) is associated with 'esper2Maude::NonLastSelectEntry' (role 'esper2Maude_NonLastSelectEntry', cardinality 0..*).
+'esper2Maude::NonLastSelectEntry' (role 'esper2Maude_NonLastSelectEntry73', cardinality 0..*) is associated with 'esper2Maude::SelectEntry' (role 'esper2Maude_SelectEntry', cardinality 0..*).
+'esper2Maude::FilterEvent' (role 'esper2Maude_FilterEvent39', cardinality 0..*) is associated with 'esper2Maude::FilterFrom' (role 'esper2Maude_FilterFrom38', cardinality 0..*).
+'esper2Maude::FilterFrom' (role 'esper2Maude_FilterFrom33', cardinality 0..*) is associated with 'esper2Maude::LogicalOperator' (role 'esper2Maude_LogicalOperator', cardinality 0..*).
+'esper2Maude::FilterOperator' (role 'esper2Maude_FilterOperator23', cardinality 0..*) is associated with 'esper2Maude::WhereFilter' (role 'esper2Maude_WhereFilter22', cardinality 0..*).
+'esper2Maude::Schema' (role 'esper2Maude_Schema4', cardinality 0..*) is associated with 'esper2Maude::EventProperty' (role 'esper2Maude_EventProperty', cardinality 0..*).
+'esper2Maude::FilterEvent' (role 'esper2Maude_FilterEvent62', cardinality 0..*) is associated with 'esper2Maude::FilterOperator' (role 'esper2Maude_FilterOperator63', cardinality 0..*).
+'esper2Maude::WhereFilter' (role 'esper2Maude_WhereFilter', cardinality 0..*) is associated with 'esper2Maude::FilterEvent' (role 'esper2Maude_FilterEvent', cardinality 0..*).
+'esper2Maude::SubFilterFollowedBy' (role 'esper2Maude_SubFilterFollowedBy49', cardinality 0..*) is associated with 'esper2Maude::FilterEvent' (role 'esper2Maude_FilterEvent50', cardinality 0..*).
+'esper2Maude::LastSelectEntry' (role 'esper2Maude_LastSelectEntry', cardinality 0..*) is associated with 'esper2Maude::Pattern' (role 'esper2Maude_Pattern13', cardinality 0..*).
+'esper2Maude::Every' (role 'esper2Maude_Every54', cardinality 0..*) is associated with 'esper2Maude::FilterEvent' (role 'esper2Maude_FilterEvent55', cardinality 0..*).
+'esper2Maude::FilterEvent' (role 'esper2Maude_FilterEvent65', cardinality 0..*) is associated with 'esper2Maude::FilterPart' (role 'esper2Maude_FilterPart66', cardinality 0..*).
+'esper2Maude::Field' (role 'esper2Maude_Field', cardinality 0..*) is associated with 'esper2Maude::SelectEntry' (role 'esper2Maude_SelectEntry78', cardinality 0..*).
+'esper2Maude::EventProperty' (role 'esper2Maude_EventProperty7', cardinality 0..*) is associated with 'esper2Maude::Schema' (role 'esper2Maude_Schema6', cardinality 0..*).
+'esper2Maude::Pattern' (role 'esper2Maude_Pattern', cardinality 0..*) is associated with 'esper2Maude::Model' (role 'esper2Maude_Model2', cardinality 0..*).
+'esper2Maude::ComparisonOperator' (role 'esper2Maude_ComparisonOperator', cardinality 0..*) is associated with 'esper2Maude::FilterOperator' (role 'esper2Maude_FilterOperator68', cardinality 0..*).
+'esper2Maude::Pattern' (role 'esper2Maude_Pattern17', cardinality 0..*) is associated with 'esper2Maude::Window' (role 'esper2Maude_Window', cardinality 0..*).
+'esper2Maude::Event' (role 'esper2Maude_Event', cardinality 0..*) is associated with 'esper2Maude::Pattern' (role 'esper2Maude_Pattern9', cardinality 0..*).

@@ -1,0 +1,94 @@
+The model has 38 class(es).
+The class 'LiteralValue' has no attributes.
+The class 'trace::RefValue' has no attributes.
+The class 'trace::TransientObject' has no attributes.
+The class 'trace::EClass' has no attributes.
+The class 'trace::CompositParameterList' has the following attributes: 'paramtervaluesOrder' of type int.
+The class 'trace::ObjectState' has no attributes.
+The class 'Value' has no attributes.
+The class 'trace::ParameterValue' has the following attributes: 'DirectionKind' of type str.
+The class 'trace::TransientObjectState' has no attributes.
+The class 'trace::StaticTransientObject' has no attributes.
+The class 'trace::LiteralBoolean' has the following attributes: 'boolvalue' of type bool.
+The class 'trace::EStructuralFeature' has no attributes.
+The class 'trace::Value' has no attributes.
+The class 'trace::StepType' has the following attributes: 'stepName' of type str.
+The class 'ParameterList' has no attributes.
+The class 'trace::EObject' has no attributes.
+The class 'trace::ParameterList' has no attributes.
+The class 'trace::RepeatingStep' has no attributes.
+The class 'Step' has no attributes.
+The class 'trace::NormalStep' has no attributes.
+The class 'StepSpec' has no attributes.
+The class 'trace::PatternOcurrence' has the following attributes: 'repet' of type int.
+The class 'trace::LeafObjectState' has no attributes.
+The class 'trace::LiteralValue' has no attributes.
+The class 'trace::Trace' has no attributes.
+The class 'trace::LiteralFloat' has the following attributes: 'floatvalue' of type float.
+The class 'trace::StepSpec' has no attributes.
+The class 'trace::State' has no attributes.
+The class 'trace::LiteralInteger' has the following attributes: 'intvalue' of type int.
+The class 'trace::StepPattern' has no attributes.
+The class 'TransientObject' has no attributes.
+The class 'trace::PatternOccurrenceStepData' has no attributes.
+The class 'ObjectState' has no attributes.
+The class 'trace::LiteralString' has the following attributes: 'stringvalue' of type str.
+The class 'trace::DynamicTransientObject' has no attributes.
+The class 'trace::LeafParameterList' has no attributes.
+The class 'trace::Step' has no attributes.
+The class 'trace::CompositeObjectState' has the following attributes: 'objectstatesOrder' of type int.
+The enumeration 'ParamterKindEnum' has the following literals: 'RETURN', 'IN', 'INOUT', 'OUT'.
+'trace::StaticTransientObject' is a specialization of 'TransientObject'.
+'trace::LeafParameterList' is a specialization of 'ParameterList'.
+'trace::DynamicTransientObject' is a specialization of 'TransientObject'.
+'trace::LiteralValue' is a specialization of 'Value'.
+'trace::NormalStep' is a specialization of 'Step'.
+'trace::PatternOcurrence' is a specialization of 'Step'.
+'trace::RefValue' is a specialization of 'Value'.
+'trace::LiteralBoolean' is a specialization of 'LiteralValue'.
+'trace::LeafObjectState' is a specialization of 'ObjectState'.
+'trace::LiteralFloat' is a specialization of 'LiteralValue'.
+'trace::CompositParameterList' is a specialization of 'ParameterList'.
+'trace::CompositeObjectState' is a specialization of 'ObjectState'.
+'trace::LiteralString' is a specialization of 'LiteralValue'.
+'trace::LiteralInteger' is a specialization of 'LiteralValue'.
+'trace::RepeatingStep' is a specialization of 'StepSpec'.
+'trace::NormalStep' is a specialization of 'StepSpec'.
+'trace::EStructuralFeature' (role 'trace_EStructuralFeature', cardinality 0..*) is associated with 'trace::TransientObjectState' (role 'trace_TransientObjectState77', cardinality 0..*).
+'trace::Trace' (role 'trace_Trace10', cardinality 0..*) is associated with 'trace::ObjectState' (role 'trace_ObjectState', cardinality 0..*).
+'trace::CompositeObjectState' (role 'trace_CompositeObjectState', cardinality 0..*) is associated with 'trace::ObjectState' (role 'trace_ObjectState79', cardinality 0..*).
+'trace::RepeatingStep' (role 'trace_RepeatingStep48', cardinality 0..*) is associated with 'trace::StepPattern' (role 'trace_StepPattern47', cardinality 0..*).
+'trace::TransientObjectState' (role 'trace_TransientObjectState71', cardinality 0..*) is associated with 'trace::TransientObject' (role 'trace_TransientObject72', cardinality 0..*).
+'trace::State' (role 'trace_State', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace', cardinality 0..*).
+'trace::Trace' (role 'trace_Trace12', cardinality 0..*) is associated with 'trace::RepeatingStep' (role 'trace_RepeatingStep', cardinality 0..*).
+'trace::State' (role 'trace_State37', cardinality 0..*) is associated with 'trace::Step' (role 'trace_Step36', cardinality 0..*).
+'trace::RepeatingStep' (role 'RepeatingStep', cardinality 0..*) is associated with 'trace::RepeatingStep' (role 'parent62', cardinality 0..*).
+'trace::State' (role 'trace_State29', cardinality 0..*) is associated with 'trace::State' (role 'trace_State31', cardinality 0..*).
+'trace::TransientObjectState' (role 'trace_TransientObjectState', cardinality 0..*) is associated with 'trace::State' (role 'trace_State33', cardinality 0..*).
+'trace::Trace' (role 'trace_Trace4', cardinality 0..*) is associated with 'trace::StepType' (role 'trace_StepType', cardinality 0..*).
+'trace::ParameterValue' (role 'trace_ParameterValue', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace16', cardinality 0..*).
+'trace::Step' (role 'trace_Step', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace14', cardinality 0..*).
+'trace::Step' (role 'children', cardinality 0..*) is associated with 'trace::NormalStep' (role 'NormalStep', cardinality 0..*).
+'trace::ObjectState' (role 'trace_ObjectState75', cardinality 0..*) is associated with 'trace::TransientObjectState' (role 'trace_TransientObjectState74', cardinality 0..*).
+'trace::ParameterValue' (role 'trace_ParameterValue68', cardinality 0..*) is associated with 'trace::Value' (role 'trace_Value69', cardinality 0..*).
+'trace::StepPattern' (role 'trace_StepPattern', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace6', cardinality 0..*).
+'trace::Value' (role 'trace_Value', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace8', cardinality 0..*).
+'trace::StepType' (role 'trace_StepType59', cardinality 0..*) is associated with 'trace::StepSpec' (role 'trace_StepSpec', cardinality 0..*).
+'trace::DynamicTransientObject' (role 'trace_DynamicTransientObject', cardinality 0..*) is associated with 'trace::EClass' (role 'trace_EClass', cardinality 0..*).
+'trace::CompositParameterList' (role 'trace_CompositParameterList', cardinality 0..*) is associated with 'trace::ParameterList' (role 'trace_ParameterList84', cardinality 0..*).
+'trace::RepeatingStep' (role 'children65', cardinality 0..*) is associated with 'trace::RepeatingStep' (role 'RepeatingStep66', cardinality 0..*).
+'trace::TransientObject' (role 'trace_TransientObject', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace2', cardinality 0..*).
+'trace::PatternOccurrenceStepData' (role 'trace_PatternOccurrenceStepData56', cardinality 0..*) is associated with 'trace::ParameterList' (role 'trace_ParameterList57', cardinality 0..*).
+'trace::NormalStep' (role 'parent', cardinality 0..*) is associated with 'trace::Step' (role 'Step', cardinality 0..*).
+'trace::ObjectState' (role 'trace_ObjectState20', cardinality 0..*) is associated with 'trace::Value' (role 'trace_Value21', cardinality 0..*).
+'trace::RepeatingStep' (role 'trace_RepeatingStep54', cardinality 0..*) is associated with 'trace::PatternOccurrenceStepData' (role 'trace_PatternOccurrenceStepData53', cardinality 0..*).
+'trace::ParameterValue' (role 'trace_ParameterValue87', cardinality 0..*) is associated with 'trace::ParameterList' (role 'trace_ParameterList86', cardinality 0..*).
+'trace::ParameterList' (role 'trace_ParameterList', cardinality 0..*) is associated with 'trace::Trace' (role 'trace_Trace18', cardinality 0..*).
+'trace::StepPattern' (role 'trace_StepPattern43', cardinality 0..*) is associated with 'trace::PatternOcurrence' (role 'trace_PatternOcurrence', cardinality 0..*).
+'trace::State' (role 'trace_State24', cardinality 0..*) is associated with 'trace::TransientObject' (role 'trace_TransientObject25', cardinality 0..*).
+'trace::EObject' (role 'trace_EObject81', cardinality 0..*) is associated with 'trace::StaticTransientObject' (role 'trace_StaticTransientObject', cardinality 0..*).
+'trace::RefValue' (role 'trace_RefValue', cardinality 0..*) is associated with 'trace::EObject' (role 'trace_EObject', cardinality 0..*).
+'trace::State' (role 'trace_State27', cardinality 0..*) is associated with 'trace::TransientObject' (role 'trace_TransientObject28', cardinality 0..*).
+'trace::PatternOccurrenceStepData' (role 'trace_PatternOccurrenceStepData', cardinality 0..*) is associated with 'trace::PatternOcurrence' (role 'trace_PatternOcurrence45', cardinality 0..*).
+'trace::PatternOccurrenceStepData' (role 'trace_PatternOccurrenceStepData50', cardinality 0..*) is associated with 'trace::State' (role 'trace_State51', cardinality 0..*).
+'trace::Step' (role 'trace_Step40', cardinality 0..*) is associated with 'trace::ParameterList' (role 'trace_ParameterList41', cardinality 0..*).

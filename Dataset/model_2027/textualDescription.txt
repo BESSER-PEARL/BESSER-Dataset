@@ -1,0 +1,16 @@
+The model has 5 class(es).
+The class 'amf::Statemachine' has the following attributes: 'name' of type str.
+The class 'amf::Network' has the following attributes: 'name' of type str.
+The class 'amf::State' has the following attributes: 'name' of type str.
+The class 'amf::Transition' has the following attributes: 'event' of type str.
+The class 'amf::Channel' has the following attributes: 'name' of type str; 'Type' of type str.
+The enumeration 'TypeOfChannel' has the following literals: 'Synchronous', 'Asynchronous'.
+The enumeration 'Event' has the following literals: 'RECEIVE', 'SEND'.
+'amf::Statemachine' (role 'amf_Statemachine6', cardinality 0..*) is associated with 'amf::State' (role 'amf_State7', cardinality 0..*).
+'amf::Transition' (role 'amf_Transition17', cardinality 0..*) is associated with 'amf::State' (role 'amf_State18', cardinality 0..*).
+'amf::Channel' (role 'amf_Channel15', cardinality 0..*) is associated with 'amf::Transition' (role 'amf_Transition14', cardinality 0..*).
+'amf::State' (role 'amf_State', cardinality 0..*) is associated with 'amf::Statemachine' (role 'amf_Statemachine4', cardinality 0..*).
+'amf::Channel' (role 'amf_Channel', cardinality 0..*) is associated with 'amf::Network' (role 'amf_Network', cardinality 0..*).
+'amf::Transition' (role 'amf_Transition', cardinality 0..*) is associated with 'amf::Statemachine' (role 'amf_Statemachine9', cardinality 0..*).
+'amf::State' (role 'amf_State12', cardinality 0..*) is associated with 'amf::Transition' (role 'amf_Transition11', cardinality 0..*).
+'amf::Network' (role 'amf_Network2', cardinality 0..*) is associated with 'amf::Statemachine' (role 'amf_Statemachine', cardinality 0..*).

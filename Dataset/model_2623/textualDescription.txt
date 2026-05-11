@@ -1,0 +1,16 @@
+The model has 7 class(es).
+The class 'Dot::DirectedArc' has no attributes.
+The class 'Dot::NamedElement' has the following attributes: 'name' of type str.
+The class 'GraphElement' has no attributes.
+The class 'Dot::GraphElement' has the following attributes: 'label' of type str; 'color' of type str.
+The class 'Dot::Graph' has no attributes.
+The class 'Dot::Node' has the following attributes: 'shape' of type str; 'style' of type str.
+The class 'NamedElement' has no attributes.
+'Dot::DirectedArc' is a specialization of 'GraphElement'.
+'Dot::Node' is a specialization of 'GraphElement'.
+'Dot::GraphElement' is a specialization of 'NamedElement'.
+'Dot::Graph' is a specialization of 'NamedElement'.
+'Dot::Graph' (role 'Graph', cardinality 0..*) is associated with 'Dot::GraphElement' (role 'contents', cardinality 0..*).
+'Dot::DirectedArc' (role 'Dot_DirectedArc4', cardinality 0..*) is associated with 'Dot::Node' (role 'Dot_Node5', cardinality 0..*).
+'Dot::Graph' (role 'graph', cardinality 0..*) is associated with 'Dot::GraphElement' (role 'GraphElement', cardinality 0..*).
+'Dot::DirectedArc' (role 'Dot_DirectedArc', cardinality 0..*) is associated with 'Dot::Node' (role 'Dot_Node', cardinality 0..*).

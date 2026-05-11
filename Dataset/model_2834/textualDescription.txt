@@ -1,0 +1,581 @@
+The model has 166 class(es).
+The class 'model::Widget' has the following attributes: 'y' of type int; 'measuredWidth' of type int; 'customId' of type str; 'layoutParams' of type str; 'x' of type int; 'locked' of type bool; 'height' of type int; 'id' of type str; 'width' of type int; 'text' of type str; 'customData' of type str; 'measuredHeight' of type int; 'annotation' of type bool.
+The class 'model::WidgetDescriptor' has the following attributes: 'textLines' of type int; 'textWrappable' of type bool; 'textCentered' of type bool; 'typeName' of type str; 'textEditable' of type bool; 'resizeMode' of type str.
+The class 'model::Arrow' has the following attributes: 'direction' of type str; 'right' of type bool; 'left' of type bool.
+The class 'model::VScrollbar' has no attributes.
+The class 'model::ScreenRuler' has no attributes.
+The class 'FlipSupport' has no attributes.
+The class 'story::model::Screen' has no attributes.
+The class 'model::Menu' has no attributes.
+The class 'model::TextInputSupport' has no attributes.
+The class 'model::VLine' has no attributes.
+The class 'ListSupport' has no attributes.
+The class 'model::Frame' has no attributes.
+The class 'model::IconSupport' has the following attributes: 'icon' of type str; 'iconRotation' of type str.
+The class 'model::IconPositionSupport' has the following attributes: 'iconPosition' of type str.
+The class 'model::Callout' has no attributes.
+The class 'model::overrides::WidgetOverrides' has the following attributes: 'noLink' of type bool; 'x' of type str; 'src' of type str; 'height' of type str; 'y' of type str; 'link' of type str; 'text' of type str; 'noText' of type bool; 'width' of type str.
+The class 'WidgetContainerOverrides' has no attributes.
+The class 'model::HLine' has no attributes.
+The class 'Reference' has no attributes.
+The class 'SelectionSupport' has no attributes.
+The class 'VisibleSupport' has no attributes.
+The class 'model::ButtonBar' has no attributes.
+The class 'WidgetContainer' has no attributes.
+The class 'ColorBorderSupport' has no attributes.
+The class 'model::Switch' has no attributes.
+The class 'model::Font' has the following attributes: 'size' of type str; 'italic' of type str; 'underline' of type str; 'bold' of type str.
+The class 'StateSupport' has no attributes.
+The class 'model::Note' has no attributes.
+The class 'model::BorderStyleSupport' has the following attributes: 'border' of type str.
+The class 'ClickSupport' has no attributes.
+The class 'model::DoubleClickSupport' has no attributes.
+The class 'Panel' has no attributes.
+The class 'model::Window' has the following attributes: 'minimizeButton' of type bool; 'maximizeButton' of type bool; 'closeButton' of type bool.
+The class 'model::LineStyleSupport' has the following attributes: 'lineStyle' of type str.
+The class 'RotationSupport' has no attributes.
+The class 'FontSupport' has no attributes.
+The class 'model::ScreenFont' has the following attributes: 'available' of type str; 'italic' of type bool; 'bold' of type bool; 'size' of type str; 'name' of type str.
+The class 'model::Item' has the following attributes: 'height' of type int; 'x' of type int; 'y' of type int; 'text' of type str; 'width' of type int.
+The class 'model::overrides::Insert' has the following attributes: 'newIndex' of type int.
+The class 'model::BorderSupport' has the following attributes: 'border' of type bool.
+The class 'IconPositionSupport' has no attributes.
+The class 'model::Tabs' has no attributes.
+The class 'model::SelectionSupport' has the following attributes: 'selection' of type str.
+The class 'TextInputSupport' has no attributes.
+The class 'model::WidgetContainer' has no attributes.
+The class 'model::Area' has no attributes.
+The class 'model::Text' has the following attributes: 'dummyText' of type bool.
+The class 'TextAlignmentSupport' has no attributes.
+The class 'model::LineHeightSupport' has the following attributes: 'lineHeight' of type str.
+The class 'model::Label' has no attributes.
+The class 'model::Image' has the following attributes: 'grayscale' of type bool; 'src' of type str.
+The class 'model::StateSupport' has the following attributes: 'state' of type str.
+The class 'LineHeightSupport' has no attributes.
+The class 'TextLinksSupport' has no attributes.
+The class 'model::Group' has no attributes.
+The class 'ColorBackgroundSupport' has no attributes.
+The class 'overrides::Operation' has no attributes.
+The class 'model::Icon' has no attributes.
+The class 'BorderSupport' has no attributes.
+The class 'DoubleClickSupport' has no attributes.
+The class 'model::overrides::Reference' has the following attributes: 'ref' of type str.
+The class 'model::VSlider' has no attributes.
+The class 'NameSupport' has no attributes.
+The class 'model::VisibleSupport' has the following attributes: 'visible' of type bool.
+The class 'model::ScratchOut' has no attributes.
+The class 'overrides::WidgetContainerOverrides' has no attributes.
+The class 'model::LinkBar' has no attributes.
+The class 'model::Screen' has the following attributes: 'theme' of type str; 'minVersion' of type str.
+The class 'model::ColorAlphaSupport' has the following attributes: 'alpha' of type int.
+The class 'model::VerticalScrollbarSupport' has the following attributes: 'verticalScrollbar' of type bool.
+The class 'model::HSplitter' has no attributes.
+The class 'model::overrides::WidgetContainerOverrides' has no attributes.
+The class 'model::Browser' has no attributes.
+The class 'model::ListSupport' has the following attributes: 'horizontalLines' of type bool; 'rowHeight' of type int.
+The class 'model::NameSupport' has the following attributes: 'name' of type str.
+The class 'Storyboard' has no attributes.
+The class 'FontOverrides' has no attributes.
+The class 'model::CurlyBrace' has the following attributes: 'position' of type str.
+The class 'model::TextAlignmentSupport' has the following attributes: 'textAlignment' of type str.
+The class 'model::overrides::Delete' has no attributes.
+The class 'Operation' has no attributes.
+The class 'model::NoteSupport' has the following attributes: 'note' of type str.
+The class 'model::Shape' has the following attributes: 'shapeType' of type str.
+The class 'model::AnnotationSupport' has no attributes.
+The class 'model::Alert' has no attributes.
+The class 'model::Panel' has no attributes.
+The class 'model::DateField' has no attributes.
+The class 'model::RotationSupport' has the following attributes: 'rotation' of type str.
+The class 'model::ColorBackgroundSupport' has the following attributes: 'background' of type str.
+The class 'Overrides' has no attributes.
+The class 'model::story::Panel' has the following attributes: 'id' of type str; 'x' of type int; 'y' of type int.
+The class 'model::FontSupport' has no attributes.
+The class 'SkinSupport' has no attributes.
+The class 'model::CrossOut' has no attributes.
+The class 'NoteSupport' has no attributes.
+The class 'model::SearchField' has no attributes.
+The class 'overrides::Reference' has no attributes.
+The class 'model::TabbedPane' has the following attributes: 'position' of type str.
+The class 'model::List' has the following attributes: 'header' of type bool.
+The class 'model::VButtonBar' has no attributes.
+The class 'ItemOverrides' has no attributes.
+The class 'model::TextArea' has no attributes.
+The class 'model::LinkSupport' has the following attributes: 'link' of type str.
+The class 'Widget' has no attributes.
+The class 'model::ProgressBar' has no attributes.
+The class 'model::Rectangle' has no attributes.
+The class 'model::Checkbox' has no attributes.
+The class 'ValueSupport' has no attributes.
+The class 'model::Hotspot' has no attributes.
+The class 'model::WidgetGroup' has no attributes.
+The class 'model::Tooltip' has the following attributes: 'position' of type str.
+The class 'BooleanSelectionSupport' has no attributes.
+The class 'model::Breadcrumbs' has no attributes.
+The class 'model::Tree' has no attributes.
+The class 'BorderStyleSupport' has no attributes.
+The class 'model::Table' has the following attributes: 'header' of type bool; 'verticalLines' of type bool.
+The class 'WidgetOverrides' has no attributes.
+The class 'model::overrides::StringToStringMap' has the following attributes: 'key' of type str; 'value' of type str.
+The class 'model::RulerGuide' has the following attributes: 'position' of type int.
+The class 'VerticalScrollbarSupport' has no attributes.
+The class 'model::CoverFlow' has no attributes.
+The class 'model::SkinSupport' has the following attributes: 'skin' of type str.
+The class 'model::Chart' has the following attributes: 'chartType' of type str.
+The class 'overrides::model::EObject' has no attributes.
+The class 'model::Accordion' has no attributes.
+The class 'ItemSupport' has no attributes.
+The class 'model::overrides::Overrides' has no attributes.
+The class 'model::VSplitter' has no attributes.
+The class 'model::HSlider' has no attributes.
+The class 'model::Popup' has no attributes.
+The class 'model::ColorPicker' has no attributes.
+The class 'model::Combo' has no attributes.
+The class 'ColorAlphaSupport' has no attributes.
+The class 'model::overrides::Operation' has no attributes.
+The class 'ColorAlternativeSupport' has no attributes.
+The class 'model::Button' has the following attributes: 'style' of type str.
+The class 'model::ColorBorderSupport' has the following attributes: 'borderColor' of type str.
+The class 'model::Circle' has no attributes.
+The class 'LinkSupport' has no attributes.
+The class 'model::TextLinksSupport' has no attributes.
+The class 'model::RadioButton' has no attributes.
+The class 'model::Placeholder' has no attributes.
+The class 'model::ClickSupport' has no attributes.
+The class 'model::TextField' has no attributes.
+The class 'IconSupport' has no attributes.
+The class 'model::overrides::ItemOverrides' has the following attributes: 'text' of type str; 'noLink' of type bool; 'link' of type str.
+The class 'model::story::Storyboard' has no attributes.
+The class 'model::Map' has no attributes.
+The class 'model::Spinner' has no attributes.
+The class 'model::ValueSupport' has the following attributes: 'value' of type int.
+The class 'model::Link' has no attributes.
+The class 'model::FlipSupport' has the following attributes: 'vFlip' of type bool; 'hFlip' of type bool.
+The class 'model::VideoPlayer' has no attributes.
+The class 'model::ColorAlternativeSupport' has the following attributes: 'alternative' of type str.
+The class 'model::ItemSupport' has no attributes.
+The class 'AnnotationSupport' has no attributes.
+The class 'model::SVGImage' has the following attributes: 'src' of type str.
+The class 'model::Master' has the following attributes: 'dimmed' of type bool.
+The class 'LineStyleSupport' has no attributes.
+The class 'model::overrides::Move' has the following attributes: 'newIndex' of type int.
+The class 'model::HScrollbar' has no attributes.
+The class 'model::overrides::FontOverrides' has the following attributes: 'size' of type str; 'bold' of type str; 'underline' of type str; 'italic' of type str.
+The class 'model::ColorForegroundSupport' has the following attributes: 'foreground' of type str.
+The class 'model::BooleanSelectionSupport' has the following attributes: 'selected' of type bool.
+The class 'StringToStringMap' has no attributes.
+The class 'ColorForegroundSupport' has no attributes.
+The enumeration 'State' has the following literals: 'Normal', 'Focused', 'Selected', 'Disabled'.
+The enumeration 'ChartType' has the following literals: 'Line', 'Column', 'Bar', 'Pie'.
+The enumeration 'ShapeType' has the following literals: 'Ellipse', 'RightTriangle', 'Rectangle', 'Parallelogram', 'Diamond', 'RoundedRectangle', 'RoundRectangle', 'Star', 'Triangle'.
+The enumeration 'TextAlignment' has the following literals: 'Left', 'Center', 'Right'.
+The enumeration 'LineStyle' has the following literals: 'Solid', 'Dashed', 'Dotted'.
+The enumeration 'ButtonStyle' has the following literals: 'Square', 'Round', 'PointLeft', 'PointRight'.
+The enumeration 'Theme' has the following literals: 'Clean', 'Sketch', 'Default'.
+The enumeration 'Position' has the following literals: 'Left', 'BottomLeft', 'TopLeft', 'Right', 'Top', 'TopRight', 'BottomRight', 'Bottom'.
+The enumeration 'BorderStyle' has the following literals: 'None_', 'DashedRounded', 'SolidRounded', 'Solid'.
+The enumeration 'ResizeMode' has the following literals: 'Vertical', 'None_', 'Both', 'Horizontal'.
+The enumeration 'Rotation90' has the following literals: '_180', '_0', '_270', '_90'.
+The enumeration 'IconSize' has the following literals: 'Small', 'Medium', 'Large', 'XXL', 'XLarge', 'Custom'.
+'model::HScrollbar' is a specialization of 'SkinSupport'.
+'model::VSplitter' is a specialization of 'Widget'.
+'model::Circle' is a specialization of 'IconPositionSupport'.
+'model::Table' is a specialization of 'ListSupport'.
+'model::Tooltip' is a specialization of 'TextAlignmentSupport'.
+'model::overrides::Move' is a specialization of 'overrides::Operation'.
+'model::Frame' is a specialization of 'Panel'.
+'model::List' is a specialization of 'Widget'.
+'model::Switch' is a specialization of 'LinkSupport'.
+'model::Callout' is a specialization of 'LinkSupport'.
+'model::TextArea' is a specialization of 'TextAlignmentSupport'.
+'model::Icon' is a specialization of 'LinkSupport'.
+'model::Tabs' is a specialization of 'SkinSupport'.
+'model::Tooltip' is a specialization of 'ColorBackgroundSupport'.
+'model::CoverFlow' is a specialization of 'SkinSupport'.
+'model::Circle' is a specialization of 'FontSupport'.
+'model::Table' is a specialization of 'SelectionSupport'.
+'model::Table' is a specialization of 'Widget'.
+'model::Shape' is a specialization of 'RotationSupport'.
+'model::Breadcrumbs' is a specialization of 'SkinSupport'.
+'model::Breadcrumbs' is a specialization of 'FontSupport'.
+'model::DateField' is a specialization of 'SkinSupport'.
+'model::Map' is a specialization of 'Widget'.
+'model::Shape' is a specialization of 'Widget'.
+'model::Tree' is a specialization of 'ItemSupport'.
+'model::Rectangle' is a specialization of 'ColorBackgroundSupport'.
+'model::TabbedPane' is a specialization of 'ColorAlphaSupport'.
+'model::Rectangle' is a specialization of 'IconSupport'.
+'model::Screen' is a specialization of 'WidgetContainer'.
+'model::Shape' is a specialization of 'BorderSupport'.
+'model::VSlider' is a specialization of 'Widget'.
+'model::overrides::Overrides' is a specialization of 'WidgetContainerOverrides'.
+'model::ScratchOut' is a specialization of 'ColorAlphaSupport'.
+'model::Item' is a specialization of 'VisibleSupport'.
+'model::Table' is a specialization of 'DoubleClickSupport'.
+'model::Map' is a specialization of 'SkinSupport'.
+'model::Callout' is a specialization of 'ColorBackgroundSupport'.
+'model::Panel' is a specialization of 'BorderStyleSupport'.
+'model::Accordion' is a specialization of 'ItemSupport'.
+'model::TextLinksSupport' is a specialization of 'ItemSupport'.
+'model::Rectangle' is a specialization of 'FontSupport'.
+'model::Menu' is a specialization of 'SelectionSupport'.
+'model::Circle' is a specialization of 'Widget'.
+'model::Popup' is a specialization of 'ItemSupport'.
+'model::ProgressBar' is a specialization of 'SkinSupport'.
+'model::HLine' is a specialization of 'ColorForegroundSupport'.
+'model::Hotspot' is a specialization of 'LinkSupport'.
+'model::DateField' is a specialization of 'StateSupport'.
+'model::Accordion' is a specialization of 'FontSupport'.
+'model::VLine' is a specialization of 'ColorForegroundSupport'.
+'model::Table' is a specialization of 'TextInputSupport'.
+'model::Switch' is a specialization of 'BooleanSelectionSupport'.
+'model::Popup' is a specialization of 'Widget'.
+'model::LinkBar' is a specialization of 'SkinSupport'.
+'model::ClickSupport' is a specialization of 'NameSupport'.
+'model::TextArea' is a specialization of 'ColorBorderSupport'.
+'model::Rectangle' is a specialization of 'LinkSupport'.
+'model::Switch' is a specialization of 'ColorBackgroundSupport'.
+'model::Tree' is a specialization of 'VerticalScrollbarSupport'.
+'model::HLine' is a specialization of 'LineStyleSupport'.
+'model::Note' is a specialization of 'TextAlignmentSupport'.
+'model::VButtonBar' is a specialization of 'FontSupport'.
+'model::ScratchOut' is a specialization of 'Widget'.
+'model::Master' is a specialization of 'Widget'.
+'model::VButtonBar' is a specialization of 'ItemSupport'.
+'model::VLine' is a specialization of 'Widget'.
+'model::TextArea' is a specialization of 'ColorBackgroundSupport'.
+'model::IconPositionSupport' is a specialization of 'IconSupport'.
+'model::SearchField' is a specialization of 'ColorBorderSupport'.
+'model::Image' is a specialization of 'Widget'.
+'model::Chart' is a specialization of 'SkinSupport'.
+'model::Table' is a specialization of 'ColorAlphaSupport'.
+'model::Popup' is a specialization of 'SelectionSupport'.
+'model::Tooltip' is a specialization of 'Widget'.
+'model::CrossOut' is a specialization of 'ColorForegroundSupport'.
+'model::Rectangle' is a specialization of 'ColorAlphaSupport'.
+'model::WidgetGroup' is a specialization of 'Widget'.
+'model::SearchField' is a specialization of 'SkinSupport'.
+'model::Alert' is a specialization of 'Widget'.
+'model::SVGImage' is a specialization of 'ColorBackgroundSupport'.
+'model::overrides::Delete' is a specialization of 'overrides::Reference'.
+'model::Note' is a specialization of 'Widget'.
+'model::Alert' is a specialization of 'IconSupport'.
+'model::Tree' is a specialization of 'Widget'.
+'model::Menu' is a specialization of 'ItemSupport'.
+'model::DateField' is a specialization of 'ColorBorderSupport'.
+'model::Rectangle' is a specialization of 'ColorForegroundSupport'.
+'model::Shape' is a specialization of 'TextAlignmentSupport'.
+'model::Callout' is a specialization of 'Widget'.
+'model::Master' is a specialization of 'LinkSupport'.
+'model::ButtonBar' is a specialization of 'Widget'.
+'model::TextArea' is a specialization of 'FontSupport'.
+'model::CrossOut' is a specialization of 'AnnotationSupport'.
+'model::LinkBar' is a specialization of 'FontSupport'.
+'model::Tooltip' is a specialization of 'SkinSupport'.
+'model::Breadcrumbs' is a specialization of 'Widget'.
+'model::Panel' is a specialization of 'ColorForegroundSupport'.
+'model::ProgressBar' is a specialization of 'ColorBackgroundSupport'.
+'model::VSlider' is a specialization of 'StateSupport'.
+'model::overrides::Delete' is a specialization of 'overrides::Operation'.
+'model::CrossOut' is a specialization of 'Widget'.
+'model::HSlider' is a specialization of 'StateSupport'.
+'model::Group' is a specialization of 'ColorAlphaSupport'.
+'model::TextArea' is a specialization of 'Widget'.
+'model::Tree' is a specialization of 'BorderSupport'.
+'model::Tree' is a specialization of 'ColorAlphaSupport'.
+'model::TextArea' is a specialization of 'VerticalScrollbarSupport'.
+'model::Panel' is a specialization of 'LinkSupport'.
+'model::Accordion' is a specialization of 'SelectionSupport'.
+'model::CrossOut' is a specialization of 'ColorAlphaSupport'.
+'model::Table' is a specialization of 'BorderSupport'.
+'model::Arrow' is a specialization of 'AnnotationSupport'.
+'model::VButtonBar' is a specialization of 'TextAlignmentSupport'.
+'model::Alert' is a specialization of 'ItemSupport'.
+'model::HSlider' is a specialization of 'ColorBackgroundSupport'.
+'model::ButtonBar' is a specialization of 'ColorBackgroundSupport'.
+'model::LinkBar' is a specialization of 'SelectionSupport'.
+'model::List' is a specialization of 'SelectionSupport'.
+'model::Alert' is a specialization of 'FontSupport'.
+'model::ScratchOut' is a specialization of 'AnnotationSupport'.
+'model::CurlyBrace' is a specialization of 'TextLinksSupport'.
+'model::WidgetGroup' is a specialization of 'WidgetContainer'.
+'model::Note' is a specialization of 'ColorBackgroundSupport'.
+'model::List' is a specialization of 'BorderSupport'.
+'model::Table' is a specialization of 'TextAlignmentSupport'.
+'model::Table' is a specialization of 'FontSupport'.
+'model::Icon' is a specialization of 'IconSupport'.
+'model::HSlider' is a specialization of 'SkinSupport'.
+'model::LinkBar' is a specialization of 'Widget'.
+'model::VScrollbar' is a specialization of 'SkinSupport'.
+'model::CurlyBrace' is a specialization of 'AnnotationSupport'.
+'model::TextArea' is a specialization of 'ColorAlphaSupport'.
+'model::TabbedPane' is a specialization of 'ColorBackgroundSupport'.
+'model::ProgressBar' is a specialization of 'Widget'.
+'model::Circle' is a specialization of 'ColorBackgroundSupport'.
+'model::Tree' is a specialization of 'FontSupport'.
+'model::Item' is a specialization of 'LinkSupport'.
+'model::Circle' is a specialization of 'IconSupport'.
+'model::DateField' is a specialization of 'ColorBackgroundSupport'.
+'model::Shape' is a specialization of 'SkinSupport'.
+'model::Circle' is a specialization of 'ColorAlphaSupport'.
+'model::Note' is a specialization of 'AnnotationSupport'.
+'model::TabbedPane' is a specialization of 'FontSupport'.
+'model::SVGImage' is a specialization of 'Widget'.
+'model::List' is a specialization of 'FontSupport'.
+'model::CoverFlow' is a specialization of 'Widget'.
+'model::overrides::WidgetOverrides' is a specialization of 'overrides::WidgetContainerOverrides'.
+'model::TextInputSupport' is a specialization of 'NameSupport'.
+'model::Tabs' is a specialization of 'FontSupport'.
+'model::Item' is a specialization of 'ClickSupport'.
+'model::Image' is a specialization of 'FlipSupport'.
+'model::Table' is a specialization of 'ClickSupport'.
+'model::SearchField' is a specialization of 'StateSupport'.
+'model::VSlider' is a specialization of 'SkinSupport'.
+'model::CurlyBrace' is a specialization of 'SkinSupport'.
+'model::CurlyBrace' is a specialization of 'ColorForegroundSupport'.
+'model::Note' is a specialization of 'ColorAlphaSupport'.
+'model::overrides::Move' is a specialization of 'overrides::Reference'.
+'model::SVGImage' is a specialization of 'ColorForegroundSupport'.
+'model::SearchField' is a specialization of 'Widget'.
+'model::LinkBar' is a specialization of 'ItemSupport'.
+'model::Alert' is a specialization of 'SkinSupport'.
+'model::Table' is a specialization of 'VerticalScrollbarSupport'.
+'model::VideoPlayer' is a specialization of 'Widget'.
+'model::CrossOut' is a specialization of 'SkinSupport'.
+'model::VScrollbar' is a specialization of 'Widget'.
+'model::List' is a specialization of 'ColorAlphaSupport'.
+'model::TextArea' is a specialization of 'TextLinksSupport'.
+'model::Shape' is a specialization of 'LinkSupport'.
+'model::Group' is a specialization of 'FontSupport'.
+'model::Icon' is a specialization of 'ColorForegroundSupport'.
+'model::HSlider' is a specialization of 'Widget'.
+'model::ColorPicker' is a specialization of 'ColorBackgroundSupport'.
+'model::SVGImage' is a specialization of 'RotationSupport'.
+'model::Note' is a specialization of 'TextLinksSupport'.
+'model::TextArea' is a specialization of 'StateSupport'.
+'model::Switch' is a specialization of 'FontSupport'.
+'model::Tabs' is a specialization of 'ItemSupport'.
+'model::Shape' is a specialization of 'IconSupport'.
+'model::CurlyBrace' is a specialization of 'Widget'.
+'model::Switch' is a specialization of 'Widget'.
+'model::ScratchOut' is a specialization of 'SkinSupport'.
+'model::Accordion' is a specialization of 'VerticalScrollbarSupport'.
+'model::VSlider' is a specialization of 'ValueSupport'.
+'model::Callout' is a specialization of 'SkinSupport'.
+'model::SVGImage' is a specialization of 'LinkSupport'.
+'model::Accordion' is a specialization of 'Widget'.
+'model::Menu' is a specialization of 'IconSupport'.
+'model::VSplitter' is a specialization of 'SkinSupport'.
+'model::ProgressBar' is a specialization of 'ValueSupport'.
+'model::List' is a specialization of 'ListSupport'.
+'model::HScrollbar' is a specialization of 'ValueSupport'.
+'model::Shape' is a specialization of 'FontSupport'.
+'model::Shape' is a specialization of 'IconPositionSupport'.
+'model::List' is a specialization of 'ColorAlternativeSupport'.
+'model::Callout' is a specialization of 'AnnotationSupport'.
+'model::Shape' is a specialization of 'ColorAlphaSupport'.
+'model::List' is a specialization of 'ItemSupport'.
+'model::DateField' is a specialization of 'Widget'.
+'model::HSplitter' is a specialization of 'SkinSupport'.
+'model::ButtonBar' is a specialization of 'FontSupport'.
+'model::Image' is a specialization of 'LinkSupport'.
+'model::TabbedPane' is a specialization of 'VerticalScrollbarSupport'.
+'model::Group' is a specialization of 'Widget'.
+'model::Arrow' is a specialization of 'ColorForegroundSupport'.
+'model::Menu' is a specialization of 'SkinSupport'.
+'model::VerticalScrollbarSupport' is a specialization of 'ValueSupport'.
+'model::Hotspot' is a specialization of 'Widget'.
+'model::SearchField' is a specialization of 'LinkSupport'.
+'model::TabbedPane' is a specialization of 'ItemSupport'.
+'model::Tooltip' is a specialization of 'TextLinksSupport'.
+'model::DateField' is a specialization of 'ColorAlphaSupport'.
+'model::VLine' is a specialization of 'SkinSupport'.
+'model::TextArea' is a specialization of 'SkinSupport'.
+'model::TabbedPane' is a specialization of 'SkinSupport'.
+'model::Breadcrumbs' is a specialization of 'ItemSupport'.
+'model::Switch' is a specialization of 'SkinSupport'.
+'model::Tabs' is a specialization of 'Widget'.
+'model::TextArea' is a specialization of 'LineHeightSupport'.
+'model::overrides::ItemOverrides' is a specialization of 'Reference'.
+'model::HLine' is a specialization of 'Widget'.
+'model::Shape' is a specialization of 'ColorBackgroundSupport'.
+'model::Shape' is a specialization of 'ColorForegroundSupport'.
+'model::Rectangle' is a specialization of 'IconPositionSupport'.
+'model::Note' is a specialization of 'LinkSupport'.
+'model::Arrow' is a specialization of 'Widget'.
+'model::Switch' is a specialization of 'StateSupport'.
+'model::Group' is a specialization of 'SkinSupport'.
+'model::Table' is a specialization of 'ColorAlternativeSupport'.
+'model::VButtonBar' is a specialization of 'Widget'.
+'model::Tabs' is a specialization of 'SelectionSupport'.
+'model::Circle' is a specialization of 'ColorForegroundSupport'.
+'model::VLine' is a specialization of 'LineStyleSupport'.
+'model::Table' is a specialization of 'ColorBackgroundSupport'.
+'model::Tooltip' is a specialization of 'FontSupport'.
+'model::WidgetGroup' is a specialization of 'NameSupport'.
+'model::Note' is a specialization of 'SkinSupport'.
+'model::Rectangle' is a specialization of 'BorderStyleSupport'.
+'model::VScrollbar' is a specialization of 'ValueSupport'.
+'model::SVGImage' is a specialization of 'ColorAlphaSupport'.
+'model::ColorPicker' is a specialization of 'SkinSupport'.
+'model::VideoPlayer' is a specialization of 'SkinSupport'.
+'model::HSplitter' is a specialization of 'Widget'.
+'model::ColorPicker' is a specialization of 'Widget'.
+'model::Circle' is a specialization of 'LinkSupport'.
+'model::Panel' is a specialization of 'ColorAlphaSupport'.
+'model::VSlider' is a specialization of 'ColorBackgroundSupport'.
+'model::ButtonBar' is a specialization of 'ItemSupport'.
+'model::VButtonBar' is a specialization of 'ColorBackgroundSupport'.
+'model::HSlider' is a specialization of 'ValueSupport'.
+'model::ButtonBar' is a specialization of 'SkinSupport'.
+'model::Arrow' is a specialization of 'LineStyleSupport'.
+'model::WidgetGroup' is a specialization of 'LinkSupport'.
+'model::HScrollbar' is a specialization of 'Widget'.
+'model::Callout' is a specialization of 'ColorAlphaSupport'.
+'model::Circle' is a specialization of 'TextAlignmentSupport'.
+'model::Circle' is a specialization of 'BorderSupport'.
+'model::Image' is a specialization of 'RotationSupport'.
+'model::Icon' is a specialization of 'Widget'.
+'model::SVGImage' is a specialization of 'FlipSupport'.
+'model::Panel' is a specialization of 'SkinSupport'.
+'model::overrides::Insert' is a specialization of 'Operation'.
+'model::Callout' is a specialization of 'FontSupport'.
+'model::Tree' is a specialization of 'SelectionSupport'.
+'model::TabbedPane' is a specialization of 'SelectionSupport'.
+'model::SearchField' is a specialization of 'FontSupport'.
+'model::Circle' is a specialization of 'LineStyleSupport'.
+'model::VButtonBar' is a specialization of 'SkinSupport'.
+'model::Shape' is a specialization of 'LineStyleSupport'.
+'model::Image' is a specialization of 'BorderSupport'.
+'model::Note' is a specialization of 'FontSupport'.
+'model::overrides::WidgetOverrides' is a specialization of 'overrides::Reference'.
+'model::Screen' is a specialization of 'NoteSupport'.
+'model::Tree' is a specialization of 'ColorBackgroundSupport'.
+'model::Rectangle' is a specialization of 'Widget'.
+'model::Chart' is a specialization of 'Widget'.
+'model::List' is a specialization of 'ColorBackgroundSupport'.
+'model::Table' is a specialization of 'TextLinksSupport'.
+'model::ButtonBar' is a specialization of 'SelectionSupport'.
+'model::CurlyBrace' is a specialization of 'FontSupport'.
+'model::ScratchOut' is a specialization of 'ColorForegroundSupport'.
+'model::List' is a specialization of 'VerticalScrollbarSupport'.
+'model::Menu' is a specialization of 'Widget'.
+'model::HLine' is a specialization of 'SkinSupport'.
+'model::VButtonBar' is a specialization of 'SelectionSupport'.
+'model::TabbedPane' is a specialization of 'Widget'.
+'model::Rectangle' is a specialization of 'TextAlignmentSupport'.
+'model::DoubleClickSupport' is a specialization of 'NameSupport'.
+'model::Group' is a specialization of 'ColorBackgroundSupport'.
+'model::Browser' is a specialization of 'Widget'.
+'model::Combo' is a specialization of 'LinkSupport'.
+'model::Panel' is a specialization of 'VerticalScrollbarSupport'.
+'model::Browser' is a specialization of 'ColorBackgroundSupport'.
+'model::Combo' is a specialization of 'ColorBackgroundSupport'.
+'model::Widget' is a specialization of 'NoteSupport'.
+'model::Placeholder' is a specialization of 'SkinSupport'.
+'model::Combo' is a specialization of 'ColorAlphaSupport'.
+'model::Text' is a specialization of 'Widget'.
+'model::Text' is a specialization of 'TextAlignmentSupport'.
+'model::Checkbox' is a specialization of 'StateSupport'.
+'model::Spinner' is a specialization of 'StateSupport'.
+'model::Button' is a specialization of 'StateSupport'.
+'model::Button' is a specialization of 'LinkSupport'.
+'model::Checkbox' is a specialization of 'BooleanSelectionSupport'.
+'model::Label' is a specialization of 'TextLinksSupport'.
+'model::Checkbox' is a specialization of 'Widget'.
+'model::Combo' is a specialization of 'SelectionSupport'.
+'model::Link' is a specialization of 'SkinSupport'.
+'model::Browser' is a specialization of 'SkinSupport'.
+'model::Text' is a specialization of 'LineHeightSupport'.
+'model::Group' is a specialization of 'VerticalScrollbarSupport'.
+'model::Placeholder' is a specialization of 'LinkSupport'.
+'model::TextField' is a specialization of 'Widget'.
+'model::Button' is a specialization of 'SkinSupport'.
+'model::Panel' is a specialization of 'Widget'.
+'model::Text' is a specialization of 'ColorForegroundSupport'.
+'model::Label' is a specialization of 'ColorForegroundSupport'.
+'model::Combo' is a specialization of 'StateSupport'.
+'model::Text' is a specialization of 'LinkSupport'.
+'model::Checkbox' is a specialization of 'SkinSupport'.
+'model::TextField' is a specialization of 'ColorBackgroundSupport'.
+'model::Link' is a specialization of 'FontSupport'.
+'model::Combo' is a specialization of 'ColorBorderSupport'.
+'model::RadioButton' is a specialization of 'LinkSupport'.
+'model::Link' is a specialization of 'StateSupport'.
+'model::Spinner' is a specialization of 'FontSupport'.
+'model::Button' is a specialization of 'FontSupport'.
+'model::Combo' is a specialization of 'SkinSupport'.
+'model::TextField' is a specialization of 'TextInputSupport'.
+'model::Widget' is a specialization of 'VisibleSupport'.
+'model::Checkbox' is a specialization of 'FontSupport'.
+'model::Window' is a specialization of 'Widget'.
+'model::Panel' is a specialization of 'ColorBackgroundSupport'.
+'model::Link' is a specialization of 'Widget'.
+'model::RadioButton' is a specialization of 'FontSupport'.
+'model::Label' is a specialization of 'IconSupport'.
+'model::Text' is a specialization of 'FontSupport'.
+'model::Combo' is a specialization of 'FontSupport'.
+'model::Button' is a specialization of 'Widget'.
+'model::Browser' is a specialization of 'FontSupport'.
+'model::Combo' is a specialization of 'Widget'.
+'model::Spinner' is a specialization of 'ColorBorderSupport'.
+'model::Widget' is a specialization of 'NameSupport'.
+'model::RadioButton' is a specialization of 'StateSupport'.
+'model::Label' is a specialization of 'IconPositionSupport'.
+'model::TextField' is a specialization of 'TextAlignmentSupport'.
+'model::Button' is a specialization of 'ColorBackgroundSupport'.
+'model::Window' is a specialization of 'VerticalScrollbarSupport'.
+'model::Window' is a specialization of 'ColorAlphaSupport'.
+'model::TextField' is a specialization of 'SkinSupport'.
+'model::Spinner' is a specialization of 'SkinSupport'.
+'model::Browser' is a specialization of 'ColorAlphaSupport'.
+'model::Window' is a specialization of 'ColorBackgroundSupport'.
+'model::Text' is a specialization of 'TextLinksSupport'.
+'model::RadioButton' is a specialization of 'Widget'.
+'model::Label' is a specialization of 'LinkSupport'.
+'model::Browser' is a specialization of 'VerticalScrollbarSupport'.
+'model::TextField' is a specialization of 'ColorAlphaSupport'.
+'model::Label' is a specialization of 'StateSupport'.
+'model::RadioButton' is a specialization of 'SkinSupport'.
+'model::Placeholder' is a specialization of 'Widget'.
+'model::Spinner' is a specialization of 'Widget'.
+'model::TextField' is a specialization of 'StateSupport'.
+'model::Area' is a specialization of 'Widget'.
+'model::TextField' is a specialization of 'ColorBorderSupport'.
+'model::Label' is a specialization of 'FontSupport'.
+'model::Window' is a specialization of 'SkinSupport'.
+'model::Spinner' is a specialization of 'ColorBackgroundSupport'.
+'model::Label' is a specialization of 'TextAlignmentSupport'.
+'model::Screen' is a specialization of 'NameSupport'.
+'model::Checkbox' is a specialization of 'LinkSupport'.
+'model::Button' is a specialization of 'ClickSupport'.
+'model::TextField' is a specialization of 'FontSupport'.
+'model::Spinner' is a specialization of 'ColorAlphaSupport'.
+'model::Link' is a specialization of 'LinkSupport'.
+'model::RadioButton' is a specialization of 'BooleanSelectionSupport'.
+'model::Label' is a specialization of 'Widget'.
+'model::Button' is a specialization of 'TextAlignmentSupport'.
+'model::Button' is a specialization of 'IconSupport'.
+'model::Label' is a specialization of 'RotationSupport'.
+'model::RulerGuide' (role 'model_RulerGuide', cardinality 0..*) is associated with 'model::ScreenRuler' (role 'model_ScreenRuler7', cardinality 0..*).
+'model::WidgetContainer' (role 'model_WidgetContainer16', cardinality 0..*) is associated with 'model::Master' (role 'model_Master15', cardinality 0..*).
+'model::Font' (role 'model_Font', cardinality 0..*) is associated with 'model::FontSupport' (role 'model_FontSupport', cardinality 0..*).
+'Overrides' (role 'Overrides', cardinality 0..*) is associated with 'model::Master' (role 'model_Master13', cardinality 0..*).
+'model::WidgetContainer' (role 'WidgetContainer', cardinality 0..*) is associated with 'model::Widget' (role 'widgets', cardinality 0..*).
+'FontOverrides' (role 'FontOverrides', cardinality 0..*) is associated with 'model::overrides::WidgetOverrides' (role 'model_overrides_WidgetOverrides26', cardinality 0..*).
+'model::ScreenRuler' (role 'model_ScreenRuler3', cardinality 0..*) is associated with 'model::Screen' (role 'model_Screen2', cardinality 0..*).
+'model::overrides::WidgetOverrides' (role 'model_overrides_WidgetOverrides30', cardinality 0..*) is associated with 'Operation' (role 'Operation', cardinality 0..*).
+'Panel' (role 'Panel', cardinality 0..*) is associated with 'model::story::Storyboard' (role 'model_story_Storyboard', cardinality 0..*).
+'model::Widget' (role 'Widget', cardinality 0..*) is associated with 'model::WidgetContainer' (role 'container', cardinality 0..*).
+'WidgetOverrides' (role 'WidgetOverrides', cardinality 0..*) is associated with 'model::overrides::Overrides' (role 'model_overrides_Overrides', cardinality 0..*).
+'model::story::Panel' (role 'model_story_Panel', cardinality 0..*) is associated with 'story::model::Screen' (role 'story_model_Screen', cardinality 0..*).
+'model::ScreenRuler' (role 'model_ScreenRuler', cardinality 0..*) is associated with 'model::Screen' (role 'model_Screen', cardinality 0..*).
+'ItemOverrides' (role 'ItemOverrides', cardinality 0..*) is associated with 'model::overrides::WidgetOverrides' (role 'model_overrides_WidgetOverrides28', cardinality 0..*).
+'model::Item' (role 'model_Item', cardinality 0..*) is associated with 'model::ItemSupport' (role 'model_ItemSupport', cardinality 0..*).
+'model::Master' (role 'model_Master', cardinality 0..*) is associated with 'model::WidgetContainer' (role 'model_WidgetContainer', cardinality 0..*).
+'model::overrides::WidgetOverrides' (role 'model_overrides_WidgetOverrides', cardinality 0..*) is associated with 'StringToStringMap' (role 'StringToStringMap', cardinality 0..*).
+'model::overrides::Insert' (role 'model_overrides_Insert', cardinality 0..*) is associated with 'overrides::model::EObject' (role 'overrides_model_EObject', cardinality 0..*).
+'model::story::Panel' (role 'model_story_Panel22', cardinality 0..*) is associated with 'Storyboard' (role 'Storyboard', cardinality 0..*).
+'model::ScreenFont' (role 'model_ScreenFont', cardinality 0..*) is associated with 'model::Screen' (role 'model_Screen5', cardinality 0..*).
+'model::Widget' (role 'model_Widget', cardinality 0..*) is associated with 'model::WidgetDescriptor' (role 'model_WidgetDescriptor', cardinality 0..*).
+'Operation' (role 'Operation33', cardinality 0..*) is associated with 'model::overrides::WidgetContainerOverrides' (role 'model_overrides_WidgetContainerOverrides', cardinality 0..*).

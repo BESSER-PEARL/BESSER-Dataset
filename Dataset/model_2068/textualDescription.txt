@@ -1,0 +1,5 @@
+The model has 2 class(es).
+The class 'SimpleTree::NodeKind' has no attributes.
+The class 'SimpleTree::Tree' has no attributes.
+'SimpleTree::NodeKind' (role 'SimpleTree_NodeKind3', cardinality 0..*) is associated with 'SimpleTree::NodeKind' (role 'SimpleTree_NodeKind1', cardinality 0..*).
+'SimpleTree::Tree' (role 'SimpleTree_Tree', cardinality 0..*) is associated with 'SimpleTree::NodeKind' (role 'SimpleTree_NodeKind', cardinality 0..*).
